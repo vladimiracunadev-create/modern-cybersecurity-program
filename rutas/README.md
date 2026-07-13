@@ -104,6 +104,7 @@ Gobernanza, riesgo, cumplimiento y auditoría.
 
 ## Después de tu ruta
 
+- Consulta el [mapeo a certificaciones](../certificaciones/README.md) para ver cuánto cubre el programa de tu examen objetivo.
 - Refuerza con las [autoevaluaciones](../autoevaluaciones/README.md) por parte.
 - Marca tu avance en el [seguimiento de progreso](../autoevaluaciones/README.md#progreso).
 - Cierra con los **capstones** de la [Parte 16](../classes/parte-16-capstones-y-preparacion-de-certificaciones/README.md).

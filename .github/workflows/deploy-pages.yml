@@ -11,6 +11,7 @@ on:
       - "SECURITY.md"
       - "rutas/**"
       - "autoevaluaciones/**"
+      - "certificaciones/**"
       - "labs/README.md"
       - "ctf/README.md"
       - "scripts/generar_sitio.py"

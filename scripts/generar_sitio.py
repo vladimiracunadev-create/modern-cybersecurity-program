@@ -66,7 +66,7 @@ PLANTILLA = """<!doctype html>
 </style>
 </head>
 <body>
-<div class="nav"><a href="{home}">🛡️ Inicio</a> · <a href="{indice}">📚 Clases</a> · <a href="{rutas}">🧭 Rutas</a> · <a href="{quiz}">📝 Autoevaluación</a> · <a href="{progreso}">✅ Progreso</a></div>
+<div class="nav"><a href="{home}">🛡️ Inicio</a> · <a href="{indice}">📚 Clases</a> · <a href="{rutas}">🧭 Rutas</a> · <a href="{quiz}">📝 Autoevaluación</a> · <a href="{progreso}">✅ Progreso</a> · <a href="{certis}">🎓 Certis</a></div>
 {body}
 </body>
 </html>
@@ -106,6 +106,7 @@ def escribir(rel_md: str, md_text: str) -> None:
         rutas=f"{subir}rutas/README.html" if prof else "rutas/README.html",
         quiz=f"{subir}autoevaluaciones/quiz.html" if prof else "autoevaluaciones/quiz.html",
         progreso=f"{subir}autoevaluaciones/progreso.html" if prof else "autoevaluaciones/progreso.html",
+        certis=f"{subir}certificaciones/README.html" if prof else "certificaciones/README.html",
         body=render(reescribir_enlaces(md_text)),
     )
     with open(destino, "w", encoding="utf-8") as f:
@@ -201,7 +202,7 @@ def datos_partes():
 def escribir_landing(partes) -> None:
     total = sum(p["n"] for p in partes)
     stats = [("310", "clases"), ("17", "partes"), ("4", "laboratorios"),
-             ("85", "preguntas"), ("620", "PDF + PPTX")]
+             ("85", "preguntas"), ("7", "certis mapeadas")]
     stats_html = "".join(f'<div class="stat"><b>{v}</b><span>{k}</span></div>' for v, k in stats)
     feats = [
         ("📚", "Currículo completo", "310 clases de fundamentos a nivel experto, cada una con objetivo, laboratorio, ejercicios y referencias.", "classes/README.html"),
@@ -210,6 +211,7 @@ def escribir_landing(partes) -> None:
         ("🚩", "Retos CTF", "Colección de retos con solución por categoría: web, cripto, redes, forense, OSINT y pwn.", "ctf/README.html"),
         ("📝", "Autoevaluación", "85 preguntas interactivas con puntuación, una batería por parte.", "autoevaluaciones/quiz.html"),
         ("✅", "Tu progreso", "Marca las 310 clases y sigue tu avance (se guarda en tu navegador).", "autoevaluaciones/progreso.html"),
+        ("🎓", "Certificaciones", "Mapeo a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con % de cobertura por dominio.", "certificaciones/README.html"),
     ]
     feats_html = "".join(
         f'<a class="feat" href="{u}"><div class="ic">{i}</div><h3>{t}</h3><p>{d}</p></a>'
@@ -281,6 +283,12 @@ def main() -> int:
                 generados += 1
 
     # index.html del sitio = README raíz renderizado.
+    # Documentos de certificaciones (uno por cert + índice).
+    for p in glob.glob(os.path.join(ROOT, "certificaciones", "*.md")):
+        rel = os.path.relpath(p, ROOT).replace("\\", "/")
+        escribir(rel, open(p, encoding="utf-8").read())
+        generados += 1
+
     # Portada diseñada (NO se usa el README como landing: el markdown dentro de
     # <div align="center"> no se renderiza y se veía roto).
     escribir_landing(datos_partes())
