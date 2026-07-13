@@ -2,7 +2,7 @@
 
 # 🛡️ Programa de Ciberseguridad Moderna
 
-## **310 clases · 17 partes · de fundamentos a nivel experto**
+## **320 clases · 18 partes · de fundamentos a nivel experto**
 
 **El programa de ciberseguridad más completo en español — desde redes, criptografía y Linux hasta Red Team, DFIR, cloud security, exploit development y seguridad de IA.**
 
@@ -10,7 +10,7 @@
 [![Security](https://github.com/vladimiracunadev-create/cyberseguridad-moderna-program/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/cyberseguridad-moderna-program/actions/workflows/security.yml)
 [![Deploy Pages](https://github.com/vladimiracunadev-create/cyberseguridad-moderna-program/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/cyberseguridad-moderna-program/actions/workflows/deploy-pages.yml)
 
-[![Clases](https://img.shields.io/badge/clases-310%20·%2017%20partes-7c5cff?style=for-the-badge)](classes/README.md)
+[![Clases](https://img.shields.io/badge/clases-320%20·%2018%20partes-7c5cff?style=for-the-badge)](classes/README.md)
 [![Nivel](https://img.shields.io/badge/nivel-fundamentos%20→%20experto-2e8b57?style=for-the-badge)](classes/README.md)
 [![Idioma](https://img.shields.io/badge/idioma-español-blue?style=for-the-badge)](README.md)
 [![License](https://img.shields.io/badge/license-MIT-3fb950?style=for-the-badge)](LICENSE)
@@ -25,7 +25,7 @@
 
 ## 🎯 Qué es esto
 
-Un currículo modular y **secuencial** que cubre **todo el espectro de la ciberseguridad moderna**, paso a paso, en 310 clases numeradas (001→310) agrupadas en 17 partes. Cada clase es una carpeta con un `README.md` completo que incluye:
+Un currículo modular y **secuencial** que cubre **todo el espectro de la ciberseguridad moderna**, paso a paso, en 320 clases numeradas (001→320) agrupadas en 18 partes. Cada clase es una carpeta con un `README.md` completo que incluye:
 
 - 🎯 **Objetivo** y **resultados de aprendizaje verificables**.
 - 🗺️ **Temas** con el porqué de cada uno.
@@ -55,7 +55,7 @@ Cada parte sigue explícitamente la secuencia y los énfasis de la literatura de
 
 > Las referencias apuntan a las obras; **no se reproduce su contenido**. El material del curso es original y original en su redacción.
 
-## 🗂️ Las 17 partes
+## 🗂️ Las 18 partes
 
 | # | Parte | Clases |
 |---|---|---:|
@@ -76,8 +76,9 @@ Cada parte sigue explícitamente la secuencia y los énfasis de la literatura de
 | 14 | GRC, riesgo y cumplimiento | 15 |
 | 15 | Seguridad de IA y machine learning | 10 |
 | 16 | Capstones y preparación de certificaciones | 10 |
+| 17 | Profundización para certificaciones (gestión, IAM, arquitectura) | 10 |
 
-➡️ **[Ver el índice plano de las 310 clases](classes/README.md)**
+➡️ **[Ver el índice plano de las 320 clases](classes/README.md)**
 
 ## 🧪 Laboratorios ejecutables
 
@@ -95,8 +96,8 @@ comando, más una colección de retos tipo CTF:
 ## 🧭 Portal: rutas, autoevaluación y progreso
 
 - 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, DFIR, AppSec, cloud y GRC.
-- 📝 **[Autoevaluaciones](autoevaluaciones/README.md)** — 85 preguntas (una batería por parte). Versión interactiva con puntuación: [quiz](https://vladimiracunadev-create.github.io/cyberseguridad-moderna-program/autoevaluaciones/quiz.html).
-- ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/cyberseguridad-moderna-program/autoevaluaciones/progreso.html)** — marca las 310 clases (se guarda en tu navegador).
+- 📝 **[Autoevaluaciones](autoevaluaciones/README.md)** — 92 preguntas (una batería por parte). Versión interactiva con puntuación: [quiz](https://vladimiracunadev-create.github.io/cyberseguridad-moderna-program/autoevaluaciones/quiz.html).
+- ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/cyberseguridad-moderna-program/autoevaluaciones/progreso.html)** — marca las 320 clases (se guarda en tu navegador).
 - 🎓 **[Certificaciones](certificaciones/README.md)** — mapeo del programa a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con **% de cobertura ponderado por dominio**.
 
 🌐 Todo navegable en el **[sitio del curso](https://vladimiracunadev-create.github.io/cyberseguridad-moderna-program/)** (GitHub Pages).

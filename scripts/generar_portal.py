@@ -6,7 +6,7 @@ Genera el "portal" de evaluación (Fase 4) a partir de:
 
 Produce (archivos estáticos, autocontenidos, aptos para GitHub Pages):
   - autoevaluaciones/quiz.html        (autoevaluación interactiva)
-  - autoevaluaciones/progreso.html    (checklist de 310 clases con localStorage)
+  - autoevaluaciones/progreso.html    (checklist de las clases con localStorage)
   - autoevaluaciones/README.md        (versión imprimible con respuestas)
 
 Uso: python scripts/generar_portal.py
@@ -208,7 +208,7 @@ def gen_readme(data):
          "> 🧭 ¿No sabes por dónde empezar? Mira las [rutas por rol](../rutas/README.md).\n",
          "<a id=\"progreso\"></a>\n",
          "## Seguimiento de progreso\n",
-         "Lleva la cuenta de las 310 clases en [`progreso.html`](progreso.html) "
+         "Lleva la cuenta de las 320 clases en [`progreso.html`](progreso.html) "
          "(se guarda en tu navegador).\n",
          "---\n"]
     for p in data["partes"]:

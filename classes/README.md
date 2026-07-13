@@ -1,6 +1,6 @@
 # Indice del curriculo
 
-**310 clases - 17 partes** - numeracion secuencial 001-310. Cada parte tiene su propio README con la narrativa completa (de que trata, que problemas resuelve, resultados de aprendizaje, estructura tematica y prerrequisitos).
+**320 clases - 18 partes** - numeracion secuencial 001-320. Cada parte tiene su propio README con la narrativa completa (de que trata, que problemas resuelve, resultados de aprendizaje, estructura tematica y prerrequisitos).
 
 | Parte | Tema | Clases | README de la parte |
 |---|---|---:|---|
@@ -21,6 +21,7 @@
 | 14 | GRC, riesgo y cumplimiento | 15 (276-290) | [leer parte 14](parte-14-grc-riesgo-y-cumplimiento/README.md) |
 | 15 | Seguridad de IA y machine learning | 10 (291-300) | [leer parte 15](parte-15-seguridad-de-ia-y-machine-learning/README.md) |
 | 16 | Capstones y preparacion de certificaciones | 10 (301-310) | [leer parte 16](parte-16-capstones-y-preparacion-de-certificaciones/README.md) |
+| 17 | Profundizacion para certificaciones (gestion, IAM, arquitectura) | 10 (311-320) | [leer parte 17](parte-17-profundizacion-para-certificaciones/README.md) |
 
 ---
 
@@ -386,3 +387,16 @@ A continuacion, el indice plano de las clases. Si buscas la narrativa de una par
 - [308 - Capstone: campana de bug bounty](parte-16-capstones-y-preparacion-de-certificaciones/308-capstone-campana-de-bug-bounty/README.md)
 - [309 - Construccion de portafolio y home lab permanente](parte-16-capstones-y-preparacion-de-certificaciones/309-construccion-de-portafolio-y-home-lab-permanente/README.md)
 - [310 - Plan de aprendizaje continuo y comunidad](parte-16-capstones-y-preparacion-de-certificaciones/310-plan-de-aprendizaje-continuo-y-comunidad/README.md)
+
+## [Parte 17 - Profundizacion para certificaciones](parte-17-profundizacion-para-certificaciones/README.md)
+
+- [311 - Clasificacion y ciclo de vida de los datos](parte-17-profundizacion-para-certificaciones/311-clasificacion-y-ciclo-de-vida-de-los-datos/README.md)
+- [312 - Retencion, destruccion segura de datos y DLP](parte-17-profundizacion-para-certificaciones/312-retencion-destruccion-segura-de-datos-y-dlp/README.md)
+- [313 - Gestion del ciclo de vida de identidades (IAM empresarial)](parte-17-profundizacion-para-certificaciones/313-gestion-del-ciclo-de-vida-de-identidades-iam-empresarial/README.md)
+- [314 - Federacion, SSO, SAML y OpenID Connect](parte-17-profundizacion-para-certificaciones/314-federacion-sso-saml-y-openid-connect/README.md)
+- [315 - MFA y gestion de accesos privilegiados (PAM)](parte-17-profundizacion-para-certificaciones/315-mfa-y-gestion-de-accesos-privilegiados-pam/README.md)
+- [316 - Modelos de seguridad y arquitectura (Bell-LaPadula, Biba, Clark-Wilson)](parte-17-profundizacion-para-certificaciones/316-modelos-de-seguridad-y-arquitectura/README.md)
+- [317 - Seguridad fisica y ambiental](parte-17-profundizacion-para-certificaciones/317-seguridad-fisica-y-ambiental/README.md)
+- [318 - Gestion del programa de vulnerabilidades](parte-17-profundizacion-para-certificaciones/318-gestion-del-programa-de-vulnerabilidades/README.md)
+- [319 - Analisis avanzado de phishing y correo malicioso](parte-17-profundizacion-para-certificaciones/319-analisis-avanzado-de-phishing-y-correo-malicioso/README.md)
+- [320 - Gobierno, aspectos legales/regulatorios y gestion del programa](parte-17-profundizacion-para-certificaciones/320-gobierno-aspectos-legales-regulatorios-y-gestion-del-programa/README.md)

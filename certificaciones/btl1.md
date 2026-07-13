@@ -6,21 +6,21 @@
 
 Certificación defensiva práctica muy alineada con la ruta Blue Team. Pesos estimados (el proveedor no publica ponderación oficial por dominio).
 
-## 📊 Cobertura estimada del programa: **85%**
+## 📊 Cobertura estimada del programa: **87%**
 
-`█████████░` 85.3% — suma ponderada por dominio (pesos estimados (el proveedor no publica ponderación oficial por dominio)).
+`█████████░` 87.5% — suma ponderada por dominio (pesos estimados (el proveedor no publica ponderación oficial por dominio)).
 
 ## Mapeo por dominio
 
 | Dominio del examen | Peso | Partes del programa | Cobertura | Notas |
 |---|---:|---|---:|---|
 | Security Fundamentals | 15% | Parte 0 | 90% | Conceptos base, redes, sistemas. |
-| Phishing Analysis | 18% | Parte 12 | 80% | Análisis de correos y campañas (clases 258-259). |
+| Phishing Analysis | 18% | Parte 12, 17 | 92% | Análisis de cabeceras, SPF/DKIM/DMARC, adjuntos y URLs (clase 319). |
 | Threat Intelligence | 15% | Parte 8 | 82% | Inteligencia operacional, IOCs, ATT&CK. |
 | Digital Forensics | 20% | Parte 9 | 85% | Artefactos, memoria, timelines. |
 | SIEM | 17% | Parte 8 | 86% | Splunk/Elastic, reglas, correlación (lab blue-team-soc). |
 | Incident Response | 15% | Parte 9 | 90% | Ciclo de respuesta, contención, recuperación. |
-| **Total ponderado** | **100%** | | **85%** | |
+| **Total ponderado** | **100%** | | **87%** | |
 
 ## 🎯 Brecha y cómo cerrarla
 

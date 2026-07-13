@@ -6,23 +6,23 @@
 
 Certificación gerencial de referencia (8 dominios). El programa cubre bien la base técnica; los dominios de gestión/gobierno requieren estudio adicional específico de CISSP.
 
-## 📊 Cobertura estimada del programa: **78%**
+## 📊 Cobertura estimada del programa: **85%**
 
-`████████░░` 78.1% — suma ponderada por dominio (pesos oficiales del examen).
+`█████████░` 85.4% — suma ponderada por dominio (pesos oficiales del examen).
 
 ## Mapeo por dominio
 
 | Dominio del examen | Peso | Partes del programa | Cobertura | Notas |
 |---|---:|---|---:|---|
-| Security and Risk Management | 16% | Parte 14 | 80% | Gobernanza, riesgo, cumplimiento, ética, políticas. |
-| Asset Security | 10% | Parte 14, 2 | 66% | Clasificación y manejo de datos; parcialmente cubierto. |
-| Security Architecture and Engineering | 13% | Parte 2, 5, 10 | 78% | Cripto, modelos, seguridad de sistemas y nube. |
+| Security and Risk Management | 16% | Parte 14, 17 | 86% | Gobernanza, riesgo, legal/regulatorio y gestión del programa (clase 320). |
+| Asset Security | 10% | Parte 17, 14, 2 | 90% | Clasificación, ciclo de vida, retención y DLP (clases 311-312). |
+| Security Architecture and Engineering | 13% | Parte 2, 5, 10, 17 | 88% | Cripto, modelos de seguridad y seguridad física (clases 316-317). |
 | Communication and Network Security | 13% | Parte 1 | 88% | Modelos de red, protocolos, seguridad de red. |
-| Identity and Access Management (IAM) | 13% | Parte 10, 4 | 70% | IAM en nube, OAuth/OIDC; falta algo de IAM empresarial clásico. |
+| Identity and Access Management (IAM) | 13% | Parte 10, 4, 17 | 90% | IAM empresarial, federación/SSO/SAML/OIDC, MFA y PAM (clases 313-315). |
 | Security Assessment and Testing | 12% | Parte 3, 11 | 80% | Pentest, auditoría, SAST/DAST. |
 | Security Operations | 13% | Parte 8, 9 | 82% | Detección, monitoreo, DFIR, continuidad. |
 | Software Development Security | 10% | Parte 11, 4 | 78% | SDLC seguro, secure coding, supply chain. |
-| **Total ponderado** | **100%** | | **78%** | |
+| **Total ponderado** | **100%** | | **85%** | |
 
 ## 🎯 Brecha y cómo cerrarla
 

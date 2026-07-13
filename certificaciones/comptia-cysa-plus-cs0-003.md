@@ -6,19 +6,19 @@
 
 Analista de ciberseguridad: operaciones de seguridad, gestión de vulnerabilidades e incident response. Alineado con la ruta Blue Team.
 
-## 📊 Cobertura estimada del programa: **85%**
+## 📊 Cobertura estimada del programa: **88%**
 
-`████████░░` 84.6% — suma ponderada por dominio (pesos oficiales del examen).
+`█████████░` 88.2% — suma ponderada por dominio (pesos oficiales del examen).
 
 ## Mapeo por dominio
 
 | Dominio del examen | Peso | Partes del programa | Cobertura | Notas |
 |---|---:|---|---:|---|
 | Security Operations | 33% | Parte 1, 6, 8 | 88% | Telemetría, SIEM, detección, threat hunting, análisis de malware. |
-| Vulnerability Management | 30% | Parte 3, 11 | 80% | Escaneo, priorización, gestión de vulnerabilidades a escala. |
+| Vulnerability Management | 30% | Parte 3, 11, 17 | 92% | Ciclo de VM con CVSS/EPSS/KEV y SLAs (clase 318). |
 | Incident Response and Management | 20% | Parte 9 | 90% | Ciclo NIST/SANS, contención, erradicación, RCA. |
 | Reporting and Communication | 17% | Parte 3, 8 | 80% | Reporte de hallazgos y de detección. |
-| **Total ponderado** | **100%** | | **85%** | |
+| **Total ponderado** | **100%** | | **88%** | |
 
 ## 🎯 Brecha y cómo cerrarla
 

@@ -13,6 +13,7 @@ Requiere: pip install "markdown>=3.6"
 from __future__ import annotations
 import glob
 import html as htmllib
+import json
 import os
 import re
 import shutil
@@ -201,8 +202,20 @@ def datos_partes():
 
 def escribir_landing(partes) -> None:
     total = sum(p["n"] for p in partes)
-    stats = [("310", "clases"), ("17", "partes"), ("4", "laboratorios"),
-             ("85", "preguntas"), ("7", "certis mapeadas")]
+    # Contadores dinámicos (se ajustan solos al crecer el programa).
+    try:
+        with open(os.path.join(ROOT, "autoevaluaciones", "preguntas.json"), encoding="utf-8") as f:
+            n_preg = sum(len(p["preguntas"]) for p in json.load(f)["partes"])
+    except Exception:
+        n_preg = 0
+    try:
+        with open(os.path.join(ROOT, "certificaciones", "_mapeo.json"), encoding="utf-8") as f:
+            n_cert = len(json.load(f)["certs"])
+    except Exception:
+        n_cert = 0
+    n_labs = len([d for d in glob.glob(os.path.join(ROOT, "labs", "*")) if os.path.isdir(d)])
+    stats = [(str(total), "clases"), (str(len(partes)), "partes"), (str(n_labs), "laboratorios"),
+             (str(n_preg), "preguntas"), (str(n_cert), "certis mapeadas")]
     stats_html = "".join(f'<div class="stat"><b>{v}</b><span>{k}</span></div>' for v, k in stats)
     feats = [
         ("📚", "Currículo completo", "310 clases de fundamentos a nivel experto, cada una con objetivo, laboratorio, ejercicios y referencias.", "classes/README.html"),

@@ -8,7 +8,7 @@ Batería de preguntas por parte para comprobar lo aprendido. Esta es la versión
 
 ## Seguimiento de progreso
 
-Lleva la cuenta de las 310 clases en [`progreso.html`](progreso.html) (se guarda en tu navegador).
+Lleva la cuenta de las 320 clases en [`progreso.html`](progreso.html) (se guarda en tu navegador).
 
 ---
 
@@ -1148,5 +1148,98 @@ Lleva la cuenta de las 310 clases en [`progreso.html`](progreso.html) (se guarda
 <details><summary>Ver respuesta</summary>
 
 **Correcta: b) Es continuo: el panorama de amenazas cambia constantemente.** Comunidad, práctica y actualización constante son parte del oficio.
+
+</details>
+
+## Parte 17 — Profundización para certificaciones
+
+**1. En la clasificación de datos, ¿quién define el nivel de clasificación de un activo?**
+
+- a) El custodio (custodian)
+- b) El propietario del dato (data owner)
+- c) Cualquier usuario
+- d) El proveedor de nube
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) El propietario del dato (data owner).** El data owner clasifica y define requisitos; el custodio los implementa/mantiene.
+
+</details>
+
+**2. Según NIST SP 800-88, 'purge' frente a 'clear' implica…**
+
+- a) Lo mismo
+- b) Un borrado más resistente a ataques de laboratorio (p. ej. criptoborrado)
+- c) Solo borrar la papelera
+- d) Cifrar el disco
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Un borrado más resistente a ataques de laboratorio (p. ej. criptoborrado).** Clear resiste ataques simples; purge resiste incluso recuperación de laboratorio; destroy es físico.
+
+</details>
+
+**3. En IAM, el patrón 'joiner-mover-leaver' se refiere a…**
+
+- a) Un ataque de fuerza bruta
+- b) El ciclo de vida de una identidad (alta, cambios, baja)
+- c) Un tipo de MFA
+- d) Un modelo de cifrado
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) El ciclo de vida de una identidad (alta, cambios, baja).** Gestiona aprovisionamiento, cambios de rol y desaprovisionamiento oportuno de accesos.
+
+</details>
+
+**4. SAML y OpenID Connect se usan para…**
+
+- a) Cifrar discos
+- b) Federación de identidad y single sign-on (SSO)
+- c) Escanear puertos
+- d) Analizar malware
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Federación de identidad y single sign-on (SSO).** SAML (XML) y OIDC (sobre OAuth2) permiten autenticación federada entre dominios.
+
+</details>
+
+**5. El modelo Bell-LaPadula se enfoca en proteger la…**
+
+- a) Integridad
+- b) Disponibilidad
+- c) Confidencialidad (no leer arriba, no escribir abajo)
+- d) Velocidad
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: c) Confidencialidad (no leer arriba, no escribir abajo).** Bell-LaPadula = confidencialidad; Biba y Clark-Wilson se enfocan en integridad.
+
+</details>
+
+**6. Para priorizar la remediación de vulnerabilidades, además de CVSS conviene usar…**
+
+- a) El orden alfabético
+- b) EPSS y la lista KEV de CISA (explotación real)
+- c) El tamaño del archivo
+- d) El color del reporte
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) EPSS y la lista KEV de CISA (explotación real).** CVSS mide severidad; EPSS estima probabilidad de exploit y KEV marca lo explotado activamente.
+
+</details>
+
+**7. En el análisis de un correo de phishing, SPF, DKIM y DMARC sirven para…**
+
+- a) Cifrar el cuerpo
+- b) Autenticar el origen del correo y detectar suplantación
+- c) Comprimir adjuntos
+- d) Acelerar la entrega
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Autenticar el origen del correo y detectar suplantación.** Validan que el remitente esté autorizado y que el mensaje no fue alterado; DMARC define la política.
 
 </details>

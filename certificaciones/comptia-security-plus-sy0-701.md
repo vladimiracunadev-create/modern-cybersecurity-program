@@ -6,9 +6,9 @@
 
 Certificación base de la industria: valida conocimientos fundamentales de seguridad, amenazas, arquitectura, operaciones y gobierno. El programa la cubre de forma amplia.
 
-## 📊 Cobertura estimada del programa: **84%**
+## 📊 Cobertura estimada del programa: **88%**
 
-`████████░░` 84.1% — suma ponderada por dominio (pesos oficiales del examen).
+`█████████░` 87.8% — suma ponderada por dominio (pesos oficiales del examen).
 
 ## Mapeo por dominio
 
@@ -16,10 +16,10 @@ Certificación base de la industria: valida conocimientos fundamentales de segur
 |---|---:|---|---:|---|
 | General Security Concepts | 12% | Parte 0, 2 | 92% | Tríada CIA, control de acceso, cripto básica, zero trust. |
 | Threats, Vulnerabilities & Mitigations | 22% | Parte 0, 3, 4, 5, 6, 12 | 90% | Actores, malware, ingeniería social, vulnerabilidades y mitigaciones. |
-| Security Architecture | 18% | Parte 1, 2, 10 | 82% | Redes seguras, cripto/PKI, nube; falta algo de diseño empresarial clásico. |
+| Security Architecture | 18% | Parte 1, 2, 10, 16, 17 | 88% | Redes, cripto/PKI, nube y modelos/seguridad física (Parte 17). |
 | Security Operations | 28% | Parte 1, 8, 9 | 86% | Monitoreo, detección, respuesta a incidentes, hardening. |
-| Security Program Management & Oversight | 20% | Parte 14 | 72% | Riesgo, cumplimiento y políticas: cubierto en la Parte 14, menos exhaustivo que en CISSP. |
-| **Total ponderado** | **100%** | | **84%** | |
+| Security Program Management & Oversight | 20% | Parte 14, 17 | 85% | Riesgo, cumplimiento y gobierno del programa (Parte 14 + clase 320). |
+| **Total ponderado** | **100%** | | **88%** | |
 
 ## 🎯 Brecha y cómo cerrarla
 

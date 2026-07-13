@@ -14,11 +14,41 @@
       "pesos_oficiales": true,
       "resumen": "Certificación base de la industria: valida conocimientos fundamentales de seguridad, amenazas, arquitectura, operaciones y gobierno. El programa la cubre de forma amplia.",
       "dominios": [
-        {"nombre": "General Security Concepts", "peso": 12, "cobertura": 92, "partes": "0, 2", "notas": "Tríada CIA, control de acceso, cripto básica, zero trust."},
-        {"nombre": "Threats, Vulnerabilities & Mitigations", "peso": 22, "cobertura": 90, "partes": "0, 3, 4, 5, 6, 12", "notas": "Actores, malware, ingeniería social, vulnerabilidades y mitigaciones."},
-        {"nombre": "Security Architecture", "peso": 18, "cobertura": 82, "partes": "1, 2, 10", "notas": "Redes seguras, cripto/PKI, nube; falta algo de diseño empresarial clásico."},
-        {"nombre": "Security Operations", "peso": 28, "cobertura": 86, "partes": "1, 8, 9", "notas": "Monitoreo, detección, respuesta a incidentes, hardening."},
-        {"nombre": "Security Program Management & Oversight", "peso": 20, "cobertura": 72, "partes": "14", "notas": "Riesgo, cumplimiento y políticas: cubierto en la Parte 14, menos exhaustivo que en CISSP."}
+        {
+          "nombre": "General Security Concepts",
+          "peso": 12,
+          "cobertura": 92,
+          "partes": "0, 2",
+          "notas": "Tríada CIA, control de acceso, cripto básica, zero trust."
+        },
+        {
+          "nombre": "Threats, Vulnerabilities & Mitigations",
+          "peso": 22,
+          "cobertura": 90,
+          "partes": "0, 3, 4, 5, 6, 12",
+          "notas": "Actores, malware, ingeniería social, vulnerabilidades y mitigaciones."
+        },
+        {
+          "nombre": "Security Architecture",
+          "peso": 18,
+          "cobertura": 88,
+          "partes": "1, 2, 10, 16, 17",
+          "notas": "Redes, cripto/PKI, nube y modelos/seguridad física (Parte 17)."
+        },
+        {
+          "nombre": "Security Operations",
+          "peso": 28,
+          "cobertura": 86,
+          "partes": "1, 8, 9",
+          "notas": "Monitoreo, detección, respuesta a incidentes, hardening."
+        },
+        {
+          "nombre": "Security Program Management & Oversight",
+          "peso": 20,
+          "cobertura": 85,
+          "partes": "14, 17",
+          "notas": "Riesgo, cumplimiento y gobierno del programa (Parte 14 + clase 320)."
+        }
       ],
       "brecha": "El dominio de gobierno/gestión (Parte 14) es el más ligero; refuérzalo con casos de políticas y marcos (NIST/ISO). El resto está bien cubierto por las partes técnicas.",
       "ruta": "El programa completo hasta la Parte 9 más la Parte 14 cubre el temario."
@@ -33,11 +63,41 @@
       "pesos_oficiales": true,
       "resumen": "Certificación de pruebas de penetración: planificación, recon, ataques, herramientas y reporte. El programa la cubre muy bien.",
       "dominios": [
-        {"nombre": "Planning and Scoping", "peso": 14, "cobertura": 92, "partes": "3", "notas": "Reglas de engagement, alcance y contratos (clases 066-067)."},
-        {"nombre": "Information Gathering & Vulnerability Scanning", "peso": 22, "cobertura": 90, "partes": "1, 3, 12", "notas": "Nmap, enumeración, Nessus/OpenVAS, OSINT."},
-        {"nombre": "Attacks and Exploits", "peso": 30, "cobertura": 90, "partes": "4, 5, 7", "notas": "Web, binarios, Active Directory, movimiento lateral."},
-        {"nombre": "Reporting and Communication", "peso": 18, "cobertura": 85, "partes": "3", "notas": "Reporte profesional y CVSS (clase 085)."},
-        {"nombre": "Tools and Code Analysis", "peso": 16, "cobertura": 82, "partes": "0, 5", "notas": "Python/Bash/PowerShell para seguridad, análisis de binarios/scripts."}
+        {
+          "nombre": "Planning and Scoping",
+          "peso": 14,
+          "cobertura": 92,
+          "partes": "3",
+          "notas": "Reglas de engagement, alcance y contratos (clases 066-067)."
+        },
+        {
+          "nombre": "Information Gathering & Vulnerability Scanning",
+          "peso": 22,
+          "cobertura": 92,
+          "partes": "1, 3, 12, 17",
+          "notas": "Nmap, enumeración, gestión de vulnerabilidades (clase 318), OSINT."
+        },
+        {
+          "nombre": "Attacks and Exploits",
+          "peso": 30,
+          "cobertura": 90,
+          "partes": "4, 5, 7",
+          "notas": "Web, binarios, Active Directory, movimiento lateral."
+        },
+        {
+          "nombre": "Reporting and Communication",
+          "peso": 18,
+          "cobertura": 85,
+          "partes": "3",
+          "notas": "Reporte profesional y CVSS (clase 085)."
+        },
+        {
+          "nombre": "Tools and Code Analysis",
+          "peso": 16,
+          "cobertura": 82,
+          "partes": "0, 5",
+          "notas": "Python/Bash/PowerShell para seguridad, análisis de binarios/scripts."
+        }
       ],
       "brecha": "Practica con los laboratorios (appsec-web, red-team-ad) para consolidar la parte de herramientas.",
       "ruta": "Sigue la ruta 'Pentester' (partes 0,1,3,4,5,12)."
@@ -52,10 +112,34 @@
       "pesos_oficiales": true,
       "resumen": "Analista de ciberseguridad: operaciones de seguridad, gestión de vulnerabilidades e incident response. Alineado con la ruta Blue Team.",
       "dominios": [
-        {"nombre": "Security Operations", "peso": 33, "cobertura": 88, "partes": "1, 6, 8", "notas": "Telemetría, SIEM, detección, threat hunting, análisis de malware."},
-        {"nombre": "Vulnerability Management", "peso": 30, "cobertura": 80, "partes": "3, 11", "notas": "Escaneo, priorización, gestión de vulnerabilidades a escala."},
-        {"nombre": "Incident Response and Management", "peso": 20, "cobertura": 90, "partes": "9", "notas": "Ciclo NIST/SANS, contención, erradicación, RCA."},
-        {"nombre": "Reporting and Communication", "peso": 17, "cobertura": 80, "partes": "3, 8", "notas": "Reporte de hallazgos y de detección."}
+        {
+          "nombre": "Security Operations",
+          "peso": 33,
+          "cobertura": 88,
+          "partes": "1, 6, 8",
+          "notas": "Telemetría, SIEM, detección, threat hunting, análisis de malware."
+        },
+        {
+          "nombre": "Vulnerability Management",
+          "peso": 30,
+          "cobertura": 92,
+          "partes": "3, 11, 17",
+          "notas": "Ciclo de VM con CVSS/EPSS/KEV y SLAs (clase 318)."
+        },
+        {
+          "nombre": "Incident Response and Management",
+          "peso": 20,
+          "cobertura": 90,
+          "partes": "9",
+          "notas": "Ciclo NIST/SANS, contención, erradicación, RCA."
+        },
+        {
+          "nombre": "Reporting and Communication",
+          "peso": 17,
+          "cobertura": 80,
+          "partes": "3, 8",
+          "notas": "Reporte de hallazgos y de detección."
+        }
       ],
       "brecha": "La gestión de vulnerabilidades se toca en varias partes; conviene un repaso integrado (Parte 11 clase 245).",
       "ruta": "Sigue la ruta 'Analista SOC / Blue Team' (partes 0,1,6,8,9)."
@@ -70,13 +154,55 @@
       "pesos_oficiales": false,
       "resumen": "Examen práctico de 24h. El programa cubre bien la TEORÍA; aprobar exige mucha práctica en laboratorios (HTB, PG, GOAD). Pesos estimados (OffSec no publica ponderación oficial por tema).",
       "dominios": [
-        {"nombre": "Enumeración y recon", "peso": 15, "cobertura": 90, "partes": "1, 3", "notas": "Nmap, enumeración de servicios."},
-        {"nombre": "Ataques web", "peso": 20, "cobertura": 88, "partes": "4", "notas": "SQLi, XSS, LFI/RFI, subida de archivos, etc."},
-        {"nombre": "Ataques a credenciales / password", "peso": 10, "cobertura": 88, "partes": "3", "notas": "Hashcat, John, spraying."},
-        {"nombre": "Escalada de privilegios (Win/Linux)", "peso": 20, "cobertura": 85, "partes": "3", "notas": "Clases 076-077."},
-        {"nombre": "Active Directory", "peso": 20, "cobertura": 85, "partes": "7", "notas": "Kerberoasting, PtH/PtT, BloodHound, movimiento lateral."},
-        {"nombre": "Pivoting y tunneling", "peso": 10, "cobertura": 80, "partes": "3", "notas": "Reenvío de puertos y pivoting (clase 079)."},
-        {"nombre": "Reporte", "peso": 5, "cobertura": 90, "partes": "3", "notas": "Informe profesional (clase 085)."}
+        {
+          "nombre": "Enumeración y recon",
+          "peso": 15,
+          "cobertura": 90,
+          "partes": "1, 3",
+          "notas": "Nmap, enumeración de servicios."
+        },
+        {
+          "nombre": "Ataques web",
+          "peso": 20,
+          "cobertura": 88,
+          "partes": "4",
+          "notas": "SQLi, XSS, LFI/RFI, subida de archivos, etc."
+        },
+        {
+          "nombre": "Ataques a credenciales / password",
+          "peso": 10,
+          "cobertura": 88,
+          "partes": "3",
+          "notas": "Hashcat, John, spraying."
+        },
+        {
+          "nombre": "Escalada de privilegios (Win/Linux)",
+          "peso": 20,
+          "cobertura": 85,
+          "partes": "3",
+          "notas": "Clases 076-077."
+        },
+        {
+          "nombre": "Active Directory",
+          "peso": 20,
+          "cobertura": 85,
+          "partes": "7",
+          "notas": "Kerberoasting, PtH/PtT, BloodHound, movimiento lateral."
+        },
+        {
+          "nombre": "Pivoting y tunneling",
+          "peso": 10,
+          "cobertura": 80,
+          "partes": "3",
+          "notas": "Reenvío de puertos y pivoting (clase 079)."
+        },
+        {
+          "nombre": "Reporte",
+          "peso": 5,
+          "cobertura": 90,
+          "partes": "3",
+          "notas": "Informe profesional (clase 085)."
+        }
       ],
       "brecha": "OSCP es PRÁCTICO: la teoría del programa es sólida, pero necesitas resolver decenas de máquinas. Usa el lab red-team-ad + plataformas externas.",
       "ruta": "Ruta 'Pentester' + 'Red Teamer', con práctica intensiva en laboratorios."
@@ -91,14 +217,62 @@
       "pesos_oficiales": true,
       "resumen": "Certificación gerencial de referencia (8 dominios). El programa cubre bien la base técnica; los dominios de gestión/gobierno requieren estudio adicional específico de CISSP.",
       "dominios": [
-        {"nombre": "Security and Risk Management", "peso": 16, "cobertura": 80, "partes": "14", "notas": "Gobernanza, riesgo, cumplimiento, ética, políticas."},
-        {"nombre": "Asset Security", "peso": 10, "cobertura": 66, "partes": "14, 2", "notas": "Clasificación y manejo de datos; parcialmente cubierto."},
-        {"nombre": "Security Architecture and Engineering", "peso": 13, "cobertura": 78, "partes": "2, 5, 10", "notas": "Cripto, modelos, seguridad de sistemas y nube."},
-        {"nombre": "Communication and Network Security", "peso": 13, "cobertura": 88, "partes": "1", "notas": "Modelos de red, protocolos, seguridad de red."},
-        {"nombre": "Identity and Access Management (IAM)", "peso": 13, "cobertura": 70, "partes": "10, 4", "notas": "IAM en nube, OAuth/OIDC; falta algo de IAM empresarial clásico."},
-        {"nombre": "Security Assessment and Testing", "peso": 12, "cobertura": 80, "partes": "3, 11", "notas": "Pentest, auditoría, SAST/DAST."},
-        {"nombre": "Security Operations", "peso": 13, "cobertura": 82, "partes": "8, 9", "notas": "Detección, monitoreo, DFIR, continuidad."},
-        {"nombre": "Software Development Security", "peso": 10, "cobertura": 78, "partes": "11, 4", "notas": "SDLC seguro, secure coding, supply chain."}
+        {
+          "nombre": "Security and Risk Management",
+          "peso": 16,
+          "cobertura": 86,
+          "partes": "14, 17",
+          "notas": "Gobernanza, riesgo, legal/regulatorio y gestión del programa (clase 320)."
+        },
+        {
+          "nombre": "Asset Security",
+          "peso": 10,
+          "cobertura": 90,
+          "partes": "17, 14, 2",
+          "notas": "Clasificación, ciclo de vida, retención y DLP (clases 311-312)."
+        },
+        {
+          "nombre": "Security Architecture and Engineering",
+          "peso": 13,
+          "cobertura": 88,
+          "partes": "2, 5, 10, 17",
+          "notas": "Cripto, modelos de seguridad y seguridad física (clases 316-317)."
+        },
+        {
+          "nombre": "Communication and Network Security",
+          "peso": 13,
+          "cobertura": 88,
+          "partes": "1",
+          "notas": "Modelos de red, protocolos, seguridad de red."
+        },
+        {
+          "nombre": "Identity and Access Management (IAM)",
+          "peso": 13,
+          "cobertura": 90,
+          "partes": "10, 4, 17",
+          "notas": "IAM empresarial, federación/SSO/SAML/OIDC, MFA y PAM (clases 313-315)."
+        },
+        {
+          "nombre": "Security Assessment and Testing",
+          "peso": 12,
+          "cobertura": 80,
+          "partes": "3, 11",
+          "notas": "Pentest, auditoría, SAST/DAST."
+        },
+        {
+          "nombre": "Security Operations",
+          "peso": 13,
+          "cobertura": 82,
+          "partes": "8, 9",
+          "notas": "Detección, monitoreo, DFIR, continuidad."
+        },
+        {
+          "nombre": "Software Development Security",
+          "peso": 10,
+          "cobertura": 78,
+          "partes": "11, 4",
+          "notas": "SDLC seguro, secure coding, supply chain."
+        }
       ],
       "brecha": "Los dominios de gestión (1, 2, 5) requieren el material propio de CISSP (marcos, legislación, BCP/DRP a fondo). CISSP además exige 5 años de experiencia.",
       "ruta": "Partes 14 (núcleo) + 2, 8, 9, 11 para el soporte técnico."
@@ -113,12 +287,48 @@
       "pesos_oficiales": false,
       "resumen": "Certificación defensiva práctica muy alineada con la ruta Blue Team. Pesos estimados (el proveedor no publica ponderación oficial por dominio).",
       "dominios": [
-        {"nombre": "Security Fundamentals", "peso": 15, "cobertura": 90, "partes": "0", "notas": "Conceptos base, redes, sistemas."},
-        {"nombre": "Phishing Analysis", "peso": 18, "cobertura": 80, "partes": "12", "notas": "Análisis de correos y campañas (clases 258-259)."},
-        {"nombre": "Threat Intelligence", "peso": 15, "cobertura": 82, "partes": "8", "notas": "Inteligencia operacional, IOCs, ATT&CK."},
-        {"nombre": "Digital Forensics", "peso": 20, "cobertura": 85, "partes": "9", "notas": "Artefactos, memoria, timelines."},
-        {"nombre": "SIEM", "peso": 17, "cobertura": 86, "partes": "8", "notas": "Splunk/Elastic, reglas, correlación (lab blue-team-soc)."},
-        {"nombre": "Incident Response", "peso": 15, "cobertura": 90, "partes": "9", "notas": "Ciclo de respuesta, contención, recuperación."}
+        {
+          "nombre": "Security Fundamentals",
+          "peso": 15,
+          "cobertura": 90,
+          "partes": "0",
+          "notas": "Conceptos base, redes, sistemas."
+        },
+        {
+          "nombre": "Phishing Analysis",
+          "peso": 18,
+          "cobertura": 92,
+          "partes": "12, 17",
+          "notas": "Análisis de cabeceras, SPF/DKIM/DMARC, adjuntos y URLs (clase 319)."
+        },
+        {
+          "nombre": "Threat Intelligence",
+          "peso": 15,
+          "cobertura": 82,
+          "partes": "8",
+          "notas": "Inteligencia operacional, IOCs, ATT&CK."
+        },
+        {
+          "nombre": "Digital Forensics",
+          "peso": 20,
+          "cobertura": 85,
+          "partes": "9",
+          "notas": "Artefactos, memoria, timelines."
+        },
+        {
+          "nombre": "SIEM",
+          "peso": 17,
+          "cobertura": 86,
+          "partes": "8",
+          "notas": "Splunk/Elastic, reglas, correlación (lab blue-team-soc)."
+        },
+        {
+          "nombre": "Incident Response",
+          "peso": 15,
+          "cobertura": 90,
+          "partes": "9",
+          "notas": "Ciclo de respuesta, contención, recuperación."
+        }
       ],
       "brecha": "El análisis de phishing merece práctica extra; el lab blue-team-soc cubre bien SIEM y hunting.",
       "ruta": "Ruta 'Analista SOC / Blue Team' + lab blue-team-soc."
@@ -133,11 +343,41 @@
       "pesos_oficiales": false,
       "resumen": "Certificaciones DFIR de referencia (respuesta a incidentes y forense avanzado). El programa da una base sólida; SANS profundiza mucho más en técnica y herramientas. Pesos estimados.",
       "dominios": [
-        {"nombre": "Incident Handling Process", "peso": 20, "cobertura": 85, "partes": "9", "notas": "Ciclo de IR, playbooks, contención."},
-        {"nombre": "Detección de intrusiones y ataques", "peso": 20, "cobertura": 80, "partes": "6, 7, 8", "notas": "TTPs de atacante, detección, ATT&CK."},
-        {"nombre": "Forense de host (Windows/Linux)", "peso": 22, "cobertura": 82, "partes": "9", "notas": "Artefactos, sistemas de archivos, timelines."},
-        {"nombre": "Forense de memoria", "peso": 18, "cobertura": 80, "partes": "9", "notas": "Volatility (clase 207)."},
-        {"nombre": "Análisis de malware y anti-forense", "peso": 20, "cobertura": 75, "partes": "6, 9", "notas": "Comportamiento, C2, contramedidas; SANS profundiza más."}
+        {
+          "nombre": "Incident Handling Process",
+          "peso": 20,
+          "cobertura": 85,
+          "partes": "9",
+          "notas": "Ciclo de IR, playbooks, contención."
+        },
+        {
+          "nombre": "Detección de intrusiones y ataques",
+          "peso": 20,
+          "cobertura": 82,
+          "partes": "6, 7, 8, 17",
+          "notas": "TTPs, detección, gestión de vulnerabilidades y phishing (Parte 17)."
+        },
+        {
+          "nombre": "Forense de host (Windows/Linux)",
+          "peso": 22,
+          "cobertura": 82,
+          "partes": "9",
+          "notas": "Artefactos, sistemas de archivos, timelines."
+        },
+        {
+          "nombre": "Forense de memoria",
+          "peso": 18,
+          "cobertura": 80,
+          "partes": "9",
+          "notas": "Volatility (clase 207)."
+        },
+        {
+          "nombre": "Análisis de malware y anti-forense",
+          "peso": 20,
+          "cobertura": 75,
+          "partes": "6, 9",
+          "notas": "Comportamiento, C2, contramedidas; SANS profundiza más."
+        }
       ],
       "brecha": "SANS es muy profundo y práctico: usa el material como base y complementa con retos de memoria/forense reales.",
       "ruta": "Ruta 'DFIR / Analista forense' (partes 0,1,6,9,8)."
