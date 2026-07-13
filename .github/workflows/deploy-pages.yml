@@ -9,6 +9,10 @@ on:
       - "ROADMAP.md"
       - "CONTRIBUTING.md"
       - "SECURITY.md"
+      - "rutas/**"
+      - "autoevaluaciones/**"
+      - "labs/README.md"
+      - "ctf/README.md"
       - "scripts/generar_sitio.py"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:

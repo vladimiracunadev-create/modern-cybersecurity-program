@@ -11,6 +11,8 @@ Salida: carpeta site/ con index.html y el árbol de clases en HTML.
 Requiere: pip install "markdown>=3.6"
 """
 from __future__ import annotations
+import glob
+import html as htmllib
 import os
 import re
 import shutil
@@ -110,6 +112,151 @@ def escribir(rel_md: str, md_text: str) -> None:
         f.write(html)
 
 
+LANDING_CSS = """
+:root{
+  --verde:#2e8b57; --verde2:#0b3d2e; --acento:#3fb950;
+  --bg:#ffffff; --bg2:#f4f7f6; --txt:#12181d; --muted:#5b6670; --card:#ffffff; --borde:#e2e8ec;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#0d1117; --bg2:#111820; --txt:#e6edf3; --muted:#9aa7b2; --card:#161b22; --borde:#273039; --verde:#3fb950; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.1rem}
+/* Hero */
+.hero{position:relative;overflow:hidden;color:#fff;text-align:center;padding:4.5rem 1.1rem 3.2rem;
+  background:radial-gradient(1200px 500px at 50% -10%,#1f7a4d 0%,#0b3d2e 55%,#062018 100%)}
+.hero::after{content:"";position:absolute;inset:0;opacity:.10;
+  background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);
+  background-size:34px 34px;mask-image:radial-gradient(circle at 50% 0,#000,transparent 75%)}
+.hero>*{position:relative;z-index:1}
+.hero .escudo{font-size:3.2rem;line-height:1}
+.hero h1{font-size:clamp(1.8rem,4.5vw,3rem);margin:.4rem 0 .3rem;font-weight:800;letter-spacing:-.5px}
+.hero .sub{font-size:clamp(1rem,2.2vw,1.25rem);opacity:.92;max-width:640px;margin:0 auto 1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.6rem}
+.chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:999px;
+  padding:.28rem .8rem;font-size:.85rem;font-weight:600;backdrop-filter:blur(4px)}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center}
+.btn{display:inline-block;padding:.7rem 1.3rem;border-radius:10px;font-weight:700;font-size:1rem;transition:transform .08s ease,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-1{background:#fff;color:#0b3d2e;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.btn-2{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.5)}
+/* Aviso */
+.aviso{background:var(--bg2);border-bottom:1px solid var(--borde);font-size:.9rem;color:var(--muted)}
+.aviso .wrap{padding:.7rem 1.1rem;text-align:center}
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin:2.6rem 0}
+.stat{background:var(--card);border:1px solid var(--borde);border-radius:14px;padding:1.1rem;text-align:center}
+.stat b{display:block;font-size:1.9rem;color:var(--verde);font-weight:800;line-height:1}
+.stat span{font-size:.85rem;color:var(--muted)}
+/* Secciones */
+h2.sec{font-size:1.5rem;margin:2.6rem 0 1.1rem;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.feat{background:var(--card);border:1px solid var(--borde);border-radius:14px;padding:1.2rem;transition:border-color .2s,transform .08s}
+.feat:hover{border-color:var(--verde);transform:translateY(-2px)}
+.feat .ic{font-size:1.7rem}
+.feat h3{margin:.5rem 0 .3rem;font-size:1.08rem}
+.feat p{margin:0;color:var(--muted);font-size:.92rem}
+/* Partes */
+.parts{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem}
+.part{display:flex;gap:.75rem;align-items:center;background:var(--card);border:1px solid var(--borde);
+  border-radius:12px;padding:.8rem .9rem;transition:border-color .2s,transform .08s}
+.part:hover{border-color:var(--verde);transform:translateY(-2px)}
+.part .num{flex:0 0 auto;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
+  font-weight:800;color:#fff;background:linear-gradient(135deg,var(--verde),var(--verde2))}
+.part .t{font-size:.92rem;font-weight:600;line-height:1.25}
+.part .c{font-size:.78rem;color:var(--muted)}
+/* Footer */
+footer{margin-top:3rem;border-top:1px solid var(--borde);background:var(--bg2)}
+footer .wrap{padding:2rem 1.1rem;text-align:center;color:var(--muted);font-size:.9rem}
+footer a{color:var(--verde);font-weight:600}
+"""
+
+
+def datos_partes():
+    partes = []
+    for pdir in sorted(glob.glob(os.path.join(ROOT, "classes", "parte-*")),
+                       key=lambda p: int(re.search(r"parte-(\d+)", p).group(1))):
+        idx = int(re.search(r"parte-(\d+)", pdir).group(1))
+        slug = os.path.basename(pdir)
+        nums, titulo = [], slug
+        rp = os.path.join(pdir, "README.md")
+        if os.path.isfile(rp):
+            mm = re.search(r"^#\s+Parte\s+\d+\s*[—-]\s*(.+)$",
+                           open(rp, encoding="utf-8").read(), re.MULTILINE)
+            if mm:
+                titulo = mm.group(1).split(":")[0].strip()
+        for c in glob.glob(os.path.join(pdir, "*")):
+            m = re.match(r"^(\d{3})", os.path.basename(c))
+            if m and os.path.isdir(c):
+                nums.append(int(m.group(1)))
+        partes.append({"idx": idx, "slug": slug, "titulo": titulo,
+                       "n": len(nums), "ini": min(nums), "fin": max(nums)})
+    return partes
+
+
+def escribir_landing(partes) -> None:
+    total = sum(p["n"] for p in partes)
+    stats = [("310", "clases"), ("17", "partes"), ("4", "laboratorios"),
+             ("85", "preguntas"), ("620", "PDF + PPTX")]
+    stats_html = "".join(f'<div class="stat"><b>{v}</b><span>{k}</span></div>' for v, k in stats)
+    feats = [
+        ("📚", "Currículo completo", "310 clases de fundamentos a nivel experto, cada una con objetivo, laboratorio, ejercicios y referencias.", "classes/README.html"),
+        ("🧭", "Rutas por rol", "Recorridos ordenados para pentester, red team, SOC, DFIR, AppSec, cloud y GRC.", "rutas/README.html"),
+        ("🧪", "Laboratorios", "Entornos Docker que se levantan con un comando: web, SOC, Active Directory y criptografía.", "labs/README.html"),
+        ("🚩", "Retos CTF", "Colección de retos con solución por categoría: web, cripto, redes, forense, OSINT y pwn.", "ctf/README.html"),
+        ("📝", "Autoevaluación", "85 preguntas interactivas con puntuación, una batería por parte.", "autoevaluaciones/quiz.html"),
+        ("✅", "Tu progreso", "Marca las 310 clases y sigue tu avance (se guarda en tu navegador).", "autoevaluaciones/progreso.html"),
+    ]
+    feats_html = "".join(
+        f'<a class="feat" href="{u}"><div class="ic">{i}</div><h3>{t}</h3><p>{d}</p></a>'
+        for i, t, d, u in feats)
+    parts_html = "".join(
+        f'<a class="part" href="classes/{p["slug"]}/README.html">'
+        f'<div class="num">{p["idx"]}</div>'
+        f'<div><div class="t">{htmllib.escape(p["titulo"])}</div>'
+        f'<div class="c">{p["n"]} clases · {p["ini"]:03d}–{p["fin"]:03d}</div></div></a>'
+        for p in partes)
+    cuerpo = f"""
+<header class="hero">
+  <div class="escudo">🛡️</div>
+  <h1>Programa de Ciberseguridad Moderna</h1>
+  <p class="sub">El curso más completo en español — de redes, criptografía y Linux hasta Red Team, DFIR, cloud y seguridad de IA.</p>
+  <div class="chips">
+    <span class="chip">310 clases</span><span class="chip">17 partes</span>
+    <span class="chip">Fundamentos → Experto</span><span class="chip">Español</span><span class="chip">MIT</span>
+  </div>
+  <div class="cta">
+    <a class="btn btn-1" href="classes/README.html">📚 Empezar el curso</a>
+    <a class="btn btn-2" href="rutas/README.html">🧭 Elegir mi ruta</a>
+  </div>
+</header>
+<div class="aviso"><div class="wrap">⚠️ Contenido para aprendizaje y pruebas <b>autorizadas</b>. Practica solo en entornos propios o con permiso explícito.</div></div>
+<main class="wrap">
+  <div class="stats">{stats_html}</div>
+  <h2 class="sec">Qué incluye</h2>
+  <div class="grid">{feats_html}</div>
+  <h2 class="sec">Las 17 partes</h2>
+  <div class="parts">{parts_html}</div>
+</main>
+<footer><div class="wrap">
+  Programa de Ciberseguridad Moderna · {total} clases · licencia
+  <a href="https://github.com/vladimiracunadev-create/cyberseguridad-moderna-program">MIT en GitHub</a><br>
+  <a href="classes/README.html">Índice de clases</a> · <a href="rutas/README.html">Rutas</a> ·
+  <a href="autoevaluaciones/quiz.html">Autoevaluación</a> · <a href="autoevaluaciones/progreso.html">Progreso</a>
+</div></footer>
+"""
+    doc = (f"<!doctype html><html lang='es'><head><meta charset='utf-8'>"
+           f"<meta name='viewport' content='width=device-width,initial-scale=1'>"
+           f"<title>Programa de Ciberseguridad Moderna</title>"
+           f"<style>{LANDING_CSS}</style></head><body>{cuerpo}</body></html>")
+    with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8") as f:
+        f.write(doc)
+
+
 def main() -> int:
     if os.path.isdir(OUT):
         shutil.rmtree(OUT)
@@ -134,7 +281,9 @@ def main() -> int:
                 generados += 1
 
     # index.html del sitio = README raíz renderizado.
-    shutil.copyfile(os.path.join(OUT, "README.html"), os.path.join(OUT, "index.html"))
+    # Portada diseñada (NO se usa el README como landing: el markdown dentro de
+    # <div align="center"> no se renderiza y se veía roto).
+    escribir_landing(datos_partes())
 
     # Páginas interactivas del portal (quiz + progreso), ya autocontenidas.
     destino_auto = os.path.join(OUT, "autoevaluaciones")
