@@ -113,6 +113,11 @@ Por identidad fuerte (MFA), inventario de activos, segmentación de lo crítico 
 - CISA — Zero Trust Maturity Model. <https://www.cisa.gov/zero-trust-maturity-model>
 - Cloud Security Alliance — Software-Defined Perimeter. <https://cloudsecurityalliance.org/>
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-042-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-042-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 043 - Network Security Monitoring (NSM): fundamentos](../043-network-security-monitoring-nsm-fundamentos/README.md)

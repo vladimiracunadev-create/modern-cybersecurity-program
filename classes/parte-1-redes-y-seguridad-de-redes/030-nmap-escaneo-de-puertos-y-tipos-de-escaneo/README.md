@@ -154,6 +154,11 @@ No. Un IDS moderno (Suricata/Snort) los detecta. "Stealth" se refiere a que evit
 - RFC 793 — Transmission Control Protocol. <https://www.rfc-editor.org/rfc/rfc793>
 - Nmap: Timing and Performance. <https://nmap.org/book/performance.html>
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-030-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-030-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 031 - Nmap: deteccion de servicios y fingerprinting de OS](../031-nmap-deteccion-de-servicios-y-fingerprinting-de-os/README.md)

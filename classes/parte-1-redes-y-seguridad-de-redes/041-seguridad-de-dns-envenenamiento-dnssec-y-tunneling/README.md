@@ -121,6 +121,11 @@ Analizando patrones: nombres muy largos, alta aleatoriedad (entropía), tipos de
 - DNS Flag Day / DNSSEC. <https://dnssec-analyzer.verisignlabs.com/>
 - SANS — Detecting DNS Tunneling. <https://www.sans.org/white-papers/>
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-041-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-041-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 042 - Segmentacion de red y arquitectura Zero Trust](../042-segmentacion-de-red-y-arquitectura-zero-trust/README.md)

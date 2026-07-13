@@ -147,6 +147,11 @@ Porque si un atacante captura tráfico hoy y roba una clave mañana, con PFS no 
 - RFC 4301 — Security Architecture for the Internet Protocol (IPsec). <https://www.rfc-editor.org/rfc/rfc4301>
 - strongSwan documentation. <https://docs.strongswan.org/>
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-036-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-036-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 037 - Proxies, NAT y pivoting de red](../037-proxies-nat-y-pivoting-de-red/README.md)

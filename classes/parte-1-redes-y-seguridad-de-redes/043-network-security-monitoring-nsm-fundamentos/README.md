@@ -111,6 +111,11 @@ La búsqueda proactiva de amenazas guiada por hipótesis (no por alertas), usand
 - Security Onion documentation. <https://docs.securityonion.net/>
 - SANS — NSM and Threat Hunting resources. <https://www.sans.org/>
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-043-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-043-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 044 - Zeek para analisis de red a gran escala](../044-zeek-para-analisis-de-red-a-gran-escala/README.md)

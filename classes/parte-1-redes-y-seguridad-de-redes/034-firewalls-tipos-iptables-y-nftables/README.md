@@ -166,6 +166,11 @@ No, se complementan. Defensa en profundidad: firewall perimetral + firewall de h
 - Arch Wiki — nftables. <https://wiki.archlinux.org/title/Nftables>
 - Man pages: `iptables(8)`, `nft(8)`, `conntrack(8)`.
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-034-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-034-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 035 - IDS/IPS con Snort y Suricata](../035-ids-ips-con-snort-y-suricata/README.md)

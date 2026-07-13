@@ -136,6 +136,11 @@ En gran medida sí, comparten sintaxis, pero hay opciones específicas de cada m
 - Emerging Threats Open Ruleset. <https://rules.emergingthreats.net/>
 - Sanders, C. & Smith, J. *Applied Network Security Monitoring*. Syngress.
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-035-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-035-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 036 - VPN y tuneles: IPsec, WireGuard y OpenVPN](../036-vpn-y-tuneles-ipsec-wireguard-y-openvpn/README.md)

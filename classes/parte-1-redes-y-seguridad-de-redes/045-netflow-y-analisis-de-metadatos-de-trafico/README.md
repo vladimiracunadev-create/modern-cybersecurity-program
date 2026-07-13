@@ -136,6 +136,11 @@ Buscando beaconing: conexiones periódicas y regulares hacia un mismo destino, a
 - nfdump/NfSen. <https://github.com/phaag/nfdump>
 - CERT NetSA — SiLK. <https://tools.netsa.cert.org/silk/>
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-045-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-045-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 046 - Historia y fundamentos de la criptografia](../../parte-2-criptografia-aplicada/046-historia-y-fundamentos-de-la-criptografia/README.md)

@@ -154,6 +154,11 @@ Filtra en origen con BPF, usa snap length moderado si solo necesitas cabeceras (
 - Sanders, C. *Practical Packet Analysis*, apéndice de tcpdump.
 - Wireshark: capturas remotas. <https://wiki.wireshark.org/CaptureSetup/Pipes>
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-028-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-028-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 029 - Nmap: descubrimiento de hosts y tecnicas de ping](../029-nmap-descubrimiento-de-hosts-y-tecnicas-de-ping/README.md)

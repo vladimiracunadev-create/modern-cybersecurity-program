@@ -145,6 +145,11 @@ Es la llave para automatizar la búsqueda de vulnerabilidades: se cruza con base
 - CPE Dictionary (NIST). <https://nvd.nist.gov/products/cpe>
 - NVD — National Vulnerability Database. <https://nvd.nist.gov/>
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-031-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-031-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 032 - Nmap Scripting Engine (NSE)](../032-nmap-scripting-engine-nse/README.md)

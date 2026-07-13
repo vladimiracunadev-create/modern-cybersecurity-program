@@ -149,6 +149,11 @@ Sí. Genera tráfico característico que un IDS puede alertar. Ajusta la tempori
 - Nmap Reference Guide. <https://nmap.org/book/man.html>
 - Nmap: Host Discovery Techniques. <https://nmap.org/book/host-discovery-techniques.html>
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-029-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-029-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 030 - Nmap: escaneo de puertos y tipos de escaneo](../030-nmap-escaneo-de-puertos-y-tipos-de-escaneo/README.md)

@@ -167,6 +167,11 @@ Con `nmap --script-help <nombre>`, que muestra descripción, categorías, argume
 - NSE: Writing Scripts. <https://nmap.org/book/nse-tutorial.html>
 - Categorías NSE. <https://nmap.org/book/nse-usage.html>
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-032-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-032-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 033 - Enumeracion de servicios de red](../033-enumeracion-de-servicios-de-red/README.md)

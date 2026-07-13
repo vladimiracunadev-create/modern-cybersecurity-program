@@ -118,6 +118,11 @@ Conversations agrupa por pares (A↔B); Endpoints agrupa por host individual con
 - tshark man page. <https://www.wireshark.org/docs/man-pages/tshark.html>
 - Wireshark Statistics docs. <https://www.wireshark.org/docs/wsug_html_chunked/ChStatistics.html>
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-027-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-027-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 028 - tcpdump y captura de trafico en linea de comandos](../028-tcpdump-y-captura-de-trafico-en-linea-de-comandos/README.md)

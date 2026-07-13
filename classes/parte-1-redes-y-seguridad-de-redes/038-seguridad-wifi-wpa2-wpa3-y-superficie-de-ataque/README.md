@@ -144,6 +144,11 @@ Passphrase larga y aleatoria (o WPA3), PMF activado, WPA-Enterprise en organizac
 - Wi-Fi Alliance — WPA3. <https://www.wi-fi.org/discover-wi-fi/security>
 - IEEE 802.11 standard overview. <https://standards.ieee.org/ieee/802.11/>
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-038-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-038-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 039 - Ataques de capa 2: ARP spoofing y VLAN hopping](../039-ataques-de-capa-2-arp-spoofing-y-vlan-hopping/README.md)

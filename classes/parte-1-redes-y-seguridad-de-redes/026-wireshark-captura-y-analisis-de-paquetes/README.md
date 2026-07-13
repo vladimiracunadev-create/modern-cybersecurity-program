@@ -126,6 +126,11 @@ Las redes modernas son conmutadas: el switch solo te envía lo tuyo. Necesitas u
 - Wireshark SampleCaptures. <https://wiki.wireshark.org/SampleCaptures>
 - pcapng spec. <https://pcapng.github.io/pcapng/>
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-026-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-026-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 027 - Analisis de trafico: filtros, seguimiento de flujos y estadisticas](../027-analisis-de-trafico-filtros-seguimiento-de-flujos-y-estadisticas/README.md)

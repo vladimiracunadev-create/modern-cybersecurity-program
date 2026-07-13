@@ -156,6 +156,11 @@ Sí, con despliegues en clúster (un manager y varios workers) puede analizar en
 - Zeek Scripting. <https://docs.zeek.org/en/master/scripting/index.html>
 - Sanders, C. & Smith, J. *Applied Network Security Monitoring*. Syngress.
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-044-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-044-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 045 - NetFlow y analisis de metadatos de trafico](../045-netflow-y-analisis-de-metadatos-de-trafico/README.md)

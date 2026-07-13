@@ -139,6 +139,11 @@ Dynamic ARP Inspection junto con DHCP snooping en switches gestionados; en hosts
 - Cisco — Layer 2 security best practices. <https://www.cisco.com/>
 - MITRE ATT&CK — Adversary-in-the-Middle: ARP Cache Poisoning (T1557.002). <https://attack.mitre.org/techniques/T1557/002/>
 
+## 📥 Material descargable
+
+- 📄 [Guía en PDF](./clase-039-guia.pdf) — versión imprimible de esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-039-presentacion.pptx) — deck para proyectar en clase.
+
 ## ➡️ Siguiente clase
 
 [Clase 040 - Man-in-the-Middle: tecnicas y defensa](../040-man-in-the-middle-tecnicas-y-defensa/README.md)
