@@ -1,6 +1,6 @@
 # Indice del curriculo
 
-**320 clases - 18 partes** - numeracion secuencial 001-320. Cada parte tiene su propio README con la narrativa completa (de que trata, que problemas resuelve, resultados de aprendizaje, estructura tematica y prerrequisitos).
+**324 clases - 18 partes** - numeracion secuencial 001-324. Cada parte tiene su propio README con la narrativa completa (de que trata, que problemas resuelve, resultados de aprendizaje, estructura tematica y prerrequisitos).
 
 | Parte | Tema | Clases | README de la parte |
 |---|---|---:|---|
@@ -21,7 +21,7 @@
 | 14 | GRC, riesgo y cumplimiento | 15 (276-290) | [leer parte 14](parte-14-grc-riesgo-y-cumplimiento/README.md) |
 | 15 | Seguridad de IA y machine learning | 10 (291-300) | [leer parte 15](parte-15-seguridad-de-ia-y-machine-learning/README.md) |
 | 16 | Capstones y preparacion de certificaciones | 10 (301-310) | [leer parte 16](parte-16-capstones-y-preparacion-de-certificaciones/README.md) |
-| 17 | Profundizacion para certificaciones (gestion, IAM, arquitectura) | 10 (311-320) | [leer parte 17](parte-17-profundizacion-para-certificaciones/README.md) |
+| 17 | Profundizacion para certificaciones (gestion, IAM, arquitectura) | 14 (311-324) | [leer parte 17](parte-17-profundizacion-para-certificaciones/README.md) |
 
 ---
 
@@ -400,3 +400,7 @@ A continuacion, el indice plano de las clases. Si buscas la narrativa de una par
 - [318 - Gestion del programa de vulnerabilidades](parte-17-profundizacion-para-certificaciones/318-gestion-del-programa-de-vulnerabilidades/README.md)
 - [319 - Analisis avanzado de phishing y correo malicioso](parte-17-profundizacion-para-certificaciones/319-analisis-avanzado-de-phishing-y-correo-malicioso/README.md)
 - [320 - Gobierno, aspectos legales/regulatorios y gestion del programa](parte-17-profundizacion-para-certificaciones/320-gobierno-aspectos-legales-regulatorios-y-gestion-del-programa/README.md)
+- [321 - Comunicacion y reporte para analistas de seguridad](parte-17-profundizacion-para-certificaciones/321-comunicacion-y-reporte-para-analistas-de-seguridad/README.md)
+- [322 - Threat intelligence operacional avanzada](parte-17-profundizacion-para-certificaciones/322-threat-intelligence-operacional-avanzada/README.md)
+- [323 - Pruebas de seguridad del software y evaluacion](parte-17-profundizacion-para-certificaciones/323-pruebas-de-seguridad-del-software-y-evaluacion/README.md)
+- [324 - Operaciones de seguridad: hardening y gestion de configuracion](parte-17-profundizacion-para-certificaciones/324-operaciones-de-seguridad-hardening-y-gestion-de-configuracion/README.md)

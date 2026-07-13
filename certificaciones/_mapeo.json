@@ -38,16 +38,16 @@
         {
           "nombre": "Security Operations",
           "peso": 28,
-          "cobertura": 86,
-          "partes": "1, 8, 9",
-          "notas": "Monitoreo, detección, respuesta a incidentes, hardening."
+          "cobertura": 92,
+          "partes": "1, 8, 9, 17",
+          "notas": "Monitoreo, detección, respuesta, hardening y gestión de configuración (clase 324)."
         },
         {
           "nombre": "Security Program Management & Oversight",
           "peso": 20,
-          "cobertura": 85,
+          "cobertura": 88,
           "partes": "14, 17",
-          "notas": "Riesgo, cumplimiento y gobierno del programa (Parte 14 + clase 320)."
+          "notas": "Riesgo, cumplimiento, gobierno y comunicación/reporte (clases 320-321)."
         }
       ],
       "brecha": "El dominio de gobierno/gestión (Parte 14) es el más ligero; refuérzalo con casos de políticas y marcos (NIST/ISO). El resto está bien cubierto por las partes técnicas.",
@@ -87,16 +87,16 @@
         {
           "nombre": "Reporting and Communication",
           "peso": 18,
-          "cobertura": 85,
-          "partes": "3",
-          "notas": "Reporte profesional y CVSS (clase 085)."
+          "cobertura": 90,
+          "partes": "3, 17",
+          "notas": "Reporte profesional, CVSS y comunicación a audiencias (clases 085, 321)."
         },
         {
           "nombre": "Tools and Code Analysis",
           "peso": 16,
-          "cobertura": 82,
-          "partes": "0, 5",
-          "notas": "Python/Bash/PowerShell para seguridad, análisis de binarios/scripts."
+          "cobertura": 86,
+          "partes": "0, 5, 17",
+          "notas": "Scripting, análisis de binarios y pruebas de seguridad del software (clase 323)."
         }
       ],
       "brecha": "Practica con los laboratorios (appsec-web, red-team-ad) para consolidar la parte de herramientas.",
@@ -115,9 +115,9 @@
         {
           "nombre": "Security Operations",
           "peso": 33,
-          "cobertura": 88,
-          "partes": "1, 6, 8",
-          "notas": "Telemetría, SIEM, detección, threat hunting, análisis de malware."
+          "cobertura": 92,
+          "partes": "1, 6, 8, 17",
+          "notas": "SIEM, detección, threat intelligence operacional y hardening (clases 322, 324)."
         },
         {
           "nombre": "Vulnerability Management",
@@ -136,9 +136,9 @@
         {
           "nombre": "Reporting and Communication",
           "peso": 17,
-          "cobertura": 80,
-          "partes": "3, 8",
-          "notas": "Reporte de hallazgos y de detección."
+          "cobertura": 92,
+          "partes": "3, 8, 17",
+          "notas": "Comunicación y reporte para analistas y stakeholders (clase 321)."
         }
       ],
       "brecha": "La gestión de vulnerabilidades se toca en varias partes; conviene un repaso integrado (Parte 11 clase 245).",
@@ -255,23 +255,23 @@
         {
           "nombre": "Security Assessment and Testing",
           "peso": 12,
-          "cobertura": 80,
-          "partes": "3, 11",
-          "notas": "Pentest, auditoría, SAST/DAST."
+          "cobertura": 90,
+          "partes": "3, 11, 17",
+          "notas": "Pentest, auditoría, SAST/DAST y verificación OWASP ASVS (clase 323)."
         },
         {
           "nombre": "Security Operations",
           "peso": 13,
-          "cobertura": 82,
-          "partes": "8, 9",
-          "notas": "Detección, monitoreo, DFIR, continuidad."
+          "cobertura": 88,
+          "partes": "8, 9, 17",
+          "notas": "Detección, DFIR, operaciones, hardening y gestión de configuración (clase 324)."
         },
         {
           "nombre": "Software Development Security",
           "peso": 10,
-          "cobertura": 78,
-          "partes": "11, 4",
-          "notas": "SDLC seguro, secure coding, supply chain."
+          "cobertura": 88,
+          "partes": "11, 4, 17",
+          "notas": "SDLC seguro, secure code review y pruebas de seguridad del software (clase 323)."
         }
       ],
       "brecha": "Los dominios de gestión (1, 2, 5) requieren el material propio de CISSP (marcos, legislación, BCP/DRP a fondo). CISSP además exige 5 años de experiencia.",
@@ -304,9 +304,9 @@
         {
           "nombre": "Threat Intelligence",
           "peso": 15,
-          "cobertura": 82,
-          "partes": "8",
-          "notas": "Inteligencia operacional, IOCs, ATT&CK."
+          "cobertura": 92,
+          "partes": "8, 17",
+          "notas": "Ciclo de inteligencia, IOCs/IOAs, Pyramid of Pain, MISP y ATT&CK (clase 322)."
         },
         {
           "nombre": "Digital Forensics",
@@ -353,9 +353,9 @@
         {
           "nombre": "Detección de intrusiones y ataques",
           "peso": 20,
-          "cobertura": 82,
+          "cobertura": 86,
           "partes": "6, 7, 8, 17",
-          "notas": "TTPs, detección, gestión de vulnerabilidades y phishing (Parte 17)."
+          "notas": "TTPs, detección y threat intelligence operacional (clase 322)."
         },
         {
           "nombre": "Forense de host (Windows/Linux)",

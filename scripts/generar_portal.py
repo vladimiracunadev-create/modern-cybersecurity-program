@@ -208,7 +208,7 @@ def gen_readme(data):
          "> 🧭 ¿No sabes por dónde empezar? Mira las [rutas por rol](../rutas/README.md).\n",
          "<a id=\"progreso\"></a>\n",
          "## Seguimiento de progreso\n",
-         "Lleva la cuenta de las 320 clases en [`progreso.html`](progreso.html) "
+         "Lleva la cuenta de todas las clases del programa en [`progreso.html`](progreso.html) "
          "(se guarda en tu navegador).\n",
          "---\n"]
     for p in data["partes"]:

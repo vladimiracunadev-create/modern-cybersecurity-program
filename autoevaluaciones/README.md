@@ -8,7 +8,7 @@ Batería de preguntas por parte para comprobar lo aprendido. Esta es la versión
 
 ## Seguimiento de progreso
 
-Lleva la cuenta de las 320 clases en [`progreso.html`](progreso.html) (se guarda en tu navegador).
+Lleva la cuenta de todas las clases del programa en [`progreso.html`](progreso.html) (se guarda en tu navegador).
 
 ---
 

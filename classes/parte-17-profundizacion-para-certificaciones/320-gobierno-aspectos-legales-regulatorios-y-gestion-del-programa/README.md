@@ -130,4 +130,4 @@ Al menos anualmente y ante cambios significativos (nueva regulación, incidente 
 
 ## ➡️ Siguiente clase
 
-[Volver al índice del programa](../../README.md)
+[Clase 321 - Comunicación y reporte para analistas de seguridad](../321-comunicacion-y-reporte-para-analistas-de-seguridad/README.md)

@@ -3,7 +3,7 @@
 """
 Genera un sitio estático (site/) a partir de los Markdown del repositorio,
 para publicarlo en GitHub Pages. Renderiza el README raíz, el índice de
-clases, los README de parte y los 310 README de clase a HTML, reescribiendo
+clases, los README de parte y los README de clase a HTML, reescribiendo
 los enlaces internos .md -> .html para que la navegación funcione en el sitio.
 
 Uso:  python scripts/generar_sitio.py
@@ -218,12 +218,12 @@ def escribir_landing(partes) -> None:
              (str(n_preg), "preguntas"), (str(n_cert), "certis mapeadas")]
     stats_html = "".join(f'<div class="stat"><b>{v}</b><span>{k}</span></div>' for v, k in stats)
     feats = [
-        ("📚", "Currículo completo", "310 clases de fundamentos a nivel experto, cada una con objetivo, laboratorio, ejercicios y referencias.", "classes/README.html"),
+        ("📚", "Currículo completo", f"{total} clases de fundamentos a nivel experto, cada una con objetivo, laboratorio, ejercicios y referencias.", "classes/README.html"),
         ("🧭", "Rutas por rol", "Recorridos ordenados para pentester, red team, SOC, DFIR, AppSec, cloud y GRC.", "rutas/README.html"),
         ("🧪", "Laboratorios", "Entornos Docker que se levantan con un comando: web, SOC, Active Directory y criptografía.", "labs/README.html"),
         ("🚩", "Retos CTF", "Colección de retos con solución por categoría: web, cripto, redes, forense, OSINT y pwn.", "ctf/README.html"),
-        ("📝", "Autoevaluación", "85 preguntas interactivas con puntuación, una batería por parte.", "autoevaluaciones/quiz.html"),
-        ("✅", "Tu progreso", "Marca las 310 clases y sigue tu avance (se guarda en tu navegador).", "autoevaluaciones/progreso.html"),
+        ("📝", "Autoevaluación", f"{n_preg} preguntas interactivas con puntuación, una batería por parte.", "autoevaluaciones/quiz.html"),
+        ("✅", "Tu progreso", f"Marca las {total} clases y sigue tu avance (se guarda en tu navegador).", "autoevaluaciones/progreso.html"),
         ("🎓", "Certificaciones", "Mapeo a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con % de cobertura por dominio.", "certificaciones/README.html"),
     ]
     feats_html = "".join(
@@ -241,7 +241,7 @@ def escribir_landing(partes) -> None:
   <h1>Programa de Ciberseguridad Moderna</h1>
   <p class="sub">El curso más completo en español — de redes, criptografía y Linux hasta Red Team, DFIR, cloud y seguridad de IA.</p>
   <div class="chips">
-    <span class="chip">310 clases</span><span class="chip">17 partes</span>
+    <span class="chip">{total} clases</span><span class="chip">{len(partes)} partes</span>
     <span class="chip">Fundamentos → Experto</span><span class="chip">Español</span><span class="chip">MIT</span>
   </div>
   <div class="cta">
@@ -254,7 +254,7 @@ def escribir_landing(partes) -> None:
   <div class="stats">{stats_html}</div>
   <h2 class="sec">Qué incluye</h2>
   <div class="grid">{feats_html}</div>
-  <h2 class="sec">Las 17 partes</h2>
+  <h2 class="sec">Las {len(partes)} partes</h2>
   <div class="parts">{parts_html}</div>
 </main>
 <footer><div class="wrap">

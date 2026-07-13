@@ -2,7 +2,7 @@
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md)
 
-**10 clases** · rango 311–320 · Gestión de datos, IAM empresarial, arquitectura, seguridad física, gestión de vulnerabilidades y gobierno
+**14 clases** · rango 311–324 · Gestión de datos, IAM empresarial, arquitectura, seguridad física, gestión de vulnerabilidades, gobierno, threat intelligence, reporte y operaciones
 
 **Fuentes de referencia de esta parte:**
 
@@ -57,6 +57,10 @@ Haber cursado (o dominar) la **Parte 0** (fundamentos) y tener contexto de la **
 | Gestión de vulnerabilidades | 318 | CySA+ *Vulnerability Management* |
 | Análisis de phishing | 319 | BTL1, Security+ |
 | Gobierno y gestión del programa | 320 | Security+ *Program Management*, CISSP *Risk Management* |
+| Comunicación y reporte | 321 | CySA+ *Reporting and Communication* |
+| Threat intelligence operacional | 322 | BTL1 *Threat Intelligence*, CySA+ |
+| Pruebas de seguridad del software | 323 | CISSP *Assessment & Software Dev Security* |
+| Operaciones y hardening | 324 | Security+ / CISSP *Security Operations* |
 
 ## 🔗 Referencias de la parte
 
