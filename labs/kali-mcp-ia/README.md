@@ -65,6 +65,12 @@ Con tu VM de laboratorio como **único** objetivo del alcance:
 Sigue las instrucciones del proyecto para detener sus contenedores (p. ej. `docker compose down`
 en su carpeta `docker/`).
 
+## 📋 Playbooks mapeados al curso
+
+Los 21 comandos-playbook de kali-mcp (`/kali-recon`, `/kali-osint`, `/kali-pentest`,
+`/kali-finish`…), **cada uno con la clase del programa que enseña la técnica por debajo**:
+👉 **[Catálogo de playbooks ↔ clases](comandos-kali-mcp.md)**.
+
 ## 🔗 Referencias
 
 - **kali-mcp (MIT)** — <https://github.com/pabpereza/kali-mcp>

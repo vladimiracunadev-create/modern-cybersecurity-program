@@ -125,6 +125,7 @@ amplifica tu criterio; no lo sustituye.
 - **kali-mcp (MIT)** — <https://github.com/pabpereza/kali-mcp> (documentación y comandos oficiales).
 - [Model Context Protocol](https://modelcontextprotocol.io/)
 - [Lab: pentest asistido por IA con MCP](../../../labs/kali-mcp-ia/README.md) del programa.
+- [Catálogo de playbooks de kali-mcp mapeados al curso](../../../labs/kali-mcp-ia/comandos-kali-mcp.md).
 
 ## 📥 Material descargable
 
