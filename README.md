@@ -100,7 +100,7 @@ comando, más una colección de retos tipo CTF:
 
 ## 🧭 Portal: rutas, autoevaluación y progreso
 
-- 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, DFIR, AppSec, cloud y GRC.
+- 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, DFIR, **gestión de vulnerabilidades**, AppSec, cloud y GRC.
 - 📝 **[Autoevaluaciones](autoevaluaciones/README.md)** — 97 preguntas (una batería por parte). Versión interactiva con puntuación: [quiz](https://vladimiracunadev-create.github.io/cyberseguridad-moderna-program/autoevaluaciones/quiz.html).
 - ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/cyberseguridad-moderna-program/autoevaluaciones/progreso.html)** — marca las 340 clases (se guarda en tu navegador).
 - 🎓 **[Certificaciones](certificaciones/README.md)** — mapeo del programa a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con **% de cobertura ponderado por dominio**.
@@ -118,6 +118,7 @@ comando, más una colección de retos tipo CTF:
 
 - **Pentester / Red Team** → Partes 0, 1, 3, 4, 5, 7 (+ 12).
 - **Analista SOC / Blue Team** → Partes 0, 1, 6, 8, 9.
+- **Analista de Gestión de Vulnerabilidades** → Partes 0, 1, 3, 8, 11, 17 (VM, hardening/parcheo, EDR y reporte) · alineado a **CySA+**.
 - **AppSec / Bug Bounty** → Partes 0, 2, 4, 11.
 - **DFIR / Forense** → Partes 0, 1, 6, 9.
 - **Cloud Security** → Partes 0, 2, 10, 11.
