@@ -77,15 +77,17 @@ gcc -fsanitize=address -g intov.c -o intov_asan
    int main(int argc, char **argv){ dup_items(strtoul(argv[1],0,10)); }
    ```
 
-2. Ejecuta con un `n` que provoque wrap-around (`n = 0x20000000` en 32 bits) y observa el crash.
+2. Ejecuta con un `n` que provoque wrap-around (`n = 0x20000000` = 536870912) y observa el crash. El
+   producto `n * 8` se evalúa en `unsigned int` (32 bits) por las conversiones aritméticas usuales, así
+   que se desborda **también en un binario nativo de 64 bits**: no necesitas compilar a 32 bits.
 
 3. Confirma el diagnóstico. Ojo: el overflow **unsigned** es comportamiento *definido*
    (wrap-around), así que `-fsanitize=undefined` (UBSan) **no** lo reporta. Para verlo hace
    falta el sanitizer específico de clang:
 
    ```bash
-   clang -m32 -fsanitize=unsigned-integer-overflow -g intov.c -o intov32
-   ./intov32 536870912     # ahora sí: "unsigned integer overflow"
+   clang -fsanitize=unsigned-integer-overflow -g intov.c -o intov
+   ./intov 536870912       # ahora sí: "unsigned integer overflow"
    # (Alternativa: la consecuencia real —el heap overflow— se observa con ASan en el paso 4.)
    ```
 
@@ -122,7 +124,7 @@ rechaza el tamaño y ASan no reporta nada.
 
 | Síntoma / mensaje | Causa y cómo arreglar |
 | --- | --- |
-| No se desborda en 64 bits | El overflow depende del ancho del tipo; prueba en 32 bits o tipos pequeños |
+| Esperabas que no se desbordara en 64 bits | `n * 8` se evalúa en `unsigned int` (32 bits) por las conversiones usuales, así que se desborda igual en un binario de 64 bits. Solo con operandos de 64 bits (`size_t`) haría falta un `n` mucho mayor |
 | Chequeo `if (a+b < a)` optimizado | UB en signed; usa unsigned o `__builtin_*_overflow` |
 | UBSan no reporta | No compilaste con `-fsanitize=undefined` |
 | Valor negativo "pasa" el límite | Comparación signed; convierte a unsigned con cuidado |

@@ -88,10 +88,14 @@ Al finalizar, el alumno podrá:
 
    ```zeek
    @load base/protocols/http
-   event http_request(c: connection, method: string, original_URI: string,
-                      unescaped_URI: string, version: string) {
-     if ( /sqlmap|nikto|Nmap/ in c$http$user_agent )
-       NOTICE([$note=HTTP::Suspicious_UA,
+
+   redef enum Notice::Type += { Suspicious_UA };
+
+   # Inspecciona la cabecera User-Agent cuando Zeek ya la ha parseado
+   # (en http_request el valor aún no existe: c$http$user_agent estaría sin asignar).
+   event http_header(c: connection, is_orig: bool, name: string, value: string) {
+     if ( is_orig && name == "USER-AGENT" && /sqlmap|nikto|[Nn]map/ in value )
+       NOTICE([$note=Suspicious_UA,
                $msg="User-Agent de herramienta ofensiva detectado",
                $conn=c]);
    }

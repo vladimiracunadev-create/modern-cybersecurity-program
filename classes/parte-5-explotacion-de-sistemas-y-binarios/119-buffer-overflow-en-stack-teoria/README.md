@@ -66,7 +66,7 @@ checksec --file=/bin/ls    # instalar: pip install pwntools (trae checksec)
 
 1. Toma el binario `vuln` de la clase 118 y ábrelo en pwndbg.
 
-2. Desensambla `vuln` y anota el tamaño reservado para el buffer (`sub rsp, 0x50` → 80 bytes).
+2. Desensambla `vuln` y anota el tamaño del **frame** que reserva el prólogo (`sub rsp, 0x50` → 80 bytes). Ojo: eso **no** es el tamaño del buffer. El buffer vive en `[rbp-0x40]` (64 bytes); el offset desde su inicio hasta la dirección de retorno es 64 + 8 (RBP guardado) = **72**, el valor que confirmarás con `cyclic` (coherente con las clases 118 y 120).
 
 3. Dibuja en papel el frame de `vuln` de arriba (direcciones altas) a abajo:
 

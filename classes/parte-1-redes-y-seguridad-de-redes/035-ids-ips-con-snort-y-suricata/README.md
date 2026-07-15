@@ -81,7 +81,7 @@ Al finalizar, el alumno podrá:
    ```
 
    Añade `local.rules` a `rule-files` en el YAML y recarga.
-5. **Dispara la regla**: desde otra VM `ping $HOME` y un `curl -A "Nmap NSE" http://...`; observa las alertas en `fast.log`.
+5. **Dispara la regla**: desde otra VM `ping <IP-de-un-host-en-HOME_NET>` (una IP concreta de tu red de laboratorio; no uses `$HOME`, que la shell expande a tu directorio personal) y un `curl -A "Nmap NSE" http://...`; observa las alertas en `fast.log`.
 6. **Compara con Snort 3** (opcional):
 
    ```bash

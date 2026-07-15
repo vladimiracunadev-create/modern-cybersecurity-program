@@ -28,9 +28,11 @@ INCLUIR_TOP = ["README.md", "ROADMAP.md", "CONTRIBUTING.md", "SECURITY.md",
                "rutas/README.md", "autoevaluaciones/README.md", "labs/README.md",
                "ctf/README.md", "docs/syllabus.md", "docs/rubrica-evaluacion.md",
                "docs/examen-final-por-rol.md", "soluciones/README.md",
-               "soluciones/parte-02-criptografia.md", "soluciones/parte-03-pentesting.md",
-               "soluciones/parte-04-web.md", "soluciones/parte-08-blue-team.md",
-               "soluciones/parte-09-dfir.md"]
+               "soluciones/parte-01-redes.md", "soluciones/parte-02-criptografia.md",
+               "soluciones/parte-03-pentesting.md", "soluciones/parte-04-web.md",
+               "soluciones/parte-05-binarios.md", "soluciones/parte-07-red-team.md",
+               "soluciones/parte-08-blue-team.md", "soluciones/parte-09-dfir.md",
+               "soluciones/parte-17-profundizacion.md"]
 
 LINK_MD = re.compile(r"\]\(([^)]+?)\.md((?:#[^)]*)?)\)")
 

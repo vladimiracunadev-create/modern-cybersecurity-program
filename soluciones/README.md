@@ -10,11 +10,15 @@ Claves de referencia para los **ejercicios** y **retos verificables** de las cla
 
 | Parte | Soluciones | Estado |
 |---|---|---|
+| 1 — Redes y seguridad de redes | [`parte-01-redes.md`](parte-01-redes.md) | ✅ Completa (026–045) |
 | 2 — Criptografía aplicada | [`parte-02-criptografia.md`](parte-02-criptografia.md) | ✅ Completa (046–065) |
 | 3 — Hacking ético y pentesting | [`parte-03-pentesting.md`](parte-03-pentesting.md) | ✅ Completa (066–085) |
 | 4 — Seguridad de aplicaciones web | [`parte-04-web.md`](parte-04-web.md) | ✅ Completa (086–115) |
+| 5 — Explotación de sistemas y binarios | [`parte-05-binarios.md`](parte-05-binarios.md) | ✅ Completa (116–140) |
+| 7 — Red Team y operaciones ofensivas | [`parte-07-red-team.md`](parte-07-red-team.md) | ✅ Completa (161–180) |
 | 8 — Blue Team, detección y SOC | [`parte-08-blue-team.md`](parte-08-blue-team.md) | ✅ Completa (181–200) |
 | 9 — Forense digital y respuesta a incidentes | [`parte-09-dfir.md`](parte-09-dfir.md) | ✅ Completa (201–220) |
+| 17 — Profundización para certificaciones | [`parte-17-profundizacion.md`](parte-17-profundizacion.md) | ✅ Completa (311–330) |
 | _resto de partes_ | — | ⏳ En construcción (ver plan) |
 
 > Los **laboratorios** y los **retos CTF** ya traen su propia solución en su carpeta
@@ -25,8 +29,8 @@ Claves de referencia para los **ejercicios** y **retos verificables** de las cla
 Las soluciones se generan **por parte** (una guía por parte con la clave de cada clase). Es un
 trabajo grande (340 clases), así que se hace **incremental y por lotes** para controlar el coste:
 
-- **Hecho:** Partes **2, 3, 4, 8 y 9** (110 clases con solución del reto + claves de ejercicios).
-- **Siguientes lotes sugeridos:** 17 (gestión de vulnerabilidades), 1 (redes), 5 (binarios), 7 (red team), 10 (cloud) y el resto.
+- **Hecho:** Partes **1, 2, 3, 4, 5, 7, 8, 9 y 17** (195 clases con solución del reto + claves de ejercicios).
+- **Siguientes lotes sugeridos:** 6 (malware), 10 (cloud), 11 (DevSecOps), 12 (OSINT), 13 (móvil/IoT), 14 (GRC) y el resto.
 - **Formato por clase:** _Solución del reto verificable_ (pasos + evidencia que cumple el criterio
   de aceptación) + _Claves de los ejercicios_ (respuesta breve y correcta a cada uno).
 
