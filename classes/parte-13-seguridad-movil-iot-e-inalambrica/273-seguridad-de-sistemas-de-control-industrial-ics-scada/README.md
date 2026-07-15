@@ -113,6 +113,10 @@ IEC 62443 (zonas y conductos, niveles de seguridad SL) y NIST SP 800-82 son las 
 - 📄 [Guía en PDF](./clase-273-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-273-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 272 — Ataques WiFi avanzados: Evil Twin y PMKID](../272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 274 - Seguridad automotriz y bus CAN](../274-seguridad-automotriz-y-bus-can/README.md)

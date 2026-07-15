@@ -144,6 +144,10 @@ Implementa `scapyscan.py`, un escáner SYN con Scapy que reciba un objetivo y un
 - 📄 [Guía en PDF](./clase-017-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-017-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 016 — Python para seguridad: sockets y programación de red](../016-python-para-seguridad-sockets-y-programacion-de-red/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 018 - Git y control de versiones para profesionales de seguridad](../018-git-y-control-de-versiones-para-profesionales-de-seguridad/README.md)

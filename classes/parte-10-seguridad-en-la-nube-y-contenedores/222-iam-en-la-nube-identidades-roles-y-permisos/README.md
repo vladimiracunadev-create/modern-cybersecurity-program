@@ -123,6 +123,10 @@ Empieza permisivo pero mide: usa Access Analyzer/policy usage para ver qué se u
 - 📄 [Guía en PDF](./clase-222-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-222-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 221 — Fundamentos de seguridad en la nube y responsabilidad compartida](../221-fundamentos-de-seguridad-en-la-nube-y-responsabilidad-compartida/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 223 - Seguridad en AWS](../223-seguridad-en-aws/README.md)

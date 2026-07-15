@@ -103,6 +103,10 @@ Redacta una ficha de una página para un activo de tu elección que contenga: (1
 - 📄 [Guía en PDF](./clase-001-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-001-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Volver al índice del programa](../../README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 002 - El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain](../002-el-panorama-de-amenazas-moderno-actores-motivaciones-y-cyber-kill-chain/README.md)

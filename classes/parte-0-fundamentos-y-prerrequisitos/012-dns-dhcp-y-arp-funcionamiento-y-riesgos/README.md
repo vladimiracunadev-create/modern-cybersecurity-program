@@ -129,6 +129,10 @@ Monta en tu laboratorio un ataque de ARP spoofing entre dos VMs y **demuéstralo
 - 📄 [Guía en PDF](./clase-012-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-012-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 011 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad](../011-protocolos-de-red-ip-tcp-udp-e-icmp-en-profundidad/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 013 - HTTP, HTTPS y la arquitectura de la web moderna](../013-http-https-y-la-arquitectura-de-la-web-moderna/README.md)

@@ -117,6 +117,10 @@ El guion maestro de eventos e injects, con tiempos, que estructura el ejercicio 
 - 📄 [Guía en PDF](./clase-219-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-219-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 218 — Reporte forense y aspectos legales](../218-reporte-forense-y-aspectos-legales/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 220 - Caso completo de respuesta a incidentes end-to-end](../220-caso-completo-de-respuesta-a-incidentes-end-to-end/README.md)

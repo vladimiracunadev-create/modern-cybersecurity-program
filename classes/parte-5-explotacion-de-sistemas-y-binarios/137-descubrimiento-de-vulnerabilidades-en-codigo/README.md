@@ -137,6 +137,10 @@ irreales; prioriza.
 - 📄 [Guía en PDF](./clase-137-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-137-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 136 — Fuzzing con AFL++ y libFuzzer](../136-fuzzing-con-afl-y-libfuzzer/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 138 - Desarrollo de exploits moderno](../138-desarrollo-de-exploits-moderno/README.md)

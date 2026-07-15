@@ -111,6 +111,10 @@ Repite los capstones subiendo la dificultad, persigue tu roadmap (Clase 301) y e
 - 📄 [Guía en PDF](./clase-310-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-310-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 309 — Construcción de portafolio y home lab permanente](../309-construccion-de-portafolio-y-home-lab-permanente/README.md)
+
 ## ➡️ Siguiente clase
 
 Has completado la última clase del programa. [⬆️ Volver al índice completo del Programa de Ciberseguridad Moderna](../../README.md)

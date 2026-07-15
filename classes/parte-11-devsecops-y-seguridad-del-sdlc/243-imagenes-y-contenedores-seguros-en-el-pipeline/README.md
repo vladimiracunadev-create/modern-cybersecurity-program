@@ -168,6 +168,10 @@ Sí: usa identidad OIDC efímera y un transparency log público (Rekor). Elimina
 - 📄 [Guía en PDF](./clase-243-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-243-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 242 — Seguridad en pipelines CI/CD](../242-seguridad-en-pipelines-ci-cd/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 244 - Politicas como codigo con OPA](../244-politicas-como-codigo-con-opa/README.md)

@@ -117,6 +117,10 @@ Porque compromete claves y nonces de golpe; un CSPRNG débil hace inútil el mej
 - 📄 [Guía en PDF](./clase-058-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-058-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 057 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2](../057-almacenamiento-seguro-de-contrasenas-bcrypt-scrypt-y-argon2/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 059 - Cifrado autenticado (AEAD)](../059-cifrado-autenticado-aead/README.md)

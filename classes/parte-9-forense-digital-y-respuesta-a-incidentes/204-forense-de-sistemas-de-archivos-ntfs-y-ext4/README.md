@@ -154,6 +154,10 @@ En Windows moderno normalmente sí. Es una fuente riquísima de creaciones, reno
 - 📄 [Guía en PDF](./clase-204-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-204-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 203 — Adquisición forense: discos e imágenes](../203-adquisicion-forense-discos-e-imagenes/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 205 - Analisis de artefactos de Windows](../205-analisis-de-artefactos-de-windows/README.md)

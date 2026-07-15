@@ -152,6 +152,10 @@ Porque si un atacante captura tráfico hoy y roba una clave mañana, con PFS no 
 - 📄 [Guía en PDF](./clase-036-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-036-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 035 — IDS/IPS con Snort y Suricata](../035-ids-ips-con-snort-y-suricata/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 037 - Proxies, NAT y pivoting de red](../037-proxies-nat-y-pivoting-de-red/README.md)

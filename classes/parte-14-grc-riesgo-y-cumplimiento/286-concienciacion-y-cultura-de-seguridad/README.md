@@ -121,6 +121,10 @@ De forma continua: píldoras breves y frecuentes superan a un curso largo anual.
 - 📄 [Guía en PDF](./clase-286-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-286-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 285 — Auditoría de seguridad](../285-auditoria-de-seguridad/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 287 - Metricas de seguridad: KPIs y KRIs](../287-metricas-de-seguridad-kpis-y-kris/README.md)

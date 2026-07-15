@@ -120,6 +120,10 @@ En recursos críticos (buckets con datos sensibles) sí: son la única forma de 
 - 📄 [Guía en PDF](./clase-234-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-234-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 233 — Gestión de secretos en la nube](../233-gestion-de-secretos-en-la-nube/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 235 - Respuesta a incidentes en la nube](../235-respuesta-a-incidentes-en-la-nube/README.md)

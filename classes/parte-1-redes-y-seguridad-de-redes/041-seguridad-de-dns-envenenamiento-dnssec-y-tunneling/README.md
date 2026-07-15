@@ -126,6 +126,10 @@ Analizando patrones: nombres muy largos, alta aleatoriedad (entropía), tipos de
 - 📄 [Guía en PDF](./clase-041-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-041-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 040 — Man-in-the-Middle: técnicas y defensa](../040-man-in-the-middle-tecnicas-y-defensa/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 042 - Segmentacion de red y arquitectura Zero Trust](../042-segmentacion-de-red-y-arquitectura-zero-trust/README.md)

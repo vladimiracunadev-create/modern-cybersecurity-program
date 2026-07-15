@@ -109,6 +109,10 @@ Ambos, pero el valor duradero está en las detecciones y lecciones que dejas: ca
 - 📄 [Guía en PDF](./clase-198-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-198-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 197 — Métricas y madurez del SOC](../197-metricas-y-madurez-del-soc/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 199 - Ingenieria de deteccion como disciplina](../199-ingenieria-de-deteccion-como-disciplina/README.md)

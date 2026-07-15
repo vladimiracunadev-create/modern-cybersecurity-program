@@ -116,6 +116,10 @@ La búsqueda proactiva de amenazas guiada por hipótesis (no por alertas), usand
 - 📄 [Guía en PDF](./clase-043-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-043-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 042 — Segmentación de red y arquitectura Zero Trust](../042-segmentacion-de-red-y-arquitectura-zero-trust/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 044 - Zeek para analisis de red a gran escala](../044-zeek-para-analisis-de-red-a-gran-escala/README.md)

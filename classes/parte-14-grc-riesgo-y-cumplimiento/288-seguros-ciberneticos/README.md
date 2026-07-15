@@ -112,6 +112,10 @@ La aseguradora puede denegar el siniestro por declaración inexacta. La honestid
 - 📄 [Guía en PDF](./clase-288-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-288-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 287 — Métricas de seguridad: KPIs y KRIs](../287-metricas-de-seguridad-kpis-y-kris/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 289 - Privacidad y proteccion de datos](../289-privacidad-y-proteccion-de-datos/README.md)

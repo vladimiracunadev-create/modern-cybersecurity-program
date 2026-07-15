@@ -134,6 +134,10 @@ Determinar alcance (cuántos recibieron/hicieron clic) y si hubo compromiso de c
 - 📄 [Guía en PDF](./clase-319-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-319-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 318 — Gestión del programa de vulnerabilidades](../318-gestion-del-programa-de-vulnerabilidades/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 320 - Gobierno, aspectos legales/regulatorios y gestión del programa](../320-gobierno-aspectos-legales-regulatorios-y-gestion-del-programa/README.md)

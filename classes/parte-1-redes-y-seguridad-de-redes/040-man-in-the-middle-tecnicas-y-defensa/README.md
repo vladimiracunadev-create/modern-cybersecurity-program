@@ -118,6 +118,10 @@ Usar siempre HTTPS/HSTS, una VPN de confianza y evitar aceptar certificados o in
 - 📄 [Guía en PDF](./clase-040-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-040-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 039 — Ataques de capa 2: ARP spoofing y VLAN hopping](../039-ataques-de-capa-2-arp-spoofing-y-vlan-hopping/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 041 - Seguridad de DNS: envenenamiento, DNSSEC y tunneling](../041-seguridad-de-dns-envenenamiento-dnssec-y-tunneling/README.md)

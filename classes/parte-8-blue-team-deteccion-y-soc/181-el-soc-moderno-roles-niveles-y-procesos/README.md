@@ -112,6 +112,10 @@ El monitoreo reacciona a lo que una regla ya disparó; el hunting busca proactiv
 - 📄 [Guía en PDF](./clase-181-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-181-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 180 — Adversary emulation con Atomic Red Team y Caldera](../../parte-7-red-team-y-operaciones-ofensivas/180-adversary-emulation-con-atomic-red-team-y-caldera/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 182 - Logging y fuentes de telemetria](../182-logging-y-fuentes-de-telemetria/README.md)

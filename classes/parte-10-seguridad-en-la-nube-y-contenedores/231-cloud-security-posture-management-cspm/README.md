@@ -121,6 +121,10 @@ Prioriza: no todos los hallazgos importan igual. Cruza severidad con exposición
 - 📄 [Guía en PDF](./clase-231-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-231-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 230 — Seguridad de Infrastructure as Code (Terraform)](../230-seguridad-de-infrastructure-as-code-terraform/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 232 - Seguridad serverless](../232-seguridad-serverless/README.md)

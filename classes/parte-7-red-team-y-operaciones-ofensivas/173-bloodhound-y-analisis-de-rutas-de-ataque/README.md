@@ -112,6 +112,10 @@ Sí. Los defensores lo usan para encontrar y cortar rutas peligrosas (relaciones
 - 📄 [Guía en PDF](./clase-173-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-173-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 172 — Active Directory: Pass-the-Hash y Pass-the-Ticket](../172-active-directory-pass-the-hash-y-pass-the-ticket/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 174 - Compromiso total de dominio: DCSync y Golden Ticket](../174-compromiso-total-de-dominio-dcsync-y-golden-ticket/README.md)

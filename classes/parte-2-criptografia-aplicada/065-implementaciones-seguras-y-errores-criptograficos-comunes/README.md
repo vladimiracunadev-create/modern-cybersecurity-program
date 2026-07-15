@@ -127,6 +127,10 @@ Poder cambiar algoritmos y claves sin rediseñar; será imprescindible en la mig
 - 📄 [Guía en PDF](./clase-065-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-065-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 064 — Esteganografía y ocultación de datos](../064-esteganografia-y-ocultacion-de-datos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 066 - Metodologia de pentesting: PTES y OSSTMM](../../parte-3-hacking-etico-y-pentesting-metodologia/066-metodologia-de-pentesting-ptes-y-osstmm/README.md)

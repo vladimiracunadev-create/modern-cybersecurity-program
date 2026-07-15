@@ -125,6 +125,10 @@ Segmenta por tenant: colecciones separadas o filtro obligatorio por `tenant_id` 
 - 📄 [Guía en PDF](./clase-297-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-297-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 296 — Prompt injection y jailbreaks](../296-prompt-injection-y-jailbreaks/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 298 - IA aplicada a la defensa: deteccion y SOC](../298-ia-aplicada-a-la-defensa-deteccion-y-soc/README.md)

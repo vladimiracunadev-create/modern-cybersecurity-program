@@ -159,6 +159,10 @@ No. Un IDS moderno (Suricata/Snort) los detecta. "Stealth" se refiere a que evit
 - 📄 [Guía en PDF](./clase-030-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-030-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 029 — Nmap: descubrimiento de hosts y técnicas de ping](../029-nmap-descubrimiento-de-hosts-y-tecnicas-de-ping/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 031 - Nmap: deteccion de servicios y fingerprinting de OS](../031-nmap-deteccion-de-servicios-y-fingerprinting-de-os/README.md)

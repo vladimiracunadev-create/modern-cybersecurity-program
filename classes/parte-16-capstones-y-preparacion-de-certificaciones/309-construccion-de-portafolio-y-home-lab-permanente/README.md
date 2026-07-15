@@ -124,6 +124,10 @@ Sí, pero cuida costes y aislamiento. Un lab local con Vagrant es gratuito y con
 - 📄 [Guía en PDF](./clase-309-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-309-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 308 — Capstone: campaña de bug bounty](../308-capstone-campana-de-bug-bounty/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 310 - Plan de aprendizaje continuo y comunidad](../310-plan-de-aprendizaje-continuo-y-comunidad/README.md)

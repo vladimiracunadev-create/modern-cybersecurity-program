@@ -113,6 +113,10 @@ No es realista. El objetivo es maximizar cobertura de las técnicas relevantes y
 - 📄 [Guía en PDF](./clase-306-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-306-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 305 — Capstone: operación Red Team end-to-end](../305-capstone-operacion-red-team-end-to-end/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 307 - Capstone: respuesta a incidentes DFIR end-to-end](../307-capstone-respuesta-a-incidentes-dfir-end-to-end/README.md)

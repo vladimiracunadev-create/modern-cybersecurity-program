@@ -121,6 +121,10 @@ OAEP para cifrado nuevo; PKCS#1 v1.5 es propenso a ataques (Bleichenbacher) y se
 - 📄 [Guía en PDF](./clase-049-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-049-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 048 — Cifrado de flujo: ChaCha20 y por qué evitar RC4](../048-cifrado-de-flujo-chacha20-y-por-que-evitar-rc4/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 050 - Criptografia de curva eliptica (ECC)](../050-criptografia-de-curva-eliptica-ecc/README.md)

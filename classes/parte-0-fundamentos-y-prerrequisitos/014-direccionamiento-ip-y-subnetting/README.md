@@ -118,6 +118,10 @@ Diseña un plan de direccionamiento para una organización ficticia con cuatro s
 - 📄 [Guía en PDF](./clase-014-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-014-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 013 — HTTP, HTTPS y la arquitectura de la web moderna](../013-http-https-y-la-arquitectura-de-la-web-moderna/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 015 - Python para seguridad: fundamentos del lenguaje](../015-python-para-seguridad-fundamentos-del-lenguaje/README.md)

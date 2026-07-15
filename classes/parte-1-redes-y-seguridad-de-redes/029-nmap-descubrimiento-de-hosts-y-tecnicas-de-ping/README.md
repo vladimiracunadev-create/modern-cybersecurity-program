@@ -154,6 +154,10 @@ Sí. Genera tráfico característico que un IDS puede alertar. Ajusta la tempori
 - 📄 [Guía en PDF](./clase-029-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-029-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 028 — tcpdump y captura de tráfico en línea de comandos](../028-tcpdump-y-captura-de-trafico-en-linea-de-comandos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 030 - Nmap: escaneo de puertos y tipos de escaneo](../030-nmap-escaneo-de-puertos-y-tipos-de-escaneo/README.md)

@@ -122,6 +122,10 @@ Es un marco técnico, no una norma. Combínalo con NIST AI RMF e ISO/IEC 42001 (
 - 📄 [Guía en PDF](./clase-295-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-295-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 294 — Robo y extracción de modelos](../294-robo-y-extraccion-de-modelos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 296 - Prompt injection y jailbreaks](../296-prompt-injection-y-jailbreaks/README.md)

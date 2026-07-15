@@ -150,6 +150,10 @@ Es la llave para automatizar la búsqueda de vulnerabilidades: se cruza con base
 - 📄 [Guía en PDF](./clase-031-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-031-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 030 — Nmap: escaneo de puertos y tipos de escaneo](../030-nmap-escaneo-de-puertos-y-tipos-de-escaneo/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 032 - Nmap Scripting Engine (NSE)](../032-nmap-scripting-engine-nse/README.md)

@@ -130,6 +130,10 @@ No; como RSA, cae ante Shor. Por eso existe la criptografía post-cuántica (cla
 - 📄 [Guía en PDF](./clase-050-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-050-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 049 — Cifrado asimétrico: RSA](../049-cifrado-asimetrico-rsa/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 051 - Funciones hash: SHA-2, SHA-3 y sus propiedades](../051-funciones-hash-sha-2-sha-3-y-sus-propiedades/README.md)

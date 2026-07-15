@@ -114,6 +114,10 @@ La mayoría sí (3 años típicos) y se renuevan con CEUs o reexamen. OSCP no ca
 - 📄 [Guía en PDF](./clase-301-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-301-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 300 — Gobernanza y ética de la IA segura](../../parte-15-seguridad-de-ia-y-machine-learning/300-gobernanza-y-etica-de-la-ia-segura/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 302 - Preparacion OSCP: mentalidad Try Harder](../302-preparacion-oscp-mentalidad-try-harder/README.md)

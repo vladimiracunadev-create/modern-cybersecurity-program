@@ -120,6 +120,10 @@ Porque no hay un firewall físico entre tú y el mundo: cualquiera con credencia
 - 📄 [Guía en PDF](./clase-221-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-221-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 220 — Caso completo de respuesta a incidentes end-to-end](../../parte-9-forense-digital-y-respuesta-a-incidentes/220-caso-completo-de-respuesta-a-incidentes-end-to-end/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 222 - IAM en la nube: identidades, roles y permisos](../222-iam-en-la-nube-identidades-roles-y-permisos/README.md)

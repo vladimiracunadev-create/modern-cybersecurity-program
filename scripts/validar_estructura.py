@@ -29,6 +29,7 @@ SECCIONES_REQUERIDAS = [
     "## ⚠️ Errores comunes",
     "## ❓ Preguntas frecuentes",
     "## 🔗 Referencias",
+    "## ⬅️ Clase anterior",
     "## ➡️ Siguiente clase",
 ]
 

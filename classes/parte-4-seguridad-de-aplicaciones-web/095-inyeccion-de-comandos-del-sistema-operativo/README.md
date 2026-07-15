@@ -116,6 +116,10 @@ Es frágil. Mejor evitar el shell por completo y validar con allowlists estricta
 - 📄 [Guía en PDF](./clase-095-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-095-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 094 — Inyección NoSQL](../094-inyeccion-nosql/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 096 - Cross-Site Scripting (XSS) reflejado](../096-cross-site-scripting-xss-reflejado/README.md)

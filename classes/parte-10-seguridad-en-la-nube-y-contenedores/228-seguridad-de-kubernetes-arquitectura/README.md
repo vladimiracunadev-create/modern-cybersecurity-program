@@ -121,6 +121,10 @@ En clústeres modernos sí, pero muchas instalaciones dejan roles amplios o Serv
 - 📄 [Guía en PDF](./clase-228-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-228-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 227 — Seguridad de contenedores: Docker](../227-seguridad-de-contenedores-docker/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 229 - Kubernetes: hardening y ataques](../229-kubernetes-hardening-y-ataques/README.md)

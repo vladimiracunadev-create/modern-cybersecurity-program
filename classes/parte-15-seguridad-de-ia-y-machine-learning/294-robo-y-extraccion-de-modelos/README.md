@@ -138,6 +138,10 @@ Incrustar un comportamiento secreto (respuestas concretas a entradas clave) que 
 - 📄 [Guía en PDF](./clase-294-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-294-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 293 — Envenenamiento de datos y modelos](../293-envenenamiento-de-datos-y-modelos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 295 - OWASP Top 10 para aplicaciones con LLM](../295-owasp-top-10-para-aplicaciones-con-llm/README.md)

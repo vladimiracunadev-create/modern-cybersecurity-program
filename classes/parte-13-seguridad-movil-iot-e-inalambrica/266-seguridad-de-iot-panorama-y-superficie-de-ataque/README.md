@@ -113,6 +113,10 @@ No siempre. El análisis de red, app y nube da mucho valor sin tocar el hardware
 - 📄 [Guía en PDF](./clase-266-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-266-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 265 — Ingeniería inversa de aplicaciones móviles](../265-ingenieria-inversa-de-aplicaciones-moviles/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 267 - Hacking de firmware](../267-hacking-de-firmware/README.md)

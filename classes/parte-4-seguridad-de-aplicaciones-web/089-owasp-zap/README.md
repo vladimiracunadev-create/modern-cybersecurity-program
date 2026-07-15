@@ -109,6 +109,10 @@ Con `zap-baseline.py` o `zap-full-scan.py` en un contenedor, haciendo que el pip
 - 📄 [Guía en PDF](./clase-089-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-089-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 088 — Burp Suite: configuración y flujo de trabajo](../088-burp-suite-configuracion-y-flujo-de-trabajo/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 090 - Mapeo, spidering y descubrimiento de contenido](../090-mapeo-spidering-y-descubrimiento-de-contenido/README.md)

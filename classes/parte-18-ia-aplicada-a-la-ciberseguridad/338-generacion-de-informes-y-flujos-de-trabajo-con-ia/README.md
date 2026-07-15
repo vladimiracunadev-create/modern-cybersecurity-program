@@ -104,6 +104,10 @@ puedas respaldar con la salida real de una herramienta.
 - 📄 [Guía en PDF](./clase-338-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-338-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 337 — IA para el lado defensivo: SOC, triaje y forense](../337-ia-para-el-lado-defensivo-soc-triaje-y-forense/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 339 - Riesgos, guardrails, OPSEC y ética del hacking con IA](../339-riesgos-guardrails-opsec-y-etica-del-hacking-con-ia/README.md)

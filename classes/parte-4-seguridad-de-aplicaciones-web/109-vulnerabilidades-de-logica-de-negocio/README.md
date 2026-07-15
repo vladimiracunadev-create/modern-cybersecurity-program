@@ -107,6 +107,10 @@ Validando y recalculando toda regla en el servidor, usando bloqueos/transaccione
 - 📄 [Guía en PDF](./clase-109-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-109-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 108 — Vulnerabilidades en carga de archivos](../108-vulnerabilidades-en-carga-de-archivos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 110 - Seguridad de APIs REST](../110-seguridad-de-apis-rest/README.md)

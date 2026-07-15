@@ -155,6 +155,10 @@ entorno del binario.
 - 📄 [Guía en PDF](./clase-134-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-134-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 133 — Análisis estático de binarios](../133-analisis-estatico-de-binarios/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 135 - Ofuscacion y tecnicas anti-reversing](../135-ofuscacion-y-tecnicas-anti-reversing/README.md)

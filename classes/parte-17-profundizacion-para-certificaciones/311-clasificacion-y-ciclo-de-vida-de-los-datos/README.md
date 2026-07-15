@@ -151,6 +151,10 @@ un proceso de reclasificación y desclasificación con aprobación del propietar
 - 📄 [Guía en PDF](./clase-311-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-311-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 310 — Plan de aprendizaje continuo y comunidad](../../parte-16-capstones-y-preparacion-de-certificaciones/310-plan-de-aprendizaje-continuo-y-comunidad/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 312 - Retención, destrucción segura de datos y DLP](../312-retencion-destruccion-segura-de-datos-y-dlp/README.md)

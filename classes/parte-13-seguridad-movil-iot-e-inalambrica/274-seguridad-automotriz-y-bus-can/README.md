@@ -119,6 +119,10 @@ A través de superficies conectadas (telemática celular, WiFi/Bluetooth del inf
 - 📄 [Guía en PDF](./clase-274-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-274-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 273 — Seguridad de sistemas de control industrial (ICS/SCADA)](../273-seguridad-de-sistemas-de-control-industrial-ics-scada/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 275 - Seguridad de dispositivos medicos](../275-seguridad-de-dispositivos-medicos/README.md)

@@ -112,6 +112,10 @@ Rara vez y por poco tiempo. Los metadatos de Zeek cubren la mayoría de casos de
 - 📄 [Guía en PDF](./clase-191-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-191-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 190 — Análisis de logs de Windows: Event Logs y Sysmon](../190-analisis-de-logs-de-windows-event-logs-y-sysmon/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 192 - Deteccion de movimiento lateral](../192-deteccion-de-movimiento-lateral/README.md)

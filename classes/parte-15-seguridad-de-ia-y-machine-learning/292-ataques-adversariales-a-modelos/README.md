@@ -149,6 +149,10 @@ Perturbaciones que sobreviven a la captura por cámara: pegatinas en señales de
 - 📄 [Guía en PDF](./clase-292-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-292-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 291 — Introducción a la seguridad de IA y ML](../291-introduccion-a-la-seguridad-de-ia-y-ml/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 293 - Envenenamiento de datos y modelos](../293-envenenamiento-de-datos-y-modelos/README.md)

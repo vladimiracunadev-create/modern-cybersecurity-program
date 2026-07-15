@@ -109,6 +109,10 @@ Sí; con suficientes mediciones y estadística se explotan incluso a través de 
 - 📄 [Guía en PDF](./clase-060-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-060-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 059 — Cifrado autenticado (AEAD)](../059-cifrado-autenticado-aead/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 061 - Introduccion al criptoanalisis](../061-introduccion-al-criptoanalisis/README.md)

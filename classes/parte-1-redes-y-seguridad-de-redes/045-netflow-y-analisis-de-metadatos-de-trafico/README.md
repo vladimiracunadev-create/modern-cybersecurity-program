@@ -141,6 +141,10 @@ Buscando beaconing: conexiones periódicas y regulares hacia un mismo destino, a
 - 📄 [Guía en PDF](./clase-045-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-045-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 044 — Zeek para análisis de red a gran escala](../044-zeek-para-analisis-de-red-a-gran-escala/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 046 - Historia y fundamentos de la criptografia](../../parte-2-criptografia-aplicada/046-historia-y-fundamentos-de-la-criptografia/README.md)

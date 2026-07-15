@@ -163,6 +163,10 @@ consulta el *Intel SDM* para el resto.
 - 📄 [Guía en PDF](./clase-116-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-116-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 115 — Secure coding y defensa de aplicaciones web](../../parte-4-seguridad-de-aplicaciones-web/115-secure-coding-y-defensa-de-aplicaciones-web/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 117 - El stack, los registros y las convenciones de llamada](../117-el-stack-los-registros-y-las-convenciones-de-llamada/README.md)

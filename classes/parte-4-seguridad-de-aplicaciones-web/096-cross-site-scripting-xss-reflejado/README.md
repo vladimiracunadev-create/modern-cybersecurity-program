@@ -107,6 +107,10 @@ No lo elimina, lo mitiga: aunque el bug exista, una buena CSP puede impedir que 
 - 📄 [Guía en PDF](./clase-096-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-096-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 095 — Inyección de comandos del sistema operativo](../095-inyeccion-de-comandos-del-sistema-operativo/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 097 - XSS almacenado y basado en DOM](../097-xss-almacenado-y-basado-en-dom/README.md)

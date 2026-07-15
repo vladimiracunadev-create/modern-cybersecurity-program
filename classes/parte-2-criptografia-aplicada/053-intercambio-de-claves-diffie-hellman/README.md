@@ -117,6 +117,10 @@ No; cae ante Shor, igual que RSA/ECC. De ahí la cripto post-cuántica.
 - 📄 [Guía en PDF](./clase-053-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-053-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 052 — HMAC y autenticación de mensajes](../052-hmac-y-autenticacion-de-mensajes/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 054 - Firmas digitales](../054-firmas-digitales/README.md)

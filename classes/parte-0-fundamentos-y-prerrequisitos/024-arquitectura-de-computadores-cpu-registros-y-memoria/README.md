@@ -131,6 +131,10 @@ Toma un programa C con una función que reciba argumentos y realice un cálculo.
 - 📄 [Guía en PDF](./clase-024-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-024-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 023 — Sistemas operativos: procesos, memoria y syscalls](../023-sistemas-operativos-procesos-memoria-y-syscalls/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 025 - Etica, legalidad, alcance y divulgacion responsable](../025-etica-legalidad-alcance-y-divulgacion-responsable/README.md)

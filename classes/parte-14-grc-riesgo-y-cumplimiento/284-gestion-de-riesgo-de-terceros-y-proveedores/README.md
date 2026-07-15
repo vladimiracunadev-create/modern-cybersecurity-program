@@ -124,6 +124,10 @@ Ante GDPR sigues siendo responsable de los datos que le confías. Por eso exiges
 - 📄 [Guía en PDF](./clase-284-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-284-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 283 — Continuidad de negocio y plan de recuperación ante desastres](../283-continuidad-de-negocio-y-plan-de-recuperacion-ante-desastres/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 285 - Auditoria de seguridad](../285-auditoria-de-seguridad/README.md)

@@ -107,6 +107,10 @@ Porque sin ello cualquier página puede enviar mensajes maliciosos que tu handle
 - 📄 [Guía en PDF](./clase-113-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-113-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 112 — Web cache poisoning y HTTP request smuggling](../112-web-cache-poisoning-y-http-request-smuggling/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 114 - Bug bounty: metodologia y plataformas](../114-bug-bounty-metodologia-y-plataformas/README.md)

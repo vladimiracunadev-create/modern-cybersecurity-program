@@ -127,6 +127,10 @@ El monitor de referencia es el **concepto** abstracto (mediar todo acceso); el k
 - 📄 [Guía en PDF](./clase-316-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-316-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 315 — MFA y gestión de accesos privilegiados (PAM)](../315-mfa-y-gestion-de-accesos-privilegiados-pam/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 317 - Seguridad física y ambiental](../317-seguridad-fisica-y-ambiental/README.md)

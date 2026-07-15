@@ -146,6 +146,10 @@ puedes corromper datos que la función hoja usa.
 - 📄 [Guía en PDF](./clase-117-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-117-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador](../116-arquitectura-x86-x64-y-lenguaje-ensamblador/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 118 - Debugging con GDB y pwndbg](../118-debugging-con-gdb-y-pwndbg/README.md)

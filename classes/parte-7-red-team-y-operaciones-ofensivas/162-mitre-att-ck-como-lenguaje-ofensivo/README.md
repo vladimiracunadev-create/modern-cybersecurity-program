@@ -120,6 +120,10 @@ La Kill Chain (Lockheed Martin) es lineal y de alto nivel; ATT&CK es un catálog
 - 📄 [Guía en PDF](./clase-162-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-162-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 161 — Red Team vs pentest: filosofía y objetivos](../161-red-team-vs-pentest-filosofia-y-objetivos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 163 - Emulacion de adversarios](../163-emulacion-de-adversarios/README.md)

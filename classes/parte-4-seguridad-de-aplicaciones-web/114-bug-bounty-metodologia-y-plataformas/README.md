@@ -107,6 +107,10 @@ La automatización ayuda en recon y detección superficial, pero los bugs bien p
 - 📄 [Guía en PDF](./clase-114-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-114-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution](../113-ataques-del-lado-del-cliente-cors-postmessage-y-prototype-pollution/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 115 - Secure coding y defensa de aplicaciones web](../115-secure-coding-y-defensa-de-aplicaciones-web/README.md)

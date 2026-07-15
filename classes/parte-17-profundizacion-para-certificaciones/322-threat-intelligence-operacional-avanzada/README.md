@@ -130,6 +130,10 @@ No, se complementan. La Kill Chain describe las fases de un ataque en el tiempo;
 - 📄 [Guía en PDF](./clase-322-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-322-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 321 — Comunicación y reporte para analistas de seguridad](../321-comunicacion-y-reporte-para-analistas-de-seguridad/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 323 - Pruebas de seguridad del software y evaluación](../323-pruebas-de-seguridad-del-software-y-evaluacion/README.md)

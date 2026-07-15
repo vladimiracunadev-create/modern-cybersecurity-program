@@ -122,6 +122,10 @@ No. El escaneo IaC detecta problemas *antes* de desplegar (shift-left); el CSPM 
 - 📄 [Guía en PDF](./clase-230-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-230-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 229 — Kubernetes: hardening y ataques](../229-kubernetes-hardening-y-ataques/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 231 - Cloud Security Posture Management (CSPM)](../231-cloud-security-posture-management-cspm/README.md)

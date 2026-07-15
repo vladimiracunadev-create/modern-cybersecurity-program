@@ -148,6 +148,10 @@ Entrega un script `auditor.sh` parametrizable que reciba una subred, descubra ho
 - 📄 [Guía en PDF](./clase-007-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-007-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 006 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos](../006-linea-de-comandos-linux-avanzada-grep-sed-awk-pipes-y-procesos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 008 - Windows esencial para seguridad: arquitectura, registro y servicios](../008-windows-esencial-para-seguridad-arquitectura-registro-y-servicios/README.md)

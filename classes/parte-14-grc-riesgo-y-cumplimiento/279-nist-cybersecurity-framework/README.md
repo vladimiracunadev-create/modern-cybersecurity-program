@@ -113,6 +113,10 @@ Sí; NIST publica Quick Start Guides específicas para pequeñas empresas y gest
 - 📄 [Guía en PDF](./clase-279-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-279-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 278 — ISO/IEC 27001 e implantación de un SGSI](../278-iso-iec-27001-e-implantacion-de-un-sgsi/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 280 - Controles CIS](../280-controles-cis/README.md)

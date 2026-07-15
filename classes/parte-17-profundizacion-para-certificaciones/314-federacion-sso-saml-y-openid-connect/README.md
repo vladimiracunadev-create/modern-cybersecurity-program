@@ -148,6 +148,10 @@ procese contenido malicioso. La defensa es una validación estricta de la firma 
 - 📄 [Guía en PDF](./clase-314-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-314-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 313 — Gestión del ciclo de vida de identidades (IAM empresarial)](../313-gestion-del-ciclo-de-vida-de-identidades-iam-empresarial/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 315 - MFA y gestión de accesos privilegiados (PAM)](../315-mfa-y-gestion-de-accesos-privilegiados-pam/README.md)

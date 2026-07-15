@@ -115,6 +115,10 @@ Al menos una técnica (detallada) y una ejecutiva (breve, sin jerga). La legal p
 - 📄 [Guía en PDF](./clase-218-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-218-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 217 — Análisis de causa raíz](../217-analisis-de-causa-raiz/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 219 - Ejercicios de mesa (tabletop)](../219-ejercicios-de-mesa-tabletop/README.md)

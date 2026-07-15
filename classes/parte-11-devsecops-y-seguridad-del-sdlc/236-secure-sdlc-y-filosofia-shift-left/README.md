@@ -119,6 +119,10 @@ No. SSDF (NIST) es un marco de prácticas de referencia; SAMM es un modelo de ma
 - 📄 [Guía en PDF](./clase-236-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-236-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 235 — Respuesta a incidentes en la nube](../../parte-10-seguridad-en-la-nube-y-contenedores/235-respuesta-a-incidentes-en-la-nube/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 237 - Modelado de amenazas: STRIDE y DREAD](../237-modelado-de-amenazas-stride-y-dread/README.md)

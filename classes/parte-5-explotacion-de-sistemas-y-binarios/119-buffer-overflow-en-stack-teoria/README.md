@@ -135,6 +135,10 @@ complican. Por eso primero se estudia en un binario sin protecciones.
 - 📄 [Guía en PDF](./clase-119-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-119-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 118 — Debugging con GDB y pwndbg](../118-debugging-con-gdb-y-pwndbg/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 120 - Buffer overflow en stack: explotacion practica](../120-buffer-overflow-en-stack-explotacion-practica/README.md)

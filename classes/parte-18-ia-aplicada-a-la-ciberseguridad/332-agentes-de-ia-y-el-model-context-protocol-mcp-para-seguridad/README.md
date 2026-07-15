@@ -115,6 +115,10 @@ al agente para que haga algo fuera de alcance.
 - 📄 [Guía en PDF](./clase-332-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-332-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 331 — IA generativa y LLMs en ciberseguridad: panorama, capacidades y límites](../331-ia-generativa-y-llms-en-ciberseguridad-panorama-y-limites/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 333 - kali-mcp: orquestar herramientas de Kali desde un agente de IA](../333-kali-mcp-orquestar-herramientas-de-kali-desde-un-agente-de-ia/README.md)

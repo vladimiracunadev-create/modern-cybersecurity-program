@@ -116,6 +116,10 @@ cumplimiento, no solo de comodidad.
 - 📄 [Guía en PDF](./clase-339-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-339-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 338 — Generación de informes y flujos de trabajo con IA](../338-generacion-de-informes-y-flujos-de-trabajo-con-ia/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 340 - Capstone: pentest autorizado asistido por IA con MCP](../340-capstone-pentest-autorizado-asistido-por-ia-con-mcp/README.md)

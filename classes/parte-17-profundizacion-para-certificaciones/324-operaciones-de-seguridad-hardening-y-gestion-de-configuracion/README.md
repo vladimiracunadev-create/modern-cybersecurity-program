@@ -131,6 +131,10 @@ Ambos, con prioridad por riesgo: los parches de vulnerabilidades explotadas acti
 - 📄 [Guía en PDF](./clase-324-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-324-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 323 — Pruebas de seguridad del software y evaluación](../323-pruebas-de-seguridad-del-software-y-evaluacion/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 325 - Forense de memoria avanzado](../325-forense-de-memoria-avanzado/README.md)

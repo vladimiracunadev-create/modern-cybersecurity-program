@@ -123,6 +123,10 @@ Contraseñas largas y aleatorias para cuentas de servicio, uso de gMSA/dMSA, des
 - 📄 [Guía en PDF](./clase-171-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-171-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 170 — Active Directory: enumeración](../170-active-directory-enumeracion/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 172 - Active Directory: Pass-the-Hash y Pass-the-Ticket](../172-active-directory-pass-the-hash-y-pass-the-ticket/README.md)

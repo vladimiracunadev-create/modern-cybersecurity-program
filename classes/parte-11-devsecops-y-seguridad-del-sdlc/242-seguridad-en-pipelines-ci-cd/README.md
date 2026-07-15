@@ -150,6 +150,10 @@ No. Los workflows cambian y aparecen nuevas técnicas. Corre zizmor/actionlint e
 - 📄 [Guía en PDF](./clase-242-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-242-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 241 — Secretos en el código y pre-commit hooks](../241-secretos-en-el-codigo-y-pre-commit-hooks/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 243 - Imagenes y contenedores seguros en el pipeline](../243-imagenes-y-contenedores-seguros-en-el-pipeline/README.md)

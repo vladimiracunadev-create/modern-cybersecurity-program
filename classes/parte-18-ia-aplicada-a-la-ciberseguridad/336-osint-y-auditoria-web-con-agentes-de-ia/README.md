@@ -108,6 +108,10 @@ límites legales que debes respetar (ver Parte 12 y clase 339).
 - 📄 [Guía en PDF](./clase-336-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-336-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 335 — Explotación y post-explotación autorizada asistida por IA](../335-explotacion-y-post-explotacion-autorizada-asistida-por-ia/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 337 - IA para el lado defensivo: SOC, triaje y forense](../337-ia-para-el-lado-defensivo-soc-triaje-y-forense/README.md)

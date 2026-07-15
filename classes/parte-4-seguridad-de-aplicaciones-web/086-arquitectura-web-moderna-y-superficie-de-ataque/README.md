@@ -113,6 +113,10 @@ No para empezar. Community cubre esta parte; Pro añade el scanner automático y
 - 📄 [Guía en PDF](./clase-086-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-086-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 085 — Reporte profesional de pentest](../../parte-3-hacking-etico-y-pentesting-metodologia/085-reporte-profesional-de-pentest/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 087 - OWASP Top 10: panorama general](../087-owasp-top-10-panorama-general/README.md)

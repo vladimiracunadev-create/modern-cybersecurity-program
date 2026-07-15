@@ -112,6 +112,10 @@ Porque una detección escrita contra campos CIM funciona sin importar el fabrica
 - 📄 [Guía en PDF](./clase-184-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-184-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 183 — SIEM: arquitectura y componentes](../183-siem-arquitectura-y-componentes/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 185 - Elastic Stack y Wazuh](../185-elastic-stack-y-wazuh/README.md)

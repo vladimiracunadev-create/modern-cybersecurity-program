@@ -124,6 +124,10 @@ Escribe `iocextract.py`, una herramienta que reciba un archivo de texto y extrai
 - 📄 [Guía en PDF](./clase-019-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-019-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 018 — Git y control de versiones para profesionales de seguridad](../018-git-y-control-de-versiones-para-profesionales-de-seguridad/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 020 - Sistemas de numeracion y encoding: binario, hex, base64 y URL](../020-sistemas-de-numeracion-y-encoding-binario-hex-base64-y-url/README.md)

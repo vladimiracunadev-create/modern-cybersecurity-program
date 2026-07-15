@@ -138,6 +138,10 @@ Exporta a almacenamiento con retención/immutabilidad (object lock) o a una cuen
 - 📄 [Guía en PDF](./clase-212-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-212-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 211 — Forense móvil](../211-forense-movil/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 213 - Anti-forense y sus contramedidas](../213-anti-forense-y-sus-contramedidas/README.md)

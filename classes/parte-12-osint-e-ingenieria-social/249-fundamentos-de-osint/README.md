@@ -123,6 +123,10 @@ sistemas privados ni para manipular a personas fuera de un engagement autorizado
 - 📄 [Guía en PDF](./clase-249-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-249-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 248 — Cultura DevSecOps y security champions](../../parte-11-devsecops-y-seguridad-del-sdlc/248-cultura-devsecops-y-security-champions/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 250 - OSINT de personas](../250-osint-de-personas/README.md)

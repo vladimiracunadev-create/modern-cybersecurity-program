@@ -108,6 +108,10 @@ No directamente; usa primitivas estándar bien analizadas. Preocúpate por la im
 - 📄 [Guía en PDF](./clase-061-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-061-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 060 — Ataques criptográficos: padding oracle y timing](../060-ataques-criptograficos-padding-oracle-y-timing/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 062 - Criptografia post-cuantica](../062-criptografia-post-cuantica/README.md)

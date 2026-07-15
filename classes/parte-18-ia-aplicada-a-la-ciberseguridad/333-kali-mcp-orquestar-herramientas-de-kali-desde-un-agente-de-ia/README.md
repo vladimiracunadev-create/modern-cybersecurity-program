@@ -132,6 +132,10 @@ amplifica tu criterio; no lo sustituye.
 - 📄 [Guía en PDF](./clase-333-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-333-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 332 — Agentes de IA y el Model Context Protocol (MCP) para seguridad](../332-agentes-de-ia-y-el-model-context-protocol-mcp-para-seguridad/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 334 - Reconocimiento y escaneo asistidos por IA](../334-reconocimiento-y-escaneo-asistidos-por-ia/README.md)

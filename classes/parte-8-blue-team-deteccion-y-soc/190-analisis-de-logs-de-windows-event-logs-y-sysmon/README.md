@@ -109,6 +109,10 @@ Parte de una configuración comunitaria afinada, excluye procesos benignos ruido
 - 📄 [Guía en PDF](./clase-190-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-190-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 189 — Análisis de endpoints con EDR](../189-analisis-de-endpoints-con-edr/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 191 - Analisis de logs de red y proxy](../191-analisis-de-logs-de-red-y-proxy/README.md)

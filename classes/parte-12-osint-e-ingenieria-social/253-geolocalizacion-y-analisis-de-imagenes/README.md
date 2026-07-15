@@ -124,6 +124,10 @@ coherencia contextual.
 - 📄 [Guía en PDF](./clase-253-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-253-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 252 — OSINT en redes sociales](../252-osint-en-redes-sociales/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 254 - OSINT tecnico: Shodan y Censys](../254-osint-tecnico-shodan-y-censys/README.md)

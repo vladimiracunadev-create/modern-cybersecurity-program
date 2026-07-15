@@ -140,6 +140,10 @@ Solo si los datos limpios están garantizados. Si el dataset base sigue contamin
 - 📄 [Guía en PDF](./clase-293-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-293-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 292 — Ataques adversariales a modelos](../292-ataques-adversariales-a-modelos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 294 - Robo y extraccion de modelos](../294-robo-y-extraccion-de-modelos/README.md)

@@ -147,6 +147,10 @@ research de vulnerabilidades y el pentesting avanzado.
 - 📄 [Guía en PDF](./clase-140-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-140-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 139 — Kernel exploitation: introducción](../139-kernel-exploitation-introduccion/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 141 - Introduccion al malware: tipos y taxonomia](../../parte-6-analisis-de-malware/141-introduccion-al-malware-tipos-y-taxonomia/README.md)

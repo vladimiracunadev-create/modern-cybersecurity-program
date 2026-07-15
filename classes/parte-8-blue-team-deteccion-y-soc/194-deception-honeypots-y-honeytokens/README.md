@@ -113,6 +113,10 @@ Casi nada. Un canary token es un archivo, una URL o una clave que avisa al usars
 - 📄 [Guía en PDF](./clase-194-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-194-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 193 — Detección de C2 y beaconing](../193-deteccion-de-c2-y-beaconing/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 195 - Threat intelligence operacional](../195-threat-intelligence-operacional/README.md)

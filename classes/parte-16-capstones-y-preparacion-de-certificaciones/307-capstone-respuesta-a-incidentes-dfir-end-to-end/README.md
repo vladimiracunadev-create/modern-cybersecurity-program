@@ -126,6 +126,10 @@ La alerta que dispara el incidente puede venir del capstone Blue Team (Clase 306
 - 📄 [Guía en PDF](./clase-307-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-307-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 306 — Capstone: detección Blue Team end-to-end](../306-capstone-deteccion-blue-team-end-to-end/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 308 - Capstone: campana de bug bounty](../308-capstone-campana-de-bug-bounty/README.md)

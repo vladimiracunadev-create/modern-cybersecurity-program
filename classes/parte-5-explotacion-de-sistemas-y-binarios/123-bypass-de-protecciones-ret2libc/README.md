@@ -160,6 +160,10 @@ sus constraints.
 - 📄 [Guía en PDF](./clase-123-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-123-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE](../122-protecciones-modernas-aslr-dep-nx-stack-canaries-y-pie/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 124 - Return-Oriented Programming (ROP)](../124-return-oriented-programming-rop/README.md)

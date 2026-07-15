@@ -150,6 +150,10 @@ Organízala por servicio y prioriza vectores según impacto y facilidad. Unas bu
 - 📄 [Guía en PDF](./clase-033-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-033-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 032 — Nmap Scripting Engine (NSE)](../032-nmap-scripting-engine-nse/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 034 - Firewalls: tipos, iptables y nftables](../034-firewalls-tipos-iptables-y-nftables/README.md)

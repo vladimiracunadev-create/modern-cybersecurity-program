@@ -129,6 +129,10 @@ Sí. Los detectores son modelos y por tanto atacables (evasión, envenenamiento 
 - 📄 [Guía en PDF](./clase-298-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-298-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 297 — Seguridad de aplicaciones con LLM: RAG y agentes](../297-seguridad-de-aplicaciones-con-llm-rag-y-agentes/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 299 - IA ofensiva y deepfakes](../299-ia-ofensiva-y-deepfakes/README.md)

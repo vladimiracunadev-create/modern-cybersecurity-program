@@ -114,6 +114,10 @@ Deshabilitar el procesamiento de DTD y entidades externas en la configuración d
 - 📄 [Guía en PDF](./clase-100-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-100-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 099 — Server-Side Request Forgery (SSRF)](../099-server-side-request-forgery-ssrf/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 101 - Fallos de autenticacion y bypass](../101-fallos-de-autenticacion-y-bypass/README.md)

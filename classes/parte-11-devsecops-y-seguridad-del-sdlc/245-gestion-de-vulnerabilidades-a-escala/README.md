@@ -129,6 +129,10 @@ Es una forma estandarizada de decir "este CVE está presente pero no somos explo
 - 📄 [Guía en PDF](./clase-245-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-245-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 244 — Políticas como código con OPA](../244-politicas-como-codigo-con-opa/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 246 - Supply chain security: SBOM y SLSA](../246-supply-chain-security-sbom-y-slsa/README.md)

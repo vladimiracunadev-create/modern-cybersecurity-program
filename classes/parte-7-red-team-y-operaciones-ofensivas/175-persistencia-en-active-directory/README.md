@@ -111,6 +111,10 @@ Siempre al cierre, con inventario completo de lo instalado. Dejar persistencia e
 - 📄 [Guía en PDF](./clase-175-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-175-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 174 — Compromiso total de dominio: DCSync y Golden Ticket](../174-compromiso-total-de-dominio-dcsync-y-golden-ticket/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 176 - OPSEC ofensiva](../176-opsec-ofensiva/README.md)

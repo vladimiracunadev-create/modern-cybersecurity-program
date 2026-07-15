@@ -149,6 +149,10 @@ necesario. Documenta ambas y define el período que satisface las dos.
 - 📄 [Guía en PDF](./clase-312-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-312-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 311 — Clasificación y ciclo de vida de los datos](../311-clasificacion-y-ciclo-de-vida-de-los-datos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 313 - Gestión del ciclo de vida de identidades (IAM empresarial)](../313-gestion-del-ciclo-de-vida-de-identidades-iam-empresarial/README.md)

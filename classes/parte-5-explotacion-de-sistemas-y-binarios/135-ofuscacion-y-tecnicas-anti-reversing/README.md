@@ -155,6 +155,10 @@ arquitectura de seguridad.
 - 📄 [Guía en PDF](./clase-135-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-135-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 134 — Análisis dinámico y debugging de binarios](../134-analisis-dinamico-y-debugging-de-binarios/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 136 - Fuzzing con AFL++ y libFuzzer](../136-fuzzing-con-afl-y-libfuzzer/README.md)

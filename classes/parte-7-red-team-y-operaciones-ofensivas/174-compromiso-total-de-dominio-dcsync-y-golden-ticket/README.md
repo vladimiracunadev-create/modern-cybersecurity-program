@@ -116,6 +116,10 @@ Golden da acceso total pero es más detectable; Silver es acotado a un servicio 
 - 📄 [Guía en PDF](./clase-174-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-174-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 173 — BloodHound y análisis de rutas de ataque](../173-bloodhound-y-analisis-de-rutas-de-ataque/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 175 - Persistencia en Active Directory](../175-persistencia-en-active-directory/README.md)

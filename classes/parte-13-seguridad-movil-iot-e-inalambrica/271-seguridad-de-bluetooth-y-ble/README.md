@@ -117,6 +117,10 @@ Para escanear e interactuar sí. Para sniffear conexiones necesitas hardware esp
 - 📄 [Guía en PDF](./clase-271-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-271-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 270 — Ataques a RFID y NFC](../270-ataques-a-rfid-y-nfc/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 272 - Ataques WiFi avanzados: Evil Twin y PMKID](../272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md)

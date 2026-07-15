@@ -124,6 +124,10 @@ Es voluntario, pero se está convirtiendo en referencia de facto y en base de re
 - 📄 [Guía en PDF](./clase-291-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-291-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 290 — Certificaciones y desarrollo de carrera](../../parte-14-grc-riesgo-y-cumplimiento/290-certificaciones-y-desarrollo-de-carrera/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 292 - Ataques adversariales a modelos](../292-ataques-adversariales-a-modelos/README.md)

@@ -107,6 +107,10 @@ La validación laxa de `redirect_uri` y la falta de `state`, que llevan a robo d
 - 📄 [Guía en PDF](./clase-104-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-104-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 103 — Ataques y seguridad de JWT](../103-ataques-y-seguridad-de-jwt/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 105 - Control de acceso roto: IDOR y path traversal](../105-control-de-acceso-roto-idor-y-path-traversal/README.md)

@@ -123,6 +123,10 @@ Porque nunca tienes plena certeza de haber eliminado toda la persistencia de un 
 - 📄 [Guía en PDF](./clase-235-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-235-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 234 — Logging y detección en la nube](../234-logging-y-deteccion-en-la-nube/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 236 - Secure SDLC y filosofia shift-left](../../parte-11-devsecops-y-seguridad-del-sdlc/236-secure-sdlc-y-filosofia-shift-left/README.md)

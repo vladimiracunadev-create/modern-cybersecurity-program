@@ -112,6 +112,10 @@ Solo si tratas PHI de entidades cubiertas estadounidenses. Para salud en la UE a
 - 📄 [Guía en PDF](./clase-281-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-281-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 280 — Controles CIS](../280-controles-cis/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 282 - Politicas, estandares y procedimientos](../282-politicas-estandares-y-procedimientos/README.md)

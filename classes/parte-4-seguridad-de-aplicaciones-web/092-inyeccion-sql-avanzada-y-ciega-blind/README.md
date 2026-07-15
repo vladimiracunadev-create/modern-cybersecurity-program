@@ -111,6 +111,10 @@ Reduce las pruebas por carácter de ~128 a ~7 comparaciones (log2), un ahorro en
 - 📄 [Guía en PDF](./clase-092-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-092-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 091 — Inyección SQL: fundamentos](../091-inyeccion-sql-fundamentos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 093 - SQLMap](../093-sqlmap/README.md)

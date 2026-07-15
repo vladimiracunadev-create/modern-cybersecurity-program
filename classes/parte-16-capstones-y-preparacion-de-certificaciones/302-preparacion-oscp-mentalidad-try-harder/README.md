@@ -122,6 +122,10 @@ CherryTree u Obsidian; lo importante es la disciplina, no la herramienta.
 - 📄 [Guía en PDF](./clase-302-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-302-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 301 — Roadmap de certificaciones: CompTIA, OSCP, CISSP y más](../301-roadmap-de-certificaciones-comptia-oscp-cissp-y-mas/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 303 - Capstone: laboratorio completo de pentest](../303-capstone-laboratorio-completo-de-pentest/README.md)

@@ -107,6 +107,10 @@ Fuera del directorio web servible, con nombres generados, y sírvelos con Conten
 - 📄 [Guía en PDF](./clase-108-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-108-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 107 — Server-Side Template Injection (SSTI)](../107-server-side-template-injection-ssti/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 109 - Vulnerabilidades de logica de negocio](../109-vulnerabilidades-de-logica-de-negocio/README.md)

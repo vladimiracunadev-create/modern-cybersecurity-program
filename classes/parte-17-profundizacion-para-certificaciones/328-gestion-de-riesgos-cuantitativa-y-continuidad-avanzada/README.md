@@ -131,6 +131,10 @@ RTO mira **hacia adelante**: cuánto tiempo puedo tardar en volver a funcionar. 
 - 📄 [Guía en PDF](./clase-328-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-328-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 327 — Ingeniería de detección avanzada y validación](../327-ingenieria-de-deteccion-avanzada-y-validacion/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 329 - Arquitectura de seguridad empresarial y Zero Trust](../329-arquitectura-de-seguridad-empresarial-y-zero-trust/README.md)

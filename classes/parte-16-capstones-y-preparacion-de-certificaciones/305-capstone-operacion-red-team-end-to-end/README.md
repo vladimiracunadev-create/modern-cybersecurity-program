@@ -118,6 +118,10 @@ Los logs de esta operación alimentan el capstone de la Clase 306 (purple teamin
 - 📄 [Guía en PDF](./clase-305-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-305-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 304 — Preparación CISSP: los 8 dominios](../304-preparacion-cissp-los-8-dominios/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 306 - Capstone: deteccion Blue Team end-to-end](../306-capstone-deteccion-blue-team-end-to-end/README.md)

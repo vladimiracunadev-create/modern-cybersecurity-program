@@ -165,6 +165,10 @@ Sí, con despliegues en clúster (un manager y varios workers) puede analizar en
 - 📄 [Guía en PDF](./clase-044-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-044-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 043 — Network Security Monitoring (NSM): fundamentos](../043-network-security-monitoring-nsm-fundamentos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 045 - NetFlow y analisis de metadatos de trafico](../045-netflow-y-analisis-de-metadatos-de-trafico/README.md)

@@ -122,6 +122,10 @@ solo contar clics.
 - 📄 [Guía en PDF](./clase-258-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-258-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 257 — Pretexting y vishing](../257-pretexting-y-vishing/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 259 - Defensa contra la ingenieria social](../259-defensa-contra-la-ingenieria-social/README.md)

@@ -136,6 +136,10 @@ Difícil por TRIM, pero busca en shadow copies, backups, journal, memoria y logs
 - 📄 [Guía en PDF](./clase-213-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-213-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 212 — Forense en la nube](../212-forense-en-la-nube/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 214 - Recuperacion de datos y file carving](../214-recuperacion-de-datos-y-file-carving/README.md)

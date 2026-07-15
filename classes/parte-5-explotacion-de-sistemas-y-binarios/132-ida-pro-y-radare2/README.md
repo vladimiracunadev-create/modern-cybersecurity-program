@@ -147,6 +147,10 @@ GDB.
 - 📄 [Guía en PDF](./clase-132-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-132-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 131 — Ghidra para ingeniería inversa](../131-ghidra-para-ingenieria-inversa/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 133 - Analisis estatico de binarios](../133-analisis-estatico-de-binarios/README.md)

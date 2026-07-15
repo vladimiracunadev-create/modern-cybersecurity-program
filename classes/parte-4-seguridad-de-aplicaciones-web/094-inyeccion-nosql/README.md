@@ -121,6 +121,10 @@ No. Para NoSQL existe NoSQLMap y payloads manuales; los conceptos son análogos 
 - 📄 [Guía en PDF](./clase-094-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-094-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 093 — SQLMap](../093-sqlmap/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 095 - Inyeccion de comandos del sistema operativo](../095-inyeccion-de-comandos-del-sistema-operativo/README.md)

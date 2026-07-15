@@ -144,6 +144,10 @@ Dynamic ARP Inspection junto con DHCP snooping en switches gestionados; en hosts
 - 📄 [Guía en PDF](./clase-039-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-039-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 038 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque](../038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 040 - Man-in-the-Middle: tecnicas y defensa](../040-man-in-the-middle-tecnicas-y-defensa/README.md)

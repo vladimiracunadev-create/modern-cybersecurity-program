@@ -108,6 +108,10 @@ No. Una cacería "sin hallazgo" es valiosa: valida controles, mejora baselines y
 - 📄 [Guía en PDF](./clase-188-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-188-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 187 — Detección basada en MITRE ATT&CK](../187-deteccion-basada-en-mitre-att-ck/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 189 - Analisis de endpoints con EDR](../189-analisis-de-endpoints-con-edr/README.md)

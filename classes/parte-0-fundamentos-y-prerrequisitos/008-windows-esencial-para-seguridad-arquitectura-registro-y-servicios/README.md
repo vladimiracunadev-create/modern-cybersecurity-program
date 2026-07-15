@@ -128,6 +128,10 @@ Realiza una mini auditoría de *hardening* de tu VM Windows: enumera cuentas y p
 - 📄 [Guía en PDF](./clase-008-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-008-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 007 — Bash scripting para tareas de seguridad](../007-bash-scripting-para-tareas-de-seguridad/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 009 - PowerShell para seguridad ofensiva y defensiva](../009-powershell-para-seguridad-ofensiva-y-defensiva/README.md)

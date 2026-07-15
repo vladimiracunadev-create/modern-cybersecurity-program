@@ -111,6 +111,10 @@ Sí, si se documentan, se aprueban, tienen controles compensatorios y caducan. U
 - 📄 [Guía en PDF](./clase-282-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-282-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 281 — Cumplimiento: GDPR, HIPAA y PCI-DSS](../281-cumplimiento-gdpr-hipaa-y-pci-dss/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 283 - Continuidad de negocio y plan de recuperacion ante desastres](../283-continuidad-de-negocio-y-plan-de-recuperacion-ante-desastres/README.md)

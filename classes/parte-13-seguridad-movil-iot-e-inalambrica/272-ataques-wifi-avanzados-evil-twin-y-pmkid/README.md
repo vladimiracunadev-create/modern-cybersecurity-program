@@ -123,6 +123,10 @@ Porque ataca al usuario, no al cifrado: si la víctima se conecta al AP falso e 
 - 📄 [Guía en PDF](./clase-272-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-272-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 271 — Seguridad de Bluetooth y BLE](../271-seguridad-de-bluetooth-y-ble/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 273 - Seguridad de sistemas de control industrial (ICS/SCADA)](../273-seguridad-de-sistemas-de-control-industrial-ics-scada/README.md)

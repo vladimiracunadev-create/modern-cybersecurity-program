@@ -146,6 +146,10 @@ clase 121.
 - 📄 [Guía en PDF](./clase-120-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-120-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 119 — Buffer overflow en stack: teoría](../119-buffer-overflow-en-stack-teoria/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 121 - Escritura de shellcode](../121-escritura-de-shellcode/README.md)

@@ -116,6 +116,10 @@ Porque atacantes las fabrican intencionadamente (SHAttered); afectan firmas y co
 - 📄 [Guía en PDF](./clase-051-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-051-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 050 — Criptografía de curva elíptica (ECC)](../050-criptografia-de-curva-eliptica-ecc/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 052 - HMAC y autenticacion de mensajes](../052-hmac-y-autenticacion-de-mensajes/README.md)

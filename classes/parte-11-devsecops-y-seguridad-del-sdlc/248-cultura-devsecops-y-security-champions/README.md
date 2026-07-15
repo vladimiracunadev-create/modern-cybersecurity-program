@@ -120,6 +120,10 @@ Con proxies medibles: participación en formación, tiempo de remediación por e
 - 📄 [Guía en PDF](./clase-248-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-248-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 247 — Seguridad de APIs en el ciclo de desarrollo](../247-seguridad-de-apis-en-el-ciclo-de-desarrollo/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 249 - Fundamentos de OSINT](../../parte-12-osint-e-ingenieria-social/249-fundamentos-de-osint/README.md)

@@ -134,6 +134,10 @@ No. La nube reparte responsabilidades pero tú sigues siendo responsable de tus 
 - 📄 [Guía en PDF](./clase-283-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-283-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 282 — Políticas, estándares y procedimientos](../282-politicas-estandares-y-procedimientos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 284 - Gestion de riesgo de terceros y proveedores](../284-gestion-de-riesgo-de-terceros-y-proveedores/README.md)

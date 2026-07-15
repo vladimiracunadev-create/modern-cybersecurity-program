@@ -124,6 +124,10 @@ puede ser ilegal o dañino.
 - 📄 [Guía en PDF](./clase-256-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-256-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 255 — Automatización de OSINT: SpiderFoot y Maltego](../255-automatizacion-de-osint-spiderfoot-y-maltego/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 257 - Pretexting y vishing](../257-pretexting-y-vishing/README.md)

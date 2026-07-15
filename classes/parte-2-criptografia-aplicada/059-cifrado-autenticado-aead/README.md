@@ -120,6 +120,10 @@ Limitado por el riesgo de colisión de nonces (con nonces aleatorios de 96 bits,
 - 📄 [Guía en PDF](./clase-059-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-059-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 058 — Generación de aleatoriedad segura (CSPRNG)](../058-generacion-de-aleatoriedad-segura-csprng/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 060 - Ataques criptograficos: padding oracle y timing](../060-ataques-criptograficos-padding-oracle-y-timing/README.md)

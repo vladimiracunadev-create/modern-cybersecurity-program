@@ -113,6 +113,10 @@ Con créditos de formación continua (CPE): cursos, conferencias, publicaciones 
 - 📄 [Guía en PDF](./clase-290-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-290-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 289 — Privacidad y protección de datos](../289-privacidad-y-proteccion-de-datos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 291 - Introduccion a la seguridad de IA y ML](../../parte-15-seguridad-de-ia-y-machine-learning/291-introduccion-a-la-seguridad-de-ia-y-ml/README.md)

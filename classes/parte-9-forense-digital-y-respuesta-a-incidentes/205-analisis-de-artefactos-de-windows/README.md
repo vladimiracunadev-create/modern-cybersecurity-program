@@ -140,6 +140,10 @@ Sí para probar navegación de carpetas; recuerda que persisten aunque la carpet
 - 📄 [Guía en PDF](./clase-205-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-205-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 204 — Forense de sistemas de archivos: NTFS y ext4](../204-forense-de-sistemas-de-archivos-ntfs-y-ext4/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 206 - Analisis de artefactos de Linux](../206-analisis-de-artefactos-de-linux/README.md)

@@ -119,6 +119,10 @@ Fuera de la imagen: en un gestor de secretos (clase 233), variables inyectadas e
 - 📄 [Guía en PDF](./clase-227-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-227-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 226 — Ataques y pentest en entornos cloud](../226-ataques-y-pentest-en-entornos-cloud/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 228 - Seguridad de Kubernetes: arquitectura](../228-seguridad-de-kubernetes-arquitectura/README.md)

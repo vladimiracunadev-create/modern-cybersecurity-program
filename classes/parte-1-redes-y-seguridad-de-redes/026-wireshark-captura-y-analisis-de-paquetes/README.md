@@ -131,6 +131,10 @@ Las redes modernas son conmutadas: el switch solo te envía lo tuyo. Necesitas u
 - 📄 [Guía en PDF](./clase-026-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-026-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 025 — Ética, legalidad, alcance y divulgación responsable](../../parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 027 - Analisis de trafico: filtros, seguimiento de flujos y estadisticas](../027-analisis-de-trafico-filtros-seguimiento-de-flujos-y-estadisticas/README.md)

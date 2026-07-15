@@ -106,6 +106,10 @@ Ayuda mucho porque da TTPs atómicos reproducibles (Clase 180), pero puedes ejec
 - 📄 [Guía en PDF](./clase-178-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-178-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 177 — Red teaming físico](../177-red-teaming-fisico/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 179 - Reporte y metricas de Red Team](../179-reporte-y-metricas-de-red-team/README.md)

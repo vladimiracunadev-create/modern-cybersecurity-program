@@ -117,6 +117,10 @@ Miden la eficacia del programa de respuesta y permiten fijar objetivos de mejora
 - 📄 [Guía en PDF](./clase-217-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-217-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 216 — Contención, erradicación y recuperación](../216-contencion-erradicacion-y-recuperacion/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 218 - Reporte forense y aspectos legales](../218-reporte-forense-y-aspectos-legales/README.md)

@@ -153,6 +153,10 @@ detectarlo en compilación.
 - 📄 [Guía en PDF](./clase-125-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-125-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 124 — Return-Oriented Programming (ROP)](../124-return-oriented-programming-rop/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 126 - Explotacion de heap: fundamentos](../126-explotacion-de-heap-fundamentos/README.md)

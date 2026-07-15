@@ -129,6 +129,10 @@ Escribe `logstats.py`, una herramienta CLI que reciba la ruta de un log y un pat
 - 📄 [Guía en PDF](./clase-015-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-015-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 014 — Direccionamiento IP y subnetting](../014-direccionamiento-ip-y-subnetting/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 016 - Python para seguridad: sockets y programacion de red](../016-python-para-seguridad-sockets-y-programacion-de-red/README.md)

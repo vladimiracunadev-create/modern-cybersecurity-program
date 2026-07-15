@@ -116,6 +116,10 @@ Porque un login legítimo genera poca telemetría anómala frente a un exploit r
 - 📄 [Guía en PDF](./clase-167-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-167-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 166 — Phishing y entrega de payloads](../166-phishing-y-entrega-de-payloads/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 168 - Evasion de defensas: antivirus y EDR](../168-evasion-de-defensas-antivirus-y-edr/README.md)

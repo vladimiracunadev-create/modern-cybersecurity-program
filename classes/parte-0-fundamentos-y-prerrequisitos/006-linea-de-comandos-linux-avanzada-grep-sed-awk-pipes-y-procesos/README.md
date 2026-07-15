@@ -137,6 +137,10 @@ Escribe una única línea (one-liner) que, a partir de un log de acceso web, pro
 - 📄 [Guía en PDF](./clase-006-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-006-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 005 — Linux esencial para seguridad: filesystem, permisos y usuarios](../005-linux-esencial-para-seguridad-filesystem-permisos-y-usuarios/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 007 - Bash scripting para tareas de seguridad](../007-bash-scripting-para-tareas-de-seguridad/README.md)

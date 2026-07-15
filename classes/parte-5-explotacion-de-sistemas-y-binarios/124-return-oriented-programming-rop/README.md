@@ -153,6 +153,10 @@ actual de la investigación.
 - 📄 [Guía en PDF](./clase-124-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-124-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 123 — Bypass de protecciones: ret2libc](../123-bypass-de-protecciones-ret2libc/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 125 - Vulnerabilidades de format string](../125-vulnerabilidades-de-format-string/README.md)

@@ -154,6 +154,10 @@ No: codifica sus decisiones para aplicarlas de forma consistente y automática. 
 - 📄 [Guía en PDF](./clase-244-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-244-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 243 — Imágenes y contenedores seguros en el pipeline](../243-imagenes-y-contenedores-seguros-en-el-pipeline/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 245 - Gestion de vulnerabilidades a escala](../245-gestion-de-vulnerabilidades-a-escala/README.md)

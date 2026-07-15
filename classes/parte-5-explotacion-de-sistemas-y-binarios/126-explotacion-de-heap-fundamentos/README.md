@@ -149,6 +149,10 @@ glibc moderna.
 - 📄 [Guía en PDF](./clase-126-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-126-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 125 — Vulnerabilidades de format string](../125-vulnerabilidades-de-format-string/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 127 - Heap: use-after-free y double free](../127-heap-use-after-free-y-double-free/README.md)

@@ -169,7 +169,7 @@ def construir_pptx(md_text: str, titulo: str, subtitulo: str, out_path: str) -> 
     r3.text = "Programa de Ciberseguridad Moderna"
     r3.font.size = Pt(12); r3.font.color.rgb = GRIS
 
-    saltar = {"➡️ Siguiente clase", "📥 Material descargable"}
+    saltar = {"⬅️ Clase anterior", "➡️ Siguiente clase", "📥 Material descargable"}
     for titulo_sec, cuerpo in partir_secciones(md_text):
         if any(k in titulo_sec for k in saltar):
             continue

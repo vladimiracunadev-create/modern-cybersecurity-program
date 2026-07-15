@@ -122,6 +122,10 @@ solicitudes de eliminación a los servicios.
 - 📄 [Guía en PDF](./clase-250-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-250-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 249 — Fundamentos de OSINT](../249-fundamentos-de-osint/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 251 - OSINT de empresas y dominios](../251-osint-de-empresas-y-dominios/README.md)

@@ -113,6 +113,10 @@ No hay un "evento PtH", pero su firma es un patrón: logon NTLM tipo 3 con crede
 - 📄 [Guía en PDF](./clase-192-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-192-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 191 — Análisis de logs de red y proxy](../191-analisis-de-logs-de-red-y-proxy/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 193 - Deteccion de C2 y beaconing](../193-deteccion-de-c2-y-beaconing/README.md)

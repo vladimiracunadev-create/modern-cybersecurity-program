@@ -105,6 +105,10 @@ Dentro de A03 Injection desde 2021, porque comparte causa raíz: datos no confia
 - 📄 [Guía en PDF](./clase-087-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-087-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 086 — Arquitectura web moderna y superficie de ataque](../086-arquitectura-web-moderna-y-superficie-de-ataque/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 088 - Burp Suite: configuracion y flujo de trabajo](../088-burp-suite-configuracion-y-flujo-de-trabajo/README.md)

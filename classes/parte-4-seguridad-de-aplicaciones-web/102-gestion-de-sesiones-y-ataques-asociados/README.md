@@ -107,6 +107,10 @@ Para invalidar cualquier ID que el atacante pudiera haber fijado antes de la aut
 - 📄 [Guía en PDF](./clase-102-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-102-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 101 — Fallos de autenticación y bypass](../101-fallos-de-autenticacion-y-bypass/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 103 - Ataques y seguridad de JWT](../103-ataques-y-seguridad-de-jwt/README.md)

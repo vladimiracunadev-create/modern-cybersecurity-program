@@ -107,6 +107,10 @@ Ambos, según el caso. Para HTML enriquecido en el cliente, DOMPurify; en el ser
 - 📄 [Guía en PDF](./clase-097-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-097-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 096 — Cross-Site Scripting (XSS) reflejado](../096-cross-site-scripting-xss-reflejado/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 098 - Cross-Site Request Forgery (CSRF)](../098-cross-site-request-forgery-csrf/README.md)

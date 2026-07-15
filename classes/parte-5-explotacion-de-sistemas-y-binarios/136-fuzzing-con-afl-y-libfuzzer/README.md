@@ -158,6 +158,10 @@ también considera assertions.
 - 📄 [Guía en PDF](./clase-136-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-136-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 135 — Ofuscación y técnicas anti-reversing](../135-ofuscacion-y-tecnicas-anti-reversing/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 137 - Descubrimiento de vulnerabilidades en codigo](../137-descubrimiento-de-vulnerabilidades-en-codigo/README.md)

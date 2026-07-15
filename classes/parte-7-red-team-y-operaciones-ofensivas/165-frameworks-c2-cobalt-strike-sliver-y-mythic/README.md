@@ -131,6 +131,10 @@ HTTPS con perfil realista para trabajo diario; mTLS para robustez interna del la
 - 📄 [Guía en PDF](./clase-165-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-165-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 164 — Diseño de infraestructura de comando y control (C2)](../164-diseno-de-infraestructura-de-comando-y-control-c2/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 166 - Phishing y entrega de payloads](../166-phishing-y-entrega-de-payloads/README.md)

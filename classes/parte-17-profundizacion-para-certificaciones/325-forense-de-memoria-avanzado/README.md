@@ -192,6 +192,10 @@ No para ese instante: al apagar se pierde la RAM. Por eso la captura de memoria 
 - 📄 [Guía en PDF](./clase-325-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-325-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 324 — Operaciones de seguridad: hardening y gestión de configuración](../324-operaciones-de-seguridad-hardening-y-gestion-de-configuracion/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 326 - Análisis de malware para respuesta a incidentes](../326-analisis-de-malware-para-respuesta-a-incidentes/README.md)

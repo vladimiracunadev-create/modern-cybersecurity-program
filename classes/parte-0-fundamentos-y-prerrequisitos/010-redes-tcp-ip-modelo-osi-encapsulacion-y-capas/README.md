@@ -110,6 +110,10 @@ A partir de una captura propia, entrega un documento que "diseccione" un único 
 - 📄 [Guía en PDF](./clase-010-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-010-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 009 — PowerShell para seguridad ofensiva y defensiva](../009-powershell-para-seguridad-ofensiva-y-defensiva/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 011 - Protocolos de red: IP, TCP, UDP e ICMP en profundidad](../011-protocolos-de-red-ip-tcp-udp-e-icmp-en-profundidad/README.md)

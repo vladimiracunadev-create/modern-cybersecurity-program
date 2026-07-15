@@ -118,6 +118,10 @@ Por identidad fuerte (MFA), inventario de activos, segmentación de lo crítico 
 - 📄 [Guía en PDF](./clase-042-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-042-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 041 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling](../041-seguridad-de-dns-envenenamiento-dnssec-y-tunneling/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 043 - Network Security Monitoring (NSM): fundamentos](../043-network-security-monitoring-nsm-fundamentos/README.md)

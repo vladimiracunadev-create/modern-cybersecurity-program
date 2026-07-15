@@ -122,6 +122,10 @@ La model card y el registro de riesgos: dan visibilidad inmediata de límites y 
 - 📄 [Guía en PDF](./clase-300-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-300-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 299 — IA ofensiva y deepfakes](../299-ia-ofensiva-y-deepfakes/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 301 - Roadmap de certificaciones: CompTIA, OSCP, CISSP y mas](../../parte-16-capstones-y-preparacion-de-certificaciones/301-roadmap-de-certificaciones-comptia-oscp-cissp-y-mas/README.md)

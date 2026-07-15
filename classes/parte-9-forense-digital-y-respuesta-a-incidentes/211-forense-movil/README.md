@@ -134,6 +134,10 @@ Solo con consentimiento del titular u orden judicial. Hacerlo sin autorización 
 - 📄 [Guía en PDF](./clase-211-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-211-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 210 — Forense de navegadores y correo](../210-forense-de-navegadores-y-correo/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 212 - Forense en la nube](../212-forense-en-la-nube/README.md)

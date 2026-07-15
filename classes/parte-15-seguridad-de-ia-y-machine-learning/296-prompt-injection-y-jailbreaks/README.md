@@ -136,6 +136,10 @@ Relacionados pero distintos: el jailbreak busca evadir las políticas de segurid
 - 📄 [Guía en PDF](./clase-296-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-296-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 295 — OWASP Top 10 para aplicaciones con LLM](../295-owasp-top-10-para-aplicaciones-con-llm/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 297 - Seguridad de aplicaciones con LLM: RAG y agentes](../297-seguridad-de-aplicaciones-con-llm-rag-y-agentes/README.md)

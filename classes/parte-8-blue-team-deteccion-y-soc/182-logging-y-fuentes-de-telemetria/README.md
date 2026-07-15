@@ -113,6 +113,10 @@ Solo en segmentos críticos y con retención corta. Para hunting histórico, los
 - 📄 [Guía en PDF](./clase-182-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-182-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 181 — El SOC moderno: roles, niveles y procesos](../181-el-soc-moderno-roles-niveles-y-procesos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 183 - SIEM: arquitectura y componentes](../183-siem-arquitectura-y-componentes/README.md)

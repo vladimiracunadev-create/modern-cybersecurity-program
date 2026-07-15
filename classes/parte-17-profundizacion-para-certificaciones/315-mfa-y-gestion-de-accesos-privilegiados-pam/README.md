@@ -156,6 +156,10 @@ comunicarse al personal.
 - 📄 [Guía en PDF](./clase-315-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-315-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 314 — Federación, SSO, SAML y OpenID Connect](../314-federacion-sso-saml-y-openid-connect/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 316 - Modelos de seguridad y arquitectura (Bell-LaPadula, Biba, Clark-Wilson)](../316-modelos-de-seguridad-y-arquitectura/README.md)

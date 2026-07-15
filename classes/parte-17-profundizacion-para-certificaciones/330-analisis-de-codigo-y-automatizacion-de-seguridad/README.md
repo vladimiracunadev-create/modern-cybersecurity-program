@@ -133,6 +133,10 @@ No: es defensivo. El objetivo es **encontrar y corregir** debilidades en tu prop
 - 📄 [Guía en PDF](./clase-330-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-330-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 329 — Arquitectura de seguridad empresarial y Zero Trust](../329-arquitectura-de-seguridad-empresarial-y-zero-trust/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 331 - IA generativa y LLMs en ciberseguridad: panorama y límites](../../parte-18-ia-aplicada-a-la-ciberseguridad/331-ia-generativa-y-llms-en-ciberseguridad-panorama-y-limites/README.md)

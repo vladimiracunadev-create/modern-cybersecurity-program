@@ -110,6 +110,10 @@ supervisión contra nada que no sea tu laboratorio.
 - 📄 [Guía en PDF](./clase-334-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-334-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 333 — kali-mcp: orquestar herramientas de Kali desde un agente de IA](../333-kali-mcp-orquestar-herramientas-de-kali-desde-un-agente-de-ia/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 335 - Explotación y post-explotación autorizada asistida por IA](../335-explotacion-y-post-explotacion-autorizada-asistida-por-ia/README.md)

@@ -117,6 +117,10 @@ Pregunta por cada métrica: "¿qué decisión cambiaría si este número sube o 
 - 📄 [Guía en PDF](./clase-287-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-287-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 286 — Concienciación y cultura de seguridad](../286-concienciacion-y-cultura-de-seguridad/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 288 - Seguros ciberneticos](../288-seguros-ciberneticos/README.md)

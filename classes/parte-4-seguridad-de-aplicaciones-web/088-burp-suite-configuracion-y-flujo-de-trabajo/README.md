@@ -111,6 +111,10 @@ Define siempre el scope y activa "show only in-scope" y "drop out-of-scope reque
 - 📄 [Guía en PDF](./clase-088-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-088-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 087 — OWASP Top 10: panorama general](../087-owasp-top-10-panorama-general/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 089 - OWASP ZAP](../089-owasp-zap/README.md)

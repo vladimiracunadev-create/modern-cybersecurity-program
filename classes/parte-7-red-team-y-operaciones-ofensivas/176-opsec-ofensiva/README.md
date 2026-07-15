@@ -106,6 +106,10 @@ El cuaderno es interno y esencial para deconfliction, reproducibilidad y el info
 - 📄 [Guía en PDF](./clase-176-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-176-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 175 — Persistencia en Active Directory](../175-persistencia-en-active-directory/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 177 - Red teaming fisico](../177-red-teaming-fisico/README.md)

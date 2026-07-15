@@ -128,6 +128,10 @@ Escribe `decoder.py`, una utilidad que reciba una cadena e intente detectar y de
 - 📄 [Guía en PDF](./clase-020-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-020-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 019 — Expresiones regulares para análisis de logs y datos](../019-expresiones-regulares-para-analisis-de-logs-y-datos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 021 - Criptografia: conceptos fundamentales e intuicion](../021-criptografia-conceptos-fundamentales-e-intuicion/README.md)

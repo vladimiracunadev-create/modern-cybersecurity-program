@@ -153,6 +153,10 @@ activa UBSan en CI.
 - 📄 [Guía en PDF](./clase-128-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-128-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 127 — Heap: use-after-free y double free](../127-heap-use-after-free-y-double-free/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 129 - Explotacion en Windows: manejo de SEH](../129-explotacion-en-windows-manejo-de-seh/README.md)

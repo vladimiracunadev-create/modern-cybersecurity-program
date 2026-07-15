@@ -115,6 +115,10 @@ ISO 27001 es el marco de gestión (SGSI); la gobernanza lo supervisa y aprueba. 
 - 📄 [Guía en PDF](./clase-276-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-276-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 275 — Seguridad de dispositivos médicos](../../parte-13-seguridad-movil-iot-e-inalambrica/275-seguridad-de-dispositivos-medicos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 277 - Gestion de riesgos: cuantitativa y cualitativa](../277-gestion-de-riesgos-cuantitativa-y-cualitativa/README.md)

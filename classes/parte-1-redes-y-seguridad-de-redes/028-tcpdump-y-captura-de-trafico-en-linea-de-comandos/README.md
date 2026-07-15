@@ -159,6 +159,10 @@ Filtra en origen con BPF, usa snap length moderado si solo necesitas cabeceras (
 - 📄 [Guía en PDF](./clase-028-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-028-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 027 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas](../027-analisis-de-trafico-filtros-seguimiento-de-flujos-y-estadisticas/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 029 - Nmap: descubrimiento de hosts y tecnicas de ping](../029-nmap-descubrimiento-de-hosts-y-tecnicas-de-ping/README.md)

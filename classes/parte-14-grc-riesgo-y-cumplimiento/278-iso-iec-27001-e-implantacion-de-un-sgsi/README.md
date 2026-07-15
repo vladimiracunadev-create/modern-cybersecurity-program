@@ -114,6 +114,10 @@ La certificación dura 3 años con auditorías de seguimiento anuales, más una 
 - 📄 [Guía en PDF](./clase-278-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-278-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 277 — Gestión de riesgos: cuantitativa y cualitativa](../277-gestion-de-riesgos-cuantitativa-y-cualitativa/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 279 - NIST Cybersecurity Framework](../279-nist-cybersecurity-framework/README.md)

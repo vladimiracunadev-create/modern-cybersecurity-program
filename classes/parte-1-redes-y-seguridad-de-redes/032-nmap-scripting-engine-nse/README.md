@@ -172,6 +172,10 @@ Con `nmap --script-help <nombre>`, que muestra descripción, categorías, argume
 - 📄 [Guía en PDF](./clase-032-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-032-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 031 — Nmap: detección de servicios y fingerprinting de OS](../031-nmap-deteccion-de-servicios-y-fingerprinting-de-os/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 033 - Enumeracion de servicios de red](../033-enumeracion-de-servicios-de-red/README.md)

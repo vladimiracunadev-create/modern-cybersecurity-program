@@ -120,6 +120,10 @@ Con monitoreo reforzado durante un periodo y criterios objetivos: cero IOCs acti
 - 📄 [Guía en PDF](./clase-216-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-216-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 215 — Playbooks de respuesta a incidentes](../215-playbooks-de-respuesta-a-incidentes/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 217 - Analisis de causa raiz](../217-analisis-de-causa-raiz/README.md)

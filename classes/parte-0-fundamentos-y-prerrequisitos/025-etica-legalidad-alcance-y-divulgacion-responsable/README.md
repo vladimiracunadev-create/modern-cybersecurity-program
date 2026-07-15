@@ -101,6 +101,10 @@ Elabora un paquete de autorización completo para un compromiso ficticio: (1) un
 - 📄 [Guía en PDF](./clase-025-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-025-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 024 — Arquitectura de computadores: CPU, registros y memoria](../024-arquitectura-de-computadores-cpu-registros-y-memoria/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 026 - Wireshark: captura y analisis de paquetes](../../parte-1-redes-y-seguridad-de-redes/026-wireshark-captura-y-analisis-de-paquetes/README.md)

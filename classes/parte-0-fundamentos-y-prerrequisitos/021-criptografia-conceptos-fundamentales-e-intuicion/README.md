@@ -139,6 +139,10 @@ Implementa `securebox.py`, una herramienta que cifre y descifre un archivo con A
 - 📄 [Guía en PDF](./clase-021-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-021-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 020 — Sistemas de numeración y encoding: binario, hex, base64 y URL](../020-sistemas-de-numeracion-y-encoding-binario-hex-base64-y-url/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 022 - Docker y contenedores para laboratorios de seguridad](../022-docker-y-contenedores-para-laboratorios-de-seguridad/README.md)

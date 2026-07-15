@@ -157,6 +157,10 @@ mtime y atime sí con `touch`; ctime es más difícil (requiere manipular el rel
 - 📄 [Guía en PDF](./clase-206-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-206-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 205 — Análisis de artefactos de Windows](../205-analisis-de-artefactos-de-windows/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 207 - Forense de memoria RAM con Volatility](../207-forense-de-memoria-ram-con-volatility/README.md)

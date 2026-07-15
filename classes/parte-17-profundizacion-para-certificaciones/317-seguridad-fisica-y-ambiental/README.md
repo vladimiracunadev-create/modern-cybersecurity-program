@@ -129,6 +129,10 @@ Tier III es *concurrentemente mantenible* (puedes dar mantenimiento sin apagar),
 - 📄 [Guía en PDF](./clase-317-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-317-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 316 — Modelos de seguridad y arquitectura (Bell-LaPadula, Biba, Clark-Wilson)](../316-modelos-de-seguridad-y-arquitectura/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 318 - Gestión del programa de vulnerabilidades](../318-gestion-del-programa-de-vulnerabilidades/README.md)

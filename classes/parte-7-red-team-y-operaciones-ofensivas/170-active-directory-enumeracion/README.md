@@ -106,6 +106,10 @@ Game of Active Directory: un laboratorio vulnerable y reproducible pensado para 
 - 📄 [Guía en PDF](./clase-170-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-170-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 169 — Ofuscación de payloads y bypass de AMSI](../169-ofuscacion-de-payloads-y-bypass-de-amsi/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 171 - Active Directory: Kerberoasting y ataques a Kerberos](../171-active-directory-kerberoasting-y-ataques-a-kerberos/README.md)

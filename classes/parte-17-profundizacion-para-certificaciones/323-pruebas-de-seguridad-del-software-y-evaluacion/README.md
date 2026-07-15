@@ -130,6 +130,10 @@ Por riesgo real: severidad técnica (CVSS/CWE) combinada con exposición (¿es a
 - 📄 [Guía en PDF](./clase-323-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-323-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 322 — Threat intelligence operacional avanzada](../322-threat-intelligence-operacional-avanzada/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 324 - Operaciones de seguridad: hardening y gestión de configuración](../324-operaciones-de-seguridad-hardening-y-gestion-de-configuracion/README.md)

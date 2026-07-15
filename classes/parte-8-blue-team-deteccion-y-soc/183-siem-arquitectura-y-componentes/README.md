@@ -109,6 +109,10 @@ Ingesta con propósito de detección, no por acumular. Cada fuente debe respalda
 - 📄 [Guía en PDF](./clase-183-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-183-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 182 — Logging y fuentes de telemetría](../182-logging-y-fuentes-de-telemetria/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 184 - Splunk para deteccion](../184-splunk-para-deteccion/README.md)

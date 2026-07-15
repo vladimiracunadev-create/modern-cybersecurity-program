@@ -124,6 +124,10 @@ pero asume un residuo y protégete en consecuencia.
 - 📄 [Guía en PDF](./clase-260-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-260-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 259 — Defensa contra la ingeniería social](../259-defensa-contra-la-ingenieria-social/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 261 - Seguridad de Android: arquitectura](../../parte-13-seguridad-movil-iot-e-inalambrica/261-seguridad-de-android-arquitectura/README.md)

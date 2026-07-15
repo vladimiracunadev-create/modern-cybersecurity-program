@@ -122,6 +122,10 @@ engagement.
 - 📄 [Guía en PDF](./clase-254-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-254-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 253 — Geolocalización y análisis de imágenes](../253-geolocalizacion-y-analisis-de-imagenes/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 255 - Automatizacion de OSINT: SpiderFoot y Maltego](../255-automatizacion-de-osint-spiderfoot-y-maltego/README.md)

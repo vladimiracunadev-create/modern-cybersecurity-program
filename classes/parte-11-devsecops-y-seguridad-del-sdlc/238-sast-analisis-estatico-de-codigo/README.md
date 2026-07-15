@@ -151,6 +151,10 @@ Parcialmente. Hay reglas de secretos, pero para eso es mejor una herramienta ded
 - 📄 [Guía en PDF](./clase-238-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-238-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 237 — Modelado de amenazas: STRIDE y DREAD](../237-modelado-de-amenazas-stride-y-dread/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 239 - DAST: analisis dinamico de aplicaciones](../239-dast-analisis-dinamico-de-aplicaciones/README.md)

@@ -120,6 +120,10 @@ IAM controla el acceso por identidad; VPC Service Controls crea un perímetro qu
 - 📄 [Guía en PDF](./clase-225-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-225-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 224 — Seguridad en Azure](../224-seguridad-en-azure/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 226 - Ataques y pentest en entornos cloud](../226-ataques-y-pentest-en-entornos-cloud/README.md)

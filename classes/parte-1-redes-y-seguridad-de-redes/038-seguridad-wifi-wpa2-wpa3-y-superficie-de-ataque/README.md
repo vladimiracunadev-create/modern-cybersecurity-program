@@ -149,6 +149,10 @@ Passphrase larga y aleatoria (o WPA3), PMF activado, WPA-Enterprise en organizac
 - 📄 [Guía en PDF](./clase-038-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-038-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 037 — Proxies, NAT y pivoting de red](../037-proxies-nat-y-pivoting-de-red/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 039 - Ataques de capa 2: ARP spoofing y VLAN hopping](../039-ataques-de-capa-2-arp-spoofing-y-vlan-hopping/README.md)

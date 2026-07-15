@@ -112,6 +112,10 @@ Leer es lo básico; combinado con upload o LFI puede escalar a ejecución de có
 - 📄 [Guía en PDF](./clase-105-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-105-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect](../104-seguridad-de-oauth-2-0-y-openid-connect/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 106 - Deserializacion insegura](../106-deserializacion-insegura/README.md)

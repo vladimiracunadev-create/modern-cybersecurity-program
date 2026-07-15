@@ -116,6 +116,10 @@ Revísalos tras cada incidente y en las lecciones aprendidas; un playbook es un 
 - 📄 [Guía en PDF](./clase-215-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-215-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 214 — Recuperación de datos y file carving](../214-recuperacion-de-datos-y-file-carving/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 216 - Contencion, erradicacion y recuperacion](../216-contencion-erradicacion-y-recuperacion/README.md)

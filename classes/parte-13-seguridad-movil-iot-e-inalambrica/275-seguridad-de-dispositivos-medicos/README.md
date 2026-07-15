@@ -113,6 +113,10 @@ Permite saber qué componentes de terceros usa el dispositivo para reaccionar cu
 - 📄 [Guía en PDF](./clase-275-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-275-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 274 — Seguridad automotriz y bus CAN](../274-seguridad-automotriz-y-bus-can/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 276 - Gobernanza de la seguridad de la informacion](../../parte-14-grc-riesgo-y-cumplimiento/276-gobernanza-de-la-seguridad-de-la-informacion/README.md)

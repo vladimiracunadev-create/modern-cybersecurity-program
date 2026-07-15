@@ -146,6 +146,10 @@ además el propio ejecutable.
 - 📄 [Guía en PDF](./clase-122-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-122-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 121 — Escritura de shellcode](../121-escritura-de-shellcode/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 123 - Bypass de protecciones: ret2libc](../123-bypass-de-protecciones-ret2libc/README.md)

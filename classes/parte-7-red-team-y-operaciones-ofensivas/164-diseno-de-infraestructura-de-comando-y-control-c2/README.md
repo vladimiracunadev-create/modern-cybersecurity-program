@@ -119,6 +119,10 @@ DNS es sigiloso y sobrevive a muchos filtros, pero es lento y ruidoso en volumen
 - 📄 [Guía en PDF](./clase-164-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-164-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 163 — Emulación de adversarios](../163-emulacion-de-adversarios/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 165 - Frameworks C2: Cobalt Strike, Sliver y Mythic](../165-frameworks-c2-cobalt-strike-sliver-y-mythic/README.md)

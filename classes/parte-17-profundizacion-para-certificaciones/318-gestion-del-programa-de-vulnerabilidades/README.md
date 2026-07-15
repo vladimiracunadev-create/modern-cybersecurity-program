@@ -131,6 +131,10 @@ Tendencia de riesgo abierto, MTTR por criticidad, % de remediación dentro de SL
 - 📄 [Guía en PDF](./clase-318-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-318-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 317 — Seguridad física y ambiental](../317-seguridad-fisica-y-ambiental/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 319 - Análisis avanzado de phishing y correo malicioso](../319-analisis-avanzado-de-phishing-y-correo-malicioso/README.md)

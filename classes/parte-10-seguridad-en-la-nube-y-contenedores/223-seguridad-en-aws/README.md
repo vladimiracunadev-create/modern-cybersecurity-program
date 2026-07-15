@@ -119,6 +119,10 @@ Para control de auditoría, rotación y separación de deberes, usa claves gesti
 - 📄 [Guía en PDF](./clase-223-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-223-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 222 — IAM en la nube: identidades, roles y permisos](../222-iam-en-la-nube-identidades-roles-y-permisos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 224 - Seguridad en Azure](../224-seguridad-en-azure/README.md)

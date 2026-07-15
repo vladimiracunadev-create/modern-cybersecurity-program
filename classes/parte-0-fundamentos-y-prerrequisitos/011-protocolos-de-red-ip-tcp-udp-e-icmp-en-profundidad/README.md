@@ -122,6 +122,10 @@ Realiza y documenta un escaneo comparativo contra tu VM víctima: un SYN scan y 
 - 📄 [Guía en PDF](./clase-011-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-011-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 010 — Redes TCP/IP: modelo OSI, encapsulación y capas](../010-redes-tcp-ip-modelo-osi-encapsulacion-y-capas/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 012 - DNS, DHCP y ARP: funcionamiento y riesgos](../012-dns-dhcp-y-arp-funcionamiento-y-riesgos/README.md)

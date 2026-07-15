@@ -184,6 +184,10 @@ Depende del objetivo, pero MTTD (rapidez de detección), tasa de FP (calidad) y 
 - 📄 [Guía en PDF](./clase-327-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-327-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 326 — Análisis de malware para respuesta a incidentes](../326-analisis-de-malware-para-respuesta-a-incidentes/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 328 - Gestión de riesgos cuantitativa y continuidad avanzada](../328-gestion-de-riesgos-cuantitativa-y-continuidad-avanzada/README.md)

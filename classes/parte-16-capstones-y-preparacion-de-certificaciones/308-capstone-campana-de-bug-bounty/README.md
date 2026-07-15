@@ -122,6 +122,10 @@ Mejor recon, vectores menos obvios y rapidez. Aun así, los duplicados son parte
 - 📄 [Guía en PDF](./clase-308-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-308-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 307 — Capstone: respuesta a incidentes DFIR end-to-end](../307-capstone-respuesta-a-incidentes-dfir-end-to-end/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 309 - Construccion de portafolio y home lab permanente](../309-construccion-de-portafolio-y-home-lab-permanente/README.md)

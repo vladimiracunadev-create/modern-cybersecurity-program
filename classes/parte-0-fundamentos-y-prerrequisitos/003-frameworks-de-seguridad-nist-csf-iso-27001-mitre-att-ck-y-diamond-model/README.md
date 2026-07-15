@@ -101,6 +101,10 @@ Produce un documento que integre los cuatro marcos sobre un mismo escenario: (1)
 - 📄 [Guía en PDF](./clase-003-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-003-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 002 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain](../002-el-panorama-de-amenazas-moderno-actores-motivaciones-y-cyber-kill-chain/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 004 - Montaje del laboratorio: virtualizacion, Kali, snapshots y aislamiento de red](../004-montaje-del-laboratorio-virtualizacion-kali-snapshots-y-aislamiento-de-red/README.md)

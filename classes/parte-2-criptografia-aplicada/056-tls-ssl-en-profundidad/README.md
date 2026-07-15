@@ -125,6 +125,10 @@ Handshake más rápido y cifrado, forward secrecy obligatoria, cipher suites red
 - 📄 [Guía en PDF](./clase-056-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-056-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 055 — PKI, certificados X.509 y autoridades de certificación](../055-pki-certificados-x-509-y-autoridades-de-certificacion/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 057 - Almacenamiento seguro de contrasenas: bcrypt, scrypt y Argon2](../057-almacenamiento-seguro-de-contrasenas-bcrypt-scrypt-y-argon2/README.md)

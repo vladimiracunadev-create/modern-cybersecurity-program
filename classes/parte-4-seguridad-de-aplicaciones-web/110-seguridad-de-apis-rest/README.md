@@ -112,6 +112,10 @@ Usa allowlists de campos aceptados (DTOs), nunca vincules el body directamente a
 - 📄 [Guía en PDF](./clase-110-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-110-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 109 — Vulnerabilidades de lógica de negocio](../109-vulnerabilidades-de-logica-de-negocio/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 111 - Seguridad de APIs GraphQL](../111-seguridad-de-apis-graphql/README.md)

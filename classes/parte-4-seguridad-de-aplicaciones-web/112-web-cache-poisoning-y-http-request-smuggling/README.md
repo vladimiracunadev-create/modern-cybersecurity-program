@@ -107,6 +107,10 @@ Que un solo input malicioso, una vez cacheado, se sirve a todos los usuarios que
 - 📄 [Guía en PDF](./clase-112-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-112-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 111 — Seguridad de APIs GraphQL](../111-seguridad-de-apis-graphql/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 113 - Ataques del lado del cliente: CORS, postMessage y prototype pollution](../113-ataques-del-lado-del-cliente-cors-postmessage-y-prototype-pollution/README.md)

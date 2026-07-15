@@ -137,6 +137,10 @@ No. Encuentra desviaciones de esquema y errores, pero la lógica de autorizació
 - 📄 [Guía en PDF](./clase-247-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-247-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 246 — Supply chain security: SBOM y SLSA](../246-supply-chain-security-sbom-y-slsa/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 248 - Cultura DevSecOps y security champions](../248-cultura-devsecops-y-security-champions/README.md)

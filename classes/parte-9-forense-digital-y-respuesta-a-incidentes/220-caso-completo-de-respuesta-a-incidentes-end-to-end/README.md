@@ -121,6 +121,10 @@ Manéjalo solo en VMs aisladas y desechables, con snapshots, sin salida a Intern
 - 📄 [Guía en PDF](./clase-220-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-220-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 219 — Ejercicios de mesa (tabletop)](../219-ejercicios-de-mesa-tabletop/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 221 - Fundamentos de seguridad en la nube y responsabilidad compartida](../../parte-10-seguridad-en-la-nube-y-contenedores/221-fundamentos-de-seguridad-en-la-nube-y-responsabilidad-compartida/README.md)

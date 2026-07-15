@@ -116,6 +116,10 @@ una página falsa.
 - 📄 [Guía en PDF](./clase-259-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-259-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 258 — Campañas de phishing con GoPhish](../258-campanas-de-phishing-con-gophish/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 260 - OPSEC personal y anonimato](../260-opsec-personal-y-anonimato/README.md)

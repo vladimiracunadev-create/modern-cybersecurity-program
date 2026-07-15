@@ -128,6 +128,10 @@ Construye `triage.ps1`, un script de recolección para respuesta a incidentes qu
 - 📄 [Guía en PDF](./clase-009-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-009-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 008 — Windows esencial para seguridad: arquitectura, registro y servicios](../008-windows-esencial-para-seguridad-arquitectura-registro-y-servicios/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 010 - Redes TCP/IP: modelo OSI, encapsulacion y capas](../010-redes-tcp-ip-modelo-osi-encapsulacion-y-capas/README.md)

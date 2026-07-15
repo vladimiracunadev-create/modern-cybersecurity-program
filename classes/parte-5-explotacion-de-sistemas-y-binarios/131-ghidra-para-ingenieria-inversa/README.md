@@ -134,6 +134,10 @@ el Listing.
 - 📄 [Guía en PDF](./clase-131-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-131-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 130 — Ingeniería inversa: introducción](../130-ingenieria-inversa-introduccion/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 132 - IDA Pro y radare2](../132-ida-pro-y-radare2/README.md)

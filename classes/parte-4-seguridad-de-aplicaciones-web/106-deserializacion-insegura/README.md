@@ -112,6 +112,10 @@ No deserialices datos no confiables. Si es inevitable, usa formatos de datos (no
 - 📄 [Guía en PDF](./clase-106-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-106-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 105 — Control de acceso roto: IDOR y path traversal](../105-control-de-acceso-roto-idor-y-path-traversal/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 107 - Server-Side Template Injection (SSTI)](../107-server-side-template-injection-ssti/README.md)

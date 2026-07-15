@@ -111,6 +111,10 @@ Nivel 1 como mínimo para cualquier app; niveles 2–3 para aplicaciones sensibl
 - 📄 [Guía en PDF](./clase-115-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-115-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 114 — Bug bounty: metodología y plataformas](../114-bug-bounty-metodologia-y-plataformas/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 116 - Arquitectura x86/x64 y lenguaje ensamblador](../../parte-5-explotacion-de-sistemas-y-binarios/116-arquitectura-x86-x64-y-lenguaje-ensamblador/README.md)

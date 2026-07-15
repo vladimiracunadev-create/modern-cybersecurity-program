@@ -155,6 +155,10 @@ C++ y compila con ASan en CI.
 - 📄 [Guía en PDF](./clase-127-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-127-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 126 — Explotación de heap: fundamentos](../126-explotacion-de-heap-fundamentos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 128 - Integer overflows y errores aritmeticos](../128-integer-overflows-y-errores-aritmeticos/README.md)

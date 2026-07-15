@@ -124,6 +124,10 @@ Es el catálogo estándar que describe tablas y columnas; permite mapear la base
 - 📄 [Guía en PDF](./clase-091-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-091-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 090 — Mapeo, spidering y descubrimiento de contenido](../090-mapeo-spidering-y-descubrimiento-de-contenido/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 092 - Inyeccion SQL avanzada y ciega (blind)](../092-inyeccion-sql-avanzada-y-ciega-blind/README.md)

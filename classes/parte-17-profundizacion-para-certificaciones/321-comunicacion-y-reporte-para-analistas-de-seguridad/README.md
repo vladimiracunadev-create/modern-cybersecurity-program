@@ -127,6 +127,10 @@ Porque persiguen decisiones distintas: el técnico necesita IOCs para actuar; el
 - 📄 [Guía en PDF](./clase-321-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-321-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 320 — Gobierno, aspectos legales/regulatorios y gestión del programa](../320-gobierno-aspectos-legales-regulatorios-y-gestion-del-programa/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 322 - Threat intelligence operacional avanzada](../322-threat-intelligence-operacional-avanzada/README.md)

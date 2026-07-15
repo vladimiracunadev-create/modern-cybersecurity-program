@@ -114,6 +114,10 @@ El énfasis está en autorización, límites y trazabilidad — justo lo contrar
 - 📄 [Guía en PDF](./clase-335-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-335-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 334 — Reconocimiento y escaneo asistidos por IA](../334-reconocimiento-y-escaneo-asistidos-por-ia/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 336 - OSINT y auditoría web con agentes de IA](../336-osint-y-auditoria-web-con-agentes-de-ia/README.md)

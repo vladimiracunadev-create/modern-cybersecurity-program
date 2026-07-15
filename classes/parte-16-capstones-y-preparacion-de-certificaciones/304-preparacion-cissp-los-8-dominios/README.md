@@ -112,6 +112,10 @@ D1 (Seguridad y gestión de riesgos), en torno al 15%. Domínalo bien.
 - 📄 [Guía en PDF](./clase-304-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-304-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 303 — Capstone: laboratorio completo de pentest](../303-capstone-laboratorio-completo-de-pentest/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 305 - Capstone: operacion Red Team end-to-end](../305-capstone-operacion-red-team-end-to-end/README.md)

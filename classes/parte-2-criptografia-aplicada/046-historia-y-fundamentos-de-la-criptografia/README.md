@@ -123,6 +123,10 @@ Porque los errores sutiles (nonces, padding, timing) rompen esquemas que parecen
 - 📄 [Guía en PDF](./clase-046-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-046-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 045 — NetFlow y análisis de metadatos de tráfico](../../parte-1-redes-y-seguridad-de-redes/045-netflow-y-analisis-de-metadatos-de-trafico/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 047 - Cifrado simetrico: AES y modos de operacion](../047-cifrado-simetrico-aes-y-modos-de-operacion/README.md)

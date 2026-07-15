@@ -141,6 +141,10 @@ En gran medida sí, comparten sintaxis, pero hay opciones específicas de cada m
 - 📄 [Guía en PDF](./clase-035-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-035-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 034 — Firewalls: tipos, iptables y nftables](../034-firewalls-tipos-iptables-y-nftables/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 036 - VPN y tuneles: IPsec, WireGuard y OpenVPN](../036-vpn-y-tuneles-ipsec-wireguard-y-openvpn/README.md)

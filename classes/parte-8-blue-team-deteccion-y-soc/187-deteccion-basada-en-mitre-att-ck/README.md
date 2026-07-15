@@ -107,6 +107,10 @@ Es un mapa, no una garantía. Una técnica en verde puede tener una regla frági
 - 📄 [Guía en PDF](./clase-187-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-187-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 186 — Escritura de reglas de detección con Sigma](../186-escritura-de-reglas-de-deteccion-con-sigma/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 188 - Threat hunting: metodologia](../188-threat-hunting-metodologia/README.md)

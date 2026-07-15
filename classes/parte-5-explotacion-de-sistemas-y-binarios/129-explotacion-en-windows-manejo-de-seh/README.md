@@ -141,6 +141,10 @@ x64dbg + scripts propios hoy.
 - 📄 [Guía en PDF](./clase-129-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-129-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 128 — Integer overflows y errores aritméticos](../128-integer-overflows-y-errores-aritmeticos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 130 - Ingenieria inversa: introduccion](../130-ingenieria-inversa-introduccion/README.md)

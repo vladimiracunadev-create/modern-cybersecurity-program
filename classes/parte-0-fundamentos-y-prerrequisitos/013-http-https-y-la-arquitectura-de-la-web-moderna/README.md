@@ -124,6 +124,10 @@ Usando un proxy de interceptación, captura el flujo completo de autenticación 
 - 📄 [Guía en PDF](./clase-013-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-013-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 012 — DNS, DHCP y ARP: funcionamiento y riesgos](../012-dns-dhcp-y-arp-funcionamiento-y-riesgos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 014 - Direccionamiento IP y subnetting](../014-direccionamiento-ip-y-subnetting/README.md)

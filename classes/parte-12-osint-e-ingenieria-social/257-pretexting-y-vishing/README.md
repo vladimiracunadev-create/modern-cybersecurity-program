@@ -121,6 +121,10 @@ Sí, es de los vectores más efectivos: la voz añade autoridad y urgencia que e
 - 📄 [Guía en PDF](./clase-257-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-257-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 256 — Fundamentos de ingeniería social](../256-fundamentos-de-ingenieria-social/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 258 - Campanas de phishing con GoPhish](../258-campanas-de-phishing-con-gophish/README.md)

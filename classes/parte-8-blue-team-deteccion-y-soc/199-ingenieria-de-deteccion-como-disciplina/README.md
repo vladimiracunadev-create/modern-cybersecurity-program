@@ -110,6 +110,10 @@ Cuando su ratio de falsos positivos es insostenible, la técnica ya no aplica, o
 - 📄 [Guía en PDF](./clase-199-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-199-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 198 — Casos de estudio de detección](../198-casos-de-estudio-de-deteccion/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 200 - Purple team desde el lado defensivo](../200-purple-team-desde-el-lado-defensivo/README.md)

@@ -131,6 +131,10 @@ No sin autorización. Extrae datos reales y puede violar privacidad y ley. Solo 
 - 📄 [Guía en PDF](./clase-093-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-093-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 092 — Inyección SQL avanzada y ciega (blind)](../092-inyeccion-sql-avanzada-y-ciega-blind/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 094 - Inyeccion NoSQL](../094-inyeccion-nosql/README.md)

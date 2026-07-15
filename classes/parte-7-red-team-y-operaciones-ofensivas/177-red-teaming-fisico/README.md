@@ -106,6 +106,10 @@ Solo en cerraduras propias y donde sea legal poseer las herramientas. Varían la
 - 📄 [Guía en PDF](./clase-177-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-177-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 176 — OPSEC ofensiva](../176-opsec-ofensiva/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 178 - Purple teaming](../178-purple-teaming/README.md)

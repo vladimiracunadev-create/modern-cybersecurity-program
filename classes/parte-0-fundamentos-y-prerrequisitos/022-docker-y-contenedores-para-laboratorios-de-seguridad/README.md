@@ -141,6 +141,10 @@ Crea con Docker Compose un laboratorio web vulnerable reproducible (por ejemplo 
 - 📄 [Guía en PDF](./clase-022-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-022-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 021 — Criptografía: conceptos fundamentales e intuición](../021-criptografia-conceptos-fundamentales-e-intuicion/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 023 - Sistemas operativos: procesos, memoria y syscalls](../023-sistemas-operativos-procesos-memoria-y-syscalls/README.md)

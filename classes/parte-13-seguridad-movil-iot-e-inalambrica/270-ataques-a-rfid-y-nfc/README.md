@@ -115,6 +115,10 @@ No de forma útil ni legal: los sistemas de pago usan criptografía fuerte y val
 - 📄 [Guía en PDF](./clase-270-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-270-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 269 — Radio definida por software (SDR)](../269-radio-definida-por-software-sdr/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 271 - Seguridad de Bluetooth y BLE](../271-seguridad-de-bluetooth-y-ble/README.md)

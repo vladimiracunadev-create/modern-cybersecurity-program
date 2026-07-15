@@ -113,6 +113,10 @@ El uso de herramientas que recolectan evidencia automáticamente (configuracione
 - 📄 [Guía en PDF](./clase-285-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-285-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 284 — Gestión de riesgo de terceros y proveedores](../284-gestion-de-riesgo-de-terceros-y-proveedores/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 286 - Concienciacion y cultura de seguridad](../286-concienciacion-y-cultura-de-seguridad/README.md)

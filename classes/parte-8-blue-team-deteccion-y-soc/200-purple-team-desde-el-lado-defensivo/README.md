@@ -114,6 +114,10 @@ Como programa continuo: ciclos regulares (p. ej. mensuales/trimestrales) que rev
 - 📄 [Guía en PDF](./clase-200-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-200-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 199 — Ingeniería de detección como disciplina](../199-ingenieria-de-deteccion-como-disciplina/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 201 - Fundamentos de DFIR y cadena de custodia](../../parte-9-forense-digital-y-respuesta-a-incidentes/201-fundamentos-de-dfir-y-cadena-de-custodia/README.md)

@@ -112,6 +112,10 @@ No. Los blocklists se evaden fácil. Usa allowlists de destinos y bloquea rangos
 - 📄 [Guía en PDF](./clase-099-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-099-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 098 — Cross-Site Request Forgery (CSRF)](../098-cross-site-request-forgery-csrf/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 100 - XML External Entities (XXE)](../100-xml-external-entities-xxe/README.md)

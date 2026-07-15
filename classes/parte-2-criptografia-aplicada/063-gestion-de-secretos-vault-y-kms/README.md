@@ -124,6 +124,10 @@ Según política y sensibilidad; adopta rotación automatizada y rota de inmedia
 - 📄 [Guía en PDF](./clase-063-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-063-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 062 — Criptografía post-cuántica](../062-criptografia-post-cuantica/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 064 - Esteganografia y ocultacion de datos](../064-esteganografia-y-ocultacion-de-datos/README.md)

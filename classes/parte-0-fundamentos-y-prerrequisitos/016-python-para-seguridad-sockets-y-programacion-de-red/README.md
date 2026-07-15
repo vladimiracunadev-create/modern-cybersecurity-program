@@ -130,6 +130,10 @@ Construye `pyscan.py`, un escáner de puertos TCP multihilo que reciba un objeti
 - 📄 [Guía en PDF](./clase-016-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-016-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 015 — Python para seguridad: fundamentos del lenguaje](../015-python-para-seguridad-fundamentos-del-lenguaje/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 017 - Python para seguridad: manipulacion de paquetes con Scapy](../017-python-para-seguridad-manipulacion-de-paquetes-con-scapy/README.md)

@@ -129,6 +129,10 @@ Sí, y deberías. Guarda tu carpeta de reglas en un repositorio, con revisión y
 - 📄 [Guía en PDF](./clase-186-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-186-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 185 — Elastic Stack y Wazuh](../185-elastic-stack-y-wazuh/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 187 - Deteccion basada en MITRE ATT&CK](../187-deteccion-basada-en-mitre-att-ck/README.md)

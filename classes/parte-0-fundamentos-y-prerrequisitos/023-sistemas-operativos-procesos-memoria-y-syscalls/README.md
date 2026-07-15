@@ -125,6 +125,10 @@ Analiza un binario desconocido (inofensivo, de tu laboratorio) usando solo herra
 - 📄 [Guía en PDF](./clase-023-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-023-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 022 — Docker y contenedores para laboratorios de seguridad](../022-docker-y-contenedores-para-laboratorios-de-seguridad/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 024 - Arquitectura de computadores: CPU, registros y memoria](../024-arquitectura-de-computadores-cpu-registros-y-memoria/README.md)

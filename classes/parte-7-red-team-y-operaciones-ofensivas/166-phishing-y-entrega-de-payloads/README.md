@@ -107,6 +107,10 @@ Pretextos neutros, coordinación con la white cell, no explotar emociones sensib
 - 📄 [Guía en PDF](./clase-166-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-166-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic](../165-frameworks-c2-cobalt-strike-sliver-y-mythic/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 167 - Acceso inicial: tecnicas](../167-acceso-inicial-tecnicas/README.md)

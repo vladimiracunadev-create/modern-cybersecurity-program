@@ -106,6 +106,10 @@ El dwell time y el TTD/TTR: indican cuánto tiempo estuvo "dentro" el atacante y
 - 📄 [Guía en PDF](./clase-179-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-179-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 178 — Purple teaming](../178-purple-teaming/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 180 - Adversary emulation con Atomic Red Team y Caldera](../180-adversary-emulation-con-atomic-red-team-y-caldera/README.md)

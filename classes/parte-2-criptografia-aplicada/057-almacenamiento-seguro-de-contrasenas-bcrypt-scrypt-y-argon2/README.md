@@ -125,6 +125,10 @@ No; hashea con una KDF. Cifrar implica poder descifrar, un riesgo innecesario pa
 - 📄 [Guía en PDF](./clase-057-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-057-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 056 — TLS/SSL en profundidad](../056-tls-ssl-en-profundidad/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 058 - Generacion de aleatoriedad segura (CSPRNG)](../058-generacion-de-aleatoriedad-segura-csprng/README.md)

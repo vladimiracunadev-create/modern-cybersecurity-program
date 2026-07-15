@@ -145,6 +145,10 @@ Por TRIM: el controlador borra físicamente bloques liberados, a veces en segund
 - 📄 [Guía en PDF](./clase-203-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-203-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 202 — El ciclo de respuesta a incidentes (NIST y SANS)](../202-el-ciclo-de-respuesta-a-incidentes-nist-y-sans/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 204 - Forense de sistemas de archivos: NTFS y ext4](../204-forense-de-sistemas-de-archivos-ntfs-y-ext4/README.md)

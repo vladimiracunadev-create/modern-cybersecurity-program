@@ -128,6 +128,10 @@ Al menos anualmente y ante cambios significativos (nueva regulación, incidente 
 - 📄 [Guía en PDF](./clase-320-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-320-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 319 — Análisis avanzado de phishing y correo malicioso](../319-analisis-avanzado-de-phishing-y-correo-malicioso/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 321 - Comunicación y reporte para analistas de seguridad](../321-comunicacion-y-reporte-para-analistas-de-seguridad/README.md)

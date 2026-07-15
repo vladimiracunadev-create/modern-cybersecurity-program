@@ -117,6 +117,10 @@ Permite empaquetar muchas operaciones en una petición, eludiendo rate limits di
 - 📄 [Guía en PDF](./clase-111-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-111-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 110 — Seguridad de APIs REST](../110-seguridad-de-apis-rest/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 112 - Web cache poisoning y HTTP request smuggling](../112-web-cache-poisoning-y-http-request-smuggling/README.md)

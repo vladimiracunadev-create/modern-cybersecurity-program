@@ -103,6 +103,10 @@ equivocada puede causar más daño que el incidente.
 - 📄 [Guía en PDF](./clase-337-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-337-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 336 — OSINT y auditoría web con agentes de IA](../336-osint-y-auditoria-web-con-agentes-de-ia/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 338 - Generación de informes y flujos de trabajo con IA](../338-generacion-de-informes-y-flujos-de-trabajo-con-ia/README.md)

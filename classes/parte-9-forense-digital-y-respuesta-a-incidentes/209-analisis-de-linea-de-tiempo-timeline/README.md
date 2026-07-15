@@ -134,6 +134,10 @@ Buscando incoherencias entre fuentes que registran el mismo hecho: FS, `$UsnJrnl
 - 📄 [Guía en PDF](./clase-209-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-209-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 208 — Forense de red](../208-forense-de-red/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 210 - Forense de navegadores y correo](../210-forense-de-navegadores-y-correo/README.md)

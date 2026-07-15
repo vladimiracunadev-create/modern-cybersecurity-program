@@ -147,6 +147,10 @@ reconstruye la semántica.
 - 📄 [Guía en PDF](./clase-130-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-130-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 129 — Explotación en Windows: manejo de SEH](../129-explotacion-en-windows-manejo-de-seh/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 131 - Ghidra para ingenieria inversa](../131-ghidra-para-ingenieria-inversa/README.md)

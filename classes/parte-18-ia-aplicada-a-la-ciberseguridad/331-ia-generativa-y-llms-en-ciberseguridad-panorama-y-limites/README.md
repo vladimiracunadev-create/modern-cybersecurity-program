@@ -115,6 +115,10 @@ Sí, como tutor que explica y genera ejercicios, pero contrasta siempre con el m
 - 📄 [Guía en PDF](./clase-331-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-331-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 330 — Análisis de código y automatización de seguridad](../../parte-17-profundizacion-para-certificaciones/330-analisis-de-codigo-y-automatizacion-de-seguridad/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 332 - Agentes de IA y el Model Context Protocol (MCP) para seguridad](../332-agentes-de-ia-y-el-model-context-protocol-mcp-para-seguridad/README.md)

@@ -117,6 +117,10 @@ Un código que cambia en cada uso para evitar ataques de repetición; distinguir
 - 📄 [Guía en PDF](./clase-269-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-269-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 268 — Análisis de hardware: UART, JTAG y SPI](../268-analisis-de-hardware-uart-jtag-y-spi/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 270 - Ataques a RFID y NFC](../270-ataques-a-rfid-y-nfc/README.md)

@@ -113,6 +113,10 @@ No. Actualizaciones, telemetría y sincronización también "laten". Por eso se 
 - 📄 [Guía en PDF](./clase-193-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-193-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 192 — Detección de movimiento lateral](../192-deteccion-de-movimiento-lateral/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 194 - Deception: honeypots y honeytokens](../194-deception-honeypots-y-honeytokens/README.md)

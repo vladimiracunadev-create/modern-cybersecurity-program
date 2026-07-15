@@ -145,6 +145,10 @@ Con segmentación estricta (clase 042), egress filtering, detección de túneles
 - 📄 [Guía en PDF](./clase-037-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-037-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 036 — VPN y túneles: IPsec, WireGuard y OpenVPN](../036-vpn-y-tuneles-ipsec-wireguard-y-openvpn/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 038 - Seguridad WiFi: WPA2, WPA3 y superficie de ataque](../038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md)

@@ -151,6 +151,10 @@ credenciales, cambio de permisos) y "baja" (desactivación cuando la app se reti
 - 📄 [Guía en PDF](./clase-313-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-313-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 312 — Retención, destrucción segura de datos y DLP](../312-retencion-destruccion-segura-de-datos-y-dlp/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 314 - Federación, SSO, SAML y OpenID Connect](../314-federacion-sso-saml-y-openid-connect/README.md)

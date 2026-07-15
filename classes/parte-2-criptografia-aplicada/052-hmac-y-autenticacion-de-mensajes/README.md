@@ -120,6 +120,10 @@ No; solo autenticidad e integridad. Combínalo con cifrado para confidencialidad
 - 📄 [Guía en PDF](./clase-052-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-052-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 051 — Funciones hash: SHA-2, SHA-3 y sus propiedades](../051-funciones-hash-sha-2-sha-3-y-sus-propiedades/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 053 - Intercambio de claves: Diffie-Hellman](../053-intercambio-de-claves-diffie-hellman/README.md)

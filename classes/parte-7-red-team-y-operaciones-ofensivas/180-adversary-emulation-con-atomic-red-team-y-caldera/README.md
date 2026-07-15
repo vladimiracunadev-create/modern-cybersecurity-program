@@ -119,6 +119,10 @@ No. Automatiza la emulación repetible y la validación de detecciones, pero la 
 - 📄 [Guía en PDF](./clase-180-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-180-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 179 — Reporte y métricas de Red Team](../179-reporte-y-metricas-de-red-team/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 181 - El SOC moderno: roles, niveles y procesos](../../parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md)

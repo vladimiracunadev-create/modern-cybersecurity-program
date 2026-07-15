@@ -111,6 +111,10 @@ Con cuidado y salvaguardas. Aislar un host o bloquear una IP puede impactar prod
 - 📄 [Guía en PDF](./clase-196-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-196-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 195 — Threat intelligence operacional](../195-threat-intelligence-operacional/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 197 - Metricas y madurez del SOC](../197-metricas-y-madurez-del-soc/README.md)

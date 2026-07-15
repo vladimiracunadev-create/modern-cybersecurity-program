@@ -137,6 +137,10 @@ Crea un repositorio de práctica, simula la fuga de un secreto (clave ficticia) 
 - 📄 [Guía en PDF](./clase-018-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-018-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 017 — Python para seguridad: manipulación de paquetes con Scapy](../017-python-para-seguridad-manipulacion-de-paquetes-con-scapy/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 019 - Expresiones regulares para analisis de logs y datos](../019-expresiones-regulares-para-analisis-de-logs-y-datos/README.md)

@@ -112,6 +112,10 @@ No. Sigma es un formato portable de reglas (clase 186) que puedes convertir a EQ
 - 📄 [Guía en PDF](./clase-185-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-185-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 184 — Splunk para detección](../184-splunk-para-deteccion/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 186 - Escritura de reglas de deteccion con Sigma](../186-escritura-de-reglas-de-deteccion-con-sigma/README.md)

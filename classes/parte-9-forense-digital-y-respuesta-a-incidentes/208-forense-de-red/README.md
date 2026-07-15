@@ -135,6 +135,10 @@ No: Zeek resume a escala; Wireshark inspecciona a fondo. Se complementan.
 - 📄 [Guía en PDF](./clase-208-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-208-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 207 — Forense de memoria RAM con Volatility](../207-forense-de-memoria-ram-con-volatility/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 209 - Analisis de linea de tiempo (timeline)](../209-analisis-de-linea-de-tiempo-timeline/README.md)

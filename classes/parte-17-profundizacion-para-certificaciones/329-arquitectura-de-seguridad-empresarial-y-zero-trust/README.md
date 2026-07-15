@@ -132,6 +132,10 @@ Por la identidad y los recursos más críticos. Inventaría sujetos, dispositivo
 - 📄 [Guía en PDF](./clase-329-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-329-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 328 — Gestión de riesgos cuantitativa y continuidad avanzada](../328-gestion-de-riesgos-cuantitativa-y-continuidad-avanzada/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 330 - Análisis de código y automatización de seguridad](../330-analisis-de-codigo-y-automatizacion-de-seguridad/README.md)

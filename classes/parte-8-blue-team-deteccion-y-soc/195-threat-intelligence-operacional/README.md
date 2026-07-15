@@ -109,6 +109,10 @@ El Traffic Light Protocol clasifica cuánto puedes difundir una información (RE
 - 📄 [Guía en PDF](./clase-195-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-195-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 194 — Deception: honeypots y honeytokens](../194-deception-honeypots-y-honeytokens/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 196 - Automatizacion con SOAR](../196-automatizacion-con-soar/README.md)

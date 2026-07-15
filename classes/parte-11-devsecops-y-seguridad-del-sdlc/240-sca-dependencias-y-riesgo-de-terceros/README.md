@@ -150,6 +150,10 @@ Fija versiones con lockfile y hashes, revisa nombres de paquetes nuevos, usa reg
 - 📄 [Guía en PDF](./clase-240-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-240-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 239 — DAST: análisis dinámico de aplicaciones](../239-dast-analisis-dinamico-de-aplicaciones/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 241 - Secretos en el codigo y pre-commit hooks](../241-secretos-en-el-codigo-y-pre-commit-hooks/README.md)

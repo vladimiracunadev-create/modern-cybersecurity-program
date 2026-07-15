@@ -119,6 +119,10 @@ Para muchas pruebas de la interfaz web y servicios sí, pero periféricos y comp
 - 📄 [Guía en PDF](./clase-267-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-267-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 266 — Seguridad de IoT: panorama y superficie de ataque](../266-seguridad-de-iot-panorama-y-superficie-de-ataque/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 268 - Analisis de hardware: UART, JTAG y SPI](../268-analisis-de-hardware-uart-jtag-y-spi/README.md)

@@ -123,6 +123,10 @@ No. Recolecta a escala, pero el juicio, la verificación y la interpretación si
 - 📄 [Guía en PDF](./clase-255-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-255-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 254 — OSINT técnico: Shodan y Censys](../254-osint-tecnico-shodan-y-censys/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 256 - Fundamentos de ingenieria social](../256-fundamentos-de-ingenieria-social/README.md)

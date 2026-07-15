@@ -109,6 +109,10 @@ Empieza por handshakes híbridos (X25519 + ML-KEM) donde tu stack lo soporte y p
 - 📄 [Guía en PDF](./clase-062-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-062-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 061 — Introducción al criptoanálisis](../061-introduccion-al-criptoanalisis/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 063 - Gestion de secretos: Vault y KMS](../063-gestion-de-secretos-vault-y-kms/README.md)

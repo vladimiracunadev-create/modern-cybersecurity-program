@@ -124,6 +124,10 @@ Sí: distorsiona por rangos arbitrarios y "colores". Úsala como triaje, no como
 - 📄 [Guía en PDF](./clase-277-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-277-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 276 — Gobernanza de la seguridad de la información](../276-gobernanza-de-la-seguridad-de-la-informacion/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 278 - ISO/IEC 27001 e implantacion de un SGSI](../278-iso-iec-27001-e-implantacion-de-un-sgsi/README.md)

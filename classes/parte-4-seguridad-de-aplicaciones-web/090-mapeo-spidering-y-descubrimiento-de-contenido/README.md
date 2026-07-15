@@ -122,6 +122,10 @@ Genera muchas peticiones y puede disparar alertas o rate limits. Hazlo solo con 
 - 📄 [Guía en PDF](./clase-090-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-090-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 089 — OWASP ZAP](../089-owasp-zap/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 091 - Inyeccion SQL: fundamentos](../091-inyeccion-sql-fundamentos/README.md)

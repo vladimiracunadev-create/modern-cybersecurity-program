@@ -117,6 +117,10 @@ UART puede no dar shell o exponer solo parte del sistema; leer el flash por SPI 
 - 📄 [Guía en PDF](./clase-268-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-268-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 267 — Hacking de firmware](../267-hacking-de-firmware/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 269 - Radio definida por software (SDR)](../269-radio-definida-por-software-sdr/README.md)

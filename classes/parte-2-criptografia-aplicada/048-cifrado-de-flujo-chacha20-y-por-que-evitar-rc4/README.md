@@ -117,6 +117,10 @@ Legado. Debe deshabilitarse; TLS moderno lo prohíbe.
 - 📄 [Guía en PDF](./clase-048-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-048-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 047 — Cifrado simétrico: AES y modos de operación](../047-cifrado-simetrico-aes-y-modos-de-operacion/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 049 - Cifrado asimetrico: RSA](../049-cifrado-asimetrico-rsa/README.md)

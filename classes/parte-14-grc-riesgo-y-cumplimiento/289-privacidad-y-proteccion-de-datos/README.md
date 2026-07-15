@@ -133,6 +133,10 @@ Sí, si es irreversible de verdad. Pero anonimizar bien es difícil; la seudonim
 - 📄 [Guía en PDF](./clase-289-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-289-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 288 — Seguros cibernéticos](../288-seguros-ciberneticos/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 290 - Certificaciones y desarrollo de carrera](../290-certificaciones-y-desarrollo-de-carrera/README.md)

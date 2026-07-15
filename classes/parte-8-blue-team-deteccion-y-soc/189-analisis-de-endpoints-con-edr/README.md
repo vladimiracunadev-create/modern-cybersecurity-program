@@ -114,6 +114,10 @@ No. Existen técnicas de evasión y tamper. Por eso el blue team combina EDR con
 - 📄 [Guía en PDF](./clase-189-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-189-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 188 — Threat hunting: metodología](../188-threat-hunting-metodologia/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 190 - Analisis de logs de Windows: Event Logs y Sysmon](../190-analisis-de-logs-de-windows-event-logs-y-sysmon/README.md)

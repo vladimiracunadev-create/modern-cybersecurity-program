@@ -108,6 +108,10 @@ Con tendencias de riesgo y dwell time, no con jerga técnica. Muestra cómo la i
 - 📄 [Guía en PDF](./clase-197-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-197-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 196 — Automatización con SOAR](../196-automatizacion-con-soar/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 198 - Casos de estudio de deteccion](../198-casos-de-estudio-de-deteccion/README.md)

@@ -120,6 +120,10 @@ Ambos válidos. El nativo (Secrets Manager, Key Vault, Secret Manager) se integr
 - 📄 [Guía en PDF](./clase-233-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-233-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 232 — Seguridad serverless](../232-seguridad-serverless/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 234 - Logging y deteccion en la nube](../234-logging-y-deteccion-en-la-nube/README.md)

@@ -117,6 +117,10 @@ Es riesgoso: se filtra por Referer, logs e historial. Mejor en cuerpo o cabecera
 - 📄 [Guía en PDF](./clase-098-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-098-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 097 — XSS almacenado y basado en DOM](../097-xss-almacenado-y-basado-en-dom/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 099 - Server-Side Request Forgery (SSRF)](../099-server-side-request-forgery-ssrf/README.md)

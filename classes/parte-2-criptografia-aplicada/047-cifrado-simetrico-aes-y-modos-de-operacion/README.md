@@ -125,6 +125,10 @@ No, pero sí impredecible (CBC) o único (CTR/GCM). Se transmite junto al texto 
 - 📄 [Guía en PDF](./clase-047-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-047-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 046 — Historia y fundamentos de la criptografía](../046-historia-y-fundamentos-de-la-criptografia/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 048 - Cifrado de flujo: ChaCha20 y por que evitar RC4](../048-cifrado-de-flujo-chacha20-y-por-que-evitar-rc4/README.md)

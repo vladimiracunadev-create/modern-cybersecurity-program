@@ -106,6 +106,10 @@ No exactamente: evadir es lograr que no bloquee tu contenido concreto; los memor
 - 📄 [Guía en PDF](./clase-169-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-169-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 168 — Evasión de defensas: antivirus y EDR](../168-evasion-de-defensas-antivirus-y-edr/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 170 - Active Directory: enumeracion](../170-active-directory-enumeracion/README.md)

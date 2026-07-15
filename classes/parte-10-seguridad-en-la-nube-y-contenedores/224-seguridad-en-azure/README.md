@@ -120,6 +120,10 @@ Managed identity siempre que sea posible: Azure gestiona y rota las credenciales
 - 📄 [Guía en PDF](./clase-224-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-224-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 223 — Seguridad en AWS](../223-seguridad-en-aws/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 225 - Seguridad en Google Cloud Platform](../225-seguridad-en-google-cloud-platform/README.md)

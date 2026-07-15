@@ -107,6 +107,10 @@ Puede provocar denegación de servicio. Mejor combinar rate limiting, MFA y dete
 - 📄 [Guía en PDF](./clase-101-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-101-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 100 — XML External Entities (XXE)](../100-xml-external-entities-xxe/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 102 - Gestion de sesiones y ataques asociados](../102-gestion-de-sesiones-y-ataques-asociados/README.md)

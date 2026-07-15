@@ -114,6 +114,10 @@ En el Android Keystore respaldado por hardware, nunca en `SharedPreferences` ni 
 - 📄 [Guía en PDF](./clase-261-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-261-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 260 — OPSEC personal y anonimato](../../parte-12-osint-e-ingenieria-social/260-opsec-personal-y-anonimato/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 262 - Pentest de aplicaciones Android](../262-pentest-de-aplicaciones-android/README.md)

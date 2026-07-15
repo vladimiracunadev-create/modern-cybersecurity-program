@@ -113,6 +113,10 @@ Sí: análisis estático del IPA, revisión de Info.plist y entitlements, y prue
 - 📄 [Guía en PDF](./clase-263-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-263-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 262 — Pentest de aplicaciones Android](../262-pentest-de-aplicaciones-android/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 264 - Pentest de aplicaciones iOS](../264-pentest-de-aplicaciones-ios/README.md)

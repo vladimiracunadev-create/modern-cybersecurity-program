@@ -149,6 +149,10 @@ Parcialmente. Herramientas como pytm generan amenazas candidatas a partir del mo
 - 📄 [Guía en PDF](./clase-237-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-237-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 236 — Secure SDLC y filosofía shift-left](../236-secure-sdlc-y-filosofia-shift-left/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 238 - SAST: analisis estatico de codigo](../238-sast-analisis-estatico-de-codigo/README.md)

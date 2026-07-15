@@ -126,6 +126,10 @@ Es una base excelente de configuración CIS, pero no cubre RBAC excesivo, imáge
 - 📄 [Guía en PDF](./clase-229-guia.pdf) — versión imprimible de esta clase.
 - 🎞️ [Presentación (PPTX)](./clase-229-presentacion.pptx) — deck para proyectar en clase.
 
+## ⬅️ Clase anterior
+
+[Clase 228 — Seguridad de Kubernetes: arquitectura](../228-seguridad-de-kubernetes-arquitectura/README.md)
+
 ## ➡️ Siguiente clase
 
 [Clase 230 - Seguridad de Infrastructure as Code (Terraform)](../230-seguridad-de-infrastructure-as-code-terraform/README.md)
