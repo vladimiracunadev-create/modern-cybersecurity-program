@@ -231,6 +231,7 @@ def escribir_landing(partes) -> None:
         ("📝", "Autoevaluación", f"{n_preg} preguntas interactivas con puntuación, una batería por parte.", "autoevaluaciones/quiz.html"),
         ("✅", "Tu progreso", f"Marca las {total} clases y sigue tu avance (se guarda en tu navegador).", "autoevaluaciones/progreso.html"),
         ("🎓", "Certificaciones", "Mapeo a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con % de cobertura por dominio.", "certificaciones/README.html"),
+        ("📕", "Manual en PDF", f"Las {total} clases en un único PDF (~940 páginas) para leer de corrido o estudiar sin conexión.", "manual/MANUAL.pdf"),
     ]
     feats_html = "".join(
         f'<a class="feat" href="{u}"><div class="ic">{i}</div><h3>{t}</h3><p>{d}</p></a>'
@@ -267,7 +268,8 @@ def escribir_landing(partes) -> None:
   Programa de Ciberseguridad Moderna · {total} clases · licencia
   <a href="https://github.com/vladimiracunadev-create/modern-cybersecurity-program">MIT en GitHub</a><br>
   <a href="classes/README.html">Índice de clases</a> · <a href="rutas/README.html">Rutas</a> ·
-  <a href="autoevaluaciones/quiz.html">Autoevaluación</a> · <a href="autoevaluaciones/progreso.html">Progreso</a>
+  <a href="autoevaluaciones/quiz.html">Autoevaluación</a> · <a href="autoevaluaciones/progreso.html">Progreso</a> ·
+  <a href="manual/MANUAL.pdf">Manual en PDF</a>
 </div></footer>
 """
     doc = (f"<!doctype html><html lang='es'><head><meta charset='utf-8'>"
@@ -320,6 +322,15 @@ def main() -> int:
         if os.path.isfile(origen):
             shutil.copyfile(origen, os.path.join(destino_auto, nombre))
             generados += 1
+
+    # Manual completo en PDF: se copia al sitio para que sea descargable desde
+    # GitHub Pages (el README enlaza a manual/MANUAL.pdf de forma relativa).
+    manual_pdf = os.path.join(ROOT, "manual", "MANUAL.pdf")
+    if os.path.isfile(manual_pdf):
+        destino_manual = os.path.join(OUT, "manual")
+        os.makedirs(destino_manual, exist_ok=True)
+        shutil.copyfile(manual_pdf, os.path.join(destino_manual, "MANUAL.pdf"))
+        generados += 1
 
     # .nojekyll para que Pages no ignore archivos con nombres especiales.
     open(os.path.join(OUT, ".nojekyll"), "w").close()
