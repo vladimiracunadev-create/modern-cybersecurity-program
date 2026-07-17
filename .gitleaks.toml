@@ -18,7 +18,7 @@ paths = [
   '''^classes/.*\.(pdf|pptx)$''',
   '''^labs/.*''',
   '''^ctf/.*''',
-  # El manual consolida el mismo texto didactico de las clases (tokens de
+  # El manual (PDF) consolida el mismo texto didactico de las clases (tokens de
   # ejemplo incluidos); se genera con scripts/generar_manual.py.
-  '''^manual/MANUAL\.(md|pdf)$''',
+  '''^manual/MANUAL\.pdf$''',
 ]

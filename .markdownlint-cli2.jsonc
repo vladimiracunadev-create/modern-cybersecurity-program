@@ -17,8 +17,5 @@
     "MD060": false         // estilo de columnas de tabla (subjetivo)
   },
   "globs": ["**/*.md"],
-  // manual/MANUAL.md es un artefacto generado (scripts/generar_manual.py) que
-  // consolida las 340 clases; lintar el consolidado es redundante con lintar
-  // cada clase fuente en classes/.
-  "ignores": ["node_modules", ".git", "manual"]
+  "ignores": ["node_modules", ".git"]
 }

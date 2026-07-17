@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Genera el MANUAL del curso: consolida las 340 clases en un unico documento
-ordenado, en dos formatos:
+Genera el MANUAL del curso en PDF: consolida las 340 clases en un unico
+documento ordenado.
 
-  - manual/MANUAL.md   legible y descargable desde GitHub
   - manual/MANUAL.pdf  render imprimible (via Microsoft Edge/Chrome headless)
+
+El Markdown consolidado se construye en memoria como paso intermedio (se
+convierte a HTML y de ahi a PDF); no se deja ningun .md en el repositorio.
 
 El manual respeta el orden global 001->340 agrupado en las 19 partes, con
 portada, aviso etico e indice enlazado a cada clase.
@@ -20,8 +22,8 @@ lineal (y no como pagina suelta):
     que no queden rotos fuera de su carpeta.
 
 Uso:
-    python scripts/generar_manual.py            # MD + PDF
-    python scripts/generar_manual.py --solo-md  # solo el Markdown (sin Edge)
+    python scripts/generar_manual.py                 # genera manual/MANUAL.pdf
+    python scripts/generar_manual.py --volcar-md R   # ademas escribe el MD en R (debug)
 """
 from __future__ import annotations
 
@@ -281,29 +283,29 @@ def generar_pdf(nav: str, html_path: str, pdf_path: str) -> None:
 
 
 def main() -> int:
-    solo_md = "--solo-md" in sys.argv
     clases = clases_ordenadas()
     if not clases:
         print("ERROR: no se encontraron clases")
         return 1
 
-    os.makedirs(OUT_DIR, exist_ok=True)
+    # El Markdown consolidado es solo un intermedio (MD -> HTML -> PDF): se
+    # mantiene en memoria y no se escribe ningun .md en el repositorio.
     md_text = construir_md(clases)
-    md_path = os.path.join(OUT_DIR, "MANUAL.md")
-    with open(md_path, "w", encoding="utf-8", newline="\n") as f:
-        f.write(md_text)
     kb = len(md_text.encode("utf-8")) / 1024
-    print(f"MANUAL.md generado: {len(clases)} clases, {kb:.0f} KB.")
+    print(f"Manual consolidado: {len(clases)} clases, {kb:.0f} KB de Markdown (intermedio).")
 
-    if solo_md:
-        print("(--solo-md: se omite el PDF)")
-        return 0
+    if "--volcar-md" in sys.argv:  # solo para depurar el contenido
+        destino = sys.argv[sys.argv.index("--volcar-md") + 1]
+        with open(destino, "w", encoding="utf-8", newline="\n") as f:
+            f.write(md_text)
+        print(f"Markdown volcado en: {destino}")
 
     nav = encontrar_navegador()
     if not nav:
-        print("AVISO: no se encontró Edge/Chrome; se omite el PDF (MANUAL.md sí quedó).")
-        return 0
+        print("ERROR: no se encontró Edge/Chrome; no se puede generar el PDF.")
+        return 1
 
+    os.makedirs(OUT_DIR, exist_ok=True)
     html = md_a_html(md_text)
     pdf_path = os.path.join(OUT_DIR, "MANUAL.pdf")
     with tempfile.NamedTemporaryFile(
