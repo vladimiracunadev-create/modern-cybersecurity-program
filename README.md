@@ -15,7 +15,7 @@
 [![Idioma](https://img.shields.io/badge/idioma-español-blue?style=for-the-badge)](README.md)
 [![License](https://img.shields.io/badge/license-MIT-3fb950?style=for-the-badge)](LICENSE)
 
-[📚 Índice completo de clases](classes/README.md) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Política de seguridad](SECURITY.md)
+[📚 Índice completo de clases](classes/README.md) · [📕 Manual completo](manual/MANUAL.md) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Política de seguridad](SECURITY.md)
 
 </div>
 
@@ -80,6 +80,15 @@ Cada parte sigue explícitamente la secuencia y los énfasis de la literatura de
 | 18 | IA aplicada a la ciberseguridad (agentes, MCP, kali-mcp) | 10 |
 
 ➡️ **[Ver el índice plano de las 340 clases](classes/README.md)**
+
+## 📕 Manual completo (todo el curso en un documento)
+
+¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **340 clases** en orden, con portada, aviso ético e índice enlazado.
+
+- 📖 **[Leer el manual en Markdown](manual/MANUAL.md)** — navegable en GitHub, con índice a cada clase.
+- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — ~940 páginas listas para imprimir o leer offline.
+
+> Se genera con `python scripts/generar_manual.py` a partir de las clases, así que siempre refleja el contenido actual del repositorio.
 
 ## 🧪 Laboratorios ejecutables
 
