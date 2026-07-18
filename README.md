@@ -109,7 +109,7 @@ comando, más una colección de retos tipo CTF:
 
 ## 🧭 Portal: rutas, autoevaluación y progreso
 
-- 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, DFIR, **gestión de vulnerabilidades**, AppSec, cloud y GRC.
+- 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, DFIR, **gestión de vulnerabilidades**, AppSec, cloud, GRC y **cooperación/alianzas técnicas**.
 - 📝 **[Autoevaluaciones](autoevaluaciones/README.md)** — 97 preguntas (una batería por parte). Versión interactiva con puntuación: [quiz](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/quiz.html).
 - ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/progreso.html)** — marca las 340 clases (se guarda en tu navegador).
 - 🔑 **[Soluciones a los retos](soluciones/README.md)** — claves de referencia de los ejercicios y retos (Parte 2 completa; resto por lotes).
@@ -139,6 +139,7 @@ comando, más una colección de retos tipo CTF:
 - **DFIR / Forense** → Partes 0, 1, 6, 9.
 - **Cloud Security** → Partes 0, 2, 10, 11.
 - **GRC / Gestión** → Partes 0, 14 (+ 8, 9 para contexto técnico).
+- **Cooperación y Alianzas Técnicas** → Partes 0, 14 (+ 1, 8 para base técnica) · gobernanza, protección de datos y riesgo de terceros; alineado a **CISSP** e **ISO 27001**.
 
 ## 📄 Licencia
 
