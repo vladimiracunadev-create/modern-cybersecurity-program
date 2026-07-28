@@ -137,16 +137,27 @@ jobs:
         run: |
           set -e
           APK="$OUT_DIR/CiberseguridadModerna-${TAG_NAME}.apk"
-          # El bundle JS de release debe existir y contener las clases embebidas.
           unzip -o "$APK" "assets/index.android.bundle" -d "$RUNNER_TEMP/apk_check" >/dev/null
           BUNDLE="$RUNNER_TEMP/apk_check/assets/index.android.bundle"
           SIZE=$(wc -c < "$BUNDLE")
           echo "Tamaño del bundle embebido: $SIZE bytes"
-          # Contar ocurrencias reales (grep -c cuenta líneas; el bundle minificado es 1 línea).
-          HITS=$(grep -ao 'siteUrl' "$BUNDLE" | wc -l)
-          echo "Referencias a clases (siteUrl) en el bundle: $HITS"
-          test "$SIZE" -gt 500000
+          # El bundle de release es bytecode Hermes: las CLAVES de objeto se
+          # deduplican (por eso "siteUrl" saldría 1 vez), pero cada VALOR de URL
+          # de clase es único y queda como string distinto en la tabla de strings.
+          # Contamos las rutas de clase embebidas (una por clase en siteUrl/githubUrl).
+          HITS=$(grep -ao 'classes/parte-' "$BUNDLE" | wc -l)
+          echo "Rutas de clase embebidas en el bundle: $HITS"
+          # Marcadores distintos que deben estar si el catálogo viajó completo.
+          for marker in "parte-0-fundamentos" "parte-8-blue-team" "parte-18-ia-aplicada" "el-soc-moderno"; do
+            if grep -aoq "$marker" "$BUNDLE"; then
+              echo "  OK  $marker"
+            else
+              echo "  FALTA  $marker"; exit 1
+            fi
+          done
+          test "$SIZE" -gt 1000000
           test "$HITS" -ge 300
+          echo "VERIFICADO: el temario (340 clases) viaja embebido en el APK."
 
       - name: Generar SHA256SUMS
         working-directory: ${{ steps.sign.outputs.outdir }}
