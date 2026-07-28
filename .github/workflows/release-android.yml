@@ -1,0 +1,175 @@
+name: Release Android
+
+# Compila, firma y publica el APK de la app móvil como asset de la GitHub Release.
+# Se dispara al empujar una etiqueta v* (por ejemplo v1.0.0) o manualmente.
+# El APK se construye EN LA NUBE: no se compila en local ni se commitea ningún binario.
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Etiqueta de la release (ej. v1.0.0)"
+        required: true
+        default: "v1.0.0"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-android-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  TAG_NAME: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+
+jobs:
+  android:
+    name: APK Android
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Un APK no puede salir con el temario desincronizado de las clases.
+      - name: Verificar que el catálogo embebido está al día
+        run: python scripts/generar_curriculum_movil.py --check
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+
+      - name: JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: SDK de Android
+        uses: android-actions/setup-android@v3
+
+      - name: Instalar dependencias de la app
+        working-directory: mobile
+        run: npm ci
+
+      - name: Sanidad del bundle (export web)
+        working-directory: mobile
+        run: npx expo export --platform web --output-dir dist-web
+
+      - name: Generar proyecto Android nativo (prebuild)
+        working-directory: mobile
+        env:
+          EXPO_NO_TELEMETRY: "1"
+        run: npx expo prebuild --platform android --no-install
+
+      - name: Compilar APK de release (JS embebido)
+        working-directory: mobile/android
+        run: ./gradlew assembleRelease --no-daemon
+
+      - name: Preparar keystore de firma
+        id: keystore
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          ANDROID_STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
+        run: |
+          set -e
+          KS_DIR="$RUNNER_TEMP/keystore"
+          mkdir -p "$KS_DIR"
+          KS_PATH="$KS_DIR/release.jks"
+          if [ -n "$ANDROID_KEYSTORE_BASE64" ]; then
+            echo "Usando keystore persistente de los secrets del repositorio."
+            echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > "$KS_PATH"
+            echo "alias=$ANDROID_KEY_ALIAS" >> "$GITHUB_OUTPUT"
+            echo "storepass=$ANDROID_STORE_PASSWORD" >> "$GITHUB_OUTPUT"
+            echo "keypass=$ANDROID_KEY_PASSWORD" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::No hay keystore en secrets. Se genera uno efímero para esta build."
+            echo "::warning::Para ACTUALIZAR la app sobre una instalación previa, define el secret ANDROID_KEYSTORE_BASE64 (ver docs/APP_MOVIL.md)."
+            keytool -genkeypair -v -keystore "$KS_PATH" \
+              -alias cyber -keyalg RSA -keysize 2048 -validity 10000 \
+              -storepass ciberseguridad -keypass ciberseguridad \
+              -dname "CN=Ciberseguridad Moderna, OU=Educacion, O=Vladimir Acuna, C=CR"
+            echo "alias=cyber" >> "$GITHUB_OUTPUT"
+            echo "storepass=ciberseguridad" >> "$GITHUB_OUTPUT"
+            echo "keypass=ciberseguridad" >> "$GITHUB_OUTPUT"
+          fi
+          echo "path=$KS_PATH" >> "$GITHUB_OUTPUT"
+
+      - name: Alinear y firmar el APK
+        id: sign
+        env:
+          KS_PATH: ${{ steps.keystore.outputs.path }}
+          KS_ALIAS: ${{ steps.keystore.outputs.alias }}
+          KS_STOREPASS: ${{ steps.keystore.outputs.storepass }}
+          KS_KEYPASS: ${{ steps.keystore.outputs.keypass }}
+        run: |
+          set -e
+          BUILD_TOOLS="$(ls -d "$ANDROID_SDK_ROOT"/build-tools/* | sort -V | tail -n1)"
+          echo "build-tools: $BUILD_TOOLS"
+          OUT_DIR="$GITHUB_WORKSPACE/release-artifacts"
+          mkdir -p "$OUT_DIR"
+          APK_SRC="$(find mobile/android -path '*apk/release*' -name '*.apk' | head -n1)"
+          echo "APK compilado: $APK_SRC"
+          test -n "$APK_SRC"
+          "$BUILD_TOOLS/zipalign" -f -p 4 "$APK_SRC" "$RUNNER_TEMP/aligned.apk"
+          "$BUILD_TOOLS/apksigner" sign \
+            --ks "$KS_PATH" --ks-key-alias "$KS_ALIAS" \
+            --ks-pass pass:"$KS_STOREPASS" --key-pass pass:"$KS_KEYPASS" \
+            --out "$OUT_DIR/CiberseguridadModerna-${TAG_NAME}.apk" "$RUNNER_TEMP/aligned.apk"
+          "$BUILD_TOOLS/apksigner" verify --verbose "$OUT_DIR/CiberseguridadModerna-${TAG_NAME}.apk"
+          echo "outdir=$OUT_DIR" >> "$GITHUB_OUTPUT"
+
+      - name: Comprobar que el temario viaja embebido en el APK
+        env:
+          OUT_DIR: ${{ steps.sign.outputs.outdir }}
+        run: |
+          set -e
+          APK="$OUT_DIR/CiberseguridadModerna-${TAG_NAME}.apk"
+          # El bundle JS de release debe existir y contener las clases embebidas.
+          unzip -o "$APK" "assets/index.android.bundle" -d "$RUNNER_TEMP/apk_check" >/dev/null
+          BUNDLE="$RUNNER_TEMP/apk_check/assets/index.android.bundle"
+          SIZE=$(wc -c < "$BUNDLE")
+          echo "Tamaño del bundle embebido: $SIZE bytes"
+          # Contar ocurrencias reales (grep -c cuenta líneas; el bundle minificado es 1 línea).
+          HITS=$(grep -ao 'siteUrl' "$BUNDLE" | wc -l)
+          echo "Referencias a clases (siteUrl) en el bundle: $HITS"
+          test "$SIZE" -gt 500000
+          test "$HITS" -ge 300
+
+      - name: Generar SHA256SUMS
+        working-directory: ${{ steps.sign.outputs.outdir }}
+        run: |
+          sha256sum CiberseguridadModerna-${TAG_NAME}.apk > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Publicar en la GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+          name: "Ciberseguridad Moderna ${{ env.TAG_NAME }}"
+          body: |
+            Primer release de la app móvil **Ciberseguridad Moderna** (Android).
+
+            - 340 clases en 19 partes embebidas — se leen **sin conexión**.
+            - APK compilado y firmado en GitHub Actions; el temario embebido se
+              verifica dentro del APK antes de publicar.
+            - Verifica la integridad con `SHA256SUMS.txt`.
+
+            > APK de sideload (fuera de Play Store). En Android, permite instalar desde
+            > "orígenes desconocidos" para el instalador que uses.
+          files: |
+            release-artifacts/CiberseguridadModerna-${{ env.TAG_NAME }}.apk
+            release-artifacts/SHA256SUMS.txt
+          fail_on_unmatched_files: true

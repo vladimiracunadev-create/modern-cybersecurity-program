@@ -40,3 +40,15 @@ classes/_manifest.json
 
 # Sitio generado para GitHub Pages (build artifact)
 site/
+
+# App móvil (Expo/React Native)
+mobile/node_modules/
+mobile/.expo/
+mobile/dist/
+mobile/web-build/
+mobile/android/
+mobile/ios/
+# Artefactos de release del APK (se publican como assets, nunca en el repo)
+mobile/*.apk
+mobile/*.aab
+release-artifacts/

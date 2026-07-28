@@ -17,5 +17,5 @@
     "MD060": false         // estilo de columnas de tabla (subjetivo)
   },
   "globs": ["**/*.md"],
-  "ignores": ["node_modules", ".git"]
+  "ignores": ["node_modules", "**/node_modules", ".git", "mobile/dist", "mobile/dist-web", "site"]
 }
