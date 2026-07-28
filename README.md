@@ -15,6 +15,13 @@
 [![Idioma](https://img.shields.io/badge/idioma-español-blue?style=for-the-badge)](README.md)
 [![License](https://img.shields.io/badge/license-MIT-3fb950?style=for-the-badge)](LICENSE)
 
+[![Python](https://img.shields.io/badge/Python-scripts%20%26%20labs-3776AB?style=flat-square&logo=python&logoColor=white)](scripts/)
+[![Docker](https://img.shields.io/badge/Docker-labs%20listos-2496ED?style=flat-square&logo=docker&logoColor=white)](labs/README.md)
+[![Kali](https://img.shields.io/badge/Kali%20Linux-toolkit-557C94?style=flat-square&logo=kalilinux&logoColor=white)](classes/parte-0-fundamentos-y-prerrequisitos/004-montaje-del-laboratorio-virtualizacion-kali-snapshots-y-aislamiento-de-red/README.md)
+[![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-red?style=flat-square)](classes/parte-8-blue-team-deteccion-y-soc/187-deteccion-basada-en-mitre-att-ck/README.md)
+[![Markdown](https://img.shields.io/badge/Markdown-contenido-000000?style=flat-square&logo=markdown&logoColor=white)](classes/README.md)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-sitio%20vivo-222?style=flat-square&logo=githubpages&logoColor=white)](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/)
+
 [📚 Índice completo de clases](classes/README.md) · [📕 Manual completo (PDF)](manual/MANUAL.pdf) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Política de seguridad](SECURITY.md)
 
 </div>
@@ -57,27 +64,29 @@ Cada parte sigue explícitamente la secuencia y los énfasis de la literatura de
 
 ## 🗂️ Las 19 partes
 
-| # | Parte | Clases |
-|---|---|---:|
-| 0 | Fundamentos y prerrequisitos | 25 |
-| 1 | Redes y seguridad de redes | 20 |
-| 2 | Criptografía aplicada | 20 |
-| 3 | Hacking ético y pentesting: metodología | 20 |
-| 4 | Seguridad de aplicaciones web | 30 |
-| 5 | Explotación de sistemas y binarios | 25 |
-| 6 | Análisis de malware | 20 |
-| 7 | Red Team y operaciones ofensivas | 20 |
-| 8 | Blue Team, detección y SOC | 20 |
-| 9 | Forense digital y respuesta a incidentes | 20 |
-| 10 | Seguridad en la nube y contenedores | 15 |
-| 11 | DevSecOps y seguridad del SDLC | 13 |
-| 12 | OSINT e ingeniería social | 12 |
-| 13 | Seguridad móvil, IoT e inalámbrica | 15 |
-| 14 | GRC, riesgo y cumplimiento | 15 |
-| 15 | Seguridad de IA y machine learning | 10 |
-| 16 | Capstones y preparación de certificaciones | 10 |
-| 17 | Profundización para certificaciones (gestión, IAM, arquitectura) | 20 |
-| 18 | IA aplicada a la ciberseguridad (agentes, MCP, kali-mcp) | 10 |
+Cada parte tiene su **propio README** con narrativa completa: de qué trata, resultados de aprendizaje, estructura temática y enlaces a las clases.
+
+| # | Parte | Clases | Foco | README |
+|---|---|---:|---|---|
+| 0️⃣ | Fundamentos y prerrequisitos | 25 (001–025) | Redes, SO, Linux, Windows, cripto base, Python ofensivo y laboratorio | [📘 leer](classes/parte-0-fundamentos-y-prerrequisitos/README.md) |
+| 1️⃣ | Redes y seguridad de redes | 20 (026–045) | Análisis de tráfico, escaneo, firewalls, IDS/IPS, VPN y monitoreo | [📘 leer](classes/parte-1-redes-y-seguridad-de-redes/README.md) |
+| 2️⃣ | Criptografía aplicada | 20 (046–065) | Simétrica, asimétrica, hashing, PKI, TLS y criptoanálisis | [📘 leer](classes/parte-2-criptografia-aplicada/README.md) |
+| 3️⃣ | Hacking ético y pentesting: metodología | 20 (066–085) | PTES, recon, enumeración, explotación, post-explotación y reporte | [📘 leer](classes/parte-3-hacking-etico-y-pentesting-metodologia/README.md) |
+| 4️⃣ | Seguridad de aplicaciones web | 30 (086–115) | OWASP Top 10, Burp Suite, inyecciones, XSS, SSRF, APIs y bug bounty | [📘 leer](classes/parte-4-seguridad-de-aplicaciones-web/README.md) |
+| 5️⃣ | Explotación de sistemas y binarios | 25 (116–140) | Assembly, buffer overflows, ROP, heap, fuzzing e ingeniería inversa | [📘 leer](classes/parte-5-explotacion-de-sistemas-y-binarios/README.md) |
+| 6️⃣ | Análisis de malware | 20 (141–160) | Estático, dinámico, PE, unpacking, YARA y reporte | [📘 leer](classes/parte-6-analisis-de-malware/README.md) |
+| 7️⃣ | Red Team y operaciones ofensivas | 20 (161–180) | Adversary emulation, C2, evasión de EDR y Active Directory | [📘 leer](classes/parte-7-red-team-y-operaciones-ofensivas/README.md) |
+| 8️⃣ | Blue Team, detección y SOC | 20 (181–200) | SIEM, ingeniería de detección, threat hunting y SOAR | [📘 leer](classes/parte-8-blue-team-deteccion-y-soc/README.md) |
+| 9️⃣ | Forense digital y respuesta a incidentes | 20 (201–220) | DFIR, adquisición, memoria, timelines y playbooks | [📘 leer](classes/parte-9-forense-digital-y-respuesta-a-incidentes/README.md) |
+| 🔟 | Seguridad en la nube y contenedores | 15 (221–235) | AWS, Azure, GCP, IAM, Docker, Kubernetes e IaC | [📘 leer](classes/parte-10-seguridad-en-la-nube-y-contenedores/README.md) |
+| 11 | DevSecOps y seguridad del SDLC | 13 (236–248) | Shift-left, threat modeling, SAST/DAST/SCA y supply chain | [📘 leer](classes/parte-11-devsecops-y-seguridad-del-sdlc/README.md) |
+| 12 | OSINT e ingeniería social | 12 (249–260) | Inteligencia de fuentes abiertas, phishing y OPSEC personal | [📘 leer](classes/parte-12-osint-e-ingenieria-social/README.md) |
+| 13 | Seguridad móvil, IoT e inalámbrica | 15 (261–275) | Android, iOS, firmware, hardware, SDR e ICS/SCADA | [📘 leer](classes/parte-13-seguridad-movil-iot-e-inalambrica/README.md) |
+| 14 | GRC, riesgo y cumplimiento | 15 (276–290) | Gobernanza, ISO 27001, NIST, PCI-DSS, auditoría y carrera | [📘 leer](classes/parte-14-grc-riesgo-y-cumplimiento/README.md) |
+| 15 | Seguridad de IA y machine learning | 10 (291–300) | Ataques adversariales, OWASP LLM, prompt injection y defensa con IA | [📘 leer](classes/parte-15-seguridad-de-ia-y-machine-learning/README.md) |
+| 16 | Capstones y preparación de certificaciones | 10 (301–310) | Roadmap OSCP/CISSP, proyectos integradores y aprendizaje continuo | [📘 leer](classes/parte-16-capstones-y-preparacion-de-certificaciones/README.md) |
+| 17 | Profundización para certificaciones | 20 (311–330) | Gestión de datos, IAM empresarial, arquitectura, seguridad física, gestión de vulnerabilidades y gobierno | [📘 leer](classes/parte-17-profundizacion-para-certificaciones/README.md) |
+| 18 | IA aplicada a la ciberseguridad | 10 (331–340) | LLMs y agentes: MCP, kali-mcp, pentesting asistido, defensa e informes | [📘 leer](classes/parte-18-ia-aplicada-a-la-ciberseguridad/README.md) |
 
 ➡️ **[Ver el índice plano de las 340 clases](classes/README.md)**
 
@@ -144,6 +153,58 @@ Cada rol tiene una **guía de carrera completa** (qué es, día a día, qué nec
 - **[Analista de Ciberseguridad (institución regulada)](rutas/analista-ciberseguridad.md)** → Partes 0, 8, 9, 14 (+ 3, 17) · perfil híbrido Blue/DFIR/GRC: SIEM, eventos, vulnerabilidades, incidentes y marcos NIST/ISO 27001/27035/22301; alineado a **CySA+**.
 - **[Cooperación y Alianzas Técnicas](rutas/cooperacion-alianzas.md)** → Partes 0, 14 (+ 1, 8 para base técnica) · gobernanza, protección de datos y riesgo de terceros; alineado a **CISSP** e **ISO 27001**.
 
+## ✅ Calidad y CI
+
+El repositorio no se publica a ciegas: cada `push` y cada PR pasan por integración continua que valida estructura, enlaces, codificación y build del sitio. Nada llega a `main` en rojo.
+
+| ⚙️ Workflow | Qué cubre |
+|---|---|
+| 🧪 [ci.yml](.github/workflows/ci.yml) | estructura y enlaces internos, navegación bidireccional (anterior/siguiente), codificación UTF-8 sin mojibake, `markdownlint` y build del sitio |
+| 🔒 [security.yml](.github/workflows/security.yml) | escaneo de secretos (`gitleaks`) y análisis estático (`bandit`) de los scripts |
+| 🚀 [deploy-pages.yml](.github/workflows/deploy-pages.yml) | genera y despliega el sitio del curso a GitHub Pages |
+
+Los mismos validadores corren en local antes de subir:
+
+```bash
+python scripts/validar_estructura.py       # 340 clases + enlaces .md sin rotos
+python scripts/validar_encoding.py          # todo UTF-8, sin mojibake
+python scripts/generar_navegacion.py --check # navegación coherente
+npx markdownlint-cli2 "**/*.md"             # estilo de Markdown
+```
+
+## 🎯 Qué es y qué no es este programa
+
+<table>
+<tr>
+<td valign="top" width="50%">
+
+### ✅ Lo que sí es
+
+- 📚 un currículo **secuencial y completo** de 340 clases, de fundamentos a nivel experto;
+- 🧪 un curso con **práctica real**: 11 laboratorios ejecutables y retos tipo CTF con writeups;
+- 🧭 una guía de **carrera por rol** con día a día, skills, certificaciones y salario orientativo;
+- 🎓 un mapeo honesto a **certificaciones** (Security+, PenTest+, CySA+, OSCP, CISSP, BTL1, SANS) con % de cobertura;
+- 🌐 material **abierto y offline-friendly** (manual PDF + sitio en Pages), en español.
+
+</td>
+<td valign="top" width="50%">
+
+### ❌ Lo que no es
+
+- 🚫 un atajo para "hackear" sin base: la numeración es secuencial por diseño;
+- 🚫 una licencia para atacar sistemas sin autorización (lee la [Clase 025](classes/parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.md));
+- 🚫 un sustituto del examen oficial de ninguna certificación (prepara, no certifica);
+- 🚫 una promesa de empleo: las guías de carrera marcan los salarios como **orientativos**;
+- 🚫 contenido copiado de los libros de referencia: la redacción es **original**.
+
+</td>
+</tr>
+</table>
+
+## 💡 Idea fuerza
+
+> El valor de este programa no está en presumir herramientas, sino en **traducirlas en aprendizaje real**: secuencia pedagógica, laboratorios que se levantan con un comando, honestidad sobre lo que cada rol implica y una base que puedes recorrer de principio a fin sin quedarte a medias.
+
 ## 📄 Licencia
 
 [MIT](LICENSE) — úsalo, modifícalo y compártelo. El conocimiento de seguridad debe ser accesible; su **uso**, responsable.
@@ -155,5 +216,15 @@ Cada rol tiene una **guía de carrera completa** (qué es, día a día, qué nec
 **Hecho para quien quiere aprender ciberseguridad en serio, de principio a fin.**
 
 [⬆️ Empezar por el índice de clases](classes/README.md)
+
+<br>
+
+**¿Te resulta útil? ⭐ Dale una estrella al repo.**
+
+[![GitHub stars](https://img.shields.io/github/stars/vladimiracunadev-create/modern-cybersecurity-program?style=social)](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/vladimiracunadev-create/modern-cybersecurity-program?style=social)](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/network/members)
+[![Follow](https://img.shields.io/github/followers/vladimiracunadev-create?style=social&label=Follow)](https://github.com/vladimiracunadev-create)
+
+Hecho con 🧠 y ☕ por [Vladimir Acuña](https://github.com/vladimiracunadev-create)
 
 </div>
