@@ -98,6 +98,20 @@ Cada parte tiene su **propio README** con narrativa completa: de qué trata, res
 
 > Se genera con `python scripts/generar_manual.py` a partir de las clases, así que siempre refleja el contenido actual del repositorio.
 
+## 📱 App móvil Android
+
+¿Prefieres estudiar desde el teléfono? La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **340 clases en 19 partes** para leerlas **sin conexión**, con buscador y seguimiento de progreso local. Cada clase abre su versión completa en el sitio o en GitHub con un toque.
+
+- 📥 **[Descargar el APK — release v1.0.0](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.0.0)** · verifica la integridad con `SHA256SUMS.txt`.
+- 🧭 **Navegación:** Home (19 partes + progreso global) → Parte (clases + buscador) → Clase (objetivo, resultados, temas, definiciones y práctica).
+- 🔌 **Offline-first:** el temario viaja embebido; abrir la clase completa requiere internet. El progreso se guarda **solo en tu dispositivo**.
+
+<div align="center">
+<img src="docs/img/app-home.png" alt="Pantalla de inicio: 19 partes y progreso" width="30%"> <img src="docs/img/app-parte.png" alt="Clases de una parte con buscador" width="30%"> <img src="docs/img/app-clase.png" alt="Detalle de una clase" width="30%">
+</div>
+
+> APK de **sideload** (fuera de Play Store), firmado en el pipeline de release. En Android, permite instalar desde "orígenes desconocidos" para el instalador que uses. Detalle técnico y pipeline en [docs/APP_MOVIL.md](docs/APP_MOVIL.md).
+
 ## 🧪 Laboratorios ejecutables
 
 Además de las clases, el programa incluye **entornos de práctica** que se levantan con un

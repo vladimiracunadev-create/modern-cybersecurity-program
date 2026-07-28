@@ -39,7 +39,14 @@ python-pptx). Notebooks **descartados** por decisión.
 - [x] Seguimiento de progreso de las 340 clases (localStorage).
 - [x] Rutas guiadas por rol ([`rutas/`](rutas/README.md)): pentester, red team, SOC, DFIR, AppSec, cloud, GRC.
 
+## Fase 5 — App móvil Android ✅ (completa)
+
+- [x] App **Expo / React Native** ([`mobile/`](mobile/README.md)) con las **340 clases en 19 partes** embebidas para leer **sin conexión**.
+- [x] Navegación Home (partes + progreso) → Parte (clases + buscador) → Clase (objetivo, resultados, temas, definiciones, práctica), con progreso local.
+- [x] Catálogo **generado** desde los README de las clases (`scripts/generar_curriculum_movil.py`, con `--check` de integridad).
+- [x] **Release del APK por CI** ([`release-android.yml`](.github/workflows/release-android.yml)): compila, firma y publica el APK en la nube, verificando el temario embebido antes de publicar. Primer release: [**v1.0.0**](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.0.0).
+
 ---
 
-**Las 4 fases del roadmap están completas.** ¿Ideas o mejoras? Abre un *issue* o revisa
+**Las 5 fases del roadmap están completas.** ¿Ideas o mejoras? Abre un *issue* o revisa
 [CONTRIBUTING.md](CONTRIBUTING.md).
