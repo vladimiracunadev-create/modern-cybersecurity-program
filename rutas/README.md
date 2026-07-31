@@ -140,6 +140,38 @@ Perfil defensivo generalista en un entorno regulado (banca, fondos, seguros): mo
 - 💡 El programa te da la **base técnica y normativa** que pide la oferta (SIEM, eventos, vulnerabilidades, incidentes, NIST/ISO). La **titulación, la colegiatura y el contexto de negocio** (fondos, agilismo, design thinking) los aportas tú.
 - 📖 **[Guía de carrera completa →](analista-ciberseguridad.md)** — qué es, día a día, skills, certis, salario y progresión.
 
+## 🧱 Analista de Seguridad de Infraestructura (plataformas, SIEM y cumplimiento)
+
+El puesto **bisagra** entre administración de sistemas y seguridad: administras los controles (firewalls, IPS, NAC, EDR, antivirus), **conectas y mantienes las fuentes de log del SIEM**, investigas desviaciones de configuración y ejecutas los controles de cumplimiento (SOX/PCI). Donde el SOC *consume* el SIEM, tú **lo alimentas**.
+
+1. 📚 **Parte 0** — Fundamentos (001–025) · la base literal: Linux (005–006), Windows (008), **PowerShell (009)**, **TCP/IP, DNS y HTTPS (010–013)**, Python (015), regex (019)
+2. 📚 **Parte 1** — Redes (026–045) · **034 firewalls** · **035 IDS/IPS** · 041 DNS · **042 segmentación y zero trust** (el marco del NAC) · 043 NSM · 045 NetFlow
+3. 📚 **Parte 8** — Blue Team y SOC · **182 logging y fuentes de telemetría** (la clase central) · **183 SIEM** · 184 Splunk · 185 Elastic/Wazuh · 189 EDR · 190–191 logs
+4. 📚 **Parte 2** — **055 PKI** y **056 TLS**: lo que hay detrás de HTTPS y **LDAPS**
+5. 📚 **Parte 10** — **223 AWS** · **224 Azure** · **234 logging y detección en la nube**
+6. 📚 **Partes 14 y 17** — **281 PCI DSS** · **285 auditoría** · 282 procedimientos (runbooks) · **324 hardening** · 313 IAM · 321 reporte
+
+- 🧪 [`blue-team-soc`](../labs/blue-team-soc/README.md) **conectando las fuentes tú** · [`redes-nmap`](../labs/redes-nmap/README.md) · [`rootcause-windows`](../labs/rootcause-windows/README.md) · [`cloud-security`](../labs/cloud-security/README.md)
+- 🎓 **CompTIA Security+** → **CySA+** · (fuera del programa: Network+, **SC-200**, AWS CloudOps)
+- 💡 El programa cubre casi todo el stack. Lo que **no** cubre y la oferta pide: **AS/400**, **SOX** como normativa concreta, el **NAC como producto** y la consola comercial de SIEM (Sentinel/QRadar/XSIAM) más allá de Splunk, Elastic y Wazuh.
+- 📖 **[Guía de carrera completa →](seguridad-infraestructura.md)** — qué es, día a día, skills, certis, salario y progresión.
+
+## 🧩 Ingeniero de Operación de Plataformas de Seguridad (MSSP y DLP)
+
+Operas las plataformas de seguridad **de otras empresas**, desde un proveedor de servicios gestionados, con especialidad en **protección del dato**: clasificación, descubrimiento y DLP. La ruta más orientada al dato del curso, y una vía de entrada real al sector.
+
+1. 📚 **Parte 0** — Fundamentos (001–025) · Linux (005), Windows (008), HTTP/HTTPS (013) y **003 frameworks**
+2. 📚 **Parte 17** — **311 clasificación y ciclo de vida de los datos** y **312 retención, destrucción segura y DLP** · **el núcleo especializado**
+3. 📚 **Parte 14** — **280 controles CIS** · **279 NIST CSF** · **281 PCI DSS** · **289 privacidad** · 282 procedimientos · 287 métricas
+4. 📚 **Parte 8** — 182 telemetría · 183 SIEM · 189 EDR · 197 métricas y madurez (el MSOC con el que te coordinas)
+5. 📚 **Parte 9** — 202 ciclo de incidentes y **215 playbooks** (el entregable que pide la oferta)
+6. 📚 **Parte 17** — **324 hardening** (planes de mejora) · 313/315 identidades · 321 comunicación · 📚 **Parte 10** — 233–234 nube
+
+- 🧪 [`blue-team-soc`](../labs/blue-team-soc/README.md) · [`rootcause-windows`](../labs/rootcause-windows/README.md) · [`cloud-security`](../labs/cloud-security/README.md) · 📋 escribe un **playbook de fuga de datos** y un **informe mensual de servicio**
+- 🎓 **CompTIA Security+** → CySA+ · (fuera del programa: **SC-401** para Purview/DLP y la cert del fabricante que operes)
+- 💡 El programa te da el **qué y el porqué** (ciclo del dato, DLP, privacidad, PCI, CIS/NIST, playbooks). Lo que aportas tú: la **plataforma comercial concreta**, el **inglés técnico avanzado** (aquí es requisito obligatorio) y el oficio de servicio (SLA, cliente, preventa).
+- 📖 **[Guía de carrera completa →](operacion-plataformas-dlp.md)** — qué es, día a día, skills, certis, salario y progresión.
+
 ## 👔 Jefe de Seguridad de la Información / CISO
 
 El **techo de carrera** de las rutas defensivas y el primer rol del curso con **equipo a cargo**: defines la estrategia, gestionas el riesgo, supervisas la operación (vulnerabilidades, hardening, SIEM, firewall, WAF), garantizas el cumplimiento y reportas a la alta dirección y al regulador. No es una ruta de entrada: llega desde una base técnica previa.
@@ -205,6 +237,7 @@ Cooperación institucional, alianzas estratégicas e intercambio de información
 
 ## Después de tu ruta
 
+- Rinde el **[examen final de tu rol](../docs/examen-final-por-rol.md)** — teoría, práctica e informe, con el entregable que produce el puesto. Todas las rutas de esta página tienen el suyo.
 - Consulta el [mapeo a certificaciones](../certificaciones/README.md) para ver cuánto cubre el programa de tu examen objetivo.
 - Refuerza con las [autoevaluaciones](../autoevaluaciones/README.md) por parte.
 - Marca tu avance en el [seguimiento de progreso](../autoevaluaciones/README.md#progreso).
