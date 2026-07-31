@@ -9,7 +9,7 @@ comparten la misma estructura; cambia el contenido.
 | Bloque | Peso | Formato |
 |---|---:|---|
 | **Teoría** | 25 | Quiz de la(s) parte(s) de la ruta ([autoevaluación](../autoevaluaciones/README.md)) ≥ 70%. |
-| **Práctica** | 50 | Un ejercicio en laboratorio, con evidencia reproducible. |
+| **Práctica** | 50 | Un ejercicio en laboratorio —o aplicado, en los roles de gestión—, con evidencia reproducible. |
 | **Informe/comunicación** | 25 | Documento entregable (informe, playbook o política) evaluado con la [rúbrica](rubrica-evaluacion.md). |
 
 **Aprobado:** ≥ 70/100 y práctica ≥ 30/50.
@@ -63,6 +63,55 @@ comparten la misma estructura; cambia el contenido.
 - **Teoría:** Partes 14, 17.
 - **Práctica (aplicada):** construye una matriz de riesgo, un SoA de ISO 27001 y un perfil NIST CSF para una organización ficticia.
 - **Informe:** política de seguridad + análisis de riesgo cuantitativo (FAIR).
+
+---
+
+## 🧭 Roles derivados de ofertas reales
+
+Estas siete rutas están calcadas de anuncios de empleo reales, así que su examen se parece más a una
+**prueba de selección** que a un examen académico: el entregable es el que produce el puesto.
+
+## 🏦 Analista de Ciberseguridad (institución regulada)
+
+- **Teoría:** Partes 8, 9, 14 (+ 3).
+- **Práctica:** en el lab [`blue-team-soc`](../labs/blue-team-soc/README.md), lleva una alerta hasta el cierre como caso formal de **ISO 27035** (triaje → investigación → contención → lecciones aprendidas), registrando tiempos; en paralelo, prioriza los hallazgos de un escaneo de vulnerabilidades y define SLAs de remediación.
+- **Informe:** informe de incidente + **evidencia de auditoría** mapeada a un control concreto de ISO 27001.
+
+## 🤝 Analista de Cooperación y Alianzas Técnicas
+
+- **Teoría:** Partes 14, 0 (+ 8).
+- **Práctica (aplicada):** diseña un acuerdo de **intercambio de información de amenazas** entre dos organizaciones ficticias: qué se comparte, con qué clasificación (TLP), bajo qué base legal, con qué controles de protección de datos y qué pasa ante un incumplimiento. Evalúa además el riesgo del tercero (clase 284).
+- **Informe:** memorando de entendimiento + informe de riesgo de terceros + una **nota ejecutiva de una página** dirigida a alguien sin formación técnica.
+
+## ⚙️ Security Engineer / SecOps
+
+- **Teoría:** Partes 8, 9, 11 (+ la programación de la Parte 0).
+- **Práctica (con código, obligatorio):** construye una **API REST** que exponga el estado de seguridad de los hosts a partir de la telemetría del lab [`blue-team-soc`](../labs/blue-team-soc/README.md) —autenticada, con validación de entrada y sin secretos en el código— y automatiza en Python/Bash una tarea de *offboarding* (revocar accesos y dejar registro).
+- **Informe:** documentación de la API + **runbook** de respuesta a un incidente de endpoint + el repositorio con historial de Git legible.
+
+## 🧰 Analista de Seguridad Ofensiva (consultoría)
+
+- **Teoría:** Partes 3, 4, 1.
+- **Práctica:** escanea el laboratorio con Nessus/OpenVAS y **valida a mano** cinco hallazgos —descartando al menos un falso positivo y justificando por qué—; después explota dos vulnerabilidades del OWASP Top 10 en [`appsec-web`](../labs/appsec-web/README.md), una de ellas **sobre una API**.
+- **Informe:** los cinco hallazgos en formato profesional (descripción, CVSS justificado, evidencia reproducible, impacto y remediación) + un acta de alcance previa al trabajo.
+
+## 👔 Jefe de Seguridad de la Información / CISO
+
+- **Teoría:** Partes 14, 17 (+ 8).
+- **Práctica (de dirección):** **dirige** un [ejercicio de mesa](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md) sobre un incidente grave, con roles asignados, decisiones cronometradas y comunicación a dirección; construye el registro de riesgos de la organización y un plan de remediación priorizado con responsables y fechas.
+- **Informe:** **informe ejecutivo de una página** con KPIs/KRIs + acta de aceptación formal de un riesgo (con quién lo firma) + plan de tratamiento.
+
+## 🧱 Analista de Seguridad de Infraestructura
+
+- **Teoría:** Partes 1, 8, 10 (+ PKI y TLS de la Parte 2).
+- **Práctica:** en [`blue-team-soc`](../labs/blue-team-soc/README.md), **conecta tú mismo al menos tres fuentes distintas** (Windows, Linux y un dispositivo de red o firewall), verifica la integridad de la ingesta y luego **rompe una fuente a propósito**: detéctalo, documenta cuánto tardaste y qué lo delató. Aplica una línea base de configuración y detecta una desviación.
+- **Informe:** **runbook** de alta de una fuente de log + el mismo hallazgo redactado en dos registros (técnico y ejecutivo) + evidencia de ejecución de un control.
+
+## 🧩 Ingeniero de Operación de Plataformas (MSSP y DLP)
+
+- **Teoría:** Parte 17 (311, 312) y Parte 14 (280, 281, 289).
+- **Práctica (aplicada):** define un esquema de **clasificación de datos** para una organización ficticia y el conjunto de políticas de **DLP** que lo hace cumplir; toma una tanda de casos de ejemplo, **afina los falsos positivos** y justifica cada ajuste; diseña un plan de hardening de la plataforma.
+- **Informe:** **playbook** completo de un incidente de fuga de datos (detección → contención → comunicación al cliente → cierre) + **informe mensual de servicio** con métricas. Redactarlo en inglés técnico es opcional, pero es justo lo que el puesto exige.
 
 ---
 
