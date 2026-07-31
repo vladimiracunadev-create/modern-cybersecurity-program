@@ -137,6 +137,9 @@ Practica en los laboratorios, que es donde se aprende de verdad:
 - 🧪 [`appsec-web`](../labs/appsec-web/README.md) para explotar las vulnerabilidades web con las
   manos, y [`appsec-code`](../labs/appsec-code/README.md) para revisar código y encontrar el
   fallo en la fuente (la mitad engineer del rol).
+- 🧪 [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) para el lado del **SDLC**:
+  auditar un repositorio completo en seis capas (dependencias, SAST, secretos, Dockerfile,
+  contenedor y CI/CD) y entregar el informe priorizado. Es la práctica de la Parte 11.
 - 🚩 [CTF de web](../ctf/README.md) para afilar bajo presión y sin pistas.
 
 ## 🎓 Certificaciones

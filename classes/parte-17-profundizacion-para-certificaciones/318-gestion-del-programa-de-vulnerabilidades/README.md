@@ -57,6 +57,8 @@ Monta un laboratorio de VM aislado (nunca escanees activos ajenos sin autorizaci
 
 ## 🧪 Laboratorio guiado — Construir un pipeline de priorización de VM
 
+> 🧪 **Laboratorio ejecutable del programa:** [`devsecops-pipeline`](../../../labs/devsecops-pipeline/README.md) — practica allí la priorización por exposición real y la sección de **cobertura** del informe.
+
 Ejercicio aplicado: escanearás un objetivo de laboratorio y construirás una cola de remediación priorizada por riesgo con SLAs.
 
 1. **Inventaría el objetivo.** En la red host-only, identifica el activo (Metasploitable) y clasifícalo por criticidad de negocio (aquí: bajo, es lab).

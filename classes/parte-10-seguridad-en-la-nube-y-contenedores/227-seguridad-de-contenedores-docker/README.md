@@ -60,6 +60,8 @@ docker inspect --format '{{ .HostConfig.CapAdd }} {{ .HostConfig.SecurityOpt }}'
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 **Laboratorio ejecutable del programa:** [`devsecops-pipeline`](../../../labs/devsecops-pipeline/README.md) — son las **capas 4 y 5** del lab de DevSecOps: un Dockerfile con diez antipatrones y las CVE del sistema base.
+
 1. Ejecuta `docker run -it --rm alpine sh` y explora los namespaces con `lsns` desde el host para ver el aislamiento.
 2. Lanza un contenedor con `--privileged` y muestra que puede montar el disco del host; borra el contenedor y **nunca uses privileged en producción**.
 3. Escribe un Dockerfile inseguro (corriendo como root, con secretos en `ENV`) y pásalo por **Hadolint**; corrige los hallazgos.

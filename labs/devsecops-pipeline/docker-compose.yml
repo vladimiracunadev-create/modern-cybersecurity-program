@@ -1,0 +1,26 @@
+name: devsecops-pipeline-lab
+
+# Toolbox de auditoría del pipeline de despliegue (Parte 11).
+#
+# No expone ningún puerto: las herramientas leen archivos del repositorio
+# montado y consultan bases de datos públicas de vulnerabilidades. No hay
+# servicio a la escucha y nada de este laboratorio queda accesible en red.
+
+services:
+  auditor:
+    build: .
+    container_name: lab-devsecops-auditor
+    stdin_open: true
+    tty: true
+    working_dir: /audit
+    volumes:
+      # El repositorio objetivo, en solo lectura: el análisis nunca debe poder
+      # modificar aquello que audita.
+      - ./repo-vulnerable:/audit/repo:ro
+      # Scripts y plantillas del laboratorio.
+      - ./auditar.sh:/audit/auditar.sh:ro
+      # Aquí caen los informes generados.
+      - ./salida:/audit/salida
+    # Sin privilegios adicionales: una auditoría es una operación de lectura.
+    security_opt:
+      - no-new-privileges:true

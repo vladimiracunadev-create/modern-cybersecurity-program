@@ -37,7 +37,7 @@ comparten la misma estructura; cambia el contenido.
 ## 🛡️ Analista de Gestión de Vulnerabilidades
 
 - **Teoría:** Partes 3 (071), 17 (318, 324), 8.
-- **Práctica:** escanea el lab, prioriza con CVSS/EPSS/KEV, define SLAs y valida un parcheo.
+- **Práctica:** en [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md), audita el repositorio en las seis capas, prioriza con CVSS/EPSS/KEV **ajustado por exposición real**, define SLAs y valida un parcheo con reversión si rompe los tests.
 - **Informe:** reporte semanal de VM + plan de remediación priorizado.
 
 ## 🕵️ DFIR / Analista forense
@@ -49,8 +49,8 @@ comparten la misma estructura; cambia el contenido.
 ## 🕸️ AppSec / Bug Bounty
 
 - **Teoría:** Partes 4, 2, 11.
-- **Práctica:** encuentra y explota (en tu lab) 3 vulns del OWASP Top 10 en [`appsec-web`](../labs/appsec-web/README.md); haz code review con [`appsec-code`](../labs/appsec-code/README.md).
-- **Informe:** 3 reportes tipo bug bounty (impacto, PoC, remediación).
+- **Práctica:** encuentra y explota (en tu lab) 3 vulns del OWASP Top 10 en [`appsec-web`](../labs/appsec-web/README.md); haz code review con [`appsec-code`](../labs/appsec-code/README.md); y audita el SDLC completo en [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md).
+- **Informe:** 3 reportes tipo bug bounty (impacto, PoC, remediación) + la **sección de cobertura** del informe de auditoría: qué quedó fuera del alcance y por qué.
 
 ## ☁️ Cloud Security Engineer
 
@@ -86,7 +86,7 @@ Estas siete rutas están calcadas de anuncios de empleo reales, así que su exam
 ## ⚙️ Security Engineer / SecOps
 
 - **Teoría:** Partes 8, 9, 11 (+ la programación de la Parte 0).
-- **Práctica (con código, obligatorio):** construye una **API REST** que exponga el estado de seguridad de los hosts a partir de la telemetría del lab [`blue-team-soc`](../labs/blue-team-soc/README.md) —autenticada, con validación de entrada y sin secretos en el código— y automatiza en Python/Bash una tarea de *offboarding* (revocar accesos y dejar registro).
+- **Práctica (con código, obligatorio):** construye una **API REST** que exponga el estado de seguridad de los hosts a partir de la telemetría del lab [`blue-team-soc`](../labs/blue-team-soc/README.md) —autenticada, con validación de entrada y sin secretos en el código— y automatiza en Python/Bash una tarea de *offboarding* (revocar accesos y dejar registro). Somete tu propio código a las seis capas de [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md): lo que escribas se audita igual que lo demás.
 - **Informe:** documentación de la API + **runbook** de respuesta a un incidente de endpoint + el repositorio con historial de Git legible.
 
 ## 🧰 Analista de Seguridad Ofensiva (consultoría)

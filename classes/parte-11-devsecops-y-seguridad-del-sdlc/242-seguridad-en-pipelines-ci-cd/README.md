@@ -60,6 +60,8 @@ zizmor .github/workflows/
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 **Laboratorio ejecutable del programa:** [`devsecops-pipeline`](../../../labs/devsecops-pipeline/README.md) — es la **capa 6** del lab, sobre un workflow con `pull_request_target`, inyección de expresiones y permisos totales.
+
 1. **Audita tus workflows** con zizmor y actionlint:
 
 ```bash

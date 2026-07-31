@@ -59,6 +59,8 @@ Entorno **de laboratorio propio** con una app deliberadamente vulnerable (para p
 
 ## 🧪 Laboratorio guiado — Revisión de código + SAST/SCA en CI con triaje
 
+> 🧪 **Laboratorio ejecutable del programa:** [`devsecops-pipeline`](../../../labs/devsecops-pipeline/README.md) — su script `auditar.sh` orquesta las seis capas y distingue siempre *sin hallazgos* de *no ejecutada*.
+
 Ejercicio aplicado: revisas código manualmente, montas análisis automatizado en CI, triras los hallazgos y automatizas el informe.
 
 1. **Revisión manual.** Toma un endpoint vulnerable (p. ej. una consulta SQL construida por concatenación) y, con el checklist de **OWASP Code Review / ASVS**, identifica el fallo, su categoría (inyección) y la corrección (consulta parametrizada). Documenta el antes/después.

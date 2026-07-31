@@ -54,6 +54,8 @@ Esta clase es conceptual/estratégica; el "laboratorio" es de diseño. Necesitar
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 **Laboratorio ejecutable del programa:** [`devsecops-pipeline`](../../../labs/devsecops-pipeline/README.md) — recorre las seis capas y termina moviéndolas a `pre-commit` y CI: el *shift-left* aplicado de principio a fin.
+
 Ejercicio aplicado de diseño y evaluación (no ofensivo):
 
 1. **Dibuja tu SDLC actual**. Lista las fases reales por las que pasa un cambio en tu equipo: idea → requisitos → diseño → codificación → PR/review → build → test → despliegue → operación.

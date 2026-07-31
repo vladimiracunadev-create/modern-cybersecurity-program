@@ -20,6 +20,10 @@ de las 340 clases) es la base y el primer entregable.
 - [x] Lab **DFIR memoria/malware** ([`labs/dfir-memoria`](labs/dfir-memoria/README.md)) — Volatility 3 + YARA (Partes 9 y 17; prep SANS/BTL1).
 - [x] Lab **code review / SAST** ([`labs/appsec-code`](labs/appsec-code/README.md)) — app vulnerable + Semgrep/Bandit (Partes 11 y 17; prep PenTest+/CISSP).
 - [x] Lab **Pentest con IA (kali-mcp)** ([`labs/kali-mcp-ia`](labs/kali-mcp-ia/README.md)) — agente de IA orquestando Kali vía MCP (Parte 18).
+- [x] Lab **Triaje forense de Windows** ([`labs/rootcause-windows`](labs/rootcause-windows/README.md)) — sensor de comportamiento en Rust (Partes 6, 8 y 9).
+- [x] Lab **Escaneo de red** ([`labs/redes-nmap`](labs/redes-nmap/README.md)) y **explotación de binarios** ([`labs/pwn-binarios`](labs/pwn-binarios/README.md)) — Partes 1 y 5.
+- [x] Lab **Auditoría cloud / CSPM** ([`labs/cloud-security`](labs/cloud-security/README.md)) — Prowler, ScoutSuite, trivy y kube-bench (Parte 10).
+- [x] Lab **Pipeline de despliegue (DevSecOps)** ([`labs/devsecops-pipeline`](labs/devsecops-pipeline/README.md)) — repositorio vulnerable auditado en **seis capas** (dependencias, SAST, secretos, Dockerfile, contenedor y CI/CD), con priorización KEV/EPSS/CVSS e informe (Parte 11; también 227, 318 y 330).
 - [x] Colección de **retos tipo CTF** ([`ctf/`](ctf/README.md)) con solución, por categoría.
 
 ## Fase 3 — Material complementario ✅ (completa)
@@ -37,7 +41,7 @@ python-pptx). Notebooks **descartados** por decisión.
 - [x] Sitio web navegable del currículo (GitHub Pages, con nav a rutas/quiz/progreso).
 - [x] Autoevaluaciones interactivas por parte ([`autoevaluaciones/`](autoevaluaciones/README.md), 97 preguntas).
 - [x] Seguimiento de progreso de las 340 clases (localStorage).
-- [x] Rutas guiadas por rol ([`rutas/`](rutas/README.md)): pentester, red team, SOC, DFIR, AppSec, cloud, GRC.
+- [x] Rutas guiadas por rol ([`rutas/`](rutas/README.md)): los roles clásicos (pentester, red team, SOC, DFIR, gestión de vulnerabilidades, AppSec, cloud, GRC) **más los derivados de ofertas de empleo reales** — analista de ciberseguridad en institución regulada, analista de seguridad ofensiva, SecOps, seguridad de infraestructura, operación de plataformas (MSSP/DLP), jefe de seguridad/CISO y cooperación técnica. Cada una con su [examen final](docs/examen-final-por-rol.md); índice completo en [`rutas/README.md`](rutas/README.md).
 
 ## Fase 5 — App móvil Android ✅ (completa)
 

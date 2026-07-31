@@ -66,6 +66,8 @@ osv-scanner --lockfile package-lock.json
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 **Laboratorio ejecutable del programa:** [`devsecops-pipeline`](../../../labs/devsecops-pipeline/README.md) — es la **capa 1** del lab, con el ejercicio de cobertura: dos dependencias sin versión fijada que el escáner no puede resolver.
+
 1. **Inspecciona el árbol de dependencias** de un proyecto real (p. ej. `npm ls --all` o `pip list` + `pipdeptree`). Observa cuántas son transitivas.
 2. **Escanea con Trivy**:
 

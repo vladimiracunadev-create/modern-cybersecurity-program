@@ -66,6 +66,8 @@ pip install pre-commit
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 **Laboratorio ejecutable del programa:** [`devsecops-pipeline`](../../../labs/devsecops-pipeline/README.md) — es la **capa 3** del lab: secretos con formato realista, y el matiz de los genéricos que se escapan a la detección.
+
 1. **Escanea el historial completo** de un repositorio de práctica:
 
 ```bash

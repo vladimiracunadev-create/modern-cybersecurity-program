@@ -64,6 +64,8 @@ cosign sign miregistry/miapp@sha256:<digest>
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 **Laboratorio ejecutable del programa:** [`devsecops-pipeline`](../../../labs/devsecops-pipeline/README.md) — son las **capas 4 y 5** del lab: `hadolint` sobre el Dockerfile y `trivy` sobre el sistema operativo base.
+
 1. **Parte de un Dockerfile "malo"** (imagen base pesada, root, sin pin) y lintéalo:
 
 ```bash

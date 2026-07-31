@@ -1,0 +1,64 @@
+# Workflow DELIBERADAMENTE INSEGURO (objetivo de zizmor y actionlint).
+#
+# ⚠️ Este archivo NO se ejecuta nunca. GitHub Actions solo ejecuta los workflows
+# que están en el directorio `.github/workflows/` de la RAÍZ del repositorio;
+# este vive dentro de `labs/devsecops-pipeline/repo-vulnerable/`, así que para
+# GitHub es un archivo de texto más. Es un objetivo de análisis estático, no un
+# pipeline vivo.
+#
+# Contiene los tres fallos que más aparecen en auditorías reales de CI/CD.
+
+name: Deploy a produccion
+
+# [CI-1] `pull_request_target` da al workflow el token del repositorio base
+# y, combinado con el checkout del código del PR, permite que una rama
+# cualquiera de un fork ejecute su propio código con permisos privilegiados.
+on:
+  pull_request_target:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+# [CI-2] Permisos de escritura totales para todos los jobs. La regla es la
+# contraria: mínimo privilegio, y ampliar solo el job que lo necesite.
+permissions: write-all
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # [CI-3] Acción sin fijar: `@v4` es una etiqueta MUTABLE. Quien controle
+      # el repositorio de la acción puede cambiar lo que ejecutas. Se fija por
+      # SHA completo.
+      - uses: actions/checkout@v4
+        with:
+          # [CI-4] Checkout del código del PR bajo pull_request_target: la
+          # combinación explícitamente desaconsejada por GitHub.
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      # [CI-5] Inyección de expresión en script (template injection). El título
+      # del PR lo escribe quien abre el PR: aquí se interpola directamente
+      # dentro de un shell, así que su contenido se ejecuta como comando.
+      - name: Registrar el cambio
+        run: |
+          echo "Desplegando: ${{ github.event.pull_request.title }}"
+          echo "Autor: ${{ github.event.pull_request.user.login }}"
+
+      # [CI-6] Secreto volcado a la salida estándar y a un artefacto.
+      - name: Publicar
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          echo "token=$DEPLOY_TOKEN" >> deploy.log
+          curl -k -X POST "https://deploy.interno.lab/publicar?token=$DEPLOY_TOKEN"
+
+      # [CI-7] Descarga y ejecuta un script remoto sin verificar nada:
+      # el patrón `curl | bash` en un pipeline con permisos de escritura.
+      - name: Post-despliegue
+        run: curl -sSL https://scripts.interno.lab/post-deploy.sh | bash
+
+      # [CI-8] Sube el log (que ahora contiene el token) como artefacto público.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: logs
+          path: deploy.log

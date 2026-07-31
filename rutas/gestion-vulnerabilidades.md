@@ -145,6 +145,10 @@ Practica en los laboratorios, que es donde el ciclo se vuelve músculo:
   para ver hallazgos reales de código y web que luego hay que priorizar y remediar.
 - 🧪 [`rootcause-windows`](../labs/rootcause-windows/README.md) para entender causa raíz,
   parches y hardening en Windows.
+- 🧪 [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) — **el más alineado con este
+  rol**: practica la priorización real (KEV → EPSS → CVSS ajustado por exposición), la
+  remediación con verificación y reversión, y la sección de **cobertura** del informe, que es
+  lo que separa un reporte creíble de un volcado de escáner.
 
 ## 🎓 Certificaciones
 

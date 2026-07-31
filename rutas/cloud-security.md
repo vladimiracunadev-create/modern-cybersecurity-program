@@ -126,6 +126,9 @@ Clases concretas por las que empezar (el corazón está en la Parte 10):
 - 🧪 [`cloud-security`](../labs/cloud-security/README.md) — tu entorno de práctica de nube:
   levantas infraestructura, la rompes con malas configuraciones típicas, la detectas con
   CSPM y la corriges como código. Es donde la teoría del modelo compartido se vuelve reflejo.
+- 🧪 [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) — lo que ocurre **antes** de que
+  la carga llegue a la nube: imagen base, Dockerfile, dependencias y el pipeline que lo publica.
+  El eslabón de CI/CD es el que tiene las credenciales de despliegue de tu infraestructura.
 
 ## 🎓 Certificaciones
 

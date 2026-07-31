@@ -61,6 +61,8 @@ grype sbom:sbom.cdx.json
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 **Laboratorio ejecutable del programa:** [`devsecops-pipeline`](../../../labs/devsecops-pipeline/README.md) — practica los tres huecos típicos de la cadena: dependencias sin fijar, ausencia de *lockfile* con hashes y acciones de CI sin fijar por SHA.
+
 1. **Genera el SBOM** de un proyecto y de su imagen:
 
 ```bash

@@ -55,6 +55,8 @@ Clase organizativa; el "laboratorio" es de diseño de programa. Recursos útiles
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 **Laboratorio ejecutable del programa:** [`devsecops-pipeline`](../../../labs/devsecops-pipeline/README.md) — su informe está pensado para que **desarrollo lo lea**: clasificar los hallazgos en vez de marcarlo todo como crítico.
+
 Diseño de un programa real (ejercicio aplicado, no ofensivo):
 
 1. **Diagnostica la cultura actual**. Haz una mini-encuesta a un equipo: ¿saben a quién acudir con dudas de seguridad? ¿la seguridad les frena o les ayuda? Anota el punto de partida.

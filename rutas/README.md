@@ -66,7 +66,7 @@ Ciclo de vulnerabilidades, hardening/parchado, controles (AV/EDR) y reporte — 
 6. 📚 **Parte 11** — 240 SCA/dependencias · **245** Gestión de vulnerabilidades a escala
 7. 📚 **Parte 9** — **219** Ejercicios de mesa (simulacros) · + Partes 3–7 para las pruebas de penetración de validación
 
-- 🧪 [`appsec-code`](../labs/appsec-code/README.md) (SAST/vulns en código) · [`appsec-web`](../labs/appsec-web/README.md) · [`rootcause-windows`](../labs/rootcause-windows/README.md) (controles/EDR en Windows)
+- 🧪 [`appsec-code`](../labs/appsec-code/README.md) (SAST/vulns en código) · [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) (**priorización KEV/EPSS/CVSS e informe**) · [`appsec-web`](../labs/appsec-web/README.md) · [`rootcause-windows`](../labs/rootcause-windows/README.md) (controles/EDR en Windows)
 - 🎓 **CompTIA CySA+** · Security+ · (certs de producto: Tenable/Qualys/Rapid7)
 - 📖 **[Guía de carrera completa →](gestion-vulnerabilidades.md)** — qué es, día a día, skills, certis, salario y progresión.
 
@@ -94,7 +94,7 @@ Seguridad de aplicaciones y caza de vulnerabilidades web.
 4. 📚 **Parte 11** — DevSecOps y SDLC (236–248) · para el lado defensivo
 5. 📚 **Parte 15** — Seguridad de IA/LLM (291–300) · superficie moderna
 
-- 🧪 [`appsec-web`](../labs/appsec-web/README.md) · [`appsec-code`](../labs/appsec-code/README.md) · 🚩 [CTF web](../ctf/README.md)
+- 🧪 [`appsec-web`](../labs/appsec-web/README.md) · [`appsec-code`](../labs/appsec-code/README.md) · [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) (el SDLC completo en 6 capas) · 🚩 [CTF web](../ctf/README.md)
 - 🎓 **eWPTX** · Burp Suite Certified Practitioner
 - 📖 **[Guía de carrera completa →](appsec.md)** — qué es, día a día, skills, certis, salario y progresión.
 
@@ -108,6 +108,7 @@ Seguridad de nube, contenedores y pipelines.
 4. 📚 **Parte 10** — Nube y contenedores (221–235)
 5. 📚 **Parte 11** — DevSecOps (236–248)
 
+- 🧪 [`cloud-security`](../labs/cloud-security/README.md) (auditoría CSPM) · [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) (lo que ocurre **antes** de llegar a la nube: imagen, dependencias y CI/CD)
 - 🎓 AWS Security Specialty · **CKS** (Kubernetes Security)
 - 📖 **[Guía de carrera completa →](cloud-security.md)** — qué es, día a día, skills, certis, salario y progresión.
 
@@ -215,7 +216,7 @@ Seguridad operativa desde el lado de la ingeniería: administras el EDR/XDR de t
 5. 📚 **Parte 4** — **110** Seguridad de APIs REST · para construir las APIs internas sin abrir un agujero
 6. 📚 **Parte 17** — **324** hardening y configuración · **313**/**315** identidades y PAM · **330** automatización de seguridad
 
-- 🧪 [`blue-team-soc`](../labs/blue-team-soc/README.md) · [`rootcause-windows`](../labs/rootcause-windows/README.md) · [`appsec-code`](../labs/appsec-code/README.md) · 🚩 [CTF forense / redes](../ctf/README.md)
+- 🧪 [`blue-team-soc`](../labs/blue-team-soc/README.md) · [`rootcause-windows`](../labs/rootcause-windows/README.md) · [`appsec-code`](../labs/appsec-code/README.md) · [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) · 🚩 [CTF forense / redes](../ctf/README.md)
 - 🎓 **CompTIA CySA+** · BTL1 · Security+ · (certs de producto del EDR: CrowdStrike, SentinelOne, SC-200)
 - 💡 El programa te da la **base técnica** que pide la oferta (EDR, SIEM, incidentes, Python/Bash, APIs, identidades, hardening). La **experiencia con un producto comercial concreto sobre una flota real** y el **contexto de negocio** (fintech, regulación, escala) los aportas tú.
 - 📖 **[Guía de carrera completa →](secops-engineer.md)** — qué es, día a día, skills, certis, salario y progresión.

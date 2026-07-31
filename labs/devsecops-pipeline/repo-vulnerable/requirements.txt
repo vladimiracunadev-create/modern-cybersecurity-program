@@ -1,0 +1,27 @@
+# Dependencias FIJADAS a versiones antiguas a propósito (objetivo del lab).
+#
+# No se indica aquí qué vulnerabilidades tiene cada una: descubrirlo es el
+# ejercicio. Las bases de datos de vulnerabilidades cambian cada semana, así
+# que el resultado de hoy no será idéntico al de dentro de seis meses — y esa
+# es, precisamente, una de las lecciones del laboratorio.
+#
+# Fijadas con "==" (pin exacto) para que el escáner pueda resolverlas. Abajo,
+# al final, hay dependencias SIN pin: quedan fuera del alcance del escaneo y
+# tienes que reportarlas como tales.
+
+Flask==0.12.2
+Jinja2==2.10
+Werkzeug==0.14.1
+PyYAML==5.1
+requests==2.19.1
+urllib3==1.24.1
+cryptography==2.3
+Django==2.2.0
+paramiko==2.4.1
+pillow==5.2.0
+
+# --- Sin versión fijada: NO son analizables por el escáner de composición ---
+# El informe debe listarlas explícitamente como "fuera de cobertura", nunca
+# darlas por seguras. Es el error de reporte más común en auditoría de deps.
+boto3
+lxml

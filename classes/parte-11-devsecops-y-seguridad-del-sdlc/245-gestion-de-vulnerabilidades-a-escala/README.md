@@ -59,6 +59,8 @@ cd django-DefectDojo && docker compose up -d
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 **Laboratorio ejecutable del programa:** [`devsecops-pipeline`](../../../labs/devsecops-pipeline/README.md) — incluye el bloque de priorización **KEV → EPSS → CVSS** y el procedimiento de remediación con reversión automática.
+
 Ejercicio de proceso (defensivo, sobre hallazgos propios):
 
 1. **Recolecta hallazgos**. Exporta resultados de Trivy (SCA/imagen), Semgrep (SAST) y ZAP (DAST) de tus prácticas en formato JSON.

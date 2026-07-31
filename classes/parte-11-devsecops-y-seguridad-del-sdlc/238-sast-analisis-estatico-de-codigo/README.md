@@ -63,6 +63,8 @@ semgrep --config auto ./mi-repo
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 **Laboratorio ejecutable del programa:** [`devsecops-pipeline`](../../../labs/devsecops-pipeline/README.md) — el SAST es allí **una capa de seis**; comprueba qué se le escapa y qué otra capa lo cubre.
+
 1. **Clona un repo vulnerable de práctica** (p. ej. NodeGoat) en tu entorno local.
 2. **Escanea con reglas de la comunidad**:
 
