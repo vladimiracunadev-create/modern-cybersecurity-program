@@ -183,7 +183,7 @@ pero el examen se saca aparte con un organismo acreditado. Consulta el
 ## 📈 Progresión de carrera y salario
 
 Ruta habitual: **Analista de Ciberseguridad → Analista senior / especialista → Líder de seguridad
-o CISO adjunto**. Desde aquí se abren caminos hacia la especialización (SOC, DFIR, gestión de
+o [CISO adjunto](ciso-jefe-seguridad.md)**. Desde aquí se abren caminos hacia la especialización (SOC, DFIR, gestión de
 vulnerabilidades) o hacia la gestión pura (GRC, gobernanza, dirección de seguridad). El perfil
 híbrido es una **excelente rampa** porque tocas de todo y descubres hacia dónde quieres pivotar.
 

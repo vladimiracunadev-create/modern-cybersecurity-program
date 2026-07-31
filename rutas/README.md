@@ -140,6 +140,22 @@ Perfil defensivo generalista en un entorno regulado (banca, fondos, seguros): mo
 - 💡 El programa te da la **base técnica y normativa** que pide la oferta (SIEM, eventos, vulnerabilidades, incidentes, NIST/ISO). La **titulación, la colegiatura y el contexto de negocio** (fondos, agilismo, design thinking) los aportas tú.
 - 📖 **[Guía de carrera completa →](analista-ciberseguridad.md)** — qué es, día a día, skills, certis, salario y progresión.
 
+## 👔 Jefe de Seguridad de la Información / CISO
+
+El **techo de carrera** de las rutas defensivas y el primer rol del curso con **equipo a cargo**: defines la estrategia, gestionas el riesgo, supervisas la operación (vulnerabilidades, hardening, SIEM, firewall, WAF), garantizas el cumplimiento y reportas a la alta dirección y al regulador. No es una ruta de entrada: llega desde una base técnica previa.
+
+1. 📚 **Parte 0** — Fundamentos (001–025) · el vocabulario común y **003 (frameworks NIST/ISO/MITRE)**
+2. 📚 **Parte 14** — GRC, riesgo y cumplimiento (276–290) · **el núcleo, entera**: gobernanza (276), riesgo (277), **ISO 27001 (278)**, **NIST CSF (279)**, CIS (280), políticas (282), continuidad (283), terceros (284), auditoría (285) y **métricas KPI/KRI (287)**
+3. 📚 **Parte 17** — **320** gobierno y regulación · **328** riesgo cuantitativo · **329** arquitectura empresarial · **318** programa de vulnerabilidades · **324** hardening · **321** reporte
+4. 📚 **Parte 8** — **181** cómo se organiza un SOC · **183** qué es (y qué no) un SIEM · **197** métricas y madurez
+5. 📚 **Parte 9** — **202** ciclo de respuesta y **219** ejercicios de mesa: el simulacro que dirigirás
+6. 📚 **Partes 1, 3 y 4** — lo que supervisas: **034** firewalls · **042** segmentación y zero trust · **071** Nessus · **087** OWASP Top 10 (el porqué del WAF)
+
+- 🎲 **[219 · Tabletop](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md)** es la práctica principal · 📋 construye los entregables del cargo (registro de riesgos, SoA, política, informe ejecutivo) · 🧪 [`blue-team-soc`](../labs/blue-team-soc/README.md) para no perder el contacto técnico
+- 🎓 **CISSP** · CySA+ (si te falta músculo técnico) · (fuera del programa: **CISM**, **ISO 27001 Lead Implementer**, CRISC)
+- 💡 El programa te da la **base normativa y técnica** del cargo. Lo que aportas tú es lo que más pesa en la selección: los **3 años liderando proyectos** y el **año liderando equipo**, la titulación, el trato con **reguladores y auditoría externa**, el inglés y —literal en la oferta— **Excel**.
+- 📖 **[Guía de carrera completa →](ciso-jefe-seguridad.md)** — qué es, día a día, skills, certis, salario y progresión.
+
 ## 🧰 Analista de Seguridad Ofensiva (consultoría)
 
 El **primer escalón** del oficio ofensivo, el que sí contrata sin trayectoria previa: pentest de nivel básico a intermedio sobre aplicaciones, APIs, redes e infraestructura, validación de hallazgos de escáner y elaboración de evidencia técnica. Versión acotada de la ruta de Pentester, alineada a lo que pide una consultora.

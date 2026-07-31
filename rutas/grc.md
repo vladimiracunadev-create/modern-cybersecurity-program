@@ -145,8 +145,10 @@ el programa de cada examen.
 ## 📈 Progresión de carrera y salario
 
 Ruta habitual: **Analista GRC / de cumplimiento → Especialista en riesgo o auditor de seguridad →
-GRC Manager → Responsable de seguridad (ISO/CISO adjunto) → CISO**. Desde GRC también se ramifica
-hacia **privacidad (DPO)**, **auditoría interna** y **consultoría**.
+GRC Manager → Responsable de seguridad (ISO/CISO adjunto) → [CISO](ciso-jefe-seguridad.md)**. Ese
+último escalón tiene su propia guía de rol, porque cambia el trabajo: dejas de asesorar y pasas a
+dirigir un equipo y responder por el resultado. Desde GRC también se ramifica hacia **privacidad
+(DPO)**, **auditoría interna** y **consultoría**.
 
 Rangos **orientativos y aproximados** (varían mucho por empresa, sector y experiencia):
 
