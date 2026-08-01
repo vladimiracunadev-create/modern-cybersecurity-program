@@ -68,17 +68,17 @@ Cada parte tiene su **propio README** con narrativa completa: de qué trata, res
 
 | # | Parte | Clases | Foco | README |
 |---|---|---:|---|---|
-| 0️⃣ | Fundamentos y prerrequisitos | 25 (001–025) | Redes, SO, Linux, Windows, cripto base, Python ofensivo y laboratorio | [📘 leer](classes/parte-0-fundamentos-y-prerrequisitos/README.md) |
-| 1️⃣ | Redes y seguridad de redes | 20 (026–045) | Análisis de tráfico, escaneo, firewalls, IDS/IPS, VPN y monitoreo | [📘 leer](classes/parte-1-redes-y-seguridad-de-redes/README.md) |
-| 2️⃣ | Criptografía aplicada | 20 (046–065) | Simétrica, asimétrica, hashing, PKI, TLS y criptoanálisis | [📘 leer](classes/parte-2-criptografia-aplicada/README.md) |
-| 3️⃣ | Hacking ético y pentesting: metodología | 20 (066–085) | PTES, recon, enumeración, explotación, post-explotación y reporte | [📘 leer](classes/parte-3-hacking-etico-y-pentesting-metodologia/README.md) |
-| 4️⃣ | Seguridad de aplicaciones web | 30 (086–115) | OWASP Top 10, Burp Suite, inyecciones, XSS, SSRF, APIs y bug bounty | [📘 leer](classes/parte-4-seguridad-de-aplicaciones-web/README.md) |
-| 5️⃣ | Explotación de sistemas y binarios | 25 (116–140) | Assembly, buffer overflows, ROP, heap, fuzzing e ingeniería inversa | [📘 leer](classes/parte-5-explotacion-de-sistemas-y-binarios/README.md) |
-| 6️⃣ | Análisis de malware | 20 (141–160) | Estático, dinámico, PE, unpacking, YARA y reporte | [📘 leer](classes/parte-6-analisis-de-malware/README.md) |
-| 7️⃣ | Red Team y operaciones ofensivas | 20 (161–180) | Adversary emulation, C2, evasión de EDR y Active Directory | [📘 leer](classes/parte-7-red-team-y-operaciones-ofensivas/README.md) |
-| 8️⃣ | Blue Team, detección y SOC | 20 (181–200) | SIEM, ingeniería de detección, threat hunting y SOAR | [📘 leer](classes/parte-8-blue-team-deteccion-y-soc/README.md) |
-| 9️⃣ | Forense digital y respuesta a incidentes | 20 (201–220) | DFIR, adquisición, memoria, timelines y playbooks | [📘 leer](classes/parte-9-forense-digital-y-respuesta-a-incidentes/README.md) |
-| 🔟 | Seguridad en la nube y contenedores | 15 (221–235) | AWS, Azure, GCP, IAM, Docker, Kubernetes e IaC | [📘 leer](classes/parte-10-seguridad-en-la-nube-y-contenedores/README.md) |
+| 0 | Fundamentos y prerrequisitos | 25 (001–025) | Redes, SO, Linux, Windows, cripto base, Python ofensivo y laboratorio | [📘 leer](classes/parte-0-fundamentos-y-prerrequisitos/README.md) |
+| 1 | Redes y seguridad de redes | 20 (026–045) | Análisis de tráfico, escaneo, firewalls, IDS/IPS, VPN y monitoreo | [📘 leer](classes/parte-1-redes-y-seguridad-de-redes/README.md) |
+| 2 | Criptografía aplicada | 20 (046–065) | Simétrica, asimétrica, hashing, PKI, TLS y criptoanálisis | [📘 leer](classes/parte-2-criptografia-aplicada/README.md) |
+| 3 | Hacking ético y pentesting: metodología | 20 (066–085) | PTES, recon, enumeración, explotación, post-explotación y reporte | [📘 leer](classes/parte-3-hacking-etico-y-pentesting-metodologia/README.md) |
+| 4 | Seguridad de aplicaciones web | 30 (086–115) | OWASP Top 10, Burp Suite, inyecciones, XSS, SSRF, APIs y bug bounty | [📘 leer](classes/parte-4-seguridad-de-aplicaciones-web/README.md) |
+| 5 | Explotación de sistemas y binarios | 25 (116–140) | Assembly, buffer overflows, ROP, heap, fuzzing e ingeniería inversa | [📘 leer](classes/parte-5-explotacion-de-sistemas-y-binarios/README.md) |
+| 6 | Análisis de malware | 20 (141–160) | Estático, dinámico, PE, unpacking, YARA y reporte | [📘 leer](classes/parte-6-analisis-de-malware/README.md) |
+| 7 | Red Team y operaciones ofensivas | 20 (161–180) | Adversary emulation, C2, evasión de EDR y Active Directory | [📘 leer](classes/parte-7-red-team-y-operaciones-ofensivas/README.md) |
+| 8 | Blue Team, detección y SOC | 20 (181–200) | SIEM, ingeniería de detección, threat hunting y SOAR | [📘 leer](classes/parte-8-blue-team-deteccion-y-soc/README.md) |
+| 9 | Forense digital y respuesta a incidentes | 20 (201–220) | DFIR, adquisición, memoria, timelines y playbooks | [📘 leer](classes/parte-9-forense-digital-y-respuesta-a-incidentes/README.md) |
+| 10 | Seguridad en la nube y contenedores | 15 (221–235) | AWS, Azure, GCP, IAM, Docker, Kubernetes e IaC | [📘 leer](classes/parte-10-seguridad-en-la-nube-y-contenedores/README.md) |
 | 11 | DevSecOps y seguridad del SDLC | 13 (236–248) | Shift-left, threat modeling, SAST/DAST/SCA y supply chain | [📘 leer](classes/parte-11-devsecops-y-seguridad-del-sdlc/README.md) |
 | 12 | OSINT e ingeniería social | 12 (249–260) | Inteligencia de fuentes abiertas, phishing y OPSEC personal | [📘 leer](classes/parte-12-osint-e-ingenieria-social/README.md) |
 | 13 | Seguridad móvil, IoT e inalámbrica | 15 (261–275) | Android, iOS, firmware, hardware, SDR e ICS/SCADA | [📘 leer](classes/parte-13-seguridad-movil-iot-e-inalambrica/README.md) |
