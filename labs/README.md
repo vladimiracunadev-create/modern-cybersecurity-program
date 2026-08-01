@@ -41,7 +41,7 @@ docker compose down -v      # apagar y borrar también los volúmenes/datos
 | [`redes-nmap`](redes-nmap/README.md) | Objetivos en red aislada + scanner nmap para descubrimiento y enumeración | Parte 1 | ✅ Disponible |
 | [`pwn-binarios`](pwn-binarios/README.md) | Binario vulnerable + gdb/pwntools para explotación de stack overflow | Parte 5 | ✅ Disponible |
 | [`cloud-security`](cloud-security/README.md) | Toolbox Prowler/ScoutSuite/trivy/kube-bench para auditoría CSPM | Parte 10 | ✅ Disponible |
-| [`devsecops-pipeline`](devsecops-pipeline/README.md) | Repo vulnerable + auditoría en **6 capas** (deps, SAST, secretos, Dockerfile, contenedor, CI/CD) con informe priorizado | Parte 11 (236–248) · 227, 318, 330 | ✅ Disponible |
+| [`devsecops-pipeline`](devsecops-pipeline/README.md) | Repo vulnerable + auditoría en **8 capas** (deps, SAST, secretos, Dockerfile, contenedor, CI/CD, typosquat y priorización KEV/EPSS/CVSS) con informe | Parte 11 (236–248) · 227, 318, 330 | ✅ Disponible |
 
 Además: **[🚩 Retos tipo CTF](../ctf/README.md)** — colección de retos por categoría (web, cripto, redes, forense, OSINT, pwn) con solución.
 

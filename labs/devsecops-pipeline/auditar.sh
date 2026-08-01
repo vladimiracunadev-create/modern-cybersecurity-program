@@ -5,7 +5,8 @@
 #   ./auditar.sh                 # todas las capas disponibles
 #   ./auditar.sh sast secrets    # solo las capas indicadas
 #
-# Capas: deps · sast · secrets · dockerfile · container · workflows
+# Capas: deps · sast · secrets · dockerfile · container · workflows ·
+#        typosquat · priorizar
 #
 # Principio de diseño (el mismo que debe tener tu informe): una capa que no se
 # pudo ejecutar NO es una capa limpia. El resumen final distingue siempre tres
@@ -15,7 +16,8 @@ set -uo pipefail
 
 REPO="${REPO:-/audit/repo}"
 SALIDA="${SALIDA:-/audit/salida}"
-CAPAS_DISPONIBLES=(deps sast secrets dockerfile container workflows)
+AQUI="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CAPAS_DISPONIBLES=(deps sast secrets dockerfile container workflows typosquat priorizar)
 
 mkdir -p "$SALIDA"
 
@@ -53,7 +55,7 @@ no_disponible() {
 }
 
 capa_deps() {
-    titulo "CAPA 1/6 — Composición: dependencias de terceros"
+    titulo "CAPA 1/8 — Composición: dependencias de terceros"
     if command -v osv-scanner >/dev/null 2>&1; then
         osv-scanner --lockfile="requirements.txt:$REPO/requirements.txt" \
             | tee "$SALIDA/01-deps-osv.txt"
@@ -68,7 +70,7 @@ capa_deps() {
 }
 
 capa_sast() {
-    titulo "CAPA 2/6 — SAST: tu propio código"
+    titulo "CAPA 2/8 — SAST: tu propio código"
     if command -v bandit >/dev/null 2>&1; then
         bandit -r "$REPO" -f txt | tee "$SALIDA/02-sast-bandit.txt"
         registrar sast "${PIPESTATUS[0]}"
@@ -83,7 +85,7 @@ capa_sast() {
 }
 
 capa_secrets() {
-    titulo "CAPA 3/6 — Secretos en el código"
+    titulo "CAPA 3/8 — Secretos en el código"
     if command -v gitleaks >/dev/null 2>&1; then
         gitleaks detect --no-git --redact -v --source "$REPO" \
             --report-path "$SALIDA/03-secretos.json" | tee "$SALIDA/03-secretos.txt"
@@ -94,7 +96,7 @@ capa_secrets() {
 }
 
 capa_dockerfile() {
-    titulo "CAPA 4/6 — Dockerfile: antipatrones de construcción"
+    titulo "CAPA 4/8 — Dockerfile: antipatrones de construcción"
     if command -v hadolint >/dev/null 2>&1; then
         hadolint "$REPO/Dockerfile" | tee "$SALIDA/04-dockerfile.txt"
         registrar dockerfile "${PIPESTATUS[0]}"
@@ -104,7 +106,7 @@ capa_dockerfile() {
 }
 
 capa_container() {
-    titulo "CAPA 5/6 — Contenedor: sistema operativo base"
+    titulo "CAPA 5/8 — Contenedor: sistema operativo base"
     if command -v trivy >/dev/null 2>&1; then
         trivy fs --scanners vuln,secret,misconfig "$REPO" \
             | tee "$SALIDA/05-contenedor.txt"
@@ -115,7 +117,7 @@ capa_container() {
 }
 
 capa_workflows() {
-    titulo "CAPA 6/6 — Workflows de CI/CD"
+    titulo "CAPA 6/8 — Workflows de CI/CD"
     local wf="$REPO/.github/workflows"
     if command -v zizmor >/dev/null 2>&1; then
         zizmor "$wf" | tee "$SALIDA/06-workflows-zizmor.txt"
@@ -132,6 +134,38 @@ capa_workflows() {
     fi
 }
 
+capa_typosquat() {
+    titulo "CAPA 7/8 — Cadena de suministro: nombres suplantados"
+    if command -v python3 >/dev/null 2>&1 && [ -f "$AQUI/typosquat.py" ]; then
+        python3 "$AQUI/typosquat.py" "$REPO/requirements.txt" \
+            | tee "$SALIDA/07-typosquat.txt"
+        registrar typosquat "${PIPESTATUS[0]}"
+        # Esta capa nunca "aprueba" nada: solo propone candidatos a revisión.
+        ESTADO[typosquat]="revisado (heurística: requiere criterio humano)"
+    else
+        no_disponible typosquat "python3 / typosquat.py"
+    fi
+}
+
+capa_priorizar() {
+    titulo "CAPA 8/8 — Inteligencia y priorización (KEV · EPSS · CVSS)"
+    if command -v python3 >/dev/null 2>&1 && [ -f "$AQUI/priorizar.py" ]; then
+        echo "  [i] Se usan los hallazgos de ejemplo. Para priorizar los tuyos,"
+        echo "      conviértelos al formato de hallazgos-ejemplo.json y pásalos"
+        echo "      con --hallazgos."
+        if python3 "$AQUI/priorizar.py" --salida "$SALIDA/08-plan-priorizado.md"; then
+            cat "$SALIDA/08-plan-priorizado.md"
+            # Esta capa no BUSCA hallazgos: los ordena. Decir "sin hallazgos"
+            # aqui seria enganoso, asi que se reporta lo que realmente hizo.
+            ESTADO[priorizar]="plan generado (revisa la cobertura de las señales)"
+        else
+            ESTADO[priorizar]="FALLO al generar el plan"
+        fi
+    else
+        no_disponible priorizar "python3 / priorizar.py"
+    fi
+}
+
 for capa in "${CAPAS[@]}"; do
     case "$capa" in
         deps)       capa_deps ;;
@@ -140,6 +174,8 @@ for capa in "${CAPAS[@]}"; do
         dockerfile) capa_dockerfile ;;
         container)  capa_container ;;
         workflows)  capa_workflows ;;
+        typosquat)  capa_typosquat ;;
+        priorizar)  capa_priorizar ;;
         *) echo "Capa desconocida: $capa (válidas: ${CAPAS_DISPONIBLES[*]})" ;;
     esac
 done

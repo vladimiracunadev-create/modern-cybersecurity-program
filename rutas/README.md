@@ -94,7 +94,7 @@ Seguridad de aplicaciones y caza de vulnerabilidades web.
 4. 📚 **Parte 11** — DevSecOps y SDLC (236–248) · para el lado defensivo
 5. 📚 **Parte 15** — Seguridad de IA/LLM (291–300) · superficie moderna
 
-- 🧪 [`appsec-web`](../labs/appsec-web/README.md) · [`appsec-code`](../labs/appsec-code/README.md) · [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) (el SDLC completo en 6 capas) · 🚩 [CTF web](../ctf/README.md)
+- 🧪 [`appsec-web`](../labs/appsec-web/README.md) · [`appsec-code`](../labs/appsec-code/README.md) · [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) (el SDLC completo en 8 capas) · 🚩 [CTF web](../ctf/README.md)
 - 🎓 **eWPTX** · Burp Suite Certified Practitioner
 - 📖 **[Guía de carrera completa →](appsec.md)** — qué es, día a día, skills, certis, salario y progresión.
 

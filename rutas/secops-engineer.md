@@ -166,7 +166,7 @@ Clases concretas por las que empezar:
 - 🧪 [`appsec-code`](../labs/appsec-code/README.md) — revisión de código y SAST, para que el código
   que escribas sea el que revisarías.
 - 🧪 [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) — auditar el pipeline entero en
-  seis capas y **automatizarlo**: es el trabajo de este rol aplicado al SDLC, y su script
+  ocho capas y **automatizarlo**: es el trabajo de este rol aplicado al SDLC, y su script
   `auditar.sh` es un buen modelo de cómo debe comportarse una automatización de seguridad
   (distinguir siempre *sin hallazgos* de *no ejecutada*).
 - 🚩 [CTF de forense y redes](../ctf/README.md) — reconstruir qué pasó a partir de artefactos:

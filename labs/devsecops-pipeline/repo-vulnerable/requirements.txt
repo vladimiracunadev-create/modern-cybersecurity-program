@@ -25,3 +25,11 @@ pillow==5.2.0
 # darlas por seguras. Es el error de reporte más común en auditoría de deps.
 boto3
 lxml
+
+# --- Nombres sospechosos ---
+# Estos dos NO existen en PyPI: imitan a un paquete popular. Un escáner de
+# vulnerabilidades no los reporta —no tienen CVE, no tienen historial, no son
+# "una versión vulnerable de nada"— y sin embargo son el riesgo más grave de
+# esta lista. Los caza la capa 8 (typosquat.py), no la capa 1.
+requets==2.31.0
+python-dateutils==2.8.2

@@ -23,7 +23,7 @@ de las 340 clases) es la base y el primer entregable.
 - [x] Lab **Triaje forense de Windows** ([`labs/rootcause-windows`](labs/rootcause-windows/README.md)) — sensor de comportamiento en Rust (Partes 6, 8 y 9).
 - [x] Lab **Escaneo de red** ([`labs/redes-nmap`](labs/redes-nmap/README.md)) y **explotación de binarios** ([`labs/pwn-binarios`](labs/pwn-binarios/README.md)) — Partes 1 y 5.
 - [x] Lab **Auditoría cloud / CSPM** ([`labs/cloud-security`](labs/cloud-security/README.md)) — Prowler, ScoutSuite, trivy y kube-bench (Parte 10).
-- [x] Lab **Pipeline de despliegue (DevSecOps)** ([`labs/devsecops-pipeline`](labs/devsecops-pipeline/README.md)) — repositorio vulnerable auditado en **seis capas** (dependencias, SAST, secretos, Dockerfile, contenedor y CI/CD), con priorización KEV/EPSS/CVSS e informe (Parte 11; también 227, 318 y 330).
+- [x] Lab **Pipeline de despliegue (DevSecOps)** ([`labs/devsecops-pipeline`](labs/devsecops-pipeline/README.md)) — repositorio vulnerable auditado en **ocho capas** (dependencias, SAST, secretos, Dockerfile, contenedor, CI/CD, typosquatting e inteligencia), con priorización KEV → EPSS → CVSS **implementada** (`priorizar.py`) e informe (Parte 11; también 227, 318 y 330).
 - [x] Colección de **retos tipo CTF** ([`ctf/`](ctf/README.md)) con solución, por categoría.
 
 ## Fase 3 — Material complementario ✅ (completa)

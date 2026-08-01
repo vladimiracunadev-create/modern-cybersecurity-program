@@ -37,7 +37,7 @@ comparten la misma estructura; cambia el contenido.
 ## 🛡️ Analista de Gestión de Vulnerabilidades
 
 - **Teoría:** Partes 3 (071), 17 (318, 324), 8.
-- **Práctica:** en [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md), audita el repositorio en las seis capas, prioriza con CVSS/EPSS/KEV **ajustado por exposición real**, define SLAs y valida un parcheo con reversión si rompe los tests.
+- **Práctica:** en [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md), audita el repositorio en las ocho capas y prioriza con `priorizar.py` (KEV → EPSS → CVSS **ajustado por exposición real**), define SLAs y valida un parcheo con reversión si rompe los tests.
 - **Informe:** reporte semanal de VM + plan de remediación priorizado.
 
 ## 🕵️ DFIR / Analista forense
@@ -86,7 +86,7 @@ Estas siete rutas están calcadas de anuncios de empleo reales, así que su exam
 ## ⚙️ Security Engineer / SecOps
 
 - **Teoría:** Partes 8, 9, 11 (+ la programación de la Parte 0).
-- **Práctica (con código, obligatorio):** construye una **API REST** que exponga el estado de seguridad de los hosts a partir de la telemetría del lab [`blue-team-soc`](../labs/blue-team-soc/README.md) —autenticada, con validación de entrada y sin secretos en el código— y automatiza en Python/Bash una tarea de *offboarding* (revocar accesos y dejar registro). Somete tu propio código a las seis capas de [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md): lo que escribas se audita igual que lo demás.
+- **Práctica (con código, obligatorio):** construye una **API REST** que exponga el estado de seguridad de los hosts a partir de la telemetría del lab [`blue-team-soc`](../labs/blue-team-soc/README.md) —autenticada, con validación de entrada y sin secretos en el código— y automatiza en Python/Bash una tarea de *offboarding* (revocar accesos y dejar registro). Somete tu propio código a las ocho capas de [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md): lo que escribas se audita igual que lo demás.
 - **Informe:** documentación de la API + **runbook** de respuesta a un incidente de endpoint + el repositorio con historial de Git legible.
 
 ## 🧰 Analista de Seguridad Ofensiva (consultoría)

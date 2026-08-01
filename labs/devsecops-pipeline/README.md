@@ -1,9 +1,13 @@
 # Lab: Auditoría del pipeline de despliegue (DevSecOps)
 
 Laboratorio de la **Parte 11 — DevSecOps y seguridad del SDLC** (clases 236–248). Auditas un
-repositorio deliberadamente vulnerable en **seis capas complementarias** —dependencias, código
-propio, secretos, Dockerfile, contenedor y workflows de CI/CD— y produces un informe con un plan
-de remediación priorizado.
+repositorio deliberadamente vulnerable en **ocho capas complementarias** —dependencias, código
+propio, secretos, Dockerfile, contenedor, workflows de CI/CD, suplantación de paquetes e
+inteligencia de explotación— y produces un informe con un plan de remediación priorizado.
+
+Dos de esas capas vienen **implementadas** en el laboratorio, no solo explicadas:
+[`priorizar.py`](priorizar.py) consulta CISA KEV y EPSS de verdad y ordena los hallazgos, y
+[`typosquat.py`](typosquat.py) detecta nombres de paquete suplantados.
 
 Es el laboratorio que responde a una pregunta que ningún otro del programa cubre: **¿qué se rompe
 entre que el código sale de tu editor y llega a producción?**
@@ -53,7 +57,7 @@ Los dos laboratorios se complementan y no se solapan:
 |---|---|---|
 | **Pregunta** | ¿Mi código tiene fallos? | ¿Qué despliego realmente? |
 | **Alcance** | Un archivo de código propio | Repositorio completo: deps, imagen, CI/CD, secretos |
-| **Herramientas** | Semgrep, Bandit | Seis capas, seis herramientas distintas |
+| **Herramientas** | Semgrep, Bandit | Ocho capas, ocho herramientas distintas |
 | **Habilidad** | Revisión de código y SAST | Composición de capas, priorización y cobertura |
 | **Entregable** | Código corregido | Informe de auditoría con plan priorizado |
 
@@ -72,6 +76,8 @@ cada capa NO ve** — porque es lo que justifica la existencia de la siguiente.
 | 4 | **Dockerfile** | `hadolint` | Antipatrones de construcción de la imagen | Vulnerabilidades de los paquetes que la imagen instala |
 | 5 | **Contenedor** | `trivy` | CVE del sistema operativo base y sus paquetes | Cómo se usa la imagen; qué hace la aplicación dentro |
 | 6 | **CI/CD** | `zizmor` / `actionlint` | Inyección de expresiones, permisos excesivos, acciones sin fijar | Lo que hagan los scripts que el workflow invoca |
+| 7 | **Suplantación** | [`typosquat.py`](typosquat.py) | Paquetes con nombre casi idéntico a uno popular | Paquetes maliciosos con nombre propio, que no imitan a nadie |
+| 8 | **Inteligencia** | [`priorizar.py`](priorizar.py) | Qué se explota **ya** (KEV), qué se explotará (EPSS) | Tu contexto: si ese código se ejecuta y quién lo alcanza |
 
 Léela dos veces. La primera lectura te dice qué hace cada herramienta; la segunda te dice **por qué
 hacen falta las seis**.
@@ -102,8 +108,18 @@ docker compose exec auditor bash
 Ya dentro del contenedor:
 
 ```bash
-./auditar.sh              # las seis capas
-./auditar.sh sast secrets # solo las capas que indiques
+./auditar.sh                    # las ocho capas
+./auditar.sh sast secrets       # solo las capas que indiques
+./auditar.sh typosquat priorizar # las dos capas implementadas en el propio lab
+```
+
+Las capas 7 y 8 son scripts de este laboratorio y **solo necesitan Python**, así que también se
+ejecutan fuera del contenedor:
+
+```bash
+python typosquat.py repo-vulnerable/requirements.txt
+python priorizar.py --hallazgos hallazgos-ejemplo.json
+python priorizar.py --sin-red   # sin conectividad: usa la caché y lo declara
 ```
 
 Los informes quedan en `salida/` (montada desde tu máquina, así que los puedes leer fuera del
@@ -284,11 +300,48 @@ acciones se fijan **por SHA completo**.
 > mide por lo que el pipeline puede hacer, no por la regla en abstracto— es exactamente el que se te
 > va a pedir en una auditoría real, y es lo que distingue un hallazgo de una queja genérica.
 
+### Capa 7 — Suplantación: el paquete que no tiene CVE
+
+```bash
+./auditar.sh typosquat
+# o, fuera del contenedor:
+python typosquat.py repo-vulnerable/requirements.txt
+```
+
+Vuelve a mirar `requirements.txt`. Al final hay dos nombres que **no existen en PyPI**:
+`requets` (por `requests`) y `python-dateutils` (por `python-dateutil`).
+
+Aquí está el punto que justifica esta capa entera: **la capa 1 no los reporta**. Un escáner de
+composición busca versiones vulnerables de paquetes conocidos; un paquete suplantado no tiene CVE,
+no tiene historial y no es "una versión vulnerable de nada". **Tiene carga útil.** No se busca una
+vulnerabilidad: se busca una impostura, y eso exige otra herramienta y otro criterio.
+
+El script usa distancia de Levenshtein contra una lista de paquetes muy descargados. Es una
+heurística **deliberadamente simple y con falsos positivos**, y su salida lo dice: *"ninguno es un
+veredicto"*. Antes de concluir nada hay que mirar el índice — fecha de publicación, descargas,
+repositorio de origen, autor, y si el paquete legítimo está *también* en la lista (señal clásica:
+el atacante cuenta con que no notes que tienes los dos).
+
+Y fíjate en lo que el propio script admite cuando no encuentra nada: que eso **no significa que las
+dependencias sean legítimas**. Un paquete malicioso con nombre propio, que no imite a ninguno
+conocido, es invisible para esta capa.
+
+### Capa 8 — Inteligencia: qué se está explotando de verdad
+
+```bash
+./auditar.sh priorizar
+# o, fuera del contenedor:
+python priorizar.py --hallazgos hallazgos-ejemplo.json
+```
+
+Esta capa no busca hallazgos nuevos: **ordena los que ya tienes**, que es un problema distinto y
+más difícil. Está desarrollado en la sección siguiente.
+
 ## ⚖️ El problema difícil: priorizar
 
-Cuando termines las seis capas tendrás decenas de hallazgos. Aquí es donde el laboratorio deja de
-ser técnico y se vuelve profesional: **no puedes arreglarlo todo, y fingir que sí es lo que hace
-inútil a un informe**.
+Cuando termines las capas de descubrimiento tendrás decenas de hallazgos. Aquí es donde el
+laboratorio deja de ser técnico y se vuelve profesional: **no puedes arreglarlo todo, y fingir que
+sí es lo que hace inútil a un informe**.
 
 Tres señales, que responden a preguntas distintas y no son intercambiables:
 
@@ -307,6 +360,49 @@ Ese último ajuste —el contexto— no lo pone ninguna herramienta. Lo pones t�
 que te pagan. La clase [245](../../classes/parte-11-devsecops-y-seguridad-del-sdlc/245-gestion-de-vulnerabilidades-a-escala/README.md)
 desarrolla el modelo completo y la [318](../../classes/parte-17-profundizacion-para-certificaciones/318-gestion-del-programa-de-vulnerabilidades/README.md)
 lo convierte en un programa con SLAs.
+
+### Implementado: `priorizar.py`
+
+Esta regla no se queda en la teoría. [`priorizar.py`](priorizar.py) la ejecuta: descarga el catálogo
+**CISA KEV**, consulta la **API de EPSS** de FIRST, aplica el **factor de exposición** que tú
+declaras y emite el checklist ordenado.
+
+```bash
+python priorizar.py --hallazgos hallazgos-ejemplo.json
+```
+
+Los datos de ejemplo están elegidos para que veas el efecto en una sola pantalla:
+
+| Hallazgo | CVSS | Exposición | Resultado |
+|---|---|---|---|
+| Heartbleed (CVE-2014-0160) | 7.5 | pública | **P1** — está en KEV: explotación confirmada |
+| Log4Shell (CVE-2021-44228) | 10.0 | pública | **P1** — KEV + EPSS altísimo |
+| CVE inventado, crítico | 9.8 | **no alcanzable** | **P4** — el código afectado no se ejecuta |
+
+Léelo dos veces: una vulnerabilidad de **7.5 acaba por encima de una de 9.8**. Si ordenas por CVSS
+—que es lo que hace la mayoría— trabajas primero en la que nadie está explotando y que además no
+puedes alcanzar. Ese es el coste real de priorizar mal, y por eso las tres señales no son
+intercambiables.
+
+Dos decisiones del script que conviene entender, porque son criterio profesional y no detalles de
+implementación:
+
+- **Una señal no consultada no vale cero.** Si no hay red, el informe encabeza con "NO DISPONIBLE"
+  y marca el orden como **provisional**. Es la misma regla que `auditar.sh` aplica a las capas: *sin
+  hallazgos* y *no ejecutada* nunca se mezclan.
+- **La etiqueta P1–P4 usa el CVSS ajustado**, el mismo que el orden. Una etiqueta que contradice el
+  orden de la lista destruye la confianza en el informe entero.
+
+### Minimal blast radius: subir lo mínimo, no lo último
+
+Cuando hay varias versiones que corrigen un fallo, `priorizar.py` propone **la más baja**, no la más
+reciente. Con `[2.17.1, 2.16.0, 2.15.0]` propone `2.15.0`.
+
+Es contraintuitivo hasta que lo has sufrido: subir a la última disponible arrastra cambios de API,
+dependencias nuevas y comportamiento distinto que **nadie pidió**, y convierte una corrección de
+seguridad de diez minutos en una migración de dos días — o en un build roto un viernes. Se sube lo
+imprescindible para cerrar la vulnerabilidad. **Modernizar es otra tarea**, con otro calendario y
+otro riesgo, y se planifica aparte.
 
 ## 📐 Cobertura honesta: la sección que casi nadie escribe
 
@@ -360,9 +456,19 @@ producción un viernes.
 6. **Informe priorizado.** Redacta el informe usando [`INFORME-PLANTILLA.md`](INFORME-PLANTILLA.md),
    con los hallazgos ordenados por KEV → EPSS → CVSS ajustado por exposición, y **la sección de
    cobertura completa**. *Aceptación:* un lector no técnico entiende qué hacer primero y por qué.
-7. **Shift-left (avanzado).** Convierte la auditoría en prevención: un `pre-commit` que bloquee
-   secretos y un workflow de CI que falle ante hallazgos nuevos, pero **no** ante los preexistentes
-   ya aceptados. *Aceptación:* explicar cómo gestionas la línea base sin volver el pipeline inútil.
+7. **Prioriza tus propios hallazgos.** Convierte la salida de la capa 1 al formato de
+   [`hallazgos-ejemplo.json`](hallazgos-ejemplo.json), **declara la exposición real de cada uno** y
+   pásalo por `priorizar.py`. *Aceptación:* justificar en una frase la exposición asignada a cada
+   hallazgo — es el único dato que ninguna herramienta puede deducir, y el que más cambia el orden.
+8. **Rompe el orden a propósito.** Ejecuta `priorizar.py --sin-red` y compara con la ejecución
+   normal. *Aceptación:* explicar qué cambió, y por qué un plan sin KEV ni EPSS debe entregarse
+   marcado como provisional en vez de presentarse como definitivo.
+9. **Caza al impostor.** Ejecuta `typosquat.py` y, para cada candidato, decide si es suplantación o
+   falso positivo. *Aceptación:* indicar qué comprobaste en el índice de paquetes (fecha, descargas,
+   origen) y explicar por qué la capa 1 no reportó ninguno de los dos.
+10. **Shift-left (avanzado).** Convierte la auditoría en prevención: un `pre-commit` que bloquee
+    secretos y un workflow de CI que falle ante hallazgos nuevos, pero **no** ante los preexistentes
+    ya aceptados. *Aceptación:* explicar cómo gestionas la línea base sin volver el pipeline inútil.
 
 Las respuestas y el detalle de cada capa están en [`SOLUCION.md`](SOLUCION.md) — míralo **después**
 de intentarlo.

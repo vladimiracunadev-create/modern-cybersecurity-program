@@ -1,0 +1,47 @@
+[
+  {
+    "cve": "CVE-2021-44228",
+    "paquete": "log4j-core",
+    "version": "2.14.1",
+    "versiones_corregidas": ["2.17.1", "2.16.0", "2.15.0"],
+    "cvss": 10.0,
+    "exposicion": "publica",
+    "nota": "Log4Shell. Se incluye como caso de referencia historico: es el ejemplo canonico de una vulnerabilidad con explotacion masiva confirmada."
+  },
+  {
+    "cve": "CVE-2014-0160",
+    "paquete": "openssl",
+    "version": "1.0.1f",
+    "versiones_corregidas": ["1.0.1g"],
+    "cvss": 7.5,
+    "exposicion": "publica",
+    "nota": "Heartbleed. CVSS 7.5 (menor que muchas criticas), pero con explotacion masiva documentada: el caso que demuestra por que KEV manda sobre CVSS."
+  },
+  {
+    "cve": "CVE-2023-99999",
+    "paquete": "biblioteca-interna-ejemplo",
+    "version": "1.2.0",
+    "versiones_corregidas": ["1.2.1", "1.3.0", "2.0.0"],
+    "cvss": 9.8,
+    "exposicion": "no-alcanzable",
+    "nota": "CVE INVENTADO para el laboratorio. CVSS 9.8 pero el codigo afectado no se ejecuta: sirve para ver como el factor de exposicion lo baja, y como se elige 1.2.1 (minimo) en vez de 2.0.0 (ultima)."
+  },
+  {
+    "cve": "CVE-2023-88888",
+    "paquete": "parser-ejemplo",
+    "version": "0.9.0",
+    "versiones_corregidas": [],
+    "cvss": 8.1,
+    "exposicion": "interna",
+    "nota": "CVE INVENTADO. Sin version corregida publicada: obliga a decidir entre mitigar, aislar o sustituir, y a documentar la decision."
+  },
+  {
+    "cve": "CVE-2023-77777",
+    "paquete": "utilidad-ejemplo",
+    "version": "3.1.4",
+    "versiones_corregidas": ["3.1.5"],
+    "cvss": 4.3,
+    "exposicion": "desconocida",
+    "nota": "CVE INVENTADO. Severidad media y exposicion sin analizar: se le aplica el factor conservador, no el mejor caso."
+  }
+]

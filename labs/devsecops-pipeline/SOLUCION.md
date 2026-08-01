@@ -171,23 +171,76 @@ La diferencia es sutil y decisiva: en la versión insegura, el título se **sust
 script** antes de ejecutarlo, así que su contenido se interpreta como comandos. En la versión
 corregida, llega como **valor de una variable** y el shell lo trata como dato.
 
+## Capa 7 — Suplantación de paquetes
+
+`requirements.txt` termina con dos nombres que **no existen en PyPI**:
+
+| Declarado | Imita a | Distancia |
+|---|---|---|
+| `requets==2.31.0` | `requests` | 1 |
+| `python-dateutils==2.8.2` | `python-dateutil` | 1 |
+
+Lo decisivo: **la capa 1 no reporta ninguno de los dos**. No son versiones vulnerables de nada, así
+que no hay CVE que encontrar. Un escáner de composición te devuelve "sin hallazgos" para ellos, y
+técnicamente es cierto — y completamente engañoso.
+
+Límite de la heurística, que hay que declarar en el informe: solo compara contra una lista de
+paquetes populares. **Un paquete malicioso con nombre propio no lo detecta nadie** por esta vía; para
+eso hacen falta catálogos de paquetes retirados o maliciosos (OSS Index, avisos del propio índice) y
+revisión de reputación —fecha de publicación, descargas, repositorio de origen—.
+
+La corrección estructural no es "quitar estos dos": es **fijar dependencias con lockfile y hashes**
+y usar un registro interno con lista blanca. Con hashes, un paquete que no es el que esperabas ni
+siquiera se instala.
+
+## Capa 8 — Inteligencia y priorización
+
+`priorizar.py` implementa la regla KEV → EPSS → CVSS ajustado. Con los datos de ejemplo, el orden
+que produce es la lección entera:
+
+| Orden | Hallazgo | CVSS | Señal decisiva |
+|---:|---|---:|---|
+| 1.º | Log4Shell | 10.0 | KEV + EPSS máximo |
+| 2.º | **Heartbleed** | **7.5** | **KEV: explotación confirmada** |
+| 3.º | `parser-ejemplo` | 8.1 | CVSS ajustado (exposición interna) |
+| 4.º | `utilidad-ejemplo` | 4.3 | CVSS bajo |
+| 5.º | **CVE inventado** | **9.8** | **exposición: no alcanzable** |
+
+Una vulnerabilidad de **7.5 por encima de una de 9.8**. Quien ordena por CVSS trabaja primero en la
+que nadie explota y que además no puede alcanzar, mientras deja abierta la que se está explotando
+hoy. Ese es el coste de priorizar con una sola señal.
+
+Comprobaciones que debes saber justificar:
+
+- **KEV es binario y manda.** No admite matices: o hay explotación documentada o no la hay.
+- **EPSS es probabilístico.** Describe el ecosistema, no tu entorno. Por eso va después de KEV y
+  antes de CVSS.
+- **La exposición la pones tú.** Es el único dato que ninguna API entrega, y el que más mueve el
+  orden. Si no la declaras, el script aplica el factor conservador (0.8), nunca el mejor caso.
+- **Sin red, el plan es provisional.** El informe lo encabeza. Una señal no consultada no vale cero.
+
 ## Mapa completo hallazgo → capa
 
 Este es el entregable del reto 1. Las casillas que importan son las que tienen **una sola marca**:
-prueban por qué hacen falta las seis capas.
+prueban por qué hacen falta las ocho capas.
 
-| Hallazgo | Deps | SAST | Secretos | Dockerfile | Contenedor | CI/CD |
-|---|:--:|:--:|:--:|:--:|:--:|:--:|
-| Dependencia vulnerable | ✅ | | | | parcial | |
-| `eval()` en el código | | ✅ | | | | |
-| Clave de AWS en `config.py` | | parcial | ✅ | | | |
-| Imagen base sin versión | | | | ✅ | | |
-| CVE del sistema operativo base | | | | | ✅ | |
-| Secreto en `ENV` del Dockerfile | | | parcial | ✅ | ✅ | |
-| Inyección en el workflow | | | | | | ✅ |
-| Acción sin fijar por SHA | | | | | | ✅ |
-| Falta de autenticación en los endpoints | | | | | | |
+| Hallazgo | Deps | SAST | Secretos | Dockerfile | Contenedor | CI/CD | Typo | Intel |
+|---|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| Dependencia vulnerable | ✅ | | | | parcial | | | ordena |
+| `eval()` en el código | | ✅ | | | | | | |
+| Clave de AWS en `config.py` | | parcial | ✅ | | | | | |
+| `SECRET_KEY = "dev"` | | | parcial | | | | | |
+| Imagen base sin versión | | | | ✅ | | | | |
+| CVE del sistema operativo base | | | | | ✅ | | | ordena |
+| Secreto en `ENV` del Dockerfile | | | parcial | ✅ | ✅ | | | |
+| Inyección en el workflow | | | | | | ✅ | | |
+| Acción sin fijar por SHA | | | | | | ✅ | | |
+| **Paquete suplantado** (`requets`) | | | | | | | ✅ | |
+| Falta de autenticación en los endpoints | | | | | | | | |
 
-La última fila no la marca **ninguna** capa. Es el recordatorio final del laboratorio: la
-automatización cubre los fallos que tienen forma reconocible; **los fallos de diseño siguen siendo
-tuyos**.
+Dos filas concentran la moraleja:
+
+- **`requets`** solo lo marca la capa 7. Es el hallazgo más grave de la lista —ejecución de código
+  arbitrario en tu máquina y en tu pipeline— y las seis primeras capas son ciegas a él.
+- **La falta de autenticación** no la marca **ninguna**. La automatización cubre los fallos que
+  tienen forma reconocible; **los fallos de diseño siguen siendo tuyos**.
