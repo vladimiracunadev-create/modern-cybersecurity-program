@@ -4,6 +4,10 @@ on:
   pull_request:
   push:
     branches: ["main"]
+  # Permite relanzar la validacion a mano: GitHub no siempre crea el run del
+  # push (nos paso con 744e18a) y sin esto no habia forma de reejecutar CI
+  # sobre un commit ya subido salvo empujando un commit vacio.
+  workflow_dispatch:
 
 permissions:
   contents: read
