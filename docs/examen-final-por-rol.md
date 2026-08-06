@@ -64,6 +64,12 @@ comparten la misma estructura; cambia el contenido.
 - **Práctica (aplicada):** construye una matriz de riesgo, un SoA de ISO 27001 y un perfil NIST CSF para una organización ficticia.
 - **Informe:** política de seguridad + análisis de riesgo cuantitativo (FAIR).
 
+## 🎩 CISO / Director de Seguridad de la Información
+
+- **Teoría:** Partes 14 y 17 completas (+ 8, 9 y los bloques de nube/DevSecOps de 10–11).
+- **Práctica (de dirección, sin consola):** sobre una organización ficticia con un contexto dado (sector, tamaño, servicios digitales críticos), entrega el **paquete de gobierno**: evaluación contra NIST CSF (actual vs objetivo), **registro de riesgos** con los diez riesgos principales cuantificados y con dueño, **BIA con RTO/RPO** acordados y **plan director a 24 meses con presupuesto**. Después **dirige** un [ejercicio de mesa](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md) de ransomware con reloj: decisiones de contención, criterio de notificación al regulador y comunicación a clientes.
+- **Informe:** **informe ejecutivo de una página** con KPIs/KRIs para el directorio + **acta de aceptación formal de un riesgo** (quién firma, con qué vigencia) + **defensa del presupuesto** en cinco minutos, con pérdida esperada con y sin control. Se evalúa que un lector sin formación técnica sepa **qué tiene que decidir** al terminar.
+
 ---
 
 ## 🧭 Roles derivados de ofertas reales
@@ -95,7 +101,7 @@ Estas siete rutas están calcadas de anuncios de empleo reales, así que su exam
 - **Práctica:** escanea el laboratorio con Nessus/OpenVAS y **valida a mano** cinco hallazgos —descartando al menos un falso positivo y justificando por qué—; después explota dos vulnerabilidades del OWASP Top 10 en [`appsec-web`](../labs/appsec-web/README.md), una de ellas **sobre una API**.
 - **Informe:** los cinco hallazgos en formato profesional (descripción, CVSS justificado, evidencia reproducible, impacto y remediación) + un acta de alcance previa al trabajo.
 
-## 👔 Jefe de Seguridad de la Información / CISO
+## 👔 Jefe de Seguridad de la Información
 
 - **Teoría:** Partes 14, 17 (+ 8).
 - **Práctica (de dirección):** **dirige** un [ejercicio de mesa](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md) sobre un incidente grave, con roles asignados, decisiones cronometradas y comunicación a dirección; construye el registro de riesgos de la organización y un plan de remediación priorizado con responsables y fechas.

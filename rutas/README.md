@@ -124,6 +124,22 @@ Gobernanza, riesgo, cumplimiento y auditoría.
 - 🎓 **CISSP** · ISO 27001 Lead Implementer/Auditor · CISM
 - 📖 **[Guía de carrera completa →](grc.md)** — qué es, día a día, skills, certis, salario y progresión.
 
+## 🎩 CISO / Director de Seguridad de la Información
+
+El **máximo responsable** de la seguridad de la información y la ciberseguridad de la organización. No es "evitar hackers": es proteger los **datos**, los **sistemas**, los **servicios digitales** y la **continuidad operacional del negocio**, con mandato del directorio, presupuesto propio y responsabilidad formal ante el regulador. Cargo de dirección: no se entra desde cero, se llega.
+
+1. 📚 **Parte 0** — Fundamentos · **002** panorama de amenazas · **003** frameworks NIST/ISO/MITRE · **025** ética y legalidad
+2. 📚 **Parte 14** — GRC, riesgo y cumplimiento (276–290) · **el núcleo del cargo, entera y sin recortes**
+3. 📚 **Parte 17** — **320** gobierno y regulación · **328** riesgo cuantitativo · **329** arquitectura empresarial · **316** modelos de seguridad · **311**/**312** datos y DLP · **313**/**315** identidad y PAM · **318** vulnerabilidades · **321** reporte
+4. 📚 **Parte 8** — **181** SOC · **183** SIEM · **195** threat intelligence · **197** métricas y madurez: supervisar la operación sin operarla
+5. 📚 **Parte 9** — **202** ciclo de respuesta · **215** playbooks · **219** ejercicios de mesa: la crisis que vas a dirigir
+6. 📚 **Partes 10, 11 y 15** — **221**/**234** nube · **236**/**245**/**248** DevSecOps · **300** gobernanza de la IA: donde viven hoy tus servicios digitales
+
+- 🎲 **[219 · Tabletop](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md)** es la práctica principal · 📋 construye los **diez entregables del cargo** (política, plan director, registro de riesgos, SoA, BIA/BCP, plan de respuesta, programa de vulnerabilidades, marco de terceros, concienciación e informe ejecutivo) · 🧪 [`blue-team-soc`](../labs/blue-team-soc/README.md) y [`cloud-security`](../labs/cloud-security/README.md) para no perder el contacto técnico
+- 🎓 **CISSP** · (fuera del programa: **CISM**, **CRISC**, **ISO 27001 Lead Implementer**, CCISO)
+- 💡 El programa te da **el cuerpo de conocimiento** del cargo. Lo que aportas tú: los años de trayectoria, defender un presupuesto ante un directorio, el trato con reguladores y aseguradoras, el inglés de negocio y haber gestionado una crisis real.
+- 📖 **[Guía de carrera completa →](ciso.md)** — mandato y línea de reporte, el año del CISO, entregables, primeros 90 días, cómo se te mide, certis, salario y progresión.
+
 ---
 
 ## 🏦 Analista de Ciberseguridad (institución regulada)
@@ -173,9 +189,9 @@ Operas las plataformas de seguridad **de otras empresas**, desde un proveedor de
 - 💡 El programa te da el **qué y el porqué** (ciclo del dato, DLP, privacidad, PCI, CIS/NIST, playbooks). Lo que aportas tú: la **plataforma comercial concreta**, el **inglés técnico avanzado** (aquí es requisito obligatorio) y el oficio de servicio (SLA, cliente, preventa).
 - 📖 **[Guía de carrera completa →](operacion-plataformas-dlp.md)** — qué es, día a día, skills, certis, salario y progresión.
 
-## 👔 Jefe de Seguridad de la Información / CISO
+## 👔 Jefe de Seguridad de la Información
 
-El **techo de carrera** de las rutas defensivas y el primer rol del curso con **equipo a cargo**: defines la estrategia, gestionas el riesgo, supervisas la operación (vulnerabilidades, hardening, SIEM, firewall, WAF), garantizas el cumplimiento y reportas a la alta dirección y al regulador. No es una ruta de entrada: llega desde una base técnica previa.
+El primer rol del curso con **equipo a cargo**: defines la estrategia, gestionas el riesgo, supervisas la operación (vulnerabilidades, hardening, SIEM, firewall, WAF), garantizas el cumplimiento y reportas a la alta dirección y al regulador. No es una ruta de entrada: llega desde una base técnica previa. Es el **mando medio** que en una organización grande reporta al [CISO](ciso.md).
 
 1. 📚 **Parte 0** — Fundamentos (001–025) · el vocabulario común y **003 (frameworks NIST/ISO/MITRE)**
 2. 📚 **Parte 14** — GRC, riesgo y cumplimiento (276–290) · **el núcleo, entera**: gobernanza (276), riesgo (277), **ISO 27001 (278)**, **NIST CSF (279)**, CIS (280), políticas (282), continuidad (283), terceros (284), auditoría (285) y **métricas KPI/KRI (287)**

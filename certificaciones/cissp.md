@@ -30,7 +30,7 @@ Los dominios de gestión requieren el material propio de CISSP; para la parte t�
 
 ## 🧭 Ruta sugerida
 
-Partes 14 (núcleo) + 2, 8, 9, 11 para el soporte técnico. Ver [rutas por rol](../rutas/README.md) y la [Parte 16 — preparación de certificaciones](../classes/parte-16-capstones-y-preparacion-de-certificaciones/README.md).
+Partes 14 (núcleo) + 2, 8, 9, 11 para el soporte técnico. Las rutas que apuntan directamente a esta certificación son [CISO / Director de Seguridad de la Información](../rutas/ciso.md), [Jefe de Seguridad de la Información](../rutas/ciso-jefe-seguridad.md) y [GRC / Gestión de seguridad](../rutas/grc.md). Ver [rutas por rol](../rutas/README.md) y la [Parte 16 — preparación de certificaciones](../classes/parte-16-capstones-y-preparacion-de-certificaciones/README.md).
 
 ---
 

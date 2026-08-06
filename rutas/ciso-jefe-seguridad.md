@@ -1,4 +1,4 @@
-# 👔 Jefe de Seguridad de la Información / CISO
+# 👔 Jefe de Seguridad de la Información
 
 > El puesto donde la seguridad deja de ser una tarea y pasa a ser **una responsabilidad con
 > nombre y apellido**. Defines la estrategia, gestionas el riesgo, supervisas la operación
@@ -7,13 +7,20 @@
 > regulador cuando toca.
 >
 > **Nivel de entrada:** no es un primer empleo; pide ~3 años liderando proyectos de seguridad y ~1 año liderando equipo · **Foco:** estrategia, riesgo, cumplimiento (ISO 27001/NIST), supervisión de la operación y reporte ejecutivo · **Certificación faro:** CISSP (+ ISO 27001 Lead Implementer / CISM)
+>
+> 🎩 **¿Buscabas el cargo corporativo?** Esta ruta describe el **mando medio** que dirige el
+> programa de seguridad, calcada de una oferta real. El escalón de arriba —el **máximo
+> responsable**, con mandato del directorio, presupuesto propio y responsabilidad sobre datos,
+> sistemas, servicios digitales y continuidad— tiene su propia guía:
+> **[CISO / Director de Seguridad de la Información](ciso.md)**.
 
 ## 🧭 Qué es y por qué importa
 
 Es el primer rol de este programa donde **diriges personas y respondes por resultados**, no por
-tareas. En una organización mediana el título suele ser *Jefe de Seguridad de la Información*, en
-una grande *CISO*, y en algunas *Gerente de Ciberseguridad*: el contenido es el mismo — eres **la
-persona a la que preguntan cuando algo pasa**.
+tareas. En una organización mediana el título suele ser *Jefe de Seguridad de la Información*, y en
+algunas *Gerente de Ciberseguridad*: el contenido es el mismo — eres **la persona a la que
+preguntan cuando algo pasa**. En una organización grande, este puesto reporta al
+[CISO](ciso.md), que es quien tiene el mandato corporativo y el presupuesto.
 
 El puesto se sostiene sobre cuatro patas, y hay que tenerlas las cuatro:
 
@@ -231,8 +238,9 @@ en comunicación ejecutiva; o **por la vía de gestión/auditoría** ([GRC](grc.
 riesgo operacional), que llega con el lenguaje del directorio pero tiene que ganarse el respeto
 técnico. El que combina las dos es el que asciende.
 
-Hacia arriba: **Jefe de Seguridad → CISO corporativo → CISO de grupo o Director de Riesgo
-Tecnológico**, y desde ahí a consultoría estratégica, asesoría de directorios o gerencia de riesgo.
+Hacia arriba: **Jefe de Seguridad → [CISO corporativo](ciso.md) → CISO de grupo o Director de
+Riesgo Tecnológico**, y desde ahí a consultoría estratégica, asesoría de directorios o gerencia de
+riesgo.
 
 Rangos **orientativos y aproximados** (brutos anuales; varían muchísimo por tamaño de organización,
 sector y si el cargo reporta a TI o al directorio — referencia, no promesa):
@@ -310,4 +318,5 @@ entrevista, porque define el cargo entero.
 ---
 
 - ⬅️ [Volver al índice de rutas](./README.md)
+- 🎩 [Escalón siguiente: CISO / Director de Seguridad de la Información](ciso.md) · 🏛️ [GRC / Gestión de seguridad](grc.md)
 - 🏠 [Inicio del programa](../README.md)
