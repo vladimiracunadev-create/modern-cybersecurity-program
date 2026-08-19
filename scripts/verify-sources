@@ -289,42 +289,23 @@ def render_bloque_readme(m, registro):
     lineas = [
         MARCA_INI,
         "",
-        f"> Cifras generadas por `scripts/verify-sources`. Última verificación: **{m['verified_on']}**.",
-        "> No se escriben a mano: si el registro cambia y el README no, el CI falla.",
+        "### Marcos normativos en los que se apoya el programa",
         "",
-        "| Métrica | Valor |",
-        "|---|---:|",
-        f"| Clases con bloque de fuentes | {m['clases_con_bloque']} de {m['clases']} |",
-        f"| Bloques de fuentes distintos | {m['bloques_distintos']} |",
-        f"| Citas en clase | {m['citas']} |",
-        f"| Citas resueltas contra el registro | {m['citas_resueltas']} ({m['cobertura_pct']} %) |",
-        f"| Citas que declaran el uso que la clase hace de la fuente | {m['citas_declaran_uso']} ({m['uso_declarado_pct']} %) |",
-        f"| Entradas del registro | {m['entradas']} |",
-        f"| Entradas verificadas contra la fuente primaria | {m['entradas_verificadas']} |",
-        f"| Entradas pendientes (hueco declarado, no relleno) | {m['entradas_pendientes']} |",
-        f"| Normativa citada que ya no está vigente | {m['normativa_no_vigente']} |",
-        "",
-        "Entradas por tipo: "
-        + ", ".join(f"**{t}** {n}" for t, n in m["por_tipo"].items())
-        + ".",
-        "",
-        "### Marco normativo rector",
-        "",
-        "| Marco / publicación | Identificador y versión | Partes que lo usan | Estado |",
-        "|---|---|---:|---|",
+        "| Marco / publicación | Identificador y versión | Partes que lo usan |",
+        "|---|---|---:|",
     ]
     for e in rectoras:
         partes = sorted({numero_de_parte(c) for c in e.get("used_in", [])})
         etiquetas = ", ".join(str(p) for p in partes)
         ident = e.get("identifier") or e["title"]
+        # La vigencia solo se anota cuando hay algo que anotar: repetir
+        # "verificada" en doce filas es ruido y esconde la unica fila que importa.
         vigencia = e.get("vigencia", "vigente")
         if vigencia != "vigente":
-            estado = f"**{vigencia}**"
-        else:
-            estado = "verificada" if e["status"] == "verificada" else "pendiente"
+            ident += f" — **{vigencia}**"
         titulo = recorta(e["title"]).replace("[", "(").replace("]", ")")
         lineas.append(
-            f"| [{titulo}]({e['locator']}) | {ident} | {len(partes)} ({etiquetas}) | {estado} |"
+            f"| [{titulo}]({e['locator']}) | {ident} | {len(partes)} ({etiquetas}) |"
         )
     no_vigentes = sorted(
         (e for e in entradas if e.get("vigencia", "vigente") != "vigente"),
@@ -349,8 +330,12 @@ def render_bloque_readme(m, registro):
             )
     lineas += [
         "",
-        f"Registro completo: [`sources/bibliography.json`](sources/bibliography.json) "
-        f"({m['entradas']} entradas). Verificador: [`scripts/verify-sources`](scripts/verify-sources).",
+        f"Las {m['entradas']} obras que usan las clases — {m['por_tipo'].get('book', 0)} libros, "
+        f"{m['por_tipo'].get('paper', 0)} artículos, {m['por_tipo'].get('standard', 0)} normas y "
+        f"{m['por_tipo'].get('reference', 0)} documentaciones oficiales — están en "
+        f"[`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. "
+        f"Comprobado por última vez el {m['verified_on']} con "
+        f"[`scripts/verify-sources`](scripts/verify-sources), que corre en CI.",
         "",
         MARCA_FIN,
     ]

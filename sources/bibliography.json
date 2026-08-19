@@ -2787,7 +2787,7 @@
   {
    "id": "bugcrowd-com",
    "type": "reference",
-   "title": "Bugcrowd: programas publicos de bug bounty",
+   "title": "Bugcrowd: programas públicos de bug bounty",
    "locator": "https://www.bugcrowd.com/",
    "authority": "bugcrowd.com",
    "status": "verificada",
@@ -2914,7 +2914,7 @@
   {
    "id": "cisco-com",
    "type": "reference",
-   "title": "Cisco: documentacion de redes y subnetting",
+   "title": "Cisco: documentación de redes y subnetting",
    "locator": "https://www.cisco.com/",
    "authority": "cisco.com",
    "status": "verificada",
@@ -8254,7 +8254,7 @@
   {
    "id": "herramientas-esteganografia",
    "type": "reference",
-   "title": "steghide, zsteg y stegseek: documentacion oficial",
+   "title": "steghide, zsteg y stegseek: documentación oficial",
    "locator": "https://steghide.sourceforge.net/",
    "authority": "proyectos steghide / zsteg / stegseek",
    "status": "verificada",
@@ -9227,7 +9227,7 @@
   {
    "id": "mandiant-threat-intelligence",
    "type": "reference",
-   "title": "Mandiant / Google Threat Intelligence: informes publicos",
+   "title": "Mandiant / Google Threat Intelligence: informes públicos",
    "locator": "https://cloud.google.com/blog/topics/threat-intelligence",
    "authority": "Mandiant (Google Cloud)",
    "status": "verificada",
@@ -9443,7 +9443,7 @@
   {
    "id": "nginx-docs",
    "type": "reference",
-   "title": "nginx: documentacion oficial",
+   "title": "nginx: documentación oficial",
    "locator": "https://nginx.org/en/docs/",
    "authority": "F5 / nginx",
    "status": "verificada",
@@ -9881,7 +9881,7 @@
   {
    "id": "outflank-research",
    "type": "reference",
-   "title": "Outflank: investigacion ofensiva",
+   "title": "Outflank: investigación ofensiva",
    "locator": "https://www.outflank.nl/blog/",
    "authority": "Outflank",
    "status": "pendiente",
@@ -10183,7 +10183,7 @@
   {
    "id": "proveedores-llm-docs",
    "type": "reference",
-   "title": "Documentacion oficial de proveedores de LLM (Anthropic, OpenAI)",
+   "title": "Documentación oficial de proveedores de LLM (Anthropic, OpenAI)",
    "locator": "https://platform.claude.com/docs/en/home",
    "authority": "Anthropic",
    "status": "verificada",
@@ -10204,7 +10204,7 @@
   {
    "id": "proxmark3",
    "type": "reference",
-   "title": "Proxmark3: herramienta de investigacion RFID",
+   "title": "Proxmark3: herramienta de investigación RFID",
    "locator": "https://proxmark.com/",
    "authority": "Proxmark",
    "status": "verificada",
@@ -10311,7 +10311,7 @@
   {
    "id": "red-canary-blog",
    "type": "reference",
-   "title": "Red Canary: investigacion y deteccion",
+   "title": "Red Canary: investigación y detección",
    "locator": "https://redcanary.com/resources-center/category/blog/",
    "authority": "Red Canary",
    "status": "verificada",
@@ -10897,7 +10897,7 @@
   {
    "id": "sigma-rules",
    "type": "reference",
-   "title": "Sigma: formato generico de reglas de deteccion para SIEM",
+   "title": "Sigma: formato genérico de reglas de detección para SIEM",
    "locator": "https://github.com/SigmaHQ/sigma",
    "authority": "SigmaHQ",
    "status": "verificada",
@@ -11093,7 +11093,7 @@
   {
    "id": "specterops-research",
    "type": "reference",
-   "title": "SpecterOps: investigacion sobre Active Directory y operaciones ofensivas",
+   "title": "SpecterOps: investigación sobre Active Directory y operaciones ofensivas",
    "locator": "https://specterops.io/blog/",
    "authority": "SpecterOps",
    "status": "verificada",
@@ -11138,7 +11138,7 @@
   {
    "id": "splunk-security-blog",
    "type": "reference",
-   "title": "Splunk: material sobre ingenieria de deteccion",
+   "title": "Splunk: material sobre ingeniería de detección",
    "locator": "https://www.splunk.com/en_us/blog/security.html",
    "authority": "Splunk",
    "status": "verificada",
@@ -12209,7 +12209,7 @@
   {
    "id": "cis-benchmarks",
    "type": "standard",
-   "title": "CIS Benchmarks: guias de configuracion segura",
+   "title": "CIS Benchmarks: guías de configuración segura",
    "identifier": "CIS Benchmarks",
    "published": "",
    "locator": "https://www.cisecurity.org/cis-benchmarks",
@@ -12270,7 +12270,7 @@
   {
    "id": "cisa",
    "type": "standard",
-   "title": "Cybersecurity and Infrastructure Security Agency: avisos y recursos",
+   "title": "CISA: avisos, catálogos y recursos de ciberseguridad",
    "identifier": "CISA",
    "published": "",
    "locator": "https://www.cisa.gov/",
@@ -12355,7 +12355,7 @@
   {
    "id": "enisa",
    "type": "standard",
-   "title": "European Union Agency for Cybersecurity: informes y guias",
+   "title": "European Union Agency for Cybersecurity: informes y guías",
    "identifier": "ENISA",
    "published": "",
    "locator": "https://www.enisa.europa.eu/",
@@ -13043,7 +13043,7 @@
   {
    "id": "mitre-caldera",
    "type": "standard",
-   "title": "CALDERA: automated adversary emulation platform",
+   "title": "CALDERA: plataforma de emulación automatizada de adversarios",
    "identifier": "MITRE CALDERA",
    "version": "",
    "published": "",
@@ -13100,7 +13100,7 @@
   {
    "id": "mitre-engage",
    "type": "standard",
-   "title": "MITRE Engage: framework for adversary engagement, deception and denial",
+   "title": "MITRE Engage: marco de engaño, denegación y compromiso del adversario",
    "identifier": "MITRE Engage",
    "version": "",
    "published": "",
@@ -13207,7 +13207,7 @@
   {
    "id": "nist-csrc",
    "type": "standard",
-   "title": "Computer Security Resource Center (CSRC)",
+   "title": "NIST Computer Security Resource Center (CSRC)",
    "identifier": "NIST Computer Security Resource Center",
    "published": "",
    "locator": "https://csrc.nist.gov/",
@@ -13487,7 +13487,7 @@
   {
    "id": "nist-pqc",
    "type": "standard",
-   "title": "Post-Quantum Cryptography standardization project",
+   "title": "Proyecto de estandarización de criptografía post-cuántica",
    "identifier": "NIST Post-Quantum Cryptography Project",
    "published": "",
    "locator": "https://csrc.nist.gov/projects/post-quantum-cryptography",
@@ -14688,7 +14688,7 @@
   {
    "id": "owasp-juice-shop",
    "type": "standard",
-   "title": "OWASP Juice Shop: aplicacion web deliberadamente vulnerable",
+   "title": "OWASP Juice Shop: aplicación web deliberadamente vulnerable",
    "identifier": "OWASP Juice Shop",
    "published": "",
    "locator": "https://owasp.org/www-project-juice-shop/",
