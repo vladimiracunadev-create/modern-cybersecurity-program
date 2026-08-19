@@ -34,6 +34,13 @@ jobs:
       - name: Validar codificación (sin mojibake, todo UTF-8)
         run: python scripts/validar_encoding.py
 
+      # Offline a proposito: verify-sources no toca la red. El refresco contra
+      # openlibrary/crossref/csrc vive en scripts/refresh-sources, que se lanza
+      # a mano y no bloquea. Si la red entrase aqui, el CI fallaria por un 503
+      # ajeno al repositorio y acabariamos ignorandolo.
+      - name: Validar trazabilidad de fuentes (registro, citas y cifras del README)
+        run: python scripts/verify-sources
+
       - name: Resumen
         if: always()
         run: |

@@ -62,6 +62,75 @@ Cada parte sigue explícitamente la secuencia y los énfasis de la literatura de
 
 > Las referencias apuntan a las obras; **no se reproduce su contenido**. El material del curso es original y original en su redacción.
 
+## 📖 Trazabilidad de fuentes
+
+Citar una obra no la hace comprobable. Cada libro, norma y publicación que usan las clases está declarado en un registro con **localizador resoluble** — ISBN-13 para libros, DOI para artículos, URL de la fuente primaria para normas — y con la **fecha en que se verificó**. Lo que no se pudo comprobar figura como `pendiente` con el motivo: un hueco declarado es información; un hueco relleno por intuición es una invención con formato de bibliografía.
+
+La fecha de verificación no es burocracia. Una guía retirada invalida la clase que se apoya en ella, y el registro es lo que permite detectarlo.
+
+```bash
+python scripts/verify-sources     # offline y determinista; corre en CI y bloquea
+python scripts/refresh-sources    # en red, manual; informa y nunca borra
+```
+
+<!-- fuentes:inicio -->
+
+> Cifras generadas por `scripts/verify-sources`. Última verificación: **2026-08-19**.
+> No se escriben a mano: si el registro cambia y el README no, el CI falla.
+
+| Métrica | Valor |
+|---|---:|
+| Clases con bloque de fuentes | 340 de 340 |
+| Bloques de fuentes distintos | 340 |
+| Citas en clase | 1477 |
+| Citas resueltas contra el registro | 1477 (100.0 %) |
+| Citas que declaran el uso que la clase hace de la fuente | 976 (66.1 %) |
+| Entradas del registro | 687 |
+| Entradas verificadas contra la fuente primaria | 567 |
+| Entradas pendientes (hueco declarado, no relleno) | 120 |
+| Normativa citada que ya no está vigente | 11 |
+
+Entradas por tipo: **book** 57, **paper** 24, **reference** 459, **standard** 147.
+
+### Marco normativo rector
+
+| Marco / publicación | Identificador y versión | Partes que lo usan | Estado |
+|---|---|---:|---|
+| [MITRE ATT&CK: Adversarial Tactics, Techniques and Common…](https://attack.mitre.org/) | MITRE ATT&CK v19.2 | 13 (0, 1, 3, 6, 7, 8, 9, 10, 12, 13, 16, 17, 18) | verificada |
+| [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/) | OWASP Cheat Sheet Series | 7 (0, 2, 3, 4, 10, 11, 17) | verificada |
+| [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/) | OWASP WSTG v4.2 | 8 (1, 3, 4, 11, 12, 16, 17, 18) | verificada |
+| [Computer Security Incident Handling Guide](https://csrc.nist.gov/pubs/sp/800/61/r2/final) | NIST SP 800-61 Rev. 2 | 5 (8, 9, 10, 16, 17) | **retirada** |
+| [OWASP Community: fichas de ataques y vulnerabilidades](https://owasp.org/www-community/) | OWASP Community | 5 (0, 1, 4, 5, 11) | verificada |
+| [Cybersecurity and Infrastructure Security Agency: avisos y…](https://www.cisa.gov/) | CISA | 7 (0, 9, 12, 13, 14, 16, 17) | verificada |
+| [MITRE ATLAS: Adversarial Threat Landscape for…](https://atlas.mitre.org/) | MITRE ATLAS v2026.07 | 2 (15, 18) | verificada |
+| [CIS Benchmarks: guias de configuracion segura](https://www.cisecurity.org/cis-benchmarks) | CIS Benchmarks | 4 (0, 10, 14, 17) | verificada |
+| [Artificial Intelligence Risk Management Framework (AI RMF 1.0)](https://www.nist.gov/itl/ai-risk-management-framework) | NIST AI 100-1 (AI RMF 1.0) | 2 (15, 18) | verificada |
+| [OWASP Top 10 for Large Language Model Applications](https://genai.owasp.org/llm-top-10/) | OWASP Top 10 for LLM Applications | 2 (15, 18) | verificada |
+| [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss) | FIRST CVSS | 5 (3, 4, 16, 17, 18) | verificada |
+| [Common Weakness Enumeration (CWE)](https://cwe.mitre.org/) | MITRE CWE 4.20 | 4 (4, 5, 11, 17) | verificada |
+
+### Normas citadas que ya no están vigentes
+
+Detectado al construir el registro: el organismo que las publica las ha retirado o sustituido. Se dejan declaradas porque son la fuente que la clase usó; la nota dice qué las reemplaza.
+
+| Publicación | Estado | Clases que la citan |
+|---|---|---:|
+| [NIST SP 800-61 Rev. 2](https://csrc.nist.gov/pubs/sp/800/61/r2/final) | retirada | 11 |
+| [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html) | superada | 2 |
+| [RFC 793](https://www.rfc-editor.org/rfc/rfc793) | obsoleta | 2 |
+| [NIST IR 8259](https://csrc.nist.gov/pubs/ir/8259/final) | retirada | 1 |
+| [NIST SP 800-161 Rev. 1](https://csrc.nist.gov/pubs/sp/800/161/r1/final) | retirada | 1 |
+| [NIST SP 800-162](https://csrc.nist.gov/pubs/sp/800/162/final) | retirada | 1 |
+| [NIST SP 800-88 Rev. 1](https://csrc.nist.gov/pubs/sp/800/88/r1/final) | retirada | 1 |
+| [RFC 6962](https://www.rfc-editor.org/rfc/rfc6962) | obsoleta | 1 |
+| [RFC 7230](https://www.rfc-editor.org/rfc/rfc7230) | obsoleta | 1 |
+| [RFC 7489](https://www.rfc-editor.org/rfc/rfc7489) | obsoleta | 1 |
+| [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446) | obsoleta | 1 |
+
+Registro completo: [`sources/bibliography.json`](sources/bibliography.json) (687 entradas). Verificador: [`scripts/verify-sources`](scripts/verify-sources).
+
+<!-- fuentes:fin -->
+
 ## 🗂️ Las 19 partes
 
 Cada parte tiene su **propio README** con narrativa completa: de qué trata, resultados de aprendizaje, estructura temática y enlaces a las clases.
@@ -180,7 +249,7 @@ El repositorio no se publica a ciegas: cada `push` y cada PR pasan por integraci
 
 | ⚙️ Workflow | Qué cubre |
 |---|---|
-| 🧪 [ci.yml](.github/workflows/ci.yml) | estructura y enlaces internos, navegación bidireccional (anterior/siguiente), codificación UTF-8 sin mojibake, `markdownlint` y build del sitio |
+| 🧪 [ci.yml](.github/workflows/ci.yml) | estructura y enlaces internos, navegación bidireccional (anterior/siguiente), codificación UTF-8 sin mojibake, **trazabilidad de fuentes** (`verify-sources`), `markdownlint` y build del sitio |
 | 🔒 [security.yml](.github/workflows/security.yml) | escaneo de secretos (`gitleaks`) y análisis estático (`bandit`) de los scripts |
 | 🚀 [deploy-pages.yml](.github/workflows/deploy-pages.yml) | genera y despliega el sitio del curso a GitHub Pages |
 
@@ -190,6 +259,7 @@ Los mismos validadores corren en local antes de subir:
 python scripts/validar_estructura.py       # 340 clases + enlaces .md sin rotos
 python scripts/validar_encoding.py          # todo UTF-8, sin mojibake
 python scripts/generar_navegacion.py --check # navegación coherente
+python scripts/verify-sources                # fuentes: registro, citas y cifras
 npx markdownlint-cli2 "**/*.md"             # estilo de Markdown
 ```
 
