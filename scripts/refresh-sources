@@ -1,0 +1,321 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""Refresco en red del registro de fuentes. Manual o programado. NO bloquea.
+
+Deliberadamente separado de `verify-sources`: en cuanto la red entra en el CI,
+el CI empieza a fallar por causas ajenas al repositorio (un 503 de csrc.nist.gov,
+un limite de peticiones de OpenLibrary) y un CI que falla sin culpa acaba
+ignorandose. Aqui la red es el objeto de la comprobacion, no un obstaculo.
+
+Qué hace:
+
+  - resuelve cada ISBN-13 contra openlibrary.org/isbn/{isbn}.json y compara
+    titulo y autores con lo que dice el registro;
+  - resuelve cada DOI contra api.crossref.org/works/{doi} y compara el titulo;
+  - hace GET a cada URL de norma o documentacion y registra el estado, la
+    redireccion final y las marcas de retirada u obsolescencia que publica la
+    propia fuente (NIST "Withdrawn on", RFC "Obsoleted by");
+  - actualiza `accessed` de lo que resolvio y `verified_on` del registro;
+  - REPORTA lo que dejo de resolver. No lo borra: una fuente que hoy no
+    responde sigue siendo la fuente que la clase uso.
+
+Uso:
+    python scripts/refresh-sources                 # informe, no escribe
+    python scripts/refresh-sources --write         # ademas actualiza el registro
+    python scripts/refresh-sources --only standard # limita por tipo
+    python scripts/refresh-sources --timeout 45
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+import time
+import unicodedata
+import urllib.error
+import urllib.parse
+import urllib.request
+from collections import Counter
+from datetime import date, timezone, datetime
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from sources_lib import RAIZ, REGISTRO, carga_registro, normaliza_url  # noqa: E402
+
+UA = {
+    "User-Agent": (
+        "modern-cybersecurity-program/sources "
+        "(+https://github.com/vladimiracunadev-create/modern-cybersecurity-program)"
+    )
+}
+
+# Marcas de retirada que publica NIST en la ficha de la publicacion. Solo se
+# buscan en csrc.nist.gov y pages.nist.gov: ahi "Withdrawn on" es un marcador
+# estructurado y fiable. Buscar frases equivalentes en cualquier pagina produce
+# falsos positivos, y un informe con falsos positivos acaba ignorandose, que es
+# exactamente lo que este verificador quiere evitar.
+RE_RETIRADA_NIST = re.compile(
+    r"(?i)(withdrawn on\s+[A-Za-z]+\s+\d{1,2},\s*\d{4}|superseded by[^.<]{0,90})"
+)
+HOSTS_NIST = ("csrc.nist.gov", "pages.nist.gov")
+RE_RFC = re.compile(r"rfc-editor\.org/rfc/rfc(\d+)\b")
+
+
+def hoy():
+    return datetime.now(timezone.utc).date().isoformat()
+
+
+def sin_tildes(t):
+    return "".join(c for c in unicodedata.normalize("NFD", t) if unicodedata.category(c) != "Mn")
+
+
+def clave(t):
+    return " ".join(re.sub(r"[^a-z0-9]+", " ", sin_tildes((t or "").lower())).split())
+
+
+def parecidos(a, b):
+    """Solapamiento laxo de titulos: sirve para avisar, no para decidir solo."""
+    ka, kb = set(clave(a).split()), set(clave(b).split())
+    if not ka or not kb:
+        return False
+    comunes = len(ka & kb)
+    return comunes >= max(2, int(0.5 * min(len(ka), len(kb))))
+
+
+class Red:
+    def __init__(self, timeout, pausa):
+        self.timeout = timeout
+        self.pausa = pausa
+
+    def get(self, url, limite=400000):
+        peticion = urllib.request.Request(url, headers=UA)
+        with urllib.request.urlopen(peticion, timeout=self.timeout) as r:
+            cuerpo = r.read(limite).decode("utf-8", "replace")
+            return r.getcode(), r.geturl(), cuerpo
+
+    def json(self, url):
+        codigo, final, cuerpo = self.get(url)
+        return json.loads(cuerpo)
+
+    def espera(self):
+        time.sleep(self.pausa)
+
+
+def revisa_libro(e, red):
+    isbn = e.get("isbn13")
+    if not isbn:
+        return "pendiente", "sin ISBN-13 en el registro"
+    try:
+        d = red.json(f"https://openlibrary.org/isbn/{isbn}.json")
+    except urllib.error.HTTPError as err:
+        if err.code == 404:
+            return "roto", f"openlibrary.org no conoce el ISBN {isbn} (404)"
+        return "indeterminado", f"HTTP {err.code} en openlibrary.org"
+    except Exception as err:
+        return "indeterminado", f"{type(err).__name__}: {err}"
+    titulo = d.get("title", "")
+    if d.get("subtitle"):
+        titulo += ": " + d["subtitle"]
+    if not parecidos(titulo, e.get("title", "")):
+        return "discrepa", f"OpenLibrary titula esta edicion {titulo!r}; el registro, {e.get('title')!r}"
+    return "ok", ""
+
+
+def revisa_paper(e, red):
+    doi = e.get("doi")
+    if not doi:
+        return "pendiente", "sin DOI en el registro"
+    try:
+        d = red.json("https://api.crossref.org/works/" + urllib.parse.quote(doi))["message"]
+    except urllib.error.HTTPError as err:
+        if err.code == 404:
+            # arXiv publica DOI propios que Crossref no siempre indexa.
+            if doi.startswith("10.48550/"):
+                return "ok", "DOI de arXiv, no indexado en Crossref: no es un fallo"
+            return "roto", f"Crossref no conoce el DOI {doi} (404)"
+        return "indeterminado", f"HTTP {err.code} en api.crossref.org"
+    except Exception as err:
+        return "indeterminado", f"{type(err).__name__}: {err}"
+    titulo = (d.get("title") or [""])[0]
+    if not parecidos(titulo, e.get("title", "")):
+        return "discrepa", f"Crossref titula este DOI {titulo!r}; el registro, {e.get('title')!r}"
+    return "ok", ""
+
+
+def revisa_rfc(numero, red):
+    """Estado de un RFC segun los metadatos de rfc-editor, no segun su HTML.
+
+    La ficha web menciona los RFC que este documento obsoleta, y raspar esas
+    frases hace pasar por obsoleto a un RFC vigente. El JSON trae el campo
+    `obsoleted_by`, que es el dato y no una frase suelta.
+    """
+    try:
+        d = red.json(f"https://www.rfc-editor.org/rfc/rfc{numero}.json")
+    except Exception as err:
+        return "indeterminado", f"{type(err).__name__} al leer los metadatos del RFC: {err}"
+    obsoleto = d.get("obsoleted_by") or []
+    if obsoleto:
+        return "retirada", "rfc-editor lo declara obsoleto, sustituido por " + ", ".join(obsoleto)
+    return "ok", ""
+
+
+def revisa_url(e, red):
+    url = e.get("locator", "")
+    m = RE_RFC.search(url)
+    if m:
+        return revisa_rfc(m.group(1), red)
+    try:
+        codigo, final, cuerpo = red.get(url)
+    except urllib.error.HTTPError as err:
+        if err.code in (401, 403, 429):
+            return "bloqueado", (
+                f"HTTP {err.code}: la fuente rechaza peticiones automatizadas. "
+                "No prueba que el enlace este roto, solo que no se puede comprobar asi."
+            )
+        if err.code >= 500:
+            # Un fallo del servidor no dice nada sobre el enlace. Marcarlo como
+            # roto degradaria una entrada correcta por un corte de dos minutos.
+            return "indeterminado", (
+                f"HTTP {err.code}: fallo del servidor, probablemente transitorio. "
+                "No es un enlace roto; hay que reintentar."
+            )
+        return "roto", f"HTTP {err.code}"
+    except Exception as err:
+        return "indeterminado", f"{type(err).__name__}: {err}"
+
+    detalles = []
+    if normaliza_url(final) != normaliza_url(url):
+        detalles.append(f"redirige a {final}")
+
+    host = final.split("//", 1)[-1].split("/", 1)[0]
+    if host in HOSTS_NIST:
+        texto = re.sub(r"<[^>]+>", " ", cuerpo)
+        texto = re.sub(r"\s+", " ", texto)
+        marca = RE_RETIRADA_NIST.search(texto)
+        if marca:
+            return "retirada", "; ".join(
+                detalles + [f"la fuente declara: {marca.group(1).strip()}"]
+            )
+    if detalles:
+        return "redirige", "; ".join(detalles)
+    return "ok", ""
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--write", action="store_true",
+                    help="actualiza accessed/verified_on y anota los hallazgos en notes")
+    ap.add_argument("--only", choices=["book", "paper", "standard", "reference", "dataset"],
+                    help="limita el refresco a un tipo")
+    ap.add_argument("--timeout", type=int, default=30)
+    ap.add_argument("--pausa", type=float, default=0.6,
+                    help="segundos entre peticiones, por cortesia con las APIs publicas")
+    ap.add_argument("--limite", type=int, default=0, help="revisa solo las N primeras entradas")
+    args = ap.parse_args()
+
+    registro = carga_registro()
+    red = Red(args.timeout, args.pausa)
+    entradas = [e for e in registro["entries"] if not args.only or e["type"] == args.only]
+    if args.limite:
+        entradas = entradas[: args.limite]
+
+    print("=" * 78)
+    print(f"  Refresco en red de {len(entradas)} entradas — {hoy()}")
+    print("  No bloquea: informa. Lo que no resuelve se marca, no se borra.")
+    print("=" * 78)
+
+    resultados = Counter()
+    incidencias = []
+    promovidas = []
+    fecha = hoy()
+
+    for i, e in enumerate(entradas, 1):
+        tipo = e["type"]
+        if tipo == "book":
+            estado, detalle = revisa_libro(e, red)
+        elif tipo == "paper":
+            estado, detalle = revisa_paper(e, red)
+        else:
+            estado, detalle = revisa_url(e, red)
+        resultados[estado] += 1
+
+        if estado in ("ok", "redirige"):
+            e["accessed"] = fecha
+            if estado == "ok" and e.get("status") == "pendiente":
+                # Solo se promueven las entradas sembradas automaticamente
+                # (seed = auto). En una referencia asi el localizador ES la
+                # fuente: no hay dato bibliografico aparte que contrastar, y
+                # resolver 200 es la verificacion completa.
+                #
+                # Una entrada curada a mano nunca se promueve sola: su nota
+                # suele declarar una reserva de fondo — "esto es una copia de
+                # cortesia, no la fuente primaria" — que un codigo 200 no
+                # resuelve. Pisarla dejaria el registro afirmando mas de lo
+                # que se comprobo.
+                if tipo == "reference" and e.get("seed") == "auto":
+                    e["status"] = "verificada"
+                    e["notes"] = (f"Locator comprobado en red el {fecha}: responde 200 "
+                                  "sin redireccion.")
+                    promovidas.append(e["id"])
+                else:
+                    incidencias.append(
+                        (e["id"], "revisar",
+                         "resuelve en red y sigue pendiente: su reserva no es de enlace")
+                    )
+        if estado not in ("ok",):
+            incidencias.append((e["id"], estado, detalle))
+            # Un locator que ya no resuelve deja de estar verificado, pero no se
+            # borra: sigue siendo la fuente que la clase uso.
+            if estado == "roto":
+                e["status"] = "pendiente"
+                e["notes"] = (
+                    f"Locator sin respuesta en la comprobacion del {fecha}: {detalle}. "
+                    "Se conserva porque es la fuente que la clase cito; necesita "
+                    "revision editorial."
+                )
+
+        marca = {"ok": "  ", "redirige": "->", "retirada": "!!", "roto": "XX",
+                 "bloqueado": "??", "discrepa": "~~", "indeterminado": "..",
+                 "pendiente": ".."}[estado]
+        print(f"{marca} [{i:>3}/{len(entradas)}] {e['id'][:44]:<44} {estado}"
+              + (f" — {detalle[:88]}" if detalle else ""), flush=True)
+        red.espera()
+
+    print("-" * 78)
+    print("  Resumen: " + ", ".join(f"{k} {v}" for k, v in resultados.most_common()))
+
+    graves = [x for x in incidencias if x[1] in ("roto", "retirada", "discrepa")]
+    if graves:
+        print(f"\n  {len(graves)} entradas requieren decision humana:")
+        for ident, estado, detalle in graves:
+            print(f"    [{estado}] {ident}: {detalle}")
+
+    bloqueadas = [x for x in incidencias if x[1] == "bloqueado"]
+    if bloqueadas:
+        print(f"\n  {len(bloqueadas)} entradas no se pueden comprobar por via automatica "
+              "(la fuente rechaza bots). No son enlaces rotos:")
+        for ident, _, detalle in bloqueadas:
+            print(f"    {ident}: {detalle[:96]}")
+
+    if promovidas:
+        print(f"\n  {len(promovidas)} referencias pasan de pendiente a verificada: "
+              "su locator respondio 200 sin redireccion.")
+
+    if args.write:
+        registro["verified_on"] = fecha
+        REGISTRO.write_text(json.dumps(registro, ensure_ascii=False, indent=1) + "\n",
+                            encoding="utf-8")
+        print(f"\n  Registro actualizado (verified_on={fecha}). Ninguna entrada fue "
+              "eliminada. Solo se promovieron referencias cuyo locator resolvio; "
+              "libros, articulos y normas siguen exigiendo revision humana.")
+        print("  Recuerda: python scripts/verify-sources --sync")
+    else:
+        print("\n  Informe en seco. Con --write se actualizan accessed y verified_on.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

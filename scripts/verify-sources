@@ -1,0 +1,495 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""Verificador de trazabilidad de fuentes. Offline, determinista, bloquea en CI.
+
+No toca la red: ni una peticion. Todo lo que comprueba se puede comprobar con
+el repositorio delante. Lo que exige red vive en `scripts/refresh-sources`,
+que no bloquea. Mezclarlos volveria el CI dependiente de que csrc.nist.gov
+este de pie, y un CI que falla por causas ajenas acaba siendo un CI que se
+ignora.
+
+Comprobaciones:
+
+  1. El registro parsea y cumple el esquema.
+  2. Todo `book` lleva ISBN-13 con digito de control valido; todo `paper`, DOI.
+  3. El `locator` tiene la forma canonica de su tipo.
+  4. Toda obra citada por una clase existe en el registro.
+  5. Ninguna entrada del registro queda sin usar.
+  6. Ningun bloque de fuentes se repite entre clases.
+  7. `used_in` esta sincronizado con lo que citan las clases.
+  8. Las cifras del README coinciden con el recuento del registro.
+
+Uso:
+    python scripts/verify-sources            # verifica; exit 1 si algo falla
+    python scripts/verify-sources --sync     # regenera used_in y cifras del README
+    python scripts/verify-sources --json     # vuelca las metricas en JSON
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+from collections import Counter, defaultdict
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from sources_lib import (  # noqa: E402
+    RAIZ,
+    REGISTRO,
+    Resolutor,
+    carga_registro,
+    digito_control_isbn13,
+    extrae_usos,
+)
+
+TIPOS = {"book", "paper", "standard", "reference", "dataset"}
+ESTADOS = {"verificada", "pendiente"}
+RE_ID = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
+RE_FECHA = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+RE_DOI = re.compile(r"^10\.\d{4,9}/\S+$")
+
+MARCA_INI = "<!-- fuentes:inicio -->"
+MARCA_FIN = "<!-- fuentes:fin -->"
+
+README = RAIZ / "README.md"
+
+
+class Informe:
+    def __init__(self):
+        self.errores = []
+        self.avisos = []
+
+    def error(self, seccion, mensaje):
+        self.errores.append((seccion, mensaje))
+
+    def aviso(self, seccion, mensaje):
+        self.avisos.append((seccion, mensaje))
+
+
+# --------------------------------------------------------------------------
+# 1-3. Esquema del registro
+# --------------------------------------------------------------------------
+
+
+def valida_esquema(registro, inf):
+    for campo in ("schema_version", "verified_on", "policy", "entries"):
+        if campo not in registro:
+            inf.error("esquema", f"falta el campo raiz '{campo}'")
+    if not isinstance(registro.get("entries"), list):
+        inf.error("esquema", "'entries' debe ser una lista")
+        return
+    if not RE_FECHA.match(str(registro.get("verified_on", ""))):
+        inf.error("esquema", "'verified_on' no tiene forma AAAA-MM-DD")
+
+    vistos = set()
+    for e in registro["entries"]:
+        ident = e.get("id", "<sin id>")
+        if not RE_ID.match(str(ident)):
+            inf.error("esquema", f"id no kebab-case: {ident!r}")
+        if ident in vistos:
+            inf.error("esquema", f"id duplicado: {ident}")
+        vistos.add(ident)
+
+        tipo = e.get("type")
+        if tipo not in TIPOS:
+            inf.error("esquema", f"{ident}: type invalido {tipo!r}")
+        if not e.get("title"):
+            inf.error("esquema", f"{ident}: sin title")
+        if not e.get("authority"):
+            inf.error("esquema", f"{ident}: sin authority (quien responde por la fuente)")
+        if e.get("status") not in ESTADOS:
+            inf.error("esquema", f"{ident}: status invalido {e.get('status')!r}")
+        if e.get("status") == "pendiente" and not e.get("notes"):
+            inf.error(
+                "esquema",
+                f"{ident}: status pendiente sin notes. Un hueco declarado es "
+                "informacion solo si dice por que lo es.",
+            )
+        if not RE_FECHA.match(str(e.get("accessed", ""))):
+            inf.error("esquema", f"{ident}: accessed no tiene forma AAAA-MM-DD")
+
+        locator = e.get("locator") or ""
+        if not locator:
+            # Sin localizador solo se admite como hueco declarado. La alternativa
+            # seria escribir una URL plausible, y una URL plausible que nadie
+            # comprobo es exactamente la invencion que este registro existe para
+            # impedir.
+            if e.get("status") != "pendiente" or not e.get("notes"):
+                inf.error(
+                    "esquema",
+                    f"{ident}: sin locator. Solo se admite como status pendiente "
+                    "y con el motivo escrito en notes.",
+                )
+            else:
+                inf.aviso("esquema", f"{ident}: sin localizador estable; declarada pendiente")
+            continue
+        if not isinstance(locator, str) or not locator.startswith(("https://", "http://")):
+            inf.error("esquema", f"{ident}: locator no es una URL: {locator!r}")
+            continue
+        if locator.startswith("http://"):
+            # Se admite http solo como hueco declarado: hay fuentes primarias
+            # que no publican por https y falsear el esquema seria peor que
+            # decirlo. Exige status pendiente y un motivo escrito.
+            if e.get("status") != "pendiente" or "http" not in (e.get("notes") or ""):
+                inf.error(
+                    "esquema",
+                    f"{ident}: locator http sin https. Solo se admite como status "
+                    "pendiente y con el motivo escrito en notes.",
+                )
+            else:
+                inf.aviso("esquema", f"{ident}: fuente primaria sin https; declarada pendiente")
+
+        # Forma canonica del locator segun el tipo.
+        if tipo == "book":
+            isbn = e.get("isbn13", "")
+            if not digito_control_isbn13(isbn):
+                inf.error("isbn", f"{ident}: ISBN-13 invalido o ausente: {isbn!r}")
+            elif locator != f"https://openlibrary.org/isbn/{isbn}":
+                inf.error(
+                    "locator",
+                    f"{ident}: un book debe apuntar a https://openlibrary.org/isbn/{isbn}, "
+                    f"no a {locator}",
+                )
+        elif tipo == "paper":
+            doi = e.get("doi", "")
+            if not RE_DOI.match(str(doi)):
+                inf.error("doi", f"{ident}: DOI invalido o ausente: {doi!r}")
+            elif locator != f"https://doi.org/{doi}":
+                inf.error(
+                    "locator",
+                    f"{ident}: un paper debe apuntar a https://doi.org/{doi}, no a {locator}",
+                )
+        else:
+            if e.get("isbn13") or e.get("doi"):
+                inf.aviso("locator", f"{ident}: tipo {tipo} con isbn13/doi; revisa si deberia ser book/paper")
+
+
+# --------------------------------------------------------------------------
+# 4-7. Cobertura: clases <-> registro
+# --------------------------------------------------------------------------
+
+
+def analiza_cobertura(registro, usos, bloques, inf):
+    resolutor = Resolutor(registro)
+    por_entrada = defaultdict(set)
+    sin_resolver = []
+    huerfanas = Counter()
+
+    bibliograficas = [u for u in usos if u.tipo == "bibliografica"]
+    for uso in bibliograficas:
+        ids, urls_sueltas = resolutor.resuelve(uso)
+        for ident in ids:
+            por_entrada[ident].add(uso.clase)
+        if not ids:
+            sin_resolver.append(uso)
+        for u in urls_sueltas:
+            huerfanas[u] += 1
+
+    for uso in sin_resolver:
+        inf.error(
+            "cobertura",
+            f"{uso.clase}:{uso.linea} cita una obra que no esta en el registro: {uso.crudo[:96]}",
+        )
+
+    sin_usar = [e["id"] for e in registro["entries"] if e["id"] not in por_entrada]
+    for ident in sin_usar:
+        inf.error("registro", f"{ident}: entrada del registro que ninguna clase usa")
+
+    # Bloques repetidos entre clases.
+    repetidos = defaultdict(list)
+    for clase, bloque in bloques.items():
+        if bloque.strip():
+            repetidos[bloque].append(clase)
+    for bloque, clases in repetidos.items():
+        if len(clases) > 1:
+            inf.error(
+                "bloques",
+                f"bloque de fuentes identico en {len(clases)} clases: {', '.join(clases[:3])}",
+            )
+
+    # used_in sincronizado.
+    desincronizadas = []
+    for e in registro["entries"]:
+        esperado = sorted(por_entrada.get(e["id"], set()))
+        if e.get("used_in") != esperado:
+            desincronizadas.append((e["id"], esperado))
+
+    return {
+        "resolutor": resolutor,
+        "por_entrada": por_entrada,
+        "bibliograficas": bibliograficas,
+        "sin_resolver": sin_resolver,
+        "huerfanas": huerfanas,
+        "desincronizadas": desincronizadas,
+    }
+
+
+# --------------------------------------------------------------------------
+# Metricas publicables
+# --------------------------------------------------------------------------
+
+
+def calcula_metricas(registro, usos, bloques, cob):
+    entradas = registro["entries"]
+    bib = cob["bibliograficas"]
+    resueltos = len(bib) - len(cob["sin_resolver"])
+    por_tipo = Counter(e["type"] for e in entradas)
+    verificadas = sum(1 for e in entradas if e["status"] == "verificada")
+    pendientes = len(entradas) - verificadas
+    normativa = [e for e in entradas if e["type"] == "standard"]
+    con_bloque = sum(1 for b in bloques.values() if b.strip())
+    declaran_uso = sum(1 for u in bib if u.declara_uso)
+    return {
+        "clases": len(bloques),
+        "clases_con_bloque": con_bloque,
+        "bloques_distintos": len(set(b for b in bloques.values() if b.strip())),
+        "citas": len(bib),
+        "citas_resueltas": resueltos,
+        "citas_declaran_uso": declaran_uso,
+        "cobertura_pct": round(100.0 * resueltos / len(bib), 1) if bib else 0.0,
+        "uso_declarado_pct": round(100.0 * declaran_uso / len(bib), 1) if bib else 0.0,
+        "entradas": len(entradas),
+        "entradas_verificadas": verificadas,
+        "entradas_pendientes": pendientes,
+        "por_tipo": dict(sorted(por_tipo.items())),
+        "normativa": len(normativa),
+        "normativa_no_vigente": sum(
+            1 for e in normativa if e.get("vigencia", "vigente") != "vigente"
+        ),
+        "verified_on": registro["verified_on"],
+    }
+
+
+def numero_de_parte(ruta_clase):
+    """Numero de la parte a la que pertenece una clase, para ordenar 2 antes que 10."""
+    m = re.match(r"parte-(\d+)", ruta_clase.split("/")[1])
+    return int(m.group(1)) if m else 999
+
+
+def recorta(texto, limite=62):
+    """Recorta sin partir palabras: un titulo cortado a media palabra se lee mal."""
+    if len(texto) <= limite:
+        return texto
+    corte = texto[:limite].rsplit(" ", 1)[0]
+    return (corte or texto[:limite]) + "…"
+
+
+def render_bloque_readme(m, registro):
+    """Bloque de cifras del README. Lo produce el verificador, no una persona."""
+    entradas = registro["entries"]
+    # Marcos rectores: normativa ordenada por numero de clases que la usan.
+    rectoras = sorted(
+        (e for e in entradas if e["type"] == "standard"),
+        key=lambda e: (-len(e.get("used_in", [])), e["id"]),
+    )[:12]
+
+    lineas = [
+        MARCA_INI,
+        "",
+        f"> Cifras generadas por `scripts/verify-sources`. Última verificación: **{m['verified_on']}**.",
+        "> No se escriben a mano: si el registro cambia y el README no, el CI falla.",
+        "",
+        "| Métrica | Valor |",
+        "|---|---:|",
+        f"| Clases con bloque de fuentes | {m['clases_con_bloque']} de {m['clases']} |",
+        f"| Bloques de fuentes distintos | {m['bloques_distintos']} |",
+        f"| Citas en clase | {m['citas']} |",
+        f"| Citas resueltas contra el registro | {m['citas_resueltas']} ({m['cobertura_pct']} %) |",
+        f"| Citas que declaran el uso que la clase hace de la fuente | {m['citas_declaran_uso']} ({m['uso_declarado_pct']} %) |",
+        f"| Entradas del registro | {m['entradas']} |",
+        f"| Entradas verificadas contra la fuente primaria | {m['entradas_verificadas']} |",
+        f"| Entradas pendientes (hueco declarado, no relleno) | {m['entradas_pendientes']} |",
+        f"| Normativa citada que ya no está vigente | {m['normativa_no_vigente']} |",
+        "",
+        "Entradas por tipo: "
+        + ", ".join(f"**{t}** {n}" for t, n in m["por_tipo"].items())
+        + ".",
+        "",
+        "### Marco normativo rector",
+        "",
+        "| Marco / publicación | Identificador y versión | Partes que lo usan | Estado |",
+        "|---|---|---:|---|",
+    ]
+    for e in rectoras:
+        partes = sorted({numero_de_parte(c) for c in e.get("used_in", [])})
+        etiquetas = ", ".join(str(p) for p in partes)
+        ident = e.get("identifier") or e["title"]
+        vigencia = e.get("vigencia", "vigente")
+        if vigencia != "vigente":
+            estado = f"**{vigencia}**"
+        else:
+            estado = "verificada" if e["status"] == "verificada" else "pendiente"
+        titulo = recorta(e["title"]).replace("[", "(").replace("]", ")")
+        lineas.append(
+            f"| [{titulo}]({e['locator']}) | {ident} | {len(partes)} ({etiquetas}) | {estado} |"
+        )
+    no_vigentes = sorted(
+        (e for e in entradas if e.get("vigencia", "vigente") != "vigente"),
+        key=lambda e: (-len(e.get("used_in", [])), e["id"]),
+    )
+    if no_vigentes:
+        lineas += [
+            "",
+            "### Normas citadas que ya no están vigentes",
+            "",
+            "Detectado al construir el registro: el organismo que las publica las ha "
+            "retirado o sustituido. Se dejan declaradas porque son la fuente que la clase "
+            "usó; la nota dice qué las reemplaza.",
+            "",
+            "| Publicación | Estado | Clases que la citan |",
+            "|---|---|---:|",
+        ]
+        for e in no_vigentes:
+            ident = e.get("identifier") or e["title"]
+            lineas.append(
+                f"| [{ident}]({e['locator']}) | {e['vigencia']} | {len(e.get('used_in', []))} |"
+            )
+    lineas += [
+        "",
+        f"Registro completo: [`sources/bibliography.json`](sources/bibliography.json) "
+        f"({m['entradas']} entradas). Verificador: [`scripts/verify-sources`](scripts/verify-sources).",
+        "",
+        MARCA_FIN,
+    ]
+    return "\n".join(lineas)
+
+
+def comprueba_readme(bloque, inf, sincronizar):
+    if not README.exists():
+        inf.error("readme", "no existe README.md")
+        return
+    texto = README.read_text(encoding="utf-8")
+    if MARCA_INI not in texto or MARCA_FIN not in texto:
+        inf.error(
+            "readme",
+            f"faltan las marcas {MARCA_INI} / {MARCA_FIN} en el README: "
+            "el verificador no sabe donde publicar las cifras",
+        )
+        return
+    ini = texto.index(MARCA_INI)
+    fin = texto.index(MARCA_FIN) + len(MARCA_FIN)
+    actual = texto[ini:fin]
+    if actual.strip() == bloque.strip():
+        return
+    if sincronizar:
+        README.write_text(texto[:ini] + bloque + texto[fin:], encoding="utf-8")
+        print("  README.md actualizado con las cifras del registro.")
+    else:
+        inf.error(
+            "readme",
+            "las cifras del README no coinciden con el registro. "
+            "Ejecuta: python scripts/verify-sources --sync",
+        )
+
+
+# --------------------------------------------------------------------------
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--sync", action="store_true",
+                    help="regenera used_in en el registro y las cifras del README")
+    ap.add_argument("--json", action="store_true", help="vuelca las metricas en JSON")
+    args = ap.parse_args()
+
+    inf = Informe()
+
+    if not REGISTRO.exists():
+        print(f"FALLO: no existe el registro {REGISTRO.relative_to(RAIZ)}")
+        return 1
+    try:
+        registro = carga_registro()
+    except json.JSONDecodeError as e:
+        print(f"FALLO: el registro no parsea como JSON: {e}")
+        return 1
+
+    valida_esquema(registro, inf)
+    usos, bloques = extrae_usos()
+    cob = analiza_cobertura(registro, usos, bloques, inf)
+
+    if args.sync and cob["desincronizadas"]:
+        por_id = {e["id"]: e for e in registro["entries"]}
+        for ident, esperado in cob["desincronizadas"]:
+            por_id[ident]["used_in"] = esperado
+        REGISTRO.write_text(
+            json.dumps(registro, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
+        )
+        print(f"  used_in sincronizado en {len(cob['desincronizadas'])} entradas.")
+        registro = carga_registro()
+        cob = analiza_cobertura(registro, usos, bloques, Informe())
+    else:
+        for ident, esperado in cob["desincronizadas"]:
+            inf.error(
+                "used_in",
+                f"{ident}: used_in desincronizado ({len(esperado)} clases lo usan). "
+                "Ejecuta: python scripts/verify-sources --sync",
+            )
+
+    metricas = calcula_metricas(registro, usos, bloques, cob)
+
+    # Umbral antirregresion del uso declarado. No se exige el 100 % porque
+    # llegar a el obligaria a reescribir cientos de citas con texto de relleno,
+    # que es justo lo que este trabajo no debe hacer: el material de las clases
+    # esta bien. Lo que si se impide es que la cifra baje.
+    minimo = registro.get("min_uso_declarado_pct")
+    if minimo is not None and metricas["uso_declarado_pct"] < minimo:
+        inf.error(
+            "uso-declarado",
+            f"solo el {metricas['uso_declarado_pct']} % de las citas declara el uso que la "
+            f"clase hace de la fuente; el minimo comprometido en el registro es {minimo} %",
+        )
+
+    comprueba_readme(render_bloque_readme(metricas, registro), inf, args.sync)
+
+    if args.json:
+        print(json.dumps(metricas, ensure_ascii=False, indent=1))
+        return 0
+
+    print("=" * 74)
+    print("  Trazabilidad de fuentes — verificacion offline")
+    print("=" * 74)
+    print(f"  Clases con bloque de fuentes ....... {metricas['clases_con_bloque']} de {metricas['clases']}")
+    print(f"  Bloques distintos .................. {metricas['bloques_distintos']}")
+    print(f"  Citas en clase ..................... {metricas['citas']}")
+    print(f"  Citas resueltas .................... {metricas['citas_resueltas']} ({metricas['cobertura_pct']} %)")
+    print(f"  Citas que declaran su uso .......... {metricas['citas_declaran_uso']} ({metricas['uso_declarado_pct']} %)")
+    print(f"  Entradas del registro .............. {metricas['entradas']}"
+          f"  (verificadas {metricas['entradas_verificadas']}, pendientes {metricas['entradas_pendientes']})")
+    print(f"  Por tipo ........................... "
+          + ", ".join(f"{t} {n}" for t, n in metricas["por_tipo"].items()))
+    print(f"  Normativa .......................... {metricas['normativa']}"
+          f"  (retiradas o superadas: {metricas['normativa_no_vigente']})")
+    print("-" * 74)
+
+    if inf.avisos:
+        print(f"  AVISOS ({len(inf.avisos)}):")
+        for seccion, mensaje in inf.avisos[:20]:
+            print(f"    [{seccion}] {mensaje}")
+        if len(inf.avisos) > 20:
+            print(f"    ... y {len(inf.avisos) - 20} avisos mas")
+        print("-" * 74)
+
+    if inf.errores:
+        por_seccion = Counter(s for s, _ in inf.errores)
+        print(f"  FALLO: {len(inf.errores)} problemas "
+              f"({', '.join(f'{s} {n}' for s, n in por_seccion.most_common())})")
+        print()
+        mostrados = defaultdict(int)
+        for seccion, mensaje in inf.errores:
+            mostrados[seccion] += 1
+            if mostrados[seccion] <= 12:
+                print(f"    [{seccion}] {mensaje}")
+            elif mostrados[seccion] == 13:
+                print(f"    [{seccion}] ... mas problemas de esta clase omitidos")
+        print()
+        return 1
+
+    print("  OK: registro, clases y README coherentes.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
