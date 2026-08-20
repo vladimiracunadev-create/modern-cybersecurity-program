@@ -74,7 +74,7 @@ comparten la misma estructura; cambia el contenido.
 
 ## 🧭 Roles derivados de ofertas reales
 
-Estas siete rutas están calcadas de anuncios de empleo reales, así que su examen se parece más a una
+Estas ocho rutas están calcadas de anuncios de empleo reales, así que su examen se parece más a una
 **prueba de selección** que a un examen académico: el entregable es el que produce el puesto.
 
 ## 🏦 Analista de Ciberseguridad (institución regulada)
@@ -118,6 +118,12 @@ Estas siete rutas están calcadas de anuncios de empleo reales, así que su exam
 - **Teoría:** Parte 17 (311, 312) y Parte 14 (280, 281, 289).
 - **Práctica (aplicada):** define un esquema de **clasificación de datos** para una organización ficticia y el conjunto de políticas de **DLP** que lo hace cumplir; toma una tanda de casos de ejemplo, **afina los falsos positivos** y justifica cada ajuste; diseña un plan de hardening de la plataforma.
 - **Informe:** **playbook** completo de un incidente de fuga de datos (detección → contención → comunicación al cliente → cierre) + **informe mensual de servicio** con métricas. Redactarlo en inglés técnico es opcional, pero es justo lo que el puesto exige.
+
+## 🏭 Arquitecto de Ciberseguridad IT/OT
+
+- **Teoría:** Partes 1 y 13 (**273**), 17 (316, 329, 315) y 14 (278, 279, 283, 284).
+- **Práctica (de diseño, con laboratorio):** monta un **PLC simulado** (OpenPLC/GRFICS/Conpot) en una red aislada siguiendo la [clase 273](../classes/parte-13-seguridad-movil-iot-e-inalambrica/273-seguridad-de-sistemas-de-control-industrial-ics-scada/README.md), **construye el inventario de forma pasiva** (captura de tráfico, sin escaneo activo) y sobre él entrega el **modelo Purdue** del entorno con sus **zonas y conductos**: por cada conducto, protocolo permitido, sentido, inspección y quién lo aprueba. Implementa al menos un conducto de verdad con reglas de firewall ([034](../classes/parte-1-redes-y-seguridad-de-redes/034-firewalls-tipos-iptables-y-nftables/README.md)) y demuestra con tráfico que lo que no está permitido no pasa. Después **audita tu propio diseño** contra NIST CSF y marca la brecha.
+- **Informe:** **memoria de diseño** (diagrama Purdue + matriz de flujos + justificación de cada zona) + **informe de brecha** con esfuerzo estimado y dueño + la **respuesta a una solicitud de acceso remoto de un proveedor**, resuelta como diseño (salto, MFA, sesión grabada, vigencia) y no como un sí o un no. Se evalúa que un ingeniero de automatización entienda el diagrama sin traductor.
 
 ---
 

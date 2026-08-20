@@ -180,7 +180,7 @@ comando, más una colección de retos tipo CTF:
 
 ## 🧭 Portal: rutas, autoevaluación y progreso
 
-- 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, DFIR, **gestión de vulnerabilidades**, AppSec, cloud, GRC, **analista de ciberseguridad (institución regulada)**, **analista de seguridad ofensiva**, **security engineer / SecOps**, **seguridad de infraestructura**, **operación de plataformas (MSSP/DLP)**, **jefe de seguridad**, **CISO / director de seguridad de la información** y **cooperación/alianzas técnicas**.
+- 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, DFIR, **gestión de vulnerabilidades**, AppSec, cloud, GRC, **analista de ciberseguridad (institución regulada)**, **analista de seguridad ofensiva**, **security engineer / SecOps**, **seguridad de infraestructura**, **operación de plataformas (MSSP/DLP)**, **jefe de seguridad**, **CISO / director de seguridad de la información**, **arquitecto de ciberseguridad IT/OT** y **cooperación/alianzas técnicas**.
 - 📝 **[Autoevaluaciones](autoevaluaciones/README.md)** — 97 preguntas (una batería por parte). Versión interactiva con puntuación: [quiz](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/quiz.html).
 - ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/progreso.html)** — marca las 340 clases (se guarda en tu navegador).
 - 🔑 **[Soluciones a los retos](soluciones/README.md)** — claves de referencia de los ejercicios y retos (Parte 2 completa; resto por lotes).
@@ -219,6 +219,7 @@ Cada rol tiene una **guía de carrera completa** (qué es, día a día, qué nec
 - **[CISO / Director de Seguridad de la Información](rutas/ciso.md)** → Partes 0, 14, 17 (+ 8, 9, 10, 11, 15) · el **techo de carrera** del programa: el máximo responsable de proteger **datos, sistemas, servicios digitales y continuidad operacional**, con mandato del directorio, presupuesto y responsabilidad ante el regulador; alineado a **CISSP** (y CISM/CRISC/ISO 27001 fuera del programa).
 - **[Analista de Seguridad Ofensiva (consultoría)](rutas/analista-seguridad-ofensiva.md)** → Partes 0, 1, 3, 4 (+ 170 de la 7, y 17) · el **primer escalón** del oficio ofensivo: pentest básico-intermedio de apps/APIs/redes, validación de hallazgos y evidencia técnica; alineado a **eJPT** y **PenTest+**.
 - **[Security Engineer / SecOps](rutas/secops-engineer.md)** → Partes 0, 8, 9, 11, 17 (+ 4) · perfil híbrido seguridad + desarrollo: EDR/XDR multi-SO, automatización con Python/Bash, APIs REST internas y respuesta a incidentes de endpoint; alineado a **CySA+**.
+- **[Arquitecto de Ciberseguridad IT/OT](rutas/arquitecto-it-ot.md)** → Partes 1, 13, 17, 14, 10 (+ 8, 9, 3) · el rol que **diseña** la seguridad de una planta: modelo **Purdue**, **zonas y conductos IEC 62443**, segmentación IT/OT, integración con nube y SOC y auditoría contra **NIST SP 800-82**, NIST CSF e ISO 27001; alineado a **CISSP** (y ISA/IEC 62443 y GICSP fuera del programa).
 - **[Cooperación y Alianzas Técnicas](rutas/cooperacion-alianzas.md)** → Partes 0, 14 (+ 1, 8 para base técnica) · gobernanza, protección de datos y riesgo de terceros; alineado a **CISSP** e **ISO 27001**.
 
 ## ✅ Calidad y CI

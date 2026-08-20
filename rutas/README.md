@@ -237,6 +237,22 @@ Seguridad operativa desde el lado de la ingeniería: administras el EDR/XDR de t
 - 💡 El programa te da la **base técnica** que pide la oferta (EDR, SIEM, incidentes, Python/Bash, APIs, identidades, hardening). La **experiencia con un producto comercial concreto sobre una flota real** y el **contexto de negocio** (fintech, regulación, escala) los aportas tú.
 - 📖 **[Guía de carrera completa →](secops-engineer.md)** — qué es, día a día, skills, certis, salario y progresión.
 
+## 🏭 Arquitecto de Ciberseguridad IT/OT (industria e infraestructura crítica)
+
+**Diseña**, no opera: dónde va cada zona, qué atraviesa cada conducto y cómo se conectan la red corporativa (IT), la red de proceso (OT), la nube y el SOC sin abrir un camino desde internet hasta un PLC. Entornos donde un fallo no tumba un servicio: **para una planta**. Rol senior (4–5 años), muy demandado en minería, energía, agua y portuario.
+
+1. 📚 **Parte 1** — Redes (026–045) · **el cimiento**: **042 segmentación y zero trust** · **034 firewalls** · **035 IDS/IPS** · **039 capa 2 y VLAN hopping** (por qué una VLAN no basta) · **044 Zeek** (monitorización pasiva) · 043 NSM
+2. 📚 **Parte 13** — **273 ICS/SCADA**: **la clase central** — modelo Purdue, Modbus/DNP3/S7, iDMZ, IEC 62443 y NIST SP 800-82, con laboratorio sobre simulador · + 266 IoT · 274 bus CAN
+3. 📚 **Parte 17** — **316 modelos de seguridad y arquitectura** · **329 arquitectura empresarial y zero trust** · **315 MFA y PAM** (acceso remoto de proveedores) · 324 hardening · 317 seguridad física
+4. 📚 **Parte 14** — **279 NIST CSF** · **278 ISO 27001** · **283 continuidad** (la parte "resiliente") · **284 riesgo de terceros** (integradores y fabricantes) · 285 auditoría
+5. 📚 **Parte 10** — 221 responsabilidad compartida · 222 IAM · 231 CSPM · 234 logging: el extremo de arriba de tu arquitectura
+6. 📚 **Partes 8, 9 y 3** — 182/183/187 la integración con el SOC · 202/215/**219 tabletop** · **067 reglas de engagement** y 085 reporte, para el OT/ICS pentesting con criterio
+
+- 🧪 [`redes-nmap`](../labs/redes-nmap/README.md) · [`blue-team-soc`](../labs/blue-team-soc/README.md) · [`cloud-security`](../labs/cloud-security/README.md) · 🏭 **laboratorio ICS propio** (OpenPLC/GRFICS/Conpot, montable con la clase 273) · 📐 dibuja un **Purdue completo con la política de cada conducto**: es el entregable del puesto
+- 🎓 **CISSP** (dominio de arquitectura) · Security+ · (fuera del programa: **ISA/IEC 62443 Cybersecurity Specialist**, **GICSP**, Fortinet NSE/FCSS, Palo Alto PCNSE)
+- 💡 El programa te da el **cuerpo conceptual** (segmentación, Purdue, protocolos industriales, IEC 62443 y SP 800-82 en la clase 273, arquitectura, PAM, nube, SOC, continuidad y auditoría). Lo que **no**: **IEC 62443 parte por parte**, **Fortinet y Palo Alto como producto**, pentesting ICS avanzado, la regulación local de infraestructura crítica y los **4–5 años en planta**.
+- 📖 **[Guía de carrera completa →](arquitecto-it-ot.md)** — qué es, día a día, skills, certis, salario y progresión.
+
 ## 🤝 Analista de Cooperación y Alianzas Técnicas
 
 Cooperación institucional, alianzas estratégicas e intercambio de información en ciberseguridad. Un puente entre lo técnico y lo estratégico: no auditas sistemas, articulas actores.
