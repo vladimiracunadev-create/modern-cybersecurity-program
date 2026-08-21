@@ -58,27 +58,31 @@ stateDiagram-v2
 
 El espacio de direcciones virtual de un proceso está organizado en regiones bien definidas, y conocerlas es imprescindible para entender la explotación de memoria. En las direcciones más bajas está el segmento de **código (text)**, de solo lectura y ejecutable, con las instrucciones del programa. Encima, los segmentos de **datos**: el inicializado (variables globales con valor) y el BSS (variables globales sin inicializar). A continuación crece hacia arriba el **heap**, la memoria dinámica que el programa solicita en tiempo de ejecución con `malloc`/`new` y que es el terreno de vulnerabilidades como el use-after-free y el heap overflow. En la parte alta del espacio, y creciendo hacia abajo, está el **stack (pila)**, una estructura LIFO que almacena los marcos de las llamadas a función: variables locales, argumentos y —crucialmente— la dirección de retorno. Entre heap y stack se mapean las bibliotecas compartidas. El stack es el objetivo clásico del **buffer overflow**: escribir más allá de un buffer local puede sobrescribir la dirección de retorno y desviar el flujo de ejecución.
 
-```text
-  Direcciones altas
-  +---------------------------+
-  |  Stack (crece hacia abajo)|  <- variables locales, dir. de retorno
-  |            |              |
-  |            v              |
-  +---------------------------+
-  |     (bibliotecas mmap)    |
-  +---------------------------+
-  |            ^              |
-  |            |              |
-  |  Heap (crece hacia arriba)|  <- malloc/new, memoria dinamica
-  +---------------------------+
-  |   BSS (globales sin init) |
-  +---------------------------+
-  |   Data (globales con init)|
-  +---------------------------+
-  |   Text/code (solo lectura)|  <- instrucciones del programa
-  +---------------------------+
-  Direcciones bajas
+```mermaid
+flowchart TD
+  ALTA(["Direcciones ALTAS"])
+  S["Stack<br/>variables locales, argumentos, direccion de retorno<br/>crece hacia direcciones BAJAS"]
+  M["Bibliotecas compartidas y mapeos con mmap<br/>libc, ld.so, ficheros mapeados"]
+  H["Heap<br/>malloc y new: memoria dinamica<br/>crece hacia direcciones ALTAS"]
+  B["BSS<br/>globales sin inicializar, valen 0"]
+  D["Data<br/>globales inicializadas"]
+  T["Text o codigo<br/>instrucciones del programa, solo lectura"]
+  BAJA(["Direcciones BAJAS"])
+  ALTA --- S --- M --- H --- B --- D --- T --- BAJA
+  classDef lim fill:#f6f8f7,stroke:#9aa7b2,color:#4a5560
+  classDef mem fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef ro fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class ALTA,BAJA lim
+  class S,M,H,B,D mem
+  class T ro
 ```
+
+Lee el diagrama de abajo arriba y verás por qué el orden no es arbitrario: lo que
+tiene tamaño fijo y se conoce al compilar (`text`, `data`, BSS) ocupa la parte baja,
+y las dos regiones que crecen en tiempo de ejecución —heap y stack— quedan enfrentadas
+en los extremos del espacio libre que hay en medio. Ese mapa no es teórico: puedes ver
+el tuyo en cualquier proceso con `cat /proc/<pid>/maps`, y volverás a él en cuanto
+empieces a razonar sobre dónde cae cada dato de un binario.
 
 ### Memoria virtual: la ilusión del aislamiento
 

@@ -83,18 +83,24 @@ Mientras el CSF es voluntario y orientado a resultados, **ISO/IEC 27001** es un 
 
 El **Diamond Model** modela cada evento de intrusión como un rombo con cuatro vértices relacionados: **adversario** (quién), **capacidad** (con qué: malware, exploit, herramienta), **infraestructura** (desde dónde: dominios, IPs, servidores) y **víctima** (contra quién). Su potencia analítica está en el **pivote**: si conoces un vértice, puedes descubrir los demás siguiendo las relaciones. Por ejemplo, a partir de una infraestructura (un dominio de C2) puedes pivotar hacia otras víctimas que se comunicaron con él, o hacia la capacidad que se distribuyó desde ahí. Es una herramienta de análisis de intrusiones y de *threat intelligence*, no solo de forense, y encaja de forma natural con ATT&CK: las técnicas ATT&CK describen la "capacidad" y parte del "cómo", mientras el Diamond organiza las relaciones del evento completo.
 
-```text
-                 ADVERSARIO
-                     /\
-                    /  \
-                   /    \
-       INFRAESTRUCTURA   CAPACIDAD
-                   \    /
-                    \  /
-                     \/
-                   VICTIMA
-     Pivote: conocido un vertice, se descubren los otros
+```mermaid
+flowchart TD
+  ADV["Adversario<br/>quien ataca: grupo, operador"]
+  INF["Infraestructura<br/>desde donde: C2, dominios, IP"]
+  CAP["Capacidad<br/>con que: malware, exploit, TTP"]
+  VIC["Victima<br/>a quien: organizacion, activo"]
+  ADV --- INF
+  ADV --- CAP
+  INF --- VIC
+  CAP --- VIC
+  classDef v fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  class ADV,INF,CAP,VIC v
 ```
+
+La potencia del modelo está en el **pivote**: conocido un vértice se descubren los
+otros. De una muestra de malware (capacidad) se extrae el dominio de mando y control
+(infraestructura); de ese dominio salen otras víctimas; y del patrón de víctimas se
+infiere la motivación del adversario.
 
 ### Cumplimiento no es seguridad, y ningún marco basta solo
 

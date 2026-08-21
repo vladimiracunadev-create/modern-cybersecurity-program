@@ -141,7 +141,7 @@ Cada parte tiene su **propio README** con narrativa completa: de qué trata, res
 
 ¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **340 clases** en orden, con portada, aviso ético e índice enlazado.
 
-- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — ~940 páginas listas para imprimir o leer offline.
+- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — ~1.020 páginas listas para imprimir o leer offline.
 
 > Se genera con `python scripts/generar_manual.py` a partir de las clases, así que siempre refleja el contenido actual del repositorio.
 

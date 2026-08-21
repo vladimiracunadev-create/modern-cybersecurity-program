@@ -255,7 +255,7 @@ def escribir_landing(partes) -> None:
         ("📝", "Autoevaluación", f"{n_preg} preguntas interactivas con puntuación, una batería por parte.", "autoevaluaciones/quiz.html"),
         ("✅", "Tu progreso", f"Marca las {total} clases y sigue tu avance (se guarda en tu navegador).", "autoevaluaciones/progreso.html"),
         ("🎓", "Certificaciones", "Mapeo a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con % de cobertura por dominio.", "certificaciones/README.html"),
-        ("📕", "Manual en PDF", f"Las {total} clases en un único PDF (~940 páginas) para leer de corrido o estudiar sin conexión.", "manual/MANUAL.pdf"),
+        ("📕", "Manual en PDF", f"Las {total} clases en un único PDF (~1.020 páginas) para leer de corrido o estudiar sin conexión.", "manual/MANUAL.pdf"),
     ]
     feats_html = "".join(
         f'<a class="feat" href="{u}"><div class="ic">{i}</div><h3>{t}</h3><p>{d}</p></a>'

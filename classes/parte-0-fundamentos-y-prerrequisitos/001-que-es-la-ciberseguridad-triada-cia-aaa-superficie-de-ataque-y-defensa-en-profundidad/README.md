@@ -72,24 +72,28 @@ Confundir estos tres términos lleva a decisiones malas. Una **amenaza** es un a
 
 Ninguna capa de seguridad es infalible, así que la arquitectura correcta parte de asumir que alguna caerá y coloca controles redundantes en profundidad, de modo que romper una barrera todavía deje al atacante frente a otra. Se apilan capas desde el perímetro hasta el dato: red, host, aplicación, datos y el factor humano. El **principio de mínimo privilegio** atraviesa todas: cada cuenta, proceso o servicio recibe solo los permisos que necesita para su función, de forma que comprometer uno no entregue el reino entero. El modelo **zero trust** es la evolución moderna de esta idea: elimina la confianza implícita basada en la ubicación de red ("si estás dentro del firewall, eres de fiar") y exige verificar identidad y contexto en cada acceso, sin importar desde dónde llegue. Zero trust no reemplaza la defensa en profundidad; la refina, porque sigue apilando controles pero deja de conceder una zona interna "de confianza" por defecto.
 
-```text
-                    ATACANTE
-                       |
-   +-------------------v--------------------+
-   |  Capa 1: Perimetro (firewall, filtrado) |
-   +-------------------+--------------------+
-   |  Capa 2: Red (segmentacion, IDS/IPS)    |
-   +-------------------+--------------------+
-   |  Capa 3: Host (EDR, parches, hardening) |
-   +-------------------+--------------------+
-   |  Capa 4: Aplicacion (validacion, WAF)   |
-   +-------------------+--------------------+
-   |  Capa 5: Datos (cifrado, backups)       |
-   +-------------------+--------------------+
-   |  Capa 6: Humano (MFA, concienciacion)   |
-   +----------------------------------------+
-         Si una capa cae, la siguiente contiene
+```mermaid
+flowchart TD
+  ATK(["Atacante"]) -->|"1er intento"| L1
+  L1["Capa 1 - Perimetro<br/>firewall, filtrado de borde, VPN"] -->|"si cae, aun queda"| L2
+  L2["Capa 2 - Red<br/>segmentacion, VLAN, IDS/IPS"] -->|"si cae, aun queda"| L3
+  L3["Capa 3 - Host<br/>EDR, parches, hardening del SO"] -->|"si cae, aun queda"| L4
+  L4["Capa 4 - Aplicacion<br/>validacion de entrada, WAF"] -->|"si cae, aun queda"| L5
+  L5["Capa 5 - Datos<br/>cifrado en reposo, backups, DLP"] -->|"si cae, aun queda"| L6
+  L6["Capa 6 - Humano<br/>MFA, concienciacion, procedimientos"] --> OBJ(["Activo protegido"])
+  classDef atk fill:#c0392b,stroke:#7b241c,color:#ffffff
+  classDef capa fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef obj fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class ATK atk
+  class L1,L2,L3,L4,L5,L6 capa
+  class OBJ obj
 ```
+
+Lee el diagrama como lo recorre el adversario, de arriba abajo: cada capa que
+atraviesa le **cuesta tiempo y le genera señal**, y esa señal es justamente lo que da
+margen al defensor para detectar y responder antes de que llegue al activo. Por eso
+el valor de una capa no se mide solo por lo que bloquea, sino por lo que registra
+cuando no bloquea.
 
 ## 📖 Definiciones y características
 

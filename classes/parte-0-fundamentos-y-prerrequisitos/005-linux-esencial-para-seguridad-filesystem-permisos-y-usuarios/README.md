@@ -47,14 +47,18 @@ Cada usuario en Linux se identifica por un número, el **UID**, y pertenece a un
 
 El modelo de permisos clásico de Unix asigna a cada archivo tres permisos —**r** (lectura), **w** (escritura) y **x** (ejecución)— para tres categorías de sujetos: el **propietario** (*user*), el **grupo** propietario y **otros** (el resto). Eso da los nueve caracteres que ves en `ls -l`, como en `-rw-r--r--`. El primer carácter indica el tipo (`-` archivo, `d` directorio, `l` enlace). Un matiz crucial y fuente de confusión: sobre un **directorio** los permisos cambian de significado. Ahí `r` permite listar su contenido, `w` permite crear o borrar entradas dentro de él, y `x` permite *atravesarlo* (entrar y acceder a lo que hay dentro si conoces el nombre). Por eso puedes tener un directorio en el que puedes entrar (`x`) pero no listar (`r`), o al revés. Entender esto explica muchos "permission denied" desconcertantes.
 
-```text
-   -   rw-   r--   r--
-   |    |     |     |
- tipo  user grupo otros
-        rw-   =  lee y escribe (propietario)
-        r--   =  solo lee (grupo)
-        r--   =  solo lee (otros)
-```
+| Bloque | En `-rw-r--r--` | A quién aplica | Qué concede |
+|---|---|---|---|
+| Tipo | `-` | — | Archivo regular (`d` directorio, `l` enlace simbólico, `c`/`b` dispositivo) |
+| Propietario (*user*) | `rw-` | el usuario dueño | leer y escribir; **no** ejecutar |
+| Grupo | `r--` | el grupo del archivo | solo leer |
+| Otros | `r--` | todos los demás | solo leer |
+
+El orden nunca cambia —tipo, propietario, grupo, otros— y por eso se puede leer de
+un vistazo. Esa misma máscara en **octal** es `644`, porque cada bloque de tres es la
+suma de `r`=4, `w`=2 y `x`=1: de ahí que `chmod 644 fichero` y `chmod u=rw,go=r
+fichero` sean exactamente lo mismo. Traducir entre las dos notaciones sin pensar es
+la destreza que se practica en el laboratorio de esta clase.
 
 ### Notación octal: los permisos como números
 

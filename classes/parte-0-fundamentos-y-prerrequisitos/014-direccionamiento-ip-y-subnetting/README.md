@@ -44,12 +44,21 @@ Una dirección IPv4 son 32 bits que solemos escribir en cuatro octetos decimales
 La **máscara de red** es un patrón de 32 bits donde los bits a `1` marcan la porción de red y los bits a `0` la porción de host. La notación **CIDR** (Classless Inter-Domain Routing) resume la máscara contando cuántos bits a `1` tiene: `/24` significa 24 bits de red, equivalente a `255.255.255.0`. CIDR sustituyó al viejo sistema de clases A/B/C precisamente porque permite prefijos arbitrarios (`/26`, `/30`, `/23`) y la agregación de rutas, haciendo un uso mucho más eficiente del espacio de direcciones. Cuando ves `10.10.10.0/24`, estás leyendo "los primeros 24 bits son fijos (la red) y los 8 restantes varían (los hosts)".
 
 ```text
-IP:       11000000.10101000.00001010.00000101   192.168.10.5
-Mascara:  11111111.11111111.11111111.11000000   255.255.255.192  (/26)
-          |------------ RED (26) ------------|-HOST(6)-|
-Red:      11000000.10101000.00001010.00000000   192.168.10.0
-Broadcast:11000000.10101000.00001010.00111111   192.168.10.63
+                red (26 bits)                    host (6 bits)
+          |--------------------------------|   |-----------|
+IP        11000000 . 10101000 . 00001010 . 00 000101    192.168.10.5
+Mascara   11111111 . 11111111 . 11111111 . 11 000000    255.255.255.192  (/26)
+Red       11000000 . 10101000 . 00001010 . 00 000000    192.168.10.0     <- host todo a 0
+1er host  11000000 . 10101000 . 00001010 . 00 000001    192.168.10.1
+Ult. host 11000000 . 10101000 . 00001010 . 00 111110    192.168.10.62
+Broadcast 11000000 . 10101000 . 00001010 . 00 111111    192.168.10.63    <- host todo a 1
 ```
+
+El prefijo `/26` marca dónde cae la frontera: los 26 bits de la izquierda son
+inmutables dentro de la subred y los 6 de la derecha son el espacio de hosts. De ahí
+salen las cuatro cifras que se calculan siempre: 2⁶ = 64 direcciones totales, 62
+utilizables (se restan red y broadcast), primer host = red + 1 y último host =
+broadcast − 1.
 
 ### Red, broadcast y el cálculo de hosts
 

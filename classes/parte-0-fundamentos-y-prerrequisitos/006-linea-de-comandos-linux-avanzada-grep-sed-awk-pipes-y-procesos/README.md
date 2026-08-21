@@ -43,13 +43,18 @@ La potencia de la línea de comandos no viene de un programa monolítico que lo 
 
 Todo proceso en Linux nace con tres canales de comunicación abiertos, identificados por un descriptor de archivo numérico. El descriptor **0** es la entrada estándar (stdin), por donde el proceso lee; el **1** es la salida estándar (stdout), por donde escribe sus resultados normales; y el **2** es la salida de error estándar (stderr), reservada para diagnósticos y mensajes de fallo. Mantener stdout y stderr separados es una decisión de diseño deliberada: te permite guardar los resultados en un archivo mientras sigues viendo los errores en pantalla, o al revés. El operador `>` redirige stdout a un archivo (sobrescribiéndolo), `>>` lo anexa al final, y `2>` redirige exclusivamente los errores. La construcción `2>&1` significa "manda el descriptor 2 al mismo sitio al que apunta ahora el 1", y es la forma canónica de fusionar ambos flujos.
 
-```text
-        ┌───────────────────────┐
- stdin  │                       │  stdout
- (fd 0) ─────▶     proceso    ─────▶ (fd 1)  ──▶ pantalla o archivo
-        │                       │
-        │                       │  stderr
-        └───────────────────────┘─────▶ (fd 2)  ──▶ pantalla o archivo
+```mermaid
+flowchart LR
+  IN(["Entrada<br/>teclado, archivo o proceso anterior"]) -->|"stdin - fd 0"| P
+  P["Proceso<br/>grep, sed, awk, sort..."]
+  P -->|"stdout - fd 1"| OUT(["Salida normal<br/>pantalla, archivo o siguiente proceso del pipe"])
+  P -->|"stderr - fd 2"| ERR(["Errores y avisos<br/>pantalla; NO viaja por el pipe"])
+  classDef io fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef proc fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef err fill:#fdecea,stroke:#c0392b,color:#7b241c
+  class IN,OUT io
+  class P proc
+  class ERR err
 ```
 
 Un detalle crítico para el análisis de logs: **stderr no viaja por la tubería**. Cuando escribes `comando | otro`, solo stdout entra en el pipe; los errores del primer comando siguen yendo a la terminal. Si necesitas procesar también los errores, debes redirigirlos explícitamente con `2>&1` antes del `|`.

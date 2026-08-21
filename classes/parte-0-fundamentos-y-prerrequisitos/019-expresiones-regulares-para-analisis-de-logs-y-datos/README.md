@@ -43,13 +43,22 @@ Una expresión regular es una notación compacta para describir un **conjunto de
 
 Casi todo patrón útil combina tres tipos de piezas. Las **clases de caracteres** dicen *qué* puede aparecer: `[a-f0-9]` es un dígito hexadecimal, y hay atajos como `\d` (dígito), `\w` (alfanumérico más guion bajo) y `\s` (espacio en blanco). Los **cuantificadores** dicen *cuántas veces*: `*` (cero o más), `+` (una o más), `?` (cero o una) y `{n,m}` (entre n y m). Las **anclas** dicen *dónde*: `^` (inicio de línea), `$` (fin de línea) y `\b` (límite de palabra), y son las que evitan coincidencias parciales indeseadas, como casar `192.168.1.1` dentro de `1192.168.1.1000`. El siguiente esquema descompone un patrón típico de hora en un log.
 
-```text
-  \b   \d{2}   :   \d{2}   :   \d{2}   \b
-   |     |     |     |     |     |     |
-límite  dos    lit. dos   lit. dos  límite
-palabra dígitos ':' dígitos ':' dígitos palabra
-        (hora)      (min)       (seg)
-```
+Patrón completo: `\b\d{2}:\d{2}:\d{2}\b` — una hora `HH:MM:SS` dentro de una línea
+de log.
+
+| Fragmento | Qué es | Qué encaja |
+|---|---|---|
+| `\b` | límite de palabra (ancla de ancho cero) | la frontera entre un carácter de palabra y uno que no lo es |
+| `\d{2}` | clase de dígito con cuantificador exacto | exactamente dos dígitos (la hora) |
+| `:` | literal | el carácter `:` tal cual |
+| `\d{2}` | ídem | exactamente dos dígitos (los minutos) |
+| `:` | literal | el carácter `:` tal cual |
+| `\d{2}` | ídem | exactamente dos dígitos (los segundos) |
+| `\b` | límite de palabra | cierra el token para no capturar dígitos de más |
+
+Los `\b` de los extremos son los que evitan el falso positivo: sin ellos la regex
+encajaría dentro de `123:45:6789`. Y los cuantificadores `{2}` exactos son lo que la
+separan de un `\d+` laxo que aceptaría `1:2:3` como si fuera una hora válida.
 
 ### Grupos y captura: quedarse con la parte útil
 

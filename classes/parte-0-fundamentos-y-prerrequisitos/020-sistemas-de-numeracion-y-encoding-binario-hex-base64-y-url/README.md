@@ -55,14 +55,24 @@ Aquí vive una de las confusiones más persistentes: la diferencia entre un **ca
 
 Muchos canales solo transportan texto imprimible con fiabilidad (cabeceras de correo, JSON, URLs), pero a menudo necesitas enviar datos binarios por ellos. **Base64** resuelve esto representando cada 3 bytes (24 bits) como 4 caracteres imprimibles elegidos de un alfabeto de 64 símbolos (A-Z, a-z, 0-9, `+`, `/`), con `=` como relleno. El precio es un aumento de tamaño de aproximadamente un tercio. El punto crítico, que hay que repetir hasta el cansancio, es que **Base64 no cifra nada**: es una transformación pública y reversible por cualquiera sin ninguna clave. Ver una cabecera `Authorization: Basic dXNlcjpwYXNz` no significa que las credenciales estén protegidas; se decodifican en un segundo. El diagrama muestra el empaquetado de 3 bytes en 4 caracteres.
 
-```text
-  3 bytes (24 bits)          4 caracteres Base64
-+------+------+------+      +----+----+----+----+
-| byte | byte | byte |  ->  | 6b | 6b | 6b | 6b |
-+------+------+------+      +----+----+----+----+
-   8      8      8            cada grupo de 6 bits
-                             indexa el alfabeto A-Za-z0-9+/
+```mermaid
+flowchart LR
+  A["3 bytes de entrada<br/>8 + 8 + 8 = 24 bits"] --> B["Reagrupar<br/>24 bits en 4 grupos de 6"]
+  B --> C["4 valores de 0 a 63"]
+  C --> D["4 caracteres del alfabeto<br/>A-Z a-z 0-9 mas + y /"]
+  D --> E["Si la entrada no era multiplo de 3:<br/>relleno con = hasta completar"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef f fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class A,B,C,D n
+  class E f
 ```
+
+De la geometría del diagrama sale la regla práctica para **reconocer** Base64 a
+simple vista en un log o en una captura: la salida es siempre múltiplo de 4
+caracteres, usa solo `A-Za-z0-9+/`, y si termina en `=` o `==` es que la entrada no
+era múltiplo de 3 y se rellenó (un `=` significa que sobraban 2 bytes; dos `=`, que
+sobraba 1). Cuidado con la variante **Base64URL**, que sustituye `+` y `/` por `-` y
+`_` para poder viajar en una URL: la verás constantemente en tokens JWT.
 
 ### URL/percent encoding: datos seguros en una URL
 

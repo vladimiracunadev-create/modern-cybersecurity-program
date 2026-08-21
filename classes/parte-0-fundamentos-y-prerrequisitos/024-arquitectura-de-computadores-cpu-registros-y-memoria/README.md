@@ -47,20 +47,34 @@ Los **registros** son pequeñas celdas de almacenamiento dentro de la propia CPU
 
 La **pila (stack)** es una región de memoria que funciona como estructura LIFO (last-in, first-out) y que, en x86-64, crece hacia **direcciones más bajas**. Es donde el programa guarda las variables locales, los argumentos que no caben en registros y —el dato más importante para la seguridad— la **dirección de retorno**. Cuando se ejecuta la instrucción `call funcion`, la CPU hace dos cosas: apila la dirección de la instrucción siguiente al `call` (la dirección de retorno) y salta al inicio de la función. La función suele empezar con un **prólogo** (`push rbp; mov rbp, rsp`) que establece su marco de pila, reserva espacio para las locales y trabaja. Al terminar, un **epílogo** restaura el marco anterior y la instrucción `ret` **desapila** la dirección de retorno a RIP, devolviendo el control a quien la llamó. Aquí está la vulnerabilidad clásica: si una escritura descontrolada (un buffer local sin comprobar límites) sobrescribe esa dirección de retorno guardada en la pila, cuando se ejecute `ret` la CPU saltará a donde el atacante quiera. Ese es el corazón del stack buffer overflow.
 
-```text
-  Direcciones altas
-  +--------------------------+
-  |  argumentos extra        |
-  +--------------------------+
-  |  DIRECCION DE RETORNO     |  <- objetivo del overflow
-  +--------------------------+
-  |  RBP guardado            |  <- base del marco anterior
-  +--------------------------+  <- RBP apunta aqui
-  |  variables locales       |
-  |  buffer[ ]  ...          |  <- un overflow escribe hacia arriba
-  +--------------------------+  <- RSP (cima de la pila)
-  Direcciones bajas
+```mermaid
+flowchart TD
+  ALTA(["Direcciones ALTAS"])
+  X["Argumentos extra<br/>los que no cupieron en registros"]
+  R["DIRECCION DE RETORNO<br/>a donde vuelve ret - objetivo clasico del overflow"]
+  B["RBP guardado<br/>base del marco de la funcion que llamo"]
+  L["Variables locales<br/>buffer... un overflow escribe HACIA ARRIBA"]
+  BAJA(["Direcciones BAJAS"])
+  ALTA --- X --- R --- B --- L --- BAJA
+  B -.->|"aqui apunta RBP"| PB(["base del marco actual"])
+  L -.->|"aqui apunta RSP"| PS(["cima de la pila"])
+  classDef lim fill:#f6f8f7,stroke:#9aa7b2,color:#4a5560
+  classDef mem fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef peligro fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class ALTA,BAJA,PB,PS lim
+  class X,B,L mem
+  class R peligro
 ```
+
+El diagrama hay que leerlo **de abajo arriba**, porque ese es el sentido en el que
+escribe un desbordamiento: el `buffer` vive en la zona baja del marco, y al pasarse
+de tamaño avanza primero sobre el `RBP` guardado y solo después sobre la dirección de
+retorno. Esa distancia —cuántos bytes hay entre el inicio del buffer y la dirección
+de retorno— es lo que en explotación se llama el *offset*, y calcularlo es el primer
+paso de cualquier exploit de pila. La mitigación que ataca justo ese camino es el
+**canario de pila**: un valor aleatorio que el compilador coloca entre las locales y
+el `RBP` guardado y comprueba en el epílogo; si cambió, el programa aborta antes de
+ejecutar `ret`.
 
 ### La convención de llamada System V
 

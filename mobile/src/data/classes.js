@@ -207,13 +207,14 @@ export const CLASSES = [
     "level": "Fundamentos",
     "duration": "90 min",
     "description": "Construir el vocabulario y los modelos mentales sobre los que descansa todo el programa.",
-    "theory": "Construir el vocabulario y los modelos mentales sobre los que descansa todo el programa. Al terminar sabrás qué protege realmente la ciberseguridad (no \"los hackers malos\", sino propiedades concretas de la información), cómo se controla el acceso a los sistemas, qué es la superficie de ataque de un activo y por qué ninguna defensa aislada es suficiente.",
+    "theory": "Construir el vocabulario y los modelos mentales sobre los que descansa todo el programa. La ciberseguridad no consiste en \"detener a los hackers malos\": consiste en preservar propiedades concretas y medibles de la información y de los sistemas que la procesan. Al terminar esta clase sabrás qué protege realmente la disciplina (tres propiedades esenciales más varias derivadas), cómo se decide y se registra quién puede hacer qué en un sistema, qué es la superficie de ataque de un activo y cómo reducirla, y por qué ninguna defensa aislada basta, de modo que la estrategia correcta es asumir el fal…",
     "outcomes": [
       "Definir las tres propiedades de la tríada CIA y dar un ejemplo de ataque contra cada una.",
       "Distinguir las tres A del modelo AAA (autenticación, autorización, accounting) y ubicarlas en un flujo de acceso.",
       "Enumerar los componentes de la superficie de ataque de un sistema y proponer cómo reducirla.",
-      "Explicar el principio de defensa en profundidad con capas concretas.",
-      "Relacionar cada concepto con controles reales (cifrado, MFA, logs, segmentación)."
+      "Explicar el principio de defensa en profundidad con capas concretas y su lógica de contención.",
+      "Relacionar cada concepto con controles reales (cifrado, MFA, logs, segmentación).",
+      "Diferenciar con precisión amenaza, vulnerabilidad y riesgo, y situar el modelo zero trust frente al perímetro clásico."
     ],
     "topics": [
       "Tríada CIA",
@@ -226,23 +227,25 @@ export const CLASSES = [
       "Modelos zero trust"
     ],
     "definitions": [
-      "Confidencialidad: garantía de que la información solo es accesible a quien está autorizado. Característica clave: se rompe con una fuga/disclosure; se protege con cifrado y control de acceso.",
-      "Integridad: garantía de que los datos no se alteran de forma no autorizada. Se verifica con hashes y firmas; se rompe con manipulación (tampering).",
-      "Disponibilidad: garantía de que el servicio está accesible cuando se necesita. Se ataca con DoS/DDoS; se protege con redundancia y capacidad.",
-      "Autenticación: probar que eres quien dices ser (algo que sabes/tienes/eres). Sin ella no hay identidad fiable.",
-      "Autorización: decidir qué puede hacer una identidad ya autenticada. Se implementa con RBAC/ABAC.",
-      "Accounting/Auditoría: registrar quién hizo qué y cuándo. Habilita la trazabilidad y el forense.",
-      "Superficie de ataque: suma de todos los puntos donde un atacante puede intentar entrar (puertos, APIs, formularios, personas). Menos superficie = menos riesgo."
+      "Confidencialidad: garantía de que la información solo es accesible a quien está autorizado. Se rompe con una fuga o disclosure y se protege con cifrado y control de acceso. Es la propiedad más intuitiva pero no siempre la prioritaria: en muchos sistemas industriales importa menos que la integridad.",
+      "Integridad: garantía de que los datos no se alteran de forma no autorizada ni indetectable. Se verifica con funciones hash y firmas digitales, y se rompe con manipulación (tampering). Sin integridad, ni la confidencialidad ni la disponibilidad significan nada, porque no sabrías si el dato es fiable.",
+      "Disponibilidad: garantía de que el servicio está accesible cuando se necesita. Se ataca con DoS/DDoS y se protege con redundancia, capacidad de reserva y recuperación ante desastres. Es una propiedad de seguridad de pleno derecho, no un mero asunto de infraestructura.",
+      "Autenticación: proceso de probar que una identidad es quien dice ser mediante factores (algo que sabes, tienes o eres). Sin autenticación fiable, todo lo demás carece de base porque no hay a quién atribuir acciones ni permisos.",
+      "Autorización: decisión sobre qué puede hacer una identidad ya autenticada. Se implementa con modelos como RBAC o ABAC y depende del mínimo privilegio para limitar el daño de una cuenta comprometida.",
+      "Accounting / Auditoría: registro de quién hizo qué y cuándo. Habilita la trazabilidad, la detección de abusos y la investigación forense; sin logs adecuados, un incidente es invisible o irreconstruible.",
+      "Superficie de ataque: suma de todos los puntos por los que un atacante puede intentar entrar (puertos, APIs, formularios, dependencias, personas). Reducirla desactivando lo innecesario es la forma más rentable de bajar el riesgo.",
+      "Amenaza: agente o evento con potencial de causar daño (grupo criminal, insider, desastre natural). Existe con independencia de que tengas o no una vulnerabilidad que explote."
     ],
     "tools": [],
-    "lab": "1. Elige un sistema real que conozcas (tu correo personal, un servidor web, un cajero). Anótalo. 2. CIA por activo: para ese sistema, escribe un ejemplo concreto de ataque que rompa (a) confidencialidad, (b) integridad, (c) disponibilidad. 3. Flujo AAA: dibuja en draw.io el recorrido de un login: identidad → autenticación (¿factor?) → autorización (¿qué permisos?) → accounting (¿qué se registra?)…",
+    "lab": "1. Elige un sistema real que conozcas (tu correo personal, un servidor web, un cajero automático). Anótalo; será tu activo de referencia. 2. CIA por activo: para ese sistema, escribe un ejemplo concreto de ataque que rompa (a) confidencialidad, (b) integridad y (c) disponibilidad. Justifica por qué cada uno afecta a esa propiedad y no a otra. 3. Prioridad CIA: ordena las tres propiedades para tu…",
     "exercises": [
-      "Clasifica estos incidentes según qué propiedad CIA violan: ransomware, defacement de una web, robo de base de datos, ataque de amplificación DNS.",
-      "Explica con un ejemplo la diferencia entre amenaza, vulnerabilidad y riesgo.",
-      "Diseña un esquema AAA para una app bancaria: ¿qué factores de autenticación y qué niveles de autorización usarías?",
-      "Toma un dispositivo IoT doméstico y enumera su superficie de ataque completa.",
-      "Un servidor tiene un único control: un firewall perimetral. Argumenta por qué es insuficiente y propón tres capas más.",
-      "Investiga y resume en 5 líneas qué cambia el modelo zero trust respecto al perímetro clásico."
+      "Clasifica estos incidentes según qué propiedad CIA violan principalmente: ransomware, defacement de una web, robo de una base de datos, ataque de amplificación DNS.",
+      "Explica con un ejemplo propio la diferencia entre amenaza, vulnerabilidad y riesgo, y calcula informalmente el riesgo de un caso.",
+      "Diseña un esquema AAA para una app bancaria: ¿qué factores de autenticación y qué niveles de autorización usarías, y qué eventos registrarías?",
+      "Toma un dispositivo IoT doméstico y enumera su superficie de ataque completa, separando la parte de red, la de aplicación y la humana.",
+      "Un servidor tiene un único control: un firewall perimetral. Argumenta por qué es insuficiente y propón tres capas adicionales con su función.",
+      "Explica cómo una firma digital aporta a la vez integridad, autenticidad y no repudio, y cuál de las tres no cubre por sí sola.",
+      "Investiga y resume en cinco líneas qué cambia el modelo zero trust respecto al perímetro clásico y qué problema concreto resuelve."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/001-que-es-la-ciberseguridad-triada-cia-aaa-superficie-de-ataque-y-defensa-en-profundidad/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/001-que-es-la-ciberseguridad-triada-cia-aaa-superficie-de-ataque-y-defensa-en-profundidad/README.md",
@@ -256,13 +259,14 @@ export const CLASSES = [
     "level": "Fundamentos",
     "duration": "90 min",
     "description": "Entender quién ataca, por qué lo hace y cómo se estructura un ataque dirigido de principio a fin.",
-    "theory": "Entender quién ataca, por qué lo hace y cómo se estructura un ataque dirigido de principio a fin. Al terminar podrás clasificar a un adversario por sus capacidades y motivaciones, y descomponer un incidente en las fases de la Cyber Kill Chain para saber en qué punto detectarlo o cortarlo.",
+    "theory": "Entender quién ataca, por qué lo hace y cómo se estructura un ataque dirigido de principio a fin. La defensa eficaz no reacciona a golpes aislados: anticipa el comportamiento del adversario y decide dónde interrumpirlo con el menor coste. Al terminar podrás clasificar a un adversario por sus capacidades y motivaciones, descomponer un incidente en las fases de la Cyber Kill Chain para identificar en qué punto detectarlo o cortarlo, y leer informes de threat intelligence con el vocabulario preciso que distingue un indicador efímero de un comportamiento duradero.",
     "outcomes": [
       "Clasificar actores de amenaza por tipo, capacidad y motivación.",
       "Describir las siete fases de la Cyber Kill Chain de Lockheed Martin.",
       "Ubicar controles defensivos en cada fase de la cadena.",
       "Diferenciar amenaza oportunista de amenaza persistente avanzada (APT).",
-      "Interpretar informes de threat intelligence con vocabulario correcto."
+      "Interpretar informes de threat intelligence con vocabulario correcto.",
+      "Distinguir indicadores de compromiso (IoC) de tácticas, técnicas y procedimientos (TTP) y su distinta caducidad."
     ],
     "topics": [
       "Tipos de actor",
@@ -275,22 +279,25 @@ export const CLASSES = [
       "IoC vs. TTP"
     ],
     "definitions": [
-      "Actor de amenaza: entidad (persona o grupo) que puede causar daño. Se caracteriza por su capacidad, recursos y motivación.",
-      "APT (Advanced Persistent Threat): adversario sofisticado y persistente, normalmente estatal o crimen organizado. Clave: prioriza el sigilo y la permanencia sobre la rapidez.",
-      "Cyber Kill Chain: modelo de 7 fases (reconocimiento → armamento → entrega → explotación → instalación → C2 → acciones sobre objetivos). Clave: romper una sola fase frustra el ataque.",
-      "IoC (Indicator of Compromise): evidencia concreta de un ataque (hash, IP, dominio). Clave: efímero, fácil de rotar por el atacante.",
-      "TTP (Tácticas, Técnicas y Procedimientos): cómo opera un adversario. Clave: más estable que los IoC, base de la caza de amenazas.",
-      "Ransomware como servicio (RaaS): modelo de negocio donde operadores alquilan el malware a afiliados. Clave: profesionaliza y escala el cibercrimen."
+      "Actor de amenaza: entidad (persona o grupo) capaz de causar daño. Se caracteriza por su capacidad, sus recursos y su motivación, tres factores que deben evaluarse por separado para dimensionar la defensa.",
+      "APT (Advanced Persistent Threat): adversario sofisticado y persistente, normalmente estatal o de crimen organizado de alto nivel. Su rasgo distintivo es que prioriza el sigilo y la permanencia prolongada sobre la rapidez del golpe.",
+      "Cyber Kill Chain: modelo de siete fases (reconocimiento, armamento, entrega, explotación, instalación, C2 y acciones sobre objetivos). Su utilidad es que romper una sola fase frustra el ataque completo, y cortar temprano cuesta menos.",
+      "Reconocimiento: fase inicial en la que el atacante recopila información sobre la víctima (OSINT, escaneos) para preparar el ataque. Reducir la exposición pública encarece esta fase.",
+      "Mando y control (C2): canal por el que un implante recibe órdenes de la infraestructura del atacante. Cortar la salida de red es uno de los controles más efectivos contra esta fase.",
+      "IoC (Indicator of Compromise): evidencia concreta y atómica de un ataque (hash, IP, dominio). Es fácil de bloquear pero también trivial de rotar por el atacante, por lo que caduca rápido.",
+      "TTP (Tácticas, Técnicas y Procedimientos): descripción de cómo opera un adversario. Es más estable que los IoC y constituye la base de la caza de amenazas y de una detección duradera.",
+      "Ransomware como servicio (RaaS): modelo de negocio en el que unos operadores alquilan el malware y la infraestructura a afiliados a cambio de un porcentaje. Profesionaliza y escala el cibercrimen."
     ],
     "tools": [],
-    "lab": "1. Elige un incidente público bien documentado (por ejemplo, un caso de ransomware o de compromiso de cadena de suministro descrito por CISA). 2. Mapea la Kill Chain: para cada una de las 7 fases, escribe qué hizo el atacante en ese incidente. Si falta información, márcalo como \"desconocido\". 3. Perfil del actor: clasifica al adversario (tipo, motivación probable, nivel de recursos). Justifica co…",
+    "lab": "1. Elige un incidente público bien documentado (por ejemplo, un caso de ransomware o de compromiso de la cadena de suministro descrito en un aviso de CISA). 2. Mapea la Kill Chain: para cada una de las 7 fases, escribe qué hizo el atacante en ese incidente. Si falta información, márcalo explícitamente como \"desconocido\" en lugar de inventarlo. 3. Perfil del actor: clasifica al adversario por tipo…",
     "exercises": [
-      "Ordena de menor a mayor sofisticación: hacktivista, script kiddie, APT estatal, insider malicioso.",
-      "Explica por qué \"romper la cadena\" en la fase de entrega es más barato que hacerlo en \"acciones sobre objetivos\".",
-      "Da un ejemplo de IoC y uno de TTP para una campaña de phishing.",
-      "¿Qué motivación tiene un grupo de ransomware? ¿Y una APT estatal? Contrasta objetivos.",
-      "Investiga un grupo APT documentado en ATT&CK y resume sus TTP principales.",
-      "Diseña una tabla de detección: fase de la Kill Chain → señal observable → herramienta que la capta."
+      "Ordena de menor a mayor sofisticación: hacktivista, script kiddie, APT estatal, insider malicioso, y justifica el orden con los dos ejes.",
+      "Explica por qué romper la cadena en la fase de entrega es más barato que hacerlo en \"acciones sobre objetivos\".",
+      "Da un ejemplo de IoC y uno de TTP para una campaña de phishing, y sitúalos en la pirámide del dolor.",
+      "Contrasta la motivación de un grupo de ransomware con la de una APT estatal: ¿qué objetivos persiguen y cómo cambia eso su comportamiento?",
+      "Investiga un grupo APT documentado en ATT&CK y resume sus TTP principales con al menos dos IDs de técnica.",
+      "Diseña una tabla de detección propia: fase de la Kill Chain → señal observable → herramienta que la capta.",
+      "Argumenta por qué un programa que solo bloquea IoC queda desactualizado en horas y qué añadirías para una defensa duradera."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/002-el-panorama-de-amenazas-moderno-actores-motivaciones-y-cyber-kill-chain/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/002-el-panorama-de-amenazas-moderno-actores-motivaciones-y-cyber-kill-chain/README.md",
@@ -304,13 +311,14 @@ export const CLASSES = [
     "level": "Fundamentos",
     "duration": "100 min",
     "description": "Conocer los marcos que estructuran la práctica profesional de la ciberseguridad y saber cuándo usar cada uno.",
-    "theory": "Conocer los marcos que estructuran la práctica profesional de la ciberseguridad y saber cuándo usar cada uno. Al terminar podrás ubicar cualquier control o técnica dentro de un framework, entender la diferencia entre un marco de gestión (CSF, ISO) y un marco de conocimiento adversario (ATT&CK, Diamond), y usarlos juntos.",
+    "theory": "Conocer los marcos que estructuran la práctica profesional de la ciberseguridad y saber cuándo usar cada uno. Los frameworks no son burocracia: son lenguajes compartidos que permiten a una organización hablar de riesgo, controles y adversarios sin reinventar el vocabulario cada vez. Al terminar podrás ubicar cualquier control o técnica dentro de un marco, entender la diferencia esencial entre un marco de gestión (NIST CSF, ISO 27001), que responde a \"cómo gobierno mi riesgo\", y un marco de conocimiento adversario (MITRE ATT&CK, Diamond Model), que responde a \"cómo se comporta quien me ataca\",…",
     "outcomes": [
       "Enumerar las funciones del NIST CSF 2.0 y explicar qué agrupa cada una.",
       "Describir el propósito y la estructura de ISO/IEC 27001 y su Anexo A.",
       "Navegar la matriz de MITRE ATT&CK por tácticas y técnicas.",
       "Analizar un evento con el Diamond Model de intrusión.",
-      "Combinar un marco de gestión con uno adversario en un caso real."
+      "Combinar un marco de gestión con uno adversario en un caso real.",
+      "Distinguir cumplimiento de seguridad efectiva y explicar por qué certificar no equivale a estar protegido."
     ],
     "topics": [
       "NIST CSF 2.0",
@@ -323,22 +331,25 @@ export const CLASSES = [
       "Cumplimiento vs. seguridad"
     ],
     "definitions": [
-      "NIST CSF 2.0: marco voluntario de gestión de riesgo con seis funciones (Govern, Identify, Protect, Detect, Respond, Recover). Clave: agnóstico de tecnología, orientado a resultados.",
-      "SGSI: Sistema de Gestión de Seguridad de la Información, el objeto de ISO 27001. Clave: enfoque de mejora continua (PDCA).",
-      "Anexo A / ISO 27002: catálogo de 93 controles (versión 2022) agrupados en 4 temas. Clave: es referencia, no obligación total; se seleccionan según riesgo.",
-      "MITRE ATT&CK: matriz de tácticas (el porqué) y técnicas (el cómo) del adversario. Clave: basada en observaciones reales.",
-      "Diamond Model: modelo que relaciona adversario, capacidad, infraestructura y víctima en cada evento de intrusión. Clave: pivota entre vértices para descubrir más del ataque.",
-      "Perfil (CSF): fotografía del estado actual vs. objetivo de las funciones del marco. Clave: herramienta de priorización."
+      "NIST CSF 2.0: marco voluntario de gestión de riesgo con seis funciones (Govern, Identify, Protect, Detect, Respond, Recover). Es agnóstico de tecnología y orientado a resultados, lo que lo hace un lenguaje común entre técnica, gestión y reguladores.",
+      "Funciones del CSF: los seis grandes agrupadores de actividad. Govern es la novedad de la 2.0 y aporta el contexto, los roles y las decisiones de riesgo que sostienen a las otras cinco.",
+      "Tiers: cuatro niveles (Parcial, Informado por riesgo, Repetible, Adaptativo) que describen la madurez del proceso de gestión de riesgo, no la cantidad de controles.",
+      "Perfil (CSF): fotografía del estado actual frente al objetivo a lo largo de las funciones. La brecha entre ambos perfiles es la lista priorizada de trabajo pendiente.",
+      "SGSI: Sistema de Gestión de Seguridad de la Información, objeto de ISO/IEC 27001. Se basa en la mejora continua (PDCA) sobre riesgos evaluados.",
+      "ISO/IEC 27001: estándar internacional certificable que define los requisitos del SGSI. Certificar demuestra que hay proceso, no que se esté a salvo de toda amenaza.",
+      "Anexo A / ISO 27002: catálogo de 93 controles de referencia (versión 2022) en cuatro temas: organizacionales, de personas, físicos y tecnológicos. Se seleccionan según riesgo, no en bloque.",
+      "MITRE ATT&CK: base de conocimiento de tácticas (el porqué) y técnicas (el cómo) del adversario, construida sobre observaciones reales. Describe comportamiento, no controles."
     ],
     "tools": [],
-    "lab": "1. CSF: toma una organización ficticia (una clínica pequeña) y para cada una de las 6 funciones del CSF 2.0 escribe una actividad concreta que debería realizar. 2. Perfil actual vs. objetivo: asigna a cada función un nivel del 1 al 4 (actual) y otro (deseado). Identifica la mayor brecha. 3. ISO mapeo: selecciona 5 controles del Anexo A relevantes para esa clínica y justifica cada uno con un riesg…",
+    "lab": "1. CSF: toma una organización ficticia (una clínica pequeña) y, para cada una de las 6 funciones del CSF 2.0, escribe una actividad concreta que debería realizar. 2. Perfil actual vs. objetivo: asigna a cada función un Tier del 1 al 4 para el estado actual y otro para el deseado. Identifica la mayor brecha y explica por qué priorizarla. 3. ISO mapeo: selecciona 5 controles del Anexo A relevantes…",
     "exercises": [
-      "¿Qué función nueva añadió el CSF 2.0 respecto a 1.1 y por qué importa?",
-      "Explica la diferencia entre una táctica y una técnica en ATT&CK con un ejemplo.",
-      "Da tres controles del Anexo A y clasifícalos en su tema (organizacional, personas, físico, tecnológico).",
-      "Analiza un incidente sencillo con el Diamond Model y muestra un \"pivote\" entre dos vértices.",
-      "¿Por qué \"cumplir ISO 27001\" no equivale a \"estar seguro\"? Argumenta.",
-      "Mapea una técnica ATT&CK a la función del CSF que ayudaría a mitigarla."
+      "¿Qué función nueva añadió el CSF 2.0 respecto a la 1.1 y qué problema concreto de gobernanza resuelve?",
+      "Explica con un ejemplo la diferencia entre una táctica y una técnica en ATT&CK, citando un ID real.",
+      "Da tres controles del Anexo A y clasifícalos en su tema (organizacional, personas, físico o tecnológico).",
+      "Analiza un incidente sencillo con el Diamond Model y muestra un pivote entre dos vértices distintos.",
+      "Argumenta por qué \"cumplir ISO 27001\" no equivale a \"estar seguro\" con un contraejemplo.",
+      "Mapea una técnica ATT&CK a la función del CSF que ayudaría a mitigarla y a un control del Anexo A.",
+      "Explica por qué un programa que solo usa ATT&CK, sin marco de gestión, deja huecos, y qué aporta CSF que ATT&CK no."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/003-frameworks-de-seguridad-nist-csf-iso-27001-mitre-att-ck-y-diamond-model/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/003-frameworks-de-seguridad-nist-csf-iso-27001-mitre-att-ck-y-diamond-model/README.md",
@@ -352,13 +363,14 @@ export const CLASSES = [
     "level": "Fundamentos",
     "duration": "120 min",
     "description": "Construir un laboratorio de seguridad aislado y reversible en tu propio equipo.",
-    "theory": "Construir un laboratorio de seguridad aislado y reversible en tu propio equipo. Al terminar tendrás una máquina atacante (Kali) y una o más máquinas víctima en una red interna sin salida a Internet ni a tu red doméstica, con snapshots para volver atrás tras cada experimento. > ⚠️ Nota ética y de seguridad: todo lo que se practica en este programa se hace exclusivamente dentro de este laboratorio aislado o contra sistemas para los que tengas autorización escrita. Atacar redes o equipos ajenos es ilegal. El aislamiento no es opcional: protege a terceros y te protege a ti.",
+    "theory": "Construir un laboratorio de seguridad aislado y reversible en tu propio equipo. Practicar técnicas ofensivas requiere un entorno donde el error no tenga consecuencias fuera de él: una red que no toque Internet ni tu red doméstica, y máquinas que puedas devolver a un estado limpio en segundos. Al terminar tendrás una máquina atacante (Kali) y una o más máquinas víctima en una red interna sin salida, con snapshots que te permitan experimentar con malware o exploits sabiendo que cualquier daño es reversible con un clic. > ⚠️ Nota ética y de seguridad: todo lo que se practica en este programa se…",
     "outcomes": [
       "Instalar un hipervisor y comprobar la virtualización por hardware.",
-      "Desplegar Kali Linux y una VM víctima desde imágenes oficiales.",
+      "Desplegar Kali Linux y una VM víctima desde imágenes oficiales verificadas.",
       "Configurar una red interna/host-only sin acceso a Internet.",
       "Gestionar snapshots para revertir el estado tras cada práctica.",
-      "Verificar el aislamiento con pruebas de conectividad."
+      "Verificar el aislamiento con pruebas de conectividad objetivas.",
+      "Justificar las decisiones de arquitectura del laboratorio (modo de red, recursos, higiene)."
     ],
     "topics": [
       "Virtualización tipo 1 vs. tipo 2",
@@ -371,22 +383,25 @@ export const CLASSES = [
       "Higiene del lab"
     ],
     "definitions": [
-      "Hipervisor: software que ejecuta VMs. Tipo 1 (ESXi, Hyper-V) corre sobre el hardware; tipo 2 (VirtualBox, VMware Workstation) sobre un SO anfitrión. Clave: para un lab personal, tipo 2 basta.",
-      "Snapshot: foto del estado completo de una VM (disco + RAM). Clave: permite volver a un punto limpio en segundos.",
-      "Red host-only: red virtual entre el anfitrión y las VMs, sin salida a Internet. Clave: aislamiento parcial (el host la ve).",
-      "Red interna (internal): red solo entre VMs, ni siquiera el host tiene acceso directo. Clave: el mayor aislamiento.",
-      "Metasploitable: VM deliberadamente vulnerable para practicar. Clave: nunca exponerla a Internet.",
-      "Checksum/firma: verificación de integridad y autenticidad de la ISO. Clave: garantiza que descargaste la imagen real."
+      "Hipervisor: software que crea y ejecuta máquinas virtuales. El tipo 1 corre sobre el hardware (ESXi, Hyper-V); el tipo 2 sobre un sistema anfitrión (VirtualBox, VMware Workstation). Para un laboratorio personal, el tipo 2 es suficiente y más cómodo.",
+      "Virtualización asistida por hardware (VT-x/AMD-V): extensiones del procesador que permiten ejecutar VMs con rendimiento aceptable. Sin ellas, la emulación por software hace las máquinas inutilizablemente lentas; suelen venir desactivadas en la UEFI.",
+      "Snapshot: fotografía del estado completo de una VM (disco y opcionalmente RAM). Permite volver a un punto limpio en segundos, lo que hace seguro experimentar con exploits o malware.",
+      "Red host-only: red virtual entre el anfitrión y las VMs, sin salida a Internet. Aísla del exterior pero el host sigue formando parte de la red, útil cuando el anfitrión debe interactuar con el lab.",
+      "Red interna (internal): red que conecta solo a las VMs entre sí, sin que el host ni Internet tengan acceso. Es el nivel máximo de aislamiento y la opción por defecto para prácticas ofensivas.",
+      "NAT y bridged: modos con salida a Internet. NAT permite a la VM salir sin ser alcanzable desde fuera; bridged la convierte en un equipo más de tu LAN. Ambos rompen el aislamiento y se evitan en un lab de seguridad salvo para una actualización puntual.",
+      "Checksum (SHA-256): hash criptográfico que verifica que una descarga es idéntica bit a bit a la publicada. Si no coincide, la imagen está corrupta o manipulada y no debe usarse.",
+      "Firma: verificación de que el checksum lo publicó realmente el proyecto y no un impostor, cerrando la cadena de confianza de la descarga."
     ],
     "tools": [],
-    "lab": "1. Comprobar virtualización. En Windows, abre el Administrador de tareas → Rendimiento → CPU y confirma \"Virtualización: habilitada\". Si no, actívala en la UEFI (VT-x/AMD-V). 2. Verificar la ISO de Kali. Descarga la imagen y su checksum. En PowerShell: ``powershell Get-FileHash .\\kali-linux-*.iso -Algorithm SHA256 ` Compara el resultado con el valor oficial de kali.org. Si no coincide, no la uses…",
+    "lab": "1. Comprobar la virtualización. En Windows, abre el Administrador de tareas → Rendimiento → CPU y confirma \"Virtualización: habilitada\". Si no lo está, actívala en la UEFI (VT-x/AMD-V). 2. Verificar la ISO de Kali. Descarga la imagen y su checksum oficial. En PowerShell: ``powershell Get-FileHash .\\kali-linux-*.iso -Algorithm SHA256 ` Compara el resultado con el valor publicado en kali.org. Si no…",
     "exercises": [
-      "Explica cuándo usar NAT, bridged, host-only e internal, y por qué el laboratorio usa internal.",
-      "Documenta el proceso de verificación de checksum y qué harías si no coincide.",
-      "Crea un tercer nodo (una VM Windows de evaluación) en la misma red y verifica que ve a Kali.",
-      "Diseña una convención de nombres y de IPs para tu laboratorio (subredes por escenario).",
-      "Toma un snapshot con RAM y otro sin RAM; explica la diferencia práctica.",
-      "Escribe un pequeño checklist de \"higiene\" para mantener el lab (actualizaciones, plantillas, limpieza)."
+      "Explica cuándo usar NAT, bridged, host-only e internal, y por qué el laboratorio ofensivo usa internal por defecto.",
+      "Documenta el proceso completo de verificación de checksum y qué harías, paso a paso, si el hash no coincide.",
+      "Crea un tercer nodo (una VM Windows de evaluación) en la misma red interna y verifica que ve a Kali pero no a Internet.",
+      "Diseña una convención de nombres y de IPs para tu laboratorio, con subredes distintas por escenario.",
+      "Toma un snapshot con RAM y otro sin RAM sobre la misma VM y explica la diferencia práctica al restaurarlos.",
+      "Escribe un checklist de \"higiene\" para mantener el lab: actualizaciones, plantillas base, limpieza de snapshots y control de recursos.",
+      "Argumenta por qué verificar la firma, además del checksum, aporta una garantía que el checksum solo no da."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/004-montaje-del-laboratorio-virtualizacion-kali-snapshots-y-aislamiento-de-red/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/004-montaje-del-laboratorio-virtualizacion-kali-snapshots-y-aislamiento-de-red/README.md",
@@ -399,14 +414,15 @@ export const CLASSES = [
     "title": "Linux esencial para seguridad: filesystem, permisos y usuarios",
     "level": "Fundamentos",
     "duration": "110 min",
-    "description": "Dominar el modelo de archivos, permisos y usuarios de Linux, que es la base de la mayoría de escaladas de privilegios y de las medidas de hardening.",
-    "theory": "Dominar el modelo de archivos, permisos y usuarios de Linux, que es la base de la mayoría de escaladas de privilegios y de las medidas de hardening. Al terminar sabrás leer y modificar permisos, entender usuarios y grupos, y reconocer configuraciones peligrosas como binarios SUID.",
+    "description": "Dominar el modelo de archivos, permisos y usuarios de Linux, que es la base sobre la que ocurren la mayoría de las escaladas de privilegios y de las medidas de hardening.",
+    "theory": "Dominar el modelo de archivos, permisos y usuarios de Linux, que es la base sobre la que ocurren la mayoría de las escaladas de privilegios y de las medidas de hardening. Casi todo en Linux es un archivo, y casi todo el control de acceso se reduce a quién puede leer, escribir o ejecutar qué. Al terminar sabrás leer y modificar permisos en sus dos notaciones, entender cómo se definen usuarios y grupos y dónde viven sus contraseñas, y reconocer configuraciones peligrosas como los binarios SUID que un atacante buscaría para convertirse en root.",
     "outcomes": [
       "Navegar la jerarquía FHS y ubicar archivos clave de seguridad.",
       "Interpretar y modificar permisos en notación simbólica y octal.",
       "Gestionar usuarios, grupos y sus archivos de definición.",
       "Identificar permisos especiales (SUID, SGID, sticky) y su riesgo.",
-      "Aplicar el principio de mínimo privilegio en el filesystem."
+      "Aplicar el principio de mínimo privilegio en el filesystem.",
+      "Reconocer vectores de escalada de privilegios basados en permisos mal configurados."
     ],
     "topics": [
       "FHS",
@@ -419,22 +435,25 @@ export const CLASSES = [
       "ACLs"
     ],
     "definitions": [
-      "FHS (Filesystem Hierarchy Standard): convención de directorios (/etc, /bin, /var, /home...). Clave: /etc guarda configuración, /var/log los logs.",
-      "Permisos rwx: lectura, escritura y ejecución para propietario, grupo y otros. Clave: en un directorio, x significa \"poder entrar\".",
-      "/etc/shadow: almacena los hashes de las contraseñas, legible solo por root. Clave: objetivo de cracking offline.",
-      "SUID: bit que hace que un ejecutable corra con los privilegios del propietario (a menudo root). Clave: un SUID mal puesto = escalada a root.",
-      "umask: máscara que resta permisos a los archivos recién creados. Clave: define la exposición por defecto.",
-      "ACL (Access Control List): permisos por usuario/grupo adicionales a rwx. Clave: getfacl/setfacl para control granular."
+      "FHS (Filesystem Hierarchy Standard): convención que define el propósito de cada directorio (/etc configuración, /var/log logs, /home usuarios). Conocerla permite orientarse en cualquier sistema y saber dónde buscar tras un incidente.",
+      "/etc/passwd: archivo legible por todos con los datos de cada cuenta (nombre, UID, GID, home, shell). Ya no guarda contraseñas; sirve para resolver identidades de usuario.",
+      "/etc/shadow: archivo legible solo por root que almacena las contraseñas hasheadas y con sal. Es el objetivo de un atacante que quiera romper credenciales offline, de ahí sus permisos restrictivos.",
+      "UID y GID: identificadores numéricos de usuario y grupo. El UID 0 es root, el superusuario que ignora las comprobaciones de permisos rwx tradicionales.",
+      "Permisos rwx: lectura, escritura y ejecución para propietario, grupo y otros. Sobre un directorio cambian de sentido: x significa poder atravesarlo y w poder crear o borrar entradas dentro.",
+      "Notación octal: forma compacta de expresar permisos sumando r=4, w=2, x=1 por categoría (por ejemplo, 750). Es la más usada en administración y auditoría por su concisión.",
+      "umask: máscara que resta permisos a los archivos recién creados y define su exposición por defecto. Ajustarla es una medida de hardening de bajo coste.",
+      "SUID (Set User ID): bit que hace que un ejecutable corra con los privilegios de su propietario. Legítimo en casos como passwd, pero un SUID root mal puesto es un vector directo de escalada a root."
     ],
     "tools": [],
-    "lab": "1. Explorar el FHS: ``bash ls -la / ; ls -l /etc/passwd /etc/shadow ` Observa que shadow no es legible por usuarios normales. 2. Leer permisos. Crea un archivo y examínalo: `bash touch prueba.txt ; stat prueba.txt ; ls -l prueba.txt ` Descompón la cadena -rw-r--r-- en propietario/grupo/otros. 3. Cambiar permisos en simbólico y octal: `bash chmod u+x prueba.txt ; ls -l prueba.txt chmod 640 prueba.…",
+    "lab": "1. Explorar el FHS y observar los permisos de los archivos de cuentas: ``bash ls -la / ; ls -l /etc/passwd /etc/shadow ` Confirma que shadow no es legible por usuarios normales. 2. Leer permisos. Crea un archivo y examínalo: `bash touch prueba.txt ; stat prueba.txt ; ls -l prueba.txt ` Descompón la cadena -rw-r--r-- en propietario, grupo y otros. 3. Cambiar permisos en notación simbólica y octal:…",
     "exercises": [
-      "Traduce a octal: rwxr-x---, rw-rw-r--, r--------.",
-      "Explica qué significa el permiso x en un directorio frente a en un archivo.",
-      "Crea un directorio compartido por un grupo donde los archivos nuevos hereden el grupo (pista: SGID).",
-      "Configura un directorio \"temporal\" donde cada usuario solo pueda borrar sus propios archivos (sticky bit).",
-      "Investiga por qué /etc/shadow tiene permisos 640 root:shadow y qué pasaría con 644.",
-      "Con find, localiza archivos con escritura para \"otros\" en /etc y explica el riesgo."
+      "Traduce a octal: rwxr-x---, rw-rw-r--, r--------, y de vuelta 700, 664, 600 a símbolos.",
+      "Explica con un ejemplo qué significa el permiso x en un directorio frente a en un archivo.",
+      "Crea un directorio compartido por un grupo donde los archivos nuevos hereden ese grupo automáticamente (pista: SGID).",
+      "Configura un directorio temporal donde cada usuario solo pueda borrar sus propios archivos (sticky bit) y verifícalo con dos cuentas.",
+      "Investiga por qué /etc/shadow tiene permisos 640 root:shadow y qué riesgo concreto introduciría dejarlo en 644.",
+      "Con find, localiza archivos con escritura para \"otros\" bajo /etc y explica por qué cada hallazgo sería un problema.",
+      "Explica por qué el kernel ignora el bit SUID en scripts pero lo respeta en binarios compilados, y qué implica eso para la escalada."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/005-linux-esencial-para-seguridad-filesystem-permisos-y-usuarios/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/005-linux-esencial-para-seguridad-filesystem-permisos-y-usuarios/README.md",
@@ -447,42 +466,47 @@ export const CLASSES = [
     "title": "Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos",
     "level": "Fundamentos",
     "duration": "110 min",
-    "description": "Convertir la terminal en tu herramienta más rápida para procesar texto, logs y salidas de herramientas.",
-    "theory": "Convertir la terminal en tu herramienta más rápida para procesar texto, logs y salidas de herramientas. Al terminar podrás encadenar comandos con pipes, filtrar con grep, transformar con sed, extraer campos con awk y controlar procesos, habilidades imprescindibles para el análisis de logs y la automatización.",
+    "description": "Convertir la terminal en tu herramienta más rápida para procesar texto, logs y salidas de otras herramientas, entendiendo por qué funciona y no solo qué teclear.",
+    "theory": "Convertir la terminal en tu herramienta más rápida para procesar texto, logs y salidas de otras herramientas, entendiendo por qué funciona y no solo qué teclear. Al terminar podrás encadenar comandos con tuberías, filtrar con grep, transformar flujos con sed, extraer y agregar campos con awk, y controlar procesos y señales. Estas son las habilidades que, en un incidente real, marcan la diferencia entre revisar un log de un millón de líneas en segundos o ahogarte en él; son la base del threat hunting manual, del triaje forense y de toda la automatización que construirás en las clases siguiente…",
     "outcomes": [
-      "Construir tuberías (pipes) que combinen varios comandos.",
-      "Filtrar texto con grep y expresiones regulares básicas.",
-      "Transformar flujos con sed (sustitución, borrado, rangos).",
-      "Extraer y agregar campos con awk.",
-      "Gestionar procesos: listar, priorizar, señales y jobs."
+      "Construir tuberías (pipes) que combinen varios comandos siguiendo la filosofía Unix de herramientas pequeñas y componibles.",
+      "Filtrar texto con grep y expresiones regulares, distinguiendo BRE de ERE.",
+      "Transformar flujos con sed (sustitución, borrado, rangos de direcciones) sin abrir un editor.",
+      "Extraer y agregar campos con awk, usando sus variables internas y bloques BEGIN/END.",
+      "Gestionar procesos: listarlos, priorizarlos, enviarles señales y controlar jobs en segundo plano.",
+      "Diseñar un one-liner de análisis de logs que reduzca datos temprano para ser eficiente sobre archivos grandes."
     ],
     "topics": [
       "Streams y redirección",
       "Pipes",
-      "grep",
+      "grep y regex",
       "sed",
       "awk",
       "Orden y unicidad",
-      "Procesos",
+      "Procesos y señales",
       "Jobs y background"
     ],
     "definitions": [
-      "stdin/stdout/stderr: canales estándar (0, 1, 2). Clave: 2> redirige errores; > y >> escriben/anexan.",
-      "Pipe (|): conecta la salida de un comando con la entrada del siguiente. Clave: filosofía Unix de herramientas componibles.",
-      "grep: filtra líneas que coinciden con un patrón. Clave: -r recursivo, -i sin distinción de mayúsculas, -E regex extendida.",
-      "sed: editor de flujo orientado a líneas. Clave: s/patrón/reemplazo/g es su uso más común.",
-      "awk: lenguaje para procesar texto por campos. Clave: $1, $2... son las columnas; NR el número de línea.",
-      "Señal: mensaje al proceso (SIGTERM, SIGKILL, SIGHUP). Clave: kill -9 es forzado y no permite limpieza."
+      "stdin / stdout / stderr: los tres canales estándar de todo proceso, con descriptores 0, 1 y 2. stdin es la entrada, stdout la salida normal y stderr los diagnósticos. Mantenerlos separados permite guardar resultados y ver errores por vías distintas; en seguridad, recuerda que stderr no entra en un pipe salvo que uses 2>&1.",
+      "Pipe (|): operador que conecta la stdout de un comando con la stdin del siguiente, ejecutándolos concurrentemente. Encarna la filosofía Unix de componer herramientas pequeñas. Es la base de todo informe de análisis de logs.",
+      "grep: filtra e imprime líneas que coinciden con un patrón (regex). Banderas clave: -i (insensible a mayúsculas), -r (recursivo), -v (invertir), -E (regex extendida), -o (solo lo coincidente). Buscar y descartar ruido son igual de valiosos.",
+      "Expresión regular (regex): notación para describir conjuntos de cadenas. BRE (por defecto en grep) trata + ? { | ( ) como literales; ERE (-E) les da significado especial. Dominar lo básico multiplica tu productividad en logs.",
+      "sed: editor de flujo orientado a líneas. Su forma más común es s/patrón/reemplazo/g, y entiende direcciones y rangos. Su bandera -i edita en sitio; hazlo con -i.bak para conservar respaldo.",
+      "awk: mini-lenguaje para datos por campos. $1..$NF son las columnas, NR el número de línea, FS el separador. Sus bloques BEGIN/END permiten cabeceras y totales en una sola pasada.",
+      "Campo y separador (FS): awk parte cada línea en campos usando un separador (espacios por defecto). Con -F: fijas otro delimitador (: para /etc/passwd). Un separador mal elegido es la causa nº1 de campos vacíos.",
+      "Proceso y PID: instancia de un programa en ejecución identificada por un número único. Su usuario propietario y sus privilegios determinan qué puede tocar; enumerarlos es el primer paso del triaje."
     ],
     "tools": [],
-    "lab": "1. Redirección y streams: ``bash ls /noexiste /etc 1>salida.txt 2>errores.txt ; cat errores.txt ` 2. Pipes básicas. Cuenta cuántos usuarios hay en el sistema: `bash cut -d: -f1 /etc/passwd | sort | wc -l ` 3. grep en logs. Busca intentos de login fallidos: `bash grep -i \"failed password\" /var/log/auth.log | head ` 4. Extraer IPs con awk. De esos fallos, saca la IP atacante (ajusta el campo): `bas…",
+    "lab": "1. Redirección y streams. Observa cómo se separan salida y error: ``bash ls /noexiste /etc 1>salida.txt 2>errores.txt ; cat errores.txt ` 2. Pipes básicas. Cuenta cuántos usuarios hay en el sistema: `bash cut -d: -f1 /etc/passwd | sort | wc -l ` 3. grep en logs. Busca intentos de inicio de sesión fallidos: `bash grep -i \"failed password\" /var/log/auth.log | head ` 4. Extraer IPs con awk. De esos…",
     "exercises": [
       "A partir de un access.log, obtén el top 10 de IPs con más peticiones.",
-      "Cuenta cuántas peticiones devolvieron código 404 usando awk.",
-      "Con sed, cambia todas las apariciones de http:// por https:// en un archivo.",
-      "Extrae solo los nombres de usuario con shell /bin/bash de /etc/passwd.",
-      "Muestra los 5 procesos que más memoria consumen, con usuario y PID.",
-      "Combina grep, sort y uniq -c para contar user-agents distintos en un log web."
+      "Cuenta cuántas peticiones devolvieron código 404 usando exclusivamente awk.",
+      "Con sed, cambia todas las apariciones de http:// por https:// en un archivo, conservando un respaldo .bak.",
+      "Extrae solo los nombres de usuario con shell /bin/bash de /etc/passwd en un one-liner.",
+      "Muestra los 5 procesos que más memoria residente (RSS) consumen, con usuario y PID.",
+      "Combina grep, sort y uniq -c para contar user-agents distintos en un log web.",
+      "Usando awk con un array asociativo, calcula cuántas peticiones hizo cada IP en una sola pasada (sin sort/uniq).",
+      "Explica con tus palabras por qué comando 2>&1 | grep error captura los errores y comando | grep error 2>&1 no."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/006-linea-de-comandos-linux-avanzada-grep-sed-awk-pipes-y-procesos/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/006-linea-de-comandos-linux-avanzada-grep-sed-awk-pipes-y-procesos/README.md",
@@ -495,14 +519,15 @@ export const CLASSES = [
     "title": "Bash scripting para tareas de seguridad",
     "level": "Fundamentos",
     "duration": "110 min",
-    "description": "Automatizar tareas repetitivas de seguridad con scripts de Bash robustos: barridos de red, parsing de resultados, comprobaciones de hardening y orquestación de herramientas.",
-    "theory": "Automatizar tareas repetitivas de seguridad con scripts de Bash robustos: barridos de red, parsing de resultados, comprobaciones de hardening y orquestación de herramientas. Al terminar escribirás scripts con variables, condicionales, bucles, funciones y manejo de errores.",
+    "description": "Pasar de teclear comandos sueltos a construir scripts de Bash robustos que automaticen tareas repetitivas de seguridad: barridos de red, parsing de resultados de herramientas, comprobaciones de hardening y orquestación…",
+    "theory": "Pasar de teclear comandos sueltos a construir scripts de Bash robustos que automaticen tareas repetitivas de seguridad: barridos de red, parsing de resultados de herramientas, comprobaciones de hardening y orquestación de utilidades. Al terminar escribirás scripts con variables, condicionales, bucles, funciones, manejo de argumentos y control de errores, aplicando las prácticas que separan un script frágil de uno que puedes confiar en producción. La automatización no es un lujo en seguridad: un chequeo manual que olvidas hacer es una vulnerabilidad, mientras que un script fiable lo ejecuta ig…",
     "outcomes": [
-      "Estructurar un script con shebang, variables y funciones.",
-      "Usar condicionales, bucles y case para lógica de control.",
-      "Manejar argumentos, entrada de usuario y códigos de salida.",
-      "Aplicar buenas prácticas de robustez (set -euo pipefail, comillas).",
-      "Automatizar una tarea real de seguridad de principio a fin."
+      "Estructurar un script con shebang, variables, funciones y una organización legible.",
+      "Usar condicionales [[ ]], bucles for/while y case para lógica de control.",
+      "Manejar argumentos con getopts, entrada del usuario y códigos de salida.",
+      "Aplicar buenas prácticas de robustez (set -euo pipefail, comillas, trap).",
+      "Automatizar una tarea real de seguridad de principio a fin, con informe reproducible.",
+      "Validar el código con ShellCheck y corregir los avisos antes de darlo por terminado."
     ],
     "topics": [
       "Shebang y ejecución",
@@ -515,22 +540,26 @@ export const CLASSES = [
       "Códigos de salida"
     ],
     "definitions": [
-      "Shebang (#!/usr/bin/env bash): primera línea que indica el intérprete. Clave: usa env para portabilidad.",
-      "Sustitución de comandos ($(...)): captura la salida de un comando en una variable. Clave: prefiérela a las backticks.",
-      "set -euo pipefail: aborta ante errores, variables no definidas y fallos en pipes. Clave: convierte scripts frágiles en robustos.",
-      "Quoting: entrecomillar variables (\"$var\") evita word splitting y globbing. Clave: causa nº1 de bugs y de inyección.",
-      "Código de salida: entero 0–255; 0 = éxito. Clave: $? lo lee; permite encadenar con &&/||.",
-      "Trap: captura señales/eventos para limpiar (trap 'rm -f \"$tmp\"' EXIT). Clave: higiene ante interrupciones."
+      "Shebang (#!/usr/bin/env bash): primera línea que le dice al kernel qué intérprete usar. Con env el script es portable entre distribuciones donde bash esté en rutas distintas. Sin shebang y sin permiso de ejecución, el archivo no se lanza solo.",
+      "Sustitución de comandos ($(...)): captura la salida estándar de un comando en una cadena. Se anida sin problemas y se lee mejor que las backticks, que están desaconsejadas. Es como los scripts incorporan resultados dinámicos.",
+      "Expansión de parámetro (${x:-}, ${x:?}): mecanismos para dar valores por defecto o exigir que una variable exista. ${x:?mensaje} aborta con el mensaje si falta, perfecto para validar argumentos obligatorios sin escribir un if.",
+      "set -euo pipefail: el \"modo estricto\". -e aborta ante errores, -u ante variables no definidas y pipefail ante fallos en cualquier etapa de una tubería. Convierte scripts silenciosamente rotos en scripts que fallan pronto y ruidosamente.",
+      "Quoting: entrecomillar variables (\"$var\", \"$@\") evita word splitting y globbing. Es la causa número uno de bugs y de inyección en Bash. Regla simple: en la duda, pon comillas dobles.",
+      "[[ ]]: la forma moderna de evaluar condiciones, más segura que [ ] porque no sufre word splitting y admite =~ para comparar contra regex. Usarla previene el clásico error unary operator expected.",
+      "Función: bloque de código reutilizable con nombre que recibe argumentos posicionales. Declarar variables con local evita efectos colaterales. Refactorizar a funciones reduce la duplicación y la superficie de error.",
+      "getopts: utilidad incorporada para parsear opciones de línea de comandos (-p 80) de forma estándar. Da a tus scripts una interfaz predecible y mensajes de uso coherentes con el resto de herramientas Unix."
     ],
     "tools": [],
-    "lab": "1. Esqueleto robusto. Crea barrido.sh: ``bash #!/usr/bin/env bash set -euo pipefail red=\"${1:?Uso: $0 <prefijo /24, p.ej. 10.10.10>}\" ` 2. Bucle de descubrimiento (ping sweep) en tu red interna: `bash for i in $(seq 1 254); do ip=\"${red}.${i}\" if ping -c1 -W1 \"$ip\" &>/dev/null; then echo \"[+] Activo: $ip\" fi done ` 3. Ejecuta contra tu subred de laboratorio: `bash chmod +x barrido.sh ; ./barrido.…",
+    "lab": "1. Esqueleto robusto. Crea barrido.sh con modo estricto y validación de argumento: ``bash #!/usr/bin/env bash set -euo pipefail red=\"${1:?Uso: $0 <prefijo /24, p.ej. 10.10.10>}\" ` 2. Bucle de descubrimiento (ping sweep) sobre tu red interna: `bash for i in $(seq 1 254); do ip=\"${red}.${i}\" if ping -c1 -W1 \"$ip\" &>/dev/null; then echo \"[+] Activo: $ip\" fi done ` 3. Ejecuta contra tu subred de labo…",
     "exercises": [
       "Añade a barrido.sh la opción -p PUERTO con getopts para probar un puerto TCP con nc -z.",
-      "Escribe un script que reciba una lista de hosts por archivo y los recorra con while read.",
-      "Implementa manejo de errores: si falta nmap, avisa y termina con código distinto de 0.",
-      "Crea una función que valide que el argumento es una IP bien formada.",
-      "Usa trap para borrar un archivo temporal al salir, aun con Ctrl+C.",
-      "Escribe un mini auditor que revise 3 controles de hardening y devuelva un resumen con conteo de OK/FALLO."
+      "Escribe un script que reciba una lista de hosts desde un archivo y los recorra con while read.",
+      "Implementa manejo de errores: si falta nmap, avisa por stderr y termina con un código distinto de 0.",
+      "Crea una función es_ip_valida() que valide que el argumento es una IPv4 bien formada.",
+      "Usa trap para borrar un archivo temporal al salir, comprobando que también funciona con Ctrl+C.",
+      "Escribe un mini auditor que revise 3 controles de hardening y devuelva un resumen con conteo de OK/FALLO.",
+      "Modifica un script para que devuelva códigos de salida distintos según el tipo de fallo, y documéntalos.",
+      "Ejecuta un script tuyo con bash -x y explica qué muestra la traza en dos de sus líneas."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/007-bash-scripting-para-tareas-de-seguridad/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/007-bash-scripting-para-tareas-de-seguridad/README.md",
@@ -543,14 +572,15 @@ export const CLASSES = [
     "title": "Windows esencial para seguridad: arquitectura, registro y servicios",
     "level": "Fundamentos",
     "duration": "110 min",
-    "description": "Comprender cómo funciona Windows por dentro lo suficiente para atacarlo y defenderlo: su arquitectura, el modelo de seguridad (SID, tokens, UAC), el Registro y los servicios.",
-    "theory": "Comprender cómo funciona Windows por dentro lo suficiente para atacarlo y defenderlo: su arquitectura, el modelo de seguridad (SID, tokens, UAC), el Registro y los servicios. Windows domina el parque corporativo, así que estos fundamentos son indispensables para el resto del programa.",
+    "description": "Comprender cómo funciona Windows por dentro lo suficiente para atacarlo y defenderlo con criterio: su arquitectura de doble modo, el modelo de seguridad basado en SID y tokens, el papel de UAC, el Registro como base de…",
+    "theory": "Comprender cómo funciona Windows por dentro lo suficiente para atacarlo y defenderlo con criterio: su arquitectura de doble modo, el modelo de seguridad basado en SID y tokens, el papel de UAC, el Registro como base de datos de configuración y los servicios como procesos privilegiados de fondo. Windows domina el parque corporativo, así que estos fundamentos son indispensables para todo lo que viene después: sin entender qué es un token o por qué SYSTEM es tan codiciado, técnicas como el robo de tokens, la persistencia por Run keys o la escalada por unquoted service path son magia incomprensib…",
     "outcomes": [
-      "Describir la arquitectura de Windows (user mode vs. kernel mode).",
-      "Explicar el modelo de seguridad: SID, tokens de acceso y UAC.",
+      "Describir la arquitectura de Windows y la frontera entre user mode y kernel mode.",
+      "Explicar el modelo de seguridad: SID, tokens de acceso, privilegios y UAC.",
       "Navegar y consultar el Registro de Windows con criterio de seguridad.",
-      "Gestionar servicios y detectar los mal configurados.",
-      "Identificar rutas comunes de persistencia y escalada en Windows."
+      "Gestionar servicios y detectar los mal configurados que permiten escalada.",
+      "Identificar rutas comunes de persistencia y sus técnicas MITRE ATT&CK asociadas.",
+      "Auditar una VM enumerando cuentas, auto-inicios y servicios vulnerables."
     ],
     "topics": [
       "Arquitectura NT",
@@ -563,22 +593,26 @@ export const CLASSES = [
       "Persistencia común"
     ],
     "definitions": [
-      "User mode / Kernel mode: separación de privilegios de ejecución. Clave: el kernel accede a todo; un fallo ahí compromete el sistema.",
-      "SID (Security Identifier): identificador único de cuentas/grupos. Clave: S-1-5-...; S-1-5-32-544 es Administradores.",
-      "Token de acceso: estructura que porta la identidad y privilegios de un proceso. Clave: base de la suplantación y el robo de tokens.",
-      "UAC (User Account Control): mecanismo que separa privilegios estándar de los de administrador. Clave: la elevación no es una frontera de seguridad infalible.",
-      "Registro: base de datos jerárquica de configuración (HKLM, HKCU...). Clave: Run/RunOnce son persistencia clásica.",
-      "Servicio: proceso de fondo gestionado por el SCM, a menudo con privilegios altos (SYSTEM). Clave: rutas sin comillas o permisos débiles = escalada."
+      "User mode / Kernel mode: los dos niveles de privilegio de ejecución que impone el hardware. El kernel accede a todo el sistema; un exploit ahí compromete la máquina entera, por eso Windows firma obligatoriamente el código de kernel.",
+      "SID (Security Identifier): identificador único e inmutable de una cuenta o grupo (S-1-5-...). Windows autoriza por SID, no por nombre. S-1-5-18 es SYSTEM y S-1-5-32-544 el grupo Administradores.",
+      "Token de acceso: estructura que porta la identidad (SID de usuario y grupos) y los privilegios de un proceso. El kernel lo compara con las ACL para autorizar. Es la base del robo y la suplantación de tokens.",
+      "Privilegio: derecho especial que otorga un token, como SeDebugPrivilege (depurar cualquier proceso) o SeImpersonatePrivilege (suplantar a un cliente). Ciertos privilegios equivalen a control total y son palanca de escalada.",
+      "UAC (User Account Control): mecanismo que da a los administradores un token filtrado y exige elevación para el completo. Reduce la ejecución accidental con privilegios, pero Microsoft afirma que no es una frontera de seguridad: existen bypasses.",
+      "Registro: base de datos jerárquica de configuración del SO y las apps. HKLM afecta a la máquina (requiere privilegios); HKCU al usuario actual. Sus claves Run/RunOnce son persistencia clásica y objetivo forense.",
+      "Servicio: proceso de fondo gestionado por el SCM, a menudo como SYSTEM. Rutas sin comillas (unquoted service path) o permisos débiles sobre el binario permiten escalada de privilegios.",
+      "SCM (Service Control Manager): componente que arranca, detiene y supervisa los servicios. Se consulta con sc.exe y define el nombre corto (interno) frente al nombre visible de cada servicio."
     ],
     "tools": [],
-    "lab": "1. Identidad y privilegios. En una consola: ``cmd whoami /all ` Localiza tu SID, grupos y la lista de privilegios (SeDebugPrivilege, etc.). 2. Explorar procesos con Process Explorer: observa el árbol, el usuario de cada proceso y las DLLs cargadas de uno. 3. Registro y persistencia. Abre regedit y navega a: `text HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run HKLM\\Software\\Microsoft\\Windows\\C…",
+    "lab": "1. Identidad y privilegios. En una consola, localiza tu SID, grupos y privilegios: ``cmd whoami /all ` Identifica si tienes SeDebugPrivilege o SeImpersonatePrivilege y razona qué implicarían. 2. Explorar procesos con Process Explorer: observa el árbol de procesos, la cuenta bajo la que corre cada uno y, para uno de ellos, las DLLs cargadas. 3. Registro y persistencia. Abre regedit y navega a las…",
     "exercises": [
-      "Explica la diferencia entre HKLM y HKCU y qué implica para persistencia por usuario vs. por máquina.",
-      "Investiga qué es SeImpersonatePrivilege y por qué es relevante para escalada.",
-      "Encuentra en tu VM un servicio con \"unquoted service path\" o razona por qué no hay ninguno.",
+      "Explica la diferencia entre HKLM y HKCU y qué implica para persistencia por usuario frente a por máquina.",
+      "Investiga qué es SeImpersonatePrivilege y por qué es relevante para escalada de privilegios.",
+      "Encuentra en tu VM un servicio con unquoted service path o razona con evidencia por qué no hay ninguno.",
       "Documenta 3 ubicaciones de persistencia distintas y cómo detectarlas con Autoruns.",
-      "Compara UAC con sudo de Linux: similitudes y diferencias de modelo.",
-      "Con el Visor de eventos, distingue un login interactivo (tipo 2) de uno de red (tipo 3)."
+      "Compara UAC con sudo de Linux: similitudes y diferencias de modelo de privilegios.",
+      "Con el Visor de eventos, distingue un login interactivo (tipo 2) de uno de red (tipo 3) por su Logon Type.",
+      "Relaciona la clave Run con su técnica de MITRE ATT&CK y anota el identificador.",
+      "Comprueba con icacls los permisos de la carpeta de un servicio y razona si un usuario estándar podría sustituir su binario."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/008-windows-esencial-para-seguridad-arquitectura-registro-y-servicios/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/008-windows-esencial-para-seguridad-arquitectura-registro-y-servicios/README.md",
@@ -591,19 +625,20 @@ export const CLASSES = [
     "title": "PowerShell para seguridad ofensiva y defensiva",
     "level": "Fundamentos",
     "duration": "110 min",
-    "description": "Aprender PowerShell como herramienta dual: los atacantes lo usan para vivir de la tierra (living off the land) y los defensores para automatizar y responder.",
-    "theory": "Aprender PowerShell como herramienta dual: los atacantes lo usan para vivir de la tierra (living off the land) y los defensores para automatizar y responder. Al terminar sabrás manejar objetos, consultar el sistema, entender por qué PowerShell es tan potente para ataque y qué controles (logging, AMSI, políticas) lo vigilan.",
+    "description": "Aprender PowerShell como la herramienta dual que es: los atacantes lo usan para \"vivir de la tierra\" (living off the land) porque está preinstalado y firmado por Microsoft, y los defensores lo usan para automatizar el t…",
+    "theory": "Aprender PowerShell como la herramienta dual que es: los atacantes lo usan para \"vivir de la tierra\" (living off the land) porque está preinstalado y firmado por Microsoft, y los defensores lo usan para automatizar el triaje y la respuesta a incidentes. Al terminar sabrás manejar la tubería de objetos —lo que distingue radicalmente a PowerShell de Bash—, consultar procesos, servicios, red y eventos, entender por qué PowerShell es un vector ofensivo tan frecuente y, sobre todo, qué controles defensivos (Script Block Logging, AMSI, Constrained Language Mode) lo vigilan. Dominar ambas caras es l…",
     "outcomes": [
-      "Usar cmdlets, la tubería de objetos y el sistema de ayuda.",
-      "Consultar procesos, servicios, red y eventos con PowerShell.",
-      "Explicar por qué PowerShell es un vector ofensivo frecuente.",
-      "Configurar defensas: logging de scripts, políticas de ejecución, AMSI.",
-      "Escribir un script de recolección para respuesta a incidentes."
+      "Usar cmdlets, la tubería de objetos y el sistema de ayuda autodescubrible.",
+      "Consultar procesos, servicios, conexiones de red y eventos con PowerShell.",
+      "Explicar por qué PowerShell es un vector ofensivo frecuente y qué es un LOLBin.",
+      "Configurar defensas: Script Block Logging, transcripción, Execution Policy y AMSI.",
+      "Escribir un script de recolección para respuesta a incidentes que exporte un informe.",
+      "Verificar que la ejecución de un script queda registrada en el evento 4104."
     ],
     "topics": [
-      "Cmdlets y verbo-nombre",
+      "Cmdlets y Verbo-Nombre",
       "Pipeline de objetos",
-      "Get-Help/Get-Member",
+      "Get-Help / Get-Member",
       "Consulta del sistema",
       "Uso ofensivo",
       "Execution Policy",
@@ -611,22 +646,26 @@ export const CLASSES = [
       "Constrained Language Mode"
     ],
     "definitions": [
-      "Cmdlet: comando nativo con forma Verbo-Nombre (Get-Process). Clave: devuelve objetos .NET, no texto.",
-      "Pipeline de objetos: encadena cmdlets pasando objetos con propiedades. Clave: Where-Object, Select-Object, Sort-Object.",
-      "Execution Policy: ajuste que controla qué scripts se ejecutan. Clave: no es una barrera de seguridad; se evita fácilmente.",
-      "AMSI (Antimalware Scan Interface): interfaz que permite al antivirus inspeccionar scripts en memoria. Clave: los atacantes intentan evadirla.",
-      "Script Block Logging: registro del contenido de los bloques ejecutados (evento 4104). Clave: pilar de la detección de abuso de PowerShell.",
-      "Constrained Language Mode: modo que limita el acceso a APIs peligrosas. Clave: reduce la capacidad ofensiva de PowerShell."
+      "Cmdlet: comando nativo con forma Verbo-Nombre (Get-Process). Devuelve objetos .NET, no texto, y los verbos estandarizados hacen el lenguaje descubrible. Es la unidad básica de automatización.",
+      "Pipeline de objetos: encadena cmdlets pasando objetos con propiedades tipadas, no texto. Where-Object, Select-Object y Sort-Object operan por nombre de propiedad, lo que es más robusto que parsear texto y evita errores de formato.",
+      "Get-Member: cmdlet que revela las propiedades y métodos reales de un objeto. Es la herramienta de diagnóstico número uno: cuando el pipeline no filtra bien, casi siempre es que tratas los objetos como texto.",
+      "Execution Policy: ajuste que controla qué scripts se ejecutan por defecto. No es una barrera de seguridad: se evade con -ExecutionPolicy Bypass sin privilegios. Solo previene la ejecución accidental.",
+      "Living off the land (LotL): táctica de usar herramientas legítimas del sistema para no depositar malware detectable. PowerShell es su ejemplo canónico por estar preinstalado, firmado y con acceso a .NET.",
+      "LOLBin / LOLBAS: binario legítimo del sistema del que se abusa con fines maliciosos. El proyecto LOLBAS los cataloga. Reconocerlos es clave para la detección basada en comportamiento.",
+      "AMSI (Antimalware Scan Interface): interfaz que entrega el contenido de un script al antivirus para inspeccionarlo en memoria antes de ejecutarlo, cerrando el hueco del código fileless. Los atacantes intentan evadirla.",
+      "Script Block Logging: registra el contenido de cada bloque ejecutado —incluso tras desofuscarlo— en el evento 4104. Es el pilar de la detección de abuso de PowerShell y base del análisis forense."
     ],
     "tools": [],
-    "lab": "1. Descubrir el entorno: ``powershell Get-Command -Verb Get | Measure-Object Get-Help Get-Process -Examples Get-Process | Get-Member ` 2. Consultas de sistema (uso defensivo/forense): `powershell Get-Process | Sort-Object CPU -Descending | Select-Object -First 5 Name,Id,CPU Get-Service | Where-Object Status -eq 'Running' | Select-Object Name,DisplayName Get-NetTCPConnection | Where-Object State -…",
+    "lab": "1. Descubrir el entorno y aprender a autodescubrir: ``powershell Get-Command -Verb Get | Measure-Object Get-Help Get-Process -Examples Get-Process | Get-Member ` 2. Consultas de sistema (uso defensivo y forense) apoyándote en la tubería de objetos: `powershell Get-Process | Sort-Object CPU -Descending | Select-Object -First 5 Name,Id,CPU Get-Service | Where-Object Status -eq 'Running' | Select-Ob…",
     "exercises": [
-      "Escribe un one-liner que liste los 10 procesos con más memoria (WorkingSet) ordenados.",
+      "Escribe un one-liner que liste los 10 procesos con más memoria (WorkingSet) ordenados de mayor a menor.",
       "Exporta a CSV todos los servicios con inicio automático que están detenidos.",
-      "Explica por qué Get-ExecutionPolicy no protege realmente contra scripts maliciosos.",
-      "Investiga qué es un LOLBin y da dos ejemplos usados vía PowerShell.",
-      "Configura y verifica la transcripción de PowerShell (PowerShell Transcription).",
-      "Detecta con Get-WinEvent cualquier evento 4104 que contenga la palabra Invoke-Expression."
+      "Explica con un ejemplo por qué Get-ExecutionPolicy no protege realmente contra scripts maliciosos.",
+      "Investiga qué es un LOLBin y da dos ejemplos usados a través de PowerShell, citando el proyecto LOLBAS.",
+      "Configura y verifica la transcripción de PowerShell (PowerShell Transcription) y localiza el archivo que genera.",
+      "Detecta con Get-WinEvent cualquier evento 4104 cuyo contenido incluya la palabra Invoke-Expression.",
+      "Usa Get-Member sobre la salida de Get-Service y enumera tres propiedades que no imprime la vista por defecto.",
+      "Explica la diferencia entre filtrar con -FilterHashtable y filtrar con Where-Object tras traer todos los eventos."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/009-powershell-para-seguridad-ofensiva-y-defensiva/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/009-powershell-para-seguridad-ofensiva-y-defensiva/README.md",
@@ -639,14 +678,15 @@ export const CLASSES = [
     "title": "Redes TCP/IP: modelo OSI, encapsulación y capas",
     "level": "Fundamentos",
     "duration": "100 min",
-    "description": "Entender cómo se comunican los sistemas en red mediante modelos de capas.",
-    "theory": "Entender cómo se comunican los sistemas en red mediante modelos de capas. Al terminar podrás explicar qué hace cada capa, cómo se encapsulan los datos al bajar por la pila y cómo se desencapsulan al subir, y traducir entre el modelo OSI de 7 capas y el modelo TCP/IP real.",
+    "description": "Entender cómo se comunican los sistemas en red mediante modelos de capas, la abstracción más importante de toda la disciplina de redes.",
+    "theory": "Entender cómo se comunican los sistemas en red mediante modelos de capas, la abstracción más importante de toda la disciplina de redes. Al terminar podrás explicar qué hace cada capa, cómo se encapsulan los datos al bajar por la pila del emisor y cómo se desencapsulan al subir en el receptor, y traducir con soltura entre el modelo OSI de 7 capas (el vocabulario de la industria) y el modelo TCP/IP real de 4 capas (el que gobierna Internet). Este marco no es teoría abstracta: sin él, frases como \"un ataque de capa 7\", \"un balanceador L4\" o \"spoofing de capa 2\" son ruido, y no se entiende dónde…",
     "outcomes": [
-      "Enumerar las capas de los modelos OSI y TCP/IP y su función.",
-      "Explicar la encapsulación y las PDU de cada capa.",
-      "Mapear protocolos reales a su capa correspondiente.",
+      "Enumerar las capas de los modelos OSI y TCP/IP y describir la función de cada una.",
+      "Explicar la encapsulación y nombrar la PDU de cada capa.",
+      "Mapear protocolos reales (Ethernet, IP, TCP, HTTP) a su capa correspondiente.",
       "Relacionar ataques concretos con la capa que afectan.",
-      "Observar la encapsulación real en una captura de red."
+      "Observar la encapsulación real en una captura de red con Wireshark.",
+      "Calcular la sobrecarga de cabeceras que añade cada capa a un payload."
     ],
     "topics": [
       "Modelo OSI (7 capas)",
@@ -659,22 +699,26 @@ export const CLASSES = [
       "Herramientas de observación"
     ],
     "definitions": [
-      "Modelo OSI: modelo conceptual de 7 capas (física, enlace, red, transporte, sesión, presentación, aplicación). Clave: referencia para razonar, no una implementación literal.",
-      "Modelo TCP/IP: modelo práctico de 4 capas (acceso a red, Internet, transporte, aplicación). Clave: es el que gobierna Internet.",
-      "Encapsulación: cada capa añade su cabecera al bajar por la pila. Clave: los datos de aplicación viajan envueltos en segmento → paquete → trama.",
-      "PDU (Protocol Data Unit): nombre del dato en cada capa (trama en enlace, paquete en red, segmento en transporte). Clave: precisa la terminología.",
-      "MTU: tamaño máximo de la carga a nivel de enlace (típ. 1500 en Ethernet). Clave: excederla obliga a fragmentar.",
-      "Multiplexación por puerto: la capa de transporte usa puertos para distinguir aplicaciones. Clave: permite muchas conexiones simultáneas por host."
+      "Modelo OSI: modelo conceptual de 7 capas (física, enlace, red, transporte, sesión, presentación, aplicación). Es la referencia para razonar y el vocabulario común de la industria (\"capa 7\"), no una implementación literal de Internet.",
+      "Modelo TCP/IP: modelo práctico de 4 capas (acceso a red, Internet, transporte, aplicación) que gobierna Internet de verdad. Colapsa las capas de sesión y presentación de OSI dentro de la de aplicación o de protocolos como TLS.",
+      "Encapsulación: proceso por el que cada capa añade su cabecera a los datos al bajar por la pila. Los datos de aplicación viajan envueltos como segmento → paquete → trama. El payload original se preserva; solo se envuelve.",
+      "Desencapsulación: proceso inverso en el receptor, donde cada capa lee y retira su cabecera y entrega el contenido a la capa superior. Es lo que permite que cada capa \"converse\" con su homóloga del otro extremo.",
+      "PDU (Protocol Data Unit): nombre del dato en cada capa: datos en aplicación, segmento en transporte, paquete en red, trama en enlace y bits en física. Precisa la terminología y evita confundir capas.",
+      "Dirección MAC: identificador físico de una tarjeta de red, de alcance local (capa de enlace). Cambia en cada salto de la ruta. Es la base del envenenamiento ARP.",
+      "Dirección IP: identificador lógico de un host de extremo a extremo (capa de red). No cambia a lo largo del trayecto salvo NAT. Determina el encaminamiento entre redes.",
+      "Puerto: número que identifica una aplicación dentro de un host (capa de transporte). Habilita la multiplexación: muchas conexiones simultáneas distinguidas por sus puertos."
     ],
     "tools": [],
-    "lab": "1. Dibuja el mapeo. En una tabla, alinea las 7 capas OSI con las 4 de TCP/IP y coloca al menos un protocolo por capa. 2. Captura tráfico de una petición web sencilla. En Kali: ``bash sudo tcpdump -i eth0 -c 20 -w captura.pcap host <ip-victima> ` Genera tráfico con curl http://<ip-victima>/`. 3. Abre la captura en Wireshark y selecciona un paquete HTTP. 4. Observa la encapsulación. En el panel de…",
+    "lab": "1. Dibuja el mapeo. En una tabla, alinea las 7 capas OSI con las 4 de TCP/IP y coloca al menos un protocolo por capa. 2. Captura tráfico de una petición web sencilla. En Kali (ajusta la interfaz con ip a): ``bash sudo tcpdump -i eth0 -c 20 -w captura.pcap host <ip-destino> ` Genera tráfico con curl http://<ip-destino>/`. 3. Abre la captura en Wireshark y selecciona un paquete HTTP. 4. Observa la…",
     "exercises": [
-      "Ordena de menor a mayor nivel: TCP, Ethernet, HTTP, IP.",
-      "Explica qué cabecera añade cada capa a un mensaje \"hola\" que envía una app.",
-      "¿En qué PDU y capa actúa un switch? ¿Y un router?",
-      "Da un ejemplo de ataque para cada una de las 4 capas TCP/IP.",
-      "Calcula cuánta sobrecarga (bytes de cabeceras) añaden Ethernet+IP+TCP a un payload.",
-      "Explica por qué el modelo OSI tiene capas (sesión, presentación) que TCP/IP no separa."
+      "Ordena de menor a mayor nivel de capa: TCP, Ethernet, HTTP, IP.",
+      "Explica qué cabecera añade cada capa a un mensaje \"hola\" que envía una aplicación.",
+      "¿En qué PDU y capa actúa un switch? ¿Y un router? Justifícalo.",
+      "Da un ejemplo de ataque para cada una de las 4 capas del modelo TCP/IP.",
+      "Calcula cuánta sobrecarga en bytes añaden las cabeceras Ethernet + IP + TCP a un payload (usa los tamaños mínimos de cada cabecera).",
+      "Explica por qué el modelo OSI tiene capas (sesión, presentación) que TCP/IP no separa, y dónde acaban esas funciones.",
+      "Describe qué ocurre con la dirección MAC y con la dirección IP de un paquete al pasar por un router.",
+      "Razona por qué un firewall de capa 3-4 no puede bloquear una inyección SQL y qué tipo de defensa sí puede."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/010-redes-tcp-ip-modelo-osi-encapsulacion-y-capas/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/010-redes-tcp-ip-modelo-osi-encapsulacion-y-capas/README.md",
@@ -687,14 +731,15 @@ export const CLASSES = [
     "title": "Protocolos de red: IP, TCP, UDP e ICMP en profundidad",
     "level": "Fundamentos",
     "duration": "110 min",
-    "description": "Conocer al detalle los protocolos que mueven Internet: cómo se estructuran sus cabeceras, cómo TCP establece y cierra conexiones, en qué se diferencia UDP y para qué sirve ICMP.",
-    "theory": "Conocer al detalle los protocolos que mueven Internet: cómo se estructuran sus cabeceras, cómo TCP establece y cierra conexiones, en qué se diferencia UDP y para qué sirve ICMP. Este conocimiento es la base del escaneo de puertos, la detección de intrusiones y muchos ataques de red.",
+    "description": "Conocer al detalle los protocolos que mueven Internet: cómo se estructuran sus cabeceras bit a bit, cómo TCP establece, mantiene y cierra una conexión fiable, en qué se diferencia radicalmente UDP y para qué sirve ICMP.",
+    "theory": "Conocer al detalle los protocolos que mueven Internet: cómo se estructuran sus cabeceras bit a bit, cómo TCP establece, mantiene y cierra una conexión fiable, en qué se diferencia radicalmente UDP y para qué sirve ICMP. Este conocimiento no es teoría inerte: es el sustrato del escaneo de puertos, del fingerprinting de sistemas operativos, de la detección de intrusiones y de una familia entera de ataques de red. Quien entiende las cabeceras entiende por qué un escaneo funciona, por qué un firewall responde como responde y qué revela cada paquete que viaja por el cable.",
     "outcomes": [
-      "Interpretar los campos clave de las cabeceras IP, TCP, UDP e ICMP.",
-      "Explicar el three-way handshake y el cierre de conexión TCP.",
-      "Distinguir TCP de UDP y cuándo se usa cada uno.",
-      "Relacionar flags y estados TCP con técnicas de escaneo.",
-      "Analizar una conversación real en Wireshark."
+      "Interpretar los campos clave de las cabeceras IP, TCP, UDP e ICMP y explicar su función.",
+      "Explicar el three-way handshake, el control de flujo por ventana y el cierre ordenado o abrupto de una conexión TCP.",
+      "Distinguir TCP de UDP y justificar cuándo el diseño de un protocolo elige cada uno.",
+      "Relacionar flags y estados TCP con las técnicas de escaneo (SYN, connect, FIN, UDP).",
+      "Analizar una conversación real en Wireshark, identificando fases y anomalías.",
+      "Reconocer cómo ICMP y ciertos campos IP se abusan para evasión, fingerprinting y exfiltración."
     ],
     "topics": [
       "Cabecera IP",
@@ -707,22 +752,25 @@ export const CLASSES = [
       "Escaneo de puertos"
     ],
     "definitions": [
-      "TTL (Time To Live): contador de saltos en la cabecera IP; cada router lo decrementa. Clave: a 0 se descarta y se usa en traceroute y para inferir el SO.",
-      "Three-way handshake: SYN → SYN-ACK → ACK que abre una conexión TCP. Clave: base del connect scan y del SYN flood.",
-      "Flag RST: reinicio abrupto de conexión. Clave: un puerto TCP cerrado responde con RST; así el escáner sabe que está cerrado.",
-      "UDP: transporte sin conexión ni garantías. Clave: rápido, sin handshake; DNS, DHCP, VoIP lo usan.",
-      "ICMP: protocolo de control/diagnóstico (echo request/reply, unreachable). Clave: ping y traceroute; también usado para túneles y exfiltración.",
-      "Número de secuencia: identifica la posición de los bytes en el flujo TCP. Clave: su predictibilidad histórica permitió ataques de spoofing."
+      "TTL (Time To Live): contador de saltos en la cabecera IP que cada router decrementa; al llegar a cero el paquete se descarta con un ICMP \"Time Exceeded\". Es el motor de traceroute y, como los sistemas parten de valores típicos (64, 128, 255), permite inferir el SO de origen contando saltos.",
+      "Three-way handshake: secuencia SYN → SYN-ACK → ACK que abre toda conexión TCP e intercambia los números de secuencia iniciales. Es la base del connect scan, y su saturación es lo que provoca el ataque SYN flood.",
+      "Flag RST: bit que aborta una conexión de forma inmediata, sin negociación. Un puerto TCP cerrado responde con RST a un SYN, y esa respuesta es exactamente lo que le dice al escáner que el puerto no escucha.",
+      "Número de secuencia (ISN): identifica la posición de cada byte en el flujo TCP. Su predictibilidad en implementaciones antiguas permitió ataques de spoofing e inyección; los SO modernos lo aleatorizan para mitigarlo.",
+      "Ventana (window): campo que anuncia cuántos bytes puede recibir el extremo sin desbordar su buffer. Implementa el control de flujo y evita que un emisor rápido ahogue a un receptor lento.",
+      "UDP: transporte sin conexión, sin orden ni garantías, con cabecera de solo 8 bytes. Su ligereza lo hace ideal para DNS, DHCP, VoIP y QUIC, pero también para ataques de amplificación por su falta de validación de origen.",
+      "ICMP: protocolo de control y diagnóstico de IP (echo, unreachable, time exceeded). Sostiene ping y traceroute; su payload también sirve como canal encubierto para túneles y exfiltración.",
+      "Puerto filtrado: estado en el que un firewall descarta la sonda sin responder, indistinguible a primera vista de la pérdida de red. Se diferencia de \"cerrado\" porque este último sí responde (RST o ICMP)."
     ],
     "tools": [],
-    "lab": "1. Capturar un handshake. En Kali, arranca la captura y luego conéctate a un servicio de la víctima: ``bash sudo tcpdump -i eth0 -n 'tcp and host 10.10.10.6' -w tcp.pcap & curl http://10.10.10.6/ ; sudo pkill tcpdump ` 2. Analiza en Wireshark el filtro tcp.flags.syn == 1. Identifica SYN, SYN-ACK y ACK y anota números de secuencia y puertos. 3. Cierre de conexión. Localiza los paquetes FIN/ACK (o…",
+    "lab": "1. Capturar un handshake. En Kali, arranca la captura y luego conéctate a un servicio de la víctima: ``bash sudo tcpdump -i eth0 -n 'tcp and host 10.10.10.6' -w tcp.pcap & curl http://10.10.10.6/ ; sudo pkill tcpdump ` 2. Analiza en Wireshark con el filtro tcp.flags.syn == 1. Identifica SYN, SYN-ACK y ACK, y anota los números de secuencia y los puertos de origen y destino. 3. Cierre de conexión.…",
     "exercises": [
-      "Dibuja el three-way handshake indicando qué flag lleva cada paquete.",
-      "Explica qué respuesta da un puerto TCP abierto, cerrado y filtrado ante un SYN scan.",
-      "¿Por qué el escaneo UDP es más lento y menos fiable que el TCP?",
-      "Interpreta el campo TTL de tres capturas y estima el SO de origen.",
-      "Explica la diferencia entre -sS (SYN) y -sT (connect) en nmap y sus implicaciones de sigilo.",
-      "Describe cómo ICMP puede usarse para exfiltrar datos (túnel ICMP) y cómo detectarlo."
+      "Dibuja el three-way handshake indicando qué flag lleva cada paquete y cómo evolucionan seq y ack.",
+      "Explica qué respuesta da un puerto TCP abierto, cerrado y filtrado ante un SYN scan, y por qué difieren.",
+      "¿Por qué el escaneo UDP es más lento y menos fiable que el TCP? Relaciónalo con la ausencia de handshake.",
+      "Interpreta el campo TTL de tres capturas y estima el SO de origen y el número de saltos.",
+      "Explica la diferencia entre -sS (SYN) y -sT (connect) en nmap y sus implicaciones de sigilo y de permisos.",
+      "Describe cómo ICMP puede usarse para exfiltrar datos mediante un túnel y qué señales permitirían detectarlo.",
+      "Justifica por qué bloquear todo ICMP en una red puede degradar el rendimiento (pista: Path MTU Discovery)."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/011-protocolos-de-red-ip-tcp-udp-e-icmp-en-profundidad/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/011-protocolos-de-red-ip-tcp-udp-e-icmp-en-profundidad/README.md",
@@ -735,14 +783,15 @@ export const CLASSES = [
     "title": "DNS, DHCP y ARP: funcionamiento y riesgos",
     "level": "Fundamentos",
     "duration": "100 min",
-    "description": "Comprender los tres protocolos de infraestructura que hacen funcionar cualquier red local e Internet: DNS (resolución de nombres), DHCP (asignación de direcciones) y ARP (mapeo IP↔MAC).",
-    "theory": "Comprender los tres protocolos de infraestructura que hacen funcionar cualquier red local e Internet: DNS (resolución de nombres), DHCP (asignación de direcciones) y ARP (mapeo IP↔MAC). Todos comparten un problema: se diseñaron sin autenticación, lo que los convierte en vectores clásicos de ataque en red local.",
+    "description": "Comprender los tres protocolos de infraestructura que hacen funcionar cualquier red local e Internet: DNS (resolución de nombres), DHCP (asignación automática de direcciones) y ARP (mapeo entre IP y MAC).",
+    "theory": "Comprender los tres protocolos de infraestructura que hacen funcionar cualquier red local e Internet: DNS (resolución de nombres), DHCP (asignación automática de direcciones) y ARP (mapeo entre IP y MAC). Los tres comparten un mismo pecado original: se diseñaron para redes confiables, sin autenticación, lo que los convierte en los vectores clásicos de ataque dentro de una red local. Entender cómo funcionan por dentro es entender por qué el man-in-the-middle en LAN sigue siendo tan efectivo décadas después.",
     "outcomes": [
-      "Describir el proceso de resolución DNS y sus tipos de registro.",
-      "Explicar el intercambio DHCP (DORA) y su ausencia de autenticación.",
-      "Detallar cómo ARP resuelve MAC a partir de IP.",
-      "Identificar ataques: ARP spoofing, DNS spoofing, DHCP rogue.",
-      "Observar y detectar estos ataques en el laboratorio."
+      "Describir el proceso de resolución DNS jerárquica y sus tipos de registro.",
+      "Explicar el intercambio DHCP (DORA) y por qué su ausencia de autenticación habilita servidores rogue.",
+      "Detallar cómo ARP resuelve una MAC a partir de una IP dentro del segmento local.",
+      "Identificar los ataques ARP spoofing, DNS spoofing y DHCP rogue, y su relación con el MITM.",
+      "Observar y detectar estos ataques en el laboratorio con evidencia.",
+      "Seleccionar defensas reales (DHCP snooping, DAI, DNSSEC) y justificar qué ataque frena cada una."
     ],
     "topics": [
       "Resolución DNS",
@@ -755,22 +804,25 @@ export const CLASSES = [
       "Defensas"
     ],
     "definitions": [
-      "DNS: sistema jerárquico que traduce nombres a IPs. Clave: usa UDP/53 (y TCP para transferencias); sin DNSSEC, las respuestas no están autenticadas.",
-      "Registro A / AAAA: mapea un nombre a IPv4 / IPv6. Clave: el registro más consultado.",
-      "DHCP DORA: Discover, Offer, Request, Acknowledge. Clave: el cliente confía en el primer servidor que responde → servidor rogue.",
-      "ARP: resuelve una IP local a su MAC mediante broadcast. Clave: sin estado ni autenticación; cualquiera puede responder.",
-      "ARP spoofing: enviar respuestas ARP falsas para asociar tu MAC a la IP de la víctima/gateway. Clave: habilita MITM.",
-      "DNSSEC: extensión que firma las respuestas DNS. Clave: mitiga el envenenamiento, no la confidencialidad."
+      "DNS: sistema jerárquico y distribuido que traduce nombres a direcciones IP. Usa UDP/53 para consultas y TCP/53 para respuestas grandes y transferencias; sin DNSSEC, sus respuestas no están autenticadas y pueden falsificarse.",
+      "Registro A / AAAA: mapea un nombre a una dirección IPv4 (A) o IPv6 (AAAA). Es el registro más consultado y el objetivo natural de una redirección maliciosa.",
+      "Registro MX / NS / TXT: MX indica el servidor de correo del dominio, NS delega la zona a sus servidores autoritativos, y TXT guarda texto usado hoy para SPF, DKIM y verificaciones.",
+      "DHCP DORA: secuencia Discover, Offer, Request, Acknowledge que concede una IP. El cliente confía en el primer servidor que responde, lo que abre la puerta a un servidor rogue.",
+      "ARP: protocolo que resuelve una IP local a su MAC mediante broadcast. Carece de estado y de autenticación, así que cualquier nodo del segmento puede responder con datos falsos.",
+      "ARP spoofing: envío de respuestas ARP falsas para asociar la MAC del atacante a la IP de la víctima o del gateway. Es el habilitador clásico del man-in-the-middle en redes conmutadas.",
+      "DHCP rogue: servidor DHCP no autorizado que entrega configuración maliciosa (gateway y DNS controlados por el atacante) para interceptar el tráfico de las víctimas.",
+      "DNSSEC: extensión que firma las respuestas DNS para garantizar integridad y autenticidad de origen. Mitiga el envenenamiento de caché, pero no aporta confidencialidad."
     ],
     "tools": [],
-    "lab": "1. Consultas DNS: ``bash dig A example.com +short dig MX example.com dig +trace example.com # observa la resolución jerárquica ` 2. Ver la caché ARP de tu equipo: `bash ip neigh show ` Anota la MAC del gateway. 3. Observar DHCP. Captura mientras renuevas la concesión en la VM: `bash sudo tcpdump -i eth0 -n port 67 or port 68 & sudo dhclient -v eth0 ` Identifica los cuatro mensajes DORA. 4. ARP sp…",
+    "lab": "1. Consultas DNS. Observa la resolución jerárquica y distintos registros: ``bash dig A example.com +short dig MX example.com dig +trace example.com ` 2. Ver la caché ARP de tu equipo y anotar la MAC legítima del gateway: `bash ip neigh show ` 3. Observar DHCP. Captura mientras renuevas la concesión en la VM e identifica los cuatro mensajes DORA: `bash sudo tcpdump -i eth0 -n port 67 or port 68 &…",
     "exercises": [
-      "Explica paso a paso qué ocurre desde que escribes un dominio hasta que recibes la IP.",
-      "Da un ejemplo de uso de cada registro: A, MX, TXT, CNAME, NS.",
-      "Describe cómo un servidor DHCP rogue puede convertirse en gateway de las víctimas.",
-      "¿Por qué ARP es tan fácil de falsificar? ¿Qué le falta al protocolo?",
-      "Investiga qué son DHCP snooping y Dynamic ARP Inspection y qué ataque frena cada uno.",
-      "Explica qué protege DNSSEC y qué no protege (pista: confidencialidad)."
+      "Explica paso a paso qué ocurre desde que escribes un dominio hasta que recibes su IP, nombrando cada servidor implicado.",
+      "Da un ejemplo de uso real de cada registro: A, MX, TXT, CNAME y NS.",
+      "Describe cómo un servidor DHCP rogue puede convertirse en el gateway efectivo de las víctimas.",
+      "¿Por qué ARP es tan fácil de falsificar? ¿Qué propiedad de seguridad le falta al protocolo?",
+      "Investiga DHCP snooping y Dynamic ARP Inspection e indica qué ataque concreto frena cada uno.",
+      "Explica qué protege DNSSEC y qué no protege, y compáralo con lo que aportan DoH/DoT.",
+      "Propón un método para detectar automáticamente ARP spoofing observando la caché ARP en el tiempo."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/012-dns-dhcp-y-arp-funcionamiento-y-riesgos/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/012-dns-dhcp-y-arp-funcionamiento-y-riesgos/README.md",
@@ -784,13 +836,14 @@ export const CLASSES = [
     "level": "Fundamentos",
     "duration": "110 min",
     "description": "Dominar el protocolo sobre el que corre la web y, con él, la mayor parte de la superficie de ataque moderna.",
-    "theory": "Dominar el protocolo sobre el que corre la web y, con él, la mayor parte de la superficie de ataque moderna. Al terminar entenderás peticiones y respuestas HTTP, métodos, códigos de estado, cabeceras, cookies y sesiones, y cómo HTTPS/TLS añade confidencialidad e integridad al canal.",
+    "theory": "Dominar el protocolo sobre el que corre la web y, con él, la mayor parte de la superficie de ataque moderna. Al terminar entenderás la anatomía de peticiones y respuestas HTTP, la semántica de métodos y códigos de estado, el papel de las cabeceras, cómo cookies y sesiones simulan estado sobre un protocolo que no lo tiene, y cómo HTTPS y TLS añaden confidencialidad, integridad y autenticación al canal. Este es el idioma que hablan navegadores, APIs y atacantes por igual.",
     "outcomes": [
-      "Construir e interpretar peticiones y respuestas HTTP.",
-      "Explicar métodos, códigos de estado y cabeceras relevantes.",
-      "Describir cómo funcionan cookies, sesiones y autenticación web.",
+      "Construir e interpretar peticiones y respuestas HTTP crudas.",
+      "Explicar la semántica de métodos, códigos de estado y cabeceras relevantes.",
+      "Describir cómo funcionan cookies, sesiones y la autenticación web.",
       "Explicar qué aporta TLS y cómo se establece una conexión HTTPS.",
-      "Analizar tráfico web con herramientas de interceptación."
+      "Analizar tráfico web con herramientas de interceptación como Burp o ZAP.",
+      "Evaluar la postura de seguridad de un sitio a partir de sus cabeceras."
     ],
     "topics": [
       "Modelo petición/respuesta",
@@ -803,22 +856,25 @@ export const CLASSES = [
       "HTTP/2 y HTTP/3"
     ],
     "definitions": [
-      "HTTP: protocolo de aplicación sin estado sobre TCP (o QUIC en HTTP/3). Clave: cada petición es independiente; el estado se añade con cookies.",
-      "Método: verbo que indica la acción (GET lee, POST envía, PUT reemplaza, DELETE borra). Clave: GET debe ser seguro/idempotente.",
-      "Código de estado: número de la respuesta (200 OK, 301 redirección, 401/403 auth, 404, 500). Clave: primer diagnóstico de cualquier fallo web.",
-      "Cookie: dato que el servidor pide al navegador guardar y reenviar. Clave: HttpOnly, Secure, SameSite la protegen.",
-      "TLS: protocolo que cifra y autentica el canal mediante certificados. Clave: HTTPS = HTTP sobre TLS; protege confidencialidad e integridad, no la app.",
-      "HSTS: cabecera que fuerza HTTPS en el navegador. Clave: mitiga el downgrade a HTTP."
+      "HTTP: protocolo de aplicación sin estado que corre sobre TCP (o sobre QUIC en HTTP/3). Cada petición es independiente; el estado se añade artificialmente con cookies y tokens.",
+      "Método HTTP: verbo que declara la intención (GET lee, POST envía, PUT reemplaza, DELETE borra). GET debe ser seguro e idempotente, y violar esa semántica genera fallos reales de caché y crawling.",
+      "Código de estado: número de tres dígitos que resume el resultado de la petición, agrupado en familias 2xx/3xx/4xx/5xx. Es el primer diagnóstico de cualquier fallo web.",
+      "Cookie: dato que el servidor pide al navegador almacenar y reenviar. Sus atributos HttpOnly, Secure y SameSite determinan su resistencia a XSS, captura en claro y CSRF.",
+      "Sesión: mecanismo por el que el servidor asocia peticiones al mismo usuario, normalmente mediante un identificador guardado en cookie. Es el objetivo del secuestro de sesión.",
+      "TLS: protocolo que cifra y autentica el canal mediante certificados. Aporta confidencialidad, integridad y autenticación, pero no protege contra fallos de la aplicación.",
+      "HSTS: cabecera que obliga al navegador a usar HTTPS con un dominio, mitigando los ataques de downgrade a HTTP.",
+      "CSP: cabecera que restringe los orígenes desde los que se cargan recursos, siendo una defensa de primera línea contra XSS."
     ],
     "tools": [],
-    "lab": "1. Petición cruda con curl. Observa cabeceras de respuesta: ``bash curl -v http://10.10.10.6/ 2>&1 | head -40 ` Identifica la línea de estado, cabeceras y cuerpo. 2. Métodos y estados. Prueba distintos métodos y observa el código: `bash curl -s -o /dev/null -w \"%{http_code}\\n\" -X POST http://10.10.10.6/login ` 3. Inspeccionar cookies. Haz login en la app de laboratorio con DevTools abiertas y rev…",
+    "lab": "1. Petición cruda con curl. Observa la línea de estado, las cabeceras y el cuerpo: ``bash curl -v http://10.10.10.6/ 2>&1 | head -40 ` 2. Métodos y estados. Prueba distintos métodos y observa solo el código de estado: `bash curl -s -o /dev/null -w \"%{http_code}\\n\" -X POST http://10.10.10.6/login ` 3. Inspeccionar cookies. Haz login en la app de laboratorio con las DevTools abiertas y revisa la co…",
     "exercises": [
-      "Clasifica estos códigos: 204, 301, 401, 403, 429, 502. ¿Qué significa cada uno?",
-      "Explica la diferencia entre 401 y 403.",
-      "¿Qué atributos hacen segura una cookie de sesión y contra qué protege cada uno?",
+      "Clasifica estos códigos e indica qué significa cada uno: 204, 301, 401, 403, 429, 502.",
+      "Explica con un ejemplo la diferencia práctica entre 401 y 403 en una API.",
+      "¿Qué atributos hacen segura una cookie de sesión y contra qué ataque protege cada uno?",
       "Describe qué información revela y qué oculta TLS a un observador de la red.",
-      "Investiga la cabecera Content-Security-Policy y da un ejemplo que mitigue XSS.",
-      "Con Burp Repeater, cambia un parámetro y documenta cómo responde la app."
+      "Investiga la cabecera Content-Security-Policy y escribe un ejemplo que mitigue XSS.",
+      "Con Burp o ZAP Repeater, cambia un parámetro de una petición y documenta cómo responde la app.",
+      "Explica por qué HTTPS es necesario pero no suficiente para la seguridad de una aplicación."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/013-http-https-y-la-arquitectura-de-la-web-moderna/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/013-http-https-y-la-arquitectura-de-la-web-moderna/README.md",
@@ -831,14 +887,15 @@ export const CLASSES = [
     "title": "Direccionamiento IP y subnetting",
     "level": "Fundamentos",
     "duration": "100 min",
-    "description": "Calcular subredes con soltura, algo que necesitarás constantemente para definir el alcance de un escaneo, segmentar una red o interpretar un rango objetivo.",
-    "theory": "Calcular subredes con soltura, algo que necesitarás constantemente para definir el alcance de un escaneo, segmentar una red o interpretar un rango objetivo. Al terminar sabrás pasar entre notación decimal, binaria y CIDR, calcular direcciones de red, broadcast, rango de hosts y dividir una red en subredes.",
+    "description": "Calcular subredes con soltura, una destreza que necesitarás constantemente para definir el alcance de un escaneo, segmentar una red defensivamente o interpretar el rango de un objetivo.",
+    "theory": "Calcular subredes con soltura, una destreza que necesitarás constantemente para definir el alcance de un escaneo, segmentar una red defensivamente o interpretar el rango de un objetivo. Al terminar sabrás moverte con fluidez entre notación decimal, binaria y CIDR, calcular direcciones de red, broadcast, primer y último host y número de direcciones utilizables, y dividir una red en subredes de tamaño fijo o variable. El subnetting no es aritmética por gusto: equivocarse de máscara deja objetivos fuera del alcance o, peor, incluye redes que no debías tocar.",
     "outcomes": [
-      "Convertir direcciones IP entre decimal y binario.",
-      "Interpretar máscaras de red y notación CIDR.",
-      "Calcular red, broadcast, primer/último host y número de hosts.",
-      "Dividir una red en subredes (subnetting/VLSM).",
-      "Reconocer rangos privados, especiales y su relevancia en seguridad."
+      "Convertir direcciones IP entre notación decimal y binaria con precisión.",
+      "Interpretar máscaras de red y notación CIDR y traducir entre ambas.",
+      "Calcular dirección de red, broadcast, primer y último host y número de hosts.",
+      "Dividir una red en subredes de tamaño fijo (subnetting) y variable (VLSM).",
+      "Reconocer rangos privados, especiales y reservados y su relevancia en seguridad.",
+      "Diseñar un plan de direccionamiento sin solapamientos que optimice el espacio."
     ],
     "topics": [
       "IPv4 y binario",
@@ -851,22 +908,25 @@ export const CLASSES = [
       "Rangos especiales"
     ],
     "definitions": [
-      "Máscara de red: patrón de bits que separa la porción de red de la de host. Clave: /24 = 255.255.255.0 = 24 bits de red.",
-      "CIDR: notación IP/prefijo que reemplazó las clases A/B/C. Clave: permite prefijos arbitrarios y agregación de rutas.",
-      "Dirección de red: primera del bloque, con todos los bits de host a 0. Clave: no se asigna a hosts.",
-      "Broadcast: última del bloque, con todos los bits de host a 1. Clave: tampoco es asignable.",
-      "Hosts utilizables: 2^(bits de host) − 2. Clave: se restan red y broadcast (salvo /31, /32).",
-      "Rangos privados (RFC 1918): 10/8, 172.16/12, 192.168/16. Clave: no enrutables en Internet; típicos de laboratorios y LAN."
+      "Máscara de red: patrón de 32 bits que separa la porción de red (bits a 1) de la de host (bits a 0). /24 equivale a 255.255.255.0, es decir 24 bits de red.",
+      "CIDR: notación IP/prefijo que reemplazó las clases A/B/C. Permite prefijos arbitrarios y la agregación de rutas, optimizando el uso del espacio de direcciones.",
+      "Dirección de red: primera dirección del bloque, con todos los bits de host a 0. Identifica el segmento y no se asigna a ningún host.",
+      "Dirección de broadcast: última dirección del bloque, con todos los bits de host a 1. Alcanza a todos los hosts del segmento y tampoco es asignable.",
+      "Hosts utilizables: número de direcciones asignables, igual a 2^(bits de host) − 2, porque se restan red y broadcast (salvo en /31 y /32).",
+      "Subnetting: proceso de dividir una red tomando bits de host para crear subredes iguales, a costa de flexibilidad.",
+      "VLSM: Variable Length Subnet Masking; asigna a cada segmento la máscara mínima que cubre sus hosts, evitando el desperdicio del tamaño fijo.",
+      "Rangos privados (RFC 1918): 10/8, 172.16/12 y 192.168/16; no enrutables en Internet y típicos de LANs y laboratorios."
     ],
     "tools": [],
-    "lab": "1. Decimal a binario. Convierte a mano 192.168.10.0 y 255.255.255.192 a binario. Verifica: ``bash ipcalc 192.168.10.0/26 ` 2. Analiza un bloque /24. Para 10.10.10.0/24 determina: máscara, dirección de red, broadcast, primer y último host, número de hosts. 3. Subnetear. Divide 192.168.1.0/24 en 4 subredes iguales (/26). Escribe para cada una: red, rango de hosts y broadcast. 4. Verifica con la her…",
+    "lab": "1. Decimal a binario. Convierte a mano 192.168.10.0 y 255.255.255.192 a binario, y luego verifica: ``bash ipcalc 192.168.10.0/26 ` 2. Analiza un bloque /24. Para 10.10.10.0/24 determina a mano: máscara, dirección de red, broadcast, primer y último host y número de hosts. 3. Subnetear en tamaño fijo. Divide 192.168.1.0/24 en 4 subredes iguales (/26). Escribe para cada una red, rango de hosts y bro…",
     "exercises": [
       "¿Cuántos hosts utilizables tiene un /22? ¿Y un /30?",
-      "Para 10.20.30.45/27, calcula la dirección de red y el broadcast.",
-      "Divide 192.168.100.0/24 en 8 subredes; da la 3ª subred completa.",
-      "Diseña con VLSM un plan para 3 departamentos de 60, 30 y 10 hosts partiendo de un /24.",
+      "Para 10.20.30.45/27, calcula la dirección de red y la de broadcast.",
+      "Divide 192.168.100.0/24 en 8 subredes y da la 3ª subred completa (red, rango y broadcast).",
+      "Diseña con VLSM un plan para tres departamentos de 60, 30 y 10 hosts partiendo de un /24.",
       "Explica por qué un /31 puede usarse en enlaces punto a punto pese a la regla −2.",
-      "Determina si 192.168.5.130 y 192.168.5.200 están en la misma subred /26."
+      "Determina si 192.168.5.130 y 192.168.5.200 están en la misma subred /26.",
+      "Justifica con un ejemplo por qué equivocarse de máscara altera el alcance de un escaneo."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/014-direccionamiento-ip-y-subnetting/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/014-direccionamiento-ip-y-subnetting/README.md",
@@ -879,14 +939,15 @@ export const CLASSES = [
     "title": "Python para seguridad: fundamentos del lenguaje",
     "level": "Fundamentos",
     "duration": "120 min",
-    "description": "Adquirir la base de Python necesaria para escribir herramientas de seguridad: tipos, estructuras de datos, control de flujo, funciones, manejo de archivos y excepciones.",
-    "theory": "Adquirir la base de Python necesaria para escribir herramientas de seguridad: tipos, estructuras de datos, control de flujo, funciones, manejo de archivos y excepciones. Python es el lenguaje franco de la ciberseguridad ofensiva y defensiva, y esta clase asienta lo que usarás en sockets y Scapy.",
+    "description": "Adquirir la base de Python necesaria para escribir herramientas de seguridad: tipos y estructuras de datos, control de flujo, funciones y módulos, manejo de archivos y gestión de errores con excepciones.",
+    "theory": "Adquirir la base de Python necesaria para escribir herramientas de seguridad: tipos y estructuras de datos, control de flujo, funciones y módulos, manejo de archivos y gestión de errores con excepciones. Python es el lenguaje franco de la ciberseguridad, tanto ofensiva como defensiva, porque combina una sintaxis legible con una librería estándar enorme y un ecosistema de librerías (requests, scapy, pwntools) inigualable. Esta clase asienta lo que usarás en las siguientes sobre sockets, Scapy y automatización.",
     "outcomes": [
-      "Manejar tipos, listas, diccionarios y comprensiones.",
-      "Escribir control de flujo, funciones y módulos.",
-      "Leer y escribir archivos y procesar su contenido.",
-      "Gestionar errores con excepciones y usar la stdlib.",
-      "Crear un script CLI de utilidad para seguridad."
+      "Manejar tipos, listas, diccionarios, conjuntos y comprensiones con soltura.",
+      "Escribir control de flujo, funciones reutilizables y módulos organizados.",
+      "Leer y escribir archivos y procesar su contenido de forma eficiente.",
+      "Gestionar errores con excepciones y apoyarse en la librería estándar.",
+      "Crear un script CLI de utilidad para seguridad con argparse.",
+      "Distinguir str de bytes y convertir entre ambos sin errores."
     ],
     "topics": [
       "Tipos y variables",
@@ -899,22 +960,25 @@ export const CLASSES = [
       "Entornos virtuales"
     ],
     "definitions": [
-      "str vs. bytes: texto (unicode) frente a datos binarios crudos. Clave: la red y la cripto trabajan con bytes; conviértelos con .encode()/.decode().",
-      "Diccionario: mapa clave→valor. Clave: base para contar, indexar y estructurar resultados (p. ej. IP→puertos).",
-      "Comprensión de listas: [f(x) for x in it if cond]. Clave: transforma y filtra en una línea.",
-      "Excepción: mecanismo de control de errores con try/except. Clave: evita que un fallo de red tumbe todo el script.",
-      "argparse: módulo estándar para CLIs. Clave: parsea argumentos con ayuda y validación gratis.",
-      "venv: entorno virtual aislado. Clave: separa dependencias por proyecto y evita romper el Python del sistema."
+      "str vs. bytes: str es texto Unicode para humanos; bytes son octetos crudos que viajan por la red y alimentan la cripto. Se convierten con .encode() y .decode(), y confundirlos es el error más frecuente en herramientas de red.",
+      "Diccionario (dict): mapa de clave a valor con acceso en tiempo constante. Es la estructura base para indexar y estructurar resultados de seguridad, como ip -> puertos.",
+      "Conjunto (set): colección de elementos únicos sin orden, con pertenencia en tiempo constante. Ideal para deduplicar y comprobar existencia rápidamente.",
+      "Comprensión de listas: expresión [f(x) for x in it if cond] que transforma y filtra en una línea. Sustituye bucles verbosos cuando sigue siendo legible.",
+      "Excepción: mecanismo de control de errores con try/except. Capturar tipos concretos evita que un fallo de E/S o de red tumbe todo el script.",
+      "argparse: módulo estándar para construir interfaces de línea de comandos. Aporta --help, parseo y validación de argumentos sin esfuerzo.",
+      "hashlib: módulo estándar para calcular hashes criptográficos (SHA-256, etc.). Se usa para verificar integridad de archivos y comparar contra sha256sum.",
+      "venv: entorno virtual que aísla las dependencias de un proyecto. Evita romper el Python del sistema y hace reproducible la instalación."
     ],
     "tools": [],
-    "lab": "1. REPL y tipos. Explora conversiones str/bytes: ``python b = \"admin\".encode(); print(b, b.hex(), b.decode()) ` 2. Estructuras de datos. Cuenta ocurrencias de IPs en una lista con un diccionario, y luego con collections.Counter. 3. Leer un log. Escribe un script que abra un archivo de log y cuente líneas con \"error\": `python with open(\"app.log\") as f: errores = sum(1 for line in f if \"error\" in l…",
+    "lab": "1. REPL y tipos. Explora las conversiones entre str y bytes: ``python b = \"admin\".encode(); print(b, b.hex(), b.decode()) ` 2. Estructuras de datos. Cuenta ocurrencias de IPs en una lista, primero con un diccionario manual y luego con collections.Counter, y compara. 3. Leer un log. Escribe un script que abra un archivo y cuente líneas que contengan \"error\": `python with open(\"app.log\") as f: erro…",
     "exercises": [
-      "Escribe una comprensión que devuelva solo las IPs privadas de una lista.",
+      "Escribe una comprensión que devuelva solo las IPs privadas de una lista dada.",
       "Crea un diccionario que agrupe usuarios por su shell leyendo /etc/passwd.",
-      "Implementa una función que valide si una cadena es una IPv4 bien formada (sin regex).",
+      "Implementa una función que valide si una cadena es una IPv4 bien formada, sin usar expresiones regulares.",
       "Lee un archivo grande línea a línea y extrae todas las que contengan un código HTTP 5xx.",
-      "Añade manejo de excepciones para permisos denegados y archivo inexistente.",
-      "Empaqueta tu utilidad con argparse, incluyendo --help y un argumento opcional."
+      "Añade manejo de excepciones para los casos de permiso denegado y archivo inexistente.",
+      "Empaqueta tu utilidad con argparse, incluyendo --help y un argumento opcional con valor por defecto.",
+      "Refactoriza un bucle anidado en una comprensión y discute cuándo esa transformación mejora o empeora la legibilidad."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/015-python-para-seguridad-fundamentos-del-lenguaje/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/015-python-para-seguridad-fundamentos-del-lenguaje/README.md",
@@ -927,42 +991,45 @@ export const CLASSES = [
     "title": "Python para seguridad: sockets y programación de red",
     "level": "Fundamentos",
     "duration": "120 min",
-    "description": "Programar comunicaciones de red desde cero con la librería socket.",
-    "theory": "Programar comunicaciones de red desde cero con la librería socket. Al terminar podrás construir clientes y servidores TCP/UDP, un escáner de puertos y un cliente/servidor tipo banner grabber, entendiendo cómo se traduce la teoría TCP/IP a código. Es la base de casi cualquier herramienta ofensiva de red.",
+    "description": "Programar comunicaciones de red desde cero con la librería estándar socket de Python, entendiendo cómo cada línea de código se corresponde con un concepto del stack TCP/IP que ya estudiaste.",
+    "theory": "Programar comunicaciones de red desde cero con la librería estándar socket de Python, entendiendo cómo cada línea de código se corresponde con un concepto del stack TCP/IP que ya estudiaste. Al terminar podrás construir clientes y servidores TCP y UDP, un escáner de puertos con manejo de timeouts, y un banner grabber capaz de identificar servicios, y sabrás por qué esas primitivas son el ladrillo con el que están hechas casi todas las herramientas ofensivas y defensivas de red, desde nmap hasta un simple reverse shell.",
     "outcomes": [
-      "Crear clientes y servidores TCP con socket.",
-      "Implementar comunicación UDP.",
-      "Escribir un escáner de puertos con manejo de timeouts.",
-      "Realizar banner grabbing para identificar servicios.",
-      "Aplicar concurrencia (hilos) para acelerar tareas de red."
+      "Explicar cómo la API de sockets traduce el modelo TCP/IP a llamadas concretas del sistema operativo.",
+      "Crear clientes y servidores TCP con socket, controlando el ciclo bind/listen/accept.",
+      "Implementar comunicación UDP sin conexión y razonar sus límites de fiabilidad.",
+      "Construir un escáner de puertos con connect_ex() y timeouts que no se cuelgue ante puertos filtrados.",
+      "Realizar banner grabbing para inferir el servicio y su versión.",
+      "Aplicar concurrencia con hilos para acelerar tareas de red I/O-bound de forma medible."
     ],
     "topics": [
       "API de sockets",
       "Cliente TCP",
       "Servidor TCP",
       "UDP",
-      "Timeouts",
+      "Timeouts y errores",
       "Escáner de puertos",
       "Banner grabbing",
       "Concurrencia"
     ],
     "definitions": [
-      "Socket: extremo de comunicación identificado por IP+puerto. Clave: AF_INET (IPv4) + SOCK_STREAM (TCP) o SOCK_DGRAM (UDP).",
-      "connect(): inicia el handshake TCP hacia un destino. Clave: un connect exitoso implica puerto abierto (base del connect scan).",
-      "Timeout: tiempo máximo de espera de una operación. Clave: sin él, un puerto filtrado cuelga el escáner.",
-      "Banner: texto que muchos servicios envían al conectar (versión, software). Clave: revela información para fingerprinting.",
-      "Hilo (thread): flujo de ejecución concurrente. Clave: la red es I/O-bound, así que los hilos aceleran mucho el escaneo.",
-      "bind()/listen(): preparan un servidor para aceptar conexiones. Clave: base de un handler/listener."
+      "Socket: extremo de comunicación identificado por la tupla IP + puerto, entregado por el kernel como descriptor de fichero. La clave es la pareja AF_INET (IPv4) con SOCK_STREAM (TCP) o SOCK_DGRAM (UDP), que determina el protocolo y sus garantías.",
+      "connect(): inicia el three-way handshake TCP hacia un destino. Un connect exitoso implica que el puerto está abierto y acepta conexiones; es la base teórica del connect scan, el más fiable pero también el más ruidoso porque completa la conexión.",
+      "connect_ex(): variante de connect que devuelve el código de error del sistema en lugar de lanzar una excepción. Devuelve 0 cuando el puerto está abierto, lo que hace el código de un escáner más limpio y rápido.",
+      "bind() / listen() / accept(): la tríada del lado servidor. bind fija la dirección local, listen pone el socket en modo escucha con un backlog, y accept bloquea hasta que llega un cliente y devuelve un socket nuevo dedicado a él. Son la base de cualquier listener o handler.",
+      "Timeout: tiempo máximo que una operación de socket espera antes de rendirse. Sin él, un puerto filtrado cuelga el escáner indefinidamente; con él, distingues respuestas rápidas de silencios. Se fija con settimeout().",
+      "Banner: texto que muchos servicios envían nada más aceptar la conexión (versión, software, mensaje de bienvenida). Revela información valiosa para el fingerprinting y para cruzar con bases de vulnerabilidades.",
+      "Banner grabbing: técnica de conectar a un puerto abierto y leer ese banner para identificar el servicio. Algunos servicios (como HTTP) esperan que hables tú primero, así que a veces hay que enviar una petición antes de leer.",
+      "Hilo (thread): flujo de ejecución concurrente dentro del mismo proceso. Como la red es I/O-bound y el GIL se libera en las esperas de red, los hilos aceleran mucho el escaneo pese a las limitaciones del GIL para tareas de CPU."
     ],
     "tools": [],
-    "lab": "1. Cliente TCP mínimo. Conéctate a un servicio de la víctima y lee su banner: ``python import socket s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) s.settimeout(3) s.connect((\"10.10.10.6\", 22)) print(s.recv(1024).decode(errors=\"replace\")) s.close() ` 2. Servidor de eco en Kali (para entender el lado servidor): `python srv = socket.socket(); srv.bind((\"0.0.0.0\", 9000)); srv.listen(1) conn,…",
+    "lab": "1. Cliente TCP mínimo. Conéctate a un servicio de la víctima y lee su banner: ``python import socket s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) s.settimeout(3) s.connect((\"10.10.10.6\", 22)) print(s.recv(1024).decode(errors=\"replace\")) s.close() ` 2. Servidor de eco en Kali, para entender el lado servidor completo: `python import socket srv = socket.socket() srv.setsockopt(socket.SOL_SO…",
     "exercises": [
-      "Añade a tu escáner la resolución de nombre a IP con socket.gethostbyname.",
-      "Implementa un timeout configurable por argumento de línea de comandos.",
-      "Modifica el banner grabber para enviar HEAD / HTTP/1.0\\r\\n\\r\\n y capturar la respuesta de un servidor web.",
-      "Escribe un pequeño servidor TCP que registre cada conexión con su IP y hora.",
-      "Compara el tiempo de escaneo de 1024 puertos en versión secuencial vs. con 100 hilos.",
-      "Maneja correctamente ConnectionRefusedError, socket.timeout y OSError."
+      "Añade a tu escáner la resolución de nombre a IP con socket.gethostbyname y maneja el caso de nombre no resoluble.",
+      "Implementa un timeout configurable por argumento de línea de comandos con argparse.",
+      "Modifica el banner grabber para enviar HEAD / HTTP/1.0\\r\\n\\r\\n y capturar la respuesta de un servidor web, distinguiéndola del comportamiento de SSH.",
+      "Escribe un pequeño servidor TCP concurrente que registre cada conexión con su IP y hora en un fichero de log.",
+      "Compara y grafica el tiempo de escaneo de 1024 puertos en versión secuencial frente a 100 hilos, y explica dónde deja de ayudar añadir hilos.",
+      "Maneja de forma diferenciada ConnectionRefusedError, socket.timeout y OSError, e imprime un estado (cerrado, filtrado, error) según cada uno."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/016-python-para-seguridad-sockets-y-programacion-de-red/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/016-python-para-seguridad-sockets-y-programacion-de-red/README.md",
@@ -975,14 +1042,15 @@ export const CLASSES = [
     "title": "Python para seguridad: manipulación de paquetes con Scapy",
     "level": "Fundamentos",
     "duration": "120 min",
-    "description": "Construir, enviar, capturar y diseccionar paquetes de red a bajo nivel con Scapy.",
-    "theory": "Construir, enviar, capturar y diseccionar paquetes de red a bajo nivel con Scapy. Al terminar podrás forjar paquetes capa por capa, implementar tu propio ping y SYN scan, esnifar tráfico y automatizar pruebas de red, uniendo todo lo aprendido sobre TCP/IP y Python.",
+    "description": "Construir, enviar, capturar y diseccionar paquetes de red a bajo nivel con Scapy, controlando cada campo de cada cabecera en lugar de depender de lo que el sistema operativo decida por ti.",
+    "theory": "Construir, enviar, capturar y diseccionar paquetes de red a bajo nivel con Scapy, controlando cada campo de cada cabecera en lugar de depender de lo que el sistema operativo decida por ti. Al terminar podrás forjar paquetes capa por capa, implementar tu propio ping y tu propio SYN scan half-open, esnifar tráfico con filtros y automatizar pruebas de red, uniendo en la práctica todo lo aprendido sobre el modelo TCP/IP y sobre Python.",
     "outcomes": [
-      "Forjar paquetes especificando cada capa (Ether/IP/TCP/UDP/ICMP).",
-      "Enviar y recibir paquetes con send, sr, sr1, srp.",
-      "Esnifar tráfico y aplicar filtros BPF.",
-      "Implementar un SYN scan y un descubrimiento de hosts.",
-      "Diseccionar respuestas para inferir estado y servicios."
+      "Forjar paquetes especificando cada capa (Ether, IP, TCP, UDP, ICMP) con el operador /.",
+      "Enviar y recibir paquetes con send, sr, sr1 y srp, distinguiendo capa 2 de capa 3.",
+      "Esnifar tráfico en vivo y aplicar filtros BPF para reducir el ruido.",
+      "Implementar un SYN scan half-open y un descubrimiento de hosts por ARP e ICMP.",
+      "Diseccionar las respuestas para inferir el estado de un puerto y la presencia de un host.",
+      "Verificar con Wireshark que los paquetes forjados salen exactamente como los diseñaste."
     ],
     "topics": [
       "Modelo de capas en Scapy",
@@ -991,26 +1059,28 @@ export const CLASSES = [
       "Sniffing",
       "Filtros BPF",
       "SYN scan",
-      "ARP/ICMP",
+      "ARP e ICMP",
       "Análisis de respuestas"
     ],
     "definitions": [
-      "Scapy: librería Python para forjar/capturar paquetes. Clave: IP()/TCP() apila capas con el operador /.",
-      "sr1(): envía un paquete y devuelve la primera respuesta. Clave: ideal para sondas puntuales (ping, un puerto).",
-      "srp(): como sr pero a nivel de capa 2 (Ethernet). Clave: necesario para ARP.",
-      "Filtro BPF: sintaxis de filtrado en captura (tcp port 80). Clave: evita procesar tráfico irrelevante.",
-      "SYN scan con Scapy: enviar un SYN y clasificar según la respuesta (SYN-ACK=abierto, RST=cerrado). Clave: implementa a mano lo visto en la Clase 011.",
-      "Raw sockets: acceso de bajo nivel que Scapy usa por debajo. Clave: requiere privilegios de root."
+      "Scapy: librería de Python para forjar, enviar, capturar y diseccionar paquetes de red. Su rasgo distintivo es apilar capas con el operador / (IP()/TCP()) y rellenar automáticamente los campos que no especificas.",
+      "Capa (layer): cada nivel del paquete (Ether, IP, TCP, UDP, ICMP) modelado como un objeto Python con sus campos. Se accede a una capa concreta con pkt[TCP] y se comprueba su presencia con haslayer().",
+      "sr1(): envía un paquete de capa 3 y devuelve únicamente la primera respuesta. Es la elección natural para sondas puntuales como un ping o el sondeo de un solo puerto.",
+      "sr(): envía en capa 3 y devuelve dos conjuntos, respondidos y no respondidos. Útil para escanear muchos puertos u hosts de una vez.",
+      "srp(): equivalente a sr pero en capa 2 (Ethernet), imprescindible para ARP porque necesitas forjar la trama con la MAC de broadcast.",
+      "Filtro BPF: expresión de filtrado (tcp port 80, icmp) que el kernel aplica en captura para entregarte solo el tráfico relevante y ahorrar procesamiento.",
+      "SYN scan (half-open): técnica que envía un SYN y clasifica el puerto según la respuesta (SYN-ACK = abierto, RST = cerrado, silencio = filtrado), abortando con RST sin completar el handshake.",
+      "Raw socket: socket de bajo nivel que permite construir cabeceras a mano; requiere privilegios de root porque puede fabricar tráfico arbitrario."
     ],
     "tools": [],
     "lab": "1. Forjar y ver un paquete: ``python from scapy.all import * pkt = IP(dst=\"10.10.10.6\")/ICMP() pkt.show() ` 2. Ping propio con sr1: `python resp = sr1(IP(dst=\"10.10.10.6\")/ICMP(), timeout=2, verbose=0) print(\"Vivo\" if resp else \"Sin respuesta\") ` 3. Descubrimiento ARP en la subred (capa 2): `python ans, _ = srp(Ether(dst=\"ff:ff:ff:ff:ff:ff\")/ARP(pdst=\"10.10.10.0/24\"), timeout=2, verbose=0) for _,…",
     "exercises": [
-      "Modifica el ping para ajustar el TTL y observa el efecto con traceroute manual.",
-      "Escribe un escáner que recorra una lista de puertos con SYN scan y clasifique cada uno.",
-      "Implementa un descubrimiento de hosts combinando ICMP y ARP.",
-      "Captura 20 paquetes y extrae con Scapy las IPs origen únicas.",
-      "Forja un paquete UDP a un puerto DNS y analiza la respuesta ICMP si está cerrado.",
-      "Añade el envío del RST tras un SYN-ACK para no dejar conexiones colgadas."
+      "Modifica el ping para variar el TTL (por ejemplo de 1 a 10) y reconstruye un traceroute manual observando de qué salto llega el ICMP Time Exceeded.",
+      "Escribe un escáner que recorra una lista de puertos con SYN scan y clasifique cada uno como abierto, cerrado o filtrado.",
+      "Implementa un descubrimiento de hosts que combine ARP (para la LAN) e ICMP (para hosts remotos) y explica cuándo usar cada uno.",
+      "Captura 20 paquetes con sniff y extrae con Scapy la lista de IPs origen únicas.",
+      "Forja un paquete UDP a un puerto DNS cerrado y analiza la respuesta ICMP Port Unreachable si la hay.",
+      "Asegúrate de enviar siempre el RST tras un SYN-ACK y verifica en Wireshark que no dejas conexiones a medias."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/017-python-para-seguridad-manipulacion-de-paquetes-con-scapy/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/017-python-para-seguridad-manipulacion-de-paquetes-con-scapy/README.md",
@@ -1023,42 +1093,45 @@ export const CLASSES = [
     "title": "Git y control de versiones para profesionales de seguridad",
     "level": "Fundamentos",
     "duration": "100 min",
-    "description": "Usar Git con soltura para versionar herramientas, notas y hallazgos, colaborar y, sobre todo, evitar filtrar secretos en el historial, un error de seguridad extremadamente común.",
-    "theory": "Usar Git con soltura para versionar herramientas, notas y hallazgos, colaborar y, sobre todo, evitar filtrar secretos en el historial, un error de seguridad extremadamente común. Al terminar manejarás el flujo básico, ramas, resolución de conflictos y prácticas de higiene de secretos.",
+    "description": "Usar Git con soltura para versionar herramientas, notas y hallazgos, colaborar en equipo y, sobre todo, evitar filtrar secretos en el historial, uno de los errores de seguridad más comunes y más caros del mundo real.",
+    "theory": "Usar Git con soltura para versionar herramientas, notas y hallazgos, colaborar en equipo y, sobre todo, evitar filtrar secretos en el historial, uno de los errores de seguridad más comunes y más caros del mundo real. Al terminar manejarás el flujo básico, las ramas, la resolución de conflictos y las prácticas de higiene de secretos, y entenderás por qué el modelo de datos de Git hace que un secreto empujado no se borre con solo eliminarlo en un commit posterior.",
     "outcomes": [
-      "Ejecutar el flujo básico: init, add, commit, log, diff.",
-      "Trabajar con ramas, merge y resolución de conflictos.",
-      "Sincronizar con repositorios remotos (clone, push, pull).",
-      "Prevenir la fuga de secretos con .gitignore y buenas prácticas.",
-      "Auditar un repositorio en busca de secretos en el historial."
+      "Ejecutar el flujo básico de Git: init, add, commit, log y diff, entendiendo el área de staging.",
+      "Trabajar con ramas, fusiones y resolución manual de conflictos.",
+      "Sincronizar con repositorios remotos mediante clone, push y pull.",
+      "Prevenir la fuga de secretos con .gitignore y buenas prácticas de higiene.",
+      "Auditar un repositorio en busca de secretos en todo su historial con herramientas dedicadas.",
+      "Explicar el procedimiento correcto de remediación cuando un secreto ya fue empujado."
     ],
     "topics": [
       "Modelo de Git",
+      "Área de staging",
       "Flujo básico",
       "Ramas y merge",
       "Conflictos",
       "Remotos",
       ".gitignore",
-      "Secretos en el historial",
-      "Escaneo de secretos"
+      "Secretos en el historial"
     ],
     "definitions": [
-      "Commit: instantánea del proyecto con un hash único. Clave: Git guarda snapshots completos, no diferencias.",
-      "Rama (branch): puntero móvil a una línea de desarrollo. Clave: aísla trabajo sin afectar main.",
-      "Merge: integra una rama en otra. Clave: puede generar conflictos que hay que resolver a mano.",
-      ".gitignore: lista de rutas que Git no debe rastrear. Clave: primera línea de defensa contra subir secretos/artefactos.",
-      "Historial inmutable: reescribir el pasado (rebase, filter) cambia hashes. Clave: un secreto ya empujado no se borra con solo eliminarlo en un commit nuevo.",
-      "gitleaks/trufflehog: escáneres de secretos en repos. Clave: detectan claves y tokens en todo el historial."
+      "Commit: instantánea completa del proyecto en un momento dado, identificada por un hash único e inmutable. Git guarda snapshots, no diferencias, y cada commit apunta a su padre formando la cadena del historial.",
+      "Área de staging (índice): zona intermedia donde preparas qué cambios entrarán en el próximo commit. git add la llena y git diff --cached te deja revisarla antes de confirmar, un hábito clave para no filtrar secretos.",
+      "Rama (branch): puntero móvil y ligero a un commit. Aísla líneas de trabajo sin afectar a main, lo que permite experimentar con exploits o cambios arriesgados de forma segura.",
+      "Merge: integración de una rama en otra. Es automática si las ramas tocaron líneas distintas y produce un conflicto si ambas modificaron la misma línea, que hay que resolver a mano.",
+      ".gitignore: fichero con patrones de rutas que Git no debe rastrear. Es la primera defensa contra subir secretos y artefactos, pero solo afecta a ficheros aún no rastreados.",
+      "Historial inmutable: cada commit es un objeto direccionado por contenido; reescribir el pasado (rebase, filter-repo) cambia los hashes. Un secreto ya empujado no desaparece por eliminarlo en un commit nuevo.",
+      "Remoto: copia del repositorio en otra máquina con la que sincronizas por push/pull. Como Git es distribuido, cada clon incluye todo el historial, lo que agrava cualquier fuga.",
+      "Rotación de credenciales: invalidar una clave o token expuesto y emitir uno nuevo. Es la única remediación fiable ante un secreto filtrado, porque debes asumir que ya fue copiado."
     ],
     "tools": [],
-    "lab": "1. Crear un repo de práctica (fuera del repo del curso): ``bash mkdir ~/practica-git && cd ~/practica-git && git init ` 2. Flujo básico: `bash echo \"# Notas\" > README.md git add README.md && git commit -m \"Primer commit\" git log --oneline ` 3. Ramas y conflicto controlado. Crea una rama, edita la misma línea en ambas y fuerza un conflicto al hacer merge; resuélvelo manualmente. 4. .gitignore. Aña…",
+    "lab": "1. Crear un repo de práctica (fuera del repo del curso): ``bash mkdir ~/practica-git && cd ~/practica-git && git init ` 2. Flujo básico y revisión del staging: `bash echo \"# Notas\" > README.md git add README.md git diff --cached # revisa qué vas a confirmar git commit -m \"Primer commit\" git log --oneline ` 3. Ramas y conflicto controlado. Crea una rama, edita la misma línea del README en ambas ra…",
     "exercises": [
-      "Crea, cambia entre y fusiona tres ramas, documentando cada paso.",
-      "Provoca y resuelve un conflicto de merge en un archivo con dos ediciones.",
-      "Escribe un .gitignore completo para un proyecto Python de seguridad.",
-      "Usa git log, git diff y git blame para investigar quién y cuándo cambió una línea.",
-      "Ejecuta gitleaks sobre un repo con un secreto plantado y explica el hallazgo.",
-      "Investiga cómo eliminar un secreto del historial (git filter-repo/BFG) y por qué además hay que rotarlo."
+      "Crea, cambia entre y fusiona tres ramas, documentando cada paso con git log --graph --oneline.",
+      "Provoca y resuelve un conflicto de merge en un fichero con dos ediciones incompatibles.",
+      "Escribe un .gitignore completo para un proyecto Python de seguridad (entornos, claves, artefactos, cachés).",
+      "Usa git log, git diff y git blame para investigar quién y cuándo cambió una línea concreta.",
+      "Ejecuta gitleaks sobre un repo con un secreto plantado y explica con tus palabras el hallazgo que reporta.",
+      "Investiga cómo eliminar un secreto del historial con git filter-repo o BFG, y argumenta por qué además hay que rotar la credencial."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/018-git-y-control-de-versiones-para-profesionales-de-seguridad/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/018-git-y-control-de-versiones-para-profesionales-de-seguridad/README.md",
@@ -1071,14 +1144,15 @@ export const CLASSES = [
     "title": "Expresiones regulares para análisis de logs y datos",
     "level": "Fundamentos",
     "duration": "100 min",
-    "description": "Dominar las expresiones regulares para extraer, validar y correlacionar información en logs, capturas y volcados de datos.",
-    "theory": "Dominar las expresiones regulares para extraer, validar y correlacionar información en logs, capturas y volcados de datos. Las regex son omnipresentes en SIEM, IDS, grep y herramientas de análisis; saber escribirlas bien multiplica tu velocidad como analista.",
+    "description": "Dominar las expresiones regulares para extraer, validar y correlacionar información en logs, capturas y volcados de datos con precisión y velocidad.",
+    "theory": "Dominar las expresiones regulares para extraer, validar y correlacionar información en logs, capturas y volcados de datos con precisión y velocidad. Las regex son omnipresentes en SIEM, IDS, reglas de detección, grep y prácticamente cualquier herramienta de análisis; saber escribirlas bien —y saber cuándo no usarlas— multiplica tu rendimiento como analista y te protege de patrones peligrosos que pueden colgar tu propio pipeline de análisis.",
     "outcomes": [
-      "Construir patrones con clases, cuantificadores y anclas.",
-      "Capturar subcadenas con grupos y referencias.",
-      "Extraer IOCs (IPs, hashes, URLs, correos) de texto.",
-      "Aplicar regex en grep -P, Python (re) y herramientas de análisis.",
-      "Evitar patrones peligrosos (ReDoS) y errores frecuentes."
+      "Construir patrones con clases de caracteres, cuantificadores y anclas.",
+      "Capturar subcadenas con grupos, grupos con nombre y referencias.",
+      "Extraer IOCs (IPs, hashes, URLs, correos) de texto no estructurado.",
+      "Aplicar regex de forma coherente en grep -P, en Python (re) y en herramientas de análisis.",
+      "Distinguir codicia de pereza y elegir la variante correcta en cada extracción.",
+      "Evitar patrones vulnerables a ReDoS y otros errores frecuentes."
     ],
     "topics": [
       "Literales y metacaracteres",
@@ -1091,22 +1165,24 @@ export const CLASSES = [
       "ReDoS"
     ],
     "definitions": [
-      "Metacarácter: símbolo con significado especial (. * + ? [ ] ( ) ^ $ \\). Clave: escapar con \\ para tratarlo como literal.",
-      "Clase de caracteres: conjunto entre corchetes ([a-f0-9]). Clave: \\d = dígito, \\w = alfanumérico+_, \\s = espacio.",
-      "Cuantificador codicioso: `/+ intentan capturar lo máximo. Clave: .?` (perezoso) captura lo mínimo; crucial para no \"tragar\" de más.",
-      "Grupo de captura: (...) guarda lo coincidido para reutilizarlo. Clave: (?:...) agrupa sin capturar.",
-      "Ancla: ^ (inicio), $ (fin), \\b (límite de palabra). Clave: evita coincidencias parciales no deseadas.",
-      "ReDoS: denegación de servicio por regex con retroceso catastrófico. Clave: cuantificadores anidados sobre patrones ambiguos son peligrosos."
+      "Metacarácter: símbolo con significado especial en una regex (. * + ? [ ] ( ) ^ $ \\ |). Para tratarlo como texto literal hay que escaparlo con \\, algo imprescindible al casar puntos en IPs o dominios.",
+      "Clase de caracteres: conjunto de caracteres permitidos entre corchetes ([a-f0-9]). Atajos frecuentes: \\d (dígito), \\w (alfanumérico más _), \\s (espacio). Una clase negada [^...] casa cualquier cosa salvo lo indicado.",
+      "Cuantificador: indica cuántas repeticiones (* cero o más, + una o más, ? cero o una, {n,m} un rango). Por defecto son codiciosos.",
+      "Codicioso frente a perezoso: un cuantificador codicioso (.) toma lo máximo y retrocede; el perezoso (.?) toma lo mínimo. Elegir mal \"traga\" texto de más; a menudo una clase negada es aún mejor opción.",
+      "Grupo de captura: paréntesis (...) que guardan lo coincidido para reutilizarlo; (?:...) agrupa sin capturar y (?P<nombre>...) captura con nombre en Python, lo que hace el extractor legible.",
+      "Ancla: posición sin consumir caracteres: ^ (inicio), $ (fin), \\b (límite de palabra). Evitan coincidencias parciales no deseadas.",
+      "Lookaround: aserción que comprueba contexto sin consumirlo ((?=...) lookahead, (?<=...) lookbehind). Útil para extraer algo \"seguido de\" o \"precedido por\" sin incluir el contexto.",
+      "IOC (Indicator of Compromise): dato observable que sugiere actividad maliciosa (IP, dominio, URL, hash, correo). Las regex son la herramienta habitual para extraerlos de texto no estructurado."
     ],
     "tools": [],
-    "lab": "1. Clases y cuantificadores. Encuentra todas las horas HH:MM:SS en un log: ``bash grep -oP '\\b\\d{2}:\\d{2}:\\d{2}\\b' auth.log | head ` 2. Extraer IPv4. Patrón razonable para direcciones: `bash grep -oP '\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b' access.log | sort | uniq -c | sort -nr ` 3. Grupos de captura en Python: `python import re m = re.search(r'Failed password for (\\w+) from ([\\d.]+)', linea) if m: usuario…",
+    "lab": "1. Clases y cuantificadores. Encuentra todas las horas HH:MM:SS en un log: ``bash grep -oP '\\b\\d{2}:\\d{2}:\\d{2}\\b' auth.log | head ` 2. Extraer IPv4 y contar las más frecuentes: `bash grep -oP '\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b' access.log | sort | uniq -c | sort -nr ` 3. Grupos de captura en Python: `python import re m = re.search(r'Failed password for (\\w+) from ([\\d.]+)', linea) if m: usuario, ip =…",
     "exercises": [
-      "Escribe una regex que extraiga solo IPs privadas (10/8, 172.16/12, 192.168/16) de un log.",
-      "Captura usuario e IP de cada línea de \"Failed password\" y cuenta intentos por IP.",
-      "Crea un patrón que valide un email de forma razonable (sin buscar perfección RFC).",
-      "Extrae todas las URLs de una página guardada y quédate solo con el dominio.",
-      "Diferencia con una sola pasada MD5, SHA-1 y SHA-256 por su longitud.",
-      "Investiga un ejemplo de ReDoS y reescríbelo para hacerlo seguro."
+      "Escribe una regex que extraiga solo IPs privadas (rangos 10/8, 172.16/12 y 192.168/16) de un log.",
+      "Captura usuario e IP de cada línea de \"Failed password\" y cuenta los intentos por IP.",
+      "Crea un patrón que valide un correo de forma razonable (sin perseguir la perfección del RFC) y explica sus límites.",
+      "Extrae todas las URLs de una página guardada y quédate solo con el dominio usando un grupo de captura.",
+      "Diferencia en una sola pasada MD5, SHA-1 y SHA-256 por su longitud, usando alternancia o grupos con nombre.",
+      "Investiga un ejemplo real de ReDoS (por ejemplo un patrón (a+)+), reprodúcelo en regex101 midiendo los pasos, y reescríbelo para hacerlo seguro."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/019-expresiones-regulares-para-analisis-de-logs-y-datos/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/019-expresiones-regulares-para-analisis-de-logs-y-datos/README.md",
@@ -1119,19 +1195,20 @@ export const CLASSES = [
     "title": "Sistemas de numeración y encoding: binario, hex, base64 y URL",
     "level": "Fundamentos",
     "duration": "90 min",
-    "description": "Entender cómo se representan y transforman los datos, base para leer volcados hex, decodificar payloads, ofuscar/desofuscar cargas y trabajar con protocolos.",
-    "theory": "Entender cómo se representan y transforman los datos, base para leer volcados hex, decodificar payloads, ofuscar/desofuscar cargas y trabajar con protocolos. Al terminar distinguirás con claridad codificación de cifrado y hashing, un error conceptual muy extendido.",
+    "description": "Entender cómo se representan y transforman los datos a bajo nivel, la base para leer volcados hexadecimales, decodificar payloads, ofuscar y desofuscar cargas y trabajar con protocolos.",
+    "theory": "Entender cómo se representan y transforman los datos a bajo nivel, la base para leer volcados hexadecimales, decodificar payloads, ofuscar y desofuscar cargas y trabajar con protocolos. Al terminar distinguirás con criterio firme tres conceptos que se confunden constantemente y con consecuencias graves de seguridad: codificación, cifrado y hashing. Confundirlos lleva a errores tan reales como \"proteger\" contraseñas con Base64, y esta clase te vacuna contra ese error.",
     "outcomes": [
-      "Convertir entre binario, decimal, octal y hexadecimal.",
-      "Explicar ASCII/Unicode y la diferencia bytes/texto.",
-      "Codificar y decodificar en Base64, hex y URL/percent.",
-      "Distinguir codificación, cifrado y hashing con criterio.",
-      "Analizar payloads codificados en un contexto de seguridad."
+      "Convertir entre binario, decimal, octal y hexadecimal con soltura.",
+      "Explicar la relación entre ASCII, Unicode y UTF-8, y la diferencia entre bytes y texto.",
+      "Codificar y decodificar en Base64, hexadecimal y URL/percent encoding.",
+      "Distinguir con criterio codificación, cifrado y hashing.",
+      "Analizar payloads codificados y en capas dentro de un contexto de seguridad.",
+      "Detectar heurísticamente el tipo de codificación de una cadena desconocida."
     ],
     "topics": [
       "Bases numéricas",
       "Conversión entre bases",
-      "ASCII y Unicode",
+      "ASCII, Unicode y UTF-8",
       "Hex dump",
       "Base64",
       "URL/percent encoding",
@@ -1139,22 +1216,24 @@ export const CLASSES = [
       "Cadenas de encoding"
     ],
     "definitions": [
-      "Hexadecimal: base 16 (0-9, A-F). Clave: cada dígito = 4 bits (nibble); 1 byte = 2 hex. Prefijo 0x.",
-      "ASCII/Unicode: mapeos de caracteres a números. Clave: UTF-8 codifica Unicode en bytes; distinguir carácter de byte es esencial.",
-      "Base64: representa binario con 64 caracteres imprimibles. Clave: no cifra; es reversible por cualquiera. Aumenta el tamaño ~33%.",
-      "URL/percent encoding: sustituye caracteres reservados por %XX. Clave: %20 = espacio; usado para evadir filtros y en inyecciones web.",
-      "Codificación: transformación reversible sin secreto. Clave: cualquiera la revierte; no aporta confidencialidad.",
-      "Hashing: función unidireccional a un valor fijo. Clave: no reversible; verifica integridad, no oculta datos recuperables."
+      "Hexadecimal: sistema en base 16 (0-9, A-F). Cada dígito representa exactamente 4 bits (un nibble), por lo que un byte son dos dígitos hex. Se prefija con 0x y domina en seguridad por su correspondencia limpia con los bits.",
+      "Nibble: grupo de 4 bits, la mitad de un byte, que se corresponde con un único dígito hexadecimal. Es la unidad que hace del hex una notación tan cómoda.",
+      "ASCII: mapeo original de caracteres a números de 7 bits (la A es 65). Cubre el inglés y es la base sobre la que se construyó Unicode; en UTF-8 los caracteres ASCII ocupan un solo byte idéntico.",
+      "Unicode y UTF-8: Unicode es el catálogo abstracto de code points de casi todos los idiomas; UTF-8 es la codificación que los traduce a secuencias de 1 a 4 bytes. Distinguir el carácter (abstracto) del byte (concreto) es esencial para no producir texto corrupto.",
+      "Base64: codificación que representa cada 3 bytes como 4 caracteres imprimibles de un alfabeto de 64 símbolos, con = de relleno. No cifra: es reversible por cualquiera y aumenta el tamaño en torno a un 33%.",
+      "URL/percent encoding: sustitución de caracteres reservados por %XX (su valor hex). %20 es espacio; se usa legítimamente en URLs y también para evadir filtros y WAFs en inyecciones web.",
+      "Codificación: transformación reversible sin secreto, para transporte o compatibilidad. No aporta confidencialidad porque cualquiera la revierte; confundirla con cifrado es un error de seguridad frecuente.",
+      "Cifrado: transformación reversible solo con una clave, cuyo objetivo es la confidencialidad. Sin la clave no se recupera el original."
     ],
     "tools": [],
-    "lab": "1. Conversión de bases en Python: ``python n = 0xFF print(bin(n), oct(n), n) # binario, octal, decimal print(int(\"11111111\", 2), hex(255)) ` 2. Hex dump de un archivo: `bash echo -n \"admin:1234\" | xxd ` Relaciona cada byte con su carácter ASCII. 3. Base64 ida y vuelta: `bash echo -n \"usuario:secreto\" | base64 echo -n \"dXN1YXJpbzpzZWNyZXRv\" | base64 -d ` Observa que es trivialmente reversible (¡no…",
+    "lab": "1. Conversión de bases en Python: ``python n = 0xFF print(bin(n), oct(n), n) # binario, octal, decimal print(int(\"11111111\", 2), hex(255)) ` 2. Hex dump de una cadena, relacionando cada byte con su carácter ASCII: `bash echo -n \"admin:1234\" | xxd ` 3. Base64 ida y vuelta, comprobando que es trivialmente reversible: `bash echo -n \"usuario:secreto\" | base64 echo -n \"dXN1YXJpbzpzZWNyZXRv\" | base64 -…",
     "exercises": [
-      "Convierte a mano 192 y 168 a binario y a hex; verifica con Python.",
-      "Decodifica una cabecera HTTP Authorization: Basic ... (Base64) y explica el riesgo.",
-      "Identifica si 5f4dcc3b5aa765d61d8327deb882cf99 es un hash o un encoding y de qué tipo.",
-      "Toma un payload XSS y aplícale URL encoding y HTML entity encoding; explica para qué sirve cada uno.",
-      "Escribe una función que detecte automáticamente si una cadena parece Base64, hex o URL-encoded.",
-      "Decodifica una cadena con doble Base64 y documenta cada capa."
+      "Convierte a mano 192 y 168 a binario y a hexadecimal; verifica el resultado con Python.",
+      "Decodifica una cabecera HTTP Authorization: Basic ... (Base64) y explica por qué transmitirla sin TLS es un riesgo.",
+      "Determina si 5f4dcc3b5aa765d61d8327deb882cf99 es un hash o una codificación, y de qué tipo, razonando por su longitud y su alfabeto.",
+      "Toma un payload XSS y aplícale por separado URL encoding y HTML entity encoding; explica para qué sirve cada uno en un ataque y en una defensa.",
+      "Escribe una función que detecte heurísticamente si una cadena parece Base64, hex o URL-encoded, y justifica cada regla de detección.",
+      "Decodifica una cadena con doble Base64 y documenta cada capa que vas revelando."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/020-sistemas-de-numeracion-y-encoding-binario-hex-base64-y-url/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/020-sistemas-de-numeracion-y-encoding-binario-hex-base64-y-url/README.md",
@@ -1167,17 +1246,18 @@ export const CLASSES = [
     "title": "Criptografía: conceptos fundamentales e intuición",
     "level": "Fundamentos",
     "duration": "120 min",
-    "description": "Construir la intuición criptográfica que sostiene TLS, firmas, autenticación y almacenamiento seguro de contraseñas.",
-    "theory": "Construir la intuición criptográfica que sostiene TLS, firmas, autenticación y almacenamiento seguro de contraseñas. Al terminar entenderás cifrado simétrico y asimétrico, funciones hash, HMAC, firmas digitales y por qué \"nunca inventes tu propia cripto\". No se trata de matemáticas avanzadas, sino de saber usar las primitivas correctas.",
+    "description": "Construir la intuición criptográfica que sostiene silenciosamente casi todo lo que hacemos en seguridad: TLS que protege el tráfico web, firmas que garantizan la procedencia de un binario, autenticación de usuarios y al…",
+    "theory": "Construir la intuición criptográfica que sostiene silenciosamente casi todo lo que hacemos en seguridad: TLS que protege el tráfico web, firmas que garantizan la procedencia de un binario, autenticación de usuarios y almacenamiento seguro de contraseñas. Al terminar entenderás con soltura el cifrado simétrico y asimétrico, las funciones hash, HMAC, las firmas digitales y el intercambio de claves, y —sobre todo— habrás interiorizado la regla que separa a un profesional de un aficionado peligroso: \"nunca inventes tu propia cripto\". No perseguimos las matemáticas avanzadas que hay debajo, sino e…",
     "outcomes": [
-      "Distinguir cifrado simétrico de asimétrico y sus usos.",
-      "Explicar funciones hash, colisiones y propiedades de seguridad.",
-      "Diferenciar hashing de contraseñas (bcrypt/argon2) de hash genérico.",
-      "Describir HMAC, firmas digitales e intercambio de claves.",
-      "Aplicar primitivas correctas con una librería confiable."
+      "Distinguir el cifrado simétrico del asimétrico, sus costes y por qué se combinan en la práctica.",
+      "Explicar qué es una función hash criptográfica, sus tres propiedades de seguridad y qué significa que MD5 o SHA-1 estén \"rotos\".",
+      "Diferenciar el hashing de contraseñas (bcrypt, scrypt, argon2) de un hash genérico y justificar por qué SHA-256 \"pelado\" no sirve.",
+      "Describir cómo HMAC, las firmas digitales y el intercambio de claves aportan integridad, autenticidad y no repudio.",
+      "Aplicar las primitivas adecuadas mediante una librería confiable, sin reimplementar algoritmos.",
+      "Reconocer los errores clásicos (nonce reutilizado, cifrar sin autenticar, algoritmos obsoletos) antes de cometerlos."
     ],
     "topics": [
-      "Terminología",
+      "Terminología (CIA)",
       "Cifrado simétrico",
       "Cifrado asimétrico",
       "Funciones hash",
@@ -1187,22 +1267,25 @@ export const CLASSES = [
       "Intercambio de claves"
     ],
     "definitions": [
-      "Cifrado simétrico: misma clave cifra y descifra (AES). Clave: rápido; problema = distribuir la clave de forma segura.",
-      "Cifrado asimétrico: par pública/privada (RSA, ECC). Clave: resuelve la distribución; más lento, se usa para intercambiar claves simétricas.",
-      "Función hash criptográfica: mapeo unidireccional resistente a colisiones (SHA-256). Clave: verifica integridad; MD5 y SHA-1 están rotos.",
-      "Sal (salt): valor aleatorio único por contraseña. Clave: impide tablas rainbow y que hashes iguales delaten contraseñas iguales.",
-      "HMAC: MAC basado en hash + clave secreta. Clave: garantiza integridad y autenticidad, a diferencia de un hash simple.",
-      "Firma digital: cifrar un hash con la clave privada. Clave: prueba autoría e integridad (no repudio)."
+      "Cifrado simétrico: esquema donde la misma clave cifra y descifra (AES). Es rápido y apto para grandes volúmenes de datos, pero exige distribuir la clave secreta de forma segura entre las partes, lo que constituye su principal reto operativo.",
+      "Cifrado asimétrico: esquema con un par de claves pública/privada (RSA, ECC). Resuelve la distribución de claves porque la pública se publica sin riesgo, a cambio de un coste computacional mucho mayor; por eso se usa para intercambiar claves simétricas, no para cifrar datos masivos.",
+      "Función hash criptográfica: mapeo unidireccional de datos arbitrarios a una huella de longitud fija (SHA-256). Verifica integridad y es la base de firmas y estructuras como blockchains; MD5 y SHA-1 quedaron obsoletos por colisiones prácticas.",
+      "Sal (salt): valor aleatorio único que se añade a cada contraseña antes de aplicar el KDF. Neutraliza las rainbow tables y garantiza que contraseñas idénticas produzcan hashes distintos, cerrando un canal de fuga clásico.",
+      "KDF de contraseñas: función de derivación deliberadamente lenta y costosa (bcrypt, scrypt, argon2) pensada para resistir fuerza bruta. Su factor de coste ajustable permite endurecer el sistema conforme aumenta la potencia de cálculo del atacante.",
+      "HMAC: código de autenticación de mensaje construido sobre una función hash y una clave secreta. Aporta integridad y autenticidad simultáneamente, algo que un hash simple no puede lograr frente a un adversario activo.",
+      "Firma digital: hash del mensaje transformado con la clave privada del firmante. Prueba autoría (autenticidad), que el contenido no cambió (integridad) y que el firmante no puede desdecirse (no repudio).",
+      "Cifrado autenticado (AEAD): modo que combina confidencialidad e integridad en una sola operación (AES-GCM, ChaCha20-Poly1305). Detecta cualquier manipulación del cifrado y es hoy el modo por defecto recomendado."
     ],
     "tools": [],
-    "lab": "1. Hash e integridad: ``python import hashlib print(hashlib.sha256(b\"mensaje\").hexdigest()) ` Cambia un byte del mensaje y observa el efecto avalancha. 2. Por qué MD5/SHA-1 no valen. Investiga colisiones conocidas y razona por qué no deben usarse para integridad de seguridad. 3. Cifrado simétrico autenticado con AES-GCM (vía cryptography): `python from cryptography.hazmat.primitives.ciphers.aead…",
+    "lab": "1. Hash e integridad. Calcula el hash de un mensaje y observa el efecto avalancha: ``python import hashlib print(hashlib.sha256(b\"mensaje\").hexdigest()) print(hashlib.sha256(b\"mensahe\").hexdigest()) ` Cambia un solo carácter y compara: verás que la salida cambia por completo, sin parecido con la anterior. 2. Por qué MD5/SHA-1 no valen. Investiga las colisiones documentadas de MD5 y el ataque SHAt…",
     "exercises": [
-      "Explica con un ejemplo cuándo usarías cifrado simétrico y cuándo asimétrico (y por qué se combinan).",
-      "Da tres propiedades que debe cumplir una función hash criptográfica.",
-      "Justifica por qué SHA-256 no es adecuado para almacenar contraseñas y qué usar en su lugar.",
-      "Describe cómo una firma digital aporta integridad, autenticidad y no repudio.",
-      "Explica el papel del IV/nonce y qué ocurre si se reutiliza en algunos modos.",
-      "Investiga qué es Diffie-Hellman y cómo permite acordar una clave sin transmitirla."
+      "Explica con un ejemplo concreto cuándo usarías cifrado simétrico y cuándo asimétrico, y por qué TLS combina ambos en cada conexión.",
+      "Enumera las tres propiedades de seguridad de una función hash criptográfica y explica qué protege cada una.",
+      "Justifica por qué SHA-256 no es adecuado para almacenar contraseñas y qué debe usarse en su lugar, mencionando el papel de la sal y del factor de coste.",
+      "Describe cómo una firma digital aporta a la vez integridad, autenticidad y no repudio, y en qué se diferencia de un HMAC.",
+      "Explica el papel del IV/nonce en un cifrado y qué puede ocurrir si se reutiliza en un modo como AES-GCM.",
+      "Investiga cómo Diffie-Hellman permite que dos partes acuerden una clave compartida sin transmitirla, y qué es el \"secreto hacia adelante\" (forward secrecy).",
+      "Compara RSA y ECC en tamaño de clave y rendimiento, y explica por qué ECC se prefiere en dispositivos modernos."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/021-criptografia-conceptos-fundamentales-e-intuicion/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/021-criptografia-conceptos-fundamentales-e-intuicion/README.md",
@@ -1215,14 +1298,15 @@ export const CLASSES = [
     "title": "Docker y contenedores para laboratorios de seguridad",
     "level": "Fundamentos",
     "duration": "110 min",
-    "description": "Usar contenedores para desplegar entornos vulnerables y herramientas de forma rápida, reproducible y desechable.",
-    "theory": "Usar contenedores para desplegar entornos vulnerables y herramientas de forma rápida, reproducible y desechable. Al terminar sabrás construir imágenes, ejecutar contenedores, orquestar con Docker Compose y comprender las nociones básicas de seguridad de contenedores, incluido su aislamiento respecto a una VM.",
+    "description": "Aprender a usar contenedores para desplegar entornos vulnerables y herramientas de seguridad de forma rápida, reproducible y desechable, que es exactamente lo que necesita un laboratorio de práctica.",
+    "theory": "Aprender a usar contenedores para desplegar entornos vulnerables y herramientas de seguridad de forma rápida, reproducible y desechable, que es exactamente lo que necesita un laboratorio de práctica. Al terminar sabrás construir imágenes con un Dockerfile, ejecutar y gestionar contenedores desde la CLI, orquestar varios servicios con Docker Compose y —tan importante como lo anterior— comprender el modelo de aislamiento de contenedores, sus límites reales frente a una máquina virtual y qué implica eso cuando manipulas software deliberadamente inseguro.",
     "outcomes": [
-      "Ejecutar y gestionar contenedores con la CLI de Docker.",
-      "Construir imágenes con un Dockerfile.",
-      "Orquestar varios servicios con Docker Compose.",
-      "Desplegar laboratorios vulnerables (DVWA, Juice Shop) en contenedores.",
-      "Explicar el modelo de aislamiento y sus límites frente a una VM."
+      "Ejecutar y gestionar contenedores con la CLI de Docker (run, ps, exec, logs, stop, rm).",
+      "Construir imágenes propias con un Dockerfile y entender cómo funcionan las capas y la caché.",
+      "Orquestar varios servicios interconectados con un archivo de Docker Compose.",
+      "Desplegar laboratorios vulnerables (DVWA, Juice Shop) de forma aislada y reproducible.",
+      "Explicar el modelo de aislamiento por namespaces y cgroups y sus límites frente a una VM.",
+      "Aplicar buenas prácticas básicas de seguridad de contenedores (usuario no root, imagen mínima, escaneo)."
     ],
     "topics": [
       "Imágenes vs. contenedores",
@@ -1235,22 +1319,25 @@ export const CLASSES = [
       "Seguridad de contenedores"
     ],
     "definitions": [
-      "Imagen: plantilla inmutable con el software y su entorno. Clave: se versiona por tags; base para crear contenedores.",
-      "Contenedor: instancia en ejecución de una imagen. Clave: desechable, rápido de crear y destruir.",
-      "Dockerfile: receta declarativa para construir una imagen. Clave: reproducibilidad y control de lo que se instala.",
-      "Volumen: almacenamiento persistente fuera del ciclo de vida del contenedor. Clave: los datos no se pierden al recrear.",
-      "Namespaces/cgroups: mecanismos del kernel que aíslan y limitan recursos. Clave: la base (más débil que una VM) del aislamiento de contenedores.",
-      "Docker Compose: define varios servicios en un compose.yml. Clave: levanta un laboratorio completo con un comando."
+      "Imagen: plantilla inmutable y en capas con el software y su entorno de ejecución. Se versiona mediante tags y sirve de base para crear contenedores; su elección determina tamaño y superficie de ataque.",
+      "Contenedor: instancia en ejecución de una imagen, con una capa de escritura efímera. Es rápido de crear y destruir, lo que lo hace ideal para laboratorios desechables que siempre parten de un estado limpio.",
+      "Dockerfile: receta declarativa que describe cómo construir una imagen paso a paso. Aporta reproducibilidad y control exacto de lo que se instala; el orden de sus instrucciones afecta a la eficiencia de la caché de capas.",
+      "Volumen: almacenamiento persistente gestionado por Docker, independiente del contenedor. Permite que datos como los de una base de datos sobrevivan a la recreación o destrucción del contenedor.",
+      "Namespaces: mecanismo del kernel que da a cada contenedor una vista aislada de procesos, red, usuarios y sistema de archivos. Es una de las dos piedras angulares del aislamiento de contenedores.",
+      "cgroups: mecanismo del kernel que limita y contabiliza el uso de recursos (CPU, memoria, E/S) de un contenedor. Evita que un contenedor agote los recursos del host y afecte a los demás.",
+      "Docker Compose: herramienta que declara varios servicios, redes y volúmenes en un archivo compose.yml. Levanta o destruye un laboratorio multi-servicio completo con un solo comando, garantizando reproducibilidad.",
+      "Registro (registry): repositorio de imágenes, como Docker Hub, desde el que se descargan y al que se publican. Las imágenes de terceros deben tratarse con cautela: pueden contener dependencias vulnerables o incluso maliciosas."
     ],
     "tools": [],
-    "lab": "1. Primer contenedor: ``bash docker run -d --name web -p 8080:80 nginx docker ps ; curl -s localhost:8080 | head ` 2. Inspeccionar y entrar: `bash docker logs web ; docker exec -it web bash ` 3. Desplegar un lab vulnerable (solo en red aislada): `bash docker run -d -p 3000:3000 bkimminich/juice-shop ` Abre http://localhost:3000 desde la propia VM. 4. Construir una imagen. Crea un Dockerfile con u…",
+    "lab": "1. Primer contenedor. Lanza un servidor web y comprueba que responde: ``bash docker run -d --name web -p 8080:80 nginx docker ps curl -s localhost:8080 | head ` 2. Inspeccionar y entrar. Mira los logs y abre una shell dentro del contenedor: `bash docker logs web docker exec -it web bash ` 3. Desplegar un lab vulnerable (solo en red aislada): `bash docker run -d -p 3000:3000 bkimminich/juice-shop…",
     "exercises": [
-      "Explica la diferencia entre una imagen y un contenedor con una analogía.",
-      "Mapea un volumen para que los datos de un contenedor persistan tras recrearlo.",
-      "Escribe un Dockerfile mínimo que empaquete una de tus herramientas Python.",
-      "Crea una red Docker interna y conecta dos contenedores que se comuniquen por nombre.",
-      "Compara aislamiento de contenedor vs. VM: ¿qué comparte cada uno con el host?",
-      "Investiga tres buenas prácticas de seguridad de imágenes (usuario no root, imagen mínima, escaneo)."
+      "Explica con una analogía la diferencia entre una imagen y un contenedor, y qué significa que un contenedor sea \"efímero\".",
+      "Monta un volumen para que los datos de un contenedor de base de datos persistan tras recrearlo, y demuéstralo.",
+      "Escribe un Dockerfile mínimo que empaquete una de tus herramientas Python usando una imagen base slim y un usuario no root.",
+      "Crea una red Docker interna y conecta dos contenedores que se comuniquen entre sí por su nombre de servicio.",
+      "Compara el aislamiento de un contenedor frente al de una VM: indica qué comparte cada uno con el host y qué implica para la seguridad.",
+      "Investiga y describe tres buenas prácticas de seguridad de imágenes (usuario no root, imagen mínima, escaneo de CVEs) y por qué reducen el riesgo.",
+      "Ejecuta un escaneo de vulnerabilidades con Trivy o Grype sobre una imagen pública y comenta los hallazgos más graves."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/022-docker-y-contenedores-para-laboratorios-de-seguridad/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/022-docker-y-contenedores-para-laboratorios-de-seguridad/README.md",
@@ -1263,14 +1350,15 @@ export const CLASSES = [
     "title": "Sistemas operativos: procesos, memoria y syscalls",
     "level": "Fundamentos",
     "duration": "110 min",
-    "description": "Comprender cómo un sistema operativo gestiona procesos, memoria y la frontera entre modo usuario y modo kernel a través de las llamadas al sistema.",
-    "theory": "Comprender cómo un sistema operativo gestiona procesos, memoria y la frontera entre modo usuario y modo kernel a través de las llamadas al sistema. Este es el sustrato sobre el que ocurren la explotación de memoria, la inyección de código y la evasión, y es imprescindible para las partes de explotación y forense.",
+    "description": "Comprender cómo un sistema operativo gestiona los procesos, organiza su memoria y traza la frontera entre el modo usuario y el modo kernel a través de las llamadas al sistema.",
+    "theory": "Comprender cómo un sistema operativo gestiona los procesos, organiza su memoria y traza la frontera entre el modo usuario y el modo kernel a través de las llamadas al sistema. Este es el sustrato exacto sobre el que ocurren la explotación de memoria, la inyección de código, la evasión y la detección: sin entender dónde vive cada dato de un proceso y cómo pide servicios al kernel, las técnicas ofensivas y defensivas de las partes avanzadas del programa quedan como magia. Aquí construimos el modelo mental que hace que todo lo demás tenga sentido.",
     "outcomes": [
-      "Explicar el ciclo de vida y estados de un proceso.",
-      "Describir el layout de memoria de un proceso (stack, heap, code, data).",
-      "Diferenciar modo usuario de modo kernel y el papel de las syscalls.",
-      "Rastrear las llamadas al sistema de un programa.",
-      "Relacionar estos mecanismos con técnicas de ataque y detección."
+      "Explicar el ciclo de vida de un proceso, sus estados y cómo el planificador reparte la CPU.",
+      "Describir el layout de memoria de un proceso (code, data, heap, stack) y qué vive en cada región.",
+      "Diferenciar el modo usuario del modo kernel y el papel de las syscalls como única puerta legítima al kernel.",
+      "Rastrear las llamadas al sistema de un programa con strace y las de librería con ltrace.",
+      "Relacionar estos mecanismos con técnicas de ataque (buffer overflow, hooking) y de detección (EDR, sandbox).",
+      "Interpretar el mapa de memoria de un proceso vivo a través de /proc."
     ],
     "topics": [
       "Procesos e hilos",
@@ -1283,22 +1371,25 @@ export const CLASSES = [
       "Relevancia ofensiva"
     ],
     "definitions": [
-      "Proceso: programa en ejecución con su propio espacio de memoria. Clave: aislado de otros por memoria virtual.",
-      "Hilo (thread): flujo de ejecución dentro de un proceso; comparten memoria. Clave: concurrencia con estado compartido.",
-      "Stack: memoria LIFO para llamadas y variables locales. Clave: objetivo de desbordamientos (buffer overflow).",
-      "Heap: memoria dinámica gestionada por el programa. Clave: objetivo de vulnerabilidades tipo use-after-free.",
-      "Syscall: interfaz para pedir servicios al kernel (open, read, execve). Clave: única vía legítima de un proceso para tocar el hardware/recursos.",
-      "Modo usuario/kernel: niveles de privilegio de la CPU (rings). Clave: la separación evita que un proceso comprometa el sistema directamente."
+      "Proceso: programa en ejecución con su propio espacio de memoria virtual, PID y recursos. Está aislado de otros procesos por la memoria virtual, lo que lo convierte en la unidad básica de contención del sistema.",
+      "Hilo (thread): flujo de ejecución dentro de un proceso que comparte su memoria con los demás hilos. Permite concurrencia eficiente, pero el estado compartido abre la puerta a condiciones de carrera y a que la inyección en un hilo afecte a todo el proceso.",
+      "Stack (pila): región de memoria LIFO que guarda los marcos de llamada: variables locales, argumentos y la dirección de retorno. Es el objetivo clásico del buffer overflow, ya que sobrescribir la dirección de retorno desvía la ejecución.",
+      "Heap: región de memoria dinámica gestionada por el programa mediante malloc/new. Sus errores de gestión (use-after-free, doble liberación, overflow) son una fuente prolífica de vulnerabilidades explotables.",
+      "Memoria virtual: abstracción que da a cada proceso un espacio de direcciones propio traducido a memoria física por la MMU. Proporciona aislamiento, permisos por página y es la base de mitigaciones como ASLR y DEP/NX.",
+      "Syscall: interfaz controlada por la que un proceso solicita servicios al kernel (open, read, write, execve). Es la única vía legítima para tocar el hardware o los recursos, y por tanto un punto central de observación y de superficie de ataque.",
+      "Modo usuario / modo kernel: niveles de privilegio de la CPU que separan el código de aplicación del código del kernel. Esta frontera evita que un proceso comprometa el sistema directamente; superarla es el objetivo de la escalada a kernel.",
+      "Planificador (scheduler): componente del kernel que decide qué proceso listo recibe la CPU y por cuánto tiempo. Su comportamiento sustenta la multitarea y es explotado por ciertos ataques de temporización y técnicas de evasión."
     ],
     "tools": [],
-    "lab": "1. Explorar un proceso vivo. Lanza sleep 1000 & y examina: ``bash ps -o pid,ppid,state,cmd -p $! cat /proc/$!/status | head ` 2. Layout de memoria. Observa las regiones del proceso: `bash pmap $! # o: cat /proc/$!/maps ` Identifica stack, heap y las bibliotecas mapeadas. 3. Trazar syscalls. Mira qué llamadas hace un comando: `bash strace -f -e trace=open,openat,read,write ls / 2>&1 | head -30 ` 4…",
+    "lab": "1. Explorar un proceso vivo. Lanza un proceso durmiente y examínalo: ``bash sleep 1000 & ps -o pid,ppid,state,cmd -p $! cat /proc/$!/status | head ` 2. Layout de memoria. Observa las regiones del proceso e identifica stack, heap y bibliotecas: `bash pmap $! cat /proc/$!/maps ` 3. Trazar syscalls. Filtra las llamadas de E/S de archivos de un comando: `bash strace -f -e trace=open,openat,read,write…",
     "exercises": [
-      "Dibuja el layout de memoria de un proceso e indica en qué región vive cada tipo de dato.",
-      "Explica la diferencia entre proceso e hilo y una implicación de seguridad de cada uno.",
-      "Con strace, identifica todas las syscalls que usa un programa para leer un archivo.",
-      "Investiga qué es una interrupción/trap y cómo transfiere el control al kernel.",
-      "Compara strace y ltrace: ¿qué observa cada uno y para qué sirve en análisis de malware?",
-      "Explica por qué la separación usuario/kernel es una frontera de seguridad y qué es una \"elevación a kernel\"."
+      "Dibuja el layout de memoria de un proceso e indica en qué región vive cada tipo de dato (código, globales, memoria dinámica, variables locales).",
+      "Explica la diferencia entre un proceso y un hilo, y da una implicación de seguridad concreta de cada uno.",
+      "Con strace, identifica todas las syscalls que usa un programa para leer un archivo, desde que lo abre hasta que lo cierra.",
+      "Investiga qué es una interrupción o trap y cómo transfiere el control desde modo usuario al kernel.",
+      "Compara strace y ltrace: qué observa cada uno, cuándo uno no ve nada y para qué sirve cada uno en el análisis de malware.",
+      "Explica por qué la separación usuario/kernel es una frontera de seguridad y qué significa una \"elevación a kernel\".",
+      "Interpreta un /proc/<pid>/maps real: localiza las regiones ejecutables, las de solo lectura y el stack, y explica cómo ASLR afecta a esas direcciones."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/023-sistemas-operativos-procesos-memoria-y-syscalls/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/023-sistemas-operativos-procesos-memoria-y-syscalls/README.md",
@@ -1311,14 +1402,15 @@ export const CLASSES = [
     "title": "Arquitectura de computadores: CPU, registros y memoria",
     "level": "Fundamentos",
     "duration": "110 min",
-    "description": "Entender cómo funciona una CPU a bajo nivel: registros, la pila de llamadas, el ciclo de ejecución y el ensamblador básico.",
-    "theory": "Entender cómo funciona una CPU a bajo nivel: registros, la pila de llamadas, el ciclo de ejecución y el ensamblador básico. Este conocimiento es el requisito previo indispensable para la explotación binaria, la ingeniería inversa y el análisis de malware que verás en partes avanzadas del programa.",
+    "description": "Entender cómo funciona una CPU a bajo nivel: sus registros, la pila de llamadas, el ciclo de ejecución de instrucciones y el ensamblador básico que da vida a todo programa.",
+    "theory": "Entender cómo funciona una CPU a bajo nivel: sus registros, la pila de llamadas, el ciclo de ejecución de instrucciones y el ensamblador básico que da vida a todo programa. Este conocimiento es el requisito previo indispensable para la explotación binaria, la ingeniería inversa y el análisis de malware que abordarás en las partes avanzadas del programa. No buscamos convertirte en programador de ensamblador, sino darte el modelo mental para leer código máquina, seguir el rastro de una llamada a función y entender exactamente por qué un buffer overflow permite tomar el control de la ejecución.",
     "outcomes": [
-      "Describir los registros clave de x86-64 y su función.",
-      "Explicar el ciclo fetch-decode-execute.",
-      "Trazar el uso de la pila en una llamada a función.",
-      "Leer ensamblador básico y relacionarlo con código C.",
-      "Conectar estos conceptos con vulnerabilidades de memoria."
+      "Describir los registros clave de x86-64 y la función de cada uno, en especial RIP, RSP y RBP.",
+      "Explicar el ciclo fetch-decode-execute que ejecuta cada instrucción.",
+      "Trazar el uso de la pila durante una llamada a función, incluyendo la dirección de retorno.",
+      "Leer ensamblador básico (mov, push, pop, call, ret) y relacionarlo con código C.",
+      "Conectar estos conceptos con las vulnerabilidades de memoria y sus mitigaciones (ASLR, NX/DEP, canarios).",
+      "Aplicar endianness al escribir direcciones al inspeccionar memoria."
     ],
     "topics": [
       "CPU y ciclo de ejecución",
@@ -1327,26 +1419,29 @@ export const CLASSES = [
       "Convención de llamada",
       "Ensamblador básico",
       "Endianness",
-      "Del C al ASM",
+      "Del C al ensamblador",
       "Relevancia en exploiting"
     ],
     "definitions": [
-      "Registro: memoria interna y rapidísima de la CPU. Clave: RIP apunta a la siguiente instrucción; controlarlo = controlar la ejecución.",
-      "RSP / RBP: puntero de pila y de marco. Clave: delimitan el marco de la función actual; centrales en overflows de stack.",
-      "Pila (stack): estructura LIFO que crece hacia direcciones bajas en x86. Clave: guarda dirección de retorno y locales.",
-      "call / ret: call apila la dirección de retorno y salta; ret la desapila a RIP. Clave: sobrescribir esa dirección desvía el flujo.",
-      "Endianness: orden de bytes (x86 es little-endian). Clave: al escribir direcciones en un exploit hay que respetarlo.",
-      "Convención de llamada (System V): argumentos en RDI, RSI, RDX, RCX, R8, R9. Clave: saber dónde están los parámetros al leer ASM."
+      "Registro: celda de almacenamiento interna de la CPU, extremadamente rápida. Las instrucciones operan sobre registros; RIP apunta a la siguiente instrucción, así que controlarlo equivale a controlar la ejecución del programa.",
+      "RIP (instruction pointer): registro que contiene la dirección de la próxima instrucción a ejecutar. Es el objetivo final de un exploit de secuestro de flujo: quien controla RIP controla qué ejecuta la CPU.",
+      "RSP / RBP: puntero de pila (cima) y puntero de marco (base de la función actual). Delimitan el marco de la función y son centrales en el análisis y la explotación de overflows de pila.",
+      "Pila (stack): estructura de memoria LIFO que en x86 crece hacia direcciones bajas. Almacena la dirección de retorno, el marco anterior y las variables locales, lo que la convierte en objetivo del buffer overflow.",
+      "call / ret: call apila la dirección de retorno y salta a la función; ret desapila esa dirección a RIP. Sobrescribir la dirección de retorno antes del ret es el mecanismo del stack overflow clásico.",
+      "Convención de llamada System V: contrato que pasa los primeros seis argumentos enteros en RDI, RSI, RDX, RCX, R8 y R9, y devuelve en RAX. Saber esto permite leer un desensamblado e identificar los parámetros de cada función.",
+      "Endianness: orden de los bytes de un valor multibyte en memoria; x86-64 es little-endian (byte menos significativo primero). Debe respetarse al escribir direcciones en un exploit o al interpretar un volcado de memoria.",
+      "Ciclo fetch-decode-execute: bucle fundamental de la CPU que lee, interpreta y ejecuta cada instrucción. Explica por qué controlar RIP secuestra el programa: dicta qué instrucción se busca a continuación."
     ],
     "tools": [],
-    "lab": "1. Compilar y desensamblar. Crea suma.c con una función suma(a,b) y main: ``bash gcc -O0 -g suma.c -o suma objdump -d -M intel suma | sed -n '/<suma>:/,/ret/p' ` Identifica push rbp, mov rbp, rsp, las operaciones y ret. 2. Registros en gdb: `bash gdb ./suma (gdb) break suma (gdb) run (gdb) info registers rdi rsi rsp rbp rip ` Observa los argumentos en RDI/RSI (System V). 3. Ver la pila. En el bre…",
+    "lab": "1. Compilar y desensamblar. Crea suma.c con una función suma(a, b) llamada desde main, compílala sin optimizar y desensámblala: ``bash gcc -O0 -g suma.c -o suma objdump -d -M intel suma | sed -n '/<suma>:/,/ret/p' ` Identifica el prólogo (push rbp, mov rbp, rsp), las operaciones y el ret. 2. Registros en gdb. Detente al entrar en la función y observa los argumentos: `bash gdb ./suma (gdb) break s…",
     "exercises": [
-      "Enumera 6 registros de x86-64 y describe la función de cada uno.",
-      "Explica qué guarda la pila cuando se llama a una función y en qué orden.",
-      "Desensambla una función y anota a qué línea de C corresponde cada instrucción clave.",
-      "Escribe en little-endian los bytes de la dirección 0x00401136.",
-      "Explica cómo un overflow de un buffer en la pila puede alterar RIP.",
-      "Investiga qué protegen ASLR, NX/DEP y los stack canaries, cada uno contra qué."
+      "Enumera seis registros de x86-64 y describe la función de cada uno, destacando el papel de RIP, RSP y RBP.",
+      "Explica qué guarda la pila cuando se llama a una función y en qué orden se colocan la dirección de retorno, el RBP guardado y las variables locales.",
+      "Desensambla una función sencilla y anota a qué construcción del código C corresponde cada instrucción clave.",
+      "Escribe en little-endian la secuencia de bytes de la dirección 0x00401136 tal como aparecería en memoria.",
+      "Explica paso a paso cómo un overflow de un buffer en la pila puede alterar RIP y desviar la ejecución.",
+      "Investiga qué protege cada mitigación —ASLR, NX/DEP y los canarios de pila— y contra qué parte concreta del ataque actúa.",
+      "Identifica en un desensamblado la convención System V: señala en qué registros llegan el primer y el segundo argumento de una función."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/024-arquitectura-de-computadores-cpu-registros-y-memoria/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/024-arquitectura-de-computadores-cpu-registros-y-memoria/README.md",
@@ -1359,14 +1454,15 @@ export const CLASSES = [
     "title": "Ética, legalidad, alcance y divulgación responsable",
     "level": "Fundamentos",
     "duration": "100 min",
-    "description": "Interiorizar el marco legal y ético que separa a un profesional de seguridad de un delincuente.",
-    "theory": "Interiorizar el marco legal y ético que separa a un profesional de seguridad de un delincuente. Al terminar sabrás qué es la autorización, cómo se define y respeta el alcance de un compromiso, qué dicen las leyes relevantes y cómo divulgar vulnerabilidades de forma responsable. Esta clase es la que legitima todo lo demás del programa.",
+    "description": "Interiorizar el marco legal y ético que separa a un profesional de seguridad de un delincuente informático.",
+    "theory": "Interiorizar el marco legal y ético que separa a un profesional de seguridad de un delincuente informático. Al terminar sabrás qué es la autorización y por qué es innegociable, cómo se define y se respeta el alcance de un compromiso, qué tipo de conductas tipifican las leyes de delitos informáticos y cómo divulgar una vulnerabilidad de forma responsable sin causar daño ni exponerte legalmente. Esta clase no es un trámite: es la que legitima absolutamente todo lo demás del programa. Las mismas técnicas que aprenderás son legales o son delito según una única variable —el permiso— y esa distinci…",
     "outcomes": [
-      "Explicar por qué la autorización explícita es la línea que no se cruza.",
-      "Definir el alcance (scope) de un compromiso y respetarlo.",
-      "Identificar las leyes relevantes de delitos informáticos.",
-      "Aplicar un proceso de divulgación responsable (CVD).",
-      "Redactar los elementos clave de un acuerdo de pentesting (RoE)."
+      "Explicar por qué la autorización explícita y por escrito es la línea que nunca se cruza.",
+      "Definir el alcance (scope) de un compromiso y justificar por qué salirse de él invalida la legalidad del test.",
+      "Identificar las categorías de conducta que penan las leyes de delitos informáticos relevantes.",
+      "Aplicar un proceso de divulgación coordinada de vulnerabilidades (CVD) paso a paso.",
+      "Redactar los elementos imprescindibles de unas reglas de compromiso (RoE) de pentesting.",
+      "Distinguir el hacking ético, el grey hat y el black hat por su relación con la autorización y la intención."
     ],
     "topics": [
       "Autorización",
@@ -1379,22 +1475,25 @@ export const CLASSES = [
       "Ética profesional"
     ],
     "definitions": [
-      "Autorización: permiso explícito, por escrito, del propietario del sistema para probarlo. Clave: sin ella, cualquier prueba es un delito, aunque la intención sea buena.",
-      "Alcance (scope): conjunto de activos, rangos y técnicas permitidas. Clave: salir del alcance convierte un test autorizado en ilegal.",
-      "Reglas de compromiso (RoE): documento que fija alcance, ventanas de tiempo, contactos, técnicas prohibidas y manejo de datos. Clave: protege a ambas partes.",
-      "Divulgación coordinada (CVD): proceso de reportar una vulnerabilidad al fabricante y dar plazo antes de publicarla. Clave: equilibra transparencia y riesgo.",
-      "Bug bounty: programa que autoriza y recompensa el reporte de fallos dentro de reglas publicadas. Clave: autorización previa acotada.",
-      "White/grey/black hat: hacker ético, ambiguo o malicioso. Clave: la diferencia esencial es la autorización y la intención."
+      "Autorización: permiso explícito, por escrito y otorgado por quien tiene potestad sobre el sistema, para probarlo. Sin ella, cualquier prueba es potencialmente delito, con independencia de la intención; es la frontera exacta entre la actividad legal y la ilegal.",
+      "Alcance (scope): conjunto de activos, rangos, aplicaciones y técnicas permitidas —y explícitamente prohibidas— en un compromiso. Salir del alcance convierte un test autorizado en una acción ilegal, aunque el resto estuviera permitido.",
+      "Reglas de compromiso (RoE): documento que fija alcance, ventanas de tiempo, contactos, técnicas prohibidas, confidencialidad y manejo de datos. Protege legal y operativamente a ambas partes y nunca debe faltar antes de empezar.",
+      "Divulgación coordinada (CVD): proceso de reportar una vulnerabilidad de forma privada al responsable y dar plazo para corregirla antes de publicarla. Equilibra la transparencia con el riesgo de explotación temprana.",
+      "Bug bounty: programa que autoriza y recompensa el reporte de fallos dentro de reglas publicadas. Constituye una autorización previa y acotada, válida solo mientras se respeten su alcance y sus condiciones.",
+      "Safe harbor: cláusula de un programa que protege legalmente al investigador que actúa de buena fe dentro de las reglas. No cubre las acciones que se salgan del alcance o las condiciones establecidas.",
+      "White / grey / black hat: categorías de hacker según autorización e intención. El white hat siempre tiene permiso y fin legítimo; el black hat carece de permiso y actúa con malicia; el grey hat opera en una ambigüedad que no lo libra de responsabilidad legal.",
+      "Acceso no autorizado: conducta —tipificada por la mayoría de leyes de delitos informáticos— de entrar o interactuar con un sistema sin permiso. Suele ser punible aun sin daño y sin importar la motivación del autor."
     ],
     "tools": [],
-    "lab": "1. Investiga tu jurisdicción. Localiza la ley de delitos informáticos aplicable donde vives y anota qué conductas tipifica (acceso no autorizado, interceptación, daños). 2. Analiza un caso. Toma un escenario (\"encontré una web con una vulnerabilidad evidente y la 'probé' sin permiso\") y determina si es legal, por qué, y qué debió hacerse. 3. Define un alcance. Redacta el scope de un pentest ficti…",
+    "lab": "1. Investiga tu jurisdicción. Localiza la ley de delitos informáticos aplicable donde vives y anota qué conductas tipifica (acceso no autorizado, interceptación, daños) y qué penas prevé. 2. Analiza un caso. Toma el escenario \"encontré una web con una vulnerabilidad evidente y la 'probé' sin permiso para confirmarla\". Determina si es legal, por qué, y qué debió hacerse en su lugar. 3. Define un a…",
     "exercises": [
-      "Explica por qué \"tenía buena intención\" no es defensa legal ante un acceso no autorizado.",
-      "Enumera 6 elementos que no pueden faltar en unas RoE de pentest.",
-      "Da tres ejemplos de acciones que, aun con autorización general, deberían estar explícitamente excluidas del alcance.",
-      "Describe el proceso de divulgación coordinada paso a paso, incluyendo qué hacer si el fabricante no responde.",
-      "Diferencia hacking ético, grey hat y black hat con un ejemplo de cada uno.",
-      "Investiga qué es una cláusula de \"safe harbor\" en un bug bounty y qué protege."
+      "Explica por qué \"tenía buena intención\" no constituye una defensa legal frente a un acceso no autorizado.",
+      "Enumera seis elementos que no pueden faltar en unas RoE de pentest y justifica brevemente cada uno.",
+      "Da tres ejemplos de acciones que, aun con una autorización general, deberían estar explícitamente excluidas del alcance y explica por qué.",
+      "Describe el proceso de divulgación coordinada paso a paso, incluyendo qué hacer si el fabricante no responde en un plazo razonable.",
+      "Diferencia el hacking ético, el grey hat y el black hat con un ejemplo concreto de cada uno, señalando la variable que los separa.",
+      "Investiga qué es una cláusula de \"safe harbor\" en un bug bounty, qué protege exactamente y qué queda fuera de su cobertura.",
+      "Redacta el protocolo que seguirías si durante un test autorizado descubres datos personales reales de terceros expuestos."
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.md",

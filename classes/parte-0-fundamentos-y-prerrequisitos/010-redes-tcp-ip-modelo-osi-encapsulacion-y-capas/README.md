@@ -73,13 +73,27 @@ flowchart LR
 
 La **encapsulación** es el mecanismo central. Cuando una aplicación envía datos, estos descienden por la pila y **cada capa añade su propia cabecera** (y a veces un cierre) delante de lo que recibe de la capa superior, como una serie de sobres dentro de sobres. El dato en cada capa recibe un nombre específico, su **PDU** (Protocol Data Unit): en la capa de aplicación son **datos**; al pasar por transporte se convierten en un **segmento** (TCP) o **datagrama** (UDP) al añadirse la cabecera con los puertos; en la capa de red/Internet se convierten en un **paquete** al añadirse la cabecera IP con las direcciones IP; en la capa de enlace se convierten en una **trama** al añadirse la cabecera Ethernet con las direcciones MAC; y finalmente la capa física los transmite como **bits**. En el receptor ocurre lo inverso: cada capa lee y retira su cabecera (**desencapsulación**) y entrega el contenido a la capa superior. El payload original nunca se modifica, solo se envuelve.
 
-```text
- Datos de aplicacion            [ HTTP: "GET / HTTP/1.1" ]
- + cabecera TCP (segmento)   [ TCP | HTTP ................ ]
- + cabecera IP  (paquete)  [ IP | TCP | HTTP ............. ]
- + cabecera Ethernet (trama) [ ETH | IP | TCP | HTTP | FCS ]
- -> a la red como bits
+```mermaid
+flowchart TD
+  subgraph ETH["Trama Ethernet - capa 2 - anade cabecera y cola FCS"]
+    subgraph IPP["Paquete IP - capa 3 - anade IP origen y destino"]
+      subgraph TCPS["Segmento TCP - capa 4 - anade puertos y numeros de secuencia"]
+        APP["Datos de aplicacion - capa 7<br/>GET / HTTP/1.1"]
+      end
+    end
+  end
+  ETH --> RED(["A la red, como bits"])
+  classDef app fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef red fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  class APP app
+  class RED red
 ```
+
+Cada capa **envuelve** a la de arriba añadiendo su propia cabecera (y, en Ethernet,
+también una cola: el FCS). En el receptor ocurre lo contrario: cada capa retira su
+cabecera y entrega el resto a la de arriba. Por eso una captura de Wireshark se lee
+de fuera hacia dentro, y por eso un firewall de capa 3 puede decidir sobre la IP sin
+entender una sola palabra del HTTP que transporta.
 
 ### Direccionamiento: tres direcciones para un mismo paquete
 

@@ -39,17 +39,27 @@ Al finalizar, el alumno podrá:
 
 La idea central de Scapy es que un paquete es una **pila de capas** y que apilarlas es tan sencillo como dividir con el operador `/`. Cuando escribes `IP(dst="10.10.10.6")/TCP(dport=22, flags="S")`, no estás dividiendo nada: estás diciendo "una capa IP que contiene una capa TCP". Scapy encadena los objetos, rellena automáticamente los campos que no especificas (longitudes, checksums, número de secuencia inicial) con valores sensatos y deja bajo tu control absoluto los que sí tocas. Esta es la diferencia radical con la librería `socket` de la clase anterior: allí el kernel construía las cabeceras por ti y solo veías el payload; aquí tú eres quien decide el TTL, los flags TCP o incluso valores deliberadamente anómalos para probar cómo reacciona un objetivo. El siguiente esquema muestra cómo se anida una sonda SYN típica.
 
-```text
-+-----------------------------------------------+
-| Ether  (dst MAC, src MAC, type=0x0800)        |
-|  +------------------------------------------+ |
-|  | IP    (src, dst, ttl, proto=6)           | |
-|  |  +-------------------------------------+ | |
-|  |  | TCP  (sport, dport=22, flags="S")   | | |
-|  |  +-------------------------------------+ | |
-|  +------------------------------------------+ |
-+-----------------------------------------------+
+```mermaid
+flowchart TD
+  subgraph E["Ether = dst MAC, src MAC, type=0x0800"]
+    subgraph I["IP = src, dst, ttl, proto=6"]
+      subgraph T["TCP = sport, dport=22, flags=S"]
+        C["Carga o payload<br/>vacia en un SYN"]
+      end
+    end
+  end
+  E --> S(["sendp lo pone en el cable"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef c fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class C c
+  class S n
 ```
+
+Fíjate en qué capa es la más externa, porque de eso depende la función de envío que
+toca usar: si construyes desde `Ether()` estás fabricando la trama entera y se envía
+con `sendp()` a nivel 2; si empiezas en `IP()` dejas que el kernel resuelva la capa
+de enlace y se envía con `send()`. Confundir ambas es el error más frecuente al
+empezar con Scapy.
 
 ### Enviar y recibir: elegir la función correcta
 
