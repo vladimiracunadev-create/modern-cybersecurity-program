@@ -33,6 +33,15 @@ SECCIONES_REQUERIDAS = [
     "## ➡️ Siguiente clase",
 ]
 
+# Secciones del estandar pedagogico profundo. Se exigen solo en las partes ya
+# migradas: el enriquecimiento avanza por partes y no tendria sentido poner el
+# CI en rojo por las que aun no han pasado por el.
+SECCIONES_PROFUNDAS = [
+    "## 🧠 Explicación en profundidad",
+    "## 📔 Glosario",
+]
+PARTES_ESTANDAR_PROFUNDO = ("parte-0-fundamentos-y-prerrequisitos",)
+
 
 def main() -> int:
     errores: list[str] = []
@@ -67,7 +76,10 @@ def main() -> int:
                 errores.append(f"README demasiado corto (<{MIN_BYTES} B): {parte}/{clase}/README.md")
             else:
                 contenido = open(readme, encoding="utf-8").read()
-                faltan = [s for s in SECCIONES_REQUERIDAS if s not in contenido]
+                exigidas = list(SECCIONES_REQUERIDAS)
+                if parte in PARTES_ESTANDAR_PROFUNDO:
+                    exigidas += SECCIONES_PROFUNDAS
+                faltan = [s for s in exigidas if s not in contenido]
                 if faltan:
                     errores.append(
                         f"Secciones faltantes en {parte}/{clase}/README.md: "

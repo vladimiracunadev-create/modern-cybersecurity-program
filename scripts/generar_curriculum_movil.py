@@ -115,6 +115,19 @@ def strip_inline(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+# Bloques ```mermaid ... ``` — se descartan antes de aplanar la sección a texto.
+# La app no dibuja diagramas (renderiza <Text> planos); sin esto, el código del
+# diagrama se colaría como prosa cruda (fue la causa del revert anterior).
+MERMAID_FENCE_RE = re.compile(
+    r"^[ \t]*```mermaid[ \t]*\n.*?^[ \t]*```[ \t]*$\n?",
+    re.MULTILINE | re.DOTALL,
+)
+
+
+def strip_mermaid(text: str) -> str:
+    return MERMAID_FENCE_RE.sub("", text)
+
+
 def section(body: str, emoji: str) -> str:
     """Cuerpo crudo de la sección ``## <emoji> ...``, anclada en el emoji."""
     pattern = re.compile(
@@ -122,7 +135,7 @@ def section(body: str, emoji: str) -> str:
         re.MULTILINE | re.DOTALL,
     )
     match = pattern.search(body)
-    return match.group(1).strip() if match else ""
+    return strip_mermaid(match.group(1).strip()) if match else ""
 
 
 def list_items(block: str, limit: int | None = None) -> list[str]:

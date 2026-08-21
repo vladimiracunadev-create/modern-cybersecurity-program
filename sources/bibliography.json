@@ -4308,7 +4308,8 @@
    "used_in": [
     "classes/parte-0-fundamentos-y-prerrequisitos/015-python-para-seguridad-fundamentos-del-lenguaje/README.md",
     "classes/parte-0-fundamentos-y-prerrequisitos/016-python-para-seguridad-sockets-y-programacion-de-red/README.md",
-    "classes/parte-0-fundamentos-y-prerrequisitos/019-expresiones-regulares-para-analisis-de-logs-y-datos/README.md"
+    "classes/parte-0-fundamentos-y-prerrequisitos/019-expresiones-regulares-para-analisis-de-logs-y-datos/README.md",
+    "classes/parte-0-fundamentos-y-prerrequisitos/020-sistemas-de-numeracion-y-encoding-binario-hex-base64-y-url/README.md"
    ],
    "authors": []
   },
@@ -9196,6 +9197,7 @@
     "classes/parte-0-fundamentos-y-prerrequisitos/007-bash-scripting-para-tareas-de-seguridad/README.md",
     "classes/parte-0-fundamentos-y-prerrequisitos/014-direccionamiento-ip-y-subnetting/README.md",
     "classes/parte-0-fundamentos-y-prerrequisitos/023-sistemas-operativos-procesos-memoria-y-syscalls/README.md",
+    "classes/parte-0-fundamentos-y-prerrequisitos/024-arquitectura-de-computadores-cpu-registros-y-memoria/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/027-analisis-de-trafico-filtros-seguimiento-de-flujos-y-estadisticas/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/034-firewalls-tipos-iptables-y-nftables/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/037-proxies-nat-y-pivoting-de-red/README.md",
@@ -10457,6 +10459,11 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-0-fundamentos-y-prerrequisitos/011-protocolos-de-red-ip-tcp-udp-e-icmp-en-profundidad/README.md",
+    "classes/parte-0-fundamentos-y-prerrequisitos/013-http-https-y-la-arquitectura-de-la-web-moderna/README.md",
+    "classes/parte-0-fundamentos-y-prerrequisitos/014-direccionamiento-ip-y-subnetting/README.md",
+    "classes/parte-0-fundamentos-y-prerrequisitos/016-python-para-seguridad-sockets-y-programacion-de-red/README.md",
+    "classes/parte-0-fundamentos-y-prerrequisitos/017-python-para-seguridad-manipulacion-de-paquetes-con-scapy/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/210-forense-de-navegadores-y-correo/README.md"
    ],
    "authors": []
@@ -12372,6 +12379,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-0-fundamentos-y-prerrequisitos/002-el-panorama-de-amenazas-moderno-actores-motivaciones-y-cyber-kill-chain/README.md",
     "classes/parte-12-osint-e-ingenieria-social/256-fundamentos-de-ingenieria-social/README.md",
     "classes/parte-12-osint-e-ingenieria-social/259-defensa-contra-la-ingenieria-social/README.md",
     "classes/parte-14-grc-riesgo-y-cumplimiento/288-seguros-ciberneticos/README.md",
@@ -12436,6 +12444,28 @@
    ],
    "authors": [],
    "vigencia": "vigente"
+  },
+  {
+   "id": "first-multiparty",
+   "type": "standard",
+   "title": "Guidelines and Practices for Multi-Party Vulnerability Coordination and Disclosure",
+   "identifier": "FIRST Multi-Party Coordination v1.1",
+   "published": "",
+   "locator": "https://www.first.org/global/sigs/vulnerability-coordination/multiparty/guidelines-v1.1",
+   "authority": "FIRST.org",
+   "status": "verificada",
+   "notes": "Citada en la clase 025 como practica de coordinacion cuando la vulnerabilidad afecta a varios proveedores.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.first.org/global/sigs/vulnerability-coordination"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-08-21",
+   "used_in": [
+    "classes/parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.md"
+   ],
+   "authors": []
   },
   {
    "id": "first-epss",
@@ -12954,6 +12984,9 @@
     "classes/parte-0-fundamentos-y-prerrequisitos/002-el-panorama-de-amenazas-moderno-actores-motivaciones-y-cyber-kill-chain/README.md",
     "classes/parte-0-fundamentos-y-prerrequisitos/003-frameworks-de-seguridad-nist-csf-iso-27001-mitre-att-ck-y-diamond-model/README.md",
     "classes/parte-0-fundamentos-y-prerrequisitos/008-windows-esencial-para-seguridad-arquitectura-registro-y-servicios/README.md",
+    "classes/parte-0-fundamentos-y-prerrequisitos/009-powershell-para-seguridad-ofensiva-y-defensiva/README.md",
+    "classes/parte-0-fundamentos-y-prerrequisitos/019-expresiones-regulares-para-analisis-de-logs-y-datos/README.md",
+    "classes/parte-0-fundamentos-y-prerrequisitos/023-sistemas-operativos-procesos-memoria-y-syscalls/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/037-proxies-nat-y-pivoting-de-red/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/039-ataques-de-capa-2-arp-spoofing-y-vlan-hopping/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/040-man-in-the-middle-tecnicas-y-defensa/README.md",
@@ -13222,6 +13255,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-0-fundamentos-y-prerrequisitos/001-que-es-la-ciberseguridad-triada-cia-aaa-superficie-de-ataque-y-defensa-en-profundidad/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/042-segmentacion-de-red-y-arquitectura-zero-trust/README.md",
     "classes/parte-2-criptografia-aplicada/046-historia-y-fundamentos-de-la-criptografia/README.md"
    ],
@@ -13324,6 +13358,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-0-fundamentos-y-prerrequisitos/021-criptografia-conceptos-fundamentales-e-intuicion/README.md",
     "classes/parte-2-criptografia-aplicada/047-cifrado-simetrico-aes-y-modos-de-operacion/README.md"
    ],
    "authors": [],
@@ -14239,6 +14274,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-0-fundamentos-y-prerrequisitos/018-git-y-control-de-versiones-para-profesionales-de-seguridad/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/315-mfa-y-gestion-de-accesos-privilegiados-pam/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/080-cracking-de-contrasenas-con-john-y-hashcat/README.md"
    ],
@@ -14505,6 +14541,7 @@
     "classes/parte-0-fundamentos-y-prerrequisitos/001-que-es-la-ciberseguridad-triada-cia-aaa-superficie-de-ataque-y-defensa-en-profundidad/README.md",
     "classes/parte-0-fundamentos-y-prerrequisitos/018-git-y-control-de-versiones-para-profesionales-de-seguridad/README.md",
     "classes/parte-0-fundamentos-y-prerrequisitos/021-criptografia-conceptos-fundamentales-e-intuicion/README.md",
+    "classes/parte-0-fundamentos-y-prerrequisitos/022-docker-y-contenedores-para-laboratorios-de-seguridad/README.md",
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/230-seguridad-de-infrastructure-as-code-terraform/README.md",
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/232-seguridad-serverless/README.md",
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/233-gestion-de-secretos-en-la-nube/README.md",
@@ -15210,6 +15247,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-0-fundamentos-y-prerrequisitos/021-criptografia-conceptos-fundamentales-e-intuicion/README.md",
     "classes/parte-2-criptografia-aplicada/052-hmac-y-autenticacion-de-mensajes/README.md"
    ],
    "vigencia": "vigente"
@@ -15362,6 +15400,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-0-fundamentos-y-prerrequisitos/012-dns-dhcp-y-arp-funcionamiento-y-riesgos/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/041-seguridad-de-dns-envenenamiento-dnssec-y-tunneling/README.md"
    ],
    "vigencia": "vigente"
@@ -16031,6 +16070,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-0-fundamentos-y-prerrequisitos/010-redes-tcp-ip-modelo-osi-encapsulacion-y-capas/README.md",
     "classes/parte-0-fundamentos-y-prerrequisitos/011-protocolos-de-red-ip-tcp-udp-e-icmp-en-profundidad/README.md"
    ],
    "vigencia": "vigente"
@@ -16153,7 +16193,8 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-0-fundamentos-y-prerrequisitos/012-dns-dhcp-y-arp-funcionamiento-y-riesgos/README.md"
+    "classes/parte-0-fundamentos-y-prerrequisitos/012-dns-dhcp-y-arp-funcionamiento-y-riesgos/README.md",
+    "classes/parte-0-fundamentos-y-prerrequisitos/017-python-para-seguridad-manipulacion-de-paquetes-con-scapy/README.md"
    ],
    "vigencia": "vigente"
   },

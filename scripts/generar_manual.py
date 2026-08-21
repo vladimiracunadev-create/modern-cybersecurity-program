@@ -34,6 +34,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+from html import unescape as html_unescape
 
 import markdown
 
@@ -82,6 +83,9 @@ blockquote { border-left: 3px solid #2e8b57; margin: 8px 0; padding: 3px 12px;
              background: #f5f9f7; color: #333; page-break-inside: avoid; }
 a { color: #0b6; text-decoration: none; }
 img { max-width: 100%; }
+pre.mermaid { background: transparent; border: 0; text-align: center;
+              page-break-inside: avoid; }
+pre.mermaid svg { max-width: 100%; height: auto; }
 hr { border: 0; border-top: 1px solid #d5ddd8; margin: 18px 0; }
 .portada { page-break-after: always; text-align: center; padding-top: 60mm; }
 .portada h1 { border: 0; page-break-before: avoid; font-size: 30pt; }
@@ -259,14 +263,41 @@ def construir_md(clases) -> str:
     return "".join(p).rstrip() + "\n"
 
 
+# Bloques ```mermaid -> <pre class="mermaid"> para que mermaid.js los renderice
+# a SVG dentro de Chrome headless ANTES del print-to-pdf. El fenced_code de
+# python-markdown deja el contenido escapado; mermaid necesita el texto crudo.
+MERMAID_HTML_RE = re.compile(
+    r'<pre><code class="language-mermaid">(.*?)</code></pre>', re.DOTALL
+)
+
+# Se carga desde el CDN; Chrome tiene el --virtual-time-budget (20 s) para
+# resolver el import ESM y renderizar todos los diagramas antes de imprimir.
+MERMAID_SCRIPT = (
+    '<script type="module">'
+    'import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";'
+    'mermaid.initialize({ startOnLoad: true, theme: "default", securityLevel: "strict" });'
+    "</script>"
+)
+
+
+def activar_mermaid(html_text: str) -> str:
+    return MERMAID_HTML_RE.sub(
+        lambda m: '<pre class="mermaid">' + html_unescape(m.group(1)) + "</pre>",
+        html_text,
+    )
+
+
 def md_a_html(md_text: str) -> str:
     cuerpo = markdown.markdown(
         md_text,
         extensions=["tables", "fenced_code", "sane_lists", "attr_list", "toc", "md_in_html"],
     )
+    cuerpo = activar_mermaid(cuerpo)
+    tiene_mermaid = 'class="mermaid"' in cuerpo
+    script = MERMAID_SCRIPT if tiene_mermaid else ""
     return (
         "<!doctype html><html lang='es'><head><meta charset='utf-8'>"
-        f"<style>{CSS}</style></head><body>{cuerpo}</body></html>"
+        f"<style>{CSS}</style></head><body>{cuerpo}{script}</body></html>"
     )
 
 
@@ -275,7 +306,9 @@ def generar_pdf(nav: str, html_path: str, pdf_path: str) -> None:
     subprocess.run(
         [nav, "--headless=new", "--disable-gpu", "--no-first-run",
          "--no-default-browser-check", "--no-pdf-header-footer",
-         "--virtual-time-budget=20000",
+         # Margen amplio: el import ESM de mermaid + el render de todos los
+         # diagramas a SVG debe completarse antes del print-to-pdf.
+         "--virtual-time-budget=60000",
          f"--print-to-pdf={pdf_path}", uri],
         check=True, timeout=600,
         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,

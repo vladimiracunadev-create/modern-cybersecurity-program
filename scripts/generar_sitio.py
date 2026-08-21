@@ -70,11 +70,17 @@ PLANTILLA = """<!doctype html>
   thead th {{ background: #f2f4f6; }}
   blockquote {{ border-left: 4px solid #d0d7de; margin: 1rem 0; padding: .2rem 1rem; color: inherit; opacity: .9; }}
   .nav {{ font-size: .9rem; margin-bottom: 1.5rem; opacity: .85; }}
+  pre.mermaid {{ background: transparent; text-align: center; }}
 </style>
 </head>
 <body>
 <div class="nav"><a href="{home}">🛡️ Inicio</a> · <a href="{indice}">📚 Clases</a> · <a href="{rutas}">🧭 Rutas</a> · <a href="{quiz}">📝 Autoevaluación</a> · <a href="{progreso}">✅ Progreso</a> · <a href="{certis}">🎓 Certis</a></div>
 {body}
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  const oscuro = matchMedia("(prefers-color-scheme: dark)").matches;
+  mermaid.initialize({{ startOnLoad: true, theme: oscuro ? "dark" : "default", securityLevel: "strict" }});
+</script>
 </body>
 </html>
 """
@@ -85,11 +91,29 @@ def reescribir_enlaces(texto: str) -> str:
     return LINK_MD.sub(lambda m: f"]({m.group(1)}.html{m.group(2)})", texto)
 
 
+# Bloques ```mermaid -> <pre class="mermaid"> (lo que espera mermaid.js). El
+# fenced_code de python-markdown emite <pre><code class="language-mermaid">...
+# con el contenido escapado; mermaid necesita el texto crudo, así que se
+# desescapan las entidades. Sin esto los diagramas salían como código suelto
+# (fue la causa del revert de la mejora visual anterior).
+MERMAID_HTML_RE = re.compile(
+    r'<pre><code class="language-mermaid">(.*?)</code></pre>', re.DOTALL
+)
+
+
+def activar_mermaid(html_text: str) -> str:
+    return MERMAID_HTML_RE.sub(
+        lambda m: '<pre class="mermaid">' + htmllib.unescape(m.group(1)) + "</pre>",
+        html_text,
+    )
+
+
 def render(md_text: str) -> str:
-    return markdown.markdown(
+    html_text = markdown.markdown(
         md_text,
         extensions=["tables", "fenced_code", "toc", "sane_lists", "attr_list"],
     )
+    return activar_mermaid(html_text)
 
 
 def profundidad(rel: str) -> int:

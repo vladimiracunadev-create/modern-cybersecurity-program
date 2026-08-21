@@ -65,6 +65,34 @@ Ninguno formal: es el punto de entrada del programa. Se asume manejo básico de 
 | Interiores | 023–024 | Procesos/memoria/syscalls, arquitectura de CPU |
 | Marco legal | 025 | Ética, legalidad, alcance, divulgación |
 
+El orden no es casual: cada bloque habilita el siguiente. El marco conceptual da el
+vocabulario, el laboratorio da dónde practicar sin romper nada ajeno, los sistemas
+operativos y las redes dan el terreno que después se ataca y se defiende, la
+automatización convierte el conocimiento en herramientas propias, y la ética delimita
+qué es legítimo hacer con todo lo anterior.
+
+```mermaid
+flowchart TD
+  A["Marco conceptual 001-003"] --> B["Laboratorio aislado 004"]
+  B --> C["Sistemas operativos 005-009"]
+  B --> D["Redes TCP/IP 010-014"]
+  C --> E["Automatizacion Python 015-017"]
+  D --> E
+  E --> F["Herramientas y datos 018-020"]
+  F --> G["Cripto e interiores 021-024"]
+  G --> H["Etica y legalidad 025"]
+  H --> I["Parte 1: Redes y seguridad de redes"]
+```
+
+## 📐 Estándar pedagógico de esta parte
+
+Las 25 clases de la Parte 0 siguen el **estándar pedagógico profundo** del programa: además
+del objetivo, el laboratorio y los ejercicios, cada clase incluye una sección
+**🧠 Explicación en profundidad** —prosa que explica el porqué de cada tema y lo conecta con
+los demás, apoyada en diagramas— y un **📔 Glosario** con los términos y siglas de la clase.
+Las definiciones desarrollan cada término y su relevancia en seguridad, en lugar de
+limitarse a nombrarlo. El CI verifica que ninguna clase de esta parte pierda esas secciones.
+
 ## 🔗 Referencias de la parte
 
 - NIST Cybersecurity Framework 2.0 — <https://www.nist.gov/cyberframework>

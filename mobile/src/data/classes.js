@@ -11750,7 +11750,7 @@ export const CLASSES = [
       "Docker Bench for Security para auditar el host según CIS.",
       "Hadolint para lint de Dockerfiles."
     ],
-    "lab": "1. Ejecuta docker run -it --rm alpine sh y explora los namespaces con lsns desde el host para ver el aislamiento. 2. Lanza un contenedor con --privileged y muestra que puede montar el disco del host; borra el contenedor y nunca uses privileged en producción. 3. Escribe un Dockerfile inseguro (corriendo como root, con secretos en ENV) y pásalo por Hadolint; corrige los hallazgos. 4. Refactoriza a…",
+    "lab": "> 🧪 Laboratorio ejecutable del programa: devsecops-pipeline — son las capas 4 y 5 del lab de DevSecOps: un Dockerfile con diez antipatrones y las CVE del sistema base. 1. Ejecuta docker run -it --rm alpine sh y explora los namespaces con lsns desde el host para ver el aislamiento. 2. Lanza un contenedor con --privileged y muestra que puede montar el disco del host; borra el contenedor y nunca use…",
     "exercises": [
       "Enumera las capabilities por defecto de un contenedor y explica cuáles quitarías.",
       "Convierte una imagen basada en ubuntu a una distroless y mide la reducción de CVEs.",
@@ -12218,7 +12218,7 @@ export const CLASSES = [
       "Acceso al documento NIST SP 800-218 para consultar las prácticas PO/PS/PW/RV.",
       "Un repositorio de ejemplo propio para ubicar dónde encajaría cada control."
     ],
-    "lab": "Ejercicio aplicado de diseño y evaluación (no ofensivo): 1. Dibuja tu SDLC actual. Lista las fases reales por las que pasa un cambio en tu equipo: idea → requisitos → diseño → codificación → PR/review → build → test → despliegue → operación. 2. Ubica los controles existentes. Marca en cada fase qué comprobación de seguridad ya existe hoy (aunque sea \"ninguna\"). Sé honesto. 3. Identifica los hueco…",
+    "lab": "> 🧪 Laboratorio ejecutable del programa: devsecops-pipeline — recorre las ocho capas y termina moviéndolas a pre-commit y CI: el shift-left aplicado de principio a fin. Ejercicio aplicado de diseño y evaluación (no ofensivo): 1. Dibuja tu SDLC actual. Lista las fases reales por las que pasa un cambio en tu equipo: idea → requisitos → diseño → codificación → PR/review → build → test → despliegue →…",
     "exercises": [
       "Enumera las fases del SDLC y asigna a cada una un control de seguridad concreto.",
       "Explica con un ejemplo por qué un fallo de diseño es más caro que un fallo de código.",
@@ -12321,7 +12321,7 @@ export const CLASSES = [
       "Bandit (Python) y gosec (Go) como SAST específicos de lenguaje.",
       "Un repositorio vulnerable de práctica: OWASP Juice Shop o NodeGoat o el intencionadamente inseguro DVWA."
     ],
-    "lab": "1. Clona un repo vulnerable de práctica (p. ej. NodeGoat) en tu entorno local. 2. Escanea con reglas de la comunidad: ``bash semgrep --config p/owasp-top-ten --config p/secrets ./NodeGoat --json -o hallazgos.json semgrep --config p/owasp-top-ten ./NodeGoat # salida legible en consola ` 3. Interpreta un hallazgo. Elige una inyección SQL o un XSS reportado, abre el archivo/línea y confirma si el fl…",
+    "lab": "> 🧪 Laboratorio ejecutable del programa: devsecops-pipeline — el SAST es allí una capa de seis; comprueba qué se le escapa y qué otra capa lo cubre. 1. Clona un repo vulnerable de práctica (p. ej. NodeGoat) en tu entorno local. 2. Escanea con reglas de la comunidad: ``bash semgrep --config p/owasp-top-ten --config p/secrets ./NodeGoat --json -o hallazgos.json semgrep --config p/owasp-top-ten ./No…",
     "exercises": [
       "Ejecuta Semgrep con dos rulesets distintos y compara los hallazgos.",
       "Escribe una regla que detecte eval() sobre input de usuario en JavaScript.",
@@ -12424,7 +12424,7 @@ export const CLASSES = [
       "osv-scanner (Google) — usa la base OSV, muy buena para lenguajes modernos.",
       "Dependabot / Renovate — PRs automáticos de actualización."
     ],
-    "lab": "1. Inspecciona el árbol de dependencias de un proyecto real (p. ej. npm ls --all o pip list + pipdeptree). Observa cuántas son transitivas. 2. Escanea con Trivy: ``bash trivy fs --scanners vuln --severity HIGH,CRITICAL ./mi-proyecto ` 3. Escanea con Dependency-Check y compara resultados; nota que cada herramienta usa fuentes distintas y puede diferir. 4. Prioriza con EPSS y KEV. Toma los 5 CVE re…",
+    "lab": "> 🧪 Laboratorio ejecutable del programa: devsecops-pipeline — es la capa 1 del lab, con el ejercicio de cobertura: dos dependencias sin versión fijada que el escáner no puede resolver. 1. Inspecciona el árbol de dependencias de un proyecto real (p. ej. npm ls --all o pip list + pipdeptree). Observa cuántas son transitivas. 2. Escanea con Trivy: ``bash trivy fs --scanners vuln --severity HIGH,CRIT…",
     "exercises": [
       "Genera el árbol de dependencias de un proyecto y cuenta directas vs transitivas.",
       "Escanea el mismo repo con Trivy y Dependency-Check y explica las diferencias.",
@@ -12476,7 +12476,7 @@ export const CLASSES = [
       "pre-commit (framework) — orquesta hooks locales de forma reproducible.",
       "git-filter-repo / BFG Repo-Cleaner — para purgar secretos del historial."
     ],
-    "lab": "1. Escanea el historial completo de un repositorio de práctica: ``bash gitleaks detect --source . --report-format json --report-path gitleaks.json -v ` Revisa hallazgos: cada uno lista commit, archivo, línea y regla. 2. Instala el hook de pre-commit. Crea .pre-commit-config.yaml: `yaml repos: - repo: https://github.com/gitleaks/gitleaks rev: v8.18.0 hooks: - id: gitleaks ` `bash pre-commit instal…",
+    "lab": "> 🧪 Laboratorio ejecutable del programa: devsecops-pipeline — es la capa 3 del lab: secretos con formato realista, y el matiz de los genéricos que se escapan a la detección. 1. Escanea el historial completo de un repositorio de práctica: ``bash gitleaks detect --source . --report-format json --report-path gitleaks.json -v ` Revisa hallazgos: cada uno lista commit, archivo, línea y regla. 2. Insta…",
     "exercises": [
       "Escanea el historial de un repo y clasifica los hallazgos por severidad.",
       "Configura pre-commit con gitleaks y demuestra que bloquea un commit.",
@@ -12528,7 +12528,7 @@ export const CLASSES = [
       "actionlint — linter de sintaxis y buenas prácticas de workflows.",
       "StepSecurity Harden-Runner — monitoriza y restringe el tráfico de red del runner."
     ],
-    "lab": "1. Audita tus workflows con zizmor y actionlint: ``bash zizmor .github/workflows/ci.yml actionlint ` Anota hallazgos: permisos amplios, acciones sin pin, uso de pull_request_target. 2. Restringe permisos. Aplica mínimo privilegio a nivel de workflow y sube por job solo lo necesario: `yaml permissions: contents: read # por defecto de solo lectura para todo jobs: build: permissions: contents: read…",
+    "lab": "> 🧪 Laboratorio ejecutable del programa: devsecops-pipeline — es la capa 6 del lab, sobre un workflow con pull_request_target, inyección de expresiones y permisos totales. 1. Audita tus workflows con zizmor y actionlint: ``bash zizmor .github/workflows/ci.yml actionlint ` Anota hallazgos: permisos amplios, acciones sin pin, uso de pull_request_target. 2. Restringe permisos. Aplica mínimo privileg…",
     "exercises": [
       "Audita un workflow con zizmor y clasifica los hallazgos por severidad.",
       "Reescribe un workflow para aplicar mínimo privilegio de permisos.",
@@ -12580,7 +12580,7 @@ export const CLASSES = [
       "hadolint para lintar Dockerfiles.",
       "cosign (Sigstore) para firmar y verificar."
     ],
-    "lab": "1. Parte de un Dockerfile \"malo\" (imagen base pesada, root, sin pin) y lintéalo: ``bash docker run --rm -i hadolint/hadolint < Dockerfile ` 2. Reescríbelo seguro con multi-stage, base distroless y usuario no-root: `dockerfile # build stage FROM golang:1.22 AS build WORKDIR /src COPY . . RUN CGO_ENABLED=0 go build -o /app . # runtime stage FROM gcr.io/distroless/static-debian12:nonroot COPY --from…",
+    "lab": "> 🧪 Laboratorio ejecutable del programa: devsecops-pipeline — son las capas 4 y 5 del lab: hadolint sobre el Dockerfile y trivy sobre el sistema operativo base. 1. Parte de un Dockerfile \"malo\" (imagen base pesada, root, sin pin) y lintéalo: ``bash docker run --rm -i hadolint/hadolint < Dockerfile ` 2. Reescríbelo seguro con multi-stage, base distroless y usuario no-root: `dockerfile # build stag…",
     "exercises": [
       "Convierte un Dockerfile de una sola etapa a multi-stage y mide la reducción de tamaño.",
       "Cambia una imagen base ubuntu por distroless y compara los CVE con Trivy.",
@@ -12683,7 +12683,7 @@ export const CLASSES = [
       "CISA KEV y EPSS — señales de priorización.",
       "Hoja de cálculo o issue tracker (Jira/GitHub Issues) para el flujo si no usas DefectDojo."
     ],
-    "lab": "Ejercicio de proceso (defensivo, sobre hallazgos propios): 1. Recolecta hallazgos. Exporta resultados de Trivy (SCA/imagen), Semgrep (SAST) y ZAP (DAST) de tus prácticas en formato JSON. 2. Consolida en DefectDojo. Crea un producto y engagement, importa los tres informes. Observa cómo deduplica hallazgos repetidos entre escaneos. 3. Enriquece con señales de riesgo. Para los top 20 hallazgos, añad…",
+    "lab": "> 🧪 Laboratorio ejecutable del programa: devsecops-pipeline — incluye el bloque de priorización KEV → EPSS → CVSS y el procedimiento de remediación con reversión automática. Ejercicio de proceso (defensivo, sobre hallazgos propios): 1. Recolecta hallazgos. Exporta resultados de Trivy (SCA/imagen), Semgrep (SAST) y ZAP (DAST) de tus prácticas en formato JSON. 2. Consolida en DefectDojo. Crea un pr…",
     "exercises": [
       "Dibuja el ciclo de vida de una vulnerabilidad en tu organización.",
       "Consolida hallazgos de dos herramientas y cuenta los duplicados eliminados.",
@@ -12735,7 +12735,7 @@ export const CLASSES = [
       "cosign — firma imágenes y adjunta atestaciones (SBOM, provenance).",
       "SLSA GitHub Generator — genera provenance SLSA en Actions."
     ],
-    "lab": "1. Genera el SBOM de un proyecto y de su imagen: ``bash syft dir:./mi-proyecto -o spdx-json > sbom.spdx.json syft miapp:1.0 -o cyclonedx-json > sbom.cdx.json ` Inspecciona: componentes, versiones, licencias, hashes. 2. Consume el SBOM para responder a un CVE. Simula que sale un CVE en una librería: busca en el SBOM si está y en qué versión. Luego escanea con Grype/Trivy usando el SBOM como entrad…",
+    "lab": "> 🧪 Laboratorio ejecutable del programa: devsecops-pipeline — practica los tres huecos típicos de la cadena: dependencias sin fijar, ausencia de lockfile con hashes y acciones de CI sin fijar por SHA. 1. Genera el SBOM de un proyecto y de su imagen: ``bash syft dir:./mi-proyecto -o spdx-json > sbom.spdx.json syft miapp:1.0 -o cyclonedx-json > sbom.cdx.json ` Inspecciona: componentes, versiones, l…",
     "exercises": [
       "Genera SBOM del mismo artefacto en CycloneDX y SPDX y compara su estructura.",
       "Usa un SBOM para determinar en 1 minuto si estás afectado por un CVE dado.",
@@ -12839,7 +12839,7 @@ export const CLASSES = [
       "Una plantilla de charter de programa (objetivos, roles, tiempo asignado, métricas).",
       "Herramienta de encuesta para medir percepción de seguridad en los equipos."
     ],
-    "lab": "Diseño de un programa real (ejercicio aplicado, no ofensivo): 1. Diagnostica la cultura actual. Haz una mini-encuesta a un equipo: ¿saben a quién acudir con dudas de seguridad? ¿la seguridad les frena o les ayuda? Anota el punto de partida. 2. Define el charter del programa de champions. Documenta objetivo, criterios de selección (voluntariedad + interés, no imposición), tiempo asignado (p. ej. 1…",
+    "lab": "> 🧪 Laboratorio ejecutable del programa: devsecops-pipeline — su informe está pensado para que desarrollo lo lea: clasificar los hallazgos en vez de marcarlo todo como crítico. Diseño de un programa real (ejercicio aplicado, no ofensivo): 1. Diagnostica la cultura actual. Haz una mini-encuesta a un equipo: ¿saben a quién acudir con dudas de seguridad? ¿la seguridad les frena o les ayuda? Anota el…",
     "exercises": [
       "Redacta el charter de un programa de security champions de una página.",
       "Define criterios de selección de champions que eviten la imposición.",
@@ -16544,7 +16544,7 @@ export const CLASSES = [
       "Hoja de cálculo o script Python para cruzar CVE × CVSS × EPSS × KEV y ordenar por riesgo.",
       "Gestor de tickets (Jira, GitHub Issues) para simular el flujo de remediación."
     ],
-    "lab": "Ejercicio aplicado: escanearás un objetivo de laboratorio y construirás una cola de remediación priorizada por riesgo con SLAs. 1. Inventaría el objetivo. En la red host-only, identifica el activo (Metasploitable) y clasifícalo por criticidad de negocio (aquí: bajo, es lab). 2. Escaneo no autenticado. Lanza Greenbone/OpenVAS contra el objetivo. Guarda el reporte (lista de CVEs con CVSS). 3. Escan…",
+    "lab": "> 🧪 Laboratorio ejecutable del programa: devsecops-pipeline — practica allí la priorización por exposición real y la sección de cobertura del informe. Ejercicio aplicado: escanearás un objetivo de laboratorio y construirás una cola de remediación priorizada por riesgo con SLAs. 1. Inventaría el objetivo. En la red host-only, identifica el activo (Metasploitable) y clasifícalo por criticidad de ne…",
     "exercises": [
       "Dada una lista de 5 CVEs con su CVSS y EPSS, ordénalas por riesgo y justifica por qué EPSS puede subir o bajar la prioridad frente a CVSS solo.",
       "Explica por qué una CVE con CVSS 6.5 en KEV puede ser más urgente que una CVSS 9.8 que no lo está.",
@@ -17219,7 +17219,7 @@ export const CLASSES = [
       "CI: repositorio con GitHub Actions (o GitLab CI) para orquestar los análisis en cada PR.",
       "Scripting: Python o Bash para lanzar herramientas, parsear JSON/SARIF y generar el informe."
     ],
-    "lab": "Ejercicio aplicado: revisas código manualmente, montas análisis automatizado en CI, triras los hallazgos y automatizas el informe. 1. Revisión manual. Toma un endpoint vulnerable (p. ej. una consulta SQL construida por concatenación) y, con el checklist de OWASP Code Review / ASVS, identifica el fallo, su categoría (inyección) y la corrección (consulta parametrizada). Documenta el antes/después.…",
+    "lab": "> 🧪 Laboratorio ejecutable del programa: devsecops-pipeline — su script auditar.sh orquesta las ocho capas y distingue siempre sin hallazgos de no ejecutada, y priorizar.py implementa la priorización KEV → EPSS → CVSS contra las APIs reales. Ejercicio aplicado: revisas código manualmente, montas análisis automatizado en CI, triras los hallazgos y automatizas el informe. 1. Revisión manual. Toma u…",
     "exercises": [
       "Revisa un fragmento con concatenación SQL y reescríbelo con consulta parametrizada; nombra la regla ASVS aplicable.",
       "Construye una tabla que compare SAST/DAST/IAST/SCA por: qué ven, cuándo corren, falsos positivos y falsos negativos típicos.",
