@@ -171,9 +171,8 @@ def first_sentence(text: str, max_len: int = 220) -> str:
 
 
 def paragraph(block: str, max_len: int = 600) -> str:
-    """Colapsa un bloque a prosa plana, quitando la sintaxis de lista y de cita."""
-    lines = [re.sub(r"^\s*>\s?", "", ln) for ln in block.splitlines() if ln.strip()]
-    lines = [ln for ln in lines if ln.strip()]
+    """Colapsa un bloque a prosa plana, quitando la sintaxis de lista."""
+    lines = [ln for ln in block.splitlines() if ln.strip()]
     text = strip_inline(" ".join(lines))
     if len(text) > max_len:
         text = text[: max_len - 1].rstrip() + "…"
