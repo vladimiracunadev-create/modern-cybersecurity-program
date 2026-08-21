@@ -7,6 +7,20 @@
 >
 > **Nivel de entrada:** senior; 4–5 años de ciberseguridad con exposición real a entornos industriales · **Foco:** arquitectura y segmentación IT/OT, modelo Purdue, zonas y conductos IEC 62443, integración con nube y SOC, auditoría de cumplimiento · **Certificación faro:** ISA/IEC 62443 Cybersecurity Specialist + **GICSP** (fuera del programa; dentro, CISSP por el dominio de arquitectura)
 
+
+<!-- insignias:inicio -->
+
+<div align="center">
+
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-senior-1f6feb?style=flat-square)](README.md)
+[![Foco](https://img.shields.io/badge/%F0%9F%8E%AF%20foco-arquitectura%20y%20segmentaci%C3%B3n%20IT%2FOT-6e7781?style=flat-square)](README.md)
+[![Certificación](https://img.shields.io/badge/%F0%9F%8E%93%20certi-ISA%2FIEC%2062443%20Cybersecurity%E2%80%A6-2e8b57?style=flat-square)](../certificaciones/README.md)
+[![Partes](https://img.shields.io/badge/%F0%9F%97%82%EF%B8%8F%20partes-10-e8590c?style=flat-square)](../classes/README.md)
+
+</div>
+
+<!-- insignias:fin -->
+
 ## 🧭 Qué es y por qué importa
 
 Hay una diferencia que lo explica casi todo: en **IT** el peor caso es que se pierdan datos; en
@@ -162,6 +176,29 @@ de cliente en cliente; el modelo Purdue y las zonas no.
   fabricante y los avisos de vulnerabilidad de ICS están en inglés.
 
 ## 📚 Tu ruta en el programa
+
+<!-- recorrido:inicio -->
+
+```mermaid
+flowchart TD
+    P0["🧱 Parte 0<br/>Fundamentos"]
+    P1["🌐 Parte 1<br/>Redes"]
+    P13["📡 Parte 13<br/>Móvil · IoT · OT"]
+    P17["📈 Parte 17<br/>Profundización"]
+    P14["📋 Parte 14<br/>GRC"]
+    P10["☁️ Parte 10<br/>Cloud"]
+    P8["🔵 Parte 8<br/>Blue Team / SOC"]
+    P9["🔬 Parte 9<br/>DFIR"]
+    P3["🎯 Parte 3<br/>Pentesting"]
+    P2["🔐 Parte 2<br/>Criptografía"]
+    P0 --> P1 --> P13 --> P17 --> P14 --> P10 --> P8 --> P9 --> P3 --> P2
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class P0 ini
+    class P2 fin
+```
+
+<!-- recorrido:fin -->
 
 Ruta **de arquitectura defensiva**: redes y segmentación como cimiento, la clase de ICS/SCADA como
 eje, y GRC como marco. Orden recomendado:

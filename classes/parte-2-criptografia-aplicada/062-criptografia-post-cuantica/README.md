@@ -1,7 +1,20 @@
 # Clase 062 — Criptografía post-cuántica
 
-> Parte: **2 — Criptografía aplicada** · Fuente: *Real-World Cryptography* (Wong) y NIST PQC (FIPS 203/204/205)
-> ⏱️ Duración estimada: **100 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 2](https://img.shields.io/badge/%F0%9F%94%90%20parte%202-Criptograf%C3%ADa%20aplicada-6f42c1?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-062%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **2 — Criptografía aplicada** · 📖 Fuente: *Real-World Cryptography* (Wong) y NIST PQC (FIPS 203/204/205)
+> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,24 @@ Al finalizar, el alumno podrá:
 5. **Argumentar** por qué migrar hoy pese a no existir aún computadoras cuánticas prácticas.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔐 Clase 062<br/>Criptografía post-cuántica"]
+    C --> T1["1 · Computación cuántica<br/>básica"]
+    C --> T2["2 · Algoritmo de Shor"]
+    C --> T3["3 · Algoritmo de Grover"]
+    C --> T4["4 · Familias PQC (retículos,<br/>hash, códigos)"]
+    C --> T5["5 · Estándares NIST (ML-KEM,<br/>ML-DSA, SLH-DSA)"]
+    C --> T6["6 · Migración híbrida"]
+    C --> T7["7 · Harvest now, decrypt later"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,7 +1,20 @@
 # Clase 183 — SIEM: arquitectura y componentes
 
-> Parte: **8 — Blue Team, detección y SOC** · Fuente: *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases* — Don Murdoch
-> ⏱️ Duración estimada: **100 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 8](https://img.shields.io/badge/%F0%9F%94%B5%20parte%208-Blue%20Team%2C%20detecci%C3%B3n%20y%20SOC-0969da?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-183%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **8 — Blue Team, detección y SOC** · 📖 Fuente: *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases* — Don Murdoch
+> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Valorar** modelos de despliegue: on-prem, cloud-native y SIEM as a Service.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔵 Clase 183<br/>SIEM"]
+    C --> T1["1 · Definición y funciones del<br/>SIEM"]
+    C --> T2["2 · Pipeline de ingesta"]
+    C --> T3["3 · Parsing y normalización"]
+    C --> T4["4 · Enriquecimiento (GeoIP,<br/>threat intel, activos)"]
+    C --> T5["5 · Motor de correlación y<br/>reglas"]
+    C --> T6["6 · Indexación, búsqueda y<br/>retención"]
+    C --> T7["7 · Dimensionamiento (EPS,<br/>GB/día)"]
+    C --> T8["8 · Modelos de despliegue"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

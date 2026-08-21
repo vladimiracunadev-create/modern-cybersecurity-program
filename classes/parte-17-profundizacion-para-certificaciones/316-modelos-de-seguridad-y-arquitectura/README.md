@@ -1,7 +1,20 @@
 # Clase 316 — Modelos de seguridad y arquitectura (Bell-LaPadula, Biba, Clark-Wilson)
 
-> Parte: **17 — Profundización para certificaciones** · Fuente: *(ISC)² CISSP Official Study Guide, 9.ª ed. — Chapple, Stewart & Gibson*
-> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 17](https://img.shields.io/badge/%F0%9F%93%88%20parte%2017-Profundizaci%C3%B3n%20para%20certificaciones-116329?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-316%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **17 — Profundización para certificaciones** · 📖 Fuente: *(ISC)² CISSP Official Study Guide, 9.ª ed. — Chapple, Stewart & Gibson*
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Diseñar** una matriz de control de acceso multinivel que respete un modelo formal elegido.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["📈 Clase 316<br/>Modelos de seguridad y<br/>arquitectura…"]
+    C --> T1["1 · Máquina de estados y<br/>modelo de seguridad"]
+    C --> T2["2 · Bell-LaPadula (BLP) —<br/>confidencialidad"]
+    C --> T3["3 · Biba — integridad"]
+    C --> T4["4 · Clark-Wilson — integridad<br/>comercial"]
+    C --> T5["5 · Brewer-Nash (Muralla<br/>China)"]
+    C --> T6["6 · TCB, monitor de referencia<br/>y kernel de seguridad"]
+    C --> T7["7 · Anillos de protección y<br/>modos de ejecución"]
+    C --> T8["8 · Take-Grant, matriz de<br/>acceso, Graham-Denning"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

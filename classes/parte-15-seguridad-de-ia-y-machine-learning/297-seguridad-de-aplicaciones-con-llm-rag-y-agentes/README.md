@@ -1,7 +1,20 @@
 # Clase 297 — Seguridad de aplicaciones con LLM: RAG y agentes
 
-> Parte: **15 — Seguridad de IA y machine learning** · Fuente: *OWASP Top 10 for LLM Applications (LLM07, LLM08)* y *NIST AI 600-1*
-> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 15](https://img.shields.io/badge/%F0%9F%A7%AA%20parte%2015-Seguridad%20de%20IA%20y%20machine%20learning-bf3989?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-297%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **15 — Seguridad de IA y machine learning** · 📖 Fuente: *OWASP Top 10 for LLM Applications (LLM07, LLM08)* y *NIST AI 600-1*
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -22,6 +35,24 @@ Al finalizar, el alumno podrá:
 5. **Segmentar** datos multi-tenant en el índice vectorial para evitar fugas cruzadas.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧪 Clase 297<br/>Seguridad de aplicaciones<br/>con LLM"]
+    C --> T1["1 · Anatomía de un pipeline<br/>RAG"]
+    C --> T2["2 · Injection indirecta vía<br/>documentos recuperados"]
+    C --> T3["3 · Agentes: bucle<br/>percepción-acción-herramienta"]
+    C --> T4["4 · Excessive Agency y<br/>confused deputy"]
+    C --> T5["5 · Aislamiento y sandboxing<br/>de herramientas"]
+    C --> T6["6 · Multi-tenancy en el vector<br/>store"]
+    C --> T7["7 · Human-in-the-loop y<br/>allowlists"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

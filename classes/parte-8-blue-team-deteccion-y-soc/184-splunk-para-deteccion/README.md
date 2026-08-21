@@ -1,7 +1,20 @@
 # Clase 184 — Splunk para detección
 
-> Parte: **8 — Blue Team, detección y SOC** · Fuente: *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases* — Don Murdoch
-> ⏱️ Duración estimada: **120 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 8](https://img.shields.io/badge/%F0%9F%94%B5%20parte%208-Blue%20Team%2C%20detecci%C3%B3n%20y%20SOC-0969da?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-184%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **8 — Blue Team, detección y SOC** · 📖 Fuente: *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases* — Don Murdoch
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Aplicar** el ciclo Notable Event de Splunk Enterprise Security a nivel conceptual.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔵 Clase 184<br/>Splunk para detección"]
+    C --> T1["1 · Anatomía de una búsqueda<br/>SPL"]
+    C --> T2["2 · Comandos de filtrado y<br/>campos"]
+    C --> T3["3 · stats, eval, where"]
+    C --> T4["4 · tstats y modelos de datos<br/>(CIM)"]
+    C --> T5["5 · Detección por umbral vs<br/>anomalía"]
+    C --> T6["6 · Saved searches y alertas"]
+    C --> T7["7 · Lookups y enriquecimiento"]
+    C --> T8["8 · Notable Events (Splunk ES)"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,7 +1,20 @@
 # Clase 041 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling
 
-> Parte: **1 — Redes y seguridad de redes** · Fuente: *RFC 1034/1035, RFC 4033 (DNSSEC); docs de BIND y iodine*
-> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 1](https://img.shields.io/badge/%F0%9F%8C%90%20parte%201-Redes%20y%20seguridad%20de%20redes-1f6feb?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-041%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **1 — Redes y seguridad de redes** · 📖 Fuente: *RFC 1034/1035, RFC 4033 (DNSSEC); docs de BIND y iodine*
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -21,6 +34,24 @@ Al finalizar, el alumno podrá:
 6. **Aplicar** defensas: DNSSEC, DoT/DoH, filtrado y monitoreo.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🌐 Clase 041<br/>Seguridad de DNS"]
+    C --> T1["1 · Resolución DNS y jerarquía"]
+    C --> T2["2 · Spoofing y cache poisoning"]
+    C --> T3["3 · Ataque de Kaminsky"]
+    C --> T4["4 · DNSSEC (RRSIG, DNSKEY, DS)"]
+    C --> T5["5 · DNS tunneling y<br/>exfiltración"]
+    C --> T6["6 · DoT / DoH"]
+    C --> T7["7 · Detección y filtrado"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

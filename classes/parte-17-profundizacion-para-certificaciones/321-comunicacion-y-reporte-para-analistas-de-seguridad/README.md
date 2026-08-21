@@ -1,7 +1,20 @@
 # Clase 321 — Comunicación y reporte para analistas de seguridad
 
-> Parte: **17 — Profundización para certificaciones** · Fuente: *CompTIA CySA+ (CS0-003) — Reporting and Communication* · *(ISC)² CISSP OSG — Security Operations*
-> ⏱️ Duración estimada: **120 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 17](https://img.shields.io/badge/%F0%9F%93%88%20parte%2017-Profundizaci%C3%B3n%20para%20certificaciones-116329?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-321%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **17 — Profundización para certificaciones** · 📖 Fuente: *CompTIA CySA+ (CS0-003) — Reporting and Communication* · *(ISC)² CISSP OSG — Security Operations*
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Distinguir** obligaciones de notificación (interna, clientes, reguladores, fuerzas del orden) y sus plazos.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["📈 Clase 321<br/>Comunicación y reporte para<br/>analistas de…"]
+    C --> T1["1 · Anatomía de un informe de<br/>seguridad"]
+    C --> T2["2 · Audiencia técnica vs<br/>gestión vs ejecutiva"]
+    C --> T3["3 · Resumen ejecutivo (BLUF)"]
+    C --> T4["4 · Métricas, KPIs y KRIs de<br/>SOC"]
+    C --> T5["5 · Comunicación durante un<br/>incidente"]
+    C --> T6["6 · Escalado y árbol de<br/>decisión"]
+    C --> T7["7 · Notificaciones<br/>obligatorias y plazos"]
+    C --> T8["8 · Lecciones aprendidas y<br/>reporte post-incidente"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

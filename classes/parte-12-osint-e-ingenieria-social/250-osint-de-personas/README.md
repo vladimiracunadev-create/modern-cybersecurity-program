@@ -1,7 +1,20 @@
 # Clase 250 — OSINT de personas
 
-> Parte: **12 — OSINT e ingeniería social** · Fuente: *Open Source Intelligence Techniques* (M. Bazzell)
-> ⏱️ Duración estimada: **100 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 12](https://img.shields.io/badge/%F0%9F%95%B5%EF%B8%8F%20parte%2012-OSINT%20e%20ingenier%C3%ADa%20social-6e7781?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-250%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **12 — OSINT e ingeniería social** · 📖 Fuente: *Open Source Intelligence Techniques* (M. Bazzell)
+> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -29,6 +42,24 @@ Al finalizar, el alumno podrá:
 5. **Redactar** un dossier con cadena de custodia y respeto a la privacidad.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🕵️ Clase 250<br/>OSINT de personas"]
+    C --> T1["1 · Identificadores y pivoteo"]
+    C --> T2["2 · Búsqueda de nombres y<br/>homónimos"]
+    C --> T3["3 · Enumeración de correos"]
+    C --> T4["4 · Alias/usernames cruzados"]
+    C --> T5["5 · Números de teléfono"]
+    C --> T6["6 · Brechas de datos"]
+    C --> T7["7 · Verificación y confianza"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

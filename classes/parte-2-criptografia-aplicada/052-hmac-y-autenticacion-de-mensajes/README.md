@@ -1,7 +1,20 @@
 # Clase 052 — HMAC y autenticación de mensajes
 
-> Parte: **2 — Criptografía aplicada** · Fuente: *Cryptography Engineering* (Ferguson/Schneier/Kohno) e IETF RFC 2104
-> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 2](https://img.shields.io/badge/%F0%9F%94%90%20parte%202-Criptograf%C3%ADa%20aplicada-6f42c1?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-052%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **2 — Criptografía aplicada** · 📖 Fuente: *Cryptography Engineering* (Ferguson/Schneier/Kohno) e IETF RFC 2104
+> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,24 @@ Al finalizar, el alumno podrá:
 5. **Implementar** comparación en tiempo constante para evitar timing.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔐 Clase 052<br/>HMAC y autenticación de<br/>mensajes"]
+    C --> T1["1 · MAC: definición y objetivo"]
+    C --> T2["2 · Construcción HMAC"]
+    C --> T3["3 · HMAC vs hash con clave<br/>concatenada"]
+    C --> T4["4 · Encrypt-then-MAC vs<br/>MAC-then-Encrypt"]
+    C --> T5["5 · Comparación en tiempo<br/>constante"]
+    C --> T6["6 · Claves y rotación"]
+    C --> T7["7 · HMAC en la práctica (JWT,<br/>APIs)"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

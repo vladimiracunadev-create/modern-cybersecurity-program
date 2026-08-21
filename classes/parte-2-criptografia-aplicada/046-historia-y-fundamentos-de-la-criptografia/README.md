@@ -1,7 +1,20 @@
 # Clase 046 — Historia y fundamentos de la criptografía
 
-> Parte: **2 — Criptografía aplicada** · Fuente: *Serious Cryptography* (Aumasson) y *Cryptography Engineering* (Ferguson/Schneier/Kohno)
-> ⏱️ Duración estimada: **90 min** · Nivel: **Fundamentos**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 2](https://img.shields.io/badge/%F0%9F%94%90%20parte%202-Criptograf%C3%ADa%20aplicada-6f42c1?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-046%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **2 — Criptografía aplicada** · 📖 Fuente: *Serious Cryptography* (Aumasson) y *Cryptography Engineering* (Ferguson/Schneier/Kohno)
+> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Fundamentos**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,24 @@ Al finalizar, el alumno podrá:
 5. **Justificar** por qué el secreto debe residir en la clave y no en el algoritmo.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔐 Clase 046<br/>Historia y fundamentos de la<br/>criptografía"]
+    C --> T1["1 · Objetivos de la<br/>criptografía"]
+    C --> T2["2 · Cifrados clásicos<br/>(sustitución,<br/>transposición)"]
+    C --> T3["3 · Vigenère y su ruptura<br/>(Kasiski)"]
+    C --> T4["4 · Enigma y la criptografía<br/>de la II Guerra Mundial"]
+    C --> T5["5 · Principio de Kerckhoffs"]
+    C --> T6["6 · Modelo de amenaza y del<br/>adversario"]
+    C --> T7["7 · Cripto simétrica vs<br/>asimétrica (panorama)"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

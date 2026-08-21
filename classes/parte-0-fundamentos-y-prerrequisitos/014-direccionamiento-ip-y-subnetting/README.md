@@ -1,7 +1,20 @@
 # Clase 014 — Direccionamiento IP y subnetting
 
-> Parte: **0 — Fundamentos y prerrequisitos** · Fuente: *RFC 4632 (CIDR) y W. R. Stevens, TCP/IP Illustrated*
-> ⏱️ Duración estimada: **100 min** · Nivel: **Fundamentos**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 0](https://img.shields.io/badge/%F0%9F%A7%B1%20parte%200-Fundamentos%20y%20prerrequisitos-2e8b57?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-014%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **0 — Fundamentos y prerrequisitos** · 📖 Fuente: *RFC 4632 (CIDR) y W. R. Stevens, TCP/IP Illustrated*
+> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Fundamentos**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Reconocer** rangos privados, especiales y su relevancia en seguridad.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧱 Clase 014<br/>Direccionamiento IP y<br/>subnetting"]
+    C --> T1["1 · IPv4 y binario"]
+    C --> T2["2 · Máscara de red"]
+    C --> T3["3 · Notación CIDR"]
+    C --> T4["4 · Red y broadcast"]
+    C --> T5["5 · Cálculo de hosts"]
+    C --> T6["6 · Subnetting"]
+    C --> T7["7 · VLSM"]
+    C --> T8["8 · Rangos especiales"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,7 +1,20 @@
 # Clase 095 — Inyección de comandos del sistema operativo
 
-> Parte: **4 — Seguridad de aplicaciones web** · Fuente: *The Web Application Hacker's Handbook (Stuttard & Pinto)*
-> ⏱️ Duración estimada: **100 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 4](https://img.shields.io/badge/%F0%9F%95%B8%EF%B8%8F%20parte%204-Seguridad%20de%20aplicaciones%20web-d63384?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-095%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **4 — Seguridad de aplicaciones web** · 📖 Fuente: *The Web Application Hacker's Handbook (Stuttard & Pinto)*
+> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -22,6 +35,24 @@ Al finalizar, el alumno podrá:
 5. **Recomendar** evitar shells y usar APIs seguras como defensa.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🕸️ Clase 095<br/>Inyección de comandos del<br/>sistema operativo"]
+    C --> T1["1 · Cómo el input llega al<br/>shell"]
+    C --> T2["2 · Metacaracteres de<br/>encadenado"]
+    C --> T3["3 · Command injection ciega"]
+    C --> T4["4 · Detección temporal y OOB"]
+    C --> T5["5 · Reverse shell en lab"]
+    C --> T6["6 · Diferencias Linux/Windows"]
+    C --> T7["7 · Defensa: evitar system(),<br/>allowlists"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

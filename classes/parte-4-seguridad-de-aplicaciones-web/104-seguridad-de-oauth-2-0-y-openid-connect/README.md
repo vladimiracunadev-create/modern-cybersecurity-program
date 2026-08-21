@@ -1,7 +1,20 @@
 # Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect
 
-> Parte: **4 — Seguridad de aplicaciones web** · Fuente: *Bug Bounty Bootcamp (Vickie Li)* / *RFC 6749*
-> ⏱️ Duración estimada: **120 min** · Nivel: **Experto**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 4](https://img.shields.io/badge/%F0%9F%95%B8%EF%B8%8F%20parte%204-Seguridad%20de%20aplicaciones%20web-d63384?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Experto-cf222e?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-104%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **4 — Seguridad de aplicaciones web** · 📖 Fuente: *Bug Bounty Bootcamp (Vickie Li)* / *RFC 6749*
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Experto**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -22,6 +35,24 @@ Al finalizar, el alumno podrá:
 5. **Recomendar** PKCE, `state` y validación estricta de redirect.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🕸️ Clase 104<br/>Seguridad de OAuth 2.0 y<br/>OpenID Connect"]
+    C --> T1["1 · Roles y flujos de OAuth<br/>2.0"]
+    C --> T2["2 · Authorization Code + PKCE"]
+    C --> T3["3 · Validación de redirecturi"]
+    C --> T4["4 · Parámetro state y CSRF"]
+    C --> T5["5 · OIDC e idtoken"]
+    C --> T6["6 · Confusión de tokens/scopes"]
+    C --> T7["7 · Defensas: PKCE, allowlist"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

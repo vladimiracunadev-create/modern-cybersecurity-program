@@ -1,8 +1,16 @@
-# Parte 1 — Redes y seguridad de redes
+# 🌐 Parte 1 — Redes y seguridad de redes
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⏭️ Parte siguiente](../parte-2-criptografia-aplicada/README.md)
 
-**20 clases** · rango 026–045 · Análisis de tráfico, escaneo, firewalls, IDS/IPS, VPN y monitoreo
+<div align="center">
+
+[![Clases](https://img.shields.io/badge/clases-20-1f6feb?style=flat-square)](../README.md)
+[![Rango](https://img.shields.io/badge/rango-026%E2%80%93045-24292f?style=flat-square)](../README.md)
+[![Parte](https://img.shields.io/badge/parte-1%20de%2018-6e7781?style=flat-square)](../README.md)
+
+</div>
+
+Análisis de tráfico, escaneo, firewalls, IDS/IPS, VPN y monitoreo
 
 **Fuentes de referencia de esta parte:**
 
@@ -51,6 +59,24 @@ Al terminar la parte, el alumno podrá:
 Se asume la **Parte 0 — Fundamentos y prerrequisitos**: manejo de línea de comandos Linux, conceptos del modelo OSI/TCP-IP, direccionamiento IP y subredes, y un laboratorio virtualizado (VirtualBox/VMware/KVM) con al menos una VM atacante (Kali/Parrot) y una o dos víctimas aisladas en red interna (host-only). Familiaridad básica con Python ayuda en las clases de scripting.
 
 ## 🗺️ Estructura temática
+
+<!-- arco:inicio -->
+
+```mermaid
+flowchart LR
+    B1["Análisis de tráfico<br/>026–028"]
+    B2["Escaneo y enumeración (Nmap)<br/>029–033"]
+    B3["Defensa perimetral<br/>034–036"]
+    B4["Ataques de red<br/>037–041"]
+    B5["Arquitectura y monitoreo<br/>042–045"]
+    B1 --> B2 --> B3 --> B4 --> B5
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class B1 ini
+    class B5 fin
+```
+
+<!-- arco:fin -->
 
 | Bloque | Clases | Foco |
 |-------|--------|------|

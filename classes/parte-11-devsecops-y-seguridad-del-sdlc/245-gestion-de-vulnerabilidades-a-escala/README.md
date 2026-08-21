@@ -1,7 +1,20 @@
 # Clase 245 — Gestión de vulnerabilidades a escala
 
-> Parte: **11 — DevSecOps y seguridad del SDLC** · Fuente: *Securing DevOps* (Julien Vehent) y NIST SP 800-40r4 (Guide to Enterprise Patch Management)
-> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 11](https://img.shields.io/badge/%F0%9F%94%84%20parte%2011-DevSecOps%20y%20seguridad%20del%20SDLC-2da44e?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-245%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **11 — DevSecOps y seguridad del SDLC** · 📖 Fuente: *Securing DevOps* (Julien Vehent) y NIST SP 800-40r4 (Guide to Enterprise Patch Management)
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -24,6 +37,24 @@ Al finalizar, el alumno podrá:
 5. **Reportar** el estado con métricas útiles para dirección y equipos.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔄 Clase 245<br/>Gestión de vulnerabilidades<br/>a escala"]
+    C --> T1["1 · Ciclo de vida de la<br/>vulnerabilidad"]
+    C --> T2["2 · Consolidación y<br/>deduplicación"]
+    C --> T3["3 · Priorización basada en<br/>riesgo"]
+    C --> T4["4 · SLAs por severidad"]
+    C --> T5["5 · VEX y excepciones"]
+    C --> T6["6 · Métricas del programa"]
+    C --> T7["7 · Herramientas de agregación"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

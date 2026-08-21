@@ -1,7 +1,20 @@
 # Clase 033 — Enumeración de servicios de red
 
-> Parte: **1 — Redes y seguridad de redes** · Fuente: *The Hacker Playbook / OSCP methodology; docs oficiales de cada servicio*
-> ⏱️ Duración estimada: **130 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 1](https://img.shields.io/badge/%F0%9F%8C%90%20parte%201-Redes%20y%20seguridad%20de%20redes-1f6feb?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-130%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-033%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **1 — Redes y seguridad de redes** · 📖 Fuente: *The Hacker Playbook / OSCP methodology; docs oficiales de cada servicio*
+> ⏱️ Duración estimada: **130 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -21,6 +34,24 @@ Al finalizar, el alumno podrá:
 6. **Priorizar** vectores según el valor de la información obtenida.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🌐 Clase 033<br/>Enumeración de servicios de<br/>red"]
+    C --> T1["1 · Metodología de enumeración"]
+    C --> T2["2 · SMB (139/445)"]
+    C --> T3["3 · HTTP/HTTPS (80/443)"]
+    C --> T4["4 · DNS (53)"]
+    C --> T5["5 · SNMP (161/udp)"]
+    C --> T6["6 · SMTP (25)"]
+    C --> T7["7 · FTP/LDAP"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

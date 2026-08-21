@@ -1,7 +1,20 @@
 # Clase 044 — Zeek para análisis de red a gran escala
 
-> Parte: **1 — Redes y seguridad de redes** · Fuente: *Documentación de Zeek; Applied NSM, Sanders & Smith*
-> ⏱️ Duración estimada: **130 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 1](https://img.shields.io/badge/%F0%9F%8C%90%20parte%201-Redes%20y%20seguridad%20de%20redes-1f6feb?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-130%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-044%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **1 — Redes y seguridad de redes** · 📖 Fuente: *Documentación de Zeek; Applied NSM, Sanders & Smith*
+> ⏱️ Duración estimada: **130 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -21,6 +34,24 @@ Al finalizar, el alumno podrá:
 6. **Integrar** la salida de Zeek en un pipeline de análisis/NSM.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🌐 Clase 044<br/>Zeek para análisis de red a<br/>gran escala"]
+    C --> T1["1 · Arquitectura de Zeek<br/>(eventos)"]
+    C --> T2["2 · Logs de Zeek y sus campos"]
+    C --> T3["3 · zeek-cut y análisis por<br/>CLI"]
+    C --> T4["4 · Extracción de archivos"]
+    C --> T5["5 · Zeek scripting y eventos"]
+    C --> T6["6 · Notices y framework de<br/>detección"]
+    C --> T7["7 · Zeek en producción<br/>(clusters)"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

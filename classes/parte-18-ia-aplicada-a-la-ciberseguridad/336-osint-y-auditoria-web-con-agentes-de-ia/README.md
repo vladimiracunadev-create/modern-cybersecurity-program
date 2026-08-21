@@ -1,7 +1,20 @@
 # Clase 336 — OSINT y auditoría web con agentes de IA
 
-> Parte: **18 — IA aplicada a la ciberseguridad** · Fuente: kali-mcp (MIT) · OWASP WSTG
-> ⏱️ Duración estimada: **100 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 18](https://img.shields.io/badge/%F0%9F%A7%A0%20parte%2018-IA%20aplicada%20a%20la%20ciberseguridad-7c5cff?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-336%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **18 — IA aplicada a la ciberseguridad** · 📖 Fuente: kali-mcp (MIT) · OWASP WSTG
+> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -25,6 +38,22 @@ Al finalizar, el alumno podrá:
 5. **Sintetizar** los resultados en evidencia utilizable.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧠 Clase 336<br/>OSINT y auditoría web con<br/>agentes de IA"]
+    C --> T1["1 · OSINT asistido<br/>(kali-osint)"]
+    C --> T2["2 · Límites legales del OSINT"]
+    C --> T3["3 · Auditoría web<br/>(kali-web-audit,<br/>kali-wp-audit)"]
+    C --> T4["4 · Falsos positivos"]
+    C --> T5["5 · Síntesis de evidencia"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|---|---|

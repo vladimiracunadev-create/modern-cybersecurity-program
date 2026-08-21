@@ -1,7 +1,20 @@
 # Clase 099 — Server-Side Request Forgery (SSRF)
 
-> Parte: **4 — Seguridad de aplicaciones web** · Fuente: *Real-World Bug Hunting (Yaworski)* / *OWASP Top 10 A10*
-> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 4](https://img.shields.io/badge/%F0%9F%95%B8%EF%B8%8F%20parte%204-Seguridad%20de%20aplicaciones%20web-d63384?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-099%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **4 — Seguridad de aplicaciones web** · 📖 Fuente: *Real-World Bug Hunting (Yaworski)* / *OWASP Top 10 A10*
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -22,6 +35,24 @@ Al finalizar, el alumno podrá:
 5. **Evadir** filtros de URL débiles y recomendar defensas robustas.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🕸️ Clase 099<br/>Server-Side Request Forgery<br/>(SSRF)"]
+    C --> T1["1 · Qué es SSRF y su<br/>superficie"]
+    C --> T2["2 · SSRF a servicios internos"]
+    C --> T3["3 · Metadata cloud<br/>(169.254.169.254)"]
+    C --> T4["4 · SSRF ciega y OOB"]
+    C --> T5["5 · Bypass de filtros de URL"]
+    C --> T6["6 · Esquemas alternativos<br/>(file://, gopher://)"]
+    C --> T7["7 · Defensa: allowlist, sin<br/>redirecciones"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

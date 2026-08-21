@@ -1,7 +1,20 @@
 # Clase 105 — Control de acceso roto: IDOR y path traversal
 
-> Parte: **4 — Seguridad de aplicaciones web** · Fuente: *Real-World Bug Hunting (Yaworski)* / *OWASP Top 10 A01*
-> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 4](https://img.shields.io/badge/%F0%9F%95%B8%EF%B8%8F%20parte%204-Seguridad%20de%20aplicaciones%20web-d63384?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-105%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **4 — Seguridad de aplicaciones web** · 📖 Fuente: *Real-World Bug Hunting (Yaworski)* / *OWASP Top 10 A01*
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -22,6 +35,24 @@ Al finalizar, el alumno podrá:
 5. **Recomendar** autorización a nivel de objeto y validación de rutas.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🕸️ Clase 105<br/>Control de acceso roto"]
+    C --> T1["1 · Autorización vertical vs.<br/>horizontal"]
+    C --> T2["2 · IDOR clásico"]
+    C --> T3["3 · IDOR con identificadores<br/>no obvios"]
+    C --> T4["4 · Forced browsing a<br/>funciones admin"]
+    C --> T5["5 · Path/directory traversal"]
+    C --> T6["6 · Métodos y verbos HTTP"]
+    C --> T7["7 · Defensa: authz por objeto"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,7 +1,20 @@
 # Clase 188 — Threat hunting: metodología
 
-> Parte: **8 — Blue Team, detección y SOC** · Fuente: *The Practice of Network Security Monitoring* — Richard Bejtlich
-> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 8](https://img.shields.io/badge/%F0%9F%94%B5%20parte%208-Blue%20Team%2C%20detecci%C3%B3n%20y%20SOC-0969da?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-188%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **8 — Blue Team, detección y SOC** · 📖 Fuente: *The Practice of Network Security Monitoring* — Richard Bejtlich
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Documentar** una cacería de forma reproducible.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔵 Clase 188<br/>Threat hunting"]
+    C --> T1["1 · Qué es (y qué no es) el<br/>hunting"]
+    C --> T2["2 · Hunting basado en<br/>hipótesis"]
+    C --> T3["3 · Modelo de madurez de caza<br/>(HMM)"]
+    C --> T4["4 · Marcos TaHiTI y PEAK"]
+    C --> T5["5 · Fuentes de hipótesis<br/>(ATT&CK, intel, anomalías)"]
+    C --> T6["6 · Baselining y análisis de<br/>outliers"]
+    C --> T7["7 · De hallazgo a detección"]
+    C --> T8["8 · Documentación y métricas<br/>de caza"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,7 +1,20 @@
 # Clase 294 — Robo y extracción de modelos
 
-> Parte: **15 — Seguridad de IA y machine learning** · Fuente: *Tramèr et al., "Stealing Machine Learning Models via Prediction APIs" (USENIX Security 2016)*
-> ⏱️ Duración estimada: **110 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 15](https://img.shields.io/badge/%F0%9F%A7%AA%20parte%2015-Seguridad%20de%20IA%20y%20machine%20learning-bf3989?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-294%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **15 — Seguridad de IA y machine learning** · 📖 Fuente: *Tramèr et al., "Stealing Machine Learning Models via Prediction APIs" (USENIX Security 2016)*
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -22,6 +35,24 @@ Al finalizar, el alumno podrá:
 5. **Aplicar** defensas: limitación de consultas, salida con menos información, ruido, watermarking y privacidad diferencial.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧪 Clase 294<br/>Robo y extracción de modelos"]
+    C --> T1["1 · Model extraction /<br/>stealing"]
+    C --> T2["2 · Modelo sustituto y<br/>transferibilidad"]
+    C --> T3["3 · Model inversion"]
+    C --> T4["4 · Membership inference"]
+    C --> T5["5 · Superficie de la API:<br/>confidencias vs. etiquetas"]
+    C --> T6["6 · Defensas de salida y de<br/>tasa"]
+    C --> T7["7 · Watermarking y privacidad<br/>diferencial"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

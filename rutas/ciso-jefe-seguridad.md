@@ -14,6 +14,20 @@
 > sistemas, servicios digitales y continuidad— tiene su propia guía:
 > **[CISO / Director de Seguridad de la Información](ciso.md)**.
 
+
+<!-- insignias:inicio -->
+
+<div align="center">
+
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-no%20es%20un%20primer%20empleo-1f6feb?style=flat-square)](README.md)
+[![Foco](https://img.shields.io/badge/%F0%9F%8E%AF%20foco-estrategia-6e7781?style=flat-square)](README.md)
+[![Certificación](https://img.shields.io/badge/%F0%9F%8E%93%20certi-CISSP-2e8b57?style=flat-square)](../certificaciones/README.md)
+[![Partes](https://img.shields.io/badge/%F0%9F%97%82%EF%B8%8F%20partes-7-e8590c?style=flat-square)](../classes/README.md)
+
+</div>
+
+<!-- insignias:fin -->
+
 ## 🧭 Qué es y por qué importa
 
 Es el primer rol de este programa donde **diriges personas y respondes por resultados**, no por
@@ -155,6 +169,26 @@ Aquí es donde de verdad se decide si sirves para el puesto:
   lo que no se puede demostrar no existe.
 
 ## 📚 Tu ruta en el programa
+
+<!-- recorrido:inicio -->
+
+```mermaid
+flowchart LR
+    P0["🧱 Parte 0<br/>Fundamentos"]
+    P14["📋 Parte 14<br/>GRC"]
+    P17["📈 Parte 17<br/>Profundización"]
+    P8["🔵 Parte 8<br/>Blue Team / SOC"]
+    P9["🔬 Parte 9<br/>DFIR"]
+    P1["🌐 Parte 1<br/>Redes"]
+    P3["🎯 Parte 3<br/>Pentesting"]
+    P0 --> P14 --> P17 --> P8 --> P9 --> P1 --> P3
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class P0 ini
+    class P3 fin
+```
+
+<!-- recorrido:fin -->
 
 **Este rol no se estudia desde cero.** Se llega con una base técnica previa —típicamente desde
 [SOC / Blue Team](soc-blue-team.md), [gestión de vulnerabilidades](gestion-vulnerabilidades.md),

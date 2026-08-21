@@ -1,7 +1,20 @@
 # Clase 235 — Respuesta a incidentes en la nube
 
-> Parte: **10 — Seguridad en la nube y contenedores** · Fuente: *NIST SP 800-61 Computer Security Incident Handling Guide y AWS Security Incident Response Guide*
-> ⏱️ Duración estimada: **130 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 10](https://img.shields.io/badge/%E2%98%81%EF%B8%8F%20parte%2010-Seguridad%20en%20la%20nube%20y%20contenedores-0a7ea4?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-130%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-235%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **10 — Seguridad en la nube y contenedores** · 📖 Fuente: *NIST SP 800-61 Computer Security Incident Handling Guide y AWS Security Incident Response Guide*
+> ⏱️ Duración estimada: **130 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -23,6 +36,24 @@ Al finalizar, el alumno podrá:
 5. **Documentar** un playbook reutilizable y las lecciones aprendidas.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["☁️ Clase 235<br/>Respuesta a incidentes en la<br/>nube"]
+    C --> T1["1 · Ciclo NIST aplicado a la<br/>nube"]
+    C --> T2["2 · Preparación: roles,<br/>permisos, runbooks"]
+    C --> T3["3 · Contención de identidad"]
+    C --> T4["4 · Aislamiento de recursos"]
+    C --> T5["5 · Adquisición de evidencia"]
+    C --> T6["6 · Erradicación y<br/>recuperación con IaC"]
+    C --> T7["7 · Post-incidente y lecciones"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

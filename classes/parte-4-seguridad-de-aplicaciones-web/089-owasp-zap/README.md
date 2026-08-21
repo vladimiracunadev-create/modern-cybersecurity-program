@@ -1,7 +1,20 @@
 # Clase 089 — OWASP ZAP
 
-> Parte: **4 — Seguridad de aplicaciones web** · Fuente: *OWASP ZAP Documentation* / *Web Security Testing Guide*
-> ⏱️ Duración estimada: **90 min** · Nivel: **Fundamentos**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 4](https://img.shields.io/badge/%F0%9F%95%B8%EF%B8%8F%20parte%204-Seguridad%20de%20aplicaciones%20web-d63384?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-089%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **4 — Seguridad de aplicaciones web** · 📖 Fuente: *OWASP ZAP Documentation* / *Web Security Testing Guide*
+> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Fundamentos**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,24 @@ Al finalizar, el alumno podrá:
 5. **Comparar** ZAP y Burp para elegir la herramienta según el caso.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🕸️ Clase 089<br/>OWASP ZAP"]
+    C --> T1["1 · Proxy y certificado ZAP"]
+    C --> T2["2 · Spider tradicional vs.<br/>AJAX spider"]
+    C --> T3["3 · Passive vs. active scan"]
+    C --> T4["4 · Alertas y niveles de<br/>riesgo"]
+    C --> T5["5 · Automation Framework y<br/>baseline"]
+    C --> T6["6 · Contextos y autenticación"]
+    C --> T7["7 · ZAP vs. Burp"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

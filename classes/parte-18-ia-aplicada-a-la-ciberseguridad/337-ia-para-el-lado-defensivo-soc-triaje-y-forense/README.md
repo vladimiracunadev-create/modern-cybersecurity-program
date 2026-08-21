@@ -1,7 +1,20 @@
 # Clase 337 — IA para el lado defensivo: SOC, triaje y forense
 
-> Parte: **18 — IA aplicada a la ciberseguridad** · Fuente: OWASP LLM · prácticas de SOC/DFIR (Partes 8–9)
-> ⏱️ Duración estimada: **100 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 18](https://img.shields.io/badge/%F0%9F%A7%A0%20parte%2018-IA%20aplicada%20a%20la%20ciberseguridad-7c5cff?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-337%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **18 — IA aplicada a la ciberseguridad** · 📖 Fuente: OWASP LLM · prácticas de SOC/DFIR (Partes 8–9)
+> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -22,6 +35,22 @@ Al finalizar, el alumno podrá:
 5. **Apoyar** el análisis forense (resúmenes, hipótesis) sin sustituir la evidencia.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧠 Clase 337<br/>IA para el lado defensivo"]
+    C --> T1["1 · Resumen de alertas"]
+    C --> T2["2 · Correlación asistida"]
+    C --> T3["3 · Riesgo de falso negativo"]
+    C --> T4["4 · Analista en el bucle"]
+    C --> T5["5 · Apoyo forense"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|---|---|

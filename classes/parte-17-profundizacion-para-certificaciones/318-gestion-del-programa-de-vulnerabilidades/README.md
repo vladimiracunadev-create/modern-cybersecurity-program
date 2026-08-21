@@ -1,7 +1,20 @@
 # Clase 318 — Gestión del programa de vulnerabilidades
 
-> Parte: **17 — Profundización para certificaciones** · Fuente: *CompTIA CySA+ (CS0-003) Study Guide — Chapple & Seidl* · *NIST SP 800-40 Rev.4*
-> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 17](https://img.shields.io/badge/%F0%9F%93%88%20parte%2017-Profundizaci%C3%B3n%20para%20certificaciones-116329?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-318%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **17 — Profundización para certificaciones** · 📖 Fuente: *CompTIA CySA+ (CS0-003) Study Guide — Chapple & Seidl* · *NIST SP 800-40 Rev.4*
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Diseñar** un pipeline de VM con roles, cadencia y flujo de excepciones.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["📈 Clase 318<br/>Gestión del programa de<br/>vulnerabilidades"]
+    C --> T1["1 · Ciclo de vida de VM"]
+    C --> T2["2 · Inventario y cobertura de<br/>activos"]
+    C --> T3["3 · Descubrimiento: escaneo<br/>autenticado vs no<br/>autenticado"]
+    C --> T4["4 · CVSS<br/>(Base/Temporal/Environmental)"]
+    C --> T5["5 · EPSS"]
+    C --> T6["6 · CISA KEV"]
+    C --> T7["7 · SLAs de remediación y<br/>excepciones"]
+    C --> T8["8 · Métricas y madurez del<br/>programa"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

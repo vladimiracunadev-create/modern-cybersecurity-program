@@ -1,7 +1,20 @@
 # Clase 009 — PowerShell para seguridad ofensiva y defensiva
 
-> Parte: **0 — Fundamentos y prerrequisitos** · Fuente: *Microsoft PowerShell Documentation*
-> ⏱️ Duración estimada: **110 min** · Nivel: **Fundamentos**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 0](https://img.shields.io/badge/%F0%9F%A7%B1%20parte%200-Fundamentos%20y%20prerrequisitos-2e8b57?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-009%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **0 — Fundamentos y prerrequisitos** · 📖 Fuente: *Microsoft PowerShell Documentation*
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Fundamentos**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Escribir** un script de recolección para respuesta a incidentes.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧱 Clase 009<br/>PowerShell para seguridad<br/>ofensiva y defensiva"]
+    C --> T1["1 · Cmdlets y verbo-nombre"]
+    C --> T2["2 · Pipeline de objetos"]
+    C --> T3["3 · Get-Help/Get-Member"]
+    C --> T4["4 · Consulta del sistema"]
+    C --> T5["5 · Uso ofensivo"]
+    C --> T6["6 · Execution Policy"]
+    C --> T7["7 · Logging y AMSI"]
+    C --> T8["8 · Constrained Language Mode"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

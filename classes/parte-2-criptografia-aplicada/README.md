@@ -1,8 +1,16 @@
-# Parte 2 — Criptografía aplicada
+# 🔐 Parte 2 — Criptografía aplicada
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⏭️ Parte siguiente](../parte-3-hacking-etico-y-pentesting-metodologia/README.md)
 
-**20 clases** · rango 046–065 · Simétrica, asimétrica, hashing, PKI, TLS y criptoanálisis
+<div align="center">
+
+[![Clases](https://img.shields.io/badge/clases-20-6f42c1?style=flat-square)](../README.md)
+[![Rango](https://img.shields.io/badge/rango-046%E2%80%93065-24292f?style=flat-square)](../README.md)
+[![Parte](https://img.shields.io/badge/parte-2%20de%2018-6e7781?style=flat-square)](../README.md)
+
+</div>
+
+Simétrica, asimétrica, hashing, PKI, TLS y criptoanálisis
 
 **Fuentes de referencia de esta parte:**
 
@@ -51,6 +59,28 @@ Al terminar la parte, podrás:
 Se asume haber cursado la **Parte 1 — Redes y seguridad de redes** (modelo TCP/IP, TLS a nivel de red, captura con Wireshark). Conviene manejar la línea de comandos de Linux, Python básico y aritmética modular a nivel intuitivo. No se requieren matemáticas avanzadas: los conceptos numéricos se introducen con analogías y ejemplos ejecutables.
 
 ## 🗺️ Estructura temática
+
+<!-- arco:inicio -->
+
+```mermaid
+flowchart TD
+    B1["Fundamentos<br/>046"]
+    B2["Cifrado simétrico<br/>047–048"]
+    B3["Cifrado asimétrico<br/>049–050"]
+    B4["Integridad y autenticación<br/>051–052"]
+    B5["Protocolos de clave<br/>053–054"]
+    B6["Infraestructura<br/>055–056"]
+    B7["Robustez práctica<br/>057–059"]
+    B8["Ataques y análisis<br/>060–061"]
+    B9["Frontera y operación<br/>062–065"]
+    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class B1 ini
+    class B9 fin
+```
+
+<!-- arco:fin -->
 
 | Bloque | Clases | Contenido |
 |--------|--------|-----------|

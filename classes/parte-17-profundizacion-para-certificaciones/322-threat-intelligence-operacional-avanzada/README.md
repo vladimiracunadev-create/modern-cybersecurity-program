@@ -1,7 +1,20 @@
 # Clase 322 — Threat intelligence operacional avanzada
 
-> Parte: **17 — Profundización para certificaciones** · Fuente: *Blue Team Level 1 (BTL1) — Threat Intelligence* · *CompTIA CySA+ (CS0-003)* · *SANS FOR578*
-> ⏱️ Duración estimada: **140 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 17](https://img.shields.io/badge/%F0%9F%93%88%20parte%2017-Profundizaci%C3%B3n%20para%20certificaciones-116329?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-140%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-322%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **17 — Profundización para certificaciones** · 📖 Fuente: *Blue Team Level 1 (BTL1) — Threat Intelligence* · *CompTIA CySA+ (CS0-003)* · *SANS FOR578*
+> ⏱️ Duración estimada: **140 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Aplicar** el Diamond Model para caracterizar una intrusión (adversario, capacidad, infraestructura, víctima).
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["📈 Clase 322<br/>Threat intelligence<br/>operacional avanzada"]
+    C --> T1["1 · Ciclo de inteligencia (6<br/>fases)"]
+    C --> T2["2 · Niveles: estratégico,<br/>operacional, táctico"]
+    C --> T3["3 · IOC vs IOA"]
+    C --> T4["4 · Pyramid of Pain"]
+    C --> T5["5 · Feeds, TIP y estándares<br/>(STIX/TAXII)"]
+    C --> T6["6 · MISP en operación"]
+    C --> T7["7 · MITRE ATT&CK y mapeo"]
+    C --> T8["8 · Diamond Model"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

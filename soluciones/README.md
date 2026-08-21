@@ -6,6 +6,22 @@ Claves de referencia para los **ejercicios** y **retos verificables** de las cla
 > desatascarte, no para copiar. En seguridad se aprende haciendo; mirar la respuesta antes de
 > intentarlo desperdicia el ejercicio.
 
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![soluciones](https://img.shields.io/badge/soluciones-por%20lotes-0969da?style=for-the-badge)](README.md)
+[![retos CTF](https://img.shields.io/badge/retos%20CTF-6%20categor%C3%ADas-e8590c?style=for-the-badge)](../ctf/README.md)
+
+[⬅️ Volver al programa](../README.md) ·
+[📚 Índice de clases](../classes/README.md) ·
+[🚩 Retos CTF](../ctf/README.md) ·
+[🧪 Laboratorios](../labs/README.md)
+
+</div>
+
+<!-- cabecera:fin -->
+
 ## Disponibles
 
 | Parte | Soluciones | Estado |

@@ -1,8 +1,16 @@
-# Parte 10 — Seguridad en la nube y contenedores
+# ☁️ Parte 10 — Seguridad en la nube y contenedores
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⏭️ Parte siguiente](../parte-11-devsecops-y-seguridad-del-sdlc/README.md)
 
-**15 clases** · rango 221–235 · AWS, Azure, GCP, IAM, Docker, Kubernetes e IaC
+<div align="center">
+
+[![Clases](https://img.shields.io/badge/clases-15-0a7ea4?style=flat-square)](../README.md)
+[![Rango](https://img.shields.io/badge/rango-221%E2%80%93235-24292f?style=flat-square)](../README.md)
+[![Parte](https://img.shields.io/badge/parte-10%20de%2018-6e7781?style=flat-square)](../README.md)
+
+</div>
+
+AWS, Azure, GCP, IAM, Docker, Kubernetes e IaC
 
 **Fuentes de referencia de esta parte:**
 
@@ -67,6 +75,27 @@ Al terminar la parte, el alumno podrá:
 - Manejo de línea de comandos Linux, Docker básico y nociones de HTTP/APIs REST.
 
 ## 🗺️ Estructura temática
+
+<!-- arco:inicio -->
+
+```mermaid
+flowchart TD
+    B1["Fundamentos e identidad<br/>221–222"]
+    B2["Seguridad por proveedor<br/>223–225"]
+    B3["Ofensiva cloud<br/>226"]
+    B4["Contenedores<br/>227"]
+    B5["Kubernetes<br/>228–229"]
+    B6["Automatización y postura<br/>230–231"]
+    B7["Cargas modernas<br/>232–233"]
+    B8["Operación y defensa<br/>234–235"]
+    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class B1 ini
+    class B8 fin
+```
+
+<!-- arco:fin -->
 
 | Bloque | Clases | Foco |
 |--------|--------|------|

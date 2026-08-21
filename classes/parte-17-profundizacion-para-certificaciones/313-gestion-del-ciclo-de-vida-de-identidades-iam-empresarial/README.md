@@ -1,7 +1,20 @@
 # Clase 313 — Gestión del ciclo de vida de identidades (IAM empresarial)
 
-> Parte: **17 — Profundización para certificaciones** · Fuente: *(ISC)² CISSP Official Study Guide — Dominio 5: Identity and Access Management*
-> ⏱️ Duración estimada: **100 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 17](https://img.shields.io/badge/%F0%9F%93%88%20parte%2017-Profundizaci%C3%B3n%20para%20certificaciones-116329?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-313%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **17 — Profundización para certificaciones** · 📖 Fuente: *(ISC)² CISSP Official Study Guide — Dominio 5: Identity and Access Management*
+> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -25,6 +38,25 @@ Al finalizar, el alumno podrá:
 6. **Integrar** aprovisionamiento automatizado (SCIM/IGA) con RR. HH. como fuente autoritativa.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["📈 Clase 313<br/>Gestión del ciclo de vida de<br/>identidades (IAM…"]
+    C --> T1["1 · IAAA (los cuatro pilares)"]
+    C --> T2["2 · Ciclo de vida de la<br/>identidad"]
+    C --> T3["3 · Joiner–Mover–Leaver"]
+    C --> T4["4 · Aprovisionamiento /<br/>desaprovisionamiento"]
+    C --> T5["5 · Modelos: DAC/MAC/RBAC/ABAC"]
+    C --> T6["6 · Mínimo privilegio y SoD"]
+    C --> T7["7 · Revisiones y<br/>recertificación de acceso"]
+    C --> T8["8 · Cuentas de servicio y no<br/>humanas"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

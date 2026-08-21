@@ -1,7 +1,20 @@
 # Clase 023 — Sistemas operativos: procesos, memoria y syscalls
 
-> Parte: **0 — Fundamentos y prerrequisitos** · Fuente: *Tanenbaum & Bos, Modern Operating Systems*
-> ⏱️ Duración estimada: **110 min** · Nivel: **Fundamentos**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 0](https://img.shields.io/badge/%F0%9F%A7%B1%20parte%200-Fundamentos%20y%20prerrequisitos-2e8b57?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-023%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **0 — Fundamentos y prerrequisitos** · 📖 Fuente: *Tanenbaum & Bos, Modern Operating Systems*
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Fundamentos**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Relacionar** estos mecanismos con técnicas de ataque y detección.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧱 Clase 023<br/>Sistemas operativos"]
+    C --> T1["1 · Procesos e hilos"]
+    C --> T2["2 · Estados y planificación"]
+    C --> T3["3 · Layout de memoria"]
+    C --> T4["4 · Memoria virtual"]
+    C --> T5["5 · Modo usuario/kernel"]
+    C --> T6["6 · Syscalls"]
+    C --> T7["7 · Herramientas de traza"]
+    C --> T8["8 · Relevancia ofensiva"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

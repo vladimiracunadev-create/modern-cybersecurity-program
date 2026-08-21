@@ -1,7 +1,20 @@
 # Clase 115 — Secure coding y defensa de aplicaciones web
 
-> Parte: **4 — Seguridad de aplicaciones web** · Fuente: *OWASP ASVS* / *OWASP Cheat Sheet Series*
-> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 4](https://img.shields.io/badge/%F0%9F%95%B8%EF%B8%8F%20parte%204-Seguridad%20de%20aplicaciones%20web-d63384?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-115%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **4 — Seguridad de aplicaciones web** · 📖 Fuente: *OWASP ASVS* / *OWASP Cheat Sheet Series*
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,24 @@ Al finalizar, el alumno podrá:
 5. **Evaluar** una aplicación contra un checklist de secure coding.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🕸️ Clase 115<br/>Secure coding y defensa de<br/>aplicaciones web"]
+    C --> T1["1 · Principios de diseño<br/>seguro"]
+    C --> T2["2 · Defensas por categoría<br/>OWASP"]
+    C --> T3["3 · Validación y codificación<br/>de salida"]
+    C --> T4["4 · Cabeceras de seguridad"]
+    C --> T5["5 · Gestión segura de secretos<br/>y dependencias"]
+    C --> T6["6 · SAST/DAST/SCA en CI/CD"]
+    C --> T7["7 · OWASP ASVS como checklist"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

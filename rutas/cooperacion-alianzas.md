@@ -9,6 +9,20 @@
 > diplomáticas y de gestión) · **Foco:** cooperación técnica, threat intel sharing,
 > alianzas interinstitucionales y capacity building · **Certificación faro:** CISSP / ISO 27001
 
+
+<!-- insignias:inicio -->
+
+<div align="center">
+
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-junior--intermedio-1f6feb?style=flat-square)](README.md)
+[![Foco](https://img.shields.io/badge/%F0%9F%8E%AF%20foco-cooperaci%C3%B3n%20t%C3%A9cnica-6e7781?style=flat-square)](README.md)
+[![Certificación](https://img.shields.io/badge/%F0%9F%8E%93%20certi-CISSP%20%2F%20ISO%2027001-2e8b57?style=flat-square)](../certificaciones/README.md)
+[![Partes](https://img.shields.io/badge/%F0%9F%97%82%EF%B8%8F%20partes-4-e8590c?style=flat-square)](../classes/README.md)
+
+</div>
+
+<!-- insignias:fin -->
+
 ## 🧭 Qué es y por qué importa
 
 Este no es un puesto técnico-ofensivo. No haces pentesting, no cazas amenazas en un SIEM
@@ -109,6 +123,23 @@ Aquí está el corazón del puesto. En la mayoría de los roles de este programa
   leer el contexto es una competencia, no un adorno.
 
 ## 📚 Tu ruta en el programa
+
+<!-- recorrido:inicio -->
+
+```mermaid
+flowchart LR
+    P0["🧱 Parte 0<br/>Fundamentos"]
+    P14["📋 Parte 14<br/>GRC"]
+    P1["🌐 Parte 1<br/>Redes"]
+    P8["🔵 Parte 8<br/>Blue Team / SOC"]
+    P0 --> P14 --> P1 --> P8
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class P0 ini
+    class P8 fin
+```
+
+<!-- recorrido:fin -->
 
 Este programa te da la **base técnica y de GRC** del puesto: el vocabulario y la credibilidad.
 Las competencias de cooperación, diplomacia, idiomas y gestión documental las traes tú (ver la

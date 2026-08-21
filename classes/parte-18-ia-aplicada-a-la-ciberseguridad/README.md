@@ -1,8 +1,16 @@
-# Parte 18 — IA aplicada a la ciberseguridad
+# 🧠 Parte 18 — IA aplicada a la ciberseguridad
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md)
 
-**10 clases** · rango 331–340 · LLMs y agentes de IA para hacer seguridad: MCP, kali-mcp, pentesting asistido, defensa, informes, guardrails y ética
+<div align="center">
+
+[![Clases](https://img.shields.io/badge/clases-10-7c5cff?style=flat-square)](../README.md)
+[![Rango](https://img.shields.io/badge/rango-331%E2%80%93340-24292f?style=flat-square)](../README.md)
+[![Parte](https://img.shields.io/badge/parte-18%20de%2018-6e7781?style=flat-square)](../README.md)
+
+</div>
+
+LLMs y agentes de IA para hacer seguridad: MCP, kali-mcp, pentesting asistido, defensa, informes, guardrails y ética
 
 **Fuentes de referencia de esta parte:**
 
@@ -60,6 +68,23 @@ Haber cursado la base ofensiva (Partes 3–7) y defensiva (Partes 8–9), la [Pa
 y el [appsec-web](../../labs/appsec-web/README.md) sirven como objetivos autorizados.
 
 ## 🗺️ Estructura temática
+
+<!-- arco:inicio -->
+
+```mermaid
+flowchart LR
+    B1["Fundamentos: LLMs y MCP<br/>331–332"]
+    B2["kali-mcp y ofensiva asistida<br/>333–336"]
+    B3["IA defensiva e informes<br/>337–338"]
+    B4["Riesgos, ética y capstone<br/>339–340"]
+    B1 --> B2 --> B3 --> B4
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class B1 ini
+    class B4 fin
+```
+
+<!-- arco:fin -->
 
 | Bloque | Clases | Enfoque |
 |---|---|---|

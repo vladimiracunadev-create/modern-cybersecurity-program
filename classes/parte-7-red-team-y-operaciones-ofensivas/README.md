@@ -1,8 +1,16 @@
-# Parte 7 — Red Team y operaciones ofensivas
+# 🔴 Parte 7 — Red Team y operaciones ofensivas
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⬅️ Parte anterior](../parte-6-analisis-de-malware/README.md) · [⏭️ Parte siguiente](../parte-8-blue-team-deteccion-y-soc/README.md)
 
-**20 clases** · rango 161–180 · Adversary emulation, C2, evasión de EDR y Active Directory
+<div align="center">
+
+[![Clases](https://img.shields.io/badge/clases-20-cf222e?style=flat-square)](../README.md)
+[![Rango](https://img.shields.io/badge/rango-161%E2%80%93180-24292f?style=flat-square)](../README.md)
+[![Parte](https://img.shields.io/badge/parte-7%20de%2018-6e7781?style=flat-square)](../README.md)
+
+</div>
+
+Adversary emulation, C2, evasión de EDR y Active Directory
 
 **Fuentes de referencia de esta parte:**
 
@@ -56,6 +64,24 @@ Al terminar la parte, el alumno podrá:
 - Un laboratorio virtualizado con capacidad para un dominio AD (recomendado: GOAD o un DC + 2 workstations).
 
 ## 🗺️ Estructura temática
+
+<!-- arco:inicio -->
+
+```mermaid
+flowchart LR
+    B1["Fundamentos y planificación<br/>161–163"]
+    B2["Infraestructura y entrega<br/>164–167"]
+    B3["Evasión de defensas<br/>168–169"]
+    B4["Active Directory<br/>170–175"]
+    B5["Operación y cierre<br/>176–180"]
+    B1 --> B2 --> B3 --> B4 --> B5
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class B1 ini
+    class B5 fin
+```
+
+<!-- arco:fin -->
 
 | Bloque | Clases | Tema |
 |--------|--------|------|

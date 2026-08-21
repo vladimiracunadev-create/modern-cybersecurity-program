@@ -1,7 +1,20 @@
 # Clase 140 — CTFs de pwn e ingeniería inversa
 
-> Parte: **5 — Explotación de sistemas y binarios** · Fuente: comunidad CTF · docs pwntools · writeups públicos
-> ⏱️ Duración estimada: **130 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 5](https://img.shields.io/badge/%F0%9F%92%A5%20parte%205-Explotaci%C3%B3n%20de%20sistemas%20y%20binarios-b02a37?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-130%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-140%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **5 — Explotación de sistemas y binarios** · 📖 Fuente: comunidad CTF · docs pwntools · writeups públicos
+> ⏱️ Duración estimada: **130 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -26,6 +39,25 @@ Al finalizar, el alumno podrá:
 5. **Aprender** de writeups y documentar sus propias soluciones.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["💥 Clase 140<br/>CTFs de pwn e ingeniería<br/>inversa"]
+    C --> T1["1 · Formato de CTF<br/>(jeopardy/attack-defense)"]
+    C --> T2["2 · Categorías pwn/rev y su<br/>solapamiento"]
+    C --> T3["3 · Triage rápido de un reto"]
+    C --> T4["4 · Plantilla pwntools<br/>local/remoto"]
+    C --> T5["5 · Conexión remota y flag"]
+    C --> T6["6 · Gestión de libc del reto"]
+    C --> T7["7 · Writeups y aprendizaje"]
+    C --> T8["8 · Plataformas de práctica"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 | --- | --- | --- |

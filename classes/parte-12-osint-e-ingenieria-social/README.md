@@ -1,8 +1,16 @@
-# Parte 12 — OSINT e ingeniería social
+# 🕵️ Parte 12 — OSINT e ingeniería social
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⏭️ Parte siguiente](../parte-13-seguridad-movil-iot-e-inalambrica/README.md)
 
-**12 clases** · rango 249–260 · Inteligencia de fuentes abiertas, phishing y OPSEC personal
+<div align="center">
+
+[![Clases](https://img.shields.io/badge/clases-12-6e7781?style=flat-square)](../README.md)
+[![Rango](https://img.shields.io/badge/rango-249%E2%80%93260-24292f?style=flat-square)](../README.md)
+[![Parte](https://img.shields.io/badge/parte-12%20de%2018-6e7781?style=flat-square)](../README.md)
+
+</div>
+
+Inteligencia de fuentes abiertas, phishing y OPSEC personal
 
 **Fuentes de referencia de esta parte:**
 
@@ -67,6 +75,25 @@ Al terminar la parte, el alumno podrá:
 - Nociones de la Parte 11 (DevSecOps) ayudan a contextualizar filtraciones en repositorios.
 
 ## 🗺️ Estructura temática
+
+<!-- arco:inicio -->
+
+```mermaid
+flowchart TD
+    B1["Metodología OSINT<br/>249"]
+    B2["OSINT por objetivo<br/>250–252"]
+    B3["OSINT visual y técnico<br/>253–254"]
+    B4["Automatización<br/>255"]
+    B5["Ingeniería social<br/>256–258"]
+    B6["Defensa y anonimato<br/>259–260"]
+    B1 --> B2 --> B3 --> B4 --> B5 --> B6
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class B1 ini
+    class B6 fin
+```
+
+<!-- arco:fin -->
 
 | Bloque | Clases | Enfoque |
 |--------|--------|---------|

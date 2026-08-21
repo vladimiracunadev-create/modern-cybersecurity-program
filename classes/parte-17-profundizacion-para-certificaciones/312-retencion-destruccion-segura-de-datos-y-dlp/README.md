@@ -1,7 +1,20 @@
 # Clase 312 — Retención, destrucción segura de datos y DLP
 
-> Parte: **17 — Profundización para certificaciones** · Fuente: *NIST SP 800-88 Rev. 1 — Guidelines for Media Sanitization*
-> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 17](https://img.shields.io/badge/%F0%9F%93%88%20parte%2017-Profundizaci%C3%B3n%20para%20certificaciones-116329?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-312%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **17 — Profundización para certificaciones** · 📖 Fuente: *NIST SP 800-88 Rev. 1 — Guidelines for Media Sanitization*
+> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -25,6 +38,25 @@ Al finalizar, el alumno podrá:
 6. **Evitar** los fallos típicos: datos remanentes, SSD mal borrados, retención indefinida.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["📈 Clase 312<br/>Retención, destrucción<br/>segura de datos y DLP"]
+    C --> T1["1 · Políticas de retención"]
+    C --> T2["2 · Data remanence<br/>(remanencia)"]
+    C --> T3["3 · Modelo Clear / Purge /<br/>Destroy"]
+    C --> T4["4 · Sanitización por tipo de<br/>medio"]
+    C --> T5["5 · Criptoborrado<br/>(crypto-erase)"]
+    C --> T6["6 · DLP: descubrimiento y<br/>prevención"]
+    C --> T7["7 · Certificados y cadena de<br/>custodia"]
+    C --> T8["8 · Retención en la nube y<br/>backups"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

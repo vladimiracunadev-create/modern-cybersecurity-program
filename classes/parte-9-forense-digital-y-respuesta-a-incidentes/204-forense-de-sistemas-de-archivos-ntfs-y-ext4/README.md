@@ -1,7 +1,20 @@
 # Clase 204 — Forense de sistemas de archivos: NTFS y ext4
 
-> Parte: **9 — Forense digital y respuesta a incidentes** · Fuente: *Brian Carrier — File System Forensic Analysis*
-> ⏱️ Duración estimada: **130 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 9](https://img.shields.io/badge/%F0%9F%94%AC%20parte%209-Forense%20digital%20y%20respuesta%20a%20incidentes-1a7f64?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-130%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-204%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **9 — Forense digital y respuesta a incidentes** · 📖 Fuente: *Brian Carrier — File System Forensic Analysis*
+> ⏱️ Duración estimada: **130 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Usar** The Sleuth Kit para recorrer un sistema de archivos.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔬 Clase 204<br/>Forense de sistemas de<br/>archivos"]
+    C --> T1["1 · MFT y registros de archivo"]
+    C --> T2["2 · Atributos<br/>$STANDARDINFORMATION y<br/>$FILENAME"]
+    C --> T3["3 · Timestamps MACB"]
+    C --> T4["4 · $LogFile y $UsnJrnl"]
+    C --> T5["5 · Inodos y bloques en ext4"]
+    C --> T6["6 · Journal de ext4 (jbd2)"]
+    C --> T7["7 · Archivos borrados y<br/>residuos"]
+    C --> T8["8 · The Sleuth Kit"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

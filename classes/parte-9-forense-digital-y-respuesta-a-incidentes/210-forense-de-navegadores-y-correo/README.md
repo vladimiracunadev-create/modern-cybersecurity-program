@@ -1,7 +1,20 @@
 # Clase 210 — Forense de navegadores y correo
 
-> Parte: **9 — Forense digital y respuesta a incidentes** · Fuente: *SANS FOR500* y documentación de formatos de navegador/correo
-> ⏱️ Duración estimada: **120 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 9](https://img.shields.io/badge/%F0%9F%94%AC%20parte%209-Forense%20digital%20y%20respuesta%20a%20incidentes-1a7f64?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-210%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **9 — Forense digital y respuesta a incidentes** · 📖 Fuente: *SANS FOR500* y documentación de formatos de navegador/correo
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Correlacionar** actividad web/correo con la timeline del caso.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔬 Clase 210<br/>Forense de navegadores y<br/>correo"]
+    C --> T1["1 · Bases de datos de<br/>navegador"]
+    C --> T2["2 · Chrome/Edge (History,<br/>Cookies)"]
+    C --> T3["3 · Firefox (places.sqlite)"]
+    C --> T4["4 · Caché y sesiones"]
+    C --> T5["5 · Formatos de correo (PST,<br/>OST, MBOX, EML)"]
+    C --> T6["6 · Encabezados de correo"]
+    C --> T7["7 · SPF/DKIM/DMARC"]
+    C --> T8["8 · Adjuntos y phishing"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

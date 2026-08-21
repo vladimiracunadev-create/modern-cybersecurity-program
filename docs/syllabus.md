@@ -7,6 +7,24 @@ Las horas son estimadas a partir de la duración de cada clase (~1,5–2,5 h) m�
 > a tiempo completo (~30 h/semana), **~5 meses**. No es obligatorio hacerlo entero: usa las
 > [rutas por rol](../rutas/README.md) para un subconjunto.
 
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![clases](https://img.shields.io/badge/clases-340-7c5cff?style=for-the-badge)](../classes/README.md)
+[![plan](https://img.shields.io/badge/plan-30%20semanas-2e8b57?style=for-the-badge)](syllabus.md)
+[![horas](https://img.shields.io/badge/horas-~660-24292f?style=for-the-badge)](syllabus.md)
+
+[⬅️ Volver al programa](../README.md) ·
+[📚 Índice de clases](../classes/README.md) ·
+[🧭 Rutas por rol](../rutas/README.md) ·
+[🧪 Laboratorios](../labs/README.md) ·
+[📊 Rúbrica](rubrica-evaluacion.md)
+
+</div>
+
+<!-- cabecera:fin -->
+
 ## Horas por parte
 
 | Parte | Tema | Clases | Horas aprox. | Semanas @10h |

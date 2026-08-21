@@ -1,7 +1,20 @@
 # Clase 112 — Web cache poisoning y HTTP request smuggling
 
-> Parte: **4 — Seguridad de aplicaciones web** · Fuente: *PortSwigger Research (James Kettle)*
-> ⏱️ Duración estimada: **130 min** · Nivel: **Experto**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 4](https://img.shields.io/badge/%F0%9F%95%B8%EF%B8%8F%20parte%204-Seguridad%20de%20aplicaciones%20web-d63384?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-130%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Experto-cf222e?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-112%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **4 — Seguridad de aplicaciones web** · 📖 Fuente: *PortSwigger Research (James Kettle)*
+> ⏱️ Duración estimada: **130 min** · 🎚️ Nivel: **Experto**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -22,6 +35,24 @@ Al finalizar, el alumno podrá:
 5. **Recomendar** normalización y HTTP/2 end-to-end como defensa.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🕸️ Clase 112<br/>Web cache poisoning y HTTP<br/>request smuggling"]
+    C --> T1["1 · Caches web y cache keys"]
+    C --> T2["2 · Unkeyed inputs"]
+    C --> T3["3 · Cadena frontend/backend"]
+    C --> T4["4 · CL.TE, TE.CL, TE.TE"]
+    C --> T5["5 · Impacto: hijack y bypass"]
+    C --> T6["6 · HTTP/2 downgrade"]
+    C --> T7["7 · Defensa: normalizar,<br/>rechazar ambiguo"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

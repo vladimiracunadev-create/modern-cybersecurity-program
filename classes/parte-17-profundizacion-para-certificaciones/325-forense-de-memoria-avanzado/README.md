@@ -1,7 +1,20 @@
 # Clase 325 — Forense de memoria avanzado
 
-> Parte: **17 — Profundización para certificaciones** · Fuente: *The Art of Memory Forensics (Ligh, Case, Levy, Walters)* · *SANS FOR508/FOR526*
-> ⏱️ Duración estimada: **150 min** · Nivel: **Experto**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 17](https://img.shields.io/badge/%F0%9F%93%88%20parte%2017-Profundizaci%C3%B3n%20para%20certificaciones-116329?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-150%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Experto-cf222e?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-325%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **17 — Profundización para certificaciones** · 📖 Fuente: *The Art of Memory Forensics (Ligh, Case, Levy, Walters)* · *SANS FOR508/FOR526*
+> ⏱️ Duración estimada: **150 min** · 🎚️ Nivel: **Experto**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -21,6 +34,25 @@ Al finalizar, el alumno podrá:
 6. **Redactar** una línea de tiempo de memoria integrable con el resto de la evidencia del incidente.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["📈 Clase 325<br/>Forense de memoria avanzado"]
+    C --> T1["1 · Orden de volatilidad y<br/>adquisición"]
+    C --> T2["2 · Arquitectura de Volatility<br/>3 (symbol tables, ISF)"]
+    C --> T3["3 · Enumeración de procesos<br/>(pslist, pstree, psscan)"]
+    C --> T4["4 · Conexiones de red en<br/>memoria (netscan)"]
+    C --> T5["5 · Detección de inyección<br/>(malfind, hollowfind)"]
+    C --> T6["6 · Rootkits y DKOM (ssdt,<br/>modules, modscan)"]
+    C --> T7["7 · Extracción y triaje de<br/>artefactos (dumpfiles,<br/>handles, cmdline)"]
+    C --> T8["8 · Correlación con timeline<br/>del incidente"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

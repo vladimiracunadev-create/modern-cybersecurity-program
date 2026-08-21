@@ -1,7 +1,20 @@
 # Clase 020 — Sistemas de numeración y encoding: binario, hex, base64 y URL
 
-> Parte: **0 — Fundamentos y prerrequisitos** · Fuente: *RFC 4648 (Base16/32/64) y RFC 3986 (URI)*
-> ⏱️ Duración estimada: **90 min** · Nivel: **Fundamentos**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 0](https://img.shields.io/badge/%F0%9F%A7%B1%20parte%200-Fundamentos%20y%20prerrequisitos-2e8b57?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-020%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **0 — Fundamentos y prerrequisitos** · 📖 Fuente: *RFC 4648 (Base16/32/64) y RFC 3986 (URI)*
+> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Fundamentos**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Analizar** payloads codificados en un contexto de seguridad.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧱 Clase 020<br/>Sistemas de numeración y<br/>encoding"]
+    C --> T1["1 · Bases numéricas"]
+    C --> T2["2 · Conversión entre bases"]
+    C --> T3["3 · ASCII y Unicode"]
+    C --> T4["4 · Hex dump"]
+    C --> T5["5 · Base64"]
+    C --> T6["6 · URL/percent encoding"]
+    C --> T7["7 · Encoding vs. cifrado vs.<br/>hash"]
+    C --> T8["8 · Cadenas de encoding"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,7 +1,20 @@
 # Clase 209 — Análisis de línea de tiempo (timeline)
 
-> Parte: **9 — Forense digital y respuesta a incidentes** · Fuente: *SANS FOR508* y documentación de plaso/log2timeline
-> ⏱️ Duración estimada: **130 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 9](https://img.shields.io/badge/%F0%9F%94%AC%20parte%209-Forense%20digital%20y%20respuesta%20a%20incidentes-1a7f64?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-130%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-209%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **9 — Forense digital y respuesta a incidentes** · 📖 Fuente: *SANS FOR508* y documentación de plaso/log2timeline
+> ⏱️ Duración estimada: **130 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Interpretar** patrones MACB para reconstruir la actividad.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔬 Clase 209<br/>Análisis de línea de tiempo<br/>(timeline)"]
+    C --> T1["1 · Timeline de FS vs.<br/>super-timeline"]
+    C --> T2["2 · plaso: log2timeline y<br/>psort"]
+    C --> T3["3 · Fuentes que agrega plaso"]
+    C --> T4["4 · Acotar por ventana<br/>temporal"]
+    C --> T5["5 · MACB y pivoteo"]
+    C --> T6["6 · Timesketch"]
+    C --> T7["7 · Anti-forense en timelines"]
+    C --> T8["8 · Correlación multi-fuente"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

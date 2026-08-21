@@ -1,7 +1,20 @@
 # Clase 203 — Adquisición forense: discos e imágenes
 
-> Parte: **9 — Forense digital y respuesta a incidentes** · Fuente: *Brian Carrier — File System Forensic Analysis* y *NIST SP 800-86*
-> ⏱️ Duración estimada: **120 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 9](https://img.shields.io/badge/%F0%9F%94%AC%20parte%209-Forense%20digital%20y%20respuesta%20a%20incidentes-1a7f64?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-203%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **9 — Forense digital y respuesta a incidentes** · 📖 Fuente: *Brian Carrier — File System Forensic Analysis* y *NIST SP 800-86*
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Elegir** el formato adecuado (RAW vs. E01/EWF) según el caso.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔬 Clase 203<br/>Adquisición forense"]
+    C --> T1["1 · Física vs. lógica vs.<br/>volumen"]
+    C --> T2["2 · Formatos RAW y E01/EWF"]
+    C --> T3["3 · Bloqueo de escritura"]
+    C --> T4["4 · dd y dcfldd"]
+    C --> T5["5 · ewfacquire y FTK Imager"]
+    C --> T6["6 · Hashing durante<br/>adquisición"]
+    C --> T7["7 · Adquisición en vivo vs.<br/>apagado"]
+    C --> T8["8 · Discos cifrados y SSD/TRIM"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

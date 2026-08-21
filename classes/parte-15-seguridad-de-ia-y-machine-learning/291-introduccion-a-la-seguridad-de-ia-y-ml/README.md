@@ -1,7 +1,20 @@
 # Clase 291 — Introducción a la seguridad de IA y ML
 
-> Parte: **15 — Seguridad de IA y machine learning** · Fuente: *NIST AI RMF 1.0 (NIST AI 100-1)* y *MITRE ATLAS*
-> ⏱️ Duración estimada: **90 min** · Nivel: **Fundamentos**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 15](https://img.shields.io/badge/%F0%9F%A7%AA%20parte%2015-Seguridad%20de%20IA%20y%20machine%20learning-bf3989?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-291%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **15 — Seguridad de IA y machine learning** · 📖 Fuente: *NIST AI RMF 1.0 (NIST AI 100-1)* y *MITRE ATLAS*
+> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Fundamentos**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,24 @@ Al finalizar, el alumno podrá:
 5. **Construir** un modelo de amenazas inicial para un sistema de ML dado.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧪 Clase 291<br/>Introducción a la seguridad<br/>de IA y ML"]
+    C --> T1["1 · La tríada CIA aplicada a<br/>modelos"]
+    C --> T2["2 · Ciclo de vida del ML como<br/>superficie de ataque"]
+    C --> T3["3 · Taxonomía de atacantes:<br/>caja blanca vs. negra"]
+    C --> T4["4 · MITRE ATLAS: tácticas y<br/>técnicas"]
+    C --> T5["5 · NIST AI RMF:<br/>Govern/Map/Measure/Manage"]
+    C --> T6["6 · AI Bill of Materials<br/>(AI-BOM) y cadena de<br/>suministro"]
+    C --> T7["7 · Diferencia entre<br/>seguridad, robustez y<br/>safety"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -11,6 +11,23 @@ FLAG{...}
 > 🎓 Intenta resolverlo por tu cuenta con `reto.md`; solo después abre `solucion.md`.
 > Todo es material didáctico: resuélvelo con tus herramientas en tu propia máquina.
 
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Categorías](https://img.shields.io/badge/categorías-6-e8590c?style=for-the-badge)](README.md)
+[![Writeups](https://img.shields.io/badge/writeups-incluidos-2e8b57?style=for-the-badge)](README.md)
+[![Labs](https://img.shields.io/badge/laboratorios-12-2496ED?style=for-the-badge&logo=docker&logoColor=white)](../labs/README.md)
+
+[⬅️ Volver al programa](../README.md) ·
+[🧪 Laboratorios](../labs/README.md) ·
+[📚 Índice de clases](../classes/README.md) ·
+[🔑 Soluciones](../soluciones/README.md)
+
+</div>
+
+<!-- cabecera:fin -->
+
 ## Categorías
 
 | Categoría | Reto | Dificultad | Parte relacionada |

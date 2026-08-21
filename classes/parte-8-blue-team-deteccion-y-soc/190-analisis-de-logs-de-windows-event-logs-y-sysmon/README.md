@@ -1,7 +1,20 @@
 # Clase 190 — Análisis de logs de Windows: Event Logs y Sysmon
 
-> Parte: **8 — Blue Team, detección y SOC** · Fuente: *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases* — Don Murdoch
-> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 8](https://img.shields.io/badge/%F0%9F%94%B5%20parte%208-Blue%20Team%2C%20detecci%C3%B3n%20y%20SOC-0969da?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-190%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **8 — Blue Team, detección y SOC** · 📖 Fuente: *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases* — Don Murdoch
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Escribir** detecciones sobre estos eventos y mapearlas a ATT&CK.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔵 Clase 190<br/>Análisis de logs de Windows"]
+    C --> T1["1 · Canales de Event Log de<br/>Windows"]
+    C --> T2["2 · Event IDs de autenticación<br/>(4624/4625)"]
+    C --> T3["3 · Creación de procesos (4688<br/>vs Sysmon 1)"]
+    C --> T4["4 · Sysmon: eventos clave y<br/>config"]
+    C --> T5["5 · PowerShell logging<br/>(4103/4104)"]
+    C --> T6["6 · Persistencia (4698, 4657,<br/>Sysmon 12/13)"]
+    C --> T7["7 · Logon types y sesiones"]
+    C --> T8["8 · Afinado y reducción de<br/>ruido"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,7 +1,20 @@
 # Clase 131 — Ghidra para ingeniería inversa
 
-> Parte: **5 — Explotación de sistemas y binarios** · Fuente: *Andriesse, Practical Binary Analysis* · docs de la NSA/Ghidra
-> ⏱️ Duración estimada: **130 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 5](https://img.shields.io/badge/%F0%9F%92%A5%20parte%205-Explotaci%C3%B3n%20de%20sistemas%20y%20binarios-b02a37?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-130%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-131%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **5 — Explotación de sistemas y binarios** · 📖 Fuente: *Andriesse, Practical Binary Analysis* · docs de la NSA/Ghidra
+> ⏱️ Duración estimada: **130 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -25,6 +38,25 @@ Al finalizar, el alumno podrá:
 5. **Automatizar** tareas con scripts (Python/Jython).
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["💥 Clase 131<br/>Ghidra para ingeniería<br/>inversa"]
+    C --> T1["1 · Proyecto e importación"]
+    C --> T2["2 · Auto-análisis"]
+    C --> T3["3 · Listing vs Decompiler"]
+    C --> T4["4 · Renombrar y comentar"]
+    C --> T5["5 · Retipado de estructuras"]
+    C --> T6["6 · Xrefs"]
+    C --> T7["7 · Bookmarks y symbol tree"]
+    C --> T8["8 · Scripting (GhidraScript)"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 | --- | --- | --- |

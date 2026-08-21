@@ -1,7 +1,20 @@
 # Clase 286 — Concienciación y cultura de seguridad
 
-> Parte: **14 — GRC, riesgo y cumplimiento** · Fuente: *(ISC)² CISSP Official Study Guide y SANS Security Awareness*
-> ⏱️ Duración estimada: **80 min** · Nivel: **Fundamentos**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 14](https://img.shields.io/badge/%F0%9F%93%8B%20parte%2014-GRC%2C%20riesgo%20y%20cumplimiento-24292f?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-80%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-286%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **14 — GRC, riesgo y cumplimiento** · 📖 Fuente: *(ISC)² CISSP Official Study Guide y SANS Security Awareness*
+> ⏱️ Duración estimada: **80 min** · 🎚️ Nivel: **Fundamentos**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,24 @@ Al finalizar, el alumno podrá:
 5. **Fomentar** una cultura de seguridad positiva, sin culpabilizar.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["📋 Clase 286<br/>Concienciación y cultura de<br/>seguridad"]
+    C --> T1["1 · El humano como superficie<br/>de ataque"]
+    C --> T2["2 · Concienciación vs.<br/>formación vs. educación"]
+    C --> T3["3 · Segmentación por rol y<br/>riesgo"]
+    C --> T4["4 · Simulaciones de phishing<br/>éticas"]
+    C --> T5["5 · Métricas de comportamiento"]
+    C --> T6["6 · Cultura positiva vs.<br/>culpabilización"]
+    C --> T7["7 · Refuerzo continuo"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

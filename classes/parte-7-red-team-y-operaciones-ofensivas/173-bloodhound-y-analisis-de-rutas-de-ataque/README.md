@@ -1,7 +1,20 @@
 # Clase 173 — BloodHound y análisis de rutas de ataque
 
-> Parte: **7 — Red Team y operaciones ofensivas** · Fuente: *SpecterOps — BloodHound documentation*
-> ⏱️ Duración estimada: **100 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 7](https://img.shields.io/badge/%F0%9F%94%B4%20parte%207-Red%20Team%20y%20operaciones%20ofensivas-cf222e?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-173%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **7 — Red Team y operaciones ofensivas** · 📖 Fuente: *SpecterOps — BloodHound documentation*
+> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,24 @@ Al finalizar, el alumno podrá:
 5. **Priorizar** rutas por sigilo y facilidad de explotación.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔴 Clase 173<br/>BloodHound y análisis de<br/>rutas de ataque"]
+    C --> T1["1 · Modelo de grafo"]
+    C --> T2["2 · Collectors"]
+    C --> T3["3 · Aristas abusables"]
+    C --> T4["4 · Consultas predefinidas"]
+    C --> T5["5 · Cypher personalizado"]
+    C --> T6["6 · Priorización de rutas"]
+    C --> T7["7 · Uso defensivo"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

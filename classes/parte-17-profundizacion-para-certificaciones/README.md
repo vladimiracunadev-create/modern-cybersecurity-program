@@ -1,8 +1,16 @@
-# Parte 17 — Profundización para certificaciones
+# 📈 Parte 17 — Profundización para certificaciones
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md)
 
-**20 clases** · rango 311–330 · Gestión de datos, IAM empresarial, arquitectura, seguridad física, gestión de vulnerabilidades, gobierno, threat intelligence, reporte, operaciones, forense avanzado, riesgo cuantitativo, Zero Trust y análisis de código
+<div align="center">
+
+[![Clases](https://img.shields.io/badge/clases-20-116329?style=flat-square)](../README.md)
+[![Rango](https://img.shields.io/badge/rango-311%E2%80%93330-24292f?style=flat-square)](../README.md)
+[![Parte](https://img.shields.io/badge/parte-17%20de%2018-6e7781?style=flat-square)](../README.md)
+
+</div>
+
+Gestión de datos, IAM empresarial, arquitectura, seguridad física, gestión de vulnerabilidades, gobierno, threat intelligence, reporte, operaciones, forense avanzado, riesgo cuantitativo, Zero Trust y análisis de código
 
 **Fuentes de referencia de esta parte:**
 
@@ -48,6 +56,34 @@ Al terminar la parte, el alumno podrá:
 Haber cursado (o dominar) la **Parte 0** (fundamentos) y tener contexto de la **Parte 14** (GRC). Ayuda haber visto la **Parte 8** (SOC), **Parte 9** (DFIR) y **Parte 10** (nube/IAM cloud), que esta parte complementa desde la óptica empresarial.
 
 ## 🗺️ Estructura temática
+
+<!-- arco:inicio -->
+
+```mermaid
+flowchart TD
+    B1["Seguridad de los activos/datos<br/>311–312"]
+    B2["Identidad y accesos (IAM empresarial)<br/>313–315"]
+    B3["Arquitectura y seguridad física<br/>316–317"]
+    B4["Gestión de vulnerabilidades<br/>318"]
+    B5["Análisis de phishing<br/>319"]
+    B6["Gobierno y gestión del programa<br/>320"]
+    B7["Comunicación y reporte<br/>321"]
+    B8["Threat intelligence operacional<br/>322"]
+    B9["Pruebas de seguridad del software<br/>323"]
+    B10["Operaciones y hardening<br/>324"]
+    B11["Forense de memoria y malware para IR<br/>325–326"]
+    B12["Ingeniería de detección avanzada<br/>327"]
+    B13["Riesgo cuantitativo y continuidad<br/>328"]
+    B14["Arquitectura empresarial y Zero Trust<br/>329"]
+    B15["Análisis de código y automatización<br/>330"]
+    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9 --> B10 --> B11 --> B12 --> B13 --> B14 --> B15
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class B1 ini
+    class B15 fin
+```
+
+<!-- arco:fin -->
 
 | Bloque | Clases | Enfoque de certificación |
 |---|---|---|

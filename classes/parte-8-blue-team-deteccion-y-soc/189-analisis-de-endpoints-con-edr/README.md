@@ -1,7 +1,20 @@
 # Clase 189 — Análisis de endpoints con EDR
 
-> Parte: **8 — Blue Team, detección y SOC** · Fuente: *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases* — Don Murdoch
-> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 8](https://img.shields.io/badge/%F0%9F%94%B5%20parte%208-Blue%20Team%2C%20detecci%C3%B3n%20y%20SOC-0969da?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-189%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **8 — Blue Team, detección y SOC** · 📖 Fuente: *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases* — Don Murdoch
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Diferenciar** EDR, EPP y XDR.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔵 Clase 189<br/>Análisis de endpoints con<br/>EDR"]
+    C --> T1["1 · EPP vs EDR vs XDR"]
+    C --> T2["2 · Telemetría de endpoint"]
+    C --> T3["3 · Árbol de procesos y linaje"]
+    C --> T4["4 · Detección conductual vs<br/>firmas"]
+    C --> T5["5 · Respuesta: aislar, matar,<br/>recolectar"]
+    C --> T6["6 · osquery y consultas de<br/>flota"]
+    C --> T7["7 · Velociraptor y VQL"]
+    C --> T8["8 · Manipulación (tamper) y<br/>evasión de EDR"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

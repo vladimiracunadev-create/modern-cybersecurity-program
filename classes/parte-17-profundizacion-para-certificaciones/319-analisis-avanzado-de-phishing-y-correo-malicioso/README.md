@@ -1,7 +1,20 @@
 # Clase 319 — Análisis avanzado de phishing y correo malicioso
 
-> Parte: **17 — Profundización para certificaciones** · Fuente: *Blue Team Level 1 (BTL1) — Phishing Analysis* · *CompTIA Security+ (SY0-701)*
-> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 17](https://img.shields.io/badge/%F0%9F%93%88%20parte%2017-Profundizaci%C3%B3n%20para%20certificaciones-116329?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-319%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **17 — Profundización para certificaciones** · 📖 Fuente: *Blue Team Level 1 (BTL1) — Phishing Analysis* · *CompTIA Security+ (SY0-701)*
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -22,6 +35,25 @@ Al finalizar, el alumno podrá:
 5. **Ejecutar** un playbook de respuesta: contención, purga multi-buzón, bloqueo de IOCs y reporte.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["📈 Clase 319<br/>Análisis avanzado de<br/>phishing y correo malicioso"]
+    C --> T1["1 · Anatomía de un correo y<br/>sus cabeceras"]
+    C --> T2["2 · SPF, DKIM, DMARC"]
+    C --> T3["3 · Spoofing vs impersonation<br/>vs lookalike domains"]
+    C --> T4["4 · Análisis de URLs<br/>(defanging, sandbox de<br/>URL)"]
+    C --> T5["5 · Análisis de adjuntos<br/>(hash, static, sandbox)"]
+    C --> T6["6 · Tipos: phishing, spear,<br/>whaling, BEC"]
+    C --> T7["7 · Triaje e IOCs"]
+    C --> T8["8 · Respuesta y playbook"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

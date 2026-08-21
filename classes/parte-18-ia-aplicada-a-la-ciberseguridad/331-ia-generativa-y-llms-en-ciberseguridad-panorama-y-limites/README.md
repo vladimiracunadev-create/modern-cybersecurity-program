@@ -1,7 +1,20 @@
 # Clase 331 — IA generativa y LLMs en ciberseguridad: panorama, capacidades y límites
 
-> Parte: **18 — IA aplicada a la ciberseguridad** · Fuente: *NIST AI RMF 1.0 (AI 100-1)* y *OWASP Top 10 for LLM Applications*
-> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 18](https://img.shields.io/badge/%F0%9F%A7%A0%20parte%2018-IA%20aplicada%20a%20la%20ciberseguridad-7c5cff?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-331%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **18 — IA aplicada a la ciberseguridad** · 📖 Fuente: *NIST AI RMF 1.0 (AI 100-1)* y *OWASP Top 10 for LLM Applications*
+> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -22,6 +35,24 @@ Al finalizar, el alumno podrá:
 5. **Aplicar** el marco NIST AI RMF (Govern, Map, Measure, Manage) a un caso de uso propio.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧠 Clase 331<br/>IA generativa y LLMs en<br/>ciberseguridad"]
+    C --> T1["1 · Qué es un LLM (predicción<br/>de tokens)"]
+    C --> T2["2 · Capacidades reales en<br/>seguridad"]
+    C --> T3["3 · Alucinaciones y<br/>confabulación"]
+    C --> T4["4 · Corte de conocimiento y<br/>falta de contexto"]
+    C --> T5["5 · Verificación humana<br/>(human-in-the-loop)"]
+    C --> T6["6 · Prompting efectivo para<br/>tareas técnicas"]
+    C --> T7["7 · Gobernanza: NIST AI RMF y<br/>política de uso"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,7 +1,20 @@
 # Clase 187 — Detección basada en MITRE ATT&CK
 
-> Parte: **8 — Blue Team, detección y SOC** · Fuente: *MITRE ATT&CK* — framework de tácticas y técnicas adversarias
-> ⏱️ Duración estimada: **110 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 8](https://img.shields.io/badge/%F0%9F%94%B5%20parte%208-Blue%20Team%2C%20detecci%C3%B3n%20y%20SOC-0969da?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-187%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **8 — Blue Team, detección y SOC** · 📖 Fuente: *MITRE ATT&CK* — framework de tácticas y técnicas adversarias
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Usar** los data sources de ATT&CK para saber qué telemetría requiere cada técnica.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔵 Clase 187<br/>Detección basada en MITRE<br/>ATT&CK"]
+    C --> T1["1 · Estructura de ATT&CK"]
+    C --> T2["2 · Tácticas vs técnicas vs<br/>procedimientos"]
+    C --> T3["3 · Pirámide del dolor"]
+    C --> T4["4 · Data sources y componentes"]
+    C --> T5["5 · ATT&CK Navigator"]
+    C --> T6["6 · Detecciones por técnica"]
+    C --> T7["7 · Grupos y software (intel)"]
+    C --> T8["8 · Cobertura vs profundidad"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

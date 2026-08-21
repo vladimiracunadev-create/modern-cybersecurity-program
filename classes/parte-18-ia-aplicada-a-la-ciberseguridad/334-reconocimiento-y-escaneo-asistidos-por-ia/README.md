@@ -1,7 +1,20 @@
 # Clase 334 — Reconocimiento y escaneo asistidos por IA
 
-> Parte: **18 — IA aplicada a la ciberseguridad** · Fuente: kali-mcp (MIT) · MITRE ATT&CK (Reconnaissance)
-> ⏱️ Duración estimada: **100 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 18](https://img.shields.io/badge/%F0%9F%A7%A0%20parte%2018-IA%20aplicada%20a%20la%20ciberseguridad-7c5cff?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-334%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **18 — IA aplicada a la ciberseguridad** · 📖 Fuente: kali-mcp (MIT) · MITRE ATT&CK (Reconnaissance)
+> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -26,6 +39,22 @@ Al finalizar, el alumno podrá:
 5. **Documentar** la superficie de ataque descubierta de forma reproducible.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧠 Clase 334<br/>Reconocimiento y escaneo<br/>asistidos por IA"]
+    C --> T1["1 · Recon pasivo vs activo"]
+    C --> T2["2 · Orquestación de escaneo"]
+    C --> T3["3 · Comandos de flujo<br/>(kali-recon,<br/>kali-mass-scan)"]
+    C --> T4["4 · Validación de resultados"]
+    C --> T5["5 · Alcance y ritmo"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|---|---|

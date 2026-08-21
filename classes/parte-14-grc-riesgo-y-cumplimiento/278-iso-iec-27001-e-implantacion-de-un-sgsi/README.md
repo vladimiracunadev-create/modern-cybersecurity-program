@@ -1,7 +1,20 @@
 # Clase 278 — ISO/IEC 27001 e implantación de un SGSI
 
-> Parte: **14 — GRC, riesgo y cumplimiento** · Fuente: *ISO/IEC 27001:2022 e ISO/IEC 27002:2022*
-> ⏱️ Duración estimada: **120 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 14](https://img.shields.io/badge/%F0%9F%93%8B%20parte%2014-GRC%2C%20riesgo%20y%20cumplimiento-24292f?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-278%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **14 — GRC, riesgo y cumplimiento** · 📖 Fuente: *ISO/IEC 27001:2022 e ISO/IEC 27002:2022*
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,24 @@ Al finalizar, el alumno podrá:
 5. **Preparar** la evidencia y auditoría interna previa a la certificación.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["📋 Clase 278<br/>ISO/IEC 27001 e implantación<br/>de un SGSI"]
+    C --> T1["1 · Familia ISO 27000"]
+    C --> T2["2 · Cláusulas 4–10<br/>(requisitos)"]
+    C --> T3["3 · Ciclo PDCA"]
+    C --> T4["4 · Anexo A (93 controles, 4<br/>temas)"]
+    C --> T5["5 · Declaración de<br/>Aplicabilidad (SoA)"]
+    C --> T6["6 · Auditoría de certificación<br/>(etapas 1 y 2)"]
+    C --> T7["7 · No conformidades y<br/>acciones correctivas"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

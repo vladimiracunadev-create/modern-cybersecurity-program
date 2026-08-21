@@ -1,7 +1,20 @@
 # Clase 045 — NetFlow y análisis de metadatos de tráfico
 
-> Parte: **1 — Redes y seguridad de redes** · Fuente: *RFC 3954 (NetFlow v9), RFC 7011 (IPFIX); Applied NSM*
-> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 1](https://img.shields.io/badge/%F0%9F%8C%90%20parte%201-Redes%20y%20seguridad%20de%20redes-1f6feb?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-045%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **1 — Redes y seguridad de redes** · 📖 Fuente: *RFC 3954 (NetFlow v9), RFC 7011 (IPFIX); Applied NSM*
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -21,6 +34,24 @@ Al finalizar, el alumno podrá:
 6. **Diseñar** un monitoreo de flujo para una red de tamaño medio.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🌐 Clase 045<br/>NetFlow y análisis de<br/>metadatos de tráfico"]
+    C --> T1["1 · Concepto de flujo<br/>(5-tupla)"]
+    C --> T2["2 · NetFlow v5/v9, IPFIX,<br/>sFlow"]
+    C --> T3["3 · Arquitectura<br/>exportador/colector"]
+    C --> T4["4 · nfdump / SiLK"]
+    C --> T5["5 · Detección de anomalías por<br/>flujo"]
+    C --> T6["6 · Beaconing y C2 en<br/>metadatos"]
+    C --> T7["7 · Metadatos vs. full content"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

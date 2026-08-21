@@ -8,6 +8,20 @@
 >
 > **Nivel de entrada:** ninguno; es un cargo de dirección al que se llega con 8–15 años de carrera · **Foco:** mandato, estrategia, riesgo empresarial, presupuesto, cumplimiento y resiliencia · **Certificación faro:** CISSP + CISM (y CRISC / ISO 27001 Lead Implementer según el peso del cargo)
 
+
+<!-- insignias:inicio -->
+
+<div align="center">
+
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-ninguno-1f6feb?style=flat-square)](README.md)
+[![Foco](https://img.shields.io/badge/%F0%9F%8E%AF%20foco-mandato-6e7781?style=flat-square)](README.md)
+[![Certificación](https://img.shields.io/badge/%F0%9F%8E%93%20certi-CISSP%20%2B%20CISM-2e8b57?style=flat-square)](../certificaciones/README.md)
+[![Partes](https://img.shields.io/badge/%F0%9F%97%82%EF%B8%8F%20partes-8-e8590c?style=flat-square)](../classes/README.md)
+
+</div>
+
+<!-- insignias:fin -->
+
 ## 🧭 Qué es y por qué importa
 
 Un CISO es la persona que tiene **el mandato formal** de la seguridad de la información en la
@@ -190,6 +204,27 @@ documentos** construidos sobre una organización ficticia. Son el producto real 
 10. **Informe ejecutivo mensual de una página** con KPIs/KRIs · clases [287](../classes/parte-14-grc-riesgo-y-cumplimiento/287-metricas-de-seguridad-kpis-y-kris/README.md) y [321](../classes/parte-17-profundizacion-para-certificaciones/321-comunicacion-y-reporte-para-analistas-de-seguridad/README.md)
 
 ## 📚 Tu ruta en el programa
+
+<!-- recorrido:inicio -->
+
+```mermaid
+flowchart TD
+    P0["🧱 Parte 0<br/>Fundamentos"]
+    P14["📋 Parte 14<br/>GRC"]
+    P17["📈 Parte 17<br/>Profundización"]
+    P8["🔵 Parte 8<br/>Blue Team / SOC"]
+    P9["🔬 Parte 9<br/>DFIR"]
+    P10["☁️ Parte 10<br/>Cloud"]
+    P15["🧪 Parte 15<br/>Seguridad de IA"]
+    P1["🌐 Parte 1<br/>Redes"]
+    P0 --> P14 --> P17 --> P8 --> P9 --> P10 --> P15 --> P1
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class P0 ini
+    class P1 fin
+```
+
+<!-- recorrido:fin -->
 
 **Este cargo no se estudia desde cero.** Se llega con recorrido previo —normalmente desde
 [jefe de seguridad](ciso-jefe-seguridad.md), [GRC](grc.md), [SOC](soc-blue-team.md), infraestructura

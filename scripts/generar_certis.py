@@ -25,6 +25,19 @@ def cobertura_total(cert) -> float:
     return sum(d["peso"] * d["cobertura"] for d in cert["dominios"]) / 100.0
 
 
+# Un icono por certificacion, para que la tabla del indice se lea de un
+# vistazo. Solo presentacion: la cobertura sale del mapeo.
+ICONO_CERT = {
+    "comptia-security-plus-sy0-701": "🛡️",
+    "comptia-pentest-plus-pt0-002": "🎯",
+    "comptia-cysa-plus-cs0-003": "🔵",
+    "oscp-pen-200": "🔴",
+    "cissp": "🏛️",
+    "btl1": "🧿",
+    "sans-gcih-gcfa": "🔬",
+}
+
+
 def barra(pct: float) -> str:
     llenos = round(pct / 10)
     return "█" * llenos + "░" * (10 - llenos)
@@ -89,11 +102,11 @@ def indice(data) -> str:
     L.append("")
     L.append(data["meta"]["descripcion"])
     L.append("")
-    L.append("| Certificación | Código | Nivel | Cobertura estimada | Detalle |")
-    L.append("|---|---|---|---|---|")
+    L.append("| | Certificación | Código | Nivel | Cobertura estimada | Detalle |")
+    L.append("|:---:|---|---|---|---|---|")
     for c in data["certs"]:
         total = cobertura_total(c)
-        L.append(f"| {c['nombre']} | {c['codigo']} | {c['nivel']} | "
+        L.append(f"| {ICONO_CERT.get(c['id'], '🎓')} | {c['nombre']} | {c['codigo']} | {c['nivel']} | "
                  f"`{barra(total)}` {total:.0f}% | [ver mapeo]({c['id']}.md) |")
     L.append("")
     L.append("## ¿Cómo se calcula la cobertura?")

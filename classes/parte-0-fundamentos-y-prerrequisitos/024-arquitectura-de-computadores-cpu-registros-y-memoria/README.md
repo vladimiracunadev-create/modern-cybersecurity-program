@@ -1,7 +1,20 @@
 # Clase 024 — Arquitectura de computadores: CPU, registros y memoria
 
-> Parte: **0 — Fundamentos y prerrequisitos** · Fuente: *Jon Erickson, Hacking: The Art of Exploitation*
-> ⏱️ Duración estimada: **110 min** · Nivel: **Fundamentos**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 0](https://img.shields.io/badge/%F0%9F%A7%B1%20parte%200-Fundamentos%20y%20prerrequisitos-2e8b57?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-024%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **0 — Fundamentos y prerrequisitos** · 📖 Fuente: *Jon Erickson, Hacking: The Art of Exploitation*
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Fundamentos**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Conectar** estos conceptos con vulnerabilidades de memoria.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧱 Clase 024<br/>Arquitectura de computadores"]
+    C --> T1["1 · CPU y ciclo de ejecución"]
+    C --> T2["2 · Registros x86-64"]
+    C --> T3["3 · La pila (stack)"]
+    C --> T4["4 · Convención de llamada"]
+    C --> T5["5 · Ensamblador básico"]
+    C --> T6["6 · Endianness"]
+    C --> T7["7 · Del C al ASM"]
+    C --> T8["8 · Relevancia en exploiting"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

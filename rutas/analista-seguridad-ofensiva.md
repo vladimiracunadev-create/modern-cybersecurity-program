@@ -8,6 +8,20 @@
 >
 > **Nivel de entrada:** junior / semi-senior; 1–2 años de experiencia y titulación · **Foco:** pentest de apps/APIs/redes, validación de hallazgos, evidencia y reporte · **Certificación faro:** eJPT o CompTIA PenTest+ (no OSCP todavía)
 
+
+<!-- insignias:inicio -->
+
+<div align="center">
+
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-junior%20%2F%20semi--senior-1f6feb?style=flat-square)](README.md)
+[![Foco](https://img.shields.io/badge/%F0%9F%8E%AF%20foco-pentest%20de%20apps%2FAPIs%2Fredes-6e7781?style=flat-square)](README.md)
+[![Certificación](https://img.shields.io/badge/%F0%9F%8E%93%20certi-eJPT%20o%20CompTIA%20PenTest%2B-2e8b57?style=flat-square)](../certificaciones/README.md)
+[![Partes](https://img.shields.io/badge/%F0%9F%97%82%EF%B8%8F%20partes-7-e8590c?style=flat-square)](../classes/README.md)
+
+</div>
+
+<!-- insignias:fin -->
+
 ## 🧭 Qué es y por qué importa
 
 Casi nadie entra al mundo ofensivo dirigiendo engagements. Se entra **aquí**: como analista dentro
@@ -124,6 +138,26 @@ Burp bien manejado vale más que diez utilidades de GitHub a medio entender.
   sabe qué es una cabecera HTTP.
 
 ## 📚 Tu ruta en el programa
+
+<!-- recorrido:inicio -->
+
+```mermaid
+flowchart LR
+    P0["🧱 Parte 0<br/>Fundamentos"]
+    P1["🌐 Parte 1<br/>Redes"]
+    P3["🎯 Parte 3<br/>Pentesting"]
+    P4["🕸️ Parte 4<br/>Web"]
+    P7["🔴 Parte 7<br/>Red Team"]
+    P17["📈 Parte 17<br/>Profundización"]
+    P13["📡 Parte 13<br/>Móvil · IoT · OT"]
+    P0 --> P1 --> P3 --> P4 --> P7 --> P17 --> P13
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class P0 ini
+    class P13 fin
+```
+
+<!-- recorrido:fin -->
 
 Es la ruta ofensiva **acotada al perfil de entrada**: llega hasta donde llega el puesto y no más.
 Compárala con la de [Pentester](pentester.md), que sigue hacia binarios y explotación avanzada.

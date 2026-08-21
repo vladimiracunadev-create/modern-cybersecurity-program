@@ -1,7 +1,20 @@
 # Clase 229 — Kubernetes: hardening y ataques
 
-> Parte: **10 — Seguridad en la nube y contenedores** · Fuente: *Martin & Hausenblas, "Hacking Kubernetes" (O'Reilly) y CIS Kubernetes Benchmark*
-> ⏱️ Duración estimada: **150 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 10](https://img.shields.io/badge/%E2%98%81%EF%B8%8F%20parte%2010-Seguridad%20en%20la%20nube%20y%20contenedores-0a7ea4?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-150%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-229%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **10 — Seguridad en la nube y contenedores** · 📖 Fuente: *Martin & Hausenblas, "Hacking Kubernetes" (O'Reilly) y CIS Kubernetes Benchmark*
+> ⏱️ Duración estimada: **150 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -26,6 +39,24 @@ Al finalizar, el alumno podrá:
 5. **Restringir** el token de ServiceAccount y el acceso a kubelet/etcd.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["☁️ Clase 229<br/>Kubernetes"]
+    C --> T1["1 · kube-bench y CIS Benchmark"]
+    C --> T2["2 · Pod Security Admission"]
+    C --> T3["3 · securityContext y escape<br/>de pods"]
+    C --> T4["4 · RBAC peligroso y escalada"]
+    C --> T5["5 · Abuso de tokens de<br/>ServiceAccount"]
+    C --> T6["6 · NetworkPolicy por defecto<br/>denegar"]
+    C --> T7["7 · Acceso a kubelet y etcd"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

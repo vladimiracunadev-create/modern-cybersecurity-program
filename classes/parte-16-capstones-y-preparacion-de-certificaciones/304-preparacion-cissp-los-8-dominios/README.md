@@ -1,7 +1,20 @@
 # Clase 304 — Preparación CISSP: los 8 dominios
 
-> Parte: **16 — Capstones y preparación de certificaciones** · Fuente: *(ISC)² CISSP Official Study Guide (Chapple, Stewart, Gibson)*
-> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 16](https://img.shields.io/badge/%F0%9F%8F%81%20parte%2016-Capstones%20y%20preparaci%C3%B3n%20de%20certificaciones-0550ae?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-304%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **16 — Capstones y preparación de certificaciones** · 📖 Fuente: *(ISC)² CISSP Official Study Guide (Chapple, Stewart, Gibson)*
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Diseñar** un plan de estudio de 3–6 meses con hitos.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🏁 Clase 304<br/>Preparación CISSP"]
+    C --> T1["1 · D1 Seguridad y gestión de<br/>riesgos (~15%)"]
+    C --> T2["2 · D2 Seguridad de activos<br/>(~10%)"]
+    C --> T3["3 · D3 Arquitectura e<br/>ingeniería (~13%)"]
+    C --> T4["4 · D4 Seguridad de redes y<br/>comunicaciones (~13%)"]
+    C --> T5["5 · D5 Gestión de identidad y<br/>acceso (~13%)"]
+    C --> T6["6 · D6 Evaluación y pruebas de<br/>seguridad (~12%)"]
+    C --> T7["7 · D7 Operaciones de<br/>seguridad (~13%)"]
+    C --> T8["8 · D8 Seguridad en el<br/>desarrollo de software<br/>(~11%)"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

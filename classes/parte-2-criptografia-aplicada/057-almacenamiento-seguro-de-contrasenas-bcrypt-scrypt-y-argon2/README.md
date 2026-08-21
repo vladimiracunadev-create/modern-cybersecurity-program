@@ -1,7 +1,20 @@
 # Clase 057 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2
 
-> Parte: **2 — Criptografía aplicada** · Fuente: *Real-World Cryptography* (Wong) y OWASP Password Storage Cheat Sheet
-> ⏱️ Duración estimada: **100 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 2](https://img.shields.io/badge/%F0%9F%94%90%20parte%202-Criptograf%C3%ADa%20aplicada-6f42c1?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-057%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **2 — Criptografía aplicada** · 📖 Fuente: *Real-World Cryptography* (Wong) y OWASP Password Storage Cheat Sheet
+> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -22,6 +35,24 @@ Al finalizar, el alumno podrá:
 5. **Estimar** el coste de un ataque de diccionario/fuerza bruta con hashcat.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔐 Clase 057<br/>Almacenamiento seguro de<br/>contraseñas"]
+    C --> T1["1 · Por qué no SHA-256 para<br/>contraseñas"]
+    C --> T2["2 · Salt (por usuario)"]
+    C --> T3["3 · Pepper (secreto global)"]
+    C --> T4["4 · bcrypt y factor de coste"]
+    C --> T5["5 · scrypt y Argon2<br/>(memory-hard)"]
+    C --> T6["6 · Verificación en tiempo<br/>constante"]
+    C --> T7["7 · Ataques con hashcat (lab)"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

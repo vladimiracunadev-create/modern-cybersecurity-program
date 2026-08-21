@@ -1,7 +1,20 @@
 # Clase 107 — Server-Side Template Injection (SSTI)
 
-> Parte: **4 — Seguridad de aplicaciones web** · Fuente: *Real-World Bug Hunting (Yaworski)* / *PortSwigger Research*
-> ⏱️ Duración estimada: **110 min** · Nivel: **Experto**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 4](https://img.shields.io/badge/%F0%9F%95%B8%EF%B8%8F%20parte%204-Seguridad%20de%20aplicaciones%20web-d63384?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Experto-cf222e?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-107%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **4 — Seguridad de aplicaciones web** · 📖 Fuente: *Real-World Bug Hunting (Yaworski)* / *PortSwigger Research*
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Experto**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -22,6 +35,24 @@ Al finalizar, el alumno podrá:
 5. **Recomendar** sandboxing y separación de datos y plantilla.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🕸️ Clase 107<br/>Server-Side Template<br/>Injection (SSTI)"]
+    C --> T1["1 · Motores de plantillas"]
+    C --> T2["2 · Detección ({{77}})"]
+    C --> T3["3 · Fingerprinting del motor"]
+    C --> T4["4 · De expresión a RCE"]
+    C --> T5["5 · Jinja2 / Twig / Freemarker"]
+    C --> T6["6 · SSTI vs. XSS"]
+    C --> T7["7 · Defensa: sandbox,<br/>logic-less"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

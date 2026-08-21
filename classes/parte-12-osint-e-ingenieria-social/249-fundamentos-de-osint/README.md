@@ -1,7 +1,20 @@
 # Clase 249 — Fundamentos de OSINT
 
-> Parte: **12 — OSINT e ingeniería social** · Fuente: *Open Source Intelligence Techniques* (M. Bazzell) · MITRE ATT&CK Reconnaissance
-> ⏱️ Duración estimada: **90 min** · Nivel: **Fundamentos**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 12](https://img.shields.io/badge/%F0%9F%95%B5%EF%B8%8F%20parte%2012-OSINT%20e%20ingenier%C3%ADa%20social-6e7781?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-249%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **12 — OSINT e ingeniería social** · 📖 Fuente: *Open Source Intelligence Techniques* (M. Bazzell) · MITRE ATT&CK Reconnaissance
+> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Fundamentos**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -23,6 +36,25 @@ Al finalizar, el alumno podrá:
 5. **Documentar** hallazgos con cadena de custodia y control de sesgos.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🕵️ Clase 249<br/>Fundamentos de OSINT"]
+    C --> T1["1 · Definición y disciplinas<br/>de inteligencia"]
+    C --> T2["2 · Ciclo de inteligencia (5<br/>fases)"]
+    C --> T3["3 · Pasivo vs. activo"]
+    C --> T4["4 · Fuentes abiertas:<br/>taxonomía"]
+    C --> T5["5 · Entorno de investigación<br/>seguro"]
+    C --> T6["6 · Sock puppets (identidades<br/>ficticias)"]
+    C --> T7["7 · Ética, legalidad y sesgos"]
+    C --> T8["8 · Documentación y<br/>trazabilidad"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

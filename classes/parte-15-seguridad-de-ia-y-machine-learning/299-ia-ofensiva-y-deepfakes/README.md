@@ -1,7 +1,20 @@
 # Clase 299 — IA ofensiva y deepfakes
 
-> Parte: **15 — Seguridad de IA y machine learning** · Fuente: *MITRE ATLAS* y NIST AI 600-1 (perfil de IA generativa)
-> ⏱️ Duración estimada: **100 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 15](https://img.shields.io/badge/%F0%9F%A7%AA%20parte%2015-Seguridad%20de%20IA%20y%20machine%20learning-bf3989?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-299%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **15 — Seguridad de IA y machine learning** · 📖 Fuente: *MITRE ATLAS* y NIST AI 600-1 (perfil de IA generativa)
+> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -22,6 +35,24 @@ Al finalizar, el alumno podrá:
 5. **Formar** a usuarios y procesos para resistir ingeniería social potenciada por IA.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧪 Clase 299<br/>IA ofensiva y deepfakes"]
+    C --> T1["1 · Phishing y BEC potenciados<br/>por LLM"]
+    C --> T2["2 · Deepfakes de voz (vishing)"]
+    C --> T3["3 · Deepfakes de vídeo e<br/>imagen"]
+    C --> T4["4 · Malware y ofensiva<br/>asistida por IA"]
+    C --> T5["5 · Detección de contenido<br/>sintético"]
+    C --> T6["6 · Procedencia: C2PA y<br/>watermarking"]
+    C --> T7["7 · Verificación fuera de<br/>banda y procesos"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

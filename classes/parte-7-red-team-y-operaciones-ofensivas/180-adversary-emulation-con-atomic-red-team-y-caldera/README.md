@@ -1,7 +1,20 @@
 # Clase 180 — Adversary emulation con Atomic Red Team y Caldera
 
-> Parte: **7 — Red Team y operaciones ofensivas** · Fuente: *Atomic Red Team (Red Canary) / MITRE Caldera*
-> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 7](https://img.shields.io/badge/%F0%9F%94%B4%20parte%207-Red%20Team%20y%20operaciones%20ofensivas-cf222e?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-180%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **7 — Red Team y operaciones ofensivas** · 📖 Fuente: *Atomic Red Team (Red Canary) / MITRE Caldera*
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,24 @@ Al finalizar, el alumno podrá:
 5. **Automatizar** un ciclo repetible de emulación + validación.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔴 Clase 180<br/>Adversary emulation con<br/>Atomic Red Team y…"]
+    C --> T1["1 · Atomic Red Team"]
+    C --> T2["2 · Invoke-AtomicRedTeam"]
+    C --> T3["3 · Caldera: server y agentes"]
+    C --> T4["4 · Abilities y adversary<br/>profiles"]
+    C --> T5["5 · Planners"]
+    C --> T6["6 · Validación de detección"]
+    C --> T7["7 · Automatización repetible"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,7 +1,20 @@
 # Clase 040 — Man-in-the-Middle: técnicas y defensa
 
-> Parte: **1 — Redes y seguridad de redes** · Fuente: *OWASP; documentación de bettercap y mitmproxy*
-> ⏱️ Duración estimada: **130 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 1](https://img.shields.io/badge/%F0%9F%8C%90%20parte%201-Redes%20y%20seguridad%20de%20redes-1f6feb?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-130%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-040%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **1 — Redes y seguridad de redes** · 📖 Fuente: *OWASP; documentación de bettercap y mitmproxy*
+> ⏱️ Duración estimada: **130 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -21,6 +34,24 @@ Al finalizar, el alumno podrá:
 6. **Evaluar** el riesgo residual en redes no confiables (WiFi público).
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🌐 Clase 040<br/>Man-in-the-Middle"]
+    C --> T1["1 · Anatomía del MitM"]
+    C --> T2["2 · Posicionamiento (ARP, DNS,<br/>rogue AP)"]
+    C --> T3["3 · Interceptación con proxy<br/>transparente"]
+    C --> T4["4 · SSL stripping y su<br/>mitigación"]
+    C --> T5["5 · HSTS, pinning, E2E"]
+    C --> T6["6 · Indicadores y detección"]
+    C --> T7["7 · Redes no confiables"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

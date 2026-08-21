@@ -1,7 +1,20 @@
 # Clase 118 — Debugging con GDB y pwndbg
 
-> Parte: **5 — Explotación de sistemas y binarios** · Fuente: *Andriesse, Practical Binary Analysis* · docs de pwndbg
-> ⏱️ Duración estimada: **110 min** · Nivel: **Fundamentos**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 5](https://img.shields.io/badge/%F0%9F%92%A5%20parte%205-Explotaci%C3%B3n%20de%20sistemas%20y%20binarios-b02a37?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-118%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **5 — Explotación de sistemas y binarios** · 📖 Fuente: *Andriesse, Practical Binary Analysis* · docs de pwndbg
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Fundamentos**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -23,6 +36,25 @@ Al finalizar, el alumno podrá:
 5. **Localizar** un desbordamiento observando cómo se corrompe `RIP` en tiempo de ejecución.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["💥 Clase 118<br/>Debugging con GDB y pwndbg"]
+    C --> T1["1 · Instalación de pwndbg"]
+    C --> T2["2 · Breakpoints y watchpoints"]
+    C --> T3["3 · stepi / nexti / finish"]
+    C --> T4["4 · x/ (examine) y formatos"]
+    C --> T5["5 · context de pwndbg"]
+    C --> T6["6 · vmmap y telescope"]
+    C --> T7["7 · cyclic / cyclic -l"]
+    C --> T8["8 · Ajustar ASLR en depuración"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 | --- | --- | --- |

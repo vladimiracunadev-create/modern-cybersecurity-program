@@ -1,7 +1,20 @@
 # Clase 130 — Ingeniería inversa: introducción
 
-> Parte: **5 — Explotación de sistemas y binarios** · Fuente: *Andriesse, Practical Binary Analysis* · *Eilam, Reversing*
-> ⏱️ Duración estimada: **110 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 5](https://img.shields.io/badge/%F0%9F%92%A5%20parte%205-Explotaci%C3%B3n%20de%20sistemas%20y%20binarios-b02a37?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-130%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **5 — Explotación de sistemas y binarios** · 📖 Fuente: *Andriesse, Practical Binary Analysis* · *Eilam, Reversing*
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -26,6 +39,25 @@ Al finalizar, el alumno podrá:
 5. **Planificar** una metodología de reversing por objetivos.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["💥 Clase 130<br/>Ingeniería inversa"]
+    C --> T1["1 · Qué es y usos legítimos"]
+    C --> T2["2 · Formato ELF"]
+    C --> T3["3 · Formato PE"]
+    C --> T4["4 · Secciones<br/>(.text/.data/.rodata)"]
+    C --> T5["5 · Símbolos y stripping"]
+    C --> T6["6 · strings y triage rápido"]
+    C --> T7["7 · Estático vs dinámico"]
+    C --> T8["8 · Metodología por objetivos"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 | --- | --- | --- |

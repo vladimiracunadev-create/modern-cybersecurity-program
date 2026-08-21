@@ -1,7 +1,20 @@
 # Clase 288 — Seguros cibernéticos
 
-> Parte: **14 — GRC, riesgo y cumplimiento** · Fuente: *(ISC)² CISSP Official Study Guide y How to Measure Anything in Cybersecurity Risk*
-> ⏱️ Duración estimada: **80 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 14](https://img.shields.io/badge/%F0%9F%93%8B%20parte%2014-GRC%2C%20riesgo%20y%20cumplimiento-24292f?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-80%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-288%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **14 — GRC, riesgo y cumplimiento** · 📖 Fuente: *(ISC)² CISSP Official Study Guide y How to Measure Anything in Cybersecurity Risk*
+> ⏱️ Duración estimada: **80 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,24 @@ Al finalizar, el alumno podrá:
 5. **Preparar** la evidencia para un cuestionario de suscripción (underwriting).
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["📋 Clase 288<br/>Seguros cibernéticos"]
+    C --> T1["1 · Transferencia de riesgo"]
+    C --> T2["2 · Coberturas de primera y<br/>tercera parte"]
+    C --> T3["3 · Exclusiones típicas"]
+    C --> T4["4 · Límites, sublímites y<br/>franquicia"]
+    C --> T5["5 · Requisitos de suscripción"]
+    C --> T6["6 · Cálculo de la cobertura<br/>adecuada"]
+    C --> T7["7 · El seguro no sustituye<br/>controles"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

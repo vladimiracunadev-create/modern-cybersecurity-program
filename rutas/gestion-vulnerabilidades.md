@@ -6,6 +6,20 @@
 >
 > **Nivel de entrada:** junior/intermedio (base sólida de sistemas y redes, no requiere saber explotar) · **Foco:** vulnerability management y security operations · **Certificación faro:** CySA+
 
+
+<!-- insignias:inicio -->
+
+<div align="center">
+
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-junior%2Fintermedio-1f6feb?style=flat-square)](README.md)
+[![Foco](https://img.shields.io/badge/%F0%9F%8E%AF%20foco-vulnerability%20management%20y%E2%80%A6-6e7781?style=flat-square)](README.md)
+[![Certificación](https://img.shields.io/badge/%F0%9F%8E%93%20certi-CySA%2B-2e8b57?style=flat-square)](../certificaciones/README.md)
+[![Partes](https://img.shields.io/badge/%F0%9F%97%82%EF%B8%8F%20partes-7-e8590c?style=flat-square)](../classes/README.md)
+
+</div>
+
+<!-- insignias:fin -->
+
 ## 🧭 Qué es y por qué importa
 
 La gestión de vulnerabilidades (VM) no es un pentest. El pentest es un evento acotado que
@@ -102,6 +116,26 @@ mes a mes, encajas.
   cuándo insistir, cuándo escalar y cuándo aceptar un riesgo documentado es parte del oficio.
 
 ## 📚 Tu ruta en el programa
+
+<!-- recorrido:inicio -->
+
+```mermaid
+flowchart LR
+    P0["🧱 Parte 0<br/>Fundamentos"]
+    P1["🌐 Parte 1<br/>Redes"]
+    P3["🎯 Parte 3<br/>Pentesting"]
+    P17["📈 Parte 17<br/>Profundización"]
+    P8["🔵 Parte 8<br/>Blue Team / SOC"]
+    P11["🔄 Parte 11<br/>DevSecOps"]
+    P9["🔬 Parte 9<br/>DFIR"]
+    P0 --> P1 --> P3 --> P17 --> P8 --> P11 --> P9
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class P0 ini
+    class P9 fin
+```
+
+<!-- recorrido:fin -->
 
 El orden importa: primero la base técnica, luego el escaneo, luego el ciclo completo y su
 gobierno.

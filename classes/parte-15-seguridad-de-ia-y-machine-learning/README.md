@@ -1,8 +1,16 @@
-# Parte 15 — Seguridad de IA y machine learning
+# 🧪 Parte 15 — Seguridad de IA y machine learning
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⏭️ Parte siguiente](../parte-16-capstones-y-preparacion-de-certificaciones/README.md)
 
-**10 clases** · rango 291–300 · Ataques adversariales, OWASP LLM, prompt injection y defensa con IA
+<div align="center">
+
+[![Clases](https://img.shields.io/badge/clases-10-bf3989?style=flat-square)](../README.md)
+[![Rango](https://img.shields.io/badge/rango-291%E2%80%93300-24292f?style=flat-square)](../README.md)
+[![Parte](https://img.shields.io/badge/parte-15%20de%2018-6e7781?style=flat-square)](../README.md)
+
+</div>
+
+Ataques adversariales, OWASP LLM, prompt injection y defensa con IA
 
 **Fuentes de referencia de esta parte:**
 
@@ -53,6 +61,24 @@ Al terminar la parte, el alumno podrá:
 - Un entorno de laboratorio aislado con Python 3.10+, capacidad de crear entornos virtuales y, deseablemente, GPU opcional.
 
 ## 🗺️ Estructura temática
+
+<!-- arco:inicio -->
+
+```mermaid
+flowchart LR
+    B1["Fundamentos y superficie de ataque<br/>291"]
+    B2["Ataques al modelo<br/>292, 293, 294"]
+    B3["Seguridad de LLM y aplicaciones<br/>295, 296, 297"]
+    B4["IA como herramienta<br/>298, 299"]
+    B5["Gobernanza<br/>300"]
+    B1 --> B2 --> B3 --> B4 --> B5
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class B1 ini
+    class B5 fin
+```
+
+<!-- arco:fin -->
 
 | Bloque | Clases | Foco |
 |--------|--------|------|

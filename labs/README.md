@@ -10,6 +10,23 @@ lo usan. Aquí **practicas** lo que leíste en las clases.
 > objetivos de laboratorio o contra sistemas para los que tengas **autorización
 > explícita**. Atacar sistemas ajenos es delito (ver [Clase 025](../classes/parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.md)).
 
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Laboratorios](https://img.shields.io/badge/laboratorios-12-2496ED?style=for-the-badge&logo=docker&logoColor=white)](README.md)
+[![Retos](https://img.shields.io/badge/retos%20CTF-6%20categorías-e8590c?style=for-the-badge)](../ctf/README.md)
+[![Aislados](https://img.shields.io/badge/red-127.0.0.1%20por%20diseño-2e8b57?style=for-the-badge)](README.md)
+
+[⬅️ Volver al programa](../README.md) ·
+[📚 Índice de clases](../classes/README.md) ·
+[🧭 Rutas por rol](../rutas/README.md) ·
+[🚩 Retos CTF](../ctf/README.md)
+
+</div>
+
+<!-- cabecera:fin -->
+
 ## Requisitos
 
 - [Docker](https://docs.docker.com/get-docker/) y Docker Compose v2 (`docker compose version`).
@@ -28,20 +45,20 @@ docker compose down -v      # apagar y borrar también los volúmenes/datos
 
 ## Catálogo
 
-| Lab | Descripción | Clases relacionadas | Estado |
-|---|---|---|---|
-| [`appsec-web`](appsec-web/README.md) | OWASP Juice Shop + DVWA para practicar el OWASP Top 10 (SQLi, XSS, CSRF, IDOR…) | Parte 4 (086–115) | ✅ Disponible |
-| [`blue-team-soc`](blue-team-soc/README.md) | Elasticsearch + Kibana con telemetría de un ataque real para cazar y detectar | Parte 8 (181–200) | ✅ Disponible |
-| [`red-team-ad`](red-team-ad/README.md) | Caja de atacante (Impacket/NetExec/BloodHound) + guía GOAD para atacar Active Directory | Parte 7 (161–180) | ✅ Disponible |
-| [`cripto`](cripto/README.md) | Retos de criptografía aplicada en Python puro (XOR, RSA-Fermat, MD5, ECB) | Parte 2 (046–065) | ✅ Disponible |
-| [`dfir-memoria`](dfir-memoria/README.md) | Estación Volatility 3 + YARA para forense de memoria y malware en IR | Partes 9 y 17 · SANS/BTL1 | ✅ Disponible |
-| [`appsec-code`](appsec-code/README.md) | App vulnerable + Semgrep/Bandit para code review y SAST | Partes 11 y 17 · PenTest+/CISSP | ✅ Disponible |
-| [`kali-mcp-ia`](kali-mcp-ia/README.md) | Agente de IA orquestando Kali vía MCP (usa kali-mcp, MIT) | Parte 18 | ✅ Disponible |
-| [`rootcause-windows`](rootcause-windows/README.md) | Triaje forense de Windows con RootCause (sensor de comportamiento en Rust, Apache-2.0) | Partes 6, 8 y 9 | ✅ Disponible |
-| [`redes-nmap`](redes-nmap/README.md) | Objetivos en red aislada + scanner nmap para descubrimiento y enumeración | Parte 1 | ✅ Disponible |
-| [`pwn-binarios`](pwn-binarios/README.md) | Binario vulnerable + gdb/pwntools para explotación de stack overflow | Parte 5 | ✅ Disponible |
-| [`cloud-security`](cloud-security/README.md) | Toolbox Prowler/ScoutSuite/trivy/kube-bench para auditoría CSPM | Parte 10 | ✅ Disponible |
-| [`devsecops-pipeline`](devsecops-pipeline/README.md) | Repo vulnerable + auditoría en **8 capas** (deps, SAST, secretos, Dockerfile, contenedor, CI/CD, typosquat y priorización KEV/EPSS/CVSS) con informe | Parte 11 (236–248) · 227, 318, 330 | ✅ Disponible |
+| | Lab | Descripción | Clases relacionadas | Estado |
+|:---:|---|---|---|---|
+| 🕸️ | [`appsec-web`](appsec-web/README.md) | OWASP Juice Shop + DVWA para practicar el OWASP Top 10 (SQLi, XSS, CSRF, IDOR…) | Parte 4 (086–115) | ✅ Disponible |
+| 🛡️ | [`blue-team-soc`](blue-team-soc/README.md) | Elasticsearch + Kibana con telemetría de un ataque real para cazar y detectar | Parte 8 (181–200) | ✅ Disponible |
+| 🎯 | [`red-team-ad`](red-team-ad/README.md) | Caja de atacante (Impacket/NetExec/BloodHound) + guía GOAD para atacar Active Directory | Parte 7 (161–180) | ✅ Disponible |
+| 🔐 | [`cripto`](cripto/README.md) | Retos de criptografía aplicada en Python puro (XOR, RSA-Fermat, MD5, ECB) | Parte 2 (046–065) | ✅ Disponible |
+| 🧠 | [`dfir-memoria`](dfir-memoria/README.md) | Estación Volatility 3 + YARA para forense de memoria y malware en IR | Partes 9 y 17 · SANS/BTL1 | ✅ Disponible |
+| 🔎 | [`appsec-code`](appsec-code/README.md) | App vulnerable + Semgrep/Bandit para code review y SAST | Partes 11 y 17 · PenTest+/CISSP | ✅ Disponible |
+| 🤖 | [`kali-mcp-ia`](kali-mcp-ia/README.md) | Agente de IA orquestando Kali vía MCP (usa kali-mcp, MIT) | Parte 18 | ✅ Disponible |
+| 🪟 | [`rootcause-windows`](rootcause-windows/README.md) | Triaje forense de Windows con RootCause (sensor de comportamiento en Rust, Apache-2.0) | Partes 6, 8 y 9 | ✅ Disponible |
+| 🌐 | [`redes-nmap`](redes-nmap/README.md) | Objetivos en red aislada + scanner nmap para descubrimiento y enumeración | Parte 1 | ✅ Disponible |
+| 💥 | [`pwn-binarios`](pwn-binarios/README.md) | Binario vulnerable + gdb/pwntools para explotación de stack overflow | Parte 5 | ✅ Disponible |
+| ☁️ | [`cloud-security`](cloud-security/README.md) | Toolbox Prowler/ScoutSuite/trivy/kube-bench para auditoría CSPM | Parte 10 | ✅ Disponible |
+| 🚚 | [`devsecops-pipeline`](devsecops-pipeline/README.md) | Repo vulnerable + auditoría en **8 capas** (deps, SAST, secretos, Dockerfile, contenedor, CI/CD, typosquat y priorización KEV/EPSS/CVSS) con informe | Parte 11 (236–248) · 227, 318, 330 | ✅ Disponible |
 
 Además: **[🚩 Retos tipo CTF](../ctf/README.md)** — colección de retos por categoría (web, cripto, redes, forense, OSINT, pwn) con solución.
 

@@ -1,7 +1,20 @@
 # Clase 191 — Análisis de logs de red y proxy
 
-> Parte: **8 — Blue Team, detección y SOC** · Fuente: *Applied Network Security Monitoring* — Chris Sanders y Jason Smith
-> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 8](https://img.shields.io/badge/%F0%9F%94%B5%20parte%208-Blue%20Team%2C%20detecci%C3%B3n%20y%20SOC-0969da?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-191%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **8 — Blue Team, detección y SOC** · 📖 Fuente: *Applied Network Security Monitoring* — Chris Sanders y Jason Smith
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Correlacionar** telemetría de red con la de endpoint.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔵 Clase 191<br/>Análisis de logs de red y<br/>proxy"]
+    C --> T1["1 · NSM: por qué la red<br/>importa"]
+    C --> T2["2 · Logs de firewall y flujo"]
+    C --> T3["3 · Proxy web y user-agents"]
+    C --> T4["4 · DNS: la mina de oro<br/>defensiva"]
+    C --> T5["5 · Zeek:<br/>conn/dns/http/ssl.log"]
+    C --> T6["6 · JA3/JA3S y fingerprint TLS"]
+    C --> T7["7 · Exfiltración y beaconing<br/>(intro)"]
+    C --> T8["8 · Correlación red↔endpoint"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

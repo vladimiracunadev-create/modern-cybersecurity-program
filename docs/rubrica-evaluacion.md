@@ -3,6 +3,24 @@
 Cómo evaluar (o autoevaluarte) el trabajo del programa de forma objetiva y consistente.
 Aplica tanto al alumno autodidacta como al instructor.
 
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![rúbrica](https://img.shields.io/badge/r%C3%BAbrica-por%20criterio-0969da?style=for-the-badge)](rubrica-evaluacion.md)
+[![uso](https://img.shields.io/badge/uso-alumno%20o%20instructor-6e7781?style=for-the-badge)](rubrica-evaluacion.md)
+
+[⬅️ Volver al programa](../README.md) ·
+[📚 Índice de clases](../classes/README.md) ·
+[🧭 Rutas por rol](../rutas/README.md) ·
+[🧪 Laboratorios](../labs/README.md) ·
+[📅 Syllabus](syllabus.md) ·
+[🎓 Examen por rol](examen-final-por-rol.md)
+
+</div>
+
+<!-- cabecera:fin -->
+
 ## 1. Reto verificable de cada clase
 
 Cada clase termina con un **reto verificable** que ya trae su **criterio de aceptación**.

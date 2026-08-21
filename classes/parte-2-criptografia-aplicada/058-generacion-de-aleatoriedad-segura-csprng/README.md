@@ -1,7 +1,20 @@
 # Clase 058 — Generación de aleatoriedad segura (CSPRNG)
 
-> Parte: **2 — Criptografía aplicada** · Fuente: *Serious Cryptography* (Aumasson) y NIST SP 800-90A
-> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 2](https://img.shields.io/badge/%F0%9F%94%90%20parte%202-Criptograf%C3%ADa%20aplicada-6f42c1?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-058%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **2 — Criptografía aplicada** · 📖 Fuente: *Serious Cryptography* (Aumasson) y NIST SP 800-90A
+> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,24 @@ Al finalizar, el alumno podrá:
 5. **Evitar** anti-patrones como sembrar con el tiempo o usar `random` para seguridad.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔐 Clase 058<br/>Generación de aleatoriedad<br/>segura (CSPRNG)"]
+    C --> T1["1 · Entropía y fuentes"]
+    C --> T2["2 · PRNG vs CSPRNG"]
+    C --> T3["3 · /dev/urandom y getrandom()"]
+    C --> T4["4 · DRBG (SP 800-90A)"]
+    C --> T5["5 · APIs seguras (secrets)"]
+    C --> T6["6 · Fallos famosos"]
+    C --> T7["7 · Pruebas de aleatoriedad"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,7 +1,20 @@
 # Clase 213 — Anti-forense y sus contramedidas
 
-> Parte: **9 — Forense digital y respuesta a incidentes** · Fuente: *The Art of Memory Forensics* y literatura de anti-forensics
-> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 9](https://img.shields.io/badge/%F0%9F%94%AC%20parte%209-Forense%20digital%20y%20respuesta%20a%20incidentes-1a7f64?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-213%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **9 — Forense digital y respuesta a incidentes** · 📖 Fuente: *The Art of Memory Forensics* y literatura de anti-forensics
+> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -22,6 +35,25 @@ Al finalizar, el alumno podrá:
 5. **Aplicar** contramedidas y fuentes redundantes de evidencia.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔬 Clase 213<br/>Anti-forense y sus<br/>contramedidas"]
+    C --> T1["1 · Familias de anti-forense"]
+    C --> T2["2 · Borrado seguro (wiping)"]
+    C --> T3["3 · Timestomping"]
+    C --> T4["4 · Limpieza de logs"]
+    C --> T5["5 · Cifrado y ocultamiento"]
+    C --> T6["6 · Esteganografía"]
+    C --> T7["7 · Living-off-the-land"]
+    C --> T8["8 · Detección y redundancia"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

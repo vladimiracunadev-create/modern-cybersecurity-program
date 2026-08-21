@@ -7,6 +7,20 @@
 >
 > **Nivel de entrada:** junior/semi-senior; ~1 año administrando servidores Linux y Windows · **Foco:** plataformas de seguridad, ingeniería de fuentes del SIEM, análisis de eventos y controles de cumplimiento (SOX/PCI) · **Certificación faro:** CompTIA Security+ → CySA+ (+ SC-200 del lado Microsoft)
 
+
+<!-- insignias:inicio -->
+
+<div align="center">
+
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-junior%2Fsemi--senior-1f6feb?style=flat-square)](README.md)
+[![Foco](https://img.shields.io/badge/%F0%9F%8E%AF%20foco-plataformas%20de%20seguridad-6e7781?style=flat-square)](README.md)
+[![Certificación](https://img.shields.io/badge/%F0%9F%8E%93%20certi-CompTIA%20Security%2B%20%E2%86%92%20CySA%2B-2e8b57?style=flat-square)](../certificaciones/README.md)
+[![Partes](https://img.shields.io/badge/%F0%9F%97%82%EF%B8%8F%20partes-8-e8590c?style=flat-square)](../classes/README.md)
+
+</div>
+
+<!-- insignias:fin -->
+
 ## 🧭 Qué es y por qué importa
 
 Todo SOC del mundo depende de una cosa que casi nadie explica: **que los logs lleguen**. Este rol es
@@ -140,6 +154,27 @@ plataformas de generaciones muy distintas y hay que moverse entre todas sin perd
   documentación. Es normal, y quien no los esquiva se vuelve valioso rápido.
 
 ## 📚 Tu ruta en el programa
+
+<!-- recorrido:inicio -->
+
+```mermaid
+flowchart TD
+    P0["🧱 Parte 0<br/>Fundamentos"]
+    P1["🌐 Parte 1<br/>Redes"]
+    P8["🔵 Parte 8<br/>Blue Team / SOC"]
+    P2["🔐 Parte 2<br/>Criptografía"]
+    P10["☁️ Parte 10<br/>Cloud"]
+    P14["📋 Parte 14<br/>GRC"]
+    P9["🔬 Parte 9<br/>DFIR"]
+    P17["📈 Parte 17<br/>Profundización"]
+    P0 --> P1 --> P8 --> P2 --> P10 --> P14 --> P9 --> P17
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class P0 ini
+    class P17 fin
+```
+
+<!-- recorrido:fin -->
 
 Ruta **defensiva y de infraestructura**: mucho de redes, plataformas y telemetría; nada de ofensiva
 avanzada. Orden recomendado:

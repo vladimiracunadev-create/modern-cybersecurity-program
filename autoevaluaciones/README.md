@@ -4,6 +4,19 @@ Batería de preguntas por parte para comprobar lo aprendido. Esta es la versión
 
 > 🧭 ¿No sabes por dónde empezar? Mira las [rutas por rol](../rutas/README.md).
 
+<div align="center">
+
+[![Preguntas](https://img.shields.io/badge/preguntas-97-0969da?style=for-the-badge)](README.md)
+[![Partes](https://img.shields.io/badge/baterías-19%20partes-7c5cff?style=for-the-badge)](../classes/README.md)
+[![Interactivo](https://img.shields.io/badge/quiz-con%20puntuación-2e8b57?style=for-the-badge)](quiz.html)
+
+[⬅️ Volver al programa](../README.md) ·
+[📚 Índice de clases](../classes/README.md) ·
+[🧭 Rutas por rol](../rutas/README.md) ·
+[✅ Progreso](progreso.html)
+
+</div>
+
 <a id="progreso"></a>
 
 ## Seguimiento de progreso

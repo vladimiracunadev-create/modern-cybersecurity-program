@@ -1,7 +1,20 @@
 # Clase 282 — Políticas, estándares y procedimientos
 
-> Parte: **14 — GRC, riesgo y cumplimiento** · Fuente: *(ISC)² CISSP Official Study Guide (Chapple, Stewart, Gibson)*
-> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 14](https://img.shields.io/badge/%F0%9F%93%8B%20parte%2014-GRC%2C%20riesgo%20y%20cumplimiento-24292f?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-282%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **14 — GRC, riesgo y cumplimiento** · 📖 Fuente: *(ISC)² CISSP Official Study Guide (Chapple, Stewart, Gibson)*
+> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,24 @@ Al finalizar, el alumno podrá:
 5. **Vincular** cada documento a requisitos de negocio, riesgo o regulación.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["📋 Clase 282<br/>Políticas, estándares y<br/>procedimientos"]
+    C --> T1["1 · Jerarquía documental"]
+    C --> T2["2 · Políticas (obligatorias,<br/>de alto nivel)"]
+    C --> T3["3 · Estándares y baselines"]
+    C --> T4["4 · Directrices<br/>(recomendaciones)"]
+    C --> T5["5 · Procedimientos (paso a<br/>paso)"]
+    C --> T6["6 · Ciclo de vida y control de<br/>versiones"]
+    C --> T7["7 · Excepciones y cumplimiento"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

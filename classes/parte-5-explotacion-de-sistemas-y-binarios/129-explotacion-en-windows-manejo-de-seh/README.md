@@ -1,7 +1,20 @@
 # Clase 129 — Explotación en Windows: manejo de SEH
 
-> Parte: **5 — Explotación de sistemas y binarios** · Fuente: *The Shellcoder's Handbook* · Corelan exploit-writing series
-> ⏱️ Duración estimada: **130 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 5](https://img.shields.io/badge/%F0%9F%92%A5%20parte%205-Explotaci%C3%B3n%20de%20sistemas%20y%20binarios-b02a37?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-130%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-129%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **5 — Explotación de sistemas y binarios** · 📖 Fuente: *The Shellcoder's Handbook* · Corelan exploit-writing series
+> ⏱️ Duración estimada: **130 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -26,6 +39,25 @@ Al finalizar, el alumno podrá:
 5. **Construir** un exploit SEH sobre un servicio vulnerable de laboratorio.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["💥 Clase 129<br/>Explotación en Windows"]
+    C --> T1["1 · Modelo de excepciones de<br/>Windows"]
+    C --> T2["2 · Cadena SEH y sus campos"]
+    C --> T3["3 · Sobrescritura de SEH"]
+    C --> T4["4 · POP POP RET"]
+    C --> T5["5 · mona.py"]
+    C --> T6["6 · SafeSEH / SEHOP"]
+    C --> T7["7 · DEP/ASLR en Windows"]
+    C --> T8["8 · vulnserver como práctica"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 | --- | --- | --- |

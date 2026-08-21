@@ -1,8 +1,16 @@
-# Parte 0 — Fundamentos y prerrequisitos
+# 🧱 Parte 0 — Fundamentos y prerrequisitos
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⏭️ Parte siguiente](../parte-1-redes-y-seguridad-de-redes/README.md)
 
-**25 clases** · rango 001–025 · Redes, sistemas operativos, Linux, Windows, cripto base, Python ofensivo y laboratorio
+<div align="center">
+
+[![Clases](https://img.shields.io/badge/clases-25-2e8b57?style=flat-square)](../README.md)
+[![Rango](https://img.shields.io/badge/rango-001%E2%80%93025-24292f?style=flat-square)](../README.md)
+[![Parte](https://img.shields.io/badge/parte-0%20de%2018-6e7781?style=flat-square)](../README.md)
+
+</div>
+
+Redes, sistemas operativos, Linux, Windows, cripto base, Python ofensivo y laboratorio
 
 **Fuentes de referencia de esta parte:**
 
@@ -51,6 +59,29 @@ Al terminar la parte, el alumno podrá:
 Ninguno formal: es el punto de entrada del programa. Se asume manejo básico de un computador (instalar software, navegar por carpetas) y disposición para trabajar en línea de comandos. Un equipo con virtualización por hardware (VT-x/AMD-V) y al menos 8 GB de RAM es muy recomendable.
 
 ## 🗺️ Estructura temática
+
+<!-- arco:inicio -->
+
+```mermaid
+flowchart TD
+    B1["Marco conceptual<br/>001–003"]
+    B2["Laboratorio<br/>004"]
+    B3["Linux<br/>005–007"]
+    B4["Windows<br/>008–009"]
+    B5["Redes<br/>010–014"]
+    B6["Python ofensivo<br/>015–017"]
+    B7["Herramientas y datos<br/>018–020"]
+    B8["Cripto y contenedores<br/>021–022"]
+    B9["Interiores<br/>023–024"]
+    B10["Marco legal<br/>025"]
+    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9 --> B10
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class B1 ini
+    class B10 fin
+```
+
+<!-- arco:fin -->
 
 | Bloque | Clases | Contenido |
 |--------|--------|-----------|

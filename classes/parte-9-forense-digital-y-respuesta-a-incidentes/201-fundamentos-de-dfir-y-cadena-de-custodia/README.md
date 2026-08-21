@@ -1,7 +1,20 @@
 # Clase 201 — Fundamentos de DFIR y cadena de custodia
 
-> Parte: **9 — Forense digital y respuesta a incidentes** · Fuente: *NIST SP 800-86 — Guide to Integrating Forensic Techniques into Incident Response*
-> ⏱️ Duración estimada: **90 min** · Nivel: **Fundamentos**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 9](https://img.shields.io/badge/%F0%9F%94%AC%20parte%209-Forense%20digital%20y%20respuesta%20a%20incidentes-1a7f64?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-201%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **9 — Forense digital y respuesta a incidentes** · 📖 Fuente: *NIST SP 800-86 — Guide to Integrating Forensic Techniques into Incident Response*
+> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Fundamentos**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Identificar** los errores que contaminan evidencia y cómo evitarlos.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔬 Clase 201<br/>Fundamentos de DFIR y cadena<br/>de custodia"]
+    C --> T1["1 · Qué es DFIR y sus dos<br/>mitades"]
+    C --> T2["2 · Principio de Locard"]
+    C --> T3["3 · Orden de volatilidad"]
+    C --> T4["4 · Cadena de custodia"]
+    C --> T5["5 · Integridad por hash"]
+    C --> T6["6 · Bloqueo de escritura"]
+    C --> T7["7 · Documentación y notas<br/>contemporáneas"]
+    C --> T8["8 · Ética y autorización"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

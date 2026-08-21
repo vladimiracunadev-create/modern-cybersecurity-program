@@ -1,7 +1,20 @@
 # Clase 181 — El SOC moderno: roles, niveles y procesos
 
-> Parte: **8 — Blue Team, detección y SOC** · Fuente: *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases* — Don Murdoch
-> ⏱️ Duración estimada: **90 min** · Nivel: **Fundamentos**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 8](https://img.shields.io/badge/%F0%9F%94%B5%20parte%208-Blue%20Team%2C%20detecci%C3%B3n%20y%20SOC-0969da?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-181%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **8 — Blue Team, detección y SOC** · 📖 Fuente: *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases* — Don Murdoch
+> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Fundamentos**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Situar** cada herramienta (SIEM, EDR, SOAR, TIP) dentro del flujo operativo.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔵 Clase 181<br/>El SOC moderno"]
+    C --> T1["1 · Definición y misión del<br/>SOC"]
+    C --> T2["2 · Niveles L1/L2/L3 y<br/>funciones"]
+    C --> T3["3 · Roles: analista, hunter,<br/>ingeniero de detección, IR"]
+    C --> T4["4 · Ciclo de vida de una<br/>alerta"]
+    C --> T5["5 · Modelos operativos<br/>(interno/MSSP/híbrido)"]
+    C --> T6["6 · Runbooks y playbooks"]
+    C --> T7["7 · Métricas base (MTTD, MTTR,<br/>dwell time)"]
+    C --> T8["8 · Turnos y modelo de<br/>cobertura (8x5 vs 24x7)"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,7 +1,20 @@
 # Clase 016 — Python para seguridad: sockets y programación de red
 
-> Parte: **0 — Fundamentos y prerrequisitos** · Fuente: *Seitz & Arnold, Black Hat Python (2ª ed.)*
-> ⏱️ Duración estimada: **120 min** · Nivel: **Fundamentos**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 0](https://img.shields.io/badge/%F0%9F%A7%B1%20parte%200-Fundamentos%20y%20prerrequisitos-2e8b57?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-016%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **0 — Fundamentos y prerrequisitos** · 📖 Fuente: *Seitz & Arnold, Black Hat Python (2ª ed.)*
+> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Fundamentos**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,25 @@ Al finalizar, el alumno podrá:
 5. **Aplicar** concurrencia (hilos) para acelerar tareas de red.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧱 Clase 016<br/>Python para seguridad"]
+    C --> T1["1 · API de sockets"]
+    C --> T2["2 · Cliente TCP"]
+    C --> T3["3 · Servidor TCP"]
+    C --> T4["4 · UDP"]
+    C --> T5["5 · Timeouts"]
+    C --> T6["6 · Escáner de puertos"]
+    C --> T7["7 · Banner grabbing"]
+    C --> T8["8 · Concurrencia"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

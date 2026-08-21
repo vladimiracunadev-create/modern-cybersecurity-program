@@ -1,7 +1,20 @@
 # Clase 241 — Secretos en el código y pre-commit hooks
 
-> Parte: **11 — DevSecOps y seguridad del SDLC** · Fuente: *Securing DevOps* (Julien Vehent) y OWASP Secrets Management Cheat Sheet
-> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 11](https://img.shields.io/badge/%F0%9F%94%84%20parte%2011-DevSecOps%20y%20seguridad%20del%20SDLC-2da44e?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-241%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **11 — DevSecOps y seguridad del SDLC** · 📖 Fuente: *Securing DevOps* (Julien Vehent) y OWASP Secrets Management Cheat Sheet
+> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -24,6 +37,24 @@ Al finalizar, el alumno podrá:
 5. **Remediar** correctamente: rotar el secreto y purgar el historial.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🔄 Clase 241<br/>Secretos en el código y<br/>pre-commit hooks"]
+    C --> T1["1 · Anatomía de una fuga de<br/>secreto"]
+    C --> T2["2 · Detección por entropía y<br/>patrones"]
+    C --> T3["3 · gitleaks: historial y<br/>pre-commit"]
+    C --> T4["4 · El framework pre-commit"]
+    C --> T5["5 · Escaneo en CI"]
+    C --> T6["6 · Remediación: rotar y<br/>purgar"]
+    C --> T7["7 · Gestión de secretos<br/>correcta"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

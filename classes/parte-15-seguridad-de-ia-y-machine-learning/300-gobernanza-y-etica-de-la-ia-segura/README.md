@@ -1,7 +1,20 @@
 # Clase 300 — Gobernanza y ética de la IA segura
 
-> Parte: **15 — Seguridad de IA y machine learning** · Fuente: *NIST AI RMF 1.0*, *ISO/IEC 42001:2023* y *EU AI Act*
-> ⏱️ Duración estimada: **100 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 15](https://img.shields.io/badge/%F0%9F%A7%AA%20parte%2015-Seguridad%20de%20IA%20y%20machine%20learning-bf3989?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-300%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **15 — Seguridad de IA y machine learning** · 📖 Fuente: *NIST AI RMF 1.0*, *ISO/IEC 42001:2023* y *EU AI Act*
+> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -20,6 +33,24 @@ Al finalizar, el alumno podrá:
 5. **Integrar** la seguridad de IA en el gobierno corporativo (roles, RACI, ciclo de vida).
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🧪 Clase 300<br/>Gobernanza y ética de la IA<br/>segura"]
+    C --> T1["1 · Por qué gobernar la IA"]
+    C --> T2["2 · NIST AI RMF:<br/>Govern/Map/Measure/Manage"]
+    C --> T3["3 · ISO/IEC 42001 (AIMS) e<br/>ISO/IEC 23894"]
+    C --> T4["4 · EU AI Act: niveles de<br/>riesgo"]
+    C --> T5["5 · Ética: sesgo, equidad,<br/>transparencia"]
+    C --> T6["6 · Model cards y data sheets"]
+    C --> T7["7 · Roles, RACI y ciclo de<br/>vida"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

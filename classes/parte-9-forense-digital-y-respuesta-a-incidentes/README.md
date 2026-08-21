@@ -1,8 +1,16 @@
-# Parte 9 — Forense digital y respuesta a incidentes
+# 🔬 Parte 9 — Forense digital y respuesta a incidentes
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⏭️ Parte siguiente](../parte-10-seguridad-en-la-nube-y-contenedores/README.md)
 
-**20 clases** · rango 201–220 · DFIR, adquisición, memoria, timelines y playbooks
+<div align="center">
+
+[![Clases](https://img.shields.io/badge/clases-20-1a7f64?style=flat-square)](../README.md)
+[![Rango](https://img.shields.io/badge/rango-201%E2%80%93220-24292f?style=flat-square)](../README.md)
+[![Parte](https://img.shields.io/badge/parte-9%20de%2018-6e7781?style=flat-square)](../README.md)
+
+</div>
+
+DFIR, adquisición, memoria, timelines y playbooks
 
 **Fuentes de referencia de esta parte:**
 
@@ -54,6 +62,29 @@ Al terminar la parte, el alumno podrá:
 - Un entorno de laboratorio aislado (máquinas virtuales) para practicar adquisición y análisis sin riesgo.
 
 ## 🗺️ Estructura temática
+
+<!-- arco:inicio -->
+
+```mermaid
+flowchart TD
+    B1["Fundamentos y proceso<br/>201–202"]
+    B2["Adquisición<br/>203"]
+    B3["Análisis de sistemas de archivos<br/>204"]
+    B4["Artefactos del SO<br/>205–206"]
+    B5["Memoria y red<br/>207–208"]
+    B6["Timelines<br/>209"]
+    B7["Fuentes específicas<br/>210–212"]
+    B8["Técnicas avanzadas<br/>213–214"]
+    B9["Ciclo de respuesta<br/>215–217"]
+    B10["Cierre profesional<br/>218–220"]
+    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7 --> B8 --> B9 --> B10
+    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
+    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
+    class B1 ini
+    class B10 fin
+```
+
+<!-- arco:fin -->
 
 | Bloque | Clases | Enfoque |
 |--------|--------|---------|

@@ -1,7 +1,20 @@
 # Clase 038 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque
 
-> Parte: **1 — Redes y seguridad de redes** · Fuente: *IEEE 802.11; documentación de Aircrack-ng y hcxtools*
-> ⏱️ Duración estimada: **130 min** · Nivel: **Avanzado**
+<!-- cabecera:inicio -->
+
+<div align="center">
+
+[![Parte 1](https://img.shields.io/badge/%F0%9F%8C%90%20parte%201-Redes%20y%20seguridad%20de%20redes-1f6feb?style=flat-square)](../README.md)
+[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-130%20min-24292f?style=flat-square)](../../README.md)
+[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
+[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-038%20%2F%20340-6e7781?style=flat-square)](../../README.md)
+
+</div>
+
+> 🗂️ Parte: **1 — Redes y seguridad de redes** · 📖 Fuente: *IEEE 802.11; documentación de Aircrack-ng y hcxtools*
+> ⏱️ Duración estimada: **130 min** · 🎚️ Nivel: **Avanzado**
+
+<!-- cabecera:fin -->
 
 ---
 
@@ -21,6 +34,24 @@ Al finalizar, el alumno podrá:
 6. **Aplicar** contramedidas: WPA3, PMF, passphrases fuertes, WPA-Enterprise.
 
 ## 🗺️ Temas
+
+<!-- mapa:inicio -->
+
+```mermaid
+flowchart LR
+    C["🌐 Clase 038<br/>Seguridad WiFi"]
+    C --> T1["1 · 802.11: SSID, BSSID,<br/>canales, tramas"]
+    C --> T2["2 · WPA2-PSK y el 4-way<br/>handshake"]
+    C --> T3["3 · WPA3-SAE (Dragonfly)"]
+    C --> T4["4 · Modo monitor y captura"]
+    C --> T5["5 · Captura de handshake y<br/>PMKID"]
+    C --> T6["6 · Deauth y evil twin"]
+    C --> T7["7 · Contramedidas y PMF"]
+    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
+    class C raiz
+```
+
+<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|
