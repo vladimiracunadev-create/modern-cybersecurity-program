@@ -1,20 +1,7 @@
 # Clase 276 — Gobernanza de la seguridad de la información
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 14](https://img.shields.io/badge/%F0%9F%93%8B%20parte%2014-GRC%2C%20riesgo%20y%20cumplimiento-24292f?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-276%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **14 — GRC, riesgo y cumplimiento** · 📖 Fuente: *(ISC)² CISSP Official Study Guide (Chapple, Stewart, Gibson)*
-> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **14 — GRC, riesgo y cumplimiento** · Fuente: *(ISC)² CISSP Official Study Guide (Chapple, Stewart, Gibson)*
+> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Redactar** el borrador de una carta de gobierno (charter) de un comité de seguridad.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📋 Clase 276<br/>Gobernanza de la seguridad<br/>de la información"]
-    C --> T1["1 · Gobernanza vs. gestión vs.<br/>operación"]
-    C --> T2["2 · Modelos: top-down y su<br/>necesidad"]
-    C --> T3["3 · Roles y responsabilidades<br/>(RACI)"]
-    C --> T4["4 · Apetito y tolerancia al<br/>riesgo"]
-    C --> T5["5 · Alineación con el negocio"]
-    C --> T6["6 · Due care y due diligence"]
-    C --> T7["7 · Comités y estructuras de<br/>reporte"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

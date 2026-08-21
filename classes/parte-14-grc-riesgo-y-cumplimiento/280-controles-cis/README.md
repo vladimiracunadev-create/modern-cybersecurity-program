@@ -1,20 +1,7 @@
 # Clase 280 — Controles CIS
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 14](https://img.shields.io/badge/%F0%9F%93%8B%20parte%2014-GRC%2C%20riesgo%20y%20cumplimiento-24292f?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-280%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **14 — GRC, riesgo y cumplimiento** · 📖 Fuente: *CIS Critical Security Controls v8.1 (Center for Internet Security)*
-> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **14 — GRC, riesgo y cumplimiento** · Fuente: *CIS Critical Security Controls v8.1 (Center for Internet Security)*
+> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Mapear** los controles CIS a NIST CSF e ISO 27001.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📋 Clase 280<br/>Controles CIS"]
-    C --> T1["1 · Origen y filosofía de los<br/>CIS Controls"]
-    C --> T2["2 · Los 18 controles v8.1"]
-    C --> T3["3 · Salvaguardas (Safeguards)"]
-    C --> T4["4 · Implementation Groups<br/>IG1–IG3"]
-    C --> T5["5 · Higiene cibernética<br/>esencial (IG1)"]
-    C --> T6["6 · CIS Benchmarks"]
-    C --> T7["7 · Mapeos a CSF, ISO, PCI"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

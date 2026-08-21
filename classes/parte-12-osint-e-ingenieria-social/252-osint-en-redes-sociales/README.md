@@ -1,20 +1,7 @@
 # Clase 252 — OSINT en redes sociales
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 12](https://img.shields.io/badge/%F0%9F%95%B5%EF%B8%8F%20parte%2012-OSINT%20e%20ingenier%C3%ADa%20social-6e7781?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-252%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **12 — OSINT e ingeniería social** · 📖 Fuente: *Open Source Intelligence Techniques* (M. Bazzell)
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **12 — OSINT e ingeniería social** · Fuente: *Open Source Intelligence Techniques* (M. Bazzell)
+> ⏱️ Duración estimada: **100 min** · Nivel: **Intermedio**
 
 ---
 
@@ -43,24 +30,6 @@ Al finalizar, el alumno podrá:
 5. **Documentar** hallazgos evitando sesgos y respetando la privacidad.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🕵️ Clase 252<br/>OSINT en redes sociales"]
-    C --> T1["1 · SOCMINT: qué es y sus<br/>límites"]
-    C --> T2["2 · Anatomía de un perfil"]
-    C --> T3["3 · Correlación entre<br/>plataformas"]
-    C --> T4["4 · Geotags y ubicación"]
-    C --> T5["5 · Análisis de red<br/>(conexiones)"]
-    C --> T6["6 · Fugas corporativas"]
-    C --> T7["7 · ToS y privacidad"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

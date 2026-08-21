@@ -5,20 +5,6 @@
 >
 > **Nivel de entrada:** accesible; es de las mejores puertas de entrada a la ciberseguridad · **Foco:** telemetría, SIEM, detección, threat hunting y respuesta a incidentes · **Certificación faro:** BTL1
 
-
-<!-- insignias:inicio -->
-
-<div align="center">
-
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-accesible-1f6feb?style=flat-square)](README.md)
-[![Foco](https://img.shields.io/badge/%F0%9F%8E%AF%20foco-telemetr%C3%ADa-6e7781?style=flat-square)](README.md)
-[![Certificación](https://img.shields.io/badge/%F0%9F%8E%93%20certi-BTL1-2e8b57?style=flat-square)](../certificaciones/README.md)
-[![Partes](https://img.shields.io/badge/%F0%9F%97%82%EF%B8%8F%20partes-5-e8590c?style=flat-square)](../classes/README.md)
-
-</div>
-
-<!-- insignias:fin -->
-
 ## 🧭 Qué es y por qué importa
 
 El **blue team** es el equipo defensor. Mientras el red team ataca, el blue team **detecta,
@@ -110,24 +96,6 @@ muestra.
 - **Aguante para el turno:** gestionar la rotación y la carga sin que el criterio se resienta.
 
 ## 📚 Tu ruta en el programa
-
-<!-- recorrido:inicio -->
-
-```mermaid
-flowchart LR
-    P0["🧱 Parte 0<br/>Fundamentos"]
-    P1["🌐 Parte 1<br/>Redes"]
-    P6["🦠 Parte 6<br/>Malware"]
-    P8["🔵 Parte 8<br/>Blue Team / SOC"]
-    P9["🔬 Parte 9<br/>DFIR"]
-    P0 --> P1 --> P6 --> P8 --> P9
-    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class P0 ini
-    class P9 fin
-```
-
-<!-- recorrido:fin -->
 
 Orden recomendado (según el [índice de rutas](./README.md)):
 

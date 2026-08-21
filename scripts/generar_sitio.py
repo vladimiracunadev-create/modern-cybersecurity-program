@@ -70,32 +70,11 @@ PLANTILLA = """<!doctype html>
   thead th {{ background: #f2f4f6; }}
   blockquote {{ border-left: 4px solid #d0d7de; margin: 1rem 0; padding: .2rem 1rem; color: inherit; opacity: .9; }}
   .nav {{ font-size: .9rem; margin-bottom: 1.5rem; opacity: .85; }}
-  /* Diagramas: el bloque ```mermaid se convierte en <pre class="mermaid"> y lo
-     dibuja la biblioteca. Sin esto, el sitio mostraria el codigo del diagrama
-     en crudo mientras GitHub lo pinta, y las dos superficies dirian cosas
-     distintas. */
-  pre.mermaid {{ background: transparent; text-align: center; padding: .5rem 0; }}
-  pre.mermaid svg {{ max-width: 100%; height: auto; }}
 </style>
 </head>
 <body>
 <div class="nav"><a href="{home}">🛡️ Inicio</a> · <a href="{indice}">📚 Clases</a> · <a href="{rutas}">🧭 Rutas</a> · <a href="{quiz}">📝 Autoevaluación</a> · <a href="{progreso}">✅ Progreso</a> · <a href="{certis}">🎓 Certis</a></div>
 {body}
-<script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
-  for (const code of document.querySelectorAll("pre > code.language-mermaid")) {{
-    const caja = document.createElement("pre");
-    caja.className = "mermaid";
-    caja.textContent = code.textContent;
-    code.parentElement.replaceWith(caja);
-  }}
-  const oscuro = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  mermaid.initialize({{
-    startOnLoad: true,
-    theme: oscuro ? "dark" : "default",
-    themeVariables: {{ fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif" }},
-  }});
-</script>
 </body>
 </html>
 """

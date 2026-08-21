@@ -1,20 +1,7 @@
 # Clase 128 — Integer overflows y errores aritméticos
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 5](https://img.shields.io/badge/%F0%9F%92%A5%20parte%205-Explotaci%C3%B3n%20de%20sistemas%20y%20binarios-b02a37?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-128%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **5 — Explotación de sistemas y binarios** · 📖 Fuente: *The Shellcoder's Handbook* · CWE-190/191
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **5 — Explotación de sistemas y binarios** · Fuente: *The Shellcoder's Handbook* · CWE-190/191
+> ⏱️ Duración estimada: **100 min** · Nivel: **Intermedio**
 
 ---
 
@@ -38,25 +25,6 @@ Al finalizar, el alumno podrá:
 5. **Programar** comprobaciones aritméticas seguras.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["💥 Clase 128<br/>Integer overflows y errores<br/>aritméticos"]
-    C --> T1["1 · Representación de enteros<br/>y wrap-around"]
-    C --> T2["2 · Signed vs unsigned"]
-    C --> T3["3 · Truncamiento (int→short)"]
-    C --> T4["4 · Overflow en cálculo de<br/>tamaño"]
-    C --> T5["5 · De integer bug a heap<br/>overflow"]
-    C --> T6["6 · Off-by-one"]
-    C --> T7["7 · UBSan"]
-    C --> T8["8 · Aritmética segura"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 | --- | --- | --- |

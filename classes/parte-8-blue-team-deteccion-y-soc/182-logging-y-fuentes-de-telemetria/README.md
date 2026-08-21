@@ -1,20 +1,7 @@
 # Clase 182 — Logging y fuentes de telemetría
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 8](https://img.shields.io/badge/%F0%9F%94%B5%20parte%208-Blue%20Team%2C%20detecci%C3%B3n%20y%20SOC-0969da?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-182%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **8 — Blue Team, detección y SOC** · 📖 Fuente: *Applied Network Security Monitoring* — Chris Sanders y Jason Smith · *NIST SP 800-92*
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Fundamentos**
-
-<!-- cabecera:fin -->
+> Parte: **8 — Blue Team, detección y SOC** · Fuente: *Applied Network Security Monitoring* — Chris Sanders y Jason Smith · *NIST SP 800-92*
+> ⏱️ Duración estimada: **100 min** · Nivel: **Fundamentos**
 
 ---
 
@@ -33,25 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Detectar** puntos ciegos en la cobertura de logging de una red.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔵 Clase 182<br/>Logging y fuentes de<br/>telemetría"]
-    C --> T1["1 · Taxonomía de datos NSM"]
-    C --> T2["2 · Fuentes de endpoint (Event<br/>Logs, Sysmon, EDR)"]
-    C --> T3["3 · Fuentes de red (flujo,<br/>PCAP, DNS, proxy)"]
-    C --> T4["4 · Identidad y autenticación<br/>(AD, IdP, VPN)"]
-    C --> T5["5 · Nube y SaaS (CloudTrail,<br/>M365 audit)"]
-    C --> T6["6 · Normalización y marcas de<br/>tiempo (UTC, NTP)"]
-    C --> T7["7 · Retención y coste"]
-    C --> T8["8 · Puntos ciegos y cobertura"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

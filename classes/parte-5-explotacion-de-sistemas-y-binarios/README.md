@@ -1,16 +1,8 @@
-# 💥 Parte 5 — Explotación de sistemas y binarios
+# Parte 5 — Explotación de sistemas y binarios
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⏭️ Parte siguiente](../parte-6-analisis-de-malware/README.md)
 
-<div align="center">
-
-[![Clases](https://img.shields.io/badge/clases-25-b02a37?style=flat-square)](../README.md)
-[![Rango](https://img.shields.io/badge/rango-116%E2%80%93140-24292f?style=flat-square)](../README.md)
-[![Parte](https://img.shields.io/badge/parte-5%20de%2018-6e7781?style=flat-square)](../README.md)
-
-</div>
-
-Assembly, buffer overflows, ROP, heap, fuzzing e ingeniería inversa
+**25 clases** · rango 116–140 · Assembly, buffer overflows, ROP, heap, fuzzing e ingeniería inversa
 
 **Fuentes de referencia de esta parte:**
 
@@ -78,25 +70,6 @@ Al terminar la parte, el alumno podrá:
 - Programación en C y nociones de cómo el sistema operativo gestiona procesos y memoria virtual.
 
 ## 🗺️ Estructura temática
-
-<!-- arco:inicio -->
-
-```mermaid
-flowchart TD
-    B1["Fundamentos de bajo nivel<br/>116–118"]
-    B2["Stack overflows y shellcode<br/>119–121"]
-    B3["Mitigaciones y su evasión<br/>122–124"]
-    B4["Otras clases de bugs<br/>125–128"]
-    B5["Windows y reversing<br/>129–135"]
-    B6["Descubrimiento y avanzado<br/>136–140"]
-    B1 --> B2 --> B3 --> B4 --> B5 --> B6
-    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class B1 ini
-    class B6 fin
-```
-
-<!-- arco:fin -->
 
 | Bloque | Clases | Contenido |
 | --- | --- | --- |

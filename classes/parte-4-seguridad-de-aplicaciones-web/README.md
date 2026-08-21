@@ -1,16 +1,8 @@
-# 🕸️ Parte 4 — Seguridad de aplicaciones web
+# Parte 4 — Seguridad de aplicaciones web
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⏭️ Parte siguiente](../parte-5-explotacion-de-sistemas-y-binarios/README.md)
 
-<div align="center">
-
-[![Clases](https://img.shields.io/badge/clases-30-d63384?style=flat-square)](../README.md)
-[![Rango](https://img.shields.io/badge/rango-086%E2%80%93115-24292f?style=flat-square)](../README.md)
-[![Parte](https://img.shields.io/badge/parte-4%20de%2018-6e7781?style=flat-square)](../README.md)
-
-</div>
-
-OWASP Top 10, Burp Suite, inyecciones, XSS, SSRF, APIs y bug bounty
+**30 clases** · rango 086–115 · OWASP Top 10, Burp Suite, inyecciones, XSS, SSRF, APIs y bug bounty
 
 **Fuentes de referencia de esta parte:**
 
@@ -60,26 +52,6 @@ Al terminar la parte, el alumno podrá:
 - Nociones de HTTP, HTML, JavaScript y SQL básicos. No hace falta ser desarrollador experto, pero saber leer código ayuda mucho.
 
 ## 🗺️ Estructura temática
-
-<!-- arco:inicio -->
-
-```mermaid
-flowchart TD
-    B1["Fundamentos y herramientas<br/>086–090"]
-    B2["Inyecciones<br/>091–095"]
-    B3["Cross-site y falsificación<br/>096–099"]
-    B4["Datos, auth y sesiones<br/>100–105"]
-    B5["Server-side avanzado<br/>106–109"]
-    B6["APIs y protocolo<br/>110–113"]
-    B7["Cierre profesional<br/>114–115"]
-    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7
-    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class B1 ini
-    class B7 fin
-```
-
-<!-- arco:fin -->
 
 | Bloque | Clases | Contenido |
 |--------|--------|-----------|

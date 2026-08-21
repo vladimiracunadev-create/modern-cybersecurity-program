@@ -1,20 +1,7 @@
 # Clase 060 — Ataques criptográficos: padding oracle y timing
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 2](https://img.shields.io/badge/%F0%9F%94%90%20parte%202-Criptograf%C3%ADa%20aplicada-6f42c1?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-060%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **2 — Criptografía aplicada** · 📖 Fuente: *Serious Cryptography* (Aumasson) y *Cryptography Engineering* (Ferguson/Schneier/Kohno)
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **2 — Criptografía aplicada** · Fuente: *Serious Cryptography* (Aumasson) y *Cryptography Engineering* (Ferguson/Schneier/Kohno)
+> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
 
 ---
 
@@ -35,24 +22,6 @@ Al finalizar, el alumno podrá:
 5. **Reconocer** por qué "fallar cerrado y en tiempo constante" es esencial.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔐 Clase 060<br/>Ataques criptográficos"]
-    C --> T1["1 · Ataques a la<br/>implementación"]
-    C --> T2["2 · Padding PKCS#7 y su<br/>verificación"]
-    C --> T3["3 · Padding oracle paso a paso"]
-    C --> T4["4 · Ataques de timing"]
-    C --> T5["5 · Comparación en tiempo<br/>constante"]
-    C --> T6["6 · AEAD como defensa"]
-    C --> T7["7 · Casos reales (POODLE,<br/>Lucky13)"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

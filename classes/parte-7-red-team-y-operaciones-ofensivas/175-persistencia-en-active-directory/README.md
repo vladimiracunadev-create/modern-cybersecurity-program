@@ -1,20 +1,7 @@
 # Clase 175 — Persistencia en Active Directory
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 7](https://img.shields.io/badge/%F0%9F%94%B4%20parte%207-Red%20Team%20y%20operaciones%20ofensivas-cf222e?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Experto-cf222e?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-175%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **7 — Red Team y operaciones ofensivas** · 📖 Fuente: *The Hacker Recipes / MITRE ATT&CK Persistence (TA0003)*
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Experto**
-
-<!-- cabecera:fin -->
+> Parte: **7 — Red Team y operaciones ofensivas** · Fuente: *The Hacker Recipes / MITRE ATT&CK Persistence (TA0003)*
+> ⏱️ Duración estimada: **100 min** · Nivel: **Experto**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Diseñar** un plan de erradicación tras un compromiso.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔴 Clase 175<br/>Persistencia en Active<br/>Directory"]
-    C --> T1["1 · AdminSDHolder / SDProp"]
-    C --> T2["2 · ACLs persistentes"]
-    C --> T3["3 · DCShadow"]
-    C --> T4["4 · Delegación abusiva"]
-    C --> T5["5 · Diamond/Golden Ticket"]
-    C --> T6["6 · Cuentas y credenciales<br/>ocultas"]
-    C --> T7["7 · Erradicación"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

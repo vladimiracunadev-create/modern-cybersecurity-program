@@ -1,20 +1,7 @@
 # Clase 127 — Heap: use-after-free y double free
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 5](https://img.shields.io/badge/%F0%9F%92%A5%20parte%205-Explotaci%C3%B3n%20de%20sistemas%20y%20binarios-b02a37?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-140%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Experto-cf222e?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-127%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **5 — Explotación de sistemas y binarios** · 📖 Fuente: *The Shellcoder's Handbook* · how2heap (Shellphish)
-> ⏱️ Duración estimada: **140 min** · 🎚️ Nivel: **Experto**
-
-<!-- cabecera:fin -->
+> Parte: **5 — Explotación de sistemas y binarios** · Fuente: *The Shellcoder's Handbook* · how2heap (Shellphish)
+> ⏱️ Duración estimada: **140 min** · Nivel: **Experto**
 
 ---
 
@@ -38,25 +25,6 @@ Al finalizar, el alumno podrá:
 5. **Detectar** estos bugs con ASan.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["💥 Clase 127<br/>Heap"]
-    C --> T1["1 · Puntero colgante<br/>(dangling)"]
-    C --> T2["2 · Reasignación del chunk"]
-    C --> T3["3 · Secuestro de<br/>vtable/punteros"]
-    C --> T4["4 · Double free en tcache"]
-    C --> T5["5 · tcache key (mitigación)"]
-    C --> T6["6 · tcache poisoning"]
-    C --> T7["7 · Objetivos: freehook, GOT"]
-    C --> T8["8 · Detección con ASan"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 | --- | --- | --- |

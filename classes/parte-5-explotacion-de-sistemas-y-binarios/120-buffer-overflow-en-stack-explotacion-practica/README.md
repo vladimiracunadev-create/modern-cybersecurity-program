@@ -1,20 +1,7 @@
 # Clase 120 — Buffer overflow en stack: explotación práctica
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 5](https://img.shields.io/badge/%F0%9F%92%A5%20parte%205-Explotaci%C3%B3n%20de%20sistemas%20y%20binarios-b02a37?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-140%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-120%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **5 — Explotación de sistemas y binarios** · 📖 Fuente: *Erickson, Hacking 2e* · docs de pwntools
-> ⏱️ Duración estimada: **140 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **5 — Explotación de sistemas y binarios** · Fuente: *Erickson, Hacking 2e* · docs de pwntools
+> ⏱️ Duración estimada: **140 min** · Nivel: **Intermedio**
 
 ---
 
@@ -39,25 +26,6 @@ Al finalizar, el alumno podrá:
 5. **Depurar** un exploit que falla usando GDB acoplado.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["💥 Clase 120<br/>Buffer overflow en stack"]
-    C --> T1["1 · Recolección del offset"]
-    C --> T2["2 · Estructura del payload"]
-    C --> T3["3 · p64/p32 y endianness"]
-    C --> T4["4 · ret2win"]
-    C --> T5["5 · Alineación a 16 bytes<br/>(movaps)"]
-    C --> T6["6 · pwntools básico"]
-    C --> T7["7 · Depuración con gdb.attach"]
-    C --> T8["8 · De local a remoto"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 | --- | --- | --- |

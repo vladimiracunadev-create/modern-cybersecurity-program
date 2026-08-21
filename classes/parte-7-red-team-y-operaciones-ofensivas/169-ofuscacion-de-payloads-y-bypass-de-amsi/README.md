@@ -1,20 +1,7 @@
 # Clase 169 — Ofuscación de payloads y bypass de AMSI
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 7](https://img.shields.io/badge/%F0%9F%94%B4%20parte%207-Red%20Team%20y%20operaciones%20ofensivas-cf222e?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Experto-cf222e?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-169%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **7 — Red Team y operaciones ofensivas** · 📖 Fuente: *RTFM v2 (Clark) / Microsoft AMSI documentation*
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Experto**
-
-<!-- cabecera:fin -->
+> Parte: **7 — Red Team y operaciones ofensivas** · Fuente: *RTFM v2 (Clark) / Microsoft AMSI documentation*
+> ⏱️ Duración estimada: **110 min** · Nivel: **Experto**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Detectar** los IOCs que deja un intento de bypass.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔴 Clase 169<br/>Ofuscación de payloads y<br/>bypass de AMSI"]
-    C --> T1["1 · Qué es AMSI"]
-    C --> T2["2 · Integraciones (PowerShell,<br/>VBA, .NET)"]
-    C --> T3["3 · Ofuscación de scripts"]
-    C --> T4["4 · AMSI memory patch"]
-    C --> T5["5 · Downgrade y forzar errores"]
-    C --> T6["6 · Detección de bypass"]
-    C --> T7["7 · Ofuscación de binarios"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

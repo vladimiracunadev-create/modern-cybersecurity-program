@@ -7,20 +7,6 @@
 >
 > **Nivel de entrada:** intermedio; perfil híbrido seguridad + desarrollo · **Foco:** EDR/XDR multi-SO, automatización, APIs REST, respuesta a incidentes de endpoint, SIEM · **Certificación faro:** CompTIA CySA+ (+ BTL1 en la parte operativa)
 
-
-<!-- insignias:inicio -->
-
-<div align="center">
-
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-intermedio-1f6feb?style=flat-square)](README.md)
-[![Foco](https://img.shields.io/badge/%F0%9F%8E%AF%20foco-EDR%2FXDR%20multi--SO-6e7781?style=flat-square)](README.md)
-[![Certificación](https://img.shields.io/badge/%F0%9F%8E%93%20certi-CompTIA%20CySA%2B-2e8b57?style=flat-square)](../certificaciones/README.md)
-[![Partes](https://img.shields.io/badge/%F0%9F%97%82%EF%B8%8F%20partes-8-e8590c?style=flat-square)](../classes/README.md)
-
-</div>
-
-<!-- insignias:fin -->
-
 ## 🧭 Qué es y por qué importa
 
 Este es el rol donde la ciberseguridad **se convierte en software**. No es un analista que mira
@@ -138,27 +124,6 @@ serio de seguridad tiene API; el valor que aportas es lo que construyes con ella
   funciona, no. En una fintech, además, hay reguladores y clientes mirando.
 
 ## 📚 Tu ruta en el programa
-
-<!-- recorrido:inicio -->
-
-```mermaid
-flowchart TD
-    P0["🧱 Parte 0<br/>Fundamentos"]
-    P1["🌐 Parte 1<br/>Redes"]
-    P8["🔵 Parte 8<br/>Blue Team / SOC"]
-    P9["🔬 Parte 9<br/>DFIR"]
-    P11["🔄 Parte 11<br/>DevSecOps"]
-    P4["🕸️ Parte 4<br/>Web"]
-    P17["📈 Parte 17<br/>Profundización"]
-    P2["🔐 Parte 2<br/>Criptografía"]
-    P0 --> P1 --> P8 --> P9 --> P11 --> P4 --> P17 --> P2
-    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class P0 ini
-    class P2 fin
-```
-
-<!-- recorrido:fin -->
 
 Ruta híbrida entre **operación defensiva** y **desarrollo**: hay que atravesar el bloque de Blue
 Team y el de DevSecOps. Orden recomendado:

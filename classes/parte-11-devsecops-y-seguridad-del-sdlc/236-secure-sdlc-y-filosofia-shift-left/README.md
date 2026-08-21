@@ -1,20 +1,7 @@
 # Clase 236 — Secure SDLC y filosofía shift-left
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 11](https://img.shields.io/badge/%F0%9F%94%84%20parte%2011-DevSecOps%20y%20seguridad%20del%20SDLC-2da44e?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-236%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **11 — DevSecOps y seguridad del SDLC** · 📖 Fuente: *Agile Application Security* (Bell, Brunton-Spall, Smith, Bird) y NIST SP 800-218 (SSDF)
-> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Fundamentos**
-
-<!-- cabecera:fin -->
+> Parte: **11 — DevSecOps y seguridad del SDLC** · Fuente: *Agile Application Security* (Bell, Brunton-Spall, Smith, Bird) y NIST SP 800-218 (SSDF)
+> ⏱️ Duración estimada: **90 min** · Nivel: **Fundamentos**
 
 ---
 
@@ -36,24 +23,6 @@ Al finalizar, el alumno podrá:
 5. **Diseñar** un flujo mínimo viable de DevSecOps para un equipo pequeño.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔄 Clase 236<br/>Secure SDLC y filosofía<br/>shift-left"]
-    C --> T1["1 · Fases del SDLC"]
-    C --> T2["2 · Coste de remediación por<br/>fase"]
-    C --> T3["3 · Shift-left vs shift-right"]
-    C --> T4["4 · Controles por fase (gates)"]
-    C --> T5["5 · OWASP SAMM / BSIMM"]
-    C --> T6["6 · NIST SSDF (800-218)"]
-    C --> T7["7 · Roles y responsabilidad<br/>compartida"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,20 +1,7 @@
 # Clase 306 — Capstone: detección Blue Team end-to-end
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 16](https://img.shields.io/badge/%F0%9F%8F%81%20parte%2016-Capstones%20y%20preparaci%C3%B3n%20de%20certificaciones-0550ae?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-150%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-306%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **16 — Capstones y preparación de certificaciones** · 📖 Fuente: *MITRE ATT&CK® · The Practice of Network Security Monitoring (Bejtlich)*
-> ⏱️ Duración estimada: **150 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **16 — Capstones y preparación de certificaciones** · Fuente: *MITRE ATT&CK® · The Practice of Network Security Monitoring (Bejtlich)*
+> ⏱️ Duración estimada: **150 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Medir** la cobertura de detección con ATT&CK Navigator.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🏁 Clase 306<br/>Capstone"]
-    C --> T1["1 · Telemetría de host<br/>(Sysmon/auditd)"]
-    C --> T2["2 · Centralización en SIEM"]
-    C --> T3["3 · Reglas Sigma y despliegue"]
-    C --> T4["4 · Threat hunting (Parte 11)"]
-    C --> T5["5 · Alertas y triage"]
-    C --> T6["6 · Cobertura ATT&CK"]
-    C --> T7["7 · Métricas (MTTD, FP rate)"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

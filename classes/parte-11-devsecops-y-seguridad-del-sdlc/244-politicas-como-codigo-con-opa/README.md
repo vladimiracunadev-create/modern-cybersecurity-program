@@ -1,20 +1,7 @@
 # Clase 244 — Políticas como código con OPA
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 11](https://img.shields.io/badge/%F0%9F%94%84%20parte%2011-DevSecOps%20y%20seguridad%20del%20SDLC-2da44e?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-244%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **11 — DevSecOps y seguridad del SDLC** · 📖 Fuente: Documentación de Open Policy Agent (OPA) y *Agile Application Security* (gobierno de seguridad automatizado)
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **11 — DevSecOps y seguridad del SDLC** · Fuente: Documentación de Open Policy Agent (OPA) y *Agile Application Security* (gobierno de seguridad automatizado)
+> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
 
 ---
 
@@ -38,24 +25,6 @@ Al finalizar, el alumno podrá:
 5. **Integrar** las políticas como gate obligatorio en el pipeline.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔄 Clase 244<br/>Políticas como código con<br/>OPA"]
-    C --> T1["1 · Policy as Code: motivación"]
-    C --> T2["2 · OPA y el modelo PDP/PEP"]
-    C --> T3["3 · Rego básico"]
-    C --> T4["4 · Conftest"]
-    C --> T5["5 · Casos: K8s, Terraform,<br/>Docker"]
-    C --> T6["6 · Testear políticas"]
-    C --> T7["7 · Gatekeeper (admisión K8s)"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

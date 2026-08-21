@@ -1,20 +1,7 @@
 # Clase 163 — Emulación de adversarios
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 7](https://img.shields.io/badge/%F0%9F%94%B4%20parte%207-Red%20Team%20y%20operaciones%20ofensivas-cf222e?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-163%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **7 — Red Team y operaciones ofensivas** · 📖 Fuente: *MITRE Adversary Emulation Plans / CTID*
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **7 — Red Team y operaciones ofensivas** · Fuente: *MITRE Adversary Emulation Plans / CTID*
+> ⏱️ Duración estimada: **100 min** · Nivel: **Intermedio**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Definir** los criterios de "detectado/no detectado" por cada fase.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔴 Clase 163<br/>Emulación de adversarios"]
-    C --> T1["1 · Emulación vs simulación"]
-    C --> T2["2 · Threat intelligence como<br/>insumo"]
-    C --> T3["3 · Emulation Library de MITRE"]
-    C --> T4["4 · Fases y encadenamiento de<br/>TTPs"]
-    C --> T5["5 · Selección de herramientas"]
-    C --> T6["6 · Micro-emulaciones (CTID)"]
-    C --> T7["7 · Criterios de detección por<br/>fase"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

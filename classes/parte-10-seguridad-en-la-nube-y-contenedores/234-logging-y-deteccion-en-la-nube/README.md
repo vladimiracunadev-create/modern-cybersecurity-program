@@ -1,20 +1,7 @@
 # Clase 234 — Logging y detección en la nube
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 10](https://img.shields.io/badge/%E2%98%81%EF%B8%8F%20parte%2010-Seguridad%20en%20la%20nube%20y%20contenedores-0a7ea4?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-234%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **10 — Seguridad en la nube y contenedores** · 📖 Fuente: *AWS CloudTrail / Azure Monitor / Google Cloud Logging docs y MITRE ATT&CK for Cloud*
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **10 — Seguridad en la nube y contenedores** · Fuente: *AWS CloudTrail / Azure Monitor / Google Cloud Logging docs y MITRE ATT&CK for Cloud*
+> ⏱️ Duración estimada: **120 min** · Nivel: **Intermedio**
 
 ---
 
@@ -36,24 +23,6 @@ Al finalizar, el alumno podrá:
 5. **Evitar** puntos ciegos (logging deshabilitado, regiones sin cobertura).
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["☁️ Clase 234<br/>Logging y detección en la<br/>nube"]
-    C --> T1["1 · Tipos de log: gestión,<br/>red, datos"]
-    C --> T2["2 · CloudTrail / Activity Log<br/>/ Cloud Audit Logs"]
-    C --> T3["3 · Flow logs y logs de DNS"]
-    C --> T4["4 · Centralización inmutable"]
-    C --> T5["5 · Detecciones y reglas"]
-    C --> T6["6 · SIEM en la nube"]
-    C --> T7["7 · Puntos ciegos comunes"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

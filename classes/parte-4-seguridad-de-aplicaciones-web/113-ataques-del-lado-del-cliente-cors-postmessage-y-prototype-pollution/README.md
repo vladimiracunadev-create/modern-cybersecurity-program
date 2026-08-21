@@ -1,20 +1,7 @@
 # Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 4](https://img.shields.io/badge/%F0%9F%95%B8%EF%B8%8F%20parte%204-Seguridad%20de%20aplicaciones%20web-d63384?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Experto-cf222e?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-113%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **4 — Seguridad de aplicaciones web** · 📖 Fuente: *PortSwigger Research* / *Real-World Bug Hunting (Yaworski)*
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Experto**
-
-<!-- cabecera:fin -->
+> Parte: **4 — Seguridad de aplicaciones web** · Fuente: *PortSwigger Research* / *Real-World Bug Hunting (Yaworski)*
+> ⏱️ Duración estimada: **120 min** · Nivel: **Experto**
 
 ---
 
@@ -35,24 +22,6 @@ Al finalizar, el alumno podrá:
 5. **Recomendar** allowlists de origen, validación de mensajes y `Object.freeze`.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🕸️ Clase 113<br/>Ataques del lado del cliente"]
-    C --> T1["1 · Modelo de origen (SOP) y<br/>CORS"]
-    C --> T2["2 · Configuraciones CORS<br/>inseguras"]
-    C --> T3["3 · postMessage inseguro"]
-    C --> T4["4 · Prototype pollution:<br/>concepto"]
-    C --> T5["5 · Gadgets y escalada a<br/>XSS/RCE"]
-    C --> T6["6 · Herramientas (DOM Invader)"]
-    C --> T7["7 · Defensas por vector"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

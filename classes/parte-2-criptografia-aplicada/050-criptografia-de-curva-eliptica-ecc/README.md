@@ -1,20 +1,7 @@
 # Clase 050 — Criptografía de curva elíptica (ECC)
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 2](https://img.shields.io/badge/%F0%9F%94%90%20parte%202-Criptograf%C3%ADa%20aplicada-6f42c1?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-050%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **2 — Criptografía aplicada** · 📖 Fuente: *Serious Cryptography* (Aumasson) y *Real-World Cryptography* (Wong)
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **2 — Criptografía aplicada** · Fuente: *Serious Cryptography* (Aumasson) y *Real-World Cryptography* (Wong)
+> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Comparar** ECC frente a RSA en tamaño, velocidad y adopción.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔐 Clase 050<br/>Criptografía de curva<br/>elíptica (ECC)"]
-    C --> T1["1 · Curvas elípticas sobre<br/>campos finitos"]
-    C --> T2["2 · Suma de puntos y<br/>multiplicación escalar"]
-    C --> T3["3 · ECDLP"]
-    C --> T4["4 · Curvas NIST vs Curve25519"]
-    C --> T5["5 · ECDH / X25519"]
-    C --> T6["6 · ECDSA / Ed25519"]
-    C --> T7["7 · ECC vs RSA"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

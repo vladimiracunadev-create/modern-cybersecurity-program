@@ -1,20 +1,7 @@
 # Clase 298 — IA aplicada a la defensa: detección y SOC
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 15](https://img.shields.io/badge/%F0%9F%A7%AA%20parte%2015-Seguridad%20de%20IA%20y%20machine%20learning-bf3989?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-298%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **15 — Seguridad de IA y machine learning** · 📖 Fuente: *NIST AI RMF* y literatura de detección de anomalías (Chandola, Banerjee & Kumar)
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **15 — Seguridad de IA y machine learning** · Fuente: *NIST AI RMF* y literatura de detección de anomalías (Chandola, Banerjee & Kumar)
+> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Reconocer** la evadibilidad de los detectores por adversarios (ver clase 292).
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🧪 Clase 298<br/>IA aplicada a la defensa"]
-    C --> T1["1 · Casos de uso reales de IA<br/>en el SOC"]
-    C --> T2["2 · Detección de anomalías no<br/>supervisada"]
-    C --> T3["3 · Clasificación supervisada<br/>de eventos"]
-    C --> T4["4 · El problema del desbalance<br/>y la base rate"]
-    C --> T5["5 · Métricas: precisión,<br/>recall, F1, FPR"]
-    C --> T6["6 · Alert fatigue y triage<br/>asistido"]
-    C --> T7["7 · Evadibilidad y adversario<br/>adaptativo"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

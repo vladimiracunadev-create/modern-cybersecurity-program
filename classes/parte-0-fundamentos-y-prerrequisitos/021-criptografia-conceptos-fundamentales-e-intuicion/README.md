@@ -1,20 +1,7 @@
 # Clase 021 — Criptografía: conceptos fundamentales e intuición
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 0](https://img.shields.io/badge/%F0%9F%A7%B1%20parte%200-Fundamentos%20y%20prerrequisitos-2e8b57?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-021%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **0 — Fundamentos y prerrequisitos** · 📖 Fuente: *Ferguson, Schneier & Kohno, Cryptography Engineering*
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Fundamentos**
-
-<!-- cabecera:fin -->
+> Parte: **0 — Fundamentos y prerrequisitos** · Fuente: *Ferguson, Schneier & Kohno, Cryptography Engineering*
+> ⏱️ Duración estimada: **120 min** · Nivel: **Fundamentos**
 
 ---
 
@@ -33,25 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Aplicar** primitivas correctas con una librería confiable.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🧱 Clase 021<br/>Criptografía"]
-    C --> T1["1 · Terminología"]
-    C --> T2["2 · Cifrado simétrico"]
-    C --> T3["3 · Cifrado asimétrico"]
-    C --> T4["4 · Funciones hash"]
-    C --> T5["5 · Hash de contraseñas"]
-    C --> T6["6 · HMAC y MAC"]
-    C --> T7["7 · Firmas digitales"]
-    C --> T8["8 · Intercambio de claves"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,20 +1,7 @@
 # Clase 224 — Seguridad en Azure
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 10](https://img.shields.io/badge/%E2%98%81%EF%B8%8F%20parte%2010-Seguridad%20en%20la%20nube%20y%20contenedores-0a7ea4?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-224%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **10 — Seguridad en la nube y contenedores** · 📖 Fuente: *Microsoft Cloud Security Benchmark y documentación oficial de Microsoft Defender for Cloud*
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **10 — Seguridad en la nube y contenedores** · Fuente: *Microsoft Cloud Security Benchmark y documentación oficial de Microsoft Defender for Cloud*
+> ⏱️ Duración estimada: **120 min** · Nivel: **Intermedio**
 
 ---
 
@@ -36,24 +23,6 @@ Al finalizar, el alumno podrá:
 5. **Proteger** secretos y claves con Azure Key Vault.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["☁️ Clase 224<br/>Seguridad en Azure"]
-    C --> T1["1 · Entra ID (antes Azure AD)"]
-    C --> T2["2 · Azure RBAC y roles"]
-    C --> T3["3 · Management Groups y Azure<br/>Policy"]
-    C --> T4["4 · Network Security Groups y<br/>Firewall"]
-    C --> T5["5 · Defender for Cloud y<br/>Secure Score"]
-    C --> T6["6 · Key Vault"]
-    C --> T7["7 · Microsoft Sentinel"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

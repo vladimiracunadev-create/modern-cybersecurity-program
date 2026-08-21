@@ -1,20 +1,7 @@
 # Clase 261 — Seguridad de Android: arquitectura
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 13](https://img.shields.io/badge/%F0%9F%93%A1%20parte%2013-Seguridad%20m%C3%B3vil%2C%20IoT%20e%20inal%C3%A1mbrica-9a6700?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-261%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **13 — Seguridad móvil, IoT e inalámbrica** · 📖 Fuente: *The Mobile Application Hacker's Handbook* (Chell et al.) y OWASP MASTG
-> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **13 — Seguridad móvil, IoT e inalámbrica** · Fuente: *The Mobile Application Hacker's Handbook* (Chell et al.) y OWASP MASTG
+> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
 
 ---
 
@@ -34,24 +21,6 @@ Al finalizar, el alumno podrá:
 6. **Evaluar** el impacto de rootear un dispositivo sobre las garantías del modelo.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📡 Clase 261<br/>Seguridad de Android"]
-    C --> T1["1 · Pila Android y arranque<br/>verificado"]
-    C --> T2["2 · Sandbox por UID y SELinux"]
-    C --> T3["3 · Modelo de permisos"]
-    C --> T4["4 · Componentes de aplicación<br/>e IPC (Intents)"]
-    C --> T5["5 · Android Keystore y<br/>almacenamiento"]
-    C --> T6["6 · Firma de APK y<br/>actualización"]
-    C --> T7["7 · Root y su impacto en el<br/>modelo"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

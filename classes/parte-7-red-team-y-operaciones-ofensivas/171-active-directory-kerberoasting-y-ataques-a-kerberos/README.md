@@ -1,20 +1,7 @@
 # Clase 171 — Active Directory: Kerberoasting y ataques a Kerberos
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 7](https://img.shields.io/badge/%F0%9F%94%B4%20parte%207-Red%20Team%20y%20operaciones%20ofensivas-cf222e?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-171%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **7 — Red Team y operaciones ofensivas** · 📖 Fuente: *The Hacker Recipes (Kerberos) / MITRE ATT&CK T1558*
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **7 — Red Team y operaciones ofensivas** · Fuente: *The Hacker Recipes (Kerberos) / MITRE ATT&CK T1558*
+> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Recomendar** mitigaciones (contraseñas fuertes de servicio, gMSA, monitoreo).
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔴 Clase 171<br/>Active Directory"]
-    C --> T1["1 · Flujo Kerberos"]
-    C --> T2["2 · TGT vs TGS"]
-    C --> T3["3 · Kerberoasting (T1558.003)"]
-    C --> T4["4 · AS-REP Roasting<br/>(T1558.004)"]
-    C --> T5["5 · Tipos de cifrado (RC4 vs<br/>AES)"]
-    C --> T6["6 · Crackeo offline"]
-    C --> T7["7 · Detección y mitigación"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

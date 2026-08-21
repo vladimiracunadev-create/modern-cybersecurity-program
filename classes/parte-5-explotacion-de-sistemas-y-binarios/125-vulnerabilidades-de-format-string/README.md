@@ -1,20 +1,7 @@
 # Clase 125 — Vulnerabilidades de format string
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 5](https://img.shields.io/badge/%F0%9F%92%A5%20parte%205-Explotaci%C3%B3n%20de%20sistemas%20y%20binarios-b02a37?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-125%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **5 — Explotación de sistemas y binarios** · 📖 Fuente: *Erickson, Hacking 2e* · CWE-134
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **5 — Explotación de sistemas y binarios** · Fuente: *Erickson, Hacking 2e* · CWE-134
+> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
 
 ---
 
@@ -38,25 +25,6 @@ Al finalizar, el alumno podrá:
 5. **Automatizar** el ataque con `fmtstr_payload` de pwntools.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["💥 Clase 125<br/>Vulnerabilidades de format<br/>string"]
-    C --> T1["1 · Cómo funciona printf y sus<br/>especificadores"]
-    C --> T2["2 · %p/%x para leer la pila"]
-    C --> T3["3 · Offset de argumento"]
-    C --> T4["4 · %n para escribir"]
-    C --> T5["5 · Escritura con %hn/%hhn"]
-    C --> T6["6 · Sobrescritura de la GOT"]
-    C --> T7["7 · fmtstrpayload"]
-    C --> T8["8 · Mitigaciones (FORTIFY,<br/>-Wformat)"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 | --- | --- | --- |

@@ -1,20 +1,7 @@
 # Clase 087 — OWASP Top 10: panorama general
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 4](https://img.shields.io/badge/%F0%9F%95%B8%EF%B8%8F%20parte%204-Seguridad%20de%20aplicaciones%20web-d63384?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-75%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-087%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **4 — Seguridad de aplicaciones web** · 📖 Fuente: *OWASP Top 10 (2021)*
-> ⏱️ Duración estimada: **75 min** · 🎚️ Nivel: **Fundamentos**
-
-<!-- cabecera:fin -->
+> Parte: **4 — Seguridad de aplicaciones web** · Fuente: *OWASP Top 10 (2021)*
+> ⏱️ Duración estimada: **75 min** · Nivel: **Fundamentos**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Distinguir** el Top 10 de estándares más exhaustivos como ASVS y WSTG.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🕸️ Clase 087<br/>OWASP Top 10"]
-    C --> T1["1 · A01 Broken Access Control"]
-    C --> T2["2 · A02 Cryptographic Failures"]
-    C --> T3["3 · A03 Injection (incluye<br/>XSS)"]
-    C --> T4["4 · A04 Insecure Design"]
-    C --> T5["5 · A05 Security<br/>Misconfiguration"]
-    C --> T6["6 · A06–A10"]
-    C --> T7["7 · Metodología de riesgo<br/>OWASP"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

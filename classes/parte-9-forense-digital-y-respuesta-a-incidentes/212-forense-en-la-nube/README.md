@@ -1,20 +1,7 @@
 # Clase 212 — Forense en la nube
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 9](https://img.shields.io/badge/%F0%9F%94%AC%20parte%209-Forense%20digital%20y%20respuesta%20a%20incidentes-1a7f64?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-212%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **9 — Forense digital y respuesta a incidentes** · 📖 Fuente: *NIST IR 8006 — Cloud Computing Forensic Science Challenges* y documentación de AWS/Azure/GCP
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **9 — Forense digital y respuesta a incidentes** · Fuente: *NIST IR 8006 — Cloud Computing Forensic Science Challenges* y documentación de AWS/Azure/GCP
+> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,25 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Preservar** evidencia efímera antes de que desaparezca.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔬 Clase 212<br/>Forense en la nube"]
-    C --> T1["1 · Responsabilidad compartida"]
-    C --> T2["2 · CloudTrail y logs de<br/>control"]
-    C --> T3["3 · Azure Activity/Sign-in<br/>Logs"]
-    C --> T4["4 · GCP Audit Logs"]
-    C --> T5["5 · Snapshots de disco"]
-    C --> T6["6 · Instancias efímeras y<br/>contenedores"]
-    C --> T7["7 · Compromiso de identidad<br/>(IAM)"]
-    C --> T8["8 · Preservación y aislamiento"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,20 +1,7 @@
 # Clase 255 — Automatización de OSINT: SpiderFoot y Maltego
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 12](https://img.shields.io/badge/%F0%9F%95%B5%EF%B8%8F%20parte%2012-OSINT%20e%20ingenier%C3%ADa%20social-6e7781?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-255%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **12 — OSINT e ingeniería social** · 📖 Fuente: Documentación de SpiderFoot y Maltego · *Open Source Intelligence Techniques* (M. Bazzell)
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **12 — OSINT e ingeniería social** · Fuente: Documentación de SpiderFoot y Maltego · *Open Source Intelligence Techniques* (M. Bazzell)
+> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
 
 ---
 
@@ -42,24 +29,6 @@ Al finalizar, el alumno podrá:
 5. **Consolidar** la salida automatizada en inteligencia depurada y verificada.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🕵️ Clase 255<br/>Automatización de OSINT"]
-    C --> T1["1 · Automatización vs. OSINT<br/>manual"]
-    C --> T2["2 · SpiderFoot: módulos y<br/>scans"]
-    C --> T3["3 · Gestión de API keys"]
-    C --> T4["4 · Pasivo vs. activo en<br/>módulos"]
-    C --> T5["5 · Maltego: entidades y<br/>transforms"]
-    C --> T6["6 · Grafos y correlación"]
-    C --> T7["7 · Depuración de resultados"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

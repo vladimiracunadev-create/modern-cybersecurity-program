@@ -1,22 +1,5 @@
 # 🧭 Rutas guiadas por rol
 
-<!-- cabecera-rutas:inicio -->
-
-<div align="center">
-
-[![Rutas](https://img.shields.io/badge/rutas-17-e8590c?style=for-the-badge)](README.md)
-[![Clases](https://img.shields.io/badge/clases-340%20·%2019%20partes-7c5cff?style=for-the-badge)](../classes/README.md)
-[![Labs](https://img.shields.io/badge/laboratorios-12-2496ED?style=for-the-badge)](../labs/README.md)
-
-[⬅️ Volver al programa](../README.md) ·
-[📚 Índice de clases](../classes/README.md) ·
-[🧪 Laboratorios](../labs/README.md) ·
-[🎓 Certificaciones](../certificaciones/README.md)
-
-</div>
-
-<!-- cabecera-rutas:fin -->
-
 El programa tiene 340 clases; **no todas son para todos a la vez**. Estas rutas ordenan el
 recorrido según el rol al que apuntas: qué partes hacer, en qué orden, con qué laboratorios
 practicar y a qué certificación apuntar. Todas asumen que **empiezas por la Parte 0**
@@ -24,76 +7,6 @@ practicar y a qué certificación apuntar. Todas asumen que **empiezas por la Pa
 
 > Leyenda: 📚 partes/clases · 🧪 laboratorio · 🚩 reto CTF · 🎓 certificación sugerida.
 
-<!-- mapa-roles:inicio -->
-
-```mermaid
-flowchart TB
-    B["🧱 Parte 0<br/>Fundamentos comunes"]
-
-    subgraph OF["🗡️ Ofensiva"]
-        direction TB
-        R1["🧰 Analista de<br/>Seguridad Ofensiva"] --> R2["🎯 Pentester /<br/>Ethical Hacker"]
-        R2 --> R3["🔴 Red Teamer"]
-        R4["🕸️ AppSec /<br/>Bug Bounty"]
-    end
-
-    subgraph DEF["🛡️ Defensiva y plataformas"]
-        direction TB
-        R5["🔵 Analista SOC /<br/>Blue Team"] --> R6["🕵️ DFIR /<br/>Forense"]
-        R7["🧱 Seguridad de<br/>Infraestructura"] --> R8["🧩 Plataformas<br/>MSSP y DLP"]
-        R9["🛡️ Gestión de<br/>Vulnerabilidades"] --> R10["⚙️ Security Engineer /<br/>SecOps"]
-        R11["🏦 Analista Ciber<br/>(regulada)"]
-        R12["☁️ Cloud<br/>Security"]
-    end
-
-    subgraph GOB["🏛️ Gobierno, arquitectura y dirección"]
-        direction TB
-        R13["🏛️ GRC /<br/>Gestión"] --> R14["👔 Jefe de Seguridad<br/>de la Información"]
-        R14 --> R15["🎩 CISO /<br/>Director"]
-        R16["🏭 Arquitecto<br/>IT/OT"]
-        R17["🤝 Cooperación<br/>y Alianzas"]
-    end
-
-    B --> OF
-    B --> DEF
-    B --> GOB
-
-    classDef base fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef cima fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class B base
-    class R3,R15 cima
-```
-
-<sub>Las flechas dentro de cada familia marcan la **progresión natural** entre roles; todos
-parten de la Parte 0. Los nodos naranjas son los techos de carrera de su familia.</sub>
-
-<!-- mapa-roles:fin -->
-
-<!-- tabla-roles:inicio -->
-
-| | Rol | Nivel de entrada | Foco | Partes | Certificación faro |
-|:---:|---|---|---|---|---|
-| 🎯 | **[Pentester / Ethical Hacker](pentester.md)** | intermedio (requiere base sólida de redes y sistemas) | ofensiva generalista | `0 · 1 · 2 · 3 · 4 · 5 · 12` | OSCP |
-| 🔴 | **[Red Teamer](red-team.md)** | avanzado; parte de la ruta de Pentester | emulación de amenazas, C2, OPSEC y ataque a Active Directory | `5 · 6 · 7` | CRTO / OSEP |
-| 🔵 | **[Analista SOC / Blue Team](soc-blue-team.md)** | accesible; una de las mejores puertas de entrada | telemetría, SIEM, detección, threat hunting y respuesta | `0 · 1 · 6 · 8 · 9` | BTL1 |
-| 🛡️ | **[Analista de Gestión de Vulnerabilidades](gestion-vulnerabilidades.md)** | junior/intermedio (base de sistemas y redes) | vulnerability management y security operations | `0 · 1 · 3 · 8 · 9 · 11 · 17` | CySA+ |
-| 🕵️ | **[DFIR / Analista forense](dfir.md)** | intermedio; con base de blue team o sysadmin | adquisición forense, memoria, timelines y respuesta | `0 · 1 · 6 · 8 · 9` | GCFA (SANS) |
-| 🕸️ | **[AppSec / Bug Bounty](appsec.md)** | intermedio (requiere web, HTTP y algo de programación) | seguridad de aplicaciones web | `0 · 2 · 4 · 11 · 15` | BSCP / eWPTX |
-| ☁️ | **[Cloud Security Engineer](cloud-security.md)** | intermedio; se llega desde dev, sysadmin o SOC | responsabilidad compartida, IAM, CSPM y contenedores | `0 · 2 · 4 · 10 · 11` | AWS Security Specialty / CKS (Kubernetes Security) |
-| 🏛️ | **[GRC / Gestión de seguridad](grc.md)** | medio; alcanzable desde auditoría o TI | marcos, políticas, gestión de riesgo y auditoría | `0 · 8 · 9 · 11 · 14` | CISSP |
-| 🎩 | **[CISO / Director de Seguridad de la Información](ciso.md)** | dirección; se llega con 8–15 años de carrera | mandato, estrategia, riesgo empresarial y presupuesto | `0 · 8 · 9 · 14 · 17` | CISSP + CISM (y CRISC / ISO 27001 LI) |
-| 🏦 | **[Analista de Ciberseguridad (institución regulada)](analista-ciberseguridad.md)** | intermedio; suele pedir ~2 años de experiencia y titulación | SIEM, eventos, vulnerabilidades e incidentes NIST/ISO | `0 · 8 · 9 · 14` | CompTIA CySA+ / BTL1 |
-| 🧱 | **[Analista de Seguridad de Infraestructura (plataformas, SIEM y cumplimiento)](seguridad-infraestructura.md)** | junior/semi-senior; ~1 año administrando servidores | plataformas, fuentes del SIEM y cumplimiento | `0 · 1 · 2 · 8 · 10` | CompTIA Security+ → CySA+ (+ SC-200 del lado Microsoft) |
-| 🧩 | **[Ingeniero de Operación de Plataformas de Seguridad (MSSP y DLP)](operacion-plataformas-dlp.md)** | junior; ~1 año operando herramientas de seguridad | operación de plataformas, DLP y ciclo del dato | `0 · 8 · 9 · 10 · 14 · 17` | Security+ (+ cert del fabricante que operes) |
-| 👔 | **[Jefe de Seguridad de la Información](ciso-jefe-seguridad.md)** | senior; ~3 años liderando proyectos | estrategia, riesgo, cumplimiento y equipo a cargo | `0 · 8 · 9 · 14 · 17` | CISSP (+ ISO 27001 Lead Implementer / CISM) |
-| 🧰 | **[Analista de Seguridad Ofensiva (consultoría)](analista-seguridad-ofensiva.md)** | junior / semi-senior; 1–2 años de experiencia y titulación | pentest de apps, APIs y redes, y evidencia técnica | `0 · 1 · 3 · 4 · 7 · 17` | eJPT o CompTIA PenTest+ (no OSCP todavía) |
-| ⚙️ | **[Security Engineer / SecOps (endpoint y automatización)](secops-engineer.md)** | intermedio; perfil híbrido seguridad + desarrollo | EDR/XDR, automatización, APIs y endpoint | `0 · 4 · 8 · 9 · 11 · 17` | CompTIA CySA+ (+ BTL1 en la parte operativa) |
-| 🏭 | **[Arquitecto de Ciberseguridad IT/OT (industria e infraestructura crítica)](arquitecto-it-ot.md)** | senior; 4–5 años con exposición a entornos OT | arquitectura IT/OT, modelo Purdue e IEC 62443 | `1 · 10 · 13 · 14 · 17` | IEC 62443 Cybersecurity Specialist + GICSP |
-| 🤝 | **[Analista de Cooperación y Alianzas Técnicas](cooperacion-alianzas.md)** | junior-intermedio; híbrido técnico + gestión | cooperación técnica, intel sharing y alianzas | `0 · 1 · 8 · 14` | CISSP / ISO 27001 |
-
-<sub>Cada rol tiene una **guía de carrera completa**: qué es, un día en el puesto, qué necesitas saber, tu ruta en el programa con su diagrama, certificaciones, salario orientativo y progresión.</sub>
-
-<!-- tabla-roles:fin -->
 ---
 
 ## 🎯 Pentester / Ethical Hacker

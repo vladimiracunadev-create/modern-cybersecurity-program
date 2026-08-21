@@ -1,20 +1,7 @@
 # Clase 166 — Phishing y entrega de payloads
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 7](https://img.shields.io/badge/%F0%9F%94%B4%20parte%207-Red%20Team%20y%20operaciones%20ofensivas-cf222e?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-166%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **7 — Red Team y operaciones ofensivas** · 📖 Fuente: *Operator Handbook (T. Bryant) / MITRE ATT&CK Phishing (T1566)*
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **7 — Red Team y operaciones ofensivas** · Fuente: *Operator Handbook (T. Bryant) / MITRE ATT&CK Phishing (T1566)*
+> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Aplicar** consideraciones éticas y de mínimo daño en el objetivo humano.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔴 Clase 166<br/>Phishing y entrega de<br/>payloads"]
-    C --> T1["1 · Spear phishing vs masivo"]
-    C --> T2["2 · Pretexto y OSINT"]
-    C --> T3["3 · Reputación de correo"]
-    C --> T4["4 · Formatos de entrega"]
-    C --> T5["5 · Landing pages y captura"]
-    C --> T6["6 · GoPhish"]
-    C --> T7["7 · Ética y salud del objetivo"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

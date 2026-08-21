@@ -1,20 +1,7 @@
 # Clase 192 — Detección de movimiento lateral
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 8](https://img.shields.io/badge/%F0%9F%94%B5%20parte%208-Blue%20Team%2C%20detecci%C3%B3n%20y%20SOC-0969da?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-192%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **8 — Blue Team, detección y SOC** · 📖 Fuente: *Blue Team Handbook* — Don Murdoch · *MITRE ATT&CK* (Lateral Movement)
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **8 — Blue Team, detección y SOC** · Fuente: *Blue Team Handbook* — Don Murdoch · *MITRE ATT&CK* (Lateral Movement)
+> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
 
 ---
 
@@ -35,25 +22,6 @@ Al finalizar, el alumno podrá:
 5. **Escribir** detecciones y mapearlas a la táctica Lateral Movement de ATT&CK.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔵 Clase 192<br/>Detección de movimiento<br/>lateral"]
-    C --> T1["1 · Táctica Lateral Movement<br/>(ATT&CK)"]
-    C --> T2["2 · PsExec y servicios remotos"]
-    C --> T3["3 · WMI y WinRM"]
-    C --> T4["4 · RDP y logon type 10"]
-    C --> T5["5 · Pass-the-Hash /<br/>Overpass-the-Hash"]
-    C --> T6["6 · SMB, shares admin y admin$"]
-    C --> T7["7 · Logon patterns y grafos de<br/>acceso"]
-    C --> T8["8 · Baseline de administración<br/>legítima"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

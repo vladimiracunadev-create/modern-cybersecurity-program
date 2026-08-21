@@ -1,20 +1,7 @@
 # Clase 305 — Capstone: operación Red Team end-to-end
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 16](https://img.shields.io/badge/%F0%9F%8F%81%20parte%2016-Capstones%20y%20preparaci%C3%B3n%20de%20certificaciones-0550ae?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-150%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Experto-cf222e?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-305%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **16 — Capstones y preparación de certificaciones** · 📖 Fuente: *MITRE ATT&CK® · Red Team Development and Operations (Vest & Tubberville)*
-> ⏱️ Duración estimada: **150 min** · 🎚️ Nivel: **Experto**
-
-<!-- cabecera:fin -->
+> Parte: **16 — Capstones y preparación de certificaciones** · Fuente: *MITRE ATT&CK® · Red Team Development and Operations (Vest & Tubberville)*
+> ⏱️ Duración estimada: **150 min** · Nivel: **Experto**
 
 ---
 
@@ -35,24 +22,6 @@ Al finalizar, el alumno podrá:
 5. **Entregar** un informe con narrativa de ataque y recomendaciones de detección.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🏁 Clase 305<br/>Capstone"]
-    C --> T1["1 · Threat emulation y<br/>objetivos"]
-    C --> T2["2 · Infraestructura C2 y<br/>redirectores"]
-    C --> T3["3 · Acceso inicial<br/>(phishing/payload)"]
-    C --> T4["4 · Movimiento lateral (Parte<br/>8)"]
-    C --> T5["5 · Evasión EDR/AV (Parte 5)"]
-    C --> T6["6 · Objetivos y exfiltración"]
-    C --> T7["7 · Informe y purple teaming"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

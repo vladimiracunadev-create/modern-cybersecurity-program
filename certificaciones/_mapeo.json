@@ -275,7 +275,7 @@
         }
       ],
       "brecha": "Los dominios de gestión requieren el material propio de CISSP; para la parte técnica usa los labs appsec-code (software) y dfir-memoria (operaciones). CISSP además exige 5 años de experiencia.",
-      "ruta": "Partes 14 (núcleo) + 2, 8, 9, 11 para el soporte técnico. Las rutas que apuntan directamente a esta certificación son [CISO / Director de Seguridad de la Información](../rutas/ciso.md), [Jefe de Seguridad de la Información](../rutas/ciso-jefe-seguridad.md) y [GRC / Gestión de seguridad](../rutas/grc.md)."
+      "ruta": "Partes 14 (núcleo) + 2, 8, 9, 11 para el soporte técnico."
     },
     {
       "id": "btl1",

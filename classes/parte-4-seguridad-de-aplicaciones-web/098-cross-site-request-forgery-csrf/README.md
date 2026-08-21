@@ -1,20 +1,7 @@
 # Clase 098 — Cross-Site Request Forgery (CSRF)
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 4](https://img.shields.io/badge/%F0%9F%95%B8%EF%B8%8F%20parte%204-Seguridad%20de%20aplicaciones%20web-d63384?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-098%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **4 — Seguridad de aplicaciones web** · 📖 Fuente: *The Web Application Hacker's Handbook (Stuttard & Pinto)*
-> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **4 — Seguridad de aplicaciones web** · Fuente: *The Web Application Hacker's Handbook (Stuttard & Pinto)*
+> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
 
 ---
 
@@ -35,24 +22,6 @@ Al finalizar, el alumno podrá:
 5. **Recomendar** la defensa correcta según el contexto.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🕸️ Clase 098<br/>Cross-Site Request Forgery<br/>(CSRF)"]
-    C --> T1["1 · Cómo funciona el CSRF"]
-    C --> T2["2 · Condiciones necesarias"]
-    C --> T3["3 · PoC con formularios<br/>auto-enviados"]
-    C --> T4["4 · Tokens anti-CSRF"]
-    C --> T5["5 · Cookies SameSite"]
-    C --> T6["6 · Bypass de defensas débiles"]
-    C --> T7["7 · CSRF en APIs JSON"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

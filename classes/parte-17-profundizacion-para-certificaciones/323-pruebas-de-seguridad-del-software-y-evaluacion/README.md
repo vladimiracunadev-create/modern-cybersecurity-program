@@ -1,20 +1,7 @@
 # Clase 323 — Pruebas de seguridad del software y evaluación
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 17](https://img.shields.io/badge/%F0%9F%93%88%20parte%2017-Profundizaci%C3%B3n%20para%20certificaciones-116329?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-140%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-323%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **17 — Profundización para certificaciones** · 📖 Fuente: *(ISC)² CISSP OSG — Security Assessment & Testing / Software Development Security* · *OWASP ASVS 4.0*
-> ⏱️ Duración estimada: **140 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **17 — Profundización para certificaciones** · Fuente: *(ISC)² CISSP OSG — Security Assessment & Testing / Software Development Security* · *OWASP ASVS 4.0*
+> ⏱️ Duración estimada: **140 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,25 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Verificar** requisitos de seguridad de una aplicación contra los niveles de OWASP ASVS.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📈 Clase 323<br/>Pruebas de seguridad del<br/>software y evaluación"]
-    C --> T1["1 · Pruebas en el SDLC<br/>(shift-left)"]
-    C --> T2["2 · SAST (análisis estático)"]
-    C --> T3["3 · DAST (análisis dinámico)"]
-    C --> T4["4 · IAST y SCA"]
-    C --> T5["5 · Revisión de código seguro"]
-    C --> T6["6 · Pentest de aplicaciones"]
-    C --> T7["7 · Gestión de hallazgos y SLA"]
-    C --> T8["8 · OWASP ASVS"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

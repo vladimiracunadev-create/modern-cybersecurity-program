@@ -5,20 +5,6 @@
 >
 > **Nivel de entrada:** avanzado; parte de la ruta de [Pentester](./pentester.md) · **Foco:** emulación de amenazas, C2, OPSEC y ataque a Active Directory · **Certificación faro:** CRTO / OSEP
 
-
-<!-- insignias:inicio -->
-
-<div align="center">
-
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-avanzado-1f6feb?style=flat-square)](README.md)
-[![Foco](https://img.shields.io/badge/%F0%9F%8E%AF%20foco-emulaci%C3%B3n%20de%20amenazas-6e7781?style=flat-square)](README.md)
-[![Certificación](https://img.shields.io/badge/%F0%9F%8E%93%20certi-CRTO%20%2F%20OSEP-2e8b57?style=flat-square)](../certificaciones/README.md)
-[![Partes](https://img.shields.io/badge/%F0%9F%97%82%EF%B8%8F%20partes-3-e8590c?style=flat-square)](../classes/README.md)
-
-</div>
-
-<!-- insignias:fin -->
-
 ## 🧭 Qué es y por qué importa
 
 Un red teamer **no es un pentester con otro nombre**. Es una confusión cara, así que vale la
@@ -102,22 +88,6 @@ terreno lo caminas tú.
   Cruzar esa línea es el fin de tu carrera, no una anécdota.
 
 ## 📚 Tu ruta en el programa
-
-<!-- recorrido:inicio -->
-
-```mermaid
-flowchart LR
-    P7["🔴 Parte 7<br/>Red Team"]
-    P6["🦠 Parte 6<br/>Malware"]
-    P5["💥 Parte 5<br/>Binarios"]
-    P7 --> P6 --> P5
-    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class P7 ini
-    class P5 fin
-```
-
-<!-- recorrido:fin -->
 
 Esta ruta **asume que ya completaste la de [Pentester](./pentester.md)**. El red team se construye
 encima de esa base ofensiva; no es un atajo para saltártela.

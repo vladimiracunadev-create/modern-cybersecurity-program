@@ -1,20 +1,7 @@
 # Clase 054 — Firmas digitales
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 2](https://img.shields.io/badge/%F0%9F%94%90%20parte%202-Criptograf%C3%ADa%20aplicada-6f42c1?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-054%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **2 — Criptografía aplicada** · 📖 Fuente: *Serious Cryptography* (Aumasson) y NIST FIPS 186-5
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **2 — Criptografía aplicada** · Fuente: *Serious Cryptography* (Aumasson) y NIST FIPS 186-5
+> ⏱️ Duración estimada: **100 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Aplicar** firmas para verificar integridad de software.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔐 Clase 054<br/>Firmas digitales"]
-    C --> T1["1 · Firma vs MAC"]
-    C --> T2["2 · Hash-then-sign"]
-    C --> T3["3 · RSA-PSS"]
-    C --> T4["4 · ECDSA y el riesgo del<br/>nonce"]
-    C --> T5["5 · Ed25519 (determinista)"]
-    C --> T6["6 · Verificación de software"]
-    C --> T7["7 · No repudio y sus límites"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,20 +1,7 @@
 # Clase 174 — Compromiso total de dominio: DCSync y Golden Ticket
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 7](https://img.shields.io/badge/%F0%9F%94%B4%20parte%207-Red%20Team%20y%20operaciones%20ofensivas-cf222e?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Experto-cf222e?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-174%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **7 — Red Team y operaciones ofensivas** · 📖 Fuente: *The Hacker Recipes / MITRE ATT&CK T1003.006, T1558.001*
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Experto**
-
-<!-- cabecera:fin -->
+> Parte: **7 — Red Team y operaciones ofensivas** · Fuente: *The Hacker Recipes / MITRE ATT&CK T1003.006, T1558.001*
+> ⏱️ Duración estimada: **110 min** · Nivel: **Experto**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Detectar** DCSync y tickets forjados con la telemetría adecuada.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔴 Clase 174<br/>Compromiso total de dominio"]
-    C --> T1["1 · Derechos de replicación"]
-    C --> T2["2 · DCSync (T1003.006)"]
-    C --> T3["3 · El hash de krbtgt"]
-    C --> T4["4 · Golden Ticket (T1558.001)"]
-    C --> T5["5 · Silver Ticket"]
-    C --> T6["6 · Persistencia y peligro"]
-    C --> T7["7 · Detección"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

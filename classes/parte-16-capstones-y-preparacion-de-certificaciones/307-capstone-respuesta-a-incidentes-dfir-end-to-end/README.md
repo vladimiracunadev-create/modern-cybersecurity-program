@@ -1,20 +1,7 @@
 # Clase 307 — Capstone: respuesta a incidentes DFIR end-to-end
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 16](https://img.shields.io/badge/%F0%9F%8F%81%20parte%2016-Capstones%20y%20preparaci%C3%B3n%20de%20certificaciones-0550ae?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-150%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-307%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **16 — Capstones y preparación de certificaciones** · 📖 Fuente: *NIST SP 800-61 · SANS Digital Forensics · Incident Response & Computer Forensics (Luttgens, Pepe, Mandia)*
-> ⏱️ Duración estimada: **150 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **16 — Capstones y preparación de certificaciones** · Fuente: *NIST SP 800-61 · SANS Digital Forensics · Incident Response & Computer Forensics (Luttgens, Pepe, Mandia)*
+> ⏱️ Duración estimada: **150 min** · Nivel: **Avanzado**
 
 ---
 
@@ -35,24 +22,6 @@ Al finalizar, el alumno podrá:
 5. **Redactar** un informe con timeline, IoCs y recomendaciones.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🏁 Clase 307<br/>Capstone"]
-    C --> T1["1 · Ciclo IR (NIST 800-61)"]
-    C --> T2["2 · Cadena de custodia"]
-    C --> T3["3 · Adquisición de<br/>memoria/disco"]
-    C --> T4["4 · Análisis de memoria<br/>(Volatility)"]
-    C --> T5["5 · Análisis de disco<br/>(Autopsy)"]
-    C --> T6["6 · Timeline y correlación"]
-    C --> T7["7 · Informe y lecciones<br/>aprendidas"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

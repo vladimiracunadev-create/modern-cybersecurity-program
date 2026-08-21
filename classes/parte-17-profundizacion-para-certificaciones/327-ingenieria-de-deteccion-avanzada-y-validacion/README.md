@@ -1,20 +1,7 @@
 # Clase 327 — Ingeniería de detección avanzada y validación
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 17](https://img.shields.io/badge/%F0%9F%93%88%20parte%2017-Profundizaci%C3%B3n%20para%20certificaciones-116329?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-150%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Experto-cf222e?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-327%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **17 — Profundización para certificaciones** · 📖 Fuente: *MITRE ATT&CK* · *SANS SEC555 / BTL1 SOC* · *SigmaHQ*
-> ⏱️ Duración estimada: **150 min** · 🎚️ Nivel: **Experto**
-
-<!-- cabecera:fin -->
+> Parte: **17 — Profundización para certificaciones** · Fuente: *MITRE ATT&CK* · *SANS SEC555 / BTL1 SOC* · *SigmaHQ*
+> ⏱️ Duración estimada: **150 min** · Nivel: **Experto**
 
 ---
 
@@ -34,25 +21,6 @@ Al finalizar, el alumno podrá:
 6. **Calcular** métricas de detección (cobertura ATT&CK, tasa de FP, MTTD) para dirigir la mejora.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📈 Clase 327<br/>Ingeniería de detección<br/>avanzada y validación"]
-    C --> T1["1 · Detection-as-code"]
-    C --> T2["2 · Ciclo de vida de una<br/>detección"]
-    C --> T3["3 · Sigma como formato<br/>portable"]
-    C --> T4["4 · Traducción a EQL/KQL/SPL"]
-    C --> T5["5 · Validación con Atomic Red<br/>Team"]
-    C --> T6["6 · Reducción de falsos<br/>positivos"]
-    C --> T7["7 · Métricas de detección"]
-    C --> T8["8 · Mapeo de cobertura ATT&CK"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

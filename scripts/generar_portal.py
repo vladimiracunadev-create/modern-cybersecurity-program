@@ -206,18 +206,6 @@ def gen_readme(data):
          "(con respuestas plegadas). Para la versión **interactiva** con puntuación, abre "
          "[`quiz.html`](quiz.html) desde el [sitio del curso](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/quiz.html).\n",
          "> 🧭 ¿No sabes por dónde empezar? Mira las [rutas por rol](../rutas/README.md).\n",
-         '<div align="center">\n\n'
-         "[![Preguntas](https://img.shields.io/badge/preguntas-97-0969da?style=for-the-badge)]"
-         "(README.md)\n"
-         "[![Partes](https://img.shields.io/badge/baterías-19%20partes-7c5cff?style=for-the-badge)]"
-         "(../classes/README.md)\n"
-         "[![Interactivo](https://img.shields.io/badge/quiz-con%20puntuación-2e8b57?style=for-the-badge)]"
-         "(quiz.html)\n\n"
-         "[⬅️ Volver al programa](../README.md) ·\n"
-         "[📚 Índice de clases](../classes/README.md) ·\n"
-         "[🧭 Rutas por rol](../rutas/README.md) ·\n"
-         "[✅ Progreso](progreso.html)\n\n"
-         "</div>\n",
          "<a id=\"progreso\"></a>\n",
          "## Seguimiento de progreso\n",
          "Lleva la cuenta de todas las clases del programa en [`progreso.html`](progreso.html) "

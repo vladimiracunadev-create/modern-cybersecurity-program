@@ -4,23 +4,6 @@ Cada [ruta por rol](../rutas/README.md) cierra con un **examen final** que combi
 práctica y comunicación — igual que una entrevista técnica o una certificación real. Todos
 comparten la misma estructura; cambia el contenido.
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![roles](https://img.shields.io/badge/roles-17-e8590c?style=for-the-badge)](../rutas/README.md)
-[![formato](https://img.shields.io/badge/formato-teor%C3%ADa%20%C2%B7%20pr%C3%A1ctica%20%C2%B7%20informe-2e8b57?style=for-the-badge)](examen-final-por-rol.md)
-
-[⬅️ Volver al programa](../README.md) ·
-[📚 Índice de clases](../classes/README.md) ·
-[🧭 Rutas por rol](../rutas/README.md) ·
-[🧪 Laboratorios](../labs/README.md) ·
-[📊 Rúbrica](rubrica-evaluacion.md)
-
-</div>
-
-<!-- cabecera:fin -->
-
 ## Estructura común (100 puntos)
 
 | Bloque | Peso | Formato |

@@ -1,20 +1,7 @@
 # Clase 119 — Buffer overflow en stack: teoría
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 5](https://img.shields.io/badge/%F0%9F%92%A5%20parte%205-Explotaci%C3%B3n%20de%20sistemas%20y%20binarios-b02a37?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-119%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **5 — Explotación de sistemas y binarios** · 📖 Fuente: *Erickson, Hacking 2e* · *Aleph One, "Smashing the Stack"*
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **5 — Explotación de sistemas y binarios** · Fuente: *Erickson, Hacking 2e* · *Aleph One, "Smashing the Stack"*
+> ⏱️ Duración estimada: **100 min** · Nivel: **Intermedio**
 
 ---
 
@@ -36,25 +23,6 @@ Al finalizar, el alumno podrá:
 5. **Relacionar** el overflow con las mitigaciones que lo dificultan (adelanto de la clase 122).
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["💥 Clase 119<br/>Buffer overflow en stack"]
-    C --> T1["1 · Buffers en el stack"]
-    C --> T2["2 · Escritura fuera de límites"]
-    C --> T3["3 · Sobrescritura de saved RBP<br/>y ret"]
-    C --> T4["4 · Concepto de offset"]
-    C --> T5["5 · Control de RIP → control<br/>de flujo"]
-    C --> T6["6 · Funciones peligrosas de C"]
-    C --> T7["7 · Impacto y variantes"]
-    C --> T8["8 · Panorama de mitigaciones"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 | --- | --- | --- |

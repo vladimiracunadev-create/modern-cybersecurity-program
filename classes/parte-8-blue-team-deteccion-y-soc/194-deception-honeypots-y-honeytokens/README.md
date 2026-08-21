@@ -1,20 +1,7 @@
 # Clase 194 — Deception: honeypots y honeytokens
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 8](https://img.shields.io/badge/%F0%9F%94%B5%20parte%208-Blue%20Team%2C%20detecci%C3%B3n%20y%20SOC-0969da?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-194%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **8 — Blue Team, detección y SOC** · 📖 Fuente: *The Practice of Network Security Monitoring* — Richard Bejtlich
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **8 — Blue Team, detección y SOC** · Fuente: *The Practice of Network Security Monitoring* — Richard Bejtlich
+> ⏱️ Duración estimada: **100 min** · Nivel: **Intermedio**
 
 ---
 
@@ -35,25 +22,6 @@ Al finalizar, el alumno podrá:
 5. **Integrar** las señales de deception en el SIEM y el flujo del SOC.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔵 Clase 194<br/>Deception"]
-    C --> T1["1 · Deception como estrategia"]
-    C --> T2["2 · Honeypots de baja vs alta<br/>interacción"]
-    C --> T3["3 · Honeytokens y canary<br/>tokens"]
-    C --> T4["4 · Cuentas y credenciales<br/>trampa"]
-    C --> T5["5 · Honeynets y engaño<br/>distribuido"]
-    C --> T6["6 · Colocación estratégica"]
-    C --> T7["7 · Alertas de alta fidelidad"]
-    C --> T8["8 · Riesgos y contención"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

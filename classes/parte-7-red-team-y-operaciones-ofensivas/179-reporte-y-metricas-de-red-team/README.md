@@ -1,20 +1,7 @@
 # Clase 179 — Reporte y métricas de Red Team
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 7](https://img.shields.io/badge/%F0%9F%94%B4%20parte%207-Red%20Team%20y%20operaciones%20ofensivas-cf222e?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-179%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **7 — Red Team y operaciones ofensivas** · 📖 Fuente: *Red Team Development and Operations (Vest & Tubberville)*
-> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **7 — Red Team y operaciones ofensivas** · Fuente: *Red Team Development and Operations (Vest & Tubberville)*
+> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Priorizar** recomendaciones por impacto y esfuerzo.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔴 Clase 179<br/>Reporte y métricas de Red<br/>Team"]
-    C --> T1["1 · Audiencias del informe"]
-    C --> T2["2 · Resumen ejecutivo"]
-    C --> T3["3 · Narrativa de attack path"]
-    C --> T4["4 · Evidencias y<br/>reproducibilidad"]
-    C --> T5["5 · Mapeo a ATT&CK"]
-    C --> T6["6 · Métricas<br/>(TTD/TTR/cobertura)"]
-    C --> T7["7 · Recomendaciones<br/>priorizadas"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

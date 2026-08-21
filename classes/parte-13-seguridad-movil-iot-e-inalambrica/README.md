@@ -1,16 +1,8 @@
-# 📡 Parte 13 — Seguridad móvil, IoT e inalámbrica
+# Parte 13 — Seguridad móvil, IoT e inalámbrica
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⏭️ Parte siguiente](../parte-14-grc-riesgo-y-cumplimiento/README.md)
 
-<div align="center">
-
-[![Clases](https://img.shields.io/badge/clases-15-9a6700?style=flat-square)](../README.md)
-[![Rango](https://img.shields.io/badge/rango-261%E2%80%93275-24292f?style=flat-square)](../README.md)
-[![Parte](https://img.shields.io/badge/parte-13%20de%2018-6e7781?style=flat-square)](../README.md)
-
-</div>
-
-Android, iOS, firmware, hardware, SDR e ICS/SCADA
+**15 clases** · rango 261–275 · Android, iOS, firmware, hardware, SDR e ICS/SCADA
 
 **Fuentes de referencia de esta parte:**
 
@@ -61,26 +53,6 @@ Al terminar la parte, el alumno podrá:
 - Nociones de análisis de malware y RE (Parte 11) ayudan en las clases de RE móvil y firmware.
 
 ## 🗺️ Estructura temática
-
-<!-- arco:inicio -->
-
-```mermaid
-flowchart TD
-    B1["Móvil Android<br/>261–262"]
-    B2["Móvil iOS<br/>263–264"]
-    B3["RE móvil<br/>265"]
-    B4["IoT y firmware<br/>266–267"]
-    B5["Hardware y radio<br/>268–271"]
-    B6["Inalámbrica WiFi<br/>272"]
-    B7["OT y sistemas críticos<br/>273–275"]
-    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7
-    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class B1 ini
-    class B7 fin
-```
-
-<!-- arco:fin -->
 
 | Bloque | Clases | Enfoque |
 |--------|--------|---------|

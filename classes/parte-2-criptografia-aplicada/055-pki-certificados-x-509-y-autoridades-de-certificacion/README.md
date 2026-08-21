@@ -1,20 +1,7 @@
 # Clase 055 — PKI, certificados X.509 y autoridades de certificación
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 2](https://img.shields.io/badge/%F0%9F%94%90%20parte%202-Criptograf%C3%ADa%20aplicada-6f42c1?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-055%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **2 — Criptografía aplicada** · 📖 Fuente: *Real-World Cryptography* (Wong) e IETF RFC 5280
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **2 — Criptografía aplicada** · Fuente: *Real-World Cryptography* (Wong) e IETF RFC 5280
+> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Identificar** riesgos de PKI (CA comprometida, misemisión) y mitigaciones (CT, pinning).
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔐 Clase 055<br/>PKI, certificados X.509 y<br/>autoridades de…"]
-    C --> T1["1 · Problema de confianza en<br/>claves"]
-    C --> T2["2 · Certificado X.509"]
-    C --> T3["3 · CA y cadena de confianza"]
-    C --> T4["4 · CSR y emisión"]
-    C --> T5["5 · Revocación (CRL/OCSP)"]
-    C --> T6["6 · Certificate Transparency"]
-    C --> T7["7 · Let's Encrypt / ACME"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

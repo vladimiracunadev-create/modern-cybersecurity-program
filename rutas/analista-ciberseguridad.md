@@ -7,20 +7,6 @@
 >
 > **Nivel de entrada:** intermedio; suele pedir ~2 años de experiencia y titulación · **Foco:** monitoreo (SIEM), gestión de eventos/logs/alertas, vulnerabilidades, respuesta a incidentes y cumplimiento normativo · **Certificación faro:** CompTIA CySA+ / BTL1
 
-
-<!-- insignias:inicio -->
-
-<div align="center">
-
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-intermedio-1f6feb?style=flat-square)](README.md)
-[![Foco](https://img.shields.io/badge/%F0%9F%8E%AF%20foco-monitoreo-6e7781?style=flat-square)](README.md)
-[![Certificación](https://img.shields.io/badge/%F0%9F%8E%93%20certi-CompTIA%20CySA%2B%20%2F%20BTL1-2e8b57?style=flat-square)](../certificaciones/README.md)
-[![Partes](https://img.shields.io/badge/%F0%9F%97%82%EF%B8%8F%20partes-7-e8590c?style=flat-square)](../classes/README.md)
-
-</div>
-
-<!-- insignias:fin -->
-
 ## 🧭 Qué es y por qué importa
 
 Muchas ofertas de empleo no piden un pentester, ni un forense, ni un auditor GRC puro: piden un
@@ -127,26 +113,6 @@ CVE, no prioridades. Lo que se paga es tu **criterio** para interpretar, prioriz
   dejar rastro. La disciplina pesa tanto como el conocimiento técnico.
 
 ## 📚 Tu ruta en el programa
-
-<!-- recorrido:inicio -->
-
-```mermaid
-flowchart LR
-    P0["🧱 Parte 0<br/>Fundamentos"]
-    P1["🌐 Parte 1<br/>Redes"]
-    P8["🔵 Parte 8<br/>Blue Team / SOC"]
-    P9["🔬 Parte 9<br/>DFIR"]
-    P14["📋 Parte 14<br/>GRC"]
-    P3["🎯 Parte 3<br/>Pentesting"]
-    P17["📈 Parte 17<br/>Profundización"]
-    P0 --> P1 --> P8 --> P9 --> P14 --> P3 --> P17
-    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class P0 ini
-    class P17 fin
-```
-
-<!-- recorrido:fin -->
 
 Este es un rol **híbrido**, así que la ruta cruza tres bloques: la operación defensiva (Blue Team),
 la respuesta a incidentes (DFIR) y el marco normativo (GRC). Orden recomendado:

@@ -1,20 +1,7 @@
 # Clase 216 — Contención, erradicación y recuperación
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 9](https://img.shields.io/badge/%F0%9F%94%AC%20parte%209-Forense%20digital%20y%20respuesta%20a%20incidentes-1a7f64?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-216%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **9 — Forense digital y respuesta a incidentes** · 📖 Fuente: *NIST SP 800-61 Rev. 2* y SANS PICERL
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **9 — Forense digital y respuesta a incidentes** · Fuente: *NIST SP 800-61 Rev. 2* y SANS PICERL
+> ⏱️ Duración estimada: **110 min** · Nivel: **Intermedio**
 
 ---
 
@@ -33,25 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Validar** que la amenaza fue eliminada antes de cerrar.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔬 Clase 216<br/>Contención, erradicación y<br/>recuperación"]
-    C --> T1["1 · Contención corto vs. largo<br/>plazo"]
-    C --> T2["2 · Aislar vs. observar"]
-    C --> T3["3 · Preservar evidencia al<br/>contener"]
-    C --> T4["4 · Erradicación de<br/>persistencia"]
-    C --> T5["5 · Reconstrucción vs.<br/>limpieza"]
-    C --> T6["6 · Rotación de credenciales"]
-    C --> T7["7 · Recuperación monitorizada"]
-    C --> T8["8 · Validación de erradicación"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

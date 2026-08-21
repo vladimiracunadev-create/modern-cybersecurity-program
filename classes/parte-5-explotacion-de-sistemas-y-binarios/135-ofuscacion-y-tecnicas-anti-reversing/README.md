@@ -1,20 +1,7 @@
 # Clase 135 — Ofuscación y técnicas anti-reversing
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 5](https://img.shields.io/badge/%F0%9F%92%A5%20parte%205-Explotaci%C3%B3n%20de%20sistemas%20y%20binarios-b02a37?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-135%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **5 — Explotación de sistemas y binarios** · 📖 Fuente: *Eilam, Reversing* · *Practical Binary Analysis*
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **5 — Explotación de sistemas y binarios** · Fuente: *Eilam, Reversing* · *Practical Binary Analysis*
+> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
 
 ---
 
@@ -38,25 +25,6 @@ Al finalizar, el alumno podrá:
 5. **Reconocer** control-flow flattening y virtualización.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["💥 Clase 135<br/>Ofuscación y técnicas<br/>anti-reversing"]
-    C --> T1["1 · Packing y cifrado"]
-    C --> T2["2 · Entropía como indicador"]
-    C --> T3["3 · Anti-debugging (ptrace)"]
-    C --> T4["4 · Anti-VM / anti-sandbox"]
-    C --> T5["5 · Cadenas cifradas"]
-    C --> T6["6 · Control-flow flattening"]
-    C --> T7["7 · Virtualización de código"]
-    C --> T8["8 · Contramedidas"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 | --- | --- | --- |

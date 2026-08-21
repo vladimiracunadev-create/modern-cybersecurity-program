@@ -1,20 +1,7 @@
 # Clase 207 — Forense de memoria RAM con Volatility
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 9](https://img.shields.io/badge/%F0%9F%94%AC%20parte%209-Forense%20digital%20y%20respuesta%20a%20incidentes-1a7f64?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-140%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-207%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **9 — Forense digital y respuesta a incidentes** · 📖 Fuente: *Ligh, Case, Levy, Walters — The Art of Memory Forensics* (Wiley, 2014)
-> ⏱️ Duración estimada: **140 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **9 — Forense digital y respuesta a incidentes** · Fuente: *Ligh, Case, Levy, Walters — The Art of Memory Forensics* (Wiley, 2014)
+> ⏱️ Duración estimada: **140 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,25 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Usar** Volatility 3 con sus plugins principales.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔬 Clase 207<br/>Forense de memoria RAM con<br/>Volatility"]
-    C --> T1["1 · Por qué la RAM importa"]
-    C --> T2["2 · Adquisición de memoria"]
-    C --> T3["3 · Enumeración de procesos"]
-    C --> T4["4 · Conexiones de red"]
-    C --> T5["5 · Inyección de código"]
-    C --> T6["6 · Extracción de binarios"]
-    C --> T7["7 · Detección de ocultamiento"]
-    C --> T8["8 · Volatility 3 y perfiles"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

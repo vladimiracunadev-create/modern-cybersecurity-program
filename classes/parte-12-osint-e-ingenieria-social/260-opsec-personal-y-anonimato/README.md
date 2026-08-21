@@ -1,20 +1,7 @@
 # Clase 260 — OPSEC personal y anonimato
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 12](https://img.shields.io/badge/%F0%9F%95%B5%EF%B8%8F%20parte%2012-OSINT%20e%20ingenier%C3%ADa%20social-6e7781?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-260%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **12 — OSINT e ingeniería social** · 📖 Fuente: *Extreme Privacy* (M. Bazzell) · Tor Project docs
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **12 — OSINT e ingeniería social** · Fuente: *Extreme Privacy* (M. Bazzell) · Tor Project docs
+> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
 
 ---
 
@@ -42,24 +29,6 @@ Al finalizar, el alumno podrá:
 5. **Endurecer** dispositivos y cuentas contra el rastreo y la deanonimización.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🕵️ Clase 260<br/>OPSEC personal y anonimato"]
-    C --> T1["1 · Modelado de amenaza"]
-    C --> T2["2 · Compartimentación"]
-    C --> T3["3 · Reducción de huella"]
-    C --> T4["4 · Tor y VPN"]
-    C --> T5["5 · Sistemas amnésicos (Tails)"]
-    C --> T6["6 · Metadatos y hábitos"]
-    C --> T7["7 · Cuentas e identidades"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

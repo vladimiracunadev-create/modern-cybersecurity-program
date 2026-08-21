@@ -1,20 +1,7 @@
 # Clase 123 — Bypass de protecciones: ret2libc
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 5](https://img.shields.io/badge/%F0%9F%92%A5%20parte%205-Explotaci%C3%B3n%20de%20sistemas%20y%20binarios-b02a37?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-130%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-123%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **5 — Explotación de sistemas y binarios** · 📖 Fuente: *Anley et al., The Shellcoder's Handbook* · docs pwntools
-> ⏱️ Duración estimada: **130 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **5 — Explotación de sistemas y binarios** · Fuente: *Anley et al., The Shellcoder's Handbook* · docs pwntools
+> ⏱️ Duración estimada: **130 min** · Nivel: **Avanzado**
 
 ---
 
@@ -38,25 +25,6 @@ Al finalizar, el alumno podrá:
 5. **Automatizar** todo con pwntools y su módulo `ELF`/`libc`.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["💥 Clase 123<br/>Bypass de protecciones"]
-    C --> T1["1 · Reutilización de código vs<br/>shellcode"]
-    C --> T2["2 · GOT/PLT"]
-    C --> T3["3 · Info leak"]
-    C --> T4["4 · Cálculo de base de libc"]
-    C --> T5["5 · Gadget pop rdi; ret"]
-    C --> T6["6 · system('/bin/sh')"]
-    C --> T7["7 · Alineación de stack"]
-    C --> T8["8 · pwntools ELF/ROP"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 | --- | --- | --- |

@@ -1,20 +1,7 @@
 # Clase 330 — Análisis de código y automatización de seguridad
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 17](https://img.shields.io/badge/%F0%9F%93%88%20parte%2017-Profundizaci%C3%B3n%20para%20certificaciones-116329?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-150%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-330%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **17 — Profundización para certificaciones** · 📖 Fuente: *CompTIA PenTest+ — Tools and Code Analysis* · *(ISC)² CISSP OSG — Software Development Security* · *OWASP Code Review Guide / ASVS*
-> ⏱️ Duración estimada: **150 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **17 — Profundización para certificaciones** · Fuente: *CompTIA PenTest+ — Tools and Code Analysis* · *(ISC)² CISSP OSG — Software Development Security* · *OWASP Code Review Guide / ASVS*
+> ⏱️ Duración estimada: **150 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,25 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Escribir** un script de automatización que ejecute análisis, normalice resultados y genere un informe accionable.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📈 Clase 330<br/>Análisis de código y<br/>automatización de seguridad"]
-    C --> T1["1 · Revisión de código segura<br/>(manual)"]
-    C --> T2["2 · SAST (análisis estático)"]
-    C --> T3["3 · DAST (análisis dinámico)"]
-    C --> T4["4 · IAST (instrumentado)"]
-    C --> T5["5 · SCA<br/>(composición/dependencias)"]
-    C --> T6["6 · Integración en CI<br/>(shift-left)"]
-    C --> T7["7 · Triaje de hallazgos"]
-    C --> T8["8 · Automatización (scripting,<br/>SARIF)"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

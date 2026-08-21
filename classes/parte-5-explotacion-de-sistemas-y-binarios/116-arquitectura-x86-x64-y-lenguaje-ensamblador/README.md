@@ -1,20 +1,7 @@
 # Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 5](https://img.shields.io/badge/%F0%9F%92%A5%20parte%205-Explotaci%C3%B3n%20de%20sistemas%20y%20binarios-b02a37?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-116%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **5 — Explotación de sistemas y binarios** · 📖 Fuente: *Erickson, Hacking: The Art of Exploitation, 2e* · *Intel SDM*
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Fundamentos**
-
-<!-- cabecera:fin -->
+> Parte: **5 — Explotación de sistemas y binarios** · Fuente: *Erickson, Hacking: The Art of Exploitation, 2e* · *Intel SDM*
+> ⏱️ Duración estimada: **120 min** · Nivel: **Fundamentos**
 
 ---
 
@@ -37,25 +24,6 @@ Al finalizar, el alumno podrá:
 5. **Explicar** el ciclo fetch-decode-execute y el papel de `RIP`/`EIP` y `RFLAGS`.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["💥 Clase 116<br/>Arquitectura x86/x64 y<br/>lenguaje ensamblador"]
-    C --> T1["1 · Modos de operación (real,<br/>protegido, largo)"]
-    C --> T2["2 · Registros GPR: RAX…R15,<br/>EAX…EDI"]
-    C --> T3["3 · RIP/EIP y RFLAGS"]
-    C --> T4["4 · Endianness (little-endian)"]
-    C --> T5["5 · Sintaxis Intel vs AT&T"]
-    C --> T6["6 · Instrucciones básicas:<br/>mov, add, lea, cmp, jmp,<br/>call"]
-    C --> T7["7 · Prólogo/epílogo de función"]
-    C --> T8["8 · Del C al ASM (gcc -S)"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 | --- | --- | --- |

@@ -1,20 +1,7 @@
 # Clase 026 — Wireshark: captura y análisis de paquetes
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 1](https://img.shields.io/badge/%F0%9F%8C%90%20parte%201-Redes%20y%20seguridad%20de%20redes-1f6feb?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-026%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **1 — Redes y seguridad de redes** · 📖 Fuente: *Practical Packet Analysis, C. Sanders*
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Fundamentos**
-
-<!-- cabecera:fin -->
+> Parte: **1 — Redes y seguridad de redes** · Fuente: *Practical Packet Analysis, C. Sanders*
+> ⏱️ Duración estimada: **120 min** · Nivel: **Fundamentos**
 
 ---
 
@@ -34,24 +21,6 @@ Al finalizar, el alumno podrá:
 6. **Exportar** objetos y subconjuntos de paquetes para compartir evidencia.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🌐 Clase 026<br/>Wireshark"]
-    C --> T1["1 · Puntos de captura (hub,<br/>SPAN, TAP, host)"]
-    C --> T2["2 · Modo promiscuo vs. monitor"]
-    C --> T3["3 · Anatomía de la ventana de<br/>Wireshark"]
-    C --> T4["4 · Disección por capas"]
-    C --> T5["5 · Perfiles y reglas de<br/>colorización"]
-    C --> T6["6 · Marcas de tiempo y<br/>referencia temporal"]
-    C --> T7["7 · Exportar objetos y guardar<br/>subconjuntos"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -3,27 +3,6 @@
 El programa se construye por fases. El **currículo escrito** (README completo por cada una
 de las 340 clases) es la base y el primer entregable.
 
-
-<!-- fases:inicio -->
-
-```mermaid
-flowchart LR
-    F1["✅ Fase 1<br/>Currículo escrito completo"]
-    F2["✅ Fase 2<br/>Laboratorios ejecutables"]
-    F3["✅ Fase 3<br/>Material complementario"]
-    F4["✅ Fase 4<br/>Portal y evaluación"]
-    F5["✅ Fase 5<br/>App móvil Android"]
-    F1 --> F2 --> F3 --> F4 --> F5
-    classDef hecho fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class F1 hecho
-    class F2 hecho
-    class F3 hecho
-    class F4 hecho
-    class F5 hecho
-```
-
-<!-- fases:fin -->
-
 ## Fase 1 — Currículo escrito completo ✅ (completa)
 
 - [x] Diseño del currículo: 19 partes, 340 clases, numeración 001–340.

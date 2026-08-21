@@ -1,20 +1,7 @@
 # Clase 211 — Forense móvil
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 9](https://img.shields.io/badge/%F0%9F%94%AC%20parte%209-Forense%20digital%20y%20respuesta%20a%20incidentes-1a7f64?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-211%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **9 — Forense digital y respuesta a incidentes** · 📖 Fuente: *NIST SP 800-101 Rev. 1 — Guidelines on Mobile Device Forensics*
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **9 — Forense digital y respuesta a incidentes** · Fuente: *NIST SP 800-101 Rev. 1 — Guidelines on Mobile Device Forensics*
+> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,25 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Usar** ADB y herramientas forenses móviles de forma metódica.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔬 Clase 211<br/>Forense móvil"]
-    C --> T1["1 · Retos del móvil"]
-    C --> T2["2 · Niveles de extracción"]
-    C --> T3["3 · Android: estructura y<br/>/data"]
-    C --> T4["4 · iOS: backups y keychain"]
-    C --> T5["5 · Bases SQLite de apps"]
-    C --> T6["6 · Ubicación y actividad"]
-    C --> T7["7 · ADB y modo de arranque"]
-    C --> T8["8 · Aspectos legales y<br/>consentimiento"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,20 +1,7 @@
 # Clase 028 — tcpdump y captura de tráfico en línea de comandos
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 1](https://img.shields.io/badge/%F0%9F%8C%90%20parte%201-Redes%20y%20seguridad%20de%20redes-1f6feb?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-028%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **1 — Redes y seguridad de redes** · 📖 Fuente: *Practical Packet Analysis, C. Sanders*
-> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Fundamentos**
-
-<!-- cabecera:fin -->
+> Parte: **1 — Redes y seguridad de redes** · Fuente: *Practical Packet Analysis, C. Sanders*
+> ⏱️ Duración estimada: **90 min** · Nivel: **Fundamentos**
 
 ---
 
@@ -34,24 +21,6 @@ Al finalizar, el alumno podrá:
 6. **Reconocer** los límites de tcpdump frente a analizadores gráficos.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🌐 Clase 028<br/>tcpdump y captura de tráfico<br/>en línea de…"]
-    C --> T1["1 · Selección de interfaz (-i)"]
-    C --> T2["2 · Snap length (-s) y<br/>verbosidad (-v)"]
-    C --> T3["3 · Filtros BPF primitivos y<br/>compuestos"]
-    C --> T4["4 · Escritura y lectura de<br/>pcap (-w/-r)"]
-    C --> T5["5 · Rotación con -C, -G, -W"]
-    C --> T6["6 · Filtrado por flags TCP"]
-    C --> T7["7 · tcpdump sobre SSH"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

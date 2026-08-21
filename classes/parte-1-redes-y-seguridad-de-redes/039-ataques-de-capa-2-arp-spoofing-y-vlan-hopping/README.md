@@ -1,20 +1,7 @@
 # Clase 039 — Ataques de capa 2: ARP spoofing y VLAN hopping
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 1](https://img.shields.io/badge/%F0%9F%8C%90%20parte%201-Redes%20y%20seguridad%20de%20redes-1f6feb?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-039%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **1 — Redes y seguridad de redes** · 📖 Fuente: *IEEE 802.1Q; documentación de ettercap, yersinia, scapy*
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **1 — Redes y seguridad de redes** · Fuente: *IEEE 802.1Q; documentación de ettercap, yersinia, scapy*
+> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
 
 ---
 
@@ -34,24 +21,6 @@ Al finalizar, el alumno podrá:
 6. **Aplicar** contramedidas: DAI, port security, deshabilitar DTP, native VLAN dedicada.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🌐 Clase 039<br/>Ataques de capa 2"]
-    C --> T1["1 · ARP y su falta de<br/>autenticación"]
-    C --> T2["2 · ARP spoofing/poisoning"]
-    C --> T3["3 · MAC flooding y CAM<br/>overflow"]
-    C --> T4["4 · STP y ataques de topología"]
-    C --> T5["5 · VLAN hopping (switch<br/>spoofing, double tag)"]
-    C --> T6["6 · Detección de anomalías L2"]
-    C --> T7["7 · Contramedidas de switch"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

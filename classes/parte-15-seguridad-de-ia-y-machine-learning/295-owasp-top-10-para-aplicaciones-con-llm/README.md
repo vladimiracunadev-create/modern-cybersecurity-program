@@ -1,20 +1,7 @@
 # Clase 295 — OWASP Top 10 para aplicaciones con LLM
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 15](https://img.shields.io/badge/%F0%9F%A7%AA%20parte%2015-Seguridad%20de%20IA%20y%20machine%20learning-bf3989?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-295%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **15 — Seguridad de IA y machine learning** · 📖 Fuente: *OWASP Top 10 for Large Language Model Applications (OWASP Foundation)*
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **15 — Seguridad de IA y machine learning** · Fuente: *OWASP Top 10 for Large Language Model Applications (OWASP Foundation)*
+> ⏱️ Duración estimada: **100 min** · Nivel: **Intermedio**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Construir** una checklist de auditoría OWASP-LLM aplicable a un proyecto.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🧪 Clase 295<br/>OWASP Top 10 para<br/>aplicaciones con LLM"]
-    C --> T1["1 · LLM01 Prompt Injection"]
-    C --> T2["2 · LLM02 Insecure Output<br/>Handling"]
-    C --> T3["3 · LLM03/04 Poisoning y DoS"]
-    C --> T4["4 · LLM05 Supply Chain"]
-    C --> T5["5 · LLM06 Sensitive Info<br/>Disclosure"]
-    C --> T6["6 · LLM07/08 Plugins y<br/>Excessive Agency"]
-    C --> T7["7 · LLM09/10 Overreliance y<br/>Model Theft"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

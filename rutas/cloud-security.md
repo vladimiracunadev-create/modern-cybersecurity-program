@@ -5,20 +5,6 @@
 >
 > **Nivel de entrada:** intermedio; casi nadie llega aquí de cero — se viene de dev, ops o sysadmin · **Foco:** modelo de responsabilidad compartida, IAM, CSPM, contenedores/Kubernetes e IaC · **Certificación faro:** AWS Security Specialty / CKS (Kubernetes Security)
 
-
-<!-- insignias:inicio -->
-
-<div align="center">
-
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-intermedio-1f6feb?style=flat-square)](README.md)
-[![Foco](https://img.shields.io/badge/%F0%9F%8E%AF%20foco-modelo%20de%20responsabilidad%E2%80%A6-6e7781?style=flat-square)](README.md)
-[![Certificación](https://img.shields.io/badge/%F0%9F%8E%93%20certi-AWS%20Security%20Specialty%20%2F%20CKS-2e8b57?style=flat-square)](../certificaciones/README.md)
-[![Partes](https://img.shields.io/badge/%F0%9F%97%82%EF%B8%8F%20partes-5-e8590c?style=flat-square)](../classes/README.md)
-
-</div>
-
-<!-- insignias:fin -->
-
 ## 🧭 Qué es y por qué importa
 
 La **nube es el nuevo perímetro** — y el perímetro ahora es una consola web, un token
@@ -116,24 +102,6 @@ para saber **cuál importa y cómo arreglarlo sin romper producción** lo pones 
   es quedarte obsoleto.
 
 ## 📚 Tu ruta en el programa
-
-<!-- recorrido:inicio -->
-
-```mermaid
-flowchart LR
-    P0["🧱 Parte 0<br/>Fundamentos"]
-    P2["🔐 Parte 2<br/>Criptografía"]
-    P4["🕸️ Parte 4<br/>Web"]
-    P10["☁️ Parte 10<br/>Cloud"]
-    P11["🔄 Parte 11<br/>DevSecOps"]
-    P0 --> P2 --> P4 --> P10 --> P11
-    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class P0 ini
-    class P11 fin
-```
-
-<!-- recorrido:fin -->
 
 Orden recomendado (según el [índice de rutas](./README.md)):
 

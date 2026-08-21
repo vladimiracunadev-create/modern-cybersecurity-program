@@ -1,20 +1,7 @@
 # Clase 339 — Riesgos, guardrails, OPSEC y ética del hacking con IA
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 18](https://img.shields.io/badge/%F0%9F%A7%A0%20parte%2018-IA%20aplicada%20a%20la%20ciberseguridad-7c5cff?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-339%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **18 — IA aplicada a la ciberseguridad** · 📖 Fuente: OWASP Top 10 for LLM · MITRE ATLAS · NIST AI RMF
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **18 — IA aplicada a la ciberseguridad** · Fuente: OWASP Top 10 for LLM · MITRE ATLAS · NIST AI RMF
+> ⏱️ Duración estimada: **100 min** · Nivel: **Avanzado**
 
 ---
 
@@ -36,23 +23,6 @@ Al finalizar, el alumno podrá:
 5. **Situar** el uso de IA en el marco legal y de responsabilidad profesional.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🧠 Clase 339<br/>Riesgos, guardrails, OPSEC y<br/>ética del hacking…"]
-    C --> T1["1 · Prompt injection contra tu<br/>agente"]
-    C --> T2["2 · Exceso de agencia<br/>(excessive agency)"]
-    C --> T3["3 · Fuga de datos"]
-    C --> T4["4 · Trazabilidad y auditoría"]
-    C --> T5["5 · OPSEC del uso de IA"]
-    C --> T6["6 · Marco legal y<br/>responsabilidad"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|---|---|

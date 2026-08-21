@@ -1,20 +1,7 @@
 # Clase 285 — Auditoría de seguridad
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 14](https://img.shields.io/badge/%F0%9F%93%8B%20parte%2014-GRC%2C%20riesgo%20y%20cumplimiento-24292f?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-285%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **14 — GRC, riesgo y cumplimiento** · 📖 Fuente: *(ISC)² CISSP Official Study Guide y SOC 2 (AICPA)*
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **14 — GRC, riesgo y cumplimiento** · Fuente: *(ISC)² CISSP Official Study Guide y SOC 2 (AICPA)*
+> ⏱️ Duración estimada: **100 min** · Nivel: **Intermedio**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Gestionar** hallazgos, no conformidades y planes de acción correctiva.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📋 Clase 285<br/>Auditoría de seguridad"]
-    C --> T1["1 · Tipos de auditoría y de<br/>auditor"]
-    C --> T2["2 · Proceso de auditoría"]
-    C --> T3["3 · Criterios y evidencia"]
-    C --> T4["4 · Muestreo y pruebas"]
-    C --> T5["5 · Informes SOC 1/2/3 y Type<br/>I/II"]
-    C --> T6["6 · Hallazgos y CAPA"]
-    C --> T7["7 · Auditoría continua y<br/>automatizada"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

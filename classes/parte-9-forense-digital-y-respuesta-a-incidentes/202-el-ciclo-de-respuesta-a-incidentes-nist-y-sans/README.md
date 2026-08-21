@@ -1,20 +1,7 @@
 # Clase 202 — El ciclo de respuesta a incidentes (NIST y SANS)
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 9](https://img.shields.io/badge/%F0%9F%94%AC%20parte%209-Forense%20digital%20y%20respuesta%20a%20incidentes-1a7f64?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-202%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **9 — Forense digital y respuesta a incidentes** · 📖 Fuente: *NIST SP 800-61 Rev. 2 — Computer Security Incident Handling Guide*
-> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Fundamentos**
-
-<!-- cabecera:fin -->
+> Parte: **9 — Forense digital y respuesta a incidentes** · Fuente: *NIST SP 800-61 Rev. 2 — Computer Security Incident Handling Guide*
+> ⏱️ Duración estimada: **90 min** · Nivel: **Fundamentos**
 
 ---
 
@@ -33,25 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Construir** un runbook mínimo para una fase concreta.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔬 Clase 202<br/>El ciclo de respuesta a<br/>incidentes (NIST y SANS)"]
-    C --> T1["1 · Ciclo NIST de 4 fases"]
-    C --> T2["2 · Preparación"]
-    C --> T3["3 · Detección y análisis"]
-    C --> T4["4 · Contención, erradicación y<br/>recuperación"]
-    C --> T5["5 · Actividad post-incidente"]
-    C --> T6["6 · Modelo PICERL de SANS"]
-    C --> T7["7 · Clasificación y severidad"]
-    C --> T8["8 · Roles y comunicación"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,20 +1,7 @@
 # Clase 248 — Cultura DevSecOps y security champions
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 11](https://img.shields.io/badge/%F0%9F%94%84%20parte%2011-DevSecOps%20y%20seguridad%20del%20SDLC-2da44e?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-248%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **11 — DevSecOps y seguridad del SDLC** · 📖 Fuente: *Agile Application Security* (Bell, Brunton-Spall, Smith, Bird) y OWASP Security Champions Guide / SAMM
-> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **11 — DevSecOps y seguridad del SDLC** · Fuente: *Agile Application Security* (Bell, Brunton-Spall, Smith, Bird) y OWASP Security Champions Guide / SAMM
+> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
 
 ---
 
@@ -37,24 +24,6 @@ Al finalizar, el alumno podrá:
 5. **Gestionar** el aspecto humano: blameless post-mortems, gamificación, formación continua.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔄 Clase 248<br/>Cultura DevSecOps y security<br/>champions"]
-    C --> T1["1 · Cultura sobre herramientas"]
-    C --> T2["2 · Programa de security<br/>champions"]
-    C --> T3["3 · Modelo hub-and-spoke"]
-    C --> T4["4 · Incentivos y<br/>reconocimiento"]
-    C --> T5["5 · Blameless culture"]
-    C --> T6["6 · Formación y gamificación"]
-    C --> T7["7 · Métricas del programa"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

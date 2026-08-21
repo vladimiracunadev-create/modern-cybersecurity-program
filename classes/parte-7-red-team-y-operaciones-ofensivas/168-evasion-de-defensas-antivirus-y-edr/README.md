@@ -1,20 +1,7 @@
 # Clase 168 — Evasión de defensas: antivirus y EDR
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 7](https://img.shields.io/badge/%F0%9F%94%B4%20parte%207-Red%20Team%20y%20operaciones%20ofensivas-cf222e?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Experto-cf222e?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-168%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **7 — Red Team y operaciones ofensivas** · 📖 Fuente: *RTFM v2 (Clark) / documentación de EDR y Windows internals*
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Experto**
-
-<!-- cabecera:fin -->
+> Parte: **7 — Red Team y operaciones ofensivas** · Fuente: *RTFM v2 (Clark) / documentación de EDR y Windows internals*
+> ⏱️ Duración estimada: **120 min** · Nivel: **Experto**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Explicar** las contramedidas defensivas de cada técnica ofensiva.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔴 Clase 168<br/>Evasión de defensas"]
-    C --> T1["1 · Firmas y heurística"]
-    C --> T2["2 · Userland hooking"]
-    C --> T3["3 · ETW y telemetría"]
-    C --> T4["4 · Kernel callbacks"]
-    C --> T5["5 · Unhooking"]
-    C --> T6["6 · Syscalls<br/>directas/indirectas"]
-    C --> T7["7 · Ejecución en memoria"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

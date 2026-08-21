@@ -1,20 +1,7 @@
 # Clase 186 — Escritura de reglas de detección con Sigma
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 8](https://img.shields.io/badge/%F0%9F%94%B5%20parte%208-Blue%20Team%2C%20detecci%C3%B3n%20y%20SOC-0969da?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-186%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **8 — Blue Team, detección y SOC** · 📖 Fuente: *The Sigma Specification* — proyecto SigmaHQ
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **8 — Blue Team, detección y SOC** · Fuente: *The Sigma Specification* — proyecto SigmaHQ
+> ⏱️ Duración estimada: **110 min** · Nivel: **Intermedio**
 
 ---
 
@@ -33,25 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Mapear** cada regla a técnicas MITRE ATT&CK en los tags.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔵 Clase 186<br/>Escritura de reglas de<br/>detección con Sigma"]
-    C --> T1["1 · Por qué un formato<br/>portable"]
-    C --> T2["2 · Anatomía de una regla"]
-    C --> T3["3 · Selecciones y condición"]
-    C --> T4["4 · Modificadores de campo"]
-    C --> T5["5 · Filtros y falsos positivos"]
-    C --> T6["6 · Tags ATT&CK y nivel"]
-    C --> T7["7 · Conversión con pySigma"]
-    C --> T8["8 · Repositorio SigmaHQ"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

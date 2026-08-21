@@ -1,20 +1,7 @@
 # Clase 132 — IDA Pro y radare2
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 5](https://img.shields.io/badge/%F0%9F%92%A5%20parte%205-Explotaci%C3%B3n%20de%20sistemas%20y%20binarios-b02a37?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-132%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **5 — Explotación de sistemas y binarios** · 📖 Fuente: *Eagle, The IDA Pro Book* · docs de radare2/rizin
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **5 — Explotación de sistemas y binarios** · Fuente: *Eagle, The IDA Pro Book* · docs de radare2/rizin
+> ⏱️ Duración estimada: **120 min** · Nivel: **Intermedio**
 
 ---
 
@@ -37,25 +24,6 @@ Al finalizar, el alumno podrá:
 5. **Automatizar** con r2pipe.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["💥 Clase 132<br/>IDA Pro y radare2"]
-    C --> T1["1 · IDA: vista de grafo y<br/>pseudo-C"]
-    C --> T2["2 · Hex-Rays decompiler"]
-    C --> T3["3 · radare2: modelo de<br/>comandos"]
-    C --> T4["4 · aaa / afl / pdf en r2"]
-    C --> T5["5 · Modo visual y grafo en r2"]
-    C --> T6["6 · Cutter (GUI de r2/rizin)"]
-    C --> T7["7 · Anotar y renombrar"]
-    C --> T8["8 · r2pipe / scripting"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 | --- | --- | --- |

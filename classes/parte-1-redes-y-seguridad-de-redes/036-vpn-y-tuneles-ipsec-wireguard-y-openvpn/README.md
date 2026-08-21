@@ -1,20 +1,7 @@
 # Clase 036 — VPN y túneles: IPsec, WireGuard y OpenVPN
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 1](https://img.shields.io/badge/%F0%9F%8C%90%20parte%201-Redes%20y%20seguridad%20de%20redes-1f6feb?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-130%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-036%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **1 — Redes y seguridad de redes** · 📖 Fuente: *RFC 4301 (IPsec); documentación de WireGuard y OpenVPN*
-> ⏱️ Duración estimada: **130 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **1 — Redes y seguridad de redes** · Fuente: *RFC 4301 (IPsec); documentación de WireGuard y OpenVPN*
+> ⏱️ Duración estimada: **130 min** · Nivel: **Intermedio**
 
 ---
 
@@ -34,24 +21,6 @@ Al finalizar, el alumno podrá:
 6. **Evaluar** ventajas, rendimiento y superficie de ataque de cada opción.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🌐 Clase 036<br/>VPN y túneles"]
-    C --> T1["1 · Conceptos: VPN, túnel,<br/>encapsulación"]
-    C --> T2["2 · Acceso remoto vs.<br/>site-to-site"]
-    C --> T3["3 · WireGuard: criptografía<br/>moderna"]
-    C --> T4["4 · OpenVPN: PKI y TLS"]
-    C --> T5["5 · IPsec: IKE, ESP, AH, modos"]
-    C --> T6["6 · Enrutamiento y<br/>AllowedIPs/split tunnel"]
-    C --> T7["7 · Verificación y hardening"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

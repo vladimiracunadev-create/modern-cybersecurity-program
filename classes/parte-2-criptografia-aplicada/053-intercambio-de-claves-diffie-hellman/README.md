@@ -1,20 +1,7 @@
 # Clase 053 — Intercambio de claves: Diffie-Hellman
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 2](https://img.shields.io/badge/%F0%9F%94%90%20parte%202-Criptograf%C3%ADa%20aplicada-6f42c1?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-053%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **2 — Criptografía aplicada** · 📖 Fuente: *Real-World Cryptography* (Wong) y *Serious Cryptography* (Aumasson)
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **2 — Criptografía aplicada** · Fuente: *Real-World Cryptography* (Wong) y *Serious Cryptography* (Aumasson)
+> ⏱️ Duración estimada: **100 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Elegir** parámetros seguros (grupos MODP fuertes o X25519).
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔐 Clase 053<br/>Intercambio de claves"]
-    C --> T1["1 · Problema del logaritmo<br/>discreto"]
-    C --> T2["2 · DH clásico (grupos<br/>multiplicativos)"]
-    C --> T3["3 · ECDH / X25519"]
-    C --> T4["4 · Efímero vs estático"]
-    C --> T5["5 · Derivación de clave (HKDF)"]
-    C --> T6["6 · MITM y necesidad de<br/>autenticación"]
-    C --> T7["7 · Parámetros seguros"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,20 +1,7 @@
 # Clase 002 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 0](https://img.shields.io/badge/%F0%9F%A7%B1%20parte%200-Fundamentos%20y%20prerrequisitos-2e8b57?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-002%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **0 — Fundamentos y prerrequisitos** · 📖 Fuente: *Lockheed Martin, Intelligence-Driven Computer Network Defense (Kill Chain)*
-> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Fundamentos**
-
-<!-- cabecera:fin -->
+> Parte: **0 — Fundamentos y prerrequisitos** · Fuente: *Lockheed Martin, Intelligence-Driven Computer Network Defense (Kill Chain)*
+> ⏱️ Duración estimada: **90 min** · Nivel: **Fundamentos**
 
 ---
 
@@ -33,25 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Interpretar** informes de *threat intelligence* con vocabulario correcto.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🧱 Clase 002<br/>El panorama de amenazas<br/>moderno"]
-    C --> T1["1 · Tipos de actor"]
-    C --> T2["2 · Motivaciones"]
-    C --> T3["3 · Cyber Kill Chain"]
-    C --> T4["4 · APT"]
-    C --> T5["5 · Ransomware moderno"]
-    C --> T6["6 · Insider threat"]
-    C --> T7["7 · Threat intelligence"]
-    C --> T8["8 · IoC vs. TTP"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

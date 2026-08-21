@@ -8,22 +8,6 @@ completa en el sitio del curso (GitHub Pages) o en GitHub.
 > `python scripts/generar_curriculum_movil.py` — **no se edita a mano**. Un check de
 > integridad (`--check`) falla si el archivo quedó desincronizado con las clases.
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Android](https://img.shields.io/badge/Android-APK%20sideload-3DDC84?style=for-the-badge&logo=android&logoColor=white)](README.md)
-[![clases](https://img.shields.io/badge/clases-340%20offline-7c5cff?style=for-the-badge)](../classes/README.md)
-[![progreso](https://img.shields.io/badge/progreso-solo%20en%20tu%20dispositivo-2e8b57?style=for-the-badge)](README.md)
-
-[⬅️ Volver al programa](../README.md) ·
-[📚 Índice de clases](../classes/README.md) ·
-[📱 Detalle técnico](../docs/APP_MOVIL.md)
-
-</div>
-
-<!-- cabecera:fin -->
-
 ## 🧭 Qué hace
 
 - **Home** — las 19 partes con su foco, nivel y progreso global (X/340).

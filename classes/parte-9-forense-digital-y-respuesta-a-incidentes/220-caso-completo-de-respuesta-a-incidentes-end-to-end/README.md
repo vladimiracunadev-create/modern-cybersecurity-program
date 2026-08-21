@@ -1,20 +1,7 @@
 # Clase 220 — Caso completo de respuesta a incidentes end-to-end
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 9](https://img.shields.io/badge/%F0%9F%94%AC%20parte%209-Forense%20digital%20y%20respuesta%20a%20incidentes-1a7f64?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-150%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Experto-cf222e?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-220%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **9 — Forense digital y respuesta a incidentes** · 📖 Fuente: síntesis de *NIST SP 800-61*, *The Art of Memory Forensics* e *Intelligence-Driven Incident Response*
-> ⏱️ Duración estimada: **150 min** · 🎚️ Nivel: **Experto**
-
-<!-- cabecera:fin -->
+> Parte: **9 — Forense digital y respuesta a incidentes** · Fuente: síntesis de *NIST SP 800-61*, *The Art of Memory Forensics* e *Intelligence-Driven Incident Response*
+> ⏱️ Duración estimada: **150 min** · Nivel: **Experto**
 
 ---
 
@@ -33,25 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Entregar** un informe forense y un post-mortem defendibles.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔬 Clase 220<br/>Caso completo de respuesta a<br/>incidentes…"]
-    C --> T1["1 · Escenario y alcance"]
-    C --> T2["2 · Triage inicial"]
-    C --> T3["3 · Adquisición multi-fuente"]
-    C --> T4["4 · Análisis correlacionado"]
-    C --> T5["5 · Timeline maestra"]
-    C --> T6["6 · Contención y erradicación"]
-    C --> T7["7 · RCA y lecciones"]
-    C --> T8["8 · Informe final"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

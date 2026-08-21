@@ -1,20 +1,7 @@
 # Clase 311 — Clasificación y ciclo de vida de los datos
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 17](https://img.shields.io/badge/%F0%9F%93%88%20parte%2017-Profundizaci%C3%B3n%20para%20certificaciones-116329?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-311%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **17 — Profundización para certificaciones** · 📖 Fuente: *(ISC)² CISSP Official Study Guide, 9.ª ed. — Dominio 2: Asset Security*
-> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **17 — Profundización para certificaciones** · Fuente: *(ISC)² CISSP Official Study Guide, 9.ª ed. — Dominio 2: Asset Security*
+> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
 
 ---
 
@@ -38,25 +25,6 @@ Al finalizar, el alumno podrá:
 6. **Relacionar** la clasificación con requisitos legales (GDPR, HIPAA, PCI DSS).
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📈 Clase 311<br/>Clasificación y ciclo de<br/>vida de los datos"]
-    C --> T1["1 · Valor del activo de<br/>información"]
-    C --> T2["2 · Esquemas de clasificación"]
-    C --> T3["3 · Categorización por impacto<br/>(FIPS 199 / 200)"]
-    C --> T4["4 · Roles de datos (owner,<br/>custodian, processor)"]
-    C --> T5["5 · Ciclo de vida del dato"]
-    C --> T6["6 · Etiquetado y marcado"]
-    C --> T7["7 · Datos en reposo, tránsito<br/>y uso"]
-    C --> T8["8 · Cumplimiento y datos<br/>regulados"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

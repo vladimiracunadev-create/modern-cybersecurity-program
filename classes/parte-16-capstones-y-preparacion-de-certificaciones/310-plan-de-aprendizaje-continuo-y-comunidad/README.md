@@ -1,20 +1,7 @@
 # Clase 310 — Plan de aprendizaje continuo y comunidad
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 16](https://img.shields.io/badge/%F0%9F%8F%81%20parte%2016-Capstones%20y%20preparaci%C3%B3n%20de%20certificaciones-0550ae?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-310%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **16 — Capstones y preparación de certificaciones** · 📖 Fuente: *Prácticas de la comunidad de ciberseguridad · marcos de desarrollo profesional (NICE Framework)*
-> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **16 — Capstones y preparación de certificaciones** · Fuente: *Prácticas de la comunidad de ciberseguridad · marcos de desarrollo profesional (NICE Framework)*
+> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Trazar** una ruta de especialización a 1–3 años alineada con el mercado.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🏁 Clase 310<br/>Plan de aprendizaje continuo<br/>y comunidad"]
-    C --> T1["1 · Fuentes de calidad"]
-    C --> T2["2 · Cadencia de práctica"]
-    C --> T3["3 · Comunidad y networking"]
-    C --> T4["4 · Contribución"]
-    C --> T5["5 · Especialización"]
-    C --> T6["6 · Mantenerse ético y<br/>actualizado"]
-    C --> T7["7 · Bienestar y burnout"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,20 +1,7 @@
 # Clase 332 — Agentes de IA y el Model Context Protocol (MCP) para seguridad
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 18](https://img.shields.io/badge/%F0%9F%A7%A0%20parte%2018-IA%20aplicada%20a%20la%20ciberseguridad-7c5cff?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-332%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **18 — IA aplicada a la ciberseguridad** · 📖 Fuente: Model Context Protocol (modelcontextprotocol.io) · OWASP Top 10 for LLM
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **18 — IA aplicada a la ciberseguridad** · Fuente: Model Context Protocol (modelcontextprotocol.io) · OWASP Top 10 for LLM
+> ⏱️ Duración estimada: **100 min** · Nivel: **Intermedio**
 
 ---
 
@@ -36,23 +23,6 @@ Al finalizar, el alumno podrá:
 5. **Diseñar** un modelo de permisos mínimo para un agente con herramientas.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🧠 Clase 332<br/>Agentes de IA y el Model<br/>Context Protocol (MCP)…"]
-    C --> T1["1 · De chatbot a agente"]
-    C --> T2["2 · Bucle<br/>percibir–razonar–actuar"]
-    C --> T3["3 · Arquitectura MCP"]
-    C --> T4["4 · Tools, resources y prompts"]
-    C --> T5["5 · Riesgos del agente con<br/>herramientas"]
-    C --> T6["6 · Permisos y aprobación"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|---|---|

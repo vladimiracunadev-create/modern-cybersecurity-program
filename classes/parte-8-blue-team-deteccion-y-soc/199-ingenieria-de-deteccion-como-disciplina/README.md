@@ -1,20 +1,7 @@
 # Clase 199 — Ingeniería de detección como disciplina
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 8](https://img.shields.io/badge/%F0%9F%94%B5%20parte%208-Blue%20Team%2C%20detecci%C3%B3n%20y%20SOC-0969da?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-199%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **8 — Blue Team, detección y SOC** · 📖 Fuente: *The Sigma Specification* · *MITRE ATT&CK* · prácticas de Detection Engineering
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **8 — Blue Team, detección y SOC** · Fuente: *The Sigma Specification* · *MITRE ATT&CK* · prácticas de Detection Engineering
+> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,25 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Medir** calidad (precisión, falsos positivos, cobertura, deuda de detección).
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔵 Clase 199<br/>Ingeniería de detección como<br/>disciplina"]
-    C --> T1["1 · Detection Engineering como<br/>disciplina"]
-    C --> T2["2 · Ciclo de vida de una<br/>detección"]
-    C --> T3["3 · Detection-as-code y<br/>control de versiones"]
-    C --> T4["4 · CI/CD para detecciones"]
-    C --> T5["5 · Documentación y metadatos"]
-    C --> T6["6 · Validación con Atomic Red<br/>Team"]
-    C --> T7["7 · Calidad y deuda de<br/>detección"]
-    C --> T8["8 · Colaboración red↔blue<br/>(puente a purple)"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

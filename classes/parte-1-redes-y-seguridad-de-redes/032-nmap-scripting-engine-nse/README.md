@@ -1,20 +1,7 @@
 # Clase 032 — Nmap Scripting Engine (NSE)
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 1](https://img.shields.io/badge/%F0%9F%8C%90%20parte%201-Redes%20y%20seguridad%20de%20redes-1f6feb?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-032%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **1 — Redes y seguridad de redes** · 📖 Fuente: *Nmap Network Scanning, G. Lyon*
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **1 — Redes y seguridad de redes** · Fuente: *Nmap Network Scanning, G. Lyon*
+> ⏱️ Duración estimada: **110 min** · Nivel: **Intermedio**
 
 ---
 
@@ -34,24 +21,6 @@ Al finalizar, el alumno podrá:
 6. **Escribir** un script NSE elemental en Lua.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🌐 Clase 032<br/>Nmap Scripting Engine (NSE)"]
-    C --> T1["1 · Categorías NSE (safe,<br/>default, vuln, exploit…)"]
-    C --> T2["2 · Selección de scripts<br/>(--script)"]
-    C --> T3["3 · Argumentos (--script-args)"]
-    C --> T4["4 · -sC y -A"]
-    C --> T5["5 · --script-help y<br/>--script-updatedb"]
-    C --> T6["6 · Scripts de vulnerabilidad<br/>y su fiabilidad"]
-    C --> T7["7 · Estructura de un script<br/>Lua"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

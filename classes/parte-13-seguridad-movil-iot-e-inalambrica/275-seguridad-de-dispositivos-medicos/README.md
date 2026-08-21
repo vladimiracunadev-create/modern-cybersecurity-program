@@ -1,20 +1,7 @@
 # Clase 275 — Seguridad de dispositivos médicos
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 13](https://img.shields.io/badge/%F0%9F%93%A1%20parte%2013-Seguridad%20m%C3%B3vil%2C%20IoT%20e%20inal%C3%A1mbrica-9a6700?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-275%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **13 — Seguridad móvil, IoT e inalámbrica** · 📖 Fuente: *Practical IoT Hacking* (Chantzis et al.), FDA Premarket Cybersecurity Guidance y estándares AAMI/IEC 80001
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **13 — Seguridad móvil, IoT e inalámbrica** · Fuente: *Practical IoT Hacking* (Chantzis et al.), FDA Premarket Cybersecurity Guidance y estándares AAMI/IEC 80001
+> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
 
 ---
 
@@ -36,24 +23,6 @@ Al finalizar, el alumno podrá:
 6. **Recomendar** controles alineados con guías de la FDA y AAMI.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📡 Clase 275<br/>Seguridad de dispositivos<br/>médicos"]
-    C --> T1["1 · Panorama y safety vs.<br/>security"]
-    C --> T2["2 · Dispositivos implantables"]
-    C --> T3["3 · Dispositivos hospitalarios"]
-    C --> T4["4 · Vulnerabilidades<br/>históricas"]
-    C --> T5["5 · Regulación (FDA, IEC, MDR)"]
-    C --> T6["6 · SBOM y gestión de parches"]
-    C --> T7["7 · Divulgación coordinada"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

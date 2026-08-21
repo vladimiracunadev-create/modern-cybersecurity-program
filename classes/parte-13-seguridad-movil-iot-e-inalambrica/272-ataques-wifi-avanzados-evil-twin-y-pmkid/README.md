@@ -1,20 +1,7 @@
 # Clase 272 — Ataques WiFi avanzados: Evil Twin y PMKID
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 13](https://img.shields.io/badge/%F0%9F%93%A1%20parte%2013-Seguridad%20m%C3%B3vil%2C%20IoT%20e%20inal%C3%A1mbrica-9a6700?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-272%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **13 — Seguridad móvil, IoT e inalámbrica** · 📖 Fuente: *Hacking Exposed Wireless* (Wright, Cache) y documentación de hcxtools
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **13 — Seguridad móvil, IoT e inalámbrica** · Fuente: *Hacking Exposed Wireless* (Wright, Cache) y documentación de hcxtools
+> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
 
 ---
 
@@ -36,24 +23,6 @@ Al finalizar, el alumno podrá:
 6. **Recomendar** defensas (contraseñas fuertes, WPA3, 802.1X, PMF).
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📡 Clase 272<br/>Ataques WiFi avanzados"]
-    C --> T1["1 · 802.11, modo monitor e<br/>inyección"]
-    C --> T2["2 · Handshake WPA2 de 4 vías"]
-    C --> T3["3 · Ataque PMKID (clientless)"]
-    C --> T4["4 · Crackeo con hashcat"]
-    C --> T5["5 · Evil Twin y portal cautivo"]
-    C --> T6["6 · WPA3-SAE y PMF"]
-    C --> T7["7 · Defensas y detección"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

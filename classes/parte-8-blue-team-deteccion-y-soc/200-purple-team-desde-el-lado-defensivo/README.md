@@ -1,20 +1,7 @@
 # Clase 200 — Purple team desde el lado defensivo
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 8](https://img.shields.io/badge/%F0%9F%94%B5%20parte%208-Blue%20Team%2C%20detecci%C3%B3n%20y%20SOC-0969da?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Experto-cf222e?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-200%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **8 — Blue Team, detección y SOC** · 📖 Fuente: *MITRE ATT&CK* · *Blue Team Handbook* — Don Murdoch
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Experto**
-
-<!-- cabecera:fin -->
+> Parte: **8 — Blue Team, detección y SOC** · Fuente: *MITRE ATT&CK* · *Blue Team Handbook* — Don Murdoch
+> ⏱️ Duración estimada: **120 min** · Nivel: **Experto**
 
 ---
 
@@ -35,25 +22,6 @@ Al finalizar, el alumno podrá:
 5. **Cerrar** el bucle creando o afinando detecciones por cada hueco.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔵 Clase 200<br/>Purple team desde el lado<br/>defensivo"]
-    C --> T1["1 · Qué es el purple team"]
-    C --> T2["2 · Emulación vs simulación de<br/>adversario"]
-    C --> T3["3 · Planificación basada en<br/>ATT&CK e intel"]
-    C --> T4["4 · Atomic Red Team"]
-    C --> T5["5 · Caldera y emulación<br/>encadenada"]
-    C --> T6["6 · Scorecard de detección"]
-    C --> T7["7 · Cierre del bucle"]
-    C --> T8["8 · Cadencia y mejora continua"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

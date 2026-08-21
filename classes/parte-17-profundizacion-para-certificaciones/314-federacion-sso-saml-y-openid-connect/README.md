@@ -1,20 +1,7 @@
 # Clase 314 — Federación, SSO, SAML y OpenID Connect
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 17](https://img.shields.io/badge/%F0%9F%93%88%20parte%2017-Profundizaci%C3%B3n%20para%20certificaciones-116329?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-314%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **17 — Profundización para certificaciones** · 📖 Fuente: *(ISC)² CISSP Official Study Guide — Dominio 5* · OASIS SAML 2.0 · OpenID Connect Core 1.0
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **17 — Profundización para certificaciones** · Fuente: *(ISC)² CISSP Official Study Guide — Dominio 5* · OASIS SAML 2.0 · OpenID Connect Core 1.0
+> ⏱️ Duración estimada: **100 min** · Nivel: **Avanzado**
 
 ---
 
@@ -38,25 +25,6 @@ Al finalizar, el alumno podrá:
 6. **Diseñar** una relación de confianza federada con sus metadatos y controles.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📈 Clase 314<br/>Federación, SSO, SAML y<br/>OpenID Connect"]
-    C --> T1["1 · SSO vs. federación"]
-    C --> T2["2 · Roles: IdP, SP, RP"]
-    C --> T3["3 · SAML 2.0 y aserciones"]
-    C --> T4["4 · OAuth 2.0 vs. OIDC"]
-    C --> T5["5 · Tokens: aserción SAML, ID<br/>Token, access token"]
-    C --> T6["6 · Trust y metadatos"]
-    C --> T7["7 · Riesgos de federación"]
-    C --> T8["8 · JIT provisioning y<br/>atributos"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

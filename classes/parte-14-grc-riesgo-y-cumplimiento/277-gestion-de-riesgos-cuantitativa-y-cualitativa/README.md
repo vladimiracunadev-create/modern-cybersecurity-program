@@ -1,20 +1,7 @@
 # Clase 277 — Gestión de riesgos: cuantitativa y cualitativa
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 14](https://img.shields.io/badge/%F0%9F%93%8B%20parte%2014-GRC%2C%20riesgo%20y%20cumplimiento-24292f?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-277%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **14 — GRC, riesgo y cumplimiento** · 📖 Fuente: *How to Measure Anything in Cybersecurity Risk (Hubbard & Seiersen)*
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **14 — GRC, riesgo y cumplimiento** · Fuente: *How to Measure Anything in Cybersecurity Risk (Hubbard & Seiersen)*
+> ⏱️ Duración estimada: **120 min** · Nivel: **Intermedio**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Elegir** el tratamiento adecuado: mitigar, transferir, evitar o aceptar.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📋 Clase 277<br/>Gestión de riesgos"]
-    C --> T1["1 · Vocabulario: amenaza,<br/>vulnerabilidad, riesgo"]
-    C --> T2["2 · Análisis cualitativo<br/>(matriz P×I)"]
-    C --> T3["3 · Análisis cuantitativo<br/>(SLE/ARO/ALE)"]
-    C --> T4["4 · ROSI (retorno de la<br/>inversión en seguridad)"]
-    C --> T5["5 · Estimación calibrada y<br/>rangos"]
-    C --> T6["6 · Simulación de Montecarlo"]
-    C --> T7["7 · Tratamiento del riesgo"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

@@ -1,16 +1,8 @@
-# 🏁 Parte 16 — Capstones y preparación de certificaciones
+# Parte 16 — Capstones y preparación de certificaciones
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⏮️ Parte anterior](../parte-15-seguridad-de-ia-y-machine-learning/README.md)
 
-<div align="center">
-
-[![Clases](https://img.shields.io/badge/clases-10-0550ae?style=flat-square)](../README.md)
-[![Rango](https://img.shields.io/badge/rango-301%E2%80%93310-24292f?style=flat-square)](../README.md)
-[![Parte](https://img.shields.io/badge/parte-16%20de%2018-6e7781?style=flat-square)](../README.md)
-
-</div>
-
-Roadmap OSCP/CISSP, proyectos integradores y aprendizaje continuo
+**10 clases** · rango 301–310 · Roadmap OSCP/CISSP, proyectos integradores y aprendizaje continuo
 
 **Fuentes de referencia de esta parte:**
 
@@ -61,24 +53,6 @@ Al terminar la parte, el alumno podrá:
 Esta parte asume **haber cursado las Partes 1–15**. En concreto: fundamentos y redes (Partes 1–3), Linux/Windows y scripting (Partes 4–5), pentest web y de infraestructura (Partes 6–8), Red Team y C2 (Parte 9), Blue Team, SIEM y threat hunting (Partes 10–11), DFIR y análisis de malware (Partes 12–13), cloud y DevSecOps (Parte 14) y seguridad de IA (Parte 15). Los capstones reutilizan esas técnicas; ten a mano tu laboratorio (Clase 010 y equivalentes) funcionando.
 
 ## 🗺️ Estructura temática
-
-<!-- arco:inicio -->
-
-```mermaid
-flowchart LR
-    B1["Roadmap y mentalidad<br/>301, 302"]
-    B2["Capstones ofensivos<br/>303, 305, 308"]
-    B3["Certificación de gestión<br/>304"]
-    B4["Capstones defensivos<br/>306, 307"]
-    B5["Carrera y continuidad<br/>309, 310"]
-    B1 --> B2 --> B3 --> B4 --> B5
-    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class B1 ini
-    class B5 fin
-```
-
-<!-- arco:fin -->
 
 | Bloque | Clases | Enfoque |
 |--------|--------|---------|

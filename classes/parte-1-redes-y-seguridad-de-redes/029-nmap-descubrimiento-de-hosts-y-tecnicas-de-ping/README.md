@@ -1,20 +1,7 @@
 # Clase 029 — Nmap: descubrimiento de hosts y técnicas de ping
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 1](https://img.shields.io/badge/%F0%9F%8C%90%20parte%201-Redes%20y%20seguridad%20de%20redes-1f6feb?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-029%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **1 — Redes y seguridad de redes** · 📖 Fuente: *Nmap Network Scanning, G. Lyon*
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Fundamentos**
-
-<!-- cabecera:fin -->
+> Parte: **1 — Redes y seguridad de redes** · Fuente: *Nmap Network Scanning, G. Lyon*
+> ⏱️ Duración estimada: **100 min** · Nivel: **Fundamentos**
 
 ---
 
@@ -34,24 +21,6 @@ Al finalizar, el alumno podrá:
 6. **Evitar** ruido innecesario y respetar los límites del alcance autorizado.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🌐 Clase 029<br/>Nmap"]
-    C --> T1["1 · Fases de un escaneo Nmap"]
-    C --> T2["2 · -sn (ping scan, sin<br/>puertos)"]
-    C --> T3["3 · ARP discovery en LAN"]
-    C --> T4["4 · Sondas ICMP (-PE, -PP,<br/>-PM)"]
-    C --> T5["5 · Sondas TCP/UDP (-PS, -PA,<br/>-PU)"]
-    C --> T6["6 · Control de DNS (-n, -R)"]
-    C --> T7["7 · Formatos de salida (-oA)"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

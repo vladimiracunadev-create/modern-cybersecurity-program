@@ -1,20 +1,7 @@
 # Clase 292 — Ataques adversariales a modelos
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 15](https://img.shields.io/badge/%F0%9F%A7%AA%20parte%2015-Seguridad%20de%20IA%20y%20machine%20learning-bf3989?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-120%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-292%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **15 — Seguridad de IA y machine learning** · 📖 Fuente: *Goodfellow, Shlens & Szegedy, "Explaining and Harnessing Adversarial Examples" (ICLR 2015)*
-> ⏱️ Duración estimada: **120 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **15 — Seguridad de IA y machine learning** · Fuente: *Goodfellow, Shlens & Szegedy, "Explaining and Harnessing Adversarial Examples" (ICLR 2015)*
+> ⏱️ Duración estimada: **120 min** · Nivel: **Intermedio**
 
 ---
 
@@ -35,25 +22,6 @@ Al finalizar, el alumno podrá:
 5. **Aplicar** entrenamiento adversarial como defensa y evaluar su coste.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🧪 Clase 292<br/>Ataques adversariales a<br/>modelos"]
-    C --> T1["1 · Qué es un ejemplo<br/>adversarial"]
-    C --> T2["2 · FGSM: ataque de un paso"]
-    C --> T3["3 · PGD: ataque iterativo"]
-    C --> T4["4 · Normas de perturbación<br/>(L∞, L2, L0)"]
-    C --> T5["5 · Ataques dirigidos vs. no<br/>dirigidos"]
-    C --> T6["6 · Transferibilidad y caja<br/>negra"]
-    C --> T7["7 · Ataques físicos (patches,<br/>pegatinas)"]
-    C --> T8["8 · Defensas: entrenamiento<br/>adversarial"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

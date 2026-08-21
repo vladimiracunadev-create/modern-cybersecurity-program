@@ -1,20 +1,7 @@
 # Clase 167 — Acceso inicial: técnicas
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 7](https://img.shields.io/badge/%F0%9F%94%B4%20parte%207-Red%20Team%20y%20operaciones%20ofensivas-cf222e?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-100%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-167%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **7 — Red Team y operaciones ofensivas** · 📖 Fuente: *MITRE ATT&CK Initial Access (TA0001) / RTFM v2*
-> ⏱️ Duración estimada: **100 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **7 — Red Team y operaciones ofensivas** · Fuente: *MITRE ATT&CK Initial Access (TA0001) / RTFM v2*
+> ⏱️ Duración estimada: **100 min** · Nivel: **Avanzado**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Establecer** un foothold estable con el C2 previamente montado.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🔴 Clase 167<br/>Acceso inicial"]
-    C --> T1["1 · External Remote Services<br/>(T1133)"]
-    C --> T2["2 · Exploit Public-Facing App<br/>(T1190)"]
-    C --> T3["3 · Valid Accounts (T1078)"]
-    C --> T4["4 · Password spraying"]
-    C --> T5["5 · Drive-by y supply chain"]
-    C --> T6["6 · Establecer foothold"]
-    C --> T7["7 · Sigilo del primer paso"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

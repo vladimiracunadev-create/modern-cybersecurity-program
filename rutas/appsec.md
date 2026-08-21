@@ -5,20 +5,6 @@
 >
 > **Nivel de entrada:** intermedio (requiere web, HTTP y algo de programación) · **Foco:** seguridad de aplicaciones web · **Certificación faro:** BSCP / eWPTX
 
-
-<!-- insignias:inicio -->
-
-<div align="center">
-
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-intermedio-1f6feb?style=flat-square)](README.md)
-[![Foco](https://img.shields.io/badge/%F0%9F%8E%AF%20foco-seguridad%20de%20aplicaciones%20web-6e7781?style=flat-square)](README.md)
-[![Certificación](https://img.shields.io/badge/%F0%9F%8E%93%20certi-BSCP%20%2F%20eWPTX-2e8b57?style=flat-square)](../certificaciones/README.md)
-[![Partes](https://img.shields.io/badge/%F0%9F%97%82%EF%B8%8F%20partes-5-e8590c?style=flat-square)](../classes/README.md)
-
-</div>
-
-<!-- insignias:fin -->
-
 ## 🧭 Qué es y por qué importa
 
 La superficie de ataque de casi cualquier empresa moderna es una aplicación web o una API.
@@ -113,24 +99,6 @@ en lo que exige entender la aplicación. Automatiza, pero sabe hacerlo a mano.
   humillando a quien escribió el código.
 
 ## 📚 Tu ruta en el programa
-
-<!-- recorrido:inicio -->
-
-```mermaid
-flowchart LR
-    P0["🧱 Parte 0<br/>Fundamentos"]
-    P2["🔐 Parte 2<br/>Criptografía"]
-    P4["🕸️ Parte 4<br/>Web"]
-    P11["🔄 Parte 11<br/>DevSecOps"]
-    P15["🧪 Parte 15<br/>Seguridad de IA"]
-    P0 --> P2 --> P4 --> P11 --> P15
-    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class P0 ini
-    class P15 fin
-```
-
-<!-- recorrido:fin -->
 
 El orden importa. Cada parte apoya a la siguiente; saltarte los fundamentos se paga después.
 

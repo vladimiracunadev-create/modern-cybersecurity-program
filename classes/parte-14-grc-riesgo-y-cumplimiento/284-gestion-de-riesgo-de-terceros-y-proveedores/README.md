@@ -1,20 +1,7 @@
 # Clase 284 — Gestión de riesgo de terceros y proveedores
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 14](https://img.shields.io/badge/%F0%9F%93%8B%20parte%2014-GRC%2C%20riesgo%20y%20cumplimiento-24292f?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-284%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **14 — GRC, riesgo y cumplimiento** · 📖 Fuente: *(ISC)² CISSP Official Study Guide y NIST SP 800-161*
-> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **14 — GRC, riesgo y cumplimiento** · Fuente: *(ISC)² CISSP Official Study Guide y NIST SP 800-161*
+> ⏱️ Duración estimada: **90 min** · Nivel: **Intermedio**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Gestionar** el ciclo de vida del proveedor, incluida la salida (offboarding).
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📋 Clase 284<br/>Gestión de riesgo de<br/>terceros y proveedores"]
-    C --> T1["1 · Superficie de ataque de<br/>terceros"]
-    C --> T2["2 · Ciclo de vida del<br/>proveedor"]
-    C --> T3["3 · Due diligence y<br/>cuestionarios (SIG, CAIQ)"]
-    C --> T4["4 · Cláusulas contractuales y<br/>SLA"]
-    C --> T5["5 · Riesgo de cuarta parte<br/>(4th party)"]
-    C --> T6["6 · Cadena de suministro de<br/>software (SBOM)"]
-    C --> T7["7 · Monitorización continua"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

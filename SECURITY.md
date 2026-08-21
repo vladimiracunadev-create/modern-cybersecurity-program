@@ -1,20 +1,4 @@
-# 🔐 Política de seguridad y uso responsable
-
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![uso](https://img.shields.io/badge/uso-%C3%A9tico%20y%20autorizado-cf222e?style=for-the-badge)](SECURITY.md)
-[![reporte](https://img.shields.io/badge/reporte-responsable-24292f?style=for-the-badge)](SECURITY.md)
-
-[⬅️ Volver al programa](README.md) ·
-[📚 Índice de clases](classes/README.md) ·
-[🧭 Rutas por rol](rutas/README.md) ·
-[🔐 Política de seguridad](SECURITY.md)
-
-</div>
-
-<!-- cabecera:fin -->
+# Política de seguridad y uso responsable
 
 ## Propósito del repositorio
 

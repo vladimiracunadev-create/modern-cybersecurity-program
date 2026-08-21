@@ -1,22 +1,6 @@
-# 🤝 Cómo contribuir
+# Cómo contribuir
 
 Gracias por tu interés en mejorar el **Programa de Ciberseguridad Moderna**.
-
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![PR](https://img.shields.io/badge/PR-bienvenidos-2e8b57?style=for-the-badge)](CONTRIBUTING.md)
-[![CI](https://img.shields.io/badge/CI-estructura%20%C2%B7%20enlaces%20%C2%B7%20lint-0969da?style=for-the-badge)](.github/workflows/ci.yml)
-
-[⬅️ Volver al programa](README.md) ·
-[📚 Índice de clases](classes/README.md) ·
-[🧭 Rutas por rol](rutas/README.md) ·
-[🔐 Política de seguridad](SECURITY.md)
-
-</div>
-
-<!-- cabecera:fin -->
 
 ## Formato de las clases
 

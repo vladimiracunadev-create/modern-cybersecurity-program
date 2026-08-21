@@ -1,20 +1,7 @@
 # Clase 103 — Ataques y seguridad de JWT
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 4](https://img.shields.io/badge/%F0%9F%95%B8%EF%B8%8F%20parte%204-Seguridad%20de%20aplicaciones%20web-d63384?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Avanzado-e8590c?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-103%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **4 — Seguridad de aplicaciones web** · 📖 Fuente: *Bug Bounty Bootcamp (Vickie Li)* / *RFC 7519*
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Avanzado**
-
-<!-- cabecera:fin -->
+> Parte: **4 — Seguridad de aplicaciones web** · Fuente: *Bug Bounty Bootcamp (Vickie Li)* / *RFC 7519*
+> ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
 
 ---
 
@@ -35,24 +22,6 @@ Al finalizar, el alumno podrá:
 5. **Recomendar** una configuración segura de JWT.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🕸️ Clase 103<br/>Ataques y seguridad de JWT"]
-    C --> T1["1 · Estructura y claims de JWT"]
-    C --> T2["2 · Algoritmos: HS256 vs.<br/>RS256"]
-    C --> T3["3 · alg:none"]
-    C --> T4["4 · Confusión de algoritmos"]
-    C --> T5["5 · Claves HMAC débiles"]
-    C --> T6["6 · Claims: exp, iss, aud, kid"]
-    C --> T7["7 · Defensa: verificar firma y<br/>alg"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

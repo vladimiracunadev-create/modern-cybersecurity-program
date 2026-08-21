@@ -1,20 +1,7 @@
 # Clase 114 — Bug bounty: metodología y plataformas
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 4](https://img.shields.io/badge/%F0%9F%95%B8%EF%B8%8F%20parte%204-Seguridad%20de%20aplicaciones%20web-d63384?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-114%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **4 — Seguridad de aplicaciones web** · 📖 Fuente: *Bug Bounty Bootcamp (Vickie Li)* / *Real-World Bug Hunting (Yaworski)*
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **4 — Seguridad de aplicaciones web** · Fuente: *Bug Bounty Bootcamp (Vickie Li)* / *Real-World Bug Hunting (Yaworski)*
+> ⏱️ Duración estimada: **110 min** · Nivel: **Intermedio**
 
 ---
 
@@ -35,24 +22,6 @@ Al finalizar, el alumno podrá:
 5. **Estimar** severidad con CVSS y gestionar la divulgación responsable.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🕸️ Clase 114<br/>Bug bounty"]
-    C --> T1["1 · Plataformas (HackerOne,<br/>Bugcrowd, Intigriti)"]
-    C --> T2["2 · Scope y reglas del<br/>programa"]
-    C --> T3["3 · Reconocimiento eficiente"]
-    C --> T4["4 · Priorización por retorno"]
-    C --> T5["5 · Redacción de reportes"]
-    C --> T6["6 · CVSS y severidad"]
-    C --> T7["7 · Divulgación responsable"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

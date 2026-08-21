@@ -1,16 +1,8 @@
-# 🔄 Parte 11 — DevSecOps y seguridad del SDLC
+# Parte 11 — DevSecOps y seguridad del SDLC
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⏭️ Parte siguiente](../parte-12-osint-e-ingenieria-social/README.md)
 
-<div align="center">
-
-[![Clases](https://img.shields.io/badge/clases-13-2da44e?style=flat-square)](../README.md)
-[![Rango](https://img.shields.io/badge/rango-236%E2%80%93248-24292f?style=flat-square)](../README.md)
-[![Parte](https://img.shields.io/badge/parte-11%20de%2018-6e7781?style=flat-square)](../README.md)
-
-</div>
-
-Shift-left, threat modeling, SAST/DAST/SCA y supply chain
+**13 clases** · rango 236–248 · Shift-left, threat modeling, SAST/DAST/SCA y supply chain
 
 **Fuentes de referencia de esta parte:**
 
@@ -79,25 +71,6 @@ Al terminar la parte, el alumno podrá:
 - Nociones de CI/CD (GitHub Actions, GitLab CI o similar).
 
 ## 🗺️ Estructura temática
-
-<!-- arco:inicio -->
-
-```mermaid
-flowchart TD
-    B1["**Fundamentos y diseño**<br/>236, 237"]
-    B2["**Análisis del código y la app**<br/>238, 239"]
-    B3["**Terceros y secretos**<br/>240, 241"]
-    B4["**Pipeline y artefactos**<br/>242, 243"]
-    B5["**Gobierno y cadena de suministro**<br/>244, 245, 246"]
-    B6["**APIs y cultura**<br/>247, 248"]
-    B1 --> B2 --> B3 --> B4 --> B5 --> B6
-    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class B1 ini
-    class B6 fin
-```
-
-<!-- arco:fin -->
 
 | Bloque | Clases | Foco |
 |--------|--------|------|

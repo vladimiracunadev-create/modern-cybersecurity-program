@@ -1,16 +1,8 @@
-# 🔵 Parte 8 — Blue Team, detección y SOC
+# Parte 8 — Blue Team, detección y SOC
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⏭️ Parte siguiente](../parte-9-forense-digital-y-respuesta-a-incidentes/README.md)
 
-<div align="center">
-
-[![Clases](https://img.shields.io/badge/clases-20-0969da?style=flat-square)](../README.md)
-[![Rango](https://img.shields.io/badge/rango-181%E2%80%93200-24292f?style=flat-square)](../README.md)
-[![Parte](https://img.shields.io/badge/parte-8%20de%2018-6e7781?style=flat-square)](../README.md)
-
-</div>
-
-SIEM, ingeniería de detección, threat hunting y SOAR
+**20 clases** · rango 181–200 · SIEM, ingeniería de detección, threat hunting y SOAR
 
 **Fuentes de referencia de esta parte:**
 
@@ -62,26 +54,6 @@ Al terminar la parte, el alumno podrá:
 - Un laboratorio virtualizado (VirtualBox/VMware/Proxmox) con al menos un Windows y un Linux.
 
 ## 🗺️ Estructura temática
-
-<!-- arco:inicio -->
-
-```mermaid
-flowchart TD
-    B1["Fundamentos del SOC y telemetría<br/>181–183"]
-    B2["Plataformas SIEM<br/>184–185"]
-    B3["Ingeniería de detección<br/>186–187, 199"]
-    B4["Hunting y análisis<br/>188–191"]
-    B5["Detección de TTPs avanzadas<br/>192–194"]
-    B6["Inteligencia y automatización<br/>195–196"]
-    B7["Gobierno y cierre<br/>197–198, 200"]
-    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7
-    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class B1 ini
-    class B7 fin
-```
-
-<!-- arco:fin -->
 
 | Bloque | Clases | Foco |
 |--------|--------|------|

@@ -1,20 +1,7 @@
 # Clase 324 — Operaciones de seguridad: hardening y gestión de configuración
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 17](https://img.shields.io/badge/%F0%9F%93%88%20parte%2017-Profundizaci%C3%B3n%20para%20certificaciones-116329?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-130%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-324%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **17 — Profundización para certificaciones** · 📖 Fuente: *CompTIA Security+ (SY0-701) — Security Operations* · *(ISC)² CISSP OSG — Security Operations* · *CIS Benchmarks*
-> ⏱️ Duración estimada: **130 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **17 — Profundización para certificaciones** · Fuente: *CompTIA Security+ (SY0-701) — Security Operations* · *(ISC)² CISSP OSG — Security Operations* · *CIS Benchmarks*
+> ⏱️ Duración estimada: **130 min** · Nivel: **Intermedio**
 
 ---
 
@@ -33,25 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Aplicar** medidas de hardening de OS y servicios reduciendo la superficie de ataque de forma verificable.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📈 Clase 324<br/>Operaciones de seguridad"]
-    C --> T1["1 · Baselines de seguridad"]
-    C --> T2["2 · CIS Benchmarks y niveles"]
-    C --> T3["3 · Hardening de OS y<br/>servicios"]
-    C --> T4["4 · Gestión de configuración y<br/>drift"]
-    C --> T5["5 · Gestión de parches (SP<br/>800-40)"]
-    C --> T6["6 · Gestión del cambio (RFC,<br/>CAB, rollback)"]
-    C --> T7["7 · Automatización (IaC,<br/>Ansible/GPO)"]
-    C --> T8["8 · Monitoreo continuo de<br/>configuración"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

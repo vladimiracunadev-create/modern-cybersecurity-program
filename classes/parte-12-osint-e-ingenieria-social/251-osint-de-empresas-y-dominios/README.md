@@ -1,20 +1,7 @@
 # Clase 251 — OSINT de empresas y dominios
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 12](https://img.shields.io/badge/%F0%9F%95%B5%EF%B8%8F%20parte%2012-OSINT%20e%20ingenier%C3%ADa%20social-6e7781?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-110%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Intermedio-1f6feb?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-251%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **12 — OSINT e ingeniería social** · 📖 Fuente: *Open Source Intelligence Techniques* (M. Bazzell) · OWASP WSTG (Information Gathering)
-> ⏱️ Duración estimada: **110 min** · 🎚️ Nivel: **Intermedio**
-
-<!-- cabecera:fin -->
+> Parte: **12 — OSINT e ingeniería social** · Fuente: *Open Source Intelligence Techniques* (M. Bazzell) · OWASP WSTG (Information Gathering)
+> ⏱️ Duración estimada: **110 min** · Nivel: **Intermedio**
 
 ---
 
@@ -42,24 +29,6 @@ Al finalizar, el alumno podrá:
 5. **Detectar** filtraciones en repositorios y buscar secretos expuestos.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["🕵️ Clase 251<br/>OSINT de empresas y dominios"]
-    C --> T1["1 · WHOIS y registrantes"]
-    C --> T2["2 · Registros DNS (A, MX, TXT,<br/>NS)"]
-    C --> T3["3 · Certificate Transparency"]
-    C --> T4["4 · Enumeración de subdominios"]
-    C --> T5["5 · Correos y nomenclatura"]
-    C --> T6["6 · Fingerprinting tecnológico"]
-    C --> T7["7 · Filtraciones en<br/>repos/buckets"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

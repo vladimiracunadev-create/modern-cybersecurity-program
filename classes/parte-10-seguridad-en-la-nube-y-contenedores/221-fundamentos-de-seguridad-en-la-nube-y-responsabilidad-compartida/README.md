@@ -1,20 +1,7 @@
 # Clase 221 — Fundamentos de seguridad en la nube y responsabilidad compartida
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 10](https://img.shields.io/badge/%E2%98%81%EF%B8%8F%20parte%2010-Seguridad%20en%20la%20nube%20y%20contenedores-0a7ea4?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-90%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-221%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **10 — Seguridad en la nube y contenedores** · 📖 Fuente: *AWS Well-Architected Framework: Security Pillar (documentación oficial de AWS)*
-> ⏱️ Duración estimada: **90 min** · 🎚️ Nivel: **Fundamentos**
-
-<!-- cabecera:fin -->
+> Parte: **10 — Seguridad en la nube y contenedores** · Fuente: *AWS Well-Architected Framework: Security Pillar (documentación oficial de AWS)*
+> ⏱️ Duración estimada: **90 min** · Nivel: **Fundamentos**
 
 ---
 
@@ -36,24 +23,6 @@ Al finalizar, el alumno podrá:
 5. **Mapear** controles de seguridad tradicionales a sus equivalentes cloud.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["☁️ Clase 221<br/>Fundamentos de seguridad en<br/>la nube y…"]
-    C --> T1["1 · Modelo de responsabilidad<br/>compartida"]
-    C --> T2["2 · IaaS vs PaaS vs SaaS"]
-    C --> T3["3 · 'DE la nube' vs 'EN la<br/>nube'"]
-    C --> T4["4 · Misconfiguration como<br/>causa raíz"]
-    C --> T5["5 · Perímetro definido por<br/>identidad"]
-    C --> T6["6 · Regiones, zonas y<br/>soberanía de datos"]
-    C --> T7["7 · Modelo de amenazas cloud"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

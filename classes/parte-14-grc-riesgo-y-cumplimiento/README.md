@@ -1,16 +1,8 @@
-# 📋 Parte 14 — GRC, riesgo y cumplimiento
+# Parte 14 — GRC, riesgo y cumplimiento
 
 > [⬅️ Volver al programa](../../README.md) · [📚 Índice completo](../README.md) · [⏭️ Parte siguiente](../parte-15-seguridad-de-ia-y-machine-learning/README.md)
 
-<div align="center">
-
-[![Clases](https://img.shields.io/badge/clases-15-24292f?style=flat-square)](../README.md)
-[![Rango](https://img.shields.io/badge/rango-276%E2%80%93290-24292f?style=flat-square)](../README.md)
-[![Parte](https://img.shields.io/badge/parte-14%20de%2018-6e7781?style=flat-square)](../README.md)
-
-</div>
-
-Gobernanza, ISO 27001, NIST, PCI-DSS, auditoría y carrera
+**15 clases** · rango 276–290 · Gobernanza, ISO 27001, NIST, PCI-DSS, auditoría y carrera
 
 **Fuentes de referencia de esta parte:**
 
@@ -59,26 +51,6 @@ Al terminar esta parte, el alumno podrá:
 Esta parte asume las bases técnicas del programa completo (Partes 1–13): fundamentos de redes y sistemas, criptografía (Parte 6), gestión de identidad (Parte 7), respuesta a incidentes y forense (Parte 11) y seguridad en la nube (Parte 12). No requiere programación avanzada, pero sí madurez para razonar sobre procesos, personas y negocio, no solo tecnología.
 
 ## 🗺️ Estructura temática
-
-<!-- arco:inicio -->
-
-```mermaid
-flowchart TD
-    B1["Gobernanza y riesgo<br/>276–277"]
-    B2["Marcos y estándares<br/>278–280"]
-    B3["Cumplimiento legal<br/>281, 289"]
-    B4["Documentación y resiliencia<br/>282–283"]
-    B5["Riesgo extendido y verificación<br/>284–285"]
-    B6["Cultura y medición<br/>286–287"]
-    B7["Transferencia de riesgo y carrera<br/>288, 290"]
-    B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7
-    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class B1 ini
-    class B7 fin
-```
-
-<!-- arco:fin -->
 
 | Bloque | Clases | Enfoque |
 |--------|--------|---------|

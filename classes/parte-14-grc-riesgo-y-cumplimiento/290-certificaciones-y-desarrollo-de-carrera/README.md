@@ -1,20 +1,7 @@
 # Clase 290 — Certificaciones y desarrollo de carrera
 
-<!-- cabecera:inicio -->
-
-<div align="center">
-
-[![Parte 14](https://img.shields.io/badge/%F0%9F%93%8B%20parte%2014-GRC%2C%20riesgo%20y%20cumplimiento-24292f?style=flat-square)](../README.md)
-[![Duración](https://img.shields.io/badge/%E2%8F%B1%EF%B8%8F%20duraci%C3%B3n-80%20min-24292f?style=flat-square)](../../README.md)
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-Fundamentos-2e8b57?style=flat-square)](../../README.md)
-[![Clase](https://img.shields.io/badge/%F0%9F%93%97%20clase-290%20%2F%20340-6e7781?style=flat-square)](../../README.md)
-
-</div>
-
-> 🗂️ Parte: **14 — GRC, riesgo y cumplimiento** · 📖 Fuente: *(ISC)² CISSP Official Study Guide y NICE Framework (NIST SP 800-181)*
-> ⏱️ Duración estimada: **80 min** · 🎚️ Nivel: **Fundamentos**
-
-<!-- cabecera:fin -->
+> Parte: **14 — GRC, riesgo y cumplimiento** · Fuente: *(ISC)² CISSP Official Study Guide y NICE Framework (NIST SP 800-181)*
+> ⏱️ Duración estimada: **80 min** · Nivel: **Fundamentos**
 
 ---
 
@@ -33,24 +20,6 @@ Al finalizar, el alumno podrá:
 5. **Preparar** una estrategia de estudio para una certificación concreta.
 
 ## 🗺️ Temas
-
-<!-- mapa:inicio -->
-
-```mermaid
-flowchart LR
-    C["📋 Clase 290<br/>Certificaciones y desarrollo<br/>de carrera"]
-    C --> T1["1 · Mapa de roles (NICE<br/>Framework)"]
-    C --> T2["2 · Certificaciones por etapa"]
-    C --> T3["3 · Rutas: ofensiva,<br/>defensiva, GRC, cloud"]
-    C --> T4["4 · Portfolio y evidencia<br/>práctica"]
-    C --> T5["5 · Aprendizaje continuo (CPE)"]
-    C --> T6["6 · Marca profesional y<br/>networking"]
-    C --> T7["7 · Ética profesional"]
-    classDef raiz fill:#0b3d2e,stroke:#3fb950,color:#fff
-    class C raiz
-```
-
-<!-- mapa:fin -->
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|

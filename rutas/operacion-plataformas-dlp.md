@@ -7,20 +7,6 @@
 >
 > **Nivel de entrada:** junior; ~1 año operando herramientas de seguridad · **Foco:** operación de plataformas, DLP y clasificación de datos, incidentes, hardening, documentación y relación técnica con el cliente · **Certificación faro:** Security+ como base, y la certificación del fabricante de la plataforma que operes
 
-
-<!-- insignias:inicio -->
-
-<div align="center">
-
-[![Nivel](https://img.shields.io/badge/%F0%9F%8E%9A%EF%B8%8F%20nivel-junior-1f6feb?style=flat-square)](README.md)
-[![Foco](https://img.shields.io/badge/%F0%9F%8E%AF%20foco-operaci%C3%B3n%20de%20plataformas-6e7781?style=flat-square)](README.md)
-[![Certificación](https://img.shields.io/badge/%F0%9F%8E%93%20certi-Security%2B%20como%20base-2e8b57?style=flat-square)](../certificaciones/README.md)
-[![Partes](https://img.shields.io/badge/%F0%9F%97%82%EF%B8%8F%20partes-6-e8590c?style=flat-square)](../classes/README.md)
-
-</div>
-
-<!-- insignias:fin -->
-
 ## 🧭 Qué es y por qué importa
 
 Hay dos formas de trabajar en ciberseguridad: **dentro** de la empresa que se protege, o **para
@@ -147,25 +133,6 @@ transfiere entre fabricantes, y la certificación del producto suele pagarla la 
 - **Aguante al ritmo de servicio:** varios clientes, SLA que corren y prioridades que cambian.
 
 ## 📚 Tu ruta en el programa
-
-<!-- recorrido:inicio -->
-
-```mermaid
-flowchart LR
-    P0["🧱 Parte 0<br/>Fundamentos"]
-    P17["📈 Parte 17<br/>Profundización"]
-    P14["📋 Parte 14<br/>GRC"]
-    P8["🔵 Parte 8<br/>Blue Team / SOC"]
-    P9["🔬 Parte 9<br/>DFIR"]
-    P10["☁️ Parte 10<br/>Cloud"]
-    P0 --> P17 --> P14 --> P8 --> P9 --> P10
-    classDef ini fill:#0b3d2e,stroke:#3fb950,color:#fff
-    classDef fin fill:#3d2e0b,stroke:#e8590c,color:#fff
-    class P0 ini
-    class P10 fin
-```
-
-<!-- recorrido:fin -->
 
 Es una ruta **corta y muy dirigida**: mucho de operación y de dato, poco de ofensiva. Orden
 recomendado:
