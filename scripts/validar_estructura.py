@@ -47,6 +47,7 @@ PARTES_ESTANDAR_PROFUNDO = (
     "parte-3-hacking-etico-y-pentesting-metodologia",
     "parte-4-seguridad-de-aplicaciones-web",
     "parte-5-explotacion-de-sistemas-y-binarios",
+    "parte-6-analisis-de-malware",
 )
 
 
