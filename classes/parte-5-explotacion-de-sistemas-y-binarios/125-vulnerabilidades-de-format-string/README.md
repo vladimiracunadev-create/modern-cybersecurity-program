@@ -37,6 +37,72 @@ Al finalizar, el alumno podrá:
 | 7 | fmtstr_payload | Automatización con pwntools |
 | 8 | Mitigaciones (FORTIFY, -Wformat) | Cómo se previene |
 
+## 🧠 Explicación en profundidad
+
+### Cuando el usuario controla la cadena de formato
+
+La vulnerabilidad de **format string** nace de un uso incorrecto de `printf` y su familia. La forma
+correcta es `printf("%s", entrada)`, con una cadena de formato **fija** y la entrada como argumento.
+La forma vulnerable es `printf(entrada)`, pasando la **entrada del usuario directamente como cadena
+de formato**. La diferencia es enorme: si el usuario controla la cadena de formato, controla los
+**especificadores** (`%x`, `%p`, `%s`, `%n`), que le dan la capacidad de **leer** y —lo más grave—
+**escribir** en la memoria del proceso. Es un fallo doble: permite tanto la fuga de información como
+la escritura arbitraria, y por eso es una de las primitivas más versátiles del *exploiting*.
+
+```mermaid
+flowchart TD
+  V["printf(entrada) - formato controlado por el usuario"] --> R{"Que especificador?"}
+  R -->|"%p / %x"| LEAK["LEER la pila<br/>filtrar canario, direcciones de libc/PIE"]
+  R -->|"%s"| STR["LEER una cadena en una direccion dada"]
+  R -->|"%n"| WRITE["ESCRIBIR el nº de bytes impresos<br/>en una direccion de la pila"]
+  LEAK --> USE1["Derrotar ASLR y el canario"]
+  WRITE --> USE2["Sobrescribir la GOT -> redirigir una funcion"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class V,LEAK,STR n
+  class R d
+  class WRITE,USE2 x
+```
+
+### Leer la pila: la primitiva de fuga de información
+
+`printf` espera que sus argumentos estén donde la convención de llamada los pone (registros y
+pila). Cuando el atacante pone especificadores pero **no hay argumentos reales**, `printf` los toma
+de todos modos **de la pila**, imprimiendo lo que haya ahí. Así, una entrada como `%p %p %p %p ...`
+**vuelca el contenido de la pila** palabra a palabra: se ven direcciones de libc, del binario (PIE),
+y —crucialmente— el **canario de la pila** (clase 122). Esto convierte el format string en una
+**máquina de info leaks**, la pieza que faltaba para derrotar ASLR y el canary. El primer paso
+práctico es encontrar el **offset del argumento**: enviar `AAAA %p %p %p...` y contar en qué
+posición aparece `0x41414141`, lo que dice qué índice de `%N$p` apunta a la entrada controlada por
+el atacante.
+
+### %n: de leer a escribir en memoria arbitraria
+
+El especificador que eleva el format string de "grave" a "crítico" es **`%n`**, que en lugar de
+imprimir **escribe**: guarda el **número de bytes impresos hasta ese momento** en la dirección
+apuntada por su argumento. Combinándolo con el control de la pila, el atacante coloca en la pila la
+**dirección donde quiere escribir** y controla cuántos bytes se imprimen antes del `%n` (con
+especificadores de ancho como `%100c`), logrando **escribir un valor arbitrario en una dirección
+arbitraria** —la primitiva más poderosa del exploiting—. Como escribir un valor grande de golpe
+requeriría imprimir millones de bytes, se usan las variantes **`%hn`** (escribe 2 bytes) y **`%hhn`**
+(1 byte) para construir el valor por partes, escribiendo byte a byte con anchos manejables.
+
+### El objetivo clásico y la defensa
+
+Con una primitiva de escritura arbitraria, el objetivo canónico es **sobrescribir la GOT** (clase
+122): reemplazar el puntero de una función de libc (como `printf` o `exit`) por la dirección de
+`system` o de una cadena ROP, de modo que la próxima llamada a esa función ejecute lo que el atacante
+quiere. Esto solo funciona con *partial RELRO* (GOT escribible); con *full RELRO* hay que buscar
+otros objetivos. Construir manualmente el payload de escritura es tedioso —hay que calcular anchos y
+ordenar escrituras—, así que **pwntools** lo automatiza con **`fmtstr_payload(offset, {dir: valor})`**,
+que genera la cadena de formato completa dado el offset del argumento y un diccionario de
+dirección→valor. La **defensa** es tajante y de código: **nunca pasar entrada del usuario como cadena
+de formato** —usar siempre `printf("%s", entrada)`—; los compiladores modernos ayudan con `-Wformat`
+(avisa del uso peligroso) y **FORTIFY** (`_FORTIFY_SOURCE`), que restringe `%n` en cadenas de formato
+escribibles. Es, como casi todo en esta parte, un fallo de **no separar datos de control**: la cadena
+de formato es código, y darle al usuario control sobre ella es darle control sobre el programa.
+
 ## 📖 Definiciones y características
 
 - **Format string bug:** el usuario controla la cadena de formato de `printf`. *Clave:* CWE-134;
@@ -51,6 +117,25 @@ Al finalizar, el alumno podrá:
   evita imprimir millones de caracteres.
 - **fmtstr_payload:** genera el payload de escritura automáticamente. *Clave:* `fmtstr_payload(offset,
   {addr: value})`.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Format string | Vulnerabilidad por pasar entrada como cadena de formato |
+| `printf(entrada)` | Uso vulnerable; lo correcto es `printf("%s", entrada)` |
+| Especificador | `%x`, `%p`, `%s`, `%n` de la familia printf |
+| %p / %x | Leen valores de la pila; base del info leak |
+| Volcado de pila | `%p %p %p...` imprime el contenido de la pila |
+| Offset de argumento | Índice `%N$p` que apunta a la entrada del atacante |
+| Leak del canario | Format string revela el stack canary |
+| %n | Escribe el número de bytes impresos en una dirección |
+| %hn / %hhn | Escriben 2 y 1 byte; para construir valores por partes |
+| Ancho (%100c) | Controla cuántos bytes se imprimen antes de `%n` |
+| Escritura arbitraria | Escribir cualquier valor en cualquier dirección |
+| Sobrescritura de la GOT | Objetivo clásico: redirigir una función de libc |
+| fmtstr_payload | pwntools genera el payload de escritura automáticamente |
+| FORTIFY / -Wformat | Mitigaciones del compilador contra format string |
 
 ## 🧰 Herramientas y preparación
 

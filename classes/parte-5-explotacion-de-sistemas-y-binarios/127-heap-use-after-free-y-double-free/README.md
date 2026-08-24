@@ -37,6 +37,69 @@ Al finalizar, el alumno podrá:
 | 7 | Objetivos: __free_hook, GOT | Convertir en RCE |
 | 8 | Detección con ASan | Cazar el bug en desarrollo |
 
+## 🧠 Explicación en profundidad
+
+### Usar lo que ya devolviste: el use-after-free
+
+El **use-after-free** (UAF) es hoy una de las vulnerabilidades más explotadas del mundo real
+(navegadores, kernels), y su lógica es sutil. Cuando un programa libera memoria con `free`, el
+puntero que apuntaba a ella **sigue existiendo** —se convierte en un **puntero colgante** (*dangling
+pointer*)—, pero la memoria ya no le pertenece: el allocator puede reasignarla a otra cosa. Un UAF
+ocurre cuando el programa **usa ese puntero colgante** después del `free`, accediendo a memoria que
+ahora contiene datos distintos. La explotación consiste en un baile de tres pasos: el programa libera
+un objeto, el atacante consigue que el allocator **reasigne ese mismo chunk** a un objeto que él
+controla (pidiendo memoria del mismo tamaño), y luego el programa usa el puntero colgante creyendo
+que apunta al objeto original —pero lee o escribe los datos del atacante—.
+
+```mermaid
+flowchart TD
+  F["1. free(obj)<br/>el puntero queda COLGANTE"] --> R["2. El atacante pide memoria del mismo tamano<br/>el allocator reasigna ESE chunk"]
+  R --> W["3. El atacante escribe sus datos<br/>en el chunk reciclado"]
+  W --> U["4. El programa usa el puntero colgante<br/>cree que es el objeto original"]
+  U --> HIJACK(["Secuestro: si el objeto tenia una vtable/puntero a funcion,<br/>el atacante controla a donde salta"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class F,R,W,U n
+  class HIJACK x
+```
+
+### Por qué el UAF suele terminar en control de ejecución
+
+El UAF es tan potente porque los objetos de C++ (y muchas estructuras de C) contienen **punteros a
+funciones**, y el más jugoso es la **vtable**: una tabla de punteros a los métodos virtuales de un
+objeto. Si el atacante recicla un chunk liberado con datos que él controla, y el programa luego
+**llama a un método** del objeto colgante, la CPU salta a la dirección que el atacante puso en la
+"vtable" falsa —control de ejecución directo—. Este patrón —liberar un objeto con vtable, reciclarlo
+con una vtable falsa, provocar una llamada a método— es la explotación de UAF canónica y la que ha
+comprometido navegadores durante años. No siempre hace falta una vtable: cualquier puntero de función
+o dato sensible dentro del objeto reciclado sirve.
+
+### Double free: liberar dos veces para envenenar las listas
+
+El **double free** —liberar el mismo chunk dos veces— es un tipo relacionado de corrupción que ataca
+directamente las **listas de bins** de la clase 126. Al liberar un chunk dos veces, queda **dos veces
+en la lista de libres** (por ejemplo el tcache), de modo que dos `malloc` sucesivos devuelven el
+**mismo puntero** a dos objetos distintos —un solapamiento que el atacante explota—. La técnica
+moderna es el **tcache poisoning**: aprovechando que el tcache enlaza sus chunks libres con un puntero
+`next` que vive **dentro del chunk**, el atacante libera un chunk, **sobrescribe ese puntero `next`**
+con una dirección arbitraria, y en los siguientes `malloc` el allocator entrega... esa dirección
+arbitraria. Es una primitiva de **escritura donde el atacante quiera**, obtenida engañando al tcache.
+
+### Las mitigaciones del tcache y la detección
+
+glibc endureció el tcache tras la oleada de estos ataques, y conocer las mitigaciones es parte del
+tema. La **tcache key** es un valor que se escribe en cada chunk al liberarlo; antes de meterlo en la
+lista, `free` comprueba si esa key ya está presente, lo que **detecta el double free** más obvio y
+aborta. Versiones más recientes añaden el **safe-linking**, que ofusca los punteros `next` del tcache
+(los cifra con la dirección del propio chunk) para dificultar el tcache poisoning —el atacante ya no
+puede escribir una dirección limpia, tiene que conocer o filtrar el "cifrado"—. Estas defensas no
+eliminan los ataques, los encarecen: la explotación de heap moderna es una carrera entre técnicas de
+corrupción y mitigaciones del allocator. Del lado del **desarrollo**, la defensa raíz es no usar
+punteros colgantes —poner el puntero a `NULL` tras `free` y no reusarlo—, y las herramientas de
+detección como **AddressSanitizer (ASan)**, que instrumenta el binario para **detectar UAF y double
+free en el momento en que ocurren** durante las pruebas, son hoy indispensables en el desarrollo de
+C/C++ seguro y en el *fuzzing* de la clase 136.
+
 ## 📖 Definiciones y características
 
 - **Use-after-free:** uso de memoria tras `free`. *Clave:* CWE-416; si el chunk se reasigna, escribes
@@ -51,6 +114,25 @@ Al finalizar, el alumno podrá:
   falsearlo o usar otra ruta.
 - **__free_hook / __malloc_hook:** punteros de función históricos usados como objetivo de escritura.
   *Clave:* eliminados en glibc ≥2.34; hoy se apunta a GOT/estructuras alternativas.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Use-after-free (UAF) | Usar un puntero a memoria ya liberada |
+| Puntero colgante | Puntero que sobrevive al `free` de su memoria |
+| Reasignación | El allocator entrega el chunk liberado a otra petición |
+| Reciclar el chunk | Pedir memoria del mismo tamaño para controlar el contenido |
+| vtable | Tabla de punteros a métodos virtuales de un objeto |
+| Secuestro de vtable | Vtable falsa que redirige una llamada a método |
+| Double free | Liberar el mismo chunk dos veces |
+| Solapamiento | Dos malloc devuelven el mismo puntero |
+| tcache poisoning | Sobrescribir el `next` del tcache para malloc arbitrario |
+| Puntero next | Enlace de la lista tcache, dentro del chunk |
+| Escritura arbitraria | Primitiva que da el tcache poisoning |
+| tcache key | Valor que detecta el double free obvio |
+| safe-linking | Ofusca los punteros next del tcache |
+| AddressSanitizer (ASan) | Detecta UAF y double free durante las pruebas |
 
 ## 🧰 Herramientas y preparación
 

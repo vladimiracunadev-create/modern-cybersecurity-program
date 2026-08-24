@@ -37,6 +37,72 @@ Al finalizar, el alumno podrá:
 | 7 | Bookmarks y symbol tree | Organizar el análisis |
 | 8 | Scripting (GhidraScript) | Automatizar y extraer |
 
+## 🧠 Explicación en profundidad
+
+### El decompilador libre que cambió la ingeniería inversa
+
+**Ghidra** es la suite de ingeniería inversa desarrollada por la NSA y liberada como código abierto
+en 2019, y su aparición democratizó una capacidad que antes costaba miles de dólares: un
+**decompilador** de calidad profesional. Su valor central es precisamente ese: además de
+**desensamblar** (mostrar el ensamblador), Ghidra **decompila**, es decir, reconstruye una
+aproximación en **pseudo-C** del código original. Leer `if (strcmp(input, "s3cr3t") == 0)` es
+incomparablemente más rápido que descifrar veinte instrucciones de ensamblador que hacen lo mismo, y
+por eso el decompilador es la herramienta que hace la RE abordable para quien no vive en el
+ensamblador. Ghidra es multiplataforma, gratuito y soporta multitud de arquitecturas, lo que lo ha
+convertido en la puerta de entrada estándar a la disciplina.
+
+### El flujo: proyecto, importación y auto-análisis
+
+El trabajo en Ghidra empieza creando un **proyecto** (que agrupa uno o varios binarios) e
+**importando** el ejecutable. Al importarlo, Ghidra ofrece ejecutar el **auto-análisis**: una batería
+de analizadores que identifican funciones, resuelven referencias, reconocen cadenas, detectan
+patrones de código de librería y —crucialmente— generan la decompilación. Este paso automático hace
+la mayor parte del trabajo pesado y deja el binario listo para explorar. Conviene entender que el
+auto-análisis es **heurístico**: acierta casi siempre, pero puede equivocarse (marcar como datos algo
+que es código, o al revés), y parte de la destreza es corregirlo cuando se desvía.
+
+```mermaid
+flowchart LR
+  IMP["Importar binario<br/>+ auto-analisis"] --> VIEW{"Dos vistas sincronizadas"}
+  VIEW --> LIST["Listing<br/>desensamblado, direccion a direccion"]
+  VIEW --> DEC["Decompiler<br/>pseudo-C legible"]
+  DEC --> WORK["Trabajo iterativo:<br/>renombrar, comentar, retipar"]
+  WORK --> XREF["Xrefs: quien llama, quien usa"]
+  XREF --> WORK
+  WORK --> UNDER(["Comprension del binario"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class LIST,DEC,WORK,XREF n
+  class IMP,VIEW,UNDER d
+```
+
+### Las dos vistas y el trabajo iterativo de dar sentido
+
+Ghidra presenta dos vistas **sincronizadas**: el **Listing** (el desensamblado, dirección a
+dirección, con todo el detalle) y el **Decompiler** (el pseudo-C). Se navega principalmente por el
+decompilador y se recurre al listing cuando hace falta precisión. Pero la RE no es leer pasivamente:
+es un proceso **iterativo de anotación** en el que el analista **añade el significado que el
+compilador borró**. Se **renombra** una función `FUN_00401230` a `validar_password` cuando se entiende
+qué hace; se **comenta** una sección oscura; y —la técnica más potente— se **retipan estructuras**:
+decirle a Ghidra que cierto puntero es en realidad un `struct usuario *` con campos concretos hace
+que el decompilador reescriba todos los accesos crípticos (`*(int *)(param+8)`) como accesos legibles
+(`usuario->edad`). Cada anotación mejora la decompilación de las siguientes, y el binario se va
+volviendo comprensible a medida que se documenta.
+
+### Xrefs, navegación y scripting
+
+La herramienta de navegación más usada son las **referencias cruzadas** (*xrefs*): dado una función,
+una cadena o una variable, Ghidra muestra **quién la llama y quién la usa**. Es la brújula de la RE
+por objetivos de la clase 130: si se busca cómo se valida una contraseña, se localiza la cadena del
+mensaje de error con `strings`, se busca su xref para ver **qué función la referencia**, y desde ahí
+se sube por las xrefs hasta el punto de decisión. El **symbol tree** y los **bookmarks** organizan el
+trabajo en binarios grandes. Y para tareas repetitivas —desofuscar cientos de cadenas cifradas,
+renombrar en lote, extraer datos—, Ghidra ofrece **scripting** (GhidraScript, en Java o Python), que
+automatiza lo que sería inviable a mano. La lección es que Ghidra no "resuelve" el binario por ti:
+es un entorno donde el analista, apoyado en un decompilador potente y en las xrefs, **reconstruye
+iterativamente** el significado del programa, y esa reconstrucción documentada es el producto de la
+ingeniería inversa.
+
 ## 📖 Definiciones y características
 
 - **Ghidra:** SRE framework de código abierto con decompilador propio. *Clave:* gratuito y
@@ -51,6 +117,25 @@ Al finalizar, el alumno podrá:
   definir structs mejora todo el decompilado.
 - **GhidraScript:** API para automatizar (Python/Jython o Java). *Clave:* util para desofuscar o
   extraer cadenas en lote.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Ghidra | Suite de RE libre de la NSA, con decompilador |
+| Desensamblar | Mostrar el ensamblador del binario |
+| Decompilar | Reconstruir pseudo-C del código original |
+| Pseudo-C | Aproximación en C que produce el decompilador |
+| Proyecto | Agrupación de binarios en Ghidra |
+| Auto-análisis | Analizadores que identifican funciones y generan la decompilación |
+| Heurístico | El auto-análisis acierta casi siempre pero puede fallar |
+| Listing | Vista de desensamblado, dirección a dirección |
+| Decompiler | Vista de pseudo-C legible |
+| Renombrar / comentar | Añadir el significado que el compilador borró |
+| Retipar estructuras | Declarar tipos para que la decompilación sea legible |
+| Xref | Referencia cruzada: quién llama o usa algo |
+| Symbol tree / bookmarks | Organización del trabajo en binarios grandes |
+| GhidraScript | Scripting para automatizar tareas de RE |
 
 ## 🧰 Herramientas y preparación
 

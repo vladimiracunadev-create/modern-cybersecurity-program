@@ -38,6 +38,72 @@ Al finalizar, el alumno podrá:
 | 7 | Writeups y aprendizaje | Progresar rápido |
 | 8 | Plataformas de práctica | Dónde seguir entrenando |
 
+## 🧠 Explicación en profundidad
+
+### El campo de entrenamiento de toda la parte
+
+Los **CTF** (*Capture The Flag*) son competiciones de seguridad donde se resuelven **retos** para
+obtener **flags** (cadenas secretas que prueban el éxito), y son el mejor entorno para practicar la
+explotación de binarios: **legal, seguro y con dificultad graduada**. Toda esta parte se consolida
+resolviendo retos de las categorías **pwn** (explotación de binarios) y **rev** (ingeniería inversa),
+que se solapan constantemente —para explotar un binario hay que entenderlo primero, y entenderlo es
+reversarlo—. La clase cierra la parte enseñando a **aplicar** todo lo aprendido bajo la presión y el
+formato de una competición real, que es también como se entrenan y se contratan los profesionales del
+sector.
+
+### Los formatos y las categorías
+
+Hay dos formatos principales. En **jeopardy** —el más común— hay un tablero de retos por categorías
+(pwn, rev, web, cripto, forense, OSINT) y puntos según dificultad; se resuelven de forma independiente.
+En **attack-defense** cada equipo tiene servicios que debe **parchear** (defender) mientras **explota**
+los de los rivales, un formato más cercano a la operación real. Las categorías de esta parte son **pwn**
+—explotar un binario, casi siempre remoto, para obtener una shell y leer la flag— y **rev** —entender un
+binario para deducir la entrada correcta (una contraseña, una clave) que revela la flag—. Se solapan
+porque un reto de pwn requiere reversar el binario para encontrar la vulnerabilidad, y algunos de rev
+requieren cierta explotación.
+
+```mermaid
+flowchart LR
+  R["Reto pwn/rev"] --> T["1. Triage<br/>file, checksec, strings, abrir en Ghidra"]
+  T --> V["2. Encontrar la vulnerabilidad<br/>leer el decompilado"]
+  V --> E["3. Escribir el exploit<br/>plantilla pwntools local"]
+  E --> LIBC["4. Gestionar la libc del reto<br/>usarla, no la del sistema"]
+  LIBC --> REM["5. remote(host, puerto)<br/>lanzar y leer la flag"]
+  REM --> WU["6. Writeup<br/>documentar la solucion"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class T,V,E,LIBC,REM,WU n
+  class R d
+```
+
+### El flujo de un reto de pwn, y la plantilla de pwntools
+
+Resolver un reto de pwn sigue un flujo reproducible que resume la parte. **Triage rápido** (clase 130):
+`file` y `checksec` sobre el binario para saber arquitectura y mitigaciones, `strings` para pistas, y
+abrirlo en Ghidra. **Encontrar la vulnerabilidad** leyendo el decompilado —¿hay un `gets`, un `printf`
+con formato controlado, un `free` sospechoso?—. **Escribir el exploit** con la **plantilla estándar de
+pwntools**: `pwntools` genera un esqueleto (`pwn template ./bin`) con la estructura ya montada para
+alternar entre **local** (`process()`) y **remoto** (`remote()`) cambiando un argumento, más
+`gdb.attach()` para depurar. Se desarrolla y prueba **en local**, y cuando funciona se apunta al
+**servicio remoto** del reto. Este flujo —triage, encontrar, explotar en local, lanzar en remoto— es el
+mismo que en un pentest real.
+
+### La libc del reto, los writeups y el aprendizaje
+
+Dos detalles prácticos marcan la diferencia. La **gestión de la libc**: los retos de pwn remotos suelen
+**proporcionar la libc concreta** del servidor (porque los offsets de `system`, `/bin/sh`, los gadgets
+dependen de la versión, clase 138), y hay que **usar esa libc, no la del sistema propio**, tanto para
+calcular offsets como para probar en local con el entorno correcto (`pwntools` y herramientas como
+`pwninit` automatizan enganchar la libc del reto al binario). Olvidar esto es la causa número uno de un
+exploit que funciona en local y falla en remoto. Y el hábito que de verdad hace crecer: los **writeups**
+—escribir la solución de un reto tras resolverlo (o leer los de otros para los que no)— es la forma más
+eficaz de consolidar el aprendizaje, porque obliga a articular *por qué* funcionó el exploit. Las
+**plataformas de práctica** (pwn.college, ROP Emporium, picoCTF, HackTheBox, y las plataformas de CTFs
+en vivo) ofrecen retos graduados para todos los niveles. La lección final de la parte es que la
+explotación de binarios se aprende **haciendo**: leer sobre buffer overflows no enseña a explotarlos;
+resolver cien retos, sí. Y el CTF es el entorno donde hacerlo de forma legal, segura y con una comunidad
+que comparte el conocimiento —el cierre natural de la parte más técnica del programa—.
+
 ## 📖 Definiciones y características
 
 - **CTF (Capture The Flag):** competencia de seguridad con retos que ocultan una "flag". *Clave:* pwn y
@@ -51,6 +117,25 @@ Al finalizar, el alumno podrá:
 - **Plantilla de exploit:** script pwntools reutilizable con `args.REMOTE`. *Clave:* pasar de local a
   remoto sin reescribir.
 - **Writeup:** solución documentada de un reto. *Clave:* la mejor fuente de aprendizaje tras intentarlo.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| CTF | Competición de seguridad basada en retos y flags |
+| Flag | Cadena secreta que prueba haber resuelto un reto |
+| Jeopardy | Formato de tablero de retos por categorías |
+| Attack-defense | Formato de parchear los servicios propios y atacar los ajenos |
+| pwn | Categoría de explotación de binarios |
+| rev | Categoría de ingeniería inversa |
+| Triage del reto | file, checksec, strings, abrir en Ghidra |
+| Plantilla pwntools | Esqueleto de exploit con local/remoto conmutables |
+| process() / remote() | Ejecución local / conexión al servicio del reto |
+| Libc del reto | La libc del servidor, que hay que usar para los offsets |
+| pwninit | Herramienta que engancha la libc del reto al binario |
+| Writeup | Documentación de la solución de un reto |
+| Plataforma de práctica | pwn.college, ROP Emporium, picoCTF, HackTheBox |
+| Aprender haciendo | La explotación se domina resolviendo retos |
 
 ## 🧰 Herramientas y preparación
 

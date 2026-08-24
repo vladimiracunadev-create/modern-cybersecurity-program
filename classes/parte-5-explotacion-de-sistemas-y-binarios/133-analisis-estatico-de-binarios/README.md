@@ -37,6 +37,74 @@ Al finalizar, el alumno podrá:
 | 7 | Límites: packing, indirección | Cuándo el estático no basta |
 | 8 | capstone/pyelftools | Automatizar el análisis |
 
+## 🧠 Explicación en profundidad
+
+### Entender sin ejecutar, y los límites de hacerlo
+
+El **análisis estático** examina un binario **sin ejecutarlo**, razonando sobre su código. Sus
+ventajas son grandes: es **seguro** (no se ejecuta código potencialmente malicioso, crucial para
+malware), da una **visión completa** de todos los caminos posibles del programa (no solo los que se
+ejecutan en una corrida concreta), y no requiere el entorno exacto del binario. Su reto es que hay que
+**deducir el comportamiento** de un código que puede ser enorme y del que se ha borrado el significado.
+Esta clase sistematiza los conceptos que estructuran ese análisis, que las herramientas de las clases
+anteriores implementan.
+
+### Los dos algoritmos de desensamblado, y por qué importa
+
+Antes de leer código hay que **desensamblarlo**, y hay dos estrategias con propiedades opuestas. El
+**desensamblado lineal** recorre los bytes **de principio a fin**, interpretando cada uno como una
+instrucción tras la anterior. Es simple y completo, pero se **descarrila** cuando encuentra datos
+mezclados con código (una tabla de saltos, una cadena embebida): los interpreta como instrucciones y
+a partir de ahí desensambla basura. El **desensamblado recursivo** sigue el **flujo de control**:
+empieza en un punto de entrada y sigue los saltos y llamadas, desensamblando solo lo que es
+alcanzable como código. Es mucho más preciso —no confunde datos con código— pero puede **perderse
+código** al que solo se llega por saltos indirectos (un puntero a función calculado en ejecución), que
+no puede seguir estáticamente. Las herramientas modernas combinan ambos con heurísticas, y entender
+esta tensión explica por qué a veces un desensamblador "no ve" una función o muestra basura.
+
+```mermaid
+flowchart TD
+  BIN["Binario"] --> DIS{"Estrategia de desensamblado"}
+  DIS -->|"byte a byte"| LIN["Lineal<br/>completo pero se descarrila con datos"]
+  DIS -->|"siguiendo saltos"| REC["Recursivo<br/>preciso pero pierde saltos indirectos"]
+  LIN & REC --> CFG["CFG - grafo de flujo de control<br/>bloques y bifurcaciones de una funcion"]
+  CFG --> CG["Call graph<br/>quien llama a quien"]
+  CG --> DF["Data flow<br/>de donde viene y a donde va un dato"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class LIN,REC,CFG,CG,DF n
+  class BIN,DIS d
+```
+
+### Los grafos que estructuran el análisis
+
+Sobre el desensamblado se construyen las abstracciones que hacen navegable un binario. El **CFG**
+(*Control Flow Graph*) representa una función como el grafo de sus **bloques básicos** y las
+bifurcaciones entre ellos —es la vista de grafo de la clase 132, formalizada—; muestra la estructura
+de decisiones y bucles. El **call graph** sube un nivel: representa **qué función llama a qué**,
+dando el mapa de la arquitectura del programa. Y el **análisis de flujo de datos** (*data flow*)
+sigue **de dónde viene y a dónde va un valor** —por ejemplo, rastrear si la entrada del usuario llega
+sin validar a una función peligrosa, que es la base del *taint analysis* de la clase 137—. Estos tres
+—CFG, call graph, data flow— son el andamiaje conceptual del análisis estático, y las herramientas los
+calculan automáticamente.
+
+### Detección de funciones, límites y librerías
+
+Un problema práctico del análisis estático es **identificar las funciones** en un binario stripped:
+sin símbolos, hay que reconocer dónde empieza y acaba cada función por sus prólogos/epílogos y por las
+llamadas, lo que las herramientas hacen con heurísticas (y a veces fallan). Un caso especial son las
+**funciones de librería** enlazadas estáticamente: un binario puede incluir el código de `printf`,
+`malloc` y cientos de funciones de libc, que abruman el análisis; técnicas como **FLIRT** (en IDA) o
+las firmas de Ghidra las **reconocen y etiquetan** para que el analista se concentre en el código
+propio. Los **límites** del análisis estático son importantes y honestos: la **ofuscación** y el
+**packing** (clase 135) lo dificultan enormemente —un binario empaquetado no revela su código real
+hasta que se ejecuta y se desempaqueta—, y la **indirección** (saltos y llamadas calculados en
+ejecución) esconde caminos que solo el análisis dinámico revela. Para automatizar tareas de análisis
+estático a bajo nivel existen librerías como **capstone** (motor de desensamblado) y **pyelftools**
+(parseo de ELF), que permiten construir herramientas propias. La lección es que el análisis estático
+es potente y seguro pero **incompleto por naturaleza**, y por eso se complementa con el dinámico de la
+clase 134.
+
 ## 📖 Definiciones y características
 
 - **Desensamblado lineal:** decodifica byte a byte de inicio a fin. *Clave:* rápido, pero interpreta
@@ -49,6 +117,25 @@ Al finalizar, el alumno podrá:
   detección de datos controlados por el usuario.
 - **Límites del estático:** packing, cifrado, self-modifying code, saltos indirectos. *Clave:* exigen
   complementar con análisis dinámico (clase 134).
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Análisis estático | Examinar el binario sin ejecutarlo |
+| Desensamblado lineal | Recorre los bytes en orden; se descarrila con datos |
+| Desensamblado recursivo | Sigue el flujo de control; pierde saltos indirectos |
+| Descarrilamiento | Interpretar datos como instrucciones |
+| Salto indirecto | Destino calculado en ejecución; invisible en estático |
+| CFG | Grafo de flujo de control de una función |
+| Bloque básico | Secuencia sin saltos |
+| Call graph | Grafo de qué función llama a qué |
+| Data flow | Seguir de dónde viene y a dónde va un valor |
+| Detección de funciones | Reconocer límites de función en un binario stripped |
+| FLIRT / firmas | Reconocer funciones de librería enlazadas |
+| Packing | Empaquetado que oculta el código hasta ejecutarse |
+| capstone / pyelftools | Librerías para construir herramientas de análisis |
+| Límite del estático | Ofuscación e indirección lo hacen incompleto |
 
 ## 🧰 Herramientas y preparación
 

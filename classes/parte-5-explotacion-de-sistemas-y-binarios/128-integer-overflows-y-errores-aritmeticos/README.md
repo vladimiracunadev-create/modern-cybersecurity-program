@@ -37,6 +37,72 @@ Al finalizar, el alumno podrá:
 | 7 | UBSan | Detección en desarrollo |
 | 8 | Aritmética segura | `__builtin_mul_overflow`, límites |
 
+## 🧠 Explicación en profundidad
+
+### El error que no crashea pero prepara el desastre
+
+Los **errores aritméticos con enteros** rara vez son explotables por sí solos: su gravedad está en
+que **habilitan** otras vulnerabilidades, típicamente un overflow de buffer o de heap. La causa es
+que los enteros de un ordenador tienen **tamaño fijo** y **no pueden representar cualquier valor**:
+un `unsigned int` de 32 bits solo llega hasta 4 294 967 295, y al sumarle uno **da la vuelta**
+(*wrap-around*) a 0. Ese comportamiento —perfectamente definido para los `unsigned`— produce
+resultados sorprendentes cuando el programador no lo anticipa, y esos resultados sorprendentes se
+convierten en fallos de memoria.
+
+```mermaid
+flowchart TD
+  IN["Entrada del usuario: un tamano"] --> CALC["Calculo: size = n * elem + cabecera"]
+  CALC --> OF{"El calculo desborda?"}
+  OF -->|"si: wrap-around a un numero pequeno"| SMALL["malloc reserva MENOS de lo pedido"]
+  SMALL --> COPY["El programa copia n elementos<br/>en un buffer demasiado pequeno"]
+  COPY --> HEAP(["Heap overflow -> clase 126-127"])
+  OF -->|"truncamiento int->short"| TRUNC["El tamano validado != el tamano usado"]
+  TRUNC --> HEAP
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class IN,CALC,SMALL,COPY,TRUNC n
+  class OF d
+  class HEAP x
+```
+
+### Signed, unsigned y truncamiento: tres trampas relacionadas
+
+Hay tres formas en que la aritmética de enteros traiciona al programador. El **wrap-around**
+(desbordamiento) ya visto: una suma o multiplicación que supera el máximo del tipo y "da la vuelta".
+La confusión **signed/unsigned**: un mismo patrón de bits se interpreta como positivo o como un
+número enorme según el tipo, de modo que una comprobación `if (len < BUFSIZE)` con `len` firmado se
+puede burlar pasando un valor **negativo** que, reinterpretado como `unsigned` en la copia posterior,
+se vuelve gigantesco. Y el **truncamiento**: asignar un `int` de 32 bits a un `short` de 16
+descarta los bits altos, de modo que el valor **comprobado** (32 bits) y el valor **usado** (16 bits)
+pueden diferir. Las tres comparten una firma: **el número que se valida no es el número que se usa**.
+
+### El patrón clásico: overflow en el cálculo del tamaño
+
+El caso explotable por excelencia es un **overflow en el cálculo del tamaño de una asignación**.
+Considérese `malloc(n * sizeof(elem))` donde `n` viene del usuario: si `n` es lo bastante grande, la
+multiplicación **desborda** y produce un número **pequeño**, así que `malloc` reserva un buffer
+diminuto —pero el programa, creyendo que reservó espacio para `n` elementos, **copia los n
+elementos** y desborda el heap. El atacante no ha tocado la copia; ha manipulado la **aritmética
+previa** para que la reserva sea insuficiente. Es el puente entre un "bug numérico" inofensivo en
+apariencia y un heap overflow de la clase 126. El **off-by-one** —equivocarse en uno al calcular un
+límite (`<=` en vez de `<`, reservar `n` bytes para una cadena de `n` caracteres olvidando el
+terminador nulo)— es un primo cercano: un solo byte de más, que a menudo es exactamente el byte de
+metadatos del chunk siguiente o el byte bajo de un puntero, suficiente para explotar.
+
+### Detectar y prevenir
+
+Como estos bugs no crashean por sí mismos, son difíciles de encontrar por observación. La herramienta
+clave es **UBSan** (*UndefinedBehaviorSanitizer*), que instrumenta el binario para **detectar
+overflows de enteros con signo y otros comportamientos indefinidos en tiempo de ejecución** durante
+las pruebas y el fuzzing (clase 136) —hace visible el momento exacto del wrap-around—. La **defensa**
+a nivel de código es la **aritmética segura**: comprobar los límites **antes** de operar (¿cabe la
+multiplicación en el tipo?), usar funciones de multiplicación con detección de overflow
+(`__builtin_mul_overflow` en GCC/Clang), elegir tipos con el ancho adecuado y evitar mezclar signed y
+unsigned. La lección conecta con toda la parte: la seguridad de memoria en C/C++ depende de detalles
+que el lenguaje no comprueba por ti, y un descuido aritmético de una línea puede ser el primer eslabón
+de una cadena que termina en RCE.
+
 ## 📖 Definiciones y características
 
 - **Integer overflow:** el resultado excede el máximo del tipo y "da la vuelta". *Clave:* CWE-190;
@@ -49,6 +115,25 @@ Al finalizar, el alumno podrá:
   `if (len < MAX)` con `len` negativo pasa el chequeo y luego se usa como unsigned enorme.
 - **Off-by-one:** escribir un elemento de más (típico `<=` en vez de `<`). *Clave:* puede sobrescribir
   el byte de metadatos del chunk siguiente.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Error aritmético | Bug de enteros que habilita otra vulnerabilidad |
+| Tamaño fijo | Los enteros no representan cualquier valor |
+| Wrap-around | El valor da la vuelta al superar el máximo del tipo |
+| Overflow de entero | Resultado que excede la capacidad del tipo |
+| Signed / unsigned | Interpretación del mismo patrón de bits |
+| Bypass con negativo | Un valor firmado negativo que se vuelve enorme sin signo |
+| Truncamiento | Asignar a un tipo más pequeño descarta bits altos |
+| Validado ≠ usado | El número comprobado difiere del realmente usado |
+| Overflow en el tamaño | La reserva desborda y queda pequeña; copia posterior desborda |
+| Puente a heap overflow | El bug numérico habilita la corrupción de memoria |
+| Off-by-one | Error de uno en un límite; a menudo pisa metadatos |
+| UBSan | Sanitizer que detecta overflows de enteros en pruebas |
+| Aritmética segura | Comprobar límites antes de operar |
+| __builtin_mul_overflow | Multiplicación con detección de overflow |
 
 ## 🧰 Herramientas y preparación
 

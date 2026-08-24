@@ -37,6 +37,78 @@ Al finalizar, el alumno podrá:
 | 7 | Virtualización de código | El nivel más duro |
 | 8 | Contramedidas | Dump, parcheo, dinámico |
 
+## 🧠 Explicación en profundidad
+
+### La otra cara: dificultar deliberadamente el análisis
+
+Si la ingeniería inversa reconstruye el significado de un binario, la **ofuscación** y las técnicas
+**anti-reversing** existen para **impedirlo o encarecerlo**. Las usan tanto el software legítimo
+(protección de propiedad intelectual, DRM, antitrampas) como —sobre todo— el **malware** (Parte 6),
+que quiere resistir el análisis para sobrevivir más tiempo. Conocerlas es imprescindible por dos
+razones simétricas: para **reconocerlas y derrotarlas** al analizar código protegido, y para
+**entender el juego del gato y el ratón** que define el análisis de malware moderno. Ninguna técnica
+es infalible —todas se pueden vencer con tiempo y con análisis dinámico— pero elevan el coste, que es
+su objetivo.
+
+```mermaid
+flowchart TD
+  BIN["Binario protegido"] --> P["Packing / cifrado<br/>el codigo real esta comprimido/cifrado"]
+  BIN --> AD["Anti-debugging<br/>detecta ptrace y depuradores"]
+  BIN --> AV["Anti-VM / anti-sandbox<br/>no actua si detecta analisis"]
+  BIN --> CS["Cadenas cifradas<br/>se descifran solo en ejecucion"]
+  BIN --> CFF["Control-flow flattening<br/>aplana la estructura logica"]
+  BIN --> VM["Virtualizacion de codigo<br/>bytecode propio + interprete"]
+  P & AD & AV & CS & CFF & VM --> DYN(["Contramedida general:<br/>analisis dinamico en entorno aislado"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class P,AD,AV,CS,CFF,VM n
+  class BIN,DYN d
+```
+
+### Packing y cifrado: esconder el código hasta el último momento
+
+La técnica más común es el **packing**: el código real del programa se **comprime o cifra**, y el
+binario que se distribuye contiene solo un pequeño **desempaquetador** (*stub*) que, al ejecutarse,
+**descomprime/descifra el código real en memoria** y salta a él. El efecto sobre el análisis estático
+es demoledor: al abrir el binario en Ghidra solo se ve el stub, no la lógica real —que no existe en el
+fichero, solo aparece en memoria durante la ejecución—. Un **indicador** revelador es la **entropía**:
+el código cifrado o comprimido tiene entropía alta (parece aleatorio, como en la [Clase 064](../../parte-4-seguridad-de-aplicaciones-web/README.md)),
+así que una sección de entropía anormalmente alta delata packing. La **contramedida** es el análisis
+dinámico de la clase 134: dejar que el binario se desempaquete a sí mismo y **volcar la memoria** ya
+desempaquetada. Packers conocidos como UPX se deshacen con un comando; los personalizados requieren
+localizar el punto donde termina el desempaquetado (el *OEP*, original entry point) y volcar ahí.
+
+### Detectar al analista: anti-debugging y anti-VM
+
+Un segundo grupo de técnicas **detecta que está siendo analizado** y cambia de comportamiento —el
+malware, por ejemplo, no ejecuta su carga maliciosa si se sabe observado, para no revelarla—. El
+**anti-debugging** detecta la presencia de un depurador: en Linux, la técnica clásica es que el
+programa intente hacer **`ptrace`** sobre sí mismo (solo un proceso puede trazar a otro, así que si el
+propio programa consigue trazarse es que **no** hay un depurador enganchado; si falla, hay uno). El
+**anti-VM / anti-sandbox** busca señales de que se ejecuta en una máquina virtual o en un sandbox
+automático (nombres de dispositivos característicos de VMware/VirtualBox, poca RAM, ausencia de
+actividad de usuario, tiempo acelerado) y, si las encuentra, **se comporta de forma inocua** para
+engañar al análisis automatizado. Las contramedidas son parchear estas comprobaciones (con Frida o un
+depurador) o usar entornos de análisis endurecidos que oculten su naturaleza.
+
+### Ofuscar la lógica y las cadenas, y las contramedidas
+
+El último grupo ataca la **comprensibilidad** del código que sí se ve. Las **cadenas cifradas**
+—almacenar textos (URLs de C2, mensajes, claves) cifrados y descifrarlos solo en tiempo de ejecución—
+neutralizan el reconocimiento rápido con `strings`, y la contramedida es encontrar la rutina de
+descifrado y aplicarla (a mano, con scripting o dinámicamente). El **control-flow flattening**
+transforma la estructura lógica de una función —sus `if`/bucles anidados— en una gran máquina de
+estados con un dispatcher central, de modo que el CFG (clase 133) se vuelve un amasijo ilegible que
+oculta el flujo real; herramientas de desofuscación y el análisis dinámico ayudan a reconstruirlo. Y la
+más extrema, la **virtualización de código**, traduce las instrucciones a un **bytecode propio** que
+solo un intérprete embebido en el binario entiende: el analista ya no ve x86, sino una máquina virtual
+inventada que primero hay que reversar entera —es la protección más costosa de vencer, usada en
+DRM comercial y en malware avanzado—. La lección conjunta, y la que cierra el bloque de RE, es que la
+ofuscación **eleva el coste pero no lo hace infinito**: casi todo cede ante el análisis dinámico en un
+entorno aislado, porque **en algún momento el código tiene que ejecutarse de verdad**, y ahí se le
+puede observar. El anti-reversing y su derrota son un juego iterativo, y ganar la partida es cuestión
+de paciencia y de las herramientas adecuadas.
+
 ## 📖 Definiciones y características
 
 - **Packing:** comprime/cifra el binario y lo descomprime en memoria al ejecutar. *Clave:* el estático
@@ -51,6 +123,25 @@ Al finalizar, el alumno podrá:
   linealidad; se ataca con análisis simbólico/dinámico.
 - **Virtualización:** el código se traduce a un bytecode propio interpretado por una VM embebida.
   *Clave:* la defensa más costosa de revertir.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Ofuscación | Técnicas para dificultar el análisis del binario |
+| Anti-reversing | Medidas que impiden o encarecen la RE |
+| Packing | Comprimir/cifrar el código; un stub lo revela en memoria |
+| Stub / desempaquetador | Código que descomprime el binario real al ejecutarse |
+| Entropía | Aleatoriedad; alta indica cifrado o compresión |
+| OEP | Original entry point; donde termina el desempaquetado |
+| UPX | Packer común que se deshace con un comando |
+| Anti-debugging | Detecta la presencia de un depurador |
+| ptrace | Syscall usada para detectar depuradores en Linux |
+| Anti-VM / anti-sandbox | Detecta el entorno de análisis y se inhibe |
+| Cadenas cifradas | Textos descifrados solo en ejecución; evaden `strings` |
+| Control-flow flattening | Aplana la lógica en una máquina de estados |
+| Virtualización de código | Bytecode propio con intérprete embebido |
+| Contramedida dinámica | El código acaba ejecutándose y ahí se observa |
 
 ## 🧰 Herramientas y preparación
 

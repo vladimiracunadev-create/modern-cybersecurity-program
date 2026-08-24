@@ -38,6 +38,68 @@ Al finalizar, el alumno podrá:
 | 7 | DEP/ASLR en Windows | Requieren ROP/leaks |
 | 8 | vulnserver como práctica | Objetivo legal de laboratorio |
 
+## 🧠 Explicación en profundidad
+
+### La explotación en Windows tiene su propio mecanismo
+
+Aunque los fundamentos —controlar el flujo tras un overflow— son universales, Windows tiene una
+arquitectura de manejo de errores propia que abre una vía de explotación característica: el
+**Structured Exception Handling** (SEH). En Windows, cuando ocurre una **excepción** (un acceso a
+memoria inválido, una división por cero), el sistema no aborta de inmediato: recorre una **cadena de
+manejadores de excepciones** registrados, dándole a cada uno la oportunidad de tratar el error. Esa
+cadena vive **en la pila**, y ahí está la vulnerabilidad: un overflow que la alcance puede
+**secuestrar el manejador**, de modo que la próxima excepción salte a código del atacante.
+
+### La cadena SEH y su sobrescritura
+
+Cada registro de la cadena SEH tiene dos campos: un puntero al **siguiente registro** (`nSEH`) y un
+puntero al **manejador** de esta entrada (la función que se llamará si hay una excepción). El ataque
+clásico —el **SEH overwrite**— desborda un buffer en la pila hasta sobrescribir estos dos campos, y
+luego **provoca deliberadamente una excepción** (por ejemplo, siguiendo el overflow hasta corromper
+memoria y causar un fallo). Al ocurrir la excepción, Windows invoca el manejador... que ahora apunta
+a donde el atacante quiere. Es una alternativa al clásico overwrite de la dirección de retorno,
+especialmente útil cuando un stack canary protege el retorno pero no la cadena SEH.
+
+```mermaid
+flowchart TD
+  OV["Overflow en la pila<br/>alcanza la cadena SEH"] --> SOB["Sobrescribe nSEH y el puntero al Handler"]
+  SOB --> EXC["El atacante provoca una excepcion"]
+  EXC --> WIN["Windows invoca el Handler sobrescrito"]
+  WIN --> PPR["Handler -> gadget POP POP RET"]
+  PPR --> NSEH["Ejecuta en nSEH<br/>salto corto al shellcode"]
+  NSEH --> SHELL(["Codigo del atacante"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class OV,SOB,EXC,WIN,PPR,NSEH n
+  class SHELL x
+```
+
+### POP POP RET: el gadget que caracteriza la técnica
+
+Hay un giro elegante que hace única a la explotación SEH. Cuando Windows invoca el manejador de
+excepciones, la disposición de la pila en ese momento hace que el **puntero al propio registro SEH**
+(que contiene `nSEH`, controlado por el atacante) esté en una posición predecible. El truco es apuntar
+el manejador a un gadget **`POP POP RET`**: las dos instrucciones `pop` descartan dos valores de la
+pila y el `ret` **salta a `nSEH`** —el campo que el atacante también controla—. Como `nSEH` solo tiene
+4 bytes, se rellena con un **salto corto** (`jmp short`) que redirige a la zona más grande donde está
+el shellcode. Esta coreografía —Handler → `POP POP RET` → `nSEH` → salto corto → shellcode— es la
+firma de la explotación SEH, y **`mona.py`** (una extensión de Immunity Debugger/WinDbg) la
+automatiza: encuentra gadgets `POP POP RET` válidos, calcula offsets y genera el patrón, siendo la
+herramienta emblemática del *exploiting* en Windows.
+
+### Las mitigaciones de Windows y el contexto
+
+Windows respondió con defensas específicas. **SafeSEH** valida que el manejador apunte a una función
+registrada como manejador legítimo (impide saltar a un gadget arbitrario), y **SEHOP** comprueba la
+**integridad de la cadena** SEH en tiempo de ejecución (detecta que ha sido manipulada). Junto con el
+**DEP y el ASLR** de Windows —equivalentes a los de Linux de la clase 122—, hacen que el SEH overwrite
+clásico requiera bypasses adicionales en software moderno, igual que en Linux. El entorno de práctica
+canónico es **vulnserver**, un servidor deliberadamente vulnerable diseñado para aprender explotación
+en Windows, y la cadena de herramientas gira en torno a Immunity Debugger o WinDbg con `mona.py`. La
+lección de la clase es que los **principios** de la explotación son universales —control del flujo,
+bypass de mitigaciones, reutilización de código— pero los **mecanismos** son específicos de cada
+sistema operativo, y Windows, por su modelo de excepciones, tiene los suyos.
+
 ## 📖 Definiciones y características
 
 - **SEH (Structured Exception Handling):** mecanismo de Windows con una lista enlazada de manejadores
@@ -51,6 +113,25 @@ Al finalizar, el alumno podrá:
 - **SEHOP:** valida la integridad de la cadena SEH en runtime. *Clave:* dificulta la sobrescritura.
 - **mona.py:** plugin de Immunity/WinDbg para pattern, `!mona seh`, `!mona rop`. *Clave:* acelera todo
   el flujo.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| SEH | Structured Exception Handling de Windows |
+| Excepción | Error (acceso inválido, división por cero) que dispara el manejo |
+| Cadena SEH | Lista de manejadores registrados, en la pila |
+| nSEH | Puntero al siguiente registro de la cadena |
+| Handler | Puntero a la función manejadora de esta entrada |
+| SEH overwrite | Sobrescribir nSEH y Handler con un overflow |
+| Provocar excepción | Forzar el fallo para que se invoque el Handler |
+| POP POP RET | Gadget que salta de vuelta a nSEH controlado |
+| Salto corto (jmp short) | Redirige desde nSEH al shellcode |
+| mona.py | Extensión que automatiza la explotación en Windows |
+| Immunity / WinDbg | Depuradores usados en el exploiting de Windows |
+| SafeSEH | Valida que el manejador sea legítimo |
+| SEHOP | Comprueba la integridad de la cadena SEH |
+| vulnserver | Servidor vulnerable para practicar en Windows |
 
 ## 🧰 Herramientas y preparación
 

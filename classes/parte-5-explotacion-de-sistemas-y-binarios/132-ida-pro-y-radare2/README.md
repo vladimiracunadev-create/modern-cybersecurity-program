@@ -36,6 +36,72 @@ Al finalizar, el alumno podrá:
 | 7 | Anotar y renombrar | Documentar el análisis |
 | 8 | r2pipe / scripting | Automatización |
 
+## 🧠 Explicación en profundidad
+
+### El estándar comercial y la navaja de código abierto
+
+Ghidra no es la única herramienta de RE, y conocer el ecosistema completo hace al analista más
+versátil. **IDA Pro** es el desensamblador comercial que fue durante décadas el estándar de la
+industria: su decompilador **Hex-Rays** es referencia por su calidad, su análisis es muy maduro y su
+ecosistema de plugins es enorme. Su inconveniente es el **precio** (caro, aunque existe una versión
+gratuita limitada), razón por la que Ghidra ganó tanta tracción. **radare2** (y su sucesor rizin) es
+el extremo opuesto: una suite de RE **libre, ligera y basada en línea de comandos**, extraordinariamente
+potente pero con una **curva de aprendizaje pronunciada** por su modelo de comandos denso. Los tres
+—Ghidra, IDA, radare2— hacen esencialmente lo mismo (desensamblar, decompilar, navegar), y la elección
+depende del presupuesto, la preferencia y la tarea; un profesional se maneja al menos con dos.
+
+```mermaid
+flowchart TD
+  RE["Ingenieria inversa"] --> IDA["IDA Pro<br/>comercial, Hex-Rays, muy maduro"]
+  RE --> GH["Ghidra<br/>libre, decompilador solido - clase 131"]
+  RE --> R2["radare2 / rizin<br/>libre, CLI, ligero y potente"]
+  R2 --> CUTTER["Cutter<br/>GUI sobre rizin"]
+  IDA --> GRAPH["Vista de grafo<br/>bloques basicos como flujo"]
+  GH --> GRAPH
+  R2 --> GRAPH
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class IDA,GH,R2,CUTTER,GRAPH n
+  class RE d
+```
+
+### IDA y la vista de grafo: leer el flujo de control
+
+La aportación conceptual de IDA que conviene interiorizar es la **vista de grafo**: en lugar de
+mostrar el código como una lista lineal de instrucciones, lo presenta como un **diagrama de bloques
+básicos** conectados por flechas que representan los saltos —cada bloque es una secuencia sin saltos,
+y las flechas muestran las bifurcaciones (`if`/`else`) y los bucles—. Esta visualización del **flujo
+de control** hace evidente de un vistazo la estructura de una función: dónde están las decisiones, los
+bucles, los caminos de error. Todas las herramientas modernas (Ghidra, radare2) la ofrecen, pero fue
+IDA quien la popularizó, y es la forma natural de entender una función compleja. Su decompilador
+**Hex-Rays** complementa el grafo con el pseudo-C, igual que Ghidra.
+
+### radare2: el modelo de comandos y sus verbos
+
+**radare2** funciona con un lenguaje de **comandos cortos y componibles** que sorprende al principio
+pero es muy eficiente una vez asimilado. La secuencia canónica de arranque es **`aaa`** (analizar
+todo: funciones, referencias, cadenas), tras la cual **`afl`** lista las funciones encontradas,
+**`pdf`** (*print disassembly function*) desensambla la función actual, y **`s`** (*seek*) mueve el
+cursor a una dirección. El **modo visual** (`V`) y el **modo grafo** (`VV`) ofrecen navegación
+interactiva similar a la de IDA. La filosofía de r2 es que **todo es un comando** y los comandos se
+combinan, lo que lo hace idóneo para automatizar y para trabajar sobre servidores sin interfaz
+gráfica. Para quien prefiere una GUI, **Cutter** es una interfaz gráfica construida sobre rizin que
+ofrece la potencia de r2 con una experiencia visual más cercana a IDA/Ghidra.
+
+### Anotar, renombrar y automatizar con r2pipe
+
+Como en Ghidra, el trabajo en cualquiera de estas herramientas es **iterativo y anotado**: se
+renombran funciones y variables (en r2, comandos como `afn` para renombrar una función), se añaden
+comentarios (`CC`), se marcan estructuras, y cada anotación clarifica el análisis. La automatización
+llega con **r2pipe**, una API que permite **controlar radare2 desde un script** (Python, JavaScript y
+otros): se envían comandos de r2 y se recibe su salida como datos, lo que abre la puerta a análisis
+programáticos —extraer todas las cadenas cifradas y descifrarlas, buscar patrones en cientos de
+funciones, generar informes—. IDA tiene su equivalente (IDAPython) y Ghidra el suyo (GhidraScript). La
+lección de la clase es que **la RE profesional combina herramientas**: se puede triar con radare2 en
+la línea de comandos, decompilar en Ghidra para leer el pseudo-C, y usar Hex-Rays de IDA cuando su
+decompilación sea superior en un caso concreto; dominar el ecosistema, no una sola herramienta, es lo
+que distingue al analista experimentado.
+
 ## 📖 Definiciones y características
 
 - **IDA Pro:** desensamblador/decompilador comercial líder. *Clave:* Hex-Rays produce pseudo-C de alta
@@ -46,6 +112,25 @@ Al finalizar, el alumno podrá:
 - **Grafo de control de flujo (CFG):** representación visual de bloques y saltos. *Clave:* IDA y r2
   (`VV`) lo muestran para entender la lógica.
 - **r2pipe:** API para pilotar r2 desde Python. *Clave:* automatiza extracción y análisis en lote.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| IDA Pro | Desensamblador comercial estándar de la industria |
+| Hex-Rays | Decompilador de IDA, referencia de calidad |
+| radare2 / rizin | Suite de RE libre, ligera y de línea de comandos |
+| Cutter | GUI construida sobre rizin |
+| Vista de grafo | Código como bloques básicos conectados por saltos |
+| Bloque básico | Secuencia de instrucciones sin saltos |
+| Flujo de control | Estructura de decisiones y bucles de una función |
+| aaa | Comando de r2: analizar todo |
+| afl | Lista las funciones encontradas |
+| pdf | Desensambla la función actual |
+| s (seek) | Mueve el cursor a una dirección |
+| Modo visual / grafo | Navegación interactiva en r2 (`V` / `VV`) |
+| r2pipe | API para controlar r2 desde un script |
+| IDAPython | Scripting de IDA |
 
 ## 🧰 Herramientas y preparación
 

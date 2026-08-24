@@ -36,6 +36,78 @@ Al finalizar, el alumno podrá:
 | 7 | Prólogo/epílogo de función | Punto donde se guarda y restaura el marco |
 | 8 | Del C al ASM (gcc -S) | Puente entre lo que escribes y lo que corre |
 
+## 🧠 Explicación en profundidad
+
+### Para explotar un binario hay que pensar como la CPU
+
+La explotación de binarios opera un nivel por debajo del código fuente: manipula
+directamente los **registros**, la **memoria** y el **flujo de ejecución** de la máquina. Por eso
+esta parte empieza donde terminó la [Clase 024](../../parte-0-fundamentos-y-prerrequisitos/024-arquitectura-de-computadores-cpu-registros-y-memoria/README.md) —CPU, registros y pila— y lo
+profundiza hasta el punto en que se puede **leer ensamblador con fluidez**. No se trata de
+convertirse en programador de ASM, sino de entender qué hace cada instrucción, porque un exploit
+consiste, en el fondo, en **conseguir que la CPU ejecute instrucciones que el programador no
+puso ahí**.
+
+Un procesador x86-64 tiene tres **modos de operación** que son herencia histórica: *real* (16
+bits, el de los años ochenta), *protegido* (32 bits, con memoria virtual y protección) y *largo*
+(64 bits, el actual). Casi todo el trabajo moderno ocurre en modo largo, pero conocer que existen
+explica muchas rarezas de compatibilidad.
+
+### Los registros: el escritorio de trabajo de la CPU
+
+Los **registros de propósito general** (GPR) son las pocas celdas de memoria ultrarrápida donde la
+CPU hace su trabajo. En x64 hay dieciséis de 64 bits: `RAX`, `RBX`, `RCX`, `RDX`, `RSI`, `RDI`,
+`RBP`, `RSP` y `R8`–`R15`. Cada uno es accesible también en tamaños menores: `RAX` (64), `EAX`
+(32), `AX` (16), `AL` (8), lo que aparece constantemente al leer ASM. Dos registros son
+**especiales para la explotación** y conviene fijarlos ya: **`RSP`** apunta a la cima de la pila y
+**`RIP`** (el *instruction pointer*) contiene la dirección de la **próxima instrucción a
+ejecutar**. Controlar `RIP` **es** controlar la ejecución, y por eso el objetivo de la mayoría de
+los exploits de esta parte se resume en una frase: **sobrescribir el valor que acabará en RIP**.
+El registro `RFLAGS` guarda los indicadores (cero, acarreo, signo) que gobiernan los saltos
+condicionales.
+
+```mermaid
+flowchart LR
+  subgraph CPU
+    GPR["Registros generales<br/>RAX..R15 (y EAX, AX, AL)"]
+    RIP["RIP - proxima instruccion<br/>controlarlo = controlar la ejecucion"]
+    RSP["RSP - cima de la pila"]
+    FLAGS["RFLAGS - cero, acarreo, signo"]
+  end
+  MEM["Memoria<br/>little-endian: byte bajo primero"] <--> CPU
+  CPU --> EJ["Ejecuta la instruccion en RIP<br/>y avanza"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class GPR,RSP,FLAGS,MEM,EJ n
+  class RIP d
+```
+
+### Endianness y sintaxis: dos motivos de confusión constante
+
+Dos detalles técnicos causan la mitad de los errores del principiante. El primero es la
+**endianness**: x86 es **little-endian**, es decir, almacena el byte **menos significativo
+primero**. La dirección `0x00401234` se guarda en memoria como los bytes `34 12 40 00`. Esto
+importa muchísimo al construir exploits, porque al escribir una dirección en la pila hay que
+ponerla en ese orden invertido —de ahí que `pwntools` tenga `p64()`, que empaqueta un número en
+sus 8 bytes little-endian—. El segundo es que hay **dos sintaxis de ensamblador**: **Intel**
+(`mov rax, 5`, destino primero, la que usan Windows, IDA, Ghidra) y **AT&T** (`mov $5, %rax`,
+origen primero, con `%` y `$`, la de gas y el GDB por defecto). Son el mismo código escrito de
+dos formas; saber traducir entre ambas evita confusiones al saltar de herramienta a herramienta.
+
+### Las instrucciones que hay que reconocer de un vistazo
+
+No hace falta memorizar el set completo, pero sí reconocer un puñado. **`mov`** copia datos;
+**`lea`** (*load effective address*) calcula una dirección sin acceder a memoria —útil para
+aritmética de punteros—; **`add`/`sub`** operan; **`cmp`** compara (restando sin guardar) y ajusta
+los flags; **`jmp`** salta incondicionalmente y **`je`/`jne`/`jg`...** condicionalmente según los
+flags. Y las tres que gobiernan las funciones, centrales en toda la parte: **`call`** apila la
+dirección de retorno y salta a la función; **`ret`** desapila esa dirección a `RIP` y vuelve; y el
+par **`push`/`pop`** que mueve datos a y desde la pila. El hábito más formativo para leer ASM es
+compilar C con **`gcc -S`** y comparar el código fuente con el ensamblador generado: ver cómo un
+`if`, un bucle o una llamada a función se traducen a instrucciones es lo que convierte el
+ensamblador de un jeroglífico en un idioma legible, y ese es el prerrequisito de todo lo que
+sigue.
+
 ## 📖 Definiciones y características
 
 - **Registro de propósito general (GPR):** almacenamiento rapidísimo dentro de la CPU. En x64 hay
@@ -51,6 +123,26 @@ Al finalizar, el alumno podrá:
   operandos. *Clave:* las instrucciones x86 tienen longitud variable (1 a 15 bytes).
 - **Sintaxis AT&T vs Intel:** AT&T usa `mov $0x1, %eax` (origen→destino, prefijos `%`/`$`); Intel usa
   `mov eax, 1` (destino←origen). *Clave:* GDB por defecto usa AT&T; se puede cambiar a Intel.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Registro (GPR) | Celda de memoria ultrarrápida de la CPU (RAX…R15) |
+| RAX / EAX / AX / AL | El mismo registro en 64, 32, 16 y 8 bits |
+| RIP | Puntero de instrucción; controlarlo controla la ejecución |
+| RSP | Puntero a la cima de la pila |
+| RFLAGS | Indicadores (cero, acarreo, signo) que rigen los saltos |
+| Modo real / protegido / largo | 16, 32 y 64 bits; modo largo es el actual |
+| Endianness | Orden de los bytes; x86 es little-endian |
+| Little-endian | El byte menos significativo se almacena primero |
+| p64 / p32 | Empaquetan un número en bytes little-endian (pwntools) |
+| Sintaxis Intel | `mov rax, 5`; destino primero |
+| Sintaxis AT&T | `mov $5, %rax`; origen primero, con `%` y `$` |
+| mov / lea | Copiar datos / calcular una dirección sin leer memoria |
+| cmp / jmp | Comparar ajustando flags / saltar |
+| call / ret | Llamar (apila retorno) / volver (desapila a RIP) |
+| gcc -S | Genera el ensamblador de un fuente C, para aprender a leerlo |
 
 ## 🧰 Herramientas y preparación
 

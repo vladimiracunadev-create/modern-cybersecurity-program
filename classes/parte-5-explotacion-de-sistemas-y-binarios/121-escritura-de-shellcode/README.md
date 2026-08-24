@@ -38,6 +38,70 @@ Al finalizar, el alumno podrá:
 | 7 | shellcraft / msfvenom | Alternativas listas para usar |
 | 8 | execstack y su papel | El shellcode necesita memoria ejecutable |
 
+## 🧠 Explicación en profundidad
+
+### El código que quieres que la CPU ejecute cuando controlas RIP
+
+Una vez que se controla `RIP`, hay que decidir **qué ejecutar**. El **shellcode** es la respuesta
+clásica: una secuencia de instrucciones en código máquina, normalmente diseñada para **lanzar una
+shell** (`/bin/sh`), que se inyecta en la memoria del proceso y a la que se salta. Escribir
+shellcode obliga a bajar al nivel más fundamental —hablar directamente con el **kernel** mediante
+**llamadas al sistema** ([Clase 023](../../parte-0-fundamentos-y-prerrequisitos/023-sistemas-operativos-procesos-memoria-y-syscalls/README.md))—, sin la comodidad de la biblioteca estándar,
+porque en el contexto de un exploit no hay un `libc` amistoso al que llamar de forma normal.
+
+### La syscall execve: cómo se pide una shell al kernel
+
+Lanzar una shell se reduce a una llamada al sistema: **`execve("/bin/sh", NULL, NULL)`**, que
+reemplaza el proceso actual por `/bin/sh`. En Linux x64, invocar una syscall a mano sigue un
+protocolo estricto que hay que conocer: se pone el **número de la syscall en `RAX`** (`execve` es la
+59), los **argumentos en `RDI`, `RSI`, `RDX`** (la convención de la [Clase 117](117-el-stack-los-registros-y-las-convenciones-de-llamada/README.md), pero para
+syscalls), y se ejecuta la instrucción **`syscall`**. Así, un shellcode de `execve` consiste en:
+colocar la dirección de la cadena `"/bin/sh"` en `RDI`, poner a cero `RSI` y `RDX`, cargar 59 en
+`RAX` y ejecutar `syscall`. Entender este esqueleto convierte el shellcode de una cadena mágica de
+bytes copiada de Internet en algo que se comprende y se puede adaptar.
+
+```mermaid
+flowchart TD
+  ASM["Ensamblador del shellcode<br/>execve('/bin/sh', 0, 0)"] --> REG["RAX=59, RDI=&'/bin/sh', RSI=0, RDX=0"]
+  REG --> SYS["Instruccion syscall<br/>-> el kernel lanza /bin/sh"]
+  ASM --> OP["Ensamblar y extraer opcodes<br/>los bytes en crudo"]
+  OP --> NULL{"Contiene bytes nulos 0x00?"}
+  NULL -->|"si"| REW["Reescribir sin nulos<br/>xor rax,rax en vez de mov rax,0"]
+  NULL -->|"no"| USE["Inyectar en el exploit"]
+  REW --> USE
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class ASM,REG,OP,REW,USE n
+  class SYS,NULL d
+```
+
+### El enemigo del shellcode: los bytes nulos
+
+El problema técnico que domina la escritura de shellcode es evitar **bytes prohibidos**, y el más
+común es el **byte nulo (`0x00`)**. La razón es la [Clase 119](119-buffer-overflow-en-stack-teoria/README.md): la mayoría de los overflows se
+producen a través de funciones de cadena (`strcpy`, `gets`) que **se detienen en el primer byte
+nulo**, así que un shellcode que contenga un `00` se copiará truncado y no funcionará. Por eso el
+shellcode se escribe con trucos que evitan ceros: para poner a cero un registro se usa `xor rax,
+rax` (cuyos opcodes no tienen nulos) en lugar de `mov rax, 0` (que sí los tiene); las constantes
+pequeñas se manipulan para no generar bytes altos nulos; la cadena `"/bin/sh"` se construye en la
+pila con instrucciones en vez de referenciarla directamente. Este arte —escribir código funcional
+esquivando ciertos bytes— es lo que distingue un shellcode de laboratorio de uno que sobrevive a las
+restricciones de un exploit real.
+
+### De escribirlo a probarlo, y las herramientas que lo generan
+
+El flujo práctico tiene tres pasos. Se **escribe el ensamblador**, se **ensambla y se extraen los
+opcodes** (los bytes en crudo que se inyectarán), y se **prueba** con un pequeño cargador —un
+programa que copia el shellcode a una región de memoria y salta a él— para confirmar que abre la
+shell. Aquí importa **`execstack`**: por defecto la pila es no ejecutable (DEP/NX, [Clase 122](122-protecciones-modernas-aslr-dep-nx-stack-canaries-y-pie/README.md)),
+así que para probar shellcode inyectado en la pila hay que compilar el cargador con la pila
+ejecutable, un recordatorio de por qué el shellcode-en-la-pila clásico ya no funciona en sistemas
+modernos. Para no escribir todo a mano existen generadores: **`shellcraft`** de pwntools produce
+shellcode para arquitecturas y objetivos comunes con una línea, y **`msfvenom`** ([Clase 075](../../parte-3-hacking-etico-y-pentesting-metodologia/075-msfvenom-generacion-de-payloads/README.md)) genera
+payloads con opciones de codificación. Pero entender cómo se construye a mano es lo que permite
+adaptarlo cuando el generador no encaja con las restricciones del reto —badchars concretos, tamaño
+limitado, arquitectura rara—, que es justo cuando el shellcode importa.
+
 ## 📖 Definiciones y características
 
 - **Shellcode:** secuencia de opcodes autocontenida que realiza una acción al ejecutarse. *Clave:*
@@ -51,6 +115,26 @@ Al finalizar, el alumno podrá:
 - **execstack / NX:** para ejecutar shellcode en el stack, la página debe ser ejecutable. *Clave:* hoy
   NX lo impide; por eso primero se practica con `-z execstack`.
 - **shellcraft:** módulo de pwntools que genera shellcode parametrizable. *Clave:* `pwn.asm(pwn.shellcraft.sh())`.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Shellcode | Código máquina que se inyecta y ejecuta, típico para lanzar shell |
+| Syscall | Llamada al sistema; la vía directa al kernel |
+| execve | Syscall que reemplaza el proceso por otro (`/bin/sh`) |
+| Número de syscall | Va en RAX (execve = 59 en x64) |
+| Registros de syscall | RAX (número), RDI/RSI/RDX (argumentos) |
+| Opcodes | Bytes en crudo de las instrucciones |
+| Byte nulo (0x00) | Bad character que trunca cadenas; hay que evitarlo |
+| xor rax, rax | Poner a cero sin generar bytes nulos |
+| Cadena en la pila | Construir "/bin/sh" con instrucciones para evitar nulos |
+| Cargador de pruebas | Programa que ejecuta el shellcode para validarlo |
+| execstack | Marca la pila como ejecutable para probar shellcode |
+| DEP/NX | Por defecto impide ejecutar la pila |
+| shellcraft | Generador de shellcode de pwntools |
+| msfvenom | Generador de payloads de Metasploit |
+| Badchars | Bytes prohibidos que el shellcode debe esquivar |
 
 ## 🧰 Herramientas y preparación
 

@@ -36,6 +36,76 @@ Al finalizar, el alumno podrá:
 | 7 | Flags de GCC | Cómo se activa cada una |
 | 8 | Debilidades residuales | Por qué siguen cayendo binarios |
 
+## 🧠 Explicación en profundidad
+
+### Por qué el exploit clásico ya no funciona: cuatro capas de defensa
+
+El buffer overflow "de manual" —desbordar, inyectar shellcode en la pila y saltar a él— dejó de
+funcionar hace dos décadas gracias a un conjunto de **mitigaciones** que hoy vienen activas por
+defecto. Entenderlas es imprescindible por dos razones: para saber **qué impide** cada una (y por
+tanto qué técnica de bypass hace falta) y para leer la postura de seguridad de un binario. Cada
+defensa ataca un eslabón distinto de la cadena de explotación, y por eso la explotación moderna
+consiste en **combinar bypasses**, no en un solo truco.
+
+```mermaid
+flowchart TD
+  OV["Buffer overflow"] --> C1{"Stack canary?"}
+  C1 -->|"detecta la sobrescritura"| ABORT["El programa aborta antes del ret<br/>-> hace falta leak del canario"]
+  C1 -->|"pasado"| C2{"DEP / NX?"}
+  C2 -->|"la pila no es ejecutable"| NOSHELL["No se puede ejecutar shellcode<br/>-> reutilizar codigo: ret2libc / ROP"]
+  C2 -->|"sorteado con ROP"| C3{"ASLR / PIE?"}
+  C3 -->|"direcciones aleatorias"| LEAK["No sabes a donde saltar<br/>-> hace falta un info leak"]
+  C3 -->|"leak obtenido"| WIN(["Exploit"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class OV,ABORT,NOSHELL,LEAK n
+  class C1,C2,C3 d
+  class WIN x
+```
+
+### DEP/NX y el stack canary: no ejecutar y detectar
+
+**DEP/NX** (*Data Execution Prevention* / *No-eXecute*) marca las regiones de datos —incluida la
+pila y el heap— como **no ejecutables**. Es una protección por hardware (el bit NX de la MMU) que
+mata de raíz el shellcode inyectado en la pila: aunque el atacante escriba su código ahí y salte a
+él, la CPU se niega a ejecutarlo. Su consecuencia directa es el giro de toda la explotación moderna
+hacia la **reutilización de código** —ret2libc (123) y ROP (124) ejecutan código que **ya es
+ejecutable** en lugar de inyectar el suyo—.
+
+El **stack canary** (o *stack cookie*) ataca el overflow en su punto: el compilador coloca un
+**valor aleatorio secreto** entre las variables locales y la dirección de retorno, y el epílogo de
+la función **comprueba que ese valor no ha cambiado** antes de ejecutar `ret`. Como un overflow que
+alcanza la dirección de retorno tiene que atravesar el canario, lo sobrescribe, la comprobación
+falla y el programa **aborta** (`stack smashing detected`) antes de que el atacante tome el control.
+Su debilidad: el canario es constante durante la ejecución del proceso, así que si el atacante
+consigue **leerlo** (con un *info leak* o un format string, clase 125) puede **reescribirlo con su
+propio valor** y el overflow pasa desapercibido.
+
+### ASLR y PIE: aleatorizar dónde está todo
+
+**ASLR** (*Address Space Layout Randomization*) aleatoriza en cada ejecución las **direcciones base**
+de la pila, el heap y las bibliotecas compartidas. Su efecto es que el atacante **no sabe a qué
+dirección saltar**: la dirección de `system` en libc, o de su shellcode, cambia cada vez. **PIE**
+(*Position-Independent Executable*) extiende esa aleatorización al **propio binario** —sin PIE, el
+código del programa está en una dirección fija y predecible; con PIE, también se mueve—. La
+consecuencia común de ambas es que la explotación moderna casi siempre necesita un **info leak**:
+una vulnerabilidad que **revele una dirección** en tiempo de ejecución, a partir de la cual se
+calculan las demás (porque las distancias *dentro* de una región no cambian, solo su base). Sin
+leak, no hay a dónde saltar de forma fiable.
+
+### checksec, RELRO y la lectura de la postura del binario
+
+Antes de atacar hay que saber **qué defensas hay activas**, y la herramienta es **`checksec`** (de
+pwntools o pwndbg), que reporta de un vistazo si el binario tiene canary, NX, PIE y **RELRO**. El
+**RELRO** (*RELocation Read-Only*) protege la **GOT** (*Global Offset Table*, la tabla de punteros a
+funciones de libc): *partial RELRO* deja la GOT escribible (vector de la clase 125), mientras que
+*full RELRO* la hace de solo lectura, cerrando la sobrescritura de la GOT. Leer la salida de
+`checksec` es el primer paso de cualquier reto de pwn, porque **dicta la estrategia**: sin canary y
+sin NX, sirve el shellcode clásico; con todo activado, hará falta un leak, ROP y quizá un ataque a
+la GOT o al heap. La lección de la clase es que la explotación moderna no derrota una defensa, sino
+**una pila de defensas encadenadas**, y cada una de las clases siguientes enseña a sortear una.
+
 ## 📖 Definiciones y características
 
 - **ASLR:** aleatoriza las direcciones base de librerías, stack y heap en cada ejecución. *Clave:* una
@@ -50,6 +120,25 @@ Al finalizar, el alumno podrá:
   Full cambia la superficie de ataque.
 - **checksec:** utilidad (pwntools/pwndbg) que reporta NX, canary, PIE, RELRO. *Clave:* primer paso de
   cualquier análisis de exploit.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Mitigación | Defensa del compilador o del SO contra la explotación |
+| DEP / NX | Marca los datos como no ejecutables (bit NX) |
+| Reutilización de código | ret2libc/ROP, respuesta a NX |
+| Stack canary | Valor secreto que detecta la sobrescritura de la pila |
+| Stack smashing detected | Mensaje al fallar la comprobación del canario |
+| Leak del canario | Leer el canario para reescribirlo y evadirlo |
+| ASLR | Aleatoriza las bases de pila, heap y librerías |
+| PIE | Aleatoriza también la dirección del propio binario |
+| Info leak | Vulnerabilidad que revela una dirección en ejecución |
+| Base de una región | Dirección de inicio; las distancias internas son fijas |
+| checksec | Herramienta que reporta las mitigaciones activas |
+| RELRO | Protege la GOT (partial: escribible; full: solo lectura) |
+| GOT | Tabla de punteros a funciones de libc |
+| Bypass encadenado | Combinar leak + ROP + ataque a GOT/heap |
 
 ## 🧰 Herramientas y preparación
 

@@ -37,6 +37,68 @@ Al finalizar, el alumno podrá:
 | 7 | Stack pivoting | Cuando el espacio es limitado |
 | 8 | Depurar cadenas | Ver cada gadget ejecutarse |
 
+## 🧠 Explicación en profundidad
+
+### Programar con trozos del programa que ya existe
+
+El **Return-Oriented Programming** es la generalización de ret2libc y la técnica que define la
+explotación moderna. La idea es radical: en lugar de saltar a **una** función existente, el atacante
+encadena decenas de **gadgets** —fragmentos cortos de código que ya están en el binario y terminan
+en `ret`— para construir **cualquier comportamiento que quiera**, instrucción a instrucción, sin
+inyectar un solo byte de código nuevo. Como el código reutilizado ya es ejecutable, ROP **derrota
+por completo a DEP/NX**: no hay nada que ejecutar en una región no ejecutable, solo saltos a código
+que siempre lo fue.
+
+### Por qué ret es el pegamento, y por qué basta con eso
+
+El mecanismo se apoya en una observación elegante. Un **gadget** es una secuencia como `pop rdi;
+ret` o `mov [rax], rbx; ret`: hace algo pequeño y **termina en `ret`**. La clave es que `ret`
+**desapila la siguiente dirección de la pila a `RIP`**, así que si el atacante llena la pila con una
+**lista de direcciones de gadgets**, cada `ret` salta al siguiente, encadenándolos como las cuentas
+de un collar. La pila deja de contener datos y pasa a ser un **programa**: una secuencia de "haz
+esto, luego esto". Se ha demostrado que, en un binario suficientemente grande, el conjunto de
+gadgets disponibles es **Turing-completo** —se puede computar cualquier cosa—, aunque en la práctica
+el objetivo suele ser modesto: preparar los registros para una syscall o para `system`.
+
+```mermaid
+flowchart TD
+  STACK["La pila = lista de direcciones de gadgets"] --> G1["pop rdi; ret<br/>carga RDI con el valor siguiente"]
+  G1 -->|"ret salta al siguiente"| G2["pop rsi; ret<br/>carga RSI"]
+  G2 -->|"ret"| G3["pop rax; ret<br/>numero de syscall"]
+  G3 -->|"ret"| G4["syscall<br/>ejecuta execve('/bin/sh',0,0)"]
+  G4 --> SHELL(["Shell"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class STACK,G1,G2,G3,G4 n
+  class SHELL d
+```
+
+### ret2syscall: montar una llamada al sistema con gadgets
+
+El objetivo más común de una cadena ROP es **ret2syscall**: preparar todos los registros para
+invocar `execve("/bin/sh", NULL, NULL)` directamente al kernel, sin depender de `system`. Requiere
+cargar `RAX=59`, `RDI=&"/bin/sh"`, `RSI=0`, `RDX=0` y luego ejecutar un gadget `syscall`. Cada carga
+es un gadget `pop`: `pop rax; ret` con el valor 59 en la pila justo detrás, `pop rdi; ret` con la
+dirección de la cadena, y así. La cadena completa es una secuencia cuidadosamente ordenada de
+direcciones de gadgets y valores intercalados, y construirla a mano sería tedioso y frágil —de ahí
+que se automatice—.
+
+### Encontrar gadgets, construir cadenas y el stack pivot
+
+El flujo práctico tiene herramientas dedicadas. Para **buscar gadgets** se usa **ROPgadget** o
+**ropper**, que escanean el binario y listan todas las secuencias útiles que terminan en `ret`. Para
+**construir la cadena**, el módulo **`ROP`** de pwntools es casi mágico: `rop.call('execve', [...])`
+o `rop.rdi = valor` localizan los gadgets necesarios y ensamblan la cadena automáticamente,
+resolviendo el orden. Un concepto avanzado que conviene conocer es el **stack pivot**: cuando el
+espacio del overflow es demasiado pequeño para una cadena ROP larga, se usa un gadget que **cambia
+`RSP`** (como `xchg rsp, rax` o `leave; ret`) para "mover la pila" a una región más grande que el
+atacante controla —un buffer en el heap, por ejemplo—, donde ha colocado la cadena completa.
+**Depurar** cadenas ROP es su propio arte: se pone un breakpoint en el primer gadget y se avanza con
+`stepi` observando cómo cada `ret` salta al siguiente y cómo se van llenando los registros, lo que
+convierte una cadena que "no funciona" en un problema localizable. ROP es la técnica más importante
+de la explotación moderna, y todo lo que viene después —format string para el leak, heap para el
+control, kernel— acaba apoyándose en ella.
+
 ## 📖 Definiciones y características
 
 - **Gadget:** secuencia corta de instrucciones que finaliza en `ret` (o `jmp`/`call` controlado).
@@ -51,6 +113,25 @@ Al finalizar, el alumno podrá:
   por la instrucción deseada.
 - **pwntools ROP():** constructor que resuelve gadgets y ensambla la cadena. *Clave:* `rop.execve(...)`,
   `rop.chain()`.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| ROP | Encadenar gadgets existentes para construir comportamiento |
+| Gadget | Secuencia corta que termina en `ret` |
+| ret como pegamento | Cada `ret` salta al siguiente gadget de la pila |
+| Pila como programa | La pila contiene la lista de direcciones de gadgets |
+| Turing-completitud | Con suficientes gadgets se computa cualquier cosa |
+| Derrota a NX | Reutiliza código ya ejecutable; no inyecta nada |
+| ret2syscall | Cadena que prepara y ejecuta una syscall (execve) |
+| pop rax; ret | Gadget para cargar el número de syscall |
+| ROPgadget / ropper | Herramientas que buscan gadgets en el binario |
+| ROP() de pwntools | Construye cadenas localizando gadgets automáticamente |
+| Stack pivot | Cambiar RSP a una región mayor para cadenas largas |
+| leave; ret | Gadget típico de pivote de pila |
+| Depurar cadenas ROP | Avanzar con stepi viendo cada salto y registro |
+| Cadena ROP | Secuencia ordenada de gadgets y valores en la pila |
 
 ## 🧰 Herramientas y preparación
 

@@ -46,6 +46,7 @@ PARTES_ESTANDAR_PROFUNDO = (
     "parte-2-criptografia-aplicada",
     "parte-3-hacking-etico-y-pentesting-metodologia",
     "parte-4-seguridad-de-aplicaciones-web",
+    "parte-5-explotacion-de-sistemas-y-binarios",
 )
 
 
