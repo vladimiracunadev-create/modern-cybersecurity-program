@@ -31,6 +31,75 @@ Al finalizar, el alumno podrá:
 | 6 | Firma con PSS | Firma segura (se amplía en clase 054) |
 | 7 | Cifrado híbrido | RSA envuelve una clave AES |
 
+## 🧠 Explicación en profundidad
+
+### El problema que la clave pública resuelve
+
+Toda la criptografía simétrica arrastra un problema logístico insalvable: para hablar en
+secreto hay que compartir antes una clave, y compartirla exige un canal seguro que es
+justo lo que no se tiene. Peor aún, con *n* participantes hacen falta *n(n−1)/2* claves
+distintas. La criptografía de clave pública (Diffie y Hellman, 1976; RSA, 1977) rompe ese
+nudo con una idea contraintuitiva: **dos claves relacionadas matemáticamente, una
+publicable y otra secreta**, de modo que lo que cifra una solo lo descifra la otra. Ya no
+hay que acordar nada en privado; basta con publicar la clave pública.
+
+### Por qué RSA funciona, en cuatro pasos
+
+La construcción se apoya en una **función unidireccional con trampilla**: multiplicar dos
+primos grandes es trivial, factorizar su producto es inviable, pero quien conoce los
+factores puede invertir la operación. En concreto: se eligen dos primos grandes `p` y `q`
+y se calcula `n = p·q`; se calcula la función de Euler `φ(n) = (p−1)(q−1)`; se elige un
+exponente público `e` coprimo con `φ(n)` —casi siempre 65537—; y se obtiene `d`, el
+inverso de `e` módulo `φ(n)`. La clave pública es `(n, e)` y la privada es `(n, d)`.
+Cifrar es `c = mᵉ mod n` y descifrar es `m = cᵈ mod n`.
+
+La seguridad descansa por completo en que **factorizar `n` sea inviable**: quien obtenga
+`p` y `q` calcula `φ(n)` y de ahí `d` de inmediato. De ahí que los tamaños hayan tenido
+que crecer —1024 bits está obsoleto, 2048 es el mínimo actual y 3072 o 4096 lo
+recomendable a largo plazo— y de ahí también que RSA sea el objetivo directo del
+algoritmo de Shor en la clase 062.
+
+### RSA "de libro de texto" es inseguro, y hay que saber por qué
+
+Aplicar la fórmula tal cual —el llamado **textbook RSA**— falla por dos razones
+independientes. Es **determinista**: el mismo mensaje produce siempre el mismo cifrado,
+así que un atacante que sepa que el mensaje es "sí" o "no" solo tiene que cifrar ambos y
+comparar. Y es **maleable**: por la aritmética modular, multiplicar el cifrado por `rᵉ`
+produce un cifrado válido del mensaje multiplicado por `r`, lo que permite manipular el
+resultado sin conocer la clave. Es la misma lección que ECB y que Vigenère: **el
+determinismo filtra información**.
+
+La solución es el **relleno probabilístico**. **OAEP** añade aleatoriedad estructurada
+antes de cifrar, de modo que el mismo mensaje da cifrados distintos cada vez y la
+maleabilidad desaparece. Para firmar, el relleno correcto es **PSS** (clase 054); el
+antiguo PKCS#1 v1.5 se sigue encontrando por compatibilidad, pero arrastra el ataque de
+Bleichenbacher, otro oráculo de la familia de la clase 060.
+
+### En la práctica, RSA casi nunca cifra tus datos
+
+RSA es lento y solo puede cifrar mensajes más cortos que su módulo, así que **no se usa
+para cifrar contenido**. Se usa en un esquema **híbrido**: se genera una clave AES
+aleatoria, se cifra el contenido con AES, y se cifra únicamente esa clave AES con RSA.
+Lo asimétrico transporta la clave; lo simétrico hace el trabajo pesado. Ese patrón,
+esbozado en la clase 046, es el que emplean TLS, PGP, S/MIME y prácticamente todo lo
+demás.
+
+```mermaid
+flowchart TD
+  D["Datos - pueden ser gigabytes"] --> AES["Cifrar con AES-GCM<br/>clave de sesion aleatoria"]
+  KS["Clave de sesion AES<br/>generada al azar - clase 058"] --> AES
+  KS --> RSA["Cifrar SOLO la clave con RSA-OAEP<br/>usando la clave publica del destinatario"]
+  AES --> C1["Datos cifrados"]
+  RSA --> C2["Clave de sesion cifrada"]
+  C1 --> ENV["Se envian juntos"]
+  C2 --> ENV
+  ENV --> DEC["El destinatario descifra la clave con su privada<br/>y con ella los datos"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class D,KS,C1,C2,DEC n
+  class AES,RSA,ENV d
+```
+
 ## 📖 Definiciones y características
 
 - **Clave pública/privada**: par matemáticamente relacionado; lo que cifra una descifra la otra. Característica: elimina el problema del canal secreto previo.
@@ -40,6 +109,25 @@ Al finalizar, el alumno podrá:
 - **OAEP (Optimal Asymmetric Encryption Padding)**: relleno aleatorizado que hace el cifrado no determinista y resistente. Estándar para cifrar con RSA.
 - **PSS (Probabilistic Signature Scheme)**: esquema de padding para firmas RSA, con prueba de seguridad sólida.
 - **Cifrado híbrido**: RSA cifra una clave simétrica aleatoria y AES cifra los datos; combina lo mejor de ambos.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Clave pública / privada | Par relacionado: una se publica, la otra se guarda |
+| Función unidireccional con trampilla | Fácil de calcular, difícil de invertir salvo con un secreto |
+| `n` (módulo) | Producto de dos primos grandes; parte de ambas claves |
+| `e` (exponente público) | Coprimo con φ(n); habitualmente 65537 |
+| `d` (exponente privado) | Inverso de `e` módulo φ(n) |
+| φ(n) | Función de Euler; `(p−1)(q−1)` para RSA |
+| Problema de factorización | Base de la seguridad de RSA |
+| Textbook RSA | Aplicar la fórmula sin relleno; determinista y maleable |
+| Maleabilidad | Poder alterar el mensaje manipulando el cifrado |
+| OAEP | Relleno probabilístico para **cifrar** con RSA |
+| PSS | Relleno probabilístico para **firmar** con RSA |
+| PKCS#1 v1.5 | Relleno antiguo; vulnerable al ataque de Bleichenbacher |
+| Cifrado híbrido | RSA transporta una clave AES que cifra los datos |
+| Tamaño de clave | 2048 bits mínimo actual; 3072–4096 recomendable |
 
 ## 🧰 Herramientas y preparación
 

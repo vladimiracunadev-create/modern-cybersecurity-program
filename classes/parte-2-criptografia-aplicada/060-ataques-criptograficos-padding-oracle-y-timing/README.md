@@ -33,6 +33,85 @@ Al finalizar, el alumno podrá:
 | 6 | AEAD como defensa | Elimina el oráculo |
 | 7 | Casos reales (POODLE, Lucky13) | Impacto histórico |
 
+## 🧠 Explicación en profundidad
+
+### Las brechas reales no rompen la matemática, rompen la implementación
+
+Nadie ha roto AES. Sin embargo, se descifran mensajes protegidos con AES continuamente, y
+la razón es que un sistema criptográfico no es solo un algoritmo: es también el código que
+lo ejecuta, los mensajes de error que devuelve y el tiempo que tarda en devolverlos. Un
+**canal lateral** es cualquier información que se filtra por esos aspectos no previstos en
+el modelo matemático —tiempo, consumo eléctrico, comportamiento de la caché, radiación
+electromagnética, o simplemente un mensaje de error distinto—. Esta clase enseña a verlos,
+y es la más importante de la parte para escribir código real.
+
+### El padding oracle, paso a paso
+
+La receta necesita dos ingredientes que estuvieron en todas partes durante veinte años:
+**CBC con relleno PKCS#7** y **ningún control de integridad**. El descifrado en CBC hace
+XOR del bloque descifrado con el bloque cifrado anterior; y como el atacante **controla ese
+bloque anterior**, controla directamente el resultado del XOR. Si además el sistema le dice
+—con un error distinto, un código HTTP distinto o simplemente tardando distinto— si el
+relleno resultante era válido, tiene un **oráculo**.
+
+Con eso, descifra el último byte probando los 256 valores posibles hasta que el relleno
+sea válido (lo que revela que ese byte descifrado vale `0x01`, y por tanto revela el byte
+intermedio, y por tanto el byte del texto claro real). Repite para el penúltimo forzando
+relleno `0x02 0x02`, y así hasta el bloque entero: **256 intentos por byte, sin conocer
+jamás la clave**. Vaudenay lo describió en 2002 y en 2010 se convirtió en explotación
+masiva contra ASP.NET.
+
+```mermaid
+flowchart TD
+  A["Atacante manipula el bloque cifrado anterior"] --> S["Sistema descifra e inspecciona el relleno"]
+  S --> O{"Que responde?"}
+  O -->|"'relleno invalido' o error 500"| R1["ORACULO: filtra informacion"]
+  O -->|"'error de descifrado' pero tarda distinto"| R2["ORACULO por TIMING"]
+  O -->|"error unico e indistinguible<br/>tras verificar el tag AEAD"| SEG(["Sin oraculo: ataque imposible"])
+  R1 --> D["256 intentos por byte<br/>descifra el mensaje entero sin la clave"]
+  R2 --> D
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  classDef ok fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class A,S,O n
+  class R1,R2,D x
+  class SEG ok
+```
+
+### El tiempo es un canal de salida
+
+Un **ataque de timing** explota que el código tarde distinto según datos secretos. La forma
+más común es la comparación de bytes que sale en el primer fallo: si verificar un token
+tarda un poco más cuando los tres primeros bytes son correctos, el atacante reconstruye el
+token byte a byte con unos miles de peticiones, en lugar de los 2^128 intentos que exigiría
+adivinarlo entero. La mitigación es la **comparación en tiempo constante**, que recorre
+siempre toda la longitud acumulando diferencias.
+
+El principio se generaliza: **ninguna operación sobre datos secretos debe tener un tiempo
+—ni un patrón de acceso a memoria— que dependa de esos datos**. De ahí que las
+implementaciones serias eviten ramas condicionales y accesos a tabla indexados por
+secretos, y de ahí también que las tablas de AES en software puro sean delicadas
+(**Lucky13** midió microsegundos en la verificación MAC-then-encrypt de TLS, y varios
+ataques por caché han recuperado claves AES observando qué líneas de caché se tocaban).
+La objeción habitual —"la red añade tanto ruido que eso no es explotable"— es falsa: con
+suficientes muestras y estadística, diferencias de nanosegundos se distinguen a través de
+Internet.
+
+### Cómo se cierra todo esto
+
+Las defensas son concretas y componen entre sí. **Usar AEAD** (clase 059) elimina el
+padding oracle porque el tag se verifica antes de tocar el relleno. **Devolver un error
+único** para cualquier fallo de descifrado, sin distinguir causa, elimina el oráculo por
+mensaje. **Comparar en tiempo constante** con `hmac.compare_digest` o equivalente elimina
+el oráculo por tiempo. **Usar bibliotecas maduras** en lugar de implementar primitivas
+propias hereda años de endurecimiento contra canales laterales. Y **limitar la tasa** de
+intentos encarece un ataque que necesita miles o millones de peticiones.
+
+El caso **POODLE** cierra la lección con una vuelta de tuerca: el ataque no explotaba TLS
+sino SSL 3.0, y funcionaba porque el atacante podía **forzar un downgrade** a esa versión
+antigua. Mantener protocolos obsoletos "por compatibilidad" es, en criptografía, mantener
+sus vulnerabilidades vivas.
+
 ## 📖 Definiciones y características
 
 - **Canal lateral (side-channel)**: fuga de información por medios ajenos al algoritmo (tiempo, energía, errores). Característica: rompe cripto teóricamente segura.
@@ -42,6 +121,25 @@ Al finalizar, el alumno podrá:
 - **Tiempo constante**: código cuyo tiempo no depende de datos secretos; imprescindible en comparaciones y operaciones con claves.
 - **Fallar cerrado**: rechazar sin distinguir causas ni entregar datos parciales.
 - **Lucky 13 / POODLE**: ataques reales que explotaron padding y timing en TLS/CBC.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Canal lateral | Fuga por tiempo, consumo, caché o mensajes de error |
+| Oráculo | Cualquier respuesta del sistema que revele algo sobre el secreto |
+| Padding oracle | Oráculo que revela si el relleno era válido; descifra sin clave |
+| PKCS#7 | Relleno cuya validez se puede comprobar y por tanto filtrar |
+| Vaudenay (2002) | Descripción original del ataque de padding oracle |
+| Ataque de timing | Explota que el tiempo dependa de datos secretos |
+| Comparación en tiempo constante | Recorre toda la longitud sin salir antes |
+| Lucky13 | Timing sobre MAC-then-encrypt en TLS |
+| Bleichenbacher | Oráculo análogo sobre el relleno PKCS#1 v1.5 de RSA |
+| POODLE | Downgrade a SSL 3.0 para explotar su relleno |
+| Ataque por caché | Recuperar claves observando accesos a memoria |
+| Error genérico | Respuesta única que no distingue la causa del fallo |
+| Limitación de tasa | Encarece los ataques que necesitan muchas peticiones |
+| Defensa en profundidad | AEAD + error único + tiempo constante + límites |
 
 ## 🧰 Herramientas y preparación
 

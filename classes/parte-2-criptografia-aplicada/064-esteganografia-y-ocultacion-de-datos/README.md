@@ -33,6 +33,86 @@ Al finalizar, el alumno podrá:
 | 6 | Watermarking | Uso legítimo |
 | 7 | Exfiltración y C2 encubierto | Amenaza defensiva |
 
+## 🧠 Explicación en profundidad
+
+### Ocultar el contenido frente a ocultar la existencia
+
+La criptografía y la esteganografía resuelven problemas distintos, y confundirlos lleva a
+decisiones malas. La criptografía hace que un mensaje sea **ilegible**, pero no oculta que
+existe: quien observe el canal ve un bloque de datos cifrado y sabe que hubo una
+comunicación protegida. La esteganografía hace que el mensaje sea **invisible**,
+escondiéndolo dentro de un portador de apariencia inocente, pero no lo protege si alguien
+descubre dónde está.
+
+De ahí que su valor real aparezca cuando el propio hecho de cifrar es peligroso o
+sospechoso —regímenes que penalizan el cifrado, redes donde el tráfico cifrado anómalo
+dispara alertas, exfiltración que debe pasar desapercibida—. Y de ahí también la regla de
+oro de la clase: **cifrar primero y ocultar después**. Combinadas, son defensa en
+profundidad: si el estegoanálisis detecta el portador, el atacante encuentra datos
+cifrados y no el mensaje. Además, un contenido cifrado tiene una distribución
+prácticamente uniforme, lo que en muchos portadores se camufla mejor.
+
+### LSB: la técnica clásica y por qué funciona
+
+La técnica canónica es la **sustitución del bit menos significativo (LSB)**. En una imagen
+sin compresión con pérdida, cada píxel tiene componentes de rojo, verde y azul de 8 bits;
+cambiar el último bit de cada componente altera el valor en una unidad como mucho, un
+cambio **imperceptible para el ojo humano**. Con tres bits ocultos por píxel, una imagen de
+un megapíxel transporta unos 375 KB de datos.
+
+Sus límites definen dónde se puede aplicar. Solo funciona en formatos **sin pérdida** —PNG,
+BMP, WAV—: guardar la imagen como JPEG destruye el mensaje, porque su compresión descarta
+justamente los detalles imperceptibles. Y es frágil ante cualquier reprocesado: escalar,
+recortar, recomprimir o aplicar un filtro borra la carga. Por eso la esteganografía real
+va más allá del LSB e incluye ocultación en **metadatos** (campos EXIF, comentarios ID3),
+en el *slack space* de un sistema de archivos, en campos no usados de cabeceras de
+protocolo, en la temporización de los paquetes, o en el propio DNS —el *tunneling* de la
+clase 041 es, en esencia, esteganografía sobre un protocolo—.
+
+```mermaid
+flowchart LR
+  M["Mensaje secreto"] --> CIF["1. CIFRAR<br/>AEAD - clase 059"]
+  CIF --> OCU["2. OCULTAR<br/>LSB, metadatos, protocolo"]
+  P["Portador de apariencia inocente<br/>PNG, WAV, trafico DNS"] --> OCU
+  OCU --> EST["Estego-objeto<br/>parece normal"]
+  EST --> AN{"Estegoanalisis"}
+  AN -->|"detecta anomalia estadistica"| D1["Encuentra datos CIFRADOS<br/>no el mensaje"]
+  AN -->|"no detecta"| D2["Comunicacion encubierta"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class M,P,EST,D1,D2 n
+  class CIF,OCU,AN d
+```
+
+### Detectarla: estegoanálisis
+
+El **estegoanálisis** busca las huellas estadísticas que deja la ocultación. Los bits
+menos significativos de una imagen natural no son perfectamente aleatorios: siguen
+patrones derivados del sensor y del contenido. Sustituirlos por datos cifrados —que sí son
+uniformes— **aumenta la entropía** de ese plano de bits y rompe correlaciones esperadas.
+El **análisis chi-cuadrado** y el **RS analysis** detectan justamente eso. Señales más
+groseras también sirven: un fichero anormalmente grande para sus dimensiones, un PNG donde
+todo el mundo usa JPEG, o metadatos con campos inusualmente largos.
+
+Para el defensor hay además una vía práctica muy eficaz que no requiere detectar nada:
+**la sanitización**. Recomprimir toda imagen entrante, escalarla ligeramente o eliminar
+sus metadatos destruye la carga oculta sin necesidad de saber si existía.
+
+### Por qué esto importa en defensa
+
+Aunque suene a curiosidad, la esteganografía es una amenaza operativa concreta. El malware
+la usa como canal encubierto: se han documentado familias que reciben órdenes ocultas en
+imágenes publicadas en redes sociales o en servicios de imágenes públicos —un canal de C2
+que atraviesa cualquier firewall porque el tráfico es indistinguible de navegar—, y
+también campañas que exfiltran datos dentro de ficheros aparentemente normales adjuntos en
+correos. Su uso legítimo más extendido es el **watermarking**: marcas de agua robustas,
+diseñadas para sobrevivir al reprocesado, que sirven para trazar la procedencia de
+contenido con derechos.
+
+Como todo en esta parte, el uso ético manda: practicar la ocultación y su detección en el
+laboratorio propio es formación; emplearla para sacar información de una organización sin
+autorización es exfiltración, con las consecuencias que fija la clase 025.
+
 ## 📖 Definiciones y características
 
 - **Esteganografía**: ocultar información dentro de otro medio (imagen, audio, texto) para que su existencia pase inadvertida. Característica: la seguridad depende de que nadie sospeche.
@@ -42,6 +122,26 @@ Al finalizar, el alumno podrá:
 - **Watermarking**: marca embebida (visible o no) para autenticar propiedad o rastrear filtraciones; prioriza robustez sobre capacidad.
 - **Capacidad vs imperceptibilidad vs robustez**: trade-off fundamental de toda técnica de ocultación.
 - **Cifrar-luego-ocultar**: cifrar el mensaje antes de esconderlo protege el contenido aunque se detecte el portador.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Esteganografía | Ocultar la **existencia** del mensaje |
+| Criptografía | Ocultar el **contenido** del mensaje |
+| Portador (*cover*) | Fichero o canal de apariencia inocente que aloja el mensaje |
+| Estego-objeto | Portador con la carga ya oculta dentro |
+| LSB | Sustitución del bit menos significativo |
+| Formato sin pérdida | PNG, BMP, WAV; necesarios para que el LSB sobreviva |
+| Capacidad | Cantidad de datos que un portador puede ocultar |
+| Metadatos EXIF / ID3 | Campos de imagen y audio usados para ocultar |
+| Slack space | Espacio sobrante de un bloque de disco |
+| Canal encubierto | Vía de comunicación no prevista por el diseño |
+| Estegoanálisis | Detección de contenido oculto |
+| Chi-cuadrado / RS analysis | Pruebas estadísticas que detectan LSB |
+| Entropía anómala | Indicio de que un plano de bits contiene datos cifrados |
+| Sanitización | Recomprimir o escalar para destruir la carga oculta |
+| Watermarking | Marca de agua robusta para trazar procedencia |
 
 ## 🧰 Herramientas y preparación
 

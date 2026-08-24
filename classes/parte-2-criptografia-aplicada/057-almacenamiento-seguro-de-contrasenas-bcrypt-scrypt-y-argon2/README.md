@@ -33,6 +33,89 @@ Al finalizar, el alumno podrá:
 | 6 | Verificación en tiempo constante | Evita timing |
 | 7 | Ataques con hashcat (lab) | Medir la resistencia real |
 
+## 🧠 Explicación en profundidad
+
+### La velocidad, que en un hash es una virtud, aquí es el enemigo
+
+SHA-256 está diseñado para ser rapidísimo, y eso es exactamente lo que lo hace inservible
+para almacenar contraseñas. Una GPU doméstica calcula del orden de **miles de millones**
+de SHA-256 por segundo; contra una base de datos filtrada, eso significa probar todo un
+diccionario y sus mutaciones en minutos. La contramedida no es un hash "más fuerte", sino
+una función **deliberadamente lenta y costosa**: si verificar una contraseña legítima
+tarda 250 ms, al usuario no le molesta, pero al atacante le convierte mil millones de
+intentos por segundo en cuatro.
+
+Por eso lo que se usa no son funciones hash sino **funciones de derivación de clave para
+contraseñas** (bcrypt, scrypt, Argon2), con un **factor de coste** ajustable que se sube
+conforme el hardware mejora.
+
+### Salt y pepper: dos defensas distintas que se confunden
+
+El **salt** es un valor aleatorio **único por usuario**, almacenado en claro junto al
+hash. Su función no es ocultar nada, sino garantizar que dos usuarios con la misma
+contraseña tengan hashes distintos. Eso destruye dos ataques a la vez: las **rainbow
+tables** —tablas precomputadas de contraseña→hash, que dejan de servir porque habría que
+recomputarlas para cada salt— y el ataque en paralelo contra toda la base, porque cada
+contraseña debe atacarse por separado. Un salt es obligatorio, y las funciones modernas lo
+generan y lo empotran en su cadena de salida sin que el programador tenga que pensarlo.
+
+El **pepper** es distinto: un secreto **global** que se añade a todas las contraseñas y
+que **no se guarda en la base de datos**, sino en la configuración de la aplicación o en un
+HSM. Su valor aparece justo cuando falla todo lo demás: si un atacante roba solo la base
+de datos —vía inyección SQL, por ejemplo— y no el secreto de la aplicación, los hashes le
+resultan inatacables. Es defensa en profundidad, no un sustituto del salt.
+
+```mermaid
+flowchart TD
+  P["Contrasena del usuario"] --> KDF["KDF lenta<br/>bcrypt / scrypt / Argon2id"]
+  S["Salt aleatorio<br/>UNICO por usuario, se guarda en claro"] --> KDF
+  PEP["Pepper - secreto global<br/>fuera de la base de datos"] -.->|"opcional"| KDF
+  COST["Parametros de coste<br/>tiempo, memoria, paralelismo"] --> KDF
+  KDF --> H["Hash almacenado"]
+  H --> V["Verificacion en tiempo constante"]
+  KDF -.->|"un hash rapido como SHA-256<br/>seria crackeable en minutos"| MAL(["Anti-patron"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class P,S,PEP,COST,H,V n
+  class KDF d
+  class MAL x
+```
+
+### De bcrypt a Argon2: por qué hizo falta la memoria
+
+**bcrypt** (1999) fue el primero en popularizar el coste ajustable: su parámetro de
+trabajo duplica el tiempo con cada incremento. Sigue siendo aceptable, pero tiene dos
+límites: su uso de memoria es fijo y pequeño (4 KB), lo que permite a un atacante
+paralelizar masivamente en GPU o ASIC; y trunca la entrada a 72 bytes, un detalle que
+sorprende a quien concatena un pepper largo.
+
+**scrypt** introdujo la idea decisiva: ser **memory-hard**, es decir, exigir una cantidad
+grande de memoria además de tiempo. Una GPU tiene miles de núcleos pero memoria limitada,
+así que forzar el uso de cientos de megabytes por intento **anula su ventaja de
+paralelismo** y encarece enormemente un ASIC dedicado.
+
+**Argon2**, ganador de la Password Hashing Competition en 2015, es la recomendación actual.
+Su variante **Argon2id** combina resistencia a canales laterales y a ataques de
+compromiso tiempo-memoria, y expone tres parámetros independientes: memoria, iteraciones y
+paralelismo. La guía práctica es calibrarlos en el hardware real hasta que una verificación
+tarde entre 100 y 500 ms, y revisar esos parámetros cada pocos años.
+
+### Lo que ninguna KDF puede arreglar
+
+Conviene cerrar con honestidad sobre los límites. Ningún parámetro de coste salva una
+contraseña que aparece en la primera línea de un diccionario: si es `123456`, el atacante
+la encuentra en el primer intento por muy lento que sea el hash. La KDF compra tiempo
+frente a contraseñas mediocres, no frente a las triviales. De ahí que la defensa completa
+combine el almacenamiento correcto con **longitud mínima razonable**, **comprobación
+contra listas de contraseñas filtradas** (el enfoque que recomienda NIST SP 800-63B, en
+lugar de las reglas de composición que solo producen `Password1!`), **limitación de
+intentos** y, sobre todo, **MFA**, que hace que conocer la contraseña no baste.
+
+Y una advertencia operativa: al probar la resistencia real con `hashcat` o John the
+Ripper —que es el laboratorio de esta clase— hazlo **solo sobre hashes propios o de un
+entorno autorizado**. Crackear credenciales ajenas es delito, como fija la clase 025.
+
 ## 📖 Definiciones y características
 
 - **Función de derivación de clave (KDF) para contraseñas**: función lenta y ajustable que transforma la contraseña en un hash. Característica: coste configurable para frenar ataques.
@@ -42,6 +125,25 @@ Al finalizar, el alumno podrá:
 - **scrypt**: KDF con coste de memoria, dificultando ataques con hardware especializado.
 - **Argon2id**: ganador del Password Hashing Competition; recomendado por defecto; combina resistencia a GPU y a side-channels.
 - **hashcat**: herramienta de recuperación de contraseñas (para auditar la fortaleza de tus propios hashes).
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| KDF de contraseñas | Función deliberadamente lenta para almacenar contraseñas |
+| Factor de coste | Parámetro que encarece cada intento; se sube con el tiempo |
+| Salt | Valor aleatorio único por usuario, almacenado en claro |
+| Rainbow table | Tabla precomputada contraseña→hash; el salt la inutiliza |
+| Pepper | Secreto global fuera de la base de datos; defensa adicional |
+| bcrypt | KDF clásica con coste ajustable; memoria fija y límite de 72 bytes |
+| scrypt | Primera KDF *memory-hard* ampliamente usada |
+| Memory-hard | Exige mucha memoria; anula la ventaja de las GPU |
+| Argon2 / Argon2id | KDF recomendada actual; memoria, iteraciones y paralelismo |
+| Password Hashing Competition | Concurso que seleccionó Argon2 en 2015 |
+| hashcat / John the Ripper | Herramientas de crackeo usadas para medir resistencia |
+| Ataque por diccionario | Prueba de contraseñas frecuentes y sus mutaciones |
+| NIST SP 800-63B | Guía moderna: listas de filtradas en vez de reglas de composición |
+| Verificación en tiempo constante | Comparación que no filtra información por timing |
 
 ## 🧰 Herramientas y preparación
 

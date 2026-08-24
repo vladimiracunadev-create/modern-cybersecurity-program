@@ -31,6 +31,82 @@ Al finalizar, el alumno podrá:
 | 6 | Migración híbrida | Transición segura |
 | 7 | Harvest now, decrypt later | Urgencia real |
 
+## 🧠 Explicación en profundidad
+
+### Dos algoritmos cuánticos, dos consecuencias muy distintas
+
+Un computador cuántico no es "un ordenador más rápido": explota superposición e
+interferencia para resolver ciertos problemas con una estructura algorítmica distinta. De
+todos los algoritmos conocidos, solo dos importan aquí, y confundir su alcance es el error
+más común del tema.
+
+El **algoritmo de Shor** (1994) factoriza enteros y calcula logaritmos discretos en tiempo
+polinómico. Eso significa que **RSA, Diffie-Hellman y toda la criptografía de curva
+elíptica quedan completamente rotos** ante un computador cuántico con suficientes qubits
+lógicos estables. No debilitados: rotos. Todo lo de las clases 049, 050, 053 y 054 depende
+exactamente de los dos problemas que Shor resuelve.
+
+El **algoritmo de Grover** (1996) acelera la búsqueda no estructurada, reduciendo 2^n a
+2^(n/2). Su efecto sobre la criptografía simétrica es real pero **modesto**: AES-128
+quedaría en unos 64 bits efectivos y AES-256 en 128, que siguen siendo inalcanzables. La
+respuesta es tan simple como duplicar longitudes —usar AES-256 y SHA-384 o SHA-512—. Por
+eso el titular correcto no es "la criptografía se acaba", sino: **la asimétrica hay que
+reemplazarla; la simétrica solo hay que agrandarla**.
+
+```mermaid
+flowchart TD
+  Q["Computador cuantico<br/>con qubits logicos estables"] --> SH["Algoritmo de Shor"]
+  Q --> GR["Algoritmo de Grover"]
+  SH --> R1["RSA, DH, ECC<br/>ROTOS por completo"]
+  GR --> R2["AES, SHA-2<br/>seguridad a la mitad de bits"]
+  R1 --> S1["Sustituir por PQC<br/>ML-KEM, ML-DSA, SLH-DSA"]
+  R2 --> S2["Basta con duplicar tamanos<br/>AES-256, SHA-384/512"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  classDef ok fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class Q,GR,R2,S2 n
+  class SH,R1 x
+  class S1 ok
+```
+
+### Harvest now, decrypt later: por qué la urgencia es hoy
+
+La objeción evidente —"no existe todavía un computador cuántico capaz"— tiene una
+respuesta que cambia por completo la planificación. Un adversario con recursos puede
+**capturar hoy tráfico cifrado y almacenarlo** hasta disponer de la capacidad de
+descifrarlo. Es la estrategia *harvest now, decrypt later*, y significa que cualquier dato
+cuya confidencialidad deba durar diez o veinte años —historiales médicos, secretos
+industriales, información de inteligencia, identidades— **ya está en riesgo aunque la
+máquina no exista**. La forward secrecy de la clase 053 no salva de esto: protege frente al
+robo futuro de la clave del servidor, no frente a romper el propio intercambio.
+
+Las firmas tienen un perfil de riesgo distinto y más benigno: una firma solo necesita ser
+inforjable **mientras es válida**, así que el problema es sobre todo para raíces de
+confianza y firmware de vida muy larga, donde la migración es lenta y costosa.
+
+### Qué estandarizó NIST y qué hacer ahora
+
+Tras un concurso público que empezó en 2016, NIST publicó en agosto de 2024 los primeros
+estándares. **ML-KEM** (FIPS 203, antes CRYSTALS-Kyber) es el mecanismo de encapsulado de
+claves, el sustituto de ECDH. **ML-DSA** (FIPS 204, antes CRYSTALS-Dilithium) es el esquema
+de firma de propósito general. **SLH-DSA** (FIPS 205, antes SPHINCS+) es una firma basada
+solo en hashes: más lenta y con firmas grandes, pero su seguridad depende únicamente de la
+resistencia del hash, lo que la hace la apuesta conservadora si un día se encontrara un
+fallo en los retículos.
+
+Las familias matemáticas son varias —**retículos** (la base de ML-KEM y ML-DSA, con el
+mejor equilibrio), **hash** (SLH-DSA), **códigos correctores** (Classic McEliece, con
+claves enormes) e **isogenias**, cuyo principal candidato, SIKE, fue **roto en 2022 con un
+portátil**, un recordatorio saludable de que estos esquemas son jóvenes.
+
+Precisamente por esa juventud, la práctica actual es la **migración híbrida**: combinar un
+algoritmo clásico y uno post-cuántico de modo que el resultado sea seguro si **cualquiera
+de los dos** resiste. Chrome, Cloudflare y OpenSSH ya lo despliegan (X25519 combinado con
+ML-KEM). Y el primer paso realista en una organización no es cambiar algoritmos, sino
+**inventariar** dónde se usa criptografía asimétrica y con qué vida útil, y adoptar
+**criptoagilidad** —diseñar para poder cambiar de algoritmo sin reescribir el sistema—,
+que es la recomendación de la clase 065.
+
 ## 📖 Definiciones y características
 
 - **Algoritmo de Shor**: factoriza y resuelve logaritmos discretos en tiempo polinómico en una computadora cuántica; rompe RSA, DH y ECC.
@@ -40,6 +116,25 @@ Al finalizar, el alumno podrá:
 - **ML-DSA (Dilithium) / SLH-DSA (SPHINCS+)**: firmas post-cuánticas (FIPS 204/205); SPHINCS+ se basa solo en hashes.
 - **Migración híbrida**: combinar un esquema clásico (X25519) con uno PQC (ML-KEM) para no perder seguridad si uno falla.
 - **Harvest now, decrypt later**: capturar tráfico cifrado hoy para descifrarlo cuando existan cuánticas; amenaza los datos de larga vida.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Qubit | Unidad cuántica que puede estar en superposición de estados |
+| Qubit lógico | Qubit corregido de errores; hacen falta muchos físicos por cada uno |
+| Algoritmo de Shor | Factoriza y resuelve logaritmos discretos; rompe RSA, DH y ECC |
+| Algoritmo de Grover | Acelera búsqueda; reduce la simétrica a la mitad de bits |
+| PQC | Criptografía post-cuántica: resistente a ambos algoritmos |
+| Harvest now, decrypt later | Capturar hoy para descifrar cuando exista la máquina |
+| ML-KEM (FIPS 203) | Encapsulado de claves post-cuántico; sustituto de ECDH |
+| ML-DSA (FIPS 204) | Firma post-cuántica de propósito general |
+| SLH-DSA (FIPS 205) | Firma basada solo en hashes; opción conservadora |
+| Retículos | Familia matemática base de ML-KEM y ML-DSA |
+| Classic McEliece | Esquema basado en códigos; claves muy grandes |
+| SIKE | Candidato de isogenias roto en 2022 con un portátil |
+| Migración híbrida | Combinar clásico y PQC; seguro si uno de los dos resiste |
+| Criptoagilidad | Diseñar para poder cambiar de algoritmo sin rehacer el sistema |
 
 ## 🧰 Herramientas y preparación
 

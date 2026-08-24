@@ -31,6 +31,74 @@ Al finalizar, el alumno podrá:
 | 6 | ECDSA / Ed25519 | Firmas |
 | 7 | ECC vs RSA | Trade-offs prácticos |
 
+## 🧠 Explicación en profundidad
+
+### La misma seguridad con claves diez veces más cortas
+
+La criptografía de curva elíptica resuelve el mismo problema que RSA con otra estructura
+matemática, y su ventaja es puramente cuantitativa pero decisiva: una clave ECC de **256
+bits** ofrece aproximadamente la seguridad de una RSA de **3072 bits**. Claves más cortas
+significan firmas más pequeñas, *handshakes* más rápidos, menos ancho de banda y menos
+consumo, lo que importa mucho en móviles, IoT y en cada conexión TLS del planeta. Por eso
+ECC es hoy el valor por defecto y RSA el legado que se mantiene por compatibilidad.
+
+La estructura es una **curva elíptica sobre un campo finito**: el conjunto de puntos que
+satisfacen una ecuación del tipo `y² = x³ + ax + b` con la aritmética hecha módulo un
+primo. Sobre esos puntos se define una **suma** con reglas geométricas, y repetir esa suma
+*k* veces sobre un punto `G` es la **multiplicación escalar** `k·G`. Ahí está todo: `k` es
+la clave privada, `k·G` es la clave pública, y el **ECDLP** —dados `G` y `k·G`, hallar
+`k`— es el problema que se cree inviable. Es el análogo elíptico del logaritmo discreto, y
+resiste mucho mejor que su versión clásica, que es exactamente la razón de que las claves
+puedan ser tan cortas.
+
+```mermaid
+flowchart LR
+  K["Clave privada k<br/>un numero aleatorio grande"] --> M["Multiplicacion escalar<br/>k por G"]
+  G["Punto generador G<br/>publico, fijado por la curva"] --> M
+  M --> P["Clave publica k·G<br/>un punto de la curva"]
+  P -.->|"ECDLP: hallar k conocidos G y k·G<br/>se cree inviable"| K
+  P --> U1["ECDH / X25519<br/>acordar una clave - clase 053"]
+  P --> U2["ECDSA / Ed25519<br/>firmar - clase 054"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class K,G,P,U1,U2 n
+  class M d
+```
+
+### Qué curva elegir, y por qué la pregunta tiene carga política
+
+No todas las curvas son iguales, y la elección tiene una historia. Las curvas **NIST**
+(P-256, P-384, P-521) son las estandarizadas y las que exige buena parte de la
+normativa, pero sus parámetros provienen de semillas cuyo origen la NSA nunca explicó
+del todo; tras el caso Dual_EC_DRBG —un generador con una puerta trasera plausible
+promovido por la misma agencia— parte de la comunidad dejó de confiar en ellas. Además,
+implementarlas de forma segura es difícil: exigen cuidado explícito para evitar canales
+laterales por tiempo.
+
+**Curve25519**, diseñada por Bernstein, responde a esas dos objeciones. Sus parámetros son
+**verificablemente rígidos** (elegidos por criterios públicos que no dejan margen para
+esconder nada) y su diseño hace que las implementaciones sean naturalmente resistentes a
+canales laterales y difíciles de programar mal. Sus dos usos son **X25519** para
+intercambio de claves y **Ed25519** para firmas. Cuando puedas elegir, esa es la
+recomendación; las curvas NIST se usan cuando el cumplimiento normativo o la
+interoperabilidad lo imponen.
+
+### El compromiso real frente a RSA
+
+ECC gana en tamaño, velocidad de generación de claves y de firma, y es la opción moderna.
+RSA conserva dos ventajas prácticas: verificar una firma RSA con `e = 65537` es muy rápido
+—útil cuando se verifica muchísimo más de lo que se firma— y su soporte en sistemas
+antiguos es universal. Hay además un matiz de implementación importante: **ECDSA depende
+de un nonce aleatorio por firma, y filtrar o repetir ese nonce revela la clave privada**;
+así se rompió la firma de código de la PlayStation 3. **Ed25519** elimina ese riesgo
+generando el nonce de forma determinista a partir del mensaje y de la clave, y es otra
+razón para preferirlo.
+
+Conviene cerrar con una advertencia que enlaza con la clase 062: tanto RSA como ECC caen
+ante el algoritmo de Shor en un computador cuántico suficientemente grande. ECC no es más
+resistente por ser más nueva —de hecho necesita menos qubits para ser rota—, y por eso la
+migración post-cuántica afecta a ambas por igual.
+
 ## 📖 Definiciones y características
 
 - **Curva elíptica**: conjunto de puntos que satisfacen `y² = x³ + ax + b` sobre un campo finito, con una operación de grupo. Característica: permite cripto con claves pequeñas.
@@ -40,6 +108,25 @@ Al finalizar, el alumno podrá:
 - **Ed25519**: esquema de firma sobre la curva Edwards25519; determinista y de alto rendimiento.
 - **P-256 (secp256r1)**: curva NIST muy usada en TLS y certificados.
 - **Cofactor y validación de puntos**: verificar que un punto pertenece a la curva evita ataques de curva inválida.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Curva elíptica | Conjunto de puntos que cumplen `y² = x³ + ax + b` sobre un campo finito |
+| Campo finito | Aritmética modular sobre un primo, donde vive la curva |
+| Punto generador `G` | Punto base público fijado por los parámetros de la curva |
+| Multiplicación escalar | Sumar `G` consigo mismo `k` veces; operación fundamental |
+| ECDLP | Hallar `k` conocidos `G` y `k·G`; base de la seguridad |
+| Curvas NIST (P-256…) | Estándares extendidos; parámetros de origen discutido |
+| Curve25519 | Curva de Bernstein con parámetros verificablemente rígidos |
+| Rigidez (*rigidity*) | Que los parámetros se elijan por criterios públicos y sin margen |
+| X25519 | Intercambio de claves sobre Curve25519 |
+| Ed25519 | Firma sobre Curve25519, con nonce determinista |
+| ECDSA | Firma sobre curvas NIST; el nonce filtrado revela la clave |
+| Dual_EC_DRBG | Generador retirado por sospecha de puerta trasera |
+| Canal lateral | Fuga por tiempo, consumo o caché al ejecutar la operación |
+| Equivalencia de tamaños | ECC 256 bits ≈ RSA 3072 bits |
 
 ## 🧰 Herramientas y preparación
 

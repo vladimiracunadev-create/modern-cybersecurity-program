@@ -31,6 +31,82 @@ Al finalizar, el alumno podrá:
 | 6 | Tag de autenticación | Detección de manipulación |
 | 7 | AEAD vs padding oracle | Por qué previene el ataque |
 
+## 🧠 Explicación en profundidad
+
+### Cifrar sin autenticar es una vulnerabilidad, no media solución
+
+Los modos de la clase 047 dan confidencialidad: impiden **leer**. Ninguno impide
+**modificar**. Con CTR o con un cifrado de flujo, un atacante que sepa dónde está un campo
+puede voltear bits del texto cifrado y provocar cambios exactos y predecibles en el texto
+claro, sin conocer la clave: cambiar `transferir: 100` por `transferir: 900` es
+literalmente un XOR bien colocado. Con CBC puede alterar un bloque a costa de corromper el
+anterior. La conclusión es dura y merece enunciarse así: **cifrado sin autenticación no es
+seguro en ningún escenario realista**.
+
+Durante años la solución fue componer a mano: cifrar y añadir un HMAC con
+*encrypt-then-MAC* (clase 052). Funciona, pero exige acertar en el orden, usar **claves
+distintas** para cifrado y MAC, y verificar en tiempo constante antes de descifrar. Tres
+oportunidades de equivocarse que la industria falló repetidamente. El **AEAD**
+(*Authenticated Encryption with Associated Data*) elimina la decisión: una sola primitiva,
+una sola clave, cifrado e integridad en una operación, con la composición ya demostrada.
+
+```mermaid
+flowchart LR
+  K["Clave"] --> AE["AEAD<br/>AES-GCM o ChaCha20-Poly1305"]
+  N["Nonce - unico por clave"] --> AE
+  P["Texto claro<br/>se cifra y se autentica"] --> AE
+  AAD["Datos asociados AAD<br/>se autentican pero NO se cifran<br/>cabeceras, IDs, version"] --> AE
+  AE --> CT["Texto cifrado"]
+  AE --> TAG["Tag de autenticacion"]
+  CT --> D{"Descifrado: verifica el tag PRIMERO"}
+  TAG --> D
+  D -->|"tag valido"| OK(["Devuelve el texto claro"])
+  D -->|"tag invalido"| ERR(["Error unico; NO devuelve nada"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#fdecea,stroke:#c0392b,color:#7b241c
+  class K,N,P,AAD,CT,TAG,OK n
+  class AE,D d
+  class ERR x
+```
+
+### La pieza que resuelve el padding oracle
+
+El detalle decisivo está en el orden del descifrado: un AEAD **verifica el tag antes de
+entregar nada**. Si el tag no cuadra, devuelve un único error genérico y no procesa el
+contenido, no interpreta el relleno y no ejecuta lógica alguna sobre datos manipulados.
+Con eso **el oráculo desaparece**: el atacante de la clase 060 obtiene siempre la misma
+respuesta indistinguible haga lo que haga, y su ataque no tiene de dónde extraer
+información. Por eso el consejo de esta parte no es "ten cuidado con el padding", sino
+"usa AEAD y el problema no existe".
+
+### AAD: autenticar lo que no se puede cifrar
+
+Los **datos asociados** son la parte del nombre que más se ignora y una de las más útiles.
+Hay información que debe viajar en claro para que el sistema funcione —un identificador de
+registro, un número de versión, una cabecera de protocolo, el destinatario de un
+paquete— pero que no debe poder alterarse. El AAD se incluye en el cálculo del tag sin
+cifrarse: sigue siendo legible, pero cualquier modificación invalida el descifrado. Es
+también la defensa contra ataques de **sustitución de contexto**: cifrar el registro del
+usuario A y colocarlo en la fila del usuario B falla si el identificador de fila va como
+AAD.
+
+### Elegir entre los dos, y la regla que no se negocia
+
+**AES-GCM** es el AEAD dominante y es muy rápido donde hay **AES-NI**, es decir, en
+prácticamente cualquier servidor o portátil moderno. **ChaCha20-Poly1305** gana donde no la
+hay —móviles y dispositivos modestos— y es más fácil de implementar en tiempo constante,
+por las razones de la clase 048. TLS 1.3 negocia entre ambos, y los clientes móviles
+suelen preferir el segundo.
+
+Y por encima de la elección, una regla absoluta: **nunca repitas el par (clave, nonce)**.
+En AES-GCM las consecuencias van más allá de perder confidencialidad: repetir un nonce
+permite recuperar la **clave de autenticación** interna y, con ella, **falsificar tags** —
+el atacante deja de poder solo leer y pasa a poder escribir mensajes válidos—. Con nonces
+de 96 bits, elegirlos al azar es arriesgado en volúmenes altos, así que se usa un contador
+que nunca retroceda; si se necesita aleatoriedad, **XChaCha20-Poly1305** con nonce de 192
+bits es la opción segura. Todo vuelve, una vez más, al generador de la clase 058.
+
 ## 📖 Definiciones y características
 
 - **AEAD**: cifrado que produce texto cifrado + tag de autenticación en una sola operación. Característica: confidencialidad e integridad garantizadas juntas.
@@ -40,6 +116,25 @@ Al finalizar, el alumno podrá:
 - **Datos asociados (AAD)**: datos que se autentican pero no se cifran (cabeceras, IDs); su alteración invalida el tag.
 - **Tag de autenticación**: valor (128 bits) que el receptor verifica; si no coincide, el descifrado se rechaza sin entregar datos.
 - **Fallo cerrado**: ante tag inválido, la primitiva no devuelve texto plano, evitando fugas.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| AEAD | Cifrado autenticado con datos asociados |
+| Maleabilidad | Poder alterar el texto claro manipulando el cifrado |
+| Bit-flipping | Voltear bits del cifrado para cambiar el claro de forma predecible |
+| Tag de autenticación | Etiqueta que detecta cualquier manipulación |
+| AAD | Datos asociados: se autentican pero no se cifran |
+| Sustitución de contexto | Reutilizar un cifrado válido en otro lugar; el AAD lo impide |
+| AES-GCM | AEAD dominante; muy rápido con AES-NI |
+| ChaCha20-Poly1305 | AEAD para software y móviles sin aceleración AES |
+| XChaCha20-Poly1305 | Variante con nonce de 192 bits; seguro al azar |
+| Nonce en AEAD | Debe ser único por clave; repetirlo es catastrófico |
+| Falsificación de tag | Consecuencia de repetir nonce en GCM: permite escribir |
+| Verificar antes de descifrar | Orden que elimina el padding oracle |
+| Error genérico | Respuesta única ante fallo, para no dar información |
+| Encrypt-then-MAC | Composición manual equivalente; AEAD la trae resuelta |
 
 ## 🧰 Herramientas y preparación
 

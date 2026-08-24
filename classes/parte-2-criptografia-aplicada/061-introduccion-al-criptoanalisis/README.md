@@ -31,6 +31,87 @@ Al finalizar, el alumno podrá:
 | 6 | Criptoanálisis lineal | Aproximaciones lineales |
 | 7 | "Roto" académico vs práctico | Interpretar titulares |
 
+## 🧠 Explicación en profundidad
+
+### Decir "seguro" exige decir contra qué adversario
+
+El criptoanálisis empieza donde acaba la intuición: definiendo con precisión **qué puede
+hacer el atacante**. Los cuatro modelos clásicos van de menos a más poder y no son
+académicos, describen situaciones reales. En **COA** (*ciphertext-only*) el adversario solo
+ve texto cifrado: es el espía pasivo. En **KPA** (*known-plaintext*) conoce algunos pares
+claro-cifrado, lo que ocurre siempre que un protocolo tiene cabeceras fijas o saludos
+previsibles. En **CPA** (*chosen-plaintext*) puede elegir qué se cifra, que es exactamente
+la posición de quien envía un correo a un sistema que lo archiva cifrado. Y en **CCA**
+(*chosen-ciphertext*) puede además pedir descifrados y observar el resultado, aunque sea
+solo un mensaje de error: **el padding oracle de la clase 060 es un ataque CCA**. Un
+cifrado moderno debe resistir CPA como mínimo, y CCA si va a operar en un entorno hostil.
+
+### Cuánto cuesta romperlo: bits de seguridad
+
+Decir que una clave tiene 128 bits significa que el mejor ataque conocido cuesta del orden
+de 2^128 operaciones, un número que no se alcanza con toda la energía disponible en el
+planeta. Pero **el tamaño de la clave no siempre es el nivel de seguridad**, y esa
+distinción evita malentendidos habituales: por la paradoja del cumpleaños (clase 051), un
+hash de 256 bits ofrece 128 bits frente a colisiones; RSA de 3072 bits ofrece unos 128
+bits porque existen algoritmos de factorización mucho mejores que la fuerza bruta; y ECC
+de 256 bits ofrece 128 porque el mejor ataque contra ECDLP cuesta la raíz cuadrada del
+espacio. Comparar algoritmos por longitud de clave es comparar peras con manzanas; hay que
+comparar **bits de seguridad**.
+
+```mermaid
+flowchart TD
+  M{"Que puede hacer el adversario?"}
+  M -->|"solo ve cifrados"| COA["COA - ciphertext only<br/>espia pasivo"]
+  M -->|"conoce pares claro-cifrado"| KPA["KPA - known plaintext<br/>cabeceras previsibles"]
+  M -->|"elige que se cifra"| CPA["CPA - chosen plaintext<br/>minimo exigible hoy"]
+  M -->|"pide descifrados y ve el resultado"| CCA["CCA - chosen ciphertext<br/>el padding oracle vive aqui"]
+  COA --> N["Nivel de exigencia creciente"]
+  KPA --> N
+  CPA --> N
+  CCA --> N
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class COA,KPA,N n
+  class M,CPA d
+  class CCA x
+```
+
+### Cómo se evalúan de verdad los cifrados de bloque
+
+Más allá de la fuerza bruta, existen dos técnicas que son el estándar con el que se juzga
+cualquier cifrado por bloques. El **criptoanálisis diferencial** (Biham y Shamir, público
+desde 1990) estudia cómo una diferencia concreta entre dos textos claros se propaga a una
+diferencia entre sus cifrados: si ciertas diferencias aparecen con probabilidad mayor de la
+esperada, esa desviación se puede convertir en información sobre la clave. El
+**criptoanálisis lineal** (Matsui, 1993) busca aproximaciones lineales entre bits de
+entrada, salida y clave que se cumplan algo más del 50 % de las veces, y acumula esa
+ventaja mínima sobre millones de textos.
+
+Un detalle histórico revelador: cuando se publicó el criptoanálisis diferencial, se supo
+que las S-boxes de **DES**, diseñadas en los setenta, ya estaban optimizadas contra él.
+IBM y la NSA lo conocían y lo mantuvieron en secreto. Hoy, en cambio, todo diseño serio
+—AES incluido— publica sus márgenes de seguridad frente a ambas técnicas, y esa apertura
+es la aplicación práctica del principio de Kerckhoffs de la clase 046.
+
+### "Roto" en un titular casi nunca significa "roto" en tu servidor
+
+Esta es la destreza más útil de la clase: interpretar noticias de criptografía. En el
+vocabulario académico, un cifrado está **roto** en cuanto existe cualquier ataque mejor que
+la fuerza bruta, aunque requiera 2^126 operaciones en lugar de 2^128 —una mejora
+irrelevante en la práctica pero significativa teóricamente, porque indica que la estructura
+tiene una grieta—. Un ataque **práctico** es otra cosa: recursos alcanzables por un
+atacante real.
+
+La distinción se aplica sola con ejemplos: MD5 y SHA-1 están rotos **prácticamente** (hay
+colisiones reales, hoy, por unos miles de euros) y deben erradicarse ya; los ataques
+teóricos publicados sobre AES reducen su margen en unos pocos bits y no cambian nada
+operativo. La regla profesional que se deriva: **las roturas teóricas son la señal
+temprana para planificar la migración; las prácticas exigen actuar ahora**. Y también
+—lección de RC4 y SHA-1— que el tiempo entre "hay un indicio" y "es explotable" suele
+medirse en años, así que quien empieza a migrar con el indicio llega a tiempo y quien
+espera al titular, no.
+
 ## 📖 Definiciones y características
 
 - **COA (ciphertext-only)**: el atacante solo ve texto cifrado. Modelo más débil para el atacante.
@@ -40,6 +121,26 @@ Al finalizar, el alumno podrá:
 - **Criptoanálisis diferencial**: estudia cómo diferencias en la entrada se propagan a la salida para distinguir un cifrado de uno aleatorio.
 - **Criptoanálisis lineal**: busca aproximaciones lineales entre bits de entrada, salida y clave con sesgo explotable.
 - **Ataque "roto"**: cualquier método mejor que la fuerza bruta, aunque siga siendo impracticable; señala margen erosionado.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Criptoanálisis | Estudio de cómo romper sistemas criptográficos |
+| COA | El adversario solo ve texto cifrado |
+| KPA | Conoce pares de texto claro y su cifrado |
+| CPA | Puede elegir qué textos se cifran; exigencia mínima moderna |
+| CCA | Puede pedir descifrados y observar el resultado |
+| Bits de seguridad | Coste del mejor ataque conocido, como potencia de 2 |
+| Fuerza bruta | Probar todas las claves posibles |
+| Paradoja del cumpleaños | Colisiones a coste 2^(n/2) |
+| Criptoanálisis diferencial | Estudia la propagación de diferencias entre entradas |
+| Criptoanálisis lineal | Busca aproximaciones lineales sesgadas |
+| S-box | Componente no lineal cuyo diseño resiste ambas técnicas |
+| DES | Cifrado de los setenta, endurecido contra diferencial en secreto |
+| Roto académicamente | Existe algún ataque mejor que la fuerza bruta |
+| Roto prácticamente | El ataque es alcanzable con recursos reales |
+| Margen de seguridad | Rondas de sobra frente al mejor ataque conocido |
 
 ## 🧰 Herramientas y preparación
 

@@ -31,6 +31,79 @@ Al finalizar, el alumno podrá:
 | 6 | MITM y necesidad de autenticación | DH solo no autentica |
 | 7 | Parámetros seguros | Evitar grupos débiles (Logjam) |
 
+## 🧠 Explicación en profundidad
+
+### Acordar un secreto hablando en público
+
+Diffie-Hellman (1976) es probablemente la idea más elegante de la criptografía: **dos
+partes que nunca se han visto pueden acordar una clave secreta intercambiando solo
+mensajes públicos**, de modo que quien escuche toda la conversación no puede deducirla.
+El mecanismo se apoya en la conmutatividad de la exponenciación modular: se acuerdan
+públicamente un primo grande `p` y un generador `g`; Alice elige un secreto `a` y envía
+`A = gᵃ mod p`; Bob elige `b` y envía `B = gᵇ mod p`; cada uno eleva lo recibido a su
+propio secreto y ambos obtienen `gᵃᵇ mod p`. El espía ve `p`, `g`, `A` y `B`, y para
+obtener el secreto tendría que resolver el **problema del logaritmo discreto**, que se
+cree inviable para parámetros suficientemente grandes.
+
+La analogía de las pinturas ayuda: ambos parten de un color público, cada uno le añade un
+color secreto y se intercambian las mezclas; al añadir cada uno su color secreto a la
+mezcla del otro llegan al mismo tono final, mientras que separar los colores de una mezcla
+—el equivalente al logaritmo discreto— es lo difícil.
+
+```mermaid
+sequenceDiagram
+  participant A as Alice
+  participant E as Espia (ve todo)
+  participant B as Bob
+  Note over A,B: Publico: p y g
+  A->>A: elige secreto a
+  B->>B: elige secreto b
+  A->>B: A = g^a mod p
+  B->>A: B = g^b mod p
+  A->>A: calcula B^a = g^ab
+  B->>B: calcula A^b = g^ab
+  Note over A,B: Secreto compartido g^ab
+  Note over E: ve p, g, A y B<br/>necesitaria el logaritmo discreto
+```
+
+### DH no autentica, y por eso solo nunca basta
+
+Hay una carencia fundamental que conviene enunciar sin rodeos: **Diffie-Hellman no
+autentica a nadie**. Alice acuerda una clave con quienquiera que esté al otro lado, y si
+un atacante se interpone puede hacer un DH con cada uno por separado, quedándose en medio
+con dos claves y leyendo todo mientras reenvía. Es el man-in-the-middle de la clase 040
+aplicado al acuerdo de claves. Por eso DH **siempre** se combina con un mecanismo de
+autenticación —una firma digital sobre los valores intercambiados, un certificado, una
+clave precompartida—, y es exactamente lo que hace el *handshake* de TLS 1.3 en la clase
+056: DH efímero para acordar, firma del servidor para autenticar.
+
+### Efímero: la clave de la forward secrecy
+
+La distinción entre DH **estático** y **efímero** (DHE, ECDHE) tiene una consecuencia
+enorme. Si el servidor usa siempre el mismo secreto, quien un día robe esa clave privada
+puede descifrar **todo el tráfico pasado** que haya grabado. Con DH efímero se genera un
+par nuevo para cada sesión y se destruye al terminar: comprometer la clave a largo plazo
+del servidor permite suplantarlo en el futuro, pero **no descifrar sesiones anteriores**.
+Esa propiedad es la **forward secrecy**, y es la razón de que TLS 1.3 haya eliminado
+directamente todos los modos que no la ofrecen. Su relevancia práctica es directa contra
+el "*harvest now, decrypt later*" de la clase 062.
+
+### Del secreto bruto a claves utilizables
+
+El valor `gᵃᵇ` no debe usarse como clave tal cual: es un número con estructura matemática
+y una distribución que no es uniforme. Se pasa por una **función de derivación de claves**
+—**HKDF** es el estándar—, que primero *extrae* entropía uniforme del secreto y luego la
+*expande* en tantas claves como haga falta (una para cada dirección, otra para el MAC),
+incorporando además contexto de la sesión para que claves de sesiones distintas nunca
+coincidan.
+
+Por último, los **parámetros importan**. El ataque **Logjam** (2015) demostró que muchos
+servidores compartían los mismos grupos DH de 1024 bits, y que precomputar sobre un grupo
+tan usado ponía al alcance de un Estado el descifrado de miles de servidores. La lección
+fue triple: grupos de al menos 2048 bits, grupos estandarizados y bien elegidos, y
+preferir **X25519** (la variante sobre curva elíptica de la clase 050), que es más rápida
+y no admite parámetros débiles por construcción.
+
 ## 📖 Definiciones y características
 
 - **Diffie-Hellman**: protocolo donde cada parte elige un secreto, publica `gˣ mod p` y ambos calculan `gˣʸ`. Característica: acuerdan clave sin transmitirla.
@@ -40,6 +113,25 @@ Al finalizar, el alumno podrá:
 - **HKDF**: función de derivación (extract-then-expand) que convierte el secreto compartido en claves de longitud y propósito adecuados.
 - **MITM**: sin autenticación, un atacante intercepta y sustituye las claves públicas, estableciendo dos canales que él controla.
 - **Grupos MODP / Curve25519**: parámetros recomendados; evitar primos pequeños o de origen dudoso (Logjam).
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Diffie-Hellman | Acuerdo de clave secreta mediante mensajes públicos |
+| Logaritmo discreto | Hallar `a` conocidos `g` y `gᵃ mod p`; base de la seguridad |
+| `p` y `g` | Primo y generador públicos que definen el grupo |
+| Secreto compartido | `gᵃᵇ mod p`, al que llegan ambas partes |
+| DH estático | Secreto fijo reutilizado; sin forward secrecy |
+| DHE / ECDHE | Diffie-Hellman efímero: par nuevo por sesión |
+| Forward secrecy | Robar la clave a largo plazo no descifra sesiones pasadas |
+| X25519 | DH sobre Curve25519; rápido y sin parámetros débiles |
+| MitM en DH | Un intermediario acuerda una clave con cada parte |
+| Autenticación del acuerdo | Firma o certificado que ata el DH a una identidad |
+| KDF | Función de derivación de claves a partir de un secreto |
+| HKDF | KDF estándar en dos fases: extraer y expandir |
+| Logjam | Ataque que explotó grupos DH de 1024 bits compartidos |
+| Grupo débil | Parámetros pequeños o reutilizados que permiten precomputación |
 
 ## 🧰 Herramientas y preparación
 

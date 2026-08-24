@@ -31,6 +31,79 @@ Al finalizar, el alumno podrá:
 | 6 | Comparaciones no constantes | Timing |
 | 7 | Reglas de oro y "criptoagilidad" | Diseño robusto y migrable |
 
+## 🧠 Explicación en profundidad
+
+### La regla que resume la parte: no inventes criptografía
+
+Las vulnerabilidades criptográficas reales casi nunca vienen de romper AES o RSA. Vienen de
+**usarlos mal**, y por eso OWASP colocó *Cryptographic Failures* en el segundo puesto de su
+Top 10. Esta clase recoge los patrones de fallo que se repiten y los convierte en una lista
+de comprobación aplicable.
+
+El principio rector es incómodo para el ego pero salva sistemas: **no diseñes ni
+implementes primitivas propias**. Usa bibliotecas maduras y, mejor todavía, **bibliotecas
+de alto nivel con pocas decisiones** —libsodium, Tink, `cryptography` de Python en su capa
+*recipes*, o la `age` para ficheros— que no te dejan elegir el modo, ni el relleno, ni el
+IV, porque cada elección es una oportunidad de fallar. La API correcta de criptografía es
+aquella en la que **el camino fácil es el seguro**.
+
+```mermaid
+flowchart TD
+  Q{"Que necesito?"}
+  Q -->|"cifrar datos"| A1["AEAD: AES-GCM o ChaCha20-Poly1305<br/>NUNCA ECB, ni CBC a mano"]
+  Q -->|"integridad con clave compartida"| A2["HMAC-SHA256<br/>y comparar en tiempo constante"]
+  Q -->|"guardar contrasenas"| A3["Argon2id, scrypt o bcrypt<br/>NUNCA SHA-256"]
+  Q -->|"aleatoriedad"| A4["CSPRNG del sistema<br/>NUNCA random()"]
+  Q -->|"acordar clave"| A5["X25519 efimero<br/>+ autenticacion"]
+  Q -->|"firmar"| A6["Ed25519 o RSA-PSS<br/>NUNCA PKCS#1 v1.5 nuevo"]
+  Q -->|"guardar la clave"| A7["KMS, HSM o Vault<br/>NUNCA en el codigo"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class A1,A2,A3,A4,A5,A6,A7 n
+  class Q d
+```
+
+### El catálogo de fallos, y de dónde viene cada uno
+
+**Primitivas obsoletas.** DES y 3DES por tamaño de bloque y de clave; MD5 y SHA-1 por
+colisiones prácticas (clase 051); RC4 por sus sesgos (clase 048); ECB por filtrar la
+estructura (clase 047). Todas siguen apareciendo en sistemas en producción, casi siempre
+por copiar un ejemplo antiguo de Internet.
+
+**IV y nonces mal gestionados.** Un IV fijo o predecible en CBC; un nonce repetido en GCM o
+ChaCha20, que además de romper la confidencialidad permite falsificar tags (clases 048 y
+059); contadores que se reinician al restaurar una máquina desde snapshot.
+
+**Aleatoriedad y claves.** Usar el PRNG estadístico del lenguaje en vez del CSPRNG (clase
+058); derivar una clave de algo con poca entropía; y sobre todo **claves incrustadas en el
+código**, que la clase 063 desmonta.
+
+**Falta de autenticación.** Cifrar sin AEAD ni MAC, dejando el mensaje maleable; o componer
+mal, con MAC-then-encrypt en lugar de encrypt-then-MAC (clase 052).
+
+**Fugas por tiempo.** Comparar etiquetas, tokens o contraseñas con `==`, entregando un
+oráculo byte a byte (clase 060).
+
+**Validación insuficiente.** Aceptar cualquier certificado por comodidad —el
+`verify=False` que aparece "provisionalmente" y se queda para siempre— destruye TLS por
+completo, porque anula la autenticación que impide el MitM de la clase 040. Y en JWT, el
+clásico aceptar el algoritmo que declara el propio token, incluido `none`.
+
+### Criptoagilidad: diseñar para el día que haya que cambiar
+
+La historia de esta parte —DES, MD5, SHA-1, RC4, y ahora RSA y ECC ante la amenaza
+cuántica— demuestra que **toda primitiva acaba caducando**. Un sistema bien diseñado lo
+asume: no incrusta el algoritmo en la lógica, sino que **versiona sus datos cifrados**
+guardando junto a ellos qué algoritmo y qué parámetros se usaron. Eso permite descifrar lo
+antiguo mientras se escribe lo nuevo con el algoritmo actual, y migrar sin una parada.
+Aplicado a contraseñas, es lo que permite recalcular el hash con parámetros más fuertes en
+el siguiente inicio de sesión de cada usuario.
+
+Cierra la parte una comprobación honesta: revisar código real —el propio, o un ejemplo
+preparado— buscando estos patrones es el mejor ejercicio de criptografía aplicada que
+existe, porque enseña que la distancia entre "usa AES-256" y "es seguro" es exactamente
+todo lo que se ha estudiado en estas veinte clases.
+
 ## 📖 Definiciones y características
 
 - **Cryptographic Failures (OWASP A02)**: categoría que agrupa el uso de cripto débil, mal configurada o ausente que expone datos sensibles.
@@ -40,6 +113,26 @@ Al finalizar, el alumno podrá:
 - **Superficie de implementación**: todo el código que rodea la primitiva (padding, parsing, manejo de errores) donde suelen estar los bugs.
 - **Fail closed**: ante error, denegar sin exponer datos ni detalles.
 - **Gestión del ciclo de vida de claves**: generación, distribución, rotación y destrucción seguras.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| OWASP A02 | *Cryptographic Failures*: categoría del Top 10 |
+| No inventes criptografía | Usar bibliotecas maduras en vez de implementaciones propias |
+| API de alto nivel | Biblioteca que no deja elegir modo, relleno ni IV |
+| libsodium / Tink / age | Bibliotecas con el camino fácil ya seguro |
+| Primitiva obsoleta | DES, 3DES, MD5, SHA-1, RC4, ECB |
+| IV predecible | Vector de inicialización fijo o adivinable en CBC |
+| Nonce repetido | Fallo catastrófico en GCM y en cifrados de flujo |
+| Clave incrustada | Credencial escrita en el código fuente |
+| Cifrado sin autenticar | Deja el mensaje maleable; usar AEAD |
+| Comparación con `==` | Fuga por timing en etiquetas y tokens |
+| `verify=False` | Desactivar la validación de certificados; anula TLS |
+| JWT `alg: none` | Aceptar el algoritmo que declara el propio token |
+| Criptoagilidad | Poder cambiar de algoritmo sin rehacer el sistema |
+| Versionado del cifrado | Guardar algoritmo y parámetros junto al dato |
+| Rehash en login | Recalcular el hash de contraseña con parámetros más fuertes |
 
 ## 🧰 Herramientas y preparación
 

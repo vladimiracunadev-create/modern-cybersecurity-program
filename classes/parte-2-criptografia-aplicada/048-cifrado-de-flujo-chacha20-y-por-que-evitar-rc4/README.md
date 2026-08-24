@@ -31,6 +31,78 @@ Al finalizar, el alumno podrá:
 | 6 | Reutilización de nonce | El error catastrófico |
 | 7 | ChaCha20-Poly1305 (adelanto AEAD) | Confidencialidad + integridad |
 
+## 🧠 Explicación en profundidad
+
+### Un cifrado de flujo es una máquina de generar keystream
+
+La idea es minimalista y por eso frágil: generar a partir de la clave un flujo
+pseudoaleatorio —el **keystream**— y combinarlo con el texto claro mediante **XOR**. El
+descifrado es la misma operación, porque `(M ⊕ K) ⊕ K = M`. Toda la seguridad recae
+entonces en una sola propiedad: que el keystream sea **indistinguible de aleatorio** y
+que **nunca se reutilice**.
+
+El ideal teórico existe y es el *one-time pad*: si el keystream es verdaderamente
+aleatorio, tan largo como el mensaje y se usa una sola vez, el cifrado es
+demostrablemente irrompible. Es inútil en la práctica porque distribuir una clave tan
+larga como el mensaje es el mismo problema que se quería resolver. Los cifrados de flujo
+reales son la aproximación práctica: expanden una clave corta en un keystream largo con
+un generador determinista.
+
+### Reutilizar el nonce es la catástrofe, y es fácil de razonar
+
+Si dos mensajes se cifran con el mismo keystream, un atacante que capture ambos puede
+hacer XOR entre los cifrados y **el keystream se cancela**: `(M₁ ⊕ K) ⊕ (M₂ ⊕ K) = M₁ ⊕
+M₂`. Le queda el XOR de dos textos claros, que se separa con análisis estadístico y
+palabras probables. Y no hace falta ni eso: si conoce uno de los mensajes, obtiene el
+otro directamente. Por eso todo cifrado de flujo (y el modo CTR de la clase anterior)
+lleva un **nonce** —*number used once*— junto a la clave: para que el keystream sea
+distinto en cada mensaje aunque la clave se mantenga.
+
+La regla es absoluta: **el par (clave, nonce) no debe repetirse jamás**. En la práctica se
+garantiza con un contador que nunca retrocede o con un nonce aleatorio suficientemente
+largo (los 192 bits de XChaCha20 lo hacen seguro incluso eligiéndolo al azar; los 96 bits
+de ChaCha20 estándar o de AES-GCM invitan a llevar contador). Este es el fallo que rompió
+WEP en las redes WiFi y el que hace tan peligroso restaurar una máquina virtual desde un
+*snapshot* sin renovar el estado del nonce.
+
+```mermaid
+flowchart TD
+  K["Clave"] --> G["Generador de keystream<br/>ChaCha20"]
+  N["Nonce - unico por mensaje"] --> G
+  CT["Contador de bloque"] --> G
+  G --> KS["Keystream pseudoaleatorio"]
+  M["Texto claro"] --> X["XOR"]
+  KS --> X
+  X --> C["Texto cifrado"]
+  KS -.->|"si el nonce se repite:<br/>C1 XOR C2 = M1 XOR M2<br/>el keystream se cancela"| BOOM(["Confidencialidad destruida"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef g fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class K,N,CT,M,C,KS n
+  class G,X g
+  class BOOM x
+```
+
+### ChaCha20 frente a RC4: cómo se ve un buen diseño al lado de uno malo
+
+**RC4** fue durante años el cifrado de flujo más usado del mundo (SSL, WEP, WPA-TKIP), y
+su historia es un caso de estudio. Su keystream tenía **sesgos estadísticos**: ciertos
+bytes aparecían con probabilidad ligeramente distinta a la uniforme, y esa desviación
+mínima, acumulada sobre millones de sesiones que cifran el mismo dato (una cookie de
+sesión, por ejemplo), permitió recuperarlo. RC4 está prohibido en TLS desde 2015. La
+lección no es que RC4 fuera torpe, sino que **en criptografía un sesgo diminuto acaba
+siendo explotable**, y que la migración fuera de una primitiva rota tarda años.
+
+**ChaCha20**, de Daniel J. Bernstein, es el reemplazo moderno. Se construye con
+operaciones ARX —suma, rotación y XOR— que son rápidas en software puro y, crucialmente,
+se ejecutan en **tiempo constante** por naturaleza, sin tablas dependientes de la clave y
+por tanto sin los canales laterales por caché que complican implementar AES en software.
+Esa es la razón concreta de que en un móvil sin aceleración AES-NI, ChaCha20-Poly1305 sea
+más rápido *y* más seguro de implementar que AES-GCM, y de que Google lo impulsara para
+TLS móvil. Como en el resto de la parte, el cifrado de flujo por sí solo no aporta
+integridad: la construcción que de verdad se usa es **ChaCha20-Poly1305**, el AEAD de la
+clase 059.
+
 ## 📖 Definiciones y características
 
 - **Cifrado de flujo**: genera un keystream pseudoaleatorio y lo combina por XOR con el texto. Característica: cifrado byte a byte, sin padding.
@@ -39,6 +111,25 @@ Al finalizar, el alumno podrá:
 - **Nonce**: número usado una sola vez. En ChaCha20 (RFC 8439) mide 96 bits. Repetirlo con la misma clave es fatal.
 - **RC4**: cifrado de flujo antiguo con fuertes sesgos en los primeros bytes del keystream; explotado en ataques a TLS/WEP. **Obsoleto.**
 - **XOR malleability**: cambiar un bit del cifrado cambia el mismo bit del plano; por eso el cifrado de flujo necesita un MAC.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Cifrado de flujo | Genera keystream y lo combina con XOR con el mensaje |
+| Keystream | Flujo pseudoaleatorio derivado de clave y nonce |
+| XOR | Operación reversible: `(M ⊕ K) ⊕ K = M` |
+| One-time pad | Keystream verdaderamente aleatorio y de un solo uso; irrompible |
+| Nonce | *Number used once*; hace único el keystream de cada mensaje |
+| Reutilización de nonce | Cancela el keystream y destruye la confidencialidad |
+| ChaCha20 | Cifrado de flujo moderno basado en operaciones ARX |
+| ARX | Suma, rotación y XOR; rápidas y en tiempo constante |
+| XChaCha20 | Variante con nonce de 192 bits; seguro elegirlo al azar |
+| Poly1305 | Autenticador que acompaña a ChaCha20 para formar un AEAD |
+| RC4 | Cifrado de flujo obsoleto; keystream con sesgos explotables |
+| Sesgo estadístico | Desviación de la uniformidad que acaba siendo explotable |
+| WEP | Cifrado WiFi roto en parte por reutilización de nonce |
+| Tiempo constante | Ejecución cuyo tiempo no depende de datos secretos |
 
 ## 🧰 Herramientas y preparación
 

@@ -31,6 +31,81 @@ Al finalizar, el alumno podrá:
 | 6 | Fallos famosos | Aprender de desastres |
 | 7 | Pruebas de aleatoriedad | Detectar sesgos |
 
+## 🧠 Explicación en profundidad
+
+### El cimiento invisible de todo lo demás
+
+Cada clave, cada IV, cada nonce, cada `salt`, cada token de sesión y cada nonce de ECDSA
+sale de un generador de números aleatorios. Si ese generador es predecible, **todo lo
+construido encima se derrumba** por muy correcta que sea la criptografía: no hay que
+romper AES si se puede adivinar la clave. Es la dependencia menos visible de la parte y la
+que más desastres silenciosos ha causado.
+
+La distinción clave es entre **PRNG** y **CSPRNG**. Un PRNG estadístico —el `random` de
+cualquier lenguaje, un Mersenne Twister— produce números que *parecen* aleatorios y sirven
+para simulaciones o videojuegos, pero es **determinista y reconstruible**: observando unas
+cuantas salidas se recupera el estado interno y se predicen todas las siguientes. Un
+**CSPRNG** añade dos garantías que lo hacen apto para criptografía:
+**impredecibilidad hacia delante** (conocer salidas pasadas no permite predecir las
+futuras) y **resistencia al compromiso del estado** (conocer el estado actual no permite
+reconstruir las salidas pasadas).
+
+```mermaid
+flowchart TD
+  E1["Ruido del hardware<br/>tiempos de interrupcion, E/S"] --> POOL
+  E2["RDRAND / RDSEED de la CPU"] --> POOL
+  E3["Eventos del sistema"] --> POOL
+  POOL["Pool de entropia del kernel"] --> DRBG["CSPRNG / DRBG<br/>expande la semilla"]
+  DRBG --> API["getrandom() · /dev/urandom<br/>secrets · os.urandom · crypto.randomBytes"]
+  API --> U1["Claves"]
+  API --> U2["IV y nonces"]
+  API --> U3["Salts y tokens"]
+  BAD["random.random() · rand()<br/>Mersenne Twister"] -.->|"PREDECIBLE: nunca para cripto"| X(["Anti-patron"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class E1,E2,E3,POOL,U1,U2,U3 n
+  class DRBG,API d
+  class BAD,X x
+```
+
+### Usa el del sistema operativo, y punto
+
+La recomendación profesional es casi aburrida y por eso conviene subrayarla: **no
+construyas tu propio generador ni siembres uno tú**. El kernel recoge entropía de fuentes
+físicas —tiempos de interrupción, ruido de dispositivos, instrucciones de hardware como
+RDSEED— y la usa para sembrar un CSPRNG que expone al espacio de usuario. En Linux la
+llamada correcta es `getrandom()` o leer `/dev/urandom`; en Windows, `BCryptGenRandom`.
+Desde los lenguajes, `secrets` u `os.urandom` en Python, `crypto.randomBytes` en Node,
+`crypto/rand` en Go.
+
+Conviene desactivar un mito persistente: **`/dev/random` no es "más seguro" que
+`/dev/urandom`**. En los kernels modernos, una vez que el pool está sembrado, ambos
+producen material de la misma calidad; la diferencia histórica era que `/dev/random`
+bloqueaba, lo que provocaba cuelgues en arranque y llevaba a los desarrolladores a
+soluciones peores. El único momento delicado es el **arranque temprano**, cuando aún no se
+ha acumulado entropía: por eso `getrandom()` bloquea hasta que el pool esté inicializado y
+después no vuelve a hacerlo.
+
+### Los desastres, que son concretos y caros
+
+La lista de fallos es corta pero devastadora y merece conocerse porque el patrón se
+repite. **Debian OpenSSL (2006-2008)**: un parche bienintencionado eliminó una fuente de
+entropía y redujo el espacio de claves a **32 768 posibilidades**; durante dos años, cada
+clave SSH y cada certificado generado en Debian y derivados fue enumerable en segundos.
+**Sony PlayStation 3 (2010)**: nonce `k` constante en ECDSA, clave de firma de código
+recuperada, consola abierta. **Carteras de Bitcoin en Android (2013)**: un fallo en el
+proveedor de aleatoriedad de la plataforma repitió nonces de ECDSA y permitió robar claves
+privadas y fondos.
+
+Dos patrones adicionales de la práctica diaria: las **máquinas virtuales restauradas desde
+un snapshot** repiten el estado del generador y pueden emitir los mismos nonces dos veces
+—especialmente peligroso con AES-GCM—; y los **dispositivos embebidos** que generan claves
+en el primer arranque, cuando aún no hay entropía, acaban produciendo claves idénticas en
+miles de unidades. La comprobación práctica es el laboratorio de esta clase: distinguir
+por pruebas estadísticas una salida de `random` de una de `secrets`, y aprender que
+**parecer aleatorio y ser impredecible no son lo mismo**.
+
 ## 📖 Definiciones y características
 
 - **Entropía**: medida de imprevisibilidad. El SO la recolecta de eventos físicos (interrupciones, ruido de hardware).
@@ -40,6 +115,26 @@ Al finalizar, el alumno podrá:
 - **getrandom() / /dev/urandom**: interfaz del kernel que entrega bytes de un CSPRNG bien sembrado.
 - **Semilla (seed)**: valor inicial; si es predecible (p. ej. el tiempo), toda la salida lo es.
 - **Sesgo**: desviación de la uniformidad; se detecta con pruebas estadísticas (Dieharder, NIST STS).
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Entropía | Medida de la incertidumbre real disponible como aleatoriedad |
+| PRNG | Generador determinista; parece aleatorio pero es predecible |
+| CSPRNG | Generador apto para criptografía: impredecible hacia delante |
+| Semilla (*seed*) | Valor inicial del generador; si es adivinable, todo lo es |
+| Estado interno | Datos del generador cuyo conocimiento predice las salidas |
+| Mersenne Twister | PRNG estadístico común; **nunca** para criptografía |
+| `getrandom()` | Llamada al sistema recomendada en Linux |
+| `/dev/urandom` | Fuente de aleatoriedad del kernel; equivalente en calidad |
+| `BCryptGenRandom` | API equivalente en Windows |
+| `secrets` / `os.urandom` | APIs seguras en Python |
+| DRBG | Generador determinista normalizado (NIST SP 800-90A) |
+| Debian OpenSSL | Fallo que redujo el espacio de claves a 32 768 |
+| Nonce repetido | Consecuencia típica de un generador defectuoso |
+| Snapshot de VM | Restaurar estado del generador y repetir valores |
+| Pruebas de aleatoriedad | Baterías estadísticas que detectan sesgos |
 
 ## 🧰 Herramientas y preparación
 

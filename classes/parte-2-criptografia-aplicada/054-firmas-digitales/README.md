@@ -31,6 +31,85 @@ Al finalizar, el alumno podrá:
 | 6 | Verificación de software | Uso real (paquetes, releases) |
 | 7 | No repudio y sus límites | Legal y técnico |
 
+## 🧠 Explicación en profundidad
+
+### Lo que una firma añade sobre un MAC
+
+Una firma digital se genera con la **clave privada** y se verifica con la **pública**, y
+esa asimetría cambia cualitativamente lo que se puede afirmar. Como solo el firmante posee
+la clave privada, una firma válida prueba tres cosas a la vez: **integridad** (el mensaje
+no cambió), **autenticidad** (viene de quien tiene esa clave) y **no repudio** (el
+firmante no puede negarlo de forma creíble, porque nadie más pudo producirla). El MAC de
+la clase 052 da las dos primeras pero no la tercera, porque el verificador también podría
+haber fabricado la etiqueta.
+
+Además, la verificación es **pública**: cualquiera con la clave pública puede comprobar la
+firma, sin secretos compartidos. Eso es lo que hace posible firmar un paquete de software
+una vez y que millones de máquinas lo verifiquen de forma independiente.
+
+### Hash-then-sign: no se firma el mensaje, se firma su digest
+
+Firmar directamente un mensaje grande sería lento y, en RSA, imposible por encima del
+tamaño del módulo. Por eso todos los esquemas reales aplican **hash-then-sign**: se calcula
+el digest del mensaje y se firma el digest. La consecuencia es que **la seguridad de la
+firma queda acotada por la del hash**: si alguien encuentra una colisión, dos documentos
+distintos comparten digest y una firma válida para uno lo es para el otro. Ese es el
+motivo exacto por el que SHA-1 quedó prohibido para firmas tras SHAttered, y por el que se
+falsificaron certificados con MD5.
+
+```mermaid
+flowchart LR
+  M["Mensaje"] --> H["Hash - SHA-256"]
+  H --> D["Digest"]
+  D --> F["Firmar con la CLAVE PRIVADA<br/>RSA-PSS, ECDSA o Ed25519"]
+  F --> S["Firma"]
+  M --> ENV["Se envian juntos"]
+  S --> ENV
+  ENV --> V["Verificar con la CLAVE PUBLICA<br/>rehashear y comprobar"]
+  V --> R{"Coincide?"}
+  R -->|"si"| OK(["Integro, autentico y no repudiable"])
+  R -->|"no"| NO(["Alterado o firmante distinto"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#fdecea,stroke:#c0392b,color:#7b241c
+  class M,D,S,OK n
+  class H,F,V,R,ENV d
+  class NO x
+```
+
+### Tres esquemas y el fallo del nonce
+
+**RSA-PSS** es la forma correcta de firmar con RSA: incorpora aleatoriedad en el relleno,
+lo que lo hace probabilístico y le da una demostración de seguridad de la que carece el
+antiguo PKCS#1 v1.5, todavía omnipresente por compatibilidad.
+
+**ECDSA** firma sobre curva elíptica y es compacto y rápido, pero arrastra una fragilidad
+seria: **necesita un valor aleatorio secreto (`k`, el nonce) distinto en cada firma**, y
+si ese valor se repite o se filtra, **la clave privada se recupera con álgebra
+elemental**. No es teórico: así se extrajo la clave de firma de código de la PlayStation
+3 en 2010, porque Sony usaba un `k` constante; y varias carteras de criptomonedas han
+perdido fondos por generadores de aleatoriedad defectuosos. Es la conexión más directa
+entre esta clase y la 058.
+
+**Ed25519** elimina el problema de raíz: deriva el nonce de forma **determinista** a partir
+del mensaje y de la clave privada, así que no depende del generador de aleatoriedad del
+sistema en el momento de firmar. Es además rápido, sus firmas son pequeñas (64 bytes) y su
+implementación es resistente a canales laterales por diseño. Cuando puedas elegir, es la
+recomendación.
+
+### Dónde se usa esto de verdad, y qué no cubre
+
+La firma digital es lo que sostiene la cadena de confianza del software: paquetes de
+distribución firmados por el repositorio, *releases* firmadas en GitHub, binarios con
+firma de código, imágenes de contenedor firmadas con Sigstore, y los propios certificados
+X.509 de la clase 055, que no son otra cosa que una clave pública firmada por una CA.
+
+Dos límites conviene tener claros. Primero, una firma válida solo prueba que **quien tenía
+la clave** firmó: si la clave privada fue robada, la firma sigue verificando, y por eso
+existen la revocación y las marcas de tiempo. Segundo, el **no repudio técnico no equivale
+al jurídico**: el valor legal de una firma depende de la legislación aplicable y del
+proceso que rodeó su creación, no solo de la matemática.
+
 ## 📖 Definiciones y características
 
 - **Firma digital**: valor generado con la clave privada que cualquiera verifica con la pública. Característica: aporta no repudio, algo que el MAC no da.
@@ -40,6 +119,25 @@ Al finalizar, el alumno podrá:
 - **ECDSA**: firma sobre curvas; requiere un nonce `k` único y aleatorio por firma. Repetirlo o predecirlo revela la clave privada.
 - **Ed25519**: firma determinista (deriva `k` del mensaje y la clave), eliminando el riesgo del nonce; rápida y robusta.
 - **Verificación de integridad de software**: firmar releases para que los usuarios comprueben autenticidad.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Firma digital | Se genera con clave privada y se verifica con la pública |
+| No repudio | El firmante no puede negar creíblemente la autoría |
+| Verificación pública | Cualquiera con la clave pública puede comprobar la firma |
+| Hash-then-sign | Firmar el digest en lugar del mensaje completo |
+| Colisión y firmas | Dos mensajes con el mismo digest comparten firma válida |
+| RSA-PSS | Relleno probabilístico moderno para firmar con RSA |
+| PKCS#1 v1.5 | Relleno de firma antiguo, aún presente por compatibilidad |
+| ECDSA | Firma sobre curva elíptica; depende de un nonce secreto |
+| Nonce `k` de ECDSA | Repetirlo o filtrarlo revela la clave privada |
+| Ed25519 | Firma con nonce determinista; elimina ese riesgo |
+| Firma de código | Firma de binarios y paquetes para verificar procedencia |
+| Sigstore | Infraestructura moderna de firma de artefactos de software |
+| Revocación | Invalidar una clave o certificado comprometido |
+| Marca de tiempo | Prueba de que la firma existía antes de una fecha |
 
 ## 🧰 Herramientas y preparación
 

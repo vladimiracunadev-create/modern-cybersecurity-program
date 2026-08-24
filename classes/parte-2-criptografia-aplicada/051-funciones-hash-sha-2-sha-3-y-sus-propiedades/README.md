@@ -31,6 +31,81 @@ Al finalizar, el alumno podrá:
 | 6 | SHA-3 (esponja) y BLAKE | Alternativas modernas |
 | 7 | Extensión de longitud | Trampa de diseño |
 
+## 🧠 Explicación en profundidad
+
+### Qué es un hash y, sobre todo, qué no es
+
+Una función hash criptográfica toma una entrada de cualquier tamaño y produce una salida
+de tamaño fijo —el *digest*— de forma determinista. Y aquí conviene desactivar de entrada
+el malentendido más caro de toda la criptografía aplicada: **un hash no es cifrado**. No
+hay clave y **no se puede invertir**, porque la operación destruye información: infinitas
+entradas comparten un mismo digest. "Desencriptar un MD5" no significa nada; lo que hacen
+las herramientas de crackeo es hashear candidatos hasta encontrar uno que coincida, que
+es un problema completamente distinto.
+
+Su seguridad se define por tres propiedades, en orden creciente de dificultad para el
+atacante. **Resistencia a preimagen**: dado un digest, es inviable encontrar *alguna*
+entrada que lo produzca. **Resistencia a segunda preimagen**: dada una entrada concreta,
+es inviable encontrar *otra distinta* con el mismo digest. **Resistencia a colisión**: es
+inviable encontrar *dos entradas cualesquiera* que colisionen. A esto se suma el **efecto
+avalancha**: cambiar un solo bit de la entrada debe alterar aproximadamente la mitad de
+los bits de salida, sin ninguna correlación aprovechable.
+
+### La paradoja del cumpleaños explica por qué las colisiones son más baratas
+
+La resistencia a colisión es siempre la primera en caer, y no por debilidad del diseño
+sino por combinatoria. La **paradoja del cumpleaños** dice que en un grupo de 23 personas
+la probabilidad de que dos compartan cumpleaños supera el 50 %, muy por debajo de las 183
+que la intuición sugiere. Trasladado a hashes: encontrar una colisión en una función de
+*n* bits cuesta del orden de **2^(n/2)** operaciones, no 2^n. Por eso SHA-256 ofrece 128
+bits de seguridad frente a colisiones, y por eso un hash de 64 bits es inservible aunque
+"parezca" grande.
+
+Esa es la aritmética que sentenció a **MD5** (colisiones prácticas desde 2004, hoy en
+segundos) y a **SHA-1** (colisión real demostrada por Google en 2017 con el ataque
+SHAttered). Ninguno de los dos debe usarse ya para nada que dependa de la integridad. Se
+siguen encontrando como suma de comprobación no criptográfica, pero esa distinción se
+malinterpreta constantemente y acaba en vulnerabilidades.
+
+```mermaid
+flowchart TD
+  E["Entrada de cualquier tamano"] --> H["Funcion hash"]
+  H --> D["Digest de tamano fijo<br/>256 bits en SHA-256"]
+  D --> P1["Resistencia a preimagen<br/>del digest no se vuelve a la entrada"]
+  D --> P2["Resistencia a 2a preimagen<br/>no hay otra entrada con el mismo digest"]
+  D --> P3["Resistencia a colision<br/>coste 2 elevado a n/2 - cumpleanos"]
+  P3 -.->|"es la primera que cae"| ROTO(["MD5 y SHA-1<br/>colisiones practicas"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef h fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class E,D,P1,P2,P3 n
+  class H h
+  class ROTO x
+```
+
+### Dos construcciones, y la trampa de una de ellas
+
+**SHA-2** (SHA-256, SHA-512) sigue la construcción **Merkle-Damgård**: procesa el mensaje
+en bloques encadenando un estado interno. Es sólida y sigue siendo el estándar dominante,
+pero arrastra una peculiaridad estructural con consecuencias reales: el **ataque de
+extensión de longitud**. Como el digest final *es* el estado interno, quien conozca
+`H(secreto ‖ mensaje)` y la longitud del secreto puede calcular
+`H(secreto ‖ mensaje ‖ relleno ‖ añadido)` **sin conocer el secreto**. De ahí que
+construir un autenticador concatenando clave y mensaje sea un error grave, y de ahí que
+exista HMAC (clase 052).
+
+**SHA-3** (Keccak) usa una construcción distinta, la **esponja**, que absorbe la entrada
+en un estado grande y luego exprime la salida, y por diseño **no sufre extensión de
+longitud**. No sustituye a SHA-2 —ambos son estándar— sino que aporta diversidad de
+diseño: si un día se encontrara un fallo estructural en Merkle-Damgård, existe una
+alternativa que no comparte el mismo cimiento. **BLAKE2** y **BLAKE3** completan el
+panorama con un enfoque orientado a velocidad, muy usados fuera de la normativa.
+
+Y una separación final que se aplica en la clase 057: estas funciones están diseñadas
+para ser **rápidas**, que es justo lo contrario de lo que se necesita para almacenar
+contraseñas. Hashear una contraseña con SHA-256 es un fallo de seguridad, no una
+optimización.
+
 ## 📖 Definiciones y características
 
 - **Función hash criptográfica**: transforma una entrada arbitraria en una salida fija (digest). Característica: determinista, rápida, unidireccional.
@@ -40,6 +115,26 @@ Al finalizar, el alumno podrá:
 - **Efecto avalancha**: un cambio mínimo en la entrada altera drásticamente la salida.
 - **SHA-2**: familia (SHA-256/384/512) con construcción Merkle-Damgård. Segura y ubicua.
 - **SHA-3 / Keccak**: construcción de esponja, inmune a extensión de longitud. **BLAKE2/3**: rápidas y modernas.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Función hash criptográfica | Salida de tamaño fijo, determinista y no invertible |
+| Digest | Resultado de aplicar la función hash |
+| Preimagen | Encontrar una entrada que produzca un digest dado |
+| Segunda preimagen | Encontrar otra entrada con el mismo digest que una dada |
+| Colisión | Dos entradas cualesquiera con el mismo digest |
+| Efecto avalancha | Un bit de entrada cambia ~la mitad de los de salida |
+| Paradoja del cumpleaños | Las colisiones cuestan 2^(n/2), no 2^n |
+| Bits de seguridad | Coste real del mejor ataque conocido, en potencias de 2 |
+| MD5 / SHA-1 | Rotos para integridad; colisiones prácticas |
+| SHAttered | Colisión real de SHA-1 demostrada por Google en 2017 |
+| SHA-2 | Familia estándar (SHA-256, SHA-512); Merkle-Damgård |
+| Merkle-Damgård | Construcción por bloques encadenados; sufre extensión de longitud |
+| Extensión de longitud | Extender un hash con secreto sin conocer el secreto |
+| SHA-3 / Keccak | Construcción de esponja; inmune a extensión de longitud |
+| BLAKE2 / BLAKE3 | Hashes modernos orientados a velocidad |
 
 ## 🧰 Herramientas y preparación
 
