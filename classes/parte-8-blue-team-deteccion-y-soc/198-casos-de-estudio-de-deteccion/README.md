@@ -32,6 +32,33 @@ Al finalizar, el alumno podrá:
 | 7 | Puntos de detección perdidos | Dónde mejorar |
 | 8 | Lecciones aprendidas y reporte | Cerrar el ciclo |
 
+## 🧠 Explicación en profundidad
+
+Un caso defensivo reconstruye decisiones desde evidencia, no una narración retrospectiva perfecta. Cada elemento se marca como hecho observado, inferencia sustentada o hipótesis pendiente. Fuente, consulta, zona horaria y adquisición permiten reproducir el razonamiento.
+
+```mermaid
+flowchart LR
+    E[Evidencia preservada] --> TL[Línea de tiempo]
+    TL --> G[Grafo de entidades]
+    G --> H[Hipótesis]
+    H --> Q[Consultas de contraste]
+    Q --> F[Hallazgos]
+    F --> M[Mapa ATT&CK posterior]
+    F --> R[Mejoras y regresión]
+```
+
+Se distinguen hora del evento, registro e ingesta para ordenar eventos tardíos. Una detección ausente se clasifica: fuente no recolectada, parser defectuoso, analítica inexistente, alerta no creada o triaje incorrecto. Esa clasificación asigna una corrección concreta. ATT&CK se aplica después de comprender evidencia. Para comparar cambios se conserva dataset, versión, consulta y resultado esperado.
+
+## 📔 Glosario
+
+- **Hecho:** observación directamente respaldada.
+- **Inferencia:** conclusión razonada desde hechos.
+- **Hipótesis:** explicación por contrastar.
+- **Timeline:** secuencia normalizada de eventos.
+- **Provenance:** origen y tratamiento de evidencia.
+- **Regresión:** prueba que evita reintroducir un fallo.
+- **Blind spot:** comportamiento sin visibilidad suficiente.
+
 ## 📖 Definiciones y características
 
 - **Análisis de caso:** estudio estructurado de una intrusión para extraer detecciones y lecciones. Característica: enfoque retrospectivo con valor prospectivo.

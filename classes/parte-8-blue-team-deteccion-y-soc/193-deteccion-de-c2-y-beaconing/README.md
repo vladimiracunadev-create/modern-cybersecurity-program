@@ -34,6 +34,33 @@ Al finalizar, el alumno podrá:
 | 7 | Análisis estadístico (RITA) | Detectar regularidad automáticamente |
 | 8 | Correlación con endpoint | Atar el canal al proceso |
 
+## 🧠 Explicación en profundidad
+
+El mando y control permite que una intrusión reciba instrucciones o envíe resultados. Un beacon periódico es solo una forma: puede usar jitter, permanecer inactivo, ocultarse en servicios compartidos o volverse interactivo. Buscar intervalos idénticos detecta implementaciones simples y omite variantes deliberadamente irregulares.
+
+```mermaid
+flowchart LR
+    N[Conexiones] --> T[Serie temporal]
+    D[DNS, TLS y HTTP] --> M[Metadatos]
+    E[Proceso endpoint] --> C[Contexto]
+    T --> A[Analítica multiseñal]
+    M --> A
+    C --> A
+    A --> V[Validación y alcance]
+```
+
+Se combinan regularidad, duración, asimetría de bytes, destino novedoso, rareza organizacional y proceso. Entropía de dominio o huella TLS no prueban C2: CDN, actualizadores y software empresarial producen patrones parecidos. La pregunta es si la relación host-proceso-destino concuerda con su función y con la actividad del endpoint.
+
+## 📔 Glosario
+
+- **C2:** canal para controlar un implante.
+- **Beacon:** comunicación recurrente de disponibilidad.
+- **Jitter:** variación del intervalo.
+- **Periodicidad:** repetición temporal medible.
+- **Asimetría de bytes:** diferencia entre subida y bajada.
+- **Destino novedoso:** contraparte sin historia suficiente.
+- **DGA:** algoritmo que genera dominios.
+
 ## 📖 Definiciones y características
 
 - **C2 (Command and Control):** infraestructura desde la que el atacante controla los hosts comprometidos. Característica: prioriza sigilo y persistencia del canal.

@@ -32,6 +32,41 @@ Al finalizar, el alumno podrá:
 | 7 | FIM y detección de rootkits | Capacidades de HIDS de Wazuh |
 | 8 | Dashboards en Kibana | Visualización operativa |
 
+## 🧠 Explicación en profundidad
+
+Elastic Security y Wazuh pueden compartir componentes, pero no son productos intercambiables. En Elastic, la investigación y la detección se apoyan en documentos indexados, Elastic Common Schema (ECS), reglas y capacidades del stack. Wazuh añade agentes, decodificadores, reglas, inventario, evaluación de configuración e integridad de archivos. Antes de comparar interfaces hay que comparar **qué dato existe y qué semántica conserva**.
+
+```mermaid
+flowchart TB
+    subgraph Elastic
+      ES[Beats / Agent] --> ECS[ECS e ingest pipelines]
+      ECS --> IDX[Elasticsearch]
+      IDX --> K[Kibana y reglas]
+    end
+    subgraph Wazuh
+      WA[Wazuh Agent] --> WM[Manager]
+      WM --> DR[Decoders y ruleset]
+      DR --> WI[Indexador y dashboard]
+    end
+    H[Hipótesis común] --> K
+    H --> DR
+```
+
+ECS es un contrato de campos; KQL filtra documentos y EQL expresa secuencias o relaciones temporales. Confundirlos lleva a reglas que parecen equivalentes pero no lo son. En Wazuh, un decoder reconoce la estructura y una regla interpreta su significado; una falla en el primero invalida la segunda.
+
+El contenido preconstruido acelera el inicio, no elimina la ingeniería. Cada regla debe comprobar fuente requerida, versión, campos, impacto en rendimiento y supuestos ambientales. Para evaluar plataformas se ejecuta la misma hipótesis con el mismo conjunto de positivos y negativos, y se compara fidelidad, explicación, latencia y coste operativo; contar reglas instaladas no mide cobertura.
+
+## 📔 Glosario
+
+- **ECS:** esquema común de eventos de Elastic.
+- **KQL:** lenguaje de filtrado de Kibana.
+- **EQL:** lenguaje para secuencias y relaciones entre eventos.
+- **Ingest pipeline:** transformaciones aplicadas antes de indexar.
+- **Decoder:** lógica de Wazuh que extrae campos del mensaje.
+- **Ruleset:** conjunto versionado de reglas.
+- **FIM:** monitoreo de integridad de archivos.
+- **Contenido preconstruido:** detecciones mantenidas por un proveedor que requieren validación local.
+
 ## 📖 Definiciones y características
 
 - **Elasticsearch:** motor de búsqueda e indexación distribuido. Característica: búsquedas rápidas sobre grandes volúmenes vía índices invertidos.

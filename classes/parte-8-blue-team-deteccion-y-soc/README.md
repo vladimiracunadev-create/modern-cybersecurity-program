@@ -65,6 +65,46 @@ Al terminar la parte, el alumno podrá:
 | Inteligencia y automatización | 195–196 | Threat intel operacional, SOAR |
 | Gobierno y cierre | 197–198, 200 | Métricas, casos de estudio, purple team |
 
+## 🧭 Mapa de aprendizaje
+
+La parte sigue una dependencia deliberada: primero se construye la capacidad operativa y sus datos; luego se escriben y validan detecciones; finalmente se gobierna el aprendizaje. Saltar directamente a reglas suele producir búsquedas sin datos confiables ni proceso de respuesta.
+
+```mermaid
+flowchart LR
+    SOC[SOC y proceso<br/>181] --> TEL[Telemetría y SIEM<br/>182-185]
+    TEL --> DET[Sigma y ATT&CK<br/>186-187]
+    DET --> HUNT[Hunting y endpoint<br/>188-190]
+    TEL --> NET[Red y comportamientos<br/>191-194]
+    HUNT --> CTI[CTI y SOAR<br/>195-196]
+    NET --> CTI
+    CTI --> GOV[Métricas y casos<br/>197-198]
+    GOV --> ENG[Ingeniería de detección<br/>199]
+    ENG --> PUR[Purple team y regresión<br/>200]
+```
+
+## 🧪 Caso conductor: construir una capacidad SOC verificable
+
+Durante las veinte clases se mantiene un único caso: una organización híbrida con estaciones Windows, servidores Linux, identidad centralizada, servicios cloud y salida a Internet mediante proxy. El alumno amplía el mismo dossier en vez de producir ejercicios inconexos:
+
+1. Define roles, escaladas, fuentes y contratos de datos.
+2. Implementa consultas equivalentes en las plataformas estudiadas y documenta sus diferencias.
+3. Formula hipótesis, reglas Sigma y mapeos ATT&CK sustentados en campos observables.
+4. Reconstruye movimiento lateral y C2 mediante evidencia de endpoint, identidad y red.
+5. Convierte hallazgos en playbooks, métricas y pruebas de regresión purple team.
+
+Cada afirmación debe etiquetarse como **observación**, **inferencia** o **hipótesis**. Cada detección debe declarar datos requeridos, prueba positiva, prueba negativa, propietario y criterio de retiro.
+
+## 📋 Cómo estudiar cada clase
+
+- **Antes:** revisa objetivo, glosario y diagrama; identifica qué concepto depende de una clase anterior.
+- **Durante:** reproduce el laboratorio en un entorno propio, guarda consultas y registra versiones y zona horaria.
+- **Después:** explica con tus palabras qué observa la técnica, qué no observa y qué decisión habilita.
+- **Validación:** no marques una detección como cubierta hasta demostrar dato, coincidencia analítica, alerta y respuesta.
+
+## ✅ Evidencias y evaluación de la parte
+
+El portafolio final contiene arquitectura del SOC, catálogo de telemetría, dos búsquedas SIEM equivalentes, reglas Sigma probadas, paquete de threat hunting, timeline de un caso, playbook SOAR y scorecard purple team. Se evalúa con cuatro dimensiones: exactitud técnica, trazabilidad de evidencia, reproducibilidad y claridad de la decisión defensiva. Instalar herramientas o colorear ATT&CK sin pruebas no acredita aprendizaje.
+
 ## 🔗 Referencias de la parte
 
 - Bejtlich, R. *The Practice of Network Security Monitoring*. No Starch Press. — <https://nostarch.com/nsm>
@@ -72,7 +112,11 @@ Al terminar la parte, el alumno podrá:
 - Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*.
 - MITRE ATT&CK — <https://attack.mitre.org/>
 - SigmaHQ — <https://github.com/SigmaHQ/sigma>
-- NIST SP 800-92 — <https://csrc.nist.gov/publications/detail/sp/800-92/final>
+- NIST SP 800-92, gestión de logs — <https://doi.org/10.6028/NIST.SP.800-92>
+- NIST SP 800-61 Rev. 3, respuesta a incidentes integrada con CSF 2.0 — <https://doi.org/10.6028/NIST.SP.800-61r3>
+- NIST SP 800-55 Vol. 2, programas de medición de seguridad — <https://doi.org/10.6028/NIST.SP.800-55v2>
+- MITRE ATT&CK Detection Strategies — <https://attack.mitre.org/detectionstrategies/>
+- Sigma Rules Specification 2.1.0 — <https://sigmahq.io/sigma-specification/specification/sigma-rules-specification.html>
 
 ## ▶️ Empezar
 

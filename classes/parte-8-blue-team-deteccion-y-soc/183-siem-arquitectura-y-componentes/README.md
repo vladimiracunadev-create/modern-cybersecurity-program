@@ -32,6 +32,40 @@ Al finalizar, el alumno podrá:
 | 7 | Dimensionamiento (EPS, GB/día) | Base del presupuesto y la licencia |
 | 8 | Modelos de despliegue | On-prem vs cloud vs gestionado |
 
+## 🧠 Explicación en profundidad
+
+Un SIEM es una **cadena de suministro de evidencia**. Si un eslabón pierde datos, cambia tipos o introduce retraso, la consulta final puede ejecutarse correctamente y aun así responder mal. La arquitectura debe observar su propia salud: último evento por fuente, tasa recibida, errores de parseo, retraso, descartes y capacidad de las colas son señales de seguridad.
+
+```mermaid
+flowchart LR
+    S[Fuentes] --> F[Agente o forwarder]
+    F --> B[Broker / buffer]
+    B --> N[Parseo y normalización]
+    N --> E[Enriquecimiento]
+    E --> I[Índice o data lake]
+    I --> X[Analíticas]
+    X --> A[Alertas]
+    A --> C[Casos]
+    M[Monitoreo del pipeline] -. latencia, pérdida, errores .-> F
+    M -.-> N
+    M -.-> I
+```
+
+EPS mide eventos por segundo, mientras GB/día mide bytes ingeridos; ninguno sustituye al otro. El diseño debe considerar picos, tamaño por evento, compresión, réplicas y consultas concurrentes. Un buffer desacopla productores y consumidores, pero requiere política frente a saturación: bloquear, descartar o desviar son decisiones con consecuencias distintas.
+
+El enriquecimiento añade valor —criticidad del activo, propietario, identidad o inteligencia—, pero necesita procedencia y caducidad. Una dirección IP puede cambiar de propietario; un usuario puede rotar de función. Finalmente, una coincidencia analítica no es un caso investigado: la capa de alertas debe agrupar, deduplicar y conservar el razonamiento que llevó a una decisión.
+
+## 📔 Glosario
+
+- **Forwarder:** agente que transporta eventos desde el origen.
+- **Broker:** cola duradera que desacopla etapas.
+- **EPS:** eventos procesados por segundo.
+- **Backpressure:** acumulación causada por un consumidor más lento que el productor.
+- **Índice:** estructura optimizada para buscar campos.
+- **Data lake:** repositorio de datos a gran escala, usualmente con varios esquemas.
+- **Enriquecimiento:** contexto adicional unido a un evento.
+- **Deduplicación:** reducción de repeticiones equivalentes sin perder trazabilidad.
+
 ## 📖 Definiciones y características
 
 - **SIEM:** plataforma que centraliza, normaliza y correlaciona eventos de seguridad para detectar, investigar y reportar. Característica: correlación entre múltiples fuentes en tiempo casi real.

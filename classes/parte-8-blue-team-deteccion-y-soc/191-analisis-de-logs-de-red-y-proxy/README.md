@@ -32,6 +32,34 @@ Al finalizar, el alumno podrá:
 | 7 | Exfiltración y beaconing (intro) | Patrones de salida anómala |
 | 8 | Correlación red↔endpoint | Historia completa del incidente |
 
+## 🧠 Explicación en profundidad
+
+La visibilidad de red tiene niveles. Un flujo resume quién habló con quién, cuándo y cuánto; los logs de protocolo añaden DNS, HTTP o TLS; un PCAP conserva bytes, con mayor coste y sensibilidad. Un proxy aporta usuario, política y categoría solo para tráfico que realmente lo atraviesa.
+
+```mermaid
+flowchart LR
+    P[Paquetes] --> F[Flujos]
+    P --> Z[Logs Zeek]
+    P --> PC[PCAP selectivo]
+    X[Proxy] --> PX[URL, usuario y acción]
+    F --> C[Correlación]
+    Z --> C
+    PX --> C
+    C --> H[Hipótesis]
+```
+
+Zeek relaciona `conn.log`, `dns.log`, `http.log` y `ssl.log` mediante `uid`. TLS expone metadatos, no el contenido cifrado, y nuevas tecnologías pueden reducir lo visible. Huellas y reputación son señales cambiantes, no identidades. Una detección combina novedad, frecuencia, volumen, proceso de origen y rol del activo.
+
+## 📔 Glosario
+
+- **Flow:** resumen de una conversación de red.
+- **PCAP:** captura de paquetes.
+- **Metadato:** campo interpretado sin conservar todo el contenido.
+- **Zeek UID:** identificador para unir logs de una conexión.
+- **Proxy explícito:** intermediario configurado por el cliente.
+- **TLS fingerprint:** huella del handshake observado.
+- **Egress:** tráfico que sale de una zona.
+
 ## 📖 Definiciones y características
 
 - **NSM (Network Security Monitoring):** recolección y análisis de datos de red para detectar intrusiones. Característica: visibilidad independiente del host.

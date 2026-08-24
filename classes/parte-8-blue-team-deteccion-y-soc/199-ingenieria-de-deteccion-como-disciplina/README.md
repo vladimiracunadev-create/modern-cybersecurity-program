@@ -32,6 +32,34 @@ Al finalizar, el alumno podrá:
 | 7 | Calidad y deuda de detección | Evitar degradación silenciosa |
 | 8 | Colaboración red↔blue (puente a purple) | Mejorar con adversario real |
 
+## 🧠 Explicación en profundidad
+
+La ingeniería de detección trata cada analítica como producto mantenible. Comienza con hipótesis y contrato de datos, no con sintaxis del SIEM. El contrato declara fuentes, campos, semántica, latencia y calidad mínima; así una falla upstream se distingue de una evasión.
+
+```mermaid
+flowchart LR
+    H[Hipótesis] --> C[Contrato de datos]
+    C --> A[Analítica]
+    A --> T[Pruebas]
+    T --> D[Despliegue]
+    D --> O[Observabilidad]
+    O --> M[Mantenimiento]
+    M --> R{Conservar, cambiar o retirar}
+    R --> H
+```
+
+Detection-as-code incluye regla, metadatos, mapeos y fixtures positivos y negativos. CI valida esquema, conversión, resultados y coste. En producción se vigilan tasa, latencia, campos nulos y distribución por entidad. Una caída de alertas puede significar éxito, pipeline roto o evasión. Toda regla necesita dueño, revisión y retiro; acumular contenido sin mantenimiento aumenta deuda y fatiga.
+
+## 📔 Glosario
+
+- **Contrato de datos:** requisitos verificables de telemetría.
+- **Detection-as-code:** contenido versionado y probado.
+- **Fixture:** evento de prueba con resultado esperado.
+- **CI:** validaciones automáticas previas a integrar.
+- **Drift:** cambio del entorno que degrada una regla.
+- **Observabilidad de regla:** métricas sobre ejecución.
+- **Retiro:** desactivación documentada.
+
 ## 📖 Definiciones y características
 
 - **Ingeniería de detección:** disciplina de crear, probar y mantener detecciones con rigor de ingeniería. Característica: ciclo de vida, calidad medible y mejora continua.
@@ -104,6 +132,8 @@ Cuando su ratio de falsos positivos es insostenible, la técnica ya no aplica, o
 - MITRE ATT&CK — <https://attack.mitre.org/>
 - Palantir, "Alerting and Detection Strategy Framework" — <https://github.com/palantir/alerting-detection-strategy-framework>
 - Splunk, "Detection Engineering" (recursos formativos).
+- MITRE ATT&CK Detection Strategies — <https://attack.mitre.org/detectionstrategies/>
+- Atomic Red Team, documentación oficial — <https://www.atomicredteam.io/docs/atomic-red-team>
 
 ## 📥 Material descargable
 

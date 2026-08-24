@@ -32,6 +32,36 @@ Al finalizar, el alumno podrá:
 | 7 | Riesgos de la automatización | No romper producción con una acción |
 | 8 | Métricas de automatización | Demostrar el valor |
 
+## 🧠 Explicación en profundidad
+
+SOAR coordina sistemas, decisiones y evidencia. Orquestar hace que herramientas intercambien contexto; automatizar ejecuta pasos sin intervención. Un playbook serio es una máquina de estados con entrada validada, enriquecimiento, decisión, acción, verificación, excepción y cierre; el camino ideal no basta.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Validar
+    Validar --> Enriquecer: datos suficientes
+    Validar --> Revision: datos incompletos
+    Enriquecer --> Decidir
+    Decidir --> Aprobar: impacto alto
+    Decidir --> Actuar: autorizado
+    Aprobar --> Actuar: aprobado
+    Actuar --> Verificar
+    Verificar --> Revertir: efecto adverso
+    Verificar --> Cerrar: resultado esperado
+```
+
+Cada integración usa identidad mínima, secretos rotables y auditoría. Las acciones deben ser idempotentes o reconocer repeticiones; bloqueo y aislamiento necesitan duración, propietario y reversión. La adopción progresa desde enriquecer, luego recomendar y finalmente contener solo escenarios probados. La automatización apoya decisiones de riesgo, no sustituye el juicio.
+
+## 📔 Glosario
+
+- **SOAR:** orquestación, automatización y respuesta.
+- **Orquestación:** coordinación de herramientas y datos.
+- **Playbook:** flujo ejecutable con decisiones.
+- **Idempotencia:** repetición sin efectos adicionales indebidos.
+- **Human-in-the-loop:** aprobación humana explícita.
+- **Rollback:** reversión de una acción.
+- **Service account:** identidad técnica limitada.
+
 ## 📖 Definiciones y características
 
 - **SOAR:** plataforma que orquesta herramientas y automatiza flujos de respuesta. Característica: reduce trabajo manual y estandariza la reacción.
@@ -104,7 +134,7 @@ Con cuidado y salvaguardas. Aislar un host o bloquear una IP puede impactar prod
 - TheHive & Cortex — <https://thehive-project.org/>
 - Shuffle SOAR — <https://shuffler.io/>
 - Gartner, "Market Guide for SOAR Solutions" (marco conceptual).
-- NIST SP 800-61r2, *Computer Security Incident Handling Guide* — <https://csrc.nist.gov/pubs/sp/800/61/r2/final>
+- NIST SP 800-61 Rev. 3, integración de respuesta a incidentes con CSF 2.0 — <https://doi.org/10.6028/NIST.SP.800-61r3>
 
 ## 📥 Material descargable
 

@@ -32,6 +32,32 @@ Al finalizar, el alumno podrá:
 | 7 | Conversión con pySigma | Del YAML a la consulta real |
 | 8 | Repositorio SigmaHQ | Miles de reglas listas para adaptar |
 
+## 🧠 Explicación en profundidad
+
+Sigma describe una detección en formato independiente del SIEM, pero no promete «escribir una vez y ejecutar igual en todas partes». `logsource` expresa el dato esperado; `detection` selecciona eventos y `condition` combina selecciones. Un pipeline debe resolver campos, valores y capacidades del backend. Si la fuente no registra el dato, la conversión no puede inventarlo.
+
+```mermaid
+flowchart LR
+    H[Hipótesis] --> S[Regla Sigma]
+    S --> P[Pipeline y mapeo]
+    P --> Q[Consulta nativa]
+    Q --> D[Datos reales]
+    D --> T[Pruebas positivas y negativas]
+    T --> S
+```
+
+Las listas y selecciones poseen semántica booleana precisa; los modificadores cambian la comparación y los escapes dependen de la especificación. La validación cubre esquema, conversión, ejecución, positivo conocido, actividad benigna y coste. Estado, autor, fecha, falsos positivos y referencias no son decoración: permiten gobernar la regla durante su ciclo de vida.
+
+## 📔 Glosario
+
+- **Logsource:** categoría, producto y servicio esperados.
+- **Selection:** condiciones sobre campos.
+- **Condition:** expresión booleana que combina selecciones.
+- **Modifier:** transformación o comparación aplicada a un valor.
+- **Pipeline:** mapeos previos a la conversión.
+- **Backend:** plataforma que recibe la consulta traducida.
+- **Fixture:** evento controlado para probar un resultado.
+
 ## 📖 Definiciones y características
 
 - **Sigma:** formato abierto en YAML para describir detecciones de log de forma agnóstica al SIEM. Característica: portabilidad entre backends.
@@ -119,7 +145,8 @@ Sí, y deberías. Guarda tu carpeta de reglas en un repositorio, con revisión y
 ## 🔗 Referencias
 
 - SigmaHQ (repositorio y specification) — <https://github.com/SigmaHQ/sigma>
-- Sigma Specification — <https://github.com/SigmaHQ/sigma-specification>
+- Sigma Rules Specification 2.1.0 — <https://sigmahq.io/sigma-specification/specification/sigma-rules-specification.html>
+- Sigma Conditions — <https://sigmahq.io/docs/basics/conditions.html>
 - sigma-cli / pySigma — <https://github.com/SigmaHQ/sigma-cli>
 - MITRE ATT&CK — <https://attack.mitre.org/>
 - Roth, F. y equipo SigmaHQ, documentación del proyecto.

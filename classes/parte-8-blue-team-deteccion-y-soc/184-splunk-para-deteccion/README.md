@@ -32,6 +32,36 @@ Al finalizar, el alumno podrá:
 | 7 | Lookups y enriquecimiento | Añade contexto (activos, intel) |
 | 8 | Notable Events (Splunk ES) | Cómo se gestiona la alerta en producción |
 
+## 🧠 Explicación en profundidad
+
+SPL funciona como una tubería: cada comando recibe un conjunto de resultados y produce otro. El orden importa. Filtrar temprano por tiempo, índice, sourcetype y términos selectivos reduce el trabajo posterior; extraer campos innecesarios antes del filtro encarece la consulta. `stats` agrega eventos disponibles, mientras `tstats` aprovecha estructuras aceleradas y exige comprender el modelo de datos y sus restricciones.
+
+```mermaid
+flowchart LR
+    I[Índices y rango temporal] --> F[Filtro selectivo]
+    F --> X[Extracción de campos]
+    X --> E[eval / normalización]
+    E --> G[stats o tstats]
+    G --> C[Condición de riesgo]
+    C --> N[Notable o hallazgo]
+    N --> V[Validación y ajuste]
+```
+
+El Common Information Model no modifica mágicamente los datos: define campos y etiquetas que las fuentes deben mapear. Una búsqueda portable necesita verificar que ese mapeo esté completo y fresco. Además, las búsquedas programadas deben considerar retraso de ingesta. Una ejecución cada cinco minutos sobre los últimos cinco minutos puede perder un evento que llegó seis minutos tarde; una ventana solapada exige deduplicar.
+
+El tuning profesional no consiste en añadir exclusiones indefinidamente. Primero se identifica qué hipótesis genera el ruido; luego se incorpora contexto estable —tipo de activo, cuenta de servicio, firma, relación padre-hijo— y se prueban positivos conocidos y actividad benigna. Toda excepción debe tener dueño, razón y fecha de revisión.
+
+## 📔 Glosario
+
+- **SPL:** lenguaje de búsqueda de Splunk.
+- **Sourcetype:** clasificación que guía cómo interpretar eventos.
+- **Pipeline:** secuencia de comandos separados por `|`.
+- **Transformación:** operación que resume o cambia el conjunto de resultados.
+- **CIM:** modelo común de campos y datasets de Splunk.
+- **Data model acceleration:** materialización que permite consultas `tstats` más rápidas.
+- **Notable:** evento de seguridad promovido para triaje.
+- **Ventana solapada:** rango que vuelve a consultar parte del periodo anterior.
+
 ## 📖 Definiciones y características
 
 - **SPL (Search Processing Language):** lenguaje de consulta de Splunk basado en tuberías (`|`). Característica: componible, cada comando transforma el resultado del anterior.

@@ -32,6 +32,36 @@ Al finalizar, el alumno podrá:
 | 7 | Velociraptor y VQL | Caza y DFIR a escala |
 | 8 | Manipulación (tamper) y evasión de EDR | Conocer los límites del control |
 
+## 🧠 Explicación en profundidad
+
+EDR conserva relaciones entre usuario, proceso padre, proceso hijo, archivo, registro y conexión. El valor está en el linaje, no en un nombre aislado: un intérprete puede ser legítimo, pero su padre, línea de comandos, firma, destino y frecuencia cambian la interpretación.
+
+```mermaid
+flowchart LR
+    U[Usuario] --> P[Proceso padre]
+    P --> C[Proceso hijo]
+    C --> F[Archivo o registro]
+    C --> N[Conexión]
+    F --> A[Analítica EDR]
+    N --> A
+    A --> I[Investigación]
+    I --> R{Respuesta autorizada}
+    R --> ISO[Aislar]
+    R --> COL[Recolectar]
+```
+
+PID y nombre no identifican permanentemente una ejecución: el PID se reutiliza. GUID y tiempo de creación permiten correlacionar mejor; hash y firma aportan contexto, pero tampoco deciden por sí solos. Aislar o terminar procesos modifica producción y puede destruir evidencia. Se define autoridad, reversión y prioridad de adquisición antes de automatizar. osquery consulta estado de flota y Velociraptor recolecta artefactos; complementan la historia retenida por el EDR.
+
+## 📔 Glosario
+
+- **EDR:** detección y respuesta con telemetría de endpoint.
+- **EPP:** prevención en endpoint.
+- **Árbol de procesos:** relaciones padre-hijo entre ejecuciones.
+- **Process GUID:** identificador de instancia de proceso.
+- **Live response:** sesión remota controlada.
+- **Aislamiento:** restricción de red del host.
+- **Adquisición:** recolección preservada de evidencia.
+
 ## 📖 Definiciones y características
 
 - **EDR:** solución que registra actividad de endpoint, detecta comportamientos maliciosos y permite responder remotamente. Característica: telemetría continua + capacidad de acción.
@@ -106,6 +136,7 @@ No. Existen técnicas de evasión y tamper. Por eso el blue team combina EDR con
 - Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*.
 - Velociraptor Documentation — <https://docs.velociraptor.app/>
 - osquery Documentation — <https://osquery.readthedocs.io/>
+- Microsoft Defender for Endpoint, investigación de dispositivos — <https://learn.microsoft.com/en-us/defender-endpoint/investigate-machines>
 - MITRE ATT&CK, táctica Defense Evasion — <https://attack.mitre.org/tactics/TA0005/>
 - Wazuh Endpoint Security — <https://documentation.wazuh.com/>
 

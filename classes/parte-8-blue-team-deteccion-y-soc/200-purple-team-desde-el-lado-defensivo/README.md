@@ -34,6 +34,35 @@ Al finalizar, el alumno podrá:
 | 7 | Cierre del bucle | De hueco a detección |
 | 8 | Cadencia y mejora continua | Purple como programa, no evento |
 
+## 🧠 Explicación en profundidad
+
+Purple team es colaboración orientada a evidencia, no necesariamente un equipo permanente. Se acuerdan comportamiento, activo, procedimiento seguro, datos esperados, detención y responsables. Una prueba atómica valida una unidad; una cadena emulada estudia transiciones. Sus conclusiones no son equivalentes.
+
+```mermaid
+flowchart LR
+    B[Comportamiento] --> P[Plan y límites]
+    P --> E[Ejecución controlada]
+    E --> D[¿Llegó el dato?]
+    D --> A[¿Coincidió la analítica?]
+    A --> L[¿Se generó alerta?]
+    L --> R[¿Respondió el proceso?]
+    R --> G[Brecha, dueño y fecha]
+    G --> X[Regresión]
+    X --> B
+```
+
+El scorecard separa telemetría, analítica, alerta y respuesta; «detectado/no detectado» oculta dónde falló la cadena. Atomic Red Team ofrece pruebas pequeñas y Apache Caldera (Incubating) orquesta perfiles. Ambos requieren autorización, versiones fijas y cleanup. Cada brecha termina con dueño, plazo y repetición; sin regresión el ejercicio es una foto, no capacidad sostenible.
+
+## 📔 Glosario
+
+- **Purple teaming:** colaboración para mejorar controles.
+- **Prueba atómica:** procedimiento pequeño y aislado.
+- **Emulación:** secuencia de comportamiento adversario.
+- **Control objective:** resultado defensivo verificable.
+- **Scorecard:** evidencia separada por capa.
+- **Cleanup:** reversión de artefactos de prueba.
+- **Regresión:** repetición que confirma la corrección.
+
 ## 📖 Definiciones y características
 
 - **Purple team:** ejercicio colaborativo donde red ejecuta técnicas y blue mide y mejora la detección en tiempo real. Característica: objetivo compartido de subir la cobertura.
@@ -105,7 +134,7 @@ Como programa continuo: ciclos regulares (p. ej. mensuales/trimestrales) que rev
 
 - MITRE ATT&CK y Groups — <https://attack.mitre.org/groups/>
 - Atomic Red Team — <https://github.com/redcanaryco/atomic-red-team>
-- MITRE Caldera — <https://caldera.mitre.org/>
+- Apache Caldera (Incubating), documentación oficial — <https://caldera.apache.org/>
 - MITRE ATT&CK Navigator — <https://mitre-attack.github.io/attack-navigator/>
 - Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*.
 

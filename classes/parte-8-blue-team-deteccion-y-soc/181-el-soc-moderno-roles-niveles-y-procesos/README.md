@@ -32,6 +32,38 @@ Al finalizar, el alumno podrá:
 | 7 | Métricas base (MTTD, MTTR, dwell time) | Permiten mejorar con datos, no con opinión |
 | 8 | Turnos y modelo de cobertura (8x5 vs 24x7) | Determina la ventana de exposición |
 
+## 🧠 Explicación en profundidad
+
+Un SOC no es una sala llena de pantallas: es una **capacidad operativa** que convierte señales técnicas en decisiones de riesgo. Personas, procesos, datos y herramientas deben funcionar como un sistema. NIST SP 800-61 Rev. 3 integra la respuesta a incidentes con las seis funciones de CSF 2.0; por eso el SOC no empieza cuando aparece una alerta ni termina cuando se cierra un ticket. También participa en preparación, aprendizaje y reducción del riesgo.
+
+Los niveles L1/L2/L3 son un modelo frecuente, no una norma universal. Su utilidad está en separar decisiones: L1 valida calidad y contexto mínimo; L2 determina alcance e impacto; L3 resuelve investigaciones complejas y transforma lo aprendido en mejores controles. Una escalada útil entrega evidencia, consultas ejecutadas, activos afectados y preguntas pendientes. Reenviar una alerta sin contexto solo traslada la cola.
+
+```mermaid
+flowchart LR
+    E[Evento] --> A[Analítica y alerta]
+    A --> T[Triaje con contexto]
+    T --> D{¿Incidente probable?}
+    D -- No --> C[Cierre justificado]
+    D -- Sí --> I[Investigación y alcance]
+    I --> R[Contención, erradicación y recuperación]
+    R --> L[Lecciones y mejora]
+    C --> L
+    L --> A
+```
+
+El cierre es una producción de conocimiento: debe registrar disposición, evidencia, causa de falsos positivos y acciones posteriores. Las métricas necesitan puntos de inicio y fin explícitos; «MTTR» puede significar tiempo hasta reconocer, contener, recuperar o cerrar. Comparar cifras sin esa definición crea una apariencia de precisión, no aprendizaje.
+
+## 📔 Glosario
+
+- **Triaje:** clasificación inicial basada en validez, severidad y contexto.
+- **Escalada:** transferencia documentada de responsabilidad o especialidad.
+- **Caso:** contenedor de evidencias y decisiones; no equivale automáticamente a incidente.
+- **Runbook:** instrucciones repetibles para una tarea concreta.
+- **Playbook:** coordinación de decisiones, tareas y responsables ante un escenario.
+- **RACI:** matriz de responsable, aprobador, consultado e informado.
+- **Criterio de cierre:** condiciones verificables para terminar un caso.
+- **Bucle de mejora:** retorno de lo aprendido hacia datos, reglas, controles y formación.
+
 ## 📖 Definiciones y características
 
 - **SOC (Security Operations Center):** equipo y plataforma que monitorea, detecta, investiga y responde a amenazas de forma continua. Característica clave: opera con procesos definidos, no ad hoc.
@@ -105,7 +137,8 @@ El monitoreo reacciona a lo que una regla ya disparó; el hunting busca proactiv
 - Bejtlich, R. *The Practice of Network Security Monitoring*. No Starch Press.
 - MITRE ATT&CK — <https://attack.mitre.org/>
 - SANS, "Building a World-Class Security Operations Center" (whitepaper).
-- NIST SP 800-61r2, *Computer Security Incident Handling Guide* — <https://csrc.nist.gov/pubs/sp/800/61/r2/final>
+- NIST SP 800-61 Rev. 3, *Incident Response Recommendations and Considerations for Cybersecurity Risk Management* — <https://doi.org/10.6028/NIST.SP.800-61r3>
+- NIST CSF 2.0, marco para integrar gobierno, identificación, protección, detección, respuesta y recuperación — <https://doi.org/10.6028/NIST.CSWP.29>
 
 ## 📥 Material descargable
 

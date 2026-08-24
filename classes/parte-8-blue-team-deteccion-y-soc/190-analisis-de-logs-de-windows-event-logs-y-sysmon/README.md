@@ -32,6 +32,33 @@ Al finalizar, el alumno podrá:
 | 7 | Logon types y sesiones | Diferenciar interactivo, red, RDP |
 | 8 | Afinado y reducción de ruido | Evitar ahogar el SIEM |
 
+## 🧠 Explicación en profundidad
+
+Un Event ID de Windows solo tiene significado junto con proveedor, canal, versión y política habilitada. El 4688 depende de auditoría de creación de procesos; Sysmon Event 1 añade hashes y `ProcessGuid`, pero Sysmon no alerta por sí mismo: registra lo permitido por su configuración.
+
+```mermaid
+flowchart LR
+    AP[Audit Policy] --> SEC[Security Log]
+    CFG[Configuración Sysmon] --> SYS[Sysmon Operational]
+    SEC --> C[Correlación por identidad, host y tiempo]
+    SYS --> C
+    DC[Controlador de dominio] --> C
+    C --> TL[Línea de tiempo]
+    TL --> H[Hipótesis validada]
+```
+
+Un 4624 significa autenticación exitosa, no intrusión. Tipo de logon, cuenta, origen y eventos relacionados determinan si representa consola, red, servicio o sesión remota. La autenticación puede aparecer en el controlador y el proceso en el destino. Las configuraciones comunitarias son puntos de partida: cada inclusión y exclusión debe vincularse a un caso, probar volumen y conservar versión y hash para reproducibilidad.
+
+## 📔 Glosario
+
+- **Provider:** componente que emite un evento.
+- **Channel:** flujo lógico que guarda eventos.
+- **Audit Policy:** configuración de categorías auditadas.
+- **Event ID:** identificador local al proveedor.
+- **Logon type:** clase de sesión autenticada.
+- **ProcessGuid:** identificador estable de instancia en Sysmon.
+- **Correlación temporal:** unión por entidad y ventana de tiempo.
+
 ## 📖 Definiciones y características
 
 - **Event ID 4624/4625:** logon exitoso/fallido. Característica: incluye *Logon Type* (2 interactivo, 3 red, 10 RDP) clave para el contexto.
@@ -98,7 +125,8 @@ Parte de una configuración comunitaria afinada, excluye procesos benignos ruido
 
 ## 🔗 Referencias
 
-- Microsoft Sysmon — <https://learn.microsoft.com/sysinternals/downloads/sysmon>
+- Microsoft Sysmon — <https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon>
+- Microsoft, referencia de eventos Sysmon — <https://learn.microsoft.com/en-us/windows/security/operating-system-security/sysmon/sysmon-events>
 - Windows Security Audit Events — <https://learn.microsoft.com/windows/security/threat-protection/auditing/>
 - Olaf Hartong, sysmon-modular — <https://github.com/olafhartong/sysmon-modular>
 - SwiftOnSecurity, sysmon-config — <https://github.com/SwiftOnSecurity/sysmon-config>

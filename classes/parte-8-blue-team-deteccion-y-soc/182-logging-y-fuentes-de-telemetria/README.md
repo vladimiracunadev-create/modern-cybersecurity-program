@@ -32,6 +32,37 @@ Al finalizar, el alumno podrá:
 | 7 | Retención y coste | Equilibra visibilidad y presupuesto |
 | 8 | Puntos ciegos y cobertura | Un atacante prospera donde no hay logs |
 
+## 🧠 Explicación en profundidad
+
+La telemetría defensiva debe tratarse como un **producto de datos con propósito**, no como una acumulación indiscriminada. Cada fuente debe responder qué comportamiento permite observar, con qué campos, durante cuánto tiempo y con qué limitaciones. Endpoint muestra procesos y archivos; identidad muestra autenticaciones y privilegios; red aporta relaciones y protocolos; nube y aplicaciones revelan acciones que nunca pasan por un host administrado. Ninguna fuente ofrece por sí sola la historia completa.
+
+```mermaid
+flowchart LR
+    S[Endpoint, identidad, red, nube] --> C[Colectores]
+    C --> B[Buffer o cola]
+    B --> P[Parseo y normalización]
+    P --> Q[Controles de calidad]
+    Q --> H[Consulta en caliente]
+    Q --> A[Archivo y retención]
+    H --> D[Detecciones e investigaciones]
+    K[Catálogo de datos] -. propietario, campos, SLA .-> P
+```
+
+Conviene conservar el evento original y producir, además, una representación normalizada. El original permite revisar errores del parser; el esquema común permite correlacionar fuentes. Deben distinguirse al menos tres tiempos: cuándo ocurrió la acción, cuándo la registró el productor y cuándo llegó a la plataforma. Esa diferencia explica eventos tardíos y obliga a usar ventanas con solapamiento.
+
+La retención se decide por caso de uso, riesgo, obligación legal, privacidad y coste. «Guardar todo» puede aumentar exposición y ruido. Para cada fuente se valida completitud, puntualidad, fidelidad de campos, volumen esperado y ausencia de duplicados. Una regla perfecta sobre datos interrumpidos es una detección inexistente.
+
+## 📔 Glosario
+
+- **Fuente:** sistema que origina registros.
+- **Colector:** componente que recibe o extrae eventos.
+- **Parser:** lógica que convierte texto o estructura de origen en campos.
+- **Normalización:** mapeo a nombres y tipos comunes sin borrar el original.
+- **Latencia de ingesta:** diferencia entre ocurrencia y disponibilidad para consulta.
+- **Retención:** periodo y nivel de almacenamiento de los datos.
+- **Dato caliente:** telemetría optimizada para consulta inmediata.
+- **Calidad de datos:** completitud, exactitud, puntualidad y consistencia útiles para un caso.
+
 ## 📖 Definiciones y características
 
 - **Datos de sesión (flow):** metadatos de conexiones (IP origen/destino, puertos, bytes, duración). Característica: baratos y de larga retención; ideales para hunting histórico.
@@ -103,7 +134,8 @@ Solo en segmentos críticos y con retención corta. Para hunting histórico, los
 ## 🔗 Referencias
 
 - Sanders, C. y Smith, J. *Applied Network Security Monitoring*. Syngress.
-- NIST SP 800-92, *Guide to Computer Security Log Management* — <https://csrc.nist.gov/publications/detail/sp/800-92/final>
+- NIST SP 800-92, *Guide to Computer Security Log Management* — <https://doi.org/10.6028/NIST.SP.800-92>
+- NIST SP 800-53 Rev. 5, familia AU de auditoría y rendición de cuentas — <https://doi.org/10.6028/NIST.SP.800-53r5>
 - Microsoft Sysmon — <https://learn.microsoft.com/sysinternals/downloads/sysmon>
 - Zeek Documentation — <https://docs.zeek.org/>
 - Elastic Common Schema (ECS) — <https://www.elastic.co/guide/en/ecs/current/index.html>

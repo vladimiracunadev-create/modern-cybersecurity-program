@@ -2439,7 +2439,8 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-7-red-team-y-operaciones-ofensivas/178-purple-teaming/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/180-adversary-emulation-con-atomic-red-team-y-caldera/README.md"
+    "classes/parte-7-red-team-y-operaciones-ofensivas/180-adversary-emulation-con-atomic-red-team-y-caldera/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md"
    ],
    "authors": []
   },
@@ -8858,7 +8859,9 @@
     "classes/parte-7-red-team-y-operaciones-ofensivas/172-active-directory-pass-the-hash-y-pass-the-ticket/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/173-bloodhound-y-analisis-de-rutas-de-ataque/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/174-compromiso-total-de-dominio-dcsync-y-golden-ticket/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/175-persistencia-en-active-directory/README.md"
+    "classes/parte-7-red-team-y-operaciones-ofensivas/175-persistencia-en-active-directory/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/189-analisis-de-endpoints-con-edr/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/190-analisis-de-logs-de-windows-event-logs-y-sysmon/README.md"
    ],
    "authors": []
   },
@@ -8973,7 +8976,6 @@
     "classes/parte-6-analisis-de-malware/148-analisis-de-comportamiento/README.md",
     "classes/parte-6-analisis-de-malware/159-fileless-malware-y-living-off-the-land/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/182-logging-y-fuentes-de-telemetria/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/190-analisis-de-logs-de-windows-event-logs-y-sysmon/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/216-contencion-erradicacion-y-recuperacion/README.md"
    ],
    "authors": []
@@ -13255,7 +13257,9 @@
     "classes/parte-0-fundamentos-y-prerrequisitos/001-que-es-la-ciberseguridad-triada-cia-aaa-superficie-de-ataque-y-defensa-en-profundidad/README.md",
     "classes/parte-0-fundamentos-y-prerrequisitos/003-frameworks-de-seguridad-nist-csf-iso-27001-mitre-att-ck-y-diamond-model/README.md",
     "classes/parte-14-grc-riesgo-y-cumplimiento/279-nist-cybersecurity-framework/README.md",
-    "classes/parte-17-profundizacion-para-certificaciones/320-gobierno-aspectos-legales-regulatorios-y-gestion-del-programa/README.md"
+    "classes/parte-17-profundizacion-para-certificaciones/320-gobierno-aspectos-legales-regulatorios-y-gestion-del-programa/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/196-automatizacion-con-soar/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -14165,7 +14169,8 @@
     "classes/parte-17-profundizacion-para-certificaciones/313-gestion-del-ciclo-de-vida-de-identidades-iam-empresarial/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/317-seguridad-fisica-y-ambiental/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/320-gobierno-aspectos-legales-regulatorios-y-gestion-del-programa/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md"
+    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/182-logging-y-fuentes-de-telemetria/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -14190,7 +14195,8 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-14-grc-riesgo-y-cumplimiento/287-metricas-de-seguridad-kpis-y-kris/README.md"
+    "classes/parte-14-grc-riesgo-y-cumplimiento/287-metricas-de-seguridad-kpis-y-kris/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/197-metricas-y-madurez-del-soc/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -14266,7 +14272,9 @@
    },
    "accessed": "2026-08-24",
    "used_in": [
-    "classes/parte-7-red-team-y-operaciones-ofensivas/179-reporte-y-metricas-de-red-team/README.md"
+    "classes/parte-7-red-team-y-operaciones-ofensivas/179-reporte-y-metricas-de-red-team/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/196-automatizacion-con-soar/README.md"
    ],
    "authors": [
     "Alexander Nelson",

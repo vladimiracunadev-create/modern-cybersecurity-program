@@ -50,6 +50,7 @@ PARTES_ESTANDAR_PROFUNDO = (
     "parte-5-explotacion-de-sistemas-y-binarios",
     "parte-6-analisis-de-malware",
     "parte-7-red-team-y-operaciones-ofensivas",
+    "parte-8-blue-team-deteccion-y-soc",
 )
 
 

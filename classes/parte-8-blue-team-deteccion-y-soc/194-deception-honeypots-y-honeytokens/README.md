@@ -34,6 +34,33 @@ Al finalizar, el alumno podrá:
 | 7 | Alertas de alta fidelidad | Priorización automática |
 | 8 | Riesgos y contención | No convertir el señuelo en punto de apoyo |
 
+## 🧠 Explicación en profundidad
+
+Deception crea activos o datos instrumentados cuya interacción es improbable en operación normal. Produce señal de alta confianza, pero no cero falsos positivos: escáneres, administradores o respaldos también pueden tocar el señuelo. La colocación parte de rutas de ataque plausibles y excluye procesos legítimos conocidos.
+
+```mermaid
+flowchart LR
+    A[Ruta de ataque] --> P[Punto de colocación]
+    P --> H[Honeypot o honeytoken]
+    H --> S[Sensor y alerta]
+    S --> C[Contexto de origen]
+    C --> R[Respuesta]
+    R --> U[Ajuste y rotación]
+    K[Contención] --- H
+```
+
+La interacción baja emula menos y reduce riesgo; la alta ofrece realismo y mayor superficie que contener. Un honeytoken no concede acceso real: usa identidad o secreto sintético, único, revocable y observable. Deben constar propietario, expiración, rotación, privacidad y respuesta. Un señuelo olvidado puede convertirse en vulnerabilidad.
+
+## 📔 Glosario
+
+- **Deception:** diseño deliberado de señuelos observables.
+- **Honeypot:** sistema instrumentado como objetivo.
+- **Honeytoken:** dato sintético cuyo uso alerta.
+- **Interacción baja/alta:** funcionalidad ofrecida al visitante.
+- **Canary:** recurso que alerta ante acceso inesperado.
+- **Contención:** límites que impiden usar el señuelo como pivote.
+- **Rotación:** reemplazo controlado de señuelos.
+
 ## 📖 Definiciones y características
 
 - **Honeypot:** sistema señuelo sin propósito productivo, diseñado para ser sondeado. Característica: toda interacción es sospechosa por definición.

@@ -32,6 +32,36 @@ Al finalizar, el alumno podrá:
 | 7 | De hallazgo a detección | Capitalizar la caza |
 | 8 | Documentación y métricas de caza | Aprendizaje acumulativo |
 
+## 🧠 Explicación en profundidad
+
+Threat hunting es una investigación proactiva y acotada que parte de una hipótesis falsable; no consiste en recorrer dashboards esperando algo extraño. La hipótesis nombra actor o mecanismo, objeto, acción, contexto y evidencia esperada. El alcance fija entidades, periodo, fuentes y criterios de salida para evitar una búsqueda infinita.
+
+```mermaid
+flowchart LR
+    R[Riesgo] --> H[Hipótesis falsable]
+    H --> S[Alcance y datos]
+    S --> Q[Consultas y pivotes]
+    Q --> E[Evaluar evidencia]
+    E --> O{Resultado}
+    O -->|Confirmado| I[Incidente]
+    O -->|Refutado| K[Aprendizaje]
+    O -->|Inconcluso| D[Brecha de datos]
+    I --> N[Nueva detección]
+    K --> N
+```
+
+Una anomalía no equivale a malicia: puede revelar administración legítima o mala calidad de datos. Se compara con una línea base pertinente y se buscan pruebas que también puedan refutar la intuición. Confirmado, refutado e inconcluso son resultados útiles si conservan consultas, versiones y límites. El producto puede ser incidente, regla, mejora de logging o control preventivo.
+
+## 📔 Glosario
+
+- **Hipótesis falsable:** afirmación que la evidencia puede refutar.
+- **Baseline:** comportamiento normal para un contexto.
+- **Pivote:** consulta que sigue una entidad relacionada.
+- **Scope:** límites temporales, técnicos y organizativos.
+- **Hallazgo:** observación sustentada que requiere acción.
+- **Inconcluso:** evidencia insuficiente para decidir.
+- **Paquete de hunt:** hipótesis, datos, consultas y resultados reproducibles.
+
 ## 📖 Definiciones y características
 
 - **Threat hunting:** búsqueda proactiva e iterativa de amenazas que evadieron los controles automáticos. Característica: parte de una hipótesis, no de una alerta.

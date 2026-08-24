@@ -84,8 +84,8 @@ Eso también permite detectar cuándo una norma deja de estar vigente, que es cu
 | [CIS Benchmarks: guías de configuración segura](https://www.cisecurity.org/cis-benchmarks) | CIS Benchmarks | 4 (0, 10, 14, 17) |
 | [Artificial Intelligence Risk Management Framework (AI RMF 1.0)](https://www.nist.gov/itl/ai-risk-management-framework) | NIST AI 100-1 (AI RMF 1.0) | 2 (15, 18) |
 | [Technical Guide to Information Security Testing and Assessment](https://csrc.nist.gov/pubs/sp/800/115/final) | NIST SP 800-115 | 3 (3, 7, 16) |
+| [Security and Privacy Controls for Information Systems and…](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) | NIST SP 800-53 Rev. 5 | 5 (7, 8, 14, 16, 17) |
 | [OWASP Top 10 for Large Language Model Applications](https://genai.owasp.org/llm-top-10/) | OWASP Top 10 for LLM Applications | 2 (15, 18) |
-| [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss) | FIRST CVSS | 5 (3, 4, 16, 17, 18) |
 
 ### Normas citadas que ya no están vigentes
 

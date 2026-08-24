@@ -32,6 +32,32 @@ Al finalizar, el alumno podrá:
 | 7 | Grupos y software (intel) | Amenazas relevantes para tu sector |
 | 8 | Cobertura vs profundidad | No basta con "tocar" cada técnica |
 
+## 🧠 Explicación en profundidad
+
+ATT&CK organiza conocimiento sobre comportamientos observados, no genera reglas automáticamente. Una táctica expresa el objetivo; una técnica, el método; un procedimiento, una implementación concreta. La detección aparece al traducir un procedimiento relevante en evidencia observable dentro del entorno propio.
+
+```mermaid
+flowchart LR
+    T[Amenaza y activo] --> P[Procedimiento plausible]
+    P --> DS[Fuente y componente de datos]
+    DS --> A[Analítica]
+    A --> V[Validación controlada]
+    V --> C[Estado de cobertura]
+    C --> G[Brecha o mejora]
+```
+
+El mapeo baja hasta campos concretos: proceso, autenticación, conexión o cambio de servicio. Una celda coloreada debe distinguir dato disponible, analítica diseñada, prueba superada y operación sostenida. Cubrir toda la matriz sin priorización dispersa recursos; se eligen amenazas plausibles, activos críticos y capacidades de respuesta. Toda asociación con una técnica debe explicar qué variante observa y cuáles quedan fuera.
+
+## 📔 Glosario
+
+- **Táctica:** objetivo intermedio del adversario.
+- **Técnica:** método general para alcanzar un objetivo.
+- **Subtécnica:** variante específica.
+- **Procedimiento:** implementación observada.
+- **Componente de datos:** actividad concreta observable.
+- **Estrategia de detección:** enfoque para reconocer comportamiento.
+- **Cobertura validada:** datos, analítica y prueba reproducible.
+
 ## 📖 Definiciones y características
 
 - **Táctica:** el "por qué" del adversario (Ejecución, Persistencia, Exfiltración). Característica: 14 categorías que forman las columnas de la matriz.
@@ -97,6 +123,8 @@ Es un mapa, no una garantía. Una técnica en verde puede tener una regla frági
 ## 🔗 Referencias
 
 - MITRE ATT&CK — <https://attack.mitre.org/>
+- MITRE ATT&CK Detection Strategies — <https://attack.mitre.org/detectionstrategies/>
+- MITRE ATT&CK, detecciones y analíticas — <https://attack.mitre.org/resources/get-started/detections-and-analytics/>
 - ATT&CK Navigator — <https://mitre-attack.github.io/attack-navigator/>
 - Bianco, D. "The Pyramid of Pain" — <http://detect-respond.blogspot.com/2013/03/the-pyramid-of-pain.html>
 - ATT&CK Data Sources — <https://attack.mitre.org/datasources/>

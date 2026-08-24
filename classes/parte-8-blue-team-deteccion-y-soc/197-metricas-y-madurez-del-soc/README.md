@@ -32,6 +32,34 @@ Al finalizar, el alumno podrá:
 | 7 | Cuadro de mando por audiencia | Dirección vs operación |
 | 8 | De la métrica a la acción | Priorizar mejoras con datos |
 
+## 🧠 Explicación en profundidad
+
+Una métrica útil empieza por una decisión: objetivo, pregunta, medida, fuente y acción. Si el SOC no sabe qué decisión cambiará, el indicador se convierte en decoración o incentivo perverso.
+
+```mermaid
+flowchart LR
+    O[Objetivo] --> Q[Pregunta]
+    Q --> M[Definir medida]
+    M --> D[Datos y calidad]
+    D --> A[Análisis]
+    A --> C[Decisión]
+    C --> I[Intervención]
+    I --> O
+```
+
+MTTD y MTTR requieren inicio, fin, población y zona horaria. El promedio oculta colas largas; mediana y percentiles muestran distribución. Los incidentes nunca detectados no entran por sí solos en MTTD. Precisión y recall necesitan una verdad de referencia que suele ser incompleta. «Cobertura ATT&CK» debe expresar estados verificables, no porcentaje de celdas. La madurez se demuestra con dueños, pruebas, calidad y ciclos de mejora.
+
+## 📔 Glosario
+
+- **Medida:** valor obtenido mediante una regla definida.
+- **Métrica:** interpretación de medidas para un objetivo.
+- **Indicador:** señal que apoya una decisión.
+- **Percentil:** umbral bajo el que cae una proporción de casos.
+- **Precisión:** proporción de alertas relevantes.
+- **Recall:** proporción de positivos reales detectados.
+- **Ground truth:** referencia para evaluar resultados.
+- **Gaming:** mejorar la cifra perjudicando el objetivo.
+
 ## 📖 Definiciones y características
 
 - **MTTD (Mean Time To Detect):** tiempo medio hasta detectar un incidente. Característica: mide la eficacia de la detección; cuanto menor, mejor.
@@ -102,6 +130,7 @@ Con tendencias de riesgo y dwell time, no con jerga técnica. Muestra cómo la i
 - MITRE ATT&CK Navigator — <https://mitre-attack.github.io/attack-navigator/>
 - Mandiant M-Trends (informes de dwell time) — <https://www.mandiant.com/m-trends>
 - SANS, "SOC Metrics" (recursos formativos).
+- NIST SP 800-55 Vol. 2, diseño de programas de medición de seguridad — <https://doi.org/10.6028/NIST.SP.800-55v2>
 
 ## 📥 Material descargable
 

@@ -32,6 +32,34 @@ Al finalizar, el alumno podrá:
 | 7 | Operacionalización en SIEM | De la intel a la alerta |
 | 8 | Atribución y sesgos | Interpretar con cautela |
 
+## 🧠 Explicación en profundidad
+
+La inteligencia empieza con una decisión del consumidor, no con un feed. Un requerimiento define qué necesita saber, para cuándo y qué acción habilitará. Lo estratégico orienta riesgo; lo operacional describe campañas; lo táctico ayuda a reconocer infraestructura, artefactos y comportamientos. La misma observación pierde valor si llega tarde o sin contexto.
+
+```mermaid
+flowchart LR
+    R[Requerimiento] --> C[Recolección]
+    C --> A[Análisis]
+    A --> P[Producto]
+    P --> O[Operacionalización]
+    O --> M[Medición]
+    M --> R
+    O --> D[Detectar, bloquear o investigar]
+```
+
+Un observable es un hecho técnico; un indicador añade afirmación y contexto; una TTP suele persistir más que una IP. Cada objeto necesita procedencia, confianza, vigencia y retirada. STIX modela objetos y relaciones; TAXII los transporta. TLP orienta compartición, no sustituye clasificación legal ni controles de acceso. Operacionalizar implica probar, medir y retirar indicadores caducos.
+
+## 📔 Glosario
+
+- **PIR:** requerimiento prioritario de inteligencia.
+- **Observable:** dato técnico sin conclusión suficiente.
+- **Indicador:** patrón contextualizado que puede señalar actividad.
+- **TTP:** táctica, técnica o procedimiento.
+- **Provenance:** origen y transformaciones de información.
+- **STIX:** lenguaje estructurado para CTI.
+- **TAXII:** protocolo de intercambio de CTI.
+- **TLP:** reglas FIRST para compartir información.
+
 ## 📖 Definiciones y características
 
 - **Threat intelligence:** conocimiento sobre amenazas que informa decisiones. Característica: debe ser accionable y contextual, no un simple listado.

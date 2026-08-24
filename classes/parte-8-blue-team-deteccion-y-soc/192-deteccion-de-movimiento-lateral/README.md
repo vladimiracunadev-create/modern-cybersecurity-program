@@ -34,6 +34,34 @@ Al finalizar, el alumno podrá:
 | 7 | Logon patterns y grafos de acceso | Detectar rutas anómalas |
 | 8 | Baseline de administración legítima | Reducir falsos positivos |
 
+## 🧠 Explicación en profundidad
+
+Movimiento lateral es el uso de acceso obtenido para alcanzar otro sistema o identidad. RDP, SMB y WinRM también sostienen operaciones legítimas; el nombre de la herramienta no decide. La señal nace de una relación nueva o impropia entre origen, cuenta, destino, servicio y proceso posterior.
+
+```mermaid
+sequenceDiagram
+    participant O as Host origen
+    participant I as Identidad
+    participant D as Host destino
+    O->>I: autentica cuenta
+    I-->>D: autoriza sesión
+    O->>D: RDP, SMB o WinRM
+    D->>D: crea proceso, servicio o tarea
+    D->>O: resultado o nuevo acceso
+```
+
+Se correlacionan autenticación, servicio remoto y efecto: archivo escrito, servicio creado, proceso iniciado o conexión posterior. Se compara con grafos de administración permitida, horario, cuenta y criticidad. ATT&CK T1021 agrupa servicios remotos, pero cada subtécnica requiere campos distintos; mapear no reemplaza validar.
+
+## 📔 Glosario
+
+- **Movimiento lateral:** desplazamiento hacia otros recursos.
+- **Remote Services:** técnica ATT&CK T1021.
+- **Logon remoto:** sesión iniciada desde otro sistema.
+- **Cuenta privilegiada:** identidad con autoridad elevada.
+- **Admin share:** recurso SMB administrativo.
+- **Grafo de acceso:** relaciones permitidas entre identidades y activos.
+- **Blast radius:** alcance potencial del compromiso.
+
 ## 📖 Definiciones y características
 
 - **Movimiento lateral:** conjunto de técnicas para moverse por la red tras el compromiso inicial. Característica: usa credenciales y protocolos legítimos, difícil de separar del uso normal.
