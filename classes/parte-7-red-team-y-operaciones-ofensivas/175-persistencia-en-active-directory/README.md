@@ -31,14 +31,70 @@ Al finalizar, el alumno podrá:
 | 6 | Cuentas y credenciales ocultas | Shadow admins, DSRM |
 | 7 | Erradicación | Cómo el Blue Team limpia de verdad |
 
+## 🧠 Explicación en profundidad
+
+### Persistir en AD significa modificar relaciones de confianza
+
+La persistencia de dominio no se limita a crear una cuenta. Puede esconderse en permisos, delegaciones, políticas, cuentas de equipo, claves de servicio o configuraciones que sobreviven al cierre de sesión. Su rasgo común es conservar capacidad de acceso después de perder el camino inicial. Por eso revisar solo `Domain Admins` deja fuera a los **shadow admins**: identidades con control equivalente mediante relaciones indirectas.
+
+Cada cambio tiene tres dimensiones: objeto modificado, autoridad necesaria y proceso que vuelve efectivo el cambio. Documentarlas permite detectar y revertir sin depender del nombre de una herramienta.
+
+```mermaid
+flowchart TB
+    A[Acceso privilegiado temporal] --> B{Objeto de confianza alterado}
+    B --> C[ACL o propietario]
+    B --> D[Delegación Kerberos]
+    B --> E[Cuenta o clave]
+    B --> F[Política o réplica]
+    C --> G[Capacidad indirecta futura]
+    D --> G
+    E --> G
+    F --> G
+    G --> H[Reingreso o recuperación de privilegio]
+    C -. línea base .-> I[Detección y erradicación]
+    D -. auditar atributo .-> I
+    E -. ciclo de vida .-> I
+    F -. origen de cambio .-> I
+```
+
+### AdminSDHolder y SDProp: plantilla y propagación
+
+Microsoft describe `AdminSDHolder` como el objeto cuya ACL sirve de plantilla para cuentas y grupos protegidos. `SDProp`, ejecutado por defecto cada 60 minutos en el DC con rol de emulador PDC, compara y restablece sus descriptores de seguridad. Alterar la plantilla puede propagar permisos no deseados; modificar una cuenta protegida directamente puede ser revertido por el proceso.
+
+Esto explica además un problema legítimo: al retirar una cuenta de un grupo protegido, `adminCount` y la herencia pueden no volver automáticamente al estado esperado. La respuesta no borra permisos a ciegas; compara una línea base, determina si la cuenta aún requiere protección y restaura herencia de forma controlada.
+
+### Delegación y control de recursos
+
+En RBCD, el recurso destino define qué principal puede actuar en nombre de usuarios frente a él mediante un atributo de la cuenta de equipo. El riesgo no es que la característica sea maliciosa, sino que una identidad no prevista pueda modificar ese objeto. La mitigación revisa derechos de escritura sobre cuentas de equipo y monitoriza cambios del atributo, además de proteger las identidades delegadas.
+
+DCShadow pertenece a otra categoría: introducir cambios mediante el flujo de replicación. La detección mira registro de controladores, topología y origen de replicación, no solo modificaciones LDAP. DSRM es una capacidad de recuperación del DC; su configuración y uso remoto deben restringirse y auditarse. Son mecanismos distintos y no una sola «técnica invisible».
+
+### Erradicar exige demostrar que la capacidad desapareció
+
+Se parte de una instantánea de objetos privilegiados, ACL, propietarios, delegaciones, GPO, cuentas de equipo y derechos de replicación. Después se revoca la relación persistente, se rotan secretos afectados y se repite el análisis de rutas. El cierre requiere evidencia de que la identidad ya no conserva un camino y no existe una modificación equivalente. Restaurar solo el indicador visible deja intacta la causa.
+
 ## 📖 Definiciones y características
 
 - **AdminSDHolder**: objeto cuya ACL se propaga a cuentas protegidas cada ~60 min (SDProp). Característica: modificarla reinyecta permisos aunque los borren.
 - **DCShadow**: registrar temporalmente un DC ilegítimo para inyectar cambios replicados. Característica: evita muchos logs de modificación.
 - **RBCD (Resource-Based Constrained Delegation)**: delegación configurable por el objeto destino. Característica: abusable como puerta trasera de acceso.
-- **DSRM**: cuenta de recuperación local del DC. Característica: su uso como logon de red es una persistencia sigilosa.
-- **Diamond Ticket**: TGT modificado (no forjado desde cero) para parecer legítimo. Característica: más difícil de detectar que el Golden.
+- **DSRM**: cuenta local de recuperación del DC. Característica: su posibilidad de inicio de sesión y uso remoto depende de configuración y debe restringirse y auditarse.
+- **Diamond Ticket**: TGT legítimamente emitido cuyo contenido se modifica usando material de `krbtgt`. Característica: cambia algunos artefactos frente a un Golden Ticket, pero no garantiza menor detección.
 - **Shadow admin**: cuenta sin membresía obvia pero con permisos equivalentes vía ACLs. Característica: invisible a auditorías superficiales.
+
+## 📔 Glosario
+
+- **Persistencia:** capacidad de conservar acceso tras perder el vector inicial.
+- **Shadow admin:** principal con capacidad administrativa indirecta sin membresía privilegiada evidente.
+- **AdminSDHolder:** objeto que contiene la plantilla de permisos para objetos protegidos.
+- **SDProp:** proceso que compara y propaga descriptores de seguridad a objetos protegidos.
+- **adminCount:** atributo asociado a protección administrativa que debe interpretarse con herencia y membresías.
+- **RBCD:** delegación Kerberos donde el recurso destino especifica principales autorizados.
+- **Cuenta de equipo:** principal de seguridad que representa un sistema unido al dominio.
+- **DCShadow:** abuso del flujo de replicación para introducir cambios desde un controlador no autorizado.
+- **DSRM:** modo y cuenta de recuperación local para mantenimiento de un DC.
+- **Línea base de privilegios:** inventario aprobado de permisos, propietarios y delegaciones sensibles.
+- **Erradicación:** eliminación de la capacidad persistente y de la causa que permitió establecerla.
 
 ## 🧰 Herramientas y preparación
 
@@ -101,10 +157,11 @@ Siempre al cierre, con inventario completo de lo instalado. Dejar persistencia e
 
 ## 🔗 Referencias
 
-- The Hacker Recipes — *AD persistence*. <https://www.thehacker.recipes/ad/persistence/>
-- MITRE ATT&CK — *Persistence* (TA0003). <https://attack.mitre.org/tactics/TA0003/>
-- Microsoft — *AdminSDHolder / SDProp*. <https://learn.microsoft.com/>
-- SpecterOps — research sobre RBCD y delegación.
+- Microsoft — *Protected Accounts and Groups in Active Directory*. <https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn535499%28v%3Dws.11%29> — fuente principal para AdminSDHolder, SDProp, herencia e intervalo predeterminado.
+- Microsoft — *Accounts security posture assessments*. <https://learn.microsoft.com/en-us/defender-for-identity/security-posture-assessments/accounts> — referencia defensiva para permisos sospechosos sobre AdminSDHolder, DCSync y `krbtgt`.
+- MITRE ATT&CK — *Domain or Tenant Policy Modification* (`T1484`). <https://attack.mitre.org/techniques/T1484/> — clasificación de cambios de GPO, delegación, confianzas y controladores no autorizados.
+- MITRE ATT&CK — *Account Manipulation* (`T1098`). <https://attack.mitre.org/techniques/T1098/> — base para persistencia mediante cuentas y material de autenticación.
+- Microsoft — *Best Practices for Securing Active Directory*. <https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/best-practices-for-securing-active-directory> — sustenta línea base, mínimo privilegio y protección administrativa.
 
 ## 📥 Material descargable
 

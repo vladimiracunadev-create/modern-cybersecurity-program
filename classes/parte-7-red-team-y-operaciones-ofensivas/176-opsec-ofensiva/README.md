@@ -31,6 +31,39 @@ Al finalizar, el alumno podrá:
 | 6 | Logging del operador | Reproducibilidad y deconfliction |
 | 7 | Detección y reacción | Qué hacer si te queman |
 
+## 🧠 Explicación en profundidad
+
+### OPSEC empieza por información crítica y amenazas
+
+OPSEC no es una colección de trucos para «no dejar logs». Es un proceso de decisión: identificar qué información de la operación debe protegerse, observar qué indicadores podrían revelarla, analizar quién puede interpretarlos, valorar el riesgo y aplicar medidas proporcionadas. En un red team autorizado, también protege al cliente: evita que la prueba cause daño, se confunda con un incidente real o exponga datos recogidos durante el ejercicio.
+
+La paradoja esencial es que el operador necesita registrar con precisión lo que hace, aunque quiera reducir la huella en el objetivo. El registro se conserva en un canal controlado y con tiempo sincronizado. Así la white cell puede distinguir la prueba de actividad hostil y el equipo puede reconstruir resultados sin depender de memoria humana.
+
+```mermaid
+flowchart LR
+    A[Objetivo autorizado] --> B[Acción candidata]
+    B --> C[Predecir telemetría e impacto]
+    C --> D{¿Riesgo aceptable?}
+    D -- No --> E[Elegir alternativa o pedir cambio de alcance]
+    D -- Sí --> F[Ejecutar y registrar]
+    F --> G[Observar respuesta defensiva]
+    G --> H{¿Condición de parada?}
+    H -- Sí --> I[Detener, preservar y notificar]
+    H -- No --> J[Actualizar modelo y continuar]
+```
+
+### Menos periodicidad no significa ausencia de señal
+
+El jitter modifica los intervalos de un beacon para reducir una periodicidad exacta. No oculta el destino, el volumen, el proceso, el patrón de sesión ni las características del protocolo. Un defensor puede analizar distribuciones temporales y contexto acumulado. La buena decisión es minimizar comunicaciones a las necesarias para cumplir el objetivo y comparar el canal con el tráfico normal autorizado, no aumentar aleatoriedad sin límite.
+
+Cada acción se expresa como una pareja **efecto necesario / observaciones previsibles**. Si el objetivo es demostrar acceso a un archivo, quizá baste con leer un marcador inocuo; copiar un directorio completo agrega impacto y telemetría sin aumentar la evidencia. El sigilo profesional nace de la proporcionalidad.
+
+### Deconfliction y reacción ante una detección
+
+Antes del ejercicio se acuerdan identificadores, contactos, canal de emergencia, ventanas y condiciones de parada. Cuando aparece una alerta inesperada, el operador no borra rastros ni improvisa. Registra el estado, reduce actividad y consulta a la white cell. Rotar infraestructura sin coordinación puede parecer una escalada real y privar al equipo azul de evidencia.
+
+Si una técnica queda expuesta, la lección incluye **por qué**: proceso, red, identidad, contenido o secuencia. El informe no evalúa al operador por permanecer invisible a toda costa, sino por probar el objetivo con seguridad y mostrar qué controles observaron la actividad.
+
 ## 📖 Definiciones y características
 
 - **OPSEC**: proceso de proteger la operación evitando indicadores detectables o atribuibles. Característica: preventiva, se piensa antes de actuar.
@@ -39,6 +72,20 @@ Al finalizar, el alumno podrá:
 - **Atribución**: capacidad del defensor de vincular la actividad a un origen. Característica: buena OPSEC la dificulta.
 - **Deconfliction**: distinguir la actividad del ejercicio de un incidente real. Característica: requiere logging preciso del operador.
 - **Burned (quemado)**: cuando una técnica/infra es detectada e inutilizada. Característica: obliga a rotar y adaptarse.
+
+## 📔 Glosario
+
+- **OPSEC:** proceso para identificar y proteger información crítica frente a observación adversaria.
+- **Información crítica:** dato cuya exposición perjudica la seguridad o validez del ejercicio.
+- **Indicador observable:** señal que permite inferir una actividad o intención.
+- **Huella:** conjunto de artefactos y telemetría generado por una acción.
+- **Beacon:** comunicación periódica o semiperiódica de un agente con su infraestructura.
+- **Jitter:** variación aplicada al intervalo de comunicación; no garantiza ocultación.
+- **Deconfliction:** mecanismo para separar actividad del ejercicio de incidentes reales.
+- **White cell:** autoridad que gobierna y conoce el ejercicio.
+- **Condición de parada:** evento acordado que exige suspender o escalar actividad.
+- **Registro del operador:** bitácora protegida con hora, activo, acción, resultado y responsable.
+- **Proporcionalidad:** uso del menor impacto suficiente para demostrar el objetivo.
 
 ## 🧰 Herramientas y preparación
 
@@ -96,10 +143,11 @@ El cuaderno es interno y esencial para deconfliction, reproducibilidad y el info
 
 ## 🔗 Referencias
 
-- Vest & Tubberville — *Red Team Development and Operations* (OPSEC). <https://redteam.guide/>
-- MITRE ATT&CK — *Defense Evasion* (TA0005). <https://attack.mitre.org/tactics/TA0005/>
-- SpecterOps / research sobre OPSEC de C2.
-- Bryant, T. — *Operator Handbook*.
+- NIST — *Technical Guide to Information Security Testing and Assessment*, SP 800-115. <https://doi.org/10.6028/NIST.SP.800-115> — sustenta planificación, consideraciones legales, manejo de datos, ejecución segura y reporte.
+- Vest & Tubberville — *Red Team Development and Operations*. <https://redteam.guide/> — marco específico para planificación, deconfliction y registro de operaciones red team.
+- MITRE ATT&CK — *Defense Evasion* (TA0005). <https://attack.mitre.org/tactics/TA0005/> — taxonomía para describir técnicas; no se interpreta como garantía de invisibilidad.
+- MITRE ATT&CK — *Application Layer Protocol* (`T1071`). <https://attack.mitre.org/techniques/T1071/> — referencia para relacionar comunicaciones C2 con fuentes de red y detección.
+- Bryant, T. — *Operator Handbook* — consulta operativa complementaria; los límites del ejercicio se fundamentan en NIST SP 800-115.
 
 ## 📥 Material descargable
 

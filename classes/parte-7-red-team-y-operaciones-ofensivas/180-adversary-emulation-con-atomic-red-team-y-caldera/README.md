@@ -1,13 +1,13 @@
 # Clase 180 — Adversary emulation con Atomic Red Team y Caldera
 
-> Parte: **7 — Red Team y operaciones ofensivas** · Fuente: *Atomic Red Team (Red Canary) / MITRE Caldera*
+> Parte: **7 — Red Team y operaciones ofensivas** · Fuente: *Atomic Red Team / Apache Caldera (Incubating; proyecto originado en MITRE)*
 > ⏱️ Duración estimada: **110 min** · Nivel: **Avanzado**
 
 ---
 
 ## 🎯 Objetivo
 
-Automatizar la emulación de adversarios con dos herramientas complementarias: Atomic Red Team (tests atómicos por técnica ATT&CK) y MITRE Caldera (framework de emulación autónoma con agentes y planificador). El alumno ejecutará pruebas reproducibles en su lab, medirá la detección y cerrará el círculo entre ofensiva y defensa que abre y cierra esta parte.
+Automatizar la emulación de adversarios con dos herramientas complementarias: Atomic Red Team (tests atómicos por técnica ATT&CK) y Apache Caldera (framework de emulación con agentes y planificadores, originado en MITRE y transferido a Apache Incubator en mayo de 2026). El alumno ejecutará pruebas reproducibles en su lab, medirá la detección y cerrará el círculo entre ofensiva y defensa que abre y cierra esta parte.
 
 ## 📚 Resultados de aprendizaje
 
@@ -31,19 +31,72 @@ Al finalizar, el alumno podrá:
 | 6 | Validación de detección | Cerrar el ciclo con el SOC |
 | 7 | Automatización repetible | Emulación continua |
 
+## 🧠 Explicación en profundidad
+
+### Una prueba atómica y una emulación responden preguntas distintas
+
+Atomic Red Team ofrece pruebas pequeñas, enfocadas y descritas en archivos estructurados. Son útiles para preguntar si un comportamiento concreto genera el dato o control esperado. Una emulación de adversario conecta procedimientos en un escenario coherente, con dependencias, objetivos y estado. Superar un atomic no demuestra que la organización detectaría toda la técnica; completar una cadena tampoco identifica por sí solo cuál sensor falló.
+
+La selección comienza por una amenaza y un activo relevantes, no por ejecutar todo el catálogo. Cada prueba se revisa como código: comandos, entradas, prerrequisitos, privilegios, descargas, cambios y limpieza. La documentación oficial exige permiso y una máquina de prueba con controles activos.
+
+```mermaid
+flowchart TB
+    A[Comportamiento priorizado] --> B{Nivel de prueba}
+    B --> C[Atomic: una acción aislada]
+    B --> D[CALDERA: cadena con estado]
+    C --> E[Prerrequisitos + criterio + limpieza]
+    D --> F[Agente + abilities + adversary + planner]
+    E --> G[Ejecución instrumentada]
+    F --> G
+    G --> H[Datos, alerta, prevención y respuesta]
+    H --> I[Comparar con criterio esperado]
+    I --> J[Corregir y repetir]
+```
+
+### Anatomía de un atomic reproducible
+
+La definición identifica técnica, plataformas, entradas, ejecutor, comando, dependencias y, cuando corresponde, limpieza. `-CheckPrereqs` permite inspeccionar requisitos; obtenerlos automáticamente sigue siendo una modificación que debe revisarse. El cleanup reduce artefactos conocidos, pero no garantiza restaurar snapshots, alertas, cachés o todos los cambios. Para pruebas riesgosas se usa una VM desechable y se compara su estado antes y después.
+
+El identificador del test, versión del repositorio y valores de entrada forman parte de la evidencia. Sin ellos, dos ejecuciones con el mismo ID ATT&CK pueden no ser comparables.
+
+### Cómo razona Apache Caldera
+
+En CALDERA, un **agent** representa el endpoint que ejecuta tareas; una **ability** define una capacidad ejecutable y su mapeo; un **adversary profile** agrupa abilities; y un **planner** decide orden o elegibilidad durante una operación. Los facts obtenidos pueden satisfacer variables y habilitar acciones posteriores. Esa dependencia de estado acerca la prueba a una cadena, pero también aumenta impacto potencial.
+
+Autonomía no significa ausencia de supervisión. Se limitan agentes, objetivos, abilities, duración y condiciones de parada. Primero se ejecuta en modo controlado y se revisa cada comando. La emulación continua solo se programa cuando limpieza, aislamiento, propiedad de alertas y regresión están demostrados.
+
+### Interpretar el resultado sin sobreafirmar
+
+Para cada paso se registra: ¿se ejecutó?, ¿qué dato apareció?, ¿hubo prevención?, ¿se generó alerta?, ¿llegó al analista?, ¿la respuesta fue correcta? Un fallo de ejecución no equivale a una detección y una alerta manualmente encontrada no equivale a una capacidad operacional. Navigator resume el mapa; el detalle vive en la evidencia de cada test.
+
 ## 📖 Definiciones y características
 
 - **Atomic Red Team**: biblioteca de pruebas pequeñas y aisladas, una por técnica ATT&CK. Característica: reproducibles y fáciles de auditar.
 - **Atomic test**: comando/acción concreto que ejercita una técnica. Característica: granular, ideal para validar una detección.
-- **Caldera**: plataforma de MITRE para emulación autónoma. Característica: agentes + planificador que ejecutan cadenas de TTPs.
+- **Apache Caldera (Incubating)**: plataforma abierta de emulación originada en MITRE y transferida a Apache Software Foundation en 2026. Característica: combina agentes, abilities, perfiles y planners.
 - **Ability**: unidad ejecutable en Caldera ligada a una técnica ATT&CK. Característica: componible en perfiles.
 - **Adversary profile**: conjunto ordenado de abilities que emula a un actor. Característica: reutilizable y automatizable.
 - **Planner**: lógica que decide qué ability ejecutar a continuación. Característica: da autonomía a la operación.
 
+## 📔 Glosario
+
+- **Prueba atómica:** acción pequeña y enfocada que ejercita un procedimiento determinado.
+- **Execution framework:** herramienta que interpreta y ejecuta definiciones de pruebas.
+- **Prerrequisito:** estado, software, archivo o privilegio necesario antes de ejecutar.
+- **Cleanup:** comandos destinados a revertir artefactos conocidos; no sustituye un snapshot.
+- **Emulación de adversario:** representación controlada de comportamientos encadenados y orientados a objetivos.
+- **Agent:** componente CALDERA que recibe y ejecuta tareas en un endpoint autorizado.
+- **Ability:** capacidad ejecutable con plataforma, comando y metadatos.
+- **Adversary profile:** conjunto de abilities que representa un escenario o comportamiento.
+- **Planner:** lógica que selecciona y ordena abilities durante una operación.
+- **Fact:** dato conocido u observado que puede alimentar acciones posteriores.
+- **Operación:** instancia de ejecución con agentes, perfil, planner, estado y resultados.
+- **Regresión continua:** repetición gobernada de pruebas para comprobar controles a lo largo del tiempo.
+
 ## 🧰 Herramientas y preparación
 
 - **Atomic Red Team** + **Invoke-AtomicRedTeam** (módulo PowerShell) en una VM Windows del lab.
-- **MITRE Caldera** (Python) en un servidor de lab: `git clone https://github.com/mitre/caldera --recursive && pip install -r requirements.txt`.
+- **Apache Caldera (Incubating)** en un servidor aislado: fija una versión del repositorio <https://github.com/apache/caldera>, clónala con submódulos y sigue sus requisitos vigentes. No expongas su consola a Internet.
 - Instrumentación defensiva (Sysmon + SIEM/EDR) de la Clase 178 para validar detecciones.
 - ATT&CK Navigator para reflejar la cobertura resultante.
 
@@ -67,7 +120,7 @@ Al finalizar, el alumno podrá:
 
    Luego limpia con `-Cleanup`.
 3. **Valida la detección.** Busca en tu SIEM/EDR el evento asociado y confirma si hubo alerta.
-4. **Despliega Caldera.** Arranca el server (`python server.py --insecure`), abre la consola y despliega un agente (Sandcat) en una VM del lab.
+4. **Despliega Apache Caldera.** Usa una versión fijada del repositorio actual, crea un entorno virtual y sigue la guía de esa versión. Arranca el servidor solo dentro de la red aislada; abre la consola y despliega un agente de laboratorio en una VM autorizada.
 5. **Lanza una operación.** Usa un adversary profile existente (p. ej. "Discovery") o crea uno encadenando abilities de discovery → credential access.
 6. **Observa la cadena.** Sigue en Caldera qué abilities ejecuta el planner y correlaciona cada una con la telemetría en el SIEM.
 7. **Cierra el ciclo.** Marca en Navigator las técnicas emuladas como detectadas/no detectadas y anota qué reglas faltan por crear.
@@ -109,10 +162,13 @@ No. Automatiza la emulación repetible y la validación de detecciones, pero la 
 
 ## 🔗 Referencias
 
-- Atomic Red Team (Red Canary). <https://github.com/redcanaryco/atomic-red-team> · <https://atomicredteam.io/>
-- Invoke-AtomicRedTeam. <https://github.com/redcanaryco/invoke-atomicredteam>
-- MITRE Caldera. <https://caldera.mitre.org/> · <https://github.com/mitre/caldera>
-- MITRE ATT&CK. <https://attack.mitre.org/>
+- Atomic Red Team — documentación oficial. <https://www.atomicredteam.io/docs/atomic-red-team> — fuente para estructura, autorización, entorno de prueba, dependencias y limpieza.
+- Invoke-AtomicRedTeam — *Check Prerequisites* y *Cleanup*. <https://www.atomicredteam.io/docs/invoke-atomicredteam/check-prereqs> — sustenta la preparación y reversión explícita de cada test.
+- Invoke-AtomicRedTeam — repositorio oficial. <https://github.com/redcanaryco/invoke-atomicredteam> — fuente utilizada para fijar la versión del runner en el laboratorio.
+- Apache Caldera (Incubating). <https://caldera.apache.org/> — portal vigente de la plataforma y referencia de su finalidad y componentes.
+- Apache Caldera. <https://github.com/apache/caldera> — repositorio vigente usado para fijar versión, revisar requisitos y desplegar el laboratorio.
+- MITRE — *MITRE Contributes Caldera to the Apache Incubator*. <https://www.mitre.org/news-insights/news-release/mitre-contributes-caldera-apache-incubator-expand-open-cybersecurity> — fuente primaria para la transferencia anunciada el 20 de mayo de 2026 y la continuidad de MITRE en el proyecto.
+- MITRE ATT&CK. <https://attack.mitre.org/> — vocabulario para mapear comportamiento; el resultado se conserva por prueba concreta.
 
 ## 📥 Material descargable
 

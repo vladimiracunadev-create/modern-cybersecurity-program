@@ -970,8 +970,7 @@
    "used_in": [
     "classes/parte-7-red-team-y-operaciones-ofensivas/165-frameworks-c2-cobalt-strike-sliver-y-mythic/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/166-phishing-y-entrega-de-payloads/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/176-opsec-ofensiva/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md"
+    "classes/parte-7-red-team-y-operaciones-ofensivas/176-opsec-ofensiva/README.md"
    ]
   },
   {
@@ -2439,6 +2438,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-7-red-team-y-operaciones-ofensivas/178-purple-teaming/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/180-adversary-emulation-con-atomic-red-team-y-caldera/README.md"
    ],
    "authors": []
@@ -2717,6 +2717,7 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/078-movimiento-lateral-en-la-red/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/170-active-directory-enumeracion/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/173-bloodhound-y-analisis-de-rutas-de-ataque/README.md"
    ],
    "authors": []
@@ -4569,6 +4570,7 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-16-capstones-y-preparacion-de-certificaciones/306-capstone-deteccion-blue-team-end-to-end/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/168-evasion-de-defensas-antivirus-y-edr/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/182-logging-y-fuentes-de-telemetria/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/183-siem-arquitectura-y-componentes/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/185-elastic-stack-y-wazuh/README.md"
@@ -6338,6 +6340,7 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-7-red-team-y-operaciones-ofensivas/162-mitre-att-ck-como-lenguaje-ofensivo/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/178-purple-teaming/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/179-reporte-y-metricas-de-red-team/README.md"
    ],
    "authors": []
@@ -6366,15 +6369,16 @@
   {
    "id": "github-com-mitre-caldera",
    "type": "reference",
-   "title": "MITRE Caldera",
-   "locator": "https://github.com/mitre/caldera",
+   "title": "Apache Caldera (Incubating) — repositorio",
+   "locator": "https://github.com/apache/caldera",
    "authority": "github.com",
-   "status": "pendiente",
-   "notes": "Comprobado en red el 2026-08-19: el locator responde pero redirige a https://github.com/apache/caldera. Queda pendiente para decidir si se adopta la URL de destino.",
+   "status": "verificada",
+   "notes": "MITRE transfirió Caldera a Apache Incubator el 2026-05-20; el repositorio anterior redirige al repositorio vigente de Apache.",
    "seed": "auto",
    "matches": {
     "url_prefixes": [
-     "https://github.com/mitre/caldera"
+     "https://github.com/mitre/caldera",
+     "https://github.com/apache/caldera"
     ],
     "text_patterns": []
    },
@@ -7067,8 +7071,6 @@
    "used_in": [
     "classes/parte-16-capstones-y-preparacion-de-certificaciones/305-capstone-operacion-red-team-end-to-end/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/327-ingenieria-de-deteccion-avanzada-y-validacion/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/178-purple-teaming/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/180-adversary-emulation-con-atomic-red-team-y-caldera/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/200-purple-team-desde-el-lado-defensivo/README.md"
    ],
@@ -7133,7 +7135,8 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md"
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md"
    ],
    "authors": []
   },
@@ -8779,8 +8782,6 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-7-red-team-y-operaciones-ofensivas/174-compromiso-total-de-dominio-dcsync-y-golden-ticket/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/175-persistencia-en-active-directory/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/192-deteccion-de-movimiento-lateral/README.md"
    ],
    "authors": []
@@ -8849,7 +8850,15 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-11-devsecops-y-seguridad-del-sdlc/237-modelado-de-amenazas-stride-y-dread/README.md"
+    "classes/parte-11-devsecops-y-seguridad-del-sdlc/237-modelado-de-amenazas-stride-y-dread/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/168-evasion-de-defensas-antivirus-y-edr/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/169-ofuscacion-de-payloads-y-bypass-de-amsi/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/170-active-directory-enumeracion/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/171-active-directory-kerberoasting-y-ataques-a-kerberos/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/172-active-directory-pass-the-hash-y-pass-the-ticket/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/173-bloodhound-y-analisis-de-rutas-de-ataque/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/174-compromiso-total-de-dominio-dcsync-y-golden-ticket/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/175-persistencia-en-active-directory/README.md"
    ],
    "authors": []
   },
@@ -8991,7 +9000,6 @@
     "classes/parte-5-explotacion-de-sistemas-y-binarios/129-explotacion-en-windows-manejo-de-seh/README.md",
     "classes/parte-5-explotacion-de-sistemas-y-binarios/130-ingenieria-inversa-introduccion/README.md",
     "classes/parte-6-analisis-de-malware/145-el-formato-pe-de-windows/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/169-ofuscacion-de-payloads-y-bypass-de-amsi/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/190-analisis-de-logs-de-windows-event-logs-y-sysmon/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/205-analisis-de-artefactos-de-windows/README.md"
    ],
@@ -10327,9 +10335,7 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-16-capstones-y-preparacion-de-certificaciones/305-capstone-operacion-red-team-end-to-end/README.md",
-    "classes/parte-17-profundizacion-para-certificaciones/327-ingenieria-de-deteccion-avanzada-y-validacion/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/169-ofuscacion-de-payloads-y-bypass-de-amsi/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/180-adversary-emulation-con-atomic-red-team-y-caldera/README.md"
+    "classes/parte-17-profundizacion-para-certificaciones/327-ingenieria-de-deteccion-avanzada-y-validacion/README.md"
    ],
    "authors": []
   },
@@ -10607,8 +10613,6 @@
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/067-reglas-de-engagement-alcance-y-contratos/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/083-exfiltracion-de-datos/README.md",
     "classes/parte-6-analisis-de-malware/160-reporte-de-analisis-de-malware/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/178-purple-teaming/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/179-reporte-y-metricas-de-red-team/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/197-metricas-y-madurez-del-soc/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/201-fundamentos-de-dfir-y-cadena-de-custodia/README.md",
@@ -11114,9 +11118,8 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/078-movimiento-lateral-en-la-red/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/170-active-directory-enumeracion/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/173-bloodhound-y-analisis-de-rutas-de-ataque/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/175-persistencia-en-active-directory/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/176-opsec-ofensiva/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/192-deteccion-de-movimiento-lateral/README.md"
    ],
    "authors": []
@@ -11542,12 +11545,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-7-red-team-y-operaciones-ofensivas/170-active-directory-enumeracion/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/171-active-directory-kerberoasting-y-ataques-a-kerberos/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/172-active-directory-pass-the-hash-y-pass-the-ticket/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/173-bloodhound-y-analisis-de-rutas-de-ataque/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/174-compromiso-total-de-dominio-dcsync-y-golden-ticket/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/175-persistencia-en-active-directory/README.md"
+    "classes/parte-7-red-team-y-operaciones-ofensivas/173-bloodhound-y-analisis-de-rutas-de-ataque/README.md"
    ],
    "authors": []
   },
@@ -13045,6 +13043,7 @@
     "classes/parte-7-red-team-y-operaciones-ofensivas/167-acceso-inicial-tecnicas/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/168-evasion-de-defensas-antivirus-y-edr/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/169-ofuscacion-de-payloads-y-bypass-de-amsi/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/170-active-directory-enumeracion/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/171-active-directory-kerberoasting-y-ataques-a-kerberos/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/172-active-directory-pass-the-hash-y-pass-the-ticket/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/174-compromiso-total-de-dominio-dcsync-y-golden-ticket/README.md",
@@ -13074,19 +13073,43 @@
    "vigencia": "vigente"
   },
   {
-   "id": "mitre-caldera",
-   "type": "standard",
-   "title": "CALDERA: plataforma de emulación automatizada de adversarios",
-   "identifier": "MITRE CALDERA",
-   "version": "",
-   "published": "",
-   "locator": "https://caldera.mitre.org/",
+   "id": "mitre-caldera-apache-incubator-2026",
+   "type": "reference",
+   "title": "MITRE Contributes Caldera to the Apache Incubator to Expand Open Cybersecurity Collaboration",
+   "published": "2026-05-20",
+   "locator": "https://www.mitre.org/news-insights/news-release/mitre-contributes-caldera-apache-incubator-expand-open-cybersecurity",
    "authority": "MITRE Corporation",
    "status": "verificada",
-   "notes": "",
+   "notes": "Comunicado primario de MITRE sobre la transferencia de Caldera a Apache Incubator.",
    "matches": {
     "url_prefixes": [
-     "https://caldera.mitre.org"
+     "https://www.mitre.org/news-insights/news-release/mitre-contributes-caldera-apache-incubator-expand-open-cybersecurity"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-08-24",
+   "used_in": [
+    "classes/parte-7-red-team-y-operaciones-ofensivas/180-adversary-emulation-con-atomic-red-team-y-caldera/README.md"
+   ],
+   "authors": [
+    "MITRE Corporation"
+   ]
+  },
+  {
+   "id": "mitre-caldera",
+   "type": "standard",
+   "title": "Apache Caldera (Incubating): plataforma de emulación automatizada de adversarios",
+   "identifier": "Apache Caldera (Incubating)",
+   "version": "",
+   "published": "",
+   "locator": "https://caldera.apache.org/",
+   "authority": "Apache Software Foundation",
+   "status": "verificada",
+   "notes": "Proyecto originado en MITRE y transferido a Apache Incubator el 2026-05-20; MITRE continúa involucrado en su liderazgo técnico.",
+   "matches": {
+    "url_prefixes": [
+     "https://caldera.mitre.org",
+     "https://caldera.apache.org"
     ],
     "text_patterns": []
    },
@@ -13666,6 +13689,9 @@
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/066-metodologia-de-pentesting-ptes-y-osstmm/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/067-reglas-de-engagement-alcance-y-contratos/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/161-red-team-vs-pentest-filosofia-y-objetivos/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/167-acceso-inicial-tecnicas/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/176-opsec-ofensiva/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/179-reporte-y-metricas-de-red-team/README.md"
    ],
    "authors": [],
@@ -14138,7 +14164,8 @@
     "classes/parte-17-profundizacion-para-certificaciones/311-clasificacion-y-ciclo-de-vida-de-los-datos/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/313-gestion-del-ciclo-de-vida-de-identidades-iam-empresarial/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/317-seguridad-fisica-y-ambiental/README.md",
-    "classes/parte-17-profundizacion-para-certificaciones/320-gobierno-aspectos-legales-regulatorios-y-gestion-del-programa/README.md"
+    "classes/parte-17-profundizacion-para-certificaciones/320-gobierno-aspectos-legales-regulatorios-y-gestion-del-programa/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -14219,6 +14246,37 @@
    "vigencia": "vigente"
   },
   {
+   "id": "nist-sp-800-61r3",
+   "type": "standard",
+   "title": "Incident Response Recommendations and Considerations for Cybersecurity Risk Management: A CSF 2.0 Community Profile",
+   "identifier": "NIST SP 800-61 Rev. 3",
+   "published": "2025-04",
+   "locator": "https://doi.org/10.6028/NIST.SP.800-61r3",
+   "authority": "National Institute of Standards and Technology (NIST)",
+   "status": "verificada",
+   "notes": "Publicación final de abril de 2025; reemplaza NIST SP 800-61 Rev. 2.",
+   "matches": {
+    "url_prefixes": [
+     "https://doi.org/10.6028/NIST.SP.800-61r3",
+     "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+    ],
+    "text_patterns": [
+     "NIST SP 800-61 Rev. 3"
+    ]
+   },
+   "accessed": "2026-08-24",
+   "used_in": [
+    "classes/parte-7-red-team-y-operaciones-ofensivas/179-reporte-y-metricas-de-red-team/README.md"
+   ],
+   "authors": [
+    "Alexander Nelson",
+    "Sanjay Rekhi",
+    "Murugiah Souppaya",
+    "Karen Scarfone"
+   ],
+   "vigencia": "vigente"
+  },
+  {
    "id": "nist-sp-800-61r2",
    "type": "standard",
    "title": "Computer Security Incident Handling Guide",
@@ -14242,6 +14300,7 @@
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/235-respuesta-a-incidentes-en-la-nube/README.md",
     "classes/parte-16-capstones-y-preparacion-de-certificaciones/307-capstone-respuesta-a-incidentes-dfir-end-to-end/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/321-comunicacion-y-reporte-para-analistas-de-seguridad/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/179-reporte-y-metricas-de-red-team/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/196-automatizacion-con-soar/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/202-el-ciclo-de-respuesta-a-incidentes-nist-y-sans/README.md",

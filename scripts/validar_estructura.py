@@ -39,6 +39,7 @@ SECCIONES_REQUERIDAS = [
 SECCIONES_PROFUNDAS = [
     "## 🧠 Explicación en profundidad",
     "## 📔 Glosario",
+    "```mermaid",
 ]
 PARTES_ESTANDAR_PROFUNDO = (
     "parte-0-fundamentos-y-prerrequisitos",
@@ -48,6 +49,7 @@ PARTES_ESTANDAR_PROFUNDO = (
     "parte-4-seguridad-de-aplicaciones-web",
     "parte-5-explotacion-de-sistemas-y-binarios",
     "parte-6-analisis-de-malware",
+    "parte-7-red-team-y-operaciones-ofensivas",
 )
 
 

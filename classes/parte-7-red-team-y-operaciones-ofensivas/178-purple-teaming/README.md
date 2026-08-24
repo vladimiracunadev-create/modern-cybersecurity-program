@@ -31,14 +31,63 @@ Al finalizar, el alumno podrá:
 | 6 | Métricas de cobertura | Navigator: detectado/no detectado |
 | 7 | Documentación | Hallazgos accionables |
 
+## 🧠 Explicación en profundidad
+
+### Purple team es una forma de trabajo, no un tercer color
+
+Purple teaming describe colaboración estructurada entre quienes emulan comportamiento adversario y quienes operan la defensa. Puede realizarse con personas que conservan roles separados; no exige crear un equipo permanente. Su valor está en compartir hipótesis, tiempo y evidencia para responder una pregunta concreta: «¿podemos observar, interpretar y gestionar este comportamiento relevante?».
+
+La técnica ATT&CK es un identificador útil, pero todavía no es un caso de prueba. Hay que definir procedimiento, activo, identidad, resultado esperado, fuentes de datos y condición de limpieza. Dos procedimientos mapeados a la misma técnica pueden producir telemetría diferente.
+
+```mermaid
+flowchart LR
+    A[Hipótesis priorizada] --> B[Preparar telemetría y criterio]
+    B --> C[Ejecutar prueba controlada]
+    C --> D[Observar datos crudos]
+    D --> E[Evaluar analítica y respuesta]
+    E --> F[Corregir sensor, regla o proceso]
+    F --> G[Reejecutar misma prueba]
+    G --> H{¿Criterio cumplido?}
+    H -- No --> D
+    H -- Sí --> I[Documentar y programar regresión]
+```
+
+### Dato, analítica, alerta y respuesta son capas distintas
+
+Que Sysmon o el EDR registre un evento demuestra **visibilidad**, no detección. Una regla que coincide demuestra analítica, pero todavía debe generar una alerta enrutable, con contexto suficiente y un procedimiento ejecutable. El ciclo mide cada capa para localizar la brecha real. Ajustar una consulta cuando el sensor nunca recogió el campo necesario no resolverá el problema.
+
+También se registra prevención por separado. Si un control bloquea la prueba, se valida el evento de bloqueo y se decide si aún debe existir una detección. La defensa robusta no depende de una sola modalidad.
+
+### La cobertura ATT&CK no es un porcentaje universal
+
+Colorear una técnica completa como «detectada» puede sobrestimar madurez. La cobertura pertenece a una combinación de procedimiento, plataforma, fuente, versión y analítica. Conviene usar estados como: no probado, sin dato, dato presente, analítica activa, alerta validada y respuesta ejercitada. Navigator comunica resultados, pero no sustituye esa evidencia.
+
+### Repetibilidad y control de regresión
+
+Cada prueba conserva versión, entradas, hashes o identificadores, hora y limpieza. Tras cambiar un sensor o regla se ejecuta exactamente la misma variante, y luego una variante vecina para evitar sobreajuste a una cadena. Finalmente se agenda una regresión segura. El producto del ciclo no es solo una regla: incluye fuente normalizada, lógica, contexto de triage, propietario y evidencia de que continúa funcionando.
+
 ## 📖 Definiciones y características
 
 - **Purple team**: colaboración Red+Blue en tiempo real para mejorar detección. Característica: objetivo compartido, no adversarial.
 - **Ciclo purple**: iterar ejecución de un TTP y ajuste de la detección hasta cubrirlo. Característica: iterativo y medible.
 - **Detection engineering**: disciplina de crear y afinar reglas de detección. Característica: nace de observar TTPs reales.
-- **Cobertura ATT&CK**: porcentaje de técnicas relevantes que se detectan. Característica: se visualiza en Navigator.
+- **Cobertura ATT&CK**: estado documentado de procedimientos relevantes por plataforma, fuente y analítica. Característica: Navigator ayuda a visualizarla, pero no existe un porcentaje universal sin criterios explícitos.
 - **True/false positive**: alerta correcta vs falsa. Característica: el ciclo purple busca maximizar TP y reducir FP.
 - **Detección vs prevención**: alertar sobre vs bloquear. Característica: el purple team mide ambas.
+
+## 📔 Glosario
+
+- **Purple teaming:** colaboración iterativa para validar y mejorar controles con comportamiento adversario controlado.
+- **Hipótesis de detección:** afirmación comprobable sobre datos, analítica y resultado esperado.
+- **Procedimiento:** implementación concreta de una técnica en un contexto definido.
+- **Fuente de datos:** sistema o componente que produce observaciones relevantes.
+- **Telemetría:** eventos y medidas recogidos antes de aplicar una decisión de detección.
+- **Analítica:** lógica que transforma datos en una señal con significado.
+- **True positive:** alerta que corresponde correctamente al comportamiento probado.
+- **False positive:** alerta que clasifica como amenaza actividad que no satisface la hipótesis.
+- **Cobertura:** capacidad demostrada para un procedimiento y contexto, no solo un color en una matriz.
+- **Regresión:** repetición periódica para comprobar que el control sigue funcionando.
+- **Sobreajuste:** regla tan específica a la muestra que no detecta variantes equivalentes.
 
 ## 🧰 Herramientas y preparación
 
@@ -96,10 +145,11 @@ Ayuda mucho porque da TTPs atómicos reproducibles (Clase 180), pero puedes ejec
 
 ## 🔗 Referencias
 
-- MITRE ATT&CK — *Detections & Data Sources*. <https://attack.mitre.org/datasources/>
-- SANS — *Purple Team methodology* / cursos SEC599.
-- Atomic Red Team. <https://github.com/redcanaryco/atomic-red-team>
-- Sysmon config (SwiftOnSecurity). <https://github.com/SwiftOnSecurity/sysmon-config>
+- MITRE ATT&CK — *Data Sources*. <https://attack.mitre.org/datasources/> — vocabulario para relacionar comportamiento con componentes de telemetría.
+- MITRE ATT&CK — *Detection Strategies*. <https://attack.mitre.org/detectionstrategies/> — referencia para separar estrategia, analíticas y fuentes requeridas.
+- Atomic Red Team — documentación oficial. <https://www.atomicredteam.io/docs/atomic-red-team> — sustenta pruebas pequeñas, prerrequisitos, autorización y limpieza.
+- MITRE ATT&CK Navigator. <https://github.com/mitre-attack/attack-navigator> — herramienta usada para comunicar capas de cobertura sin reemplazar la evidencia de prueba.
+- Sysmon configuration. <https://github.com/SwiftOnSecurity/sysmon-config> — configuración comunitaria de laboratorio; debe adaptarse al entorno y no se presenta como estándar universal.
 
 ## 📥 Material descargable
 

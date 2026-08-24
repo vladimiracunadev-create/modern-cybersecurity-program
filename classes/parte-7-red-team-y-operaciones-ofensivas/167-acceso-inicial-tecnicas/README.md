@@ -31,14 +31,67 @@ Al finalizar, el alumno podrá:
 | 6 | Establecer foothold | Del acceso a la sesión C2 |
 | 7 | Sigilo del primer paso | No quemar la operación al entrar |
 
+## 🧠 Explicación en profundidad
+
+### Acceso inicial no significa todavía control estable
+
+MITRE ATT&CK llama **Initial Access** al conjunto de técnicas empleadas para entrar en una red. La distinción es importante: demostrar que una credencial funciona o que una aplicación responde a una prueba no equivale a disponer de un punto de apoyo operativo. Entre ambos estados hay que confirmar identidad, alcance, permisos, estabilidad y telemetría generada. Una buena operación separa esas comprobaciones para no convertir una validación mínima en un incidente causado por el propio equipo de evaluación.
+
+El vector tampoco se elige solo por su probabilidad de éxito. Se compara con las reglas de enfrentamiento, el objetivo de la prueba y el posible impacto. Una aplicación pública vulnerable puede ofrecer una ruta directa, pero probarla sobre producción puede afectar disponibilidad. Una cuenta válida evita explotar software, pero un inicio de sesión desde un origen o horario inusual sigue siendo visible para un proveedor de identidad. **Válido no significa invisible.**
+
+```mermaid
+flowchart LR
+    A[Superficie autorizada] --> B{Hipótesis de acceso}
+    B --> C[Servicio remoto expuesto]
+    B --> D[Aplicación pública]
+    B --> E[Cuenta válida]
+    C --> F[Validación mínima]
+    D --> F
+    E --> F
+    F --> G{¿Acceso permitido y estable?}
+    G -- No --> H[Registrar evidencia y detener]
+    G -- Sí --> I[Confirmar identidad y permisos]
+    I --> J[Foothold controlado]
+    J --> K[Medir telemetría y comunicar]
+```
+
+### Del inventario a una hipótesis comprobable
+
+Enumerar puertos sin contexto produce una lista, no una decisión. Cada hallazgo debe convertirse en una hipótesis: «el portal VPN acepta identidades del dominio y carece del control acordado» o «la versión observada de la aplicación podría estar afectada por una vulnerabilidad concreta». La hipótesis incluye evidencia necesaria, criterio de éxito, riesgo y condición de parada. Esa disciplina impide probar indiscriminadamente cada servicio descubierto.
+
+En `T1133`, el objeto de estudio es un servicio remoto accesible desde fuera del perímetro. En `T1190`, la condición inicial es una aplicación expuesta y una debilidad validable. En `T1078`, lo determinante es que una identidad legítima pueda usarse en un contexto que la organización debería restringir. Son problemas distintos y dejan rastros distintos: autenticación en VPN o RDP, solicitudes y errores de aplicación, o eventos del proveedor de identidad.
+
+### Password spraying: modelo de riesgo, no receta de sigilo
+
+El spraying distribuye una misma contraseña entre varias identidades, a diferencia del ataque que concentra muchas contraseñas sobre una cuenta. Esa distribución puede reducir la probabilidad de alcanzar un umbral de bloqueo por usuario, pero no elimina los controles. Un SOC puede correlacionar numerosos fallos con igual origen, agente, protocolo o intervalo; además, políticas inteligentes pueden bloquear por riesgo y no solo por contador.
+
+Antes de una prueba autorizada se obtienen la política de bloqueo, la ventana de observación, las cuentas excluidas y un contacto de emergencia. El ritmo no se «adivina»: se acuerda. El resultado pedagógico relevante no es cuántas credenciales se prueban, sino si la organización previene, detecta y responde al patrón sin afectar cuentas críticas.
+
+### Qué debe probar el foothold
+
+Un foothold bien documentado responde cuatro preguntas: qué identidad o proceso se controla, en qué activo, con qué privilegios y durante cuánto tiempo. También conserva el instante, origen, técnica ATT&CK y evidencia defensiva. No exige persistencia automática; de hecho, instalarla sin que esté dentro del alcance amplía innecesariamente el impacto. El primer acceso es una evidencia intermedia para evaluar controles, no una licencia para continuar sin límites.
+
 ## 📖 Definiciones y características
 
 - **External Remote Services (`T1133`)**: acceso vía servicios remotos expuestos (RDP, VPN, Citrix). Característica: no requiere malware, solo credenciales.
 - **Exploit Public-Facing Application (`T1190`)**: explotar una vulnerabilidad en un servicio accesible. Característica: entrada directa sin interacción del usuario.
-- **Valid Accounts (`T1078`)**: usar credenciales legítimas obtenidas. Característica: muy sigiloso, "parece" un login normal.
-- **Password spraying**: probar 1–2 contraseñas comunes contra muchos usuarios. Característica: evita bloqueos por intentos.
+- **Valid Accounts (`T1078`)**: usar credenciales legítimas obtenidas. Característica: puede mezclarse con actividad normal, pero el origen, dispositivo, horario y patrón siguen siendo detectables.
+- **Password spraying**: probar un número muy limitado de contraseñas contra varias identidades. Característica: distribuye intentos, pero aún puede bloquear cuentas y ser correlacionado.
 - **Foothold**: primer punto de apoyo controlado en la red objetivo. Característica: base para pivotar y escalar.
 - **Drive-by compromise (`T1189`)**: comprometer al usuario al visitar un sitio. Característica: indirecto y oportunista.
+
+## 📔 Glosario
+
+- **Superficie expuesta:** activos y servicios alcanzables desde el punto de partida autorizado.
+- **Vector de acceso:** camino concreto que conecta una condición inicial con la entrada al entorno.
+- **Hipótesis de acceso:** afirmación comprobable que relaciona un activo, una debilidad y un resultado esperado.
+- **Foothold:** acceso inicial confirmado y suficientemente estable para la siguiente actividad autorizada.
+- **Cuenta válida:** identidad legítima empleada fuera del uso previsto o sin los controles esperados.
+- **Password spraying:** prueba de una contraseña limitada sobre varias cuentas; no debe confundirse con fuerza bruta por cuenta.
+- **Política de bloqueo:** reglas que determinan umbrales, duración y restablecimiento tras fallos de autenticación.
+- **Condición de parada:** evento previamente acordado que obliga a suspender una prueba.
+- **White cell:** grupo que conoce y gobierna el ejercicio, gestiona seguridad y resuelve incidentes.
+- **Telemetría de autenticación:** registros de intentos, resultados, origen, dispositivo y contexto de inicio de sesión.
 
 ## 🧰 Herramientas y preparación
 
@@ -96,20 +149,21 @@ Obtén un **foothold con sesión C2** en una máquina de tu laboratorio a travé
 ## ❓ Preguntas frecuentes
 
 **❓ ¿Cuál es el vector más común hoy?**
-Servicios remotos expuestos con credenciales válidas (a menudo filtradas) y explotación de aplicaciones públicas sin parchear compiten con el phishing por el primer puesto.
+No existe un ranking universal: cambia según sector, periodo, fuente de incidentes y taxonomía. La evaluación debe usar inteligencia reciente y relevante para la organización, no asumir que el vector más citado será el aplicable.
 
 **❓ ¿El password spraying es detectable?**
 Sí, genera muchos logins fallidos distribuidos; por eso se hace lento y con pocas contraseñas. Aún así, un SOC atento lo detecta.
 
 **❓ ¿Por qué preferir credenciales válidas?**
-Porque un login legítimo genera poca telemetría anómala frente a un exploit ruidoso; es el vector más "limpio" para el foothold.
+Porque evita explotar software y puede parecerse al uso esperado. Aun así, genera telemetría de identidad y puede ser muy anómalo por origen, dispositivo, horario, MFA o secuencia de accesos.
 
 ## 🔗 Referencias
 
-- MITRE ATT&CK — *Initial Access* (TA0001). <https://attack.mitre.org/tactics/TA0001/>
-- NetExec (nxc). <https://github.com/Pennyw0rth/NetExec>
-- kerbrute. <https://github.com/ropnop/kerbrute>
-- Clark, B. — *RTFM: Red Team Field Manual v2*.
+- MITRE ATT&CK — *Initial Access* (TA0001). <https://attack.mitre.org/tactics/TA0001/> — taxonomía utilizada para distinguir `T1133`, `T1190`, `T1078` y los demás caminos de entrada.
+- NIST — *Technical Guide to Information Security Testing and Assessment*, SP 800-115. <https://doi.org/10.6028/NIST.SP.800-115> — sustenta la planificación, las reglas de enfrentamiento, el manejo seguro de datos y el reporte de pruebas técnicas.
+- NetExec. <https://github.com/Pennyw0rth/NetExec> — documentación de la herramienta empleada únicamente en el laboratorio de autenticación.
+- Kerbrute. <https://github.com/ropnop/kerbrute> — referencia del comportamiento y opciones de la herramienta de enumeración del laboratorio.
+- Clark, B. — *RTFM: Red Team Field Manual v2* — consulta operativa complementaria; la clasificación conceptual se toma de ATT&CK y NIST.
 
 ## 📥 Material descargable
 

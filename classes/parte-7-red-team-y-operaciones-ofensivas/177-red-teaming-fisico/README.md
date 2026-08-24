@@ -31,14 +31,61 @@ Al finalizar, el alumno podrá:
 | 6 | Marco legal | Autorización, carta de permiso |
 | 7 | Puente físico→red | De estar dentro a un foothold |
 
+## 🧠 Explicación en profundidad
+
+### El alcance físico tiene personas, espacios y tiempo
+
+Una evaluación física no se autoriza solo con una dirección. Las reglas deben identificar edificios y zonas excluidas, horarios, técnicas permitidas, personas que no pueden ser involucradas, tratamiento de fotografías y datos, y respuesta si intervienen guardias o fuerzas públicas. La carta de autorización sirve para verificación de emergencia; no sustituye comunicación, seguros, legislación local ni condiciones de parada.
+
+El reconocimiento se limita a información necesaria para probar controles. Registrar matrículas, rostros o rutinas puede crear datos personales que la organización no necesita. La evidencia debe minimizarse, cifrarse y eliminarse según el plan acordado.
+
+```mermaid
+flowchart TB
+    A[Perímetro del sitio] --> B[Recepción y control de identidad]
+    B --> C[Zona de empleados]
+    C --> D[Zona restringida]
+    D --> E[Activo crítico]
+    A -. barrera .-> F[Cámaras e iluminación]
+    B -. control .-> G[Badge + validación humana]
+    C -. detección .-> H[Reporte de acompañamiento]
+    D -. respuesta .-> I[Guardia y procedimiento]
+    E -. protección .-> J[Gabinete, bloqueo y monitoreo]
+```
+
+### La seguridad física es defensa en profundidad
+
+Una tarjeta no es todo el sistema de acceso. Importan enrolamiento, tecnología, lector, controlador, puerta, anti-passback, vigilancia y conducta del personal. La posibilidad de leer o copiar un identificador de una credencial no demuestra por sí sola que una puerta lo aceptará: protocolos modernos pueden usar autenticación criptográfica y el backend puede aplicar estado o segundo factor.
+
+Igualmente, un dispositivo USB que declara ser teclado no obtiene privilegios automáticamente. Intervienen bloqueo de pantalla, control de dispositivos, privilegios de la sesión, allowlisting y EDR. El ejercicio separa **capacidad del dispositivo**, **aceptación por el sistema** e **impacto autorizado**.
+
+### Del acceso a la evidencia, sin ampliar el daño
+
+El objetivo se valida con marcadores inocuos: alcanzar una zona acordada, presentar una tarjeta de prueba, conectar a una VLAN preparada o fotografiar un token puesto por la white cell. No se fuerza una puerta que pueda dañar mecanismos, no se deja hardware sin inventario y no se recolectan credenciales reales si un sustituto demuestra lo mismo.
+
+Al terminar se contabilizan dispositivos, se retiran implantes de prueba, se revocan credenciales temporales y se informa cualquier debilidad que pueda causar un riesgo inmediato. El hallazgo explica qué capas fallaron y cuáles contuvieron la prueba; «entramos» no es análisis suficiente.
+
 ## 📖 Definiciones y características
 
 - **Tailgating / piggybacking**: entrar detrás de un empleado autorizado. Característica: explota la cortesía humana, no un fallo técnico.
-- **Clonado RFID**: copiar una tarjeta de acceso (125 kHz / 13.56 MHz). Característica: posible con lectores portátiles a corta distancia.
+- **Clonado RFID**: reproducción de datos de credenciales compatibles y débiles. Característica: no toda tarjeta de 125 kHz o 13,56 MHz es clonable; protocolo, claves y backend determinan el riesgo.
 - **Dropbox**: dispositivo (ej. una mini-PC) dejado en la red interna con conectividad C2. Característica: convierte el acceso físico en foothold remoto.
 - **HID injection**: dispositivo que se hace pasar por teclado (Rubber Ducky) para ejecutar comandos. Característica: rápido y difícil de bloquear por USB storage policies.
-- **Get-out-of-jail letter**: carta firmada que autoriza al operador y evita consecuencias legales si es descubierto. Característica: imprescindible; se lleva siempre encima.
+- **Carta de autorización de emergencia**: documento firmado y verificable que acredita alcance y contactos si el operador es interceptado. Característica: no otorga inmunidad ni sustituye el cumplimiento legal.
 - **RoE físicas**: reglas de qué edificios, horarios y métodos están permitidos. Característica: delimitan el ejercicio físico.
+
+## 📔 Glosario
+
+- **Alcance físico:** espacios, horarios, personas y métodos incluidos expresamente.
+- **Zona restringida:** área con controles adicionales por sensibilidad o seguridad.
+- **Tailgating:** entrada no autorizada aprovechando la apertura de una persona autorizada.
+- **Piggybacking:** acceso con conocimiento o cooperación de quien habilita el paso; el uso varía entre organizaciones.
+- **Badge:** credencial física o móvil presentada a un sistema de control de acceso.
+- **RFID/NFC:** familias de tecnologías de radio; frecuencia por sí sola no determina seguridad.
+- **HID:** clase de dispositivo de interfaz humana, como teclado o ratón.
+- **Dropbox físico:** equipo inventariado colocado temporalmente para una prueba autorizada de red.
+- **Anti-passback:** control que limita usos inconsistentes de una credencial entre entradas y salidas.
+- **Marcador inocuo:** evidencia preparada que permite demostrar acceso sin tocar datos reales.
+- **Cadena de custodia:** registro del control y transferencia de evidencia o dispositivos.
 
 ## 🧰 Herramientas y preparación
 
@@ -96,10 +143,11 @@ Solo en cerraduras propias y donde sea legal poseer las herramientas. Varían la
 
 ## 🔗 Referencias
 
-- Bryant, T. — *Operator Handbook*.
-- MITRE ATT&CK — *Hardware Additions* (`T1200`). <https://attack.mitre.org/techniques/T1200/>
-- TOOOL — *The Open Organisation Of Lockpickers* (recursos educativos). <https://toool.us/>
-- Documentación de Proxmark3 y Hak5 (Rubber Ducky) como referencia técnica.
+- NIST — *Technical Guide to Information Security Testing and Assessment*, SP 800-115. <https://doi.org/10.6028/NIST.SP.800-115> — base para autorización, planificación segura, evidencia y reglas de enfrentamiento.
+- NIST — *Security and Privacy Controls for Information Systems and Organizations*, SP 800-53 Rev. 5, familia PE. <https://doi.org/10.6028/NIST.SP.800-53r5> — sustenta defensa física en profundidad, control de acceso, monitoreo y visitantes.
+- MITRE ATT&CK — *Hardware Additions* (`T1200`). <https://attack.mitre.org/techniques/T1200/> — clasificación del riesgo de añadir dispositivos y sus mitigaciones.
+- TOOOL — recursos educativos y código ético. <https://toool.us/> — referencia de seguridad y práctica responsable de cerraduras.
+- Proxmark3. <https://github.com/RfidResearchGroup/proxmark3> y Hak5 USB Rubber Ducky. <https://docs.hak5.org/hak5-usb-rubber-ducky/> — documentación de los dispositivos del laboratorio, sin asumir que toda credencial o endpoint es vulnerable.
 
 ## 📥 Material descargable
 

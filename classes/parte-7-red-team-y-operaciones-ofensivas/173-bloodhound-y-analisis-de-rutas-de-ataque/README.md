@@ -31,6 +31,43 @@ Al finalizar, el alumno podrá:
 | 6 | Priorización de rutas | Sigilo vs facilidad |
 | 7 | Uso defensivo | El Blue Team también lo usa |
 
+## 🧠 Explicación en profundidad
+
+### BloodHound cambia la pregunta
+
+Una auditoría puede listar miembros de grupos privilegiados y no detectar que una cuenta ordinaria controla indirectamente a uno de ellos. BloodHound modela identidades, equipos, grupos, sesiones y permisos como un **grafo dirigido**. La pregunta deja de ser «¿quién es administrador?» y pasa a ser «¿qué secuencia de relaciones conecta una identidad controlada con un activo crítico?».
+
+Un nodo representa una entidad; una arista expresa una relación con dirección y semántica. `MemberOf` no significa lo mismo que `GenericAll`, y `HasSession` describe estado observado, no un permiso permanente. Leer solo la línea visual sin consultar el significado de la arista produce conclusiones falsas.
+
+```mermaid
+flowchart LR
+    U[Usuario comprometido] -->|MemberOf| H[Grupo Helpdesk]
+    H -->|GenericAll| S[Cuenta de servicio]
+    S -->|AdminTo| W[Servidor de aplicaciones]
+    A[Administrador] -->|HasSession| W
+    A -->|MemberOf| D[Domain Admins]
+    style U fill:#ffd6d6
+    style D fill:#d6ffd6
+```
+
+El camino es una **hipótesis**: hay que confirmar que los datos siguen vigentes, que la ACE no está condicionada por herencia, que el servidor es alcanzable y que la sesión continúa existiendo. BloodHound prioriza la validación; no garantiza todos los saltos.
+
+### Calidad y temporalidad de los datos
+
+La recolección combina objetos relativamente estables —grupos o ACL— con estados volátiles —sesiones—. Cada conjunto necesita marca de tiempo, identidad recolectora, métodos habilitados y cobertura. Importar datos antiguos con datos nuevos puede dibujar rutas que nunca coexistieron. Antes de informar una ruta se registra cuándo se observó cada relación y se vuelve a consultar el salto crítico.
+
+La cuenta colectora también condiciona visibilidad. Que no aparezca una relación puede significar que no existe, que no fue consultada o que la identidad no pudo verla. Ausencia en el grafo no equivale automáticamente a ausencia de riesgo.
+
+### Ruta más corta no significa mejor remediación
+
+El camino con menos aristas ayuda a explorar, pero el control defensivo se elige por alcance y efecto. Quitar una ACE heredada mal concedida puede cortar cientos de rutas; cerrar una sesión corta una relación transitoria. La remediación identifica el **punto de control** que reduce mayor exposición sin romper administración legítima.
+
+Conviene etiquetar activos de alto valor y puntos de entrada realistas, y comparar rutas antes y después de un cambio. Así BloodHound valida delegaciones de helpdesk, separación de niveles, cuentas de servicio y lugares donde inician sesión administradores.
+
+### Del grafo al hallazgo demostrable
+
+El informe conserva consulta, versión de datos y aristas relevantes. Para cada salto explica requisito, evidencia, limitación y medida defensiva. La demostración se detiene cuando el impacto queda probado; no hace falta recorrer hasta el control total si una modificación segura y reversible valida la relación crítica.
+
 ## 📖 Definiciones y características
 
 - **BloodHound**: herramienta que modela AD como grafo para hallar rutas de ataque. Característica: convierte relaciones complejas en caminos visibles.
@@ -39,6 +76,20 @@ Al finalizar, el alumno podrá:
 - **GenericAll / WriteDACL**: control total o sobre la ACL de un objeto. Característica: permiten tomar control de cuentas/grupos.
 - **Cypher**: lenguaje de consulta de grafos (Neo4j). Característica: permite preguntas personalizadas.
 - **Attack path**: secuencia de aristas de un nodo controlado a uno objetivo. Característica: el "mapa" del ataque.
+
+## 📔 Glosario
+
+- **Grafo dirigido:** nodos conectados por relaciones con dirección.
+- **Nodo:** entidad modelada, como usuario, grupo, equipo o dominio.
+- **Arista:** relación tipada entre dos nodos.
+- **Semántica de arista:** condiciones exactas bajo las que una relación representa capacidad o estado.
+- **Attack path:** secuencia potencial desde un punto inicial hasta un objetivo.
+- **Punto de entrada:** identidad o activo considerado inicialmente controlado.
+- **Activo de alto valor:** entidad cuya afectación tendría impacto significativo.
+- **SharpHound:** recolector oficial de datos de Active Directory para BloodHound.
+- **Cypher:** lenguaje de consulta de grafos.
+- **Relación transitoria:** arista dependiente de un estado cambiante.
+- **Punto de control:** cambio defensivo capaz de interrumpir una o varias rutas.
 
 ## 🧰 Herramientas y preparación
 
@@ -102,10 +153,12 @@ Sí. Los defensores lo usan para encontrar y cortar rutas peligrosas (relaciones
 
 ## 🔗 Referencias
 
-- SpecterOps — *BloodHound CE*. <https://bloodhound.specterops.io/> · <https://github.com/SpecterOps/BloodHound>
-- bloodhound-python. <https://github.com/dirkjanm/BloodHound.py>
-- The Hacker Recipes — *DACL abuse*. <https://www.thehacker.recipes/ad/movement/dacl/>
-- SpecterOps — blog sobre attack paths.
+- SpecterOps — *BloodHound: Attack Paths*. <https://bloodhound.specterops.io/analyze-data/findings/attack-paths> — fuente principal para nodos iniciales, objetivos, rutas y remediación.
+- SpecterOps — *BloodHound CE documentation*. <https://bloodhound.specterops.io/> — referencia oficial para recolección, importación y semántica del modelo.
+- SpecterOps — repositorio oficial de BloodHound. <https://github.com/SpecterOps/BloodHound> — fuente usada para fijar la versión del software desplegado en el laboratorio.
+- Microsoft — *Best Practices for Securing Active Directory*. <https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/best-practices-for-securing-active-directory> — fundamento de mínimo privilegio y administración segura.
+- bloodhound-python. <https://github.com/dirkjanm/BloodHound.py> — documentación del recolector alternativo utilizado en el laboratorio.
+- The Hacker Recipes — *DACL abuse*. <https://www.thehacker.recipes/ad/movement/dacl/> — apoyo práctico; cada conclusión se valida contra la semántica oficial de la arista.
 
 ## 📥 Material descargable
 

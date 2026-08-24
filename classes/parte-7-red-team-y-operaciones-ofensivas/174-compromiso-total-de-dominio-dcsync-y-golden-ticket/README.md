@@ -13,7 +13,7 @@ Ejecutar las técnicas que representan el "game over" de un dominio: DCSync (rep
 
 Al finalizar, el alumno podrá:
 
-1. **Ejecutar** DCSync para extraer el hash de `krbtgt` y de cualquier cuenta.
+1. **Demostrar** en un dominio desechable cómo una identidad con derechos de replicación puede solicitar material de `krbtgt`, limitando y registrando el alcance.
 2. **Forjar** un Golden Ticket y usarlo para acceso arbitrario.
 3. **Explicar** por qué `krbtgt` es la clave maestra del dominio.
 4. **Distinguir** Golden Ticket de Silver Ticket.
@@ -24,21 +24,72 @@ Al finalizar, el alumno podrá:
 | # | Tema | Por qué importa |
 |---|------|-----------------|
 | 1 | Derechos de replicación | Base del abuso DCSync |
-| 2 | DCSync (`T1003.006`) | Robar hashes sin tocar el DC directamente |
+| 2 | DCSync (`T1003.006`) | Abusar de replicación sin una extracción local convencional en el DC |
 | 3 | El hash de krbtgt | Clave para forjar TGTs |
-| 4 | Golden Ticket (`T1558.001`) | TGT forjado = acceso total |
+| 4 | Golden Ticket (`T1558.001`) | Un TGT forjado compromete la confianza del dominio |
 | 5 | Silver Ticket | TGS forjado para un servicio |
 | 6 | Persistencia y peligro | Sobrevive a cambios de contraseña |
 | 7 | Detección | DCSync y tickets anómalos |
 
+## 🧠 Explicación en profundidad
+
+### DCSync abusa de autorización de replicación
+
+Los controladores de dominio replican cambios para mantener copias coherentes del directorio. DCSync imita solicitudes de replicación con una identidad que posee derechos suficientes, como `DS-Replication-Get-Changes` y derechos adicionales según los datos pedidos. No explota una contraseña por sí mismo: explota una **delegación de alto impacto** o una identidad ya privilegiada.
+
+La consecuencia es grave porque puede exponer material de credenciales sin una extracción convencional dentro de LSASS del DC. Pero decir que «parece totalmente legítimo» es excesivo. La defensa puede identificar solicitudes desde equipos que no son controladores, revisar quién posee derechos de replicación y correlacionar cambios de ACL previos con actividad de red y directorio.
+
+```mermaid
+flowchart LR
+    A[Identidad comprometida] --> B{¿Derechos de replicación?}
+    B -- No --> C[Solicitud denegada]
+    B -- Sí --> D[Solicitud DRS al DC]
+    D --> E[Material del directorio]
+    E --> F[Clave de krbtgt expuesta]
+    F --> G[Posibilidad de forjar TGT]
+    G --> H[Solicitud de TGS al KDC]
+    H --> I[Acceso al servicio]
+    D -. origen no-DC .-> J[Detección y respuesta]
+```
+
+### Golden Ticket es una consecuencia, no el primer paso
+
+ATT&CK define `T1558.001` como la forja de un TGT mediante material de `krbtgt`. También se necesita contexto correcto del dominio. El ticket permite representar identidades y solicitar tickets de servicio; comprometer `krbtgt` transforma así un incidente de cuenta en un incidente de confianza de dominio.
+
+Un **Silver Ticket** usa la clave de una cuenta de servicio para forjar un ticket destinado a ese servicio. Su alcance es menor y la ruta puede evitar parte de la interacción normal con el KDC, lo cual cambia la detección. TGT y TGS no son intercambiables: el secreto empleado determina alcance y observabilidad.
+
+### Recuperar confianza requiere coordinación
+
+Microsoft indica que, durante la recuperación de un bosque, la contraseña de `krbtgt` debe restablecerse dos veces y entre ambos cambios se debe esperar más que la vida máxima configurada de los tickets —diez horas con los valores predeterminados citados—. «Dos resets inmediatos» no es una receta válida. Antes se comprueba salud de replicación, control de los DC, alcance del compromiso y continuidad; de lo contrario pueden producirse fallos de autenticación o reintroducirse claves comprometidas.
+
+El cambio de `krbtgt` tampoco limpia cuentas persistentes, ACL maliciosas, claves de servicio ni endpoints comprometidos. La respuesta revisa derechos de replicación, administradores, confianzas, GPO, cuentas de equipo y servicios. Si queda una ruta privilegiada, las nuevas claves pueden volver a exponerse.
+
+### Qué demuestra el laboratorio
+
+El resultado debe probar la cadena causal: derecho de replicación observado, solicitud desde origen no esperado, material afectado, consecuencia sobre tickets y señales disponibles. La restauración revierte delegaciones, rota secretos en el orden documentado y verifica que la hipótesis ya no funciona. Esa comparación produce conocimiento defensivo, no solo una captura de «Domain Admin».
+
 ## 📖 Definiciones y características
 
-- **DCSync**: abusar de los derechos de replicación (`DS-Replication-Get-Changes`) para pedir al DC los hashes. Característica: se ve como replicación legítima entre DCs.
+- **DCSync**: abusar de derechos de replicación para solicitar datos sensibles al DC. Característica: usa operaciones de replicación, pero el origen no-DC y las delegaciones anómalas pueden detectarse.
 - **krbtgt**: cuenta cuyo hash cifra todos los TGT del dominio. Característica: quien lo tiene, forja identidad de cualquiera.
-- **Golden Ticket**: TGT forjado con el hash de krbtgt. Característica: acceso total, válido hasta cambiar krbtgt (dos veces).
-- **Silver Ticket**: TGS forjado con el hash de una cuenta de servicio. Característica: acceso a un servicio concreto, más sigiloso.
+- **Golden Ticket**: TGT forjado con material de clave de `krbtgt`. Característica: permite representar identidades; el acceso real depende de servicio, conectividad y controles.
+- **Silver Ticket**: TGS forjado con material de clave de una cuenta de servicio. Característica: alcance limitado al servicio y una secuencia de telemetría distinta, no invisibilidad garantizada.
 - **Derechos de replicación**: permisos que normalmente tienen los DCs (y DA). Característica: si un usuario los obtiene, puede DCSync.
-- **KRBTGT reset**: cambiar dos veces la contraseña de krbtgt invalida golden tickets. Característica: única remediación real tras el compromiso.
+- **KRBTGT reset**: rotación coordinada de las claves de `krbtgt` según la guía de recuperación. Característica: dos cambios separados por la vida configurada de tickets retiran claves anteriores, pero no erradican otras persistencias.
+
+## 📔 Glosario
+
+- **Replicación de directorio:** intercambio de cambios entre controladores para mantener AD DS coherente.
+- **DRS:** protocolos y operaciones empleados en la replicación de Active Directory.
+- **Derecho extendido:** permiso específico que autoriza operaciones más allá de lectura o escritura genérica.
+- **DCSync:** solicitud de datos de replicación abusando de derechos equivalentes a los necesarios para replicar.
+- **krbtgt:** cuenta especial cuyas claves usa el KDC para proteger TGT.
+- **Golden Ticket:** TGT forjado con material de `krbtgt`.
+- **Silver Ticket:** ticket de servicio forjado con la clave de una cuenta de servicio.
+- **Vida máxima del ticket:** periodo configurado durante el cual un ticket puede aceptarse.
+- **Rotación de claves:** sustitución controlada de secretos y retirada de valores anteriores.
+- **Salud de replicación:** estado que confirma que los DC intercambian cambios correctamente.
+- **Compromiso de confianza:** incidente que afecta la base criptográfica o administrativa del dominio.
 
 ## 🧰 Herramientas y preparación
 
@@ -66,7 +117,7 @@ Al finalizar, el alumno podrá:
    ```
 
 5. **Usa el ticket.** Con el TGT forjado inyectado, accede al DC: `dir \\dc01.lab.local\C$` o `psexec.py` sin credenciales adicionales.
-6. **Silver Ticket (comparación).** Forja un TGS para un servicio concreto (CIFS) con el hash de la cuenta de máquina y observa que es más sigiloso (no pasa por el DC para el TGS).
+6. **Silver Ticket (comparación).** En el dominio desechable, compara un TGS de prueba para un servicio concreto con el flujo normal. Observa qué solicitud al KDC falta y qué telemetría permanece en servicio, host y red; no concluyas sigilo solo por ausencia de un evento.
 7. **Detección.** Revisa el evento `4662` (acceso a objeto con GUID de replicación) para DCSync y anomalías en la vida/PAC de los tickets para Golden Ticket.
 
 ## ✍️ Ejercicios
@@ -80,8 +131,8 @@ Al finalizar, el alumno podrá:
 
 ## 📝 Reto verificable
 
-Logra **acceso total al DC de tu AD lab** mediante DCSync + Golden Ticket: extrae el hash de krbtgt, forja un TGT de Administrator y úsalo para leer un recurso del DC sin credenciales adicionales.
-**Criterio de aceptación:** muestras el hash de krbtgt obtenido por DCSync, el comando de forja del Golden Ticket y una acción con éxito sobre el DC usando ese ticket; además identificas el evento `4662` que delató la replicación. Todo en tu laboratorio.
+Demuestra en un **dominio desechable** la cadena DCSync → compromiso de `krbtgt` → ticket forjado contra un recurso marcador preparado por la white cell, y restaura después el snapshot.
+**Criterio de aceptación:** documentas el derecho que habilitó la replicación, la identidad y origen de la solicitud, el ticket observado con `klist`, las señales defensivas y un plan de recuperación que respeta la espera indicada por Microsoft. No se usan datos reales ni se deja persistencia.
 
 ## ⚠️ Errores comunes
 
@@ -102,14 +153,15 @@ Porque usa el protocolo de replicación legítimo (MS-DRSR): pide los datos como
 No. Solo resetear krbtgt (dos veces) invalida los golden tickets. Por eso es la peor persistencia posible.
 
 **❓ ¿Golden o Silver Ticket?**
-Golden da acceso total pero es más detectable; Silver es acotado a un servicio pero más sigiloso porque no solicita TGS al DC.
+Golden afecta la confianza de emisión de TGT del dominio; Silver se limita a la clave y servicio asociados. Su detectabilidad depende de la telemetría y del procedimiento: que una ruta no solicite un TGS al KDC no la vuelve invisible en el servicio o endpoint.
 
 ## 🔗 Referencias
 
-- The Hacker Recipes — *DCSync / Kerberos tickets*. <https://www.thehacker.recipes/ad/movement/>
-- MITRE ATT&CK — *DCSync* (`T1003.006`), *Golden Ticket* (`T1558.001`). <https://attack.mitre.org/>
-- Impacket `secretsdump`. <https://github.com/fortra/impacket>
-- Microsoft — *KRBTGT account maintenance*. <https://learn.microsoft.com/>
+- MITRE ATT&CK — *DCSync* (`T1003.006`). <https://attack.mitre.org/techniques/T1003/006/> — requisitos de replicación, mitigaciones y detección.
+- MITRE ATT&CK — *Golden Ticket* (`T1558.001`). <https://attack.mitre.org/techniques/T1558/001/> — relación entre clave de `krbtgt`, TGT forjado y solicitudes TGS.
+- Microsoft — *AD Forest Recovery: Reset the krbtgt password*. <https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/forest-recovery-guide/ad-forest-recovery-reset-the-krbtgt-password> — procedimiento oficial, doble restablecimiento y espera basada en la vida de tickets.
+- Microsoft — *Best Practices for Securing Active Directory*. <https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/best-practices-for-securing-active-directory> — protección de controladores, cuentas privilegiadas y recuperación.
+- Impacket. <https://github.com/fortra/impacket> — documentación de `secretsdump` utilizada solo para la demostración controlada.
 
 ## 📥 Material descargable
 

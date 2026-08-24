@@ -31,6 +31,43 @@ Al finalizar, el alumno podrá:
 | 6 | Confianzas de dominio/forest | Movimiento entre dominios |
 | 7 | Sigilo en la enumeración | Evitar disparar alertas |
 
+## 🧠 Explicación en profundidad
+
+### Active Directory es un grafo de objetos y permisos
+
+AD DS no es solamente una lista de usuarios. Es un servicio de directorio distribuido entre controladores de dominio que almacena objetos —cuentas, equipos, grupos, unidades organizativas y políticas— junto con atributos y relaciones. Microsoft especifica LDAP como su protocolo principal de acceso al directorio, mientras Kerberos y NTLM participan en autenticación. Entender esa separación evita atribuir a LDAP funciones que pertenecen a Kerberos o al sistema de autorización.
+
+La enumeración útil reconstruye tres planos: **identidad** (quién es quién), **recursos** (qué equipos y servicios existen) y **control** (quién puede modificar o utilizar qué). Una cuenta aparentemente común puede ser relevante por pertenencia transitiva a grupos, por una ACE sobre otro objeto o porque ejecuta un servicio. El riesgo reside con frecuencia en la relación, no en el nombre del objeto.
+
+```mermaid
+flowchart TB
+    U[Usuario de bajo privilegio] -->|miembro de| G[Grupo de soporte]
+    G -->|ACE: control sobre| C[Cuenta de servicio]
+    C -->|SPN asociado| S[Servicio en servidor]
+    P[GPO] -->|se aplica a| OU[Unidad organizativa]
+    OU -->|contiene| H[Equipo administrado]
+    T[Confianza] -->|conecta| D[Otro dominio]
+    U -. consulta LDAP .-> G
+    U -. consulta LDAP .-> C
+    U -. consulta LDAP .-> P
+```
+
+### Cómo se organiza una consulta LDAP
+
+Una consulta necesita una base de búsqueda, un alcance, un filtro y los atributos que se desean recuperar. Pedir todo el dominio con todos los atributos es sencillo, pero genera volumen y dificulta el análisis. Una consulta dirigida parte de una pregunta: «¿qué cuentas de usuario poseen un SPN?» o «¿qué grupos contienen a esta identidad?». Entonces limita el filtro y solicita solo los atributos necesarios.
+
+El **distinguished name** ubica un objeto en el árbol; el `sAMAccountName` conserva un nombre de inicio de sesión histórico y el SID identifica al principal de seguridad dentro de las relaciones de autorización. Confundirlos causa errores al correlacionar resultados. También hay que considerar replicación: dos controladores pueden mostrar diferencias transitorias después de un cambio.
+
+### De la colección al razonamiento
+
+PowerView, Impacket, NetExec y los colectores de BloodHound son medios de consulta, no conclusiones. Cada resultado importante debe verificarse mediante otra vista o consulta y conservar su procedencia. Por ejemplo, descubrir un SPN identifica una cuenta vinculada a un servicio; no demuestra por sí solo que la contraseña sea débil ni que el servicio sea explotable. Una ACE `GenericAll` exige confirmar objeto origen, objeto destino, herencia y contexto antes de describir una ruta.
+
+BloodHound representa relaciones como nodos y aristas para ayudar a razonar sobre caminos. Eso no convierte cada camino calculado en uno ejecutable: pueden intervenir segmentación, sesiones caducadas, controles de endpoint o datos desactualizados. La visualización produce hipótesis que luego se validan con el menor impacto posible.
+
+### Enumerar también deja telemetría
+
+Las lecturas legítimas del directorio son necesarias para la administración, por lo que prevenirlas de forma absoluta no suele ser viable. La defensa busca secuencias, volumen, origen e identidad: un endpoint que consulta rápidamente todos los usuarios, grupos, ACL y relaciones puede diferir de la actividad administrativa habitual. El red team debe medir número de consultas, duración y fuentes empleadas; «low and slow» tampoco garantiza invisibilidad si el patrón acumulado es anómalo.
+
 ## 📖 Definiciones y características
 
 - **Active Directory**: servicio de directorio de Microsoft para gestionar identidades y recursos. Característica: LDAP + Kerberos como columna vertebral.
@@ -39,6 +76,21 @@ Al finalizar, el alumno podrá:
 - **GPO (Group Policy Object)**: política aplicada a OUs/equipos. Característica: mal configurada, ofrece escalado.
 - **ACL / ACE**: permisos sobre objetos de AD. Característica: relaciones abusables (GenericAll, WriteDACL).
 - **Trust (confianza)**: relación entre dominios/forests. Característica: puede permitir saltar de un dominio a otro.
+
+## 📔 Glosario
+
+- **AD DS:** servicio de directorio de dominio de Microsoft implementado por controladores de dominio.
+- **Objeto:** entrada del directorio que representa una identidad, recurso, contenedor u otra entidad.
+- **Atributo:** propiedad almacenada en un objeto, como nombre, SID o SPN.
+- **LDAP:** protocolo estándar para consultar y actualizar servicios de directorio.
+- **Base DN:** punto del árbol desde el cual comienza una búsqueda LDAP.
+- **Distinguished name (DN):** nombre jerárquico único que ubica un objeto en el directorio.
+- **SID:** identificador de un principal de seguridad utilizado en autorización.
+- **OU:** contenedor administrativo al que pueden vincularse políticas y delegaciones.
+- **ACE:** entrada individual que concede o deniega un derecho dentro de una ACL.
+- **SPN:** identificador que asocia una instancia de servicio con la cuenta bajo la que se ejecuta.
+- **Confianza:** relación que permite reconocer autenticación entre dominios o bosques bajo reglas definidas.
+- **Replicación:** propagación de cambios entre controladores de dominio.
 
 ## 🧰 Herramientas y preparación
 
@@ -86,7 +138,7 @@ Produce un **mapa del dominio de tu AD lab**: usuarios privilegiados, cuentas co
 ## ❓ Preguntas frecuentes
 
 **❓ ¿Necesito ser admin para enumerar AD?**
-No. Con **cualquier** cuenta de dominio válida se puede enumerar la mayor parte del directorio: ese es el diseño de AD y la razón de su exposición.
+No necesariamente. Por defecto, una identidad autenticada puede leer muchos objetos y atributos necesarios para operar AD DS, pero ACL, endurecimiento y tipo de objeto pueden limitar la vista. La práctica mide lo que esa identidad concreta puede consultar, no asume acceso universal.
 
 **❓ ¿PowerView o BloodHound?**
 Ambos: PowerView para consultas puntuales interactivas; BloodHound para visualizar relaciones y rutas de ataque (Clase 173).
@@ -96,10 +148,12 @@ Game of Active Directory: un laboratorio vulnerable y reproducible pensado para 
 
 ## 🔗 Referencias
 
-- The Hacker Recipes — *AD enumeration*. <https://www.thehacker.recipes/>
-- GOAD. <https://github.com/Orange-Cyberdefense/GOAD>
-- PowerSploit/PowerView. <https://github.com/PowerShellMafia/PowerSploit>
-- Impacket. <https://github.com/fortra/impacket>
+- Microsoft — *Active Directory Protocols Overview*. <https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-adod/9003d65b-05eb-4ba1-a006-dd617476319d> — fuente principal para distinguir AD DS, LDAP y los protocolos relacionados.
+- Microsoft — *Active Directory Data Model and glossary*. <https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-addm/bf6e41b7-bae0-4a47-affd-6f18218a537c> — sustenta los conceptos de objeto, atributo, naming context, SID y replicación.
+- MITRE ATT&CK — *Permission Groups Discovery* (`T1069`). <https://attack.mitre.org/techniques/T1069/> — referencia para explicar el valor ofensivo y la detección de enumeración de grupos.
+- SpecterOps — *BloodHound: Attack Paths*. <https://bloodhound.specterops.io/analyze-data/findings/attack-paths> — base del razonamiento como grafo y de la necesidad de validar los caminos calculados.
+- GOAD. <https://github.com/Orange-Cyberdefense/GOAD> — laboratorio vulnerable reproducible utilizado en los ejercicios.
+- PowerSploit/PowerView. <https://github.com/PowerShellMafia/PowerSploit> e Impacket. <https://github.com/fortra/impacket> — documentación de las herramientas concretas del laboratorio.
 
 ## 📥 Material descargable
 
