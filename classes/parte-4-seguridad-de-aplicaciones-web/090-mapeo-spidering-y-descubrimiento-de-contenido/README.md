@@ -31,6 +31,71 @@ Al finalizar, el alumno podrá:
 | 6 | Análisis de JavaScript | Los JS revelan rutas de API |
 | 7 | robots.txt, sitemap.xml, .git | Fuentes de rutas sensibles |
 
+## 🧠 Explicación en profundidad
+
+### No puedes probar lo que no has encontrado
+
+Antes de atacar hay que **mapear** la aplicación: descubrir todas sus páginas, endpoints,
+parámetros y ficheros. Es la fase de reconocimiento de la clase 068 aplicada a una única
+aplicación web, y su premisa es contundente: **la vulnerabilidad crítica está a menudo en la
+parte de la aplicación que nadie mira** —un endpoint de administración olvidado, una API
+antigua sin autenticación, un fichero de respaldo accesible—. Un pentest que solo prueba lo
+que se ve navegando normalmente deja fuera justo donde suelen estar los fallos graves. Por
+eso el mapeo combina lo pasivo (seguir enlaces) con lo activo (adivinar lo que no está
+enlazado).
+
+```mermaid
+flowchart TD
+  SP["Spidering<br/>seguir enlaces visibles"] --> MAPA
+  CD["Content discovery / dirbusting<br/>adivinar rutas ocultas con diccionarios"] --> MAPA
+  PD["Descubrimiento de parametros<br/>campos no documentados"] --> MAPA
+  SD["Enumeracion de subdominios"] --> MAPA
+  JS["Analisis de JavaScript<br/>endpoints y claves en el codigo cliente"] --> MAPA
+  AF["Ficheros reveladores<br/>robots.txt, sitemap.xml, .git"] --> MAPA
+  MAPA["Mapa completo de la superficie<br/>paginas, endpoints, parametros"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class SP,CD,PD,SD,JS,AF n
+  class MAPA d
+```
+
+### Dirbusting: adivinar lo que no está enlazado
+
+El descubrimiento de contenido (**content discovery** o *dirbusting*) prueba rutas
+**probables** contra el servidor —`/admin`, `/backup`, `/api/v1`, `/.env`, `/config.php`— y
+observa cuáles responden con algo distinto de un 404. Es fuerza bruta dirigida por
+**diccionarios**, y su eficacia depende por completo de la calidad de la lista: por eso
+**SecLists** —una colección enorme y curada de nombres de rutas, parámetros y payloads reales—
+es el recurso de referencia. Herramientas como `ffuf`, `feroxbuster` o `gobuster` lanzan miles
+de peticiones y filtran por código de respuesta, tamaño o número de palabras para separar lo
+que existe de lo que no. Un matiz importante: no basta con mirar el código 200; a veces un 403
+(prohibido) revela que la ruta **existe** aunque no se pueda acceder, y un 401 indica que hay
+algo protegido detrás.
+
+### El JavaScript es un mapa que el propio sitio te entrega
+
+En una aplicación moderna, el **análisis del JavaScript** del cliente es una de las fuentes de
+descubrimiento más ricas y más ignoradas. Como toda la lógica de la SPA viaja al navegador,
+sus ficheros `.js` contienen —a la vista de cualquiera— la lista de **endpoints de la API** que
+la aplicación consume, nombres de parámetros, rutas internas, *feature flags* y, con más
+frecuencia de la que debería, **claves y secretos** incrustados por descuido. Extraer las URLs
+y los parámetros de esos ficheros (con herramientas como LinkFinder o simplemente leyéndolos)
+suele revelar endpoints que ninguna otra técnica encuentra, porque no están enlazados en
+ningún sitio salvo dentro del código que los llama.
+
+### Los ficheros que hablan de más
+
+Ciertos ficheros estándar filtran información valiosa por diseño o por descuido. **`robots.txt`**
+lista rutas que el dueño **no quiere** que indexen los buscadores —lo que a menudo es
+exactamente un índice de las zonas interesantes—. **`sitemap.xml`** enumera páginas. Y el
+hallazgo más grave de este tipo es un directorio **`.git`** accesible: si el repositorio de
+código quedó expuesto, se puede **descargar el código fuente completo** de la aplicación
+—con su lógica, sus rutas y quizá sus secretos en el historial (clase 018)—, lo que convierte
+un pentest de caja negra en uno de caja blanca. La enumeración de **subdominios** (clase 068,
+con crt.sh) cierra el mapa por arriba, revelando entornos de `dev`, `staging` o `api` que
+suelen estar peor protegidos que producción. El resultado de toda esta fase es un **inventario
+de la superficie de ataque** sobre el que las 25 clases siguientes tienen dónde trabajar.
+
 ## 📖 Definiciones y características
 
 - **Content discovery**: proceso de encontrar recursos no enlazados por fuerza bruta de rutas. Característica: depende de un buen diccionario.
@@ -39,6 +104,25 @@ Al finalizar, el alumno podrá:
 - **Subdominio**: host bajo el dominio principal. Característica: puede quedar fuera de las protecciones del principal.
 - **Virtual host (vhost)**: sitios distintos servidos por la misma IP según la cabecera Host. Característica: se enumeran fuzzeando el Host.
 - **Recursión de directorios**: repetir el dirbusting dentro de cada carpeta hallada. Característica: descubre estructuras profundas.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Mapeo | Descubrir toda la estructura de la aplicación antes de atacar |
+| Spidering | Descubrimiento siguiendo enlaces visibles |
+| Content discovery / dirbusting | Adivinar rutas no enlazadas con diccionarios |
+| SecLists | Colección de referencia de rutas, parámetros y payloads |
+| ffuf / feroxbuster / gobuster | Herramientas de fuzzing de rutas |
+| Código de respuesta | 200, 403, 401… revelan la existencia y protección de una ruta |
+| Descubrimiento de parámetros | Encontrar campos de entrada no documentados |
+| Análisis de JavaScript | Extraer endpoints y secretos del código cliente |
+| LinkFinder | Herramienta que extrae URLs de ficheros JS |
+| robots.txt | Lista rutas que el dueño no quiere indexar |
+| sitemap.xml | Enumera páginas de la aplicación |
+| Directorio `.git` expuesto | Permite descargar el código fuente completo |
+| Enumeración de subdominios | Descubre entornos dev/staging/api peor protegidos |
+| Inventario de superficie | Resultado del mapeo; base de las pruebas posteriores |
 
 ## 🧰 Herramientas y preparación
 

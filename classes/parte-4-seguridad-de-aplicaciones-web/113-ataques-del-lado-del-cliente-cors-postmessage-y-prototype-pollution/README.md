@@ -33,6 +33,72 @@ Al finalizar, el alumno podrá:
 | 6 | Herramientas (DOM Invader) | Detección práctica |
 | 7 | Defensas por vector | Cierre del fallo |
 
+## 🧠 Explicación en profundidad
+
+### La política del mismo origen, y las tres formas de eludirla
+
+El navegador aísla los sitios entre sí con la **política del mismo origen** (SOP): el JavaScript de
+`a.com` no puede leer datos de `b.com`. Es la barrera fundamental de la seguridad web del lado del
+cliente, y esta clase reúne tres formas de **relajarla mal** o **rodearla**: CORS mal configurado,
+`postMessage` inseguro y prototype pollution. Los tres comparten que el fallo está en el **cliente**
+—en cómo el JavaScript de la aplicación maneja la comunicación entre orígenes o su propio estado— y que
+su impacto va del robo de datos al XSS o incluso al RCE.
+
+```mermaid
+flowchart TD
+  SOP["Same-Origin Policy<br/>aisla a.com de b.com"] --> V1["CORS mal configurado<br/>refleja el Origin o permite null"]
+  SOP --> V2["postMessage inseguro<br/>no valida el origen del mensaje"]
+  SOP --> V3["Prototype pollution<br/>contaminar Object.prototype"]
+  V1 --> R1["Robo de datos entre origenes"]
+  V2 --> R2["XSS / robo de datos"]
+  V3 --> R3["Gadget -> XSS o RCE"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class V1,V2,V3 n
+  class SOP d
+  class R1,R2,R3 x
+```
+
+### CORS mal configurado: relajar la SOP demasiado
+
+**CORS** (*Cross-Origin Resource Sharing*) es el mecanismo que permite, de forma controlada, que un
+origen acceda a recursos de otro —necesario para que una SPA en `app.com` consuma una API en
+`api.com`—. El problema aparece cuando se configura de forma **demasiado permisiva**. El fallo clásico:
+el servidor **refleja** el valor de la cabecera `Origin` de la petición en la respuesta
+`Access-Control-Allow-Origin` **junto con** `Access-Control-Allow-Credentials: true`. Eso significa
+"cualquier origen puede leer mi respuesta **con las cookies del usuario**", lo que permite a un sitio
+malicioso hacer peticiones autenticadas a la API de la víctima y **leer los datos**. Otro fallo es
+confiar en el origen `null` (que ciertos contextos envían) o usar comodines mal. La regla: un
+**allowlist estricto** de orígenes permitidos, y nunca reflejar el `Origin` con credenciales activadas.
+
+### postMessage inseguro y prototype pollution
+
+`postMessage` es la API que permite a dos ventanas o iframes de **distinto origen** comunicarse de
+forma legítima. Es segura **si se usa bien**, y peligrosa si no: el receptor debe **verificar el
+origen** del mensaje (`event.origin`) antes de confiar en él, y no pasar su contenido a un **sink**
+peligroso (`innerHTML`, `eval`). Un receptor que acepta mensajes de cualquier origen y los inserta en
+la página es un **DOM XSS** (clase 097) a través de `postMessage`. El **prototype pollution** es el más
+sutil y propio de JavaScript: como los objetos JS heredan de `Object.prototype`, si el atacante logra
+que la aplicación escriba en `__proto__` (por ejemplo, fusionando sin sanear un JSON que contiene
+`{"__proto__": {"isAdmin": true}}`), **contamina el prototipo del que heredan todos los objetos**. Por
+sí solo puede no hacer nada, pero combinado con un **gadget** —código de la aplicación que lee esa
+propiedad contaminada— escala a bypass de autorización, XSS o, en Node.js, incluso RCE. Es análogo a la
+gadget chain de la deserialización (clase 106), trasladado al prototipo de JavaScript.
+
+### Herramientas y defensa por vector
+
+Estos ataques del lado del cliente se cazan leyendo el JavaScript y probando la comunicación entre
+orígenes; **DOM Invader** (integrado en el navegador de Burp) automatiza el rastreo de sources, sinks y
+gadgets de postMessage y prototype pollution. Las defensas son específicas de cada vector y no hay una
+sola: para **CORS**, allowlist estricto de orígenes y no reflejar `Origin` con credenciales; para
+**postMessage**, validar siempre `event.origin` y no llevar el contenido a sinks peligrosos; para
+**prototype pollution**, sanear las claves al fusionar objetos (rechazar `__proto__`, `constructor`,
+`prototype`), usar `Object.create(null)` o `Map` para datos sin prototipo, y `Object.freeze` sobre el
+prototipo. La lección conjunta es que el navegador es un entorno hostil donde el estado y la
+comunicación entre orígenes se manejan con cuidado: la SOP protege mucho, pero cada mecanismo que la
+relaja —por necesidad legítima— es una superficie que hay que configurar con precisión.
+
 ## 📖 Definiciones y características
 
 - **SOP (Same-Origin Policy)**: política que aísla orígenes distintos. Característica: CORS la relaja de forma controlada.
@@ -41,6 +107,25 @@ Al finalizar, el alumno podrá:
 - **Prototype pollution**: inyectar propiedades en `Object.prototype` vía claves como `__proto__`. Característica: afecta a todos los objetos.
 - **Gadget**: código que lee una propiedad contaminable y la usa peligrosamente. Característica: convierte la contaminación en XSS/RCE.
 - **Source/sink en cliente**: origen del dato y punto de uso. Característica: base para rastrear estos ataques.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Same-Origin Policy (SOP) | Aísla el JS de un origen de los datos de otro |
+| CORS | Mecanismo que relaja la SOP de forma controlada |
+| Access-Control-Allow-Origin | Cabecera que dice qué orígenes pueden leer la respuesta |
+| Reflejar el Origin | Fallo: devolver el Origin recibido con credenciales |
+| Allow-Credentials | Permite enviar cookies en la petición cross-origin |
+| Origen null | Valor que ciertos contextos envían; peligroso confiarlo |
+| postMessage | API de comunicación entre ventanas de distinto origen |
+| event.origin | Origen del mensaje; hay que validarlo siempre |
+| Prototype pollution | Contaminar `Object.prototype` desde el que heredan todos |
+| `__proto__` | Propiedad cuya escritura provoca la contaminación |
+| Gadget | Código que lee la propiedad contaminada y escala el ataque |
+| DOM Invader | Herramienta de Burp para sources, sinks y gadgets |
+| Object.create(null) | Objeto sin prototipo; mitiga la pollution |
+| Defensa por vector | Cada mecanismo se protege de forma específica |
 
 ## 🧰 Herramientas y preparación
 

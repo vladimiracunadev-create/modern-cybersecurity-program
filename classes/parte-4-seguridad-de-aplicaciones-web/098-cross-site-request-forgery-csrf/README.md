@@ -33,6 +33,74 @@ Al finalizar, el alumno podrá:
 | 6 | Bypass de defensas débiles | Realidad de las apps |
 | 7 | CSRF en APIs JSON | Matices con Content-Type |
 
+## 🧠 Explicación en profundidad
+
+### El navegador manda tus cookies aunque la petición no la hagas tú
+
+El **Cross-Site Request Forgery** explota una decisión de diseño del navegador: cuando una página
+—**cualquiera**— hace una petición a un sitio, el navegador **adjunta automáticamente las cookies**
+de ese sitio. Eso significa que si estás autenticado en `banco.com` y visitas una página maliciosa,
+esa página puede hacer que tu navegador envíe una petición a `banco.com` **con tu cookie de sesión
+incluida**, y el banco la procesará como si la hubieras hecho tú. El atacante no roba tu sesión
+—como en el XSS— sino que **la usa a ciegas**: consigue que realices una **acción que cambia estado**
+(transferir dinero, cambiar tu correo, borrar algo) sin tu intención y sin ver el resultado.
+
+### Las tres condiciones que tienen que darse
+
+El CSRF no es siempre posible; requiere que se cumplan **tres condiciones** a la vez, y entenderlas
+es a la vez cómo se detecta y cómo se defiende:
+
+```mermaid
+flowchart TD
+  C1["1. Accion relevante<br/>que cambia estado"] --> POS
+  C2["2. Autenticacion por cookie<br/>que el navegador adjunta sola"] --> POS
+  C3["3. Parametros predecibles<br/>sin token secreto"] --> POS
+  POS["CSRF posible"]
+  POS --> POC["PoC: formulario auto-enviado<br/>desde una pagina del atacante"]
+  POS -.->|"falla si hay"| DEF["Token anti-CSRF<br/>o cookie SameSite"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  classDef ok fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class C1,C2,C3 n
+  class POS,POC x
+  class DEF ok
+```
+
+Primero, una **acción que valga la pena** (cambiar estado; leer datos no sirve, porque el atacante
+no ve la respuesta). Segundo, que la sesión dependa **solo de cookies** que el navegador envía
+automáticamente —si hace falta una cabecera o un token que el atacante no puede poner, no hay
+CSRF—. Tercero, que **todos los parámetros de la petición sean predecibles** —si hay un valor
+secreto que el atacante no puede adivinar, no puede forjar la petición—. La prueba de concepto
+clásica es un **formulario que se auto-envía** con JavaScript alojado en una página del atacante:
+cuando la víctima la visita, el formulario dispara la petición a `banco.com` con sus cookies.
+
+### Las dos defensas que rompen las condiciones
+
+Cada defensa ataca una de las condiciones. El **token anti-CSRF** (o *synchronizer token*) ataca la
+tercera: el servidor incluye en cada formulario un valor **secreto, único e impredecible** que
+debe volver con la petición; como una página de otro origen **no puede leer** ese token (lo impide
+la política del mismo origen), no puede forjar una petición válida. Es la defensa clásica y sólida,
+siempre que el token se genere bien y se valide en el servidor.
+
+La defensa moderna es el atributo de cookie **`SameSite`**, que ataca la segunda condición diciéndole
+al navegador **cuándo** adjuntar la cookie según el origen de la petición. `SameSite=Strict` no la
+envía nunca en peticiones que vienen de otro sitio; `SameSite=Lax` —hoy el **valor por defecto** en
+los navegadores modernos— la envía solo en navegaciones de nivel superior (hacer clic en un enlace)
+pero no en peticiones en segundo plano como el envío de un formulario cross-site. Ese cambio de
+defecto ha reducido drásticamente el CSRF clásico, y es la razón por la que hoy es menos común que
+hace años —pero no ha desaparecido—.
+
+### Por qué sigue vivo, y los errores de defensa
+
+Conviene no dar el CSRF por muerto. Las defensas **débiles** se evaden: validar solo la cabecera
+`Referer` falla porque a veces está ausente y el navegador no siempre la envía; un token que no se
+valida en el servidor, o que es el mismo para todos, no protege. Y hay un caso que sorprende: las
+**APIs que aceptan JSON** a veces se creen inmunes, pero si el endpoint también acepta
+`application/x-www-form-urlencoded` o no comprueba el `Content-Type`, un formulario CSRF clásico
+puede alcanzarlo. La combinación recomendada hoy es **`SameSite` como base de plataforma más tokens
+anti-CSRF en las acciones sensibles**, defensa en profundidad que cubre tanto los navegadores
+modernos como los casos límite.
+
 ## 📖 Definiciones y características
 
 - **CSRF**: forzar una acción autenticada usando la sesión de la víctima desde otro sitio. Característica: explota que el navegador envía cookies automáticamente.
@@ -41,6 +109,25 @@ Al finalizar, el alumno podrá:
 - **Verificación de Origin/Referer**: comprobar el origen de la petición. Característica: defensa complementaria.
 - **PoC (Proof of Concept)**: página que dispara la acción automáticamente. Característica: prueba el impacto real.
 - **Double-submit cookie**: patrón donde el token va en cookie y en cuerpo. Característica: alternativa sin estado en servidor.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| CSRF | Forzar al navegador de la víctima a hacer una acción autenticada |
+| Envío automático de cookies | El navegador adjunta la cookie sin importar el origen |
+| Acción que cambia estado | Requisito: transferir, cambiar correo, borrar |
+| Autenticación por cookie | Requisito: la sesión depende solo de la cookie |
+| Parámetros predecibles | Requisito: sin un secreto que el atacante no pueda poner |
+| Formulario auto-enviado | PoC clásica alojada en la página del atacante |
+| Token anti-CSRF | Valor secreto e impredecible que debe volver con la petición |
+| Synchronizer token | Nombre técnico del token anti-CSRF |
+| Política del mismo origen | Impide que otro sitio lea el token |
+| SameSite | Atributo de cookie que controla su envío cross-site |
+| SameSite=Lax | Valor por defecto moderno; no la envía en envíos de fondo |
+| SameSite=Strict | No envía la cookie en ninguna petición cross-site |
+| Validación de Referer | Defensa débil; el Referer puede faltar |
+| CSRF en APIs JSON | Posible si el endpoint acepta formularios o ignora el Content-Type |
 
 ## 🧰 Herramientas y preparación
 

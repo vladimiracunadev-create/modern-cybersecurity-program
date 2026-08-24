@@ -33,6 +33,73 @@ Al finalizar, el alumno podrá:
 | 6 | Ataques de complejidad (DoS) | Disponibilidad |
 | 7 | Defensa: límites y authz | Cierre del fallo |
 
+## 🧠 Explicación en profundidad
+
+### Un solo endpoint, un lenguaje de consulta y una superficie distinta
+
+**GraphQL** cambia el modelo de las APIs REST: en lugar de muchos endpoints fijos, hay **un solo
+endpoint** (`/graphql`) al que el cliente envía **consultas** que especifican exactamente qué datos
+quiere, con qué campos y qué relaciones. Esa flexibilidad —pedir en una consulta lo que en REST serían
+varias llamadas— es su virtud y también su superficie de ataque particular. Muchas defensas
+mentales de REST no aplican: no hay "endpoints ocultos" que enumerar (el esquema los expone todos),
+pero aparecen problemas nuevos —la autorización dispersa en cada resolver, los ataques de complejidad,
+la introspección que regala el mapa completo—. Distinguir **queries** (leen datos) de **mutations**
+(los modifican) es el primer paso: las mutations son las que cambian estado y las que más importa
+proteger.
+
+### La introspección: el esquema te entrega el mapa
+
+La característica más relevante para el pentesting es la **introspección**: GraphQL permite consultar
+su **propio esquema** —todos los tipos, campos, argumentos y mutations disponibles— con una consulta
+especial. Es una funcionalidad de desarrollo pensada para herramientas como GraphiQL, pero si está
+habilitada en producción, entrega al atacante el **mapa completo de la API** sin esfuerzo: qué datos
+existen, qué operaciones se pueden hacer, qué campos hay incluso en tipos que la interfaz nunca usa.
+Herramientas como GraphQL Voyager o InQL reconstruyen el esquema entero a partir de la introspección.
+La primera comprobación de un pentest GraphQL es si la introspección está abierta —y la primera
+recomendación defensiva, casi siempre, desactivarla en producción—.
+
+```mermaid
+flowchart TD
+  EP["/graphql - un solo endpoint"] --> INTRO["Introspeccion<br/>revela el esquema completo"]
+  INTRO --> MAP["Mapa de tipos, campos y mutations"]
+  MAP --> A1["Autorizacion en resolvers<br/>cada campo debe comprobar permiso"]
+  MAP --> A2["Ataques de complejidad<br/>consultas anidadas -> DoS"]
+  MAP --> A3["Batching / alias<br/>evadir rate limiting"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class INTRO,MAP,A1,A2,A3 n
+  class EP d
+```
+
+### El error de fondo: creer que un endpoint es un punto de control
+
+La trampa conceptual de GraphQL es asumir que, por haber un solo endpoint, basta con proteger ese
+endpoint. Falso: la autorización en GraphQL debe vivir en **cada resolver** —la función que resuelve
+cada campo—. Una consulta puede navegar relaciones (`usuario { pedidos { direccion } }`), y cada salto
+debe comprobar que el usuario tiene permiso sobre **ese** dato. Es el **BOLA de la clase 110** trasladado
+a GraphQL, y es más fácil de pasar por alto porque la autorización queda dispersa por decenas de
+resolvers en vez de en un puñado de endpoints. Un campo sensible sin comprobación en su resolver es una
+fuga, aunque el endpoint esté "autenticado".
+
+### Complejidad, batching y la defensa
+
+Dos ataques nacen de la flexibilidad del lenguaje. Los **ataques de complejidad / profundidad**: como
+el cliente compone la consulta, puede pedir estructuras profundamente **anidadas o recursivas**
+(`amigos { amigos { amigos { ... } } }`) que obligan al servidor a resolver un número explosivo de
+operaciones, provocando un **DoS** con una sola petición. La defensa es limitar la profundidad, la
+complejidad y el número de nodos de las consultas, y aplicar timeouts. El **batching y los alias**: una
+sola petición GraphQL puede contener **muchas operaciones** usando alias (`a: login(...) b: login(...)
+...`), lo que permite **evadir el rate limiting** que cuenta peticiones HTTP —mil intentos de login en
+una sola petición— y acelerar fuerza bruta o enumeración. La defensa exige limitar operaciones por
+petición y aplicar el rate limiting a nivel de operación, no de petición HTTP.
+
+La defensa transversal de GraphQL se resume así: **desactivar la introspección** (y GraphiQL) en
+producción, comprobar **autorización en cada resolver** por objeto y por campo, **limitar complejidad,
+profundidad y batching** para frenar el DoS y la evasión de límites, y no exponer más campos de los
+necesarios. Como en REST, la seguridad de GraphQL es, en su núcleo, **autorización granular**; solo
+que la flexibilidad del lenguaje añade la complejidad y el batching como vectores propios que un
+pentester debe probar siempre.
+
 ## 📖 Definiciones y características
 
 - **GraphQL**: lenguaje de consulta con un único endpoint donde el cliente define qué datos quiere. Característica: flexibilidad que amplía la superficie.
@@ -41,6 +108,25 @@ Al finalizar, el alumno podrá:
 - **Batching**: enviar múltiples operaciones en una petición. Característica: puede eludir rate limiting (p. ej. fuerza bruta).
 - **Alias**: renombrar campos para repetir una consulta muchas veces. Característica: amplifica ataques en una sola petición.
 - **Ataque de complejidad**: consulta profundamente anidada que agota recursos. Característica: DoS sin gran volumen de peticiones.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| GraphQL | API de un solo endpoint con lenguaje de consulta |
+| Query | Operación que lee datos |
+| Mutation | Operación que modifica datos |
+| Resolver | Función que resuelve cada campo de una consulta |
+| Introspección | Consultar el propio esquema de la API |
+| Esquema | Todos los tipos, campos y operaciones disponibles |
+| GraphiQL / InQL | Herramientas que reconstruyen el esquema |
+| Autorización por resolver | Comprobar el permiso en cada campo, no solo el endpoint |
+| BOLA en GraphQL | Acceder a datos de otro navegando relaciones |
+| Ataque de complejidad | Consultas anidadas o recursivas que provocan DoS |
+| Límite de profundidad | Restringir cuán anidada puede ser una consulta |
+| Batching | Muchas operaciones en una sola petición |
+| Alias | Repetir operaciones con nombres distintos para evadir límites |
+| Rate limiting por operación | Contar operaciones, no peticiones HTTP |
 
 ## 🧰 Herramientas y preparación
 

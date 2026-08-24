@@ -33,6 +33,71 @@ Al finalizar, el alumno podrá:
 | 6 | Esquemas alternativos (file://, gopher://) | Amplían el impacto |
 | 7 | Defensa: allowlist, sin redirecciones | Cierre del fallo |
 
+## 🧠 Explicación en profundidad
+
+### Convertir el servidor en tu proxy hacia dentro
+
+El **Server-Side Request Forgery** ocurre cuando una aplicación toma una **URL controlada por el
+usuario** y **hace una petición a ella desde el servidor**. La aplicación tiene funciones legítimas
+que hacen esto —cargar una imagen desde una URL, un webhook, importar datos de un enlace, un
+generador de miniaturas—, y el abuso consiste en darle una URL que apunte no a Internet, sino a
+sitios que **el atacante no puede alcanzar directamente pero el servidor sí**. El servidor se
+convierte, en efecto, en un **proxy hacia la red interna**. Su gravedad hizo que OWASP lo añadiera
+como categoría propia (A10) en 2021.
+
+### La joya: el servicio de metadatos cloud
+
+El objetivo de mayor impacto del SSRF, y la razón de su prominencia moderna, es el **servicio de
+metadatos** de la clase 086: la dirección `169.254.169.254`, alcanzable solo **desde dentro** de una
+instancia cloud, que devuelve su configuración y **sus credenciales**. Si una aplicación en AWS,
+GCP o Azure es vulnerable a SSRF, el atacante le pide que consulte esa dirección y obtiene las
+**claves de acceso temporales del rol de la instancia** —es decir, las llaves de la infraestructura
+cloud del objetivo—. La brecha de Capital One en 2019, con más de cien millones de registros
+expuestos, fue exactamente esto: un SSRF que alcanzó el servicio de metadatos de AWS. Es el mejor
+argumento de por qué el SSRF no es un fallo menor.
+
+```mermaid
+flowchart LR
+  A["Atacante controla una URL<br/>que la app va a pedir"] --> APP["Servidor hace la peticion"]
+  APP --> T{"A donde?"}
+  T -->|"169.254.169.254"| META["Metadata cloud<br/>-> credenciales de la instancia"]
+  T -->|"http://10.0.0.5/admin"| INT["Servicios internos<br/>no expuestos a Internet"]
+  T -->|"file:///etc/passwd"| FILE["Esquemas alternativos<br/>lectura de ficheros"]
+  META --> CRIT(["Compromiso de la infraestructura"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class A,APP,INT,FILE n
+  class T d
+  class META,CRIT x
+```
+
+### Más allá de la nube: red interna, esquemas y SSRF ciega
+
+Aunque no haya metadatos, el SSRF abre la **red interna** entera: servicios que confían en el
+tráfico interno (bases de datos, paneles de administración, APIs sin autenticar) y que asumen que
+"si viene de dentro, es de fiar" —la suposición que el zero trust de la clase 042 desmonta—. Se
+puede escanear puertos internos observando los tiempos o los errores de respuesta. Y los **esquemas
+de URL alternativos** amplían el arsenal: `file://` para **leer ficheros locales**, `gopher://`
+para construir peticiones arbitrarias a otros protocolos (hasta hablar con Redis o SMTP internos),
+`dict://` para sondear servicios. Cuando la aplicación **no devuelve** el resultado de la petición,
+existe la **SSRF ciega**, que se confirma con el canal **out-of-band** de siempre: hacer que el
+servidor resuelva o pida algo a un dominio del atacante demuestra que la petición se realizó.
+
+### Por qué las defensas ingenuas fallan y qué funciona
+
+El SSRF es notoriamente difícil de filtrar bien, y esa dificultad es parte de la lección. Un
+**blocklist** de direcciones internas se evade de muchas formas: representaciones alternativas de
+la IP (decimal, octal, `0x`), `127.0.0.1` escrito como `127.1` o `[::1]`, dominios que resuelven a
+IPs internas (**DNS rebinding**), y **redirecciones** —la URL permitida devuelve un 302 hacia una
+interna, y si la aplicación sigue redirecciones, cae—. Por eso la defensa correcta es un
+**allowlist** estricto de destinos permitidos (no un blocklist de prohibidos), **no seguir
+redirecciones** automáticamente, **validar la IP resuelta** justo antes de conectar (no solo el
+nombre), y **segmentar la red** para que el servidor de aplicación no tenga acceso a los servicios
+internos ni al metadata que no necesita. En cloud, exigir **IMDSv2** (que requiere un token y
+cabeceras que un SSRF simple no puede poner) mitiga específicamente el ataque al metadata. Defensa
+en profundidad, porque ninguna capa por sí sola basta.
+
 ## 📖 Definiciones y características
 
 - **SSRF**: el servidor hace una petición a una URL controlada por el atacante. Característica: usa la posición de red del servidor.
@@ -41,6 +106,25 @@ Al finalizar, el alumno podrá:
 - **Bypass de filtro**: técnicas para saltar allow/blocklists (IP decimal, DNS rebinding, redirecciones). Característica: los filtros por string son frágiles.
 - **Esquema de URL**: `http`, `file`, `gopher`, `dict`. Característica: esquemas exóticos amplían lo que se puede hacer.
 - **DNS rebinding**: cambiar la resolución DNS tras la validación. Característica: evade filtros basados en resolver una vez.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| SSRF | La aplicación hace una petición a una URL que controla el atacante |
+| Proxy hacia dentro | El servidor alcanza lo que el atacante no puede |
+| Servicio de metadatos | `169.254.169.254`; devuelve credenciales de la instancia |
+| Capital One | Brecha de 2019 causada por SSRF al metadata de AWS |
+| Red interna | Servicios que confían en el tráfico de dentro |
+| Escaneo interno | Sondear puertos internos por tiempos o errores |
+| Esquema alternativo | `file://`, `gopher://`, `dict://` amplían el ataque |
+| SSRF ciega | La app no devuelve el resultado; se confirma por OOB |
+| Blocklist | Filtrar IPs internas; evadible de muchas formas |
+| DNS rebinding | Un dominio que resuelve a una IP interna |
+| Redirección | La URL permitida redirige a una interna |
+| Allowlist de destinos | Solo destinos permitidos; la defensa correcta |
+| Validar IP resuelta | Comprobar la IP real antes de conectar |
+| IMDSv2 | Metadata con token que un SSRF simple no puede alcanzar |
 
 ## 🧰 Herramientas y preparación
 

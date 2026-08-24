@@ -31,6 +31,75 @@ Al finalizar, el alumno podrá:
 | 6 | Contextos y autenticación | Escaneo autenticado |
 | 7 | ZAP vs. Burp | Elegir la herramienta adecuada |
 
+## 🧠 Explicación en profundidad
+
+### La alternativa abierta, y por qué conviene conocer las dos
+
+**OWASP ZAP** (*Zed Attack Proxy*) es el equivalente libre y gratuito de Burp, mantenido por
+la comunidad OWASP. Comparte el concepto central —un proxy de interceptación que ve y modifica
+el tráfico— y por eso mucho de la clase 088 se traslada directamente: también genera una **CA**
+que hay que instalar para HTTPS, también tiene target, sitemap e interceptación manual. La
+razón de estudiarlo no es solo tener una opción sin coste, sino que **ZAP brilla donde Burp
+Community flaquea**: en automatización. Su escaneo activo es completo y sin las limitaciones
+de velocidad de la edición gratuita de Burp, y su **Automation Framework** lo hace idóneo para
+integrarse en un pipeline de CI/CD.
+
+```mermaid
+flowchart LR
+  B["Navegador + CA de ZAP"] <--> ZAP["ZAP Proxy"]
+  ZAP <--> S["Servidor"]
+  ZAP --> SP["Spider tradicional<br/>sigue enlaces del HTML"]
+  ZAP --> AJ["AJAX Spider<br/>ejecuta JS con navegador real"]
+  ZAP --> PA["Escaneo PASIVO<br/>observa, no toca"]
+  ZAP --> AC["Escaneo ACTIVO<br/>envia payloads de prueba"]
+  AC -.->|"solo dentro del scope"| ADV(["puede alterar datos"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#fdecea,stroke:#c0392b,color:#7b241c
+  class B,S,SP,AJ,PA n
+  class ZAP,AC d
+  class ADV x
+```
+
+### Spider tradicional frente a AJAX spider: por qué hacen falta los dos
+
+Para probar una aplicación hay que descubrir primero sus páginas, y ZAP ofrece dos
+**spiders** que responden a las dos arquitecturas de la clase 086. El **spider tradicional**
+descarga el HTML y sigue los enlaces que encuentra en él: rápido y suficiente para una web
+renderizada en servidor. Pero una **SPA** casi no tiene enlaces en el HTML inicial —el
+contenido lo genera el JavaScript al ejecutarse—, así que el spider tradicional apenas ve
+nada. Para eso está el **AJAX Spider**, que lanza un navegador real, ejecuta el JavaScript,
+hace clic en los elementos y descubre las rutas que solo aparecen tras la interacción. La
+regla práctica: sitio clásico, spider tradicional; SPA, AJAX Spider (más lento pero
+necesario).
+
+### Pasivo frente a activo: la distinción que evita incidentes
+
+La diferencia más importante de operar cualquier escáner es entre escaneo **pasivo** y
+**activo**, y confundirla causa problemas reales. El **escaneo pasivo** solo **observa** el
+tráfico que ya generas navegando: detecta cabeceras de seguridad ausentes, cookies sin flags,
+información filtrada —todo **sin enviar nada** al servidor más allá de tu navegación normal—.
+Es seguro en cualquier entorno. El **escaneo activo** es lo contrario: **envía payloads de
+prueba** (comillas para SQLi, scripts para XSS, etc.) para provocar y detectar
+vulnerabilidades. Es potente, pero **es intrusivo**: puede crear registros basura, disparar
+acciones, e incluso —si encuentra una inyección— alterar o borrar datos. Por eso el escaneo
+activo se lanza **solo dentro del scope autorizado** y nunca contra producción sin permiso
+explícito, exactamente como marcan las RoE de la clase 067.
+
+### Automatización, y ZAP frente a Burp
+
+El **Automation Framework** y el modo *baseline* de ZAP son su ventaja diferencial: permiten
+definir en un fichero un escaneo reproducible —autenticación incluida, mediante **contextos**
+que enseñan a ZAP cómo iniciar sesión— y ejecutarlo sin interfaz gráfica, lo que encaja
+perfectamente en un pipeline de DevSecOps (Parte 11) para que cada despliegue pase un chequeo
+de seguridad automático. En la comparación práctica, ninguno es "mejor": Burp Professional
+domina el trabajo **manual** e interactivo por su ergonomía y sus extensiones; ZAP domina el
+**automatizado y gratuito**. Muchos profesionales usan los dos, y saber operar ambos es una
+ventaja real. La advertencia común a los dos es la misma: un escáner automático encuentra lo
+**fácil y conocido**, genera **falsos positivos** que hay que verificar a mano, y **no
+sustituye** el análisis manual —las vulnerabilidades de lógica de negocio (clase 109), por
+ejemplo, ningún escáner las ve—.
+
 ## 📖 Definiciones y características
 
 - **ZAP**: proxy de seguridad web libre mantenido por OWASP. Característica: gratuito, scriptable y apto para CI/CD.
@@ -39,6 +108,25 @@ Al finalizar, el alumno podrá:
 - **Passive scan**: análisis no intrusivo del tráfico observado. Característica: seguro, no envía payloads.
 - **Active scan**: envía payloads para confirmar vulnerabilidades. Característica: intrusivo, solo con autorización.
 - **Baseline scan**: escaneo rápido y no intrusivo pensado para CI. Característica: falla el build si hay alertas nuevas.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| OWASP ZAP | Proxy de pentesting web libre y gratuito de OWASP |
+| CA de ZAP | Certificado propio para interceptar HTTPS |
+| Spider tradicional | Descubre páginas siguiendo enlaces del HTML |
+| AJAX Spider | Ejecuta JS con un navegador real para descubrir rutas de SPA |
+| Escaneo pasivo | Solo observa el tráfico; no envía nada; seguro |
+| Escaneo activo | Envía payloads de prueba; intrusivo; solo dentro del scope |
+| Falso positivo | Alerta que no se sostiene al verificarla a mano |
+| Alerta | Hallazgo del escáner, con nivel de riesgo |
+| Automation Framework | Escaneos reproducibles definidos en fichero |
+| Baseline scan | Escaneo rápido y no intrusivo para CI/CD |
+| Contexto | Configuración que enseña a ZAP a autenticarse |
+| CI/CD | Integración continua donde encaja el escaneo automatizado |
+| Escaneo intrusivo | El que puede alterar datos o disparar acciones |
+| Análisis manual | Lo que ningún escáner sustituye |
 
 ## 🧰 Herramientas y preparación
 

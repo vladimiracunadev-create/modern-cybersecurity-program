@@ -31,6 +31,74 @@ Al finalizar, el alumno podrá:
 | 6 | Servicios cloud y metadata | Amplían el impacto de fallos como SSRF |
 | 7 | Puntos de entrada de datos | Cada input es un vector potencial |
 
+## 🧠 Explicación en profundidad
+
+### Cada componente que añade funcionalidad añade superficie de ataque
+
+Una aplicación web moderna ya no es un servidor sirviendo páginas. Es una cadena de piezas
+—navegador, CDN, WAF, balanceador, servidor de aplicación, API, base de datos, servicios
+cloud— y **cada una procesa la entrada del usuario de una forma distinta**, lo que la
+convierte en un punto de ataque potencial. Entender esa arquitectura no es un preámbulo
+teórico: es lo que permite razonar *dónde* puede fallar algo. Una inyección SQL vive en el
+servidor de aplicación; un XSS, en el navegador; un SSRF, en la capacidad del backend de
+hacer peticiones; un cache poisoning, en la CDN. Sin el mapa, cada vulnerabilidad de las 29
+clases siguientes parecería un truco aislado en lugar de una consecuencia de la arquitectura.
+
+```mermaid
+flowchart LR
+  U["Navegador<br/>SPA / JS<br/>XSS, CSRF, prototype pollution"] --> CDN["CDN / WAF / balanceador<br/>cache poisoning, request smuggling"]
+  CDN --> APP["Servidor de aplicacion<br/>SQLi, command inj., SSTI, deserializacion"]
+  APP --> API["API REST / GraphQL<br/>BOLA, mass assignment, authz"]
+  API --> DB["Base de datos"]
+  APP --> INT["Servicios internos<br/>SSRF, metadata cloud"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class U,CDN,API,DB,INT n
+  class APP d
+```
+
+### El desplazamiento al cliente lo cambió todo
+
+La web clásica renderizaba en el servidor (**SSR**): cada clic pedía una página nueva. La web
+moderna es en buena parte **SPA** (*single-page application*): el servidor entrega un paquete
+de JavaScript que se ejecuta en el navegador y habla con el backend mediante **APIs**
+(REST o GraphQL) que devuelven datos, no HTML. Ese cambio tiene dos consecuencias de
+seguridad enormes. Primero, **mucha lógica vive ahora en el cliente**, es decir, en un
+entorno que el atacante controla por completo: cualquier validación hecha solo en el
+navegador es decorativa, porque se salta hablando directamente con la API. Segundo, la
+**superficie de ataque se movió a las APIs**, que son endpoints estructurados y a menudo mal
+protegidos —de ahí que las clases 110 y 111 les dediquen atención propia—.
+
+La regla que atraviesa toda la parte nace aquí: **nunca confíes en el cliente**. Todo lo que
+llega del navegador —parámetros, cabeceras, cookies, cuerpo JSON, orden de los campos— es
+entrada potencialmente hostil, y la validación y la autorización de verdad tienen que
+ocurrir en el **servidor**.
+
+### Los intermediarios: defensa y nueva superficie a la vez
+
+Entre el usuario y la aplicación hay hoy varias capas que no existían antes. Una **CDN**
+cachea contenido cerca del usuario; un **WAF** filtra peticiones con patrones maliciosos
+conocidos; un **balanceador** reparte carga. Son defensas útiles, pero introducen su propia
+superficie: un WAF se puede **evadir** (codificando el payload de forma que no coincida con
+sus firmas pero sí sea interpretado por el backend), una CDN mal configurada permite
+**cache poisoning** (clase 112), y la discrepancia entre cómo el proxy y el backend
+interpretan una misma petición habilita el **request smuggling** (clase 112). Un principio
+que conviene fijar: un WAF **reduce** el ruido y frena lo automático, pero **no sustituye**
+al código seguro; tratarlo como la defensa principal es un error clásico.
+
+### Los puntos de entrada de datos, y la joya de la nube
+
+Toda vulnerabilidad web empieza en un **punto de entrada**: un sitio por donde el atacante
+mete datos que la aplicación procesa. Enumerarlos es el primer paso de cualquier prueba:
+parámetros de URL y de formulario, cabeceras HTTP (incluidas `User-Agent`, `Referer`,
+`X-Forwarded-For`), cookies, el cuerpo de las peticiones (JSON, XML, multipart), los campos
+de una API y hasta partes de la propia ruta. Y un caso especial que la arquitectura cloud
+hizo crítico: el **servicio de metadatos** (`169.254.169.254` en la mayoría de proveedores),
+una dirección interna que devuelve credenciales y configuración de la instancia. Si el
+backend puede ser inducido a pedirle algo a esa dirección —un SSRF, clase 099—, entrega las
+llaves de la infraestructura. Tener el mapa de entradas y de servicios internos es lo que
+convierte el pentest web de un tanteo a ciegas en una búsqueda dirigida.
+
 ## 📖 Definiciones y características
 
 - **Superficie de ataque**: conjunto de todos los puntos donde un atacante puede introducir o extraer datos. Característica clave: crece con cada parámetro, endpoint y cabecera nuevos.
@@ -39,6 +107,25 @@ Al finalizar, el alumno podrá:
 - **SPA (Single Page Application)**: app que renderiza en el navegador y habla con una API. Característica: el código fuente JS es visible y revela endpoints.
 - **Endpoint de API**: URL que expone una operación del backend. Característica: suele tener menos protección visual pero igual necesidad de autorización.
 - **Metadata endpoint (cloud)**: servicio interno (169.254.169.254) que entrega credenciales temporales. Característica: alcanzable vía SSRF si no se protege.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Cliente-servidor | El navegador pide, el servidor responde sobre HTTP/HTTPS |
+| SSR | Renderizado en servidor; cada acción pide una página nueva |
+| SPA | Aplicación de una página; JS en el cliente habla con una API |
+| API REST / GraphQL | Backend que devuelve datos estructurados, no HTML |
+| Nunca confíes en el cliente | La validación real ocurre en el servidor |
+| CDN | Red de distribución que cachea contenido cerca del usuario |
+| WAF | Firewall de aplicación que filtra peticiones maliciosas |
+| Evasión de WAF | Codificar el payload para no coincidir con sus firmas |
+| Balanceador | Reparte la carga entre servidores |
+| Punto de entrada | Lugar por donde el atacante introduce datos |
+| Cabecera HTTP | Metadato de la petición; también es entrada del usuario |
+| Servicio de metadatos | `169.254.169.254`; devuelve credenciales de la instancia |
+| Superficie de ataque | Conjunto de todos los puntos de entrada y componentes |
+| Backend | Servidor de aplicación y sus servicios internos |
 
 ## 🧰 Herramientas y preparación
 

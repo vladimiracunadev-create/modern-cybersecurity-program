@@ -31,6 +31,69 @@ Al finalizar, el alumno podrá:
 | 6 | SAST/DAST/SCA en CI/CD | Automatizar la seguridad |
 | 7 | OWASP ASVS como checklist | Verificación estructurada |
 
+## 🧠 Explicación en profundidad
+
+### La síntesis: construir defendiendo, no parcheando
+
+Las 29 clases anteriores enseñaron a **atacar**; esta las invierte para enseñar a **construir seguro**,
+y su tesis es que **la seguridad es más barata y más efectiva diseñada desde el principio que
+parcheada al final**. No es una lista de trucos, sino un conjunto de principios que, aplicados,
+eliminan **clases enteras** de vulnerabilidad en lugar de instancias sueltas. El hilo que conecta casi
+todo lo visto es uno solo: **no confiar en la entrada y no mezclar datos con código**. Quien
+interioriza eso ya tiene el 80% del secure coding.
+
+```mermaid
+flowchart TD
+  D["Diseno seguro desde el inicio<br/>modelado de amenazas - A04"] --> C1["Separar codigo y datos<br/>parametrizar, no invocar shell, no deserializar input"]
+  D --> C2["Validar entrada + codificar salida<br/>por contexto"]
+  D --> C3["Autorizar en el servidor<br/>por objeto, denegar por defecto"]
+  D --> C4["Cabeceras de seguridad<br/>CSP, HSTS, cookies con flags"]
+  D --> C5["Secretos y dependencias<br/>fuera del codigo, actualizadas"]
+  C1 & C2 & C3 & C4 & C5 --> CI["SAST + DAST + SCA en CI/CD"]
+  CI --> ASVS(["OWASP ASVS como checklist verificable"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class C1,C2,C3,C4,C5,CI n
+  class D,ASVS d
+```
+
+### Las defensas por categoría, ya vistas y ahora ordenadas
+
+Cada categoría de riesgo tiene su defensa raíz, y ordenarlas es el resumen de la parte. Contra la
+**inyección** (SQL, comandos, NoSQL): separar código y datos —consultas parametrizadas, APIs que no
+invocan la shell, no deserializar entrada—. Contra el **XSS**: **codificación de salida por contexto**
+(la defensa primaria) más CSP como red de seguridad. Contra el **control de acceso roto**: autorizar
+**en el servidor, por objeto, denegando por defecto**. Contra los **fallos criptográficos** (Parte 2):
+AEAD, KDF para contraseñas, TLS bien configurado, no inventar cripto. Contra la **mala configuración**:
+endurecer por defecto y no exponer lo innecesario. El patrón se repite: **validar la entrada** (rechazar
+lo que no encaja, con allowlists) y **codificar la salida** (según dónde va el dato) son las dos
+operaciones que, bien hechas, cierran la mayoría de los fallos de inyección de toda la parte.
+
+### Cabeceras, secretos y dependencias
+
+Tres capas transversales completan la defensa. Las **cabeceras de seguridad** son defensa gratuita que
+el navegador aplica: **CSP** (restringe scripts, clase 096), **HSTS** (fuerza HTTPS, clase 040),
+`X-Content-Type-Options`, `X-Frame-Options`/frame-ancestors (contra clickjacking), y las **cookies con
+flags** `HttpOnly`, `Secure`, `SameSite` (clase 102). La **gestión de secretos**: nunca en el código
+(clase 063), sino en un gestor o variables de entorno seguras, con escaneo automático que impida
+commitearlos. Y la **gestión de dependencias**: el A06 de OWASP (componentes vulnerables) es de los
+fallos más comunes, porque una aplicación hereda las vulnerabilidades de sus librerías —mantenerlas
+actualizadas y monitorizar sus CVE (Parte 11) es tan importante como el código propio—.
+
+### Automatizar la seguridad: SAST, DAST, SCA y ASVS
+
+El secure coding no depende de que cada desarrollador recuerde todo: se **automatiza** en el pipeline
+(la Parte 11 lo desarrolla). **SAST** (*static application security testing*) analiza el **código
+fuente** buscando patrones peligrosos. **DAST** analiza la **aplicación en ejecución** enviándole
+ataques (ZAP en modo baseline, clase 089). **SCA** (*software composition analysis*) revisa las
+**dependencias** contra bases de vulnerabilidades. Integrados en CI/CD, atrapan fallos antes de
+producción. Y como marco de referencia verificable, **OWASP ASVS** (*Application Security Verification
+Standard*) es la **checklist** exhaustiva —mucho más detallada que el Top 10 (clase 087)— con
+requisitos concretos por nivel de criticidad, que sirve tanto para construir como para auditar. El
+cierre de la parte es una idea de madurez: el objetivo no es cazar bugs uno a uno para siempre, sino
+**diseñar y automatizar** de modo que las clases enteras de vulnerabilidad no lleguen a existir. Atacar
+enseña dónde están los fallos; construir seguro es lo que hace que no vuelvan.
+
 ## 📖 Definiciones y características
 
 - **Secure coding**: prácticas de programación que previenen vulnerabilidades. Característica: es más barato prevenir que parchear.
@@ -39,6 +102,26 @@ Al finalizar, el alumno podrá:
 - **CSP (Content Security Policy)**: cabecera que restringe recursos ejecutables. Característica: mitiga XSS aunque exista el bug.
 - **ASVS**: estándar de verificación de OWASP con requisitos por nivel. Característica: convierte "ser seguro" en una checklist auditable.
 - **SAST/DAST/SCA**: análisis estático, dinámico y de composición. Característica: automatizan la detección en el pipeline.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Secure coding | Construir software seguro por diseño, no por parche |
+| Diseño seguro | Modelar amenazas antes de programar (A04) |
+| Separar código y datos | Parametrizar, no invocar shell, no deserializar input |
+| Validación de entrada | Rechazar lo que no encaja, con allowlists |
+| Codificación de salida | Codificar el dato según su contexto; defensa primaria del XSS |
+| Autorización en servidor | Por objeto y denegando por defecto |
+| CSP / HSTS | Cabeceras que restringen scripts y fuerzan HTTPS |
+| X-Frame-Options | Cabecera contra clickjacking |
+| Flags de cookie | HttpOnly, Secure, SameSite |
+| Gestión de secretos | Fuera del código, con escaneo automático |
+| Componentes vulnerables | A06; heredar CVE de las dependencias |
+| SAST | Análisis estático del código fuente |
+| DAST | Análisis dinámico de la aplicación en ejecución |
+| SCA | Análisis de las dependencias contra CVE |
+| OWASP ASVS | Estándar de verificación; checklist detallada |
 
 ## 🧰 Herramientas y preparación
 

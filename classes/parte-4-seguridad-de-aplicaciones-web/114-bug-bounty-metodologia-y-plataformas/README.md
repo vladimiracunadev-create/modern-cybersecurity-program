@@ -33,6 +33,67 @@ Al finalizar, el alumno podrá:
 | 6 | CVSS y severidad | Lenguaje común de riesgo |
 | 7 | Divulgación responsable | Ética y reputación |
 
+## 🧠 Explicación en profundidad
+
+### Cazar vulnerabilidades por recompensa, dentro de las reglas
+
+El **bug bounty** es un modelo en el que las organizaciones invitan a investigadores externos a
+encontrar vulnerabilidades a cambio de una **recompensa** por cada una válida. Plataformas como
+**HackerOne**, **Bugcrowd** e **Intigriti** intermedian: alojan los **programas** (el conjunto de
+reglas de cada organización), gestionan los reportes y los pagos. Es una vía real de aprendizaje y de
+ingresos, pero su premisa fundamental es la misma que la del pentest (clase 067): **solo estás
+autorizado a probar lo que el programa incluye en su alcance, con las técnicas que permite**. Salirse
+del scope en bug bounty no es una infracción menor: es acceso no autorizado, con las mismas
+consecuencias legales de siempre.
+
+```mermaid
+flowchart LR
+  SCOPE["Leer el programa<br/>scope, exclusiones, reglas"] --> RECON["Reconocimiento eficiente<br/>subdominios, JS, endpoints"]
+  RECON --> PRIOR["Priorizar por retorno<br/>donde es probable un bug pagado"]
+  PRIOR --> TEST["Probar dentro del scope"]
+  TEST --> REPORT["Reporte claro y reproducible"]
+  REPORT --> TRIAGE["Triaje y recompensa"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class RECON,PRIOR,TEST,REPORT,TRIAGE n
+  class SCOPE d
+```
+
+### Lo primero, siempre: leer el scope
+
+Antes de tocar nada se lee el programa a fondo, y esto no es un trámite: es lo que separa un
+investigador profesional de uno que se mete en problemas. El programa define qué **dominios y activos**
+están **dentro** del alcance y cuáles **explícitamente fuera**, qué **técnicas están prohibidas**
+(casi siempre la denegación de servicio, la ingeniería social a empleados, los ataques automáticos
+agresivos), y qué **tipos de hallazgo** paga y cuáles considera fuera de interés. Probar un subdominio
+excluido, lanzar un DoS "para ver", o hacer phishing a un empleado son formas rápidas de quedar
+baneado de la plataforma —o de acabar en un problema legal—. El scope es la ley del engagement.
+
+### Reconocimiento y priorización: el retorno del tiempo
+
+En un programa amplio, el **reconocimiento eficiente** marca la diferencia, y aplica todo lo de la
+clase 090: enumerar subdominios (crt.sh), analizar el JavaScript en busca de endpoints, descubrir APIs
+y versiones antiguas. La clave es la **priorización por retorno**: el tiempo es limitado, así que se
+va donde es más probable encontrar un bug que **pague** —funcionalidad nueva o compleja, adquisiciones
+recientes con seguridad desigual, endpoints de API poco pulidos, zonas que otros cazadores habrán
+mirado menos—. Cazar el mismo XSS reflejado que ya reportaron cien personas rara vez es rentable;
+encontrar un IDOR o una falla de lógica en una función nueva sí. Entender **qué se valora** (impacto,
+originalidad) orienta el esfuerzo.
+
+### El reporte es lo que se paga, y la divulgación responsable
+
+Como en el pentest (clase 085), **el hallazgo no vale por sí mismo: vale el reporte**. Un buen reporte
+de bug bounty tiene título claro, pasos de reproducción exactos, evidencia (capturas, peticiones), una
+explicación del **impacto real** (no "encontré un XSS" sino "un atacante puede robar la sesión de
+cualquier usuario que abra este enlace") y una remediación sugerida. El **triaje** —el equipo que
+valida el reporte— decide si es válido, único y con qué severidad, y el **CVSS** (clase 071) ayuda a
+justificar la recompensa. Un reporte confuso o exagerado se rechaza aunque el bug sea real. Y todo se
+enmarca en la **divulgación responsable**: se reporta **en privado** a la organización a través de la
+plataforma, se le da **tiempo para corregir**, y no se hace público el fallo hasta que esté resuelto y
+el programa lo autorice. Publicar un bug sin resolver, extorsionar con él, o usarlo para acceder a más
+datos de los necesarios para demostrarlo, cruza la línea de la investigación a la actividad
+delictiva. El bug bounty es hacking **ético y legal** precisamente porque respeta esas reglas.
+
 ## 📖 Definiciones y características
 
 - **Bug bounty**: programa que recompensa el reporte de vulnerabilidades bajo reglas definidas. Característica: hacking autorizado y con límites.
@@ -41,6 +102,25 @@ Al finalizar, el alumno podrá:
 - **CVSS**: sistema estándar para puntuar severidad. Característica: da un lenguaje común, pero no sustituye el impacto de negocio.
 - **Duplicado**: bug ya reportado por otro. Característica: no se recompensa; premia la velocidad y la originalidad.
 - **Divulgación responsable**: reportar en privado y esperar la corrección. Característica: protege a usuarios y a tu reputación.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Bug bounty | Recompensa por vulnerabilidades reportadas |
+| HackerOne / Bugcrowd / Intigriti | Plataformas que alojan programas |
+| Programa | Reglas y alcance de una organización |
+| Scope | Activos autorizados; fuera de él es acceso no autorizado |
+| Exclusiones | Dominios o técnicas explícitamente prohibidos |
+| Técnica prohibida | DoS, ingeniería social, escaneo agresivo (habitual) |
+| Reconocimiento eficiente | Subdominios, JS y endpoints con buen retorno |
+| Priorización por retorno | Ir donde es probable un bug pagado |
+| Duplicado | Bug ya reportado; no se recompensa |
+| Reporte | Producto que se paga; claro y reproducible |
+| Impacto | Lo que el bug permite; justifica la severidad |
+| Triaje | Validación del reporte por la plataforma |
+| CVSS | Puntuación que ayuda a fijar la recompensa |
+| Divulgación responsable | Reportar en privado y dar tiempo a corregir |
 
 ## 🧰 Herramientas y preparación
 

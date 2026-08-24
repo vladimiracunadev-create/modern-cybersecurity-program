@@ -33,6 +33,72 @@ Al finalizar, el alumno podrá:
 | 6 | `$where` y JS server-side | Ejecución de lógica arbitraria |
 | 7 | Defensa: validar tipos | Cierre del fallo |
 
+## 🧠 Explicación en profundidad
+
+### Distinta base de datos, mismo error de fondo
+
+Que una aplicación use MongoDB en lugar de SQL **no la hace inmune a la inyección**: el fallo
+raíz —mezclar entrada del usuario con la lógica de la consulta— es el mismo, solo cambia la
+forma. En las bases **NoSQL** documentales como MongoDB, las consultas no son cadenas de texto
+sino **estructuras de datos** (objetos JSON con operadores), y ahí está la vuelta de tuerca: la
+inyección no consiste en romper una cadena con una comilla, sino en **cambiar el tipo o la
+estructura** de lo que se envía para introducir **operadores** que la aplicación no esperaba.
+Entender esto es clave porque las defensas mentales del programador ("escapo las comillas")
+no aplican y dejan un hueco enorme.
+
+### El operador que rompe la autenticación
+
+MongoDB tiene operadores de consulta como `$ne` (distinto de), `$gt` (mayor que), `$regex`
+(coincide con) o `$where` (evalúa JavaScript). El ataque clásico convierte un valor simple en
+un objeto con uno de esos operadores. Imagina un login que consulta
+`{ user: entrada_user, password: entrada_pass }`. Si la aplicación acepta JSON y no valida
+tipos, el atacante envía `{ "user": "admin", "password": { "$ne": "" } }`: el operador `$ne ""`
+significa "cualquier contraseña distinta de vacío", es decir, **coincide con cualquier
+contraseña**, y se entra como admin sin conocerla. Es el `admin' --` de la clase 091 traducido
+al mundo NoSQL, y funciona porque el desarrollador esperaba un texto y recibió un objeto.
+
+```mermaid
+flowchart TD
+  N["Login espera<br/>user y password como texto"] --> A{"Como llega la entrada?"}
+  A -->|"JSON directo"| J["password: {'$ne': ''}<br/>= cualquier contrasena"]
+  A -->|"query string"| Q["user[$ne]=x<br/>frameworks lo parsean a objeto"]
+  J --> BY(["Auth bypass sin conocer la clave"])
+  Q --> BY
+  BY --> DEF["Defensa: validar TIPOS<br/>rechazar objetos donde se espera texto"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  classDef ok fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class N,J,Q n
+  class BY x
+  class DEF ok
+```
+
+### Dos vías de entrada, y la inyección ciega
+
+Hay dos formas de colar esos operadores. La directa es una **API que acepta JSON**: ahí el
+atacante controla la estructura por completo y puede anidar operadores a voluntad. La menos
+obvia, y por eso peligrosa, es la **query string**: muchos frameworks (Express con
+`qs`, PHP) **parsean automáticamente** una sintaxis como `user[$ne]=x` convirtiéndola en un
+objeto `{ user: { $ne: "x" } }` antes de que llegue a la consulta. Es decir, un parámetro de
+URL de apariencia inofensiva se transforma en un operador de MongoDB sin que el atacante
+necesite enviar JSON. Este comportamiento sorprende a muchos desarrolladores y es una fuente
+recurrente de fallos.
+
+Como en SQL, cuando no se ven los resultados existe la **NoSQLi ciega**: con `$regex` se
+pregunta si un valor **empieza por** cierto patrón (`{"password": {"$regex": "^a"}}`) y, según
+la aplicación responda a una coincidencia o no, se extrae el dato **carácter a carácter**,
+exactamente como la inyección booleana de la clase 092. Y el operador **`$where`** —o
+`mapReduce`— es el más grave, porque **evalúa JavaScript en el servidor**: si el atacante
+controla lo que se ejecuta ahí, puede pasar de leer datos a ejecutar lógica arbitraria, un
+escalón hacia el RCE.
+
+La **defensa** tiene un acento distinto al de SQL y conviene subrayarlo: además de no construir
+consultas con entrada sin validar, lo decisivo es **validar los tipos**. Si un campo debe ser
+una cadena, hay que **rechazar** explícitamente que llegue un objeto —comprobar
+`typeof entrada === 'string'`, usar esquemas de validación como los de Mongoose, y sanear los
+operadores `$`—. En NoSQL, la comprobación de tipos no es una buena práctica opcional: es la
+barrera que impide el bypass más común.
+
 ## 📖 Definiciones y características
 
 - **NoSQL injection**: manipular consultas de bases no relacionales insertando operadores u objetos. Característica: se aprovecha del tipado débil del input.
@@ -41,6 +107,25 @@ Al finalizar, el alumno podrá:
 - **`$where`**: ejecuta JavaScript en el servidor Mongo. Característica: potente y peligroso; puede permitir DoS o extracción.
 - **Inyección de objeto**: enviar `{"$ne":""}` donde se espera un string. Característica: posible cuando el backend no valida tipos.
 - **Type juggling**: confusión de tipos entre cliente y servidor. Característica: base de muchos bypass NoSQL.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| NoSQL | Bases no relacionales; MongoDB es documental (JSON) |
+| Inyección NoSQL | Alterar la estructura o el tipo de la consulta con operadores |
+| Operador de consulta | `$ne`, `$gt`, `$regex`, `$where` de MongoDB |
+| `$ne` | "Distinto de"; con `""` coincide con cualquier valor |
+| Auth bypass con `$ne` | `password: {$ne: ""}` entra sin conocer la contraseña |
+| Confusión de tipo | Enviar un objeto donde se espera una cadena |
+| Vía JSON | La API acepta JSON y el atacante controla la estructura |
+| Vía query string | `user[$ne]=x` se parsea a objeto automáticamente |
+| Parseo de parámetros | Frameworks que convierten la query string en objetos |
+| NoSQLi ciega | Extraer datos con `$regex` carácter a carácter |
+| `$regex` | Coincidencia por patrón; base de la inyección ciega |
+| `$where` | Evalúa JavaScript en el servidor; riesgo de RCE |
+| Validación de tipos | Rechazar objetos donde se espera texto; la defensa clave |
+| Esquema de validación | Mongoose u otros que fuerzan el tipo de cada campo |
 
 ## 🧰 Herramientas y preparación
 

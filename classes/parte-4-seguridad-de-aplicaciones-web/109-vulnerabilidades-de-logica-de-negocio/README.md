@@ -33,6 +33,76 @@ Al finalizar, el alumno podrá:
 | 6 | Abuso de descuentos/cupones | Casos reales frecuentes |
 | 7 | Defensa: validar reglas en servidor | Cierre del fallo |
 
+## 🧠 Explicación en profundidad
+
+### El fallo que ningún escáner encuentra
+
+Las vulnerabilidades de **lógica de negocio** son distintas de todas las anteriores: no hay una
+inyección, ni un carácter mágico, ni un patrón que un escáner reconozca. El código funciona
+**exactamente como se programó**; el problema es que **la lógica programada permite un abuso que el
+desarrollador no anticipó**. Por eso son invisibles para las herramientas automáticas (Burp, ZAP, un
+escáner de vulnerabilidades no las ve) y solo se encuentran **entendiendo qué hace la aplicación y
+razonando cómo romper sus reglas**. Son, en muchos programas de bug bounty, los hallazgos mejor pagados,
+precisamente porque exigen inteligencia humana y no se automatizan.
+
+La causa raíz es siempre una **suposición implícita del desarrollador** que el atacante viola: "el
+usuario seguirá los pasos en orden", "el precio que llega es el que enviamos", "nadie pedirá una
+cantidad negativa", "cada cupón se usa una vez". Cada una de esas suposiciones no verificadas en el
+servidor es una vulnerabilidad de lógica.
+
+```mermaid
+flowchart TD
+  DEV["Suposicion del desarrollador"] --> A{"Como se viola?"}
+  A -->|"manipular valores"| P["Precio o cantidad negativa,<br/>editar el total en el carrito"]
+  A -->|"saltarse pasos"| F["Flow bypass<br/>ir directo a /pago sin verificar"]
+  A -->|"repetir en paralelo"| RC["Race condition<br/>usar el mismo saldo dos veces"]
+  A -->|"abusar de reglas"| C["Cupones/descuentos<br/>apilar, reutilizar"]
+  P & F & RC & C --> IMP(["Perdida economica / bypass"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class DEV,P,F,RC,C n
+  class A d
+  class IMP x
+```
+
+### Manipular valores y saltarse pasos
+
+Los casos más comunes son concretos y elocuentes. La **manipulación de precios o cantidades**: si el
+precio o el total viaja en la petición (un campo oculto, el carrito en el cliente) y el servidor lo
+**acepta sin recalcularlo**, el atacante lo cambia —comprar por 0,01 €, o pedir una **cantidad
+negativa** que en un cálculo mal hecho **abona** dinero en lugar de cobrarlo—. El **flow bypass**:
+saltarse pasos obligatorios de un proceso —ir directo a la URL de "pedido confirmado" sin pasar por el
+pago, completar un registro sin verificar el correo, acceder al paso 3 sin haber pasado el control del
+paso 2— cuando el servidor asume que se llegó por el camino previsto. El **abuso de descuentos y
+cupones**: apilar cupones que deberían ser excluyentes, reutilizar un código de un solo uso, aplicar un
+reembolso varias veces.
+
+### Race conditions: la ventana entre comprobar y actuar
+
+Las **condiciones de carrera** (*race conditions*) son una clase especialmente potente de fallo lógico.
+Ocurren cuando la aplicación **comprueba** una condición y **actúa** en dos pasos separados, y el
+atacante envía **muchas peticiones simultáneas** para colarse en la ventana entre ambos. El ejemplo
+canónico: una tarjeta regalo con 50 € de saldo; si se envían diez peticiones de "gastar 50 €"
+exactamente a la vez, y cada una comprueba el saldo *antes* de que las otras lo hayan descontado, todas
+ven 50 € disponibles y **todas se aprueban** —se gastan 500 € de un saldo de 50—. Lo mismo aplica a
+canjear un cupón varias veces, retirar dinero de una cuenta, o superar un límite de "uno por usuario".
+La herramienta para provocarlas es enviar peticiones en paralelo con precisión (Turbo Intruder en Burp,
+por ejemplo), y su existencia es una razón de peso para las transacciones atómicas y los bloqueos en el
+servidor.
+
+### La defensa: no confiar en nada del cliente y validar reglas en el servidor
+
+La remediación de la lógica de negocio no es una librería ni una configuración: es **diseño**. Cada
+regla de negocio debe **validarse en el servidor**, y cada valor sensible (precios, saldos, permisos,
+estado del flujo) debe ser **autoritativo en el servidor**, nunca tomado del cliente. Los precios se
+recalculan del catálogo, no se aceptan de la petición; las cantidades se validan (positivas, dentro de
+límites); el estado del flujo se comprueba en cada paso; las operaciones sobre saldos se hacen de forma
+**atómica** con bloqueos para cerrar la ventana de las race conditions; y los límites de uso se aplican
+transaccionalmente. El **modelado de amenazas** —pensar antes de programar "¿cómo abusaría alguien de
+esto?"— es la única defensa preventiva real, y por eso OWASP creó la categoría A04 *Insecure Design*
+(clase 087): estos fallos no se parchean, se diseñan para que no existan.
+
 ## 📖 Definiciones y características
 
 - **Falla de lógica**: violación de una regla de negocio, no de una tecnología. Característica: invisible para los escáneres.
@@ -41,6 +111,25 @@ Al finalizar, el alumno podrá:
 - **Manipulación de parámetros de negocio**: alterar precio, cantidad o estado en la petición. Característica: el servidor debe recalcular, no confiar.
 - **Idempotencia**: una operación repetida no cambia el resultado. Característica: su ausencia habilita abusos (doble canje).
 - **Límite lógico**: restricción de negocio (máximos, mínimos). Característica: si no se valida en servidor, se evade.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Lógica de negocio | Reglas específicas de la aplicación |
+| Fallo de lógica | Abuso permitido por la lógica; el código funciona "bien" |
+| Invisible a escáneres | No hay patrón que detectar automáticamente |
+| Suposición del desarrollador | Premisa no verificada que el atacante viola |
+| Manipulación de precio | Aceptar el precio o total que envía el cliente |
+| Cantidad negativa | Valor que un cálculo mal hecho convierte en abono |
+| Flow bypass | Saltarse pasos obligatorios de un proceso |
+| Abuso de cupones | Apilar o reutilizar descuentos excluyentes |
+| Race condition | Explotar la ventana entre comprobar y actuar |
+| Peticiones en paralelo | Enviar muchas a la vez para colarse en la ventana |
+| Turbo Intruder | Herramienta para lanzar peticiones simultáneas |
+| Operación atómica | Comprobar y actuar sin ventana intermedia |
+| Valor autoritativo en servidor | Precios y saldos calculados en el servidor |
+| Modelado de amenazas | Anticipar el abuso antes de programar; A04 |
 
 ## 🧰 Herramientas y preparación
 

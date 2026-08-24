@@ -31,6 +31,71 @@ Al finalizar, el alumno podrá:
 | 6 | A06–A10 | Componentes, auth, integridad, logging, SSRF |
 | 7 | Metodología de riesgo OWASP | Convierte hallazgos en prioridades |
 
+## 🧠 Explicación en profundidad
+
+### Un mapa consensuado del riesgo web, no una lista de bugs
+
+El **OWASP Top 10** es el documento de referencia de la seguridad web: un consenso de la
+industria, revisado cada pocos años (la edición vigente es la de 2021), sobre las diez
+**categorías** de riesgo más críticas en aplicaciones web. Es importante entender qué es y
+qué no es. **No** es una lista de vulnerabilidades concretas ni un estándar de cumplimiento
+exhaustivo; es un instrumento de **concienciación y priorización** que agrupa fallos por su
+naturaleza. Su valor para esta parte es doble: ordena las 30 clases dándoles un marco común,
+y es el vocabulario con el que un informe de pentest web se comunica con desarrolladores y
+dirección.
+
+La metodología detrás importa: las categorías se ordenan combinando **prevalencia** (con qué
+frecuencia aparecen), **explotabilidad**, **detectabilidad** e **impacto**, a partir de
+datos reales de cientos de miles de aplicaciones. Por eso el orden cambia entre ediciones y
+refleja cómo evoluciona el ecosistema.
+
+```mermaid
+flowchart TD
+  A01["A01 Broken Access Control<br/>el nº1: IDOR, authz rota - clase 105"]
+  A02["A02 Cryptographic Failures<br/>datos sin cifrar - Parte 2"]
+  A03["A03 Injection<br/>SQLi, command, XSS - clases 091-097"]
+  A04["A04 Insecure Design<br/>fallos de diseno, no de codigo"]
+  A05["A05 Security Misconfiguration<br/>por defecto inseguro - clase 108"]
+  A06["A06-A10<br/>componentes, identificacion, integridad,<br/>logging, SSRF"]
+  A01 --> A03 --> A05 --> A06
+  A02 --> A04
+  classDef top fill:#c0392b,stroke:#7b241c,color:#ffffff
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  class A01 top
+  class A02,A03,A04,A05,A06 n
+```
+
+### Las tres primeras concentran la mayoría del daño
+
+**A01 Broken Access Control** encabeza la lista de 2021 tras subir desde el quinto puesto, y
+su ascenso cuenta una historia: el fallo más extendido no es técnico-sofisticado, es
+**dejar que un usuario acceda a lo que no le corresponde** —ver el pedido de otro cambiando
+un número (IDOR), llamar a una función de administración sin ser administrador—. Es barato de
+explotar, difícil de detectar automáticamente y de impacto directo. **A02 Cryptographic
+Failures** (antes "Sensitive Data Exposure") agrupa los datos sensibles mal protegidos: sin
+cifrar en tránsito o en reposo, con algoritmos rotos, con claves mal gestionadas —todo lo de
+la Parte 2 visto desde el fallo—. **A03 Injection** —que en 2021 **absorbió el XSS**— cubre
+que datos del usuario acaben interpretados como código o comando: SQL, comandos del sistema,
+LDAP, y el propio XSS.
+
+### Diseño, configuración y el resto
+
+**A04 Insecure Design** fue una categoría nueva en 2021 con una idea potente: hay fallos que
+**no** son bugs de implementación sino de **diseño**, ausencias de un control que nunca se
+pensó. No se arreglan parcheando código; se arreglan con modelado de amenazas antes de
+programar. **A05 Security Misconfiguration** recoge lo inseguro por defecto: paneles
+expuestos, cabeceras ausentes, permisos excesivos, mensajes de error verbosos. El resto
+—A06 componentes vulnerables, A07 fallos de identificación y autenticación, A08 fallos de
+integridad de software y datos, A09 fallos de registro y monitorización, **A10 SSRF**
+(añadido por votación de la comunidad, clase 099)— completa el cuadro.
+
+La conclusión práctica que ordena la parte: el Top 10 es el **índice mental** con el que se
+aborda cualquier aplicación. Ante un objetivo nuevo, recorrerlo categoría por categoría
+—"¿tiene control de acceso roto? ¿inyecciones? ¿mala configuración?"— garantiza cobertura y
+evita el sesgo de ir solo a la vulnerabilidad que uno domina. Para una checklist más
+exhaustiva y verificable existe **OWASP ASVS** (clase 115), pero el Top 10 es el punto de
+partida de todo pentest web.
+
 ## 📖 Definiciones y características
 
 - **OWASP Top 10**: documento de concienciación con las 10 categorías de riesgo web más críticas. Característica: es un punto de partida, no una checklist completa.
@@ -39,6 +104,25 @@ Al finalizar, el alumno podrá:
 - **Insecure Design (A04)**: fallo por diseño, no por implementación. Característica: no se corrige con un parche puntual.
 - **SSRF (A10)**: el servidor hace peticiones a destinos controlados por el atacante. Característica: entró como categoría propia por su relevancia en cloud.
 - **Riesgo = probabilidad × impacto**: fórmula que OWASP usa para ordenar. Característica: guía la priorización, no la sustituye por criterio.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| OWASP Top 10 | Consenso de las diez categorías de riesgo web más críticas |
+| Categoría de riesgo | Agrupación de fallos por naturaleza, no un bug concreto |
+| Prevalencia | Con qué frecuencia aparece un fallo en aplicaciones reales |
+| A01 Broken Access Control | Acceder a lo que no corresponde; el nº1 de 2021 |
+| A02 Cryptographic Failures | Datos sensibles mal protegidos |
+| A03 Injection | Datos interpretados como código; incluye XSS desde 2021 |
+| A04 Insecure Design | Fallo de diseño, no de implementación |
+| A05 Security Misconfiguration | Inseguro por defecto o mal configurado |
+| A06 Componentes vulnerables | Dependencias con fallos conocidos |
+| A07 Fallos de autenticación | Identificación y gestión de sesión débiles |
+| A08 Fallos de integridad | Software o datos sin verificar |
+| A09 Fallos de registro | Falta de logging y monitorización |
+| A10 SSRF | Server-Side Request Forgery; añadido por la comunidad |
+| OWASP ASVS | Estándar de verificación más detallado que el Top 10 |
 
 ## 🧰 Herramientas y preparación
 

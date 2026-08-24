@@ -33,6 +33,75 @@ Al finalizar, el alumno podrá:
 | 6 | Métodos y verbos HTTP | Bypass por verbo |
 | 7 | Defensa: authz por objeto | Cierre del fallo |
 
+## 🧠 Explicación en profundidad
+
+### El nº1 del OWASP Top 10, y el más fácil de explotar
+
+El **control de acceso roto** es la categoría A01 de OWASP —la más extendida— porque combina
+altísimo impacto con explotación trivial. Autenticarse responde "¿quién eres?"; **autorizar**
+responde "¿puedes hacer *esto*?", y el fallo es no comprobar bien esa segunda pregunta en cada
+acción. La causa profunda es casi siempre la misma: **confiar en que el cliente no pedirá lo que no
+debe**, ocultando funciones o identificadores en la interfaz en lugar de verificar los permisos en el
+servidor. Como el atacante controla el cliente (clase 086), cualquier control que viva solo ahí es
+decorativo.
+
+Hay dos ejes de escalada que conviene nombrar: **horizontal** (acceder a datos de **otro usuario del
+mismo nivel** —ver el pedido de otro cliente—) y **vertical** (acceder a funciones de un **nivel
+superior** —un usuario normal llamando a una función de administración—).
+
+```mermaid
+flowchart TD
+  R["Peticion autenticada"] --> Q{"El servidor comprueba<br/>permiso sobre ESTE objeto/funcion?"}
+  Q -->|"no: confia en el ID de la URL"| IDOR["IDOR<br/>/pedido?id=124 -> ver otro usuario"]
+  Q -->|"no: la funcion admin no valida rol"| FB["Forced browsing<br/>/admin sin ser admin"]
+  Q -->|"no: normaliza mal la ruta"| PT["Path traversal<br/>../../etc/passwd"]
+  IDOR & FB & PT --> BREACH(["Acceso no autorizado"])
+  Q -->|"si, por objeto y en servidor"| OK(["Correcto"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  classDef ok fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class R,IDOR,FB,PT n
+  class Q d
+  class BREACH x
+  class OK ok
+```
+
+### IDOR: cambiar un número y ver lo que no es tuyo
+
+El **IDOR** (*Insecure Direct Object Reference*) es el fallo de autorización horizontal por
+excelencia y uno de los más comunes en bug bounty. Ocurre cuando la aplicación usa un identificador
+del usuario para acceder a un objeto **sin comprobar que ese objeto le pertenece**: si `/factura?id=123`
+muestra tu factura, probar `id=124` muestra la de otro —porque el servidor obedece el ID sin
+verificar la propiedad—. Usar identificadores **no obvios** (UUIDs en lugar de números secuenciales)
+**dificulta adivinarlos pero NO es una defensa**: si el ID se filtra por otro sitio (una respuesta de
+API, un log) el IDOR sigue ahí. La única defensa real es **comprobar en el servidor, para cada
+petición, que el usuario tiene permiso sobre ese objeto concreto**.
+
+### Forced browsing y path traversal
+
+El **forced browsing** es el equivalente vertical: acceder directamente a URLs o funciones de
+privilegio superior que la interfaz no muestra al usuario normal —`/admin`, `/api/users/delete`—
+apostando a que el único control era **no enseñar el enlace**. Si esas rutas no verifican el rol en el
+servidor, se accede sin más. Relacionado está probar **métodos HTTP** distintos: un endpoint puede
+proteger el `GET` pero no el `DELETE` o el `PUT`, o aceptar un `X-HTTP-Method-Override`. El **path
+traversal** (o directory traversal) es control de acceso roto sobre el **sistema de ficheros**: si la
+aplicación construye una ruta con entrada del usuario (`/descargar?fichero=informe.pdf`) sin
+normalizarla, inyectar `../../../../etc/passwd` **sube** por el árbol de directorios y lee ficheros
+fuera de lo previsto —código, configuración, claves—. Los payloads se codifican (`%2e%2e%2f`, doble
+codificación) para saltar filtros ingenuos.
+
+### La regla que lo cierra todo: denegar por defecto y verificar en el servidor
+
+Toda esta categoría se remedia con dos principios. **Denegar por defecto**: el acceso se concede
+explícitamente, nunca se asume; un endpoint nuevo sin comprobación de permisos debe ser inaccesible,
+no accesible. Y **verificar la autorización en el servidor, por objeto y en cada petición**: no basta
+con comprobar el rol al entrar; hay que comprobar, cada vez, que **este** usuario puede hacer **esta**
+acción sobre **este** recurso. Para el path traversal, además, se canonicaliza la ruta y se confina el
+acceso a un directorio base. La lección de fondo es que el control de acceso **no se puede delegar al
+cliente** —ni ocultando enlaces, ni usando IDs difíciles, ni confiando en que nadie cambie la URL—:
+es una decisión que el servidor toma en cada operación, o no existe.
+
 ## 📖 Definiciones y características
 
 - **Broken Access Control**: la app no verifica que el usuario pueda hacer/ver lo solicitado. Característica: categoría A01, la más frecuente.
@@ -41,6 +110,25 @@ Al finalizar, el alumno podrá:
 - **Autorización vertical**: acceder a funciones de mayor privilegio. Característica: escalada a admin.
 - **Path traversal**: usar `../` para salir del directorio permitido. Característica: lee archivos arbitrarios del servidor.
 - **Forced browsing**: navegar directamente a URLs no enlazadas. Característica: revela funciones sin control de acceso.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Control de acceso roto | No verificar bien los permisos; A01 de OWASP |
+| Autorización | Comprobar si una identidad puede hacer una acción |
+| Escalada horizontal | Acceder a datos de otro usuario del mismo nivel |
+| Escalada vertical | Acceder a funciones de un nivel superior |
+| IDOR | Referenciar un objeto sin comprobar la propiedad |
+| Identificador no obvio | UUID que dificulta adivinar, pero no es una defensa |
+| Forced browsing | Acceder a funciones ocultas que no validan el rol |
+| Métodos HTTP | Un endpoint puede proteger GET pero no DELETE/PUT |
+| Path traversal | `../` para leer ficheros fuera del directorio previsto |
+| Canonicalización de ruta | Normalizar la ruta antes de usarla |
+| Codificación de payload | `%2e%2e%2f` para saltar filtros de traversal |
+| Denegar por defecto | El acceso se concede explícitamente, nunca se asume |
+| Verificación por objeto | Comprobar el permiso sobre el recurso concreto |
+| Control en el servidor | La autorización no se delega al cliente |
 
 ## 🧰 Herramientas y preparación
 

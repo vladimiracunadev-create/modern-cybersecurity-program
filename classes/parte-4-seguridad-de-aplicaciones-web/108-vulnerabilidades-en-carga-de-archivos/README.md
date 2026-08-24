@@ -33,6 +33,72 @@ Al finalizar, el alumno podrá:
 | 6 | Path traversal en el nombre | Sobrescritura de archivos |
 | 7 | Defensa: allowlist, renombrar, aislar | Cierre del fallo |
 
+## 🧠 Explicación en profundidad
+
+### Subir un fichero puede ser subir un programa
+
+La carga de archivos es una funcionalidad omnipresente —foto de perfil, adjuntos, documentos— y una
+fuente frecuente de compromisos graves, porque un fichero subido no es solo datos: según **dónde se
+guarde y cómo se sirva**, puede convertirse en **código que el servidor ejecuta**. El escenario más
+crítico es el **web shell**: si el atacante consigue subir un fichero con extensión ejecutable (`.php`,
+`.jsp`, `.aspx`) a una carpeta desde la que el servidor **ejecuta** scripts, y luego lo visita, el
+servidor ejecuta ese código y el atacante obtiene RCE. Por eso la carga de archivos es un punto que se
+audita siempre y con cuidado.
+
+### Las tres validaciones y cómo se saltan
+
+Las defensas típicas se apilan en tres capas, y el pentest consiste en probar cómo se evade cada una:
+
+```mermaid
+flowchart TD
+  U["Fichero subido"] --> V1{"Valida la extension?"}
+  V1 -->|"blocklist .php"| B1["Bypass: .phtml, .php5,<br/>mayusculas, doble ext, byte nulo"]
+  V1 -->|"ok"| V2{"Valida el Content-Type?"}
+  V2 -->|"solo la cabecera"| B2["Bypass: falsear Content-Type"]
+  V2 -->|"ok"| V3{"Valida los magic bytes?"}
+  V3 -->|"solo la cabecera del fichero"| B3["Bypass: GIF89a + codigo,<br/>polyglot"]
+  B1 & B2 & B3 --> SHELL(["Web shell -> RCE"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class U,B1,B2,B3 n
+  class V1,V2,V3 d
+  class SHELL x
+```
+
+La **validación por extensión** con blocklist (prohibir `.php`) se evade con extensiones alternativas
+que el servidor también ejecuta (`.phtml`, `.php5`, `.phar`), mayúsculas (`.PHP`), doble extensión
+(`archivo.php.jpg` en servidores mal configurados), o trucos históricos como el **byte nulo**
+(`shell.php%00.jpg`). La validación por **Content-Type** es aún más débil, porque esa cabecera la
+**pone el cliente** y se falsea sin esfuerzo en Burp. La validación por **magic bytes** (los primeros
+bytes que identifican el tipo real, como `GIF89a` para un GIF) es más robusta, pero se evade con un
+**polyglot**: un fichero que empieza con los magic bytes de una imagen válida y **contiene código
+después** —pasa la comprobación de tipo y sigue siendo ejecutable—. La lección: cada validación por
+separado es evadible, y por eso la defensa correcta las combina y añade la pieza que de verdad importa.
+
+### Más allá del web shell: XSS, SVG y traversal en el nombre
+
+No todo ataque de upload busca RCE. Un **SVG** subido y servido como imagen es XML con JavaScript
+dentro (clase 100), así que puede provocar **XSS almacenado** cuando otro usuario lo visualiza. Un
+HTML subido y servido en el mismo origen también. El **nombre del fichero** es otra entrada peligrosa:
+si se usa sin sanear para construir la ruta de guardado, un nombre como `../../../var/www/shell.php`
+provoca **path traversal** (clase 105) y coloca el fichero donde el atacante quiera —incluida una
+carpeta ejecutable—. Y el contenido puede esconder otros ataques: XXE en un DOCX, un ZIP bomb, malware
+que se distribuirá a otros usuarios. La superficie de la carga de archivos va mucho más allá del web
+shell.
+
+### La defensa en profundidad que cierra el tema
+
+Ninguna comprobación aislada basta; la carga segura combina varias medidas. **Allowlist de extensiones
+y tipos** (permitir solo lo esperado, nunca prohibir lo peligroso). **Renombrar el fichero** con un
+valor generado por el servidor, descartando el nombre original —lo que elimina de un golpe el path
+traversal y las dobles extensiones—. **Guardar fuera de la raíz web** o en un **almacenamiento
+separado** (un bucket de objetos, otro dominio sin ejecución), de modo que aunque se suba un `.php`
+**no haya forma de ejecutarlo**. **Servir los ficheros con `Content-Disposition: attachment`** y un
+Content-Type seguro para que el navegador los descargue en lugar de interpretarlos. Y **limitar tamaño
+y escanear** el contenido. La combinación —renombrar, aislar del entorno de ejecución y validar por
+allowlist— convierte un vector crítico en un riesgo manejable, y es el patrón que se lleva al informe.
+
 ## 📖 Definiciones y características
 
 - **File upload inseguro**: aceptar archivos sin validar tipo, contenido o ubicación. Característica: puede llevar a RCE.
@@ -41,6 +107,25 @@ Al finalizar, el alumno podrá:
 - **Blocklist de extensiones**: prohibir ciertas extensiones. Característica: frágil; se evade con variantes (`.phtml`, `.php5`).
 - **Allowlist**: permitir solo extensiones/tipos seguros. Característica: defensa robusta.
 - **Almacenamiento fuera de webroot**: guardar uploads donde no se ejecuten. Característica: evita ejecución del contenido subido.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Carga de archivos | Funcionalidad de subir ficheros; superficie de ataque frecuente |
+| Web shell | Fichero ejecutable subido que da RCE al visitarlo |
+| Validación por extensión | Comprobar el sufijo; evadible con blocklist |
+| Doble extensión | `archivo.php.jpg` en servidores mal configurados |
+| Byte nulo | `shell.php%00.jpg`; truco histórico de bypass |
+| Content-Type | Cabecera puesta por el cliente; se falsea |
+| Magic bytes | Primeros bytes que identifican el tipo real |
+| Polyglot | Fichero válido como imagen que además contiene código |
+| SVG malicioso | XML con JavaScript; provoca XSS al visualizarse |
+| Path traversal en el nombre | `../` en el nombre para colocar el fichero donde sea |
+| Allowlist | Permitir solo tipos esperados; la defensa base |
+| Renombrar | Descartar el nombre original; anula traversal y doble ext. |
+| Almacenamiento sin ejecución | Guardar donde el fichero no se pueda ejecutar |
+| Content-Disposition | Forzar descarga en lugar de interpretación |
 
 ## 🧰 Herramientas y preparación
 

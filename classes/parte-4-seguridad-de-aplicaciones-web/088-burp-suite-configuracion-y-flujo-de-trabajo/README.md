@@ -31,6 +31,69 @@ Al finalizar, el alumno podrá:
 | 6 | Decoder y Comparer | Codificación y diffing de respuestas |
 | 7 | Extensiones (BApp Store) | Amplían capacidades (JWT, autorize) |
 
+## 🧠 Explicación en profundidad
+
+### El proxy que se pone en medio de tu propio navegador
+
+La herramienta central del pentesting web es un **proxy de interceptación**, y Burp Suite es
+el estándar de la industria. La idea es sencilla y poderosa: Burp se coloca **entre tu
+navegador y el servidor**, de modo que cada petición y cada respuesta pasa por él y se puede
+**ver, pausar, modificar y reenviar**. Eso derriba de un golpe la principal barrera de la
+seguridad web —que la lógica del cliente parece intocable—: con Burp, todo lo que el
+navegador envía es material moldeable antes de llegar al servidor, así que cualquier
+validación hecha en el JavaScript se salta editando la petición directamente.
+
+Para interceptar tráfico **HTTPS** hay un detalle imprescindible: Burp genera su propia
+**autoridad certificadora (CA)**, y hay que instalar su certificado en el navegador como
+confiable. Sin eso, el navegador —que hace lo correcto— rechaza la conexión porque ve que
+alguien se ha interpuesto (es, literalmente, un man-in-the-middle consentido, clase 040). Con
+el certificado instalado, Burp descifra, muestra y recifra el tráfico de forma transparente.
+
+```mermaid
+flowchart LR
+  B["Navegador<br/>+ CA de Burp instalada"] <-->|"intercepta"| BURP["Burp Proxy"]
+  BURP <--> S["Servidor"]
+  BURP --> P["Proxy: ver y editar en vivo"]
+  BURP --> R["Repeater: reenviar y afinar a mano"]
+  BURP --> I["Intruder: automatizar cargas"]
+  BURP --> D["Decoder / Comparer"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class B,S,P,R,I,D n
+  class BURP d
+```
+
+### Repeater e Intruder: las dos herramientas que se usan a diario
+
+El **Proxy** captura el tráfico, pero el trabajo real ocurre en dos módulos. **Repeater** es
+el banco de pruebas manual: se envía una petición ahí, se modifica un parámetro, se reenvía y
+se compara la respuesta —una y otra vez—. Es donde se confirma una inyección SQL a mano, se
+prueba un IDOR cambiando un identificador, se afina un payload de XSS. Su virtud es el
+**control total y la reproducibilidad**: cada prueba es deliberada y se puede repetir exacta.
+
+**Intruder** automatiza lo que Repeater hace a mano: toma una petición, marca posiciones de
+inyección y prueba **listas de cargas** en ellas. Sirve para fuerza bruta, fuzzing de
+parámetros, enumeración de IDs. Sus modos —Sniper (una posición a la vez), Battering ram
+(la misma carga en todas), Pitchfork y Cluster bomb (combinaciones)— cubren distintos
+patrones de ataque. Un aviso: en la edición **Community** de Burp, Intruder está
+**limitado en velocidad** a propósito; el trabajo automatizado serio usa la Professional o
+herramientas dedicadas.
+
+### El resto del arsenal, y la lección de fondo
+
+**Decoder** codifica y descodifica (URL, Base64, hex, HTML) —imprescindible porque la web
+codifica datos en todas partes, como en la clase 020—; **Comparer** resalta diferencias
+entre dos respuestas, clave para detectar inyecciones ciegas donde el único indicio es un
+cambio sutil. Y el **BApp Store** es el catálogo de extensiones que amplían Burp (autorize
+para probar control de acceso, Turbo Intruder para ataques a alta velocidad, etc.).
+
+Antes de nada se define el **target scope**: la lista de dominios que se está autorizado a
+probar. Configurarlo bien no es opcional: limita las herramientas automáticas a lo permitido
+y evita el error grave de escanear algo fuera de alcance (clase 067). La lección que resume
+el módulo es que Burp no "hackea" nada por sí solo: es un **instrumento de observación y
+manipulación** que amplifica el criterio del analista. Quien entiende HTTP y las
+vulnerabilidades usa Burp para verificarlas con precisión; quien no, solo genera ruido.
+
 ## 📖 Definiciones y características
 
 - **Proxy interceptor**: intermediario que captura el tráfico entre navegador y servidor. Característica: permite pausar y editar cada petición.
@@ -39,6 +102,25 @@ Al finalizar, el alumno podrá:
 - **Scope**: definición de qué hosts están dentro del test. Característica: evita tocar sistemas no autorizados.
 - **Match/Replace**: reglas que reescriben peticiones/respuestas automáticamente. Característica: útil para persistir cabeceras o tokens.
 - **Collaborator**: servidor externo de Burp para detectar interacciones out-of-band. Característica: revela SSRF/blind ciegos (solo en Pro).
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Proxy de interceptación | Se sitúa entre navegador y servidor para ver y editar el tráfico |
+| Burp Suite | Proxy de pentesting web estándar de la industria |
+| CA de Burp | Certificado propio que hay que instalar para interceptar HTTPS |
+| Interceptar | Pausar una petición para modificarla antes de enviarla |
+| Target scope | Dominios autorizados; limita las herramientas automáticas |
+| Sitemap | Árbol del contenido descubierto del objetivo |
+| Repeater | Reenvío manual y reproducible de peticiones |
+| Intruder | Automatiza cargas sobre posiciones marcadas |
+| Sniper / Cluster bomb | Modos de Intruder según posiciones y combinaciones |
+| Payload | Carga que se prueba en una posición de inyección |
+| Decoder | Codifica y descodifica (URL, Base64, hex, HTML) |
+| Comparer | Resalta diferencias entre dos respuestas |
+| BApp Store | Catálogo de extensiones de Burp |
+| Edición Community | Versión gratuita con Intruder limitado en velocidad |
 
 ## 🧰 Herramientas y preparación
 
