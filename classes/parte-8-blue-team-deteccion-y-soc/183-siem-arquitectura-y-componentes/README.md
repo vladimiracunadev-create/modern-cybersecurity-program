@@ -96,6 +96,25 @@ Una prueba arquitectónica completa inyecta un evento conocido, sigue su recorri
 - **EPS (Events Per Second):** volumen de eventos por segundo. Característica: métrica de dimensionamiento y licenciamiento.
 - **Retención caliente/fría:** datos recientes rápidos de consultar (hot) vs históricos baratos (cold). Característica: equilibrio coste/velocidad.
 
+## 🔍 Diagnóstico resuelto — la regla dejó de alertar
+
+Una detección de creación de cuentas producía resultados diarios y pasa a cero. Reiniciar la búsqueda o bajar el umbral no identifica la causa. Se recorre el pipeline desde el origen:
+
+1. El productor sigue generando el evento; se verifica localmente con una acción controlada.
+2. El forwarder informa envío, pero la cola local crece: el destino rechaza conexiones por un certificado renovado.
+3. El broker no recibe nuevos eventos de esa fuente, mientras otras mantienen su tasa.
+4. Parseo e índice funcionan para los últimos eventos conocidos; la consulta también coincide con un fixture histórico.
+
+La causa es transporte, no lógica de detección. La respuesta restaura confianza/certificado, observa que la cola drena sin pérdida y comprueba el evento sintético hasta el caso. Si solo se hubiera mirado el dashboard de alertas, «cero» podría interpretarse como ausencia de ataques.
+
+### Decisión de dimensionamiento
+
+Supón 5.000 endpoints, 0,8 EPS promedio y picos de 4 EPS durante actualizaciones. El promedio conjunto es 4.000 EPS, pero el pico teórico alcanza 20.000. El diseño debe declarar simultaneidad realista, tamaño por evento, duración, capacidad de buffer y margen. GB/día se calcula aparte porque dos eventos pueden diferir mucho en tamaño. Estas estimaciones se validan con medición, no se presentan como capacidad garantizada.
+
+## ✅ Criterio de dominio
+
+El alumno debe localizar una falla por etapa, distinguir ingestión de detección, justificar buffer y política de saturación, y explicar cómo permisos, retención y enriquecimiento afectan evidencia. Dibujar componentes sin flujos de salud ni decisiones de fallo es insuficiente.
+
 ## 🧰 Herramientas y preparación
 
 Para experimentar la arquitectura, prepara en laboratorio aislado uno de estos stacks:

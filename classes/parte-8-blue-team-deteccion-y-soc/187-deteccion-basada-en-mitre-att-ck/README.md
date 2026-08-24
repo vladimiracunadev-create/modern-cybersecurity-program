@@ -83,6 +83,25 @@ Una prueba controlada ejecuta el procedimiento autorizado y observa cuatro capas
 - **Data source (ATT&CK):** tipo de telemetría necesaria para detectar una técnica (Process Creation, Network Traffic). Característica: guía tu estrategia de logging.
 - **ATT&CK Navigator:** herramienta web para colorear la matriz según cobertura o intel. Característica: comunica huecos visualmente.
 
+## 🔍 Cobertura resuelta — Remote Services
+
+Se prioriza T1021 porque los administradores usan un bastión y los accesos directos a servidores críticos no están autorizados. En vez de colorear toda la técnica, se descompone:
+
+| Procedimiento | Evidencia necesaria | Estado de ejemplo |
+|---|---|---|
+| RDP directo | autenticación, origen, destino, sesión/proceso | probado en Windows |
+| SMB/admin share | acceso a share, escritura, servicio/proceso | analítica en prueba |
+| WinRM | autenticación, servicio y proceso host | dato presente, sin regla |
+| SSH | autenticación y comando/sesión en Linux | sin cobertura en segmento legado |
+
+La capa Navigator puede mostrar estos resultados agregados, pero enlaza la ficha de evidencia. Probar RDP no autoriza marcar WinRM o SSH. El estado «dato presente» tampoco significa que un analista recibirá una alerta.
+
+La priorización se justifica por amenaza, exposición y activo. Si el entorno no usa RDP, invertir primero en esa variante tendría poco sentido aunque ATT&CK la documente. La matriz es una representación de decisiones propias, no una lista obligatoria de todas las técnicas.
+
+## ✅ Criterio de dominio
+
+El alumno puede bajar de táctica a procedimiento, componentes y campos, ejecutar una prueba autorizada y describir brechas. El porcentaje de celdas coloreadas no es un resultado aceptable sin significado y evidencia.
+
 ## 🧰 Herramientas y preparación
 
 - **ATT&CK Navigator** (versión web oficial o desplegada localmente).

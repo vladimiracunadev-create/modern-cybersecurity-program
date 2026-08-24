@@ -85,6 +85,18 @@ Incluir todo puede afectar volumen y utilidad; excluir demasiado crea ceguera. S
 - **Sysmon Event 22 (DNS Query):** consulta DNS por proceso. Característica: base para detectar C2/DGA.
 - **PowerShell 4104 (ScriptBlock):** registra el bloque de script ejecutado, incluso ofuscado tras des-ofuscar. Característica: visibilidad crítica de ejecución.
 
+## 🔍 Correlación resuelta — RDP y actividad posterior
+
+Se genera una sesión RDP autorizada desde `ADMIN-WS` hacia `SRV-LAB`. En Security se identifica el 4624 con tipo de logon correspondiente y campos de origen disponibles; en el controlador se revisa validación de la cuenta; en Sysmon se observan procesos creados dentro de la ventana. La prueba anota diferencias de reloj.
+
+Luego se repite desde un origen no incluido en el grafo administrativo. La analítica no alerta solo por 4624: combina origen inesperado, cuenta y criticidad, y presenta procesos posteriores. Si la línea de comandos de 4688 está vacía, se comprueba política. Si Sysmon Event 3 está excluido, la clase declara que no puede asociar red mediante esa fuente.
+
+La configuración se cambia para incluir un caso de uso y se mide volumen antes/después. Se guarda XML, hash y versión. Una exclusión comunitaria se revisa línea por línea; que funcione para otro entorno no demuestra que preserve esta detección.
+
+## ✅ Criterio de dominio
+
+El alumno explica proveedor, canal, ID y política; correlaciona autenticación y proceso sin confundirlos; y demuestra con dos ejecuciones qué registra su configuración. Memorizar una tabla de Event IDs no basta.
+
 ## 🧰 Herramientas y preparación
 
 - **Sysmon** con una configuración base robusta (p. ej. la de SwiftOnSecurity o la de Olaf Hartong como punto de partida) adaptada a tu entorno.

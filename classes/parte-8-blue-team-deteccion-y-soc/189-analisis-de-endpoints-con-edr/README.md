@@ -86,6 +86,18 @@ Aislamiento, cuarentena y terminación tienen efectos diferentes. En una estaci�
 - **Velociraptor:** plataforma DFIR/hunting con su lenguaje VQL. Característica: recolección forense y caza a escala de flota.
 - **Aislamiento de host:** desconecta el endpoint de la red salvo del EDR. Característica: contiene sin apagar, preservando evidencia.
 
+## 🔍 Investigación resuelta — `rundll32.exe` con conexión exterior
+
+La alerta señala `rundll32.exe`, pero el analista localiza su `ProcessGuid`, no todos los procesos con el mismo nombre. El padre es un binario en el perfil del usuario; la línea de comandos carga una DLL recién escrita; poco después la misma instancia abre una conexión. Se preservan hash, ruta, firma, usuario y tiempos.
+
+Hacia atrás se encuentra un archivo descargado por navegador. Hacia adelante se observan un cambio de Run key y una conexión. Se busca el hash en la flota y también el patrón padre–hijo, porque una variante puede cambiar bytes. Event Logs y proxy corroboran descarga e identidad. La combinación sustenta el incidente; ningún indicador aislado lo hacía.
+
+Antes de aislar, el playbook confirma que es una estación y que la consola EDR mantendrá comunicación. Se captura la evidencia prioritaria, se aísla con autoridad registrada y se verifica el estado. En un servidor crítico la secuencia podría cambiar: eso demuestra que la acción depende del activo.
+
+## ✅ Criterio de dominio
+
+El alumno reconstruye linaje por instancia, diferencia estado actual de historia, corrobora con otra fuente y justifica respuesta y reversión. Marcar un proceso como malicioso solo por nombre o hash desconocido no cumple.
+
 ## 🧰 Herramientas y preparación
 
 En laboratorio aislado:

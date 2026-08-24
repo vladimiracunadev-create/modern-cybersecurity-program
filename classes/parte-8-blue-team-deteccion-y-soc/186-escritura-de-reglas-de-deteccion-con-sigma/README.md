@@ -84,6 +84,18 @@ Las pruebas cubren esquema, conversión, positivo, negativos representativos y r
 - **falsepositives:** campo que documenta causas benignas conocidas. Característica: ayuda al triaje y a afinar.
 - **pySigma / sigma-cli:** herramienta que compila Sigma a la consulta del backend. Característica: soporta múltiples pipelines (ECS, Splunk CIM…).
 
+## 🔍 Regla razonada — Office inicia un intérprete
+
+La conducta se divide en una selección de procesos padre (`WINWORD.EXE`, `EXCEL.EXE`), otra de hijos (`powershell.exe`, `cmd.exe`, `wscript.exe`) y, si los datos lo permiten, argumentos de descarga. La condición decide si el caso requiere cualquier padre y cualquier hijo, más un término de red. Esa oración se escribe antes del YAML.
+
+El fixture positivo contiene campos mínimos y debe coincidir. Un negativo cercano usa PowerShell iniciado por una herramienta de administración aprobada y no debería hacerlo si la hipótesis exige padre Office. Otro fixture omite `ParentImage`: la prueba documenta que no hay coincidencia, revelando dependencia de telemetría.
+
+La regla se convierte con el pipeline de la organización. Se inspecciona la consulta resultante para comprobar rutas, escape y case sensitivity, luego se ejecuta contra el backend. Una segunda conversión puede producir sintaxis distinta sin ser equivalente; la portabilidad se demuestra con pruebas, no por extensión `.yml`.
+
+## ✅ Criterio de dominio
+
+La entrega incluye hipótesis, logsource, lógica explicada, fixtures, consultas convertidas, resultado real, campos requeridos, falsos positivos contextualizados y dueño. Una regla que pasa validación de esquema pero nunca se ejecutó contra datos no está terminada.
+
 ## 🧰 Herramientas y preparación
 
 - **sigma-cli** (`pip install sigma-cli`) con los plugins de backend (`sigma plugin install splunk`, `elasticsearch`).

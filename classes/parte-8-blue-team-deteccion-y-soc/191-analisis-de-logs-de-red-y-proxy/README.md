@@ -86,6 +86,18 @@ Pérdida de paquetes, tráfico asimétrico o reloj incorrecto alteran resultados
 - **DNS tunneling:** exfiltración/C2 encapsulados en consultas DNS. Característica: dominios largos, alta entropía, muchas subconsultas.
 - **Beaconing:** conexiones periódicas y regulares a un C2. Característica: patrón temporal casi constante (se profundiza en la clase 193).
 
+## 🔍 Investigación guiada — descarga y conexión posterior
+
+El proxy registra una descarga desde una URL nueva. Primero se verifica si el tráfico pasó realmente por el proxy y qué identidad estaba asociada. Zeek muestra DNS y TLS/HTTP relacionados mediante `uid`; el flow confirma duración y bytes. Si existe PCAP permitido, se comprueba integridad de la sesión y se extrae el objeto solo cuando el protocolo lo permite.
+
+El archivo extraído se hashea, pero no se afirma ejecución. En EDR aparece una creación de proceso desde la ruta de descargas y una conexión al mismo destino. Esa fuente aporta el eslabón que la red no podía demostrar. Si el tráfico está cifrado y no existe objeto, el informe limita la afirmación a metadatos observados.
+
+La huella TLS coincide con software común; no se usa como veredicto. La rareza proviene de que ese proceso y host nunca habían contactado el destino, junto con el linaje del endpoint. El caso enseña cómo fuentes complementarias cambian confianza.
+
+## ✅ Criterio de dominio
+
+El alumno diferencia flow, log de protocolo y PCAP; explica NAT/proxy y pérdida; une logs con identificadores o tiempo justificadamente; y separa descarga, transferencia y ejecución.
+
 ## 🧰 Herramientas y preparación
 
 En laboratorio aislado con un tap/mirror:

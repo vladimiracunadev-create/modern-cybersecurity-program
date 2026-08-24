@@ -91,6 +91,20 @@ FIM tampoco significa que todo cambio sea sospechoso. Se eligen rutas por critic
 - **Wazuh:** plataforma open source que combina HIDS, SIEM y gestión de cumplimiento. Característica: motor de reglas con niveles de severidad y mapeo ATT&CK.
 - **Decoder (Wazuh):** extrae campos de un log crudo antes de evaluarlo contra reglas. Característica: paso previo a la correlación.
 
+## 🔍 Comparación aplicada — alta inesperada de una cuenta
+
+Se usa un mismo conjunto de eventos: creación de usuario local, incorporación posterior a administradores y una creación legítima aprobada. La pregunta no es qué interfaz resulta más cómoda, sino si ambas rutas preservan la relación y explican el resultado.
+
+En Elastic se inspecciona el documento original, el ingest pipeline y el mapeo ECS. KQL confirma presencia y EQL expresa una secuencia por host/cuenta dentro de un `maxspan`. Se comprueba qué ocurre si falta el campo de entidad. En Wazuh se valida que el decoder extraiga los campos, que la regla base coincida y que frecuencia/correlación no unan usuarios diferentes. Los IDs y niveles de reglas se documentan junto a la versión del ruleset.
+
+El caso legítimo debe quedar explicado por contexto estrecho, como host de aprovisionamiento, cuenta autorizada y ventana de cambio. Excluir todas las creaciones en servidores borraría la conducta que se busca. Después se comparan latencia, evidencia mostrada, facilidad de investigación, falsos positivos y mantenimiento.
+
+FIM se evalúa con la misma disciplina. Se modifica un archivo controlado en una ruta vigilada, se verifica qué metadatos ofrece el agente y se repite una actualización legítima. Si la alerta no puede atribuir proceso o usuario, esa limitación queda escrita; no se completa con suposiciones.
+
+## ✅ Criterio de dominio
+
+El alumno puede explicar ECS, KQL, EQL, decoder y ruleset en su función exacta; reproduce positivos y negativos en ambas plataformas y justifica por qué resultados parecidos recorren arquitecturas distintas.
+
 ## 🧰 Herramientas y preparación
 
 En laboratorio aislado:

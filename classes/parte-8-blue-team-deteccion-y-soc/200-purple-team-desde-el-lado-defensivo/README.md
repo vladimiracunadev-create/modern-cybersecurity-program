@@ -91,6 +91,18 @@ Cada brecha tiene dueño, fecha, cambio y test de regresión versionado. En la r
 - **Cierre del bucle:** crear/afinar una detección por cada hueco hallado. Característica: convierte el ejercicio en mejora permanente.
 - **Cadencia:** frecuencia de los ejercicios purple. Característica: el valor está en la repetición, no en un evento aislado.
 
+## 🔍 Ejercicio resuelto — cuatro capas de evidencia
+
+Se selecciona una prueba atómica autorizada de ejecución de intérprete. El plan fija host, usuario, tiempo, prerequisitos, detención y cleanup. Blue team no conoce el minuto exacto, pero sí la ventana y límites de seguridad.
+
+El procedimiento se ejecuta. El scorecard encuentra: telemetría presente; regla coincidente; notable suprimido por una excepción vencida; por tanto no hubo triaje. «No detectado» habría ocultado que dato y analítica funcionaban. Se elimina o restringe la excepción, se repite y se verifica que el analista recibe contexto y sigue el runbook.
+
+Después Apache Caldera orquesta una cadena en laboratorio para estudiar transiciones, manteniendo versión y perfil. El resultado no reemplaza la prueba atómica: responde otra pregunta. Cada brecha conserva evidencia, dueño, fecha y test versionado.
+
+## ✅ Criterio de dominio
+
+El alumno distingue prueba y emulación, presenta evidencia por capa, aplica cleanup y demuestra regresión. Ejecutar una herramienta y mostrar una captura sin cambio verificado no completa purple teaming.
+
 ## 🧰 Herramientas y preparación
 
 En laboratorio aislado con la telemetría de toda la parte:

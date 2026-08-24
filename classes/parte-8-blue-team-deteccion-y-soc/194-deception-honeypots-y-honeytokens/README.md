@@ -83,6 +83,18 @@ Los accesos legítimos se prueban: scanner, backup, indexador y equipo de infrae
 - **Cuenta trampa:** usuario de AD atractivo (p. ej. "admin_backup") que nadie debe usar. Característica: cualquier logon con ella es incidente.
 - **Honeynet:** red de honeypots interconectados. Característica: observa movimiento lateral del atacante.
 
+## 🔍 Diseño resuelto — token en una ruta de administración
+
+El modelo de ataque muestra que un adversario con acceso a un share de documentación buscaría credenciales de automatización. Se coloca un archivo sintético con una URL única que no otorga acceso. Cada ubicación usa un token distinto, de modo que la alerta identifica dónde se descubrió.
+
+Antes de activar se prueban backup, indexador, antivirus y administradores. El backup toca el archivo y genera una alerta benigna; se ajusta la colocación o se añade contexto estrecho, no se ignoran todas las lecturas. La alerta conserva origen, identidad, token y hora y activa un playbook de alcance.
+
+El token tiene dueño, expiración y rotación. El receptor se monitorea y no expone sistemas reales. Si se usa un honeypot de alta interacción, se aplican segmentación, control de salida, captura y restauración, porque el riesgo operativo es mayor.
+
+## ✅ Criterio de dominio
+
+El alumno justifica ubicación por ruta de ataque, demuestra que el señuelo no concede privilegio, prueba alertado y falsos positivos legítimos, y documenta contención y ciclo de vida.
+
 ## 🧰 Herramientas y preparación
 
 En laboratorio aislado y segmentado:

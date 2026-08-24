@@ -90,6 +90,18 @@ La prueba de detección usa acciones autorizadas y cleanup. Se valida dato, regl
 - **Logon Type 3/10:** red (SMB/WMI) e interactivo remoto (RDP). Característica: pistas para clasificar el tipo de acceso.
 - **Event 4648:** logon con credenciales explícitas. Característica: frecuente en overpass-the-hash y uso de credenciales robadas.
 
+## 🔍 Secuencia resuelta — acceso SMB y servicio remoto
+
+Una estación de usuario autentica una cuenta administrativa contra un servidor que normalmente solo recibe gestión desde el bastión. Minutos después aparecen acceso a un share administrativo, escritura de un binario y creación de servicio. Cada evento aislado puede existir en administración; la secuencia, origen y relación no autorizada elevan la confianza.
+
+Se construye un grafo con cuenta, estación y servidor. La investigación busca la misma cuenta en otros destinos y comprueba si el servidor afectado originó conexiones nuevas. También revisa si hubo cambio aprobado. La severidad deriva del privilegio y activo, no del nombre de la herramienta.
+
+La prueba de laboratorio reproduce una variante SMB autorizada y una desde origen inesperado. Se valida qué datos sustentan autenticación, transferencia y ejecución. El resultado solo acredita esa variante; RDP, WinRM y SSH mantienen estados separados.
+
+## ✅ Criterio de dominio
+
+El alumno debe explicar la cadena completa, identificar relaciones administrativas normales, ampliar alcance en ambas direcciones y mapear a la subtécnica exacta sin declarar cobertura total de T1021.
+
 ## 🧰 Herramientas y preparación
 
 En laboratorio aislado con un dominio de pruebas:

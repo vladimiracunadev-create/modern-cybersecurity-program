@@ -87,6 +87,18 @@ JA3 y otras huellas describen características observadas del cliente, no identi
 - **DNS C2:** órdenes/datos codificados en consultas y respuestas DNS. Característica: alta cadencia de subdominios y registros TXT inusuales.
 - **Domain fronting:** ocultar el destino real tras un dominio de CDN legítimo. Característica: SNI benigno con Host header distinto.
 
+## 🔍 Análisis resuelto — periodicidad con jitter
+
+Para un host se agrupan conexiones por destino y se ordenan tiempos. Un candidato presenta intervalos cercanos a cinco minutos, con variación de ±20 %. Se calculan mediana y dispersión; no se exige igualdad exacta. El tráfico intercambia pocos bytes y el destino es nuevo para ese host.
+
+Antes de clasificar, se compara con inventario: los agentes de monitoreo tienen periodicidad semejante. El endpoint muestra que el candidato pertenece a un ejecutable en ruta temporal cuyo padre fue un documento, mientras el agente legítimo está firmado, instalado y usa destinos conocidos. DNS, TLS y proceso forman la evidencia conjunta.
+
+Una segunda ventana muestra actividad interactiva que rompe el patrón. La detección basada solo en periodicidad la perdería, por lo que se mantiene otra analítica de relación rara proceso–destino. La huella TLS y entropía del dominio aportan contexto, no identidad.
+
+## ✅ Criterio de dominio
+
+El alumno explica intervalos, jitter, ventana y baseline; descarta al menos una alternativa benigna; correlaciona endpoint; y declara límites de cifrado y visibilidad. Un dominio «raro» sin razonamiento no cumple.
+
 ## 🧰 Herramientas y preparación
 
 En laboratorio aislado:

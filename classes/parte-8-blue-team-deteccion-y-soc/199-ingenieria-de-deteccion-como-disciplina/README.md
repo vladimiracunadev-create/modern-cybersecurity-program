@@ -88,6 +88,18 @@ Excepciones tienen alcance y vencimiento. La regla se revisa cuando cambia amena
 - **Deuda de detección:** reglas obsoletas, ruidosas o sin dueño. Característica: degrada la señal si no se gestiona.
 - **Precisión de detección:** proporción de alertas verdaderas sobre el total. Característica: mide la calidad, no la cantidad.
 
+## 🔍 Producto completo — ciclo de una detección
+
+La historia de usuario defensiva define que el SOC necesita reconocer creación remota de servicios en servidores críticos. El contrato declara eventos, host, servicio, identidad, origen, proceso y latencia. La regla se implementa con metadatos y fixtures; Atomic Red Team genera una variante autorizada y un procedimiento administrativo legítimo sirve como negativo.
+
+CI valida esquema y resultados. El despliegue inicia en modo observación, mide volumen y luego crea alertas para un grupo. En producción se vigilan último evento por fuente, coincidencias, campos nulos y tiempo de consulta. Una actualización cambia el campo de servicio y el test falla antes de desplegar: ese fallo es el valor práctico de detection-as-code.
+
+Meses después la plataforma migra y la regla es sustituida. Se retira con motivo, reemplazo y dependencias, manteniendo historial. El producto cubrió un ciclo completo, no solo el momento de escritura.
+
+## ✅ Criterio de dominio
+
+El alumno entrega repositorio reproducible, contrato, pruebas, rollout, métricas y retiro. Una regla activa sin dueño, datos vigilados ni negativo conocido se considera deuda.
+
 ## 🧰 Herramientas y preparación
 
 - Un **repositorio Git** para tus reglas Sigma (clase 186) como fuente de verdad.

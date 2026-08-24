@@ -92,6 +92,26 @@ El tuning conserva trazabilidad. En vez de excluir `powershell.exe` para una her
 - **Saved search / alert:** búsqueda guardada que corre en horario y dispara acciones. Característica: soporta throttling para evitar spam de alertas.
 - **Notable Event:** alerta gestionable en Splunk ES con estado, propietario y urgencia. Característica: el objeto de trabajo del analista.
 
+## 🔍 Búsqueda razonada — fallos seguidos de éxito
+
+La intención es identificar una combinación de cuenta y origen con varios fallos y después un éxito. Una primera búsqueda exploratoria conserva detalle:
+
+```spl
+index=auth earliest=-30m (action="failure" OR action="success")
+| table _time user src dest action
+| sort 0 user src _time
+```
+
+Solo después de comprobar campos se construye una agregación. Contar fallos y éxitos en la misma ventana no demuestra que el éxito ocurrió después; para esa condición se conservan tiempos o se usa una lógica de secuencia adecuada al entorno. Agrupar solo por `user` mezclaría varios orígenes; agrupar solo por `src` mezclaría cuentas. El par `user, src`, y a veces `dest`, pertenece a la hipótesis.
+
+La búsqueda de producción añade ventana solapada por retraso de ingesta y una clave de deduplicación. Una lookup identifica cuentas de servicio, pero no las excluye por completo: cambia el contexto y aplica condiciones propias. El notable muestra cuenta, origen, destinos, primer/último evento, conteos y pivote, de modo que el analista no repita la búsqueda inicial.
+
+Antes de migrar a `tstats`, se mapea la fuente al dataset CIM correspondiente y se compara resultado con SPL sobre eventos crudos. Si una fuente no puebla `action`, la búsqueda acelerada pierde casos aunque sea rápida. El ejercicio enseña que optimización viene después de verificar semántica.
+
+## ✅ Criterio de dominio
+
+El alumno explica cada comando, demuestra un positivo y un negativo, mide retraso y ejecución, y documenta cualquier excepción con vencimiento. Copiar una consulta que devuelve filas sin justificar agrupación, orden y campos no acredita detección.
+
 ## 🧰 Herramientas y preparación
 
 - **Splunk Enterprise Trial** o **Splunk Free** en el Windows/Linux de laboratorio.

@@ -90,6 +90,18 @@ Antes de bloquear se evalúa colisión con infraestructura compartida y se prueb
 - **STIX/TAXII:** formato y protocolo estándar para representar e intercambiar intel. Característica: interoperabilidad entre plataformas.
 - **TIP (Threat Intelligence Platform):** software para agregar, enriquecer y distribuir intel (MISP, OpenCTI). Característica: gestiona ciclo de vida y scoring de indicadores.
 
+## 🔍 Producto resuelto — campaña contra identidad
+
+El requerimiento pregunta qué infraestructura y procedimientos de una campaña reciente pueden cambiar controles de identidad esta semana. Se recogen reportes primarios y observaciones internas. Una IP se registra con primera/última observación, fuente, relación y expiración; no se etiqueta «maliciosa para siempre».
+
+El análisis encuentra además uso de aplicaciones OAuth y phishing de sesión. Esas TTP producen acciones más duraderas: revisar consentimientos, detectar aplicaciones nuevas y monitorizar tokens. Para el SOC se crea un paquete con observables, relaciones, confianza, queries y criterios de retiro. Para dirección se resume exposición e intervención, sin saturar con hashes.
+
+En STIX se modelan objetos y relaciones; TAXII puede transportarlos. Antes de bloquear una IP se busca retrospectivamente y se evalúa infraestructura compartida. TLP regula compartición del producto según FIRST, pero privacidad y contratos se aplican aparte.
+
+## ✅ Criterio de dominio
+
+El alumno parte de un requerimiento, diferencia observable, indicador y TTP, conserva procedencia/tiempo/confianza, y demuestra qué decisión produjo el producto. Importar un feed sin consumidores ni retirada no es inteligencia operacional.
+
 ## 🧰 Herramientas y preparación
 
 - **MISP** o **OpenCTI** desplegado en laboratorio (Docker) como TIP.

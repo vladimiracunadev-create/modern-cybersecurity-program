@@ -88,6 +88,18 @@ Se empieza con tareas frecuentes, deterministas y reversibles. Primero se observ
 - **Acción de respuesta:** aislar host, bloquear IP, deshabilitar cuenta. Característica: potente y potencialmente disruptiva; requiere salvaguardas.
 - **Runbook vs playbook:** el runbook describe pasos (a veces manuales); el playbook los automatiza. Característica: el playbook es la versión ejecutable.
 
+## 🔍 Playbook resuelto — correo sospechoso
+
+El trigger recibe un mensaje reportado. El primer estado valida que existen mensaje original, destinatario e identificador; si falta alguno, crea una tarea humana y no declara benigno. Después extrae URLs y hashes preservando procedencia, consulta reputación con hora/fuente y busca otros destinatarios.
+
+Si la confianza es baja, el playbook recomienda acciones. Si se confirma campaña y el impacto está dentro de la política, retira mensajes; revocar sesiones o bloquear dominio compartido requiere aprobación. Cada acción comprueba estado previo, registra resultado y ofrece rollback. Un timeout de API produce «desconocido», nunca `false`.
+
+Las pruebas cubren mensaje malicioso, newsletter legítima, adjunto ausente, API caída, ejecución duplicada y reversión. Se compara tiempo y calidad con el proceso manual. Solo los pasos deterministas y seguros avanzan a automatización.
+
+## ✅ Criterio de dominio
+
+El alumno entrega estados, contratos, errores, permisos, gates y rollback; demuestra auditoría y pruebas. Un diagrama lineal que solo funciona cuando todas las APIs responden no es un playbook operativo.
+
 ## 🧰 Herramientas y preparación
 
 En laboratorio aislado:

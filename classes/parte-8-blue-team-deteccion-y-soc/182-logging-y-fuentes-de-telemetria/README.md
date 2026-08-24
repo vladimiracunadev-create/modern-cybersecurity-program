@@ -99,6 +99,27 @@ Completitud mide lo recibido frente a lo esperado; puntualidad, la demora; exact
 - **Normalización:** llevar campos heterogéneos a un esquema común (ej. ECS de Elastic). Característica: habilita correlación entre fuentes.
 - **Sincronización NTP:** todos los relojes en la misma referencia (UTC). Característica: sin ella, las líneas de tiempo son inservibles.
 
+## 🔍 Ejemplo trabajado — contrato de datos para RDP anómalo
+
+La hipótesis es: «una cuenta de servicio que no usa sesiones interactivas inicia RDP desde un origen no administrativo». Se transforma en requisitos verificables:
+
+| Pregunta | Campo o contexto | Si falta |
+|---|---|---|
+| ¿Qué identidad inició la sesión? | cuenta y dominio normalizados | no se puede atribuir |
+| ¿Desde dónde? | host/IP origen y traducciones conocidas | no se evalúa ruta autorizada |
+| ¿Hacia qué activo? | host destino y criticidad | no se prioriza impacto |
+| ¿Qué clase de sesión? | tipo de logon o evento de RDP | se mezclan servicios y usuarios |
+| ¿Era esperable? | inventario de cuentas y grafo administrativo | rareza sin contexto |
+| ¿Qué ocurrió después? | procesos/sesión en destino | no se distingue acceso de actividad |
+
+Se genera una sesión benigna controlada. El evento aparece en el host, tarda 40 segundos en llegar, conserva origen y mapea la identidad correctamente. Después se desconecta temporalmente el colector para verificar buffering. Finalmente se consulta un periodo histórico suficiente para establecer frecuencia. Esta prueba recorre el diagrama completo y produce evidencia de cobertura.
+
+Si el campo origen queda vacío, la acción correcta no es añadir una regla que lo ignore. Se abre una brecha de dato, se identifica versión/configuración del productor y se declara que esa variante no está cubierta. El contrato permite decir qué se perdió y qué decisiones quedaron afectadas.
+
+## ✅ Criterio de dominio
+
+La estrategia es válida cuando cada fuente tiene propósito, propietario, campos críticos, latencia, retención y control de salud; el alumno puede explicar qué fuente confirma cada afirmación y qué conclusión no puede obtener con los datos disponibles.
+
 ## 🧰 Herramientas y preparación
 
 Monta un laboratorio aislado con:

@@ -106,6 +106,22 @@ Las métricas deben provocar una conversación y una acción. Si aumenta el tiem
 - **MTTR (Mean Time To Respond):** tiempo medio hasta contener/erradicar. Mide la eficacia de la respuesta.
 - **Dwell time:** tiempo que el atacante permanece sin ser detectado. Métrica reina del blue team.
 
+## 🔍 Caso resuelto — de una alerta a una decisión
+
+El SIEM genera una alerta porque `WINWORD.EXE` inició `powershell.exe` en el portátil de la directora financiera. La severidad inicial es alta por criticidad del activo, pero todavía no existe un incidente confirmado.
+
+1. **L1 valida la señal.** Confirma host, usuario, hora y que los eventos no estén duplicados. Revisa proceso padre, línea de comandos y fuente del documento. Encuentra `-EncodedCommand` y una conexión posterior. No cierra por el simple hecho de que PowerShell sea una herramienta legítima.
+2. **L1 escala con contexto.** Entrega IDs de eventos, consulta utilizada, documento, hash, dominio, criticidad y ventana investigada. Formula la pregunta pendiente: determinar alcance y persistencia.
+3. **L2 amplía el alcance.** Busca el mismo hash, dominio y patrón padre-hijo en la flota; revisa identidad y correo. Encuentra el mensaje en tres buzones, pero ejecución solo en un host. Clasifica el caso como incidente probable de phishing con ejecución.
+4. **Incident response decide contención.** Se aísla el portátil y se revocan sesiones de la cuenta con autorización registrada. Antes se preservan los artefactos volátiles definidos por el playbook.
+5. **L3 y detección cierran el bucle.** Analizan el payload, afinan la regla con la relación Office–intérprete–red y crean una búsqueda retrospectiva. El cierre incluye alcance, acciones, evidencia, limitaciones y prueba de regresión.
+
+La enseñanza no es que cada alerta siga exactamente esos cargos. Es que cada transición agrega evidencia y cambia una decisión. Si L1 hubiera reenviado solo el nombre de la regla, L2 repetiría trabajo; si el equipo hubiera aislado sin autoridad ni adquisición, podría perder evidencia; si cerrara sin regresión, aprendería únicamente sobre ese caso.
+
+## ✅ Evidencias de aprendizaje
+
+El alumno demuestra comprensión cuando puede entregar un flujo donde cada rol tiene una decisión, una entrada y una salida; distingue alerta, caso e incidente; define los relojes de sus métricas; y explica qué mejora retorna al SOC. Un organigrama sin criterios de escalada no cumple el objetivo.
+
 ## 🧰 Herramientas y preparación
 
 No necesitas software ofensivo en esta clase; es conceptual y de diseño. Prepara:

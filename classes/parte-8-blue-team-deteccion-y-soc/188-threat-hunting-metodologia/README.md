@@ -87,6 +87,18 @@ Una línea base no es un promedio universal. Se segmenta por rol de activo, tipo
 - **PEAK:** marco moderno (Prepare, Execute, Act with Knowledge) para cacerías de hipótesis, baseline y ML. Característica: estructura y documenta el proceso.
 - **Baseline:** modelo de lo normal en el entorno. Característica: sin él, no se distingue lo anómalo.
 
+## 🔍 Hunt completo — cuenta de backup con sesión interactiva
+
+**Hipótesis:** una cuenta destinada a backup pudo iniciar una sesión interactiva en servidores fuera de mantenimiento. **Alternativas:** intervención aprobada, inventario incorrecto o servicio mal configurado. **Alcance:** treinta días, servidores administrados y eventos de identidad/endpoint.
+
+Primero se valida que el inventario identifica la cuenta y que la telemetría distingue sesión interactiva. Se mide frecuencia por tipo, origen y destino. Aparece un acceso desde un jump host durante una ventana aprobada: refuta esa observación como amenaza, pero revela que la documentación de la cuenta era incompleta. Otro acceso desde una estación común carece de cambio aprobado; se pivota a procesos y privilegios. La evidencia resulta inconclusa porque faltan procesos del destino durante ese intervalo.
+
+El hunt no declara «sin compromiso». Produce dos salidas: corregir inventario y logging del segmento, además de una consulta candidata que alerta cuando una cuenta de servicio usa sesión interactiva desde origen no autorizado. Las consultas, rango y resultados se guardan para repetir después de mejorar datos.
+
+## ✅ Criterio de dominio
+
+Se evalúa si la hipótesis era falsable, si se buscaron explicaciones benignas, si cada pivote respondió una pregunta y si el resultado distingue confirmado, refutado e inconcluso. Encontrar muchos outliers sin cerrar razonamiento no constituye un hunt completo.
+
 ## 🧰 Herramientas y preparación
 
 - Tu SIEM (Splunk/Elastic) con telemetría de endpoint y red de clases previas.

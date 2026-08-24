@@ -86,6 +86,18 @@ El producto final incluye timeline, entidades, hallazgos, incertidumbres, causa 
 - **Pivot:** paso de un dato a otro relacionado (proceso→conexión→host). Característica: técnica central de la investigación.
 - **Lección aprendida:** mejora concreta derivada del caso. Característica: debe traducirse en detección, control o proceso.
 
+## 🔍 Caso resuelto — detección ausente
+
+Un dataset controlado contiene documento, intérprete y conexión. La timeline confirma los tres hechos. En el SIEM existen proceso y red, pero la regla no alertó. Se ejecuta la consulta contra el evento y se descubre que esperaba `process.parent.name`, mientras el pipeline pobló otro campo.
+
+La clasificación es «mapeo/parser», no «regla inexistente». Se corrige el pipeline o contrato, se reindexa la muestra cuando procede y se ejecutan fixtures. Después se verifica notable y triaje. El mapa ATT&CK se actualiza solo cuando la cadena completa queda probada.
+
+El informe conserva dataset/commit, hash, versión de parser, consulta antes/después, positivo, negativo y resultado. También registra que la prueba cubre una variante concreta y no todas las ejecuciones de intérpretes.
+
+## ✅ Criterio de dominio
+
+El alumno separa hechos, inferencias e hipótesis; reproduce el gap; lo localiza en una etapa y demuestra regresión. Una narración sin consultas ni procedencia no es caso de estudio verificable.
+
 ## 🧰 Herramientas y preparación
 
 - Un dataset de intrusión realista: **Splunk BOTS**, **Security Onion** con PCAP/logs de ejemplo, o **EVTX-ATTACK-SAMPLES** (colección de Event Logs de ataques).

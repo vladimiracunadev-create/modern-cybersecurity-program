@@ -88,6 +88,18 @@ Una métrica madura tiene dueño y respuesta prevista. Si el percentil 90 de tri
 - **Métrica vanidosa:** número que impresiona pero no informa (p. ej. "alertas procesadas"). Característica: incentiva el gaming, no la mejora.
 - **SOC-CMM:** modelo de madurez de capacidades del SOC. Característica: evalúa personas, procesos, tecnología y servicios.
 
+## 🔍 Métrica construida — tiempo hasta contención
+
+**Objetivo:** reducir exposición de incidentes confirmados de severidad alta. **Inicio:** timestamp de confirmación registrado en el caso. **Fin:** aislamiento o revocación verificados. **Población:** incidentes altos cerrados en el trimestre. **Presentación:** mediana y percentil 90, segmentados por horario y tipo. **Fuente:** historial de estados y acciones del sistema de casos.
+
+La métrica excluye deliberadamente tiempo antes de confirmación; no debe llamarse tiempo desde compromiso. Un caso sin contención se conserva como observación censurada o excepción documentada, no se elimina para mejorar la cifra. Si p90 empeora fuera de horario, la intervención puede ser autoridad on-call, no presionar a cerrar tickets.
+
+Se acompaña con calidad/reapertura para evitar contención aparente. Después de cambiar el proceso se compara una ventana suficiente y se explican cambios de población. NIST SP 800-55 Vol. 2 respalda el vínculo entre medida, objetivo y decisión.
+
+## ✅ Criterio de dominio
+
+El alumno define fórmula con eventos reales, población, segmentación, límites y decisión; detecta incentivos perversos. Escribir «mejorar MTTR» sin definir R ni timestamps no cumple.
+
 ## 🧰 Herramientas y preparación
 
 - Datos de tu SIEM/ticketing de laboratorio (o dataset simulado) para calcular métricas.
