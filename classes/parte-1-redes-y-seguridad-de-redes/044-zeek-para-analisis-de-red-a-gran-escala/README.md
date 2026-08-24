@@ -32,6 +32,74 @@ Al finalizar, el alumno podrá:
 | 6 | Notices y framework de detección | Alertas propias |
 | 7 | Zeek en producción (clusters) | Escala real |
 
+## 🧠 Explicación en profundidad
+
+### Zeek no busca firmas: describe lo que pasa
+
+La diferencia esencial entre Zeek y un IDS de firmas como Suricata es de propósito.
+Suricata pregunta "¿este tráfico coincide con algo malo conocido?". Zeek pregunta "¿qué
+está ocurriendo en esta red?" y lo escribe en registros estructurados, dejando el juicio
+para después. Por eso Zeek es la fuente de los **datos de transacción** de NSM: no genera
+sobre todo alertas, genera un **diario** de la actividad de la red del que luego se puede
+extraer casi cualquier cosa —incluida evidencia de ataques que aún no tenían firma cuando
+ocurrieron—.
+
+Su motor es **dirigido por eventos**. Zeek analiza el tráfico, reconoce protocolos
+—incluso en puertos no estándar, porque los identifica por comportamiento y no por
+número— y por cada cosa que ocurre (una conexión que se establece, una petición HTTP, un
+*handshake* TLS, una consulta DNS) dispara un **evento**. Scripts escritos en el lenguaje
+de Zeek reaccionan a esos eventos, y esa arquitectura es lo que lo hace a la vez un
+generador de logs riquísimo y una plataforma de detección programable.
+
+```mermaid
+flowchart LR
+  T["Trafico de red"] --> M["Motor de eventos de Zeek<br/>identifica protocolos por comportamiento"]
+  M -->|"conn"| E1["evento: conexion"]
+  M -->|"http"| E2["evento: peticion HTTP"]
+  M -->|"ssl / dns / files"| E3["evento: TLS, DNS, ficheros"]
+  E1 --> S["Scripts en lenguaje Zeek<br/>reaccionan a los eventos"]
+  E2 --> S
+  E3 --> S
+  S --> L["Logs estructurados<br/>conn.log, http.log, dns.log, ssl.log..."]
+  S --> N["Notices<br/>lo que merece atencion"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef m fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class T,E1,E2,E3,L,N n
+  class M,S m
+```
+
+### Los logs y el arte de consultarlos sin base de datos
+
+Zeek produce una familia de logs, uno por tipo de actividad, y conocer los principales es
+media clase. `conn.log` es el registro maestro: una línea por conexión con la 5-tupla,
+duración, bytes en cada sentido y estado. `http.log`, `dns.log`, `ssl.log`, `files.log` y
+`x509.log` detallan cada protocolo. Todos comparten un formato tabular con un campo clave,
+el **UID**, que es el mismo para todas las líneas de una misma conexión y permite
+**correlacionar** entre logs: del `uid` de una conexión sospechosa en `conn.log` se salta
+a su petición en `http.log` y al certificado en `ssl.log`.
+
+La herramienta cotidiana para explorar esto es **`zeek-cut`**, que extrae columnas por
+nombre y se combina con las utilidades de la Parte 0: `cat conn.log | zeek-cut id.resp_h
+orig_bytes | sort | ...` responde preguntas reales sin montar ninguna base de datos. Este
+es el pago de aquella clase de `grep`, `sort` y `awk`: los logs de Zeek están hechos para
+ese flujo de trabajo.
+
+### De describir a detectar, y de un host a un clúster
+
+Sobre esa base descriptiva, Zeek permite construir detección propia. El **framework de
+notices** es el mecanismo por el que un script eleva algo a la categoría de "esto merece
+atención" —un fichero ejecutable descargado desde un dominio recién visto, una
+transferencia de zona DNS, un certificado autofirmado en un servicio que debería tener uno
+válido—, con la ventaja de que la lógica tiene todo el contexto de la conexión disponible.
+Es detección a medida, complementaria a las firmas de Suricata: donde la firma reconoce un
+patrón fijo, el script de Zeek expresa una regla de negocio sobre el comportamiento.
+
+Para redes grandes, Zeek escala en **clúster**: varios procesos *worker* reparten el
+tráfico, un *proxy* coordina el estado compartido y un *manager* consolida los logs, de
+modo que un único punto de análisis lógico puede cubrir enlaces de muchos gigabits. Esa
+capacidad de operar a escala real es lo que lo distingue de una simple herramienta de
+laboratorio y lo sitúa en el corazón de los grandes programas de monitoreo.
+
 ## 📖 Definiciones y características
 
 - **Zeek:** framework de análisis de red orientado a eventos; no es un IDS de firmas, sino un motor que registra la actividad y ejecuta scripts ante eventos de protocolo.
@@ -40,6 +108,25 @@ Al finalizar, el alumno podrá:
 - **`zeek-cut`:** utilidad para extraer columnas específicas de los logs (con cabeceras) desde la línea de comandos.
 - **notice:** mecanismo de Zeek para emitir alertas cuando un script detecta algo relevante.
 - **Evento:** en Zeek, un hecho de red (p. ej. `http_request`) al que un script puede reaccionar con lógica propia.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Zeek | Motor de análisis de red que genera logs de transacción, no firmas |
+| Dirigido por eventos | Arquitectura en que cada actividad dispara un evento programable |
+| Evento | Señal que emite el motor (conexión, petición HTTP, handshake TLS…) |
+| Script de Zeek | Código que reacciona a eventos para generar logs o detección |
+| `conn.log` | Registro maestro: una línea por conexión con su 5-tupla y bytes |
+| `http.log` / `dns.log` / `ssl.log` | Logs detallados por protocolo |
+| UID | Identificador de conexión común a todos los logs; permite correlacionar |
+| `zeek-cut` | Extrae columnas de los logs por nombre, para análisis por CLI |
+| Framework de notices | Mecanismo para elevar algo a "merece atención" |
+| Notice | Evento destacado por un script como digno de revisión |
+| Identificación por comportamiento | Reconocer un protocolo aunque use un puerto no estándar |
+| Clúster Zeek | Despliegue con workers, proxy y manager para gran escala |
+| Worker / manager | Procesos que reparten el tráfico y consolidan los logs |
+| Datos de transacción | Resumen estructurado de la actividad; la aportación de Zeek a NSM |
 
 ## 🧰 Herramientas y preparación
 

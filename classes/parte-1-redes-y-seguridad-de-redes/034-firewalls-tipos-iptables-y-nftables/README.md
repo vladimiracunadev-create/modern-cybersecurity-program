@@ -32,6 +32,79 @@ Al finalizar, el alumno podrá:
 | 6 | nftables vs. iptables | Sintaxis moderna unificada |
 | 7 | Persistencia y logging | Reglas duraderas y auditables |
 
+## 🧠 Explicación en profundidad
+
+### El estado lo cambia todo
+
+Un firewall **sin estado** juzga cada paquete por separado: mira direcciones, puertos y
+flags, y decide. Suena razonable hasta que intentas escribir una regla para "permitir
+que mis usuarios naveguen". Sin estado necesitas dos reglas —salida al 443 y entrada
+desde el 443— y esa segunda regla abre un agujero enorme, porque cualquier atacante que
+ponga el 443 como puerto de origen atraviesa tu filtro. Un firewall **con estado** en
+cambio recuerda las conexiones que ha visto nacer, y por eso puede expresar la
+intención real: "permite lo que salga y lo que sea respuesta a algo que salió".
+
+En Linux esa memoria es **conntrack**, y clasifica cada paquete en cuatro estados.
+`NEW` es un intento de conexión nuevo. `ESTABLISHED` pertenece a una conexión ya
+aceptada. `RELATED` es tráfico asociado a otra conexión existente —el caso clásico es
+el canal de datos de FTP, o un `ICMP unreachable` que corresponde a una conexión
+conocida—. E `INVALID` es lo que no encaja en ningún flujo conocido y casi siempre se
+descarta. Con esas cuatro piezas, un firewall de host completo cabe en cuatro reglas, y
+eso no es una simplificación de manual: es la forma correcta de escribirlo.
+
+```mermaid
+flowchart TD
+  P["Paquete entrante"] --> CT{"conntrack: que estado tiene?"}
+  CT -->|"ESTABLISHED o RELATED"| A["ACCEPT<br/>es respuesta a algo que permitimos"]
+  CT -->|"INVALID"| D1["DROP<br/>no encaja en ningun flujo conocido"]
+  CT -->|"NEW"| R{"Coincide con una regla de servicio publicado?"}
+  R -->|"si"| A2["ACCEPT<br/>p. ej. tcp/22 desde la red de gestion"]
+  R -->|"no"| D2["Politica por defecto: DROP"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#fdecea,stroke:#c0392b,color:#7b241c
+  class A,A2 n
+  class CT,R d
+  class D1,D2 x
+```
+
+### Dónde actúa cada regla: netfilter en cinco ganchos
+
+`iptables` y `nftables` no son el firewall: son la interfaz para programar
+**netfilter**, el subsistema del kernel que intercepta los paquetes en cinco puntos
+—`PREROUTING`, `INPUT`, `FORWARD`, `OUTPUT` y `POSTROUTING`—. Saber en qué gancho actúa
+cada cadena es lo que evita el desconcierto más común del principiante: una regla en
+`INPUT` no filtra el tráfico que el equipo **enruta** hacia otra máquina, porque ese
+tráfico pasa por `FORWARD` y nunca toca `INPUT`. Del mismo modo, el NAT de destino se
+hace en `PREROUTING` —antes de decidir la ruta, porque cambia el destino— y el NAT de
+origen en `POSTROUTING`, justo antes de salir.
+
+Las reglas se evalúan **en orden** dentro de cada cadena y la primera coincidencia
+decide, así que el orden no es un detalle de estilo: una regla permisiva colocada arriba
+anula todo lo que venga después. Y al final está la **política por defecto**, que en un
+firewall serio es `DROP`: se deniega todo y se abre lo justificado, no al revés.
+Escribir la política de `INPUT` en `DROP` sin haber permitido antes el tráfico
+`ESTABLISHED` y el interfaz de *loopback* es, por cierto, la forma más rápida y clásica
+de perder el acceso SSH a un servidor remoto.
+
+### nftables, y por qué conviene migrar
+
+`nftables` sustituye a la familia entera de herramientas antiguas —`iptables`,
+`ip6tables`, `arptables`, `ebtables`— por una sola sintaxis y un solo motor. Sus mejoras
+no son cosméticas: los **conjuntos** (*sets*) y **mapas** permiten expresar "estos
+cuarenta puertos" o "estas redes" en una única regla en lugar de cuarenta, con
+evaluación eficiente en lugar de lineal; una misma tabla `inet` cubre IPv4 e IPv6 sin
+duplicar el conjunto de reglas —y olvidar IPv6 es un agujero real, porque un servidor
+con IPv6 activo y sin filtrar está expuesto aunque su IPv4 esté impecable—; y las
+actualizaciones son atómicas, así que no hay ventana con el firewall a medio cargar.
+
+Dos hábitos completan el cuadro. **Persistencia**: las reglas viven en memoria y
+desaparecen al reiniciar, así que hay que guardarlas explícitamente
+(`nft list ruleset > /etc/nftables.conf`, `iptables-save`, o el mecanismo de la
+distribución). Y **logging**: registrar lo que se descarta, con límite de tasa para no
+inundar el disco, es lo que convierte al firewall en una fuente de detección y no solo
+en un muro mudo.
+
 ## 📖 Definiciones y características
 
 - **Firewall sin estado:** filtra cada paquete de forma aislada según cabeceras; simple pero incapaz de relacionar paquetes de una misma conexión.
@@ -40,6 +113,26 @@ Al finalizar, el alumno podrá:
 - **Cadena (chain):** lista ordenada de reglas asociada a un hook de netfilter (`INPUT`, `OUTPUT`, `FORWARD`).
 - **Política por defecto:** acción cuando ninguna regla coincide. La postura segura es `DROP` en INPUT/FORWARD.
 - **nftables:** framework moderno del kernel que reemplaza iptables/ip6tables/arptables/ebtables con una sintaxis unificada y mejor rendimiento.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Firewall sin estado | Juzga cada paquete de forma aislada; exige reglas de vuelta inseguras |
+| Firewall con estado | Recuerda las conexiones vistas y permite sus respuestas |
+| conntrack | Subsistema del kernel Linux que sigue el estado de las conexiones |
+| `NEW` | Paquete que inicia una conexión nueva |
+| `ESTABLISHED` | Paquete perteneciente a una conexión ya aceptada |
+| `RELATED` | Tráfico asociado a otra conexión (datos de FTP, ICMP correspondiente) |
+| `INVALID` | Paquete que no encaja en ningún flujo conocido; se descarta |
+| netfilter | Subsistema del kernel que intercepta paquetes; el motor real |
+| `PREROUTING` / `POSTROUTING` | Ganchos antes y después de la decisión de ruta (NAT) |
+| `INPUT` / `OUTPUT` / `FORWARD` | Tráfico hacia, desde y a través del equipo |
+| Política por defecto | Veredicto si ninguna regla coincide; en un firewall serio, `DROP` |
+| DROP vs. REJECT | Descartar en silencio o responder con un error explícito |
+| nftables | Sustituto moderno y unificado de iptables/ip6tables/arptables/ebtables |
+| *Set* / mapa | Estructura de nftables que agrupa puertos o redes en una sola regla |
+| Tabla `inet` | Tabla de nftables que cubre IPv4 e IPv6 con un solo conjunto de reglas |
 
 ## 🧰 Herramientas y preparación
 

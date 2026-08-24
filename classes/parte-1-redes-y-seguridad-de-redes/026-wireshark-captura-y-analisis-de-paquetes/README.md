@@ -32,6 +32,77 @@ Al finalizar, el alumno podrá:
 | 6 | Marcas de tiempo y referencia temporal | Medir latencia y ordenar eventos |
 | 7 | Exportar objetos y guardar subconjuntos | Compartir evidencia sin ruido |
 
+## 🧠 Explicación en profundidad
+
+### El problema no es capturar, es capturar donde hay algo que ver
+
+La primera decisión de cualquier análisis no es qué filtro escribir, sino **dónde
+enchufar el analizador**, y es la que más capturas inútiles produce. La red de los años
+noventa usaba *hubs*, que repetían cada trama por todos los puertos: bastaba con
+conectarse en cualquier sitio para verlo todo. La red moderna es **conmutada**, y un
+switch aprende qué MAC vive detrás de cada puerto y entrega cada trama solo por el
+puerto correcto. La consecuencia práctica es dura: si abres Wireshark en tu portátil
+conectado a un switch, verás tu propio tráfico, el *broadcast* y el *multicast*, y
+nada más. No hay filtro que arregle eso, porque lo que falta nunca llegó a tu tarjeta.
+
+De ahí salen las cuatro posiciones posibles, cada una con su compromiso. Capturar **en
+el propio host** es lo más sencillo y siempre está disponible, pero solo ves lo de ese
+host y un atacante con privilegios podría manipular lo que ves. Un **puerto SPAN** (o
+*mirror*) le pide al switch que copie a un puerto el tráfico de otros: no requiere
+hardware extra, pero el switch descarta copias bajo carga, así que puedes perder
+justamente los paquetes del incidente. Un **TAP** de red es un dispositivo pasivo
+intercalado en el cable que duplica el tráfico sin participar en él: es la opción
+fiable y la que se usa cuando la captura tiene que valer como evidencia. Y en
+inalámbrico hace falta **modo monitor**, que no es lo mismo que el promiscuo: el
+promiscuo entrega las tramas Ethernet que la tarjeta ve aunque no vayan dirigidas a
+ella; el monitor entrega las tramas 802.11 crudas, incluidas las de gestión y control,
+sin estar asociado a ninguna red.
+
+```mermaid
+flowchart TD
+  Q{"Que necesito ver?"}
+  Q -->|"solo este equipo"| H["Captura en el host<br/>tcpdump / Wireshark local<br/>siempre disponible, visibilidad minima"]
+  Q -->|"varios equipos de la LAN"| S["Puerto SPAN del switch<br/>sin hardware extra<br/>puede descartar bajo carga"]
+  Q -->|"evidencia fiable, sin perdidas"| T["TAP pasivo en el cable<br/>duplicado integro<br/>requiere hardware y cortar el enlace"]
+  Q -->|"trafico 802.11"| W["Modo monitor en la NIC wifi<br/>tramas de gestion y control<br/>sin asociarse a la red"]
+  classDef q fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef o fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  class Q q
+  class H,S,T,W o
+```
+
+### Dos filtros que no son el mismo filtro
+
+Wireshark tiene dos lenguajes de filtrado y confundirlos es el error número uno del
+principiante. El **filtro de captura** usa la sintaxis BPF (`host 10.0.0.5 and tcp port
+80`), se aplica en el momento de capturar y decide qué se guarda en disco: lo que
+descarta se pierde para siempre. El **filtro de visualización** usa la sintaxis propia
+de Wireshark (`http.request.method == "GET"`), se aplica sobre lo ya capturado y solo
+oculta filas: nada se destruye y puedes cambiarlo cuantas veces quieras.
+
+La regla operativa que se deriva de esa asimetría es sencilla: **sé generoso al
+capturar y estricto al visualizar**. Filtrar en captura solo se justifica cuando el
+volumen es inmanejable o cuando hay una razón legal o de privacidad para no almacenar
+cierto tráfico. Si dudas, captura de más: siempre puedes esconder paquetes después,
+pero no puedes recuperar los que nunca guardaste.
+
+### La disección: de bytes a campos con nombre
+
+Lo que convierte a Wireshark en un instrumento y no en un volcador de bytes es el
+**disector**. Cada protocolo tiene un módulo que sabe leer sus cabeceras y presentarlas
+como campos con nombre y tipo, y los disectores se encadenan siguiendo exactamente la
+encapsulación que estudiaste en la Parte 0: la trama Ethernet declara en su campo
+*type* que lleva IPv4, la cabecera IP declara en *protocol* que lleva TCP, y el puerto
+TCP sugiere qué protocolo de aplicación viene dentro. Por eso el panel de detalle es un
+árbol desplegable: estás abriendo las capas de fuera hacia dentro.
+
+Ese encadenamiento explica también dos rarezas cotidianas. Que un servicio en un puerto
+no estándar aparezca como "Data" es porque el disector se elige por puerto, y la
+solución es *Decode As*. Y que los *checksums* TCP/IP salgan en rojo en tu propia
+máquina casi nunca indica corrupción: es el **checksum offloading**, es decir, la
+tarjeta de red calcula el checksum después de que Wireshark haya visto el paquete, así
+que lo que capturas todavía lo lleva vacío.
+
 ## 📖 Definiciones y características
 
 - **Paquete / trama (frame):** unidad de datos capturada en el cable. Wireshark muestra la trama Ethernet completa; su característica clave es que incluye todas las cabeceras encapsuladas.
@@ -40,6 +111,25 @@ Al finalizar, el alumno podrá:
 - **Disector (dissector):** módulo que interpreta bytes de un protocolo y los presenta como campos legibles. Wireshark trae cientos.
 - **Colorización:** reglas que pintan filas según condiciones (p. ej. rojo para checksums malos, negro para resets TCP).
 - **SPAN/mirror port:** puerto del switch configurado para copiar el tráfico de otros puertos hacia el analizador.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Trama (*frame*) | Unidad de datos en el cable, con todas las cabeceras encapsuladas |
+| Modo promiscuo | La NIC entrega todas las tramas Ethernet que ve, no solo las suyas |
+| Modo monitor | Captura de tramas 802.11 crudas sin asociarse a una red |
+| SPAN / *mirror port* | Puerto del switch que copia el tráfico de otros puertos |
+| TAP | Dispositivo pasivo que duplica el tráfico de un enlace sin participar en él |
+| BPF | *Berkeley Packet Filter*: sintaxis del filtro de **captura** |
+| Filtro de visualización | Sintaxis propia de Wireshark; oculta, no descarta |
+| Disector | Módulo que interpreta los bytes de un protocolo como campos con nombre |
+| Decode As | Forzar un disector concreto cuando el puerto no es el estándar |
+| pcapng | Formato de captura moderno, con metadatos y comentarios |
+| Checksum offloading | La NIC calcula el checksum tras la captura; produce falsos rojos |
+| Colorización | Reglas que pintan filas según una condición, para triaje visual |
+| Perfil | Conjunto guardado de columnas, colores y preferencias |
+| Stream index | Identificador que Wireshark asigna a cada conversación TCP |
 
 ## 🧰 Herramientas y preparación
 

@@ -33,6 +33,83 @@ Al finalizar, el alumno podrá:
 | 7 | I/O Graph y RTT | Rendimiento y latencia |
 | 8 | `tshark` para filtros por lote | Escalar el análisis |
 
+## 🧠 Explicación en profundidad
+
+### El filtro de visualización es un lenguaje, no una caja de búsqueda
+
+Escribir `http` en la barra de filtro no busca la palabra "http" en ninguna parte:
+evalúa la expresión booleana "este paquete tiene una capa HTTP". Entender que es un
+lenguaje con campos tipados cambia por completo lo que puedes pedirle. Cada campo que
+un disector produce es direccionable —`ip.src`, `tcp.flags.syn`, `dns.qry.name`,
+`http.response.code`— y Wireshark te dice el nombre exacto de cualquier campo si lo
+seleccionas en el panel de detalle y miras la barra de estado.
+
+Sobre esos campos operan comparadores (`==`, `!=`, `>`, `<=`), pertenencia a conjuntos
+(`tcp.port in {80 443 8080}`), subcadenas (`contains`), expresiones regulares
+(`matches`) y los operadores lógicos `and`, `or`, `not`. Hay una trampa clásica que
+conviene interiorizar ya: `ip.addr != 10.0.0.5` **no** significa "paquetes que no
+tocan a ese host". `ip.addr` aparece dos veces en cada paquete (origen y destino), y la
+expresión es cierta en cuanto *alguna* de las dos ocurrencias sea distinta, lo que
+incluye a todos los paquetes que van hacia ese host. La forma correcta es negar la
+pertenencia entera: `not (ip.addr == 10.0.0.5)`.
+
+### Del paquete al flujo: la unidad real del análisis
+
+Un paquete aislado casi nunca responde una pregunta. La unidad que importa es la
+**conversación**, y por eso *Follow Stream* es probablemente la función más usada de
+Wireshark: reensambla todos los segmentos de un flujo en el orden correcto, descarta
+retransmisiones y te muestra el diálogo tal y como lo vieron las aplicaciones. Al
+hacerlo, Wireshark escribe además un filtro `tcp.stream == N` que te deja volver a la
+vista de paquetes con esa conversación ya aislada.
+
+Alrededor de esa idea giran las tres estadísticas que resuelven la mayoría de los
+triajes. **Conversations** ordena los pares de interlocutores por bytes o paquetes, y
+responde "¿quién habla más y con quién?" —así se detecta una exfiltración o un host que
+no debería estar hablando con Internet—. **Endpoints** cuenta por host y revela al
+equipo que contacta con cientos de destinos, la firma de un escaneo. Y la **jerarquía
+de protocolos** describe la composición del tráfico en un vistazo: un porcentaje
+inesperado de DNS, o tráfico en un puerto que nadie sabía que estaba en uso, salta ahí
+antes que en ningún otro sitio.
+
+```mermaid
+flowchart LR
+  P["Captura cruda<br/>miles de paquetes"] --> J["Jerarquia de protocolos<br/>que hay aqui dentro?"]
+  J --> CO["Conversations<br/>quien habla con quien y cuanto"]
+  CO --> FS["Follow Stream<br/>que se dijeron exactamente"]
+  FS --> EI["Expert Information<br/>que fue mal en el camino"]
+  EI --> R(["Conclusion con evidencia<br/>filtro + paquetes que la sostienen"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef r fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class P,J,CO,FS,EI n
+  class R r
+```
+
+### Expert Information: lo que la red te está diciendo
+
+Wireshark clasifica automáticamente las anomalías que detecta y las agrupa en **Expert
+Information** por severidad. Aprender a leer esa lista ahorra horas, porque cada
+categoría apunta a una causa distinta. Las **retransmisiones** y los **dup ACK**
+indican pérdida de paquetes en el camino, no un problema del servidor. Un
+**TCP ZeroWindow** dice que el receptor se quedó sin espacio de buffer: el cuello de
+botella es la aplicación que no lee, no la red. Un **RST** indica un cierre abrupto,
+que puede ser un puerto cerrado, un firewall que corta o una aplicación que abortó. Y
+los **out-of-order** suelen ser consecuencia de rutas asimétricas o de balanceo.
+
+Conviene separar desde el principio dos preguntas que se confunden: *¿la red va mal?*
+se responde con retransmisiones, RTT y ventana; *¿alguien está haciendo algo raro?* se
+responde con endpoints, jerarquía de protocolos y patrones temporales. Son análisis
+distintos con herramientas distintas dentro de la misma captura.
+
+### Escalar con tshark
+
+Todo lo anterior tiene su equivalente en línea de comandos con `tshark`, y esa es la
+puerta a procesar cien capturas en lugar de una. `tshark -r captura.pcapng -Y
+'dns.flags.response == 0' -T fields -e dns.qry.name` aplica el mismo filtro de
+visualización y extrae solo el campo que te interesa, en un formato que puedes pasar
+por `sort | uniq -c | sort -rn` y convertir en un ranking de dominios consultados. El
+análisis interactivo sirve para entender un caso; `tshark` sirve para convertir ese
+entendimiento en una comprobación repetible.
+
 ## 📖 Definiciones y características
 
 - **Filtro de visualización:** expresión booleana sobre campos disecados (`ip.addr == 10.0.0.5 && tcp.port == 443`). No altera la captura, solo la vista.
@@ -41,6 +118,26 @@ Al finalizar, el alumno podrá:
 - **Retransmisión:** reenvío de un segmento TCP no confirmado; señal de pérdida o congestión.
 - **Duplicate ACK:** ACKs repetidos que indican huecos en la secuencia; preludio de retransmisión rápida.
 - **RTT (Round-Trip Time):** tiempo entre un segmento y su ACK; base para medir latencia.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Filtro de visualización | Expresión booleana sobre campos disecados; oculta paquetes |
+| Campo de protocolo | Dato direccionable de una cabecera (`ip.src`, `tcp.flags.syn`) |
+| `contains` / `matches` | Operadores de subcadena y de expresión regular |
+| Follow Stream | Reensamblado de una conversación completa en orden |
+| `tcp.stream` | Índice que identifica cada conversación TCP de la captura |
+| Conversations | Estadística por pares de interlocutores (bytes, paquetes, duración) |
+| Endpoints | Estadística por host individual; delata escaneos |
+| Jerarquía de protocolos | Composición porcentual del tráfico de la captura |
+| Expert Information | Anomalías detectadas por Wireshark, agrupadas por severidad |
+| Retransmisión | Reenvío de un segmento no confirmado; indica pérdida |
+| Dup ACK | ACK repetido que señala un hueco en la secuencia recibida |
+| TCP ZeroWindow | El receptor anuncia buffer lleno; cuello de botella en la aplicación |
+| RST | Cierre abrupto de conexión: puerto cerrado, firewall o aborto |
+| RTT | *Round-trip time*: latencia de ida y vuelta medida sobre el flujo |
+| tshark | Wireshark en línea de comandos; mismo lenguaje de filtros |
 
 ## 🧰 Herramientas y preparación
 

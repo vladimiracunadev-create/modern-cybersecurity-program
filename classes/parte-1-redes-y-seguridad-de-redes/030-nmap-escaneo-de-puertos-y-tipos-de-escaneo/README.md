@@ -32,6 +32,89 @@ Al finalizar, el alumno podrá:
 | 6 | Selección de puertos (`-p`, `--top-ports`, `-F`) | Cobertura vs. tiempo |
 | 7 | Temporización (`-T`, `--min-rate`) | Precisión vs. sigilo vs. velocidad |
 
+## 🧠 Explicación en profundidad
+
+### Los seis estados de un puerto, y por qué "filtrado" es el interesante
+
+Nmap no clasifica los puertos en abierto y cerrado, sino en seis estados, y la
+diferencia entre tres de ellos es la que convierte un escaneo en información útil sobre
+la arquitectura de la red. **Abierto** significa que hay una aplicación aceptando
+conexiones. **Cerrado** significa que el host respondió pero nadie escucha ahí: es una
+respuesta informativa, porque demuestra que el host existe y que el paquete llegó.
+**Filtrado** significa que Nmap no obtuvo respuesta o recibió un error ICMP: algo en el
+camino está descartando el paquete, y eso es un hallazgo sobre el firewall, no una
+ausencia de datos. Los otros tres —*unfiltered*, *open|filtered* y *closed|filtered*—
+expresan ambigüedades propias de ciertos tipos de escaneo.
+
+Todo esto se deduce del comportamiento de TCP que estudiaste en la clase 011. Un SYN a
+un puerto abierto responde `SYN/ACK`; a un puerto cerrado responde `RST`; y si no
+responde nada, o llega un `ICMP unreachable` de tipo administrativo, hay un filtro por
+medio. El escáner no "mira" el puerto: infiere su estado a partir de la respuesta, y
+por eso conocer el protocolo es lo que te permite interpretar el resultado en vez de
+leerlo.
+
+```mermaid
+flowchart TD
+  S["Nmap envia SYN al puerto"] --> R{"Que responde?"}
+  R -->|"SYN/ACK"| O["ABIERTO<br/>hay un servicio escuchando"]
+  R -->|"RST"| C["CERRADO<br/>el host vive, nadie escucha ahi"]
+  R -->|"nada, o ICMP unreachable"| F["FILTRADO<br/>algo descarta por el camino"]
+  O --> RST["-sS responde RST y aborta<br/>la conexion nunca se completa"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef o fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef f fill:#fdecea,stroke:#c0392b,color:#7b241c
+  class S,C,RST n
+  class O o
+  class F f
+```
+
+### SYN scan, connect scan y por qué uno necesita root
+
+El **SYN scan** (`-sS`) es el escaneo por defecto de Nmap cuando tiene privilegios, y
+se llama *semiabierto* porque no completa el handshake: envía el SYN, interpreta la
+respuesta y contesta con un `RST` que aborta la conexión antes de que se establezca.
+Eso le da dos ventajas —es más rápido y históricamente no dejaba entrada en los logs de
+la aplicación, que solo registra conexiones completas— y una exigencia: necesita
+*raw sockets*, y por tanto privilegios de root o la capacidad `CAP_NET_RAW`.
+
+El **connect scan** (`-sT`) es la alternativa sin privilegios: usa la llamada
+`connect()` del sistema operativo, igual que cualquier cliente normal. Es más lento,
+completa el handshake y por tanto es perfectamente visible en los logs del servicio,
+pero funciona desde una cuenta sin privilegios, que es exactamente la situación en la
+que te encuentras cuando pivotas desde un host comprometido. Conviene desmontar aquí un
+mito extendido: el SYN scan **no** es sigiloso frente a un IDS moderno. Suricata o Zeek
+detectan sin esfuerzo un patrón de SYN a muchos puertos desde un mismo origen. Lo que
+evita el SYN scan es el log de la aplicación, no la detección de red.
+
+### UDP: lento, ambiguo e imprescindible
+
+El escaneo UDP (`-sU`) es la parte que casi todo el mundo omite y donde se esconden
+servicios críticos: DNS, SNMP, NTP, DHCP, TFTP y buena parte del mundo industrial. Su
+dificultad es estructural: UDP no tiene handshake, así que un puerto abierto
+normalmente **no responde nada**, y la única señal fiable es el `ICMP port unreachable`
+que devuelve un puerto cerrado. Como los sistemas operativos limitan la tasa de esos
+mensajes ICMP, Nmap tiene que esperar, y de ahí que un `-sU` completo pueda tardar
+horas. El resultado habitual es `open|filtered`: no se puede distinguir un puerto
+abierto y callado de uno filtrado. Enviar sondas específicas del protocolo con
+`-sU -sV` resuelve buena parte de esa ambigüedad, porque un servicio real sí contesta a
+una consulta bien formada.
+
+### Elegir cuántos puertos y a qué velocidad
+
+Los 65 535 puertos rara vez se escanean enteros por defecto. Nmap escanea los 1000 más
+frecuentes salvo que digas otra cosa; `-F` baja a los 100 más frecuentes, `--top-ports
+N` fija el número, y `-p-` los abre todos. La frecuencia no es una lista arbitraria:
+sale del fichero `nmap-services`, construido con datos de escaneos masivos reales.
+
+La temporización (`-T0` a `-T5`) ajusta simultáneamente paralelismo, *timeouts* y
+retardo entre sondas. `-T4` es un valor razonable en redes locales fiables; `-T5` puede
+perder resultados por *timeouts* agresivos, y `-T0`/`-T1` existen para eludir umbrales
+de detección a costa de tardar horas. Hay un compromiso que conviene enunciar sin
+rodeos: **velocidad, precisión y sigilo forman un triángulo del que solo se eligen
+dos**. Y en una red de producción, un escaneo agresivo puede tumbar dispositivos
+frágiles —impresoras, controladores industriales, equipos médicos—, así que el ritmo
+no es solo una decisión técnica sino de riesgo operacional.
+
 ## 📖 Definiciones y características
 
 - **SYN scan (`-sS`):** envía SYN y ante un SYN/ACK envía RST sin completar la conexión ("semiabierto"). Requiere privilegios; es el default de Nmap con root.
@@ -39,6 +122,25 @@ Al finalizar, el alumno podrá:
 - **UDP scan (`-sU`):** envía datagramas UDP; la ausencia de respuesta se interpreta como `open\|filtered`, y un ICMP port-unreachable como `closed`. Lento por diseño.
 - **Estado `filtered`:** Nmap no puede determinar si el puerto está abierto porque un firewall descarta las sondas.
 - **ACK scan (`-sA`):** no determina open/closed, sino si el puerto está `filtered` o `unfiltered`; sirve para mapear reglas de firewall con y sin estado.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Abierto | Una aplicación acepta conexiones en ese puerto |
+| Cerrado | El host responde pero nadie escucha; prueba que el host existe |
+| Filtrado | Sin respuesta o error ICMP: un filtro descarta el tráfico |
+| `open` / `filtered` (ambiguo) | Estado indeterminado típico de UDP y de FIN/NULL/Xmas |
+| SYN scan (`-sS`) | Escaneo semiabierto; requiere *raw sockets* y privilegios |
+| Connect scan (`-sT`) | Usa `connect()`; sin privilegios, pero visible en los logs |
+| UDP scan (`-sU`) | Escaneo UDP; lento y ambiguo, pero cubre DNS, SNMP y NTP |
+| ACK scan (`-sA`) | No determina apertura: mapea si hay firewall con estado |
+| FIN / NULL / Xmas | Escaneos con flags atípicos para eludir filtros simples |
+| `-p` / `-F` / `-p-` | Selección de puertos: lista, los 100 frecuentes, todos |
+| `--top-ports` | Escanea los N puertos más frecuentes según `nmap-services` |
+| `-T0`…`-T5` | Plantillas de temporización: de sigiloso y lento a agresivo |
+| `--min-rate` | Fuerza un mínimo de paquetes por segundo |
+| Raw socket | Socket que permite construir cabeceras a mano; exige privilegios |
 
 ## 🧰 Herramientas y preparación
 

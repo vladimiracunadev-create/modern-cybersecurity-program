@@ -32,6 +32,73 @@ Al finalizar, el alumno podrá:
 | 6 | Scripts de vulnerabilidad y su fiabilidad | Evitar falsos positivos |
 | 7 | Estructura de un script Lua | Extender Nmap |
 
+## 🧠 Explicación en profundidad
+
+### NSE convierte un escáner en una plataforma
+
+El *Nmap Scripting Engine* es un intérprete de **Lua** embebido en Nmap con acceso a
+todo lo que el escaneo ya descubrió y a librerías propias para hablar HTTP, SMB, SSH,
+DNS o SNMP. Eso cambia la naturaleza de la herramienta: Nmap deja de responder solo
+"¿qué hay aquí?" y pasa a responder "¿y qué puedo averiguar o comprobar sobre lo que
+hay?". La consulta de una zona DNS, la enumeración de comparticiones SMB, la lista de
+cifradores TLS aceptados por un servidor o la comprobación de una vulnerabilidad
+concreta son, todas, scripts NSE.
+
+Cada script declara en qué **fase** se ejecuta, y eso determina qué información tiene
+disponible. Los de fase `prerule` corren antes de cualquier escaneo (por ejemplo, para
+descubrir hosts por *broadcast*); los de `hostrule` se ejecutan una vez por host; los de
+`portrule` —la mayoría— una vez por puerto que cumpla una condición, típicamente
+"puerto 445 abierto"; y los de `postrule` al final, para agregar resultados de todo el
+escaneo.
+
+```mermaid
+flowchart TD
+  PRE["prerule<br/>antes del escaneo<br/>descubrimiento por broadcast"] --> ESC["Escaneo de puertos, version y OS"]
+  ESC --> HR["hostrule<br/>una vez por host vivo"]
+  ESC --> PR["portrule<br/>una vez por puerto que cumpla la condicion"]
+  HR --> POST
+  PR --> POST["postrule<br/>al final: agrega resultados de todo el escaneo"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef e fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class PRE,HR,PR,POST n
+  class ESC e
+```
+
+### Las categorías son una declaración de riesgo, no una taxonomía
+
+Los más de 600 scripts que trae Nmap están etiquetados en categorías, y leerlas como
+etiquetas de riesgo es lo que separa un uso profesional de un accidente. **`safe`**
+agrupa los que no van a tumbar nada ni disparar defensas de forma apreciable.
+**`default`** (los que ejecuta `-sC` y `-A`) son rápidos, útiles y razonablemente
+seguros. **`discovery`** y **`version`** amplían la información sin agresividad.
+**`vuln`** comprueba vulnerabilidades conocidas. Y en el otro extremo, **`intrusive`**
+puede afectar al objetivo, **`dos`** intenta explícitamente provocar una denegación de
+servicio, y **`exploit`** intenta explotar de verdad.
+
+De ahí sale una regla que conviene grabarse: **`--script vuln` no es una categoría
+inocente**. Muchos de esos scripts son intrusivos, y algunos comprueban la
+vulnerabilidad provocándola. Ejecutarlos contra un sistema de producción sin
+autorización explícita para pruebas intrusivas es exactamente el tipo de acción que la
+clase 025 delimita. La selección admite combinaciones lógicas —`--script "default and
+safe"`, `--script "smb-* and not brute"`— y ese control fino es la forma correcta de
+acotar el riesgo.
+
+### Argumentos, salida y fiabilidad
+
+`--script-args` pasa parámetros a los scripts (credenciales, dominios, límites de
+tiempo, rutas de diccionario) y `--script-args-file` los lee de un fichero, que es lo
+razonable cuando hay secretos de por medio: un argumento en la línea de comandos queda
+en el historial de la shell y es visible en la tabla de procesos para cualquier usuario
+del sistema.
+
+Sobre la interpretación de resultados, hay dos advertencias que ahorran informes
+embarazosos. La primera es que muchos scripts de `vuln` determinan la vulnerabilidad
+**por versión**, no por comprobación real, y arrastran por tanto el problema de los
+*backports* de la clase anterior; el estado `VULNERABLE (DoS)` o el sufijo `LIKELY
+VULNERABLE` te está diciendo justamente eso. La segunda es que NSE también sirve para
+defenderse: correr los scripts de descubrimiento contra tu propia red es una forma
+barata y honesta de saber qué ve un atacante que llegue hasta ahí.
+
 ## 📖 Definiciones y características
 
 - **NSE:** motor que ejecuta scripts Lua durante o después del escaneo, con acceso a los resultados de puertos y a librerías de red.
@@ -39,6 +106,26 @@ Al finalizar, el alumno podrá:
 - **`--script-args`:** mecanismo para pasar parámetros (credenciales, rutas, límites) a los scripts.
 - **Script de vulnerabilidad:** comprueba una debilidad concreta (p. ej. `ssl-heartbleed`) y reporta estado, referencias y a veces CVE.
 - **`--script-help`:** muestra la documentación de un script sin ejecutarlo.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| NSE | *Nmap Scripting Engine*: intérprete Lua embebido en Nmap |
+| Lua | Lenguaje de scripting ligero en el que se escriben los scripts NSE |
+| `prerule` | Fase previa al escaneo; no depende de ningún host |
+| `hostrule` | Se ejecuta una vez por host que cumpla la condición |
+| `portrule` | Se ejecuta una vez por puerto que cumpla la condición |
+| `postrule` | Se ejecuta al final para agregar resultados globales |
+| Categoría `safe` | Scripts que no afectan al objetivo de forma apreciable |
+| Categoría `default` | Conjunto que ejecutan `-sC` y `-A` |
+| Categoría `vuln` | Comprobación de vulnerabilidades conocidas; a menudo intrusiva |
+| Categoría `intrusive` / `dos` / `exploit` | Pueden degradar, tumbar o explotar el objetivo |
+| `--script` | Selecciona scripts por nombre, categoría, patrón o expresión lógica |
+| `--script-args` | Pasa parámetros a los scripts seleccionados |
+| `--script-help` | Muestra la documentación de un script sin ejecutarlo |
+| `--script-updatedb` | Reconstruye el índice tras añadir scripts propios |
+| `LIKELY VULNERABLE` | Veredicto por versión, no por comprobación efectiva |
 
 ## 🧰 Herramientas y preparación
 

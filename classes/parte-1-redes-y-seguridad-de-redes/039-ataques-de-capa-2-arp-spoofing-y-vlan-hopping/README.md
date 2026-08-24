@@ -32,6 +32,76 @@ Al finalizar, el alumno podrá:
 | 6 | Detección de anomalías L2 | Respuesta defensiva |
 | 7 | Contramedidas de switch | DAI, port security, PVLAN |
 
+## 🧠 Explicación en profundidad
+
+### Toda la seguridad de arriba descansa sobre una capa 2 que confía en todos
+
+La capa 2 se diseñó para una LAN pequeña donde todos los equipos eran de fiar, y esa
+suposición no se corrigió nunca. **ARP**, el protocolo que traduce una IP en la MAC del
+equipo que la tiene, no lleva autenticación de ningún tipo: cuando un host pregunta
+"¿quién tiene 10.0.0.1?", cualquiera puede responder "yo", y el que pregunta se lo cree
+y guarda la respuesta en su caché. Ese es el fallo del que cuelgan casi todos los
+ataques de esta clase. Lo importante de entenderlo es que **no es un bug que se pueda
+parchear**: es cómo funciona ARP por diseño, así que la defensa no consiste en arreglar
+ARP sino en vigilar y contener sus abusos en el switch.
+
+### ARP spoofing: el motor del man-in-the-middle en la LAN
+
+El **ARP spoofing** (o *poisoning*) explota esa credulidad enviando respuestas ARP
+falsas para envenenar las cachés de dos víctimas a la vez: al gateway le dices que la MAC
+de la víctima eres tú, y a la víctima le dices que la MAC del gateway eres tú. A partir
+de ese momento todo el tráfico entre ambos pasa por tu equipo, que lo reenvía para que la
+comunicación siga fluyendo y nadie note nada. Eso es un **man-in-the-middle** de capa 2,
+y es la base de lo que se estudia en la clase 040: una vez en medio, se puede leer,
+modificar o intentar degradar el cifrado del tráfico.
+
+```mermaid
+flowchart TD
+  subgraph ANTES["Antes del ataque"]
+    V1["Victima"] <-->|"trafico directo"| G1["Gateway"]
+  end
+  subgraph DESPUES["Con ARP spoofing"]
+    V2["Victima<br/>cree que el atacante es el gateway"] --> ATK["Atacante<br/>envenena ambas caches ARP"]
+    ATK --> G2["Gateway<br/>cree que el atacante es la victima"]
+    ATK -.->|"reenvia para no romper la conexion"| G2
+    G2 -.-> ATK -.-> V2
+  end
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef a fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class V1,G1,V2,G2 n
+  class ATK a
+```
+
+### MAC flooding, STP y VLAN hopping: romper la segmentación desde abajo
+
+El repertorio de capa 2 no acaba en ARP. El **MAC flooding** satura la tabla CAM del
+switch —la que asocia cada MAC a un puerto— con miles de direcciones falsas; cuando la
+tabla se llena, muchos switches degradan a comportamiento de *hub* y empiezan a difundir
+todo por todos los puertos, devolviendo al atacante la visibilidad total que la
+conmutación le había quitado. Los ataques sobre **STP** (*Spanning Tree*) consisten en
+anunciarse como puente raíz para que la topología se recalcule y el tráfico pase por el
+equipo del atacante.
+
+El **VLAN hopping** es el más grave porque rompe la segmentación en la que confían las
+capas superiores. Tiene dos formas: el *switch spoofing*, donde el atacante negocia un
+enlace *trunk* haciéndose pasar por un switch y con ello gana acceso a todas las VLAN; y
+el *double tagging*, que aprovecha cómo algunos switches procesan las etiquetas 802.1Q
+para colar una trama con dos etiquetas de modo que la segunda la lleve a una VLAN a la
+que el atacante no debería llegar. Si tu diseño de red confía en las VLAN para aislar,
+el VLAN hopping es lo que tienes que impedir.
+
+### La defensa vive en el switch
+
+Ninguno de estos ataques se para en el host: se para configurando el switch, y ese es el
+mensaje operativo de la clase. **DAI** (*Dynamic ARP Inspection*) valida las respuestas
+ARP contra una tabla de asignaciones legítimas y descarta las falsas. **Port security**
+limita cuántas MAC se aceptan por puerto y frena el MAC flooding. **BPDU Guard** protege
+STP desactivando el puerto si recibe anuncios de topología donde no debería haberlos. Y
+contra el VLAN hopping, la regla es desactivar la negociación automática de trunk (DTP),
+no usar la VLAN 1 para nada y fijar explícitamente el modo de cada puerto. La
+**segmentación** de la clase 042 solo es real si la capa 2 que la sostiene está
+endurecida; de lo contrario, es una línea en un diagrama que el atacante atraviesa.
+
 ## 📖 Definiciones y características
 
 - **ARP:** protocolo que asocia IP a MAC en una LAN; no tiene autenticación, así que cualquiera puede enviar respuestas falsas.
@@ -40,6 +110,26 @@ Al finalizar, el alumno podrá:
 - **VLAN hopping:** técnica para enviar tráfico a una VLAN distinta a la asignada, saltando la segmentación; por switch spoofing (DTP) o double tagging 802.1Q.
 - **DAI (Dynamic ARP Inspection):** control de switch que valida los paquetes ARP contra la tabla DHCP snooping y descarta los falsos.
 - **Port security:** limita las MAC permitidas por puerto, mitigando el MAC flooding.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| ARP | Traduce una IP en la MAC correspondiente; sin autenticación por diseño |
+| Caché ARP | Tabla local IP→MAC que el ARP spoofing envenena |
+| ARP spoofing / poisoning | Respuestas ARP falsas para interceptar tráfico en la LAN |
+| Man-in-the-middle L2 | Interposición del atacante entre dos hosts del mismo segmento |
+| Tabla CAM | Tabla del switch que asocia cada MAC a un puerto |
+| MAC flooding | Saturar la CAM para degradar el switch a comportamiento de hub |
+| STP | *Spanning Tree Protocol*; evita bucles y es manipulable |
+| VLAN hopping | Saltar de una VLAN a otra rompiendo la segmentación |
+| Switch spoofing | Negociar un trunk haciéndose pasar por switch para ver todas las VLAN |
+| Double tagging | Insertar dos etiquetas 802.1Q para alcanzar otra VLAN |
+| 802.1Q | Estándar de etiquetado de VLAN |
+| DAI | *Dynamic ARP Inspection*; valida las respuestas ARP en el switch |
+| Port security | Limita las MAC aceptadas por puerto |
+| BPDU Guard | Protege STP desactivando puertos con anuncios indebidos |
+| DTP | Protocolo de negociación de trunk; conviene desactivarlo |
 
 ## 🧰 Herramientas y preparación
 

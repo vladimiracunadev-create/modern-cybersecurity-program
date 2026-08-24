@@ -32,6 +32,87 @@ Al finalizar, el alumno podrá:
 | 6 | Salida EVE JSON y logs | Integración con SIEM |
 | 7 | Afinado y falsos positivos | Detección usable en producción |
 
+## 🧠 Explicación en profundidad
+
+### Detectar o bloquear: la decisión que define el despliegue
+
+Un **IDS** observa una copia del tráfico y avisa; un **IPS** se sitúa en el camino del
+tráfico y puede descartarlo. La misma herramienta —Suricata lo es— hace las dos cosas
+según cómo se despliegue, y la elección tiene consecuencias que van mucho más allá de lo
+técnico. En modo IDS, sobre un SPAN o un TAP, un falso positivo genera una alerta
+molesta; en modo IPS, en línea, un falso positivo **corta tráfico legítimo** y produce
+una incidencia de negocio. Y como el IPS está en el camino, si se cae o se satura se
+convierte en un punto único de fallo para toda la red que protege.
+
+Por eso el patrón habitual en organizaciones sensatas es empezar en modo IDS, afinar las
+reglas hasta que el ruido sea manejable, y solo entonces pasar en línea las firmas de
+las que se tiene confianza alta. El bloqueo se gana; no se activa el primer día.
+
+```mermaid
+flowchart TD
+  subgraph IDS["Modo IDS - fuera del camino"]
+    T1["Trafico real"] --> SW["SPAN / TAP"] --> S1["Sensor<br/>solo observa"]
+    S1 --> AL(["Alerta<br/>un falso positivo molesta"])
+  end
+  subgraph IPS["Modo IPS - en linea"]
+    T2["Trafico real"] --> S2["Sensor<br/>decide pasar o descartar"]
+    S2 --> OK(["Sigue su camino"])
+    S2 --> BL(["Descartado<br/>un falso positivo corta servicio"])
+  end
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef s fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#fdecea,stroke:#c0392b,color:#7b241c
+  class T1,T2,SW,AL,OK n
+  class S1,S2 s
+  class BL x
+```
+
+### La anatomía de una regla, leída como una frase
+
+Una firma de Suricata o Snort se lee de izquierda a derecha como una oración con dos
+partes. La **cabecera** dice qué hacer y sobre qué tráfico: acción (`alert`, `drop`,
+`pass`), protocolo, dirección de origen con puerto, el operador de dirección (`->`) y
+destino con puerto. Las **opciones**, entre paréntesis, refinan la condición y aportan
+los metadatos.
+
+```text
+alert http $EXTERNAL_NET any -> $HOME_NET any ( \
+    msg:"Descarga de ejecutable desde host recien registrado"; \
+    flow:established,to_client; \
+    http.content_type; content:"application/x-msdownload"; \
+    classtype:trojan-activity; sid:1000010; rev:1; )
+```
+
+Las opciones que más determinan la calidad de una firma son cuatro. `flow` acota la
+dirección y el estado de la conexión, y evita que la regla dispare sobre tráfico suelto
+o en el sentido equivocado. Los **buffers de protocolo** —`http.uri`, `http.user_agent`,
+`tls.sni`, `dns.query`— restringen la búsqueda al campo correcto en lugar de rastrear
+todo el paquete, lo que multiplica la precisión y el rendimiento. `content` busca una
+cadena literal y es barato; `pcre` aplica una expresión regular y es caro, así que la
+práctica correcta es poner primero un `content` que descarte la mayoría del tráfico y
+solo después el `pcre`. Y `flowbits` permite **encadenar estado entre paquetes**:
+marcar en un paquete y comprobar la marca en otro, que es como se detectan secuencias en
+lugar de eventos aislados. El `sid` identifica la regla —el rango local empieza en
+1000000— y el `rev` su versión.
+
+### El problema real no es escribir reglas: es el ruido
+
+Un despliegue con `ET Open` completo genera decenas de miles de alertas diarias en una
+red mediana, y un SOC que recibe eso deja de mirar las alertas en una semana. El trabajo
+de verdad es el **afinado**: desactivar categorías que no aplican a tu entorno, crear
+excepciones por origen para escáneres de vulnerabilidades y sistemas de monitorización
+propios, ajustar `threshold` y `suppress` para limitar repeticiones, y medir cuántas
+alertas se investigan de verdad. Una regla que nadie mira nunca es peor que no tener la
+regla, porque da una sensación de cobertura que no existe.
+
+Conviene también conocer los límites del método. La detección por firma solo reconoce lo
+que alguien ya describió: no ve un ataque nuevo, y **no ve dentro del tráfico cifrado**.
+Con TLS omnipresente, lo que queda visible son los metadatos —el `SNI`, el certificado,
+los tamaños y tiempos, la huella JA3—, y por eso este bloque desemboca de forma natural
+en el análisis de metadatos de las clases 043 a 045. La salida **EVE JSON** de Suricata
+es la pieza que conecta todo eso con un SIEM: un evento estructurado por línea, con
+alertas y también con registros de transacción HTTP, DNS y TLS.
+
 ## 📖 Definiciones y características
 
 - **IDS:** detecta y alerta sobre tráfico sospechoso pero no lo bloquea; se despliega fuera de línea (tap/span).
@@ -40,6 +121,27 @@ Al finalizar, el alumno podrá:
 - **`content`:** cadena o bytes a buscar en el payload; núcleo de la mayoría de firmas.
 - **`flow`:** restringe la regla a una dirección/estado de la conexión (`to_server,established`).
 - **EVE JSON:** formato de salida estructurado de Suricata que registra alertas, flujos, DNS, TLS, HTTP, etc.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| IDS | Detecta y alerta observando una copia del tráfico |
+| IPS | Se sitúa en línea y puede descartar el tráfico |
+| Modo en línea | Despliegue en el camino del tráfico; un fallo corta el servicio |
+| Firma / regla | Descripción de un patrón de tráfico considerado malicioso |
+| Cabecera de regla | Acción, protocolo, origen, dirección y destino |
+| `flow` | Acota dirección y estado de la conexión en la que aplica la regla |
+| Buffer de protocolo | Campo concreto donde buscar (`http.uri`, `tls.sni`, `dns.query`) |
+| `content` | Búsqueda de cadena literal; rápida |
+| `pcre` | Expresión regular; precisa pero costosa, se pone tras un `content` |
+| `flowbits` | Marca de estado que encadena condiciones entre paquetes |
+| `sid` / `rev` | Identificador y versión de la regla; el rango local empieza en 1000000 |
+| ET Open | Conjunto de reglas abierto de Emerging Threats |
+| Afinado (*tuning*) | Reducir el ruido para que las alertas sean investigables |
+| `threshold` / `suppress` | Limitar repeticiones y silenciar orígenes conocidos |
+| EVE JSON | Salida estructurada de Suricata: alertas y transacciones, una por línea |
+| JA3 | Huella del cliente TLS; identifica software sin descifrar el tráfico |
 
 ## 🧰 Herramientas y preparación
 

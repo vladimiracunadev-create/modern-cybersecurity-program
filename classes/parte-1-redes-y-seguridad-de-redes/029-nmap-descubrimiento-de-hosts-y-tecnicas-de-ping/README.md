@@ -32,6 +32,77 @@ Al finalizar, el alumno podrá:
 | 6 | Control de DNS (`-n`, `-R`) | Velocidad y sigilo |
 | 7 | Formatos de salida (`-oA`) | Alimentar fases posteriores |
 
+## 🧠 Explicación en profundidad
+
+### Nmap es una tubería, y saltarse una fase distorsiona el resultado
+
+Nmap no ejecuta "un escaneo": ejecuta una secuencia de fases, y cada una alimenta a la
+siguiente. Primero resuelve los objetivos, después **descubre** qué hosts están vivos,
+luego resuelve DNS inverso de los que respondieron, a continuación escanea puertos
+sobre esos hosts, y por último aplica detección de versión, de sistema operativo y
+scripts NSE si se lo pides. Entender esa tubería explica el fallo más caro del
+principiante: si la fase de descubrimiento decide erróneamente que un host está caído,
+**Nmap nunca le escanea los puertos**, y el informe dirá que no hay nada donde sí había
+un servidor.
+
+De ahí que existan dos banderas complementarias que conviene tener siempre presentes.
+`-sn` hace **solo** descubrimiento y omite el escaneo de puertos: es el inventario
+rápido. Y `-Pn` hace lo contrario, **omitir el descubrimiento** y tratar a todos los
+objetivos como vivos: es lo que se usa contra hosts que no responden a ninguna sonda
+—muy común en redes con firewall— a costa de tardar mucho más, porque escanea también
+direcciones vacías.
+
+```mermaid
+flowchart TD
+  A["Resolucion de objetivos<br/>nombres, rangos, CIDR"] --> B["Descubrimiento de hosts<br/>ARP, ICMP, TCP, UDP"]
+  B -->|"vivo"| C["DNS inverso<br/>-n lo desactiva"]
+  B -->|"sin respuesta"| X(["Descartado<br/>-Pn fuerza continuar"])
+  C --> D["Escaneo de puertos<br/>clase 030"]
+  D --> E["Version y sistema operativo<br/>clase 031"]
+  E --> F["Scripts NSE<br/>clase 032"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef x fill:#fdecea,stroke:#c0392b,color:#7b241c
+  classDef s fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class A,C,D,E,F n
+  class X x
+  class B s
+```
+
+### En la LAN manda ARP, y no hay discusión
+
+Cuando el objetivo está en tu mismo segmento de capa 2, Nmap ignora lo que le pidas y
+usa **ARP**, porque es la técnica correcta por una razón estructural: para enviarle un
+paquete IP a un vecino hay que conocer su MAC de todas formas, así que la consulta ARP
+es obligatoria. Y como ARP vive por debajo de IP, ningún firewall de host puede
+ignorarlo sin dejar de participar en la red. El resultado es que el descubrimiento en
+LAN es rápido y prácticamente infalible, mientras que a través de un router es un
+ejercicio de probabilidades.
+
+Fuera del segmento local sí eliges. Las sondas ICMP —`-PE` (echo), `-PP` (timestamp),
+`-PM` (address mask)— son las clásicas, y muchas redes filtran el echo pero olvidan las
+otras dos. Las sondas TCP son las más útiles contra firewalls: `-PS` envía un SYN a un
+puerto (cualquier respuesta, `SYN/ACK` o `RST`, demuestra que el host existe) y `-PA`
+envía un ACK, que atraviesa filtros sin estado que solo bloquean SYN. `-PU` prueba UDP
+buscando el `ICMP port unreachable`, que también prueba existencia. La estrategia
+razonable contra una red desconocida es combinar varias contra puertos con
+probabilidades altas: `-PS22,80,443 -PA3389 -PU161`.
+
+### El DNS es una fuga y un freno
+
+Por defecto Nmap resuelve el DNS inverso de los hosts que responden. Eso tiene dos
+costes que conviene decidir a conciencia. El primero es **velocidad**: en un `/16` con
+poca respuesta, las consultas DNS pueden dominar el tiempo total del escaneo; `-n` las
+desactiva y suele ser la única optimización que hace falta. El segundo es **sigilo**:
+cada consulta inversa deja tu interés registrado en el servidor DNS de la organización,
+que a menudo es justamente el servidor que un defensor está monitorizando. En un
+ejercicio con requisitos de discreción, `-n` no es una optimización, es una medida
+operativa.
+
+Por último, `-oA base` guarda a la vez los tres formatos —normal, *grepable* y XML— con
+el mismo prefijo, y ese hábito paga solo. El XML es lo que consumen las herramientas
+posteriores y los informes; el *grepable* es lo que te deja sacar una lista de IPs con
+un puerto abierto en una línea de `awk` para alimentar la fase siguiente.
+
 ## 📖 Definiciones y características
 
 - **Host discovery:** fase en la que Nmap determina qué objetivos están activos antes de escanear puertos, para no perder tiempo en IPs muertas.
@@ -39,6 +110,24 @@ Al finalizar, el alumno podrá:
 - **Ping scan (`-sn`):** realiza descubrimiento pero **omite** el escaneo de puertos; devuelve solo la lista de hosts vivos.
 - **Sonda TCP SYN a 443 (`-PS443`):** envía un SYN; un SYN/ACK o RST prueba que el host existe aunque bloquee ICMP.
 - **Falso negativo:** host vivo que aparece como "down" porque filtró todas las sondas usadas.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Fases de Nmap | Objetivos → descubrimiento → DNS → puertos → versión/OS → NSE |
+| `-sn` | Solo descubrimiento de hosts; no escanea puertos |
+| `-Pn` | Omite el descubrimiento y trata todo objetivo como vivo |
+| ARP discovery | Descubrimiento en la LAN mediante consultas ARP; el más fiable |
+| `-PE` / `-PP` / `-PM` | Sondas ICMP: echo, timestamp y address mask |
+| `-PS` | Sonda TCP SYN a un puerto para probar existencia del host |
+| `-PA` | Sonda TCP ACK; atraviesa filtros sin estado |
+| `-PU` | Sonda UDP; busca el ICMP *port unreachable* |
+| `-n` / `-R` | Nunca resolver DNS / resolver siempre |
+| `-oA` | Guarda salida en los tres formatos (normal, grepable y XML) |
+| Formato grepable | Salida de una línea por host, pensada para `grep`/`awk` |
+| Host vivo | Objetivo que respondió a alguna sonda de descubrimiento |
+| Falso negativo de descubrimiento | Host activo descartado por no responder; se corrige con `-Pn` |
 
 ## 🧰 Herramientas y preparación
 

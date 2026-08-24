@@ -32,6 +32,71 @@ Al finalizar, el alumno podrá:
 | 6 | Beaconing y C2 en metadatos | Patrones temporales |
 | 7 | Metadatos vs. full content | Cuándo usar cada uno |
 
+## 🧠 Explicación en profundidad
+
+### Cuando no puedes guardarlo todo, guarda quién habló con quién
+
+El contenido completo es carísimo y el cifrado esconde la carga útil de casi todo el
+tráfico. De esa doble realidad nace el análisis de **flujos**: renunciar a *qué* se dijo
+para quedarse con los **metadatos** de *quién habló con quién, cuándo, por cuánto tiempo y
+cuánto volumen*. Un **flujo** es una secuencia unidireccional de paquetes que comparten
+una **5-tupla** —IP origen, IP destino, puerto origen, puerto destino y protocolo—; el
+registro de flujo resume esa conversación en unas pocas decenas de bytes. Esa compresión
+brutal es lo que permite **retener meses** de actividad de una red entera, y por eso los
+flujos son la memoria larga de un programa de monitoreo.
+
+Y aquí está la idea que sostiene toda la clase: los metadatos son sorprendentemente
+reveladores **aunque el contenido esté cifrado**. TLS oculta lo que dice una conexión,
+pero no puede ocultar que existe, ni su duración, ni su ritmo, ni su volumen —y con eso
+basta para detectar muchísimo—.
+
+```mermaid
+flowchart LR
+  R["Router / switch<br/>observa el trafico"] -->|"exporta registros de flujo"| CO["Colector<br/>nfcapd, almacena"]
+  CO --> AN["Analisis<br/>nfdump, SiLK, consultas"]
+  AN --> P1["Escaneo:<br/>un origen, muchos destinos/puertos"]
+  AN --> P2["Exfiltracion:<br/>subida anomala a un destino externo"]
+  AN --> P3["Beaconing C2:<br/>conexiones periodicas al mismo destino"]
+  AN --> P4["DDoS:<br/>muchos origenes, un destino"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef s fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class R s
+  class CO,AN,P1,P2,P3,P4 n
+```
+
+### Formatos y arquitectura: exportador y colector
+
+El vocabulario técnico es sencillo una vez ordenado. **NetFlow v5** es el formato
+clásico de Cisco, de campos fijos; **NetFlow v9** lo hizo extensible con plantillas;
+**IPFIX** es el estándar abierto derivado de v9; y **sFlow** es distinto en naturaleza,
+porque **muestrea** paquetes (uno de cada N) en lugar de contabilizar todos los flujos,
+lo que lo hace más ligero a costa de precisión. La arquitectura tiene dos piezas: el
+**exportador** —el router o switch que observa el tráfico y emite los registros— y el
+**colector** —el servidor que los recibe, almacena e indexa—. Herramientas como
+**nfdump** (con `nfcapd` recogiendo y `nfdump` consultando) y **SiLK** son las que
+convierten ese depósito en respuestas.
+
+### Los patrones que delatan sin ver el contenido
+
+El valor del análisis de flujos está en los **patrones temporales y volumétricos**, y hay
+un puñado que conviene reconocer de memoria. Un **escaneo** se ve como un origen que
+contacta con muchísimos destinos o puertos en poco tiempo, con flujos minúsculos. Una
+**exfiltración** aparece como un volumen de subida anómalo hacia un destino externo, a
+menudo fuera de horario. Un **DDoS** es la imagen especular: muchísimos orígenes
+convergiendo en un destino. Y el más valioso y sutil es el **beaconing** de un canal de
+*command and control*: conexiones **periódicas** a un mismo destino —cada 60 segundos, con
+tamaño casi constante— que denuncian a un malware "llamando a casa" aunque cada conexión
+individual parezca inocente y aunque todo el contenido esté cifrado. La regularidad es la
+firma; ninguna carga útil hace falta.
+
+La decisión de fondo que enmarca toda la clase es **metadatos frente a contenido
+completo**. El contenido responde "¿qué se dijo exactamente?" pero es caro y el cifrado lo
+tapa; los metadatos responden "¿quién, cuándo, cuánto y con qué ritmo?", son baratos, se
+retienen mucho tiempo y sobreviven al cifrado. Un programa de monitoreo maduro usa los dos
+en capas —flujos para la vigilancia amplia y de retención larga, contenido completo en
+ventanas cortas cuando algo merece una mirada de cerca—, cerrando así el recorrido que
+empezó con un solo paquete en Wireshark.
+
 ## 📖 Definiciones y características
 
 - **Flujo (flow):** secuencia unidireccional de paquetes que comparten la 5-tupla (IP origen/destino, puertos, protocolo) en un intervalo; se resume en un registro con bytes, paquetes, marcas de tiempo y flags.
@@ -39,6 +104,25 @@ Al finalizar, el alumno podrá:
 - **sFlow:** muestreo de paquetes (no flujos completos) exportado por switches; útil para estadísticas a gran escala con bajo coste.
 - **Exportador/colector:** el router/switch **exporta** los flujos; un **colector** (nfcapd, SiLK) los recibe y almacena para consulta.
 - **Beaconing:** patrón de conexiones regulares y periódicas hacia un mismo destino, típico de malware que "llama a casa" (C2).
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Flujo | Secuencia unidireccional de paquetes con una 5-tupla común |
+| 5-tupla | IP origen, IP destino, puerto origen, puerto destino y protocolo |
+| Metadatos de tráfico | Quién, cuándo, cuánto y con qué ritmo; sin el contenido |
+| NetFlow v5 | Formato clásico de Cisco, de campos fijos |
+| NetFlow v9 | Formato extensible mediante plantillas |
+| IPFIX | Estándar abierto derivado de NetFlow v9 |
+| sFlow | Muestreo de paquetes (uno de cada N); más ligero, menos preciso |
+| Exportador | Dispositivo que observa el tráfico y emite los registros de flujo |
+| Colector | Servidor que recibe, almacena e indexa los flujos |
+| nfdump / SiLK | Herramientas de captura y consulta de flujos |
+| Beaconing | Conexiones periódicas a un mismo destino; firma de C2 |
+| Command and control (C2) | Canal por el que el malware recibe órdenes |
+| Exfiltración | Salida anómala de datos hacia un destino externo |
+| Metadatos vs. contenido | Barato y resistente al cifrado frente a fiel pero caro |
 
 ## 🧰 Herramientas y preparación
 

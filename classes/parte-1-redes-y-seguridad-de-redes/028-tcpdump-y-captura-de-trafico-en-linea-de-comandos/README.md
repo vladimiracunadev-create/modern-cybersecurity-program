@@ -32,6 +32,78 @@ Al finalizar, el alumno podrá:
 | 6 | Filtrado por flags TCP | Ver handshakes, resets, escaneos |
 | 7 | tcpdump sobre SSH | Capturar donde no hay GUI |
 
+## 🧠 Explicación en profundidad
+
+### Por qué el analista serio acaba en la línea de comandos
+
+Wireshark es insuperable para entender **una** captura; `tcpdump` es lo que usas cuando
+tienes que capturar en un servidor sin entorno gráfico, dejar corriendo una captura
+durante días, o meter la captura dentro de un script. Es además la herramienta que casi
+con seguridad ya está instalada en la máquina comprometida que estás investigando, y la
+que consume menos recursos en el equipo que estás observando.
+
+Los dos parámetros que más consecuencias tienen son los menos vistosos. El **snap
+length** (`-s`) fija cuántos bytes se guardan de cada paquete: en versiones modernas el
+valor por defecto es el paquete completo, pero un `-s 96` clásico guarda solo las
+cabeceras y te deja sin la carga útil justo cuando la necesitas. Y el **modo
+promiscuo**, que `tcpdump` activa por defecto, se desactiva con `-p`; hacerlo es a
+menudo lo correcto en un servidor, porque reduce ruido y carga.
+
+### BPF: un filtro que se compila y se ejecuta en el kernel
+
+La sintaxis de filtro de `tcpdump` no es una comodidad de la herramienta: es **BPF**,
+un pequeño lenguaje que se compila a bytecode y se ejecuta **dentro del kernel**, sobre
+cada paquete, antes de que este se copie al espacio de usuario. Esa arquitectura es la
+razón de que un filtro de captura bien puesto no solo reduzca el tamaño del fichero,
+sino que evite descartes bajo carga: los paquetes que el filtro rechaza nunca llegan a
+cruzar la frontera kernel-usuario.
+
+El lenguaje se construye con tres tipos de primitivas —tipo (`host`, `net`, `port`,
+`portrange`), dirección (`src`, `dst`) y protocolo (`ip`, `ip6`, `tcp`, `udp`,
+`icmp`, `arp`)— combinadas con `and`, `or` y `not`. Y tiene un nivel más potente que
+casi nadie usa: el acceso directo a bytes de la cabecera con la notación
+`proto[offset:tamaño]`. Así, `tcp[13] & 2 != 0` selecciona los paquetes cuyo byte 13 de
+la cabecera TCP (el de los flags) tiene activo el bit SYN, que es exactamente cómo se
+caza un escaneo sin depender de ningún disector.
+
+```mermaid
+flowchart LR
+  NIC(["Tarjeta de red<br/>todo el trafico"]) --> K
+  K["Filtro BPF<br/>compilado y ejecutado EN EL KERNEL"]
+  K -->|"encaja"| U["Espacio de usuario<br/>tcpdump escribe el pcap"]
+  K -->|"no encaja"| D(["Descartado<br/>nunca se copia, no cuesta nada"])
+  U --> F(["fichero .pcap<br/>para Wireshark, Zeek o tshark"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef k fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef d fill:#f6f8f7,stroke:#9aa7b2,color:#4a5560
+  class NIC,U,F n
+  class K k
+  class D d
+```
+
+### Capturas que duran días sin llenar el disco
+
+Una captura de larga duración no se hace lanzando `tcpdump` y esperando: se hace con
+**rotación**. `-C` corta por tamaño en megabytes, `-G` corta por tiempo en segundos, y
+`-W` limita cuántos ficheros se conservan antes de empezar a sobrescribir los más
+antiguos. La combinación de los tres es un *buffer* circular: `-G 3600 -W 24` deja
+siempre las últimas 24 horas en ficheros de una hora, con un consumo de disco acotado y
+predecible.
+
+Ese patrón es la base de la captura de contenido completo en un programa de NSM, y su
+límite es el que verás en la clase 043: el disco. Guardar todo el tráfico de un enlace
+saturado durante semanas es inviable, y por eso el monitoreo real combina contenido
+completo de ventana corta con metadatos de retención larga.
+
+### Un apunte de privilegios
+
+Capturar exige privilegios elevados, pero eso no obliga a ejecutar el analizador como
+root. En Linux lo correcto es conceder la capacidad concreta al binario de captura
+(`setcap cap_net_raw,cap_net_admin=eip`), o usar el patrón de Wireshark: `dumpcap`
+privilegiado y la interfaz de análisis sin privilegios. Es el principio de mínimo
+privilegio de la clase 001 aplicado a un caso muy concreto: un disector que procesa
+datos hostiles es una superficie de ataque, y no quieres que corra como root.
+
 ## 📖 Definiciones y características
 
 - **BPF (Berkeley Packet Filter):** lenguaje de filtrado compilado en kernel; muy eficiente porque descarta paquetes antes de copiarlos a espacio de usuario.
@@ -39,6 +111,25 @@ Al finalizar, el alumno podrá:
 - **Ring buffer:** conjunto rotatorio de archivos (`-C` tamaño, `-W` número) que evita llenar el disco.
 - **Primitiva BPF:** unidad básica del filtro: `host`, `net`, `port`, `tcp`, `udp`, `src`, `dst`.
 - **`-n`:** desactiva resolución DNS/puertos; acelera y evita generar tráfico extra durante la captura.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| tcpdump | Capturador de paquetes en línea de comandos, basado en libpcap |
+| BPF | Lenguaje de filtrado compilado y ejecutado en el kernel |
+| Primitiva BPF | Pieza del filtro: tipo (`host`), dirección (`src`) o protocolo (`tcp`) |
+| `proto[off:len]` | Acceso directo a bytes de una cabecera dentro del filtro |
+| Snap length (`-s`) | Bytes que se guardan de cada paquete |
+| `-p` | Desactiva el modo promiscuo (captura solo lo dirigido al host) |
+| `-w` / `-r` | Escribir la captura a fichero / leer un fichero existente |
+| `-C` | Rotación por tamaño de fichero (MB) |
+| `-G` | Rotación por tiempo (segundos) |
+| `-W` | Número máximo de ficheros conservados (buffer circular) |
+| `-n` | No resolver nombres; evita DNS que contamina la propia captura |
+| Descarte (*drop*) | Paquete perdido por saturación del buffer de captura |
+| libpcap | Librería de captura sobre la que se apoyan tcpdump, Wireshark y Zeek |
+| `setcap` | Concede capacidades concretas a un binario sin darle root entero |
 
 ## 🧰 Herramientas y preparación
 

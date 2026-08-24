@@ -32,6 +32,83 @@ Al finalizar, el alumno podrá:
 | 6 | Escaneo agresivo (`-A`) | Todo en una pasada |
 | 7 | De versión a vulnerabilidad (CVE/CPE) | Priorizar hallazgos |
 
+## 🧠 Explicación en profundidad
+
+### Un puerto abierto no es información; un servicio con versión sí lo es
+
+Saber que el 8080 está abierto no permite decidir nada. Saber que ahí corre un *Apache
+Tomcat 9.0.30* sí, porque eso ya se puede cruzar con un catálogo de vulnerabilidades
+conocidas y con la política de parches de la organización. La detección de versión
+(`-sV`) es el paso que convierte un mapa de puertos en un inventario accionable, y su
+mecánica es más sencilla de lo que parece: Nmap se conecta al puerto, **escucha el
+banner** que muchos servicios envían sin que nadie se lo pida, y si eso no basta empieza
+a enviar sondas del fichero `nmap-service-probes`, cada una diseñada para provocar una
+respuesta característica de un protocolo concreto. Después compara la respuesta con
+miles de expresiones regulares hasta encontrar la que encaja.
+
+La `--version-intensity` (0 a 9) controla cuántas de esas sondas se lanzan. Baja
+intensidad significa rápido y silencioso pero con más servicios sin identificar; alta
+intensidad significa preciso pero ruidoso, con muchas conexiones raras que un IDS marca
+sin dificultad. `--version-light` equivale a intensidad 2 y `--version-all` a 9. Y hay
+un detalle que conviene tener presente en un pentest: los banners **mienten con
+frecuencia**, porque endurecer un servidor suele incluir ocultar o falsear la versión.
+Un banner no es prueba; es una hipótesis que hay que confirmar por comportamiento.
+
+```mermaid
+flowchart TD
+  P["Puerto abierto detectado"] --> B{"Envia banner solo?"}
+  B -->|"si"| M["Comparar con la base de firmas"]
+  B -->|"no"| S["Enviar sondas de nmap-service-probes<br/>intensidad 0-9"]
+  S --> M
+  M --> R{"Encaja alguna firma?"}
+  R -->|"si"| ID["Servicio + version + CPE"]
+  R -->|"no"| FP["Huella desconocida<br/>Nmap invita a enviarla al proyecto"]
+  ID --> V["Cruce con CVE por CPE<br/>hipotesis de vulnerabilidad"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef g fill:#f6f8f7,stroke:#9aa7b2,color:#4a5560
+  class P,M,S,ID n
+  class B,R d
+  class FP g
+  class V n
+```
+
+### CPE: el identificador que enlaza tu escaneo con el mundo de las CVE
+
+Cuando Nmap identifica un servicio, además del texto legible emite un **CPE** (*Common
+Platform Enumeration*), un identificador normalizado con la forma
+`cpe:/a:apache:tomcat:9.0.30`. Ese identificador es la pieza que convierte un informe de
+escaneo en algo automatizable, porque las bases de vulnerabilidades —el NVD entre
+ellas— indexan las CVE por CPE. Así, la cadena completa del trabajo real queda cerrada:
+puerto abierto → servicio identificado → CPE → lista de CVE aplicables → priorización
+por explotabilidad e impacto.
+
+Insisto en la palabra *hipótesis*. Que una versión aparezca asociada a una CVE no
+significa que el sistema sea explotable: puede estar parcheado sin cambiar el número de
+versión (algo habitual en los paquetes de las distribuciones, que aplican *backports*),
+puede no tener activo el módulo afectado, o puede tener una mitigación por
+configuración. Confundir "versión vulnerable según el catálogo" con "sistema
+comprometible" es el origen de la mayoría de los falsos positivos de un informe.
+
+### Fingerprinting de OS: adivinar por los detalles que nadie estandarizó
+
+`-O` deduce el sistema operativo aprovechando que los RFC dejan libertad en muchos
+detalles de implementación. Nmap envía una batería de sondas TCP, UDP e ICMP —algunas
+deliberadamente anómalas— y mide una **firma** compuesta por decenas de rasgos: el TTL
+inicial, el tamaño de ventana TCP, qué opciones aparecen y en qué orden, cómo se generan
+los números de secuencia iniciales, cómo responde el sistema a flags imposibles. Cada
+familia de sistemas operativos combina esos rasgos de forma distinta, y la firma
+resultante se compara con la base `nmap-os-db`.
+
+El método exige al menos un puerto abierto y uno cerrado para ser fiable, y por eso su
+salida viene con un porcentaje de confianza. `--osscan-guess` fuerza a Nmap a proponer
+la coincidencia más próxima cuando no hay una exacta, lo que es útil para orientarse
+pero peligroso para afirmar. Dispositivos con pila TCP/IP propia —impresoras, cámaras,
+autómatas industriales, balanceadores— confunden con frecuencia al detector. Y `-A`
+agrupa en una sola bandera `-sV -O --script=default --traceroute`: es cómodo, pero es
+la opción más ruidosa que ofrece Nmap y no debería ser el reflejo automático en un
+entorno donde la discreción importe.
+
 ## 📖 Definiciones y características
 
 - **Detección de versión (`-sV`):** Nmap envía sondas específicas y compara las respuestas con la base `nmap-service-probes` para identificar producto y versión exacta.
@@ -39,6 +116,24 @@ Al finalizar, el alumno podrá:
 - **OS fingerprinting (`-O`):** analiza detalles de la pila TCP/IP (ISN, opciones, tamaño de ventana, TTL) para inferir el sistema operativo.
 - **Intensidad de versión (0–9):** controla cuántas sondas se lanzan; mayor intensidad = más precisión y más ruido.
 - **Fiabilidad de OS:** porcentaje que expresa cuán segura es la coincidencia; por debajo de cierto umbral Nmap muestra varias conjeturas.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| `-sV` | Detección de versión de servicio mediante banners y sondas |
+| Banner | Texto de presentación que muchos servicios envían al conectar |
+| `nmap-service-probes` | Base de sondas y expresiones regulares de identificación |
+| `--version-intensity` | Número de sondas a lanzar (0 = mínimo, 9 = exhaustivo) |
+| CPE | Identificador normalizado de plataforma (`cpe:/a:apache:tomcat:9.0.30`) |
+| NVD | Base de datos nacional de vulnerabilidades; indexa CVE por CPE |
+| Backport | Parche aplicado sin subir el número de versión; falsea el cruce con CVE |
+| `-O` | Detección de sistema operativo por huella de pila TCP/IP |
+| Huella de pila | Conjunto de rasgos de implementación (TTL, ventana, opciones, ISN) |
+| `nmap-os-db` | Base de firmas de sistemas operativos de Nmap |
+| `--osscan-guess` | Propone la coincidencia más próxima cuando no hay una exacta |
+| `-A` | Modo agresivo: versión, OS, scripts por defecto y traceroute |
+| Falso positivo | Hallazgo reportado que no se sostiene al verificarlo |
 
 ## 🧰 Herramientas y preparación
 

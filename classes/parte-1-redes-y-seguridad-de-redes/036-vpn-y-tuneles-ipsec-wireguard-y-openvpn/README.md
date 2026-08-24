@@ -32,6 +32,79 @@ Al finalizar, el alumno podrá:
 | 6 | Enrutamiento y `AllowedIPs`/split tunnel | Qué tráfico va por el túnel |
 | 7 | Verificación y hardening | Confirmar que cifra y es seguro |
 
+## 🧠 Explicación en profundidad
+
+### Un túnel es un paquete dentro de otro paquete
+
+La idea que sostiene toda VPN es la **encapsulación**: coger un paquete IP completo,
+cifrarlo, y meterlo como carga útil dentro de otro paquete IP que viaja por la red
+pública. El paquete exterior lleva las direcciones de los dos extremos del túnel y no
+revela nada de lo que transporta; el interior, con las direcciones reales de origen y
+destino, viaja protegido. Cuando el paquete llega al otro extremo, se descifra y se
+reinyecta como si hubiera nacido en esa red. Eso es lo que crea la ilusión de que dos
+redes separadas por Internet son una sola red privada.
+
+De esa mecánica salen las dos arquitecturas. En **acceso remoto**, un usuario (el
+"guerrero de carretera") monta un túnel hasta la red de su organización y trabaja como
+si estuviera dentro. En **site-to-site**, dos redes enteras se unen a través de un par
+de *gateways* que cifran todo lo que cruza entre ellas, de forma transparente para los
+equipos de cada lado. La diferencia no es de tecnología sino de dónde termina el túnel:
+en un dispositivo del usuario o en la puerta de una red.
+
+```mermaid
+flowchart LR
+  subgraph A["Red A - privada"]
+    H1["Host 10.0.1.5"]
+  end
+  H1 --> G1["Gateway VPN A<br/>cifra y encapsula"]
+  G1 -->|"paquete cifrado por Internet<br/>solo se ven las IP publicas"| G2["Gateway VPN B<br/>descifra y reinyecta"]
+  G2 --> H2["Host 10.0.2.9"]
+  subgraph B["Red B - privada"]
+    H2
+  end
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef g fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class H1,H2 n
+  class G1,G2 g
+```
+
+### Tres tecnologías, tres filosofías
+
+**WireGuard** es la apuesta moderna y su virtud es la simplicidad. Vive en el kernel,
+usa un conjunto **fijo** de primitivas criptográficas actuales (Curve25519,
+ChaCha20-Poly1305, BLAKE2), y su configuración cabe en unas pocas líneas: cada par se
+identifica por su clave pública, exactamente como SSH. Menos código significa menos
+superficie de ataque y menos que auditar, y su rendimiento supera al de las
+alternativas. Su modelo mental clave es `AllowedIPs`, que cumple doble función: define
+qué destinos se enrutan por el túnel y, en recepción, qué IP de origen se aceptan de
+cada par (*cryptokey routing*).
+
+**OpenVPN** es la opción veterana y flexible: corre en espacio de usuario, se apoya en
+TLS y en una **PKI** de certificados, y por eso puede atravesar casi cualquier red
+—incluso disfrazándose de HTTPS sobre el 443— a costa de más configuración y menor
+rendimiento. **IPsec** es el estándar de la industria y el más complejo: no es un
+protocolo sino una suite (IKE negocia las claves; ESP cifra y autentica la carga; AH
+solo autentica), con dos modos —*transporte*, que cifra solo la carga, y *túnel*, que
+cifra el paquete entero— y es lo que hablan de fábrica los equipos de red y los
+cortafuegos corporativos.
+
+### Lo que un túnel cifrado no te da gratis
+
+Montar el túnel es la mitad del trabajo; la otra mitad es asegurarse de que hace lo que
+crees. El error de configuración más frecuente y peligroso es el **split tunneling** mal
+entendido: si solo enrutas por el túnel el rango de la oficina, el resto del tráfico del
+usuario sale por su conexión local sin protección, lo que puede ser aceptable o un
+agujero según el caso —un portátil comprometido con un pie en cada red es un puente—.
+Enrutar *todo* por el túnel (`AllowedIPs = 0.0.0.0/0`) protege pero concentra el tráfico
+y expone la resolución DNS, que hay que forzar también por el túnel para no filtrar por
+fuera qué dominios visita el usuario.
+
+Y una VPN cifra el **transporte**, no valida al usuario ni comprueba el estado del
+dispositivo: es un canal, no un control de acceso. Por eso encaja como una pieza dentro
+del zero trust de la clase 042 y no como su sustituto. Verificar que un túnel realmente
+cifra —capturando en el interfaz físico y confirmando que ahí no se ve el tráfico
+interior en claro— es un hábito que separa "lo configuré" de "funciona".
+
 ## 📖 Definiciones y características
 
 - **Túnel:** encapsulación de paquetes dentro de otros para atravesar una red intermedia, normalmente cifrando la carga.
@@ -40,6 +113,25 @@ Al finalizar, el alumno podrá:
 - **IPsec:** conjunto de protocolos (IKE para negociar claves, ESP para cifrar) estandarizado en RFC 4301; base de la mayoría de VPN site-to-site empresariales.
 - **`AllowedIPs` (WireGuard):** define qué rangos se enrutan por el túnel y qué IP de origen se aceptan del peer; determina el "split tunnel".
 - **PFS (Perfect Forward Secrecy):** propiedad por la que comprometer una clave no revela sesiones pasadas; aportada por el intercambio efímero de claves.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| VPN | Red privada extendida sobre una infraestructura pública mediante cifrado |
+| Túnel | Encapsulación de un paquete dentro de otro para atravesar una red |
+| Acceso remoto | Túnel de un usuario individual hacia la red de la organización |
+| Site-to-site | Túnel entre dos redes completas, gateway a gateway |
+| WireGuard | VPN moderna en kernel, con criptografía fija y configuración mínima |
+| `AllowedIPs` | En WireGuard, destinos enrutados y orígenes aceptados por par |
+| OpenVPN | VPN en espacio de usuario basada en TLS y PKI; muy flexible |
+| IPsec | Suite estándar de VPN: IKE, ESP y AH |
+| IKE | Protocolo de intercambio de claves de IPsec |
+| ESP / AH | Cifrado+autenticación / solo autenticación en IPsec |
+| Modo túnel vs. transporte | Cifrar el paquete entero o solo su carga útil |
+| Split tunneling | Enrutar solo parte del tráfico por el túnel |
+| PKI | Infraestructura de certificados que autentica los extremos |
+| Fuga de DNS | Resolver nombres fuera del túnel, revelando los dominios visitados |
 
 ## 🧰 Herramientas y preparación
 

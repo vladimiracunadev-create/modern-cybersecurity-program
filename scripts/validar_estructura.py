@@ -40,7 +40,10 @@ SECCIONES_PROFUNDAS = [
     "## 🧠 Explicación en profundidad",
     "## 📔 Glosario",
 ]
-PARTES_ESTANDAR_PROFUNDO = ("parte-0-fundamentos-y-prerrequisitos",)
+PARTES_ESTANDAR_PROFUNDO = (
+    "parte-0-fundamentos-y-prerrequisitos",
+    "parte-1-redes-y-seguridad-de-redes",
+)
 
 
 def main() -> int:

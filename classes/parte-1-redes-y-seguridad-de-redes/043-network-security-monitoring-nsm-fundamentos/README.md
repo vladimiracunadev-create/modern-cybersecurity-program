@@ -32,6 +32,71 @@ Al finalizar, el alumno podrá:
 | 6 | Detección por indicadores vs. hunting | Reactivo y proactivo |
 | 7 | Métricas y cobertura | Medir el programa |
 
+## 🧠 Explicación en profundidad
+
+### La premisa que ordena toda la defensa: la prevención falla
+
+El *Network Security Monitoring* parte de una idea de Richard Bejtlich tan sobria como
+poderosa: **la prevención acabará fallando**, así que hay que construir la capacidad de
+*detectar* y *responder* con la misma seriedad con que se construyen los muros. NSM no es
+un producto: es una disciplina de recolectar, mantener y analizar datos de red para
+encontrar al intruso que ya está dentro y reconstruir lo que hizo. Cambia la pregunta de
+"¿cómo impido que entren?" —importante pero insuficiente— por "¿cómo me entero de que
+entraron, y qué evidencia tengo para responder?".
+
+### Los tipos de datos, del más caro al más barato
+
+La columna vertebral de NSM es entender qué datos existen, porque cada uno tiene un
+compromiso distinto entre valor y coste de almacenamiento. El **contenido completo**
+(*full packet capture*) lo guarda todo, byte a byte: es la máxima fidelidad y permite
+extraer cualquier artefacto después, pero es carísimo de almacenar y solo se retiene
+durante ventanas cortas. Los **datos de transacción** —los logs de Zeek de la clase 044—
+resumen cada conexión y cada operación de aplicación en un registro estructurado: son la
+pieza más útil del conjunto, porque conservan el "quién habló con quién, cuándo y qué
+pidió" con un coste de almacenamiento moderado. Los **datos de sesión / flujo** —el
+NetFlow de la clase 045— guardan solo los metadatos de cada conexión (la 5-tupla, bytes,
+duración): baratísimos, y por eso los que se retienen durante meses. Las **alertas** son
+la salida de los IDS de la clase 035. Y los **datos estadísticos** describen la forma
+agregada del tráfico.
+
+```mermaid
+flowchart TD
+  FC["Contenido completo<br/>full packet capture"] --> TX["Datos de transaccion<br/>logs de Zeek"]
+  TX --> SE["Datos de sesion / flujo<br/>NetFlow, IPFIX"]
+  SE --> AL["Alertas<br/>IDS/IPS"]
+  AL --> ST["Datos estadisticos<br/>forma agregada"]
+  FC -. "mas detalle, mas coste, retencion corta" .-> ST
+  SE -. "menos detalle, mas barato, retencion larga" .-> FC
+  classDef alto fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef med fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  class FC alto
+  class TX,SE,AL,ST med
+```
+
+### Dónde poner el sensor decide qué puedes ver
+
+Un programa de NSM vale lo que ve, y lo que ve depende de la **colocación del sensor**.
+El principio es cubrir los puntos de estrangulamiento por los que pasa el tráfico que
+importa: el perímetro (lo que entra y sale hacia Internet), las fronteras entre
+segmentos internos (para ver el movimiento lateral que el perímetro no capta), y los
+enlaces hacia activos críticos. Aquí reaparecen los conceptos de la clase 026: un TAP
+para no perder paquetes, un SPAN cuando no hay más remedio, y el problema del **cifrado**,
+que hoy oculta el contenido de la mayoría del tráfico y empuja el análisis hacia los
+metadatos —con quién, cuándo, cuánto— que TLS no puede esconder.
+
+### Detección e investigación: dos modos de mirar
+
+NSM opera en dos modos complementarios que conviene no confundir. La **detección basada
+en indicadores** es reactiva: reglas, firmas y listas de IOC que disparan cuando aparece
+algo conocido —eficaz contra lo catalogado, ciega ante lo nuevo—. El ***threat hunting***
+es proactivo: partir de una hipótesis ("si hubiera un C2 con *beaconing*, vería conexiones
+periódicas a un mismo destino") y buscarla en los datos aunque ninguna alerta haya
+saltado. Los dos se alimentan del mismo acervo de datos NSM y se necesitan mutuamente: lo
+que un *hunt* descubre se convierte en la firma que automatiza su detección futura.
+**Security Onion** empaqueta todo esto —Suricata, Zeek, almacenamiento y las interfaces de
+análisis— en una distribución lista para desplegar, y es la forma habitual de montar un
+laboratorio de NSM sin integrar cada pieza a mano.
+
 ## 📖 Definiciones y características
 
 - **NSM:** recolección, análisis y escalado de indicaciones y advertencias para detectar y responder a intrusiones; asume que el atacante entrará y busca detectarlo pronto.
@@ -40,6 +105,25 @@ Al finalizar, el alumno podrá:
 - **Transaction data:** registros de protocolo de alto nivel (peticiones HTTP, consultas DNS, handshakes TLS) como los que produce Zeek.
 - **Alert data:** salidas de IDS/IPS (Suricata/Snort) que señalan coincidencias con firmas.
 - **Threat hunting:** búsqueda proactiva de amenazas guiada por hipótesis, sin depender de una alerta previa.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| NSM | Recolección y análisis de datos de red para detectar y responder |
+| Bejtlich | Autor que formalizó la disciplina de NSM |
+| Contenido completo | Captura íntegra de paquetes; máxima fidelidad, alto coste |
+| Datos de transacción | Resumen estructurado por conexión y operación (logs de Zeek) |
+| Datos de sesión / flujo | Metadatos por conexión (5-tupla, bytes, duración); baratos |
+| Alertas | Salida de los IDS/IPS |
+| Datos estadísticos | Descripción agregada de la forma del tráfico |
+| Colocación de sensores | Dónde se observa el tráfico; determina la visibilidad |
+| Punto de estrangulamiento | Enlace por el que pasa el tráfico que interesa vigilar |
+| Detección por indicadores | Reglas y firmas sobre lo conocido; reactiva |
+| Threat hunting | Búsqueda proactiva a partir de hipótesis, sin alerta previa |
+| IOC | *Indicator of Compromise*: dato observable de una intrusión |
+| Security Onion | Distribución que integra Suricata, Zeek y análisis para NSM |
+| Cobertura | Proporción del tráfico y de las técnicas que el programa ve |
 
 ## 🧰 Herramientas y preparación
 

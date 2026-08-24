@@ -32,6 +32,77 @@ Al finalizar, el alumno podrá:
 | 6 | Pivoting multi-salto | Alcanzar redes segmentadas |
 | 7 | Detección defensiva del pivoting | Cerrar el vector |
 
+## 🧠 Explicación en profundidad
+
+### NAT: la traducción que moldea toda la red moderna
+
+**NAT** reescribe direcciones (y a menudo puertos) de los paquetes que cruzan un router,
+y entender sus tres variantes evita mucha confusión. **SNAT** cambia la dirección de
+*origen*: es lo que hace tu router doméstico para que muchos equipos con IP privada
+compartan una IP pública. **DNAT** cambia la de *destino*: es el *port forwarding* que
+publica un servidor interno hacia fuera. Y **PAT** —la forma habitual de SNAT— multiplexa
+por puerto de origen, de modo que el router recuerda en una tabla qué conexión interna
+corresponde a cada puerto reescrito y puede devolver las respuestas al equipo correcto.
+
+Esa tabla de traducción tiene una consecuencia de seguridad que es la base del resto de
+la clase: **desde fuera no se puede iniciar una conexión hacia un equipo tras NAT**,
+porque no hay entrada previa en la tabla que diga a dónde entregarla. El NAT no se
+diseñó como control de seguridad, pero funciona como uno de facto, y por eso el atacante
+que quiere alcanzar una red interna no ataca de fuera hacia dentro: hace que la conexión
+**nazca desde dentro**.
+
+### Pivoting: usar un equipo comprometido como puente
+
+El *pivoting* es exactamente eso. Una vez que se controla un host con un pie en dos
+redes —una alcanzable y otra segmentada—, ese host se usa como trampolín para llegar a
+lo que antes era inaccesible. La herramienta natural es **SSH**, porque sus reenvíos de
+puerto crean túneles sin instalar nada. Hay tres modos y conviene no confundirlos:
+
+- **Local (`-L`)**: abres un puerto en *tu* máquina que sale por el servidor SSH hacia un
+  destino concreto. Sirve para alcanzar *un* servicio interno.
+- **Remoto (`-R`)**: abres un puerto en el *servidor* que vuelve hacia tu máquina. Es el
+  *reverse shell* de los túneles: sirve cuando el equipo interno puede salir hacia ti
+  pero tú no puedes entrar a él.
+- **Dinámico (`-D`)**: conviertes el cliente SSH en un **proxy SOCKS**, un túnel genérico
+  hacia *cualquier* destino que el servidor pueda alcanzar. Es el pivote de propósito
+  general.
+
+```mermaid
+flowchart LR
+  ATK["Atacante"] -->|"SSH -D 1080"| PIV["Host pivote<br/>comprometido<br/>un pie en cada red"]
+  PIV -.->|"alcanza"| INT1["10.10.0.10"]
+  PIV -.->|"alcanza"| INT2["10.10.0.20"]
+  ATK -->|"proxychains nmap"| SOCKS["Proxy SOCKS local :1080"]
+  SOCKS --> PIV
+  classDef a fill:#c0392b,stroke:#7b241c,color:#ffffff
+  classDef p fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  class ATK a
+  class PIV,SOCKS p
+  class INT1,INT2 n
+```
+
+### proxychains, cadenas de saltos y cómo se ve desde el otro lado
+
+**proxychains** intercepta las llamadas de red de una herramienta que no sabe hablar
+SOCKS y las fuerza por el proxy del túnel, de modo que puedes lanzar un `nmap -sT` o un
+cliente cualquiera "a través" del pivote. Hay dos límites que conviene enunciar sin
+adornos: por un túnel SOCKS solo pasa **TCP** con conexión completa —así que nada de SYN
+scan ni de UDP; el escaneo debe ser `-sT` y sin ping (`-Pn`)—, y cada salto añade
+latencia, por lo que una cadena de tres o cuatro pivotes vuelve el escaneo lento y
+frágil. Cuando la profundidad crece, los operadores pasan a frameworks de C2 con
+enrutamiento propio, pero el concepto es el mismo.
+
+Todo esto tiene su reverso defensivo, que es lo que de verdad importa proteger. El
+pivoting deja huellas: conexiones internas que nacen en un host que no debería
+iniciarlas, un servidor de aplicaciones hablando SSH hacia estaciones de trabajo, picos
+de conexiones salientes de larga duración. La defensa no es un único control sino la
+suma de segmentar de verdad (clase 042), monitorizar el tráfico **este-oeste** —el que
+va de host interno a host interno, que el perímetro no ve— y restringir qué equipos
+pueden iniciar conexiones hacia dónde. Un pivote solo funciona si la red interna confía
+en sus propios equipos por el mero hecho de estar dentro, que es precisamente la
+suposición que el zero trust elimina.
+
 ## 📖 Definiciones y características
 
 - **NAT (Network Address Translation):** traduce direcciones entre redes; PAT (overload) multiplexa muchos hosts internos tras una IP pública usando puertos.
@@ -40,6 +111,25 @@ Al finalizar, el alumno podrá:
 - **Proxy SOCKS:** proxy de nivel de sesión, agnóstico al protocolo de aplicación; ideal para túneles genéricos (SOCKS5).
 - **Pivoting:** técnica de usar un host ya controlado como punto de apoyo para acceder a segmentos de red que no son alcanzables directamente desde el atacante.
 - **Túnel SSH dinámico (`-D`):** abre un proxy SOCKS local que reenvía por SSH cualquier conexión al otro extremo.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| NAT | Traducción de direcciones de red al cruzar un router |
+| SNAT | Reescribe la dirección de origen (salida de una red privada) |
+| DNAT | Reescribe la dirección de destino (*port forwarding*) |
+| PAT | SNAT multiplexado por puerto; la forma doméstica habitual |
+| Tabla de traducción | Registro que asocia cada conexión interna con su puerto reescrito |
+| Proxy | Intermediario que reenvía tráfico en nombre de otro |
+| Pivoting | Usar un host comprometido como puente hacia otra red |
+| SSH `-L` (local) | Túnel hacia un servicio interno concreto |
+| SSH `-R` (remoto) | Túnel de vuelta desde el servidor hacia el atacante |
+| SSH `-D` (dinámico) | Convierte el cliente SSH en un proxy SOCKS genérico |
+| SOCKS | Protocolo de proxy genérico; transporta TCP con conexión completa |
+| proxychains | Fuerza el tráfico de una herramienta a través de un proxy |
+| Tráfico este-oeste | Comunicación entre hosts internos; invisible al perímetro |
+| Movimiento lateral | Avance del atacante de un host interno a otro |
 
 ## 🧰 Herramientas y preparación
 

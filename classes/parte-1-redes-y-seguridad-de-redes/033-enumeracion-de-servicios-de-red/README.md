@@ -32,6 +32,70 @@ Al finalizar, el alumno podrá:
 | 6 | SMTP (25) | Enumeración de usuarios |
 | 7 | FTP/LDAP | Accesos anónimos y directorio |
 
+## 🧠 Explicación en profundidad
+
+### Enumerar es distinto de escanear, y es donde se gana el compromiso
+
+El escaneo responde *qué hay*; la enumeración responde *qué me deja ver y hacer eso que
+hay*. Es una diferencia de profundidad, no de herramienta: escanear el 445 te dice que
+hay SMB; enumerarlo te da la lista de comparticiones, los usuarios del dominio, la
+política de contraseñas y a veces un fichero de configuración con credenciales dentro.
+En la práctica profesional, la enumeración es la fase que más determina el resultado de
+un pentest, y la que más se hace mal por prisa.
+
+El método que funciona tiene tres propiedades. Es **exhaustivo**: no se salta un puerto
+raro porque "seguramente no sea nada", porque el servicio olvidado es precisamente el
+que nadie parchea. Es **iterativo**: cada dato encontrado abre una consulta nueva —un
+nombre de usuario lleva a probar acceso, un dominio lleva a una transferencia de zona,
+una versión lleva a un exploit conocido—. Y es **documentado**: cada hallazgo se anota
+con la orden exacta que lo produjo y la marca de tiempo, porque un informe sin
+reproducibilidad no vale nada y porque el cliente puede pedirte que demuestres qué
+hiciste y cuándo.
+
+```mermaid
+flowchart LR
+  E["Escaneo<br/>puertos y versiones"] --> S["Servicio identificado"]
+  S --> Q["Preguntas por servicio<br/>que expone sin autenticar?"]
+  Q --> D["Dato nuevo<br/>usuario, share, dominio, ruta, version"]
+  D -->|"realimenta"| Q
+  D --> R(["Hallazgo documentado<br/>orden exacta + evidencia + hora"])
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef r fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class E,S,Q,D n
+  class R r
+```
+
+### Qué preguntar a cada servicio
+
+Cada protocolo tiene su repertorio de preguntas, y conviene tenerlo interiorizado.
+**SMB** (139/445) es el más generoso en redes Windows: comparticiones accesibles,
+sesiones nulas en sistemas antiguos, usuarios y grupos, política de contraseñas y
+versión del dialecto —si acepta SMBv1, ya tienes un hallazgo por sí solo—. **HTTP/S**
+(80/443) abre la superficie más grande: cabeceras y tecnología del servidor,
+`robots.txt` y ficheros de metadatos, directorios y ficheros por diccionario,
+*virtual hosts* que responden distinto según el `Host`, y el certificado TLS, que suele
+regalar nombres internos en sus *Subject Alternative Names*.
+
+**DNS** (53) dibuja el mapa: registros habituales, y sobre todo la transferencia de zona
+(`AXFR`), que en un servidor mal configurado entrega el listado completo de la
+infraestructura de una vez. **SNMP** (161/udp) es el clásico infravalorado: con la
+comunidad por defecto `public` se obtienen inventario de interfaces, procesos, software
+instalado y a veces configuraciones enteras; con `private`, escritura. **SMTP** (25)
+permite validar usuarios con `VRFY`, `EXPN` o el propio `RCPT TO`. **FTP** (21) se
+comprueba siempre por acceso anónimo. Y **LDAP** (389/636) es, en un dominio, el
+directorio completo si permite consultas anónimas.
+
+### El límite: enumerar no es explotar
+
+Hay una frontera que conviene tener nítida antes de tocar nada. Consultar lo que un
+servicio ofrece sin autenticación es enumeración. Probar credenciales por fuerza bruta,
+escribir en una compartición o disparar un exploit es otra cosa, y necesita estar dentro
+del **alcance autorizado** por escrito. El riesgo no es solo legal: un ataque de
+diccionario contra un directorio activo bloquea cuentas y produce un incidente real
+—llamadas al *service desk*, usuarios sin poder trabajar— que el cliente te va a
+facturar en credibilidad. La regla operativa es sencilla: si una acción puede modificar
+el estado del sistema objetivo, tiene que estar explícitamente permitida.
+
 ## 📖 Definiciones y características
 
 - **Enumeración:** proceso de interactuar con un servicio para extraer información detallada (usuarios, recursos, versiones, configuración) más allá de saber que existe.
@@ -39,6 +103,25 @@ Al finalizar, el alumno podrá:
 - **Transferencia de zona (AXFR):** volcado completo de una zona DNS; si está mal permitida, expone todos los registros.
 - **Community string (SNMP):** "contraseña" en claro (a menudo `public`/`private`) que da acceso de lectura/escritura a la MIB.
 - **VHost (Virtual Host):** varios sitios en una misma IP diferenciados por cabecera `Host`; enumerarlos revela aplicaciones ocultas.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Enumeración | Extraer información detallada de un servicio ya identificado |
+| Sesión nula | Conexión SMB sin credenciales que revela usuarios y recursos |
+| Compartición (*share*) | Recurso de red publicado por SMB |
+| SMBv1 | Dialecto obsoleto e inseguro; su presencia ya es un hallazgo |
+| AXFR | Transferencia de zona DNS; entrega la zona completa |
+| Cadena de comunidad | "Contraseña" de SNMP; `public` y `private` son los valores por defecto |
+| `VRFY` / `EXPN` | Órdenes SMTP que permiten validar o expandir usuarios |
+| FTP anónimo | Acceso sin credenciales con el usuario `anonymous` |
+| LDAP anónimo | Consulta al directorio sin autenticar; expone la estructura del dominio |
+| *Virtual host* | Sitio que responde según la cabecera `Host`; oculta contenido |
+| SAN del certificado | *Subject Alternative Names*; suele filtrar nombres internos |
+| Fuerza bruta | Prueba masiva de credenciales; **fuera** de la enumeración pasiva |
+| Bloqueo de cuentas | Efecto colateral de la fuerza bruta contra un directorio |
+| Alcance autorizado | Conjunto de sistemas y acciones permitidos por escrito |
 
 ## 🧰 Herramientas y preparación
 

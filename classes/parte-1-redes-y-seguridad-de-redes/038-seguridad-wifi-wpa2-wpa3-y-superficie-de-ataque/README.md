@@ -32,6 +32,81 @@ Al finalizar, el alumno podrá:
 | 6 | Deauth y evil twin | Ataques activos |
 | 7 | Contramedidas y PMF | Defensa real |
 
+## 🧠 Explicación en profundidad
+
+### El medio compartido cambia las reglas
+
+En una red cableada, alcanzar el tráfico exige acceso físico al cable o al switch. En
+inalámbrico, el medio es el aire y **cualquiera dentro del alcance recibe todas las
+tramas**, aunque no esté conectado a la red. Esa diferencia es la raíz de toda la
+seguridad WiFi: el cifrado no es un extra, es lo único que impide que el vecino lea tu
+tráfico. Antes de hablar de ataques hay que fijar el vocabulario de 802.11: el **SSID**
+es el nombre de la red; el **BSSID** es la MAC del punto de acceso; y las tramas se
+dividen en tres tipos —*gestión* (asociación, autenticación, *beacons*), *control*
+(ACK, RTS/CTS) y *datos*—. Las tramas de gestión son la superficie de ataque clave,
+porque históricamente viajaban **sin autenticar**.
+
+Para capturar todo eso hace falta **modo monitor**, distinto del promiscuo cableado:
+entrega las tramas 802.11 crudas de todos los tipos, sin estar asociado a ninguna red, y
+requiere una tarjeta y un driver que lo soporten. Sin modo monitor no hay auditoría WiFi
+posible.
+
+### WPA2 y el talón de Aquiles del 4-way handshake
+
+WPA2-PSK protege el tráfico con una clave por sesión, pero esa clave se deriva durante
+un intercambio inicial —el **4-way handshake**— que ocurre cada vez que un cliente se
+asocia. El problema es que ese handshake contiene material suficiente para verificar
+*offline* si una contraseña candidata es correcta. El atacante no necesita estar
+conectado: le basta con **capturar el handshake** y después probar millones de
+contraseñas contra él en su propio equipo, sin volver a tocar la red. Y no tiene que
+esperar a que alguien se conecte: una trama de **deauth** —de gestión, sin autenticar—
+expulsa a un cliente ya asociado y lo obliga a rehacer el handshake al reconectar.
+
+El ataque **PMKID** lo hizo aún más fácil en muchos routers: permite obtener el material
+crackeable directamente del punto de acceso, sin necesidad de un cliente conectado. En
+ambos casos, la fortaleza real de una red WPA2-PSK **no está en el protocolo, sino en la
+contraseña**: una passphrase larga y aleatoria es inviable de romper; una débil cae en
+minutos con un diccionario.
+
+```mermaid
+flowchart TD
+  A["Atacante en modo monitor"] --> C{"Hay un cliente asociado?"}
+  C -->|"si"| D["Enviar deauth<br/>trama de gestion sin autenticar"]
+  D --> H["El cliente rehace el 4-way handshake"]
+  C -->|"no hace falta"| P["Solicitar PMKID al AP"]
+  H --> CAP["Capturar material crackeable"]
+  P --> CAP
+  CAP --> OFF["Crackeo OFFLINE por diccionario<br/>en el equipo del atacante"]
+  OFF --> R{"Passphrase debil?"}
+  R -->|"si"| KO(["Clave obtenida"])
+  R -->|"no, larga y aleatoria"| OK(["Inviable"])
+  classDef a fill:#c0392b,stroke:#7b241c,color:#ffffff
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class A a
+  class D,H,P,CAP,OFF n
+  class C,R d
+  class KO,OK n
+```
+
+### WPA3 y las defensas que sí funcionan
+
+**WPA3** cambia el handshake por **SAE** (*Simultaneous Authentication of Equals*, o
+Dragonfly), y la diferencia es estructural: SAE es un intercambio autenticado por
+contraseña que **no entrega material para crackeo offline**. Aunque el atacante capture
+todo, no puede probar contraseñas contra la captura; cada intento exige interactuar con
+la red, lo que se puede limitar y detectar. WPA3 añade además *forward secrecy* —romper
+una sesión no descubre las anteriores— y cifra incluso las redes abiertas con OWE.
+
+La otra defensa imprescindible es **PMF** (*Protected Management Frames*, 802.11w), que
+autentica las tramas de gestión y con ello **neutraliza el deauth**: sin la posibilidad
+de expulsar clientes a voluntad, buena parte de los ataques activos —incluido el *evil
+twin* que fuerza reconexiones— pierde su palanca. Un **evil twin** es un punto de acceso
+falso que imita el SSID legítimo para que los clientes se asocien a él; combinado con
+deauth para echarlos del bueno, es el vector clásico de robo de credenciales en WiFi. La
+defensa realista combina WPA3 donde el parque de dispositivos lo permita, PMF activado,
+una passphrase fuerte donde aún haya WPA2, y separar la red de invitados de la interna.
+
 ## 📖 Definiciones y características
 
 - **WPA2-PSK:** autenticación con clave precompartida; deriva la clave de sesión mediante un 4-way handshake que puede capturarse y atacarse offline por diccionario.
@@ -40,6 +115,25 @@ Al finalizar, el alumno podrá:
 - **WPA3-SAE (Simultaneous Authentication of Equals):** reemplaza el PSK vulnerable por un intercambio resistente a ataques offline y con forward secrecy.
 - **PMF (Protected Management Frames, 802.11w):** protege tramas de gestión, mitigando ataques de deauth.
 - **Evil twin:** punto de acceso falso que imita a uno legítimo para interceptar clientes.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| SSID | Nombre de la red inalámbrica |
+| BSSID | Dirección MAC del punto de acceso |
+| Tramas de gestión | Asociación, autenticación y *beacons*; superficie de ataque clave |
+| Modo monitor | Captura de tramas 802.11 crudas sin asociarse a la red |
+| WPA2-PSK | Cifrado con clave precompartida; vulnerable a crackeo offline |
+| 4-way handshake | Intercambio que deriva la clave de sesión; capturable |
+| Deauth | Trama de gestión que expulsa a un cliente y fuerza reconexión |
+| PMKID | Material crackeable obtenible del AP sin cliente conectado |
+| Crackeo offline | Prueba de contraseñas contra una captura, sin tocar la red |
+| WPA3-SAE (Dragonfly) | Handshake que no expone material para crackeo offline |
+| *Forward secrecy* | Romper una sesión no compromete las anteriores |
+| PMF (802.11w) | Autenticación de tramas de gestión; neutraliza el deauth |
+| Evil twin | AP falso que imita un SSID legítimo para captar clientes |
+| OWE | Cifrado oportunista para redes abiertas |
 
 ## 🧰 Herramientas y preparación
 
