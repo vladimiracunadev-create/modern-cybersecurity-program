@@ -31,6 +31,45 @@ Al finalizar, el alumno podrá:
 | 6 | Separación por función | Un dominio quemado no tumba toda la operación |
 | 7 | Resiliencia y rotación | Sobrevivir al bloqueo del defensor |
 
+## 🧠 Explicación en profundidad
+
+El servidor desde el que un operador controla sus implantes es, a la vez, lo más valioso y lo más frágil de una operación. Si el defensor lo localiza, cae toda la campaña: identifica los implantes, bloquea el dominio y atribuye. Por eso la infraestructura de C2 no es "un servidor con un panel", sino una **arquitectura por capas** diseñada bajo un principio: que el team server nunca reciba tráfico del objetivo directamente, y que **ninguna pieza quemada tumbe el conjunto**.
+
+### El principio: nada crítico expuesto, todo sacrificable
+
+La regla de oro es separar lo **valioso** (el team server, el cerebro) de lo **desechable** (los redirectores, los dominios). El objetivo solo habla con piezas sacrificables; cuando una se quema, se reemplaza sin tocar el núcleo. Esto invierte la economía del defensor: bloquear un redirector le cuesta trabajo y a ti te cuesta un `terraform apply`.
+
+```mermaid
+flowchart LR
+  IMP["Implante<br/>en la victima"] --> RD1["Redirector<br/>HTTPS (sacrificable)"]
+  RD1 --> TS["Team server<br/>(nunca expuesto)"]
+  IMP2["Implante<br/>largo plazo"] --> RD2["Redirector<br/>DNS (sacrificable)"]
+  RD2 --> TS
+  OP["Operador"] --> TS
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  classDef x fill:#c0392b,stroke:#7b241c,color:#ffffff
+  class RD1,RD2 n
+  class TS,OP d
+  class IMP,IMP2 x
+```
+
+### Redirectores: la capa de sacrificio
+
+Un **redirector** es un proxy (socat, Nginx con `proxy_pass`, Apache `mod_rewrite`) que se sitúa entre el implante y el team server. Hace dos cosas: **reenvía** el tráfico C2 válido al team server y **descarta o desvía** todo lo demás —un analista curioso que navegue al dominio ve una web inocua, no un panel de C2—. Al filtrar por User-Agent, URI o cabeceras esperadas, el redirector convierte el escaneo del defensor en ruido inútil y protege la IP real del núcleo.
+
+### Que el tráfico parezca legítimo: dominios, categorización y perfiles
+
+El sigilo no es solo ocultar *dónde* está el servidor, sino hacer que el tráfico *parezca* rutinario. Tres palancas: **categorizar dominios** (un dominio clasificado como "business" o "health" por los proxies web pasa filtros de reputación); los **malleable profiles**, que definen cómo se ven las peticiones (URIs, headers, jitter) para imitar una app legítima como una API de telemetría; y el **domain fronting**, que usa el SNI de un CDN legítimo para que el destino aparente ser un dominio de confianza —técnica cada vez más limitada por los proveedores—.
+
+### Canales: short-haul y long-haul
+
+No todos los implantes usan el mismo canal. El **short-haul** (HTTPS con check-ins frecuentes) da trabajo interactivo y ágil, pero genera más tráfico. El **long-haul** (DNS o check-ins muy espaciados) es lento pero sigiloso, ideal para la **persistencia**: si el operador pierde el canal rápido, el lento sigue vivo para recuperar el acceso. Combinarlos —un beacon rápido para operar, uno lento de respaldo— equilibra agilidad y supervivencia.
+
+### Separación por función y resiliencia
+
+La lección operativa final es **compartimentar**: infraestructura distinta para *staging* (entrega del payload), *C2 de largo plazo* y *exfiltración*. Así, quemar el dominio de staging no revela el canal de exfiltración ni el de persistencia. A esto se suma un **plan de rotación**: dominios y redirectores de reserva listos para entrar cuando el defensor bloquee los activos. Una operación bien diseñada asume que la parte visible caerá, y se organiza para que caer no signifique perder.
+
 ## 📖 Definiciones y características
 
 - **Team server**: servidor central que gestiona implantes y operadores. Característica: se protege tras redirectores, nunca recibe tráfico del objetivo directamente.
@@ -39,6 +78,27 @@ Al finalizar, el alumno podrá:
 - **Domain fronting**: usar el SNI/host de un CDN legítimo para ocultar el destino real. Característica: cada vez más limitado por los proveedores.
 - **Malleable profile**: configuración que define cómo se ve el tráfico C2 (headers, URIs, jitter). Característica: mimetiza aplicaciones legítimas.
 - **Categorización de dominio**: clasificar un dominio como "business/health" ante proxies web. Característica: evita bloqueos por reputación.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Team server | Servidor central que gestiona implantes y operadores; nunca se expone |
+| Redirector | Proxy sacrificable que reenvía tráfico válido y descarta el resto |
+| Staging | Infraestructura dedicada a la entrega inicial del payload |
+| Long-haul C2 | Canal lento y sigiloso para persistencia |
+| Short-haul C2 | Canal rápido para trabajo interactivo |
+| Domain fronting | Ocultar el destino real tras el SNI de un CDN legítimo |
+| Malleable profile | Configuración que define cómo se ve el tráfico C2 |
+| Categorización de dominio | Clasificar un dominio (business/health) para pasar filtros |
+| SNI | Server Name Indication; el host del handshake TLS |
+| Jitter | Variación aleatoria del intervalo de check-in |
+| Redirector DNS | Redirector que reenvía tráfico C2 sobre consultas DNS |
+| Compartimentación | Separar infraestructura por función para limitar el daño |
+| Rotación | Reemplazar dominios/redirectores quemados por reservas |
+| Quemado (burned) | Activo detectado o bloqueado por el defensor |
+| VPS | Servidor virtual donde se despliega la infraestructura |
+| Beacon | Implante que llama a casa a intervalos configurables |
 
 ## 🧰 Herramientas y preparación
 

@@ -31,6 +31,40 @@ Al finalizar, el alumno podrá:
 | 6 | GoPhish | Ejecución y métricas de campaña |
 | 7 | Ética y salud del objetivo | No dañar a las personas |
 
+## 🧠 Explicación en profundidad
+
+El phishing sigue encabezando los informes de acceso inicial año tras año no porque sea sofisticado, sino porque ataca la capa que ningún parche cubre del todo: la **decisión humana**. Entender por qué funciona —y por qué un defensor lo detecta o no— importa mucho más que memorizar el último truco de entrega, porque los trucos caducan y el principio permanece. Esta clase mira el phishing desde la lógica del que emula a un adversario, siempre dentro de buzones de laboratorio o de un alcance autorizado.
+
+### El pretexto es el verdadero exploit
+
+Antes que ningún fichero, lo que se "programa" es una historia. Un **pretexto** creíble se apoya en tres palancas psicológicas —autoridad ("es de IT"), urgencia ("caduca hoy") y familiaridad ("el portal de RRHH de siempre")— y su credibilidad se construye con **OSINT**: nombres reales, jerga interna, el aspecto del correo corporativo. Por eso el spear phishing dirigido supera con creces al envío masivo: no compite en volumen, compite en verosimilitud. Y por eso mismo la primera línea defensiva no es técnica sino formativa: un usuario que reconoce las palancas resiste aunque el correo pase todos los filtros.
+
+### Reputación: por qué el defensor te cree (o no)
+
+Un correo no se juzga solo por su texto; el receptor evalúa **quién lo envía**. Los tres registros DNS de autenticación deciden esa confianza: **SPF** declara qué servidores pueden enviar en nombre del dominio, **DKIM** firma el mensaje criptográficamente para probar que no se alteró, y **DMARC** le dice al receptor qué hacer si SPF o DKIM fallan. Un dominio recién comprado y sin historial "huele mal" a los filtros por reputación; de ahí el **calentamiento** (enviar tráfico legítimo creciente durante días). En el ejercicio esto se configura bien no para engañar mejor, sino para que la prueba mida la conducta humana y no quede sepultada en la carpeta de spam por un detalle de infraestructura.
+
+### La carrera del Mark-of-the-Web
+
+Cuando Windows descarga un fichero de internet le adhiere una marca, el **Mark-of-the-Web (MOTW)**, que activa advertencias y bloquea macros. Toda la evolución de los formatos de entrega es, en el fondo, una carrera alrededor de esa marca: las macros de Office cayeron cuando Microsoft empezó a bloquearlas por MOTW, y el terreno se desplazó hacia **contenedores** (ISO, VHD) cuyo contenido interno no siempre hereda la marca, hacia **HTML smuggling** —donde el binario se reconstruye en el navegador desde JavaScript y nunca viaja "como fichero" por el proxy— y hacia el abuso de instaladores firmados. Para el defensor, cada técnica deja una señal distinta (un ISO montándose, un `.lnk` lanzando `powershell`), y ahí es donde el conocimiento ofensivo se convierte en detección.
+
+```mermaid
+flowchart TD
+  A["Payload a entregar"] --> B{"¿El defensor<br/>respeta MOTW?"}
+  B -->|"si"| C["Contenedor ISO/VHD<br/>o HTML smuggling"]
+  B -->|"no"| D["Adjunto directo<br/>o macro"]
+  C --> E{"¿Proxy inspecciona<br/>descargas?"}
+  E -->|"si"| F["HTML smuggling<br/>reconstruye en navegador"]
+  E -->|"no"| G["Enlace a contenedor"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class A,C,F,G n
+  class B,D,E d
+```
+
+### Medir sin dañar
+
+El entregable de una campaña no son "víctimas", son **métricas**: tasa de apertura, de clic y de entrega de credenciales. Herramientas como **GoPhish** las capturan de forma controlada. Pero la medición honesta convive con un límite ético estricto: el objetivo es evaluar el proceso, no humillar a personas. Por eso se prohíben pretextos que exploten emociones sensibles (despidos, emergencias familiares), se coordina con la **white cell**, y el cierre no es una lista de "quién picó" sino una fase de concienciación. Un ejercicio de phishing que deja al personal resentido ha fracasado aunque sus números sean altos, porque destruye la colaboración con la defensa que es su verdadero fin.
+
 ## 📖 Definiciones y características
 
 - **Spear phishing (`T1566.001`)**: correo dirigido con adjunto/enlace a personas concretas. Característica: alta tasa de éxito por personalización.
@@ -39,6 +73,27 @@ Al finalizar, el alumno podrá:
 - **HTML smuggling**: reconstruir el payload en el navegador vía JS/Blob para evadir proxies. Característica: el binario no viaja por la red como tal.
 - **SPF/DKIM/DMARC**: mecanismos de autenticación de correo. Característica: bien configurados mejoran la entregabilidad del phishing legítimo del ejercicio.
 - **Landing page**: página que captura credenciales o entrega el payload. Característica: clona un servicio conocido de forma controlada.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Phishing (T1566) | Envío de mensajes engañosos para inducir una acción (clic, credenciales, ejecución) |
+| Spear phishing | Phishing dirigido y personalizado contra personas u organizaciones concretas |
+| Pretexto | Historia que motiva la acción del objetivo; el verdadero "exploit" de la campaña |
+| OSINT | Recogida de información de fuentes públicas para dar verosimilitud al pretexto |
+| SPF | Registro DNS que declara qué servidores pueden enviar correo en nombre del dominio |
+| DKIM | Firma criptográfica del correo que prueba que no se alteró en tránsito |
+| DMARC | Política que indica al receptor qué hacer si SPF o DKIM fallan |
+| Calentamiento de dominio | Enviar tráfico legítimo creciente para construir reputación de envío |
+| Mark-of-the-Web (MOTW) | Marca que Windows pone a ficheros de internet; dispara advertencias y bloqueos |
+| Contenedor (ISO/VHD) | Formato de disco cuyo contenido interno puede no heredar el MOTW |
+| HTML smuggling | Reconstruir el payload en el navegador vía JS/Blob para evadir proxies |
+| LNK | Acceso directo de Windows usado como lanzador dentro de un contenedor |
+| Landing page | Página controlada que captura credenciales o entrega el payload |
+| GoPhish | Plataforma para lanzar y medir campañas de phishing controladas |
+| Tasa de clic | Porcentaje de objetivos que abrieron el enlace; métrica central de la campaña |
+| White cell | Personas informadas que supervisan el ejercicio y protegen a los objetivos |
 
 ## 🧰 Herramientas y preparación
 

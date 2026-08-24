@@ -31,6 +31,58 @@ Al finalizar, el alumno podrá:
 | 6 | Perfiles de tráfico | Mimetizar HTTP legítimo |
 | 7 | Telemetría e IOCs | Cómo detecta el Blue Team cada framework |
 
+## 🧠 Explicación en profundidad
+
+Un framework de C2 es el sistema operativo del Red Team: genera los implantes, gestiona las sesiones y da al operador la consola desde la que trabaja. Aunque hay muchos, todos comparten el **mismo modelo conceptual** —listener, implante, sesión— y se diferencian en licencia, extensibilidad y, sobre todo, en la **telemetría que dejan** para el Blue Team. Entender ese modelo común es lo que permite pasar de una herramienta a otra sin reaprender de cero.
+
+### El modelo común: listener, implante, sesión
+
+Tres piezas explican cualquier C2. El **listener** es el servicio que espera conexiones (HTTP/HTTPS/DNS/mTLS): define el canal de entrada. El **implante** (agente o beacon) es el código que corre en la víctima y "llama a casa". La **sesión** es el control interactivo que el operador obtiene sobre ese implante. Toda operación es, en el fondo, generar un implante que hable con un listener para abrir una sesión.
+
+```mermaid
+flowchart LR
+  subgraph Operador
+    C["Consola del<br/>framework"]
+  end
+  subgraph Servidor
+    L["Listener<br/>HTTPS/DNS/mTLS"]
+  end
+  subgraph Victima
+    A["Implante<br/>(beacon/agente)"]
+  end
+  C --> L
+  A -->|"check-in<br/>+ jitter"| L
+  L -->|"tareas"| A
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class L n
+  class C,A d
+```
+
+### Beacon vs stager: el trade-off de la entrega
+
+Un **stager** es un payload minúsculo cuya única misión es descargar el implante completo; es pequeño (cabe en una macro o un one-liner) pero hace una **petición extra observable** —justo el momento que muchas detecciones cazan—. Un payload **stageless** lleva todo el implante de una vez: más grande y ruidoso en disco, pero sin esa descarga delatora. Elegir entre uno y otro es un cálculo de sigilo según el vector de entrega.
+
+### Los tres frameworks de referencia
+
+- **Cobalt Strike** es el estándar comercial: su implante **Beacon** y los **Malleable C2 profiles** definieron el género. Precisamente por ubicuo, es el más perfilado por los EDR —y su uso pirata es ilegal, por lo que aquí se estudia solo conceptualmente—.
+- **Sliver** (BishopFox, escrito en Go) es open source, multiplataforma y moderno: mTLS por defecto, implantes stageless robustos y una consola cómoda. Es el caballo de batalla gratuito del laboratorio.
+- **Mythic** es un framework **modular** sobre Docker: separa el servidor de los **agentes** (Apollo, Medusa…) y los **C2 profiles**, de modo que se extiende con perfiles y agentes nuevos sin tocar el núcleo.
+
+| Framework | Licencia | Lenguaje | Rasgo distintivo |
+|---|---|---|---|
+| Cobalt Strike | Comercial | Java/C | Beacon + Malleable, muy detectado |
+| Sliver | Open source | Go | mTLS, multiplataforma, fácil de montar |
+| Mythic | Open source | Docker/varios | Modular: agentes y perfiles enchufables |
+
+### Perfiles de tráfico: mimetizar lo normal
+
+El sigilo en la red depende del **C2 profile**: la plantilla que define cómo se ven las peticiones —URIs, cabeceras, cadencia—. Un buen perfil hace que el beacon parezca tráfico de una aplicación corriente (una API de actualizaciones, telemetría de un producto) en lugar de un patrón anómalo. Sliver y Mythic ofrecen equivalentes al Malleable de Cobalt Strike; un perfil por defecto, sin personalizar, es una de las formas más rápidas de que te detecten.
+
+### La otra cara: cada framework deja huella
+
+Ningún C2 es invisible. Cada uno deja **IOCs** característicos: certificados TLS con valores por defecto, tamaños y cadencias de check-in, artefactos en memoria (patrones del Beacon), named pipes con nombres reconocibles. Estudiar el framework desde el lado ofensivo es también aprender **qué telemetría genera**, porque ese conocimiento es exactamente lo que el Blue Team usa para cazarlo —y lo que el purple teaming (Clase 178) convierte en detecciones—.
+
 ## 📖 Definiciones y características
 
 - **Listener**: servicio que espera conexiones de implantes (HTTP/HTTPS/DNS/mTLS). Característica: define el canal de entrada.
@@ -39,6 +91,27 @@ Al finalizar, el alumno podrá:
 - **Beacon (Cobalt Strike)**: implante de referencia con jitter y sleep configurables. Característica: define el estándar que muchos EDR detectan.
 - **C2 profile**: define cómo se ve el tráfico (Sliver/Mythic tienen equivalentes al Malleable de CS). Característica: clave para el sigilo.
 - **Jitter / sleep**: variación aleatoria del intervalo de check-in. Característica: dificulta la detección por periodicidad (beaconing).
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| C2 framework | Plataforma que genera implantes y gestiona sesiones |
+| Listener | Servicio que espera conexiones de implantes |
+| Implante / agente | Código que corre en la víctima y llama a casa |
+| Beacon | Implante que hace check-in a intervalos con jitter |
+| Sesión | Control interactivo del operador sobre un implante |
+| Stager | Payload pequeño que descarga el implante completo |
+| Stageless | Payload que lleva el implante completo de una vez |
+| Cobalt Strike | C2 comercial de referencia; Beacon y Malleable |
+| Sliver | C2 open source en Go, multiplataforma, mTLS |
+| Mythic | C2 modular sobre Docker con agentes y perfiles |
+| C2 profile | Plantilla que define cómo se ve el tráfico C2 |
+| Malleable C2 | Lenguaje de perfiles de tráfico de Cobalt Strike |
+| mTLS | TLS mutuo; ambos extremos se autentican con certificado |
+| Jitter / sleep | Aleatoriedad e intervalo del check-in |
+| Named pipe | Canal IPC de Windows usado por algunos implantes |
+| IOC | Indicador de compromiso que deja el framework |
 
 ## 🧰 Herramientas y preparación
 

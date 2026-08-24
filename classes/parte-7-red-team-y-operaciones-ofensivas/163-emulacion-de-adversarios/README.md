@@ -31,6 +31,51 @@ Al finalizar, el alumno podrá:
 | 6 | Micro-emulaciones (CTID) | Emulaciones atómicas y reutilizables |
 | 7 | Criterios de detección por fase | Convierten la emulación en medición |
 
+## 🧠 Explicación en profundidad
+
+La diferencia entre "hacer hacking" y **emular a un adversario** es la diferencia entre improvisar y seguir un guion basado en inteligencia. La emulación de adversarios toma lo que sabemos de un actor real —APT29, FIN7— y reconstruye su forma de operar de manera controlada, para responder una pregunta muy concreta: *si este actor viniera a por nosotros, ¿lo veríamos?*. No se trata de usar su malware, sino de reproducir su **comportamiento**.
+
+### Emulación, simulación y ataque oportunista
+
+Tres cosas que se confunden y no son lo mismo:
+
+| Enfoque | En qué se basa | Cuándo usarlo |
+|---|---|---|
+| **Emulación** | TTPs de un actor *específico* (CTI) | Hay un modelo de amenaza claro y maduro |
+| **Simulación** | Comportamientos adversariales *genéricos* | Punto de partida, cobertura amplia |
+| **Ataque oportunista** | Lo que el operador sepa hacer | Pentest, no medición de detección |
+
+La emulación es la más realista y la más cara de preparar, porque exige inteligencia sólida. La simulación (por ejemplo con Atomic Red Team) es un buen primer paso cuando el cliente aún no tiene un adversario prioritario.
+
+### La CTI como materia prima
+
+Un plan de emulación **no se inventa**: nace de datos. La fuente son los informes de CTI (Mandiant, CrowdStrike, Microsoft, The DFIR Report), la página del grupo en ATT&CK y la Emulation Library de MITRE. De ahí se extraen los TTPs y —clave— el **orden** en que el actor los encadena. Anclar cada técnica del plan a una fuente evita el pecado de la "emulación de fantasía": reproducir algo que el actor nunca hizo.
+
+```mermaid
+flowchart LR
+  CTI["Informes CTI<br/>+ pagina ATT&CK"] --> EXTRACT["Extraer TTPs<br/>con su ID"]
+  EXTRACT --> ORDER["Ordenar en fases<br/>segun dependencias"]
+  ORDER --> TOOL["Elegir herramienta<br/>por TTP"]
+  TOOL --> CRIT["Definir deteccion<br/>esperada por fase"]
+  CRIT --> RUN["Ejecutar en el lab"]
+  classDef n fill:#eaf3ee,stroke:#2e8b57,color:#12321f
+  classDef d fill:#0b3d2e,stroke:#0b3d2e,color:#ffffff
+  class EXTRACT,ORDER,TOOL n
+  class CTI,RUN d
+```
+
+### Fases: por qué el orden importa
+
+Un plan de emulación no es una bolsa de técnicas: es una **secuencia con dependencias**. No puedes hacer movimiento lateral antes de haber descubierto la red, ni exfiltrar antes de haber recolectado. Estructurar el plan por fases —Initial Access → Discovery → Credential Access → Lateral Movement → Collection → Exfiltration— reproduce el flujo real del actor y, de paso, permite medir en qué fase te detectan (que es exactamente lo que quiere saber la defensa).
+
+### Reproducir el comportamiento, no el binario
+
+Un error peligroso e innecesario es querer usar el malware real del actor. No hace falta: emulas la **acción**, no la muestra. Si APT29 usó un download cradle de PowerShell (`T1059.001`), lo reproduces con un stager de tu C2; si volcó credenciales (`T1003.001`), con un método equivalente en el lab. El comportamiento observable —y por tanto la detección— es el mismo, sin el riesgo de detonar malware real.
+
+### Micro-emulaciones y criterios de detección
+
+El Center for Threat-Informed Defense (CTID) popularizó las **micro-emulaciones**: unidades atómicas y componibles que emulan un comportamiento pequeño y aislado, fáciles de reutilizar entre planes. Sea macro o micro, cada TTP del plan debe llevar su **criterio de detección**: qué evento debería generar y quién debería verlo. Sin ese criterio, la emulación es un ejercicio ofensivo más; con él, es una **medición** de la defensa.
+
 ## 📖 Definiciones y características
 
 - **Adversary emulation**: reproducción fiel del comportamiento de un actor específico basada en CTI. Característica: imita TTPs, no solo objetivos.
@@ -39,6 +84,27 @@ Al finalizar, el alumno podrá:
 - **Emulation Plan**: documento paso a paso que reproduce a un actor. Característica: encadena TTPs con herramientas y comandos.
 - **CTI (Cyber Threat Intelligence)**: información sobre actores, campañas y TTPs. Característica: es la materia prima del plan.
 - **Micro-emulation**: emulación de un comportamiento pequeño y aislado (CTID). Característica: modular y componible.
+
+## 📔 Glosario
+
+| Término | Definición concisa |
+|---------|--------------------|
+| Adversary emulation | Reproducción fiel del comportamiento de un actor real, basada en CTI |
+| Adversary simulation | Uso de comportamientos adversariales genéricos, sin atarse a un actor |
+| TTP | Tácticas, técnicas y procedimientos; la firma comportamental de un actor |
+| CTI | Cyber Threat Intelligence: información sobre actores, campañas y TTPs |
+| Emulation Plan | Documento paso a paso que reproduce a un actor |
+| Emulation Library | Colección pública de planes validados por MITRE/CTID |
+| Micro-emulación | Emulación atómica de un comportamiento aislado y reutilizable |
+| Fase | Etapa del plan que agrupa TTPs con una meta común |
+| Download cradle | Descarga y ejecución en memoria de un payload, típica de PowerShell |
+| Stager | Payload pequeño que descarga y lanza el implante completo |
+| Detección esperada | Evento que un TTP debería generar y quién debería verlo |
+| APT29 | Actor estatal (Cozy Bear) frecuente en planes de emulación |
+| FIN7 | Actor con motivación financiera y TTPs bien documentados |
+| CTID | Center for Threat-Informed Defense, impulsor de las micro-emulaciones |
+| Atomic Red Team | Biblioteca de pruebas atómicas para simular TTPs |
+| Deconfliction | Distinguir la actividad del ejercicio de un incidente real |
 
 ## 🧰 Herramientas y preparación
 
