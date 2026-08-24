@@ -48,6 +48,22 @@ flowchart LR
 
 Las listas y selecciones poseen semántica booleana precisa; los modificadores cambian la comparación y los escapes dependen de la especificación. La validación cubre esquema, conversión, ejecución, positivo conocido, actividad benigna y coste. Estado, autor, fecha, falsos positivos y referencias no son decoración: permiten gobernar la regla durante su ciclo de vida.
 
+### De la hipótesis a la lógica
+
+«Detectar PowerShell» no es una hipótesis: describe una herramienta legítima y produciría ruido. Una formulación defendible podría ser: «un proceso de Office inicia un intérprete con argumentos de descarga en una estación de usuario». De ahí nacen campos esperados —imagen padre, imagen hija, línea de comandos y host— y límites: si el sensor no captura argumentos, la regla no observa la parte decisiva.
+
+En Sigma, selecciones separadas hacen visible el razonamiento. Una selección identifica padres de Office; otra intérpretes; otra términos de red. La `condition` decide si todas son necesarias o si algunas son alternativas. Antes de convertir, se lee como oración booleana y se crean dos eventos mínimos: uno que debe coincidir y otro casi idéntico que no. Esto descubre condiciones demasiado abiertas mejor que mirar YAML.
+
+### Portabilidad real y pruebas
+
+El diagrama muestra una compilación dependiente del entorno. El pipeline traduce nombres canónicos a campos reales y puede añadir condiciones. Un backend quizá sea sensible a mayúsculas, otro trate comodines de forma diferente y otro no soporte una función. Por eso se inspecciona la consulta generada y se ejecuta en la plataforma; una conversión exitosa solo demuestra que se produjo texto válido.
+
+Las pruebas cubren esquema, conversión, positivo, negativos representativos y rendimiento. También se prueba un campo ausente: decidir si no coincide o produce error forma parte del diseño. Regla, pipeline y fixtures se versionan juntos. Cuando cambia el esquema, CI debe señalarlo; cuando cambia el entorno benigno, se ajusta con contexto estrecho y fecha de revisión, sin excluir todo el comportamiento.
+
+### Metadatos que sostienen el ciclo de vida
+
+`status` comunica estabilidad; `date` y `modified` permiten revisar antigüedad; `level` orienta, pero la severidad final depende del activo; `falsepositives` enumera escenarios a investigar, no excepciones automáticas. Las etiquetas ATT&CK justifican relación observable. Una regla retirada conserva motivo y sustituta para que el equipo no repita decisiones ni deje dependencias invisibles.
+
 ## 📔 Glosario
 
 - **Logsource:** categoría, producto y servicio esperados.

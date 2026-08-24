@@ -52,6 +52,22 @@ flowchart LR
 
 Una anomalía no equivale a malicia: puede revelar administración legítima o mala calidad de datos. Se compara con una línea base pertinente y se buscan pruebas que también puedan refutar la intuición. Confirmado, refutado e inconcluso son resultados útiles si conservan consultas, versiones y límites. El producto puede ser incidente, regla, mejora de logging o control preventivo.
 
+### Formular una hipótesis investigable
+
+«Buscar actividad rara» no indica qué observar ni cuándo terminar. En cambio: «una cuenta de backup, que no debería iniciar sesiones interactivas, pudo usar RDP durante la madrugada; deberían existir autenticación remota y procesos ajenos al agente de backup» define entidad, desviación, periodo y evidencia. Antes de consultar se verifica que inventario y logs distingan esas propiedades.
+
+La hipótesis incluye alternativas benignas. Mantenimiento aprobado podría explicar la sesión; una cuenta mal clasificada podría invalidar la línea base. Buscar activamente esas explicaciones reduce sesgo de confirmación. El alcance fija hosts, identidades, días y fuentes, además de un límite de tiempo para que el hunt sea gestionable.
+
+### Ejecutar y documentar pivotes
+
+Primero se mide frecuencia y distribución, luego se pivota por origen, destino, proceso, privilegio y red. Cada consulta responde una pregunta escrita. Si un resultado cambia la hipótesis, se registra; no se reescribe la historia como si siempre se hubiera sabido. Las consultas conservan rango, zona horaria, versión y campos usados.
+
+Confirmado inicia respuesta y alcance. Refutado mejora conocimiento normal. Inconcluso identifica exactamente el dato ausente; no se presenta como «no hay amenaza». El diagrama termina en detección porque una conducta repetible puede convertirse en analítica, pero algunos hallazgos se corrigen mejor con política, segmentación o logging.
+
+### Línea base y rareza
+
+Una línea base no es un promedio universal. Se segmenta por rol de activo, tipo de cuenta, horario y estacionalidad. Un controlador de dominio y una estación de diseño no comparten normalidad. Los outliers ayudan a ordenar investigación, pero popularidad tampoco garantiza legitimidad: una técnica extendida puede volverse común. El hunter combina estadística, conocimiento del sistema y evidencia causal.
+
 ## 📔 Glosario
 
 - **Hipótesis falsable:** afirmación que la evidencia puede refutar.

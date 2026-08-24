@@ -51,6 +51,26 @@ El Common Information Model no modifica mágicamente los datos: define campos y 
 
 El tuning profesional no consiste en añadir exclusiones indefinidamente. Primero se identifica qué hipótesis genera el ruido; luego se incorpora contexto estable —tipo de activo, cuenta de servicio, firma, relación padre-hijo— y se prueban positivos conocidos y actividad benigna. Toda excepción debe tener dueño, razón y fecha de revisión.
 
+### Leer SPL como una explicación comprobable
+
+Considera una búsqueda que pretende encontrar muchos fallos seguidos de un éxito. El filtro inicial selecciona autenticaciones y periodo; la extracción identifica usuario, origen y resultado; la agregación cuenta y ordena; la condición expresa el umbral. Si se agrupa solo por usuario, se mezclan dos orígenes; si se agrupa solo por IP, se mezclan cuentas. La elección de claves forma parte de la hipótesis, no es un detalle de sintaxis.
+
+Antes de optimizar con `tstats`, se ejecuta una versión transparente sobre una muestra pequeña y se inspeccionan eventos. Después se compara el resultado acelerado con esa referencia. Si CIM no mapea `src`, `user` o `action` de una fuente, `tstats` puede devolver menos sin mostrar un error evidente. Esta comparación enseña que rendimiento y corrección son problemas separados.
+
+Para búsquedas programadas se anota: frecuencia, ventana, retraso aceptado y clave de deduplicación. Por ejemplo, ejecutar cada cinco minutos sobre los últimos quince absorbe eventos tardíos, pero puede repetir coincidencias; un identificador estable o una supresión temporal controla duplicados. El diagrama representa esta transformación: cada caja debe poder explicar qué filas entraron, cuáles salieron y por qué. Una detección mantenible permite que otro analista reproduzca esa explicación.
+
+### Campos, agregaciones y contexto
+
+Una búsqueda exploratoria suele comenzar con eventos crudos y `table` para verificar nombres y valores. Después `eval` construye campos derivados con una razón explícita; `stats` reduce filas y puede borrar detalle necesario para investigar. Antes de agregar se decide qué evidencia conservar, por ejemplo lista de hosts, primer y último tiempo y conteo distinto de destinos. `transaction` puede resultar intuitivo, pero consume recursos y no siempre modela bien sesiones; agrupaciones con claves y tiempo suelen ser más transparentes.
+
+Lookups permiten añadir inventario, cuentas de servicio o listas autorizadas. Ese contexto necesita propietario y actualización. Una lookup obsoleta puede silenciar al usuario que dejó de ser administrador. Las macros evitan duplicación, pero esconden lógica si no se versionan y documentan. El alumno debe poder expandirlas y explicar la búsqueda completa.
+
+### Del resultado a una detección operativa
+
+Una consulta que encuentra un ejemplo no está lista para producción. Se ejecuta sobre periodos benignos, se mide cardinalidad, se identifican entidades dominantes y se prueba con un positivo controlado. Luego se define severidad con impacto del activo y confianza de la señal. El notable incluye campos suficientes para que el analista empiece: identidad, host, tiempo, razón y pivotes, no solo el texto de la regla.
+
+El tuning conserva trazabilidad. En vez de excluir `powershell.exe` para una herramienta administrativa, se limita a ruta, firma, cuenta, padre y activo conocidos; se fija vencimiento. Esto enseña una diferencia decisiva: reducir falsos positivos no debe borrar el comportamiento que la hipótesis quería detectar.
+
 ## 📔 Glosario
 
 - **SPL:** lenguaje de búsqueda de Splunk.

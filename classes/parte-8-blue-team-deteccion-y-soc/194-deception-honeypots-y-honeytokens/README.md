@@ -51,6 +51,18 @@ flowchart LR
 
 La interacción baja emula menos y reduce riesgo; la alta ofrece realismo y mayor superficie que contener. Un honeytoken no concede acceso real: usa identidad o secreto sintético, único, revocable y observable. Deben constar propietario, expiración, rotación, privacidad y respuesta. Un señuelo olvidado puede convertirse en vulnerabilidad.
 
+### Diseñar desde una ruta de ataque
+
+Colocar un honeypot al azar produce una herramienta más que mantener. Primero se modela por dónde pasaría un adversario: shares de administración, repositorios de configuración, segmentos con servidores o documentación interna. El señuelo se coloca donde una exploración plausible lo encuentre y una operación normal no necesite tocarlo. Su nombre y contenido deben ser creíbles sin copiar datos reales.
+
+Un honeytoken puede ser una credencial sintética, URL única o registro de base de datos. La señal necesita atribución: cada ubicación usa un token diferente para saber qué fue accedido. La credencial carece de privilegios reales y su uso se observa en un sistema controlado. Si concede acceso para aumentar realismo, deja de ser un simple token y exige un diseño de contención más fuerte.
+
+### Operar el sensor con seguridad
+
+Interacción alta permite observar más conducta, pero el atacante ejecuta código dentro del entorno señuelo. Se segmenta salida, limita recursos, captura telemetría y define restauración. También se revisan privacidad y reglas de monitoreo con responsables internos. La alerta incluye origen, señuelo, método y pasos inmediatos; una señal de alta confianza sin playbook puede desperdiciar su ventaja.
+
+Los accesos legítimos se prueban: scanner, backup, indexador y equipo de infraestructura. Una alerta benigna no invalida deception; indica que la colocación o exclusión necesita ajuste. Rotación y health checks verifican que el token sigue único y el canal de alerta funciona. MITRE Engage ayuda a pensar objetivos y planificación, no autoriza interacción fuera del entorno propio.
+
 ## 📔 Glosario
 
 - **Deception:** diseño deliberado de señuelos observables.

@@ -48,6 +48,22 @@ flowchart LR
 
 El mapeo baja hasta campos concretos: proceso, autenticación, conexión o cambio de servicio. Una celda coloreada debe distinguir dato disponible, analítica diseñada, prueba superada y operación sostenida. Cubrir toda la matriz sin priorización dispersa recursos; se eligen amenazas plausibles, activos críticos y capacidades de respuesta. Toda asociación con una técnica debe explicar qué variante observa y cuáles quedan fuera.
 
+### Una técnica no equivale a una detección
+
+T1021 Remote Services reúne formas distintas de acceso remoto. RDP puede dejar autenticación y creación de sesión; SMB puede mostrar acceso a recursos y creación de servicio; WinRM produce otro recorrido. Una regla para RDP no cubre automáticamente toda T1021. El objeto de cobertura correcto combina procedimiento, activo, componente de datos y analítica.
+
+La construcción empieza por escenarios relevantes. Si administradores usan RDP mediante un jump host, una relación directa desde una estación común tiene valor. Se necesitan origen, destino, cuenta, tipo de sesión, horario y procesos posteriores. ATT&CK ayuda a nombrar la conducta y localizar datos posibles; el entorno decide cuáles existen y qué significa anormal.
+
+### Leer una matriz sin engañarse
+
+Una capa de Navigator necesita una leyenda. Verde puede significar fuente presente, regla desplegada o prueba superada, tres estados muy diferentes. Una evaluación útil distingue: sin dato; dato presente pero no validado; analítica diseñada; prueba positiva y negativa aprobada; operación monitoreada; capacidad degradada. Cada estado enlaza evidencia y fecha.
+
+Las brechas también se describen. Quizá la regla vea Windows administrado pero no Linux, o detecte servicio remoto pero no credenciales reutilizadas. Registrar variantes no observadas evita que la dirección interprete un color como protección total. La prioridad no busca maximizar matriz: relaciona inteligencia de amenazas, exposición, activos críticos y coste de respuesta para decidir qué brecha reducir primero.
+
+### Del mapeo a la validación
+
+Una prueba controlada ejecuta el procedimiento autorizado y observa cuatro capas: se generó el evento, llegó a plataforma, coincidió la analítica y el proceso respondió. Si falla la primera, no se «afina la regla»; se corrige telemetría. Si alerta pero nadie actúa, la cobertura técnica no es capacidad operativa. El mapa cambia solo después de documentar esa cadena.
+
 ## 📔 Glosario
 
 - **Táctica:** objetivo intermedio del adversario.

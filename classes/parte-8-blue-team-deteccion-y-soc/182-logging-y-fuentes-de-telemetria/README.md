@@ -52,6 +52,32 @@ Conviene conservar el evento original y producir, además, una representación n
 
 La retención se decide por caso de uso, riesgo, obligación legal, privacidad y coste. «Guardar todo» puede aumentar exposición y ruido. Para cada fuente se valida completitud, puntualidad, fidelidad de campos, volumen esperado y ausencia de duplicados. Una regla perfecta sobre datos interrumpidos es una detección inexistente.
 
+### Del caso de uso al dato necesario
+
+Para detectar una cuenta que usa RDP por primera vez no basta pedir «logs de Windows». La hipótesis necesita, como mínimo, identidad, host origen, host destino, tipo de inicio de sesión y tiempo; para evaluar rareza necesita además historia suficiente. Ese desglose convierte un deseo genérico en un contrato verificable. Si el origen llega vacío en el 40 % de los eventos, la detección no tiene la misma cobertura aunque el SIEM muestre millones de registros.
+
+La normalización tampoco consiste en renombrar columnas mecánicamente. Dos productos pueden usar `user` para la cuenta solicitante y la cuenta afectada. Antes de mapear se define la semántica y se conserva el campo original. Lo mismo ocurre con una IP detrás de NAT o con un hostname reutilizado: normalizar facilita consultas, pero la identidad de la entidad todavía necesita contexto.
+
+Lee el diagrama de izquierda a derecha y prueba cada frontera. En la fuente se pregunta si el evento se genera; en el colector, si se pierde al desconectarse; en el parser, si los tipos y tiempos son correctos; en almacenamiento, si la retención cubre la investigación; y en detección, si llega antes del SLA. Un control sintético —por ejemplo, un evento benigno emitido cada hora— permite comprobar la cadena completa. Esto transforma «tenemos logging» en una afirmación medible.
+
+### Elegir telemetría por preguntas defensivas
+
+Para investigar ejecución sospechosa se necesitan proceso, línea de comandos, identidad, linaje y, según la pregunta, firma o hash. Para abuso de identidad hacen falta autenticación, resultado, método, origen, recurso y cambios de privilegio. Para posible exfiltración se combinan red, proxy, aplicación y contexto del dato. Esta descomposición permite priorizar: una fuente costosa que no responde un caso relevante no gana valor por producir mucho volumen.
+
+Las fuentes describen perspectivas diferentes. Endpoint asocia una conexión al proceso; red confirma que cruzó un sensor; DNS muestra resolución; identidad explica la sesión; la aplicación registra la acción de negocio. Si dos fuentes discrepan, se revisan relojes, NAT, proxies, campos y alcance de sensores. La discrepancia puede ser precisamente el hallazgo de calidad que faltaba.
+
+### Parsear sin alterar el significado
+
+El parser transforma tipos y extrae campos. Una cadena `10` y un entero `10` no siempre se consultan igual; una fecha sin zona puede desplazarse al normalizar. Los eventos fallidos no deberían desaparecer: pasan a una cola observable con muestra y razón. Se conserva mensaje raw, representación normalizada y versión del pipeline para atribuir un cambio a la fuente, al parser o a la analítica.
+
+Un esquema común tampoco autoriza borrar matices. «Usuario actor» y «usuario objetivo» son relaciones distintas aunque el producto use una sola etiqueta. La semántica se documenta antes del mapeo. Esa disciplina evita correlaciones que parecen correctas porque los campos comparten nombre, pero describen entidades diferentes.
+
+### Retención, protección y calidad operativa
+
+La ventana de investigación guía retención. Conservar autenticaciones siete días no permite reconstruir un acceso inicial descubierto al día treinta; guardar todo indefinidamente aumenta coste y privacidad. Se decide qué queda disponible inmediatamente, qué pasa a archivo y qué se elimina de forma verificable. La única copia tampoco debe quedar bajo control del host investigado: reenvío temprano, separación de cuentas y alertas por silencio protegen la historia.
+
+Completitud mide lo recibido frente a lo esperado; puntualidad, la demora; exactitud, si el campo representa su contrato; consistencia, cambios y duplicados. Un catálogo registra propietario, propósito, campos críticos, tasa, latencia, retención y detecciones dependientes. Cuando la fuente se degrada, el SOC puede nombrar las capacidades afectadas en lugar de decir vagamente que «faltan logs».
+
 ## 📔 Glosario
 
 - **Fuente:** sistema que origina registros.

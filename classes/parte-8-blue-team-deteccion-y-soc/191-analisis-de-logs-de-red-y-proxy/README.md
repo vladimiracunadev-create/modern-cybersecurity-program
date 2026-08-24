@@ -50,6 +50,22 @@ flowchart LR
 
 Zeek relaciona `conn.log`, `dns.log`, `http.log` y `ssl.log` mediante `uid`. TLS expone metadatos, no el contenido cifrado, y nuevas tecnologías pueden reducir lo visible. Huellas y reputación son señales cambiantes, no identidades. Una detección combina novedad, frecuencia, volumen, proceso de origen y rol del activo.
 
+### Qué puede demostrar cada nivel
+
+NetFlow o IPFIX permite responder si existió una relación, su duración y volumen aproximado, pero no qué objeto se transfirió. PCAP puede permitir reconstrucción cuando el protocolo no está cifrado y la captura es completa; también exige espacio, control de acceso y conocimiento del punto de captura. Zeek convierte tráfico en registros semánticos más consultables, aunque su interpretación depende del protocolo observado. El proxy conoce URL y usuario solo cuando la sesión pasa por él y la identidad está bien asociada.
+
+El diagrama no muestra fuentes equivalentes, sino complementarias. Una conexión en `conn.log` comparte `uid` con DNS, HTTP o TLS cuando Zeek pudo analizarlos. Ese vínculo evita correlacionar únicamente por segundos e IP. Aun así, NAT y proxies pueden hacer que la dirección visible represente un intermediario. Para atribuir a proceso o usuario se añade endpoint e identidad.
+
+### Analizar TLS y destinos sin convertir señales en veredictos
+
+En TLS pueden observarse SNI, versión, certificado y parámetros del handshake según versión, sensor y cifrado. Una huella ayuda a agrupar clientes, pero software legítimo puede compartirla y un atacante cambiarla. Un certificado nuevo no implica host malicioso; un CDN puede alojar muchos dominios. Se combinan señales: primera aparición para ese activo, frecuencia, duración, bytes, categoría, proceso y eventos anteriores.
+
+La línea base se segmenta. Un proxy corporativo, un servidor de actualizaciones y una estación no tienen el mismo patrón. También se distingue «nuevo para la organización» de «nuevo para esta entidad». El primero puede detectar infraestructura recién vista; el segundo, una relación inusual aunque el dominio sea común.
+
+### Calidad y límites de captura
+
+Pérdida de paquetes, tráfico asimétrico o reloj incorrecto alteran resultados. Se monitorean drops del sensor, interfaces y desfase temporal. Bajo cifrado se afirma lo observado —una sesión con ciertos metadatos— y no contenido inexistente. Este lenguaje evita que una investigación convierta ausencia de visibilidad en ausencia de actividad.
+
 ## 📔 Glosario
 
 - **Flow:** resumen de una conversación de red.

@@ -52,6 +52,20 @@ flowchart LR
 
 PID y nombre no identifican permanentemente una ejecución: el PID se reutiliza. GUID y tiempo de creación permiten correlacionar mejor; hash y firma aportan contexto, pero tampoco deciden por sí solos. Aislar o terminar procesos modifica producción y puede destruir evidencia. Se define autoridad, reversión y prioridad de adquisición antes de automatizar. osquery consulta estado de flota y Velociraptor recolecta artefactos; complementan la historia retenida por el EDR.
 
+### Reconstruir el árbol de una ejecución
+
+Ante `rundll32.exe`, el nombre no decide. Se localiza la instancia por GUID y tiempo, se examinan padre, línea de comandos, DLL y export, y se siguen archivos, hijos y conexiones. Después se compara ruta, firma, prevalencia y usuario. Un binario firmado puede cargar contenido hostil; un hash desconocido puede ser software interno. La conclusión surge de relaciones, no de una etiqueta aislada.
+
+El árbol puede ser incompleto porque el sensor empezó tarde, perdió eventos o no observa igual procesos protegidos. Se contrasta con Event Logs, filesystem y red. Si un proceso terminó, una consulta actual de osquery no lo devuelve aunque la historia del EDR lo registre. Esta diferencia entre estado presente e historial evita falsos «no ocurrió».
+
+### Alcance desde una entidad
+
+Una investigación pivota en dos direcciones. Hacia atrás pregunta cómo apareció el proceso: documento, servicio, tarea, usuario o descarga. Hacia adelante pregunta qué modificó, con quién habló y si creó persistencia. Luego busca la misma combinación en toda la flota. Hash sirve cuando el objeto es estable; conducta y ruta permiten encontrar variantes. Cada pivote conserva tiempo y criterio para que el alcance no se transforme en búsqueda ilimitada.
+
+### Responder sin perder control
+
+Aislamiento, cuarentena y terminación tienen efectos diferentes. En una estación, aislar pronto puede ser razonable; en un servidor crítico puede interrumpir servicio y cortar la única visibilidad. Antes se define quién autoriza, qué canales quedan permitidos, qué evidencia volátil se recoge, cuánto dura la medida y cómo revertirla. La consola debe registrar operador, motivo y resultado. Una acción rápida sin trazabilidad puede contener hoy y dificultar la investigación mañana.
+
 ## 📔 Glosario
 
 - **EDR:** detección y respuesta con telemetría de endpoint.

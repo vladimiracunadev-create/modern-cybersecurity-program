@@ -53,6 +53,24 @@ flowchart LR
 
 El scorecard separa telemetría, analítica, alerta y respuesta; «detectado/no detectado» oculta dónde falló la cadena. Atomic Red Team ofrece pruebas pequeñas y Apache Caldera (Incubating) orquesta perfiles. Ambos requieren autorización, versiones fijas y cleanup. Cada brecha termina con dueño, plazo y repetición; sin regresión el ejercicio es una foto, no capacidad sostenible.
 
+### Planificar una prueba que responda una pregunta
+
+El equipo elige comportamiento por amenaza y activo, no por herramienta atractiva. Para validar PowerShell iniciado desde Office se define host de laboratorio, procedimiento, evento esperado, regla, alerta y respuesta. Se documentan alcance, ventana, contactos, detención y cleanup. Si la prueba toca producción, el dueño del servicio y la autoridad de cambio deben aprobarla.
+
+Atomic Red Team documenta tests pequeños con prerequisitos y cleanup. Sirve para comprobar un eslabón de forma repetible. Apache Caldera (Incubating) permite orquestar abilities y perfiles de adversario para estudiar secuencias. Una cadena añade realismo y dependencias, pero dificulta localizar fallos; por eso primero se validan unidades y después recorridos.
+
+### Leer el scorecard por capas
+
+Si se ejecutó el procedimiento y no hay evento, la brecha está en sensor o configuración. Si hay dato pero la regla no coincide, está en analítica o mapeo. Si coincide sin generar alerta, está en programación o supresión. Si alerta y el analista no la interpreta, está en contexto, runbook o capacidad. Esta separación evita la respuesta inútil «no detectado».
+
+El resultado registra evidencia de cada capa, tiempos, versión y limitaciones. Una prueba de Windows no acredita Linux; una variante con línea de comandos fija no acredita todas las evasiones. ATT&CK comunica el procedimiento, pero la cobertura conserva granularidad.
+
+### Colaboración y mejora cerrada
+
+El red team explica intención y artefactos sin convertir la sesión en una demostración competitiva. El blue team muestra qué vio y cómo razonó. Juntos modifican dato, regla o proceso y repiten. La discusión se centra en el sistema, no en culpar al analista por no conocer previamente el guion.
+
+Cada brecha tiene dueño, fecha, cambio y test de regresión versionado. En la repetición no basta que aparezca una alerta: se confirma contexto y respuesta. Con el tiempo, la biblioteca de regresiones permite detectar cuándo una actualización rompe capacidad. Ese ciclo —hipótesis, ejecución, evidencia, corrección y repetición— es el resultado profesional de purple teaming.
+
 ## 📔 Glosario
 
 - **Purple teaming:** colaboración para mejorar controles.

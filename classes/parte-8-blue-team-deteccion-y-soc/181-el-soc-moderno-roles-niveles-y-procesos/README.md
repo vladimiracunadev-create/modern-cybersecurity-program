@@ -53,6 +53,38 @@ flowchart LR
 
 El cierre es una producción de conocimiento: debe registrar disposición, evidencia, causa de falsos positivos y acciones posteriores. Las métricas necesitan puntos de inicio y fin explícitos; «MTTR» puede significar tiempo hasta reconocer, contener, recuperar o cerrar. Comparar cifras sin esa definición crea una apariencia de precisión, no aprendizaje.
 
+### Cómo se razona una alerta dentro del SOC
+
+Supongamos que una regla informa que Word inició PowerShell. El L1 no debería limitarse a leer el nombre de ambos procesos. Primero confirma que el evento corresponde al host y periodo correctos, consulta la línea de comandos, la identidad, el documento de origen y la criticidad del equipo. Si Word abrió un script firmado desde una plantilla corporativa, el contexto reduce la sospecha; si descargó contenido y PowerShell se conecta a un dominio nuevo, aumenta. Esta comparación enseña por qué triaje significa **reducir incertidumbre**, no decidir a toda velocidad.
+
+El L2 recibe el caso con ese contexto y formula preguntas de alcance: ¿ocurrió en más equipos?, ¿la cuenta inició sesiones anómalas?, ¿aparecieron archivos o persistencia?, ¿hay comunicación exterior? El L3 o especialista entra cuando hacen falta análisis de memoria, ingeniería inversa o una nueva analítica. La separación no es jerárquica por prestigio: protege la atención de especialistas y evita que investigaciones complejas bloqueen el flujo básico.
+
+El diagrama debe leerse como un circuito, no como una cinta transportadora. La flecha de «lecciones» hacia «analítica» obliga a revisar la regla; también puede revelar que falta telemetría, que un runbook es ambiguo o que el control preventivo debe cambiar. Así, un SOC maduro no se mide por cuántas alertas cierra, sino por cuánto reduce incertidumbre y riesgo con evidencia reproducible.
+
+### Roles que cooperan, no compartimentos aislados
+
+El modelo L1/L2/L3 sirve para ordenar la carga, pero puede volverse contraproducente si crea silos. El analista que hace triaje conoce primero los patrones de ruido; esa información debe llegar al ingeniero de detección. El hunter descubre conductas que todavía no generan alertas; debe transferir consultas, datos requeridos y casos negativos. El respondedor conoce qué evidencia faltó durante la contención; ese aprendizaje debe modificar logging y playbooks. El responsable del SOC mantiene prioridades, capacidad, riesgo y comunicación con el negocio. En equipos pequeños, una persona puede asumir varias funciones, pero las responsabilidades siguen necesitando nombre y tiempo asignado.
+
+Una matriz RACI aclara una dimensión, no toda la operación. Para una alerta de acceso privilegiado, por ejemplo, el analista puede ser responsable del triaje, el incident commander aprobador de la respuesta, IAM consultado para interpretar la cuenta y el dueño del servicio informado. Si dos personas figuran como aprobadoras o ninguna tiene autoridad para aislar un servidor, el problema aparecerá durante la crisis. Por eso la matriz se prueba con escenarios, no se archiva como organigrama.
+
+### Modelo interno, MSSP o híbrido
+
+Un SOC interno conserva contexto, control de prioridades y cercanía con ingeniería, pero exige personal, turnos, formación y continuidad. Un MSSP aporta escala y cobertura compartida; sin acceso a contexto empresarial puede limitarse a reenviar alertas. El modelo híbrido suele repartir monitoreo continuo y conocimiento local, pero necesita un contrato operativo preciso: qué fuentes ve el proveedor, qué enriquece, cuándo llama, quién conserva evidencia, qué ocurre fuera de horario y cómo se mide el servicio.
+
+La decisión no se toma solo por coste de licencias. Se comparan riesgo, tiempo de cobertura, soberanía de datos, dependencia del proveedor, capacidad de respuesta y conocimiento que debe permanecer dentro. Un servicio «24x7» no garantiza respuesta 24x7 si el cliente no tiene autoridad de guardia para contener. Cobertura significa que una señal puede convertirse en decisión durante toda la ventana prometida.
+
+### Herramientas dentro del proceso
+
+El SIEM centraliza y correlaciona telemetría; el EDR conserva contexto y permite acciones en endpoints; una TIP gestiona inteligencia; SOAR coordina tareas; el sistema de casos registra evidencia y decisiones. Ninguna herramienta reemplaza al proceso que la rodea. Si el EDR aísla un host pero el playbook no define autorización ni reversión, existe capacidad técnica sin control operativo. Si el SIEM genera una alerta sin dueño ni criterio de severidad, existe detección sin respuesta.
+
+Runbook y playbook tampoco son sinónimos. «Consultar los inicios de sesión de una cuenta» puede ser un runbook técnico. El playbook de compromiso de identidad decide cuándo ejecutar esa consulta, qué otras fuentes revisar, cuándo revocar sesiones, quién comunica al usuario y qué evidencia conservar. El primero reduce variación al ejecutar; el segundo coordina decisiones bajo incertidumbre.
+
+### Medir sin deformar el comportamiento
+
+MTTD, MTTR y dwell time requieren población y relojes que quizá no estén disponibles. El momento real del compromiso suele conocerse solo después, de modo que MTTD puede medirse para incidentes confirmados y no para amenazas nunca descubiertas. Una media baja puede ocultar pocos casos extremadamente lentos; conviene observar distribución, percentiles y severidad. La tasa de falsos positivos necesita denominador: alertas cerradas como benignas sobre alertas investigadas, con criterios consistentes.
+
+Las métricas deben provocar una conversación y una acción. Si aumenta el tiempo de triaje porque ahora se documenta mejor el alcance, no significa automáticamente deterioro. Si una regla produce miles de cierres repetidos, el problema puede estar en la hipótesis, el dato o el control preventivo. El SOC aprende cuando relaciona la cifra con la causa y asigna una mejora verificable.
+
 ## 📔 Glosario
 
 - **Triaje:** clasificación inicial basada en validez, severidad y contexto.

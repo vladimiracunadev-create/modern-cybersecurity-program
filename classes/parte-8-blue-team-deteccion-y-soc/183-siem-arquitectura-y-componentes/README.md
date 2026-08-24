@@ -55,6 +55,26 @@ EPS mide eventos por segundo, mientras GB/día mide bytes ingeridos; ninguno sus
 
 El enriquecimiento añade valor —criticidad del activo, propietario, identidad o inteligencia—, pero necesita procedencia y caducidad. Una dirección IP puede cambiar de propietario; un usuario puede rotar de función. Finalmente, una coincidencia analítica no es un caso investigado: la capa de alertas debe agrupar, deduplicar y conservar el razonamiento que llevó a una decisión.
 
+### Diseñar desde la investigación, no desde el producto
+
+Imagina una caída de red de veinte minutos. Un agente con buffer local puede reenviar los eventos cuando vuelve la conexión; un envío UDP sin confirmación puede perderlos. Ambos dashboards podrían verse normales después. Por eso la arquitectura se decide preguntando qué pérdida es aceptable, cuánto retraso tolera cada detección y cómo se demuestra la recuperación. La cola no es solo rendimiento: es parte de la integridad operativa.
+
+El dimensionamiento requiere una historia cuantitativa. Si 5.000 endpoints producen un promedio moderado pero una actualización dispara creación de procesos simultánea, el pico puede superar parsers o indexadores. Se miden percentiles y ráfagas, no únicamente promedio diario. Si el sistema aplica backpressure, se observa dónde crece la cola y cuánto tiempo hay antes de agotar disco. Si descarta, se define qué fuente pierde prioridad y quién recibe la alerta.
+
+El diagrama también muestra dos productos diferentes: eventos y casos. Entre ambos deben existir reglas de agrupación. Diez alertas del mismo proceso en un host pueden ser un caso; la misma alerta en cien hosts puede ser una campaña. Esa decisión necesita claves de correlación y ventanas explícitas. Diseñar el SIEM desde preguntas investigativas evita comprar capacidad de ingesta sin capacidad real de explicación.
+
+### Almacenamiento, consulta y seguridad de la plataforma
+
+No toda la telemetría necesita la misma velocidad. Los eventos usados por alertas inmediatas permanecen en una capa de consulta rápida; la historia menos consultada puede pasar a almacenamiento económico y restaurarse cuando una investigación lo requiera. Esta separación obliga a definir cuánto tarda la restauración y qué búsquedas dejan de ser posibles. Una política de treinta días «hot» y un año archivado no equivale a trece meses de búsqueda instantánea.
+
+La arquitectura también debe protegerse. Un SIEM concentra identidades, direcciones, comandos y hallazgos sensibles. El acceso se separa por función; las cuentas de ingesta no administran reglas; los analistas no alteran evidencia original; las acciones administrativas se auditan fuera de la misma frontera cuando sea posible. Alta disponibilidad no solo significa réplicas: se prueban recuperación, consistencia y continuidad de colectores.
+
+### Enriquecimiento con tiempo y procedencia
+
+Agregar «activo crítico» parece simple hasta que el inventario está atrasado. Cada enriquecimiento necesita fuente, momento de consulta y vigencia. Para investigaciones históricas puede ser incorrecto usar el propietario actual de un host sobre un evento de hace seis meses. Cuando el contexto histórico no existe, el analista debe indicarlo. El enriquecimiento ayuda a priorizar, pero nunca debe ocultar el evento de origen ni convertir reputación externa en veredicto.
+
+Una prueba arquitectónica completa inyecta un evento conocido, sigue su recorrido y mide cada etapa: generación, recepción, parseo, indexación, coincidencia, alerta y caso. Si el evento llega pero la alerta no, la falla está después de ingesta; si no llega, revisar la regla desperdicia tiempo. Esa localización sistemática es una competencia central del ingeniero SIEM.
+
 ## 📔 Glosario
 
 - **Forwarder:** agente que transporta eventos desde el origen.

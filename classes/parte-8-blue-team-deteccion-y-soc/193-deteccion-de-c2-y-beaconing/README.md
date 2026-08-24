@@ -51,6 +51,22 @@ flowchart LR
 
 Se combinan regularidad, duración, asimetría de bytes, destino novedoso, rareza organizacional y proceso. Entropía de dominio o huella TLS no prueban C2: CDN, actualizadores y software empresarial producen patrones parecidos. La pregunta es si la relación host-proceso-destino concuerda con su función y con la actividad del endpoint.
 
+### Periodicidad, jitter y ventanas
+
+Un beacon simple contacta cada intervalo. Se ordenan tiempos por entidad y destino, se calculan diferencias y se observa dispersión. Jitter ensancha esa distribución; por ello no se exige igualdad exacta. La ventana debe contener suficientes observaciones, pero una muy larga mezcla cambios de red y periodos de sueño. Frecuencia regular también aparece en monitoreo, NTP y actualizadores, así que el proceso y destino son decisivos.
+
+El tráfico interactivo rompe periodicidad y puede aumentar bytes. Algunos canales usan long polling, servicios cloud o DNS; otros cambian dominios. La detección no debe depender de una única forma. Se construyen analíticas complementarias para relaciones raras persistentes, sesiones de baja transferencia, patrones DNS y conexiones de procesos inesperados.
+
+### Combinar red y endpoint
+
+Una estación que consulta un dominio nuevo y establece TLS cada pocos minutos es un candidato. Si el EDR muestra que la conexión pertenece al navegador iniciado por el usuario, la explicación cambia; si pertenece a un proceso desde una ruta temporal cuyo padre fue Office, la confianza sube. Si el sensor de red está detrás de un proxy, la IP origen puede ser el proxy y la atribución requiere sus logs.
+
+Bytes asimétricos no equivalen a exfiltración: un heartbeat suele enviar poco y recibir poco; una descarga legítima recibe mucho. Se estudian dirección, secuencia y rol del sistema. La reputación externa puede priorizar, pero un dominio sin reputación es desconocido, no benigno, y uno marcado requiere verificar tiempo y procedencia.
+
+### Límites de huellas y entropía
+
+JA3 y otras huellas describen características observadas del cliente, no identidad estable del malware. Bibliotecas compartidas, cambios de TLS y evasión reducen su duración. La entropía de nombres puede señalar generación algorítmica, pero servicios legítimos crean identificadores largos. Estas señales aportan evidencia cuando coinciden con contexto, nunca una sentencia aislada. El resultado investigativo explica qué combinación disparó y qué alternativa benigna fue descartada.
+
 ## 📔 Glosario
 
 - **C2:** canal para controlar un implante.

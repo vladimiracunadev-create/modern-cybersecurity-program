@@ -56,6 +56,20 @@ ECS es un contrato de campos; KQL filtra documentos y EQL expresa secuencias o r
 
 El contenido preconstruido acelera el inicio, no elimina la ingeniería. Cada regla debe comprobar fuente requerida, versión, campos, impacto en rendimiento y supuestos ambientales. Para evaluar plataformas se ejecuta la misma hipótesis con el mismo conjunto de positivos y negativos, y se compara fidelidad, explicación, latencia y coste operativo; contar reglas instaladas no mide cobertura.
 
+### La misma pregunta, dos recorridos técnicos
+
+Supongamos que se quiere detectar la creación inesperada de un usuario local. En Elastic se verifica que el agente recoja el evento, que el pipeline lo convierta a ECS sin perder el mensaje original y que la regla consulte campos realmente poblados. En Wazuh se comprueba recepción, decoder, regla base y regla de correlación. El resultado visible puede parecer igual, pero los puntos de fallo y la evidencia de diagnóstico son distintos.
+
+KQL resulta apropiado para filtrar documentos: «muéstrame eventos con este host y acción». EQL aporta secuencia: «una creación de cuenta seguida de incorporación a un grupo privilegiado en el mismo host». La secuencia necesita entidad, orden y `maxspan`; sin ellos puede unir acciones no relacionadas. En Wazuh, frecuencia y timeframe también exigen saber qué identificador conecta eventos. Aprender el lenguaje significa comprender esas relaciones, no memorizar operadores.
+
+El diagrama paralelo se lee desde la hipótesis común hacia atrás y hacia adelante. Hacia atrás pregunta si cada plataforma posee el dato equivalente; hacia adelante compara qué alerta, contexto y evidencia produce. Una evaluación profesional documenta diferencias de semántica y operación, no declara ganador universal. La elección depende del entorno, equipo, casos de uso y coste total de mantener datos y contenido.
+
+### Operación y mantenimiento
+
+En Elastic, mappings incompatibles pueden rechazar documentos o volver un campo no consultable como se esperaba; los ingest pipelines necesitan métricas de fallos. En Wazuh, una actualización de decoder o ruleset puede cambiar coincidencias. Por eso el laboratorio conserva muestras de eventos y repite pruebas después de actualizar.
+
+FIM tampoco significa que todo cambio sea sospechoso. Se eligen rutas por criticidad, se reconoce el volumen de actualizaciones legítimas y se correlaciona con usuario o proceso cuando la fuente lo permite. La evaluación final compara la capacidad de responder una pregunta y mantenerla durante meses: despliegue de agentes, salud, upgrades, almacenamiento, permisos, pruebas y esfuerzo de triaje forman parte del coste real.
+
 ## 📔 Glosario
 
 - **ECS:** esquema común de eventos de Elastic.

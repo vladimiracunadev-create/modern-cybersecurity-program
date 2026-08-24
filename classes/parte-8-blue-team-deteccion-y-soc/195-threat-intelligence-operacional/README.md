@@ -49,6 +49,26 @@ flowchart LR
 
 Un observable es un hecho técnico; un indicador añade afirmación y contexto; una TTP suele persistir más que una IP. Cada objeto necesita procedencia, confianza, vigencia y retirada. STIX modela objetos y relaciones; TAXII los transporta. TLP orienta compartición, no sustituye clasificación legal ni controles de acceso. Operacionalizar implica probar, medir y retirar indicadores caducos.
 
+### Requerimientos antes que feeds
+
+«Recibir más indicadores» no define éxito. Un requerimiento podría ser: «¿qué infraestructura y procedimientos de campañas contra nuestro sector podemos convertir esta semana en controles para correo e identidad?». Nombra consumidor, decisión y tiempo. A partir de él se eligen fuentes y se descarta información interesante pero no accionable.
+
+Estratégica, operacional y táctica describen alcance y audiencia, no jerarquía de calidad. Dirección puede necesitar tendencia e impacto; respuesta, secuencia de campaña; detección, observables y comportamientos. Un mismo informe se transforma para cada consumidor sin presentar una IP como conclusión estratégica.
+
+### Del observable al indicador
+
+Una IP encontrada en un reporte es un observable. Se vuelve indicador cuando se añade relación, periodo, fuente y confianza: «servidor C2 observado por esta campaña entre estas fechas». La dirección puede ser reasignada; se establece expiración. Un hash es preciso pero cambia con el archivo; una TTP es más durable pero requiere analítica conductual. La pirámide del dolor orienta esa diferencia, no elimina indicadores simples.
+
+La confianza separa credibilidad de fuente y fuerza de la asociación. Dos fuentes pueden repetir el mismo origen y no ser independientes. Se preserva procedencia y se evita incrementar confianza solo por duplicación. Si una observación proviene de análisis interno, se enlaza al caso y a la evidencia permitida.
+
+### STIX, TAXII y TLP sin confusiones
+
+STIX representa objetos como indicator, malware, campaign o attack-pattern y sus relaciones; TAXII define servicios para intercambiarlos. Implementar ambos no garantiza calidad: objetos sin fechas, relaciones o procedencia siguen siendo pobres. TLP indica límites de compartición definidos por FIRST; no reemplaza clasificación contractual, privacidad ni necesidad de conocer.
+
+### Operacionalizar y medir
+
+Antes de bloquear se evalúa colisión con infraestructura compartida y se prueba en modo observación cuando el impacto es alto. En detección se busca retrospectivamente para conocer prevalencia, luego se monitoriza. Cada indicador tiene dueño, primera/última observación, expiración y decisión de renovación. Se mide cuántos productos cambiaron una decisión, generaron hallazgos válidos o redujeron tiempo; contar indicadores ingeridos recompensa volumen, no inteligencia.
+
 ## 📔 Glosario
 
 - **PIR:** requerimiento prioritario de inteligencia.

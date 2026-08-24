@@ -52,6 +52,24 @@ sequenceDiagram
 
 Se correlacionan autenticación, servicio remoto y efecto: archivo escrito, servicio creado, proceso iniciado o conexión posterior. Se compara con grafos de administración permitida, horario, cuenta y criticidad. ATT&CK T1021 agrupa servicios remotos, pero cada subtécnica requiere campos distintos; mapear no reemplaza validar.
 
+### Detectar relaciones, no herramientas
+
+Una administración legítima suele seguir caminos: jump host, cuenta dedicada, ventana y conjunto de destinos. El movimiento lateral rompe o amplía esas relaciones. Una cuenta de soporte que accede desde su bastión a servidores asignados puede ser normal; la misma cuenta desde una estación de usuario hacia un controlador de dominio merece explicación. El grafo usa nodos de identidad y host, y aristas de acceso observadas o autorizadas.
+
+La rareza aislada no basta. Un nuevo servidor produce aristas nuevas; una migración cambia patrones. Se enriquece con criticidad, privilegio, cambio aprobado y actividad posterior. La fuerza de la señal crece cuando a la relación inesperada siguen creación de servicio, tarea, proceso remoto, transferencia de archivo o acceso a credenciales.
+
+### Secuencias por servicio remoto
+
+RDP se investiga con autenticación, tipo de sesión, origen, eventos de sesión y procesos en el destino. SMB puede mostrar acceso a shares administrativos y escritura; si después aparece un servicio, la secuencia es más específica. WinRM y PowerShell remoting dejan artefactos propios del servicio y procesos host. WMI puede ejecutar de manera remota sin seguir la misma ruta. No se busca una secuencia universal: se modela cada procedimiento.
+
+El `sequenceDiagram` enseña que identidad y destino ven fragmentos. El servicio de identidad valida credenciales; el host destino observa sesión y ejecución; red confirma relación. El SIEM une por cuenta, origen, destino y tiempo. Si un eslabón falta, se reduce el nivel de confianza y se declara la limitación.
+
+### Alcance y respuesta
+
+Al confirmar un caso se pregunta dónde más se usaron cuenta, origen y mecanismo, qué credenciales pudieron exponerse y qué destino se volvió nuevo origen. El movimiento lateral forma cadenas; investigar solo el último host subestima alcance. La contención puede revocar sesiones, aislar nodos o limitar rutas, coordinando cuentas compartidas y servicios críticos.
+
+La prueba de detección usa acciones autorizadas y cleanup. Se valida dato, regla, alerta y triaje por subtécnica. Pintar T1021 completa después de probar RDP ocultaría SMB o WinRM sin cobertura; por eso el estado se conserva al nivel realmente demostrado.
+
 ## 📔 Glosario
 
 - **Movimiento lateral:** desplazamiento hacia otros recursos.

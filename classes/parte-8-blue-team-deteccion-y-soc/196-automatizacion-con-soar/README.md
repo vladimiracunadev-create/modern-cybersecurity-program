@@ -52,6 +52,22 @@ stateDiagram-v2
 
 Cada integración usa identidad mínima, secretos rotables y auditoría. Las acciones deben ser idempotentes o reconocer repeticiones; bloqueo y aislamiento necesitan duración, propietario y reversión. La adopción progresa desde enriquecer, luego recomendar y finalmente contener solo escenarios probados. La automatización apoya decisiones de riesgo, no sustituye el juicio.
 
+### Qué problema resuelve realmente SOAR
+
+Una alerta de phishing obliga a consultar reputación, obtener el mensaje, extraer URLs, buscar destinatarios, revisar autenticación, abrir un caso y decidir contención. Sin orquestación, el analista cambia de consola y copia información; aumenta demora y error. SOAR estandariza intercambio y registro. No determina por sí solo que el mensaje sea malicioso: reúne evidencia y ejecuta decisiones previamente autorizadas.
+
+NIST SP 800-61 Rev. 3 sitúa la respuesta dentro de la gestión de riesgo de CSF 2.0. Eso justifica que un playbook incluya impacto, autoridad, comunicación y recuperación, no solo llamadas API. TheHive y Cortex ejemplifican separación entre gestión de casos y analizadores/responders; Shuffle muestra workflows e integraciones. La arquitectura concreta varía, pero el principio es el mismo: el caso conserva contexto y el flujo coordina acciones trazables.
+
+### Diseñar el playbook como estados y contratos
+
+Cada paso declara entrada, salida, error y reintento. «Consultar reputación» recibe un observable validado y devuelve fuente, resultado, hora y confianza; no un booleano sin procedencia. Si la API no responde, el flujo debe distinguir desconocido de benigno. Una acción idempotente comprueba si el indicador ya está bloqueado antes de repetir. Las excepciones llegan a una cola con dueño, no desaparecen.
+
+Los gates humanos se ubican según impacto. Enriquecer puede ser automático; deshabilitar una cuenta privilegiada o aislar un servidor requiere contexto y aprobación. La aprobación muestra evidencia, efecto esperado, duración y rollback. Las credenciales de integraciones aplican mínimo privilegio y separación por acción: una clave de consulta no necesita permiso de bloqueo.
+
+### Adoptar y medir sin automatizar el error
+
+Se empieza con tareas frecuentes, deterministas y reversibles. Primero se observa el playbook en modo recomendación y se compara con decisiones humanas; luego se automatizan pasos de bajo impacto. Se prueban positivo, caso benigno, dato ausente, timeout, duplicado y rollback. Métricas útiles separan tiempo ahorrado, tasa de excepción, fallos de integración, acciones revertidas y calidad del resultado. Reducir clics sin mejorar decisión no demuestra madurez.
+
 ## 📔 Glosario
 
 - **SOAR:** orquestación, automatización y respuesta.

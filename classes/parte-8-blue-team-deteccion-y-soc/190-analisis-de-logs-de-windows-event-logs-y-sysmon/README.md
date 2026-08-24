@@ -49,6 +49,22 @@ flowchart LR
 
 Un 4624 significa autenticación exitosa, no intrusión. Tipo de logon, cuenta, origen y eventos relacionados determinan si representa consola, red, servicio o sesión remota. La autenticación puede aparecer en el controlador y el proceso en el destino. Las configuraciones comunitarias son puntos de partida: cada inclusión y exclusión debe vincularse a un caso, probar volumen y conservar versión y hash para reproducibilidad.
 
+### Interpretar el contexto del evento
+
+Provider y canal delimitan el significado del ID. Un 1 de Sysmon no es el 1 de otro proveedor. En Security, la política efectiva determina si el evento existe y ciertos campos requieren opciones adicionales. Antes de escribir una detección se genera una acción conocida, se observa su XML y se confirma cómo aparecen usuario, equipo y tiempo en esa versión de Windows.
+
+Para RDP, 4624 ofrece un punto de partida, pero se relaciona con tipo de logon, origen, eventos de sesión y actividad posterior. La validación de credenciales puede estar en un controlador de dominio mientras la creación de proceso ocurre en el destino. Se correlaciona por identidad, host y ventana tolerando deriva; no existe un único evento que cuente toda la historia.
+
+### 4688 y Sysmon Event 1
+
+Ambos describen creación de procesos desde perspectivas diferentes. 4688 pertenece a auditoría nativa y su línea de comandos depende de política; Sysmon 1 puede aportar `ProcessGuid`, hashes y padre según configuración. La ausencia de un campo primero obliga a revisar instrumentación. `ProcessGuid` ayuda a unir Event 1 con conexiones o archivos porque un PID puede reutilizarse.
+
+Sysmon Event 3 conecta proceso y red, pero suele filtrarse por volumen; Event 22 asocia DNS a proceso, sin demostrar conexión posterior. Eventos 11 y 13 aportan archivo y registro. Una correlación explica qué eslabón sustenta cada afirmación: consulta, conexión, escritura o persistencia.
+
+### Diseñar la configuración
+
+Incluir todo puede afectar volumen y utilidad; excluir demasiado crea ceguera. Se parte de casos de uso, se mide una muestra y se revisan principales productores. Una exclusión se hace con atributos estrechos y estables, no solo nombre de proceso. Configuración, versión y hash se gestionan como código; después de cambiar se repiten eventos de control. El objetivo no es tener Sysmon instalado, sino saber con precisión qué conducta registra y cuál no.
+
 ## 📔 Glosario
 
 - **Provider:** componente que emite un evento.

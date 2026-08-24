@@ -49,6 +49,24 @@ flowchart LR
 
 Se distinguen hora del evento, registro e ingesta para ordenar eventos tardíos. Una detección ausente se clasifica: fuente no recolectada, parser defectuoso, analítica inexistente, alerta no creada o triaje incorrecto. Esa clasificación asigna una corrección concreta. ATT&CK se aplica después de comprender evidencia. Para comparar cambios se conserva dataset, versión, consulta y resultado esperado.
 
+### Reconstruir sin escribir la conclusión primero
+
+Un caso empieza con preguntas: qué entidad actuó, qué activo fue afectado, qué cambió y qué evidencia falta. La línea de tiempo reúne eventos con procedencia; el grafo conecta usuarios, procesos, archivos, hosts y destinos. Primero se anotan hechos —un evento con campos concretos—; después inferencias —dos eventos probablemente pertenecen a la misma sesión—; por último hipótesis que aún requieren contraste.
+
+Esta separación evita retrospectiva perfecta. Sabiendo el resultado, es fácil interpretar toda anomalía como señal evidente. El analista debe registrar qué podía conocerse en ese momento y qué consulta reveló el siguiente dato. Una explicación alternativa se prueba: una conexión rara puede ser actualización; un proceso firmado puede haber sido abusado. La fuerza del caso surge de corroboración, no de narrativa dramática.
+
+### Usar datasets de forma reproducible
+
+Splunk Boss of the SOC ofrece datasets y preguntas de investigación para practicar; EVTX-ATTACK-SAMPLES reúne eventos útiles para probar artefactos. Son materiales de laboratorio, no prueba de rendimiento universal. Se fija versión o commit, se preserva archivo y hash, se documentan zona horaria, parser y consulta. Si se modifica una regla, se repite exactamente la misma muestra y se comparan positivos, negativos y coste.
+
+ATT&CK se aplica después de entender el comportamiento. Mapear una ejecución a una técnica no añade evidencia; ofrece vocabulario para comunicar. El caso debe explicar qué procedimiento y campos justifican el mapeo y qué partes no se observaron.
+
+### Convertir fallos en mejoras específicas
+
+Una alerta perdida se localiza en la cadena. Si el origen nunca generó dato, se corrige instrumentación; si llegó sin campos, parser; si la consulta no coincidió, lógica; si coincidió pero no creó notable, programación; si el notable fue cerrado mal, runbook o formación. Decir simplemente «el SIEM falló» no asigna una intervención verificable.
+
+El producto final incluye timeline, entidades, hallazgos, incertidumbres, causa del gap, cambio propuesto y prueba de regresión. Un buen caso enseña tanto por qué se detectó como por qué pudo no detectarse.
+
 ## 📔 Glosario
 
 - **Hecho:** observación directamente respaldada.

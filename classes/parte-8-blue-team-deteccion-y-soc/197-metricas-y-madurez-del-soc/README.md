@@ -49,6 +49,24 @@ flowchart LR
 
 MTTD y MTTR requieren inicio, fin, población y zona horaria. El promedio oculta colas largas; mediana y percentiles muestran distribución. Los incidentes nunca detectados no entran por sí solos en MTTD. Precisión y recall necesitan una verdad de referencia que suele ser incompleta. «Cobertura ATT&CK» debe expresar estados verificables, no porcentaje de celdas. La madurez se demuestra con dueños, pruebas, calidad y ciclos de mejora.
 
+### Construir una medida desde una decisión
+
+NIST SP 800-55 Vol. 2 propone desarrollar un programa de medición ligado a objetivos de seguridad. Aplicado al SOC, si el objetivo es reducir exposición de activos críticos, la pregunta puede ser cuánto tarda la contención de incidentes confirmados de severidad alta. Se define inicio —por ejemplo, confirmación— y fin —aislamiento verificado—, población, exclusiones, fuente y periodicidad. Solo entonces existe una medida comparable.
+
+MTTR es ambiguo porque la R puede significar reconocer, responder, remediar o recuperar. Dos equipos pueden publicar «dos horas» midiendo intervalos distintos. La clase exige escribir la fórmula con timestamps concretos. También se presentan mediana y percentiles: un promedio de una hora puede ocultar algunos incidentes de doce horas. Segmentar por severidad y tipo evita comparar phishing simple con ransomware extendido.
+
+### Calidad de detección sin denominadores engañosos
+
+La precisión se aproxima con verdaderos positivos entre alertas clasificadas como positivas, pero las disposiciones de analistas pueden contener error. Recall exige conocer positivos que la detección perdió, algo que se estima mediante incidentes retrospectivos, ejercicios o datasets controlados. Contar «falsos positivos» sin denominador castiga reglas de alto volumen aunque su proporción sea razonable. Tampoco toda alerta benigna es inútil: puede identificar política débil.
+
+MTTD sufre sesgo de selección: solo incluye incidentes descubiertos y cuyo inicio pudo estimarse. Dwell time reportado externamente suele usar otra población. Por eso se documentan límites y no se transforma una métrica en promesa universal.
+
+### Madurez y cobertura como evidencia
+
+SOC-CMM puede ordenar conversaciones de madurez, pero una puntuación necesita evidencia: roles, pruebas, calidad de datos, revisión de reglas, ejercicios y acciones cerradas. ATT&CK Navigator visualiza, no certifica. La cobertura se expresa por procedimiento, activo, dato, analítica, prueba y estado operativo.
+
+Una métrica madura tiene dueño y respuesta prevista. Si el percentil 90 de triaje empeora, se analiza cola, complejidad y datos; no se ordena «cerrar más rápido». Si un objetivo incentiva cierres prematuros, se combina con reapertura, calidad y recurrencia. Medir sirve para decidir una intervención y comprobar su efecto, no para producir una cifra favorable.
+
 ## 📔 Glosario
 
 - **Medida:** valor obtenido mediante una regla definida.
