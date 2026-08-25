@@ -160,13 +160,23 @@ jobs:
           # del bytecode párrafos completos de una muestra de clases; con el
           # catálogo resumido de la 1.0.0 este paso falla.
           python scripts/verificar_bundle.py "$BUNDLE"
-          # Los diagramas no viajan en el bundle JS sino como recursos Android
-          # (Metro los empaqueta en res/drawable*), así que se cuentan aparte:
-          # el programa tiene 360 y la app no debe salir sin ellos.
+          # Los diagramas no viajan en el bundle JS sino como recursos Android, y
+          # hay que contarlos allí donde el APK los deje: en un build de release
+          # el plugin de Android renombra los recursos y puede convertirlos a
+          # WebP, así que buscarlos por 'res/drawable*/*.png' da cero aunque
+          # estén todos (nos pasó al publicar la 1.1.0). Se cuenta por extensión
+          # en todo el paquete.
           DIAGRAMAS=$(ls mobile/assets/diagramas/*.png | wc -l)
-          EN_APK=$(unzip -l "$APK" | grep -cE 'res/drawable[^/]*/.*\.png' || true)
+          EN_APK=$(unzip -l "$APK" | grep -cE '\.(png|webp)$' || true)
           echo "Diagramas en el repositorio: $DIAGRAMAS · imágenes en el APK: $EN_APK"
-          test "$EN_APK" -ge "$DIAGRAMAS"
+          if [ "$EN_APK" -lt "$DIAGRAMAS" ]; then
+            echo "::error::El APK lleva $EN_APK imágenes y el curso tiene $DIAGRAMAS diagramas."
+            echo "Contenido del APK (primeras rutas de imagen):"
+            unzip -l "$APK" | grep -iE '\.(png|webp)$' | head -20
+            echo "Directorios de primer nivel:"
+            unzip -l "$APK" | awk '{print $4}' | grep -oE '^[^/]+/' | sort -u | head
+            exit 1
+          fi
           echo "VERIFICADO: los $DIAGRAMAS diagramas viajan dentro del APK."
 
       - name: Generar SHA256SUMS
