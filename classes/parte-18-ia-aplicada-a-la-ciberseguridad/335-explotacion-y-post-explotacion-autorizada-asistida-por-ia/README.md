@@ -37,6 +37,33 @@ Al finalizar, el alumno podrá:
 | 4 | Post-explotación con límites | Prueba de impacto sin causar daño ni tocar datos reales. |
 | 5 | Reproducibilidad | Cada paso debe poder repetirse manualmente. |
 
+## 🧠 Explicación en profundidad
+
+La explotación asistida aumenta velocidad y riesgo de daño. Se exige prueba mínima, aprobación por etapa, límites de efecto, deconfliction y cleanup. La capacidad de generar un payload no constituye autorización para ejecutarlo.
+
+```mermaid
+flowchart LR
+  A["Hallazgo"] --> B["Aprobación"] --> C["Prueba mínima"] --> D["Limpieza"]
+```
+
+El diagrama separa lenguaje de autoridad. El modelo puede proponer; la política determina si la operación pertenece al alcance; la herramienta produce evidencia; y una persona o control determinista decide transiciones de alto impacto. Se registran prompt relevante, parámetros validados, versión, salida, aprobador y cleanup sin almacenar secretos innecesarios.
+
+### Caso razonado
+
+El objetivo se demuestra con lectura de un marcador. El agente no descarga datos reales ni busca persistencia.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Proof of impact | Evidencia mínima suficiente del efecto autorizado. |
+| Guardrail | Capa que reduce una capacidad o detecta su uso; no garantía absoluta. |
+| Audit trail | Registro ordenado de solicitudes, decisiones, ejecuciones y resultados. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando reproduce el flujo completo, puede atribuir cada acción, evita que texto no confiable otorgue autoridad y explica qué control contiene un fallo del modelo.
+
 ## 📖 Definiciones y características
 
 **Supervisión humana (human-in-the-loop)**

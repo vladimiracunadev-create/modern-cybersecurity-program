@@ -31,6 +31,33 @@ Al finalizar, el alumno podrá:
 | 4 | Audiencias del informe | Ejecutivo vs técnico (ver clase 085). |
 | 5 | Plantillas y consistencia | Informes homogéneos y auditables. |
 
+## 🧠 Explicación en profundidad
+
+Generar informes exige separar hechos, inferencias y redacción. La IA transforma evidencia sanitizada bajo una plantilla; el revisor valida cada hallazgo, severidad, alcance y recomendación antes de publicar.
+
+```mermaid
+flowchart LR
+  A["Evidencia"] --> B["Borrador"] --> C["Revisión"] --> D["Publicación"]
+```
+
+El diagrama separa lenguaje de autoridad. El modelo puede proponer; la política determina si la operación pertenece al alcance; la herramienta produce evidencia; y una persona o control determinista decide transiciones de alto impacto. Se registran prompt relevante, parámetros validados, versión, salida, aprobador y cleanup sin almacenar secretos innecesarios.
+
+### Caso razonado
+
+El borrador afirma exfiltración donde solo hubo acceso. La revisión reduce el lenguaje al efecto demostrado.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Provenance de informe | Relación entre afirmación, fuente, transformación y aprobador. |
+| Guardrail | Capa que reduce una capacidad o detecta su uso; no garantía absoluta. |
+| Audit trail | Registro ordenado de solicitudes, decisiones, ejecuciones y resultados. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando reproduce el flujo completo, puede atribuir cada acción, evita que texto no confiable otorgue autoridad y explica qué control contiene un fallo del modelo.
+
 ## 📖 Definiciones y características
 
 **Borrador asistido**

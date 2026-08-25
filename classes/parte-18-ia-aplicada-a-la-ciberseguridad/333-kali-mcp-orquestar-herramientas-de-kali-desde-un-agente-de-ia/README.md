@@ -40,6 +40,33 @@ Al finalizar, el alumno podrá:
 | 5 | Cierre e informe (`/kali-finish`) | Consolida hallazgos en un reporte. |
 | 6 | Controles de seguridad | Aislamiento, aprobación y logs de cada acción. |
 
+## 🧠 Explicación en profundidad
+
+Orquestar Kali concentra autoridad: parámetros generados pueden escanear, modificar o exfiltrar. La arquitectura limita comandos, destinos, credenciales, red, tiempo y salida; un contenedor no basta si posee red o sockets privilegiados.
+
+```mermaid
+flowchart LR
+  A["Solicitud"] --> B["Política"] --> C["Kali aislado"] --> D["Evidencia"]
+```
+
+El diagrama separa lenguaje de autoridad. El modelo puede proponer; la política determina si la operación pertenece al alcance; la herramienta produce evidencia; y una persona o control determinista decide transiciones de alto impacto. Se registran prompt relevante, parámetros validados, versión, salida, aprobador y cleanup sin almacenar secretos innecesarios.
+
+### Caso razonado
+
+El agente propone un rango fuera del contrato. El broker rechaza el destino antes de que la herramienta lo reciba.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Broker de herramientas | Capa que valida y media cada ejecución. |
+| Guardrail | Capa que reduce una capacidad o detecta su uso; no garantía absoluta. |
+| Audit trail | Registro ordenado de solicitudes, decisiones, ejecuciones y resultados. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando reproduce el flujo completo, puede atribuir cada acción, evita que texto no confiable otorgue autoridad y explica qué control contiene un fallo del modelo.
+
 ## 📖 Definiciones y características
 
 **kali-mcp**

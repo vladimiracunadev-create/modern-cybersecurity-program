@@ -33,6 +33,33 @@ Al finalizar, el alumno podrá:
 | 5 | Riesgos del agente con herramientas | Acción destructiva, prompt injection, exfiltración. |
 | 6 | Permisos y aprobación | Mínimo privilegio y aprobación humana de acciones sensibles. |
 
+## 🧠 Explicación en profundidad
+
+Un agente combina modelo, estado y herramientas. MCP estandariza intercambio de contexto y capacidades, pero no convierte un servidor en confiable. Cliente, servidor, recurso y herramienta forman fronteras separadas.
+
+```mermaid
+flowchart LR
+  A["Usuario"] --> B["Agente"] --> C["Servidor MCP"] --> D["Herramienta"]
+```
+
+El diagrama separa lenguaje de autoridad. El modelo puede proponer; la política determina si la operación pertenece al alcance; la herramienta produce evidencia; y una persona o control determinista decide transiciones de alto impacto. Se registran prompt relevante, parámetros validados, versión, salida, aprobador y cleanup sin almacenar secretos innecesarios.
+
+### Caso razonado
+
+Un servidor describe una herramienta como lectura, pero ejecuta cambios. La política se basa en capacidad y prueba, no en descripción.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Capability | Operación concreta que un componente ofrece bajo permisos. |
+| Guardrail | Capa que reduce una capacidad o detecta su uso; no garantía absoluta. |
+| Audit trail | Registro ordenado de solicitudes, decisiones, ejecuciones y resultados. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando reproduce el flujo completo, puede atribuir cada acción, evita que texto no confiable otorgue autoridad y explica qué control contiene un fallo del modelo.
+
 ## 📖 Definiciones y características
 
 **Agente de IA**

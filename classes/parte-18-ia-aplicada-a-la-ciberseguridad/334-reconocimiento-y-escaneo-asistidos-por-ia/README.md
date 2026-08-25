@@ -35,6 +35,33 @@ Al finalizar, el alumno podrá:
 | 4 | Validación de resultados | Contrastar el resumen de la IA con la salida real. |
 | 5 | Alcance y ritmo | Evitar tocar lo no autorizado o saturar la red. |
 
+## 🧠 Explicación en profundidad
+
+La IA puede ordenar inventario y sugerir siguientes pruebas; no amplía alcance ni valida banners. Cada comando se deriva de una pregunta, pasa por política y produce artefactos reproducibles.
+
+```mermaid
+flowchart LR
+  A["Alcance"] --> B["Plan"] --> C["Escaneo"] --> D["Triage"]
+```
+
+El diagrama separa lenguaje de autoridad. El modelo puede proponer; la política determina si la operación pertenece al alcance; la herramienta produce evidencia; y una persona o control determinista decide transiciones de alto impacto. Se registran prompt relevante, parámetros validados, versión, salida, aprobador y cleanup sin almacenar secretos innecesarios.
+
+### Caso razonado
+
+Nmap muestra versión probable. El agente la trata como hipótesis y verifica en fuente y configuración antes de asociar vulnerabilidad.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Plan de colección | Conjunto acotado de observaciones ligado a una pregunta. |
+| Guardrail | Capa que reduce una capacidad o detecta su uso; no garantía absoluta. |
+| Audit trail | Registro ordenado de solicitudes, decisiones, ejecuciones y resultados. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando reproduce el flujo completo, puede atribuir cada acción, evita que texto no confiable otorgue autoridad y explica qué control contiene un fallo del modelo.
+
 ## 📖 Definiciones y características
 
 **Reconocimiento pasivo**

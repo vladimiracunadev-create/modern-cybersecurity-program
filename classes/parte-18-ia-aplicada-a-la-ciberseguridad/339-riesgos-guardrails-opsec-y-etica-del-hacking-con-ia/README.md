@@ -33,6 +33,33 @@ Al finalizar, el alumno podrá:
 | 5 | OPSEC del uso de IA | Modelo local vs nube, qué entra al contexto. |
 | 6 | Marco legal y responsabilidad | La IA no diluye tu responsabilidad ni la autorización. |
 
+## 🧠 Explicación en profundidad
+
+Los guardrails son capas falibles: política, permisos, aislamiento, aprobación, límites, logging y respuesta. Una negativa del modelo no es frontera; una herramienta sin privilegio sí reduce capacidad.
+
+```mermaid
+flowchart LR
+  A["Intención"] --> B["Política"] --> C["Capacidad"] --> D["Auditoría"]
+```
+
+El diagrama separa lenguaje de autoridad. El modelo puede proponer; la política determina si la operación pertenece al alcance; la herramienta produce evidencia; y una persona o control determinista decide transiciones de alto impacto. Se registran prompt relevante, parámetros validados, versión, salida, aprobador y cleanup sin almacenar secretos innecesarios.
+
+### Caso razonado
+
+Una inyección logra que el modelo solicite un secreto, pero el broker no expone variables y registra el intento.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Fail closed | Comportamiento que niega la operación cuando falta validación. |
+| Guardrail | Capa que reduce una capacidad o detecta su uso; no garantía absoluta. |
+| Audit trail | Registro ordenado de solicitudes, decisiones, ejecuciones y resultados. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando reproduce el flujo completo, puede atribuir cada acción, evita que texto no confiable otorgue autoridad y explica qué control contiene un fallo del modelo.
+
 ## 📖 Definiciones y características
 
 **Prompt injection**

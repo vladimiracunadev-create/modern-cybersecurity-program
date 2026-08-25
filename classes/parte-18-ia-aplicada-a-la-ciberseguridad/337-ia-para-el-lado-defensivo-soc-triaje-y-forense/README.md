@@ -31,6 +31,33 @@ Al finalizar, el alumno podrá:
 | 4 | Analista en el bucle | Escalar/cerrar es decisión humana. |
 | 5 | Apoyo forense | Hipótesis y resúmenes, nunca en lugar de la evidencia. |
 
+## 🧠 Explicación en profundidad
+
+En SOC y forense, el modelo ayuda a priorizar y resumir, pero la cadena de evidencia permanece fuera del prompt. Las salidas citan eventos, preservan originales y permiten revisión humana antes de contención.
+
+```mermaid
+flowchart LR
+  A["Evento"] --> B["Enriquecimiento"] --> C["Analista"] --> D["Respuesta"]
+```
+
+El diagrama separa lenguaje de autoridad. El modelo puede proponer; la política determina si la operación pertenece al alcance; la herramienta produce evidencia; y una persona o control determinista decide transiciones de alto impacto. Se registran prompt relevante, parámetros validados, versión, salida, aprobador y cleanup sin almacenar secretos innecesarios.
+
+### Caso razonado
+
+El resumen omite una cuenta afectada. La interfaz conserva consulta y filas fuente, y el analista corrige el alcance.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Evidence pointer | Referencia estable al artefacto original que sustenta una frase. |
+| Guardrail | Capa que reduce una capacidad o detecta su uso; no garantía absoluta. |
+| Audit trail | Registro ordenado de solicitudes, decisiones, ejecuciones y resultados. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando reproduce el flujo completo, puede atribuir cada acción, evita que texto no confiable otorgue autoridad y explica qué control contiene un fallo del modelo.
+
 ## 📖 Definiciones y características
 
 **Triaje asistido**

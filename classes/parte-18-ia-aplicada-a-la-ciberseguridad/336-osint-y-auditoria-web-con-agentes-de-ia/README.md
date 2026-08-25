@@ -34,6 +34,33 @@ Al finalizar, el alumno podrá:
 | 4 | Falsos positivos | Los escáneres (y la IA) sobre-reportan; hay que validar. |
 | 5 | Síntesis de evidencia | Convertir ruido en hallazgos accionables. |
 
+## 🧠 Explicación en profundidad
+
+Un agente OSINT puede propagar homónimos y una auditoría web puede seguir enlaces fuera de alcance. Las fuentes conservan procedencia, las entidades mantienen alternativas y cada navegación valida dominio y método.
+
+```mermaid
+flowchart LR
+  A["Pregunta"] --> B["Fuentes"] --> C["Correlación"] --> D["Informe"]
+```
+
+El diagrama separa lenguaje de autoridad. El modelo puede proponer; la política determina si la operación pertenece al alcance; la herramienta produce evidencia; y una persona o control determinista decide transiciones de alto impacto. Se registran prompt relevante, parámetros validados, versión, salida, aprobador y cleanup sin almacenar secretos innecesarios.
+
+### Caso razonado
+
+Dos perfiles comparten alias. El agente mantiene nodos separados hasta encontrar evidencia independiente.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Entity resolution | Evaluación de si registros representan la misma entidad. |
+| Guardrail | Capa que reduce una capacidad o detecta su uso; no garantía absoluta. |
+| Audit trail | Registro ordenado de solicitudes, decisiones, ejecuciones y resultados. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando reproduce el flujo completo, puede atribuir cada acción, evita que texto no confiable otorgue autoridad y explica qué control contiene un fallo del modelo.
+
 ## 📖 Definiciones y características
 
 **OSINT (Open Source Intelligence)**

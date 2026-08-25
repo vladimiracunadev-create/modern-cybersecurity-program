@@ -33,6 +33,33 @@ Al finalizar, el alumno podrá:
 | 6 | Prompting efectivo para tareas técnicas | Mejora señal/ruido de la respuesta |
 | 7 | Gobernanza: NIST AI RMF y política de uso | Marco para adoptar IA con responsabilidad |
 
+## 🧠 Explicación en profundidad
+
+Un LLM predice salidas condicionadas por contexto; no consulta verdad ni mantiene conocimiento operativo garantizado. En seguridad puede resumir, transformar y proponer hipótesis, pero cada afirmación técnica necesita evidencia primaria.
+
+```mermaid
+flowchart LR
+  A["Pregunta"] --> B["Contexto"] --> C["Salida"] --> D["Verificación"]
+```
+
+El diagrama separa lenguaje de autoridad. El modelo puede proponer; la política determina si la operación pertenece al alcance; la herramienta produce evidencia; y una persona o control determinista decide transiciones de alto impacto. Se registran prompt relevante, parámetros validados, versión, salida, aprobador y cleanup sin almacenar secretos innecesarios.
+
+### Caso razonado
+
+El modelo atribuye un CVE correcto al producto equivocado. El analista conserva la hipótesis y la descarta al verificar versión y aviso oficial.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Grounding | Vinculación de una salida con evidencia accesible. |
+| Guardrail | Capa que reduce una capacidad o detecta su uso; no garantía absoluta. |
+| Audit trail | Registro ordenado de solicitudes, decisiones, ejecuciones y resultados. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando reproduce el flujo completo, puede atribuir cada acción, evita que texto no confiable otorgue autoridad y explica qué control contiene un fallo del modelo.
+
 ## 📖 Definiciones y características
 
 - **LLM (Large Language Model):** modelo estadístico que predice el siguiente *token* (fragmento de texto) dado el contexto previo. **Característica clave:** no "sabe" hechos; reproduce patrones plausibles del texto con el que fue entrenado.

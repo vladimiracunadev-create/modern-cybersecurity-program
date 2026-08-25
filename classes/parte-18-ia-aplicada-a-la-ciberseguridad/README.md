@@ -61,6 +61,15 @@ y el [appsec-web](../../labs/appsec-web/README.md) sirven como objetivos autoriz
 
 ## 🗺️ Estructura temática
 
+```mermaid
+flowchart LR
+  A["331–333<br/>LLM, agente,<br/>MCP y Kali"] --> B["334–336<br/>recon, explotación<br/>y OSINT autorizados"] --> C["337–340<br/>defensa, informes,<br/>guardrails y capstone"]
+```
+
+## 🧭 Recorrido clase a clase
+
+Las clases 331–333 construyen límites del modelo y la arquitectura de agentes, MCP y herramientas aisladas. Las 334–336 aplican esa arquitectura a colección, pruebas mínimas y OSINT sin ampliar alcance. Las 337–339 trasladan el método a SOC, forense, informes y guardrails. La clase 340 integra autorización, checkpoints, evidencia, comunicación y cleanup. El principio común es verificable: una salida del modelo puede ser hipótesis o propuesta, nunca permiso ni prueba por sí sola.
+
 | Bloque | Clases | Enfoque |
 |---|---|---|
 | Fundamentos: LLMs y MCP | 331–332 | Qué aportan, arquitectura de agentes |
