@@ -17,8 +17,12 @@ import json
 import os
 import re
 import shutil
+import sys
 
 import markdown
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from mermaid_svg import dibujar as dibujar_diagramas  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "site")
@@ -35,6 +39,15 @@ INCLUIR_TOP = ["README.md", "ROADMAP.md", "CONTRIBUTING.md", "SECURITY.md",
                "soluciones/parte-17-profundizacion.md"]
 
 LINK_MD = re.compile(r"\]\(([^)]+?)\.md((?:#[^)]*)?)\)")
+
+# Material descargable de cada clase (guía en PDF y presentación PPTX). Vive
+# junto al README en el repositorio, pero NO se copia al sitio: son ~340 PDF de
+# ~1 MB cada uno y publicarlos duplicaría cientos de megas en cada despliegue de
+# Pages. Los enlaces relativos se reescriben a GitHub, donde el fichero ya está;
+# sin esto, esos enlaces daban 404 en el sitio publicado.
+REPO_SLUG = "vladimiracunadev-create/modern-cybersecurity-program"
+BLOB_BASE = f"https://github.com/{REPO_SLUG}/blob/main/"
+LINK_BINARIO = re.compile(r"\]\(\./([^)]+?\.(?:pdf|pptx))\)")
 
 PLANTILLA = """<!doctype html>
 <html lang="es">
@@ -70,42 +83,63 @@ PLANTILLA = """<!doctype html>
   thead th {{ background: #f2f4f6; }}
   blockquote {{ border-left: 4px solid #d0d7de; margin: 1rem 0; padding: .2rem 1rem; color: inherit; opacity: .9; }}
   .nav {{ font-size: .9rem; margin-bottom: 1.5rem; opacity: .85; }}
-  pre.mermaid {{ background: transparent; text-align: center; }}
+  /* Los diagramas van incrustados como SVG. Se dibujan con el tema claro de
+     mermaid, asi que en modo oscuro se les da su propio fondo claro: preferimos
+     un diagrama siempre legible a uno que a veces no esta. */
+  figure.mermaid {{ margin: 1.5rem 0; text-align: center; background: #ffffff;
+                    border-radius: 10px; padding: .75rem; overflow-x: auto; }}
+  figure.mermaid svg {{ max-width: 100%; height: auto; }}
 </style>
 </head>
 <body>
 <div class="nav"><a href="{home}">🛡️ Inicio</a> · <a href="{indice}">📚 Clases</a> · <a href="{rutas}">🧭 Rutas</a> · <a href="{quiz}">📝 Autoevaluación</a> · <a href="{progreso}">✅ Progreso</a> · <a href="{certis}">🎓 Certis</a></div>
 {body}
-<script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-  const oscuro = matchMedia("(prefers-color-scheme: dark)").matches;
-  mermaid.initialize({{ startOnLoad: true, theme: oscuro ? "dark" : "default", securityLevel: "strict" }});
-</script>
 </body>
 </html>
 """
 
 
-def reescribir_enlaces(texto: str) -> str:
-    """Convierte enlaces internos ...algo.md(#anchor) en ...algo.html(#anchor)."""
-    return LINK_MD.sub(lambda m: f"]({m.group(1)}.html{m.group(2)})", texto)
+def reescribir_enlaces(texto: str, rel_md: str = "") -> str:
+    """Enlaces internos .md -> .html; material binario de la clase -> GitHub."""
+    texto = LINK_MD.sub(lambda m: f"]({m.group(1)}.html{m.group(2)})", texto)
+    if rel_md:
+        carpeta = rel_md.rsplit("/", 1)[0] if "/" in rel_md else ""
+        prefijo = f"{BLOB_BASE}{carpeta}/" if carpeta else BLOB_BASE
+        texto = LINK_BINARIO.sub(lambda m: f"]({prefijo}{m.group(1)})", texto)
+    return texto
 
 
-# Bloques ```mermaid -> <pre class="mermaid"> (lo que espera mermaid.js). El
-# fenced_code de python-markdown emite <pre><code class="language-mermaid">...
-# con el contenido escapado; mermaid necesita el texto crudo, así que se
-# desescapan las entidades. Sin esto los diagramas salían como código suelto
-# (fue la causa del revert de la mejora visual anterior).
+# Bloques ```mermaid: fenced_code los emite como
+# <pre><code class="language-mermaid"> con el contenido escapado. De ahi se saca
+# el codigo del diagrama para pedir su SVG ya dibujado.
+#
+# El SVG se incrusta en la pagina en vez de cargar mermaid.js y dibujarlo en el
+# navegador. Asi el diagrama viaja DENTRO del HTML —igual que en los PDF— y la
+# pagina deja de depender de que una CDN responda para que se vea el grafico;
+# ademas, un diagrama con la sintaxis rota ya no puede aparecer como el cartel
+# de "Syntax error", porque la cache los rechaza.
 MERMAID_HTML_RE = re.compile(
     r'<pre><code class="language-mermaid">(.*?)</code></pre>', re.DOTALL
 )
 
+_sin_dibujar = 0
+
 
 def activar_mermaid(html_text: str) -> str:
-    return MERMAID_HTML_RE.sub(
-        lambda m: '<pre class="mermaid">' + htmllib.unescape(m.group(1)) + "</pre>",
-        html_text,
-    )
+    fuentes = [htmllib.unescape(m) for m in MERMAID_HTML_RE.findall(html_text)]
+    if not fuentes:
+        return html_text
+    svgs = dibujar_diagramas(fuentes, verbose=False)
+
+    def reemplazo(match):
+        global _sin_dibujar
+        svg = svgs.get(htmllib.unescape(match.group(1)).strip())
+        if not svg:
+            _sin_dibujar += 1
+            return match.group(0)
+        return f'<figure class="mermaid">{svg}</figure>'
+
+    return MERMAID_HTML_RE.sub(reemplazo, html_text)
 
 
 def render(md_text: str) -> str:
@@ -138,7 +172,7 @@ def escribir(rel_md: str, md_text: str) -> None:
         quiz=f"{subir}autoevaluaciones/quiz.html" if prof else "autoevaluaciones/quiz.html",
         progreso=f"{subir}autoevaluaciones/progreso.html" if prof else "autoevaluaciones/progreso.html",
         certis=f"{subir}certificaciones/README.html" if prof else "certificaciones/README.html",
-        body=render(reescribir_enlaces(md_text)),
+        body=render(reescribir_enlaces(md_text, rel_md)),
     )
     with open(destino, "w", encoding="utf-8") as f:
         f.write(html)
@@ -255,7 +289,7 @@ def escribir_landing(partes) -> None:
         ("📝", "Autoevaluación", f"{n_preg} preguntas interactivas con puntuación, una batería por parte.", "autoevaluaciones/quiz.html"),
         ("✅", "Tu progreso", f"Marca las {total} clases y sigue tu avance (se guarda en tu navegador).", "autoevaluaciones/progreso.html"),
         ("🎓", "Certificaciones", "Mapeo a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con % de cobertura por dominio.", "certificaciones/README.html"),
-        ("📕", "Manual en PDF", f"Las {total} clases en un único PDF (~1.020 páginas) para leer de corrido o estudiar sin conexión.", "manual/MANUAL.pdf"),
+        ("📕", "Manual en PDF", f"Las {total} clases en un único PDF (1.302 páginas, con sus diagramas) para leer de corrido o estudiar sin conexión.", "manual/MANUAL.pdf"),
     ]
     feats_html = "".join(
         f'<a class="feat" href="{u}"><div class="ic">{i}</div><h3>{t}</h3><p>{d}</p></a>'
@@ -369,6 +403,9 @@ def main() -> int:
     open(os.path.join(OUT, ".nojekyll"), "w").close()
 
     print(f"Sitio generado en site/  ({generados} páginas HTML + index.html)")
+    if _sin_dibujar:
+        print(f"AVISO: {_sin_dibujar} diagrama(s) quedaron sin dibujar; "
+              f"revisa su sintaxis mermaid (scripts/mermaid_svg.py los cuenta).")
     return 0
 
 

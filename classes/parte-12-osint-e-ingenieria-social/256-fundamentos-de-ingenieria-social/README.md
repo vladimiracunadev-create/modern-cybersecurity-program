@@ -51,7 +51,7 @@ Una persona decide con información incompleta, presión temporal, normas de ayu
 flowchart LR
   CONT["Contexto y pretexto"] --> SIG["Señales<br/>autoridad, urgencia, familiaridad"]
   SIG --> ACT["Acción solicitada"]
-  ACT --> CTRL{ "¿Existe verificación<br/>independiente?" }
+  ACT --> CTRL{"¿Existe verificación<br/>independiente?"}
   CTRL -->|"sí"| STOP["Detener/escalar"]
   CTRL -->|"no"| IMP["Impacto potencial"]
   REP["Canal de reporte simple"] --> STOP

@@ -51,7 +51,7 @@ sequenceDiagram
     TGS-->>C: Ticket para el servicio
     C->>S: Ticket + autenticador
     S-->>C: Acceso según autorización
-    Note over C,S: Kerberoasting estudia material del TGS fuera de línea; no rompe Kerberos por sí mismo
+    Note over C,S: Kerberoasting estudia material del TGS fuera de línea, no rompe Kerberos por sí mismo
 ```
 
 ### Qué condición hace posible Kerberoasting

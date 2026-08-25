@@ -38,6 +38,10 @@ from html import unescape as html_unescape
 
 import markdown
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from mermaid_svg import dibujar as dibujar_diagramas  # noqa: E402
+from salida_atomica import publicar  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CLASSES = os.path.join(ROOT, "classes")
 OUT_DIR = os.path.join(ROOT, "manual")
@@ -83,9 +87,9 @@ blockquote { border-left: 3px solid #2e8b57; margin: 8px 0; padding: 3px 12px;
              background: #f5f9f7; color: #333; page-break-inside: avoid; }
 a { color: #0b6; text-decoration: none; }
 img { max-width: 100%; }
-pre.mermaid { background: transparent; border: 0; text-align: center;
+div.mermaid { background: transparent; border: 0; text-align: center;
               page-break-inside: avoid; }
-pre.mermaid svg { max-width: 100%; height: auto; }
+div.mermaid svg { max-width: 100%; height: auto; }
 hr { border: 0; border-top: 1px solid #d5ddd8; margin: 18px 0; }
 .portada { page-break-after: always; text-align: center; padding-top: 60mm; }
 .portada h1 { border: 0; page-break-before: avoid; font-size: 30pt; }
@@ -263,28 +267,41 @@ def construir_md(clases) -> str:
     return "".join(p).rstrip() + "\n"
 
 
-# Bloques ```mermaid -> <pre class="mermaid"> para que mermaid.js los renderice
-# a SVG dentro de Chrome headless ANTES del print-to-pdf. El fenced_code de
-# python-markdown deja el contenido escapado; mermaid necesita el texto crudo.
+# Bloques ```mermaid: el fenced_code de python-markdown los deja como
+# <pre><code class="language-mermaid"> con el contenido escapado.
 MERMAID_HTML_RE = re.compile(
     r'<pre><code class="language-mermaid">(.*?)</code></pre>', re.DOTALL
 )
 
-# Se carga desde el CDN; Chrome tiene el --virtual-time-budget (20 s) para
-# resolver el import ESM y renderizar todos los diagramas antes de imprimir.
-MERMAID_SCRIPT = (
-    '<script type="module">'
-    'import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";'
-    'mermaid.initialize({ startOnLoad: true, theme: "default", securityLevel: "strict" });'
-    "</script>"
-)
 
+def incrustar_diagramas(html_text: str) -> tuple[str, int, int]:
+    """Cambia cada bloque mermaid por su SVG ya dibujado.
 
-def activar_mermaid(html_text: str) -> str:
-    return MERMAID_HTML_RE.sub(
-        lambda m: '<pre class="mermaid">' + html_unescape(m.group(1)) + "</pre>",
-        html_text,
-    )
+    Antes esta pagina cargaba mermaid.js y confiaba en que Chrome esperase a que
+    dibujara los 360 diagramas antes de imprimir. No lo hacia: el PDF salia sin
+    ninguno, y subir el presupuesto de tiempo virtual de 60 s a 900 s no cambiaba
+    nada (mismo tamano de fichero, mismos cero diagramas). Ahora los SVG llegan
+    dibujados desde la cache y la pagina que se imprime no ejecuta JavaScript.
+    """
+    fuentes = [html_unescape(m) for m in MERMAID_HTML_RE.findall(html_text)]
+    if not fuentes:
+        return html_text, 0, 0
+    svgs = dibujar_diagramas(fuentes)
+
+    faltan = 0
+
+    def reemplazo(match: "re.Match[str]") -> str:
+        nonlocal faltan
+        fuente = html_unescape(match.group(1)).strip()
+        svg = svgs.get(fuente)
+        if not svg:
+            faltan += 1
+            # Sin SVG se deja el bloque tal cual: es feo, pero es honesto y el
+            # recuento de abajo lo dice en voz alta.
+            return match.group(0)
+        return f'<div class="mermaid">{svg}</div>'
+
+    return MERMAID_HTML_RE.sub(reemplazo, html_text), len(fuentes), faltan
 
 
 def md_a_html(md_text: str) -> str:
@@ -292,27 +309,114 @@ def md_a_html(md_text: str) -> str:
         md_text,
         extensions=["tables", "fenced_code", "sane_lists", "attr_list", "toc", "md_in_html"],
     )
-    cuerpo = activar_mermaid(cuerpo)
-    tiene_mermaid = 'class="mermaid"' in cuerpo
-    script = MERMAID_SCRIPT if tiene_mermaid else ""
+    cuerpo, total, faltan = incrustar_diagramas(cuerpo)
+    if total:
+        print(f"Diagramas incrustados: {total - faltan}/{total}.")
+    if faltan:
+        print(f"AVISO: {faltan} diagrama(s) sin dibujar; revisa su sintaxis mermaid.")
     return (
         "<!doctype html><html lang='es'><head><meta charset='utf-8'>"
-        f"<style>{CSS}</style></head><body>{cuerpo}{script}</body></html>"
+        f"<style>{CSS}</style></head><body>{cuerpo}</body></html>"
     )
 
 
+TIMEOUT_S = 1200
+
+# Un manual de 340 clases no baja de varios megas; por debajo de esto la
+# impresion salio mal aunque el navegador diga que termino bien.
+MIN_PDF_BYTES = 5_000_000
+
+
 def generar_pdf(nav: str, html_path: str, pdf_path: str) -> None:
+    """Imprime la pagina y comprueba que el PDF salio, antes de publicarlo.
+
+    Se imprime a un temporal: el navegador escribe con stderr silenciado, y si no
+    puede sobrescribir el manual anterior (en Windows pasa mientras el antivirus
+    lo tiene mapeado) el fallo era invisible y quedaba el PDF viejo en su sitio,
+    con fecha vieja, como si se hubiera regenerado.
+
+    Ya no hay JavaScript que esperar —los diagramas llegan dibujados—, asi que
+    tampoco hace falta presupuesto de tiempo virtual (que ademas nunca sirvio
+    para esto: se agotaba mucho antes de que mermaid terminara).
+    """
+    tmp_pdf = pdf_path + ".tmp"
+    if os.path.exists(tmp_pdf):
+        os.remove(tmp_pdf)
     uri = "file:///" + html_path.replace("\\", "/")
     subprocess.run(
         [nav, "--headless=new", "--disable-gpu", "--no-first-run",
          "--no-default-browser-check", "--no-pdf-header-footer",
-         # Margen amplio: el import ESM de mermaid + el render de todos los
-         # diagramas a SVG debe completarse antes del print-to-pdf.
-         "--virtual-time-budget=60000",
-         f"--print-to-pdf={pdf_path}", uri],
-        check=True, timeout=600,
+         f"--print-to-pdf={tmp_pdf}", uri],
+        check=True, timeout=TIMEOUT_S,
         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
     )
+    publicar(tmp_pdf, pdf_path, MIN_PDF_BYTES)
+
+
+# Etiqueta de nodo mermaid: A["Texto"], B(Texto), C{Texto}. Sirve de sonda para
+# comprobar, ya sobre el PDF, que el diagrama de esa clase acabo dibujado.
+ETIQUETA_MERMAID = re.compile(
+    r'[\[\(\{]{1,2}"?([A-Za-zÁÉÍÓÚÑáéíóúñ][^"\]\)\}\|<>\n]{5,28})"?[\]\)\}]{1,2}'
+)
+BLOQUE_MERMAID = re.compile(r"```mermaid\n(.*?)```", re.DOTALL)
+
+
+def sondas_de_diagramas(clases, cada: int = 15) -> list[tuple[int, str]]:
+    """Una etiqueta por clase muestreada que SOLO exista dentro de su diagrama.
+
+    Si la etiqueta tambien aparece en la prosa, encontrarla en el PDF no probaria
+    nada; por eso se descartan las que el texto de la clase ya menciona.
+    """
+    sondas: list[tuple[int, str]] = []
+    for num, _parte, _dir_rel, readme in clases[::cada]:
+        md = open(readme, encoding="utf-8").read()
+        bloques = BLOQUE_MERMAID.findall(md)
+        if not bloques:
+            continue
+        prosa = BLOQUE_MERMAID.sub("", md)
+        for etiqueta in ETIQUETA_MERMAID.findall(bloques[0]):
+            etiqueta = etiqueta.strip()
+            if etiqueta and etiqueta not in prosa:
+                sondas.append((num, etiqueta))
+                break
+    return sondas
+
+
+def verificar_diagramas(pdf_path: str, clases) -> bool:
+    """Abre el PDF y comprueba que los diagramas muestreados estan dentro.
+
+    Un PDF de 1.200 paginas con el peso esperado puede seguir teniendo decenas de
+    diagramas sin dibujar; el tamano del fichero no lo delata. Se necesita pypdf;
+    si no esta, se avisa y no se bloquea.
+    """
+    try:
+        from pypdf import PdfReader
+    except ImportError:
+        print("AVISO: sin pypdf no se puede verificar el PDF (pip install pypdf).")
+        return True
+
+    sondas = sondas_de_diagramas(clases)
+    if not sondas:
+        print("AVISO: no se encontraron etiquetas de diagrama que muestrear.")
+        return True
+
+    texto = "\n".join((pagina.extract_text() or "") for pagina in PdfReader(pdf_path).pages)
+
+    def esta(etiqueta: str) -> bool:
+        # Mermaid parte las etiquetas largas en varias lineas dentro del nodo, y
+        # al extraer el texto del PDF llegan separadas: se compara tolerando el
+        # espaciado para no dar por ausente un diagrama que si esta dibujado.
+        if etiqueta in texto:
+            return True
+        return re.search(r"\s*".join(re.escape(p) for p in etiqueta.split()), texto) is not None
+
+    faltan = [(num, etq) for num, etq in sondas if not esta(etq)]
+    print(f"Diagramas verificados: {len(sondas) - len(faltan)}/{len(sondas)} sondas encontradas.")
+    if faltan:
+        print(f"FALLA: {len(faltan)} diagrama(s) no llegaron al PDF: {faltan[:5]}")
+        print(f"       Revisa la cache de diagramas (.cache/mermaid) y la sintaxis mermaid.")
+        return False
+    return True
 
 
 def main() -> int:
@@ -353,6 +457,9 @@ def main() -> int:
 
     mb = os.path.getsize(pdf_path) / 1024 / 1024
     print(f"MANUAL.pdf generado: {mb:.1f} MB  ({nav.split(chr(92))[-1]}).")
+
+    if not verificar_diagramas(pdf_path, clases):
+        return 1
     return 0
 
 

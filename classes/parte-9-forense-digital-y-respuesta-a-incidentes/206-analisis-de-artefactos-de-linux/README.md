@@ -42,7 +42,7 @@ flowchart LR
     A[auditd y autenticación] --> TL
     S[shell, cron y systemd] --> TL
     F[filesystem y paquetes] --> TL
-    P[/proc y memoria si está vivo] --> TL
+    P["/proc y memoria si está vivo"] --> TL
     TL --> H[Hipótesis corroborada]
 ```
 

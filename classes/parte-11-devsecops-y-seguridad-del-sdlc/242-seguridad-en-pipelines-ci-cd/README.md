@@ -50,7 +50,7 @@ flowchart LR
   SIGN --> ENV["Entorno protegido"]
   OIDC["OIDC + política cloud"] -->|"credencial breve"| RUN
   SEC["Secretos y permisos"] --> RUN
-  LOG["Logs y evidencia"] <-- RUN
+  RUN --> LOG["Logs y evidencia"]
 ```
 
 El límite crítico se encuentra entre la contribución y el runner. En eventos como `pull_request_target`, el workflow puede ejecutarse con contexto privilegiado del repositorio base; combinarlo con *checkout* de código del PR puede dar secretos a código controlado por un colaborador externo. La defensa exige separar trabajos no confiables de publicación, usar permisos mínimos y transferir solo artefactos verificados entre etapas.
