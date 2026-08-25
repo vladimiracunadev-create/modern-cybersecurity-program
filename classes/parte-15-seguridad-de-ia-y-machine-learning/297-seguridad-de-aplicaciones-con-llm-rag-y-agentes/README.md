@@ -33,6 +33,33 @@ Al finalizar, el alumno podrá:
 | 6 | Multi-tenancy en el vector store | Evitar fuga de datos entre clientes |
 | 7 | Human-in-the-loop y allowlists | Última barrera ante acciones peligrosas |
 
+## 🧠 Explicación en profundidad
+
+RAG añade ingestión, índice, recuperación y citas; un agente añade planificación y herramientas. Cada paso introduce identidad, datos y permisos. La respuesta del modelo nunca concede por sí sola autoridad para ejecutar una acción.
+
+```mermaid
+flowchart LR
+  A["Ingesta"] --> B["Recuperación"] --> C["Modelo"] --> D["Herramienta"]
+```
+
+El diagrama debe leerse como una cadena de supuestos: verificar un nodo no demuestra los siguientes. La evaluación declara actor, acceso, datos, métrica, umbral y consecuencia; compara una línea base y conserva fallos, no solo promedios.
+
+### Caso razonado
+
+Un documento de otro tenant aparece por filtro tardío. La autorización se mueve a la recuperación y se prueba antes de generar.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Tool boundary | Frontera donde texto puede provocar una operación. |
+| Evaluación | Experimento reproducible ligado a un riesgo y criterio. |
+| Riesgo residual | Exposición que permanece tras controles. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando formula un escenario específico, reproduce evidencia, explica límites y diseña controles técnicos y de gobierno sin atribuir certeza al modelo.
+
 ## 📖 Definiciones y características
 
 - **RAG:** arquitectura que recupera documentos de una base de conocimiento y los inyecta en el contexto del LLM. *Característica:* el contenido recuperado es entrada no confiable de facto.

@@ -33,6 +33,33 @@ Al finalizar, el alumno podrá:
 | 6 | Detección por activaciones | Las muestras envenenadas se agrupan aparte |
 | 7 | Defensas: fine-pruning, saneamiento | Eliminar el backdoor sin reentrenar de cero |
 
+## 🧠 Explicación en profundidad
+
+El envenenamiento altera entrenamiento, ajuste o retroalimentación. La defensa necesita procedencia, control de acceso, revisión de muestras, validación estadística y capacidad de reconstruir; limpiar outliers no detecta puertas traseras discretas.
+
+```mermaid
+flowchart LR
+  A["Fuente"] --> B["Dataset"] --> C["Entrenamiento"] --> D["Modelo"]
+```
+
+El diagrama debe leerse como una cadena de supuestos: verificar un nodo no demuestra los siguientes. La evaluación declara actor, acceso, datos, métrica, umbral y consecuencia; compara una línea base y conserva fallos, no solo promedios.
+
+### Caso razonado
+
+Una fuente minoritaria cambia etiquetas de una clase. La comparación por fuente y versión descubre el patrón que el promedio ocultaba.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Data lineage | Procedencia y transformaciones de datos. |
+| Evaluación | Experimento reproducible ligado a un riesgo y criterio. |
+| Riesgo residual | Exposición que permanece tras controles. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando formula un escenario específico, reproduce evidencia, explica límites y diseña controles técnicos y de gobierno sin atribuir certeza al modelo.
+
 ## 📖 Definiciones y características
 
 - **Envenenamiento de datos:** manipular el conjunto de entrenamiento para alterar el modelo resultante. *Característica:* actúa en tiempo de entrenamiento, no de inferencia.

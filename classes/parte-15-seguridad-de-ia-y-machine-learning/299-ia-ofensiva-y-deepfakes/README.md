@@ -33,6 +33,33 @@ Al finalizar, el alumno podrá:
 | 6 | Procedencia: C2PA y watermarking | Probar el origen en vez de detectar la falsificación |
 | 7 | Verificación fuera de banda y procesos | La defensa organizativa que sí escala |
 
+## 🧠 Explicación en profundidad
+
+La IA ofensiva y los medios sintéticos cambian escala y coste, no eliminan requisitos de autorización ni garantizan eficacia. La defensa combina procedencia, autenticación de procesos, verificación independiente y respuesta; detectar artefactos visuales no basta.
+
+```mermaid
+flowchart LR
+  A["Generación"] --> B["Distribución"] --> C["Decisión"] --> D["Daño"]
+```
+
+El diagrama debe leerse como una cadena de supuestos: verificar un nodo no demuestra los siguientes. La evaluación declara actor, acceso, datos, métrica, umbral y consecuencia; compara una línea base y conserva fallos, no solo promedios.
+
+### Caso razonado
+
+Una voz sintética supera la intuición, pero no el callback financiero. Se fortalece la transacción en vez de depender de detectar audio falso.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Deepfake | Medio sintético o manipulado que imita atributos humanos. |
+| Evaluación | Experimento reproducible ligado a un riesgo y criterio. |
+| Riesgo residual | Exposición que permanece tras controles. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando formula un escenario específico, reproduce evidencia, explica límites y diseña controles técnicos y de gobierno sin atribuir certeza al modelo.
+
 ## 📖 Definiciones y características
 
 - **Deepfake:** contenido sintético (voz, imagen, vídeo) generado o alterado con IA para parecer real. *Característica:* la calidad crece más rápido que la detección.

@@ -31,6 +31,33 @@ Al finalizar, el alumno podrá:
 | 6 | LLM07/08 Plugins y Excessive Agency | Herramientas inseguras y permisos excesivos del agente |
 | 7 | LLM09/10 Overreliance y Model Theft | Confiar ciegamente y robo del modelo |
 
+## 🧠 Explicación en profundidad
+
+OWASP Top 10 para LLM organiza riesgos de aplicaciones; no certifica modelos ni sustituye threat modeling. Cada categoría debe mapearse a activos, fronteras, pruebas y evidencia del sistema concreto.
+
+```mermaid
+flowchart LR
+  A["Taxonomía"] --> B["Escenario"] --> C["Control"] --> D["Prueba"]
+```
+
+El diagrama debe leerse como una cadena de supuestos: verificar un nodo no demuestra los siguientes. La evaluación declara actor, acceso, datos, métrica, umbral y consecuencia; compara una línea base y conserva fallos, no solo promedios.
+
+### Caso razonado
+
+El equipo marca diez categorías como completas, pero un agente tiene herramienta de borrado sin aprobación. El escenario revela la brecha que el checklist ocultó.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Taxonomía | Lenguaje común de riesgos, no veredicto. |
+| Evaluación | Experimento reproducible ligado a un riesgo y criterio. |
+| Riesgo residual | Exposición que permanece tras controles. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando formula un escenario específico, reproduce evidencia, explica límites y diseña controles técnicos y de gobierno sin atribuir certeza al modelo.
+
 ## 📖 Definiciones y características
 
 - **LLM01 – Prompt Injection:** entradas (directas o indirectas, vía documentos) que reprograman el comportamiento del modelo. *Característica:* la causa raíz es que datos e instrucciones comparten el mismo canal.

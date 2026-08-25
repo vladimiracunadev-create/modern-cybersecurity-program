@@ -54,6 +54,15 @@ Al terminar la parte, el alumno podrá:
 
 ## 🗺️ Estructura temática
 
+```mermaid
+flowchart LR
+  A["291–294<br/>activos, robustez,<br/>datos y extracción"] --> B["295–297<br/>LLM, inyección,<br/>RAG y agentes"] --> C["298–300<br/>operación, abuso<br/>y gobierno"]
+```
+
+## 🧭 Recorrido clase a clase
+
+Las clases 291–294 construyen el modelo de amenaza desde el ciclo de datos hasta inferencia y extracción. Las clases 295–297 trasladan ese razonamiento a aplicaciones LLM, contenido no confiable, RAG y herramientas. Las clases 298–300 evalúan uso defensivo, abuso y gobierno durante todo el ciclo. Cada clase produce evidencia reproducible y declara incertidumbre; ninguna taxonomía ni benchmark funciona como certificado de seguridad.
+
 | Bloque | Clases | Foco |
 |--------|--------|------|
 | Fundamentos y superficie de ataque | 291 | Panorama, ciclo de vida, MITRE ATLAS, NIST AI RMF |

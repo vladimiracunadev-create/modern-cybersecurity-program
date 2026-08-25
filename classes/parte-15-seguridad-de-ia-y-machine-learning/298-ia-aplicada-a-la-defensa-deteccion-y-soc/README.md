@@ -31,6 +31,33 @@ Al finalizar, el alumno podrá:
 | 6 | Alert fatigue y triage asistido | El coste humano de los falsos positivos |
 | 7 | Evadibilidad y adversario adaptativo | Los atacantes también atacan al detector |
 
+## 🧠 Explicación en profundidad
+
+IA puede priorizar y resumir, pero su salida es evidencia derivada. Se mide con conjuntos representativos, falsos negativos, calibración, deriva y tiempo de analista. Automatizar una decisión exige umbral, revisión y rollback.
+
+```mermaid
+flowchart LR
+  A["Telemetría"] --> B["Modelo"] --> C["Analista"] --> D["Respuesta"]
+```
+
+El diagrama debe leerse como una cadena de supuestos: verificar un nodo no demuestra los siguientes. La evaluación declara actor, acceso, datos, métrica, umbral y consecuencia; compara una línea base y conserva fallos, no solo promedios.
+
+### Caso razonado
+
+El resumen omite un indicador crítico. La interfaz conserva eventos fuente y permite verificar cada afirmación.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Human-in-the-loop | Diseño que asigna revisión humana con autoridad real. |
+| Evaluación | Experimento reproducible ligado a un riesgo y criterio. |
+| Riesgo residual | Exposición que permanece tras controles. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando formula un escenario específico, reproduce evidencia, explica límites y diseña controles técnicos y de gobierno sin atribuir certeza al modelo.
+
 ## 📖 Definiciones y características
 
 - **Detección de anomalías:** identificar eventos que se desvían del comportamiento normal. *Característica:* útil cuando los ataques son raros y no hay etiquetas; propensa a falsos positivos.

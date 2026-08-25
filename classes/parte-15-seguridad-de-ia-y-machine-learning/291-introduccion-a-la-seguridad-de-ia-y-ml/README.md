@@ -31,6 +31,33 @@ Al finalizar, el alumno podrá:
 | 6 | AI Bill of Materials (AI-BOM) y cadena de suministro | Modelos y datos de terceros heredan riesgo |
 | 7 | Diferencia entre seguridad, robustez y safety | Evita confundir problemas distintos |
 
+## 🧠 Explicación en profundidad
+
+El riesgo de IA abarca datos, modelo, aplicación, infraestructura, usuarios y efectos. Seguridad del modelo y uso seguro no son equivalentes: un modelo robusto puede revelar datos por una integración deficiente, y una aplicación controlada puede depender de un modelo frágil.
+
+```mermaid
+flowchart LR
+  A["Datos"] --> B["Modelo"] --> C["Aplicación"] --> D["Efecto"]
+```
+
+El diagrama debe leerse como una cadena de supuestos: verificar un nodo no demuestra los siguientes. La evaluación declara actor, acceso, datos, métrica, umbral y consecuencia; compara una línea base y conserva fallos, no solo promedios.
+
+### Caso razonado
+
+Un clasificador preciso falla sobre un grupo no representado. El equipo separa error de calidad, abuso deliberado e impacto de negocio antes de elegir control.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Activo de IA | Componente o resultado cuyo daño importa. |
+| Evaluación | Experimento reproducible ligado a un riesgo y criterio. |
+| Riesgo residual | Exposición que permanece tras controles. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando formula un escenario específico, reproduce evidencia, explica límites y diseña controles técnicos y de gobierno sin atribuir certeza al modelo.
+
 ## 📖 Definiciones y características
 
 - **Superficie de ataque de IA:** conjunto de puntos donde un adversario puede influir en datos, entrenamiento, modelo o inferencia. *Característica:* se extiende a la cadena de suministro (datasets y modelos preentrenados de terceros).

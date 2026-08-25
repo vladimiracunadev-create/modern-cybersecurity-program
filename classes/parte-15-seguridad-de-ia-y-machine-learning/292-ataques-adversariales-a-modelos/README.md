@@ -34,6 +34,33 @@ Al finalizar, el alumno podrá:
 | 7 | Ataques físicos (patches, pegatinas) | La amenaza no vive solo en píxeles digitales |
 | 8 | Defensas: entrenamiento adversarial | Mejora robustez a costa de precisión limpia |
 
+## 🧠 Explicación en profundidad
+
+Un ejemplo adversarial modifica una entrada bajo un modelo de amenaza para cambiar una decisión. Éxito depende de conocimiento, consultas, restricciones y dominio; una perturbación pequeña en píxeles no implica que sea imperceptible o viable físicamente.
+
+```mermaid
+flowchart LR
+  A["Amenaza"] --> B["Perturbación"] --> C["Inferencia"] --> D["Impacto"]
+```
+
+El diagrama debe leerse como una cadena de supuestos: verificar un nodo no demuestra los siguientes. La evaluación declara actor, acceso, datos, métrica, umbral y consecuencia; compara una línea base y conserva fallos, no solo promedios.
+
+### Caso razonado
+
+Un ataque digital funciona sobre archivos pero no al fotografiar la señal. El informe limita la conclusión al canal probado.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Robustez | Desempeño bajo variaciones definidas, no inmunidad universal. |
+| Evaluación | Experimento reproducible ligado a un riesgo y criterio. |
+| Riesgo residual | Exposición que permanece tras controles. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando formula un escenario específico, reproduce evidencia, explica límites y diseña controles técnicos y de gobierno sin atribuir certeza al modelo.
+
 ## 📖 Definiciones y características
 
 - **Ejemplo adversarial:** entrada `x' = x + δ` con `‖δ‖ ≤ ε` que causa una predicción errónea. *Característica:* δ suele ser imperceptible para un humano.

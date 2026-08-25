@@ -33,6 +33,33 @@ Al finalizar, el alumno podrá:
 | 6 | Defensa en capas | Ningún control único basta |
 | 7 | Red teaming automatizado (garak, PyRIT) | Medir sistemáticamente en vez de a ojo |
 
+## 🧠 Explicación en profundidad
+
+La inyección mezcla instrucciones no confiables con autoridad del sistema. Un jailbreak busca eludir comportamiento; una inyección indirecta llega desde documentos o herramientas. Separar datos de control reduce riesgo, pero el modelo no es una frontera de autorización.
+
+```mermaid
+flowchart LR
+  A["Contenido"] --> B["Modelo"] --> C["Herramienta"] --> D["Consecuencia"]
+```
+
+El diagrama debe leerse como una cadena de supuestos: verificar un nodo no demuestra los siguientes. La evaluación declara actor, acceso, datos, métrica, umbral y consecuencia; compara una línea base y conserva fallos, no solo promedios.
+
+### Caso razonado
+
+Un PDF ordena enviar secretos. El sistema trata su texto como dato, restringe herramientas y exige aprobación para salida sensible.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Inyección indirecta | Instrucción hostil incorporada en contenido externo. |
+| Evaluación | Experimento reproducible ligado a un riesgo y criterio. |
+| Riesgo residual | Exposición que permanece tras controles. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando formula un escenario específico, reproduce evidencia, explica límites y diseña controles técnicos y de gobierno sin atribuir certeza al modelo.
+
 ## 📖 Definiciones y características
 
 - **Prompt injection directa:** el atacante escribe instrucciones en su propia entrada ("ignora las instrucciones anteriores y..."). *Característica:* fácil de intentar, mitigable pero no eliminable.

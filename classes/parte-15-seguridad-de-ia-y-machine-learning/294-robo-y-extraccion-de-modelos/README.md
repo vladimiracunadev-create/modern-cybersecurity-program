@@ -33,6 +33,33 @@ Al finalizar, el alumno podrá:
 | 6 | Defensas de salida y de tasa | Reducir señal y frecuencia de consultas |
 | 7 | Watermarking y privacidad diferencial | Detectar copias y limitar fugas |
 
+## 🧠 Explicación en profundidad
+
+La extracción aproxima comportamiento mediante consultas; no siempre recupera parámetros. El riesgo depende de interfaz, salidas, coste, valor intelectual y posibilidad de usar el sustituto. Rate limits, reducción de detalle y monitorización se combinan.
+
+```mermaid
+flowchart LR
+  A["API"] --> B["Consultas"] --> C["Sustituto"] --> D["Abuso"]
+```
+
+El diagrama debe leerse como una cadena de supuestos: verificar un nodo no demuestra los siguientes. La evaluación declara actor, acceso, datos, métrica, umbral y consecuencia; compara una línea base y conserva fallos, no solo promedios.
+
+### Caso razonado
+
+Muchas consultas legítimas por lote se parecen a extracción. La detección combina patrón, identidad y propósito para no bloquear negocio.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Model extraction | Construcción de un sustituto desde observaciones. |
+| Evaluación | Experimento reproducible ligado a un riesgo y criterio. |
+| Riesgo residual | Exposición que permanece tras controles. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando formula un escenario específico, reproduce evidencia, explica límites y diseña controles técnicos y de gobierno sin atribuir certeza al modelo.
+
 ## 📖 Definiciones y características
 
 - **Model extraction:** entrenar un modelo sustituto que replica al víctima usando pares (consulta, respuesta). *Característica:* efectivo incluso con solo etiquetas, mejor con probabilidades.

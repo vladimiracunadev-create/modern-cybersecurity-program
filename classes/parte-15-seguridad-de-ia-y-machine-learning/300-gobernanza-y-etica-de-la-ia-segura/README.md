@@ -31,6 +31,33 @@ Al finalizar, el alumno podrá:
 | 6 | Model cards y data sheets | Documentación responsable del modelo |
 | 7 | Roles, RACI y ciclo de vida | Quién responde por qué a lo largo del tiempo |
 
+## 🧠 Explicación en profundidad
+
+Gobernar IA asigna propósito, dueño, riesgo, datos, evaluación, monitorización, incidentes y retiro. NIST AI RMF organiza Govern, Map, Measure y Manage; no prescribe una única puntuación ni convierte ética en cumplimiento automático.
+
+```mermaid
+flowchart LR
+  A["Govern"] --> B["Map"] --> C["Measure"] --> D["Manage"]
+```
+
+El diagrama debe leerse como una cadena de supuestos: verificar un nodo no demuestra los siguientes. La evaluación declara actor, acceso, datos, métrica, umbral y consecuencia; compara una línea base y conserva fallos, no solo promedios.
+
+### Caso razonado
+
+Un modelo pasa exactitud pero carece de mecanismo de apelación. El impacto sobre personas exige controles más allá de performance.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Impact assessment | Evaluación contextual de efectos, afectados y mitigaciones. |
+| Evaluación | Experimento reproducible ligado a un riesgo y criterio. |
+| Riesgo residual | Exposición que permanece tras controles. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando formula un escenario específico, reproduce evidencia, explica límites y diseña controles técnicos y de gobierno sin atribuir certeza al modelo.
+
 ## 📖 Definiciones y características
 
 - **Gobernanza de IA:** conjunto de políticas, roles y procesos para que la IA se use de forma segura, ética y conforme. *Característica:* atraviesa seguridad, legal, ética y negocio.
