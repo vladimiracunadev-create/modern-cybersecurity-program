@@ -27,8 +27,12 @@ que mermaid termine. Y el esqueleto vacio es traicionero: es un ``<svg>`` valido
 con su hoja de estilos y un ``<g></g>`` sin nada dentro, asi que comprobar solo
 que "hay un svg" da por bueno un diagrama que no existe.
 
-Los SVG se cachean por hash del codigo fuente del diagrama, asi que regenerar el
-manual tras editar una clase solo vuelve a dibujar lo que cambio.
+Los SVG se guardan por hash del codigo fuente del diagrama en ``diagramas/``,
+que **se versiona**. No es una cache descartable: el CI construye el sitio de
+GitHub Pages y no tiene navegador con el que dibujar nada, asi que si los
+diagramas no estuvieran en el repositorio las paginas publicadas saldrian sin
+ellos. Como efecto util, regenerar cualquier salida tras editar una clase solo
+vuelve a dibujar lo que cambio.
 
 Ademas del SVG se genera un PNG de cada diagrama. No es un duplicado por gusto:
 el HTML y los PDF incrustan el SVG (vectorial, nitido a cualquier zoom), pero una
@@ -56,7 +60,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CACHE = ROOT / ".cache" / "mermaid"
+# Versionado a proposito (ver arriba): sin esto, el build del sitio en CI no
+# tendria los diagramas y publicaria las clases sin sus graficos.
+CACHE = ROOT / "diagramas"
 
 PRESUPUESTO_MS = 60_000
 TIMEOUT_S = 600
@@ -181,7 +187,12 @@ def dibujar(fuentes: list[str], nav: str | None = None, verbose: bool = True) ->
 
     nav = nav or encontrar_navegador()
     if not nav:
-        raise SystemExit("No se encontro Edge ni Chrome para dibujar los diagramas.")
+        raise SystemExit(
+            f"Faltan {len(pendientes)} diagrama(s) en {CACHE.name}/ y no hay Edge ni Chrome "
+            f"con el que dibujarlos.\n"
+            f"Dibujalos donde si haya navegador y commitea el resultado:\n"
+            f"    python scripts/mermaid_svg.py"
+        )
 
     if verbose:
         print(f"Diagramas: {len(svgs)} en cache, {len(pendientes)} por dibujar "
@@ -276,7 +287,10 @@ def rasterizar(fuentes: list[str], nav: str | None = None, verbose: bool = True)
 
     nav = nav or encontrar_navegador()
     if not nav:
-        raise SystemExit("No se encontro Edge ni Chrome para rasterizar los diagramas.")
+        raise SystemExit(
+            f"Faltan {len(pendientes)} PNG en {CACHE.name}/ y no hay navegador con el que "
+            f"generarlos. Ejecuta: python scripts/mermaid_svg.py"
+        )
     if verbose:
         print(f"PNG: {len(pngs)} en cache, {len(pendientes)} por rasterizar.")
 

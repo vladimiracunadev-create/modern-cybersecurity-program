@@ -56,6 +56,10 @@ el diagrama **compila**: uno con la sintaxis rota no deja un hueco, sino un cart
 error"* con una bomba, y ese cartel viaja igual al sitio y al PDF. `scripts/mermaid_svg.py` los
 rechaza y los cuenta, así que basta con ejecutarlo y mirar el resumen.
 
+Los diagramas dibujados viven en `diagramas/` y **se commitean**: el CI construye el sitio y no
+tiene navegador con el que dibujarlos. Si editas un diagrama, ejecuta `scripts/mermaid_svg.py` e
+incluye el `.svg` y el `.png` nuevos en el commit.
+
 Tres formas de romperlo que ya han aparecido en este repositorio: usar `;` dentro de un
 `Note over` (mermaid lo lee como fin de sentencia), abrir una etiqueta con `[/` (es la sintaxis de
 la forma de paralelogramo, no texto — entrecomilla la etiqueta), y dejar espacios dentro de

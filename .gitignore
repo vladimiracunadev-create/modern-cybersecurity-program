@@ -38,9 +38,6 @@ Thumbs.db
 # Manifest interno de generación
 classes/_manifest.json
 
-# Diagramas mermaid ya dibujados a SVG (scripts/mermaid_svg.py). Es una caché
-# reconstruible desde las clases: se regenera sola y no se versiona.
-.cache/
 
 # Salida de los laboratorios: informes y cachés que se generan al ejecutarlos
 # (p. ej. el catálogo CISA KEV que descarga labs/devsecops-pipeline/priorizar.py).

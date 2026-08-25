@@ -254,9 +254,11 @@ python scripts/generar_material.py --todas   # guía PDF + presentación PPTX po
 python scripts/generar_curriculum_movil.py   # catálogo embebido de la app móvil
 ```
 
-> Los diagramas se dibujan **una vez** y se cachean por hash
-> ([`scripts/mermaid_svg.py`](scripts/mermaid_svg.py)), en SVG para el HTML y los PDF y en PNG para
-> las presentaciones y la app. Dejar que mermaid dibujara durante la impresión no escala —en el
+> Los diagramas se dibujan **una vez** y se guardan por hash en
+> [`diagramas/`](diagramas/) ([`scripts/mermaid_svg.py`](scripts/mermaid_svg.py)), en SVG para el
+> HTML y los PDF y en PNG para las presentaciones y la app. Se versionan a propósito: el CI
+> construye el sitio y no tiene navegador con el que dibujarlos, así que si no estuvieran en el
+> repositorio las páginas publicadas saldrían sin sus gráficos. Dejar que mermaid dibujara durante la impresión no escala —en el
 > manual, con 360 diagramas en una sola página, el PDF salía sin ninguno—, y así el resultado
 > tampoco depende de que una CDN responda a tiempo.
 >

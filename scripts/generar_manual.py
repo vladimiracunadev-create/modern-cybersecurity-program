@@ -414,7 +414,7 @@ def verificar_diagramas(pdf_path: str, clases) -> bool:
     print(f"Diagramas verificados: {len(sondas) - len(faltan)}/{len(sondas)} sondas encontradas.")
     if faltan:
         print(f"FALLA: {len(faltan)} diagrama(s) no llegaron al PDF: {faltan[:5]}")
-        print(f"       Revisa la cache de diagramas (.cache/mermaid) y la sintaxis mermaid.")
+        print("       Revisa los diagramas de diagramas/ y su sintaxis mermaid.")
         return False
     return True
 
