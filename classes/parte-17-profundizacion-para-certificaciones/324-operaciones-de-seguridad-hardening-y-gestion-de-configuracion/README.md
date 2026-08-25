@@ -32,6 +32,29 @@ Al finalizar, el alumno podrá:
 | 7 | Automatización (IaC, Ansible/GPO) | Hardening consistente y a escala |
 | 8 | Monitoreo continuo de configuración | Verifica que la baseline se sostiene (SP 800-137) |
 
+## 🧠 Modelo mental y caso de decisión
+
+Hardening define estado deseado, despliega, verifica deriva y gestiona excepciones; una imagen inicial no basta.
+
+```mermaid
+flowchart LR
+  A["Baseline"] --> B["Despliegue"] --> C["Deriva"] --> D["Corrección"]
+```
+
+**Caso razonado.** Una excepción temporal queda permanente. Caducidad y dueño la devuelven a decisión.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **Baseline de seguridad:** conjunto mínimo y documentado de ajustes de configuración que define el estado "seguro conocido" de un sistema. Característica clave: es el punto de referencia contra el que se mide la deriva y el cumplimiento.

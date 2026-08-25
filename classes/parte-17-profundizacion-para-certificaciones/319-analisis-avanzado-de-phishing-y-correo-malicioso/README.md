@@ -34,6 +34,29 @@ Al finalizar, el alumno podrá:
 | 7 | Triaje e IOCs | Priorizar y extraer indicadores para bloqueo |
 | 8 | Respuesta y playbook | Contener, purgar, bloquear, reportar, concienciar |
 
+## 🧠 Modelo mental y caso de decisión
+
+El análisis conserva mensaje original, cabeceras, autenticación, URLs, adjuntos y contexto antes de atribuir intención.
+
+```mermaid
+flowchart LR
+  A["Mensaje"] --> B["Cabeceras"] --> C["Artefactos"] --> D["Conclusión"]
+```
+
+**Caso razonado.** SPF pasa porque el atacante usa dominio propio; autenticación de dominio no significa legitimidad.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **Cabeceras de correo:** metadatos del mensaje. `Received` (saltos MTA, se leen de abajo hacia arriba), `Return-Path` (dónde rebotan), `Authentication-Results` (veredicto SPF/DKIM/DMARC), `Message-ID`. Característica clave: revelan el origen real y la ruta, difíciles de falsificar todos a la vez.

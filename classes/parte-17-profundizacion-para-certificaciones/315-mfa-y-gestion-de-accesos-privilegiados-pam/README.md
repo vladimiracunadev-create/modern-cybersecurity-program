@@ -37,6 +37,29 @@ Al finalizar, el alumno podrá:
 | 7 | JIT y zero standing privilege | Reduce la ventana de exposición del privilegio |
 | 8 | Grabación y auditoría de sesión | Trazabilidad y disuasión del abuso |
 
+## 🧠 Modelo mental y caso de decisión
+
+MFA eleva assurance según protocolo; PAM controla asignación, uso, sesión y retiro del privilegio.
+
+```mermaid
+flowchart LR
+  A["Solicitud"] --> B["Aprobación"] --> C["Sesión"] --> D["Revisión"]
+```
+
+**Caso razonado.** Un OTP es retransmitido por phishing. La migración prioriza autenticación ligada al verificador.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **Factor de autenticación:** categoría de prueba de identidad — **algo que sabes**

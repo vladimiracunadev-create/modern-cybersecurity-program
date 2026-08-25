@@ -32,6 +32,29 @@ Al finalizar, el alumno podrá:
 | 7 | Triaje de hallazgos | Prioriza lo explotable y elimina el ruido que mata la adopción |
 | 8 | Automatización (scripting, SARIF) | Pega las herramientas y normaliza la salida |
 
+## 🧠 Modelo mental y caso de decisión
+
+Automatizar seguridad exige entradas confiables, idempotencia, límites, logging y rollback; un script con privilegios es parte de la superficie.
+
+```mermaid
+flowchart LR
+  A["Entrada"] --> B["Decisión"] --> C["Acción"] --> D["Auditoría"]
+```
+
+**Caso razonado.** Una remediación masiva corrige el síntoma y rompe servicio; el modo simulación y rollback limitan daño.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **Revisión de código segura:** lectura estructurada del código buscando defectos de seguridad (validación, authz, manejo de secretos, criptografía). Característica clave: capta **fallos de lógica de negocio** que ninguna herramienta automática entiende.

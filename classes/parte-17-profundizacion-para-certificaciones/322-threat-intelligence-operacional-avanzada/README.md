@@ -32,6 +32,29 @@ Al finalizar, el alumno podrá:
 | 7 | MITRE ATT&CK y mapeo | Lenguaje común de TTPs y cobertura defensiva |
 | 8 | Diamond Model | Estructura para caracterizar y correlacionar intrusiones |
 
+## 🧠 Modelo mental y caso de decisión
+
+Inteligencia reduce incertidumbre para una decisión; indicadores caducan y las hipótesis deben competir.
+
+```mermaid
+flowchart LR
+  A["Requisito"] --> B["Colección"] --> C["Análisis"] --> D["Decisión"]
+```
+
+**Caso razonado.** Diez fuentes copian el mismo IOC. Se cuenta una raíz y se calibra confianza.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **Ciclo de inteligencia:** proceso de **Dirección → Recolección → Procesamiento → Análisis → Difusión → Retroalimentación**. Característica clave: es iterativo; sin *dirección* (requisitos) se recolecta ruido.

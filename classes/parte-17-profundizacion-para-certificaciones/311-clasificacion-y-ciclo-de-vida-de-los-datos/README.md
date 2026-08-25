@@ -37,6 +37,29 @@ Al finalizar, el alumno podrá:
 | 7 | Datos en reposo, tránsito y uso | Cada estado exige controles distintos |
 | 8 | Cumplimiento y datos regulados | PII/PHI/PCI imponen mínimos legales |
 
+## 🧠 Modelo mental y caso de decisión
+
+Clasificar sirve para aplicar decisiones proporcionales durante creación, uso, intercambio, archivo y eliminación.
+
+```mermaid
+flowchart LR
+  A["Crear"] --> B["Clasificar"] --> C["Usar"] --> D["Eliminar"]
+```
+
+**Caso razonado.** Un archivo cambia de dueño y conserva etiqueta antigua; se revisan evento, autoridad y propagación.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **Clasificación de datos:** proceso de asignar una etiqueta de sensibilidad (p. ej.

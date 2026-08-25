@@ -33,6 +33,29 @@ Al finalizar, el alumno podrá:
 | 7 | Métricas de detección | Lo que no se mide no se mejora; guía la priorización |
 | 8 | Mapeo de cobertura ATT&CK | Revela puntos ciegos frente al adversario |
 
+## 🧠 Modelo mental y caso de decisión
+
+Una detección vive: hipótesis, datos, lógica, pruebas, despliegue, métricas y mantenimiento frente a deriva.
+
+```mermaid
+flowchart LR
+  A["Hipótesis"] --> B["Datos"] --> C["Regla"] --> D["Validación"]
+```
+
+**Caso razonado.** La regla pasa un ejemplo pero no variantes. Se añade corpus positivo y negativo.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **Detection-as-code:** práctica de gestionar reglas de detección con las herramientas del desarrollo de software (Git, revisión, CI/CD, pruebas). Característica clave: trazabilidad y reproducibilidad de cada cambio.

@@ -33,6 +33,29 @@ Al finalizar, el alumno podrá:
 | 7 | Extracción y triaje de artefactos (`dumpfiles`, `handles`, `cmdline`) | Convierte un hallazgo en IOC accionable |
 | 8 | Correlación con timeline del incidente | La memoria es una foto; hay que ubicarla en la secuencia del ataque |
 
+## 🧠 Modelo mental y caso de decisión
+
+Memoria es una captura temporal cuya interpretación depende de adquisición, símbolos, contexto y corroboración.
+
+```mermaid
+flowchart LR
+  A["Adquirir"] --> B["Validar"] --> C["Analizar"] --> D["Corroborar"]
+```
+
+**Caso razonado.** Un proceso sin ruta parece malicioso pero corresponde a memoria incompleta; se contrasta con VAD y disco.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **Volcado de memoria (memory dump):** copia byte a byte de la RAM física en un instante. Característica clave: contiene datos que nunca se escriben a disco (claves, procesos, comandos).

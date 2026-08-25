@@ -32,6 +32,29 @@ Al finalizar, el alumno podrá:
 | 7 | Gestión de hallazgos y SLA | Convierte reportes en remediación medible |
 | 8 | OWASP ASVS | Estándar verificable de requisitos de seguridad |
 
+## 🧠 Modelo mental y caso de decisión
+
+La estrategia combina revisión, SAST, DAST, composición y pruebas manuales según propiedad y fase.
+
+```mermaid
+flowchart LR
+  A["Propiedad"] --> B["Técnica"] --> C["Evidencia"] --> D["Gate"]
+```
+
+**Caso razonado.** DAST no alcanza un rol; la cobertura inválida el resultado verde y se corrige autenticación.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **SAST (Static Application Security Testing):** analiza el **código fuente/binario sin ejecutarlo**. Característica clave: cobertura temprana y amplia, pero muchos falsos positivos; no ve fallos de configuración en runtime.

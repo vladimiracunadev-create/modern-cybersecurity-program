@@ -37,6 +37,29 @@ Al finalizar, el alumno podrá:
 | 7 | Revisiones y recertificación de acceso | Corrige el privilege creep acumulado |
 | 8 | Cuentas de servicio y no humanas | Suelen quedar fuera del ciclo y sin dueño |
 
+## 🧠 Modelo mental y caso de decisión
+
+IAM enlaza evento laboral, identidad, cuentas, derechos, revisión y baja; crear una cuenta no demuestra acceso correcto.
+
+```mermaid
+flowchart LR
+  A["Evento"] --> B["Identidad"] --> C["Acceso"] --> D["Revisión"]
+```
+
+**Caso razonado.** Un traslado conserva privilegios previos. La revisión por evento detecta acumulación antes del ciclo anual.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **Identidad:** representación digital única de un usuario, dispositivo o servicio dentro del

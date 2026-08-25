@@ -49,6 +49,15 @@ Haber cursado (o dominar) la **Parte 0** (fundamentos) y tener contexto de la **
 
 ## 🗺️ Estructura temática
 
+```mermaid
+flowchart LR
+  A["311–315<br/>datos e identidad"] --> B["316–321<br/>arquitectura, operación,<br/>gobierno y comunicación"] --> C["322–327<br/>inteligencia, pruebas,<br/>forense y detección"] --> D["328–330<br/>riesgo, Zero Trust<br/>y automatización"]
+```
+
+## 🧭 Recorrido clase a clase
+
+Las clases 311–315 gobiernan datos e identidades durante todo su ciclo. Las 316–321 conectan modelos, seguridad física, vulnerabilidades, correo, obligaciones y comunicación. Las 322–327 profundizan inteligencia y capacidades técnicas de evaluación, forense, malware y detección. Las 328–330 integran riesgo cuantitativo, continuidad, arquitectura Zero Trust y automatización segura. La progresión está diseñada para decidir y justificar, no para memorizar dominios de examen.
+
 | Bloque | Clases | Enfoque de certificación |
 |---|---|---|
 | Seguridad de los activos/datos | 311–312 | CISSP *Asset Security*, Security+ |

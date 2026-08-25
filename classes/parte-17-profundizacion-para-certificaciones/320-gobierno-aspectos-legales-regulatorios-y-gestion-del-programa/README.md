@@ -32,6 +32,29 @@ Al finalizar, el alumno podrá:
 | 7 | Gestión de riesgos y apetito de riesgo | Prioriza inversión según tolerancia |
 | 8 | Métricas y madurez (KPI/KRI, CMMI/NIST) | Demuestra valor y mejora continua |
 
+## 🧠 Modelo mental y caso de decisión
+
+La obligación se determina por jurisdicción, entidad, dato y evento; el equipo técnico preserva hechos y coordina asesoría competente.
+
+```mermaid
+flowchart LR
+  A["Hecho"] --> B["Aplicabilidad"] --> C["Decisión"] --> D["Evidencia"]
+```
+
+**Caso razonado.** Un plazo de notificación varía por régimen. Se evita prometer una regla universal y se activa la matriz jurídica.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **Gobierno de seguridad:** dirección estratégica que alinea la seguridad con los objetivos del negocio, define apetito de riesgo y asigna responsabilidad. Característica clave: responde *qué y por qué*, mientras la gestión responde *cómo*.

@@ -37,6 +37,29 @@ Al finalizar, el alumno podrá:
 | 7 | Riesgos de federación | Un IdP comprometido compromete todo |
 | 8 | JIT provisioning y atributos | Cómo se crean cuentas al vuelo con claims |
 
+## 🧠 Modelo mental y caso de decisión
+
+Federación separa autenticación, assertion/token, cliente y recurso. Firmar no corrige audiencia, redirect URI o autorización erróneas.
+
+```mermaid
+flowchart LR
+  A["Usuario"] --> B["IdP"] --> C["Cliente"] --> D["Recurso"]
+```
+
+**Caso razonado.** Un token válido para otra audiencia es aceptado. El recurso valida emisor, audiencia y contexto.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **SSO (Single Sign-On):** el usuario se autentica una vez y accede a varias aplicaciones sin

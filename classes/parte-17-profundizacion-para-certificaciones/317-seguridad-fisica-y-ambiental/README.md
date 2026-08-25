@@ -32,6 +32,29 @@ Al finalizar, el alumno podrá:
 | 7 | Supresión de incendios en salas de TI | Apagar fuego sin destruir los equipos |
 | 8 | Tiers de centros de datos (Uptime Institute) | Clasifican disponibilidad y redundancia |
 
+## 🧠 Modelo mental y caso de decisión
+
+La seguridad física diseña disuasión, detección, demora, respuesta y recuperación alrededor de personas y activos.
+
+```mermaid
+flowchart LR
+  A["Amenaza"] --> B["Barrera"] --> C["Detección"] --> D["Respuesta"]
+```
+
+**Caso razonado.** Una puerta fuerte carece de alerta y procedimiento; el tiempo de demora no produce seguridad sin respuesta.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **CPTED:** metodología de diseño que reduce el delito mediante el entorno físico. Sus pilares son **vigilancia natural**, **control natural de accesos**, **refuerzo territorial** y **mantenimiento**. Característica clave: la prevención empieza en la arquitectura del sitio, no en el guardia.

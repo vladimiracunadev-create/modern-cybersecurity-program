@@ -32,6 +32,29 @@ Al finalizar, el alumno podrá:
 | 7 | BIA: procesos críticos, MTD, RTO, RPO | Fija cuánto puede parar y cuántos datos se pueden perder |
 | 8 | Estrategias de continuidad y DR | Traduce los objetivos en sitios, backups y planes de recuperación |
 
+## 🧠 Modelo mental y caso de decisión
+
+Cuantificación y continuidad comparten escenarios, dependencias y distribuciones; el objetivo no es una cifra exacta.
+
+```mermaid
+flowchart LR
+  A["Escenario"] --> B["Distribución"] --> C["Dependencia"] --> D["Decisión"]
+```
+
+**Caso razonado.** El promedio de interrupción oculta cola catastrófica; percentiles cambian la estrategia.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **SLE (Single Loss Expectancy):** pérdida esperada de un solo evento. `SLE = valor del activo (AV) × factor de exposición (EF)`. Característica clave: mide el impacto de **un** incidente, no del año.

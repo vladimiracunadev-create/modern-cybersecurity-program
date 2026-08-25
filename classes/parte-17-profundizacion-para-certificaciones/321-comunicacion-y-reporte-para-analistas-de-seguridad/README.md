@@ -32,6 +32,29 @@ Al finalizar, el alumno podrá:
 | 7 | Notificaciones obligatorias y plazos | Cumplimiento legal (GDPR 72 h, etc.) |
 | 8 | Lecciones aprendidas y reporte post-incidente | Cierra el ciclo y mejora el programa |
 
+## 🧠 Modelo mental y caso de decisión
+
+El reporte adapta decisión, evidencia y lenguaje a audiencia sin ocultar incertidumbre ni exagerar impacto.
+
+```mermaid
+flowchart LR
+  A["Audiencia"] --> B["Decisión"] --> C["Evidencia"] --> D["Acción"]
+```
+
+**Caso razonado.** Un ejecutivo necesita exposición y opciones; el anexo conserva comandos y hashes para ingeniería.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **BLUF (Bottom Line Up Front):** técnica de redacción que pone la conclusión y la acción requerida al principio. Característica clave: respeta el tiempo del lector ejecutivo, que decide antes de leer el detalle.

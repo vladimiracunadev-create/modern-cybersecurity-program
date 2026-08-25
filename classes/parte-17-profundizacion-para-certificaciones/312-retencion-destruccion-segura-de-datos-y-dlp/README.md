@@ -37,6 +37,29 @@ Al finalizar, el alumno podrá:
 | 7 | Certificados y cadena de custodia | Prueba el cumplimiento ante auditoría |
 | 8 | Retención en la nube y backups | Los datos sobreviven en réplicas y snapshots |
 
+## 🧠 Modelo mental y caso de decisión
+
+Retención equilibra obligación, necesidad y minimización; DLP observa canales pero no comprende por sí solo propósito.
+
+```mermaid
+flowchart LR
+  A["Inventario"] --> B["Retener"] --> C["Detectar salida"] --> D["Destruir"]
+```
+
+**Caso razonado.** Un backup impide cumplir eliminación inmediata; se documenta expiración y acceso restringido en vez de prometer borrado inexistente.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **Retención de datos:** período durante el cual la organización conserva un tipo de dato,

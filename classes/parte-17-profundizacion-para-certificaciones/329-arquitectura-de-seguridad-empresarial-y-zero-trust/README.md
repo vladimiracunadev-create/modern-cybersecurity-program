@@ -32,6 +32,29 @@ Al finalizar, el alumno podrá:
 | 7 | Componentes ZT: PE, PA, PEP | Separan decidir de aplicar la política de acceso |
 | 8 | SASE / ZTNA | Lleva el modelo al usuario remoto y a la nube |
 
+## 🧠 Modelo mental y caso de decisión
+
+Zero Trust evalúa cada acceso con identidad, dispositivo, recurso y contexto; no significa ausencia de redes ni confianza cero literal.
+
+```mermaid
+flowchart LR
+  A["Identidad"] --> B["Contexto"] --> C["Política"] --> D["Recurso"]
+```
+
+**Caso razonado.** MFA fuerte no compensa dispositivo sin gestión que descarga datos sensibles.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **Arquitectura de seguridad empresarial (ESA):** disciplina que estructura los controles de seguridad de toda la organización de forma coherente y alineada al negocio. Característica clave: piensa en **sistema**, no en dispositivos aislados.

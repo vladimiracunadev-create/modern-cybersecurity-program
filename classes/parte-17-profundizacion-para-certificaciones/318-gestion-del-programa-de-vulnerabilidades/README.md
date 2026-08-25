@@ -32,6 +32,29 @@ Al finalizar, el alumno podrá:
 | 7 | SLAs de remediación y excepciones | Convierten hallazgos en compromisos medibles |
 | 8 | Métricas y madurez del programa | Demuestran reducción de riesgo en el tiempo |
 
+## 🧠 Modelo mental y caso de decisión
+
+El programa convierte inventario y hallazgos en tratamiento verificable, no en una carrera por cerrar conteos.
+
+```mermaid
+flowchart LR
+  A["Activo"] --> B["Hallazgo"] --> C["Prioridad"] --> D["Retest"]
+```
+
+**Caso razonado.** Un crítico no desplegado recibe menos prioridad que una vulnerabilidad explotada en servicio público.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **Gestión de vulnerabilidades (VM):** proceso continuo de identificar, evaluar, tratar y reportar vulnerabilidades. Característica clave: cíclico y basado en riesgo, no un escaneo puntual.

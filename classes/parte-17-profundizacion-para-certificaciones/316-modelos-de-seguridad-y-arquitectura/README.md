@@ -32,6 +32,29 @@ Al finalizar, el alumno podrá:
 | 7 | Anillos de protección y modos de ejecución | Aislamiento por hardware entre kernel y usuario |
 | 8 | Take-Grant, matriz de acceso, Graham-Denning | Modelos de derechos y su propagación |
 
+## 🧠 Modelo mental y caso de decisión
+
+Los modelos formales explican propiedades bajo supuestos; arquitectura combina sujetos, objetos, flujos y fronteras reales.
+
+```mermaid
+flowchart LR
+  A["Propiedad"] --> B["Modelo"] --> C["Arquitectura"] --> D["Prueba"]
+```
+
+**Caso razonado.** Bell-LaPadula protege confidencialidad pero no resuelve integridad operacional; se combinan controles.
+
+## 📔 Glosario operativo complementario
+
+| Término | Definición |
+|---|---|
+| Evidencia | Información cuya procedencia y relación con un criterio pueden revisarse. |
+| Supuesto | Condición declarada de la que depende una conclusión. |
+| Riesgo residual | Exposición que permanece después del tratamiento. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
+
 ## 📖 Definiciones y características
 
 - **Modelo de máquina de estados (state machine model):** representa el sistema como estados y transiciones; es *seguro* si siempre parte de un estado seguro y toda transición conduce a otro estado seguro. Característica clave: fundamento matemático de BLP y Biba.
