@@ -84,6 +84,7 @@ El valor probatorio aparece al correlacionar: un PDF recuperado comparte hash co
 - **Header/footer carving**: extraer entre una firma de inicio y una de fin. Característica: falla si el archivo está fragmentado.
 - **Fragmentación**: archivo disperso en clusters no contiguos. Característica: el carving simple lo reconstruye mal.
 - **bulk_extractor**: busca características como correos y URLs sin depender del filesystem. Característica: útil para triage; sus hallazgos necesitan contexto y deduplicación.
+- **Falso positivo**: dato "recuperado" que no es un archivo válido. Característica: hay que validar cada recuperado.
 
 ## 🔍 Caso razonado — dos JPEG y un PDF parcialmente sobrescrito
 
@@ -94,7 +95,6 @@ Un candidato PDF comienza con `%PDF` pero su tabla xref apunta a sectores sobres
 ## ✅ Criterio de dominio
 
 Dominas la clase cuando eliges recuperación por metadatos antes de carving cuando corresponde, delimitas el espacio procesado, registras offsets y parámetros, validas cada formato con estructura interna, deduplicas por hash y redactas conclusiones que distinguen presencia de bytes, archivo válido, identidad y uso.
-- **Falso positivo**: dato "recuperado" que no es un archivo válido. Característica: hay que validar cada recuperado.
 
 ## 🧰 Herramientas y preparación
 
@@ -188,7 +188,7 @@ Artefactos como emails, URLs, números de tarjeta y dominios, sin necesidad de p
 - **foremost:** <https://foremost.sourceforge.net/> — documentación del carver; sus resultados requieren validación estructural.
 - **bulk_extractor:** <https://github.com/simsong/bulk_extractor> — código y documentación del proyecto para extracción de características sin parsear el filesystem.
 - **NIST CFTT:** <https://www.nist.gov/itl/ssd/software-quality-group/computer-forensics-tool-testing-program-cftt> — programa oficial de metodología y pruebas de herramientas forenses; consultar reportes aplicables a herramienta y versión.
-- **Carrier, B. — _File System Forensic Analysis_, Addison-Wesley, 2005:** fundamento conceptual; contrastar detalles con el filesystem y versión actuales.
+- **Carrier, B. — *File System Forensic Analysis*, Addison-Wesley, 2005:** fundamento conceptual; contrastar detalles con el filesystem y versión actuales.
 
 ## 📥 Material descargable
 

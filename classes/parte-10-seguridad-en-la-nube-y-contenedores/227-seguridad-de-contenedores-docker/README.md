@@ -78,6 +78,7 @@ Se ejecuta como usuario no root, filesystem de solo lectura, capabilities elimin
 - **Contenedor privilegiado:** modo que amplía dispositivos, capabilities y acceso respecto del perfil normal. *Clave:* aumenta sustancialmente rutas hacia el host y exige justificación excepcional.
 - **Multi-stage build:** compilar en una etapa y copiar artefactos seleccionados a otra. *Clave:* reduce toolchain final; no elimina secretos persistidos por comandos o archivos copiados incorrectamente.
 - **Distroless / scratch:** imágenes con conjunto mínimo de runtime. *Clave:* reducen componentes, pero complican diagnóstico y no eliminan vulnerabilidades de la aplicación.
+- **Seccomp:** filtra syscalls disponibles al contenedor. *Clave:* el perfil por defecto ya bloquea syscalls peligrosas.
 
 ## 🔍 Caso razonado — una aplicación que necesita escribir y escuchar en 80
 
@@ -88,7 +89,6 @@ Trivy encuentra una CVE en una biblioteca que la app no carga. La excepción no 
 ## ✅ Criterio de dominio
 
 Dominas la clase cuando puedes explicar qué aísla cada mecanismo, reconstruir una imagen sin secretos en capas, fijarla por digest y ejecutar la carga con usuario, mounts, capabilities y perfiles mínimos, documentando cada excepción y su prueba.
-- **Seccomp:** filtra syscalls disponibles al contenedor. *Clave:* el perfil por defecto ya bloquea syscalls peligrosas.
 
 ## 🧰 Herramientas y preparación
 
@@ -162,7 +162,7 @@ Fuera de las capas de imagen, mediante un gestor y una identidad de carga. La en
 - CIS Docker Benchmark. <https://www.cisecurity.org/benchmark/docker> — baseline versionada; comprobar aplicabilidad al runtime y distribución.
 - Docker Bench for Security. <https://github.com/docker/docker-bench-security> — automatiza una selección de checks CIS; documentar versión, host y pruebas no ejecutables.
 - Trivy. <https://github.com/aquasecurity/trivy> — proyecto primario de escaneo; interpretar base, alcance y configuración.
-- Liz Rice, _Container Security_. <https://www.oreilly.com/library/view/container-security/9781492056690/> — explicación complementaria de mecanismos Linux.
+- Liz Rice, *Container Security*. <https://www.oreilly.com/library/view/container-security/9781492056690/> — explicación complementaria de mecanismos Linux.
 
 ## 📥 Material descargable
 

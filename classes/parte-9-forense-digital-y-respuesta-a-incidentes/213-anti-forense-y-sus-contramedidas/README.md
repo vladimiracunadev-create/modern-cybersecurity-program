@@ -188,7 +188,7 @@ Difícil por TRIM, pero busca en shadow copies, backups, journal, memoria y logs
 - **MITRE ATT&CK T1070.006 — Timestomp:** <https://attack.mitre.org/techniques/T1070/006/> — comportamiento y fuentes de detección para modificación temporal.
 - **LOLBAS:** <https://lolbas-project.github.io/> — catálogo comunitario de usos documentados de binarios legítimos; una coincidencia requiere contexto.
 - **Eric Zimmerman’s Tools:** <https://ericzimmerman.github.io/> — documentación de herramientas para artefactos Windows; validar versión y resultados contra fuentes originales.
-- **Ligh, Case, Levy y Walters — _The Art of Memory Forensics_, Wiley, 2014:** fundamento para análisis en memoria; los perfiles y comandos históricos no sustituyen documentación actual de Volatility 3.
+- **Ligh, Case, Levy y Walters — *The Art of Memory Forensics*, Wiley, 2014:** fundamento para análisis en memoria; los perfiles y comandos históricos no sustituyen documentación actual de Volatility 3.
 
 ## 📥 Material descargable
 

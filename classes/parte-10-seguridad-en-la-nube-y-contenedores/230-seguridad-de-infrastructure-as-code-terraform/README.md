@@ -76,6 +76,7 @@ tfsec y Checkov aplican reglas sobre configuración; OPA o Sentinel pueden evalu
 - **tfsec / Checkov:** escáneres estáticos de IaC. *Clave:* encuentran buckets públicos, SG abiertos, cifrado ausente.
 - **Policy-as-code:** reglas (OPA/Rego, Sentinel) que aprueban o bloquean planes. *Clave:* impide desplegar lo no conforme.
 - **Backend remoto:** almacenamiento coordinado del state. *Clave:* capacidades de cifrado, locking, acceso, auditoría y recuperación dependen del backend y versión.
+- **Módulo:** paquete reutilizable de Terraform. *Clave:* verifica origen y versión para la cadena de suministro.
 
 ## 🔍 Caso razonado — contraseña marcada `sensitive` que sigue en state
 
@@ -86,7 +87,6 @@ Checkov deja pasar el código después del cambio, pero la verificación no term
 ## ✅ Criterio de dominio
 
 Dominas la clase cuando puedes explicar HCL–plan–state–cloud, demostrar qué valor sensible persiste, fijar providers y módulos, escribir una policy con pruebas y límites, y detectar drift declarando recursos y permisos cubiertos.
-- **Módulo:** paquete reutilizable de Terraform. *Clave:* verifica origen y versión para la cadena de suministro.
 
 ## 🧰 Herramientas y preparación
 

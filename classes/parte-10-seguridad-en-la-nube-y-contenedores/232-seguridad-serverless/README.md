@@ -73,6 +73,8 @@ Variables de entorno pueden cifrarse en reposo, pero suelen ser legibles para id
 - **Rol de ejecución:** identidad IAM que asume la función. *Clave:* debe ser mínimo y exclusivo por función.
 - **Event injection:** uso de campos de un evento para alterar una operación posterior. *Clave:* autenticar origen, validar esquema y usar APIs seguras resuelven riesgos diferentes.
 - **Abuso de costo/concurrencia:** invocaciones, fan-out o bucles que consumen cuota y presupuesto. *Clave:* combina límites, idempotencia, alertas y protección en la fuente.
+- **Cold start:** primera invocación tras inactividad. *Clave:* relevante para timeouts y para no cachear secretos inseguros.
+- **Variables de entorno:** config inyectada en la función. *Clave:* no son secretas por sí solas; usa un gestor de secretos y cifrado.
 
 ## 🔍 Caso razonado — objeto que dispara un bucle
 
@@ -83,8 +85,6 @@ La corrección separa prefijos o buckets, filtra eventos, agrega idempotencia y 
 ## ✅ Criterio de dominio
 
 Dominas la clase cuando puedes modelar una cadena de evento completa, asignar rol mínimo por función, diseñar idempotencia y límites, entregar secretos sin exponerlos y demostrar con logs/métricas qué ocurrió durante reintentos y rechazo.
-- **Cold start:** primera invocación tras inactividad. *Clave:* relevante para timeouts y para no cachear secretos inseguros.
-- **Variables de entorno:** config inyectada en la función. *Clave:* no son secretas por sí solas; usa un gestor de secretos y cifrado.
 
 ## 🧰 Herramientas y preparación
 

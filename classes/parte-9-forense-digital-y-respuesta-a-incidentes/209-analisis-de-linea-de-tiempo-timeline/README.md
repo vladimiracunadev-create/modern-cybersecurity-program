@@ -184,7 +184,7 @@ Buscando incoherencias entre fuentes que registran el mismo hecho: FS, `$UsnJrnl
 - **Timesketch Documentation:** <https://timesketch.org/> — documentación del proyecto para búsqueda, anotación y colaboración; no sustituye la validación del parser.
 - **The Sleuth Kit:** <https://www.sleuthkit.org/sleuthkit/docs.php> — documentación del proyecto para timelines de filesystem y semántica de sus herramientas.
 - **RFC 3227 / BCP 55:** <https://www.rfc-editor.org/info/rfc3227/> — guía para recolección y archivo de evidencia; sustenta documentar reloj, zona y deriva.
-- **Carrier, B. — _File System Forensic Analysis_, Addison-Wesley, 2005:** fundamento técnico; sus ejemplos deben contrastarse con versiones actuales de cada filesystem.
+- **Carrier, B. — *File System Forensic Analysis*, Addison-Wesley, 2005:** fundamento técnico; sus ejemplos deben contrastarse con versiones actuales de cada filesystem.
 
 ## 📥 Material descargable
 

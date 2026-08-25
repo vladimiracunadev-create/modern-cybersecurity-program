@@ -84,6 +84,7 @@ El GDPR exige notificar a la autoridad de control sin dilación indebida y, cuan
 - **Cadena de custodia**: registro cronológico de posesión, transferencia y acciones sobre evidencia. Característica: una discontinuidad debe investigarse y explicarse; su efecto legal no es automático ni universal.
 - **Testigo experto**: perito que explica hallazgos técnicos al tribunal. Característica: debe ser claro, imparcial y defendible.
 - **Notificación de brecha**: obligación aplicable bajo un marco y hechos concretos. Característica: autoridad, afectados, umbral y plazo varían; GDPR incorpora la regla condicionada de 72 horas del artículo 33.
+- **Privacidad**: límites sobre qué datos se pueden recolectar/analizar. Característica: varía por jurisdicción y contexto laboral.
 
 ## 🔍 Caso razonado — dos timestamps en conflicto
 
@@ -94,7 +95,6 @@ El resumen ejecutivo declara acceso observado y alcance conocido. El anexo cita 
 ## ✅ Criterio de dominio
 
 Dominas la clase cuando cada conclusión puede rastrearse a una fuente, separas hecho e inferencia, declaras alternativas y limitaciones, adaptas profundidad sin cambiar los hechos y reconoces qué decisiones requieren asesoría legal. Tu informe permite repetir los pasos sustantivos y no promete admisibilidad universal.
-- **Privacidad**: límites sobre qué datos se pueden recolectar/analizar. Característica: varía por jurisdicción y contexto laboral.
 
 ## 🧰 Herramientas y preparación
 

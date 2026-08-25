@@ -84,6 +84,7 @@ La integridad también debe demostrarse. En AWS, la validación de archivos de C
 - **GCP Audit Logs**: Admin Activity, Data Access, System Event. Característica: Data Access puede estar desactivado por costo.
 - **Snapshot**: representación puntual administrada por el proveedor de un volumen. Característica: preserva estado accesible del disco, pero no equivale a una imagen física ni garantiza consistencia de aplicación.
 - **Evidencia efímera**: datos ligados al ciclo de vida de instancias, contenedores, memoria o almacenamiento temporal. Característica: puede desaparecer al reemplazar o terminar el recurso.
+- **Rol/clave IAM comprometida**: credencial robada usada por el atacante. Característica: se investiga por patrones anómalos en los logs de API.
 
 ## 🔍 Caso razonado — rol asumido en dos regiones
 
@@ -94,7 +95,6 @@ Antes de revocar, exporta los eventos con un rol de investigación separado y re
 ## ✅ Criterio de dominio
 
 Dominas la clase cuando diferencias control, datos e identidad; enumeras cobertura y retención por proveedor; preservas respuestas API reproducibles; explicas los límites de snapshots; y reconstruyes una cadena de sesión IAM a través de cuentas y regiones sin atribuir el principal técnico directamente a una persona.
-- **Rol/clave IAM comprometida**: credencial robada usada por el atacante. Característica: se investiga por patrones anómalos en los logs de API.
 
 ## 🧰 Herramientas y preparación
 

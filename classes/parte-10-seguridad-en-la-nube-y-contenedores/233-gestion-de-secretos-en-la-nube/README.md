@@ -76,6 +76,8 @@ Un escáner usa patrones, entropía y validación opcional. Puede omitir formato
 - **Secreto dinámico:** credencial generada bajo demanda con TTL corto (p. ej. Vault crea un usuario de BD temporal). *Clave:* nada persistente que robar.
 - **Envelope encryption:** cifrar datos con una clave de datos, y esa clave con una clave maestra (KMS). *Clave:* base del cifrado escalable.
 - **Entrega en runtime:** el secreto se obtiene durante la ejecución. *Clave:* evita incorporarlo al build, pero debe controlar variables, archivos, memoria, logs y caché.
+- **Sidecar de secretos (Vault Agent):** proceso que obtiene y renueva secretos junto a la app. *Clave:* mantiene el secreto fuera del código.
+- **Escáner de secretos:** herramienta que busca secretos en el código/historial. *Clave:* prevención en el pipeline.
 
 ## 🔍 Caso razonado — secreto eliminado de Git pero todavía válido
 
@@ -86,8 +88,6 @@ Gitleaks se configura con una regla para el formato interno y una prueba sintét
 ## ✅ Criterio de dominio
 
 Dominas la clase cuando modelas el ciclo completo, eliges secreto estático/dinámico con justificación, demuestras entrega sin código o imagen, pruebas rotación sin caída y ejecutas una respuesta a filtración que revoca antes de limpiar rastros.
-- **Sidecar de secretos (Vault Agent):** proceso que obtiene y renueva secretos junto a la app. *Clave:* mantiene el secreto fuera del código.
-- **Escáner de secretos:** herramienta que busca secretos en el código/historial. *Clave:* prevención en el pipeline.
 
 ## 🧰 Herramientas y preparación
 

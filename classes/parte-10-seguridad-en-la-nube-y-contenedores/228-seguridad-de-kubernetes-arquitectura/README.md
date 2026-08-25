@@ -84,6 +84,7 @@ Namespaces organizan nombres, cuotas, RBAC y políticas namespaced; no crean ais
 - **RBAC:** control de acceso por roles (Role/ClusterRole + Binding). *Clave:* privilegio mínimo dentro del clúster.
 - **ServiceAccount:** identidad de los pods frente al API server. *Clave:* su token, si se roba, da acceso a la API.
 - **Admission controller:** valida o muta objetos antes de persistirlos. *Clave:* aplica políticas sobre solicitudes admitidas, con alcance y excepciones configurables.
+- **NetworkPolicy:** API para expresar aislamiento L3/L4 según selección y direcciones. *Clave:* el efecto depende del CNI, políticas aplicables y flujos permitidos.
 
 ## 🔍 Caso razonado — Pod sin token que necesita hablar con una API externa
 
@@ -94,7 +95,6 @@ La prueba usa `kubectl auth can-i` para casos positivos y negativos, inspecciona
 ## ✅ Criterio de dominio
 
 Dominas la clase cuando puedes seguir una petición por authn, authz, admission, etcd y reconciliación; explicar qué no pasa por esa ruta; diseñar ServiceAccount/RBAC mínimo; y demostrar los límites de namespace, NetworkPolicy, kubelet y Secret.
-- **NetworkPolicy:** API para expresar aislamiento L3/L4 según selección y direcciones. *Clave:* el efecto depende del CNI, políticas aplicables y flujos permitidos.
 
 ## 🧰 Herramientas y preparación
 
@@ -167,7 +167,7 @@ En clústeres modernos sí, pero muchas instalaciones dejan roles amplios o Serv
 - Kubernetes — RBAC Authorization. <https://kubernetes.io/docs/reference/access-authn-authz/rbac/> — semántica de roles, bindings y verbos.
 - Kubernetes — Security Checklist. <https://kubernetes.io/docs/concepts/security/security-checklist/> — recomendaciones actuales, incluidas Secrets y tokens.
 - NIST SP 800-190. <https://doi.org/10.6028/NIST.SP.800-190> — guía de riesgos de contenedores; complementar con versión Kubernetes desplegada.
-- Martin y Hausenblas, _Hacking Kubernetes_. <https://www.oreilly.com/library/view/hacking-kubernetes/9781492081722/> — ejemplos complementarios, no documentación normativa.
+- Martin y Hausenblas, *Hacking Kubernetes*. <https://www.oreilly.com/library/view/hacking-kubernetes/9781492081722/> — ejemplos complementarios, no documentación normativa.
 
 ## 📥 Material descargable
 

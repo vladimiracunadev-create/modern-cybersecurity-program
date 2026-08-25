@@ -77,6 +77,9 @@ Default-deny cambia el namespace a aislamiento por selección, pero necesita un 
 - **securityContext:** ajustes de seguridad del pod/contenedor (runAsNonRoot, readOnlyRootFilesystem, drop capabilities). *Clave:* el equivalente al hardening de Docker en K8s.
 - **Escape de pod:** obtener capacidades o acceso fuera del aislamiento previsto del contenedor. *Clave:* configuración privilegiada, mounts y vulnerabilidades pueden facilitarlo; el impacto debe demostrarse.
 - **RBAC `escalate`/`bind`:** verbos para crear roles con permisos no poseídos o enlazar roles. *Clave:* son sensibles, pero su impacto depende de recursos, ámbitos y bindings disponibles.
+- **Token de ServiceAccount:** JWT montado en el pod para hablar con la API. *Clave:* si se roba, el atacante actúa como ese SA.
+- **NetworkPolicy default-deny:** conjunto de políticas que aísla Pods seleccionados en ingress y/o egress. *Clave:* establece allowlists si el CNI la implementa y las dependencias se modelan.
+- **kube-bench:** herramienta que evalúa el CIS Benchmark. *Clave:* automatiza la auditoría de hardening.
 
 ## 🔍 Caso razonado — `create pods` sin `get secrets`
 
@@ -87,9 +90,6 @@ La corrección separa namespaces por confianza, limita quién crea workloads, co
 ## ✅ Criterio de dominio
 
 Dominas la clase cuando puedes convertir un hallazgo de benchmark en riesgo contextual, aplicar PSA con versión y modos, demostrar una ruta indirecta RBAC, construir NetworkPolicy desde flujos y explicar qué controles permanecen en nodo, kubelet y etcd.
-- **Token de ServiceAccount:** JWT montado en el pod para hablar con la API. *Clave:* si se roba, el atacante actúa como ese SA.
-- **NetworkPolicy default-deny:** conjunto de políticas que aísla Pods seleccionados en ingress y/o egress. *Clave:* establece allowlists si el CNI la implementa y las dependencias se modelan.
-- **kube-bench:** herramienta que evalúa el CIS Benchmark. *Clave:* automatiza la auditoría de hardening.
 
 ## 🧰 Herramientas y preparación
 
@@ -164,7 +164,7 @@ Es una base excelente de configuración CIS, pero no cubre RBAC excesivo, imáge
 - Kubernetes — Network Policies. <https://kubernetes.io/docs/concepts/services-networking/network-policies/> — semántica y dependencia del plugin.
 - CIS Kubernetes Benchmark. <https://www.cisecurity.org/benchmark/kubernetes> — baseline según distribución y versión.
 - kube-bench. <https://github.com/aquasecurity/kube-bench> — automatización del benchmark; revisar target y configuración.
-- Martin y Hausenblas, _Hacking Kubernetes_. <https://www.oreilly.com/library/view/hacking-kubernetes/9781492081722/> — escenarios complementarios controlados.
+- Martin y Hausenblas, *Hacking Kubernetes*. <https://www.oreilly.com/library/view/hacking-kubernetes/9781492081722/> — escenarios complementarios controlados.
 
 ## 📥 Material descargable
 

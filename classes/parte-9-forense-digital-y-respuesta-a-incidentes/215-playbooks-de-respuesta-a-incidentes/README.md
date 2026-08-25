@@ -166,7 +166,7 @@ Revísalos tras cada incidente y en las lecciones aprendidas; un playbook es un 
 - **CISA Incident and Vulnerability Response Playbooks:** <https://www.cisa.gov/sites/default/files/publications/Cybersecurity_Incident_Vulnerability_Response_Playbooks_508C.pdf> — ejemplo oficial de pasos, roles y coordinación; debe adaptarse al contexto y al marco NIST vigente.
 - **MITRE ATT&CK:** <https://attack.mitre.org/> — lenguaje y conocimiento de comportamientos para búsquedas y cobertura; no es un procedimiento de respuesta.
 - **TheHive:** <https://docs.strangebee.com/thehive/> — documentación oficial de gestión de casos y observables; la herramienta no define por sí sola autoridad operativa.
-- **Roberts y Brown — _Intelligence-Driven Incident Response_, O’Reilly, 2017:** enfoque de respuesta guiada por inteligencia; complementar con normas y arquitectura actuales.
+- **Roberts y Brown — *Intelligence-Driven Incident Response*, O’Reilly, 2017:** enfoque de respuesta guiada por inteligencia; complementar con normas y arquitectura actuales.
 
 ## 📥 Material descargable
 

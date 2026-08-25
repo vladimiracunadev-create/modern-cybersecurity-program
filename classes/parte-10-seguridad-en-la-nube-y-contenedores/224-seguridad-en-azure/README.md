@@ -74,6 +74,7 @@ Defender for Cloud combina recomendaciones de postura con planes de protección 
 - **Azure Policy:** reglas que auditan o fuerzan configuraciones. *Clave:* efecto `Deny` bloquea despliegues no conformes.
 - **NSG:** filtro stateful sobre subred o NIC. *Clave:* el número de prioridad menor se evalúa antes; se consideran reglas efectivas en ambos ámbitos.
 - **Defender for Cloud:** capacidades de postura y protección según planes habilitados. *Clave:* Secure Score representa recomendaciones del servicio, no una medida completa de riesgo.
+- **Key Vault:** almacén gestionado de secretos y claves. *Clave:* acceso vía RBAC/policy y auditado.
 
 ## 🔍 Caso razonado — Contributor no puede leer un secreto
 
@@ -84,7 +85,6 @@ Luego Azure Policy exige deshabilitar acceso público y usar Private Endpoint. L
 ## ✅ Criterio de dominio
 
 Dominas la clase cuando puedes dibujar tenant y jerarquía de recursos, explicar una asignación RBAC efectiva por ámbito, diferenciar Policy de autorización, validar NSG/Private Endpoint y diseñar acceso a Key Vault mediante managed identity con logs y pruebas de denegación.
-- **Key Vault:** almacén gestionado de secretos y claves. *Clave:* acceso vía RBAC/policy y auditado.
 
 ## 🧰 Herramientas y preparación
 
