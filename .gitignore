@@ -49,6 +49,9 @@ site/
 mobile/node_modules/
 mobile/.expo/
 mobile/dist/
+# Salida de `expo export --platform web`, que el pipeline de release genera para
+# comprobar el bundle antes de compilar el APK.
+mobile/dist-web/
 mobile/web-build/
 mobile/android/
 mobile/ios/
@@ -56,3 +59,6 @@ mobile/ios/
 mobile/*.apk
 mobile/*.aab
 release-artifacts/
+
+# Configuracion local del agente (settings.local.json, launch.json de preview)
+.claude/

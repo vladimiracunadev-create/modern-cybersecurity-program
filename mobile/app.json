@@ -2,7 +2,7 @@
   "expo": {
     "name": "Ciberseguridad Moderna",
     "slug": "modern-cybersecurity-program",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
@@ -19,12 +19,17 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0b1220"
       },
-      "package": "com.vladimiracuna.moderncybersecurity"
+      "package": "com.vladimiracuna.moderncybersecurity",
+      "versionCode": 2
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "sdkVersion": "51.0.0",
-    "platforms": ["android", "ios", "web"]
+    "platforms": [
+      "android",
+      "ios",
+      "web"
+    ]
   }
 }

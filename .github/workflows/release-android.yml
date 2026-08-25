@@ -66,6 +66,15 @@ jobs:
         working-directory: mobile
         run: npx expo export --platform web --output-dir dist-web
 
+      # Se comprueba ya sobre el bundle web (barato, 1 min) para no descubrir
+      # un catalogo recortado despues de compilar el APK entero.
+      - name: Verificar el contenido en el bundle web
+        run: |
+          set -e
+          BUNDLE="$(find mobile/dist-web -name 'AppEntry-*.js' | head -n1)"
+          test -n "$BUNDLE"
+          python scripts/verificar_bundle.py "$BUNDLE"
+
       - name: Generar proyecto Android nativo (prebuild)
         working-directory: mobile
         env:
@@ -131,7 +140,7 @@ jobs:
           "$BUILD_TOOLS/apksigner" verify --verbose "$OUT_DIR/CiberseguridadModerna-${TAG_NAME}.apk"
           echo "outdir=$OUT_DIR" >> "$GITHUB_OUTPUT"
 
-      - name: Comprobar que el temario viaja embebido en el APK
+      - name: Comprobar que las clases viajan COMPLETAS dentro del APK
         env:
           OUT_DIR: ${{ steps.sign.outputs.outdir }}
         run: |
@@ -139,25 +148,18 @@ jobs:
           APK="$OUT_DIR/CiberseguridadModerna-${TAG_NAME}.apk"
           unzip -o "$APK" "assets/index.android.bundle" -d "$RUNNER_TEMP/apk_check" >/dev/null
           BUNDLE="$RUNNER_TEMP/apk_check/assets/index.android.bundle"
-          SIZE=$(wc -c < "$BUNDLE")
-          echo "Tamaño del bundle embebido: $SIZE bytes"
+          echo "Tamaño del bundle embebido: $(wc -c < "$BUNDLE") bytes"
           # El bundle de release es bytecode Hermes: las CLAVES de objeto se
-          # deduplican (por eso "siteUrl" saldría 1 vez), pero cada VALOR de URL
-          # de clase es único y queda como string distinto en la tabla de strings.
-          # Contamos las rutas de clase embebidas (una por clase en siteUrl/githubUrl).
+          # deduplican (por eso "siteUrl" saldría 1 vez), pero cada VALOR es un
+          # string distinto en la tabla de strings. Contamos las rutas de clase.
           HITS=$(grep -ao 'classes/parte-' "$BUNDLE" | wc -l)
           echo "Rutas de clase embebidas en el bundle: $HITS"
-          # Marcadores distintos que deben estar si el catálogo viajó completo.
-          for marker in "parte-0-fundamentos" "parte-8-blue-team" "parte-18-ia-aplicada" "el-soc-moderno"; do
-            if grep -aoq "$marker" "$BUNDLE"; then
-              echo "  OK  $marker"
-            else
-              echo "  FALTA  $marker"; exit 1
-            fi
-          done
-          test "$SIZE" -gt 1000000
           test "$HITS" -ge 300
-          echo "VERIFICADO: el temario (340 clases) viaja embebido en el APK."
+          # Y lo que de verdad importa desde la 1.1.0: que el TEXTO de las
+          # clases esté ahí, no solo sus enlaces. El verificador busca dentro
+          # del bytecode párrafos completos de una muestra de clases; con el
+          # catálogo resumido de la 1.0.0 este paso falla.
+          python scripts/verificar_bundle.py "$BUNDLE"
 
       - name: Generar SHA256SUMS
         working-directory: ${{ steps.sign.outputs.outdir }}
@@ -171,12 +173,21 @@ jobs:
           tag_name: ${{ env.TAG_NAME }}
           name: "Ciberseguridad Moderna ${{ env.TAG_NAME }}"
           body: |
-            Primer release de la app móvil **Ciberseguridad Moderna** (Android).
+            App móvil **Ciberseguridad Moderna** (Android) — las 340 clases del
+            programa, en el teléfono.
 
-            - 340 clases en 19 partes embebidas — se leen **sin conexión**.
-            - APK compilado y firmado en GitHub Actions; el temario embebido se
-              verifica dentro del APK antes de publicar.
+            - **Las clases viajan enteras**: explicación en profundidad, glosario,
+              laboratorio, ejercicios, reto, errores comunes, preguntas frecuentes y
+              referencias. Se leen **sin conexión**; ya no hace falta salir al sitio
+              para leer la clase.
+            - 340 clases en 19 partes, con progreso guardado solo en el dispositivo.
+            - APK compilado y firmado en GitHub Actions. Antes de publicar se abre el
+              APK y se comprueba, dentro del bytecode, que el texto de las clases está
+              realmente ahí — no basta con que el build salga en verde.
             - Verifica la integridad con `SHA256SUMS.txt`.
+
+            > Los diagramas mermaid no se dibujan en la app: cada clase enlaza a su
+            > página del sitio, donde sí se ven.
 
             > APK de sideload (fuera de Play Store). En Android, permite instalar desde
             > "orígenes desconocidos" para el instalador que uses.

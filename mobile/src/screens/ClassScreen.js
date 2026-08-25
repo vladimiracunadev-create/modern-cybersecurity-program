@@ -1,12 +1,20 @@
 /**
- * ClassScreen.js — Detalle de una clase.
+ * ClassScreen.js — La clase completa, sin conexión.
  *
- * Dos pestañas:
- *   Teoría   → objetivo, resultados, temas, definiciones y herramientas
- *   Práctica → laboratorio guiado y ejercicios
+ * Dos pestañas, alimentadas por los bloques que el generador embebe en
+ * src/data/classes.js a partir del README:
+ *   Teoría   → objetivo, resultados, temas, explicación en profundidad,
+ *              definiciones y glosario
+ *   Práctica → herramientas y preparación, laboratorio guiado, ejercicios,
+ *              reto verificable, errores comunes, preguntas y referencias
  *
- * Como cada clase es un README.md (no hay notebooks), la clase completa se abre
- * en el sitio del curso (Pages) o en GitHub con los botones inferiores.
+ * Hasta la versión anterior aquí solo cabía un resumen recortado y había que
+ * salir al sitio para leer la clase de verdad; ahora el texto completo viaja en
+ * el APK. Si un catálogo antiguo no trae ``content``, se cae al resumen de
+ * siempre en vez de dejar la pantalla vacía.
+ *
+ * Los botones inferiores siguen abriendo la clase en el sitio (con sus
+ * diagramas dibujados) y su fuente en GitHub.
  */
 
 import React, { useEffect, useState } from 'react';
@@ -20,6 +28,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import ClassContent from '../components/ClassContent';
 import { isClassCompleted, removeProgress, saveProgress } from '../utils/progress';
 import { colors, spacing, radius, fontSize, fontWeight, levelColor } from '../theme';
 
@@ -51,6 +60,11 @@ export default function ClassScreen({ route }) {
   const exercises = classData.exercises ?? [];
   const lab = classData.lab ?? '';
 
+  // Clase completa embebida. Un catálogo anterior a esta versión no la trae.
+  const theoryBlocks = classData.content?.theory ?? [];
+  const practiceBlocks = classData.content?.practice ?? [];
+  const hasFullContent = theoryBlocks.length > 0 || practiceBlocks.length > 0;
+
   const [activeTab, setActiveTab] = useState('theory');
   const [completed, setCompleted] = useState(false);
 
@@ -68,7 +82,21 @@ export default function ClassScreen({ route }) {
     setCompleted(true);
   };
 
-  const TheoryTab = () => (
+  const TheoryTab = () =>
+    hasFullContent ? (
+      <ScrollView style={styles.tabContent} showsVerticalScrollIndicator={false}>
+        <ClassContent
+          blocks={theoryBlocks}
+          empty="Esta clase no trae parte teórica embebida. Ábrela en el sitio."
+        />
+        <View style={styles.bottomSpacer} />
+      </ScrollView>
+    ) : (
+      <SummaryTheoryTab />
+    );
+
+  // Resumen de respaldo: solo se usa si el catálogo embebido es antiguo.
+  const SummaryTheoryTab = () => (
     <ScrollView style={styles.tabContent} showsVerticalScrollIndicator={false}>
       <View style={styles.card}>
         <Text style={styles.cardTitle}>Objetivo</Text>
@@ -127,7 +155,27 @@ export default function ClassScreen({ route }) {
     </ScrollView>
   );
 
-  const PracticeTab = () => (
+  const PracticeTab = () =>
+    hasFullContent ? (
+      <ScrollView style={styles.tabContent} showsVerticalScrollIndicator={false}>
+        <View style={styles.card}>
+          <Text style={styles.cardTitle}>Antes de empezar</Text>
+          <Text style={styles.cardText}>
+            Monta siempre un entorno propio y aislado. Todo lo ofensivo de este programa es para
+            laboratorios tuyos o sistemas con permiso explícito.
+          </Text>
+        </View>
+        <ClassContent
+          blocks={practiceBlocks}
+          empty="Esta clase es sobre todo conceptual: su práctica está en la pestaña de teoría."
+        />
+        <View style={styles.bottomSpacer} />
+      </ScrollView>
+    ) : (
+      <SummaryPracticeTab />
+    );
+
+  const SummaryPracticeTab = () => (
     <ScrollView style={styles.tabContent} showsVerticalScrollIndicator={false}>
       <View style={styles.card}>
         <Text style={styles.cardTitle}>Cómo practicar</Text>

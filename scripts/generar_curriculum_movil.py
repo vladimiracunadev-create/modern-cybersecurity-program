@@ -10,9 +10,21 @@ Recorre ``classes/parte-*/NNN-*/README.md`` — la única fuente de verdad de la
     TOTAL_CLASSES / TOTAL_PARTS
     classesForPart(slug)
 
-La app embebe este archivo en el bundle JS para que el temario funcione **sin
+La app embebe este archivo en el bundle JS para que el curso funcione **sin
 conexión**; lo único que necesita red son los enlaces "Abrir la clase" (sitio en
 GitHub Pages) y "Ver en GitHub".
+
+Cada clase viaja **entera**, no resumida: además de los campos de tarjeta
+(objetivo, temas, nivel, duración) se emite ``content``, la secuencia de bloques
+—encabezados, párrafos, viñetas, tablas, citas y bloques de código— en la que se
+convierte el README completo. Antes solo viajaba un resumen recortado a unos
+cientos de caracteres, así que la explicación en profundidad, el glosario, los
+errores comunes, las preguntas frecuentes y las referencias no llegaban al
+teléfono; quien leía la clase en la app leía otra cosa que quien la leía en el
+sitio. Los bloques se reparten en dos pestañas por el emoji de su sección:
+``theory`` (objetivo, resultados, temas, explicación, definiciones, glosario) y
+``practice`` (preparación, laboratorio, ejercicios, reto, errores, preguntas,
+referencias).
 
 A diferencia del repo de data-science, aquí las clases son solo ``README.md`` (no
 hay notebooks), así que cada clase enlaza a su página del sitio y a su fuente en
@@ -90,6 +102,18 @@ PART_SHORT: dict[str, str] = {
     "parte-17-profundizacion-para-certificaciones": "Profundización para certificaciones",
     "parte-18-ia-aplicada-a-la-ciberseguridad": "IA aplicada a la ciberseguridad",
 }
+
+# ── Reparto de secciones entre las dos pestañas de la app ────────────────────
+#
+# Se ancla en el emoji, no en el texto: el título varía ("🧪 Laboratorio guiado
+# (defensivo)"), el emoji no. Lo que no está en ninguna de las dos listas es
+# navegación del repositorio y no tiene sentido dentro de la app.
+
+THEORY_EMOJIS = ("🎯", "📚", "🗺️", "🧠", "📖", "📔")
+PRACTICE_EMOJIS = ("🧰", "🧪", "✍️", "📝", "⚠️", "❓", "🔗")
+# 📥 Material descargable, ⬅️ Clase anterior y ➡️ Siguiente clase se descartan:
+# son enlaces a ficheros del repo y a páginas que la app ya cubre con su
+# navegación propia.
 
 # ── Regexes ──────────────────────────────────────────────────────────────────
 
@@ -192,6 +216,150 @@ def paragraph(block: str, max_len: int = 600) -> str:
     return text
 
 
+# ── README completo -> bloques que la app sabe pintar ────────────────────────
+
+SECTION_RE = re.compile(r"^##\s+(.+)$", re.MULTILINE)
+HEADING_RE = re.compile(r"^(#{3,6})\s+(.+)$")
+FENCE_RE = re.compile(r"^\s*```\s*([\w+-]*)\s*$")
+ORDERED_RE = re.compile(r"^(\s*)(\d+)[.)]\s+(.*)$")
+UNORDERED_RE = re.compile(r"^(\s*)[-*]\s+(.*)$")
+TABLE_SEP_RE = re.compile(r"^\|[\s:|-]+\|?$")
+
+
+def table_cells(line: str) -> list[str]:
+    return [c.strip() for c in line.strip().strip("|").split("|")]
+
+
+def blocks_from(body: str) -> list[dict]:
+    """Convierte el cuerpo de una sección en bloques para el renderizador de la app.
+
+    Se mantiene deliberadamente simple —la app pinta <Text>, no HTML—, pero
+    conserva la estructura que hace legible una clase: jerarquía de subtítulos,
+    párrafos separados, viñetas con su nivel, tablas con su cabecera, citas y
+    bloques de código sin tocar (un comando mal cortado deja de ser un comando).
+    """
+    blocks: list[dict] = []
+    lines = body.splitlines()
+    i = 0
+    parrafo: list[str] = []
+
+    def cerrar_parrafo() -> None:
+        if parrafo:
+            texto = strip_inline(" ".join(parrafo))
+            if texto:
+                blocks.append({"t": "p", "x": texto})
+            parrafo.clear()
+
+    while i < len(lines):
+        line = lines[i]
+        stripped = line.strip()
+
+        # Bloque de código: se copia literal, sin aplanar el markdown inline.
+        fence = FENCE_RE.match(line)
+        if fence:
+            cerrar_parrafo()
+            lang = fence.group(1)
+            i += 1
+            buf: list[str] = []
+            while i < len(lines) and not FENCE_RE.match(lines[i]):
+                buf.append(lines[i])
+                i += 1
+            i += 1  # cierre
+            if lang == "mermaid":
+                # La app no dibuja diagramas: en vez de colar el código del
+                # diagrama como prosa (o de borrarlo en silencio, que deja al
+                # texto refiriéndose a un gráfico invisible), se deja una marca
+                # que remite a la versión web.
+                blocks.append({"t": "dg"})
+            elif buf:
+                blocks.append({"t": "code", "x": "\n".join(buf).rstrip(), "lang": lang})
+            continue
+
+        if not stripped:
+            cerrar_parrafo()
+            i += 1
+            continue
+
+        heading = HEADING_RE.match(line)
+        if heading:
+            cerrar_parrafo()
+            nivel = "h3" if len(heading.group(1)) == 3 else "h4"
+            blocks.append({"t": nivel, "x": strip_inline(heading.group(2))})
+            i += 1
+            continue
+
+        # Tabla: cabecera + separador + filas.
+        if stripped.startswith("|") and i + 1 < len(lines) and TABLE_SEP_RE.match(lines[i + 1].strip()):
+            cerrar_parrafo()
+            head = [strip_inline(c) for c in table_cells(stripped)]
+            i += 2
+            filas: list[list[str]] = []
+            while i < len(lines) and lines[i].strip().startswith("|"):
+                filas.append([strip_inline(c) for c in table_cells(lines[i].strip())])
+                i += 1
+            blocks.append({"t": "table", "h": head, "r": filas})
+            continue
+
+        if stripped.startswith(">"):
+            cerrar_parrafo()
+            cita: list[str] = []
+            while i < len(lines) and lines[i].strip().startswith(">"):
+                cita.append(lines[i].strip().lstrip(">").strip())
+                i += 1
+            texto = strip_inline(" ".join(c for c in cita if c))
+            if texto:
+                blocks.append({"t": "q", "x": texto})
+            continue
+
+        ordered = ORDERED_RE.match(line)
+        if ordered:
+            cerrar_parrafo()
+            texto = strip_inline(ordered.group(3))
+            if texto:
+                blocks.append({"t": "li", "n": int(ordered.group(2)),
+                               "d": len(ordered.group(1)) // 2, "x": texto})
+            i += 1
+            continue
+
+        unordered = UNORDERED_RE.match(line)
+        if unordered:
+            cerrar_parrafo()
+            texto = strip_inline(unordered.group(2))
+            if texto:
+                blocks.append({"t": "li", "d": len(unordered.group(1)) // 2, "x": texto})
+            i += 1
+            continue
+
+        parrafo.append(stripped)
+        i += 1
+
+    cerrar_parrafo()
+    return blocks
+
+
+def full_content(md: str) -> tuple[list[dict], list[dict]]:
+    """Todas las secciones del README repartidas en (teoría, práctica)."""
+    theory: list[dict] = []
+    practice: list[dict] = []
+    matches = list(SECTION_RE.finditer(md))
+    for idx, match in enumerate(matches):
+        titulo = match.group(1).strip()
+        fin = matches[idx + 1].start() if idx + 1 < len(matches) else len(md)
+        cuerpo = md[match.end():fin].strip()
+        if titulo.startswith(THEORY_EMOJIS):
+            destino = theory
+        elif titulo.startswith(PRACTICE_EMOJIS):
+            destino = practice
+        else:
+            continue
+        bloques = blocks_from(cuerpo)
+        if not bloques:
+            continue
+        destino.append({"t": "h2", "x": strip_inline(titulo)})
+        destino.extend(bloques)
+    return theory, practice
+
+
 def parse_class(part_slug: str, class_dir: str, md: str) -> dict:
     """Convierte el README de una clase en el objeto que consume la app."""
     title_match = TITLE_RE.search(md)
@@ -215,6 +383,8 @@ def parse_class(part_slug: str, class_dir: str, md: str) -> dict:
     lab = paragraph(section(md, "🧪"), max_len=400)
     exercises = list_items(section(md, "✍️"), limit=10)
 
+    theory_blocks, practice_blocks = full_content(md)
+
     class_path = f"classes/{part_slug}/{class_dir}"
     return {
         "id": f"{number:03d}-{class_dir}",
@@ -231,6 +401,8 @@ def parse_class(part_slug: str, class_dir: str, md: str) -> dict:
         "tools": tools,
         "lab": lab,
         "exercises": exercises,
+        # La clase entera, en bloques: es lo que la app pinta al abrirla.
+        "content": {"theory": theory_blocks, "practice": practice_blocks},
         "siteUrl": f"{PAGES_BASE}/{class_path}/README.html",
         "githubUrl": f"{GITHUB_BASE}/{class_path}/README.md",
     }
@@ -288,6 +460,13 @@ def render(parts: list[dict], classes: list[dict]) -> str:
     def dump(obj) -> str:
         return json.dumps(obj, ensure_ascii=False, indent=2)
 
+    def dump_classes(items: list[dict]) -> str:
+        # Con la clase completa embebida, indentar cada bloque multiplicaría el
+        # tamaño del fichero y haría ilegible cualquier diff. Una clase por
+        # línea deja el diff en "cambiaron estas N clases".
+        cuerpo = ",\n  ".join(json.dumps(c, ensure_ascii=False) for c in items)
+        return "[\n  " + cuerpo + "\n]"
+
     header = (
         "// ============================================================\n"
         "// GENERADO AUTOMÁTICAMENTE — NO EDITAR A MANO\n"
@@ -298,7 +477,7 @@ def render(parts: list[dict], classes: list[dict]) -> str:
     )
     body = (
         f"export const PARTS = {dump(parts)};\n\n"
-        f"export const CLASSES = {dump(classes)};\n\n"
+        f"export const CLASSES = {dump_classes(classes)};\n\n"
         "// Índice por parte derivado en runtime (evita duplicar los objetos de clase).\n"
         "export const CLASSES_BY_PART = CLASSES.reduce((acc, c) => {\n"
         "  (acc[c.partSlug] = acc[c.partSlug] || []).push(c);\n"
@@ -335,6 +514,15 @@ def main() -> int:
     empty = [c["id"] for c in classes if not c["theory"] or not c["outcomes"]]
     if empty:
         print(f"AVISO: {len(empty)} clases sin objetivo o sin resultados: {empty[:5]}")
+    sin_cuerpo = [
+        c["id"] for c in classes
+        if len(c["content"]["theory"]) < 5 or not c["content"]["practice"]
+    ]
+    if sin_cuerpo:
+        print(f"AVISO: {len(sin_cuerpo)} clases con contenido embebido escaso: {sin_cuerpo[:5]}")
+    bloques = sum(len(c["content"]["theory"]) + len(c["content"]["practice"]) for c in classes)
+    kb = len(content.encode("utf-8")) / 1024
+    print(f"Contenido embebido: {bloques} bloques, {kb:.0f} KB de catálogo.")
     return 0
 
 

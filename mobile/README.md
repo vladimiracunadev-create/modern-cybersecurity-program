@@ -1,8 +1,10 @@
 # 📱 App móvil — Ciberseguridad Moderna
 
 App **Android** (Expo / React Native) que embebe las **340 clases en 19 partes** del
-programa para leerlas **sin conexión** desde el móvil. Cada clase abre su versión
-completa en el sitio del curso (GitHub Pages) o en GitHub.
+programa **completas** para leerlas **sin conexión** desde el móvil: la explicación en
+profundidad, el glosario, el laboratorio, los ejercicios, los errores comunes y las
+referencias, no un resumen. Lo único que necesita red son los diagramas —la app no
+dibuja mermaid y remite al sitio— y los botones de "Abrir la clase" y "GitHub".
 
 > El catálogo (`src/data/classes.js`) **se genera** desde `classes/**/README.md` con
 > `python scripts/generar_curriculum_movil.py` — **no se edita a mano**. Un check de
@@ -12,9 +14,11 @@ completa en el sitio del curso (GitHub Pages) o en GitHub.
 
 - **Home** — las 19 partes con su foco, nivel y progreso global (X/340).
 - **Parte** — las clases de una parte, con buscador por número, título o tema.
-- **Clase** — objetivo, resultados de aprendizaje, temas, definiciones y práctica
-  (laboratorio + ejercicios), con botones para abrir la clase completa en el sitio o
-  en GitHub.
+- **Clase** — el README entero, repartido en dos pestañas por el emoji de cada
+  sección: *Teoría* (objetivo, resultados, temas, explicación en profundidad,
+  definiciones, glosario) y *Práctica* (preparación, laboratorio, ejercicios, reto,
+  errores comunes, preguntas frecuentes, referencias). Con botones para abrirla en el
+  sitio —donde los diagramas sí se dibujan— o en GitHub.
 - **Progreso** — marca clases como completadas; se guarda local con AsyncStorage y no
   sale del dispositivo.
 
@@ -25,9 +29,9 @@ mobile/
 ├── App.js                       Entrada + navegación (tema oscuro)
 ├── app.json                     Config Expo (nombre, icono, paquete)
 ├── src/
-│   ├── data/classes.js          GENERADO: 340 clases (no editar a mano)
+│   ├── data/classes.js          GENERADO: las 340 clases enteras (no editar a mano)
 │   ├── screens/                 HomeScreen · PartScreen · ClassScreen
-│   ├── components/              PartCard · ClassCard
+│   ├── components/              PartCard · ClassCard · ClassContent (bloques)
 │   ├── navigation/AppNavigator.js
 │   ├── utils/                   enlaces.js (sitio/GitHub) · progress.js (AsyncStorage)
 │   └── theme.js                 design system (colores, espaciado)
@@ -59,7 +63,7 @@ empujar una etiqueta `v*`, y se publica como asset de la GitHub Release junto a 
 
 ## 🔒 Privacidad
 
-- Todo el contenido viaja embebido: el temario se lee **sin conexión**.
-- Abrir la clase completa (sitio/GitHub) requiere internet.
+- Todo el contenido viaja embebido: las 340 clases se leen enteras **sin conexión**.
+- Solo requieren internet los diagramas y los enlaces al sitio y a GitHub.
 - El progreso se guarda **solo en el dispositivo** (AsyncStorage). La app no tiene
   cuentas, ni analítica, ni backend.
