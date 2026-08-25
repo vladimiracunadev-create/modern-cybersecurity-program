@@ -141,17 +141,17 @@ Cada parte tiene su **propio README** con narrativa completa: de qué trata, res
 
 ¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **340 clases** en orden, con portada, aviso ético e índice enlazado.
 
-- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — ~1.020 páginas listas para imprimir o leer offline.
+- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — **1.302 páginas** con los 360 diagramas dibujados, listas para imprimir o leer offline.
 
 > Se genera con `python scripts/generar_manual.py` a partir de las clases, así que siempre refleja el contenido actual del repositorio.
 
 ## 📱 App móvil Android
 
-¿Prefieres estudiar desde el teléfono? La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **340 clases en 19 partes** para leerlas **sin conexión**, con buscador y seguimiento de progreso local. Cada clase abre su versión completa en el sitio o en GitHub con un toque.
+¿Prefieres estudiar desde el teléfono? La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **340 clases en 19 partes** **completas** para leerlas **sin conexión**, con buscador y seguimiento de progreso local. Desde la versión 1.1.0 no hay que salir de la app para leer la clase: viaja entera, con su explicación en profundidad, sus **diagramas** y su práctica.
 
-- 📥 **[Descargar el APK — release v1.0.0](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.0.0)** · verifica la integridad con `SHA256SUMS.txt`.
-- 🧭 **Navegación:** Home (19 partes + progreso global) → Parte (clases + buscador) → Clase (objetivo, resultados, temas, definiciones y práctica).
-- 🔌 **Offline-first:** el temario viaja embebido; abrir la clase completa requiere internet. El progreso se guarda **solo en tu dispositivo**.
+- 📥 **[Descargar el APK — release v1.1.0](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.1.0)** · verifica la integridad con `SHA256SUMS.txt`.
+- 🧭 **Navegación:** Home (19 partes + progreso global) → Parte (clases + buscador) → Clase, en dos pestañas: *Teoría* (objetivo, resultados, temas, explicación en profundidad, definiciones, glosario) y *Práctica* (preparación, laboratorio, ejercicios, reto, errores comunes, preguntas frecuentes, referencias).
+- 🔌 **Offline-first:** las clases se leen enteras sin conexión, diagramas incluidos; solo necesitan internet los enlaces al sitio y a GitHub. El progreso se guarda **solo en tu dispositivo**.
 
 <div align="center">
 <img src="docs/img/app-home.png" alt="Pantalla de inicio: 19 partes y progreso" width="30%"> <img src="docs/img/app-parte.png" alt="Clases de una parte con buscador" width="30%"> <img src="docs/img/app-clase.png" alt="Detalle de una clase" width="30%">
@@ -231,6 +231,7 @@ El repositorio no se publica a ciegas: cada `push` y cada PR pasan por integraci
 | 🧪 [ci.yml](.github/workflows/ci.yml) | estructura y enlaces internos, navegación bidireccional (anterior/siguiente), codificación UTF-8 sin mojibake, **trazabilidad de fuentes** (`verify-sources`), `markdownlint` y build del sitio |
 | 🔒 [security.yml](.github/workflows/security.yml) | escaneo de secretos (`gitleaks`) y análisis estático (`bandit`) de los scripts |
 | 🚀 [deploy-pages.yml](.github/workflows/deploy-pages.yml) | genera y despliega el sitio del curso a GitHub Pages |
+| 📱 [release-android.yml](.github/workflows/release-android.yml) | compila y firma el APK, y **abre el artefacto** para comprobar que las clases viajan completas dentro antes de publicarlo |
 
 Los mismos validadores corren en local antes de subir:
 
@@ -240,7 +241,28 @@ python scripts/validar_encoding.py          # todo UTF-8, sin mojibake
 python scripts/generar_navegacion.py --check # navegación coherente
 python scripts/verify-sources                # fuentes: registro, citas y cifras
 npx markdownlint-cli2 "**/*.md"             # estilo de Markdown
+python scripts/generar_curriculum_movil.py --check   # catálogo de la app al día
 ```
+
+Y los generadores que llevan las clases a cada formato:
+
+```bash
+python scripts/mermaid_svg.py                # dibuja los 360 diagramas a SVG (caché)
+python scripts/generar_sitio.py              # site/ — el curso en HTML para Pages
+python scripts/generar_manual.py             # manual/MANUAL.pdf — el curso entero
+python scripts/generar_material.py --todas   # guía PDF + presentación PPTX por clase
+python scripts/generar_curriculum_movil.py   # catálogo embebido de la app móvil
+```
+
+> Los diagramas se dibujan **una vez** y se cachean por hash
+> ([`scripts/mermaid_svg.py`](scripts/mermaid_svg.py)), en SVG para el HTML y los PDF y en PNG para
+> las presentaciones y la app. Dejar que mermaid dibujara durante la impresión no escala —en el
+> manual, con 360 diagramas en una sola página, el PDF salía sin ninguno—, y así el resultado
+> tampoco depende de que una CDN responda a tiempo.
+>
+> Que estén **todos** en **todas** las salidas se comprueba con
+> [`scripts/verificar_diagramas.py`](scripts/verificar_diagramas.py), que abre los binarios y
+> cuenta: no se fía de lo que el generador dijo haber hecho.
 
 ## 🎯 Qué es y qué no es este programa
 

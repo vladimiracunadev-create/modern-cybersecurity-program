@@ -2,9 +2,9 @@
 
 App **Android** (Expo / React Native) que embebe las **340 clases en 19 partes** del
 programa **completas** para leerlas **sin conexión** desde el móvil: la explicación en
-profundidad, el glosario, el laboratorio, los ejercicios, los errores comunes y las
-referencias, no un resumen. Lo único que necesita red son los diagramas —la app no
-dibuja mermaid y remite al sitio— y los botones de "Abrir la clase" y "GitHub".
+profundidad, **los diagramas**, el glosario, el laboratorio, los ejercicios, los errores
+comunes y las referencias, no un resumen. Lo único que necesita red son los botones de
+"Abrir la clase" y "GitHub".
 
 > El catálogo (`src/data/classes.js`) **se genera** desde `classes/**/README.md` con
 > `python scripts/generar_curriculum_movil.py` — **no se edita a mano**. Un check de
@@ -17,8 +17,8 @@ dibuja mermaid y remite al sitio— y los botones de "Abrir la clase" y "GitHub"
 - **Clase** — el README entero, repartido en dos pestañas por el emoji de cada
   sección: *Teoría* (objetivo, resultados, temas, explicación en profundidad,
   definiciones, glosario) y *Práctica* (preparación, laboratorio, ejercicios, reto,
-  errores comunes, preguntas frecuentes, referencias). Con botones para abrirla en el
-  sitio —donde los diagramas sí se dibujan— o en GitHub.
+  errores comunes, preguntas frecuentes, referencias), con los diagramas de la clase
+  como imagen. Con botones para abrirla en el sitio o en GitHub.
 - **Progreso** — marca clases como completadas; se guarda local con AsyncStorage y no
   sale del dispositivo.
 
@@ -30,12 +30,15 @@ mobile/
 ├── app.json                     Config Expo (nombre, icono, paquete)
 ├── src/
 │   ├── data/classes.js          GENERADO: las 340 clases enteras (no editar a mano)
+│   ├── data/diagramas.js        GENERADO: mapa hash → PNG de cada diagrama
 │   ├── screens/                 HomeScreen · PartScreen · ClassScreen
 │   ├── components/              PartCard · ClassCard · ClassContent (bloques)
 │   ├── navigation/AppNavigator.js
 │   ├── utils/                   enlaces.js (sitio/GitHub) · progress.js (AsyncStorage)
 │   └── theme.js                 design system (colores, espaciado)
-└── assets/                      icono, splash, adaptive-icon, favicon
+└── assets/
+    ├── diagramas/                GENERADO: los diagramas de las clases en PNG
+    └── (icono, splash, adaptive-icon, favicon)
 ```
 
 ## 🚀 Desarrollo
@@ -63,7 +66,8 @@ empujar una etiqueta `v*`, y se publica como asset de la GitHub Release junto a 
 
 ## 🔒 Privacidad
 
-- Todo el contenido viaja embebido: las 340 clases se leen enteras **sin conexión**.
-- Solo requieren internet los diagramas y los enlaces al sitio y a GitHub.
+- Todo el contenido viaja embebido, diagramas incluidos: las 340 clases se leen
+  enteras **sin conexión**.
+- Solo requieren internet los enlaces al sitio y a GitHub.
 - El progreso se guarda **solo en el dispositivo** (AsyncStorage). La app no tiene
   cuentas, ni analítica, ni backend.

@@ -3,10 +3,10 @@
 La app vive en [`mobile/`](../mobile/README.md) y es una app **Expo / React Native**
 que embebe las **340 clases en 19 partes** para leerlas **sin conexión** desde el
 teléfono. Desde la versión **1.1.0** cada clase viaja **entera** —explicación en
-profundidad, glosario, laboratorio, ejercicios, reto, errores comunes, preguntas
-frecuentes y referencias—, no un resumen: lo que se lee en el móvil es la misma clase
-que se lee en el sitio. Los enlaces al sitio y a GitHub siguen ahí para ver los
-diagramas dibujados y la fuente en Markdown.
+profundidad, diagramas, glosario, laboratorio, ejercicios, reto, errores comunes,
+preguntas frecuentes y referencias—, no un resumen: lo que se lee en el móvil es la
+misma clase que se lee en el sitio, **sin conexión y sin salir de la app**. Los enlaces
+al sitio y a GitHub siguen ahí para la versión web y la fuente en Markdown.
 
 ## 🧩 Fuente de verdad y generación del catálogo
 
@@ -39,8 +39,15 @@ sigue siendo el laboratorio). Por cada clase emite dos cosas:
   navegación del repositorio, no contenido de la clase.
 
 Los bloques ` ```mermaid ` no se emiten como código —sería el texto del diagrama
-colado como prosa— sino como un bloque `dg` que remite a la versión web. La app pinta
-`<Text>`, no dibuja SVG.
+colado como prosa— sino como un bloque `dg` con el **hash de su imagen**. El PNG del
+diagrama se copia a `mobile/assets/diagramas/` y `mobile/src/data/diagramas.js` mapea
+cada hash a su `require(...)`; Metro necesita una ruta literal para empaquetar la imagen
+dentro del APK, por eso el mapa se escribe entero en vez de construir la ruta en tiempo
+de ejecución. Así los diagramas pesan como recursos del APK y no inflan el JavaScript.
+
+Se usa PNG y no SVG a propósito: el `<Image>` de React Native no lee SVG sin una
+dependencia nativa que, además, ignoraría la hoja de estilos que mermaid incrusta dentro
+del SVG y dejaría los diagramas sin colores ni cajas.
 
 Las partes llevan su foco y el nivel dominante de sus clases.
 

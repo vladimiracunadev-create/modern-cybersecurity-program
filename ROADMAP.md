@@ -46,9 +46,10 @@ python-pptx). Notebooks **descartados** por decisión.
 ## Fase 5 — App móvil Android ✅ (completa)
 
 - [x] App **Expo / React Native** ([`mobile/`](mobile/README.md)) con las **340 clases en 19 partes** embebidas para leer **sin conexión**.
-- [x] Navegación Home (partes + progreso) → Parte (clases + buscador) → Clase (objetivo, resultados, temas, definiciones, práctica), con progreso local.
+- [x] Navegación Home (partes + progreso) → Parte (clases + buscador) → Clase, con progreso local.
+- [x] **Las clases enteras dentro del APK** (v1.1.0): explicación en profundidad, diagramas, glosario, laboratorio, ejercicios, reto, errores comunes, preguntas y referencias. Hasta la v1.0.0 la app embebía un resumen y había que salir al sitio para leer la clase.
 - [x] Catálogo **generado** desde los README de las clases (`scripts/generar_curriculum_movil.py`, con `--check` de integridad).
-- [x] **Release del APK por CI** ([`release-android.yml`](.github/workflows/release-android.yml)): compila, firma y publica el APK en la nube, verificando el temario embebido antes de publicar. Primer release: [**v1.0.0**](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.0.0).
+- [x] **Release del APK por CI** ([`release-android.yml`](.github/workflows/release-android.yml)): compila, firma y publica el APK en la nube. Antes de publicar abre el artefacto y busca dentro del bytecode párrafos completos de las clases ([`scripts/verificar_bundle.py`](scripts/verificar_bundle.py)): un build en verde no prueba que el contenido viajara. Primer release: [**v1.0.0**](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.0.0) · último: [**v1.1.0**](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.1.0).
 
 ---
 
