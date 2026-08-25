@@ -79,17 +79,17 @@ derivar todo— es la columna vertebral de la explotación moderna con ASLR.
 ### Colocar el argumento: el gadget pop rdi
 
 Para llamar a `system("/bin/sh")` en x64 hace falta que el puntero a `"/bin/sh"` esté en **`RDI`**
-(la convención System V de la [Clase 117](117-el-stack-los-registros-y-las-convenciones-de-llamada/README.md)). Pero el atacante solo controla la pila, no los
+(la convención System V de la [Clase 117](../117-el-stack-los-registros-y-las-convenciones-de-llamada/README.md)). Pero el atacante solo controla la pila, no los
 registros directamente. La solución es un **gadget** —una pequeña secuencia de instrucciones que ya
 existe en el binario y termina en `ret`—, en concreto **`pop rdi; ret`**: al saltar a él, `pop rdi`
 toma el siguiente valor de la pila (que el atacante ha colocado: la dirección de `"/bin/sh"`) y lo
 mete en `RDI`, y `ret` continúa la cadena hacia `system`. Este uso de un gadget para preparar un
-registro es exactamente la idea que la [Clase 124](124-return-oriented-programming-rop/README.md) generaliza en ROP; ret2libc es, en el
+registro es exactamente la idea que la [Clase 124](../124-return-oriented-programming-rop/README.md) generaliza en ROP; ret2libc es, en el
 fondo, una cadena ROP muy corta con un destino conocido.
 
 ### La alineación otra vez, y las herramientas
 
-Reaparece el fantasma de la [Clase 120](120-buffer-overflow-en-stack-explotacion-practica/README.md): `system` ejecuta instrucciones SSE que exigen la
+Reaparece el fantasma de la [Clase 120](../120-buffer-overflow-en-stack-explotacion-practica/README.md): `system` ejecuta instrucciones SSE que exigen la
 **pila alineada a 16 bytes**, así que un ret2libc que "debería" funcionar puede crashear dentro de
 `system` por desalineamiento, y se arregla con un gadget `ret` extra de relleno. Todo esto se
 construye con **pwntools**, que automatiza la parte tediosa: el objeto **`ELF`** parsea el binario y

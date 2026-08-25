@@ -54,7 +54,7 @@ porque en el contexto de un exploit no hay un `libc` amistoso al que llamar de f
 Lanzar una shell se reduce a una llamada al sistema: **`execve("/bin/sh", NULL, NULL)`**, que
 reemplaza el proceso actual por `/bin/sh`. En Linux x64, invocar una syscall a mano sigue un
 protocolo estricto que hay que conocer: se pone el **número de la syscall en `RAX`** (`execve` es la
-59), los **argumentos en `RDI`, `RSI`, `RDX`** (la convención de la [Clase 117](117-el-stack-los-registros-y-las-convenciones-de-llamada/README.md), pero para
+59), los **argumentos en `RDI`, `RSI`, `RDX`** (la convención de la [Clase 117](../117-el-stack-los-registros-y-las-convenciones-de-llamada/README.md), pero para
 syscalls), y se ejecuta la instrucción **`syscall`**. Así, un shellcode de `execve` consiste en:
 colocar la dirección de la cadena `"/bin/sh"` en `RDI`, poner a cero `RSI` y `RDX`, cargar 59 en
 `RAX` y ejecutar `syscall`. Entender este esqueleto convierte el shellcode de una cadena mágica de
@@ -78,7 +78,7 @@ flowchart TD
 ### El enemigo del shellcode: los bytes nulos
 
 El problema técnico que domina la escritura de shellcode es evitar **bytes prohibidos**, y el más
-común es el **byte nulo (`0x00`)**. La razón es la [Clase 119](119-buffer-overflow-en-stack-teoria/README.md): la mayoría de los overflows se
+común es el **byte nulo (`0x00`)**. La razón es la [Clase 119](../119-buffer-overflow-en-stack-teoria/README.md): la mayoría de los overflows se
 producen a través de funciones de cadena (`strcpy`, `gets`) que **se detienen en el primer byte
 nulo**, así que un shellcode que contenga un `00` se copiará truncado y no funcionará. Por eso el
 shellcode se escribe con trucos que evitan ceros: para poner a cero un registro se usa `xor rax,
@@ -93,7 +93,7 @@ restricciones de un exploit real.
 El flujo práctico tiene tres pasos. Se **escribe el ensamblador**, se **ensambla y se extraen los
 opcodes** (los bytes en crudo que se inyectarán), y se **prueba** con un pequeño cargador —un
 programa que copia el shellcode a una región de memoria y salta a él— para confirmar que abre la
-shell. Aquí importa **`execstack`**: por defecto la pila es no ejecutable (DEP/NX, [Clase 122](122-protecciones-modernas-aslr-dep-nx-stack-canaries-y-pie/README.md)),
+shell. Aquí importa **`execstack`**: por defecto la pila es no ejecutable (DEP/NX, [Clase 122](../122-protecciones-modernas-aslr-dep-nx-stack-canaries-y-pie/README.md)),
 así que para probar shellcode inyectado en la pila hay que compilar el cargador con la pila
 ejecutable, un recordatorio de por qué el shellcode-en-la-pila clásico ya no funciona en sistemas
 modernos. Para no escribir todo a mano existen generadores: **`shellcraft`** de pwntools produce

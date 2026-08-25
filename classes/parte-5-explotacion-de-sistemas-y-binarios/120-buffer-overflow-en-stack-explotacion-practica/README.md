@@ -77,7 +77,7 @@ todo encaje.
 
 En x64, el fallo más frustrante del principiante aparece justo cuando el exploit "debería"
 funcionar: se redirige `RIP` a la función correcta, pero el programa **crashea dentro de ella** con
-un SIGSEGV. La causa casi siempre es la **desalineación de la pila** de la [Clase 117](117-el-stack-los-registros-y-las-convenciones-de-llamada/README.md): la ABI
+un SIGSEGV. La causa casi siempre es la **desalineación de la pila** de la [Clase 117](../117-el-stack-los-registros-y-las-convenciones-de-llamada/README.md): la ABI
 exige `RSP` alineado a 16 bytes en un `call`, y las instrucciones SSE (`movaps`) que usan `system`,
 `printf` y otras funciones de libc lanzan un fallo si no lo está. La solución es tan sencilla como
 desconcertante era el síntoma: **añadir la dirección de un gadget `ret`** (un simple `ret`, fácil de

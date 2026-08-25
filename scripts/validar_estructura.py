@@ -9,6 +9,13 @@ Comprueba:
   3. La numeración de clases es secuencial y sin huecos (001..N).
   4. Todos los enlaces internos a archivos .md resuelven (no hay enlaces rotos).
 
+Sobre el punto 4: se revisa **todo el repositorio**, no solo classes/, y se
+aceptan las tres formas de escribir un enlace relativo —`../otra/README.md`,
+`./otra/README.md` y `otra/README.md`—. La versión anterior exigía el prefijo `./` o
+`../`, así que un enlace a una clase hermana escrito sin prefijo quedaba fuera
+del recuento: resolvía a `clase-actual/otra-clase/README.md`, que no existe, y
+el CI lo daba por bueno. Se detectaron 14 enlaces rotos así.
+
 Uso:  python scripts/validar_estructura.py
 Salida: código 0 si todo está bien; 1 si hay errores (para CI).
 """
@@ -20,7 +27,16 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CLASSES = os.path.join(ROOT, "classes")
 MIN_BYTES = 400  # un README real es mucho mayor; esto detecta stubs vacíos
-LINK_RE = re.compile(r"\]\((\.\.?/[^)]+\.md)\)")
+
+# Enlaces a un .md, con o sin ancla. NO se exige el prefijo `./` o `../`: el
+# enlace a una clase hermana se escribe a menudo sin el, y esa es justamente la
+# forma que se colaba sin revisar.
+LINK_RE = re.compile(r"\]\(([^)\s]+?\.md)(?:#[^)]*)?\)")
+# Enlaces que no apuntan a un fichero del repositorio y no hay que resolver.
+LINK_EXTERNO = re.compile(r"^(?:[a-zA-Z][a-zA-Z0-9+.-]*:|//|/)")
+# Arboles que no se revisan: salida generada (site/), dependencias y binarios
+# de la app movil. Su markdown no es fuente, es producto.
+EXCLUIR = {".git", "node_modules", "site", "dist", "dist-web", "__pycache__"}
 
 # Secciones que TODA clase debe incluir (robustez pedagógica).
 SECCIONES_REQUERIDAS = [
@@ -109,26 +125,36 @@ def main() -> int:
             if dup:
                 errores.append(f"Numeros de clase duplicados: {dup}")
 
-    # enlaces internos .md
+    # enlaces internos .md, en todo el repositorio
     enlaces = 0
     rotos = 0
-    for cur, _, files in os.walk(CLASSES):
+    ficheros_md = 0
+    for cur, dirs, files in os.walk(ROOT):
+        dirs[:] = [d for d in dirs if d not in EXCLUIR]
         for fn in files:
             if not fn.endswith(".md"):
                 continue
             p = os.path.join(cur, fn)
+            ficheros_md += 1
             with open(p, encoding="utf-8") as fh:
                 txt = fh.read()
             for mm in LINK_RE.finditer(txt):
+                destino = mm.group(1)
+                if LINK_EXTERNO.match(destino):
+                    continue
                 enlaces += 1
-                tgt = os.path.normpath(os.path.join(cur, mm.group(1)))
+                # normpath resuelve los `..` sin tocar el disco; ademas evita
+                # pasarle a Windows una ruta larga con segmentos `..` dentro,
+                # que os.path.exists rechaza aunque el fichero exista.
+                tgt = os.path.normpath(os.path.join(cur, destino))
                 if not os.path.exists(tgt):
                     rotos += 1
-                    errores.append(f"Enlace roto en {os.path.relpath(p, ROOT)} -> {mm.group(1)}")
+                    errores.append(f"Enlace roto en {os.path.relpath(p, ROOT)} -> {destino}")
 
     print("== Validacion del Programa de Ciberseguridad Moderna ==")
     print(f"Partes encontradas : {n_partes}")
     print(f"Clases encontradas : {n_clases}")
+    print(f"Ficheros .md revisados: {ficheros_md}")
     print(f"Enlaces .md revisados: {enlaces} (rotos: {rotos})")
 
     if errores:

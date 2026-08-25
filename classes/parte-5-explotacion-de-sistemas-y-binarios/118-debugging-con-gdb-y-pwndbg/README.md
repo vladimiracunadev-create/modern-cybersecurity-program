@@ -80,7 +80,7 @@ pwndbg aporta comandos que resuelven problemas concretos del oficio. **`context`
 se pinta en cada parada y reúne todo lo relevante de un vistazo. **`vmmap`** muestra el **mapa de
 memoria** del proceso —qué regiones hay (código, pila, heap, libc), en qué direcciones y con qué
 **permisos** (r/w/x)—, imprescindible para saber si una zona es ejecutable (clave para DEP/NX de la
-[Clase 122](122-protecciones-modernas-aslr-dep-nx-stack-canaries-y-pie/README.md)) y para leer las bases con ASLR. **`telescope`** vuelca la pila
+[Clase 122](../122-protecciones-modernas-aslr-dep-nx-stack-canaries-y-pie/README.md)) y para leer las bases con ASLR. **`telescope`** vuelca la pila
 siguiendo los punteros de forma recursiva, mostrando a qué apunta cada valor, lo que hace legible de
 un vistazo una pila que en GDB puro sería una columna de números. Y el par **`cyclic`/`cyclic -l`**
 es el truco que ahorra horas: `cyclic 200` genera un patrón de De Bruijn (una secuencia donde cada

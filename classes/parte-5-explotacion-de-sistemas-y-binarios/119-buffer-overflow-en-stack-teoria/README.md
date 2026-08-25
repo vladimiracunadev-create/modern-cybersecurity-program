@@ -67,7 +67,7 @@ del buffer hasta llegar a la dirección de retorno. Es el número que convierte 
 "controlo `RIP`", porque un payload se construye como *offset* bytes de relleno seguidos de la
 dirección a la que se quiere saltar. En un marco típico, el offset es el tamaño del buffer más el
 espacio de otras locales más los 8 bytes del `RBP` guardado, pero rara vez se calcula a mano: se
-mide con el **patrón de De Bruijn** de la [Clase 118](118-debugging-con-gdb-y-pwndbg/README.md)
+mide con el **patrón de De Bruijn** de la [Clase 118](../118-debugging-con-gdb-y-pwndbg/README.md)
 (`cyclic`), que da el offset exacto de un solo intento. Controlar `RIP` **es** controlar el flujo:
 a partir de ahí el exploit decide a dónde saltar —a shellcode propio, a una función existente, a
 una cadena ROP—, y ese "a dónde" es lo que ocupa el resto de la parte.
@@ -91,7 +91,7 @@ escribir, qué **bytes están prohibidos** (un `strcpy` se corta en el byte nulo
 direcciones con `00` son problemáticas), y qué **mitigaciones** hay activas. Y aquí la clase cierra
 poniendo el mapa de lo que viene: el buffer overflow "clásico" —desbordar, inyectar shellcode en la
 pila y saltar a él— **ya no funciona en sistemas modernos** por un conjunto de defensas que la
-[Clase 122](122-protecciones-modernas-aslr-dep-nx-stack-canaries-y-pie/README.md) detalla: **DEP/NX**
+[Clase 122](../122-protecciones-modernas-aslr-dep-nx-stack-canaries-y-pie/README.md) detalla: **DEP/NX**
 impide ejecutar la pila, **ASLR** aleatoriza las direcciones, el **stack canary** detecta la
 sobrescritura antes del `ret`, y **PIE** aleatoriza también el propio binario. Por eso las técnicas
 modernas —ret2libc (123), ROP (124)— **reutilizan código existente** en lugar de inyectarlo. La
