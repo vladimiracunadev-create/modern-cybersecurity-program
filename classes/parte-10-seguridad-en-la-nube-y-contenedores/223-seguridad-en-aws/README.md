@@ -27,22 +27,67 @@ Al finalizar, el alumno podrá:
 | # | Tema | Por qué importa |
 |---|------|-----------------|
 | 1 | VPC, subredes y security groups | Segmentación de red y control de tráfico |
-| 2 | S3: block public access y políticas | Buckets públicos son la fuga clásica |
+| 2 | S3: block public access y políticas | Evaluar acceso público, compartido y excepciones legítimas |
 | 3 | Cifrado en reposo y KMS | Protege datos y controla claves |
 | 4 | GuardDuty | Detección de amenazas basada en logs |
 | 5 | Security Hub | Consolidación de hallazgos y benchmarks |
 | 6 | AWS Config | Inventario y evaluación de cumplimiento continuo |
 | 7 | CloudTrail y Flow Logs | Auditoría de API y tráfico de red |
 
+## 🧠 Explicación en profundidad
+
+AWS organiza seguridad a través de cuentas, regiones y servicios. Una arquitectura defendible separa cargas y entornos en cuentas, aplica guardrails organizacionales y luego configura controles de identidad, red, datos y detección. La clase no busca memorizar productos, sino entender qué pregunta responde cada uno y qué deja fuera.
+
+```mermaid
+flowchart TD
+    O[Organization y cuentas] --> I[IAM y SCP]
+    O --> V[VPC, subredes, rutas]
+    V --> SG[SG y NACL]
+    I --> D[S3 y cargas]
+    SG --> D
+    K[KMS y políticas de clave] --> D
+    D --> CT[CloudTrail / Flow Logs]
+    CT --> GD[GuardDuty]
+    CT --> CF[Config / Security Hub]
+    GD --> R[Respuesta]
+    CF --> R
+```
+
+La lectura es descendente: organización limita el espacio de decisión; IAM autoriza API; VPC define conectividad; KMS añade control criptográfico; logs observan; GuardDuty y Security Hub interpretan fuentes distintas. Security Hub agrega hallazgos y estándares, mientras Config registra configuración y evalúa reglas. Ninguno corrige automáticamente todas las causas salvo una automatización explícita y autorizada.
+
+### Red: ruta, estado y punto de aplicación
+
+Una subred no es «pública» por su nombre, sino por rutas, gateway y posibilidad de asignar dirección accesible. Security Groups son stateful y expresan permisos sobre interfaces; NACL operan stateless por subred y requieren reglas de ida y retorno. Network Firewall, WAF y controles de aplicación responden a otras capas. Abrir `0.0.0.0/0` en un SG solo produce exposición si existe una ruta y un servicio escuchando, pero sigue siendo un estado que debe justificarse.
+
+### S3, KMS y acceso efectivo
+
+S3 Block Public Access combina controles en organización, cuenta, bucket y access point; AWS aplica la combinación más restrictiva relevante. Esto ayuda a impedir políticas o ACL públicas, pero no evita accesos excesivos de principals autenticados ni compartición no pública. Se revisan bucket policy, IAM, access points, propiedad de objetos y Access Analyzer.
+
+KMS protege claves y registra uso, pero cifrado en reposo no limita a un principal que tiene simultáneamente permiso al dato y a `Decrypt`. La separación de administración y uso, condiciones y política de clave importan tanto como activar cifrado.
+
+### Telemetría y cobertura regional
+
+CloudTrail registra actividades cubiertas; management events y data events tienen cobertura y costo distintos. VPC Flow Logs son metadatos, no contenido. GuardDuty procesa fuentes administradas según plan y región; Security Hub consolida hallazgos si está habilitado y configurado. El diseño enumera regiones, cuentas, delegación administrativa, retención y destino separado antes del incidente.
+
 ## 📖 Definiciones y características
 
 - **VPC:** red virtual aislada dentro de AWS. *Clave:* subredes privadas sin ruta a Internet reducen exposición.
 - **Security Group:** firewall stateful a nivel de instancia. *Clave:* solo permite (allow); denegar es no incluir la regla.
 - **NACL:** firewall stateless a nivel de subred. *Clave:* permite reglas deny explícitas, complementa a los SG.
-- **S3 Block Public Access:** interruptor de cuenta/bucket que anula ACLs y políticas públicas. *Clave:* actívalo a nivel de cuenta.
+- **S3 Block Public Access:** conjunto de cuatro controles aplicables en varios ámbitos. *Clave:* bloquea formas de acceso público, pero no reemplaza la revisión de acceso autenticado y compartido.
 - **KMS:** servicio de gestión de claves. *Clave:* separa quién administra la clave de quién la usa; auditable vía CloudTrail.
-- **GuardDuty:** detección de amenazas que analiza CloudTrail, DNS y Flow Logs. *Clave:* sin agentes, se activa con un clic.
-- **Security Hub:** agrega hallazgos y ejecuta el CIS/AWS FSBP benchmark. *Clave:* panel único de postura.
+- **GuardDuty:** servicio administrado de detección que usa fuentes y planes documentados. *Clave:* cobertura, región, características habilitadas y contexto determinan los hallazgos.
+- **Security Hub:** servicio de postura y agregación de hallazgos. *Clave:* centraliza estándares y productos, pero requiere priorización y remediación fuera del panel.
+
+## 🔍 Caso razonado — bucket cifrado pero expuesto a una cuenta externa
+
+Un bucket tiene BPA activo y cifrado KMS, pero una bucket policy permite lectura a una cuenta asociada completa. No es «público» en el sentido de acceso anónimo y BPA puede no bloquear el patrón, aunque el alcance sea excesivo. Access Analyzer identifica acceso externo; el equipo determina qué rol concreto lo necesita y reduce principal, prefijo y condiciones.
+
+Después verifica que la cuenta externa también posee permiso KMS, revisa CloudTrail data events disponibles y prueba acceso permitido y denegado. El caso demuestra que cifrado, BPA y policy resuelven preguntas distintas y que un check verde aislado no equivale a confidencialidad efectiva.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando puedes seguir una solicitud desde cuenta y principal hasta ruta, SG, política de recurso y KMS; distinguir prevención, registro y detección; y documentar cobertura regional y una excepción de acceso con pruebas positivas y negativas.
 
 ## 🧰 Herramientas y preparación
 
@@ -91,8 +136,8 @@ controles como `PASSED`.
 |-------------------|-----------------------|
 | Bucket "public" pese a política privada | ACL heredada o BPA desactivado; activa Block Public Access a nivel de cuenta. |
 | SG "no funciona" al denegar un puerto | Los SG solo permiten; para deny explícito usa NACL a nivel de subred. |
-| GuardDuty sin hallazgos aunque hay actividad | Solo cubre la región activada; habilítalo en todas las regiones usadas. |
-| CloudTrail sin registros históricos | Solo captura desde su creación; créalo antes de necesitarlo, multi-región. |
+| GuardDuty sin hallazgos aunque hay actividad | Un hallazgo depende de región, plan, fuente y lógica de detección. Verifica cobertura sin asumir que toda actividad genera alerta. |
+| El trail no contiene el evento esperado | Revisa región, categoría, selector y fecha. Event history aporta ciertos management events recientes, pero no reemplaza un trail organizacional y su retención. |
 | `AccessDenied` al usar una clave KMS | Falta permiso en la política de la clave; añade el principal a `kms:Decrypt`. |
 
 ## ❓ Preguntas frecuentes
@@ -106,13 +151,14 @@ No. GuardDuty detecta amenazas conocidas a partir de los logs de AWS; un SIEM co
 **❓ ¿Debo usar claves gestionadas por AWS o por el cliente (CMK)?**
 Para control de auditoría, rotación y separación de deberes, usa claves gestionadas por el cliente (CMK). Las gestionadas por AWS son cómodas pero dan menos control sobre la política.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- AWS Well-Architected — Security Pillar. <https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html>
-- CIS Amazon Web Services Foundations Benchmark. <https://www.cisecurity.org/benchmark/amazon_web_services>
-- Amazon S3 — Blocking public access. <https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html>
-- Amazon GuardDuty docs. <https://docs.aws.amazon.com/guardduty/>
-- Prowler. <https://github.com/prowler-cloud/prowler>
+- AWS Well-Architected — Security Pillar. <https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html> — principios oficiales de diseño.
+- Amazon S3 — Blocking public access. <https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html> — semántica oficial de los cuatro controles y ámbitos.
+- AWS IAM policy evaluation. <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html> — base para acceso efectivo de identidad y recurso.
+- Amazon GuardDuty. <https://docs.aws.amazon.com/guardduty/> — fuentes, planes y operación oficial; no garantiza detectar toda actividad adversaria.
+- CIS AWS Foundations Benchmark. <https://www.cisecurity.org/benchmark/amazon_web_services> — baseline independiente de configuración, no evaluación total de arquitectura.
+- Prowler. <https://github.com/prowler-cloud/prowler> — automatiza checks; validar alcance, versión y permisos del rol auditor.
 
 ## 📥 Material descargable
 

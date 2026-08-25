@@ -35,16 +35,60 @@ Al finalizar, el alumno podrá:
 | 4 | RBAC peligroso y escalada | `create pods`, `escalate`, `bind` como vías a admin |
 | 5 | Abuso de tokens de ServiceAccount | Movimiento lateral dentro del clúster |
 | 6 | NetworkPolicy por defecto denegar | Contener movimiento lateral de red |
-| 7 | Acceso a kubelet y etcd | Vectores de compromiso total |
+| 7 | Acceso a kubelet y etcd | Rutas críticas que pueden evitar controles del API server |
+
+## 🧠 Explicación en profundidad
+
+Hardening de Kubernetes reduce caminos desde una carga comprometida hacia otras cargas, la API o el nodo. Un benchmark aporta controles verificables para una distribución y versión, pero no conoce la aplicación ni sustituye un modelo de amenazas. La clase conecta baseline, políticas de Pod, RBAC, red y nodos mediante pruebas de comportamiento.
+
+```mermaid
+flowchart LR
+    W[Workload comprometido] --> SA[Token / ServiceAccount]
+    W --> K[Kernel y runtime]
+    W --> N[Red del clúster]
+    SA --> API[Kubernetes API]
+    K --> H[Nodo]
+    N --> O[Otros servicios]
+    PSA[Pod Security Admission] -. limita .-> K
+    RB[RBAC mínimo] -. limita .-> API
+    NP[NetworkPolicy] -. limita .-> O
+    B[Hardening nodo/control plane] -. limita .-> H
+```
+
+El diagrama toma un Pod comprometido como punto de partida. Cada control limita una rama, pero ninguno cubre todas. PSA no restringe llamadas API del ServiceAccount; RBAC no impide un escape de kernel; NetworkPolicy no endurece el contenedor. La defensa se evalúa por rutas que permanecen.
+
+### Pod Security Standards y `securityContext`
+
+Pod Security Admission aplica niveles `privileged`, `baseline` y `restricted` mediante labels de namespace en modos `enforce`, `audit` y `warn`. La versión de la política puede fijarse para evitar cambios inesperados. `restricted` exige varias prácticas, pero no configura recursos, red, imagen confiable ni lógica de aplicación.
+
+`runAsNonRoot`, `allowPrivilegeEscalation: false`, capabilities eliminadas, seccomp y filesystem read-only se prueban con la imagen real. Un UID no root todavía puede acceder a datos montados; read-only root no protege volúmenes escribibles; seccomp no corrige RBAC.
+
+### Permisos que crean permisos
+
+Kubernetes documenta que crear workloads puede permitir montar Secrets, usar ServiceAccounts del namespace o acceder a volúmenes. `bind`, `escalate`, `impersonate`, aprobación de CSR, modificación de admission webhooks y acceso `nodes/proxy` son capacidades sensibles. El análisis no se limita a buscar `cluster-admin`: modela qué objeto puede crear o modificar el principal.
+
+### Red, kubelet y etcd
+
+Default-deny cambia el namespace a aislamiento por selección, pero necesita un CNI compatible y reglas explícitas para DNS, ingress controllers y dependencias. El acceso directo a kubelet o etcd puede evitar controles esperados del API server; se restringe por red, certificados, autenticación, autorización y administración del proveedor. En servicios gestionados, el cliente verifica qué componentes controla y qué evidencia entrega el proveedor.
 
 ## 📖 Definiciones y características
 
 - **Pod Security Admission (PSA):** admission controller con niveles `privileged`/`baseline`/`restricted`. *Clave:* `restricted` bloquea pods peligrosos por namespace.
 - **securityContext:** ajustes de seguridad del pod/contenedor (runAsNonRoot, readOnlyRootFilesystem, drop capabilities). *Clave:* el equivalente al hardening de Docker en K8s.
-- **Escape de pod:** salir del contenedor al nodo (vía privileged, hostPath, hostPID). *Clave:* convierte un pod comprometido en compromiso del nodo.
-- **RBAC `escalate`/`bind`:** verbos que permiten otorgarse más permisos. *Clave:* deben restringirse; equivalen a admin.
+- **Escape de pod:** obtener capacidades o acceso fuera del aislamiento previsto del contenedor. *Clave:* configuración privilegiada, mounts y vulnerabilidades pueden facilitarlo; el impacto debe demostrarse.
+- **RBAC `escalate`/`bind`:** verbos para crear roles con permisos no poseídos o enlazar roles. *Clave:* son sensibles, pero su impacto depende de recursos, ámbitos y bindings disponibles.
+
+## 🔍 Caso razonado — `create pods` sin `get secrets`
+
+Un desarrollador no puede leer Secrets por API, pero puede crear Pods y elegir cualquier ServiceAccount del namespace. Crea un Pod que monta un Secret usado por otra aplicación. La política parecía mínima si solo se observaba `get secrets`; el análisis de rutas muestra acceso indirecto mediante workload.
+
+La corrección separa namespaces por confianza, limita quién crea workloads, controla ServiceAccounts utilizables, aplica PSA Restricted y reduce Secrets montables por diseño. Una prueba negativa confirma que el principal ya no puede crear el Pod peligroso, mientras su despliegue legítimo sigue funcionando.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando puedes convertir un hallazgo de benchmark en riesgo contextual, aplicar PSA con versión y modos, demostrar una ruta indirecta RBAC, construir NetworkPolicy desde flujos y explicar qué controles permanecen en nodo, kubelet y etcd.
 - **Token de ServiceAccount:** JWT montado en el pod para hablar con la API. *Clave:* si se roba, el atacante actúa como ese SA.
-- **NetworkPolicy default-deny:** política que bloquea todo el tráfico salvo lo permitido. *Clave:* imprescindible para contener movimiento lateral.
+- **NetworkPolicy default-deny:** conjunto de políticas que aísla Pods seleccionados en ingress y/o egress. *Clave:* establece allowlists si el CNI la implementa y las dependencias se modelan.
 - **kube-bench:** herramienta que evalúa el CIS Benchmark. *Clave:* automatiza la auditoría de hardening.
 
 ## 🧰 Herramientas y preparación
@@ -100,7 +144,7 @@ comprometido ya no alcanza a otros pods por red.
 | NetworkPolicy "no hace nada" | El CNI no la soporta; usa Calico/Cilium y aplica default-deny primero. |
 | Pod no arranca tras hardening | `runAsNonRoot` sin usuario válido o ruta que exige escritura; ajusta UID y monta tmpfs. |
 | RBAC amplio "porque es más fácil" | Superficie de escalada enorme; refactoriza a Roles concretos por namespace. |
-| Token de SA robado da acceso total | SA con permisos excesivos y token automontado; recorta permisos y desactiva automount. |
+| Token de SA permite más acceso del esperado | El ServiceAccount o una ruta indirecta posee permisos amplios. Revisa RBAC efectivo, audiencia, expiración y necesidad de automount. |
 
 ## ❓ Preguntas frecuentes
 
@@ -113,13 +157,14 @@ No necesariamente, pero puede escalar: si el pod es privilegiado escapa al nodo;
 **❓ ¿Es suficiente kube-bench para asegurar el clúster?**
 Es una base excelente de configuración CIS, pero no cubre RBAC excesivo, imágenes vulnerables ni cargas mal escritas. Complétalo con kubeaudit, Trivy y revisión de NetworkPolicies.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Martin & Hausenblas, *Hacking Kubernetes*, O'Reilly. <https://www.oreilly.com/library/view/hacking-kubernetes/9781492081722/>
-- CIS Kubernetes Benchmark. <https://www.cisecurity.org/benchmark/kubernetes>
-- Kubernetes — Pod Security Admission. <https://kubernetes.io/docs/concepts/security/pod-security-admission/>
-- kube-bench. <https://github.com/aquasecurity/kube-bench>
-- Kubernetes — Network Policies. <https://kubernetes.io/docs/concepts/services-networking/network-policies/>
+- Kubernetes — Pod Security Admission. <https://kubernetes.io/docs/concepts/security/pod-security-admission/> — niveles, modos y versionado oficiales.
+- Kubernetes — RBAC Good Practices. <https://kubernetes.io/docs/concepts/security/rbac-good-practices/> — rutas de escalada documentadas por el proyecto.
+- Kubernetes — Network Policies. <https://kubernetes.io/docs/concepts/services-networking/network-policies/> — semántica y dependencia del plugin.
+- CIS Kubernetes Benchmark. <https://www.cisecurity.org/benchmark/kubernetes> — baseline según distribución y versión.
+- kube-bench. <https://github.com/aquasecurity/kube-bench> — automatización del benchmark; revisar target y configuración.
+- Martin y Hausenblas, _Hacking Kubernetes_. <https://www.oreilly.com/library/view/hacking-kubernetes/9781492081722/> — escenarios complementarios controlados.
 
 ## 📥 Material descargable
 

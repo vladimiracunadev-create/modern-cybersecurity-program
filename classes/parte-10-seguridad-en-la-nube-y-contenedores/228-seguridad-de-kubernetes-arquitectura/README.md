@@ -27,22 +27,74 @@ Al finalizar, el alumno podrá:
 | # | Tema | Por qué importa |
 |---|------|-----------------|
 | 1 | Plano de control vs plano de datos | Separa cerebro y músculo del clúster |
-| 2 | API server como punto central | Todo pasa por él; es el objetivo principal |
-| 3 | etcd | Almacena TODO el estado, incluidos Secrets |
+| 2 | API server como punto central | Media solicitudes declarativas y controles de acceso |
+| 3 | etcd | Conserva el estado persistido del clúster y requiere protección específica |
 | 4 | kubelet | Agente por nodo; su API es un vector clásico |
 | 5 | Flujo authn → authz → admission | Cómo se autoriza cada acción |
 | 6 | RBAC y ServiceAccounts | Identidad y permisos dentro del clúster |
 | 7 | Namespaces y NetworkPolicy | Aislamiento lógico y de red |
 
+## 🧠 Explicación en profundidad
+
+Kubernetes mantiene un estado deseado mediante controladores. El usuario envía objetos al API server; después autenticación, autorización y admission determinan si se aceptan. etcd conserva el estado persistido y los controladores hacen converger workloads. Seguridad requiere proteger esa cadena completa y el camino desde un Pod hasta el nodo.
+
+```mermaid
+sequenceDiagram
+    participant U as Usuario/ServiceAccount
+    participant A as API server
+    participant Z as Authn/Authz
+    participant M as Admission
+    participant E as etcd
+    participant C as Controllers/Scheduler
+    participant K as kubelet
+    U->>A: Solicitud + credencial
+    A->>Z: Autenticar y autorizar
+    Z-->>A: Decisión
+    A->>M: Validar/mutar objeto
+    M-->>A: Admitir o rechazar
+    A->>E: Persistir estado admitido
+    C->>E: Observar estado
+    C->>K: Asignación del Pod
+    K->>K: Crear contenedores y mounts
+```
+
+El diagrama muestra que no «todo» tráfico del clúster pasa por el API server: las operaciones declarativas sí, pero el tráfico entre aplicaciones sigue otra ruta. Un control de admission puede impedir un Pod inseguro al crearlo; NetworkPolicy regula conectividad compatible con el CNI; el runtime y nodo aplican aislamiento.
+
+### Identidad, autorización y admisión
+
+Autenticación establece nombre y grupos; autorización decide verbos sobre recursos; admission examina o modifica el objeto después de autorizar y antes de persistir. RBAC combina Role/ClusterRole con bindings. Un RoleBinding puede enlazar un ClusterRole dentro de un namespace, detalle importante para interpretar alcance.
+
+ServiceAccounts son identidades namespaced para workloads. Los tokens proyectados actuales pueden tener audiencia y expiración, pero un Pod comprometido puede usarlos mientras sean válidos. Se deshabilita automount cuando no se necesita y se limita RBAC; no se depende solo de duración.
+
+### etcd, kubelet y nodos
+
+etcd debe usar autenticación mutua, red restringida, backups protegidos y cifrado de recursos sensibles cuando corresponda. Kubernetes Secret usa base64 en su representación, no cifrado por ese hecho; el cifrado en reposo debe configurarse. No todo estado externo —volúmenes, logs o secretos de terceros— vive en etcd, por lo que «contiene todo» es impreciso.
+
+kubelet ejecuta Pods asignados y expone APIs operativas. Autenticación, autorización webhook, certificados y acceso a `nodes/proxy` importan. Comprometer un nodo puede exponer workloads y credenciales locales aunque el API server esté bien configurado.
+
+### Namespace y red
+
+Namespaces organizan nombres, cuotas, RBAC y políticas namespaced; no crean aislamiento de kernel ni red automáticamente. NetworkPolicy funciona solo si el plugin de red la implementa y selecciona Pods por etiquetas. Una política default-deny sin allow de DNS o dependencias puede romper la aplicación; el diseño se deriva de flujos observados y requisitos.
+
 ## 📖 Definiciones y características
 
-- **API server:** frontend REST del plano de control. *Clave:* toda operación pasa por authn, authz y admission aquí.
-- **etcd:** base clave-valor con el estado del clúster. *Clave:* contiene los Secrets; su compromiso equivale a comprometer el clúster.
-- **kubelet:** agente que ejecuta pods en cada nodo. *Clave:* su API (10250) sin autenticación permite ejecutar en pods.
+- **API server:** frontend del plano de control para operaciones de recursos Kubernetes. *Clave:* procesa autenticación, autorización y admission; el tráfico de aplicación no sigue necesariamente esa ruta.
+- **etcd:** almacén consistente del estado persistido por Kubernetes. *Clave:* puede contener Secrets y credenciales; acceso, transporte, backups y cifrado requieren protección.
+- **kubelet:** agente de nodo que administra Pods asignados. *Clave:* sus APIs requieren autenticación y autorización; permisos proxy también amplían acceso.
 - **RBAC:** control de acceso por roles (Role/ClusterRole + Binding). *Clave:* privilegio mínimo dentro del clúster.
 - **ServiceAccount:** identidad de los pods frente al API server. *Clave:* su token, si se roba, da acceso a la API.
-- **Admission controller:** valida/mutila objetos antes de persistirlos (p. ej. Pod Security Admission). *Clave:* fuerza políticas de seguridad.
-- **NetworkPolicy:** firewall L3/L4 entre pods. *Clave:* sin ella, todos los pods se comunican libremente.
+- **Admission controller:** valida o muta objetos antes de persistirlos. *Clave:* aplica políticas sobre solicitudes admitidas, con alcance y excepciones configurables.
+
+## 🔍 Caso razonado — Pod sin token que necesita hablar con una API externa
+
+Una aplicación solo consume una API externa y no necesita Kubernetes API. El manifiesto establece `automountServiceAccountToken: false`; RBAC no concede permisos y NetworkPolicy permite DNS y el destino necesario. Si posteriormente incorpora descubrimiento de ConfigMaps, el equipo no monta un token con `default` amplio: crea ServiceAccount, Role de lectura sobre nombres concretos y Binding en el namespace.
+
+La prueba usa `kubectl auth can-i` para casos positivos y negativos, inspecciona mounts del Pod y valida flujos. El caso muestra que identidad, admisión y red son capas distintas y que una necesidad nueva debe cambiar el diseño explícitamente.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando puedes seguir una petición por authn, authz, admission, etcd y reconciliación; explicar qué no pasa por esa ruta; diseñar ServiceAccount/RBAC mínimo; y demostrar los límites de namespace, NetworkPolicy, kubelet y Secret.
+- **NetworkPolicy:** API para expresar aislamiento L3/L4 según selección y direcciones. *Clave:* el efecto depende del CNI, políticas aplicables y flujos permitidos.
 
 ## 🧰 Herramientas y preparación
 
@@ -100,21 +152,22 @@ que los implementa.
 ## ❓ Preguntas frecuentes
 
 **❓ ¿Por qué el API server es el objetivo principal de un atacante?**
-Porque es la única puerta a todo el clúster: quien lo controla puede crear pods, leer Secrets y moverse a los nodos. Por eso su autenticación, RBAC y admission control son la defensa central.
+Porque media cambios declarativos y expone recursos según autorización. Protegerlo es central, pero kubelet, etcd, nodos, runtime y red también poseen superficies que pueden evitar controles esperados.
 
 **❓ ¿Qué pasa si un atacante lee etcd directamente?**
-Obtiene todo el estado, incluidos los Secrets (por defecto solo en base64, no cifrados). Por eso se recomienda cifrado en reposo de etcd y acceso restringido con TLS mutuo.
+Puede leer el estado persistido accesible, incluidos Secrets almacenados allí. El impacto depende de permisos y cifrado configurado; se restringen red y certificados, se cifra material sensible y se protegen backups.
 
 **❓ ¿RBAC está activo por defecto?**
 En clústeres modernos sí, pero muchas instalaciones dejan roles amplios o ServiceAccounts con permisos excesivos. RBAC solo protege si se configura con privilegio mínimo.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Martin & Hausenblas, *Hacking Kubernetes*, O'Reilly. <https://www.oreilly.com/library/view/hacking-kubernetes/9781492081722/>
-- Kubernetes — Cluster Architecture. <https://kubernetes.io/docs/concepts/architecture/>
-- Kubernetes — Controlling Access to the API. <https://kubernetes.io/docs/concepts/security/controlling-access/>
-- Kubernetes — RBAC Authorization. <https://kubernetes.io/docs/reference/access-authn-authz/rbac/>
-- NIST SP 800-190. <https://csrc.nist.gov/pubs/sp/800/190/final>
+- Kubernetes — Cluster Architecture. <https://kubernetes.io/docs/concepts/architecture/> — componentes y reconciliación oficiales.
+- Kubernetes — Controlling Access to the API. <https://kubernetes.io/docs/concepts/security/controlling-access/> — secuencia oficial de autenticación, autorización y admisión.
+- Kubernetes — RBAC Authorization. <https://kubernetes.io/docs/reference/access-authn-authz/rbac/> — semántica de roles, bindings y verbos.
+- Kubernetes — Security Checklist. <https://kubernetes.io/docs/concepts/security/security-checklist/> — recomendaciones actuales, incluidas Secrets y tokens.
+- NIST SP 800-190. <https://doi.org/10.6028/NIST.SP.800-190> — guía de riesgos de contenedores; complementar con versión Kubernetes desplegada.
+- Martin y Hausenblas, _Hacking Kubernetes_. <https://www.oreilly.com/library/view/hacking-kubernetes/9781492081722/> — ejemplos complementarios, no documentación normativa.
 
 ## 📥 Material descargable
 

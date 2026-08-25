@@ -34,14 +34,56 @@ Al finalizar, el alumno podrá:
 | 6 | Key Vault | Gestión de secretos, claves y certificados |
 | 7 | Microsoft Sentinel | SIEM/SOAR nativo en la nube |
 
+## 🧠 Explicación en profundidad
+
+Azure separa el tenant de identidad de la jerarquía de administración de recursos. Microsoft Entra ID autentica identidades; Azure RBAC autoriza acciones sobre management groups, suscripciones, grupos de recursos y recursos. Confundir ambos planos produce asignaciones que parecen correctas pero no cubren la API o el dato esperado.
+
+```mermaid
+flowchart TD
+    T[Tenant Entra ID] --> P[Principal / managed identity]
+    MG[Management groups] --> S[Suscripciones]
+    S --> RG[Resource groups]
+    RG --> R[Recursos]
+    P --> RB[Azure RBAC por ámbito]
+    RB --> R
+    MG --> AP[Azure Policy heredada]
+    AP --> R
+    R --> M[Activity / resource / identity logs]
+    M --> D[Defender for Cloud y Sentinel]
+```
+
+El diagrama muestra dos árboles que convergen: identidad y recursos. Una asignación RBAC contiene principal, definición de rol y ámbito; la herencia baja por la jerarquía. Azure Policy evalúa propiedades de recursos y puede auditar, denegar, modificar o desplegar configuración según definición y efecto. Policy no concede permisos de uso y RBAC no obliga a que el recurso cumpla una configuración.
+
+### Red y acceso privado
+
+NSG aplica reglas stateful a NIC o subred y resuelve prioridades numéricas; una regla con número menor tiene mayor prioridad. Azure Firewall ofrece control centralizado y otras capacidades; Private Endpoint lleva un servicio PaaS a una interfaz en VNet, pero DNS y acceso público deben revisarse. La existencia de un endpoint privado no demuestra que el endpoint público quedó deshabilitado.
+
+### Claves, secretos e identidades administradas
+
+Key Vault conserva claves, secretos y certificados con modelos de autorización y logging. Una managed identity permite que una carga obtenga token sin secreto de aplicación almacenado. Esto reduce secretos estáticos, pero la identidad todavía necesita RBAC mínimo, rotación de valores gestionados y protección frente a una carga comprometida que pueda solicitar tokens.
+
+### Postura, protección y SIEM
+
+Defender for Cloud combina recomendaciones de postura con planes de protección de cargas. Secure Score prioriza mejoras según el modelo del producto, no cuantifica por sí solo el riesgo empresarial. Sentinel ingiere datos, ejecuta analíticas y coordina incidentes; su capacidad depende de conectores, esquema, retención, reglas y respuesta. El diseño une Activity Log, Entra sign-in/audit logs y logs de recurso sin asumir que uno contiene todo.
+
 ## 📖 Definiciones y características
 
-- **Microsoft Entra ID:** servicio de identidad de Azure. *Clave:* MFA y Conditional Access son la primera línea de defensa.
+- **Microsoft Entra ID:** servicio de identidad y directorio. *Clave:* autenticación, Conditional Access y gobierno de identidades complementan la autorización Azure RBAC.
 - **Azure RBAC:** asignación de roles (Owner, Contributor, Reader…) por ámbito. *Clave:* el ámbito puede ser suscripción, grupo de recursos o recurso.
 - **Management Group:** contenedor jerárquico de suscripciones. *Clave:* permite aplicar policy heredada a toda la organización.
 - **Azure Policy:** reglas que auditan o fuerzan configuraciones. *Clave:* efecto `Deny` bloquea despliegues no conformes.
-- **NSG:** firewall stateful sobre subred o NIC. *Clave:* reglas por prioridad; la más baja gana.
-- **Defender for Cloud:** CSPM + protección de cargas. *Clave:* el Secure Score cuantifica la postura.
+- **NSG:** filtro stateful sobre subred o NIC. *Clave:* el número de prioridad menor se evalúa antes; se consideran reglas efectivas en ambos ámbitos.
+- **Defender for Cloud:** capacidades de postura y protección según planes habilitados. *Clave:* Secure Score representa recomendaciones del servicio, no una medida completa de riesgo.
+
+## 🔍 Caso razonado — Contributor no puede leer un secreto
+
+Una persona tiene `Contributor` en un grupo de recursos y puede configurar el Key Vault, pero la lectura del valor depende del modelo de acceso al plano de datos. El equipo distingue control plane y data plane, revisa RBAC efectivo del vault y evita asignar `Owner` como solución rápida. Otorga un rol de lectura de secretos en el ámbito mínimo solo a la managed identity de la aplicación.
+
+Luego Azure Policy exige deshabilitar acceso público y usar Private Endpoint. La prueba verifica DNS desde la carga, denegación desde una red externa y registros del acceso. El caso conecta identidad, red, configuración y evidencia sin confundir administración del recurso con lectura del contenido.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando puedes dibujar tenant y jerarquía de recursos, explicar una asignación RBAC efectiva por ámbito, diferenciar Policy de autorización, validar NSG/Private Endpoint y diseñar acceso a Key Vault mediante managed identity con logs y pruebas de denegación.
 - **Key Vault:** almacén gestionado de secretos y claves. *Clave:* acceso vía RBAC/policy y auditado.
 
 ## 🧰 Herramientas y preparación
@@ -105,15 +147,16 @@ Los roles de Entra ID gobiernan el directorio (usuarios, grupos, apps); los de A
 El nivel CSPM básico es gratuito; los planes de protección de cargas (servidores, contenedores, bases de datos) se facturan por recurso. Actívalos según el riesgo.
 
 **❓ ¿Managed identity o service principal con secreto?**
-Managed identity siempre que sea posible: Azure gestiona y rota las credenciales automáticamente, sin secretos que se filtren.
+Managed identity cuando el servicio y la arquitectura la soporten: evita una credencial de aplicación administrada por el equipo. Aun así, protege la carga, limita su RBAC y monitorea la emisión y uso de tokens.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Microsoft Cloud Security Benchmark. <https://learn.microsoft.com/security/benchmark/azure/>
-- Microsoft Defender for Cloud docs. <https://learn.microsoft.com/azure/defender-for-cloud/>
-- Azure RBAC docs. <https://learn.microsoft.com/azure/role-based-access-control/>
-- Azure Key Vault best practices. <https://learn.microsoft.com/azure/key-vault/general/best-practices>
-- CIS Microsoft Azure Foundations Benchmark. <https://www.cisecurity.org/benchmark/azure>
+- Microsoft Cloud Security Benchmark. <https://learn.microsoft.com/security/benchmark/azure/> — baseline oficial de controles y responsabilidades.
+- Azure RBAC. <https://learn.microsoft.com/azure/role-based-access-control/> — documentación oficial de roles, asignaciones y ámbitos.
+- Azure Policy. <https://learn.microsoft.com/azure/governance/policy/overview> — efectos, herencia y evaluación oficial; no reemplaza RBAC.
+- Defender for Cloud. <https://learn.microsoft.com/azure/defender-for-cloud/> — planes y capacidades actuales; confirmar qué está habilitado.
+- Azure Key Vault best practices. <https://learn.microsoft.com/azure/key-vault/general/best-practices> — recomendaciones oficiales de identidad, red, rotación y recuperación.
+- CIS Azure Foundations Benchmark. <https://www.cisecurity.org/benchmark/azure> — baseline complementaria con versión y perfil explícitos.
 
 ## 📥 Material descargable
 

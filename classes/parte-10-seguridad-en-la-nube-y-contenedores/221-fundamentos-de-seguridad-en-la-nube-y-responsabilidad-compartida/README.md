@@ -10,7 +10,7 @@
 Comprender qué cambia cuando la infraestructura se mueve a la nube y dónde queda exactamente la
 frontera de responsabilidad entre el proveedor y el cliente. Al terminar, el alumno sabrá clasificar
 cualquier servicio (IaaS, PaaS, SaaS) según quién asegura qué, e identificar los errores de
-configuración del cliente que causan la mayoría de las brechas cloud.
+configuración del cliente que pueden exponer datos, identidades y servicios.
 
 ## 📚 Resultados de aprendizaje
 
@@ -26,23 +26,68 @@ Al finalizar, el alumno podrá:
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|
-| 1 | Modelo de responsabilidad compartida | Define legalmente y técnicamente qué te toca asegurar |
+| 1 | Modelo de responsabilidad compartida | Asigna tareas técnicas y operativas según servicio y contrato |
 | 2 | IaaS vs PaaS vs SaaS | La frontera de responsabilidad se mueve con cada modelo |
 | 3 | "DE la nube" vs "EN la nube" | Separa fallos del proveedor de errores del cliente |
-| 4 | Misconfiguration como causa raíz | El 99% de brechas cloud son error del cliente (Gartner) |
-| 5 | Perímetro definido por identidad | En la nube, IAM sustituye al firewall perimetral |
+| 4 | Configuración insegura y estado efectivo | Distinguir intención, valor por defecto y cambio desplegado |
+| 5 | Identidad, red y datos como controles compuestos | Ninguna capa reemplaza por sí sola a las demás |
 | 6 | Regiones, zonas y soberanía de datos | Cumplimiento, latencia y aislamiento de fallos |
 | 7 | Modelo de amenazas cloud | Superficie de API, plano de gestión y datos |
+
+## 🧠 Explicación en profundidad
+
+La nube combina recursos virtualizados, servicios administrados y automatización por API. NIST SP 800-145 define características y modelos de servicio, pero esa taxonomía no decide quién configura una clave, revisa un log o corrige una aplicación. Para cada servicio se construye una matriz de **tarea**, **parte responsable**, **evidencia de cumplimiento** y **dependencia compartida**.
+
+```mermaid
+flowchart LR
+    B[Necesidad de negocio] --> S{Modelo de servicio}
+    S --> I[IaaS]
+    S --> P[PaaS]
+    S --> A[SaaS]
+    I --> M[Matriz por tarea]
+    P --> M
+    A --> M
+    M --> C[Configuración del cliente]
+    M --> R[Control del proveedor]
+    M --> X[Responsabilidad compartida]
+    C --> E[Evidencia y monitoreo]
+    R --> E
+    X --> E
+```
+
+El diagrama no presenta una línea fija: obliga a clasificar tareas. En IaaS el proveedor opera instalaciones y virtualización, mientras el cliente suele administrar sistema invitado, aplicaciones, identidades y reglas. En un servicio administrado, el parche del motor puede pasar al proveedor, pero esquema, acceso, cifrado elegido y datos siguen requiriendo decisiones del cliente. En SaaS permanecen cuentas, configuración, dispositivos, compartición y gobierno de datos.
+
+### «Seguridad de» y «seguridad en» la nube
+
+La distinción popular ayuda a empezar, pero puede ocultar dependencias. El proveedor protege la infraestructura del servicio y publica capacidades; el cliente debe activarlas y operar sus controles. Algunas tareas son compartidas: el proveedor ofrece cifrado y resiliencia regional, mientras el cliente selecciona claves, región, replicación y pruebas de recuperación. La responsabilidad también tiene una dimensión contractual: SLA y certificaciones no demuestran que una arquitectura concreta cumpla el requisito del cliente.
+
+### API, identidad, red y datos
+
+El plano de control crea, cambia o elimina recursos; el plano de datos procesa contenido; el plano de identidad emite y evalúa sesiones. Una acción administrativa puede venir desde Internet sin cruzar la VPC de la carga. Por eso IAM es crítico, pero no «sustituye» firewall, segmentación, validación de aplicación o cifrado. Un rol mínimo puede invocar una API vulnerable; una red privada puede contener una identidad excesiva; un dato cifrado puede quedar públicamente legible para una identidad autorizada de forma incorrecta.
+
+### Región, zona y soberanía
+
+Región describe una ubicación geográfica ofrecida por el proveedor; zonas dentro de ella aportan dominios de fallo separados según el servicio. Desplegar en dos zonas mejora tolerancia a ciertos fallos, pero no protege automáticamente contra borrado lógico, credencial comprometida o dependencia regional compartida. Residencia, transferencia, jurisdicción y backup deben analizarse por tipo de dato y servicio, no solo por el nombre de la región.
 
 ## 📖 Definiciones y características
 
 - **Responsabilidad compartida:** modelo donde el proveedor asegura la infraestructura subyacente y el cliente asegura lo que despliega encima. *Característica clave:* la línea divisoria depende del servicio contratado.
 - **IaaS (Infrastructure as a Service):** el proveedor da cómputo, red y almacenamiento virtualizados (p. ej. EC2). *Clave:* el cliente asegura SO, parches, red y aplicación.
 - **PaaS (Platform as a Service):** el proveedor gestiona también el runtime y el SO (p. ej. App Engine, RDS). *Clave:* el cliente asegura datos, configuración y accesos.
-- **SaaS (Software as a Service):** el proveedor gestiona casi todo (p. ej. Microsoft 365). *Clave:* el cliente solo asegura datos, identidades y configuración de la app.
-- **Plano de control (control plane):** las APIs de gestión del proveedor. *Clave:* comprometerlo da control total; se protege con IAM y MFA.
-- **Misconfiguration:** ajuste inseguro dejado por el cliente (bucket público, puerto abierto). *Clave:* invisible para el proveedor, es el vector dominante.
+- **SaaS (Software as a Service):** el proveedor entrega una aplicación administrada. *Clave:* el cliente conserva responsabilidades sobre identidades, dispositivos, datos, configuración e integración según contrato.
+- **Plano de control (control plane):** APIs y mecanismos que administran recursos. *Clave:* el impacto de una sesión comprometida depende de permisos, límites organizacionales y controles de detección.
+- **Configuración insegura:** estado efectivo que expone o debilita un recurso respecto de su requisito. *Clave:* puede provenir de valores por defecto, cambios manuales, IaC, herencia o excepción.
 - **Blast radius:** alcance del daño si un recurso se compromete. *Clave:* se limita con segmentación de cuentas, VPCs y privilegio mínimo.
+
+## 🔍 Caso razonado — la misma base de datos en IaaS y PaaS
+
+Una organización puede instalar PostgreSQL en una VM o contratar una base administrada. En la VM controla parche, sistema, proceso, backup, red, credenciales y datos. En PaaS el proveedor asume sistema y motor dentro del servicio, pero el cliente todavía define acceso público o privado, usuarios, parámetros disponibles, retención, claves y restauración. «El proveedor parchea» no significa «la base está segura».
+
+La matriz de evidencia cambia: en IaaS se conserva inventario y estado de parche del host; en PaaS se usa versión administrada, configuración, logs del servicio y pruebas de restauración. En ambos casos se verifica IAM, red, clasificación de datos y monitoreo. Esa comparación muestra por qué el modelo se aplica por tarea, no mediante un porcentaje genérico.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando puedes tomar un servicio concreto, asignar al menos diez tareas entre proveedor, cliente y compartidas, indicar una evidencia verificable para cada tarea y explicar cómo identidad, red, aplicación, datos, región y operación reducen riesgos distintos.
 
 ## 🧰 Herramientas y preparación
 
@@ -64,7 +109,7 @@ Este es un tema conceptual: el laboratorio es un análisis de arquitectura y una
 1. Elige tres servicios reales, uno por modelo: por ejemplo **EC2** (IaaS), **AWS Lambda** (PaaS/FaaS) y **Amazon S3** (almacenamiento gestionado).
 2. Para cada uno, construye una tabla con las capas: *hardware físico, red, hipervisor, SO, runtime, aplicación, datos, IAM/config*. Marca en cada capa quién es responsable: **Proveedor**, **Cliente** o **Compartida**.
 3. Investiga en la documentación oficial cómo describe el proveedor la frontera de cada servicio y contrasta con tu tabla.
-4. Toma una brecha pública real (p. ej. una fuga por bucket S3 mal configurado) e identifica **en qué capa** falló y **de quién** era la responsabilidad. Comprobarás que casi siempre fue del cliente.
+4. Toma un incidente cloud documentado y separa hechos públicos, control afectado y tareas del proveedor, cliente o compartidas. No atribuyas causa si el informe público no la demuestra.
 5. Redacta un párrafo de "controles mínimos del cliente" para cada uno de los tres servicios.
 6. Repite el ejercicio de la capa IAM: describe por qué en la nube el perímetro es la identidad y no la red.
 
@@ -90,7 +135,7 @@ menos un control concreto del cliente por componente.
 
 | Síntoma / mensaje | Causa y cómo arreglar |
 |-------------------|-----------------------|
-| "El proveedor ya me protege, no necesito hacer nada" | Malentiende el modelo; la config y los datos siempre son del cliente. Aplica controles propios. |
+| "El proveedor ya me protege, no necesito hacer nada" | Confunde operación del servicio con configuración y gobierno del cliente. Construye la matriz por tarea y contrato. |
 | Bucket o blob accesible públicamente sin querer | ACL/política heredada o pública por defecto en versiones antiguas; activa *block public access*. |
 | Uso diario de la cuenta raíz | Rompe el privilegio mínimo; crea usuarios/roles y guarda la raíz solo para tareas críticas con MFA. |
 | Datos en región equivocada | Se ignoró soberanía/latencia; define región por diseño y bloquea otras con SCP/policies. |
@@ -107,13 +152,13 @@ Sí lo tienes: identidades, permisos, configuración de la app y los datos que s
 **❓ ¿Por qué se dice que "la identidad es el nuevo perímetro"?**
 Porque no hay un firewall físico entre tú y el mundo: cualquiera con credenciales válidas puede llamar a la API. Controlar quién puede hacer qué (IAM) es el control central.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- AWS Shared Responsibility Model. <https://aws.amazon.com/compliance/shared-responsibility-model/>
-- AWS Well-Architected — Security Pillar. <https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html>
-- Microsoft — Shared responsibility in the cloud. <https://learn.microsoft.com/azure/security/fundamentals/shared-responsibility>
-- Google Cloud — Shared responsibility and shared fate. <https://cloud.google.com/architecture/framework/security/shared-responsibility-shared-fate>
-- NIST SP 800-145, *The NIST Definition of Cloud Computing*. <https://csrc.nist.gov/pubs/sp/800/145/final>
+- AWS Shared Responsibility Model. <https://aws.amazon.com/compliance/shared-responsibility-model/> — explicación oficial AWS; la división se concreta por servicio.
+- Microsoft — Shared responsibility in the cloud. <https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility> — matriz oficial actualizada para IaaS, PaaS y SaaS.
+- Google Cloud — Shared responsibility and shared fate. <https://cloud.google.com/architecture/framework/security/shared-responsibility-shared-fate> — perspectiva oficial Google; no modifica las obligaciones contractuales del cliente.
+- NIST SP 800-145. <https://doi.org/10.6028/NIST.SP.800-145> — definición neutral de características, modelos de servicio y despliegue cloud.
+- AWS Well-Architected — Security Pillar. <https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html> — principios de diseño; debe aplicarse a arquitectura y requisitos concretos.
 
 ## 📥 Material descargable
 

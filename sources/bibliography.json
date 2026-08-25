@@ -2459,7 +2459,8 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-10-seguridad-en-la-nube-y-contenedores/221-fundamentos-de-seguridad-en-la-nube-y-responsabilidad-compartida/README.md"
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/221-fundamentos-de-seguridad-en-la-nube-y-responsabilidad-compartida/README.md",
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/226-ataques-y-pentest-en-entornos-cloud/README.md"
    ],
    "authors": []
   },
@@ -3014,6 +3015,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/222-iam-en-la-nube-identidades-roles-y-permisos/README.md",
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/225-seguridad-en-google-cloud-platform/README.md"
    ],
    "authors": []
@@ -3038,6 +3040,27 @@
    "used_in": [
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/234-logging-y-deteccion-en-la-nube/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/212-forense-en-la-nube/README.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "cloud-google-com-vpc-service-controls",
+   "type": "reference",
+   "title": "VPC Service Controls overview",
+   "locator": "https://cloud.google.com/vpc-service-controls/docs/overview",
+   "authority": "Google Cloud",
+   "status": "verificada",
+   "notes": "Documentacion oficial consultada el 2026-08-24: describe perimetros de servicio, controles de ingreso y egreso y su relacion con IAM.",
+   "matches": {
+    "url_prefixes": [
+     "https://cloud.google.com/vpc-service-controls",
+     "https://docs.cloud.google.com/vpc-service-controls"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-08-24",
+   "used_in": [
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/225-seguridad-en-google-cloud-platform/README.md"
    ],
    "authors": []
   },
@@ -3939,7 +3962,8 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-10-seguridad-en-la-nube-y-contenedores/222-iam-en-la-nube-identidades-roles-y-permisos/README.md"
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/222-iam-en-la-nube-identidades-roles-y-permisos/README.md",
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/223-seguridad-en-aws/README.md"
    ],
    "authors": []
   },
@@ -4087,7 +4111,8 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-0-fundamentos-y-prerrequisitos/022-docker-y-contenedores-para-laboratorios-de-seguridad/README.md"
+    "classes/parte-0-fundamentos-y-prerrequisitos/022-docker-y-contenedores-para-laboratorios-de-seguridad/README.md",
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/227-seguridad-de-contenedores-docker/README.md"
    ],
    "authors": []
   },
@@ -8720,11 +8745,9 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-10-seguridad-en-la-nube-y-contenedores/221-fundamentos-de-seguridad-en-la-nube-y-responsabilidad-compartida/README.md",
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/224-seguridad-en-azure/README.md",
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/231-cloud-security-posture-management-cspm/README.md",
-    "classes/parte-10-seguridad-en-la-nube-y-contenedores/232-seguridad-serverless/README.md",
-    "classes/parte-10-seguridad-en-la-nube-y-contenedores/234-logging-y-deteccion-en-la-nube/README.md"
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/232-seguridad-serverless/README.md"
    ],
    "authors": []
   },
@@ -8766,6 +8789,8 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/221-fundamentos-de-seguridad-en-la-nube-y-responsabilidad-compartida/README.md",
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/234-logging-y-deteccion-en-la-nube/README.md",
     "classes/parte-11-devsecops-y-seguridad-del-sdlc/237-modelado-de-amenazas-stride-y-dread/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/168-evasion-de-defensas-antivirus-y-edr/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/169-ofuscacion-de-payloads-y-bypass-de-amsi/README.md",
@@ -8784,14 +8809,15 @@
    "id": "learn-microsoft-com-entra",
    "type": "reference",
    "title": "Microsoft Entra ID docs",
-   "locator": "https://learn.microsoft.com/entra/identity",
+   "locator": "https://learn.microsoft.com/en-us/entra/identity/",
    "authority": "microsoft.com",
    "status": "pendiente",
    "notes": "Comprobado en red el 2026-08-19: el locator responde pero redirige a https://learn.microsoft.com/en-us/entra/identity/. Queda pendiente para decidir si se adopta la URL de destino.",
    "seed": "auto",
    "matches": {
     "url_prefixes": [
-     "https://learn.microsoft.com/entra"
+     "https://learn.microsoft.com/entra",
+     "https://learn.microsoft.com/en-us/entra"
     ],
     "text_patterns": []
    },
@@ -13226,6 +13252,7 @@
    "used_in": [
     "classes/parte-0-fundamentos-y-prerrequisitos/001-que-es-la-ciberseguridad-triada-cia-aaa-superficie-de-ataque-y-defensa-en-profundidad/README.md",
     "classes/parte-0-fundamentos-y-prerrequisitos/003-frameworks-de-seguridad-nist-csf-iso-27001-mitre-att-ck-y-diamond-model/README.md",
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/235-respuesta-a-incidentes-en-la-nube/README.md",
     "classes/parte-14-grc-riesgo-y-cumplimiento/279-nist-cybersecurity-framework/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/320-gobierno-aspectos-legales-regulatorios-y-gestion-del-programa/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md",
@@ -13463,6 +13490,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/235-respuesta-a-incidentes-en-la-nube/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/212-forense-en-la-nube/README.md"
    ],
    "authors": [],
@@ -14246,6 +14274,7 @@
    },
    "accessed": "2026-08-24",
    "used_in": [
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/235-respuesta-a-incidentes-en-la-nube/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/179-reporte-y-metricas-de-red-team/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/196-automatizacion-con-soar/README.md",

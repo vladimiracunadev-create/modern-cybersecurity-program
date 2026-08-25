@@ -28,11 +28,43 @@ Al finalizar, el alumno podrá:
 |---|------|-----------------|
 | 1 | Qué es CSPM | Visibilidad continua de misconfiguraciones |
 | 2 | CSPM vs escaneo IaC | Runtime vs pre-despliegue |
-| 3 | Prowler | Auditoría multi-cloud con cientos de checks |
+| 3 | Prowler | Automatizar checks con alcance, versión y credencial conocidos |
 | 4 | ScoutSuite | Auditoría con informe HTML navegable |
 | 5 | Marcos de cumplimiento | CIS, PCI-DSS, HIPAA, ISO 27001 |
 | 6 | Priorización de hallazgos | Evitar la fatiga de alertas |
 | 7 | Ciclo de remediación y métricas | Mejorar la postura con el tiempo |
+
+## 🧠 Explicación en profundidad
+
+CSPM compara configuración efectiva con reglas de seguridad y cumplimiento. El resultado es un hallazgo, no una vulnerabilidad explotable demostrada ni una prioridad empresarial automática. Para convertirlo en trabajo útil se agrega contexto: exposición, privilegio, sensibilidad de datos, ruta de ataque, dueño, compensaciones y origen IaC.
+
+```mermaid
+flowchart LR
+    A[Inventario y APIs] --> C[Checks CSPM]
+    C --> F[Hallazgos normalizados]
+    F --> X[Contexto: exposición + datos + identidad]
+    X --> P[Prioridad y dueño]
+    P --> R[Corregir recurso e IaC]
+    R --> V[Reescaneo y prueba]
+    V --> M[Métricas y recurrencia]
+    M --> C
+```
+
+El ciclo vuelve al check porque la postura cambia. Una corrección manual puede ser revertida por Terraform; una corrección en código puede no alcanzar recursos creados fuera del pipeline. Por eso el ticket vincula recurso, cuenta, regla, evidencia, repositorio, excepción y fecha de verificación.
+
+### Cobertura antes que cantidad
+
+Prowler y ScoutSuite usan APIs con una credencial. Un `AccessDenied` puede convertir un check en desconocido, no en conforme. Se documentan cuentas, regiones, servicios, permisos, versión, checks deshabilitados y errores. «Cientos de checks» no es una medida de cobertura si faltan datos o el servicio no está soportado.
+
+Los frameworks aportan requisitos con objetivos distintos. CIS define benchmarks de configuración; PCI DSS, ISO 27001 o una política interna requieren alcance y evidencia adicional. Un mapeo de herramienta es una ayuda, no certificación de cumplimiento.
+
+### Priorizar y aceptar riesgo
+
+Severidad del producto es un dato. Un bucket públicamente accesible con datos sensibles puede ser urgente; el mismo patrón en un sitio estático previsto requiere revisar integridad, origen y excepción. Un rol potente sin ruta de uso puede tener prioridad distinta a una credencial activa que puede asumirlo. Las excepciones incluyen justificación, control compensatorio, aprobador, vencimiento y revisión.
+
+### Métricas que no incentiven ocultar
+
+Contar hallazgos abiertos castiga inventarios más completos. Se miden cobertura de cuentas y servicios, edad por severidad contextual, tiempo a triage, tiempo a corrección, recurrencia, excepciones vencidas y porcentaje corregido en IaC. Las tendencias se segmentan por equipo y criticidad sin confundir volumen con riesgo total.
 
 ## 📖 Definiciones y características
 
@@ -40,9 +72,19 @@ Al finalizar, el alumno podrá:
 - **Prowler:** herramienta open source con cientos de checks para AWS/Azure/GCP/K8s. *Clave:* mapea a CIS y otros marcos.
 - **ScoutSuite:** auditor multi-cloud que genera un informe HTML navegable. *Clave:* ideal para revisión visual y priorización.
 - **Baseline de seguridad:** conjunto de controles mínimos esperados. *Clave:* referencia contra la que se mide la postura.
-- **Severidad:** clasificación del riesgo de un hallazgo. *Clave:* guía el orden de remediación.
+- **Severidad:** estimación técnica producida por una regla o producto. *Clave:* orienta, pero la prioridad incorpora exposición, datos, privilegio, explotabilidad y negocio.
 - **Drift de postura:** aparición de nuevas misconfiguraciones con el tiempo. *Clave:* exige auditoría continua, no puntual.
-- **Remediación:** corrección del hallazgo. *Clave:* debe medirse (tiempo de cierre, % conforme).
+- **Remediación:** cambio que corrige causa y estado efectivo. *Clave:* se aplica al recurso y a su fuente declarativa y se verifica mediante reescaneo y prueba.
+
+## 🔍 Caso razonado — dos security groups con el mismo check
+
+Prowler marca dos SG con SSH desde Internet. Uno está asociado a una instancia apagada sin IP pública; el otro a un bastion con IP pública y contraseña habilitada. La regla es idéntica, pero la ruta y el impacto no. El segundo se prioriza, se migra a acceso administrado o rango autorizado y se revisan autenticaciones; el primero también se corrige en Terraform para evitar exposición futura.
+
+La evidencia de cierre incluye diff IaC, plan, estado efectivo y reescaneo. Si el bastion conserva una excepción temporal, se documentan dueño, origen permitido, MFA/clave, logs y vencimiento.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando puedes ejecutar una auditoría con cobertura declarada, distinguir conforme de desconocido, contextualizar hallazgos iguales de forma distinta, corregir recurso e IaC y presentar métricas que midan cobertura, edad y recurrencia.
 
 ## 🧰 Herramientas y preparación
 
@@ -108,13 +150,13 @@ Para empezar no. Prowler y ScoutSuite cubren muy bien AWS/Azure/GCP con cientos 
 **❓ ¿Cómo evito la fatiga de alertas?**
 Prioriza: no todos los hallazgos importan igual. Cruza severidad con exposición a Internet y criticidad del recurso, remedia primero lo explotable y automatiza la supresión justificada de falsos positivos.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Prowler. <https://github.com/prowler-cloud/prowler>
-- ScoutSuite. <https://github.com/nccgroup/ScoutSuite>
-- CIS Benchmarks. <https://www.cisecurity.org/cis-benchmarks>
-- AWS Security Hub (CSPM gestionado). <https://docs.aws.amazon.com/securityhub/>
-- Microsoft Defender for Cloud (CSPM). <https://learn.microsoft.com/azure/defender-for-cloud/concept-cloud-security-posture-management>
+- Prowler. <https://github.com/prowler-cloud/prowler> — proyecto primario y checks; fijar versión, provider, regiones y permisos.
+- ScoutSuite. <https://github.com/nccgroup/ScoutSuite> — proyecto primario de recolección e informe; un reporte HTML no sustituye priorización.
+- CIS Benchmarks. <https://www.cisecurity.org/cis-benchmarks> — baselines versionadas y perfiladas.
+- AWS Security Hub. <https://docs.aws.amazon.com/securityhub/> — postura y agregación gestionadas según estándares y regiones habilitados.
+- Microsoft Defender for Cloud CSPM. <https://learn.microsoft.com/azure/defender-for-cloud/concept-cloud-security-posture-management> — capacidades y planes oficiales actuales.
 
 ## 📥 Material descargable
 

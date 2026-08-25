@@ -31,16 +31,58 @@ Al finalizar, el alumno podrá:
 | 3 | Event injection | Los eventos vienen de fuentes no confiables |
 | 4 | Secretos en funciones | Variables de entorno no son un vault |
 | 5 | Dependencias y cadena de suministro | Paquetes vulnerables en el bundle |
-| 6 | Denial-of-Wallet | Abuso que dispara el coste, no la caída |
+| 6 | Abuso de concurrencia y costo | Relacionar disponibilidad, cuotas, bucles y presupuesto |
 | 7 | Observabilidad de funciones | Trazas y logs para detección |
+
+## 🧠 Explicación en profundidad
+
+Serverless elimina la administración directa de servidores para el cliente, no la responsabilidad sobre código, dependencias, eventos, identidad, configuración y datos. La unidad de amenaza no es solo la función: es la cadena trigger → transformación → función → servicios descendentes → respuesta.
+
+```mermaid
+flowchart LR
+    T[HTTP / cola / objeto / evento] --> V[Autenticidad + esquema + tamaño]
+    V --> F[Función]
+    I[Rol de ejecución mínimo] --> F
+    S[Gestor de secretos] --> F
+    F --> D[BD / storage / API]
+    F --> O[Logs, métricas y trazas]
+    Q[Cuotas, concurrencia, DLQ] --> F
+    O --> A[Detección y costo]
+```
+
+El diagrama sitúa validación antes del código y controles operativos alrededor. Un evento emitido por un servicio cloud todavía puede contener datos controlados por un usuario. Autenticar el origen no valida el payload; validar JSON no autoriza la operación; parametrizar una consulta no limita el rol de ejecución.
+
+### Identidad por función y confianza entre eventos
+
+Reutilizar un rol amplio entre funciones mezcla blast radius. Cada función o grupo coherente obtiene acciones y recursos mínimos, con condiciones cuando sean estables. También se protege quién puede actualizar código, variables, layers, destinations y rol. Una identidad administrada elimina claves estáticas, pero una ejecución comprometida puede usar sus tokens efectivos.
+
+Los eventos se validan por esquema, tamaño, tipos, identificadores y relación con el recurso esperado. En flujos asíncronos se consideran reintentos, idempotencia, orden, dead-letter queues y poison messages. Un mismo evento procesado dos veces no debe duplicar transferencias o privilegios.
+
+### Costo, disponibilidad y bucles
+
+Un atacante o error puede generar invocaciones, fan-out o bucles entre servicios. «Denial-of-wallet» es una etiqueta útil, pero el efecto puede incluir throttling y caída. Se usan límites de concurrencia, cuotas, rate limiting en la entrada, budgets y alarmas; un budget alerta y no siempre detiene consumo. Los límites se prueban para no bloquear carga legítima ni agotar dependencias compartidas.
+
+### Secretos, dependencias y observabilidad
+
+Variables de entorno pueden cifrarse en reposo, pero suelen ser legibles para identidades con permisos de configuración o para el proceso. Se usa un gestor y cache controlado con rotación. Dependencias y layers se fijan, escanean y reconstruyen. Logs evitan payloads y secretos, conservan request/correlation ID, identidad, resultado, latencia y errores; trazas explican llamadas distribuidas con muestreo conocido.
 
 ## 📖 Definiciones y características
 
 - **Función como servicio (FaaS):** código que corre bajo demanda sin gestionar servidores. *Clave:* no parcheas SO, pero sí el código y sus permisos.
 - **Trigger/evento:** fuente que invoca la función (HTTP, cola, objeto en bucket). *Clave:* el payload del evento es entrada no confiable.
 - **Rol de ejecución:** identidad IAM que asume la función. *Clave:* debe ser mínimo y exclusivo por función.
-- **Event injection:** inyección a través del payload del evento. *Clave:* valida y sanea todo evento entrante.
-- **Denial-of-Wallet:** abuso que multiplica invocaciones y coste. *Clave:* limita concurrencia y presupuesto.
+- **Event injection:** uso de campos de un evento para alterar una operación posterior. *Clave:* autenticar origen, validar esquema y usar APIs seguras resuelven riesgos diferentes.
+- **Abuso de costo/concurrencia:** invocaciones, fan-out o bucles que consumen cuota y presupuesto. *Clave:* combina límites, idempotencia, alertas y protección en la fuente.
+
+## 🔍 Caso razonado — objeto que dispara un bucle
+
+Una función transforma cada archivo subido y escribe el resultado en el mismo bucket/prefijo que activa el trigger. El archivo de salida vuelve a invocarla y produce un bucle. No es necesariamente un atacante: es una relación de eventos mal diseñada con impacto de costo y disponibilidad.
+
+La corrección separa prefijos o buckets, filtra eventos, agrega idempotencia y limita concurrencia. La prueba crea un objeto benigno, confirma una sola transformación, revisa métrica de invocaciones y verifica que un payload sobredimensionado o con esquema inválido se rechaza sin registrarlo completo.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando puedes modelar una cadena de evento completa, asignar rol mínimo por función, diseñar idempotencia y límites, entregar secretos sin exponerlos y demostrar con logs/métricas qué ocurrió durante reintentos y rechazo.
 - **Cold start:** primera invocación tras inactividad. *Clave:* relevante para timeouts y para no cachear secretos inseguros.
 - **Variables de entorno:** config inyectada en la función. *Clave:* no son secretas por sí solas; usa un gestor de secretos y cifrado.
 
@@ -107,13 +149,13 @@ No como almacén seguro: son visibles para quien pueda leer la configuración de
 **❓ ¿Qué es denial-of-wallet y por qué preocupa en serverless?**
 Es un abuso que no busca tumbar el servicio sino disparar el número de invocaciones y, con ello, el coste. Se mitiga con límites de concurrencia, throttling en el API Gateway y alarmas/presupuestos de coste.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- OWASP Serverless Top 10. <https://owasp.org/www-project-serverless-top-10/>
-- AWS Lambda — Security overview. <https://docs.aws.amazon.com/lambda/latest/dg/lambda-security.html>
-- Azure Functions security. <https://learn.microsoft.com/azure/azure-functions/security-concepts>
-- Google Cloud Functions — Securing. <https://cloud.google.com/functions/docs/securing>
-- OWASP — Serverless Security Cheat Sheet. <https://cheatsheetseries.owasp.org/>
+- AWS Lambda — Security. <https://docs.aws.amazon.com/lambda/latest/dg/lambda-security.html> — modelo y controles oficiales AWS; confirmar integración específica de cada trigger.
+- Azure Functions security. <https://learn.microsoft.com/azure/azure-functions/security-concepts> — recomendaciones oficiales de identidad, red y secretos.
+- Google Cloud Run functions security. <https://cloud.google.com/functions/docs/securing> — autenticación y protección oficial del servicio vigente.
+- OWASP Serverless Top 10. <https://owasp.org/www-project-serverless-top-10/> — taxonomía comunitaria para modelado; no ranking universal de frecuencia.
+- OWASP Serverless Security Cheat Sheet. <https://cheatsheetseries.owasp.org/cheatsheets/Serverless_FaaS_Security_Cheat_Sheet.html> — prácticas complementarias para eventos, permisos y observabilidad.
 
 ## 📥 Material descargable
 

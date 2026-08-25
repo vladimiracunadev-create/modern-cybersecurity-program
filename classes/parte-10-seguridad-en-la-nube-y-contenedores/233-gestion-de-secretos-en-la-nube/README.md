@@ -30,17 +30,62 @@ Al finalizar, el alumno podrá:
 | 2 | Gestores de secretos | Almacén cifrado con control de acceso |
 | 3 | Rotación automática | Reduce la ventana de un secreto comprometido |
 | 4 | Secretos dinámicos | Credenciales efímeras generadas al vuelo |
-| 5 | Inyección segura en runtime | Sin secretos en la imagen ni en el código |
+| 5 | Entrega en runtime | Reducir persistencia en código, imagen, variables y logs |
 | 6 | Cifrado y KMS/envelope | Protección de la clave que protege los secretos |
 | 7 | Detección de filtraciones | git-secrets, gitleaks, trufflehog |
+
+## 🧠 Explicación en profundidad
+
+Un secreto es información cuya posesión permite autenticar o autorizar: contraseña, token, clave API o material privado. No todo dato sensible es un secreto y no toda clave criptográfica se gestiona igual. La seguridad se diseña como ciclo: creación, almacenamiento, distribución, uso, rotación, revocación, auditoría y destrucción.
+
+```mermaid
+flowchart LR
+    I[Identidad de carga] --> A[Autenticación al gestor]
+    A --> P[Política mínima]
+    P --> G[Secreto estático o dinámico]
+    G --> D[Entrega en memoria/archivo acotado]
+    D --> U[Uso por la aplicación]
+    U --> L[Auditoría sin valor secreto]
+    G --> R[Rotación / TTL / revocación]
+    R --> D
+    X[Detección de filtración] --> R
+```
+
+El objetivo del diagrama no es «guardar todo en Vault», sino evitar que la aplicación necesite una credencial raíz para pedir otra credencial. La identidad inicial debe venir de la plataforma cuando sea posible —workload identity, managed identity, IAM role— y su política solo permite la ruta requerida.
+
+### Estático, rotado y dinámico
+
+Un secreto estático puede rotarse periódicamente o ante compromiso. La rotación necesita coordinación entre emisor, gestor y consumidores; durante una ventana pueden coexistir versiones. Un secreto dinámico se crea bajo demanda con TTL y revocación, como una credencial temporal de base de datos. Reduce vida útil, pero exige disponibilidad del gestor, renovación y manejo de expiración.
+
+Rotar cada 90 días no es una ley universal. Frecuencia depende de capacidad de revocación, exposición, privilegio, automatización y requisitos. Una credencial corta que se imprime en logs sigue siendo un incidente; una credencial larga protegida no debe quedar sin plan de emergencia.
+
+### Entrega y memoria residual
+
+Inyectar en runtime evita capas de imagen y repositorio, pero el secreto puede aparecer en variables, `/proc`, crash dumps, comandos, telemetría o archivos temporales. Un volumen en memoria con permisos mínimos puede reducir ciertas fugas; una llamada directa al gestor reduce persistencia local, pero necesita cache y tolerancia a fallos. Se modela qué procesos y operadores pueden leerlo.
+
+Envelope encryption usa una data key para el contenido y una key-encryption key administrada por KMS; facilita escalabilidad y separación, pero la aplicación que descifra necesita autorización. El cifrado no corrige una política que entrega el secreto a demasiadas identidades.
+
+### Detección y respuesta
+
+Un escáner usa patrones, entropía y validación opcional. Puede omitir formatos propios y señalar datos falsos. Los escaneos pre-commit, CI e historial se complementan. Al hallar un secreto, borrarlo del último commit no basta: se revoca o rota primero, se determina alcance y uso, se sanea historial cuando corresponda y se buscan copias en forks, artefactos y logs.
 
 ## 📖 Definiciones y características
 
 - **Gestor de secretos:** servicio que almacena secretos cifrados con control de acceso y auditoría. *Clave:* acceso por identidad, no por secreto compartido.
-- **Rotación:** cambio periódico y automático del secreto. *Clave:* limita el tiempo útil de un secreto robado.
+- **Rotación:** emisión de una versión nueva y retiro coordinado de la anterior. *Clave:* reduce ventana solo si consumidores migran y la versión expuesta se revoca.
 - **Secreto dinámico:** credencial generada bajo demanda con TTL corto (p. ej. Vault crea un usuario de BD temporal). *Clave:* nada persistente que robar.
 - **Envelope encryption:** cifrar datos con una clave de datos, y esa clave con una clave maestra (KMS). *Clave:* base del cifrado escalable.
-- **Inyección en runtime:** el secreto llega a la app en ejecución, nunca en la imagen. *Clave:* montaje de secreto o llamada al gestor con identidad.
+- **Entrega en runtime:** el secreto se obtiene durante la ejecución. *Clave:* evita incorporarlo al build, pero debe controlar variables, archivos, memoria, logs y caché.
+
+## 🔍 Caso razonado — secreto eliminado de Git pero todavía válido
+
+Un token aparece en un commit y luego se borra. El equipo lo revoca inmediatamente, consulta logs del proveedor desde la primera exposición, emite un reemplazo con alcance menor y migra el pipeline a OIDC. Después reescribe historial según coordinación, pero no presenta esa limpieza como revocación.
+
+Gitleaks se configura con una regla para el formato interno y una prueba sintética. La aplicación recibe el nuevo secreto desde el gestor mediante identidad de carga y no lo registra. El criterio de cierre incluye uso no autorizado evaluado, todas las copias conocidas tratadas y alerta para intentos con el token antiguo.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando modelas el ciclo completo, eliges secreto estático/dinámico con justificación, demuestras entrega sin código o imagen, pruebas rotación sin caída y ejecutas una respuesta a filtración que revoca antes de limpiar rastros.
 - **Sidecar de secretos (Vault Agent):** proceso que obtiene y renueva secretos junto a la app. *Clave:* mantiene el secreto fuera del código.
 - **Escáner de secretos:** herramienta que busca secretos en el código/historial. *Clave:* prevención en el pipeline.
 
@@ -107,13 +152,13 @@ Los dinámicos son superiores cuando el sistema los soporta: se crean bajo deman
 **❓ ¿Vault o el gestor nativo del proveedor?**
 Ambos válidos. El nativo (Secrets Manager, Key Vault, Secret Manager) se integra sin desplegar nada y con IAM del proveedor. Vault brilla en multi-cloud, secretos dinámicos avanzados y control fino, a cambio de operarlo tú.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- HashiCorp Vault docs. <https://developer.hashicorp.com/vault/docs>
-- AWS Secrets Manager. <https://docs.aws.amazon.com/secretsmanager/>
-- OWASP Secrets Management Cheat Sheet. <https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html>
-- gitleaks. <https://github.com/gitleaks/gitleaks>
-- Google Cloud Secret Manager. <https://cloud.google.com/secret-manager/docs>
+- HashiCorp Vault. <https://developer.hashicorp.com/vault/docs> — motores, auth, policies, leases y auditoría oficiales.
+- Vault programmatic best practices. <https://developer.hashicorp.com/vault/docs/configuration/programmatic-best-practices> — advierte sobre secretos de Vault que persisten en state Terraform.
+- AWS Secrets Manager. <https://docs.aws.amazon.com/secretsmanager/> y Google Secret Manager. <https://cloud.google.com/secret-manager/docs> — capacidades oficiales; revisar rotadores, replicación y permisos por servicio.
+- OWASP Secrets Management Cheat Sheet. <https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html> — guía de ciclo de vida y patrones complementarios.
+- Gitleaks. <https://github.com/gitleaks/gitleaks> — proyecto primario; documentar reglas, versión y validación de hallazgos.
 
 ## 📥 Material descargable
 

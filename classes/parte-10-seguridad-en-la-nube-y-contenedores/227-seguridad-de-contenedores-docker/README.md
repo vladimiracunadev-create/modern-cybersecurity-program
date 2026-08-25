@@ -34,14 +34,60 @@ Al finalizar, el alumno podrá:
 | 6 | Runtime seguro (seccomp, AppArmor) | Contener el proceso en ejecución |
 | 7 | Registro y firma de imágenes | Cadena de suministro confiable |
 
+## 🧠 Explicación en profundidad
+
+Un contenedor es un conjunto de procesos aislados mediante mecanismos del kernel y empaquetados con un filesystem. No posee un kernel independiente como una VM convencional. Por eso el riesgo depende tanto de imagen y configuración como del daemon, host y kernel compartido.
+
+```mermaid
+flowchart TD
+    S[Fuente y dependencias] --> B[Build por etapas]
+    B --> I[Imagen y digest]
+    I --> R[Registro y firma/attestation]
+    R --> D[Despliegue]
+    D --> N[Namespaces / user mapping]
+    D --> C[cgroups / capabilities]
+    D --> P[seccomp / AppArmor / SELinux]
+    N --> O[Proceso observado]
+    C --> O
+    P --> O
+```
+
+El diagrama recorre dos vidas: cadena de suministro y runtime. Una imagen sin CVE conocida puede ejecutarse con `--privileged` y mounts peligrosos; una configuración restrictiva no corrige una dependencia vulnerable. La evidencia debe cubrir digest, procedencia, contenido, usuario, capabilities, mounts, red y perfiles efectivos.
+
+### Aislamiento y privilegio
+
+Namespaces separan vistas de PID, red, montajes, IPC, hostname y usuarios; cgroups limitan y contabilizan recursos. Capabilities dividen privilegios de root, pero algunas como `SYS_ADMIN` abarcan operaciones amplias. User namespaces o modo rootless pueden mapear root del contenedor a un usuario no privilegiado del host, con limitaciones funcionales que deben probarse.
+
+`--privileged` amplía dispositivos y capabilities y relaja controles; no debe describirse simplemente como «root del host», porque el resultado depende de mounts, kernel y runtime, pero rompe buena parte del modelo esperado. También son críticos el socket Docker, `hostPath`, `hostNetwork` y dispositivos.
+
+### Imagen, capas y secretos
+
+Cada instrucción de build puede crear capas recuperables. Borrar un secreto en una capa posterior no elimina el contenido anterior. BuildKit secrets permiten montar material durante un paso sin copiarlo a la imagen, siempre que el comando tampoco lo persista. Multi-stage reduce herramientas en la salida, pero no demuestra ausencia de vulnerabilidades ni secretos.
+
+El escáner relaciona paquetes con bases de vulnerabilidades y puede producir falsos positivos o carecer de contexto de explotabilidad. Se conserva versión, base, digest y política de excepción. La firma vincula una identidad con un digest y declaración; no garantiza que el contenido sea seguro.
+
+### Runtime y reducción verificable
+
+Se ejecuta como usuario no root, filesystem de solo lectura, capabilities eliminadas y recursos limitados. Docker aplica un perfil seccomp predeterminado cuando la plataforma lo soporta; AppArmor o SELinux agregan restricciones. Cada excepción se prueba: si la app necesita escribir, se monta solo la ruta y capacidad necesarias, en lugar de desactivar el perfil completo.
+
 ## 📖 Definiciones y características
 
 - **Namespace:** aísla la vista de un proceso (PID, red, montajes, usuarios). *Clave:* es el mecanismo central de aislamiento del contenedor.
 - **cgroup:** limita recursos (CPU, memoria, PIDs). *Clave:* previene abuso de recursos y algunas denegaciones de servicio.
 - **Capability:** privilegio granular del kernel (p. ej. `CAP_NET_ADMIN`). *Clave:* recórtalas con `--cap-drop=ALL` y añade solo las necesarias.
-- **Contenedor privilegiado:** `--privileged` desactiva casi todo el aislamiento. *Clave:* casi equivale a root en el host; evítalo.
-- **Multi-stage build:** compilar en una etapa y copiar solo el artefacto a una imagen mínima. *Clave:* elimina toolchain y secretos de la imagen final.
-- **Distroless / scratch:** imágenes base sin shell ni gestor de paquetes. *Clave:* reducen superficie de ataque.
+- **Contenedor privilegiado:** modo que amplía dispositivos, capabilities y acceso respecto del perfil normal. *Clave:* aumenta sustancialmente rutas hacia el host y exige justificación excepcional.
+- **Multi-stage build:** compilar en una etapa y copiar artefactos seleccionados a otra. *Clave:* reduce toolchain final; no elimina secretos persistidos por comandos o archivos copiados incorrectamente.
+- **Distroless / scratch:** imágenes con conjunto mínimo de runtime. *Clave:* reducen componentes, pero complican diagnóstico y no eliminan vulnerabilidades de la aplicación.
+
+## 🔍 Caso razonado — una aplicación que necesita escribir y escuchar en 80
+
+La imagen original corre como root, contiene compilador y escribe en `/tmp` y `/var/cache/app`. El equipo usa multi-stage, crea un UID no root y monta `tmpfs` solo en ambas rutas. En kernels modernos puede usar un puerto no privilegiado o ajustar la configuración; si requiere `NET_BIND_SERVICE`, agrega únicamente esa capability y mantiene las demás eliminadas.
+
+Trivy encuentra una CVE en una biblioteca que la app no carga. La excepción no se cierra como «falso positivo» sin más: documenta digest, paquete, ruta, análisis de alcance, fecha de revisión y versión que la corregirá. El runtime se prueba con filesystem read-only y perfil seccomp activo.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando puedes explicar qué aísla cada mecanismo, reconstruir una imagen sin secretos en capas, fijarla por digest y ejecutar la carga con usuario, mounts, capabilities y perfiles mínimos, documentando cada excepción y su prueba.
 - **Seccomp:** filtra syscalls disponibles al contenedor. *Clave:* el perfil por defecto ya bloquea syscalls peligrosas.
 
 ## 🧰 Herramientas y preparación
@@ -63,7 +109,7 @@ docker inspect --format '{{ .HostConfig.CapAdd }} {{ .HostConfig.SecurityOpt }}'
 > 🧪 **Laboratorio ejecutable del programa:** [`devsecops-pipeline`](../../../labs/devsecops-pipeline/README.md) — son las **capas 4 y 5** del lab de DevSecOps: un Dockerfile con diez antipatrones y las CVE del sistema base.
 
 1. Ejecuta `docker run -it --rm alpine sh` y explora los namespaces con `lsns` desde el host para ver el aislamiento.
-2. Lanza un contenedor con `--privileged` y muestra que puede montar el disco del host; borra el contenedor y **nunca uses privileged en producción**.
+2. Compara en una VM desechable la salida de `capsh --print` de un contenedor normal y otro `--privileged`, sin montar discos ni acceder a datos del host. Documenta qué controles se ampliaron y elimina ambos.
 3. Escribe un Dockerfile inseguro (corriendo como root, con secretos en `ENV`) y pásalo por **Hadolint**; corrige los hallazgos.
 4. Refactoriza a un **multi-stage build** con imagen final `distroless` o `scratch`, usuario no root (`USER 1000`) y sin secretos.
 5. Escanea ambas imágenes con `trivy image` y compara el número de CVEs y el tamaño.
@@ -95,7 +141,7 @@ imagen corre como UID no root, y `docker inspect` confirma `CapDrop: [ALL]` y `R
 | Secreto visible en `docker history` | Se pasó por `ENV`/`ARG` o `COPY`; usa build secrets o inyección en runtime. |
 | Contenedor corre como root sin querer | Falta `USER` en el Dockerfile; añádelo y ajusta permisos de archivos. |
 | Trivy reporta cientos de CVEs | Imagen base gorda/antigua; cambia a base mínima y actualiza. |
-| `--privileged` "necesario" para que funcione | Casi nunca lo es; identifica la capability concreta y añádela sola. |
+| `--privileged` "necesario" para que funcione | No se identificó la operación requerida. Traza el fallo y concede solo capability, dispositivo o mount estrictamente justificado. |
 
 ## ❓ Preguntas frecuentes
 
@@ -106,15 +152,17 @@ No. Comparten el kernel del host; una fuga o un contenedor privilegiado pueden c
 Porque si el atacante escapa del contenedor o explota una capability, ser root dentro facilita el escape hacia el host. El usuario no root reduce el impacto de un compromiso.
 
 **❓ ¿Dónde guardo los secretos si no en el Dockerfile?**
-Fuera de la imagen: en un gestor de secretos (clase 233), variables inyectadas en runtime o montajes de secretos del orquestador. Nunca en capas de la imagen.
+Fuera de las capas de imagen, mediante un gestor y una identidad de carga. La entrega en runtime también debe evitar exposición en variables, comandos, logs, dumps y archivos con permisos amplios.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Liz Rice, *Container Security*, O'Reilly. <https://www.oreilly.com/library/view/container-security/9781492056690/>
-- CIS Docker Benchmark. <https://www.cisecurity.org/benchmark/docker>
-- Trivy. <https://github.com/aquasecurity/trivy>
-- Docker Bench for Security. <https://github.com/docker/docker-bench-security>
-- NIST SP 800-190, Application Container Security Guide. <https://csrc.nist.gov/pubs/sp/800/190/final>
+- Docker Engine security. <https://docs.docker.com/engine/security/> — documentación oficial de namespaces, daemon, capabilities y user namespaces.
+- Docker seccomp profiles. <https://docs.docker.com/engine/security/seccomp/> — comportamiento oficial del perfil predeterminado y excepciones.
+- NIST SP 800-190. <https://doi.org/10.6028/NIST.SP.800-190> — riesgos y recomendaciones de ciclo de vida de contenedores.
+- CIS Docker Benchmark. <https://www.cisecurity.org/benchmark/docker> — baseline versionada; comprobar aplicabilidad al runtime y distribución.
+- Docker Bench for Security. <https://github.com/docker/docker-bench-security> — automatiza una selección de checks CIS; documentar versión, host y pruebas no ejecutables.
+- Trivy. <https://github.com/aquasecurity/trivy> — proyecto primario de escaneo; interpretar base, alcance y configuración.
+- Liz Rice, _Container Security_. <https://www.oreilly.com/library/view/container-security/9781492056690/> — explicación complementaria de mecanismos Linux.
 
 ## 📥 Material descargable
 

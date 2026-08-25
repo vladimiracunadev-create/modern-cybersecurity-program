@@ -18,18 +18,9 @@
 
 ## 🎯 ¿De qué trata esta parte?
 
-La infraestructura moderna vive en la nube y se empaqueta en contenedores. Esta parte enseña a
-asegurar los tres grandes proveedores (AWS, Azure, GCP) y el stack de contenedores (Docker,
-Kubernetes) desde una perspectiva tanto defensiva como ofensiva. Verás por qué la mayoría de las
-brechas en la nube no son fallos del proveedor sino errores de configuración del cliente: buckets
-públicos, roles con permisos excesivos, claves filtradas y superficies de gestión expuestas.
+La seguridad cloud no consiste en trasladar controles del centro de datos a una consola. Los recursos se crean mediante API, las identidades pueden operar entre cuentas y servicios, y gran parte de la infraestructura es efímera o administrada por un proveedor. El alumno debe aprender a preguntar quién controla cada capa, qué identidad autoriza una acción, qué configuración expresa la intención y qué registro permite reconstruirla.
 
-Partimos del **modelo de responsabilidad compartida** —la frontera exacta entre lo que asegura el
-proveedor y lo que te toca a ti— y de **IAM**, el verdadero perímetro de la nube. A partir de ahí
-recorremos la seguridad específica de cada proveedor, el pentest de entornos cloud, la seguridad
-de contenedores (aislamiento por namespaces y cgroups, imágenes, runtime), Kubernetes (arquitectura,
-hardening con CIS y ataques reales a etcd, kubelet y RBAC), Infrastructure as Code con Terraform,
-CSPM, serverless, gestión de secretos, logging y respuesta a incidentes en la nube.
+El modelo de responsabilidad compartida no es una frontera única ni una exención contractual automática: cambia por servicio, configuración y tarea. IAM tampoco reemplaza red, cifrado, aplicaciones o operación. Esta parte conecta esos controles y enseña a razonar sobre su composición en AWS, Azure y Google Cloud, antes de pasar a contenedores, Kubernetes, IaC, postura, serverless, secretos, detección y respuesta.
 
 Sirve a arquitectos de seguridad cloud, ingenieros DevSecOps, pentesters que auditan infraestructura
 moderna y equipos SRE que deben endurecer plataformas Kubernetes en producción. Toda la práctica usa
@@ -79,15 +70,51 @@ Al terminar la parte, el alumno podrá:
 | Cargas modernas | 232–233 | Serverless, gestión de secretos |
 | Operación y defensa | 234–235 | Logging/detección, respuesta a incidentes |
 
-## 🔗 Referencias de la parte
+## 📚 Recorrido explicado, clase por clase
+
+**[Clase 221 — Fundamentos y responsabilidad compartida](221-fundamentos-de-seguridad-en-la-nube-y-responsabilidad-compartida/README.md).** Construye el vocabulario de servicio, región, zona, plano de control y plano de datos. Enseña a asignar cada tarea de seguridad al proveedor, cliente o responsabilidad compartida sin usar porcentajes publicitarios. La evidencia es una matriz razonada para una arquitectura IaaS, PaaS y SaaS.
+
+**[Clase 222 — IAM en la nube](222-iam-en-la-nube-identidades-roles-y-permisos/README.md).** Convierte identidad en una decisión evaluable: principal, credencial, política, recurso, condición, sesión y límites superiores. Aparece antes de los proveedores porque toda consola y API necesita autorización. La evidencia es una política mínima acompañada por pruebas positivas y negativas.
+
+**[Clase 223 — Seguridad en AWS](223-seguridad-en-aws/README.md).** Aplica los fundamentos a cuentas, VPC, S3, KMS, CloudTrail, Config, GuardDuty y Security Hub. No presenta servicios como botones mágicos: explica qué fuente usan y qué cobertura depende de configuración. La evidencia es una revisión de arquitectura con controles preventivos, detectivos y trazabilidad.
+
+**[Clase 224 — Seguridad en Azure](224-seguridad-en-azure/README.md).** Relaciona tenant, management groups, suscripciones, Entra ID, Azure RBAC, Policy, NSG, Key Vault, Defender for Cloud y Sentinel. La secuencia obliga a distinguir identidad del directorio y autorización sobre recursos. La evidencia es una asignación por ámbito y una política con efecto probado.
+
+**[Clase 225 — Seguridad en Google Cloud](225-seguridad-en-google-cloud-platform/README.md).** Explica organización, carpetas, proyectos, IAM, cuentas de servicio, Organization Policy, VPC Service Controls y Security Command Center. La evidencia es un diseño donde herencia, perímetro de datos y excepciones quedan documentados.
+
+**[Clase 226 — Ataques y pentest cloud](226-ataques-y-pentest-en-entornos-cloud/README.md).** Usa un laboratorio autorizado para mostrar cómo una credencial limitada, metadatos, relaciones de confianza o permisos indirectos pueden producir rutas de ataque. Enseña reglas de compromiso y política del proveedor antes que herramientas. La evidencia es una cadena reproducible con impacto controlado y mitigación.
+
+**[Clase 227 — Seguridad de contenedores Docker](227-seguridad-de-contenedores-docker/README.md).** Pasa de los servicios administrados al aislamiento de procesos: namespaces, cgroups, capabilities, daemon, imágenes, capas, secretos y perfiles de runtime. La evidencia es una imagen reconstruida y una ejecución con privilegios medidos.
+
+**[Clase 228 — Arquitectura de seguridad Kubernetes](228-seguridad-de-kubernetes-arquitectura/README.md).** Presenta API server, etcd, kubelet, autenticación, autorización, admisión, ServiceAccounts, namespaces y red como una cadena de decisiones. La evidencia es el seguimiento de una petición desde identidad hasta persistencia y ejecución.
+
+**[Clase 229 — Hardening y ataques Kubernetes](229-kubernetes-hardening-y-ataques/README.md).** Aplica Pod Security Admission, `securityContext`, RBAC, NetworkPolicy y benchmarks sin confundir cumplimiento con seguridad completa. La evidencia es un workload que falla bajo una política insegura y funciona con la excepción mínima explicada.
+
+**[Clase 230 — Seguridad de Terraform e IaC](230-seguridad-de-infrastructure-as-code-terraform/README.md).** Conecta código, plan, state, proveedores, módulos, drift, escaneo y policy-as-code. La evidencia es un cambio revisado desde HCL hasta plan y estado, con secretos y dependencias tratados explícitamente.
+
+**[Clase 231 — CSPM](231-cloud-security-posture-management-cspm/README.md).** Enseña a convertir miles de checks en decisiones basadas en exposición, privilegio, datos, explotabilidad y dueño. Se coloca después de IaC para corregir tanto el recurso como su fuente declarativa. La evidencia es una cola priorizada y métricas de cierre y recurrencia.
+
+**[Clase 232 — Seguridad serverless](232-seguridad-serverless/README.md).** Analiza funciones, triggers, payloads, identidades, dependencias, concurrencia, costos y observabilidad. La evidencia es un flujo de evento validado con permisos acotados y límites operativos.
+
+**[Clase 233 — Gestión de secretos](233-gestion-de-secretos-en-la-nube/README.md).** Distingue secreto, clave, token, certificado e identidad de carga, y explica almacenamiento, entrega, rotación, revocación y auditoría. La evidencia es un secreto entregado en runtime sin quedar en código, imagen o logs, más un procedimiento de compromiso.
+
+**[Clase 234 — Logging y detección cloud](234-logging-y-deteccion-en-la-nube/README.md).** Diseña visibilidad por planos de gestión, datos, identidad, red y carga. Explica cobertura, latencia, costo, retención e integridad antes de crear una alerta. La evidencia es una matriz de fuentes y una detección probada con evento benigno controlado.
+
+**[Clase 235 — Respuesta a incidentes cloud](235-respuesta-a-incidentes-en-la-nube/README.md).** Integra la Parte 9 con identidades, API, snapshots, logs, recursos efímeros e IaC. La evidencia final es una bitácora de decisiones, preservación reproducible, contención reversible y recuperación validada.
+
+## 🧭 Método de trabajo de la parte
+
+Cada clase usa el mismo razonamiento profesional: definir activo y frontera de responsabilidad, identificar identidad y plano, expresar estado esperado, comprobar estado efectivo, observar cambios y registrar excepciones. Los laboratorios se ejecutan solo en cuentas, suscripciones, proyectos o clústeres propios y con límites de costo. Una herramienta entrega observaciones; el alumno debe explicar alcance, falsos positivos, permisos usados y qué control corrige la causa.
+
+## 🔗 Referencias de la parte y criterio de uso
 
 - Liz Rice, *Container Security*, O'Reilly. <https://www.oreilly.com/library/view/container-security/9781492056690/>
 - Martin & Hausenblas, *Hacking Kubernetes*, O'Reilly. <https://www.oreilly.com/library/view/hacking-kubernetes/9781492081722/>
-- AWS Well-Architected — Security Pillar. <https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html>
-- Microsoft Cloud Security Benchmark. <https://learn.microsoft.com/security/benchmark/azure/>
-- Google Cloud Security Foundations. <https://cloud.google.com/architecture/security-foundations>
-- CIS Benchmarks. <https://www.cisecurity.org/cis-benchmarks>
-- NIST SP 800-190. <https://csrc.nist.gov/pubs/sp/800/190/final>
+- AWS Well-Architected — Security Pillar. <https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html> — principios oficiales de diseño AWS; no sustituye la documentación específica de cada servicio.
+- Microsoft Cloud Security Benchmark. <https://learn.microsoft.com/security/benchmark/azure/> — baseline oficial multi-cloud de Microsoft; cada recomendación debe ajustarse al ámbito y servicio.
+- Google Cloud Security Foundations. <https://cloud.google.com/architecture/security-foundations> — guía oficial de organización y controles fundacionales.
+- CIS Benchmarks. <https://www.cisecurity.org/cis-benchmarks> — baselines verificables; una coincidencia no demuestra ausencia de otras rutas de riesgo.
+- NIST SP 800-190. <https://doi.org/10.6028/NIST.SP.800-190> — riesgos y recomendaciones para contenedores; se complementa con documentación actual de Docker y Kubernetes.
 
 ## ▶️ Empezar
 

@@ -33,15 +33,57 @@ Al finalizar, el alumno podrá:
 | 6 | Escalada de privilegios IAM | Rutas que convierten un permiso menor en admin |
 | 7 | Federación y SSO | Centralizar identidades corporativas |
 
+## 🧠 Explicación en profundidad
+
+Una decisión IAM no es «el usuario tiene un rol». Es la evaluación de una solicitud concreta: principal y sesión, acción, recurso, contexto, políticas aplicables y límites superiores. Esta clase usa AWS para estudiar la lógica explícita y después traduce el razonamiento a Azure RBAC y Google Cloud IAM.
+
+```mermaid
+flowchart LR
+    P[Principal y credencial] --> S[Sesión]
+    S --> Q[Acción + recurso + contexto]
+    Q --> I[Políticas de identidad]
+    Q --> R[Políticas de recurso]
+    I --> E[Evaluación]
+    R --> E
+    B[Boundary / SCP / guardrail] --> E
+    E -->|Allow efectivo| A[API ejecuta]
+    E -->|Deny implícito o explícito| D[Solicitud rechazada]
+    A --> L[Log y revisión]
+```
+
+El diagrama enseña que la credencial autentica y la política autoriza. En AWS una solicitud parte de denegación implícita; necesita un `Allow` aplicable y un `Deny` explícito prevalece. Sin embargo, la interacción exacta entre políticas de identidad, recurso, boundaries, SCP y sesiones cambia por tipo de principal y acceso cross-account. Memorizar «allow menos deny» no basta: se debe usar la documentación y el simulador con el contexto real.
+
+### Personas, cargas y sesiones
+
+Las personas deberían federarse desde un proveedor corporativo y obtener sesiones temporales con MFA o controles adaptativos. Las cargas usan identidades de servicio o roles vinculados a la plataforma. Una clave estática descargada crea un secreto que debe almacenarse, rotarse y atribuirse; una sesión temporal reduce duración, pero todavía puede ser robada y usada hasta expirar o ser revocada por mecanismos disponibles.
+
+### Privilegio mínimo como proceso
+
+El permiso mínimo no se diseña una sola vez. Se parte de acciones necesarias, se acotan recursos, se agregan condiciones de región, red, etiquetas o servicio y se prueban casos permitidos y denegados. Luego se usan logs de acceso para retirar permisos no utilizados. Un `Resource: "*"` puede ser requerido por una API sin soporte granular, pero debe documentarse y compensarse; un wildcard no es automáticamente una vulnerabilidad ni automáticamente aceptable.
+
+### Rutas indirectas de escalada
+
+`iam:PassRole` no equivale por sí solo a administrador. Se vuelve peligroso cuando el principal puede pasarlo a un servicio que ejecutará acciones bajo un rol más potente y puede controlar esa carga. De modo similar, editar una trust policy, crear versiones de funciones o enlazar roles puede producir nuevas rutas. El análisis construye un grafo de relaciones y valida una cadena completa, no una lista de permisos «peligrosos» aislados.
+
 ## 📖 Definiciones y características
 
 - **Usuario IAM:** identidad de larga duración con credenciales propias. *Clave:* preferir roles; los usuarios con claves estáticas son un riesgo si se filtran.
 - **Rol IAM:** identidad asumible que otorga credenciales temporales vía STS. *Clave:* sin secreto permanente, ideal para servicios y federación.
 - **Política:** documento JSON con `Effect`, `Action`, `Resource` y `Condition`. *Clave:* define permisos de forma declarativa.
 - **Policy de recurso:** adjunta al recurso (bucket, cola) en vez de a la identidad. *Clave:* permite acceso cross-account controlado.
-- **Permission boundary:** techo máximo de permisos que una identidad puede tener. *Clave:* delega administración sin poder escalar.
+- **Permission boundary:** conjunto que limita permisos máximos otorgables por políticas de identidad. *Clave:* no concede acceso y debe combinarse con otros límites y políticas.
 - **`sts:AssumeRole`:** acción que cambia de identidad. *Clave:* base de la federación y de muchas rutas de escalada.
-- **Escalada de privilegios:** aprovechar un permiso para obtener otro mayor. *Clave:* permisos como `iam:PassRole` + `ec2:RunInstances` equivalen a admin.
+- **Escalada de privilegios:** cadena que permite obtener capacidades superiores a las previstas. *Clave:* requiere demostrar acciones, recursos, rol destino, trust policy y control efectivo de la carga.
+
+## 🔍 Caso razonado — desplegar una Lambda con `PassRole`
+
+Una identidad puede crear funciones y pasar un rol con lectura de un bucket sensible. Si también puede definir el código, invocar la función y recuperar su salida, existe una ruta hacia esos datos. Si la política de confianza no admite Lambda, `PassRole` está condicionado a otro servicio o la función no puede devolver contenido, la cadena cambia.
+
+La corrección no es eliminar todo `PassRole`: se restringe el ARN del rol, `iam:PassedToService`, acciones de creación y destino de salida; se separan roles de despliegue y ejecución. Las pruebas incluyen una operación legítima que debe funcionar y otra con un rol no autorizado que debe fallar.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando puedes explicar una decisión con principal, sesión, acción, recurso, contexto y cada política aplicable; produces pruebas allow/deny; y demuestras o refutas una ruta de escalada completa sin llamar «admin» a un permiso aislado.
 
 ## 🧰 Herramientas y preparación
 
@@ -77,7 +119,7 @@ aws iam simulate-principal-policy \
 2. Convierte una integración basada en clave estática en un rol asumido por un servicio.
 3. Explica el resultado de una petición con un `Deny` explícito y un `Allow` simultáneos.
 4. Añade una `Condition` que exija MFA para acciones destructivas.
-5. Usa PMapper para encontrar todas las identidades que pueden asumir un rol admin.
+5. Usa PMapper para identificar caminos hacia un rol privilegiado dentro de las cuentas y relaciones que la credencial auditora pudo observar; declara límites de cobertura.
 6. Diseña un esquema de permission boundaries para un equipo que autoadministra sus recursos.
 
 ## 📝 Reto verificable
@@ -102,21 +144,22 @@ acciones legítimas se permiten y una acción no relacionada se deniega.
 ## ❓ Preguntas frecuentes
 
 **❓ ¿Rol o usuario para una aplicación?**
-Siempre rol. Un rol da credenciales temporales que rotan solas; una clave de usuario es un secreto permanente que, si se filtra, sirve al atacante indefinidamente.
+Prefiere identidad de carga o rol temporal cuando la plataforma lo soporte. Reduce credenciales estáticas, pero todavía debes limitar permisos, proteger la carga y comprender expiración y revocación de sesiones.
 
 **❓ ¿Qué pasa si una política de identidad permite algo y una de recurso lo deniega?**
-Gana el deny. La evaluación combina todas las políticas aplicables y cualquier deny explícito prevalece sobre cualquier allow.
+Un `Deny` explícito aplicable prevalece sobre un `Allow`; sin `Allow` aplicable existe denegación implícita. La política relevante cambia por tipo de principal, recurso, sesión y acceso cross-account.
 
 **❓ ¿Cómo aplico privilegio mínimo sin frenar al equipo?**
 Empieza permisivo pero mide: usa Access Analyzer/policy usage para ver qué se usa realmente y recorta lo no utilizado. Itera en vez de adivinar.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- AWS IAM User Guide. <https://docs.aws.amazon.com/IAM/latest/UserGuide/>
-- AWS — IAM policy evaluation logic. <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html>
-- PMapper (Principal Mapper). <https://github.com/nccgroup/PMapper>
-- Rhino Security Labs — AWS IAM privilege escalation methods. <https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/>
-- Microsoft Entra ID docs. <https://learn.microsoft.com/entra/identity/>
+- AWS IAM User Guide. <https://docs.aws.amazon.com/IAM/latest/UserGuide/> — fuente oficial para identidades, roles, políticas y STS.
+- AWS — IAM policy evaluation logic. <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html> — reglas oficiales; revisar las variantes por principal y acceso cross-account.
+- Microsoft Entra ID. <https://learn.microsoft.com/en-us/entra/identity/> — documentación oficial para identidad y federación Microsoft.
+- Google Cloud IAM overview. <https://cloud.google.com/iam/docs/overview> — referencia oficial para principals, roles, políticas y herencia en Google Cloud.
+- PMapper. <https://github.com/nccgroup/PMapper> — herramienta abierta para modelar relaciones AWS; los caminos deben validarse contra políticas efectivas.
+- Rhino Security Labs — IAM privilege escalation. <https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/> — investigación técnica complementaria, no especificación de autorización.
 
 ## 📥 Material descargable
 

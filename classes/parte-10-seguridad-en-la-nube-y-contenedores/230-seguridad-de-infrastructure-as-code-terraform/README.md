@@ -29,19 +29,63 @@ Al finalizar, el alumno podrá:
 | 1 | IaC y drift | Reproducibilidad y coherencia con lo desplegado |
 | 2 | Escaneo estático (tfsec/Checkov) | Detectar misconfig antes de aplicar |
 | 3 | Gestión del state | Contiene secretos y estado sensible |
-| 4 | Secretos en Terraform | Nunca en texto plano ni en el state |
+| 4 | Datos sensibles en configuración, plan y state | Comprender cuándo se almacenan, ocultan u omiten |
 | 5 | Módulos y proveedores confiables | Cadena de suministro de IaC |
 | 6 | Policy-as-code (OPA/Sentinel) | Guardarraíles automáticos |
 | 7 | IaC en el pipeline CI/CD | Shift-left de la seguridad de infra |
+
+## 🧠 Explicación en profundidad
+
+Terraform compara configuración, state y objetos remotos para producir un plan. Seguridad debe revisar los tres: HCL expresa intención, el plan muestra cambios calculados y el state enlaza direcciones Terraform con objetos reales y atributos. Un escáner que solo lee HCL puede perder valores calculados; una policy sobre plan puede encontrar valores desconocidos hasta `apply`.
+
+```mermaid
+flowchart LR
+    H[HCL + módulos] --> I[terraform init]
+    L[Lock file + checksums] --> I
+    I --> P[terraform plan]
+    S[State protegido] --> P
+    C[Cloud real / refresh] --> P
+    P --> Q[Escaneo y policy]
+    Q --> A{Aprobación}
+    A -->|Sí| AP[Apply con identidad temporal]
+    AP --> S
+    AP --> V[Postcondición y drift]
+```
+
+El diagrama incluye dependencias y credencial de ejecución porque el pipeline es parte de la superficie. El archivo `.terraform.lock.hcl` fija selecciones y hashes de providers, pero actualmente no fija módulos remotos de la misma manera; los módulos requieren versión o referencia inmutable y revisión de origen.
+
+### State y secretos
+
+State puede contener contraseñas, claves y metadatos sensibles. Marcar una variable `sensitive` oculta su presentación en CLI, pero no impide necesariamente almacenarla. Terraform actual incorpora valores `ephemeral` y argumentos write-only en versiones y providers compatibles; antes de usarlos se comprueba soporte. El backend necesita cifrado, acceso mínimo, locking, versionado, logs y recuperación.
+
+Leer un secreto desde Vault mediante un data source puede escribirlo igualmente en state si un recurso lo conserva. «Usar un vault» no es suficiente: se revisa el flujo completo desde obtención hasta provider, plan, state, logs y recurso final.
+
+### Escaneo, policy y valores desconocidos
+
+tfsec y Checkov aplican reglas sobre configuración; OPA o Sentinel pueden evaluar JSON del plan. Las políticas deben probarse con casos permitidos, denegados y valores desconocidos. Una regla «todo S3 debe ser privado» puede bloquear un sitio público legítimo; la excepción debe tener dueño, alcance y expiración.
+
+### Drift y cadena de suministro
+
+`terraform plan` actualiza estado observado según modo y puede revelar cambios externos, pero la detección depende de credenciales, refresh y recursos gestionados. Un recurso fuera del state no aparece automáticamente como drift del módulo. El pipeline fija Terraform y providers, revisa cambios de lock, usa credenciales OIDC temporales y separa plan de apply con aprobación basada en riesgo.
 
 ## 📖 Definiciones y características
 
 - **Infrastructure as Code (IaC):** definir infraestructura en archivos versionados. *Clave:* auditable y reproducible, pero un error se replica a escala.
 - **Terraform state:** archivo con el mapeo entre código y recursos reales. *Clave:* puede contener secretos en texto plano; protégelo.
-- **Drift:** divergencia entre el código y la infraestructura real. *Clave:* `terraform plan` lo detecta.
+- **Drift:** divergencia entre estado deseado, state y objeto remoto. *Clave:* `plan` puede revelar cambios de recursos gestionados según refresh, permisos y provider; no inventaría recursos desconocidos.
 - **tfsec / Checkov:** escáneres estáticos de IaC. *Clave:* encuentran buckets públicos, SG abiertos, cifrado ausente.
 - **Policy-as-code:** reglas (OPA/Rego, Sentinel) que aprueban o bloquean planes. *Clave:* impide desplegar lo no conforme.
-- **Backend remoto:** almacenamiento del state (S3+DynamoDB, GCS, Terraform Cloud). *Clave:* habilita cifrado y bloqueo concurrente.
+- **Backend remoto:** almacenamiento coordinado del state. *Clave:* capacidades de cifrado, locking, acceso, auditoría y recuperación dependen del backend y versión.
+
+## 🔍 Caso razonado — contraseña marcada `sensitive` que sigue en state
+
+Un módulo recibe `db_password` con `sensitive = true`. La salida CLI la oculta, pero el provider la conserva en el atributo del recurso y aparece en el state. El equipo confirma el comportamiento sobre un laboratorio, mueve generación y consumo a un mecanismo write-only soportado o rediseña la entrega, y protege versiones previas del backend.
+
+Checkov deja pasar el código después del cambio, pero la verificación no termina allí: se inspecciona el plan JSON, se limita el rol CI, se prueba una policy que bloquea exposición pública y se ejecuta una consulta post-apply. La lección es seguir el dato y el recurso, no confiar en una etiqueta.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando puedes explicar HCL–plan–state–cloud, demostrar qué valor sensible persiste, fijar providers y módulos, escribir una policy con pruebas y límites, y detectar drift declarando recursos y permisos cubiertos.
 - **Módulo:** paquete reutilizable de Terraform. *Clave:* verifica origen y versión para la cadena de suministro.
 
 ## 🧰 Herramientas y preparación
@@ -109,13 +153,14 @@ Ambos son buenos; suelen usarse juntos porque sus reglas no coinciden al 100%. C
 **❓ ¿El escaneo estático reemplaza al CSPM?**
 No. El escaneo IaC detecta problemas *antes* de desplegar (shift-left); el CSPM (clase 231) evalúa lo *ya desplegado* en tiempo de ejecución, incluyendo cambios hechos fuera de Terraform. Se complementan.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Terraform docs — Backends y state. <https://developer.hashicorp.com/terraform/language/state>
-- tfsec. <https://github.com/aquasecurity/tfsec>
-- Checkov. <https://www.checkov.io/>
-- Open Policy Agent / Conftest. <https://www.openpolicyagent.org/>
-- OWASP Infrastructure as Code Security Cheat Sheet. <https://cheatsheetseries.owasp.org/cheatsheets/Infrastructure_as_Code_Security_Cheat_Sheet.html>
+- Terraform — State. <https://developer.hashicorp.com/terraform/language/state> — propósito, almacenamiento y operación oficial.
+- Terraform — Manage sensitive data. <https://developer.hashicorp.com/terraform/language/manage-sensitive-data> — diferencias vigentes entre `sensitive`, `ephemeral` y write-only, con requisitos de versión.
+- Terraform — Dependency lock file. <https://developer.hashicorp.com/terraform/language/files/dependency-lock> — alcance de selección y hashes de providers.
+- Open Policy Agent — Terraform. <https://www.openpolicyagent.org/docs/terraform> — evaluación de plan y limitaciones de valores desconocidos.
+- Checkov. <https://www.checkov.io/> y tfsec. <https://github.com/aquasecurity/tfsec> — herramientas primarias; documentar versión, reglas y supresiones.
+- OWASP IaC Security Cheat Sheet. <https://cheatsheetseries.owasp.org/cheatsheets/Infrastructure_as_Code_Security_Cheat_Sheet.html> — recomendaciones complementarias, no especificación de Terraform.
 
 ## 📥 Material descargable
 
