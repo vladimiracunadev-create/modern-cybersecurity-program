@@ -42,6 +42,56 @@ Al finalizar, el alumno podrá:
 | 6 | Grabación y legalidad | Consentimiento y jurisdicción |
 | 7 | Debrief y métricas | Convertir el ejercicio en aprendizaje |
 
+## 🧠 Explicación en profundidad
+
+### El pretexto crea una razón para saltarse un control
+
+En *pretexting*, la historia conecta identidad, contexto y solicitud: «soy soporte, hay una incidencia y necesito verificar tu código». En *vishing*, la voz añade sincronía, presión y dificultad para consultar. La señal más importante no es si la historia suena profesional, sino si pide una acción que el proceso normal no debería permitir: revelar un secreto, instalar software, transferir fondos o aprobar una notificación inesperada.
+
+```mermaid
+sequenceDiagram
+  participant A as Solicitante
+  participant E as Empleado
+  participant P as Procedimiento
+  participant R as Canal oficial
+  A->>E: Historia + urgencia + solicitud
+  E->>P: ¿La acción está permitida?
+  P-->>E: Exige verificación independiente
+  E->>R: Devuelve llamada a número registrado
+  R-->>E: Confirma o rechaza identidad y solicitud
+  E-->>A: Continúa o detiene sin revelar secretos
+```
+
+El diagrama reemplaza la intuición por un procedimiento. La identificación de llamada, la voz y datos personales pueden falsificarse u obtenerse de fuentes abiertas. La devolución se hace a un directorio confiable, no al número dictado por quien llama. Soporte legítimo no necesita pedir contraseña ni código OTP; una aprobación MFA inesperada se rechaza y reporta.
+
+### Diseñar protocolos para momentos de presión
+
+Los guiones defensivos deben ser breves: «No puedo validar esta solicitud en una llamada entrante; abriré un ticket y devolveré el contacto por el directorio oficial». También se requiere una ruta para excepciones reales: emergencias, personal remoto o accesibilidad. Si verificar toma veinte minutos y el trabajo exige rapidez, las personas buscarán atajos. El control debe ser usable.
+
+Las señales de audio sintético o número alterado pueden ayudar, pero no constituyen una prueba confiable para el usuario. La defensa robusta autentica la transacción: número registrado, ticket existente, doble aprobación y límites de rol. Incluso una voz auténtica puede pertenecer a una cuenta comprometida o a una persona coaccionada.
+
+### Simulación autorizada
+
+Una práctica de vishing usa actores informados, números controlados, guion aprobado y datos ficticios. No graba sin base legal, no busca secretos reales y detiene el ejercicio si surge una situación sensible. Se evalúa si se usó el canal de verificación y si el reporte llegó con información accionable, no la capacidad teatral del evaluador.
+
+### Caso razonado: técnico que conoce el inventario
+
+Una llamada menciona el modelo exacto del portátil y un ticket real visto en una filtración de correo. El empleado no discute esos datos; abre el portal oficial, comprueba que el ticket no solicita instalación y llama a soporte desde el directorio. Reporta número, hora y pretexto. La conclusión no depende de detectar una voz falsa, sino de mantener la frontera del proceso.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Pretexting | Uso de una historia para legitimar identidad y solicitud. |
+| Vishing | Ingeniería social mediante voz o telefonía. |
+| Callback | Devolución por un número obtenido de una fuente confiable. |
+| MFA fatigue | Presión mediante solicitudes repetidas de aprobación. |
+| Autenticación de transacción | Verificación específica de la acción, no solo de la persona. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando reconoce la acción sensible bajo un pretexto convincente, ejecuta verificación independiente, conserva datos útiles para respuesta y diseña un ejercicio seguro centrado en el proceso.
+
 ## 📖 Definiciones y características
 
 - **Pretexting:** crear un escenario/identidad falsa para justificar una petición. Característica: se sostiene en detalles obtenidos por OSINT.

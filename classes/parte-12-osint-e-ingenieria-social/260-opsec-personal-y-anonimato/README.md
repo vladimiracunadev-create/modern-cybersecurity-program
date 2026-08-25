@@ -40,6 +40,52 @@ Al finalizar, el alumno podrá:
 | 6 | Metadatos y hábitos | La OPSEC se rompe por descuidos |
 | 7 | Cuentas e identidades | Correos y alias segregados |
 
+## 🧠 Explicación en profundidad
+
+### OPSEC protege relaciones entre actividades, identidades y consecuencias
+
+OPSEC comienza con un modelo de amenaza: qué información dañaría al investigador o a terceros, qué adversario podría obtenerla, con qué capacidades y durante cuánto tiempo. **Privacidad**, **seudonimato** y **anonimato** no son equivalentes. Un seudónimo estable oculta el nombre pero permite correlacionar actividad; Tor reduce ciertas observaciones de red, pero no corrige un login personal, un documento con autor o un patrón horario único.
+
+```mermaid
+flowchart LR
+  AS["Activos y personas<br/>a proteger"] --> ADV["Adversarios y capacidades"]
+  ADV --> SURF["Superficies<br/>red, cuenta, dispositivo, contenido"]
+  SURF --> LINK["Riesgos de correlación"]
+  LINK --> CTRL["Separación, minimización,<br/>actualización y cifrado"]
+  CTRL --> TEST["Pruebas de fuga y revisión"]
+  TEST -. "cambio de amenaza" .-> AS
+```
+
+El diagrama destaca la correlación. Dirección IP, cookies, huella de navegador, correo de recuperación, estilo, zona horaria, pagos y contactos pueden unir compartimentos. La separación debe ser coherente a través de cuenta, navegador o perfil, dispositivo cuando el riesgo lo exige, archivos y comportamiento. No existe una herramienta que garantice anonimato frente a todos los adversarios.
+
+### Controles por capa
+
+En dispositivo se actualiza, cifra y limita software; en cuentas se usan credenciales únicas, recuperación protegida y autenticación resistente al phishing; en navegación se separan perfiles y se reducen extensiones; en contenido se revisan metadatos y detalles identificables; en comunicaciones se escoge un canal según metadatos y amenaza, no solo por cifrado del contenido. Las copias y exportaciones también forman parte del ciclo.
+
+Tor Browser está diseñado para reducir diferencias entre usuarios y enrutar tráfico mediante Tor. Instalar extensiones, cambiar configuraciones arbitrariamente o abrir documentos externos puede aumentar correlación o revelar red. Una VPN mueve confianza al proveedor y no equivale a anonimato. Estas herramientas se usan conforme a legislación y políticas; no para eludir una investigación legítima ni ocultar daño.
+
+### Bienestar y riesgo de terceros
+
+La investigación puede exponer al analista a contenido traumático, acoso y doxxing. Se definen horarios, revisión por pares, apoyo y procedimiento ante amenaza. Publicar una captura puede revelar a una fuente mediante nombre, notificaciones o detalles del entorno; la sanitización se verifica sobre una copia y se conserva el original protegido cuando existe razón legítima.
+
+### Caso razonado: seudónimo unido por recuperación
+
+Una cuenta de investigación usa un alias distinto y Tor, pero registra el correo personal como recuperación y sube un PDF con nombre de autor. Dos capas de aplicación derrotan la separación de red. El analista crea una matriz de vínculos, elimina metadatos en copias, separa recuperación según el modelo y verifica desde un entorno limpio. No declara anonimato absoluto; documenta el adversario frente al que redujo correlación.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Modelo de amenaza | Relación entre activos, adversarios, capacidades y consecuencias. |
+| Seudonimato | Uso de identidad alternativa que puede mantener continuidad. |
+| Anonimato | Dificultad de vincular una acción con una identidad dentro de un conjunto. |
+| Compartimentación | Separación consistente para limitar correlación e impacto. |
+| Metadato | Información sobre creación, comunicación o contexto, distinta del contenido principal. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno diseña OPSEC para un adversario concreto, identifica enlaces entre capas, prueba fugas, explica límites de Tor y VPN y protege tanto al investigador como a terceros sin prometer anonimato absoluto.
+
 ## 📖 Definiciones y características
 
 - **OPSEC:** proceso de proteger información sensible identificando qué revelas y a quién. Característica: es disciplina continua, no una herramienta.
@@ -100,12 +146,10 @@ no puede garantizar el anonimato.
 ## ❓ Preguntas frecuentes
 
 **❓ ¿Tor me hace 100% anónimo?**
-No. Oculta tu IP, pero el anonimato se rompe por errores de comportamiento, JavaScript, correlación de
-tráfico o iniciar sesión en cuentas identificables.
+No. Tor puede impedir que el destino vea directamente la dirección de origen y distribuye el circuito, pero el anonimato depende también del adversario, endpoint, navegador, cuentas, contenido y posibilidad de correlación de tráfico.
 
 **❓ ¿VPN o Tor?**
-Distintos objetivos: la VPN cambia en quién confías (el proveedor te ve); Tor distribuye la confianza.
-Para anonimato fuerte, Tor/Tails; la VPN es un complemento, no un anonimizador por sí sola.
+Responden a modelos distintos. Una VPN traslada observación y confianza al proveedor; Tor distribuye el circuito y Tor Browser reduce algunas formas de enlace. Ninguna opción garantiza «anonimato fuerte» en abstracto: se selecciona y configura según adversario, dispositivo, actividad y consecuencias.
 
 **❓ ¿Puedo borrar mi huella por completo?**
 Casi nunca del todo. Puedes reducirla mucho con minimización, eliminación en brokers y buena OPSEC,

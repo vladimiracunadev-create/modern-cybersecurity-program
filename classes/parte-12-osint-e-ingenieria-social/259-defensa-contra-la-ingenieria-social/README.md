@@ -34,6 +34,52 @@ Al finalizar, el alumno podrá:
 | 6 | Botón de reporte | Convierte usuarios en sensores |
 | 7 | Respuesta a incidentes SE | Contiene el daño rápido |
 
+## 🧠 Explicación en profundidad
+
+### Defender significa que una sola decisión humana no produzca un desastre
+
+La concienciación ayuda, pero ninguna persona mantiene atención perfecta. La arquitectura debe asumir mensajes convincentes, cuentas comprometidas y momentos de presión. Se combinan controles preventivos, resistentes, detectivos y de recuperación: autenticación ligada al dominio, verificación de transacciones, filtrado, privilegios mínimos, reporte sencillo, revocación de sesiones y respuesta coordinada.
+
+```mermaid
+flowchart TD
+  MSG["Solicitud por correo,<br/>voz o mensajería"] --> FILTER["Filtrado y contexto"]
+  FILTER --> USER["Persona + procedimiento"]
+  USER --> VERIFY["Canal independiente /<br/>doble aprobación"]
+  USER --> REPORT["Reporte de un paso"]
+  VERIFY --> SAFE["Acción autorizada"]
+  REPORT --> SOC["Triage y correlación"]
+  SOC --> CONTAIN["Bloquear, revocar,<br/>buscar alcance"]
+  CONTAIN --> LEARN["Mejorar proceso y control"]
+```
+
+Autenticación y autorización de negocio no son lo mismo. Passkeys/WebAuthn bien configuradas resisten el phishing mediante vinculación al verificador, como describe NIST SP 800-63B-4; SMS y OTP introducidos manualmente no ofrecen esa propiedad frente a un intermediario. Aun con autenticación resistente, un usuario puede autorizar voluntariamente una transferencia falsa. Los procesos de alto impacto necesitan confirmación de datos, doble control y límites.
+
+### Reportar debe ser más fácil que ignorar
+
+Un botón de reporte conserva encabezados y mensaje original, informa al usuario y alimenta automatización. SOC deduplica campañas, busca destinatarios, bloquea indicadores y evalúa cuentas. El canal debe aceptar dudas: penalizar falsos reportes reduce la detección temprana. Las métricas incluyen tiempo desde recepción hasta primer reporte y desde reporte hasta contención, además de cobertura de autenticación resistente y cumplimiento de callback.
+
+### Responder por escenario
+
+Si alguien hizo clic, se determina qué se ejecutó y qué datos se entregaron. Si ingresó una contraseña, se restablece, revocan sesiones y tokens, se revisan reglas de correo y actividad posterior; cambiar la contraseña sin revocar sesiones puede ser insuficiente. Si aprobó una transacción, se activa fraude y recuperación. Si solo recibió el mensaje, todavía aporta inteligencia para proteger a otros.
+
+### Caso razonado: MFA que no detuvo el ataque
+
+Una víctima entrega contraseña y OTP a un proxy en tiempo real. El atacante obtiene sesión. La organización no concluye que «MFA no sirve»; identifica que ese autenticador no era resistente al phishing, revoca sesiones y migra accesos críticos a WebAuthn, manteniendo detección y recuperación. También revisa por qué la página falsa llegó y cómo se reportó.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Phishing resistance | Propiedad protocolaria que evita entregar una salida válida a un verificador impostor. |
+| Session revocation | Invalidación de sesiones y tokens ya emitidos. |
+| Callback | Verificación por un canal conocido e independiente. |
+| Doble control | Participación de dos autorizadores en una acción crítica. |
+| Triage | Clasificación inicial que determina alcance, urgencia y respuesta. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la defensa cuando puede mapear una solicitud a controles técnicos y de proceso, diferenciar tipos de MFA, diseñar reporte y respuesta, y medir reducción de riesgo sin responsabilizar únicamente al usuario.
+
 ## 📖 Definiciones y características
 
 - **SPF/DKIM/DMARC:** mecanismos DNS que autentican el correo. Característica: con DMARC en `p=reject` el dominio es difícil de suplantar.
@@ -110,6 +156,7 @@ una página falsa.
 - FIDO Alliance — Passkeys. <https://fidoalliance.org/passkeys/>
 - CISA — Avoiding Social Engineering and Phishing. <https://www.cisa.gov/>
 - ENISA — Cybersecurity awareness. <https://www.enisa.europa.eu/>
+- NIST SP 800-63B-4 — Authenticator and Verifier Requirements. <https://pages.nist.gov/800-63-4/sp800-63b/authenticators/>
 
 ## 📥 Material descargable
 

@@ -94,7 +94,7 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 | Publicación | Estado | Clases que la citan |
 |---|---|---:|
 | [NIST SP 800-61 Rev. 2](https://csrc.nist.gov/pubs/sp/800/61/r2/final) | retirada | 12 |
-| [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html) | superada | 3 |
+| [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html) | superada | 4 |
 | [RFC 793](https://www.rfc-editor.org/rfc/rfc793) | obsoleta | 2 |
 | [NIST IR 8259](https://csrc.nist.gov/pubs/ir/8259/final) | retirada | 1 |
 | [NIST SP 800-161 Rev. 1](https://csrc.nist.gov/pubs/sp/800/161/r1/final) | retirada | 1 |
@@ -105,7 +105,7 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 | [RFC 7489](https://www.rfc-editor.org/rfc/rfc7489) | obsoleta | 1 |
 | [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446) | obsoleta | 1 |
 
-Las 689 obras que usan las clases — 57 libros, 24 artículos, 149 normas y 459 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-08-19 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
+Las 691 obras que usan las clases — 57 libros, 24 artículos, 151 normas y 459 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-08-19 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
 
 <!-- fuentes:fin -->
 

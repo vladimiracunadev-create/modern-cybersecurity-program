@@ -40,6 +40,52 @@ Al finalizar, el alumno podrá:
 | 6 | Atribución de activos | Vincular IP a la organización |
 | 7 | Priorización y reporte | Convertir exposición en acción |
 
+## 🧠 Explicación en profundidad
+
+### Un buscador de Internet ofrece observaciones, no un inventario perfecto
+
+Shodan y Censys realizan mediciones y exponen resultados indexados de servicios accesibles. Cada registro depende de cuándo, desde dónde y con qué protocolo se observó. Puede estar desactualizado, corresponder a un proxy o CDN, o mostrar un banner configurado manualmente. Por ello una coincidencia es una **pista de exposición**, no confirmación de versión vulnerable ni autorización para conectarse activamente.
+
+```mermaid
+flowchart LR
+  S["Sonda del proveedor"] --> OBS["Observación<br/>tiempo + protocolo"]
+  OBS --> IDX["Índice y campos"]
+  Q["Consulta acotada<br/>dominio, cert, ASN"] --> IDX
+  IDX --> CAND["Activo candidato"]
+  CAND --> COR["Corroborar con inventario,<br/>DNS y propietario"]
+  COR --> DEC["Exposición confirmada,<br/>histórica o tercero"]
+```
+
+La consulta comienza con identificadores autorizados: dominios propios, certificados, rangos o etiquetas cloud. Buscar por banner genérico produce muchos falsos positivos. Los certificados pueden unir servicios, pero también ser compartidos; un ASN agrupa anuncios de red, no todos los activos de una organización; y una IP cloud puede reasignarse.
+
+### Observación pasiva y validación activa
+
+Consultar el índice evita enviar tráfico directo al activo, aunque el proveedor obtuvo los datos mediante mediciones. Validar activamente con `nmap`, navegador o un cliente ya cambia la interacción y requiere alcance y permiso. Esta clase limita la práctica a activos propios o laboratorios y conserva consultas, fecha de observación y filtros. No se explotan resultados encontrados en Internet.
+
+Para reducción de superficie se compara el inventario esperado con el observado: puertos, protocolos, certificados y regiones. La diferencia puede revelar un activo desconocido, una entrada antigua o un servicio de un tercero. Antes de abrir un incidente se asigna propietario y se verifica vigencia mediante fuentes internas.
+
+### Banners, vulnerabilidades y priorización
+
+Un banner de versión no demuestra que el software sea vulnerable: puede ocultar parches retroportados o ser falso. La asociación con CVE se presenta como candidata hasta verificar producto, versión, configuración y alcance. Exposiciones administrativas, bases de datos o protocolos sin cifrar se priorizan por datos y control accesibles, no solo por el número de puerto.
+
+### Caso razonado: base de datos «de la empresa»
+
+Una búsqueda por dominio de certificado encuentra una IP con MongoDB. RDAP muestra un proveedor cloud y DNS ya no apunta allí; el certificado fue observado meses antes. El analista consulta inventario y confirma que era una prueba eliminada. Clasifica el registro como histórico y solicita revisar retención del certificado, en vez de afirmar que existe una base abierta actual.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Banner | Respuesta o metadato de servicio; puede ser incompleto o engañoso. |
+| Índice de medición | Base construida con observaciones realizadas en momentos concretos. |
+| Exposición | Servicio accesible desde una posición de red determinada. |
+| Activo candidato | Resultado pendiente de validar propiedad, vigencia y función. |
+| Validación activa | Interacción directa con el servicio, sujeta a autorización. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno crea consultas acotadas sobre infraestructura autorizada, registra tiempo y procedencia, valida propiedad y vigencia, separa banner de vulnerabilidad y produce una acción defensiva sin ampliar el alcance.
+
 ## 📖 Definiciones y características
 
 - **Banner:** respuesta que un servicio muestra al conectar (versión, cabeceras). Característica: base del fingerprinting remoto.

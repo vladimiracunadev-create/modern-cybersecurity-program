@@ -26,7 +26,7 @@ Al finalizar, el alumno podrá:
 2. **Verificar** la validez de correos y detectar brechas asociadas.
 3. **Rastrear** la reutilización de un alias en múltiples plataformas.
 4. **Evaluar** el nivel de confianza y evitar falsos positivos por homónimos.
-5. **Redactar** un dossier con cadena de custodia y respeto a la privacidad.
+5. **Redactar** un informe mínimo con procedencia, confianza y respeto a la privacidad, sin convertirlo en un dossier intrusivo.
 
 ## 🗺️ Temas
 
@@ -39,6 +39,53 @@ Al finalizar, el alumno podrá:
 | 5 | Números de teléfono | Enlazan mensajería y registros |
 | 6 | Brechas de datos | Revelan contraseñas y patrones |
 | 7 | Verificación y confianza | Separa hecho de inferencia |
+
+## 🧠 Explicación en profundidad
+
+### Resolver identidad exige probar coincidencias y diferencias
+
+Investigar a una persona no consiste en unir perfiles porque comparten un nombre. La **resolución de entidades** compara atributos —alias, trayectoria, ubicación aproximada, fechas, relaciones y estilo de publicación— y busca tanto confirmaciones como contradicciones. Un identificador fuerte puede ser reutilizado, falsificado o reciclado; varios identificadores débiles pueden coincidir por azar.
+
+```mermaid
+flowchart TD
+  H["Hipótesis: perfiles A y B<br/>son la misma persona"] --> ID["Indicadores permitidos<br/>alias, bio, tiempo, vínculos"]
+  ID --> C1["Coincidencias"]
+  ID --> C2["Contradicciones"]
+  C1 --> ALT["Hipótesis alternativas"]
+  C2 --> ALT
+  ALT --> COR["Corroboración independiente"]
+  COR --> OUT["Conclusión mínima<br/>+ confianza + límites"]
+```
+
+El diagrama obliga a formular una hipótesis refutable. Si dos cuentas publican simultáneamente desde lugares incompatibles o muestran carreras distintas, la contradicción pesa. Si ambas usan la misma foto, puede existir copia. Una fotografía inversa ayuda a encontrar apariciones, pero no identifica por sí sola a su sujeto.
+
+### Alcance legítimo y minimización
+
+Una revisión de exposición propia, una investigación periodística con garantías o una debida diligencia autorizada tienen propósitos diferentes. Antes de buscar se documentan base legítima, categorías permitidas, tiempo de retención y destinatarios. No se intenta recuperar contraseñas, acceder a cuentas privadas, engañar contactos ni recopilar familiares que no son relevantes. «Está en Internet» no elimina expectativas, legislación de protección de datos ni riesgo humano.
+
+Los datos de filtraciones requieren un tratamiento especial. Un servicio defensivo puede permitir comprobar si un identificador propio aparece comprometido sin revelar contraseñas. Descargar o redistribuir bases robadas amplía el daño y puede ser ilegal. Para una evaluación de exposición se registra la existencia de una alerta y la acción defensiva, no el contenido sensible.
+
+### Construir una línea temporal sin fabricar continuidad
+
+Las fechas de creación, empleo y publicación pueden ordenar hechos, pero las plataformas cambian zona horaria, permiten editar y muestran fechas incompletas. Se conserva el valor original y la conversión aplicada. Los huecos se presentan como huecos. Las relaciones sociales son señales: seguir a una empresa no demuestra trabajar allí; aparecer en una foto no demuestra una relación actual.
+
+### Caso razonado: homónimo en un informe de selección
+
+Un analista encuentra un proceso judicial asociado al nombre de un candidato. La ciudad coincide, pero el segundo apellido y la edad no. En lugar de elevarlo como hallazgo, trata el resultado como homónimo y exige un identificador autorizado e independiente. Documenta la no coincidencia y evita conservar el dato. El objetivo no es completar una historia, sino impedir una atribución dañina.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Resolución de entidades | Evaluación de si registros distintos representan al mismo sujeto. |
+| Homónimo | Persona diferente que comparte nombre u otro atributo. |
+| Identificador | Atributo usado para relacionar registros, con fuerza y riesgo variables. |
+| Minimización | Recopilar y conservar solo lo necesario para el propósito declarado. |
+| Contradicción | Evidencia que reduce la plausibilidad de una hipótesis de identidad. |
+
+## ✅ Criterio de dominio
+
+Hay dominio cuando el alumno puede resolver una identidad propia o ficticia con criterios positivos y negativos, mantener hipótesis alternativas, explicar la base y los límites de la búsqueda y producir un informe que no exponga datos innecesarios.
 
 ## 📖 Definiciones y características
 

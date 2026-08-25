@@ -20,7 +20,7 @@ Al finalizar, el alumno podrá:
 2. **Aplicar** el ciclo de inteligencia de cinco fases a un objetivo autorizado.
 3. **Distinguir** OSINT pasivo de activo y sus implicaciones de detección y legalidad.
 4. **Preparar** un entorno de investigación aislado con cuentas "sock puppet" y máquina desechable.
-5. **Documentar** hallazgos con cadena de custodia y control de sesgos.
+5. **Documentar** hallazgos con procedencia, transformaciones y control de sesgos; reconocer cuándo un proceso formal exige cadena de custodia adicional.
 
 ## 🗺️ Temas
 
@@ -35,20 +35,69 @@ Al finalizar, el alumno podrá:
 | 7 | Ética, legalidad y sesgos | Mantiene la operación lícita y objetiva |
 | 8 | Documentación y trazabilidad | Hace el hallazgo verificable y reutilizable |
 
+## 🧠 Explicación en profundidad
+
+### OSINT es un proceso de inteligencia, no una búsqueda grande
+
+Una fuente abierta es información obtenible legalmente sin acceso clandestino; eso no significa que carezca de restricciones, riesgo o datos personales. **OSINT** aparece cuando esa información se selecciona, evalúa, relaciona y comunica para responder una pregunta concreta. Guardar cien enlaces es recopilación. Explicar con confianza calibrada qué hipótesis sostienen y cuáles no, preservando procedencia, es un producto de inteligencia.
+
+```mermaid
+flowchart LR
+  Q["Pregunta y decisión"] --> PLAN["Plan de colección<br/>indicadores y límites"]
+  PLAN --> COL["Recopilar<br/>fuentes abiertas"]
+  COL --> PRE["Preservar<br/>URL, fecha, copia, hash"]
+  PRE --> EVA["Evaluar fuente<br/>y contenido"]
+  EVA --> ANA["Corroborar e interpretar"]
+  ANA --> REP["Informe + confianza<br/>+ vacíos"]
+  REP -. "nuevas preguntas" .-> Q
+```
+
+El gráfico comienza por la decisión que el análisis debe apoyar. Sin ella, el investigador acumula datos interesantes pero irrelevantes. El plan define indicadores buscables, fuentes probables, restricciones legales, fecha de corte y condición para detenerse. Durante la recopilación se registra cómo se llegó a cada elemento; después se separa la evaluación de la **fuente** —quién la controla, cercanía al hecho, historial— de la evaluación del **contenido** —consistencia, fecha, posibilidad de manipulación—.
+
+### Hecho, inferencia e hipótesis
+
+«El certificado observado contiene este dominio» es una observación. «El dominio pertenece a la misma organización» es una inferencia que necesita contexto; puede tratarse de un proveedor o activo abandonado. «Se prepara una campaña» es una hipótesis todavía más amplia. Un informe profesional etiqueta estas capas, presenta alternativas y asigna confianza alta, media o baja con una justificación, no con porcentajes inventados.
+
+La corroboración debe buscar independencia. Diez sitios que copian la misma publicación constituyen una sola raíz informativa. Una fuente primaria puede ser directa pero interesada; una secundaria puede aportar contraste. La ausencia de resultados tampoco demuestra ausencia del fenómeno: buscadores indexan de forma parcial, el contenido cambia y las plataformas personalizan resultados.
+
+### Preservación, minimización y seguridad
+
+El Berkeley Protocol ofrece un referente metodológico para recopilar, analizar y preservar información digital de manera profesional, además de considerar seguridad física, digital y psicosocial. Su ámbito original son investigaciones de derechos humanos, por lo que no convierte automáticamente cualquier captura en evidencia judicial ni sustituye la legislación local. En este curso se adoptan sus principios de trazabilidad: URL, fecha/hora, contexto, método, copia original y hash cuando corresponda.
+
+Recopilar solo lo necesario reduce daño y sesgo. Datos públicos pueden seguir siendo sensibles. No se contacta a personas, no se eluden controles, no se publica información identificable y no se amplía el objetivo sin autorización.
+
+### Caso razonado: cinco noticias, una sola fuente
+
+Cinco artículos afirman que una empresa cerrará una planta. Todos enlazan un mismo mensaje anónimo. El investigador no cuenta cinco corroboraciones; registra una raíz con cinco republicaciones, busca comunicaciones regulatorias, declaraciones, ofertas laborales y cambios operacionales, y mantiene dos hipótesis. El informe concluye «evidencia insuficiente» en vez de rellenar el vacío con certeza.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Requisito de inteligencia | Pregunta ligada a una decisión y a un alcance. |
+| Fuente primaria | Material cercano al hecho; no garantiza neutralidad ni autenticidad. |
+| Corroboración | Apoyo mediante evidencia con origen suficientemente independiente. |
+| Procedencia | Registro del origen y transformaciones de un elemento. |
+| Confianza analítica | Juicio explicado sobre la solidez de una conclusión. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando convierte una necesidad en pregunta y plan, preserva procedencia, distingue observación de inferencia, detecta fuentes dependientes y redacta una conclusión con alternativas, vacíos y confianza justificada.
+
 ## 📖 Definiciones y características
 
 - **OSINT (Open Source Intelligence):** inteligencia derivada de información **pública y de acceso
   legal**. Característica clave: la fuente es abierta, pero el valor está en la correlación, no en el dato aislado.
 - **Ciclo de inteligencia:** proceso iterativo de *dirección → recolección → procesamiento → análisis → difusión*. Característica: es cíclico; el análisis genera nuevas preguntas.
-- **OSINT pasivo:** recolección que no interactúa con la infraestructura del objetivo (cachés, buscadores, archivos). Característica: casi indetectable.
+- **OSINT pasivo:** recolección que no interactúa directamente con la infraestructura del objetivo (cachés, buscadores, archivos). Característica: reduce contacto directo, pero proveedores y fuentes aún pueden registrar consultas.
 - **OSINT activo:** implica tocar sistemas del objetivo (visitar su web, resolver su DNS). Característica: deja rastros en logs.
-- **Sock puppet:** identidad ficticia y creíble usada para investigar sin exponer al analista. Característica: debe tener historia y coherencia.
-- **Cadena de custodia:** registro de cómo, cuándo y de dónde se obtuvo cada evidencia. Característica: sin ella, el hallazgo no es defendible.
+- **Identidad de investigación:** perfil separado que algunas investigaciones autorizadas usan para reducir exposición. Característica: su creación y uso requieren aprobación, necesidad y reglas de plataforma.
+- **Procedencia:** registro de cómo, cuándo y de dónde se obtuvo información y qué transformaciones recibió. Característica: permite auditar el análisis; una cadena de custodia formal añade requisitos según el contexto jurídico.
 - **Sesgo de confirmación:** tendencia a interpretar datos para confirmar una hipótesis previa. Característica: el principal enemigo del analista.
 
 ## 🧰 Herramientas y preparación
 
-- **Máquina de investigación aislada:** VM (VirtualBox/VMware) con snapshot limpio, o la *Trace Labs OSINT VM* / Kali. Nunca investigues desde tu equipo y cuenta personales.
+- **Máquina de investigación aislada:** VM (VirtualBox/VMware) con snapshot limpio, o la *Trace Labs OSINT VM* / Kali, cuando el modelo de amenaza justifique separar el entorno de las cuentas cotidianas.
 - **Navegador endurecido:** Firefox con contenedores (Multi-Account Containers), sin sesión personal; opcionalmente detrás de VPN/Tor según el alcance.
 - **Gestor de casos:** herramienta para notas y capturas: Obsidian, CherryTree o una plantilla Markdown; captura con Hunchly si es un engagement formal.
 - **OSINT Framework** (osintframework.com) como índice de fuentes por categoría.
@@ -72,7 +121,7 @@ Ejercicio aplicado y **autorizado**: OSINT sobre ti mismo (autoevaluación de hu
 
 1. Clasifica 10 fuentes de datos como pasivas o activas y justifica cada una.
 2. Dibuja el ciclo de inteligencia y describe qué ocurre si se salta la fase de "dirección".
-3. Crea un sock puppet coherente (nombre, correo dedicado, foto generada) y documenta su historia sin usarlo aún.
+3. Diseña en papel una política para identidades de investigación: aprobación, propósito, plataformas permitidas, prohibición de suplantar personas reales, retención y cierre. No crees ni uses una cuenta.
 4. Redacta una hipótesis y luego lista 3 datos que la **refutarían**, para combatir el sesgo de confirmación.
 5. Diseña la plantilla de tabla de hallazgos con columnas de confianza y verificación cruzada.
 6. Investiga la diferencia entre OSINT y "doxing" y explica dónde está la frontera legal/ética.
@@ -89,8 +138,8 @@ y el informe distingue explícitamente hechos verificados de inferencias.
 
 | Síntoma / mensaje | Causa y cómo arreglar |
 |-------------------|------------------------|
-| El objetivo detecta la investigación | Se hizo OSINT activo sin querer (visitar su web logueado). Usa fuentes pasivas y sock puppets. |
-| Hallazgos que no se pueden reproducir | Faltó cadena de custodia. Registra URL, fecha y captura de cada dato. |
+| El objetivo detecta la investigación | Se hizo interacción directa sin contemplarla. Revisa alcance, fuentes y entorno; no crees identidades encubiertas sin aprobación. |
+| Hallazgos que no se pueden reproducir | Faltó procedencia. Registra URL, fecha, contexto y copia permitida de cada dato. |
 | Conclusiones sesgadas | Se buscó confirmar una hipótesis. Formula hipótesis rivales y busca refutarlas. |
 | Cuenta personal filtrada al objetivo | Se usó el navegador/sesión propios. Investiga siempre desde la VM aislada. |
 | Datos "públicos" pero de origen ilegal | Un leak robado no es fuente lícita. Verifica la legalidad de la fuente. |
@@ -103,8 +152,7 @@ personales y la interacción con el objetivo tienen límites (GDPR, leyes locale
 propósito determinan la legalidad.
 
 **❓ ¿Necesito Tor o VPN siempre?**
-No siempre; depende del alcance y del riesgo de atribución. Para investigaciones sensibles, sí. Lo
-esencial es no exponer tu identidad real ni tocar la infraestructura del objetivo sin querer.
+No existe una respuesta universal. Depende del adversario, la legislación, las reglas de la organización y las fuentes consultadas. Tor o una VPN cambian qué partes observan el tráfico, pero también introducen límites y confianza; primero diseña el modelo de amenaza.
 
 **❓ ¿Un sock puppet es engañar?**
 Es una identidad de investigación, no una suplantación de una persona real. No lo uses para acceder a
@@ -117,6 +165,7 @@ sistemas privados ni para manipular a personas fuera de un engagement autorizado
 - OSINT Framework. <https://osintframework.com/>
 - Trace Labs OSINT VM. <https://www.tracelabs.org/initiatives/osint-vm>
 - Have I Been Pwned. <https://haveibeenpwned.com/>
+- OHCHR y UC Berkeley — *Berkeley Protocol on Digital Open Source Investigations*. <https://www.ohchr.org/sites/default/files/2022-04/OHCHR_BerkeleyProtocol.pdf>
 
 ## 📥 Material descargable
 

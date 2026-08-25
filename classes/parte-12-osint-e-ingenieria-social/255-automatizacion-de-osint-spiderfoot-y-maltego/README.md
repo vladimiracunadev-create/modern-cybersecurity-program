@@ -40,6 +40,53 @@ Al finalizar, el alumno podrá:
 | 6 | Grafos y correlación | Ver relaciones ocultas |
 | 7 | Depuración de resultados | Falsos positivos y verificación |
 
+## 🧠 Explicación en profundidad
+
+### Automatizar amplía cobertura y también errores
+
+SpiderFoot y Maltego convierten semillas en consultas y relaciones. Son útiles para repetir tareas, conservar caminos y encontrar candidatos, pero no validan automáticamente identidad, propiedad ni actualidad. Un error temprano —dos homónimos fusionados o un dominio compartido— se propaga por todo el grafo y produce una historia visual convincente pero falsa.
+
+```mermaid
+flowchart LR
+  SEED["Semilla autorizada"] --> MOD["Módulos/transforms<br/>seleccionados"]
+  MOD --> RAW["Resultados brutos"]
+  RAW --> NORM["Normalizar y deduplicar"]
+  NORM --> GRAPH["Grafo con relación,<br/>fuente y fecha"]
+  GRAPH --> REV["Revisión humana"]
+  REV -->|"confirmado"| REP["Producto analítico"]
+  REV -->|"dudoso"| HOLD["Hipótesis pendiente"]
+```
+
+El diagrama coloca la revisión después del grafo, no porque solo se revise al final, sino para recordar que una arista generada es una afirmación que necesita procedencia. Cada nodo debería conservar tipo y normalización; cada relación, transform, fuente, hora y confianza. Deduplicar por texto puede unir entidades distintas, mientras no deduplicar puede inflar centralidad.
+
+### Diseñar un flujo reproducible
+
+Se parte de una pregunta y módulos necesarios, no de «ejecutar todo». Los módulos pueden consultar servicios externos, consumir cuotas, transmitir la semilla o realizar actividad directa; se revisan sus comportamientos y términos. Se limita concurrencia, se aíslan credenciales y se evita cargar datos personales en servicios no aprobados.
+
+Una ejecución reproducible conserva versión de herramienta, configuración, semillas, fecha y exportación original. Los resultados cambian porque Internet cambia; repetir no significa obtener lo mismo, sino poder explicar el procedimiento. Para análisis a largo plazo se comparan snapshots en vez de sobrescribirlos.
+
+### Grafos que apoyan, no sustituyen, el razonamiento
+
+El color y el tamaño de un nodo pueden representar confianza, tipo o centralidad, pero la leyenda debe decirlo. Un nodo central en la muestra puede ser un CDN o servicio compartido. Los caminos relevantes se inspeccionan contra sus fuentes y se exporta un informe textual con hechos e inferencias; la captura del grafo por sí sola no es una conclusión.
+
+### Caso razonado: dominio compartido que une dos empresas
+
+Un transform relaciona dos organizaciones mediante la misma IP. La visualización sugiere infraestructura común, pero la IP pertenece a un hosting masivo. El analista cambia la relación a «alojado por», añade el proveedor y evita fusionar las organizaciones. Después busca certificados y registros oficiales para evaluar vínculos reales. La automatización encontró una coincidencia; la revisión determinó su significado.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Semilla | Entidad inicial autorizada desde la que comienza la expansión. |
+| Transform/módulo | Operación que consulta o deriva relaciones. |
+| Normalización | Conversión a formas comparables sin asumir identidad. |
+| Arista | Relación tipada entre nodos, con fuente y tiempo. |
+| Propagación de error | Ampliación de una asociación incorrecta a resultados posteriores. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la automatización cuando selecciona módulos por pregunta y riesgo, conserva configuración y procedencia, revisa relaciones críticas y entrega un grafo cuya leyenda, fuentes y límites permiten auditarlo.
+
 ## 📖 Definiciones y características
 
 - **SpiderFoot:** framework de recolección OSINT por módulos. Característica: automatiza cientos de fuentes y correlaciona.

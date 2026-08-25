@@ -40,6 +40,55 @@ Al finalizar, el alumno podrá:
 | 6 | Detección de manipulación | Distinguir real de falso |
 | 7 | Verificación cruzada | Confirmar con mapas/satélite |
 
+## 🧠 Explicación en profundidad
+
+### Geolocalizar es converger evidencia independiente
+
+Una imagen puede contener metadatos, texto, arquitectura, vegetación, relieve, clima, sombras, señales viales y patrones de transporte. Ninguna pista aislada suele bastar. La geolocalización profesional formula candidatos, busca elementos discriminantes y trata de **refutar** cada lugar antes de confirmar una coincidencia.
+
+```mermaid
+flowchart TD
+  IMG["Original preservado"] --> META["Metadatos<br/>si existen"]
+  IMG --> VIS["Pistas visuales<br/>texto, vía, edificios"]
+  IMG --> TIME["Luz, clima y tiempo"]
+  META --> CAND["Lugares candidatos"]
+  VIS --> CAND
+  TIME --> CAND
+  CAND --> GEO["Comparación geoespacial<br/>mapas e imágenes"]
+  GEO --> REF["Refutar alternativas"]
+  REF --> OUT["Ubicación y confianza<br/>o resultado inconcluso"]
+```
+
+Los metadatos EXIF pueden incluir coordenadas y fecha, pero plataformas suelen eliminarlos y cualquier archivo puede ser editado. Se registran como pista, no como verdad. El texto se transcribe antes de buscarlo; la dirección del tránsito, señalética y mobiliario urbano reducen regiones; las alineaciones entre edificios y relieve ayudan a verificar una posición exacta.
+
+### Tiempo, sombra y precisión honesta
+
+La sombra depende de fecha, hora, orientación y geometría. Sin conocer la vertical del objeto, la cámara y el horizonte, calcular una hora exacta produce falsa precisión. Es más seguro usarla para comprobar compatibilidad: «la iluminación es coherente con una toma matinal hacia el oeste» y contrastarla con otras señales. El clima observado se compara con registros históricos solo después de acotar tiempo y lugar.
+
+La conclusión puede tener granularidad de país, ciudad, tramo de calle o coordenada. Informar más precisión que la evidencia es un error. En contextos sensibles se generaliza la ubicación para no exponer domicilios, testigos o infraestructura vulnerable.
+
+### Integridad de imagen y búsqueda inversa
+
+Una búsqueda inversa puede encontrar copias anteriores, recortes o mayor resolución; no demuestra por sí sola que el primer resultado sea el original. El análisis de compresión y metadatos puede señalar edición, pero recodificación normal también altera patrones. Se conserva el archivo más cercano al original, hash y transformaciones realizadas, y se separa «editada» de «engañosa»: recortar una imagen no prueba intención maliciosa.
+
+### Caso razonado: coordenadas correctas, fecha falsa
+
+Una fotografía conserva GPS de una plaza y se publica como actual. Las coordenadas coinciden, pero una búsqueda inversa encuentra la misma imagen años antes; además, una obra visible ya no existe. El analista confirma el lugar y rechaza la fecha alegada. Geolocalización y cronolocalización son preguntas distintas: acertar una no valida la otra.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| EXIF | Metadatos de captura que pueden faltar o modificarse. |
+| Geolocalización | Inferencia del lugar representado. |
+| Cronolocalización | Inferencia de fecha o periodo de captura. |
+| Pista discriminante | Rasgo que diferencia candidatos de manera comprobable. |
+| Refutación | Búsqueda deliberada de incompatibilidades con una hipótesis. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando preserva el original, construye y descarta candidatos con al menos dos familias de evidencia, informa precisión y confianza acordes y protege ubicaciones sensibles.
+
 ## 📖 Definiciones y características
 
 - **EXIF:** metadatos incrustados por la cámara (GPS, modelo, fecha). Característica: muy revelador, pero eliminado por muchas plataformas.

@@ -40,11 +40,55 @@ Al finalizar, el alumno podrá:
 | 6 | Fingerprinting tecnológico | Prioriza vectores conocidos |
 | 7 | Filtraciones en repos/buckets | Secretos y código expuesto |
 
+## 🧠 Explicación en profundidad
+
+### Una organización no coincide exactamente con su dominio
+
+El objetivo técnico es reconstruir relaciones entre entidades legales, marcas, dominios, certificados, rangos, proveedores y servicios. Cada relación necesita un tipo y una fecha. Un subdominio observado hace tres años puede estar retirado; una IP puede pertenecer a un CDN compartido; un certificado puede incluir nombres de un proveedor. Confundir relación con propiedad conduce a atribuciones y alcances incorrectos.
+
+```mermaid
+flowchart LR
+  ORG["Entidad/Marca"] -->|"opera"| DOM["Dominio"]
+  DOM --> DNS["DNS histórico/actual"]
+  DOM --> CT["Certificados CT"]
+  DNS --> IP["IP"]
+  IP --> ASN["ASN / proveedor"]
+  DOM --> SAAS["SaaS/CDN/correo"]
+  CT --> CAND["Candidatos"]
+  CAND --> VAL["Validación de propiedad,<br/>vigencia y alcance"]
+```
+
+Los registros DNS describen enrutamiento y delegación, no siempre propiedad. `MX` muestra quién recibe correo; `NS`, la autoridad DNS; `TXT` puede contener verificaciones y políticas. Certificate Transparency permite descubrir nombres incluidos en certificados públicos, pero una entrada no demuestra que el host siga activo ni autorizado para pruebas. RDAP reemplaza buena parte del uso de WHOIS con datos estructurados, aunque la privacidad limita registrantes.
+
+### Del inventario a la hipótesis de riesgo
+
+Una adquisición, rebranding o proveedor deja huellas temporales. El analista combina fuentes corporativas, registros oficiales, DNS, certificados y repositorios públicos, manteniendo fechas. Para cada activo candidato asigna estado: confirmado, probable, tercero relacionado, histórico o descartado. El resultado defensivo sirve para inventario y superficie de ataque; no concede permiso para escanear o acceder.
+
+La tecnología detectada mediante cabeceras, archivos públicos o repositorios es una hipótesis de versión. Los banners pueden estar ocultos o ser engañosos. Una dependencia mencionada en una vacante no prueba que un sistema de producción use esa versión. Se evita convertir señales comerciales en vulnerabilidades confirmadas.
+
+### Caso razonado: subdominio de un proveedor
+
+Certificate Transparency revela `support.empresa.example`, que resuelve a una plataforma SaaS. El dominio está bajo la marca, pero la infraestructura y la operación pertenecen al proveedor. Para un inventario se registra la relación y el contrato; para una evaluación técnica se verifica si el proveedor está dentro del alcance. Atacar el host porque contiene el nombre de la empresa sería una inferencia operativa inválida.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| RDAP | Protocolo estructurado para consultar datos de registro de recursos de Internet. |
+| Certificate Transparency | Registros públicos auditables de certificados emitidos. |
+| ASN | Identificador de un sistema autónomo que anuncia prefijos, no sinónimo de empresa. |
+| Activo candidato | Recurso relacionado que aún requiere validar propiedad y vigencia. |
+| Dependencia externa | Servicio de un tercero que soporta una función de la organización. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase si entrega un mapa temporal con relaciones tipadas, separa propiedad de alojamiento, valida activos con fuentes independientes y marca de forma explícita qué recursos no están autorizados para interacción técnica.
+
 ## 📖 Definiciones y características
 
 - **WHOIS:** base de datos de registro de dominios/IP. Característica: cada vez más ofuscada por privacidad, pero útil por fechas y NS.
 - **Certificate Transparency (CT):** logs públicos de certificados TLS emitidos. Característica: revela subdominios sin consultar al objetivo.
-- **Enumeración pasiva de subdominios:** descubrir hosts sin enviar tráfico al objetivo. Característica: casi indetectable.
+- **Enumeración pasiva de subdominios:** descubrir nombres mediante índices y fuentes de terceros sin consultar directamente cada host. Característica: reduce interacción directa, pero las fuentes consultadas conservan sus propios registros y cobertura parcial.
 - **Registro TXT/SPF/DMARC:** políticas de correo publicadas en DNS. Característica: indican si el dominio es fácil de suplantar.
 - **Fingerprinting:** identificar tecnologías (CMS, servidor, framework). Característica: guía la explotación posterior.
 - **Secreto expuesto:** clave/API filtrada en un repo o bucket. Característica: hallazgo de alto impacto y crítico de reportar.

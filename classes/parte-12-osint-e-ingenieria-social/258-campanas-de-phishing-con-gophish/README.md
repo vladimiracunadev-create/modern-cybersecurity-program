@@ -41,6 +41,51 @@ Al finalizar, el alumno podrá:
 | 6 | Métricas y tracking | Medir resiliencia real |
 | 7 | Informe y formación | Cerrar el ciclo educativo |
 
+## 🧠 Explicación en profundidad
+
+### Una simulación es una intervención educativa con riesgo propio
+
+GoPhish facilita plantillas, envío, páginas y eventos, pero la herramienta no convierte una campaña en ética ni útil. Antes se define la pregunta: ¿el canal de reporte funciona?, ¿un proceso financiero resiste una solicitud falsa?, ¿la autenticación técnica impide reutilizar credenciales? La población, el mensaje y la métrica se eligen para esa pregunta y reciben aprobación de seguridad, legal, RR. HH. y responsables del servicio según el contexto.
+
+```mermaid
+flowchart LR
+  OBJ["Objetivo de aprendizaje"] --> GOV["Aprobaciones, alcance<br/>y reducción de daño"]
+  GOV --> DESIGN["Mensaje y landing<br/>sin secretos reales"]
+  DESIGN --> PILOT["Piloto controlado"]
+  PILOT --> RUN["Ejecución con parada"]
+  RUN --> RESP["Reporte y respuesta"]
+  RESP --> DEB["Debrief y mejora"]
+  DEB --> RET["Retención mínima<br/>y eliminación"]
+```
+
+El diagrama incluye piloto, parada, *debrief* y eliminación porque enviar mensajes es solo una fase. Se excluyen temas que puedan causar daño —despidos, salud, emergencias familiares—, poblaciones especialmente sensibles y periodos críticos. La página de práctica nunca valida ni almacena contraseñas reales. Si se necesita medir intento de ingreso, basta registrar el evento local y mostrar educación inmediata; los campos contienen valores ficticios o se descartan antes de persistir.
+
+### Métricas que apoyan decisiones
+
+La apertura es poco fiable por bloqueos de imágenes y escáneres automáticos. El clic también puede provenir de un sandbox. El reporte mediante el canal esperado, el tiempo hasta que SOC recibe una señal útil, la contención y la repetición de fallos de proceso ofrecen más contexto. Las métricas se agregan; el seguimiento individual solo se usa si fue aprobado, necesario y comunicado. Comparar tasas entre campañas con dificultades distintas induce conclusiones falsas.
+
+### Infraestructura y coordinación defensiva
+
+El dominio, DKIM/SPF/DMARC, listas y horarios se configuran sobre infraestructura autorizada. SOC conoce el ejercicio mediante un mecanismo que permita evaluar el playbook sin provocar una respuesta externa innecesaria. Existe contacto de emergencia para detener envíos, retirar la página y atender dudas. Los mensajes se explican en el *debrief*, conforme a la política aprobada.
+
+### Caso razonado: 0 % de clics, defensa no demostrada
+
+Una campaña produce cero clics. El equipo celebra, pero el gateway bloqueó todos los correos y nadie evaluó reporte, autenticación ni proceso. La conclusión correcta es que el control de correo funcionó para ese patrón; no que las personas sean inmunes. El siguiente ejercicio autorizado prueba una solicitud ficticia de cambio financiero sin enlace y mide callback y doble aprobación.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Landing de simulación | Página controlada que educa y no captura secretos reales. |
+| Parada de emergencia | Procedimiento para detener envíos y retirar infraestructura. |
+| Debrief | Explicación posterior que conecta señales, proceso y aprendizaje. |
+| Métrica agregada | Resultado grupal que reduce exposición individual. |
+| Escáner automático | Sistema que puede abrir enlaces y contaminar métricas. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno diseña una campaña aprobada desde una pregunta defensiva, minimiza datos y daño, distingue eventos humanos de automatizados, prepara respuesta y traduce resultados en mejoras de controles y procesos.
+
 ## 📖 Definiciones y características
 
 - **GoPhish:** framework open source para simulacros de phishing. Característica: gestiona campañas y métricas de principio a fin.
@@ -91,7 +136,7 @@ propios/autorizados, y el informe incluye tasa de reporte y al menos tres accion
 | Síntoma / mensaje | Causa y cómo arreglar |
 |-------------------|------------------------|
 | Correos marcados como spam | Falta SPF/DKIM en el lab o dominio con mala reputación. Configura autenticación de correo. |
-| No se registran aperturas | Cliente bloquea imágenes (tracking pixel). Considera el clic como métrica principal. |
+| No se registran aperturas | Cliente o gateway bloquea imágenes; además, los escáneres pueden abrirlas. Trata apertura y clic como señales imperfectas y prioriza reporte, respuesta y cumplimiento del proceso. |
 | Landing page captura contraseñas | Configuración por defecto peligrosa. Desactiva la captura en un simulacro ético. |
 | Campaña llega a no autorizados | Grupo mal filtrado. Verifica la lista antes de lanzar. |
 | Empleados molestos/desconfiados | Faltó comunicación y enfoque educativo. Forma, no castigues. |
@@ -107,8 +152,7 @@ Se comunica la política general (que pueden ocurrir simulacros) sin anunciar ca
 transparencia del programa y el enfoque formativo son clave.
 
 **❓ ¿Qué métrica importa más?**
-La tasa de reporte. Que la gente reconozca y reporte el correo es mejor indicador de resiliencia que
-solo contar clics.
+No existe una sola métrica suficiente. El reporte aporta una señal defensiva útil, pero debe combinarse con tiempo de triage, contención, cobertura técnica y cumplimiento del proceso que el ejercicio pretendía evaluar.
 
 ## 🔗 Referencias
 

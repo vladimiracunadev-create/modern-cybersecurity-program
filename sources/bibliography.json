@@ -14331,6 +14331,55 @@
    "vigencia": "retirada"
   },
   {
+   "id": "berkeley-protocol-open-source-investigations",
+   "type": "standard",
+   "title": "Berkeley Protocol on Digital Open Source Investigations",
+   "identifier": "OHCHR Berkeley Protocol",
+   "published": "2022",
+   "locator": "https://www.ohchr.org/sites/default/files/2022-04/OHCHR_BerkeleyProtocol.pdf",
+   "authority": "Office of the United Nations High Commissioner for Human Rights and UC Berkeley Human Rights Center",
+   "status": "verificada",
+   "notes": "Guia metodologica para investigacion digital de fuentes abiertas; su ambito no sustituye las reglas juridicas aplicables a cada investigacion.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.ohchr.org/sites/default/files/2022-04/OHCHR_BerkeleyProtocol.pdf"
+    ],
+    "text_patterns": [
+     "berkeley protocol"
+    ]
+   },
+   "accessed": "2026-08-24",
+   "used_in": [
+    "classes/parte-12-osint-e-ingenieria-social/249-fundamentos-de-osint/README.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "nist-sp-800-63b-4",
+   "type": "standard",
+   "title": "Digital Identity Guidelines: Authentication and Authenticator Management",
+   "identifier": "NIST SP 800-63B-4",
+   "published": "2025",
+   "locator": "https://pages.nist.gov/800-63-4/sp800-63b/authenticators/",
+   "authority": "National Institute of Standards and Technology (NIST)",
+   "status": "verificada",
+   "notes": "Revision vigente; define resistencia al phishing y requisitos de autenticadores y verificadores.",
+   "matches": {
+    "url_prefixes": [
+     "https://pages.nist.gov/800-63-4"
+    ],
+    "text_patterns": [
+     "sp 800 63b 4",
+     "nist sp 800 63b 4"
+    ]
+   },
+   "accessed": "2026-08-24",
+   "used_in": [
+    "classes/parte-12-osint-e-ingenieria-social/259-defensa-contra-la-ingenieria-social/README.md"
+   ],
+   "authors": []
+  },
+  {
    "id": "nist-sp-800-63b",
    "type": "standard",
    "title": "Digital Identity Guidelines: Authentication and Lifecycle Management",
@@ -14351,6 +14400,7 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-0-fundamentos-y-prerrequisitos/018-git-y-control-de-versiones-para-profesionales-de-seguridad/README.md",
+    "classes/parte-12-osint-e-ingenieria-social/259-defensa-contra-la-ingenieria-social/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/315-mfa-y-gestion-de-accesos-privilegiados-pam/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/080-cracking-de-contrasenas-con-john-y-hashcat/README.md"
    ],

@@ -41,6 +41,51 @@ Al finalizar, el alumno podrá:
 | 6 | Marco ético y legal | Frontera entre prueba y delito |
 | 7 | Del OSINT al pretexto | La información habilita el engaño |
 
+## 🧠 Explicación en profundidad
+
+### La ingeniería social explota un contexto, no una supuesta ingenuidad
+
+Una persona decide con información incompleta, presión temporal, normas de ayuda y señales de autoridad. Un atacante diseña el contexto para que una acción peligrosa parezca coherente: pagar una factura, restablecer una cuenta, compartir un código o abrir un documento. Culpar a la víctima oculta fallos del sistema: procesos que permiten una sola aprobación, canales sin verificación y autenticadores que pueden retransmitirse.
+
+```mermaid
+flowchart LR
+  CONT["Contexto y pretexto"] --> SIG["Señales<br/>autoridad, urgencia, familiaridad"]
+  SIG --> ACT["Acción solicitada"]
+  ACT --> CTRL{ "¿Existe verificación<br/>independiente?" }
+  CTRL -->|"sí"| STOP["Detener/escalar"]
+  CTRL -->|"no"| IMP["Impacto potencial"]
+  REP["Canal de reporte simple"] --> STOP
+  TECH["Controles técnicos"] --> CTRL
+```
+
+El diagrama muestra que la defensa no depende solo de «reconocer señales». Inserta verificación independiente antes de una acción irreversible y facilita detenerse sin castigo. Una llamada que conoce datos reales sigue necesitando devolución a un número oficial; una solicitud de pago exige doble control; un login usa autenticación resistente al phishing.
+
+### Principios de influencia sin convertirlos en receta
+
+Autoridad, urgencia, reciprocidad, consistencia, afinidad y prueba social ayudan a analizar mensajes, pero no son botones universales ni explican por completo la conducta. El resultado depende de rol, cultura, carga, canal y consecuencias percibidas. La educación debe enseñar a verificar procesos, no a desconfiar de toda interacción ni a memorizar una lista de trucos.
+
+### Simulación ética y reducción de daño
+
+Una simulación autorizada define propósito, población, aprobaciones, datos recolectados, soporte, exclusiones y parada de emergencia. No solicita contraseñas reales, no usa temas traumáticos, salud, despido o crisis personales, y no avergüenza individuos. Se mide el proceso: reporte, escalamiento y resistencia técnica. Las cifras de clic no comparan limpiamente equipos con roles y exposición diferentes.
+
+### Caso razonado: cambio de cuenta bancaria
+
+Un correo auténtico de un proveedor comprometido solicita cambiar la cuenta de pago. No contiene faltas ni dominio parecido; la formación basada en «buscar errores» falla. El control efectivo es verificar cambios financieros por un canal previamente registrado y requerir doble aprobación. El incidente se reporta sin culpar al empleado que recibió un mensaje contextualizado.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Pretexto | Historia diseñada para justificar identidad, urgencia y solicitud. |
+| Canal independiente | Medio de verificación no proporcionado por la propia solicitud. |
+| BEC | Compromiso o suplantación de correo para inducir acciones de negocio. |
+| Simulación | Ejercicio autorizado con objetivos, límites y protección de participantes. |
+| Culpa a la víctima | Enfoque que atribuye el fallo a la persona e ignora controles del sistema. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno descompone un escenario en contexto, señales, acción e impacto; diseña controles técnicos y de proceso; y propone una simulación que mide aprendizaje sin capturar secretos ni dañar a participantes.
+
 ## 📖 Definiciones y características
 
 - **Ingeniería social:** manipulación de personas para que realicen acciones o revelen información. Característica: explota confianza y emoción, no fallos técnicos.

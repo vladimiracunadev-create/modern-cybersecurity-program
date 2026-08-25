@@ -41,6 +41,50 @@ Al finalizar, el alumno podrá:
 | 6 | Fugas corporativas | Empleados exponen a la empresa |
 | 7 | ToS y privacidad | Evita ilegalidad y baneos |
 
+## 🧠 Explicación en profundidad
+
+### Una plataforma muestra una versión parcial y mediada de la realidad
+
+Las redes sociales ordenan, recomiendan y eliminan contenido mediante reglas que el investigador no controla. Una captura representa una interfaz en un momento, no todo el historial. Cuentas, métricas y publicaciones pueden ser editadas, coordinadas o automatizadas. El análisis comienza preservando el objeto original y su contexto: URL o identificador, autor declarado, fecha visible, fecha de captura, conversación, multimedia y método de acceso permitido.
+
+```mermaid
+flowchart LR
+  POST["Publicación observada"] --> PRES["Preservar contexto<br/>ID, fecha, URL, copia"]
+  PRES --> AUTH["Autenticidad de cuenta<br/>sin asumir identidad"]
+  PRES --> MEDIA["Verificar multimedia"]
+  PRES --> NET["Relaciones e interacciones"]
+  AUTH --> HYP["Hipótesis alternativas"]
+  MEDIA --> HYP
+  NET --> HYP
+  HYP --> REP["Conclusión calibrada"]
+```
+
+Una insignia o nombre visible es una señal de la cuenta, no prueba absoluta de quién operó una publicación concreta. Se examinan historia, enlaces desde canales oficiales, coherencia temporal y posibles compromisos. La búsqueda inversa y la geolocalización ayudan con multimedia, mientras que la conversación completa evita citar fuera de contexto.
+
+### Redes, coordinación y límites de inferencia
+
+Un grafo representa nodos y relaciones observadas: seguir, mencionar, responder, compartir. Una arista no equivale a amistad, mando ni coordinación. Para sostener coordinación se buscan patrones temporales, contenido inusualmente similar, secuencias y comportamiento repetido, y se consideran explicaciones como noticias populares o automatización legítima. Las métricas de centralidad describen el grafo recolectado, condicionado por la API y la muestra; no revelan automáticamente al «líder» real.
+
+Las APIs, términos de servicio y normas de privacidad delimitan la recopilación. Automatizar navegación o crear identidades encubiertas puede infringir reglas y aumentar riesgo; esta clase trabaja con datos propios, cuentas de laboratorio o conjuntos publicados para investigación. No se contacta, persuade ni perfila a individuos reales.
+
+### Caso razonado: publicación viral fuera de fecha
+
+Un video se comparte como prueba de un incidente actual. La búsqueda inversa encuentra copias de dos años antes y los edificios no coinciden con el lugar afirmado. El analista conserva la publicación actual, enlaza el material anterior y concluye que el video está descontextualizado; no concluye quién lo publicó primero ni la intención de cada usuario. La verificación responde una pregunta concreta sin inventar motivaciones.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Contexto conversacional | Publicaciones y respuestas necesarias para interpretar un mensaje. |
+| Grafo observado | Red limitada por la muestra y las relaciones disponibles. |
+| Coordinación | Comportamiento conjunto que requiere más evidencia que contenido parecido. |
+| Descontextualización | Uso de material auténtico con fecha, lugar o significado incorrecto. |
+| Identificador de publicación | Clave estable de plataforma preferible a una captura aislada. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno preserva una publicación con contexto, evalúa cuenta, tiempo, multimedia y red por separado, formula alternativas y explica cómo la plataforma y el método de colección limitan su conclusión.
+
 ## 📖 Definiciones y características
 
 - **SOCMINT:** inteligencia derivada de redes sociales. Característica: alta densidad de datos personales, alto riesgo ético.
