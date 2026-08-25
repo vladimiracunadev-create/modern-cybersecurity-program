@@ -35,6 +35,54 @@ Al finalizar, el alumno podrá:
 | 6 | Firma con cosign | Integridad y procedencia del artefacto |
 | 7 | Gate de admisión | Solo imágenes firmadas y limpias a producción |
 
+## 🧠 Explicación en profundidad
+
+### La seguridad empieza por un artefacto reproducible y termina en runtime
+
+Una imagen es un sistema de archivos por capas más metadatos de ejecución. Reducirla elimina paquetes y superficie, pero «mínima» no significa automáticamente segura: una aplicación vulnerable sigue siéndolo en *distroless*, y una imagen sin shell puede ejecutarse como root o recibir secretos inseguros. El pipeline debe controlar el origen de la base, el contenido construido, la identidad del artefacto y la configuración con que se ejecutará.
+
+```mermaid
+flowchart LR
+  SRC["Fuente + lockfiles"] --> BUILD["Build multi-stage"]
+  BASE["Base fijada por digest"] --> BUILD
+  BUILD --> IMG["Imagen por digest"]
+  IMG --> SCAN["SBOM + vulnerabilidades"]
+  SCAN --> SIGN["Firma/procedencia"]
+  SIGN --> REG["Registry inmutable"]
+  REG --> ADM["Admisión verifica política"]
+  ADM --> RUN["Runtime no-root<br/>FS solo lectura, límites"]
+```
+
+El diagrama enseña una cadena de identidad. La etiqueta `app:1.0` es una referencia humana que puede apuntar a otro contenido; el digest identifica bytes concretos. La firma debe cubrir ese digest y la admisión debe verificar firma, emisor y política antes de ejecutar. Firmar no afirma que no existan vulnerabilidades: afirma quién autorizó un artefacto y permite vincularlo con procedencia.
+
+### Construcción: capas, secretos y base
+
+Multi-stage separa herramientas de compilación del runtime, pero no borra automáticamente secretos copiados en una etapa o incluidos en el contexto. Se usan montajes de secretos del builder, `.dockerignore` y contextos mínimos; después se inspecciona el historial. La base se selecciona por necesidad, mantenimiento y compatibilidad, se fija por digest para reproducibilidad y se actualiza mediante un proceso controlado. Fijarla eternamente también conserva vulnerabilidades, por lo que bots o tareas de actualización proponen nuevos digests con pruebas.
+
+El escaneo debe observar la imagen final y su SBOM. Un CVE en el stage de build importa de manera distinta a uno distribuido, aunque el constructor también puede ser atacado durante el build. Los resultados se triagean por alcance, exposición y política, como en la clase 240.
+
+### Ejecución: reducir consecuencias
+
+El usuario no-root, sistema de archivos de solo lectura, capacidades Linux mínimas, seccomp, límites de recursos y ausencia de sockets privilegiados reducen el impacto. No constituyen una frontera equivalente a una VM en todos los escenarios: los contenedores comparten kernel. Las excepciones —escritura temporal, puerto o capacidad— se conceden en un punto específico, no desactivando todo el control.
+
+### Caso razonado: imagen pequeña con riesgo grande
+
+Una imagen distroless de 30 MB pasa el escáner de paquetes, pero ejecuta como UID 0 y monta el socket de Docker para lanzar tareas. Un compromiso de la aplicación puede controlar el daemon del host. El equipo elimina el socket mediante una API de trabajos con permisos limitados, declara usuario no-root, fija la base, genera SBOM y verifica firma en admisión. El tamaño era una señal de mantenimiento; nunca fue una garantía de aislamiento.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Digest | Identificador criptográfico del contenido exacto de una imagen. |
+| Multi-stage build | Construcción con etapas separadas para no distribuir todas las herramientas. |
+| Distroless | Imagen de runtime sin distribución de propósito general; no implica invulnerabilidad. |
+| Admisión | Decisión previa a ejecutar basada en identidad y política del artefacto. |
+| Capacidad Linux | Privilegio granular que puede retirarse del proceso. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando puede seguir una imagen desde su base hasta runtime, demostrar su identidad por digest, explicar qué cubren escaneo y firma, evitar secretos en capas y justificar controles de ejecución sin confundir tamaño con seguridad.
+
 ## 📖 Definiciones y características
 
 - **Multi-stage build**: separar la fase de compilación de la imagen final. *Característica*: la imagen de producción no lleva compiladores ni herramientas de build.

@@ -35,6 +35,52 @@ Al finalizar, el alumno podrá:
 | 6 | Falsos positivos y tuning | Ajustar reglas y umbrales |
 | 7 | Límites del DAST | No ve el código; cobertura depende del crawling |
 
+## 🧠 Explicación en profundidad
+
+### DAST ve el comportamiento expuesto, no el código que lo produjo
+
+Un analizador dinámico interactúa con una aplicación en ejecución como lo haría un cliente: descubre rutas, envía variaciones, observa códigos, cabeceras, cuerpos, tiempos y efectos. Esa perspectiva permite detectar configuraciones y comportamientos que solo existen al desplegar —cabeceras ausentes, cookies débiles, errores detallados, inyecciones alcanzables—, con independencia del lenguaje del backend. Su límite es simétrico: si no alcanza una ruta, un estado o un rol, no puede evaluarlo; y una respuesta anómala no siempre revela la línea de código responsable.
+
+```mermaid
+flowchart LR
+  S["Semillas<br/>URL, OpenAPI, sesión"] --> C["Crawler<br/>rutas y estados"]
+  C --> A["Ataques activos<br/>variaciones controladas"]
+  A --> R["Respuesta<br/>contenido, tiempo, efecto"]
+  R --> E["Evidencia reproducible"]
+  AUTH["Contextos autenticados<br/>usuario y administrador"] --> C
+  SCOPE["Alcance y exclusiones"] --> A
+```
+
+El diagrama separa cobertura de ataque. Primero se ofrecen semillas y contextos; después el *crawler* construye un mapa; solo entonces el escáner activo prueba parámetros. Un informe con cero alertas y tres rutas visitadas no equivale a una aplicación segura. Por eso la primera métrica es la cobertura: endpoints esperados versus observados, métodos, roles, estados y tipos de contenido.
+
+### Baseline, escaneo activo y seguridad del entorno
+
+El *baseline scan* de ZAP es principalmente pasivo: inspecciona el tráfico generado al recorrer el sitio y es apropiado para una comprobación frecuente. El escaneo activo envía cargas que pueden crear datos, consumir recursos o alterar estados. Debe ejecutarse únicamente sobre un laboratorio o entorno autorizado, con cuentas y datos desechables, límites de velocidad y exclusiones explícitas. «Solo es un escáner» no elimina el riesgo operacional.
+
+La autenticación debe modelarse como parte del experimento. Una sesión expirada puede convertir todas las respuestas en la página de login y producir una falsa sensación de cobertura. Para probar autorización se requieren al menos dos identidades y oráculos claros: que el usuario A reciba denegación al solicitar el objeto de B, no simplemente que la respuesta tenga `200` o `403`. Los flujos modernos también exigen importar contratos OpenAPI, controlar tokens y, cuando corresponde, instrumentar navegación con navegador.
+
+### Triar por evidencia y complementar técnicas
+
+Un hallazgo dinámico se conserva con petición, respuesta mínima, precondiciones, efecto y pasos de repetición. Las diferencias temporales deben repetirse y compararse con controles; reflejar una cadena no demuestra XSS ejecutable; un error `500` no prueba inyección. DAST complementa SAST: el primero confirma exposición en una instancia, el segundo ayuda a localizar la causa y puede cubrir rutas aún no desplegadas. Ninguno reemplaza pruebas manuales de lógica de negocio.
+
+### Caso razonado: escaneo verde detrás del login
+
+Un pipeline informa cero alertas. El mapa de sitios contiene `/login` y recursos estáticos, pero ninguna ruta `/api/orders`. La cookie de prueba expiró y el proxy siguió una redirección silenciosa. El equipo corrige el contexto de autenticación, importa OpenAPI, añade dos usuarios de prueba y comprueba la cobertura antes de interpretar vulnerabilidades. Aparece un acceso indebido entre usuarios. El fallo inicial no era del detector: era un experimento sin condición de validez.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Crawler | Componente que descubre rutas y transiciones accesibles. |
+| Escaneo pasivo | Análisis del tráfico observado sin enviar cargas de ataque. |
+| Escaneo activo | Pruebas que modifican deliberadamente entradas y pueden alterar el objetivo. |
+| Contexto | Alcance, autenticación y reglas usadas para explorar una aplicación. |
+| Oráculo | Condición observable que permite decidir si una prueba pasó o falló. |
+
+## ✅ Criterio de dominio
+
+El alumno demuestra dominio cuando puede configurar un objetivo autorizado, medir cobertura antes de interpretar resultados, conservar una sesión válida, reproducir una alerta con evidencia y explicar qué vulnerabilidades quedan fuera del alcance de DAST.
+
 ## 📖 Definiciones y características
 
 - **DAST**: prueba de seguridad sobre la app en ejecución sin acceso al código. *Característica*: encuentra fallos de runtime/config; ciego a código no alcanzado por el crawler.

@@ -36,6 +36,53 @@ Al finalizar, el alumno podrá:
 | 6 | Testear políticas | Las políticas también necesitan tests |
 | 7 | Gatekeeper (admisión K8s) | OPA en el clúster en runtime |
 
+## 🧠 Explicación en profundidad
+
+### Separar la decisión de la aplicación de la política
+
+Política como código expresa decisiones en un lenguaje versionable y comprobable. OPA recibe **entrada estructurada** y datos, evalúa reglas Rego y devuelve una decisión; no ejecuta por sí mismo el bloqueo. Conftest convierte archivos como Terraform o Kubernetes en entrada durante CI; Gatekeeper integra evaluación en admisión de Kubernetes. La misma idea adopta puntos de aplicación diferentes, con consecuencias distintas.
+
+```mermaid
+flowchart LR
+  I["Entrada<br/>manifiesto, request, plan"] --> PDP["OPA/Rego<br/>punto de decisión"]
+  D["Datos y excepciones"] --> PDP
+  T["Pruebas de política"] --> PDP
+  PDP --> DEC["allow / deny / warnings"]
+  DEC --> PEP["CI, API o admisión<br/>punto de aplicación"]
+  PEP --> AUD["Evidencia y métricas"]
+```
+
+El diagrama distingue el **PDP** que decide del **PEP** que aplica. Si CI informa una denegación pero permite continuar, la política no está siendo impuesta. Si admisión bloquea sin mecanismo de emergencia, un error puede impedir una recuperación. Diseñar la política incluye ubicación, modo de fallo, disponibilidad, mensaje, excepción y registro.
+
+### Escribir reglas que enseñen y puedan mantenerse
+
+Una regla debe describir una propiedad observable, no una intención vaga. «Los contenedores no deben ser privilegiados» puede evaluarse; «la carga debe ser segura» no. El resultado debería incluir recurso, regla, motivo y remediación. Las reglas se agrupan por dominio y exponen decisiones estables aunque cambie su implementación interna.
+
+Las pruebas cubren casos permitidos, denegados, datos ausentes y excepciones. Un cambio de política se revisa como código porque puede ampliar o restringir acceso en cientos de recursos. Conviene desplegar primero en auditoría, observar impacto, corregir inventario y finalmente bloquear. La excepción es un dato explícito con propietario y caducidad, no un comentario permanente.
+
+### Límites y contexto
+
+OPA decide solo con la información recibida. Un manifiesto puede declarar `runAsNonRoot`, pero no demostrar que la imagen funciona de esa manera; una política de región no sabe si el dato tiene una clasificación especial salvo que esa clasificación llegue como dato confiable. El esquema y procedencia de la entrada forman parte del control.
+
+### Caso razonado: regla demasiado amplia
+
+Una organización bloquea cualquier `LoadBalancer`, afectando servicios internos de una plataforma administrada. La intención era impedir exposición pública. Se redefine la propiedad usando clase, anotaciones aprobadas, red y propietario; se añaden fixtures de casos internos y públicos, y una excepción temporal con vencimiento. La política mejora porque modela el riesgo real en vez de prohibir una palabra.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| PDP | Componente que calcula una decisión de política. |
+| PEP | Componente que hace cumplir esa decisión. |
+| Rego | Lenguaje declarativo usado por OPA. |
+| Input | Documento evaluado en una consulta concreta. |
+| Data | Información auxiliar confiable usada por las reglas. |
+| Audit mode | Evaluación y registro sin bloqueo, útil para adopción gradual. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno formula una propiedad evaluable, implementa reglas y pruebas positivas/negativas, explica dónde se aplica la decisión, diseña excepciones temporales y reconoce qué hechos no están presentes en la entrada.
+
 ## 📖 Definiciones y características
 
 - **Policy as Code**: expresar reglas como código versionado y probado. *Característica*: revisable en PRs, con historial y tests, no en un PDF.

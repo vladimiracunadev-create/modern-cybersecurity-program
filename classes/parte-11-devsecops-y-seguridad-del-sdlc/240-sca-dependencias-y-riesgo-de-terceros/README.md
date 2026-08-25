@@ -35,6 +35,54 @@ Al finalizar, el alumno podrá:
 | 6 | Actualización automatizada | Dependabot/Renovate para no acumular deuda |
 | 7 | Riesgos de licencia y typosquatting | No todo riesgo es un CVE |
 
+## 🧠 Explicación en profundidad
+
+### Una vulnerabilidad publicada no equivale automáticamente a riesgo explotable
+
+SCA construye un inventario de componentes y versiones y los correlaciona con avisos de vulnerabilidad. Parece una comparación simple, pero intervienen identidad del paquete, ecosistema, versión resuelta y dependencias transitivas. El manifiesto expresa intención (`package.json`, `pom.xml`); el archivo de bloqueo registra una resolución concreta; y el artefacto construido puede contener algo distinto. Analizar solo uno de ellos deja puntos ciegos.
+
+```mermaid
+flowchart LR
+  M["Manifiesto<br/>rangos declarados"] --> RES["Resolución"]
+  L["Lockfile<br/>versiones concretas"] --> RES
+  RES --> G["Grafo transitivo"]
+  G --> A["Artefacto/SBOM<br/>lo distribuido"]
+  ADV["Avisos OSV/NVD/proveedor"] --> MATCH["Correlación"]
+  A --> MATCH
+  MATCH --> TRI["Alcance, explotación,<br/>exposición y decisión"]
+```
+
+El diagrama muestra dos problemas diferentes: saber **qué hay** y decidir **qué importa**. Una coincidencia puede ser incorrecta por un identificador ambiguo; puede afectar una función nunca incluida; o puede ser crítica y explotada activamente. La decisión combina severidad técnica, exposición del servicio, alcance del código vulnerable, privilegios, controles compensatorios y evidencia de explotación. CISA KEV confirma vulnerabilidades explotadas en el mundo real dentro del alcance de su catálogo; EPSS estima probabilidad de explotación observada en un horizonte definido. Ninguna señal, por separado, representa impacto empresarial.
+
+### Remediar el grafo, no solo editar una versión
+
+La dependencia vulnerable puede ser directa o llegar a través de otra biblioteca. Antes de actualizar hay que identificar qué paquete la introduce, si existe una versión compatible, qué cambios semánticos trae y qué pruebas protegen la migración. A veces se puede actualizar la dependencia padre; otras, aplicar una restricción temporal o retirar la funcionalidad. Una excepción debe registrar componente, versión, rutas afectadas, análisis de alcance, mitigación, propietario y vencimiento.
+
+Los *gates* deben evitar tanto el abandono como el bloqueo indiscriminado. Un patrón práctico es impedir componentes nuevos con vulnerabilidades por encima de la política, tratar KEV con prioridad especial y mantener el legado en un backlog con SLA basado en riesgo. El resultado del escáner debe ser reproducible: versión de la base de avisos, herramienta, lockfile y hash del artefacto.
+
+### Licencias, procedencia y mantenimiento
+
+El riesgo de terceros no termina en CVE. Incluye licencias incompatibles, paquetes abandonados, nombres confundibles, mantenedores comprometidos y scripts de instalación. SCA aporta inventario, pero la admisión de un componente también requiere procedencia, salud del proyecto, necesidad funcional y capacidad de sustituirlo. Reducir dependencias innecesarias disminuye superficie y trabajo de actualización.
+
+### Caso razonado: CVSS crítico en una utilidad de desarrollo
+
+El escáner encuentra un CVSS crítico en una biblioteca presente solo en el generador de documentación, fuera de la imagen final. El equipo verifica el SBOM del artefacto y confirma que no se distribuye; documenta «no afectado» con evidencia. En el mismo análisis aparece una vulnerabilidad de severidad menor en un parser expuesto a archivos de clientes y listada en KEV. Esa segunda recibe prioridad. El caso enseña por qué ordenar exclusivamente por CVSS desperdicia capacidad.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Dependencia transitiva | Componente incorporado por otra dependencia, no declarado directamente. |
+| Lockfile | Registro reproducible de versiones e integridad resueltas. |
+| Reachability | Evidencia de que el código vulnerable puede alcanzarse desde el producto. |
+| KEV | Catálogo de CISA de vulnerabilidades conocidas como explotadas. |
+| EPSS | Estimación probabilística de explotación; no mide impacto propio. |
+| VEX | Declaración del estado de afectación de un producto respecto de vulnerabilidades. |
+
+## ✅ Criterio de dominio
+
+Hay dominio cuando el alumno reconstruye la ruta de una dependencia hasta el artefacto, valida la coincidencia, diferencia severidad de riesgo, propone una actualización comprobable y documenta una excepción temporal sin ocultar deuda.
+
 ## 📖 Definiciones y características
 
 - **SCA**: análisis de componentes de terceros para detectar vulnerabilidades y riesgos. *Característica*: se basa en identificar versiones y cruzarlas con bases de avisos.

@@ -35,6 +35,54 @@ Al finalizar, el alumno podrá:
 | 6 | Remediación: rotar y purgar | Detectar no basta; hay que rotar |
 | 7 | Gestión de secretos correcta | Vaults en vez de secretos en código |
 
+## 🧠 Explicación en profundidad
+
+### Un secreto expuesto debe tratarse como credencial comprometida
+
+Una contraseña, token o clave privada no deja de estar expuesta porque se borre del último commit. Git conserva objetos e historial; además, pueden existir clones, *forks*, cachés de CI, artefactos, registros y copias de seguridad. La respuesta correcta comienza por **revocar o rotar** la credencial y revisar su uso. Reescribir el historial reduce propagación futura, pero no puede demostrar que nadie la copió.
+
+```mermaid
+flowchart LR
+  DEV["Editor"] --> PC["pre-commit<br/>detección rápida"]
+  PC --> REPO["Repositorio"]
+  REPO --> CI["CI<br/>historial + reglas centrales"]
+  CI --> ART["Build y artefactos"]
+  VAULT["Gestor de secretos"] -->|"identidad breve / referencia"| CI
+  LEAK["Hallazgo"] --> ROT["Revocar y rotar"]
+  ROT --> AUD["Auditar uso y alcance"]
+  AUD --> CLEAN["Limpiar copias controladas"]
+```
+
+El diagrama distingue prevención y respuesta. El *hook* reduce errores antes del commit, pero es local y el usuario puede omitirlo; CI aplica una regla central, pero llega después de la subida. El gestor evita almacenar el valor en el repositorio, aunque una tarea todavía puede imprimirlo o enviarlo a un destino hostil. La defensa necesita capas y un flujo de incidente.
+
+### Cómo detectan los escáneres y por qué se equivocan
+
+Las reglas combinan formatos conocidos, palabras contextuales y entropía. Un valor aleatorio puede parecer secreto sin serlo; una contraseña débil y humana puede escapar a un detector de entropía. La verificación contra el proveedor aumenta certeza, pero también podría enviar material sensible fuera de la organización, por lo que debe evaluarse. Los resultados requieren clasificación: credencial real, ejemplo deliberado, dato de prueba o falso positivo. Los ejemplos deben usar valores inequívocamente ficticios y dominios reservados.
+
+La configuración no debería llenar una lista global de exclusiones. Una excepción precisa indica archivo, regla, motivo y revisión. Los binarios, fixtures y archivos generados necesitan tratamiento específico. También se escanean commits previos y artefactos, no solo el directorio de trabajo.
+
+### Secretos dinámicos y alcance mínimo
+
+El objetivo no es mover una clave larga desde YAML a otra variable igualmente permanente. Siempre que la plataforma lo permita, el pipeline intercambia una identidad de corta duración —por ejemplo mediante OIDC— por credenciales limitadas a una tarea. Se restringen audiencia, repositorio, rama, entorno, operación y duración. Los logs se enmascaran, pero el enmascaramiento es una red de seguridad, no autorización: transformaciones como base64 pueden eludirlo.
+
+### Caso razonado: clave borrada del repositorio
+
+Un desarrollador publica una clave cloud, hace un segundo commit borrándola y concluye que el problema está resuelto. El equipo revoca la clave, consulta registros desde su emisión, identifica ejecuciones, rota recursos derivados y después limpia el historial coordinando clones. Añade detección local y central, reemplaza la clave por federación de identidad limitada al entorno y crea una prueba que evita imprimir variables. La secuencia prioriza detener el acceso antes de embellecer Git.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Secreto | Material que permite autenticar, firmar, descifrar o autorizar. |
+| Rotación | Sustitución controlada de una credencial y actualización de consumidores. |
+| Revocación | Invalidación de la credencial comprometida. |
+| Entropía | Medida estadística usada como señal, no prueba de que un valor sea secreto. |
+| Credencial efímera | Autorización de corta duración emitida para un contexto concreto. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la materia si puede diseñar prevención local y central, clasificar un hallazgo, ejecutar una respuesta en el orden correcto y reemplazar un secreto permanente por identidad limitada sin afirmar que limpiar el historial elimina la exposición pasada.
+
 ## 📖 Definiciones y características
 
 - **Secreto**: credencial que da acceso (API key, token, password, clave privada). *Característica*: si toca un repo, asume compromiso y rota.

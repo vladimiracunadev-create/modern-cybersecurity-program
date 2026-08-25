@@ -35,6 +35,53 @@ Al finalizar, el alumno podrá:
 | 6 | Rate limiting y consumo de recursos | API4: abuso y DoS |
 | 7 | Fuzzing y testing de contrato en CI | Automatizar la verificación |
 
+## 🧠 Explicación en profundidad
+
+### El contrato describe mensajes; la autorización protege objetos y operaciones
+
+Una API segura comienza definiendo activos, consumidores, operaciones y propiedades de autorización. OpenAPI puede especificar rutas, esquemas y mecanismos de autenticación, pero no demuestra que el usuario A deba leer el pedido 42. Esa relación pertenece a la lógica de negocio y debe expresarse mediante requisitos, decisiones centralizadas y pruebas negativas.
+
+```mermaid
+flowchart LR
+  REQ["Requisito<br/>quién puede hacer qué"] --> CONTRACT["Contrato OpenAPI<br/>mensajes y esquemas"]
+  CONTRACT --> CODE["Implementación<br/>validación + autorización"]
+  CODE --> TEST["Pruebas de contrato,<br/>propiedades y abuso"]
+  TEST --> GATE["Gate CI"]
+  GATE --> RUN["Gateway + servicio"]
+  RUN --> OBS["Logs, cuotas y anomalías"]
+  OBS -. "aprendizaje" .-> REQ
+```
+
+El contrato permite *linting*, generación de casos y detección de cambios incompatibles. Los esquemas restringen forma, tamaño y tipo; las validaciones semánticas comprueban reglas como fechas o transiciones. En el servicio, autenticación establece una identidad y autorización decide cada objeto, campo y función. Un gateway puede verificar token y cuota, pero no conoce por sí solo todas las relaciones del dominio.
+
+### Diseñar pruebas desde propiedades
+
+La suite combina casos válidos con abuso: identificadores de otro usuario, rol insuficiente, campos adicionales, listas masivas, reintentos, estados inválidos y funciones administrativas. Para BOLA se crean dos identidades y objetos diferenciados; se cambia solo el identificador y se exige una denegación sin filtrar existencia. Para consumo de recursos se prueba paginación, límites, coste y cancelación, no solo peticiones por segundo.
+
+El *fuzzing* guiado por esquema explora combinaciones que el equipo no escribió, pero su calidad depende del contrato y del oráculo. Una respuesta `500` es un indicio; se investiga el efecto y la reproducibilidad. En APIs GraphQL, gRPC y asíncronas cambian las superficies, aunque permanecen las preguntas de identidad, límites y validación.
+
+### Cambios y observabilidad
+
+Una política de versión protege consumidores, pero mantener una versión vulnerable indefinidamente tampoco es seguro. Se identifican clientes, se publica deprecación, se mide uso y se retira con plan. La telemetría conserva actor, operación, objeto lógico, decisión y correlación sin registrar tokens ni datos sensibles completos.
+
+### Caso razonado: autorización solo en la interfaz
+
+La UI oculta «exportar todos» a usuarios normales, pero la API acepta la operación si se conoce la ruta. El contrato documenta el endpoint sin su requisito de rol y las pruebas solo usan administrador. Se agrega una política de autorización en servicio, casos negativos por rol, una regla de revisión para operaciones sensibles y alerta de intentos denegados. Ocultar un botón era experiencia de usuario, no control de acceso.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Contrato | Descripción interoperable de operaciones y mensajes; no prueba autorización. |
+| BOLA | Acceso indebido a objetos por faltar una comprobación contextual. |
+| Mass assignment | Modificación de campos internos al enlazar entrada sin lista permitida. |
+| Rate limit | Restricción de frecuencia; debe considerar identidad, operación y coste. |
+| Prueba negativa | Caso que exige rechazar una acción inválida o no autorizada. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase si transforma propiedades de negocio en contrato, implementación y pruebas negativas; diferencia gateway de autorización de dominio; controla recursos; y conserva evidencia operativa sin filtrar secretos.
+
 ## 📖 Definiciones y características
 
 - **BOLA (Broken Object Level Authorization)**: acceder a objetos de otros usuarios cambiando un ID. *Característica*: API1, la vulnerabilidad más común; se previene autorizando por objeto en cada request.

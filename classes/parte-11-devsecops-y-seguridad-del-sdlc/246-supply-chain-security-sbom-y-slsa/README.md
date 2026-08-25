@@ -19,8 +19,8 @@ Al finalizar, el alumno podrá:
 
 1. **Explicar** qué es un SBOM, sus formatos (CycloneDX, SPDX) y sus elementos mínimos.
 2. **Generar** un SBOM de código y de imágenes con Syft/Trivy.
-3. **Consumir** un SBOM para responder "¿estoy afectado por este CVE?" en minutos.
-4. **Describir** los niveles de SLSA y qué garantiza cada uno.
+3. **Consumir** un SBOM para acelerar la investigación de afectación, conservando la verificación de alcance.
+4. **Describir** los niveles del Build Track de SLSA v1.2 y qué garantiza cada uno.
 5. **Crear y verificar** atestaciones de procedencia firmadas con cosign.
 
 ## 🗺️ Temas
@@ -31,18 +31,68 @@ Al finalizar, el alumno podrá:
 | 2 | SBOM: qué es y para qué | Inventario verificable de componentes |
 | 3 | CycloneDX vs SPDX | Los dos formatos estándar |
 | 4 | Generar y consumir SBOM | Inventario + respuesta rápida a CVE |
-| 5 | SLSA: niveles 1–4 | Garantías crecientes de integridad de build |
+| 5 | SLSA v1.2: Build L1–L3 | Garantías crecientes de procedencia y protección del build |
 | 6 | Procedencia y atestaciones | Cómo se construyó, firmado y verificable |
 | 7 | Firma y verificación (cosign) | Confianza criptográfica del artefacto |
 
+## 🧠 Explicación en profundidad
+
+### Inventario, identidad y procedencia responden preguntas distintas
+
+La cadena de suministro abarca código fuente, dependencias, herramientas, builders, repositorios, registros y canales de actualización. Un atacante no necesita vulnerar la lógica del producto si puede sustituir un paquete, robar una cuenta de publicación o modificar el artefacto después del build. Defenderla requiere poder responder: **qué contiene**, **de dónde proviene**, **cómo se construyó** y **qué política autorizó su consumo**.
+
+```mermaid
+flowchart LR
+  SRC["Fuente identificada"] --> BUILD["Builder controlado"]
+  DEP["Dependencias verificadas"] --> BUILD
+  BUILD --> ART["Artefacto por digest"]
+  BUILD --> PROV["Provenance/attestation"]
+  ART --> SBOM["SBOM: componentes"]
+  ART --> SIG["Firma: identidad/autorización"]
+  SBOM --> VERIFY["Verificación de consumo"]
+  PROV --> VERIFY
+  SIG --> VERIFY
+  VERIFY --> RELEASE["Promoción"]
+```
+
+Una **SBOM** enumera componentes y relaciones bajo un formato como SPDX o CycloneDX. No garantiza que estén libres de vulnerabilidades, que el archivo sea completo ni que el build sea legítimo. Una **firma** vincula una identidad con bytes; no describe necesariamente el proceso. La **procedencia** registra builder, materiales y parámetros. Estas evidencias se complementan y deben vincularse al mismo digest para evitar que documentos correctos acompañen a otro artefacto.
+
+### SLSA actual: tracks y garantías incrementales
+
+SLSA 1.2 organiza requisitos en *tracks*. En el Build Track, L1 exige procedencia; L2 añade procedencia autenticada generada por una plataforma alojada; L3 exige una plataforma endurecida con protección fuerte e aislamiento frente a manipulación durante el build. No corresponde enseñar los antiguos cuatro niveles de SLSA 0.1 como si siguieran vigentes. Además, un nivel de un artefacto no se hereda transitivamente a todas sus dependencias.
+
+Adoptar SLSA significa seleccionar una amenaza y una garantía, no colocar una insignia. Si el productor genera su propia procedencia desde un paso que puede modificarla, el documento describe pero ofrece poca resistencia. La verificación en el consumidor —identidad esperada, builder permitido, fuente, parámetros y digest— es tan importante como producir la attestation.
+
+### Calidad y ciclo de vida de una SBOM
+
+La SBOM debe generarse desde el artefacto final cuando sea posible, conservar versiones y relaciones, y publicarse con una política de acceso apropiada. Se valida sintaxis, completitud razonable y correspondencia con el digest. Cuando aparece una vulnerabilidad, VEX puede expresar si el producto está afectado, no afectado, en investigación o corregido, junto con justificación. No es un mecanismo para borrar alertas sin evidencia.
+
+### Caso razonado: SBOM correcta para el archivo equivocado
+
+El pipeline construye dos veces: una para escanear y otra para publicar. La primera genera una SBOM limpia; la segunda descarga una dependencia más reciente por no usar lockfile. El registro almacena artefacto y SBOM, pero sus digests no coinciden. La solución es construir una sola vez, promover el mismo digest y adjuntar SBOM, firma y procedencia a esa identidad. La trazabilidad corrige el proceso, no solo el documento.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| SBOM | Inventario estructurado de componentes y relaciones de un artefacto. |
+| Attestation | Declaración firmable sobre una propiedad o proceso. |
+| Provenance | Evidencia de materiales, builder y pasos que produjeron un artefacto. |
+| SLSA track | Conjunto de garantías y niveles para un aspecto de la cadena. |
+| VEX | Estado razonado de afectación frente a una vulnerabilidad. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno puede vincular artefacto, SBOM, firma y procedencia por digest, explicar qué garantiza cada evidencia, describir correctamente SLSA Build v1.2 y diseñar verificación en el punto de consumo.
+
 ## 📖 Definiciones y características
 
-- **SBOM (Software Bill of Materials)**: inventario formal de componentes de un artefacto. *Característica*: permite responder al instante qué contienes cuando sale un CVE (ej. Log4Shell).
-- **CycloneDX / SPDX**: formatos estándar de SBOM. *Característica*: CycloneDX orientado a seguridad; SPDX orientado a licencias/ISO 5962.
+- **SBOM (Software Bill of Materials)**: inventario formal de componentes de un artefacto. *Característica*: acelera la investigación cuando aparece una vulnerabilidad, pero requiere validar completitud y alcance.
+- **CycloneDX / SPDX**: formatos estándar de SBOM. *Característica*: CycloneDX nació orientado al análisis de componentes; SPDX es ISO/IEC 5962:2021 y cubre también licencias y procedencia.
 - **Procedencia (provenance)**: metadatos verificables de cómo, dónde y con qué se construyó un artefacto. *Característica*: base de SLSA; responde "¿este binario salió realmente de este código y pipeline?".
-- **SLSA**: Supply-chain Levels for Software Artifacts, marco de niveles de integridad de build. *Característica*: niveles crecientes (build reproducible, aislado, no falsificable).
+- **SLSA**: Supply-chain Levels for Software Artifacts, especificación organizada en tracks. *Característica*: el Build Track v1.2 eleva garantías desde procedencia existente hasta builds endurecidos.
 - **Atestación**: afirmación firmada sobre un artefacto (SBOM, provenance, resultados de escaneo). *Característica*: verificable criptográficamente y almacenable junto a la imagen.
-- **Orden Ejecutiva 14028**: normativa de EE. UU. que exige SBOM a proveedores. *Característica*: convierte el SBOM en requisito, no en opcional.
+- **Orden Ejecutiva 14028**: orden federal estadounidense que instruyó requisitos y guías de seguridad para software adquirido por agencias; impulsó, entre otras medidas, el uso de SBOM. Su aplicación concreta depende del proceso de contratación y de las guías posteriores.
 
 ## 🧰 Herramientas y preparación
 
@@ -83,7 +133,7 @@ cosign verify-attestation --type cyclonedx miregistry/miapp@sha256:<digest> \
 
 4. **Genera provenance SLSA en el pipeline**. Configura el `slsa-github-generator` para que el workflow emita una atestación de procedencia del artefacto build.
 5. **Verifica la procedencia**. Comprueba que el artefacto fue construido por tu pipeline y a partir del commit esperado (`cosign verify-attestation --type slsaprovenance`).
-6. **Autoevalúa tu nivel SLSA**. Contrasta tu pipeline con los requisitos: ¿build con script versionado? ¿generación de provenance? ¿build aislado y no falsificable? Determina tu nivel actual y el siguiente objetivo.
+6. **Autoevalúa tu nivel SLSA Build v1.2**. Contrasta tu pipeline con L1–L3: procedencia, autenticidad emitida por plataforma alojada y protección/aislamiento del builder. Determina el nivel realmente demostrado y el siguiente objetivo.
 7. **Publica el SBOM**. Adjúntalo al release para que tus consumidores puedan auditarlo.
 
 > Nota ética: la seguridad de la cadena de suministro es defensiva. No publiques SBOM con datos
@@ -120,20 +170,20 @@ documenta el nivel SLSA alcanzado con evidencia.
 ## ❓ Preguntas frecuentes
 
 **❓ ¿SBOM y SLSA compiten?**
-No. El SBOM dice *qué* contiene el artefacto; SLSA garantiza *cómo* se construyó con integridad. Juntos dan visibilidad y confianza de la cadena.
+No. El SBOM describe *qué* contiene el artefacto; SLSA establece requisitos sobre procedencia y garantías del proceso. Ninguno demuestra por sí solo que el software sea seguro.
 
 **❓ ¿CycloneDX o SPDX?**
 CycloneDX está más orientado a seguridad (integra VEX, se usa mucho con herramientas de escaneo); SPDX es estándar ISO y fuerte en cumplimiento de licencias. Muchos generan ambos.
 
 **❓ ¿Qué nivel de SLSA necesito?**
-Empieza por generar provenance (nivel bajo) y sube hacia builds aislados y no falsificables según tu criticidad. No todos necesitan el nivel máximo.
+Empieza por generar y verificar procedencia (Build L1) y adopta una plataforma alojada o endurecida cuando el riesgo justifique L2 o L3. El nivel debe declararse con la versión de la especificación y con evidencia, no por semejanza informal.
 
 **❓ ¿El SBOM me protege de un ataque de supply chain?**
-No lo previene por sí solo, pero te permite responder en minutos ("¿estamos afectados por X?") y es la base para verificar procedencia y detectar componentes maliciosos.
+No lo previene por sí solo. Reduce el tiempo de inventario y ayuda a investigar «¿contenemos X?», pero la afectación exige analizar versión, configuración y alcance; la procedencia se verifica mediante evidencia adicional vinculada al artefacto.
 
 ## 🔗 Referencias
 
-- SLSA — <https://slsa.dev/>
+- SLSA Specification v1.2 — <https://slsa.dev/spec/v1.2/>
 - NTIA Minimum Elements for a SBOM — <https://www.ntia.gov/report/2021/minimum-elements-software-bill-materials-sbom>
 - CycloneDX — <https://cyclonedx.org/>
 - SPDX — <https://spdx.dev/>

@@ -35,6 +35,54 @@ Al finalizar, el alumno podrá:
 | 6 | Métricas del programa | MTTR, backlog, tasa de recurrencia |
 | 7 | Herramientas de agregación | DefectDojo y similares |
 
+## 🧠 Explicación en profundidad
+
+### Gestionar vulnerabilidades es operar decisiones a lo largo del tiempo
+
+Un escaneo produce observaciones; un programa produce resultados. Para ello necesita inventario, propietario, deduplicación, validación, priorización, tratamiento, verificación y aprendizaje. Sin inventario no se conoce la exposición; sin propietario el ticket envejece; sin verificación, «cerrado» puede significar que alguien cambió un estado.
+
+```mermaid
+flowchart LR
+  AS["Activos y componentes"] --> DISC["Descubrimiento multifuente"]
+  DISC --> NORM["Normalizar y deduplicar"]
+  NORM --> TRI["Validar alcance y riesgo"]
+  TRI --> OWN["Asignar propietario y SLA"]
+  OWN --> FIX["Corregir, mitigar o aceptar"]
+  FIX --> VER["Verificación independiente"]
+  VER --> MET["Métricas y causa raíz"]
+  MET -. "mejorar controles" .-> DISC
+```
+
+La deduplicación no debe borrar contexto: un mismo CVE en una estación aislada y en una API pública comparte identificador, pero no exposición ni propietario. Se conserva la instancia por activo y se agrupa para coordinar una solución. La fuente, fecha, evidencia y versión de herramienta permiten explicar por qué un hallazgo apareció o desapareció.
+
+### Priorizar con varias dimensiones
+
+CVSS describe severidad técnica bajo supuestos; KEV aporta evidencia de explotación conocida; EPSS estima probabilidad de explotación; el negocio aporta criticidad, exposición, privilegio y controles. Una fórmula puede ordenar, pero debe ser transparente y revisable. «Crítico = 24 horas» sin capacidad de emergencia ni pruebas puede fomentar cierres falsos. El SLA empieza cuando el hallazgo es accionable y contempla rutas de excepción, escalamiento y verificación.
+
+El tratamiento no siempre es «parchear». Puede actualizar, retirar, reconfigurar, aislar, deshabilitar una función o aceptar temporalmente con aprobación. La aceptación registra el riesgo residual, controles compensatorios y vencimiento. VEX sirve para comunicar estados de afectación de un producto, no para declarar «no afectado» sin análisis.
+
+### Métricas que no castigan la honestidad
+
+Contar vulnerabilidades abiertas puede subir cuando mejora la cobertura. Son más útiles la edad por riesgo, tiempo hasta triage y remediación, porcentaje de activos con propietario, reaperturas, excepciones vencidas y recurrencia de causas. Una mediana sola oculta la cola; se observan percentiles y casos fuera del SLA. Las métricas deben provocar decisiones, no rankings de equipos que incentiven ocultar resultados.
+
+### Caso razonado: mil críticos y ninguna prioridad
+
+Tras integrar escáneres, DefectDojo recibe mil hallazgos críticos duplicados. El equipo normaliza identificadores, conserva instancias por activo y separa imágenes no desplegadas. Cruza exposición y KEV, valida una ruta pública explotable y asigna un dueño. Los hallazgos heredados entran en campañas por componente; los nuevos rompen la línea base según política. El valor no provino de cerrar mil tickets, sino de convertir datos en una cola defendible.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Instancia | Aparición concreta de una vulnerabilidad en un activo o artefacto. |
+| SLA | Compromiso temporal condicionado por riesgo y proceso definido. |
+| Riesgo residual | Riesgo que permanece después del tratamiento. |
+| Control compensatorio | Medida alternativa que reduce riesgo sin eliminar la causa. |
+| Reapertura | Evidencia de que la corrección no eliminó o reintrodujo el problema. |
+
+## ✅ Criterio de dominio
+
+El alumno domina el programa cuando puede convertir hallazgos heterogéneos en instancias trazables, ordenar con contexto, asignar tratamiento y vencimiento, verificar el cierre y elegir métricas que distingan cobertura, velocidad y riesgo residual.
+
 ## 📖 Definiciones y características
 
 - **Gestión de vulnerabilidades**: proceso continuo de identificar, evaluar, tratar y reportar vulnerabilidades. *Característica*: es un ciclo, no un evento puntual.

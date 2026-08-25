@@ -35,6 +35,52 @@ Al finalizar, el alumno podrá:
 | 6 | Integración en CI | Dónde y cómo bloquear |
 | 7 | Baseline y diff-aware scanning | Escanear solo lo nuevo para no ahogarse en deuda |
 
+## 🧠 Explicación en profundidad
+
+### Qué observa un analizador estático
+
+SAST examina una representación del programa sin necesitar que la aplicación esté atendiendo peticiones. Una regla textual busca patrones locales; un analizador sintáctico entiende el árbol del lenguaje; uno semántico resuelve tipos y llamadas; y un motor de flujo sigue cómo un dato controlado por el usuario puede llegar desde una **fuente** hasta un **sumidero** peligroso sin atravesar un sanitizador válido. Cuanto más contexto necesita el análisis, mayor puede ser su coste y también su capacidad de distinguir usos seguros de peligrosos.
+
+```mermaid
+flowchart LR
+  SRC["Fuente<br/>request.args['q']"] --> PROP["Propagación<br/>variables y llamadas"]
+  PROP -->|"sin validación"| SINK["Sumidero<br/>ejecución SQL"]
+  PROP -->|"consulta parametrizada"| SAFE["Ruta controlada"]
+  RULE["Regla + modelo del framework"] --> PROP
+  SINK --> FIND["Hallazgo con ruta y contexto"]
+```
+
+El diagrama muestra por qué buscar la palabra `execute` no basta. El mismo método puede recibir una consulta parametrizada o una cadena concatenada. El motor necesita comprender el flujo y las convenciones del framework; de lo contrario produce falsos positivos o, peor, falsos negativos silenciosos. SAST encuentra especialmente bien familias que dejan huella en el código —inyecciones, criptografía débil, APIs inseguras, secretos—, pero no puede decidir por sí solo si un usuario está autorizado a leer un objeto de negocio o si una configuración desplegada contradice el repositorio.
+
+### Del hallazgo a una decisión de ingeniería
+
+Un resultado útil identifica regla, ubicación, flujo, CWE relacionada, confianza y forma de remediación. La severidad genérica es solo el inicio. El equipo debe preguntar si la ruta se compila y despliega, si la fuente es realmente controlable, qué privilegio alcanza, si existen mitigaciones y si hay una prueba que reproduzca el comportamiento. Marcar «falso positivo» sin razón pierde conocimiento; una supresión responsable tiene alcance mínimo, justificación, responsable y revisión.
+
+En integración continua conviene diferenciar deuda existente de cambios nuevos. Una línea base permite informar lo heredado y bloquear regresiones en el *diff*. Las reglas de alta confianza pueden impedir el merge; las experimentales deben observarse primero. También hay que fijar versiones de reglas: actualizar un *ruleset* puede cambiar cientos de resultados aunque el código no cambie, y esa variación debe tratarse como un cambio de control.
+
+### Diseñar una regla, no coleccionar coincidencias
+
+Para crear una regla se parte de una propiedad: «ninguna entrada HTTP llega a `subprocess` con `shell=True`». Después se construyen casos positivos y negativos, se contempla propagación entre funciones y se valida contra el código real. Una regla estrecha que detecta un patrón importante con alta señal suele producir más valor que cien coincidencias ruidosas. La revisión humana sigue siendo necesaria para lógica de negocio, condiciones de carrera, diseño de autorización y combinaciones que el modelo no representa.
+
+### Caso razonado: SQL que parece vulnerable
+
+Semgrep marca una llamada a `cursor.execute(query, params)`. Al inspeccionar el flujo, `query` es una constante y los datos externos viajan en `params`; el driver realiza parametrización. No se suprime toda la regla: se documenta este sitio como seguro. En otra ruta, un nombre de columna se concatena porque los parámetros no sustituyen identificadores. Allí la solución es una lista permitida de nombres, no «escapar» a ciegas. El caso demuestra que el mismo sumidero exige comprender qué parte de la consulta controla el atacante.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| AST | Árbol que representa la estructura sintáctica del código. |
+| Fuente | Origen potencial de datos no confiables. |
+| Sumidero | Operación sensible que puede convertir esos datos en impacto. |
+| Sanitizador | Transformación válida para un contexto específico; no es universal. |
+| Taint analysis | Seguimiento de datos desde fuentes hasta sumideros. |
+| Línea base | Conjunto heredado que se gestiona sin permitir nuevos hallazgos equivalentes. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno puede explicar la ruta de un hallazgo, reproducirlo o descartarlo con evidencia, escoger una corrección contextual, escribir pruebas positivas y negativas para una regla y definir un gate que no confunda severidad con certeza.
+
 ## 📖 Definiciones y características
 
 - **SAST**: análisis del código sin ejecutarlo. *Característica*: cobertura de todo el código, incluidas rutas no ejecutadas; ciego a configuración y runtime.

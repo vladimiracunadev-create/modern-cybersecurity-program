@@ -35,6 +35,52 @@ Al finalizar, el alumno podrá:
 | 6 | Aislamiento de runners | Efímeros, sin credenciales persistentes |
 | 7 | OIDC en vez de secretos long-lived | Credenciales cortas federadas a la nube |
 
+## 🧠 Explicación en profundidad
+
+### El pipeline es un sistema de producción privilegiado
+
+CI/CD lee código no confiable, descarga herramientas, ejecuta scripts y publica artefactos. A menudo posee tokens capaces de escribir en el repositorio, registrar paquetes o desplegar infraestructura. Por eso comprometer el pipeline puede ser más valioso que atacar una aplicación: permite modificar muchas entregas desde un punto central. El archivo YAML es código con privilegios y debe revisarse con la misma disciplina que el producto.
+
+```mermaid
+flowchart LR
+  PR["Código/PR<br/>entrada no confiable"] --> WF["Workflow y acciones"]
+  WF --> RUN["Runner aislado"]
+  RUN --> BUILD["Artefacto"]
+  BUILD --> SIGN["Firma/procedencia"]
+  SIGN --> ENV["Entorno protegido"]
+  OIDC["OIDC + política cloud"] -->|"credencial breve"| RUN
+  SEC["Secretos y permisos"] --> RUN
+  LOG["Logs y evidencia"] <-- RUN
+```
+
+El límite crítico se encuentra entre la contribución y el runner. En eventos como `pull_request_target`, el workflow puede ejecutarse con contexto privilegiado del repositorio base; combinarlo con *checkout* de código del PR puede dar secretos a código controlado por un colaborador externo. La defensa exige separar trabajos no confiables de publicación, usar permisos mínimos y transferir solo artefactos verificados entre etapas.
+
+### Dependencias, permisos e identidad
+
+Una acción de terceros también es una dependencia ejecutable. GitHub documenta que fijarla a un SHA completo es la forma de obtener una referencia inmutable; el comentario puede conservar la versión legible. Antes de actualizar se verifica que el SHA pertenece al repositorio original. Para paquetes y herramientas se conservan lockfiles, hashes o imágenes por digest.
+
+El `GITHUB_TOKEN` debe declarar permisos por workflow o tarea; omitirlos deja decisiones a valores predeterminados que pueden cambiar por configuración. Publicar o desplegar requiere un job separado, entorno protegido y aprobación cuando el riesgo lo justifique. OIDC evita una clave cloud permanente, pero no es permiso mágico: el proveedor debe validar emisor, audiencia y atributos como repositorio, rama o entorno.
+
+Los runners efímeros reducen persistencia entre trabajos. Un runner autohospedado añade responsabilidad: parches, aislamiento, red de salida, limpieza y protección frente a PR no confiables. Un contenedor de job no garantiza aislamiento fuerte frente al host si expone sockets o privilegios.
+
+### Caso razonado: acción útil con tag mutable
+
+Un workflow usa `vendor/deploy@v2` con permiso de escritura y secreto cloud. Aunque la acción sea legítima hoy, el tag puede moverse o el repositorio comprometerse. El equipo revisa su procedencia, fija un SHA, limita permisos, mueve despliegue a un entorno protegido y sustituye la clave por OIDC con política de rama. También registra digest del artefacto para que el job de despliegue no reconstruya una salida distinta.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Runner | Entorno que ejecuta los pasos del workflow. |
+| Evento privilegiado | Disparador cuyo token o secretos tienen más autoridad que la entrada evaluada. |
+| Pinning | Fijación de una dependencia a una identidad inmutable, como SHA o digest. |
+| OIDC federation | Intercambio de identidad verificable por credenciales breves del proveedor. |
+| Procedencia | Evidencia de qué proceso e insumos produjeron un artefacto. |
+
+## ✅ Criterio de dominio
+
+Hay dominio cuando el alumno rastrea datos y privilegios desde el evento hasta el despliegue, reconoce ejecución de entrada no confiable, reduce permisos, fija dependencias, separa build de release y puede explicar qué amenaza mitiga cada control.
+
 ## 📖 Definiciones y características
 
 - **Poisoned Pipeline Execution (PPE)**: inyectar código malicioso que el pipeline ejecuta con sus privilegios. *Característica*: ocurre cuando el pipeline corre código no confiable de PRs.

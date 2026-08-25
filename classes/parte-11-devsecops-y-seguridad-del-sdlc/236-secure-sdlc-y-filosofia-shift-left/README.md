@@ -16,7 +16,7 @@ SDLC de su organización y ubicar en él las prácticas y herramientas de esta p
 
 Al finalizar, el alumno podrá:
 
-1. **Explicar** la diferencia entre seguridad "bolt-on" (al final) y "built-in" (integrada), con datos de coste de remediación.
+1. **Explicar** la diferencia entre seguridad "bolt-on" (al final) y "built-in" (integrada), declarando los supuestos de cualquier estimación de remediación.
 2. **Mapear** los controles de seguridad a cada fase del SDLC (requisitos, diseño, código, build, test, despliegue, operación).
 3. **Justificar** shift-left frente a stakeholders usando métricas (tiempo de detección, coste de corrección).
 4. **Seleccionar** un modelo de madurez (OWASP SAMM o BSIMM) para evaluar el estado actual.
@@ -33,6 +33,51 @@ Al finalizar, el alumno podrá:
 | 5 | OWASP SAMM / BSIMM | Modelos de madurez para medir progreso |
 | 6 | NIST SSDF (800-218) | Marco de referencia reconocido y auditable |
 | 7 | Roles y responsabilidad compartida | "Security is everyone's job", no solo de AppSec |
+
+## 🧠 Explicación en profundidad
+
+### Un SDLC seguro cambia decisiones, no solo añade escáneres
+
+El ciclo de desarrollo seguro parte de una idea sencilla: una vulnerabilidad no aparece únicamente cuando una herramienta la detecta. Antes fue una decisión de requisitos, diseño, implementación, dependencia, configuración o despliegue. Por eso **integrar seguridad** significa crear evidencia y retroalimentación en cada una de esas decisiones. En requisitos se establecen propiedades verificables —por ejemplo, quién puede autorizar una transferencia—; en diseño se modelan fronteras de confianza; en código se revisan patrones peligrosos; en construcción se protege la procedencia del artefacto; y en operación se comprueba si las hipótesis siguen siendo válidas.
+
+NIST SSDF no prescribe un pipeline único. Organiza prácticas de alto nivel en cuatro grupos: preparar a la organización, proteger el software, producir software bien asegurado y responder a vulnerabilidades. Esto permite integrarlo en Scrum, Kanban o un proceso regulado sin fingir que todos trabajan igual. El control apropiado depende del riesgo del producto: una biblioteca abierta, una API financiera y el firmware de un dispositivo médico no necesitan exactamente los mismos *gates*.
+
+```mermaid
+flowchart LR
+  R["Requisitos<br/>propiedades de seguridad"] --> D["Diseño<br/>amenazas y confianza"]
+  D --> C["Código<br/>revisión y SAST"]
+  C --> B["Build<br/>SCA, secretos, procedencia"]
+  B --> T["Pruebas<br/>DAST y abuso"]
+  T --> P["Despliegue<br/>política y firma"]
+  P --> O["Operación<br/>telemetría e incidentes"]
+  O -. "hallazgos y aprendizaje" .-> R
+```
+
+El diagrama es un ciclo, no una cinta que termina al desplegar. **Shift-left** acorta la distancia entre introducir y descubrir un defecto; **shift-right** devuelve evidencia de producción: comportamientos reales, rutas que las pruebas no cubrieron y controles que fallaron. Ninguno sustituye al otro. Una validación de autorización debe diseñarse y probarse antes de publicar, pero también observarse después para detectar abuso de cuentas legítimas.
+
+### Gates proporcionales y señales útiles
+
+Un *gate* es una decisión explícita: continuar, advertir o detener. Bloquear cada hallazgo desde el primer día suele producir evasión porque los analizadores emiten resultados con diferente confianza. Es preferible comenzar con una línea base, bloquear secretos confirmados y vulnerabilidades críticas nuevas, y asignar el resto con plazos y responsables. La regla debe incluir alcance, severidad, excepción temporal, evidencia exigida y fecha de revisión. Así el pipeline materializa una política en vez de convertirse en una colección opaca de herramientas.
+
+Tampoco debe repetirse como ley universal que corregir en producción cuesta exactamente 100 veces más. La dirección del efecto es razonable —un defecto tardío puede exigir migraciones, coordinación y recuperación—, pero la proporción depende del sistema y del estudio. En esta clase el alumno calcula el coste de un caso propio: tiempo de ingeniería, interrupción, soporte, exposición y oportunidad. Esa estimación es defendible porque hace visibles sus supuestos.
+
+### Caso razonado: autenticación añadida al final
+
+Un equipo termina una API y descubre en DAST que cualquier usuario puede consultar pedidos ajenos cambiando un identificador. El escáner encontró el síntoma, pero la causa nació antes: los requisitos no definieron la propiedad «solo propietario o soporte autorizado», el diseño no ubicó la decisión de autorización y las pruebas solo cubrieron respuestas exitosas. El arreglo profesional no es añadir una expresión al escáner. Se documenta la propiedad, se centraliza la autorización, se agregan pruebas negativas y telemetría de denegaciones. Este cambio conecta requisitos, diseño, código, prueba y operación.
+
+## 📔 Glosario operativo
+
+| Término | Significado en esta clase |
+|---|---|
+| Propiedad de seguridad | Condición verificable que debe mantenerse, incluso ante entradas hostiles. |
+| Gate | Regla de decisión del flujo, con evidencia, umbral y tratamiento de excepciones. |
+| Línea base | Estado aceptado y documentado desde el que se impide introducir deuda nueva. |
+| Shift-left | Retroalimentar seguridad antes, sin prometer eliminar los fallos de producción. |
+| Shift-right | Validar hipótesis mediante observación y respuesta durante la operación. |
+
+## ✅ Criterio de dominio
+
+Hay dominio cuando el alumno puede tomar un cambio concreto, rastrear dónde puede introducir riesgo, asignar controles preventivos y detectivos por fase, justificar qué resultados bloquean la entrega y explicar cómo la evidencia operacional vuelve al backlog. Enumerar herramientas sin ese razonamiento no demuestra comprensión del SDLC seguro.
 
 ## 📖 Definiciones y características
 
@@ -62,7 +107,7 @@ Ejercicio aplicado de diseño y evaluación (no ofensivo):
 2. **Ubica los controles existentes**. Marca en cada fase qué comprobación de seguridad ya existe hoy (aunque sea "ninguna"). Sé honesto.
 3. **Identifica los huecos**. Para cada fase sin control, anota una práctica candidata de esta parte (p. ej. threat modeling en diseño, SAST en PR, SCA en build).
 4. **Descarga el toolbox de OWASP SAMM v2** y completa la auto-evaluación de al menos la práctica "Secure Build" y "Security Testing". Anota tu nivel actual (0–3).
-5. **Estima el coste**. Toma un bug de seguridad real que tu equipo haya arreglado en producción y estima qué habría costado detectarlo en la fase de código (revisa el modelo de IBM Systems Sciences Institute: ~1x en diseño, ~15x en test, ~100x en producción).
+5. **Estima el coste**. Toma un defecto de seguridad real corregido en producción y separa horas de diagnóstico, cambio, coordinación, despliegue, recuperación y soporte. Construye después un escenario contrafactual para detectarlo en diseño o código y marca cada supuesto; no uses un multiplicador universal.
 6. **Prioriza 3 gates**. Elige los tres controles automatizados de mayor impacto/menor esfuerzo para introducir primero y justifícalos.
 
 ## ✍️ Ejercicios

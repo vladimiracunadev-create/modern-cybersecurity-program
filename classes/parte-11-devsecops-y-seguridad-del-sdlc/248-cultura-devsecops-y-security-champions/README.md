@@ -35,6 +35,53 @@ Al finalizar, el alumno podrá:
 | 6 | Formación y gamificación | Mantener el conocimiento vivo |
 | 7 | Métricas del programa | Demostrar valor y ajustar |
 
+## 🧠 Explicación en profundidad
+
+### La cultura se observa en decisiones repetidas
+
+Decir que «la seguridad es responsabilidad de todos» puede diluirla si nadie tiene autoridad, tiempo o apoyo. Un modelo operativo sano asigna al equipo de producto la seguridad cotidiana de su servicio; AppSec define capacidades, patrones, asesoría y riesgo transversal; plataforma ofrece caminos seguros; y liderazgo asigna recursos y acepta el riesgo residual. El *security champion* conecta estos grupos, pero no reemplaza a un especialista ni se convierte en aprobador único.
+
+```mermaid
+flowchart TD
+  LEAD["Liderazgo<br/>prioridad y recursos"] --> TEAM["Equipo de producto<br/>propietario del servicio"]
+  APP["AppSec<br/>estándares y asesoría"] <--> CH["Security champion<br/>contexto local"]
+  CH <--> TEAM
+  PLAT["Plataforma<br/>paved roads"] --> TEAM
+  INC["Hallazgos e incidentes"] --> LEARN["Aprendizaje sin ocultar causas"]
+  LEARN --> APP
+  LEARN --> TEAM
+```
+
+El diagrama muestra que el champion es un enlace bidireccional. Traduce riesgos al contexto del producto, recoge fricción de los controles, facilita modelado y ayuda a encontrar al experto adecuado. Necesita tiempo explícito, formación, comunidad y una descripción de éxito. Nombrar a la persona más entusiasta sin reducir otra carga conduce a agotamiento.
+
+### Paved roads y autonomía con límites
+
+Un *paved road* es una ruta mantenida que hace fácil la opción segura: plantilla de servicio con autenticación, logs, pipeline fijado, SBOM y despliegue protegido. No debe ser una cárcel; los equipos pueden desviarse mediante un proceso claro de riesgo. La plataforma mide adopción y fricción, y mejora el camino cuando las excepciones revelan una necesidad legítima.
+
+La formación efectiva se conecta con trabajo real: sesiones breves sobre cambios actuales, laboratorios seguros, revisión de incidentes y acompañamiento. Completar cursos es una entrada, no un resultado. Se observan tiempo de retroalimentación, recurrencia de defectos, adopción de patrones, antigüedad del riesgo y satisfacción del desarrollador. Comparar equipos por número bruto de hallazgos incentiva ocultarlos.
+
+### Seguridad psicológica y responsabilidad
+
+Una revisión sin culpa no significa ausencia de responsabilidad. Se separa el error humano del diseño del sistema, se reconstruyen incentivos y barreras y se asignan acciones verificables. Si reportar un secreto provoca castigo automático, la próxima exposición puede ocultarse; si nunca se corrige una conducta deliberadamente riesgosa, tampoco hay control. La cultura madura permite escalar pronto y toma decisiones explícitas.
+
+### Caso razonado: champion convertido en cuello de botella
+
+Un equipo exige que su champion apruebe cada pull request. Al ausentarse, las entregas se detienen y los demás dejan de aprender. Se redefine el rol: las reglas repetibles pasan a plantillas y CI; cambios de alto riesgo reciben modelado con AppSec; los desarrolladores mantienen revisión normal; el champion dedica tiempo a enseñar y mejorar patrones. La seguridad se distribuye sin eliminar responsables.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Security champion | Miembro del equipo que facilita prácticas y conexión con especialistas. |
+| Paved road | Camino de desarrollo mantenido con controles seguros por defecto. |
+| Ownership | Autoridad y obligación explícitas sobre decisiones y resultados. |
+| Seguridad psicológica | Posibilidad de informar problemas temprano sin represalia improductiva. |
+| Métrica de resultado | Señal del cambio de riesgo o comportamiento, no mera actividad. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno diseña un programa con mandato, tiempo, formación, comunidad, escalamiento y métricas; delimita responsabilidades; y evita convertir al champion en policía, especialista universal o aprobador obligatorio.
+
 ## 📖 Definiciones y características
 
 - **Security champion**: desarrollador de un equipo que actúa como enlace y referente de seguridad. *Característica*: no es experto full-time; es un multiplicador dentro de su equipo.
