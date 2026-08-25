@@ -169,13 +169,13 @@ No para aprender. Con Splunk core y saved searches ya construyes detecciones. ES
 **❓ ¿Por qué usar el CIM?**
 Porque una detección escrita contra campos CIM funciona sin importar el fabricante del log, evitando reescribir por cada fuente nueva.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Splunk Search Reference (SPL) — <https://docs.splunk.com/Documentation/Splunk/latest/SearchReference>
-- Splunk Boss of the SOC (BOTS) datasets — <https://github.com/splunk/botsv3>
-- Splunk Security Essentials — <https://splunkbase.splunk.com/app/3435>
-- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*.
-- Splunk Common Information Model — <https://docs.splunk.com/Documentation/CIM>
+- Splunk SPL Search Reference: documentación oficial de la sintaxis y semántica de los comandos utilizados en los ejemplos — <https://help.splunk.com/en/splunk-enterprise/search/spl-search-reference/10.0/search-commands/tstats>
+- Splunk Common Information Model: documentación oficial del modelo de datos usado por `tstats`; una búsqueda CIM depende de que la fuente esté normalizada y el modelo acelerado según el despliegue — <https://help.splunk.com/en/splunk-enterprise/common-information-model/8.5/introduction/overview-of-the-splunk-common-information-model>
+- Splunk, supresión de alertas: documentación oficial para evitar notificaciones repetidas dentro de una ventana definida — <https://help.splunk.com/en/splunk-enterprise/alert-and-respond/alerting-manual/10.0/manage-alert-trigger-conditions-and-throttling/throttle-alerts>
+- Splunk BOTS v3: repositorio público de Splunk con datos de práctica; sirve como evidencia reproducible de laboratorio, no como fuente normativa — <https://github.com/splunk/botsv3>
+- Splunk Security Essentials: aplicación oficial/comunitaria de contenido para explorar casos de uso; cada ejemplo debe validarse contra los propios campos y datos — <https://splunkbase.splunk.com/app/3435>
 
 ## 📥 Material descargable
 

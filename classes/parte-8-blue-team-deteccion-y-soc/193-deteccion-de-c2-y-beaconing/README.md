@@ -27,7 +27,7 @@ Al finalizar, el alumno podrá:
 |---|------|-----------------|
 | 1 | Anatomía de un canal C2 | Entender qué detectar |
 | 2 | Beaconing: intervalo y jitter | La huella temporal del implante |
-| 3 | C2 sobre HTTP/S | El canal más común |
+| 3 | C2 sobre HTTP/S | Puede mezclarse con tráfico web permitido y exige correlación contextual |
 | 4 | C2 sobre DNS | Evasión mediante resolución |
 | 5 | Malleable C2 y evasión | Cómo se camuflan los frameworks |
 | 6 | JA3/JA3S y fingerprints | Identificar herramientas |
@@ -66,6 +66,24 @@ Bytes asimétricos no equivalen a exfiltración: un heartbeat suele enviar poco 
 ### Límites de huellas y entropía
 
 JA3 y otras huellas describen características observadas del cliente, no identidad estable del malware. Bibliotecas compartidas, cambios de TLS y evasión reducen su duración. La entropía de nombres puede señalar generación algorítmica, pero servicios legítimos crean identificadores largos. Estas señales aportan evidencia cuando coinciden con contexto, nunca una sentencia aislada. El resultado investigativo explica qué combinación disparó y qué alternativa benigna fue descartada.
+
+### HTTP/S: parecer normal no significa ser indistinguible
+
+Un canal C2 puede usar métodos, rutas, cabeceras y tiempos semejantes a tráfico web. Frameworks con perfiles maleables permiten modificar esos elementos, por lo que una firma fija envejece. Aun así, la relación completa puede ser extraña: proceso que no debería navegar, destino nuevo, sesiones pequeñas persistentes, user-agent incoherente o certificado/contexto inusual. Se detecta la combinación y se preservan elementos que el adversario puede variar.
+
+El cifrado protege contenido y también limita inspección. No se concluye qué comando viajó. Se correlacionan handshake/metadatos, DNS, flow, proxy y proceso. Si el tráfico usa un servicio cloud compartido, bloquear el dominio puede tener gran impacto; la respuesta puede centrarse en endpoint, identidad y objeto más específico.
+
+### DNS como canal
+
+C2 sobre DNS puede codificar información en labels, variar tipos de registro o usar frecuencia anómala. Pero nombres largos y TXT no son por sí solos maliciosos. Se examinan volumen por cliente/dominio, proporción de respuestas, longitud, entropía, diversidad de subdominios, periodicidad y proceso. El resolvedor recursivo puede ocultar cliente si la telemetría se toma en un punto incorrecto.
+
+### RITA y análisis estadístico
+
+RITA procesa metadatos de red para resaltar patrones como beaconing y relaciones. Su score prioriza investigación; no certifica C2. La configuración, periodo y calidad de logs afectan resultados. El analista abre los candidatos, compara software legítimo, mira endpoint y documenta por qué uno se escala. Automatizar el ranking no automatiza la conclusión.
+
+### Malleability y resiliencia
+
+Cuando el adversario cambia intervalos, dominios o TLS, una detección de un solo indicador puede caer. La estrategia mantiene capas: infraestructura con caducidad, características de protocolo, relación proceso-red y comportamiento temporal. Purple team puede variar un parámetro a la vez para comprobar cuál señal sobrevive y registrar la frontera real de cobertura.
 
 ## 📔 Glosario
 
@@ -155,13 +173,13 @@ Sí, por metadatos: periodicidad, volumen, JA3, dominios y correlación con el p
 **❓ ¿Beaconing siempre es malicioso?**
 No. Actualizaciones, telemetría y sincronización también "laten". Por eso se combina periodicidad con reputación de destino, volumen y contexto de endpoint antes de escalar.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- MITRE ATT&CK, Command and Control — <https://attack.mitre.org/tactics/TA0011/>
-- RITA — <https://github.com/activecm/rita>
-- JA3 (Salesforce) — <https://github.com/salesforce/ja3>
-- Sanders, C. y Smith, J. *Applied Network Security Monitoring*. Syngress.
-- Active Countermeasures, "Detecting Beacons" (recursos formativos) — <https://www.activecountermeasures.com/>
+- MITRE ATT&CK, Command and Control: fuente primaria para el objetivo táctico y los procedimientos documentados — <https://attack.mitre.org/tactics/TA0011/>
+- MITRE ATT&CK T1071: fuente primaria para protocolos de capa de aplicación utilizados por procedimientos de C2; el uso de HTTP o DNS también puede ser legítimo — <https://attack.mitre.org/techniques/T1071/>
+- RITA: repositorio del proyecto y sus analíticas de metadatos; una puntuación de beaconing es una señal para investigar, no una atribución — <https://github.com/activecm/rita>
+- JA3: repositorio original del método de huella TLS; documenta el cálculo, pero no convierte una coincidencia en veredicto — <https://github.com/salesforce/ja3>
+- Sanders, C. y Smith, J. *Applied Network Security Monitoring*. Syngress: bibliografía complementaria para razonar con metadatos de red.
 
 ## 📥 Material descargable
 

@@ -68,6 +68,16 @@ Los gates humanos se ubican según impacto. Enriquecer puede ser automático; de
 
 Se empieza con tareas frecuentes, deterministas y reversibles. Primero se observa el playbook en modo recomendación y se compara con decisiones humanas; luego se automatizan pasos de bajo impacto. Se prueban positivo, caso benigno, dato ausente, timeout, duplicado y rollback. Métricas útiles separan tiempo ahorrado, tasa de excepción, fallos de integración, acciones revertidas y calidad del resultado. Reducir clics sin mejorar decisión no demuestra madurez.
 
+### Integraciones como dependencias de producción
+
+Cada conector tiene esquema, autenticación, cuotas, timeout y versiones. El playbook valida respuestas y conserva request/correlation ID cuando existe. Una API que devuelve HTTP 200 puede incluir un resultado parcial; interpretar solo el código de estado es insuficiente. Los cambios de contrato se prueban en staging y los secretos se almacenan en un gestor, no en el flujo.
+
+SIEM aporta alerta, EDR contexto/acción, TIP inteligencia y ticketing registro, pero el caso debe mantener una vista coherente. Si dos sistemas tienen estados distintos, se define cuál es fuente de verdad para cierre. Las acciones importantes generan un evento auditable fuera del propio playbook.
+
+### Métricas que distinguen velocidad de seguridad
+
+Tiempo ahorrado se calcula comparando pasos equivalentes y no presupone que más rápido sea mejor. Se observa tasa de enriquecimientos útiles, decisiones modificadas, excepciones, errores, reintentos y rollbacks. Si el playbook cierra rápido pero aumenta reapertura o daño, la automatización degradó el proceso. NIST SP 800-61 Rev. 3 aporta el marco de respuesta; no prescribe una plataforma SOAR ni autoriza acciones específicas.
+
 ## 📔 Glosario
 
 - **SOAR:** orquestación, automatización y respuesta.
@@ -156,13 +166,13 @@ Lo aburrido, frecuente y bien definido: enriquecimiento de indicadores, deduplic
 **❓ ¿Puedo automatizar la contención completa?**
 Con cuidado y salvaguardas. Aislar un host o bloquear una IP puede impactar producción; muchos equipos exigen aprobación humana antes de acciones irreversibles.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*.
-- TheHive & Cortex — <https://thehive-project.org/>
-- Shuffle SOAR — <https://shuffler.io/>
-- Gartner, "Market Guide for SOAR Solutions" (marco conceptual).
-- NIST SP 800-61 Rev. 3, integración de respuesta a incidentes con CSF 2.0 — <https://doi.org/10.6028/NIST.SP.800-61r3>
+- NIST SP 800-61 Rev. 3: fuente primaria para integrar respuesta, autoridad, comunicación, recuperación y mejora con la gestión de riesgo; no prescribe un producto SOAR — <https://doi.org/10.6028/NIST.SP.800-61r3>
+- TheHive 5, gestión de observables: documentación oficial para conservar observables, contexto y relaciones dentro de alertas y casos — <https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/observables/about-observables/>
+- Shuffle, workflows: documentación oficial de triggers, nodos, variables, condiciones, autenticación, ejecuciones y revisiones — <https://shuffler.io/docs/workflows>
+- Shuffle API: documentación oficial de autenticación y endpoints usada para razonar sobre contratos de integración — <https://shuffler.io/docs/API>
+- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*: bibliografía profesional complementaria para casos operativos.
 
 ## 📥 Material descargable
 

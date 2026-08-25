@@ -7,7 +7,7 @@
 
 ## 🎯 Objetivo
 
-Usar el engaño (deception) como fuente de detección de altísima fidelidad: honeypots, honeytokens y cuentas trampa que nadie legítimo debería tocar, de modo que cualquier interacción es, por definición, sospechosa. Aprenderás a desplegar señuelos, a colocar honeytokens en lugares estratégicos y a alertar sobre su uso.
+Usar el engaño (*deception*) para crear señales deliberadamente selectivas: honeypots, honeytokens y cuentas trampa cuyo uso esperado debe ser nulo o muy limitado. Una interacción eleva la prioridad, pero todavía se valida contra escáneres, pruebas y errores operativos autorizados. Aprenderás a diseñar, colocar, contener y mantener señuelos sin convertirlos en una afirmación automática de compromiso.
 
 > ⚠️ **Ética:** los honeypots se despliegan en tu propia infraestructura para observar y alertar. No los uses para atacar a terceros ni para atraer tráfico hacia sistemas que no controlas.
 
@@ -25,7 +25,7 @@ Al finalizar, el alumno podrá:
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|
-| 1 | Deception como estrategia | Señales sin falsos positivos |
+| 1 | Deception como estrategia | Señales potencialmente muy selectivas que aún requieren contexto |
 | 2 | Honeypots de baja vs alta interacción | Riesgo vs riqueza de datos |
 | 3 | Honeytokens y canary tokens | Trampas ligeras y ubicuas |
 | 4 | Cuentas y credenciales trampa | Detectar robo y uso de credenciales |
@@ -63,6 +63,20 @@ Interacción alta permite observar más conducta, pero el atacante ejecuta códi
 
 Los accesos legítimos se prueban: scanner, backup, indexador y equipo de infraestructura. Una alerta benigna no invalida deception; indica que la colocación o exclusión necesita ajuste. Rotación y health checks verifican que el token sigue único y el canal de alerta funciona. MITRE Engage ayuda a pensar objetivos y planificación, no autoriza interacción fuera del entorno propio.
 
+### Cuentas trampa y credenciales sintéticas
+
+Una cuenta señuelo se crea para no iniciar sesiones legítimas y se monitorea en autenticación. Debe carecer de privilegios útiles, tener controles que impidan uso real y distinguir intentos de validación automática. Publicar una contraseña funcional en un archivo «trampa» puede crear riesgo; se prefiere un secreto sintético cuyo intento de uso produzca señal sin acceso.
+
+La ubicación debe ser creíble para el modelo de ataque, pero no engañar a empleados de forma irresponsable. Propietarios de identidad y legal/privacidad conocen el diseño cuando corresponde. El playbook empieza por preservar origen y revisar qué repositorio expuso el token; cambiarlo de inmediato sin investigar puede borrar la pista.
+
+### Honeynets y escala
+
+Una honeynet agrupa señuelos y telemetría para representar una superficie más amplia. Escalar aumenta mantenimiento, identidades, rutas y riesgo de que un componente se use como pivote. Se segmenta, limita salida, aplica imágenes restaurables y separa administración. Más señuelos no equivalen a mejor cobertura si no corresponden a rutas plausibles.
+
+### Fidelidad y prioridad
+
+La fidelidad proviene de selectividad y contexto. Un token al que nadie legítimo accede permite priorizar, pero health checks y scanners pueden crear eventos. La automatización puede elevar severidad y recolectar contexto; acciones destructivas siguen criterios de autoridad. Se mide tiempo de detección, accesos legítimos, salud y brechas reveladas, no solo cantidad de alertas.
+
 ## 📔 Glosario
 
 - **Deception:** diseño deliberado de señuelos observables.
@@ -80,7 +94,7 @@ Los accesos legítimos se prueban: scanner, backup, indexador y equipo de infrae
 - **Alta interacción:** SO/servicios reales controlados. Característica: datos ricos, mayor riesgo de ser abusado.
 - **Honeytoken:** dato-cebo (credencial, archivo, URL, registro) cuya sola invocación dispara alerta. Característica: no requiere un host dedicado.
 - **Canary token:** honeytoken que "avisa" al abrirse (documento, DNS, AWS key). Característica: telemetría de alta fidelidad y despliegue trivial.
-- **Cuenta trampa:** usuario de AD atractivo (p. ej. "admin_backup") que nadie debe usar. Característica: cualquier logon con ella es incidente.
+- **Cuenta trampa:** identidad sintética sin uso productivo, documentada y monitoreada. Característica: un inicio de sesión es una señal de alta prioridad que debe investigarse con procedencia y contexto, no una conclusión autosuficiente.
 - **Honeynet:** red de honeypots interconectados. Característica: observa movimiento lateral del atacante.
 
 ## 🔍 Diseño resuelto — token en una ruta de administración
@@ -143,7 +157,7 @@ Despliega al menos dos mecanismos de deception (p. ej. un honeypot y un honeytok
 ## ❓ Preguntas frecuentes
 
 **❓ ¿La deception reemplaza a las detecciones normales?**
-No. Es una capa complementaria de altísima fidelidad. Detecta a quien ya está dentro y explorando, pero no ve todo; se combina con SIEM, EDR y hunting.
+No. Es una capa complementaria cuya selectividad depende del diseño y de controlar accesos legítimos. Solo observa interacciones con los señuelos desplegados; se combina con SIEM, EDR, telemetría de identidad y hunting.
 
 **❓ ¿No es peligroso poner un honeypot?**
 Solo si está mal segmentado. Un honeypot aislado, con salida controlada, es seguro. El riesgo aparece cuando puede pivotar hacia la red real.
@@ -151,13 +165,14 @@ Solo si está mal segmentado. Un honeypot aislado, con salida controlada, es seg
 **❓ ¿Los honeytokens requieren infraestructura?**
 Casi nada. Un canary token es un archivo, una URL o una clave que avisa al usarse. Es de las detecciones más baratas y efectivas que existen.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Bejtlich, R. *The Practice of Network Security Monitoring*. No Starch Press.
-- Canarytokens (Thinkst) — <https://canarytokens.org/>
-- Cowrie SSH/Telnet honeypot — <https://github.com/cowrie/cowrie>
-- T-Pot honeypot platform — <https://github.com/telekom-security/tpotce>
-- MITRE Engage (deception framework) — <https://engage.mitre.org/>
+- MITRE Engage: marco oficial para planificar y analizar adversary engagement; se usa para objetivos, riesgos y operación del engaño — <https://engage.mitre.org/>
+- MITRE, *A Practical Guide to Adversary Engagement*: guía primaria del proceso de planificación; no convierte toda interacción con un señuelo en incidente confirmado — <https://engage.mitre.org/wp-content/uploads/2022/04/EngageHandbook-v1.0.pdf>
+- Canarytokens (Thinkst): implementación mantenida por su proveedor para generar tokens del laboratorio — <https://canarytokens.org/>
+- Cowrie: repositorio oficial del proyecto SSH/Telnet honeypot; respalda su instalación y capacidades concretas — <https://github.com/cowrie/cowrie>
+- T-Pot: repositorio oficial de la plataforma para estudiar un despliegue multi-honeypot — <https://github.com/telekom-security/tpotce>
+- Bejtlich, R. *The Practice of Network Security Monitoring*. No Starch Press: bibliografía complementaria sobre monitoreo y evidencia de red.
 
 ## 📥 Material descargable
 

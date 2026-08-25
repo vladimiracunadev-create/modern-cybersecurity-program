@@ -68,6 +68,16 @@ El rollout puede comenzar en modo hunting, después alertar a un grupo y finalme
 
 Excepciones tienen alcance y vencimiento. La regla se revisa cuando cambia amenaza, plataforma o fuente. Si ya no responde a riesgo, se retira con motivo y reemplazo. El catálogo de miles de reglas no es madurez si nadie sabe cuáles funcionan; una cartera pequeña, probada y vinculada a decisiones puede ofrecer más capacidad.
 
+### Calidad y deuda de detección
+
+La deuda aparece cuando reglas no tienen dueño, fixtures, datos confiables, documentación o revisión. También cuando varias reglas duplican conducta con excepciones distintas. Se inventaría y prioriza por riesgo: una regla crítica sin health check puede requerir atención antes que diez reglas ruidosas de baja severidad.
+
+Calidad incluye fidelidad, cobertura declarada, coste, explicabilidad y utilidad de respuesta. Precisión sola puede favorecer una regla demasiado estrecha; recall teórico sin ground truth es incierto. Las pruebas y ejercicios aportan muestras conocidas, mientras incidentes reales revelan variantes.
+
+### Colaboración entre red y blue
+
+Red team describe procedimiento, prerequisitos y variaciones; blue team declara datos y lógica. No se entrega únicamente el IOC al final, porque eso crea una detección frágil. Juntos identifican qué conducta permaneció estable y qué control debería observarla. El ingeniero convierte el resultado en test de regresión, y operaciones confirma que la alerta contiene contexto accionable. Esta colaboración prepara la clase 200: purple team es el ciclo de trabajo, no un color adicional en el organigrama.
+
 ## 📔 Glosario
 
 - **Contrato de datos:** requisitos verificables de telemetría.
@@ -150,20 +160,18 @@ Entrega un mini repositorio de detección como código con al menos tres reglas 
 Porque comparten problemas: calidad, regresiones, mantenimiento y colaboración. Aplicar control de versiones, revisión y CI evita que tu cobertura se degrade sin que nadie lo note.
 
 **❓ ¿Toda detección debe validarse con Atomic?**
-Siempre que exista un test atómico aplicable, sí: la cobertura teórica engaña. Validar demuestra que la regla dispara ante la técnica real y no solo en el papel.
+Cuando exista un procedimiento seguro y representativo, conviene validarlo. Una prueba atómica demuestra la respuesta ante esa variante, datos y configuración; no acredita todas las implementaciones de la técnica. Si no puede ejecutarse, se documenta la limitación y se usan fixtures u otra evidencia controlada.
 
 **❓ ¿Cuándo retiro una detección?**
 Cuando su ratio de falsos positivos es insostenible, la técnica ya no aplica, o otra regla la cubre mejor. Documenta la decisión: retirar también es ingeniería.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- SigmaHQ y Sigma Specification — <https://github.com/SigmaHQ/sigma>
-- Atomic Red Team — <https://github.com/redcanaryco/atomic-red-team>
-- MITRE ATT&CK — <https://attack.mitre.org/>
-- Palantir, "Alerting and Detection Strategy Framework" — <https://github.com/palantir/alerting-detection-strategy-framework>
-- Splunk, "Detection Engineering" (recursos formativos).
-- MITRE ATT&CK Detection Strategies — <https://attack.mitre.org/detectionstrategies/>
-- Atomic Red Team, documentación oficial — <https://www.atomicredteam.io/docs/atomic-red-team>
+- Sigma Rules Specification: especificación oficial usada para estructura, validación y conversión de reglas portables — <https://sigmahq.io/sigma-specification/specification/sigma-rules-specification.html>
+- MITRE ATT&CK Detection Strategies: contenido oficial para relacionar estrategia, analíticas y componentes de datos — <https://attack.mitre.org/detectionstrategies/>
+- Atomic Red Team: documentación oficial de pruebas focalizadas, prerrequisitos, permisos y limpieza; una prueba valida el procedimiento y entorno ejecutados, no toda variante de una técnica — <https://www.atomicredteam.io/docs/atomic-red-team>
+- Palantir, *Alerting and Detection Strategy Framework*: marco público para documentar objetivos, lógica, respuesta y prueba; se usa como referencia de diseño, no como estándar normativo — <https://github.com/palantir/alerting-detection-strategy-framework>
+- SigmaHQ Rules: repositorio comunitario de contenido que debe adaptarse, probarse, versionarse y mantenerse localmente — <https://github.com/SigmaHQ/sigma>
 
 ## 📥 Material descargable
 

@@ -69,6 +69,22 @@ STIX representa objetos como indicator, malware, campaign o attack-pattern y sus
 
 Antes de bloquear se evalúa colisión con infraestructura compartida y se prueba en modo observación cuando el impacto es alto. En detección se busca retrospectivamente para conocer prevalencia, luego se monitoriza. Cada indicador tiene dueño, primera/última observación, expiración y decisión de renovación. Se mide cuántos productos cambiaron una decisión, generaron hallazgos válidos o redujeron tiempo; contar indicadores ingeridos recompensa volumen, no inteligencia.
 
+### MISP y OpenCTI: repositorio no equivale a proceso
+
+MISP organiza eventos, atributos, objetos, relaciones y compartición; OpenCTI modela conocimiento y relaciones alrededor de objetos CTI. Las capacidades y versiones deben consultarse en su documentación oficial. Una TIP ayuda a conservar procedencia, relaciones y distribución, pero no decide qué fuente es creíble ni qué indicador debe bloquearse. El modelo de gobierno sigue siendo humano y organizacional.
+
+Al importar, se preservan IDs, timestamps, fuente y restricciones de compartición. Se evita aplanar una relación STIX compleja en una lista sin contexto. La deduplicación distingue el mismo observable de dos análisis independientes; repetir una entrada no aumenta automáticamente confianza.
+
+### Scoring y caducidad
+
+Un score combina dimensiones explícitas: confianza de fuente, fuerza de asociación, recencia, relevancia y posible impacto. No se mezclan en un número sin explicar. Una IP de hosting compartido puede tener asociación alta con una campaña y alto coste de bloqueo. El SIEM debería ver componentes o etiquetas que permitan al analista entender el resultado.
+
+La caducidad depende del tipo y observación. Hashes pueden conservar valor retrospectivo; IPs/dominios se reasignan; TTPs duran más pero evolucionan. Expirar no borra historia: retira del uso activo y conserva procedencia para casos pasados.
+
+### Atribución y sesgos
+
+Atribuir actor exige múltiples fuentes y nivel de confianza; similitud de herramienta o infraestructura no basta. Sesgo de confirmación puede hacer seleccionar solo evidencias compatibles; circular reporting puede aparentar corroboración cuando varios informes repiten una fuente. Se buscan alternativas y se distingue «actividad consistente con» de identidad confirmada. La detección debe seguir funcionando aunque la atribución cambie.
+
 ## 📔 Glosario
 
 - **PIR:** requerimiento prioritario de inteligencia.
@@ -156,13 +172,13 @@ Es útil pero volátil: el atacante cambia hash e IP en segundos. Complétala co
 **❓ ¿Qué es el TLP?**
 El Traffic Light Protocol clasifica cuánto puedes difundir una información (RED/AMBER/GREEN/CLEAR). Respetarlo es clave para participar en comunidades de compartición.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*.
-- MISP Project — <https://www.misp-project.org/>
-- OpenCTI — <https://www.opencti.io/>
-- OASIS STIX/TAXII — <https://oasis-open.github.io/cti-documentation/>
-- FIRST, Traffic Light Protocol (TLP) — <https://www.first.org/tlp/>
+- OASIS CTI: documentación oficial de STIX 2.1 y TAXII 2.1 para representación e intercambio; estandarizar objetos no garantiza exactitud ni vigencia — <https://oasis-open.github.io/cti-documentation/>
+- FIRST TLP 2.0: fuente oficial de las marcas y reglas de compartición TLP; no reemplaza controles legales, contractuales o de privacidad — <https://www.first.org/tlp/>
+- MISP: documentación oficial de eventos, atributos, objetos, taxonomías y compartición — <https://www.misp-project.org/documentation/>
+- OpenCTI: documentación oficial de su modelo de grafo basado en STIX 2.1; respalda relaciones y procedencia, no la atribución automática — <https://docs.opencti.io/latest/usage/data-model/>
+- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*: bibliografía profesional complementaria para operacionalización.
 
 ## 📥 Material descargable
 

@@ -169,13 +169,13 @@ No. El EDR ve el endpoint en profundidad y responde; el SIEM correlaciona todas 
 **❓ ¿Cómo evito que el SIEM se vuelva un basurero de logs?**
 Ingesta con propósito de detección, no por acumular. Cada fuente debe respaldar al menos un caso de uso de detección o hunting.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*.
-- Gartner, "Magic Quadrant for SIEM" (marco conceptual de capacidades).
-- Elastic SIEM/Security docs — <https://www.elastic.co/security>
-- Splunk Docs, "How indexing works" — <https://docs.splunk.com/>
-- Wazuh Documentation — <https://documentation.wazuh.com/>
+- NIST SP 800-92: fuente primaria para la arquitectura y los procesos de gestión de logs que un SIEM implementa parcialmente — <https://doi.org/10.6028/NIST.SP.800-92>
+- Elastic, documentación oficial sobre creación y ejecución de reglas: respalda el recorrido desde datos consultables hasta una alerta en Elastic Security — <https://www.elastic.co/guide/en/security/current/rules-ui-create.html>
+- Splunk, documentación oficial de indexación: respalda los conceptos de parsing, índices, tiempo del evento y almacenamiento en Splunk — <https://help.splunk.com/en/splunk-enterprise/administer/manage-indexers-and-indexer-clusters/10.2/indexing-overview/how-indexing-works>
+- Wazuh, arquitectura oficial: describe agente, servidor, indexer, dashboard y su flujo de datos; no se extrapola automáticamente a otros SIEM — <https://documentation.wazuh.com/current/getting-started/architecture.html>
+- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*: bibliografía profesional complementaria para casos de uso operativos.
 
 ## 📥 Material descargable
 

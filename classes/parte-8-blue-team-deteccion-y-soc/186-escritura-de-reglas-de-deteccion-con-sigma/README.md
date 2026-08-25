@@ -7,7 +7,7 @@
 
 ## 🎯 Objetivo
 
-Escribir reglas de detección portables en Sigma, el "YAML de las detecciones": un formato genérico que se convierte a la consulta nativa de cualquier SIEM (Splunk, Elastic, QRadar, etc.). Aprenderás la estructura de una regla, sus operadores lógicos, cómo evitar falsos positivos y cómo compilarla con `sigma`/`pySigma` a tu backend.
+Escribir reglas de detección en Sigma como una representación portable de la intención. Aprenderás su estructura y operadores, cómo describir falsos positivos conocidos y cómo convertir con `sigma`/`pySigma` hacia backends compatibles, verificando los mapeos y las diferencias que impiden asumir equivalencia automática entre SIEM.
 
 ## 📚 Resultados de aprendizaje
 
@@ -23,14 +23,14 @@ Al finalizar, el alumno podrá:
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|
-| 1 | Por qué un formato portable | Escribe una vez, despliega en cualquier SIEM |
+| 1 | Por qué un formato portable | Separa intención de detección y sintaxis del backend |
 | 2 | Anatomía de una regla | logsource, detection, condition, metadata |
 | 3 | Selecciones y condición | La lógica de detección |
 | 4 | Modificadores de campo | Precisión al matchear valores |
 | 5 | Filtros y falsos positivos | Detecciones que no ahogan al SOC |
 | 6 | Tags ATT&CK y nivel | Contexto y priorización |
 | 7 | Conversión con pySigma | Del YAML a la consulta real |
-| 8 | Repositorio SigmaHQ | Miles de reglas listas para adaptar |
+| 8 | Repositorio SigmaHQ | Contenido comunitario que debe revisarse, adaptarse y probarse |
 
 ## 🧠 Explicación en profundidad
 
@@ -63,6 +63,18 @@ Las pruebas cubren esquema, conversión, positivo, negativos representativos y r
 ### Metadatos que sostienen el ciclo de vida
 
 `status` comunica estabilidad; `date` y `modified` permiten revisar antigüedad; `level` orienta, pero la severidad final depende del activo; `falsepositives` enumera escenarios a investigar, no excepciones automáticas. Las etiquetas ATT&CK justifican relación observable. Una regla retirada conserva motivo y sustituta para que el equipo no repita decisiones ni deje dependencias invisibles.
+
+### Modificadores, filtros y valores: dónde se decide la precisión
+
+Los modificadores de Sigma no son adornos. `contains`, `startswith` y `endswith` cambian la relación entre campo y valor; combinaciones como `all` cambian si una lista expresa alternativas o requisitos simultáneos. Las expresiones regulares y comodines requieren revisar la especificación y el backend, porque escape y soporte pueden variar. El alumno debe tomar un evento concreto y explicar qué comparación se realizará, no inferirla por intuición.
+
+Un filtro de falsos positivos representa una explicación benigna acotada. Si una herramienta corporativa usa PowerShell, excluir todo `powershell.exe` destruye la detección. Se puede caracterizar cuenta, ruta firmada, padre, host administrado y ventana, y aun así revisar vencimiento. La sección `falsepositives` de los metadatos documenta escenarios conocidos; no ejecuta exclusiones automáticamente.
+
+### ATT&CK, nivel y repositorio comunitario
+
+Una etiqueta ATT&CK declara que la lógica observa una conducta relacionada; debe indicar técnica/subtécnica adecuada y explicar el vínculo. `level` expresa una estimación genérica de importancia, mientras el SIEM puede recalcular prioridad con criticidad del activo y contexto. Copiar nivel y tags de otra regla sin revisar produce metadatos convincentes pero falsos.
+
+SigmaHQ ofrece contenido comunitario útil para aprender y adaptar. Antes de usar una regla se leen referencias, logsource, campos, estado, fecha y falsos positivos; se compara con la versión de telemetría y se crean pruebas locales. «Publicada en SigmaHQ» aporta procedencia, no garantía de cobertura en la organización.
 
 ## 📔 Glosario
 
@@ -170,14 +182,14 @@ Sí, y deberías. Guarda tu carpeta de reglas en un repositorio, con revisión y
 **❓ ¿Debo usar las reglas de SigmaHQ tal cual?**
 Úsalas como base, pero adáptalas: cada entorno tiene sus falsos positivos. Copiar sin afinar genera fatiga de alertas.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- SigmaHQ (repositorio y specification) — <https://github.com/SigmaHQ/sigma>
-- Sigma Rules Specification 2.1.0 — <https://sigmahq.io/sigma-specification/specification/sigma-rules-specification.html>
-- Sigma Conditions — <https://sigmahq.io/docs/basics/conditions.html>
-- sigma-cli / pySigma — <https://github.com/SigmaHQ/sigma-cli>
-- MITRE ATT&CK — <https://attack.mitre.org/>
-- Roth, F. y equipo SigmaHQ, documentación del proyecto.
+- Sigma Rules Specification 2.1.0: especificación oficial de estructura, `logsource`, `detection`, condición y metadatos — <https://sigmahq.io/sigma-specification/specification/sigma-rules-specification.html>
+- Sigma Conditions: documentación oficial de expresiones, selecciones y cuantificadores usados en `condition` — <https://sigmahq.io/docs/basics/conditions.html>
+- Sigma Modifiers: documentación oficial de transformaciones y de la semántica de `all`; el soporte final depende del backend — <https://sigmahq.io/docs/basics/modifiers.html>
+- SigmaHQ Rules: repositorio comunitario mantenido por el proyecto; aporta ejemplos, pero cada regla exige adaptación y prueba local — <https://github.com/SigmaHQ/sigma>
+- sigma-cli / pySigma: implementación oficial de conversión; una conversión válida no demuestra que los campos existan ni que la detección sea eficaz — <https://github.com/SigmaHQ/sigma-cli>
+- MITRE ATT&CK: fuente primaria para los identificadores de técnicas usados en etiquetas — <https://attack.mitre.org/>
 
 ## 📥 Material descargable
 

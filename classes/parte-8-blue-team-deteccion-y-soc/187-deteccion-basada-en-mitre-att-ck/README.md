@@ -64,6 +64,20 @@ Las brechas también se describen. Quizá la regla vea Windows administrado pero
 
 Una prueba controlada ejecuta el procedimiento autorizado y observa cuatro capas: se generó el evento, llegó a plataforma, coincidió la analítica y el proceso respondió. Si falla la primera, no se «afina la regla»; se corrige telemetría. Si alerta pero nadie actúa, la cobertura técnica no es capacidad operativa. El mapa cambia solo después de documentar esa cadena.
 
+### Pirámide del dolor: utilidad y límites
+
+La pirámide popularizada por David Bianco ordena tipos de indicadores según el coste que suele imponer al adversario cambiar: hashes y direcciones tienden a ser más fáciles de reemplazar que herramientas y TTPs. No es una ley cuantitativa. Una IP puede ser crítica durante una campaña activa y una regla de TTP puede ser demasiado amplia. La enseñanza es combinar señales rápidas de vida corta con analíticas conductuales más duraderas, manteniendo caducidad y pruebas.
+
+### Grupos, software e inteligencia como fuente de prioridad
+
+Las páginas de grupos y software de ATT&CK resumen procedimientos documentados y referencias públicas. No prueban que un actor vaya a atacar a la organización ni que una técnica sea exclusiva de ese grupo. Se cruzan con sector, geografía, exposición y observaciones internas. La atribución se mantiene separada de la detección: se puede detectar una conducta sin saber quién la ejecutó.
+
+Un perfil de amenaza útil selecciona procedimientos plausibles y activos afectados. Si varios grupos relevantes usan credenciales válidas y servicios remotos, la prioridad puede ser identidad y rutas administrativas, no una firma específica de malware. ATT&CK ofrece vocabulario para documentar la decisión; la organización aporta contexto de riesgo.
+
+### Profundidad frente a presencia
+
+Dos detecciones mapeadas a la misma técnica pueden observar fases diferentes, usar fuentes independientes o cubrir variantes distintas. Esa redundancia puede aumentar resiliencia. En cambio, una única regla con cobertura nominal puede depender de un campo frágil. La matriz debe permitir profundidad —variedad de procedimientos, datos, plataformas y pruebas— además de presencia. Por eso el objetivo no es «una regla por técnica».
+
 ## 📔 Glosario
 
 - **Táctica:** objetivo intermedio del adversario.
@@ -155,15 +169,15 @@ No compiten. La Kill Chain describe fases de alto nivel; ATT&CK detalla el "cóm
 **❓ ¿Cobertura de Navigator = seguridad?**
 Es un mapa, no una garantía. Una técnica en verde puede tener una regla frágil o llena de falsos positivos. Valídala (clase 200, purple team).
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- MITRE ATT&CK — <https://attack.mitre.org/>
-- MITRE ATT&CK Detection Strategies — <https://attack.mitre.org/detectionstrategies/>
-- MITRE ATT&CK, detecciones y analíticas — <https://attack.mitre.org/resources/get-started/detections-and-analytics/>
-- ATT&CK Navigator — <https://mitre-attack.github.io/attack-navigator/>
-- Bianco, D. "The Pyramid of Pain" — <http://detect-respond.blogspot.com/2013/03/the-pyramid-of-pain.html>
-- ATT&CK Data Sources — <https://attack.mitre.org/datasources/>
-- DeTT&CT — <https://github.com/rabobank-cdc/DeTTECT>
+- MITRE ATT&CK: base de conocimiento primaria para tácticas, técnicas, subtécnicas, grupos, software y procedimientos — <https://attack.mitre.org/>
+- MITRE ATT&CK Detection Strategies: contenido oficial que vincula estrategias, analíticas y componentes de datos; no certifica la cobertura de un entorno — <https://attack.mitre.org/detectionstrategies/>
+- MITRE, detecciones y analíticas: guía oficial para interpretar el modelo de detección — <https://attack.mitre.org/resources/get-started/detections-and-analytics/>
+- ATT&CK Data Components: propiedades observables asociadas a comportamientos; deben traducirse a campos y fuentes concretas del despliegue — <https://attack.mitre.org/datacomponents/>
+- ATT&CK Navigator: herramienta oficial para crear capas y visualizar decisiones de cobertura; el color de una celda no es evidencia de eficacia — <https://mitre-attack.github.io/attack-navigator/>
+- Bianco, D. "The Pyramid of Pain": fuente original del modelo conceptual; se usa como heurística de coste para el adversario, no como ley de priorización — <http://detect-respond.blogspot.com/2013/03/the-pyramid-of-pain.html>
+- DeTT&CT: herramienta comunitaria para administrar cobertura y visibilidad; complementa, pero no sustituye, pruebas locales — <https://github.com/rabobank-cdc/DeTTECT>
 
 ## 📥 Material descargable
 

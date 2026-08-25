@@ -102,9 +102,9 @@ Las métricas deben provocar una conversación y una acción. Si aumenta el tiem
 - **Analista L1 (triage):** primer filtro; clasifica alertas, descarta falsos positivos evidentes y escala lo que merece investigación. Característica: alto volumen, decisiones rápidas.
 - **Analista L2 (investigación):** profundiza, correlaciona múltiples fuentes y determina alcance. Característica: pivota entre telemetría de red, endpoint e identidad.
 - **L3 / Threat Hunter / Ingeniero de detección:** caza proactiva, crea y afina detecciones, lidera incidentes complejos. Característica: trabaja por hipótesis, no solo por alertas.
-- **MTTD (Mean Time To Detect):** tiempo medio desde el compromiso hasta la detección. Cuanto menor, menos daño.
-- **MTTR (Mean Time To Respond):** tiempo medio hasta contener/erradicar. Mide la eficacia de la respuesta.
-- **Dwell time:** tiempo que el atacante permanece sin ser detectado. Métrica reina del blue team.
+- **MTTD (Mean Time To Detect):** media de un intervalo de detección definido sobre una población concreta. Solo es interpretable si se documentan inicio, fin y casos incluidos.
+- **MTTR:** sigla ambigua que puede referirse a reconocer, responder, remediar o recuperar. Debe escribirse la definición operacional antes de compararla.
+- **Dwell time:** intervalo estimado entre el inicio de una intrusión y su detección en incidentes donde ambos momentos pueden establecerse; no representa los incidentes nunca descubiertos.
 
 ## 🔍 Caso resuelto — de una alerta a una decisión
 
@@ -179,14 +179,13 @@ No. El SIEM es una herramienta; el SOC es el equipo y los procesos que la usan (
 **❓ ¿Cuál es la diferencia entre threat hunting y monitoreo de alertas?**
 El monitoreo reacciona a lo que una regla ya disparó; el hunting busca proactivamente lo que ninguna regla detectó, partiendo de hipótesis.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*.
-- Bejtlich, R. *The Practice of Network Security Monitoring*. No Starch Press.
-- MITRE ATT&CK — <https://attack.mitre.org/>
-- SANS, "Building a World-Class Security Operations Center" (whitepaper).
-- NIST SP 800-61 Rev. 3, *Incident Response Recommendations and Considerations for Cybersecurity Risk Management* — <https://doi.org/10.6028/NIST.SP.800-61r3>
-- NIST CSF 2.0, marco para integrar gobierno, identificación, protección, detección, respuesta y recuperación — <https://doi.org/10.6028/NIST.CSWP.29>
+- NIST SP 800-61 Rev. 3, *Incident Response Recommendations and Considerations for Cybersecurity Risk Management*: fuente primaria para integrar preparación, detección, respuesta, recuperación y mejora con la gestión de riesgo; no prescribe niveles L1/L2/L3 — <https://doi.org/10.6028/NIST.SP.800-61r3>
+- NIST CSF 2.0: fuente primaria para las funciones Govern, Identify, Protect, Detect, Respond y Recover y su relación dentro de un programa — <https://doi.org/10.6028/NIST.CSWP.29>
+- MITRE ATT&CK: base de conocimiento mantenida por MITRE para describir tácticas y técnicas; se usa como vocabulario de comportamiento, no como organigrama de un SOC — <https://attack.mitre.org/>
+- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*: bibliografía profesional complementaria para casos de uso y operación.
+- Bejtlich, R. *The Practice of Network Security Monitoring*. No Starch Press: bibliografía complementaria sobre monitoreo e investigación basada en evidencia de red.
 
 ## 📥 Material descargable
 

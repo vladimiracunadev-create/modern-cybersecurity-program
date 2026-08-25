@@ -65,6 +65,18 @@ Sysmon Event 3 conecta proceso y red, pero suele filtrarse por volumen; Event 22
 
 Incluir todo puede afectar volumen y utilidad; excluir demasiado crea ceguera. Se parte de casos de uso, se mide una muestra y se revisan principales productores. Una exclusión se hace con atributos estrechos y estables, no solo nombre de proceso. Configuración, versión y hash se gestionan como código; después de cambiar se repiten eventos de control. El objetivo no es tener Sysmon instalado, sino saber con precisión qué conducta registra y cuál no.
 
+### PowerShell: motor, módulos y bloques de script
+
+PowerShell puede producir varias fuentes según versión y política. Module Logging (por ejemplo, eventos 4103) registra actividad relacionada con módulos; Script Block Logging (4104) registra bloques procesados por el motor y puede fragmentar contenido. Transcription es otra capacidad con implicaciones de almacenamiento y datos sensibles. Habilitar una no implica que todas las demás existan.
+
+La ofuscación puede dificultar lectura, pero el motor necesita interpretar instrucciones; los eventos disponibles dependen de configuración y del modo de ejecución. Se correlacionan host, usuario, runspace/proceso, tiempo y fragmentos. Una palabra sospechosa aislada produce ruido; relación con padre, descarga, AMSI/EDR y red aporta contexto. Los logs pueden contener secretos, por lo que acceso y retención necesitan control.
+
+### Persistencia y semántica de cambios
+
+El evento 4698 puede registrar creación de tarea programada cuando la auditoría correspondiente está disponible. Cambios de Registry pueden observarse mediante auditoría nativa o Sysmon 12/13 según configuración. Un cambio en Run key es consistente con persistencia, pero instaladores legítimos lo usan. Se examinan proceso, usuario, ruta, firma y ventana de cambio.
+
+La práctica no memoriza IDs sin fuente: genera tarea y cambio controlados, inspecciona XML y confirma campos. Así puede distinguir «el evento no apareció porque la actividad no ocurrió» de «la política no lo registró».
+
 ## 📔 Glosario
 
 - **Provider:** componente que emite un evento.
@@ -143,7 +155,7 @@ Entrega tres detecciones basadas en Event Logs/Sysmon (autenticación, ejecució
 ## ❓ Preguntas frecuentes
 
 **❓ ¿Sysmon o solo Event Logs nativos?**
-Sysmon añade hash, linaje íntegro, conexiones por proceso y DNS. Los nativos aportan autenticación y auditoría. La combinación es el estándar de facto del blue team.
+Sysmon puede añadir hashes, identificadores de proceso y telemetría de red/DNS según su configuración. Los eventos nativos aportan autenticación y auditoría que Sysmon no sustituye. Combinarlos amplía el contexto, pero la cobertura final depende de políticas, versiones, configuración y salud de recolección.
 
 **❓ ¿PowerShell logging captura scripts ofuscados?**
 ScriptBlock (4104) registra el bloque tras des-ofuscar en muchos casos, revelando la intención real. Es una de las fuentes más valiosas contra ataques modernos.
@@ -151,13 +163,13 @@ ScriptBlock (4104) registra el bloque tras des-ofuscar en muchos casos, reveland
 **❓ ¿Cómo evito que Sysmon sature el SIEM?**
 Parte de una configuración comunitaria afinada, excluye procesos benignos ruidosos y prioriza los eventos con valor de detección (1, 3, 7, 11, 13, 22).
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Microsoft Sysmon — <https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon>
-- Microsoft, referencia de eventos Sysmon — <https://learn.microsoft.com/en-us/windows/security/operating-system-security/sysmon/sysmon-events>
-- Windows Security Audit Events — <https://learn.microsoft.com/windows/security/threat-protection/auditing/>
-- Olaf Hartong, sysmon-modular — <https://github.com/olafhartong/sysmon-modular>
-- SwiftOnSecurity, sysmon-config — <https://github.com/SwiftOnSecurity/sysmon-config>
+- Microsoft Sysmon: documentación oficial de instalación y configuración; explica que ciertos tipos de evento, como conexiones de red, pueden estar deshabilitados por defecto — <https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon>
+- Microsoft, eventos Sysmon: referencia oficial de IDs, campos y semántica; `ProcessGuid` permite correlacionar instancias de proceso — <https://learn.microsoft.com/en-us/windows/security/operating-system-security/sysmon/sysmon-events>
+- Microsoft, logging de PowerShell: documentación oficial de los mecanismos y canales de registro de PowerShell en Windows — <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging_windows>
+- Microsoft, auditoría de seguridad de Windows: documentación oficial para políticas y eventos nativos; la disponibilidad depende de la política aplicada — <https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/>
+- sysmon-modular y sysmon-config: configuraciones comunitarias para estudiar decisiones de inclusión/exclusión; no son baselines universales ni sustituyen pruebas de volumen — <https://github.com/olafhartong/sysmon-modular> · <https://github.com/SwiftOnSecurity/sysmon-config>
 - Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*.
 
 ## 📥 Material descargable

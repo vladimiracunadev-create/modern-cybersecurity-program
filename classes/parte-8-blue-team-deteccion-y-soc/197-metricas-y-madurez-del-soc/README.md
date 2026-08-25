@@ -67,6 +67,16 @@ SOC-CMM puede ordenar conversaciones de madurez, pero una puntuación necesita e
 
 Una métrica madura tiene dueño y respuesta prevista. Si el percentil 90 de triaje empeora, se analiza cola, complejidad y datos; no se ordena «cerrar más rápido». Si un objetivo incentiva cierres prematuros, se combina con reapertura, calidad y recurrencia. Medir sirve para decidir una intervención y comprobar su efecto, no para producir una cifra favorable.
 
+### Cuadros de mando por audiencia
+
+La operación necesita distribución por regla, cola, edad, campos faltantes y salud de fuentes para actuar hoy. El responsable del SOC necesita capacidad, calidad, incidentes y deuda para asignar trabajo. Dirección necesita tendencia de riesgo, impacto, decisiones y confianza, no una pared de EPS. La misma medida puede agregarse de forma diferente, pero conserva definición y procedencia.
+
+Un dashboard no sustituye análisis. Se añaden notas sobre cambios de herramienta, población o política que rompen comparabilidad. Colores y umbrales tienen explicación: rojo significa una decisión prevista, no solo valor alto. Los datos sensibles se limitan según audiencia.
+
+### Gaming y revisión del sistema de medición
+
+Si se recompensa cantidad de cierres, aumentan cierres superficiales; si se castigan falsos positivos sin contexto, se silencian reglas útiles. Se anticipan comportamientos inducidos y se equilibran velocidad, calidad y resultado. Periódicamente se retira una medida que ya no orienta decisión. NIST SP 800-55 Vol. 2 respalda tratar medición como programa con roles y gestión de datos, no como lista fija de KPI.
+
 ## 📔 Glosario
 
 - **Medida:** valor obtenido mediante una regla definida.
@@ -80,9 +90,9 @@ Una métrica madura tiene dueño y respuesta prevista. Si el percentil 90 de tri
 
 ## 📖 Definiciones y características
 
-- **MTTD (Mean Time To Detect):** tiempo medio hasta detectar un incidente. Característica: mide la eficacia de la detección; cuanto menor, mejor.
+- **MTTD (Mean Time To Detect):** media de un intervalo de detección definido. Característica: requiere inicio, fin, población y límites antes de interpretarse.
 - **MTTR (Mean Time To Respond/Remediate):** tiempo hasta contener/erradicar. Característica: mide la respuesta; distingue "respond" de "remediate".
-- **Dwell time:** tiempo total del atacante sin ser detectado. Característica: métrica reina; refleja el impacto real.
+- **Dwell time:** intervalo estimado de presencia no detectada para incidentes conocidos. Característica: está sujeto a sesgo de selección y a incertidumbre sobre el inicio.
 - **Tasa de falsos positivos:** proporción de alertas que no eran incidentes. Característica: alta = fatiga y coste; guía el afinado.
 - **Cobertura ATT&CK:** técnicas detectadas frente al total relevante. Característica: mide amplitud; debe combinarse con profundidad.
 - **Métrica vanidosa:** número que impresiona pero no informa (p. ej. "alertas procesadas"). Característica: incentiva el gaming, no la mejora.
@@ -153,14 +163,14 @@ Porque incentivan el comportamiento equivocado: cerrar alertas rápido o inflar 
 **❓ ¿Cómo comunico el valor del SOC a dirección?**
 Con tendencias de riesgo y dwell time, no con jerga técnica. Muestra cómo la inversión reduce el tiempo de exposición y el impacto potencial.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*.
-- SOC-CMM — <https://www.soc-cmm.com/>
-- MITRE ATT&CK Navigator — <https://mitre-attack.github.io/attack-navigator/>
-- Mandiant M-Trends (informes de dwell time) — <https://www.mandiant.com/m-trends>
-- SANS, "SOC Metrics" (recursos formativos).
-- NIST SP 800-55 Vol. 2, diseño de programas de medición de seguridad — <https://doi.org/10.6028/NIST.SP.800-55v2>
+- NIST SP 800-55 Vol. 1: fuente primaria para identificar y seleccionar medidas de seguridad vinculadas con objetivos y decisiones — <https://doi.org/10.6028/NIST.SP.800-55v1>
+- NIST SP 800-55 Vol. 2: fuente primaria para desarrollar un programa de medición, incluida recolección, análisis, comunicación y revisión — <https://doi.org/10.6028/NIST.SP.800-55v2>
+- MITRE ATT&CK Navigator: herramienta oficial para visualizar capas de cobertura; no calcula eficacia, profundidad ni calidad de telemetría — <https://mitre-attack.github.io/attack-navigator/>
+- SOC-CMM: modelo público especializado para autoevaluación de madurez; es una referencia de trabajo, no una certificación de NIST o MITRE — <https://www.soc-cmm.com/>
+- Mandiant M-Trends: informe anual usado como ejemplo de cómo se publica *dwell time* sobre una población observada; no constituye un benchmark universal — <https://www.mandiant.com/m-trends>
+- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*: bibliografía profesional complementaria.
 
 ## 📥 Material descargable
 

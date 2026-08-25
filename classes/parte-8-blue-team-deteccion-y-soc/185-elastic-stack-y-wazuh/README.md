@@ -162,13 +162,14 @@ Las versiones recientes incluyen su propio Wazuh Indexer (fork de OpenSearch/Ela
 **❓ ¿EQL sustituye a las reglas Sigma?**
 No. Sigma es un formato portable de reglas (clase 186) que puedes convertir a EQL, KQL o SPL. EQL es el lenguaje nativo de Elastic al que Sigma se traduce.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Elastic Security docs — <https://www.elastic.co/guide/en/security/current/index.html>
-- EQL syntax reference — <https://www.elastic.co/guide/en/elasticsearch/reference/current/eql.html>
-- Wazuh Documentation — <https://documentation.wazuh.com/>
-- Elastic Common Schema (ECS) — <https://www.elastic.co/guide/en/ecs/current/index.html>
-- Sanders, C. y Smith, J. *Applied Network Security Monitoring*. Syngress.
+- Elastic Security, creación de reglas: documentación oficial para tipos de regla, programación, previsualización y acciones — <https://www.elastic.co/guide/en/security/current/rules-ui-create.html>
+- Elasticsearch EQL: referencia oficial de sintaxis para consultas de eventos y secuencias; su resultado depende del mapeo y de la categoría de evento — <https://www.elastic.co/guide/en/elasticsearch/reference/current/eql.html>
+- Elastic Common Schema (ECS): especificación oficial de los campos normalizados usados por las consultas de la clase — <https://www.elastic.co/guide/en/ecs/current/index.html>
+- Wazuh, componentes y flujo de datos: documentación oficial de agente, servidor, indexer y dashboard — <https://documentation.wazuh.com/current/getting-started/components/index.html>
+- Wazuh, motor de análisis: documentación oficial sobre decoders, reglas y generación de alertas — <https://documentation.wazuh.com/current/getting-started/components/wazuh-server.html>
+- Sanders, C. y Smith, J. *Applied Network Security Monitoring*. Syngress: bibliografía complementaria sobre investigación con telemetría.
 
 ## 📥 Material descargable
 

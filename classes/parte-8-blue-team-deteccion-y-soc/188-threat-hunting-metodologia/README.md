@@ -68,6 +68,20 @@ Confirmado inicia respuesta y alcance. Refutado mejora conocimiento normal. Inco
 
 Una línea base no es un promedio universal. Se segmenta por rol de activo, tipo de cuenta, horario y estacionalidad. Un controlador de dominio y una estación de diseño no comparten normalidad. Los outliers ayudan a ordenar investigación, pero popularidad tampoco garantiza legitimidad: una técnica extendida puede volverse común. El hunter combina estadística, conocimiento del sistema y evidencia causal.
 
+### Modelos de madurez y marcos: mapas, no recetas
+
+El Hunting Maturity Model describe una progresión desde dependencia de procedimientos automatizados hacia hunts guiados por datos y capacidad de crear nuevas analíticas. Sirve para conversar sobre capacidad, no para asignar prestigio a un equipo. Una organización puede tener buenos hunters y datos insuficientes; el siguiente paso sería mejorar telemetría, no ejecutar hunts más sofisticados en el vacío.
+
+TaHiTI estructura el proceso desde propósito e hipótesis hasta investigación y resultados. PEAK, publicado por Splunk, diferencia enfoques basados en hipótesis, baseline y exploración asistida por modelo, y enfatiza operación repetible. Se elige el marco que ayude a responder la pregunta; no se mezclan siglas para aparentar metodología. En todos los casos deben existir alcance, evidencia, decisión y transferencia de aprendizaje.
+
+### De dónde nacen hipótesis útiles
+
+ATT&CK aporta procedimientos; inteligencia aporta campañas y contexto; incidentes y purple team revelan brechas; cambios de arquitectura crean nuevas preguntas; anomalías sugieren fenómenos que todavía deben explicarse. Una hipótesis no necesita nombrar un actor. «Un token de sesión puede reutilizarse desde una ubicación nueva» puede ser más comprobable que «el grupo X está dentro».
+
+### Métricas de hunting
+
+Contar hunts o queries incentiva actividad, no valor. Se observan hipótesis cerradas, hallazgos corroborados, brechas de datos corregidas, analíticas creadas y tiempo hasta operacionalización, junto con limitaciones. Un hunt refutado puede ser valioso si mejora baseline. La documentación permite que otro analista lo repita y evita investigar la misma pregunta desde cero.
+
 ## 📔 Glosario
 
 - **Hipótesis falsable:** afirmación que la evidencia puede refutar.
@@ -153,13 +167,13 @@ Al contrario. Sin hipótesis no es caza, es navegación aleatoria. La hipótesis
 **❓ ¿Cada cacería debe encontrar un atacante?**
 No. Una cacería "sin hallazgo" es valiosa: valida controles, mejora baselines y suele revelar higiene o puntos ciegos que corregir.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Bejtlich, R. *The Practice of Network Security Monitoring*. No Starch Press.
-- Bianco, D. "The Hunting Maturity Model" — <http://detect-respond.blogspot.com/>
-- SURFcert, *TaHiTI Threat Hunting Methodology*.
-- Splunk, *PEAK Threat Hunting Framework* — <https://www.splunk.com/en_us/blog/security/peak-threat-hunting-framework.html>
-- MITRE ATT&CK — <https://attack.mitre.org/>
+- Bianco, D. *Hunting Maturity Model*: fuente original del modelo de madurez; describe capacidad organizativa y no puntúa por sí solo la calidad de una cacería — <http://detect-respond.blogspot.com/2015/10/a-simple-hunting-maturity-model.html>
+- SURF, *TaHiTI Threat Hunting Methodology*: publicación original de la metodología para estructurar propósito, hipótesis, investigación y resultados — <https://www.surf.nl/en/knowledge-base/2018/threat-hunting-with-tahiti.html>
+- Splunk, *PEAK Threat Hunting Framework*: material oficial para los enfoques hypothesis-driven, baseline y model-assisted — <https://www.splunk.com/en_us/form/the-peak-threat-hunting-framework.html>
+- MITRE ATT&CK: fuente primaria de comportamientos que pueden originar hipótesis; elegir una técnica no demuestra que la hipótesis sea relevante localmente — <https://attack.mitre.org/>
+- Bejtlich, R. *The Practice of Network Security Monitoring*. No Starch Press: bibliografía complementaria sobre investigación y monitoreo de red.
 
 ## 📥 Material descargable
 

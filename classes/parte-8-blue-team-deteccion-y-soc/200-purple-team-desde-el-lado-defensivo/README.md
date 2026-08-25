@@ -71,6 +71,18 @@ El red team explica intención y artefactos sin convertir la sesión en una demo
 
 Cada brecha tiene dueño, fecha, cambio y test de regresión versionado. En la repetición no basta que aparezca una alerta: se confirma contexto y respuesta. Con el tiempo, la biblioteca de regresiones permite detectar cuándo una actualización rompe capacidad. Ese ciclo —hipótesis, ejecución, evidencia, corrección y repetición— es el resultado profesional de purple teaming.
 
+### Simulación, prueba y emulación
+
+Una prueba atómica ejecuta una acción pequeña y controlada. Una emulación representa procedimientos de un adversario con mayor fidelidad y puede encadenarlos. Una simulación puede representar efectos o señales sin reproducir todos los pasos. Los términos se definen en el plan porque responden preguntas diferentes; mayor realismo también aumenta riesgo, dependencias y dificultad de atribuir un fallo.
+
+ATT&CK e inteligencia ayudan a elegir procedimientos, pero no sustituyen autorización. El plan explica por qué ese comportamiento amenaza ese activo, qué fuente debería verlo y qué efecto se evita. Atomic Red Team documenta tests con prerequisitos y cleanup; su documentación oficial exige permiso y entorno de prueba. Apache Caldera permite construir perfiles y ejecutarlos para evaluar susceptibilidad, según su sitio oficial. Ninguno garantiza por sí solo una emulación segura.
+
+### Cadencia como programa
+
+No todas las pruebas se ejecutan con la misma frecuencia. Cambios de sensor o parser pueden activar regresiones pequeñas; amenazas prioritarias motivan ejercicios periódicos; una emulación amplia requiere planificación. Se programa según cambio y riesgo, no para cumplir cantidad mensual.
+
+La biblioteca registra última ejecución, plataforma, versión y resultado por capa. Un test que no aplica a la versión actual se actualiza o retira. Las tendencias muestran tiempo para cerrar brechas y reincidencia, evitando convertir el scorecard en competencia. El objetivo es que la organización pueda aprender más rápido que cambian sus sistemas y amenazas.
+
 ## 📔 Glosario
 
 - **Purple teaming:** colaboración para mejorar controles.
@@ -160,13 +172,14 @@ Ambos. Atomic valida técnicas individuales con rapidez; Caldera emula operacion
 **❓ ¿Con qué frecuencia hacer purple?**
 Como programa continuo: ciclos regulares (p. ej. mensuales/trimestrales) que revalidan cobertura y cierran huecos. Un solo ejercicio da una foto; la cadencia da mejora sostenida.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- MITRE ATT&CK y Groups — <https://attack.mitre.org/groups/>
-- Atomic Red Team — <https://github.com/redcanaryco/atomic-red-team>
-- Apache Caldera (Incubating), documentación oficial — <https://caldera.apache.org/>
-- MITRE ATT&CK Navigator — <https://mitre-attack.github.io/attack-navigator/>
-- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*.
+- MITRE ATT&CK Groups: fuente primaria para procedimientos públicamente asociados con grupos; se usa para seleccionar escenarios relevantes, no para atribuir actividad observada — <https://attack.mitre.org/groups/>
+- Atomic Red Team: documentación oficial de pruebas focalizadas con autorización, prerrequisitos y limpieza; sirve para verificar capas concretas de evidencia — <https://www.atomicredteam.io/docs/atomic-red-team>
+- Apache Caldera: documentación oficial de perfiles y ejecución de emulación; una operación segura todavía requiere alcance, controles y monitoreo locales — <https://caldera.apache.org/>
+- MITRE ATT&CK Navigator: herramienta oficial para registrar y comparar estados de cobertura antes y después de las pruebas — <https://mitre-attack.github.io/attack-navigator/>
+- NIST SP 800-115: guía primaria para planificar, ejecutar y documentar pruebas técnicas autorizadas; aporta reglas de compromiso y manejo de hallazgos — <https://doi.org/10.6028/NIST.SP.800-115>
+- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*: bibliografía profesional complementaria.
 
 ## 📥 Material descargable
 

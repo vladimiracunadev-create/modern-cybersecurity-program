@@ -165,7 +165,6 @@
    "used_in": [
     "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/183-siem-arquitectura-y-componentes/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/184-splunk-para-deteccion/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/189-analisis-de-endpoints-con-edr/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/190-analisis-de-logs-de-windows-event-logs-y-sysmon/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/192-deteccion-de-movimiento-lateral/README.md",
@@ -2252,27 +2251,6 @@
    "authors": []
   },
   {
-   "id": "activecountermeasures-com",
-   "type": "reference",
-   "title": "Active Countermeasures, \"Detecting Beacons\" (recursos formativos)",
-   "locator": "https://www.activecountermeasures.com/",
-   "authority": "activecountermeasures.com",
-   "status": "verificada",
-   "notes": "Locator comprobado en red el 2026-08-19: responde 200 sin redireccion.",
-   "seed": "auto",
-   "matches": {
-    "url_prefixes": [
-     "https://www.activecountermeasures.com"
-    ],
-    "text_patterns": []
-   },
-   "accessed": "2026-08-19",
-   "used_in": [
-    "classes/parte-8-blue-team-deteccion-y-soc/193-deteccion-de-c2-y-beaconing/README.md"
-   ],
-   "authors": []
-  },
-  {
    "id": "activeresponse-org",
    "type": "reference",
    "title": "Caltagirone, Pendergast & Betz, The Diamond Model of Intrusion Analysis",
@@ -2440,7 +2418,8 @@
    "used_in": [
     "classes/parte-7-red-team-y-operaciones-ofensivas/178-purple-teaming/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/180-adversary-emulation-con-atomic-red-team-y-caldera/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md"
+    "classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/200-purple-team-desde-el-lado-defensivo/README.md"
    ],
    "authors": []
   },
@@ -2680,27 +2659,6 @@
    "authors": []
   },
   {
-   "id": "bloodhound-readthedocs-io",
-   "type": "reference",
-   "title": "SpecterOps, BloodHound docs",
-   "locator": "https://bloodhound.readthedocs.io/",
-   "authority": "readthedocs.io",
-   "status": "pendiente",
-   "notes": "Comprobado en red el 2026-08-19: el locator responde pero redirige a https://bloodhound.readthedocs.io/en/latest/. Queda pendiente para decidir si se adopta la URL de destino.",
-   "seed": "auto",
-   "matches": {
-    "url_prefixes": [
-     "https://bloodhound.readthedocs.io"
-    ],
-    "text_patterns": []
-   },
-   "accessed": "2026-08-19",
-   "used_in": [
-    "classes/parte-8-blue-team-deteccion-y-soc/192-deteccion-de-movimiento-lateral/README.md"
-   ],
-   "authors": []
-  },
-  {
    "id": "bloodhound-specterops-io",
    "type": "reference",
    "title": "BloodHound (SpecterOps)",
@@ -2719,7 +2677,8 @@
    "used_in": [
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/078-movimiento-lateral-en-la-red/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/170-active-directory-enumeracion/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/173-bloodhound-y-analisis-de-rutas-de-ataque/README.md"
+    "classes/parte-7-red-team-y-operaciones-ofensivas/173-bloodhound-y-analisis-de-rutas-de-ataque/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/192-deteccion-de-movimiento-lateral/README.md"
    ],
    "authors": []
   },
@@ -4402,19 +4361,19 @@
   {
    "id": "docs-splunk-com",
    "type": "reference",
-   "title": "Splunk Docs, \"How indexing works\"",
-   "locator": "https://docs.splunk.com/",
+   "title": "Splunk Enterprise documentation",
+   "locator": "https://help.splunk.com/en/splunk-enterprise",
    "authority": "splunk.com",
-   "status": "pendiente",
-   "notes": "Comprobado en red el 2026-08-19: HTTP 403: la fuente rechaza peticiones automatizadas. No prueba que el enlace este roto, No es un enlace roto: es una fuente que no admite comprobacion automatica.",
+   "status": "verificada",
+   "notes": "Documentacion oficial comprobada en red el 2026-08-24: las paginas de indexacion, CIM, tstats y throttling responden y describen las capacidades citadas.",
    "seed": "auto",
    "matches": {
     "url_prefixes": [
-     "https://docs.splunk.com"
+     "https://help.splunk.com/en/splunk-enterprise"
     ],
     "text_patterns": []
    },
-   "accessed": "2026-08-19",
+   "accessed": "2026-08-24",
    "used_in": [
     "classes/parte-8-blue-team-deteccion-y-soc/183-siem-arquitectura-y-componentes/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/184-splunk-para-deteccion/README.md"
@@ -4893,27 +4852,6 @@
     "classes/parte-13-seguridad-movil-iot-e-inalambrica/262-pentest-de-aplicaciones-android/README.md",
     "classes/parte-13-seguridad-movil-iot-e-inalambrica/265-ingenieria-inversa-de-aplicaciones-moviles/README.md",
     "classes/parte-5-explotacion-de-sistemas-y-binarios/134-analisis-dinamico-y-debugging-de-binarios/README.md"
-   ],
-   "authors": []
-  },
-  {
-   "id": "gartner-research",
-   "type": "reference",
-   "title": "Gartner: Magic Quadrant for SIEM y Market Guide for SOAR",
-   "locator": "https://www.gartner.com/en/research/magic-quadrant",
-   "authority": "Gartner",
-   "status": "pendiente",
-   "notes": "gartner.com responde 403 a peticiones automatizadas y los informes citados son de pago: no se pudo contrastar ni la edicion ni el contenido.",
-   "matches": {
-    "url_prefixes": [],
-    "text_patterns": [
-     "gartner"
-    ]
-   },
-   "accessed": "2026-08-19",
-   "used_in": [
-    "classes/parte-8-blue-team-deteccion-y-soc/183-siem-arquitectura-y-componentes/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/196-automatizacion-con-soar/README.md"
    ],
    "authors": []
   },
@@ -7071,9 +7009,7 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-16-capstones-y-preparacion-de-certificaciones/305-capstone-operacion-red-team-end-to-end/README.md",
-    "classes/parte-17-profundizacion-para-certificaciones/327-ingenieria-de-deteccion-avanzada-y-validacion/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/200-purple-team-desde-el-lado-defensivo/README.md"
+    "classes/parte-17-profundizacion-para-certificaciones/327-ingenieria-de-deteccion-avanzada-y-validacion/README.md"
    ],
    "authors": []
   },
@@ -8767,27 +8703,6 @@
    "authors": []
   },
   {
-   "id": "learn-microsoft-com",
-   "type": "reference",
-   "title": "Microsoft",
-   "locator": "https://learn.microsoft.com/",
-   "authority": "microsoft.com",
-   "status": "pendiente",
-   "notes": "Comprobado en red el 2026-08-19: el locator responde pero redirige a https://learn.microsoft.com/en-us/. Queda pendiente para decidir si se adopta la URL de destino.",
-   "seed": "auto",
-   "matches": {
-    "url_prefixes": [
-     "https://learn.microsoft.com"
-    ],
-    "text_patterns": []
-   },
-   "accessed": "2026-08-19",
-   "used_in": [
-    "classes/parte-8-blue-team-deteccion-y-soc/192-deteccion-de-movimiento-lateral/README.md"
-   ],
-   "authors": []
-  },
-  {
    "id": "learn-microsoft-com-azure",
    "type": "reference",
    "title": "Microsoft",
@@ -8860,6 +8775,7 @@
     "classes/parte-7-red-team-y-operaciones-ofensivas/173-bloodhound-y-analisis-de-rutas-de-ataque/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/174-compromiso-total-de-dominio-dcsync-y-golden-ticket/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/175-persistencia-en-active-directory/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/182-logging-y-fuentes-de-telemetria/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/189-analisis-de-endpoints-con-edr/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/190-analisis-de-logs-de-windows-event-logs-y-sysmon/README.md"
    ],
@@ -8975,7 +8891,6 @@
     "classes/parte-6-analisis-de-malware/144-analisis-dinamico-basico-y-sandboxing/README.md",
     "classes/parte-6-analisis-de-malware/148-analisis-de-comportamiento/README.md",
     "classes/parte-6-analisis-de-malware/159-fileless-malware-y-living-off-the-land/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/182-logging-y-fuentes-de-telemetria/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/216-contencion-erradicacion-y-recuperacion/README.md"
    ],
    "authors": []
@@ -9002,7 +8917,6 @@
     "classes/parte-5-explotacion-de-sistemas-y-binarios/129-explotacion-en-windows-manejo-de-seh/README.md",
     "classes/parte-5-explotacion-de-sistemas-y-binarios/130-ingenieria-inversa-introduccion/README.md",
     "classes/parte-6-analisis-de-malware/145-el-formato-pe-de-windows/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/190-analisis-de-logs-de-windows-event-logs-y-sysmon/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/205-analisis-de-artefactos-de-windows/README.md"
    ],
    "authors": []
@@ -9659,19 +9573,19 @@
   {
    "id": "opencti-io",
    "type": "reference",
-   "title": "OpenCTI",
-   "locator": "https://www.opencti.io/",
+   "title": "OpenCTI data model documentation",
+   "locator": "https://docs.opencti.io/latest/usage/data-model/",
    "authority": "opencti.io",
-   "status": "pendiente",
-   "notes": "Comprobado en red el 2026-08-19: el locator responde pero redirige a https://filigran.io/. Queda pendiente para decidir si se adopta la URL de destino.",
+   "status": "verificada",
+   "notes": "Documentacion oficial comprobada en red el 2026-08-24: describe el grafo de conocimiento, nodos, relaciones y base STIX 2.1.",
    "seed": "auto",
    "matches": {
     "url_prefixes": [
-     "https://www.opencti.io"
+     "https://docs.opencti.io"
     ],
     "text_patterns": []
    },
-   "accessed": "2026-08-19",
+   "accessed": "2026-08-24",
    "used_in": [
     "classes/parte-8-blue-team-deteccion-y-soc/195-threat-intelligence-operacional/README.md"
    ],
@@ -10615,8 +10529,6 @@
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/067-reglas-de-engagement-alcance-y-contratos/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/083-exfiltracion-de-datos/README.md",
     "classes/parte-6-analisis-de-malware/160-reporte-de-analisis-de-malware/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/197-metricas-y-madurez-del-soc/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/201-fundamentos-de-dfir-y-cadena-de-custodia/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/202-el-ciclo-de-respuesta-a-incidentes-nist-y-sans/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/205-analisis-de-artefactos-de-windows/README.md",
@@ -11168,8 +11080,7 @@
     "classes/parte-8-blue-team-deteccion-y-soc/183-siem-arquitectura-y-componentes/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/184-splunk-para-deteccion/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/188-threat-hunting-metodologia/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/198-casos-de-estudio-de-deteccion/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md"
+    "classes/parte-8-blue-team-deteccion-y-soc/198-casos-de-estudio-de-deteccion/README.md"
    ],
    "authors": []
   },
@@ -11575,19 +11486,20 @@
   {
    "id": "thehive-project-org",
    "type": "reference",
-   "title": "TheHive & Cortex",
-   "locator": "https://thehive-project.org/",
-   "authority": "thehive-project.org",
-   "status": "pendiente",
-   "notes": "Comprobado en red el 2026-08-19: el locator responde pero redirige a https://strangebee.com/. Queda pendiente para decidir si se adopta la URL de destino.",
+   "title": "TheHive documentation",
+   "locator": "https://docs.strangebee.com/thehive/",
+   "authority": "strangebee.com",
+   "status": "verificada",
+   "notes": "Documentacion oficial comprobada en red el 2026-08-24: describe casos, alertas y observables en TheHive 5. Se mantiene el prefijo historico para resolver citas existentes que redirigen al proveedor actual.",
    "seed": "auto",
    "matches": {
     "url_prefixes": [
+     "https://docs.strangebee.com/thehive",
      "https://thehive-project.org"
     ],
     "text_patterns": []
    },
-   "accessed": "2026-08-19",
+   "accessed": "2026-08-24",
    "used_in": [
     "classes/parte-8-blue-team-deteccion-y-soc/196-automatizacion-con-soar/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/202-el-ciclo-de-respuesta-a-incidentes-nist-y-sans/README.md",
@@ -13258,8 +13170,7 @@
     "classes/parte-0-fundamentos-y-prerrequisitos/003-frameworks-de-seguridad-nist-csf-iso-27001-mitre-att-ck-y-diamond-model/README.md",
     "classes/parte-14-grc-riesgo-y-cumplimiento/279-nist-cybersecurity-framework/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/320-gobierno-aspectos-legales-regulatorios-y-gestion-del-programa/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/196-automatizacion-con-soar/README.md"
+    "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -13696,7 +13607,8 @@
     "classes/parte-7-red-team-y-operaciones-ofensivas/167-acceso-inicial-tecnicas/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/176-opsec-ofensiva/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/179-reporte-y-metricas-de-red-team/README.md"
+    "classes/parte-7-red-team-y-operaciones-ofensivas/179-reporte-y-metricas-de-red-team/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/200-purple-team-desde-el-lado-defensivo/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -14500,7 +14412,8 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-8-blue-team-deteccion-y-soc/182-logging-y-fuentes-de-telemetria/README.md"
+    "classes/parte-8-blue-team-deteccion-y-soc/182-logging-y-fuentes-de-telemetria/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/183-siem-arquitectura-y-componentes/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"

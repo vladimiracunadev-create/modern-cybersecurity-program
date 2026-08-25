@@ -67,6 +67,20 @@ Una alerta perdida se localiza en la cadena. Si el origen nunca generó dato, se
 
 El producto final incluye timeline, entidades, hallazgos, incertidumbres, causa del gap, cambio propuesto y prueba de regresión. Un buen caso enseña tanto por qué se detectó como por qué pudo no detectarse.
 
+### Caso 1: phishing, ejecución y persistencia
+
+El correo aporta entrega y URL/adjunto; proxy o navegador apoya descarga; endpoint demuestra proceso; tareas/registro muestran persistencia. El orden no se presume: se normalizan tiempos y se enlazan entidades. Una detección puede existir en ejecución y faltar en persistencia. El informe distingue qué etapa se observó y qué fuente no estaba disponible.
+
+### Caso 2: acceso remoto y expansión
+
+Una cuenta privilegiada aparece desde una estación hacia un servidor, luego el servidor inicia conexiones a otros activos. El grafo revela que el destino se convirtió en origen. Se comparan rutas administrativas y eventos de servicio remoto. Si el SOC solo agrupó por host inicial, el gap está en correlación/alcance, no necesariamente en ausencia de alertas individuales.
+
+### Caso 3: canal exterior y posible exfiltración
+
+Una relación periódica evoluciona hacia transferencia saliente. Flow demuestra volumen y destino; endpoint vincula proceso; clasificación del dato requiere fuente adicional. No se llama exfiltración solo por bytes. La hipótesis se fortalece si aparecen preparación de archivos, proceso inesperado y destino sin justificación, pero el informe conserva el término «posible» cuando el contenido no puede confirmarse.
+
+Estos tres casos no son historias para memorizar. Enseñan a mover la unidad de análisis: evento, secuencia, entidad, grafo y decisión. Los datasets permiten reproducir el razonamiento, y el reporte explica también alternativas descartadas.
+
 ## 📔 Glosario
 
 - **Hecho:** observación directamente respaldada.
@@ -139,7 +153,7 @@ Resuelve un caso completo entregando: línea de tiempo con técnicas ATT&CK por 
 | Timeline desordenada | Tiempos no sincronizados; normaliza a UTC (clase 182) |
 | Fases sin evidencia | Punto ciego de telemetría; anótalo como hueco a cerrar |
 | Mapeo ATT&CK forzado | Técnica mal asignada; verifica el procedimiento real |
-| "El ataque era indetectable" | Casi nunca; suele faltar una fuente o una regla, no ser imposible |
+| "El ataque era indetectable" | Afirmación no demostrada; separa ausencia de telemetría, fallo de ingesta, falta de analítica y comportamiento realmente no observable con las fuentes disponibles |
 | Reporte sin acciones | Análisis sin lecciones; cada caso debe producir mejoras concretas |
 
 ## ❓ Preguntas frecuentes
@@ -153,13 +167,13 @@ Splunk BOTS, Security Onion, EVTX-ATTACK-SAMPLES y los datasets de Atomic Red Te
 **❓ ¿El objetivo es encontrar al atacante o mejorar la detección?**
 Ambos, pero el valor duradero está en las detecciones y lecciones que dejas: cada caso resuelto debe hacer al SOC más difícil de sorprender la próxima vez.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Bejtlich, R. *The Practice of Network Security Monitoring*. No Starch Press.
-- Sanders, C. y Smith, J. *Applied Network Security Monitoring*. Syngress.
-- Splunk BOTS datasets — <https://github.com/splunk/botsv3>
-- EVTX-ATTACK-SAMPLES — <https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES>
-- MITRE ATT&CK — <https://attack.mitre.org/>
+- MITRE ATT&CK: fuente primaria para mapear procedimientos demostrados por evidencia; el mapeo no reemplaza la reconstrucción temporal — <https://attack.mitre.org/>
+- Splunk BOTS v3: dataset público mantenido por Splunk para investigaciones reproducibles; los hechos del caso se derivan del dataset, no se generalizan como frecuencia real — <https://github.com/splunk/botsv3>
+- EVTX-ATTACK-SAMPLES: colección comunitaria de eventos Windows para laboratorio; cada muestra debe identificarse y conservarse con su procedencia — <https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES>
+- Bejtlich, R. *The Practice of Network Security Monitoring*. No Starch Press: bibliografía complementaria sobre razonamiento investigativo.
+- Sanders, C. y Smith, J. *Applied Network Security Monitoring*. Syngress: bibliografía complementaria sobre análisis de evidencia de red.
 
 ## 📥 Material descargable
 

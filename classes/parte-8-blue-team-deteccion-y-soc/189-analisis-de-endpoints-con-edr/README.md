@@ -66,6 +66,20 @@ Una investigación pivota en dos direcciones. Hacia atrás pregunta cómo aparec
 
 Aislamiento, cuarentena y terminación tienen efectos diferentes. En una estación, aislar pronto puede ser razonable; en un servidor crítico puede interrumpir servicio y cortar la única visibilidad. Antes se define quién autoriza, qué canales quedan permitidos, qué evidencia volátil se recoge, cuánto dura la medida y cómo revertirla. La consola debe registrar operador, motivo y resultado. Una acción rápida sin trazabilidad puede contener hoy y dificultar la investigación mañana.
 
+### EPP, EDR y XDR sin confundir alcance
+
+EPP agrupa capacidades preventivas en endpoint, como antimalware y control de ejecución. EDR prioriza telemetría, investigación y respuesta en endpoints. XDR es una categoría de producto que correlaciona dominios como endpoint, identidad, correo o nube; su nombre no garantiza qué fuentes integra ni cuánto historial conserva. La evaluación comienza por datos y casos de uso, no por la etiqueta comercial.
+
+La detección por firma reconoce objetos o patrones conocidos; la conductual observa relaciones y secuencias. No son adversarias: una firma puede bloquear rápido un hash confirmado y una conducta detectar variantes. Ambas necesitan contexto y medición. «El AV no lo detectó» no implica que EDR lo hará, ni al revés.
+
+### osquery, Velociraptor y el tiempo de la pregunta
+
+osquery modela estado del sistema en tablas y permite consultas de flota; muchas preguntas describen lo que existe al ejecutarlas. Velociraptor usa VQL y artefactos para colección y hunting/DFIR, con capacidad de recuperar distintos datos según plataforma y permisos. Una consulta actual no reemplaza telemetría histórica. El alumno debe indicar si responde «está ahora», «ocurrió» o «queda un artefacto».
+
+### Tamper y límites del sensor
+
+Un adversario con privilegios puede intentar detener servicios, alterar configuración o evadir callbacks. La defensa incluye protección del agente, alertas por pérdida de heartbeats, mínimo privilegio y fuentes independientes. Sin embargo, «sensor online» no demuestra que todos los eventos lleguen. Se monitorean versión, política, retraso y cobertura por host. Hablar de evasión en esta clase sirve para reconocer límites y validar salud, no para prometer invulnerabilidad del EDR.
+
 ## 📔 Glosario
 
 - **EDR:** detección y respuesta con telemetría de endpoint.
@@ -155,16 +169,16 @@ Sí. Velociraptor, osquery, Wazuh y Sysmon cubren los conceptos clave —telemet
 **❓ ¿El EDR es infalible?**
 No. Existen técnicas de evasión y tamper. Por eso el blue team combina EDR con telemetría de red, identidad y hunting: defensa en profundidad.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
 - 🏢 **En la empresa:** EDR/XDR comerciales como **CrowdStrike Falcon**, **Microsoft Defender for Endpoint**, **SentinelOne** o **Elastic Security** — el análisis de endpoint es transferible entre productos.
 - 🛠️ [RootCause Windows Inspector](https://github.com/vladimiracunadev-create/rootcause-windows-inspector) (Apache-2.0) — sensor forense de comportamiento para Windows · lab: [`labs/rootcause-windows`](../../../labs/rootcause-windows/README.md).
 - Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*.
-- Velociraptor Documentation — <https://docs.velociraptor.app/>
-- osquery Documentation — <https://osquery.readthedocs.io/>
-- Microsoft Defender for Endpoint, investigación de dispositivos — <https://learn.microsoft.com/en-us/defender-endpoint/investigate-machines>
-- MITRE ATT&CK, táctica Defense Evasion — <https://attack.mitre.org/tactics/TA0005/>
-- Wazuh Endpoint Security — <https://documentation.wazuh.com/>
+- Velociraptor: documentación oficial de VQL, artefactos, colecciones y respuesta remota; su presencia no garantiza retención histórica de cada evento — <https://docs.velociraptor.app/>
+- osquery: documentación oficial de tablas y consultas; muchas tablas describen estado al momento de consultar, no una secuencia histórica — <https://osquery.readthedocs.io/>
+- Microsoft Defender for Endpoint: documentación oficial del flujo de investigación de dispositivos usada como ejemplo de EDR comercial — <https://learn.microsoft.com/en-us/defender-endpoint/investigate-machines>
+- MITRE ATT&CK, Defense Evasion: fuente primaria de comportamientos que pueden intentar reducir visibilidad o eludir controles — <https://attack.mitre.org/tactics/TA0005/>
+- Wazuh Agent: documentación oficial de las capacidades y fuentes del agente usado en el laboratorio — <https://documentation.wazuh.com/current/getting-started/components/wazuh-agent.html>
 
 ## 📥 Material descargable
 

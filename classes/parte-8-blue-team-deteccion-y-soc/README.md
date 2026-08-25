@@ -19,7 +19,7 @@
 
 Esta parte cambia el punto de vista: dejamos el lado ofensivo (Parte 7) y nos sentamos del lado del defensor. El objetivo ya no es entrar, sino **ver** al atacante, **entenderlo** y **expulsarlo** antes de que cumpla su misión. Para eso construimos la disciplina completa de un Security Operations Center (SOC) moderno: recolección de telemetría, correlación en un SIEM, escritura de detecciones, caza proactiva de amenazas (threat hunting) y automatización de la respuesta con SOAR.
 
-El hilo conductor es el **modelo de monitoreo de seguridad de red y endpoint** que popularizaron Bejtlich y la escuela de Applied NSM: la prevención falla siempre, así que la organización que sobrevive es la que detecta rápido y responde con método. Trabajaremos con herramientas reales y vigentes —Splunk, Elastic Stack, Wazuh, Sysmon, Sigma, Suricata/Zeek— y con marcos que la industria usa a diario: MITRE ATT&CK para hablar de comportamiento adversario y la pirámide del dolor para priorizar qué detectar.
+El hilo conductor es el **modelo de monitoreo de seguridad de red y endpoint** desarrollado por Bejtlich y la práctica de Network Security Monitoring: los controles preventivos reducen probabilidad e impacto, pero no eliminan por completo el riesgo; por eso deben complementarse con visibilidad, detección y respuesta. Trabajaremos con Splunk, Elastic Stack, Wazuh, Sysmon, Sigma y Zeek como medios para estudiar conceptos, y con MITRE ATT&CK como vocabulario de comportamiento. Ninguna herramienta o marco se presentará como sustituto del análisis del entorno.
 
 Sirve a quien quiera ser analista de SOC (L1/L2/L3), ingeniero de detección, threat hunter o líder de blue team; también a red teamers que quieren entender qué deja huella y a arquitectos que diseñan la instrumentación. Cada clase combina teoría de por qué funciona una detección con laboratorio reproducible en un entorno propio.
 
@@ -163,18 +163,16 @@ Cada afirmación debe etiquetarse como **observación**, **inferencia** o **hip�
 
 El portafolio final contiene arquitectura del SOC, catálogo de telemetría, dos búsquedas SIEM equivalentes, reglas Sigma probadas, paquete de threat hunting, timeline de un caso, playbook SOAR y scorecard purple team. Se evalúa con cuatro dimensiones: exactitud técnica, trazabilidad de evidencia, reproducibilidad y claridad de la decisión defensiva. Instalar herramientas o colorear ATT&CK sin pruebas no acredita aprendizaje.
 
-## 🔗 Referencias de la parte
+## 🔗 Referencias de la parte y criterio de uso
 
-- Bejtlich, R. *The Practice of Network Security Monitoring*. No Starch Press. — <https://nostarch.com/nsm>
-- Sanders, C. y Smith, J. *Applied Network Security Monitoring*. Syngress.
-- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*.
-- MITRE ATT&CK — <https://attack.mitre.org/>
-- SigmaHQ — <https://github.com/SigmaHQ/sigma>
-- NIST SP 800-92, gestión de logs — <https://doi.org/10.6028/NIST.SP.800-92>
-- NIST SP 800-61 Rev. 3, respuesta a incidentes integrada con CSF 2.0 — <https://doi.org/10.6028/NIST.SP.800-61r3>
-- NIST SP 800-55 Vol. 2, programas de medición de seguridad — <https://doi.org/10.6028/NIST.SP.800-55v2>
-- MITRE ATT&CK Detection Strategies — <https://attack.mitre.org/detectionstrategies/>
-- Sigma Rules Specification 2.1.0 — <https://sigmahq.io/sigma-specification/specification/sigma-rules-specification.html>
+La parte separa **fuentes primarias** de **bibliografía profesional y datos de práctica**. NIST, MITRE y las especificaciones oficiales sustentan marcos, vocabulario y requisitos; la documentación de cada producto sustenta únicamente su comportamiento; libros y datasets ayudan a enseñar o reproducir casos, sin presentarse como normas.
+
+- NIST SP 800-92: gestión del ciclo de vida de logs — <https://doi.org/10.6028/NIST.SP.800-92>
+- NIST SP 800-61 Rev. 3: respuesta a incidentes integrada con CSF 2.0 — <https://doi.org/10.6028/NIST.SP.800-61r3>
+- NIST SP 800-55 Vols. 1 y 2: selección de medidas y programa de medición — <https://doi.org/10.6028/NIST.SP.800-55v1> · <https://doi.org/10.6028/NIST.SP.800-55v2>
+- MITRE ATT&CK y Detection Strategies: comportamientos, estrategias, analíticas y componentes de datos — <https://attack.mitre.org/> · <https://attack.mitre.org/detectionstrategies/>
+- Sigma Rules Specification 2.1.0: estructura y semántica del formato — <https://sigmahq.io/sigma-specification/specification/sigma-rules-specification.html>
+- Bejtlich, R. *The Practice of Network Security Monitoring*. No Starch Press; Sanders, C. y Smith, J. *Applied Network Security Monitoring*. Syngress; Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*: bibliografía profesional complementaria.
 
 ## ▶️ Empezar
 

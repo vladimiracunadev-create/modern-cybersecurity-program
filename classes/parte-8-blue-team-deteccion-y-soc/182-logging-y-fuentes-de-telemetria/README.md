@@ -26,11 +26,11 @@ Al finalizar, el alumno podrá:
 | 1 | Taxonomía de datos NSM | Da un vocabulario para pensar la telemetría |
 | 2 | Fuentes de endpoint (Event Logs, Sysmon, EDR) | Donde ocurre la ejecución del ataque |
 | 3 | Fuentes de red (flujo, PCAP, DNS, proxy) | Ven lo que el host puede ocultar |
-| 4 | Identidad y autenticación (AD, IdP, VPN) | La identidad es el nuevo perímetro |
+| 4 | Identidad y autenticación (AD, IdP, VPN) | Permite reconstruir quién accedió, desde dónde y con qué privilegios |
 | 5 | Nube y SaaS (CloudTrail, M365 audit) | El log del data center ya no basta |
 | 6 | Normalización y marcas de tiempo (UTC, NTP) | Sin tiempo correcto no hay correlación |
 | 7 | Retención y coste | Equilibra visibilidad y presupuesto |
-| 8 | Puntos ciegos y cobertura | Un atacante prospera donde no hay logs |
+| 8 | Puntos ciegos y cobertura | Delimita qué comportamientos pueden investigarse y cuáles quedan sin evidencia |
 
 ## 🧠 Explicación en profundidad
 
@@ -97,7 +97,7 @@ Completitud mide lo recibido frente a lo esperado; puntualidad, la demora; exact
 - **Datos estadísticos:** agregados (top talkers, volúmenes). Característica: útiles para anomalías y línea base.
 - **Log de endpoint:** eventos del SO y aplicaciones (Security.evtx, Sysmon). Característica: granularidad de proceso, línea de comandos, red por proceso.
 - **Normalización:** llevar campos heterogéneos a un esquema común (ej. ECS de Elastic). Característica: habilita correlación entre fuentes.
-- **Sincronización NTP:** todos los relojes en la misma referencia (UTC). Característica: sin ella, las líneas de tiempo son inservibles.
+- **Sincronización temporal:** los sistemas mantienen una referencia de tiempo coherente y documentada, normalmente UTC con NTP. Característica: reduce ambigüedades al correlacionar eventos; el desfase debe medirse y conservarse cuando no pueda corregirse.
 
 ## 🔍 Ejemplo trabajado — contrato de datos para RDP anómalo
 
@@ -170,7 +170,7 @@ Entrega un **plan de logging** de una página con: matriz activo×fuente, priori
 ## ❓ Preguntas frecuentes
 
 **❓ ¿Registro todo o filtro?**
-Filtra con criterio. Registrar todo agota presupuesto y entierra las señales. Prioriza por valor de detección (ver pirámide del dolor en la clase 187).
+No existe una respuesta universal. Conserva las fuentes y campos que sostienen casos de uso, investigación, obligaciones y auditoría; mide volumen, privacidad y coste antes de excluir. Un filtro debe documentar qué evidencia elimina y cómo se valida que no rompa una detección.
 
 **❓ ¿Event Logs nativos o Sysmon?**
 Ambos. Los nativos dan autenticación y auditoría; Sysmon aporta creación de procesos con hash, línea de comandos y conexiones por proceso.
@@ -178,14 +178,14 @@ Ambos. Los nativos dan autenticación y auditoría; Sysmon aporta creación de p
 **❓ ¿Necesito PCAP completo?**
 Solo en segmentos críticos y con retención corta. Para hunting histórico, los datos de sesión (flow/Zeek) rinden mucho más por byte almacenado.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Sanders, C. y Smith, J. *Applied Network Security Monitoring*. Syngress.
-- NIST SP 800-92, *Guide to Computer Security Log Management* — <https://doi.org/10.6028/NIST.SP.800-92>
-- NIST SP 800-53 Rev. 5, familia AU de auditoría y rendición de cuentas — <https://doi.org/10.6028/NIST.SP.800-53r5>
-- Microsoft Sysmon — <https://learn.microsoft.com/sysinternals/downloads/sysmon>
-- Zeek Documentation — <https://docs.zeek.org/>
-- Elastic Common Schema (ECS) — <https://www.elastic.co/guide/en/ecs/current/index.html>
+- NIST SP 800-92, *Guide to Computer Security Log Management*: guía primaria para infraestructura, procesos y ciclo de vida de gestión de logs; sus decisiones deben adaptarse a tecnologías y riesgos actuales — <https://doi.org/10.6028/NIST.SP.800-92>
+- NIST SP 800-53 Rev. 5, familia AU: fuente primaria para objetivos de auditoría, contenido, protección, revisión y retención; no define por sí sola la configuración de un producto — <https://doi.org/10.6028/NIST.SP.800-53r5>
+- Microsoft Sysmon: documentación oficial de instalación, configuración y capacidades del sensor de Windows — <https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon>
+- Zeek, documentación oficial: referencia para los metadatos y registros de actividad de red producidos por Zeek — <https://docs.zeek.org/en/current/reference/logs/index.html>
+- Elastic Common Schema (ECS): especificación oficial del esquema usado como ejemplo de normalización; adoptar ECS no corrige por sí solo errores de origen o parsing — <https://www.elastic.co/guide/en/ecs/current/index.html>
+- Sanders, C. y Smith, J. *Applied Network Security Monitoring*. Syngress: bibliografía profesional complementaria para el análisis de telemetría de red.
 
 ## 📥 Material descargable
 

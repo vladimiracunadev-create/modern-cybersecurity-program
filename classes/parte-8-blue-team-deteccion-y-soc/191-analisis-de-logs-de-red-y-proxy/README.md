@@ -66,6 +66,22 @@ La línea base se segmenta. Un proxy corporativo, un servidor de actualizaciones
 
 Pérdida de paquetes, tráfico asimétrico o reloj incorrecto alteran resultados. Se monitorean drops del sensor, interfaces y desfase temporal. Bajo cifrado se afirma lo observado —una sesión con ciertos metadatos— y no contenido inexistente. Este lenguaje evita que una investigación convierta ausencia de visibilidad en ausencia de actividad.
 
+### Firewall, flujo y proxy: tres preguntas distintas
+
+Un firewall registra decisiones de política —permitido, denegado, traducido— con los campos que su configuración conserve. Flow resume conversaciones y volumen aunque no exista proxy. El proxy puede asociar URL, categoría, usuario y acción cuando controla esa solicitud. Una sesión permitida por firewall no demuestra que la aplicación completó; un `200` del proxy no demuestra que un archivo se ejecutó.
+
+User-Agent aporta contexto de cliente, pero es un texto modificable y aplicaciones legítimas pueden compartirlo. Las detecciones comparan valor con proceso, destino y patrón histórico. Un cliente que declara navegador pero proviene de un servicio puede merecer investigación; no se etiqueta malware solo por cadena rara.
+
+### DNS como secuencia, no como «mina de oro» automática
+
+DNS permite observar qué nombre preguntó un cliente, respuesta, tipo y frecuencia cuando el sensor está en la ruta. Una consulta no implica conexión posterior y una respuesta NXDOMAIN puede provenir de errores legítimos. DGA y tunneling pueden producir longitud, entropía, volumen o tipos inusuales, pero CDNs, telemetría y software también generan nombres largos.
+
+Se agrupa por entidad y dominio registrable, se compara con rol y se buscan relaciones posteriores. Bajo DoH/DoT, el sensor puede perder detalle si la organización no controla el resolvedor; esa pérdida se declara y puede compensarse con logs del endpoint o servicio DNS administrado.
+
+### Exfiltración: volumen con contexto del dato
+
+Muchos bytes salientes no prueban exfiltración: backups y cargas cloud son normales. Se evalúan origen, destino, horario, protocolo, proceso, usuario y sensibilidad del activo. Una alerta útil explica qué dimensión cambió y contra qué baseline. La red puede demostrar transferencia; clasificar el contenido requiere otras fuentes o inspección autorizada.
+
 ## 📔 Glosario
 
 - **Flow:** resumen de una conversación de red.
@@ -155,13 +171,13 @@ Muchísimo. Casi todo ataque resuelve dominios: DGA, tunneling y C2 dejan huella
 **❓ ¿Necesito PCAP completo?**
 Rara vez y por poco tiempo. Los metadatos de Zeek cubren la mayoría de casos de hunting con una fracción del almacenamiento.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Sanders, C. y Smith, J. *Applied Network Security Monitoring*. Syngress.
-- Zeek Documentation — <https://docs.zeek.org/>
-- RITA — <https://github.com/activecm/rita>
-- JA3 (Salesforce) — <https://github.com/salesforce/ja3>
-- Suricata Documentation — <https://docs.suricata.io/>
+- Zeek, referencia oficial de logs: describe `conn.log`, DNS, HTTP, TLS y la correlación mediante `uid`; los campos dependen de protocolos observables y configuración — <https://docs.zeek.org/en/current/reference/logs/index.html>
+- Suricata: documentación oficial de EVE JSON y de los eventos que el sensor puede producir — <https://docs.suricata.io/en/latest/output/eve/eve-json-output.html>
+- RITA: repositorio del proyecto para análisis de metadatos y periodicidad; sus puntuaciones ordenan investigación y no demuestran por sí solas C2 — <https://github.com/activecm/rita>
+- JA3: repositorio original del método de huella TLS; se usa como atributo contextual, no como identidad estable de una familia — <https://github.com/salesforce/ja3>
+- Sanders, C. y Smith, J. *Applied Network Security Monitoring*. Syngress: bibliografía profesional complementaria sobre análisis de telemetría de red.
 
 ## 📥 Material descargable
 

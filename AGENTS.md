@@ -6,6 +6,8 @@ Estas reglas se aplican a toda creación, revisión o ampliación de unidades y 
 
 El repositorio es un programa profesional de aprendizaje, no un índice temático ni una colección de resúmenes. Cada clase debe permitir comprender, razonar, practicar y verificar el tema sin depender de afirmaciones vacías o de conocimiento implícito.
 
+La **Parte 6 — Análisis de malware** es la referencia canónica de tono y construcción pedagógica: explicación fluida desde primeros principios, conceptos desarrollados en contexto, subsecciones que cubren el temario, diagrama interpretado, práctica coherente y fuentes que respaldan afirmaciones concretas. No se debe usar su cantidad de palabras como plantilla; se debe reproducir su calidad de enseñanza.
+
 ## Contenido clase a clase
 
 - Conservar el contenido válido existente y profundizarlo; no reemplazarlo por texto genérico.
@@ -15,6 +17,10 @@ El repositorio es un programa profesional de aprendizaje, no un índice temátic
 - Leer y explicar los diagramas dentro del texto. Cada gráfico debe representar el tema específico de la clase y aportar comprensión, no decorar.
 - Incorporar práctica reproducible, criterios de verificación, errores comunes y preguntas que obliguen a razonar.
 - Definir términos técnicos en contexto y mantener un glosario útil, sin usar definiciones circulares.
+- Revisar y consolidar **toda la clase**: objetivo, resultados, tabla de temas, explicación, definiciones, glosario, preparación, laboratorio, ejercicios, reto, errores, preguntas y referencias. No limitar el trabajo a insertar una sección nueva.
+- Comprobar que cada tema anunciado en la tabla se desarrolla de forma explícita en la explicación o práctica. Una tabla no sustituye el contenido.
+- Eliminar contradicciones entre secciones, simplificaciones absolutas, afirmaciones publicitarias y frases heredadas que la nueva explicación desmienta.
+- El README de entrada de cada parte debe explicar el recorrido clase por clase: qué enseña cada clase, por qué aparece en esa posición, cómo conecta con la anterior y qué evidencia de aprendizaje produce.
 
 ## Profundidad y extensión
 
@@ -23,6 +29,7 @@ El repositorio es un programa profesional de aprendizaje, no un índice temátic
 - Un tema amplio puede requerir varias subsecciones, ejemplos y diagramas; uno acotado puede ser más breve si queda plenamente explicado.
 - Evaluar la calidad por comprensión lograda, claridad causal, cobertura de aspectos y capacidad de aplicar el conocimiento, no por cumplir una cuota de texto.
 - Evitar párrafos uniformes, frases intercambiables entre clases, lenguaje robótico y relleno.
+- No considerar una unidad terminada por aumentar líneas o palabras. Debe superarse una revisión cualitativa contra la Parte 6 y comprobarse cobertura de todos los temas.
 
 ## Fuentes y veracidad
 

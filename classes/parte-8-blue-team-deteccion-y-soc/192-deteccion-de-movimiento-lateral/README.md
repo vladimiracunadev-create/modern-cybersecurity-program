@@ -70,6 +70,22 @@ Al confirmar un caso se pregunta dónde más se usaron cuenta, origen y mecanism
 
 La prueba de detección usa acciones autorizadas y cleanup. Se valida dato, regla, alerta y triaje por subtécnica. Pintar T1021 completa después de probar RDP ocultaría SMB o WinRM sin cobertura; por eso el estado se conserva al nivel realmente demostrado.
 
+### PsExec, WMI y WinRM: efectos observables diferentes
+
+PsExec y herramientas semejantes pueden copiar un binario y crear un servicio remoto; la detección correlaciona share administrativo, Service Control Manager y proceso. El nombre del servicio puede cambiar, por lo que depender solo de `PSEXESVC` cubre una implementación. WMI puede iniciar procesos mediante proveedores y deja otra combinación de autenticación, actividad WMI y proceso. WinRM/PowerShell remoting se apoya en WS-Management y procesos host propios.
+
+Estas tecnologías son administración legítima. La pregunta no es «¿se usó WMI?», sino quién, desde qué origen, hacia qué activo, con qué comando y si respeta rutas autorizadas. Un inventario de herramientas y bastiones reduce ruido, pero sus excepciones deben ser específicas y revisables.
+
+### Pass-the-Hash y Overpass-the-Hash
+
+Pass-the-Hash reutiliza material NTLM sin conocer la contraseña en claro; Overpass-the-Hash usa material para obtener tickets Kerberos según el procedimiento. No existe un evento que diga literalmente «PtH». Se razona con tipo/protocolo de autenticación, origen, cuenta, privilegios, destino y actividad posterior, comparando con comportamiento legítimo.
+
+La detección de credenciales reutilizadas necesita comprender qué protocolos permite el entorno y qué logs poseen controladores y destinos. Una señal aislada de NTLM puede ser compatibilidad heredada. La combinación con una estación no autorizada, cuenta privilegiada y expansión a varios hosts aumenta confianza. La respuesta considera rotación de credenciales y sesiones, no solo aislar el último equipo.
+
+### Baseline administrativo como control vivo
+
+El grafo autorizado se alimenta de arquitectura y cambios aprobados, no solo de lo observado: si un acceso hostil se repite, podría convertirse en «normal» estadístico. Se comparan esperado y observado. Las desviaciones se investigan y el baseline tiene dueño y fecha. Así se evita tanto alertar cada tarea de soporte como aprender actividad maliciosa como normal.
+
 ## 📔 Glosario
 
 - **Movimiento lateral:** desplazamiento hacia otros recursos.
@@ -158,13 +174,13 @@ Ayuda mucho (Sysmon, logon events), pero correlacionar con la red (SMB, conexion
 **❓ ¿Detecto Pass-the-Hash directamente?**
 No hay un "evento PtH", pero su firma es un patrón: logon NTLM tipo 3 con credenciales explícitas (4648) en contextos donde se esperaría Kerberos. Se detecta por anomalía.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- MITRE ATT&CK, Lateral Movement — <https://attack.mitre.org/tactics/TA0008/>
-- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*.
-- Microsoft, "Securing lateral movement paths" — <https://learn.microsoft.com/>
-- SpecterOps, BloodHound docs — <https://bloodhound.readthedocs.io/>
-- JPCERT/CC, "Detecting Lateral Movement through Tracking Event Logs" — <https://jpcertcc.github.io/ToolAnalysisResultSheet/>
+- MITRE ATT&CK, Lateral Movement: fuente primaria para el objetivo táctico, sus técnicas y procedimientos documentados — <https://attack.mitre.org/tactics/TA0008/>
+- MITRE ATT&CK T1021, Remote Services: fuente primaria para RDP, SMB/Windows Admin Shares, WinRM, SSH y otras subtécnicas; no afirma que un único evento confirme movimiento lateral — <https://attack.mitre.org/techniques/T1021/>
+- JPCERT/CC, *Tool Analysis Result Sheet*: investigación publicada con artefactos de herramientas y eventos de Windows; se usa para formular y probar observables concretos — <https://jpcertcc.github.io/ToolAnalysisResultSheet/>
+- SpecterOps BloodHound: documentación oficial del producto para modelar relaciones de identidad y rutas; una ruta posible no prueba que haya sido utilizada — <https://bloodhound.specterops.io/>
+- Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*: bibliografía profesional complementaria.
 
 ## 📥 Material descargable
 
