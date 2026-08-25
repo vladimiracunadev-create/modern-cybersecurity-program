@@ -15,7 +15,11 @@ on:
       - "labs/README.md"
       - "ctf/README.md"
       - "manual/MANUAL.pdf"
+      # Los diagramas se incrustan en las páginas: si cambian, el sitio publicado
+      # se queda con los de antes hasta que otro cambio lo reconstruya.
+      - "diagramas/**"
       - "scripts/generar_sitio.py"
+      - "scripts/mermaid_svg.py"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
