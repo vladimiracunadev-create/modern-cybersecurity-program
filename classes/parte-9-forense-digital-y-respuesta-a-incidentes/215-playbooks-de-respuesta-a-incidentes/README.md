@@ -25,12 +25,58 @@ Al finalizar, el alumno podrá:
 |---|------|-----------------|
 | 1 | Qué es un playbook | Respuesta consistente |
 | 2 | Anatomía: fases, roles, decisiones | Estructura reutilizable |
-| 3 | Playbook de phishing | El caso más frecuente |
-| 4 | Playbook de ransomware | El más dañino |
-| 5 | Playbook de cuenta comprometida | Muy común en nube |
+| 3 | Playbook de phishing | Coordinar correo, identidad, endpoint y comunicación |
+| 4 | Playbook de ransomware | Decidir ante propagación, cifrado y continuidad |
+| 5 | Playbook de cuenta comprometida | Revocar sesiones sin perder alcance ni evidencia |
 | 6 | Integración con ATT&CK | Mapear al adversario |
 | 7 | SOAR y automatización | Escalar la respuesta |
 | 8 | Mantenimiento del playbook | No dejar que caduque |
+
+## 🧠 Explicación en profundidad
+
+Un playbook convierte política y conocimiento técnico en decisiones repetibles. No es una lista rígida: define disparadores, información mínima, ramas, responsables, aprobaciones, comunicaciones, evidencia y salida. Debe funcionar bajo presión y también explicar cuándo detenerse.
+
+```mermaid
+flowchart LR
+    T[Trigger y alcance] --> V[Validar incidente]
+    V --> S[Clasificar impacto]
+    S --> B{Rama de escenario}
+    B --> C[Contener con aprobación]
+    B --> E[Escalar/legal/comunicar]
+    C --> R[Verificar y recuperar]
+    E --> R
+    R --> L[Lecciones y actualización]
+```
+
+Runbook detalla una tarea; playbook coordina varias. Los contactos, credenciales de emergencia y dependencias se prueban, no se suponen. Cada acción de contención incluye efecto empresarial y reversión. Una versión debe señalar marco aplicable, propietario, fecha y pruebas tabletop. La automatización ejecuta pasos autorizados; no amplía autoridad.
+
+### Un playbook es un contrato operativo
+
+El documento une señal de entrada, severidad, responsables, fuentes mínimas, decisiones y criterios de salida. «Investigar el correo» no es un paso ejecutable; «preservar el `.eml`, calcular SHA-256 y consultar URL, adjunto, remitente y destinatarios» sí define productos verificables. Cada paso señala quién ejecuta, quién aprueba, dónde registra el resultado y qué dependencia puede detenerlo.
+
+Las ramas se construyen con criterios observables, aunque no siempre binarios: cifrado activo, privilegio administrativo, datos regulados, propagación o impacto de continuidad. El playbook también define cómo proceder con información insuficiente. Una decisión de aislar puede requerir aprobación distinta si afecta una estación de usuario o un sistema clínico.
+
+### El escenario cambia las preguntas, no el método de calidad
+
+En phishing se preserva mensaje, se busca alcance entre destinatarios, se correlaciona navegación y se evalúa identidad. En ransomware se priorizan propagación, backups, claves, sistemas críticos y comunicación. En una cuenta cloud se revocan sesiones y secretos coordinadamente, se investigan roles asumidos y se evita destruir la sesión investigativa. Estos ejemplos no se ordenan por una supuesta frecuencia universal: la organización prioriza según su riesgo y datos propios.
+
+ATT&CK ayuda a describir comportamientos y diseñar búsquedas, pero no reemplaza la lógica de respuesta. Un IOC puede caducar o compartirse con infraestructura legítima; un playbook incluye validación, expiración y reversión de bloqueos.
+
+### Mantener, probar y automatizar con límites
+
+Cada playbook tiene propietario, versión, cambios, dependencias y fecha de la última prueba. Un tabletop prueba autoridad y coordinación; una prueba técnica valida comandos y permisos. Los hallazgos generan cambios trazables y una reprueba. Revisarlo solo por calendario es insuficiente si cambió una API, proveedor, arquitectura o obligación.
+
+SOAR puede enriquecer, abrir casos, consultar y bloquear, pero el grado de automatización depende del daño potencial y confianza. Acciones destructivas o de amplio impacto conservan aprobación y mecanismo de reversión. Las credenciales del SOAR se tratan como acceso privilegiado.
+
+## 📔 Glosario
+
+- **Playbook:** flujo de decisiones y tareas de un escenario.
+- **Runbook:** procedimiento técnico específico.
+- **Trigger:** condición que inicia el flujo.
+- **Decision gate:** punto que exige criterio o aprobación.
+- **Escalation path:** ruta formal hacia mayor autoridad.
+- **Out-of-band:** canal separado de sistemas posiblemente afectados.
+- **Versionado:** historial controlado de cambios.
 
 ## 📖 Definiciones y características
 
@@ -41,6 +87,16 @@ Al finalizar, el alumno podrá:
 - **SOAR**: Security Orchestration, Automation and Response. Característica: automatiza tareas repetibles del playbook.
 - **IOC**: indicador de compromiso (hash, IP, dominio). Característica: alimenta el bloqueo y la búsqueda retroactiva.
 - **ATT&CK**: matriz de tácticas/técnicas del adversario. Característica: da un lenguaje común para describir el ataque.
+
+## 🔍 Caso razonado — cifrado activo en un servidor de archivos
+
+La alerta combina renombrados masivos y una nota de rescate. El playbook exige validar host, proceso y alcance, preservar telemetría disponible y decidir aislamiento según propagación e impacto. La rama «cifrado activo confirmado» autoriza aislamiento de red por el líder de incidente; desconectar almacenamiento compartido requiere al responsable de continuidad. Paralelamente se protege la infraestructura de backups con credenciales separadas.
+
+El documento no ordena «borrar malware». Antes de erradicar, registra imagen, memoria si es viable, identidad, conexiones y mecanismo de persistencia. La recuperación solo avanza desde un punto anterior al compromiso verificado y con monitoreo reforzado. Cada decisión deja hora, responsable, evidencia conocida y resultado esperado.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando otra persona puede ejecutar tu playbook sin interpretación privada: cada paso produce evidencia, cada rama tiene criterios, autoridad y reversión, las dependencias han sido probadas y la automatización conserva límites. Además, puedes adaptar el mismo modelo a phishing, ransomware e identidad sin copiar listas genéricas.
 
 ## 🧰 Herramientas y preparación
 
@@ -96,7 +152,7 @@ Diseña un playbook completo para "cuenta de correo corporativa comprometida" co
 El playbook orquesta la respuesta a un tipo de incidente; el runbook detalla una tarea técnica dentro de él.
 
 **❓ ¿Cuántos playbooks necesito?**
-Empieza por los incidentes más frecuentes y dañinos: phishing, ransomware, cuenta comprometida, malware. Amplía según tu contexto.
+Prioriza con datos de riesgo, incidentes, amenazas y dependencias de tu organización. Phishing, ransomware, cuenta comprometida y malware son plantillas iniciales posibles, no un ranking universal.
 
 **❓ ¿SOAR reemplaza al analista?**
 No. Automatiza lo repetible (enriquecer IOCs, bloquear, notificar) para que el analista se enfoque en decisiones.
@@ -104,12 +160,13 @@ No. Automatiza lo repetible (enriquecer IOCs, bloquear, notificar) para que el a
 **❓ ¿Cómo evito que caduquen?**
 Revísalos tras cada incidente y en las lecciones aprendidas; un playbook es un documento vivo.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Roberts & Brown — *Intelligence-Driven Incident Response*, O'Reilly 2017.
-- NIST SP 800-61 Rev. 2: <https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final>
-- MITRE ATT&CK: <https://attack.mitre.org/>
-- TheHive & Cortex: <https://thehive-project.org/>
+- **NIST SP 800-61 Rev. 3:** <https://doi.org/10.6028/NIST.SP.800-61r3> — recomendaciones actuales que integran respuesta a incidentes con CSF 2.0; reemplaza Rev. 2.
+- **CISA Incident and Vulnerability Response Playbooks:** <https://www.cisa.gov/sites/default/files/publications/Cybersecurity_Incident_Vulnerability_Response_Playbooks_508C.pdf> — ejemplo oficial de pasos, roles y coordinación; debe adaptarse al contexto y al marco NIST vigente.
+- **MITRE ATT&CK:** <https://attack.mitre.org/> — lenguaje y conocimiento de comportamientos para búsquedas y cobertura; no es un procedimiento de respuesta.
+- **TheHive:** <https://docs.strangebee.com/thehive/> — documentación oficial de gestión de casos y observables; la herramienta no define por sí sola autoridad operativa.
+- **Roberts y Brown — _Intelligence-Driven Incident Response_, O’Reilly, 2017:** enfoque de respuesta guiada por inteligencia; complementar con normas y arquitectura actuales.
 
 ## 📥 Material descargable
 

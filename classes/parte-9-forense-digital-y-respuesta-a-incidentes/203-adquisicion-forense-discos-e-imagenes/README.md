@@ -32,15 +32,68 @@ Al finalizar, el alumno podrá:
 | 7 | Adquisición en vivo vs. apagado | Decisión bajo orden de volatilidad |
 | 8 | Discos cifrados y SSD/TRIM | Retos modernos de adquisición |
 
+## 🧠 Explicación en profundidad
+
+Adquirir no significa copiar archivos visibles. Una imagen física busca sectores direccionables, espacio no asignado y estructuras; una adquisición lógica obtiene objetos accesibles mediante el sistema o una API. La elección depende de pregunta, cifrado, estado, tiempo, capacidad y autoridad.
+
+```mermaid
+flowchart LR
+    Q[Pregunta investigativa] --> S{Fuente encendida}
+    S -->|Sí| V[Datos volátiles y claves]
+    S -->|No o después| B[Bloqueo de escritura]
+    V --> D[Imagen o adquisición lógica]
+    B --> D
+    D --> H[Hash origen/adquisición]
+    H --> P[Preservar original]
+```
+
+Apagar puede preservar disco y destruir RAM o claves; mantener encendido altera timestamps. No existe decisión sin impacto, por eso se registra. Un write blocker reduce escrituras en medios compatibles, pero se verifica. Formatos raw y contenedores forenses difieren en metadatos, compresión y segmentación. El hash se calcula y compara en puntos definidos, conservando también logs de herramienta y errores de lectura.
+
+### Elegir método desde la pregunta
+
+Si la pregunta exige archivos de usuario accesibles, una adquisición lógica puede ser suficiente y más rápida. Si interesa contenido borrado, estructura o espacio no asignado, se necesita imagen física cuando el medio y acceso lo permiten. Un volumen cifrado abierto puede justificar adquisición en vivo antes de perder claves; eso modifica el sistema y se registra. NIST SP 800-86 respalda seleccionar técnicas según necesidad de respuesta y preservación, no aplicar un único ritual.
+
+Antes se documentan dispositivo, número de serie, conexiones, estado, fecha, reloj y autoridad. En medios apagados se usa write blocker de hardware o software apropiado y se verifica con una prueba controlada. «Conecté el bloqueador» no demuestra que funcionó. En sistemas vivos se limita el conjunto de comandos y se recoge primero lo más volátil pertinente.
+
+### Imagen, formato y verificación
+
+Raw ofrece una representación sectorial simple; E01 y otros contenedores pueden almacenar metadatos, segmentos, compresión y checks. El formato no garantiza calidad. Se guardan logs con sectores ilegibles y reintentos. Si existen bad sectors, el informe distingue datos adquiridos de los no disponibles y evita afirmar una copia perfecta.
+
+El hash de la adquisición se calcula al crear y se verifica antes de analizar o transferir. Hashes internos de bloques pueden ayudar a detectar corrupción en contenedores. El algoritmo y valor se registran completos. El original se monta de solo lectura o se custodia; las herramientas trabajan sobre copia. libewf ofrece herramientas abiertas para formatos EWF, mientras FTK Imager es una herramienta de adquisición cuyo uso debe documentarse por versión y parámetros.
+
+### Decidir sobre un equipo encendido
+
+Apagar desconecta sesiones y elimina RAM; adquirir en vivo altera memoria y filesystem. Se ponderan cifrado, procesos en memoria, seguridad física, propagación y criticidad. La decisión pertenece al plan de incidente. El diagrama coloca la pregunta antes de la herramienta porque una adquisición técnicamente correcta puede ser investigativamente inútil si destruyó la única evidencia que respondía el caso.
+
+## 📔 Glosario
+
+- **Adquisición física:** copia de sectores direccionables.
+- **Adquisición lógica:** colección mediante archivos o API.
+- **Imagen raw:** copia sectorial sin contenedor adicional.
+- **Write blocker:** control que impide escrituras al medio.
+- **Bad sector:** sector que no pudo leerse de forma fiable.
+- **Live acquisition:** recolección con sistema en ejecución.
+- **Verificación:** comparación documentada de integridad.
+
 ## 📖 Definiciones y características
 
-- **Adquisición física**: copia bit a bit de todo el medio, incluido espacio no asignado. Característica: recupera datos borrados.
+- **Adquisición física**: copia de sectores direccionables del medio o dispositivo accesible, incluido espacio no asignado. Característica: permite buscar residuos si no fueron sobrescritos, eliminados por TRIM o cifrados de forma inaccesible.
 - **Adquisición lógica**: copia de archivos y estructuras vivas. Característica: más rápida pero omite lo borrado.
 - **Formato RAW (dd)**: copia cruda sin metadatos. Característica: universal pero sin verificación embebida.
-- **Formato E01 (EWF)**: EnCase Evidence Format con compresión, metadatos del caso y hash integrado. Característica: verifica integridad por sí mismo.
-- **Write blocker**: dispositivo que impide escritura en el original. Característica: hardware es el estándar de oro.
+- **Formato E01 (EWF)**: contenedor con segmentación, compresión, metadatos y comprobaciones. Característica: sus controles ayudan a detectar corrupción, pero no reemplazan procedimiento ni verificación externa.
+- **Write blocker**: dispositivo o control destinado a impedir escrituras al original. Característica: hardware y software deben seleccionarse y probarse según interfaz y escenario.
 - **Espacio no asignado (unallocated)**: sectores sin archivo vivo asignado. Característica: fuente de datos borrados y carving.
-- **TRIM en SSD**: el disco borra físicamente bloques marcados como libres. Característica: dificulta recuperar borrados en SSD.
+- **TRIM en SSD**: comando por el que el sistema informa bloques que ya no necesita; el controlador decide cómo y cuándo gestionarlos. Característica: puede reducir o impedir recuperación, sin permitir predecir un resultado universal.
+
+## 🔍 Caso razonado — portátil cifrado y SSD
+
+Un portátil corporativo está encendido, desbloqueado y conectado. La pregunta prioritaria es si una cuenta ejecutó una herramienta y extrajo archivos. Apagar puede cerrar el volumen cifrado y perder RAM; realizar una imagen física en vivo puede tardar y modificar el sistema. El plan autoriza primero memoria y estado de cifrado, después una adquisición lógica de artefactos prioritarios y finalmente la imagen o snapshot técnicamente viable. Cada acción, demora y error queda registrado.
+
+En un SSD, la ausencia de contenido borrado después de TRIM no demuestra que nunca existió. En un E01, metadatos y comprobaciones internas no reemplazan el hash externo ni el log de sectores fallidos. El examinador preserva una copia sellada, verifica una copia de trabajo y limita la conclusión a lo efectivamente adquirido.
+
+## ✅ Criterio de dominio
+
+El alumno compara adquisición física, lógica y en vivo contra una pregunta concreta; documenta formato, herramienta, versión, dispositivo, write blocker, hashes y errores; y explica el impacto de cifrado y TRIM. Una copia sin log, verificación o justificación metodológica no se acepta como adquisición completa.
 
 ## 🧰 Herramientas y preparación
 
@@ -133,12 +186,14 @@ Para prácticas sí; en casos legales serios se prefiere un write-blocker de har
 **❓ ¿Por qué mi SSD no recupera borrados?**
 Por TRIM: el controlador borra físicamente bloques liberados, a veces en segundos.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- Carrier, B. — *File System Forensic Analysis*, Addison-Wesley 2005.
-- NIST SP 800-86: <https://csrc.nist.gov/publications/detail/sp/800-86/final>
-- FTK Imager (Exterro): <https://www.exterro.com/ftk-imager>
-- libewf / ewf-tools: <https://github.com/libyal/libewf>
+- NIST SP 800-86: fuente primaria para seleccionar y documentar adquisición según necesidad de respuesta y forense — <https://doi.org/10.6028/NIST.SP.800-86>
+- RFC 3227: fuente primaria para orden de volatilidad, copias bit a bit, checksums y análisis sobre copia — <https://www.rfc-editor.org/info/rfc3227/>
+- NIST Computer Forensics Tool Testing: proyecto primario de requisitos y pruebas; los resultados aplican a versiones y configuraciones ensayadas — <https://www.nist.gov/itl/ssd/software-quality-group/computer-forensics-tool-testing-program-cftt>
+- libewf: implementación primaria abierta de formatos EWF y herramientas como `ewfacquire` — <https://github.com/libyal/libewf>
+- FTK Imager: documentación del proveedor para funciones de adquisición; no sustituye validación independiente del método — <https://www.exterro.com/ftk-product-downloads/ftk-imager-version-4-7-3>
+- Carrier, B. *File System Forensic Analysis*. Addison-Wesley: bibliografía complementaria.
 
 ## 📥 Material descargable
 

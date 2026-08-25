@@ -26,21 +26,75 @@ Al finalizar, el alumno podrá:
 | 1 | Causa próxima vs. raíz | Arreglar el síntoma no basta |
 | 2 | Los 5 Porqués | Método simple y potente |
 | 3 | Diagrama de Ishikawa | Causas por categoría |
-| 4 | Reconstrucción de kill chain | Ver todo el ataque |
+| 4 | Reconstrucción de secuencia de ataque | Relacionar acciones, controles y efectos |
 | 5 | Cultura blameless | Aprender, no castigar |
 | 6 | Acciones correctivas | Prevenir la recurrencia |
 | 7 | Métricas post-incidente | MTTD, MTTR |
 | 8 | Lecciones aprendidas | Cerrar el ciclo NIST |
 
+## 🧠 Explicación en profundidad
+
+Causa raíz no significa encontrar una única persona o vulnerabilidad. Un incidente emerge de condiciones técnicas y organizativas: exposición, identidad, control preventivo, telemetría, decisión y gobernanza. «Phishing» describe un mecanismo inicial, no por qué produjo impacto.
+
+```mermaid
+flowchart TD
+    I[Impacto observado] --> W1[¿Qué acción lo produjo?]
+    W1 --> W2[¿Qué acceso lo permitió?]
+    W2 --> W3[¿Qué control faltó o falló?]
+    W3 --> W4[¿Por qué existía esa condición?]
+    W4 --> SYS[Causas técnicas y sistémicas]
+    SYS --> ACT[Acciones con dueño y evidencia]
+```
+
+Los «5 porqués» ayudan si se sustentan en hechos y no se fuerzan hasta una respuesta conveniente. Un diagrama causal permite múltiples contribuyentes y barreras fallidas. Se separan causa, factor contribuyente y síntoma. Las acciones se priorizan por reducción de riesgo y se verifican mediante métrica o prueba; «capacitar usuarios» sin condición medible rara vez corrige el sistema completo.
+
+### Pasar de la cronología al mecanismo causal
+
+Una timeline responde principalmente cuándo y en qué orden; el RCA pregunta qué condiciones hicieron posible el impacto. Que una persona abriera un adjunto puede ser un hecho próximo, pero el resultado también dependió de controles de correo, configuración de macros, privilegios, segmentación, telemetría y capacidad de recuperación. El modelo causal conecta acciones con barreras presentes, ausentes o ineficaces.
+
+No toda condición es «la raíz». Se distingue disparador, causa próxima, factor contribuyente, condición sistémica e impacto. Varias ramas pueden converger. Esta precisión evita una cadena artificial donde el quinto «porqué» refleja la preferencia del facilitador y no la evidencia.
+
+### Usar métodos como ayudas, no como máquinas de verdad
+
+Los 5 Porqués funcionan bien para una cadena acotada y se detienen cuando falta evidencia o se sale del control de la organización. Ishikawa ayuda a explorar personas, proceso, tecnología, entorno y gobernanza, pero cada rama debe validarse. ATT&CK ofrece vocabulario para acciones adversarias; no explica por sí solo por qué los controles internos fallaron.
+
+Un postmortem sin culpa no elimina responsabilidad profesional. Busca entender decisiones dentro de la información, incentivos y herramientas disponibles, y separa conducta deliberada de error razonable. Esto aumenta la probabilidad de obtener datos honestos y acciones de sistema.
+
+### Diseñar acciones que demuestren reducción de riesgo
+
+Cada acción se vincula a una causa, tiene dueño, plazo, prioridad y prueba de eficacia. «Implementar MFA resistente al phishing para administradores y simular un inicio con credencial robada» es verificable; «mejorar MFA» no. También se revisan efectos secundarios y cobertura: un control puede reducir una ruta pero dejar cuentas de servicio o recuperación fuera.
+
+MTTD y MTTR requieren definición de inicio, fin, población e incidentes excluidos. Un promedio que mezcla severidades o solo casos detectados puede ocultar deterioro. Se complementan con distribución, cobertura, tiempo por fase y reincidencia de condiciones causales.
+
+## 📔 Glosario
+
+- **Causa raíz:** condición cuya corrección reduce recurrencia significativa.
+- **Factor contribuyente:** condición que aumentó probabilidad o impacto.
+- **Síntoma:** manifestación observable del problema.
+- **5 Whys:** técnica iterativa de preguntas causales.
+- **Causal graph:** relaciones entre condiciones y resultado.
+- **Control fallido:** barrera inexistente, ineficaz o eludida.
+- **Acción correctiva:** cambio con dueño y validación.
+
 ## 📖 Definiciones y características
 
 - **Causa próxima**: el evento inmediato que produjo el daño (p. ej. "se ejecutó el macro"). Característica: visible pero superficial.
-- **Causa raíz**: la condición de fondo que permitió todo (p. ej. "no había filtrado de adjuntos ni bloqueo de macros"). Característica: al corregirla, se previenen incidentes futuros.
+- **Causa raíz**: condición sistémica cuya corrección reduce de forma demostrable la probabilidad o impacto de recurrencia. Característica: puede coexistir con otras causas y no asegura prevención absoluta.
 - **Causa contribuyente**: factor que agravó o facilitó. Característica: no es la raíz, pero importa.
-- **5 Porqués**: preguntar "¿por qué?" iterativamente hasta la raíz. Característica: simple, ideal para causas lineales.
+- **5 Porqués**: preguntar por condiciones causales sucesivas y respaldarlas con evidencia. Característica: útil para cadenas acotadas; puede simplificar en exceso sistemas complejos.
 - **Ishikawa (espina de pescado)**: agrupa causas por categorías (personas, proceso, tecnología…). Característica: útil para causas múltiples.
 - **Blameless post-mortem**: análisis sin culpar individuos. Característica: fomenta honestidad y aprendizaje.
-- **MTTD/MTTR**: tiempo medio de detección/respuesta. Característica: métricas de mejora del programa.
+- **MTTD/MTTR**: medidas de tiempo de detección y respuesta bajo una definición explícita. Característica: orientan tendencias, pero son sensibles a población, severidad y sesgo de detección.
+
+## 🔍 Caso razonado — por qué «el usuario hizo clic» no cierra el análisis
+
+Un adjunto ejecuta código y roba un token administrativo. Culpar el clic propone capacitar otra vez, pero no explica por qué el adjunto llegó, por qué pudo ejecutar, por qué la cuenta tenía privilegio continuo ni por qué el uso del token tardó horas en detectarse. El diagrama causal muestra fallos independientes en filtrado, política de ejecución, privilegio y telemetría.
+
+Las acciones resultantes son distintas: bloquear el tipo de contenido mediante una prueba reproducible, reducir privilegio permanente, aplicar autenticación resistente al phishing y alertar sobre uso anómalo del token. Cada control se asigna y se reprueba. La capacitación puede ser complementaria, pero deja de presentarse como remedio único.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando transformas una timeline en un modelo causal con múltiples contribuyentes, detienes un método cuando falta evidencia, evitas atribuir la raíz a una persona por comodidad y defines acciones cuya eficacia puede probarse con condiciones y métricas bien delimitadas.
 
 ## 🧰 Herramientas y preparación
 
@@ -105,12 +159,12 @@ Porque culpar oculta la verdad. Un análisis sin culpa obtiene información hone
 **❓ ¿Para qué sirven MTTD/MTTR?**
 Miden la eficacia del programa de respuesta y permiten fijar objetivos de mejora incidente a incidente.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- NIST SP 800-61 Rev. 2 (Lessons Learned): <https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final>
-- Lockheed Martin — Cyber Kill Chain: <https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html>
-- Google SRE — Postmortem Culture: <https://sre.google/sre-book/postmortem-culture/>
-- MITRE ATT&CK: <https://attack.mitre.org/>
+- **NIST SP 800-61 Rev. 3:** <https://doi.org/10.6028/NIST.SP.800-61r3> — vincula aprendizaje de incidentes, mejora continua y gestión de riesgo en CSF 2.0.
+- **Google SRE — Postmortem Culture:** <https://sre.google/sre-book/postmortem-culture/> — práctica publicada para postmortems orientados al aprendizaje; debe adaptarse a obligaciones laborales y regulatorias.
+- **MITRE ATT&CK:** <https://attack.mitre.org/> — vocabulario para reconstruir comportamientos; no constituye por sí mismo un análisis causal organizacional.
+- **NIST Cybersecurity Framework 2.0:** <https://www.nist.gov/cyberframework> — marco oficial para relacionar hallazgos con gobierno, identificación, protección, detección, respuesta y recuperación.
 
 ## 📥 Material descargable
 

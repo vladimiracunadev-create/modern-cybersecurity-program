@@ -77,15 +77,15 @@ Eso también permite detectar cuándo una norma deja de estar vigente, que es cu
 | [MITRE ATT&CK: Adversarial Tactics, Techniques and Common…](https://attack.mitre.org/) | MITRE ATT&CK v19.2 | 13 (0, 1, 3, 6, 7, 8, 9, 10, 12, 13, 16, 17, 18) |
 | [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/) | OWASP Cheat Sheet Series | 7 (0, 2, 3, 4, 10, 11, 17) |
 | [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/) | OWASP WSTG v4.2 | 8 (1, 3, 4, 11, 12, 16, 17, 18) |
+| [CISA: avisos, catálogos y recursos de ciberseguridad](https://www.cisa.gov/) | CISA | 7 (0, 9, 12, 13, 14, 16, 17) |
 | [Computer Security Incident Handling Guide](https://csrc.nist.gov/pubs/sp/800/61/r2/final) | NIST SP 800-61 Rev. 2 — **retirada** | 6 (7, 8, 9, 10, 16, 17) |
 | [OWASP Community: fichas de ataques y vulnerabilidades](https://owasp.org/www-community/) | OWASP Community | 5 (0, 1, 4, 5, 11) |
-| [CISA: avisos, catálogos y recursos de ciberseguridad](https://www.cisa.gov/) | CISA | 7 (0, 9, 12, 13, 14, 16, 17) |
 | [MITRE ATLAS: Adversarial Threat Landscape for…](https://atlas.mitre.org/) | MITRE ATLAS v2026.07 | 2 (15, 18) |
 | [CIS Benchmarks: guías de configuración segura](https://www.cisecurity.org/cis-benchmarks) | CIS Benchmarks | 4 (0, 10, 14, 17) |
+| [The NIST Cybersecurity Framework (CSF) 2.0](https://www.nist.gov/cyberframework) | NIST CSF 2.0 | 5 (0, 8, 9, 14, 17) |
 | [Technical Guide to Information Security Testing and Assessment](https://csrc.nist.gov/pubs/sp/800/115/final) | NIST SP 800-115 | 4 (3, 7, 8, 16) |
+| [Incident Response Recommendations and Considerations for…](https://doi.org/10.6028/NIST.SP.800-61r3) | NIST SP 800-61 Rev. 3 | 3 (7, 8, 9) |
 | [Artificial Intelligence Risk Management Framework (AI RMF 1.0)](https://www.nist.gov/itl/ai-risk-management-framework) | NIST AI 100-1 (AI RMF 1.0) | 2 (15, 18) |
-| [Security and Privacy Controls for Information Systems and…](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) | NIST SP 800-53 Rev. 5 | 5 (7, 8, 14, 16, 17) |
-| [OWASP Top 10 for Large Language Model Applications](https://genai.owasp.org/llm-top-10/) | OWASP Top 10 for LLM Applications | 2 (15, 18) |
 
 ### Normas citadas que ya no están vigentes
 
@@ -105,7 +105,7 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 | [RFC 7489](https://www.rfc-editor.org/rfc/rfc7489) | obsoleta | 1 |
 | [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446) | obsoleta | 1 |
 
-Las 686 obras que usan las clases — 57 libros, 24 artículos, 149 normas y 456 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-08-19 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
+Las 688 obras que usan las clases — 57 libros, 24 artículos, 149 normas y 458 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-08-19 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
 
 <!-- fuentes:fin -->
 

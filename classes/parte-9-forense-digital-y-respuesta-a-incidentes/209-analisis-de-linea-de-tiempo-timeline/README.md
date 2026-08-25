@@ -7,7 +7,7 @@
 
 ## 🎯 Objetivo
 
-Aprender a construir y analizar **super-timelines**: la fusión de todos los timestamps de un sistema (sistema de archivos, registro, logs, artefactos) en una única línea de tiempo ordenada. Al terminar podrás usar plaso/log2timeline y Timesketch para reconstruir la secuencia exacta de un incidente.
+Aprender a construir y analizar **super-timelines**: la integración de timestamps extraídos de sistema de archivos, registro, logs y aplicaciones en una vista temporal trazable. Al terminar podrás usar plaso/log2timeline y Timesketch para reconstruir la secuencia sustentada de un incidente, incluidos vacíos y conflictos.
 
 ## 📚 Resultados de aprendizaje
 
@@ -24,23 +24,78 @@ Al finalizar, el alumno podrá:
 | # | Tema | Por qué importa |
 |---|------|-----------------|
 | 1 | Timeline de FS vs. super-timeline | Alcance de la evidencia temporal |
-| 2 | plaso: log2timeline y psort | Motor estándar de timelines |
+| 2 | plaso: log2timeline y psort | Flujo reproducible de extracción y exportación |
 | 3 | Fuentes que agrega plaso | Riqueza del resultado |
 | 4 | Acotar por ventana temporal | Reducir el ruido |
 | 5 | MACB y pivoteo | Encontrar el punto de entrada |
 | 6 | Timesketch | Análisis colaborativo |
 | 7 | Anti-forense en timelines | Timestomping y huecos |
-| 8 | Correlación multi-fuente | La historia completa |
+| 8 | Correlación multi-fuente | Una historia sustentada con alcances y vacíos |
+
+## 🧠 Explicación en profundidad
+
+Una timeline no es una lista ordenada sin más: integra relojes con semánticas distintas. Tiempo del evento, escritura del registro, adquisición e ingesta pueden divergir. Zona horaria, DST, deriva y precisión deben normalizarse sin borrar el valor original.
+
+```mermaid
+flowchart LR
+    D[Disco y filesystem] --> P[Parseo con plaso]
+    L[Logs y eventos] --> P
+    B[Browser y aplicaciones] --> P
+    P --> N[Normalizar tiempo y procedencia]
+    N --> F[Filtrar por entidades y ventana]
+    F --> C[Correlacionar]
+    C --> H[Hipótesis y vacíos]
+```
+
+Una super-timeline facilita pivotes pero amplifica errores de parsers y volumen. Cada fila necesita fuente y parser; varias filas pueden representar una sola acción. Se empieza con hitos confiables, se amplía la ventana y se buscan eventos que contradigan la historia. La ausencia temporal puede ser rotación, apagado, pérdida o falta de instrumentación.
+
+### Cuatro tiempos que no deben confundirse
+
+El tiempo del hecho, el tiempo escrito por una aplicación, el tiempo de modificación del contenedor y el tiempo de adquisición pueden ser distintos. Un servidor puede registrar en UTC, una aplicación en hora local y un artefacto conservar una precisión de segundos. Además, el reloj del host puede estar adelantado. Normalizar facilita ordenar, pero se conserva el valor original, zona, precisión y corrección aplicada. RFC 3227 recomienda documentar desfase y configuración temporal precisamente porque una línea ordenada puede ser falsa si se mezclan relojes sin examinarlos.
+
+MACB tampoco significa cuatro observadores independientes. Son categorías de tiempos del sistema de archivos cuya semántica depende del formato y de la operación. Copiar, extraer, renombrar o restaurar puede actualizar tiempos distintos. Por eso una fila temporal describe un cambio registrado, no necesariamente la intención humana detrás de él.
+
+### De la imagen al almacén Plaso
+
+`log2timeline.py` identifica fuentes y las procesa mediante parsers hacia un archivo `.plaso`; `pinfo.py` permite inspeccionar información del procesamiento; `psort.py` filtra y exporta eventos. Esta separación es pedagógicamente importante: el CSV no es la fuente original, sino una representación derivada. El expediente debe conservar imagen, almacenamiento Plaso, versión, parámetros, zona horaria, parser y hash de los productos relevantes.
+
+Habilitar más parsers aumenta cobertura y ruido, y también el tiempo de proceso. Una selección se justifica por sistema, pregunta y ventana. Antes de interpretar millones de filas, se revisan errores del procesamiento y se comprueba que las fuentes esperadas realmente fueron reconocidas.
+
+### Pivotar, contradecir y medir confianza
+
+El análisis parte de un hito de alta confianza —por ejemplo, una autenticación confirmada o una descarga observada— y abre ventanas antes y después. Se agrupan filas que pueden corresponder a una misma acción y se buscan confirmaciones en fuentes con mecanismos distintos. Un tiempo alterado en el filesystem puede entrar en conflicto con journal, navegador, EDR o red; esa contradicción es evidencia útil, pero no demuestra por sí sola *timestomping*.
+
+Timesketch facilita consultas, etiquetas y colaboración, pero no convierte automáticamente eventos en narrativa. La conclusión debe explicar qué fuente sostiene cada paso, qué corrección temporal se aplicó y qué intervalos siguen siendo desconocidos.
+
+## 📔 Glosario
+
+- **Timeline:** secuencia temporal de artefactos.
+- **Super-timeline:** integración de múltiples fuentes.
+- **Time skew:** diferencia entre reloj observado y referencia.
+- **DST:** cambio estacional de hora.
+- **Parser:** lógica que interpreta un artefacto.
+- **Hito:** evento confiable usado como pivote.
+- **Provenance:** vínculo de la fila con su fuente.
 
 ## 📖 Definiciones y características
 
 - **Timeline de sistema de archivos**: ordena solo los timestamps MACB del FS. Característica: rápida pero limitada.
-- **Super-timeline**: fusiona FS, registro, logs, navegador, etc. Característica: visión completa, pero voluminosa y ruidosa.
+- **Super-timeline**: integra eventos derivados de filesystem, registro, logs, navegador y otras fuentes. Característica: amplía la cobertura, pero conserva vacíos, duplicados y errores de interpretación.
 - **plaso**: framework que produce timelines; `log2timeline` extrae, `psort` filtra/exporta. Característica: soporta cientos de parsers.
 - **Plaso storage (.plaso)**: base intermedia de eventos. Característica: se filtra sin re-procesar la imagen.
 - **Timesketch**: plataforma web para analizar y anotar timelines en equipo. Característica: permite etiquetar y buscar a gran escala.
 - **Pivote**: saltar de un evento clave a los relacionados en el tiempo. Característica: técnica central del análisis.
-- **Timestomping**: alterar timestamps para engañar. Característica: crea incoherencias detectables entre fuentes.
+- **Timestomping**: alterar timestamps para dificultar la reconstrucción. Característica: puede producir incoherencias, aunque estas también admiten causas legítimas y requieren corroboración.
+
+## 🔍 Caso razonado — descarga, ejecución y persistencia con relojes distintos
+
+El proxy registra una descarga a las `14:02 UTC`; el navegador del portátil conserva `10:02` sin zona explícita; Prefetch muestra actividad dos minutos después y una tarea programada aparece a las `14:06 UTC`. Antes de ordenar, el analista verifica que el host estaba en UTC−4 y que su reloj atrasaba 47 segundos. Conserva tiempos originales y agrega columnas normalizadas, fuente y precisión.
+
+La secuencia es consistente con descarga seguida de ejecución y persistencia, pero el historial no prueba que una persona leyó la página y Prefetch no identifica por sí solo quién inició el programa. La narrativa final diferencia hechos registrados, inferencias y vacíos. Si `$STANDARD_INFORMATION` muestra una fecha de creación anterior a la descarga mientras `$FILE_NAME`, el journal y el proxy concuerdan, se investiga manipulación o copia preservando tiempos en lugar de escoger inmediatamente una sola explicación.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando construyes una timeline reproducible, conservas tiempo original y normalizado, documentas zona y desfase, puedes rastrear cada fila hasta fuente y parser, agrupas eventos relacionados sin contarlos doble y redactas una secuencia que incluye contradicciones y límites de confianza.
 
 ## 🧰 Herramientas y preparación
 
@@ -122,12 +177,14 @@ No, pero facilita el trabajo en equipo, el etiquetado y la búsqueda. Un CSV tam
 **❓ ¿Cómo detecto manipulación de tiempos?**
 Buscando incoherencias entre fuentes que registran el mismo hecho: FS, `$UsnJrnl`, logs y artefactos deberían concordar.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- plaso / log2timeline: <https://plaso.readthedocs.io/>
-- Timesketch: <https://timesketch.org/>
-- SANS — Windows Forensic Analysis (FOR508): <https://www.sans.org/>
-- Carrier, B. — *File System Forensic Analysis*, Addison-Wesley 2005.
+- **Plaso User’s Guide:** <https://plaso.readthedocs.io/en/latest/sources/user/Users-Guide.html> — documentación oficial del flujo `log2timeline`, almacén y herramientas de inspección.
+- **Using psort:** <https://plaso.readthedocs.io/en/latest/sources/user/Using-psort.html> — referencia oficial de filtrado y exportación; documenta que UTC es la zona de salida predeterminada.
+- **Timesketch Documentation:** <https://timesketch.org/> — documentación del proyecto para búsqueda, anotación y colaboración; no sustituye la validación del parser.
+- **The Sleuth Kit:** <https://www.sleuthkit.org/sleuthkit/docs.php> — documentación del proyecto para timelines de filesystem y semántica de sus herramientas.
+- **RFC 3227 / BCP 55:** <https://www.rfc-editor.org/info/rfc3227/> — guía para recolección y archivo de evidencia; sustenta documentar reloj, zona y deriva.
+- **Carrier, B. — _File System Forensic Analysis_, Addison-Wesley, 2005:** fundamento técnico; sus ejemplos deben contrastarse con versiones actuales de cada filesystem.
 
 ## 📥 Material descargable
 

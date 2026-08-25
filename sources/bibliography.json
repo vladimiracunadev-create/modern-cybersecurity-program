@@ -85,8 +85,7 @@
     "classes/parte-6-analisis-de-malware/151-rootkits-y-bootkits/README.md",
     "classes/parte-6-analisis-de-malware/159-fileless-malware-y-living-off-the-land/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/207-forense-de-memoria-ram-con-volatility/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/213-anti-forense-y-sus-contramedidas/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/220-caso-completo-de-respuesta-a-incidentes-end-to-end/README.md"
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/213-anti-forense-y-sus-contramedidas/README.md"
    ]
   },
   {
@@ -736,8 +735,7 @@
    "used_in": [
     "classes/parte-6-analisis-de-malware/157-threat-intelligence-a-partir-de-malware/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/202-el-ciclo-de-respuesta-a-incidentes-nist-y-sans/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/215-playbooks-de-respuesta-a-incidentes/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/220-caso-completo-de-respuesta-a-incidentes-end-to-end/README.md"
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/215-playbooks-de-respuesta-a-incidentes/README.md"
    ]
   },
   {
@@ -2440,8 +2438,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-16-capstones-y-preparacion-de-certificaciones/307-capstone-respuesta-a-incidentes-dfir-end-to-end/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/220-caso-completo-de-respuesta-a-incidentes-end-to-end/README.md"
+    "classes/parte-16-capstones-y-preparacion-de-certificaciones/307-capstone-respuesta-a-incidentes-dfir-end-to-end/README.md"
    ],
    "authors": []
   },
@@ -3032,7 +3029,8 @@
    "seed": "auto",
    "matches": {
     "url_prefixes": [
-     "https://cloud.google.com/logging"
+     "https://cloud.google.com/logging",
+     "https://docs.cloud.google.com/logging"
     ],
     "text_patterns": []
    },
@@ -3884,15 +3882,16 @@
   {
    "id": "docs-aws-amazon-com-cloudtrail",
    "type": "reference",
-   "title": "AWS CloudTrail",
-   "locator": "https://docs.aws.amazon.com/cloudtrail",
+   "title": "AWS CloudTrail log file integrity validation",
+   "locator": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-intro.html",
    "authority": "amazon.com",
    "status": "verificada",
-   "notes": "Locator comprobado en red el 2026-08-19: responde 200 sin redireccion.",
+   "notes": "Documentacion oficial consultada el 2026-08-24: explica digest, firmas y prerequisitos para validar integridad de archivos CloudTrail.",
    "seed": "auto",
    "matches": {
     "url_prefixes": [
-     "https://docs.aws.amazon.com/cloudtrail"
+     "https://docs.aws.amazon.com/awscloudtrail",
+     "https://docs.aws.amazon.com/en_en/awscloudtrail"
     ],
     "text_patterns": []
    },
@@ -4595,7 +4594,6 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/204-forense-de-sistemas-de-archivos-ntfs-y-ext4/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/205-analisis-de-artefactos-de-windows/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/213-anti-forense-y-sus-contramedidas/README.md"
    ],
@@ -5025,6 +5023,7 @@
    "used_in": [
     "classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md",
     "classes/parte-16-capstones-y-preparacion-de-certificaciones/308-capstone-campana-de-bug-bounty/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/204-forense-de-sistemas-de-archivos-ntfs-y-ext4/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/211-forense-movil/README.md"
    ],
    "authors": []
@@ -8634,7 +8633,9 @@
    "used_in": [
     "classes/parte-13-seguridad-movil-iot-e-inalambrica/274-seguridad-automotriz-y-bus-can/README.md",
     "classes/parte-5-explotacion-de-sistemas-y-binarios/122-protecciones-modernas-aslr-dep-nx-stack-canaries-y-pie/README.md",
-    "classes/parte-5-explotacion-de-sistemas-y-binarios/139-kernel-exploitation-introduccion/README.md"
+    "classes/parte-5-explotacion-de-sistemas-y-binarios/139-kernel-exploitation-introduccion/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/204-forense-de-sistemas-de-archivos-ntfs-y-ext4/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/206-analisis-de-artefactos-de-linux/README.md"
    ],
    "authors": []
   },
@@ -8723,8 +8724,7 @@
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/224-seguridad-en-azure/README.md",
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/231-cloud-security-posture-management-cspm/README.md",
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/232-seguridad-serverless/README.md",
-    "classes/parte-10-seguridad-en-la-nube-y-contenedores/234-logging-y-deteccion-en-la-nube/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/212-forense-en-la-nube/README.md"
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/234-logging-y-deteccion-en-la-nube/README.md"
    ],
    "authors": []
   },
@@ -8771,13 +8771,12 @@
     "classes/parte-7-red-team-y-operaciones-ofensivas/169-ofuscacion-de-payloads-y-bypass-de-amsi/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/170-active-directory-enumeracion/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/171-active-directory-kerberoasting-y-ataques-a-kerberos/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/172-active-directory-pass-the-hash-y-pass-the-ticket/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/173-bloodhound-y-analisis-de-rutas-de-ataque/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/174-compromiso-total-de-dominio-dcsync-y-golden-ticket/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/175-persistencia-en-active-directory/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/182-logging-y-fuentes-de-telemetria/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/189-analisis-de-endpoints-con-edr/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/190-analisis-de-logs-de-windows-event-logs-y-sysmon/README.md"
+    "classes/parte-8-blue-team-deteccion-y-soc/190-analisis-de-logs-de-windows-event-logs-y-sysmon/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/205-analisis-de-artefactos-de-windows/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/212-forense-en-la-nube/README.md"
    ],
    "authors": []
   },
@@ -8916,8 +8915,7 @@
     "classes/parte-0-fundamentos-y-prerrequisitos/009-powershell-para-seguridad-ofensiva-y-defensiva/README.md",
     "classes/parte-5-explotacion-de-sistemas-y-binarios/129-explotacion-en-windows-manejo-de-seh/README.md",
     "classes/parte-5-explotacion-de-sistemas-y-binarios/130-ingenieria-inversa-introduccion/README.md",
-    "classes/parte-6-analisis-de-malware/145-el-formato-pe-de-windows/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/205-analisis-de-artefactos-de-windows/README.md"
+    "classes/parte-6-analisis-de-malware/145-el-formato-pe-de-windows/README.md"
    ],
    "authors": []
   },
@@ -8925,19 +8923,25 @@
    "id": "learn-microsoft-com-windows-server",
    "type": "reference",
    "title": "Microsoft",
-   "locator": "https://learn.microsoft.com/windows-server/storage/file-server/ntfs-overview",
+   "locator": "https://learn.microsoft.com/en-us/windows-server/storage/file-server/ntfs-overview",
    "authority": "microsoft.com",
    "status": "pendiente",
    "notes": "Comprobado en red el 2026-08-19: el locator responde pero redirige a https://learn.microsoft.com/en-us/windows-server/storage/file-server/ntfs-ove. Queda pendiente para decidir si se adopta la URL de destino.",
    "seed": "auto",
    "matches": {
     "url_prefixes": [
-     "https://learn.microsoft.com/windows-server"
+     "https://learn.microsoft.com/windows-server",
+     "https://learn.microsoft.com/en-us/windows-server"
     ],
     "text_patterns": []
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-7-red-team-y-operaciones-ofensivas/171-active-directory-kerberoasting-y-ataques-a-kerberos/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/172-active-directory-pass-the-hash-y-pass-the-ticket/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/173-bloodhound-y-analisis-de-rutas-de-ataque/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/174-compromiso-total-de-dominio-dcsync-y-golden-ticket/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/175-persistencia-en-active-directory/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/204-forense-de-sistemas-de-archivos-ntfs-y-ext4/README.md"
    ],
    "authors": []
@@ -9043,8 +9047,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-0-fundamentos-y-prerrequisitos/002-el-panorama-de-amenazas-moderno-actores-motivaciones-y-cyber-kill-chain/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/217-analisis-de-causa-raiz/README.md"
+    "classes/parte-0-fundamentos-y-prerrequisitos/002-el-panorama-de-amenazas-moderno-actores-motivaciones-y-cyber-kill-chain/README.md"
    ],
    "authors": []
   },
@@ -9125,7 +9128,9 @@
     "classes/parte-1-redes-y-seguridad-de-redes/027-analisis-de-trafico-filtros-seguimiento-de-flujos-y-estadisticas/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/034-firewalls-tipos-iptables-y-nftables/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/037-proxies-nat-y-pivoting-de-red/README.md",
-    "classes/parte-6-analisis-de-malware/154-malware-en-linux/README.md"
+    "classes/parte-6-analisis-de-malware/154-malware-en-linux/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/206-analisis-de-artefactos-de-linux/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/208-forense-de-red/README.md"
    ],
    "authors": []
   },
@@ -9995,7 +10000,8 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/209-analisis-de-linea-de-tiempo-timeline/README.md"
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/209-analisis-de-linea-de-tiempo-timeline/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/220-caso-completo-de-respuesta-a-incidentes-end-to-end/README.md"
    ],
    "authors": []
   },
@@ -10386,7 +10392,12 @@
     "classes/parte-0-fundamentos-y-prerrequisitos/014-direccionamiento-ip-y-subnetting/README.md",
     "classes/parte-0-fundamentos-y-prerrequisitos/016-python-para-seguridad-sockets-y-programacion-de-red/README.md",
     "classes/parte-0-fundamentos-y-prerrequisitos/017-python-para-seguridad-manipulacion-de-paquetes-con-scapy/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/210-forense-de-navegadores-y-correo/README.md"
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/201-fundamentos-de-dfir-y-cadena-de-custodia/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/203-adquisicion-forense-discos-e-imagenes/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/207-forense-de-memoria-ram-con-volatility/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/209-analisis-de-linea-de-tiempo-timeline/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/210-forense-de-navegadores-y-correo/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/220-caso-completo-de-respuesta-a-incidentes-end-to-end/README.md"
    ],
    "authors": []
   },
@@ -10529,14 +10540,8 @@
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/067-reglas-de-engagement-alcance-y-contratos/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/083-exfiltracion-de-datos/README.md",
     "classes/parte-6-analisis-de-malware/160-reporte-de-analisis-de-malware/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/201-fundamentos-de-dfir-y-cadena-de-custodia/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/202-el-ciclo-de-respuesta-a-incidentes-nist-y-sans/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/205-analisis-de-artefactos-de-windows/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/206-analisis-de-artefactos-de-linux/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/209-analisis-de-linea-de-tiempo-timeline/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/210-forense-de-navegadores-y-correo/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/216-contencion-erradicacion-y-recuperacion/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md"
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/205-analisis-de-artefactos-de-windows/README.md"
    ],
    "authors": []
   },
@@ -10863,7 +10868,10 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/204-forense-de-sistemas-de-archivos-ntfs-y-ext4/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/206-analisis-de-artefactos-de-linux/README.md"
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/206-analisis-de-artefactos-de-linux/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/209-analisis-de-linea-de-tiempo-timeline/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/214-recuperacion-de-datos-y-file-carving/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/220-caso-completo-de-respuesta-a-incidentes-end-to-end/README.md"
    ],
    "authors": []
   },
@@ -11269,7 +11277,8 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-13-seguridad-movil-iot-e-inalambrica/263-seguridad-de-ios-arquitectura/README.md"
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/263-seguridad-de-ios-arquitectura/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/211-forense-movil/README.md"
    ],
    "authors": []
   },
@@ -11823,7 +11832,8 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-17-profundizacion-para-certificaciones/325-forense-de-memoria-avanzado/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/207-forense-de-memoria-ram-con-volatility/README.md"
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/207-forense-de-memoria-ram-con-volatility/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/220-caso-completo-de-respuesta-a-incidentes-end-to-end/README.md"
    ],
    "authors": []
   },
@@ -11831,14 +11841,15 @@
    "id": "volatilityfoundation-org",
    "type": "reference",
    "title": "Volatility Foundation",
-   "locator": "https://www.volatilityfoundation.org/",
+   "locator": "https://volatilityfoundation.org/",
    "authority": "volatilityfoundation.org",
    "status": "pendiente",
    "notes": "Comprobado en red el 2026-08-19: el locator responde pero redirige a https://volatilityfoundation.org/. Queda pendiente para decidir si se adopta la URL de destino.",
    "seed": "auto",
    "matches": {
     "url_prefixes": [
-     "https://www.volatilityfoundation.org"
+     "https://www.volatilityfoundation.org",
+     "https://volatilityfoundation.org"
     ],
     "text_patterns": []
    },
@@ -12214,6 +12225,8 @@
     "classes/parte-16-capstones-y-preparacion-de-certificaciones/310-plan-de-aprendizaje-continuo-y-comunidad/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/315-mfa-y-gestion-de-accesos-privilegiados-pam/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/319-analisis-avanzado-de-phishing-y-correo-malicioso/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/215-playbooks-de-respuesta-a-incidentes/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/216-contencion-erradicacion-y-recuperacion/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md"
    ],
    "authors": [],
@@ -13092,6 +13105,26 @@
    "vigencia": "vigente"
   },
   {
+   "id": "mozilla-firefox-profiles",
+   "type": "reference",
+   "title": "Profiles - Where Firefox stores bookmarks, passwords and other user data",
+   "locator": "https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data",
+   "authority": "Mozilla",
+   "status": "verificada",
+   "notes": "Documentacion oficial de soporte consultada el 2026-08-24: enumera los datos conservados en el perfil Firefox y advierte que se almacenan separados del programa.",
+   "matches": {
+    "url_prefixes": [
+     "https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-08-24",
+   "used_in": [
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/210-forense-de-navegadores-y-correo/README.md"
+   ],
+   "authors": []
+  },
+  {
    "id": "nfpa-75",
    "type": "standard",
    "title": "NFPA 75: Standard for the Fire Protection of Information Technology Equipment",
@@ -13108,6 +13141,31 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-17-profundizacion-para-certificaciones/317-seguridad-fisica-y-ambiental/README.md"
+   ],
+   "authors": [],
+   "vigencia": "vigente"
+  },
+  {
+   "id": "nist-cftt",
+   "type": "reference",
+   "title": "Computer Forensics Tool Testing Program (CFTT)",
+   "locator": "https://www.nist.gov/itl/ssd/software-quality-group/computer-forensics-tool-testing-program-cftt",
+   "authority": "National Institute of Standards and Technology (NIST)",
+   "status": "verificada",
+   "notes": "Pagina oficial consultada el 2026-08-24: describe el programa, metodologia y reportes de prueba de herramientas forenses.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.nist.gov/itl/ssd/software-quality-group/computer-forensics-tool-testing-program-cftt"
+    ],
+    "text_patterns": [
+     "nist cftt\\b",
+     "nist computer forensics tool testing"
+    ]
+   },
+   "accessed": "2026-08-24",
+   "used_in": [
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/203-adquisicion-forense-discos-e-imagenes/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/214-recuperacion-de-datos-y-file-carving/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -13170,7 +13228,11 @@
     "classes/parte-0-fundamentos-y-prerrequisitos/003-frameworks-de-seguridad-nist-csf-iso-27001-mitre-att-ck-y-diamond-model/README.md",
     "classes/parte-14-grc-riesgo-y-cumplimiento/279-nist-cybersecurity-framework/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/320-gobierno-aspectos-legales-regulatorios-y-gestion-del-programa/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md"
+    "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/202-el-ciclo-de-respuesta-a-incidentes-nist-y-sans/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/215-playbooks-de-respuesta-a-incidentes/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/216-contencion-erradicacion-y-recuperacion/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/217-analisis-de-causa-raiz/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -14186,7 +14248,13 @@
    "used_in": [
     "classes/parte-7-red-team-y-operaciones-ofensivas/179-reporte-y-metricas-de-red-team/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/196-automatizacion-con-soar/README.md"
+    "classes/parte-8-blue-team-deteccion-y-soc/196-automatizacion-con-soar/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/202-el-ciclo-de-respuesta-a-incidentes-nist-y-sans/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/215-playbooks-de-respuesta-a-incidentes/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/216-contencion-erradicacion-y-recuperacion/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/217-analisis-de-causa-raiz/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/220-caso-completo-de-respuesta-a-incidentes-end-to-end/README.md"
    ],
    "authors": [
     "Alexander Nelson",
@@ -14335,7 +14403,11 @@
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/201-fundamentos-de-dfir-y-cadena-de-custodia/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/203-adquisicion-forense-discos-e-imagenes/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/206-analisis-de-artefactos-de-linux/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/218-reporte-forense-y-aspectos-legales/README.md"
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/207-forense-de-memoria-ram-con-volatility/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/208-forense-de-red/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/212-forense-en-la-nube/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/218-reporte-forense-y-aspectos-legales/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/220-caso-completo-de-respuesta-a-incidentes-end-to-end/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -15287,7 +15359,12 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-17-profundizacion-para-certificaciones/325-forense-de-memoria-avanzado/README.md"
+    "classes/parte-17-profundizacion-para-certificaciones/325-forense-de-memoria-avanzado/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/201-fundamentos-de-dfir-y-cadena-de-custodia/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/203-adquisicion-forense-discos-e-imagenes/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/207-forense-de-memoria-ram-con-volatility/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/209-analisis-de-linea-de-tiempo-timeline/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/220-caso-completo-de-respuesta-a-incidentes-end-to-end/README.md"
    ],
    "vigencia": "vigente"
   },
@@ -15655,7 +15732,8 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-17-profundizacion-para-certificaciones/319-analisis-avanzado-de-phishing-y-correo-malicioso/README.md"
+    "classes/parte-17-profundizacion-para-certificaciones/319-analisis-avanzado-de-phishing-y-correo-malicioso/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/210-forense-de-navegadores-y-correo/README.md"
    ],
    "vigencia": "vigente"
   },

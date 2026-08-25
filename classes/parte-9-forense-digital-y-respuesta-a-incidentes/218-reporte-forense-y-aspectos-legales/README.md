@@ -15,7 +15,7 @@ Al finalizar, el alumno podrá:
 
 1. **Estructurar** un informe forense completo y trazable.
 2. **Escribir** hallazgos que separen hechos de opiniones.
-3. **Garantizar** la admisibilidad y la cadena de custodia.
+3. **Documentar** fiabilidad, custodia y limitaciones para que el foro aplicable pueda evaluarlas.
 4. **Adaptar** el informe a audiencias técnica, ejecutiva y legal.
 5. **Reconocer** obligaciones de privacidad y notificación de brechas.
 
@@ -25,21 +25,75 @@ Al finalizar, el alumno podrá:
 |---|------|-----------------|
 | 1 | Estructura del informe | Claridad y trazabilidad |
 | 2 | Hechos vs. opinión | Credibilidad pericial |
-| 3 | Admisibilidad de evidencia | Que no la rechacen |
+| 3 | Fiabilidad y requisitos procesales | Documentar método para el contexto aplicable |
 | 4 | Cadena de custodia en el informe | Integridad demostrable |
 | 5 | Audiencias del informe | Técnico, ejecutivo, legal |
 | 6 | Testimonio pericial | Defender los hallazgos |
-| 7 | Privacidad y notificación | GDPR, plazos legales |
+| 7 | Privacidad y notificación | Identificar jurisdicción, alcance y plazos aplicables |
 | 8 | Retención y confidencialidad | Manejo del material |
+
+## 🧠 Explicación en profundidad
+
+El informe convierte trabajo técnico en afirmaciones auditables para una audiencia y jurisdicción concretas. Separa alcance, métodos, limitaciones, hechos, inferencias y opinión experta. No ofrece asesoría legal: preservación, privacidad, notificación y transferencias se coordinan con asesoría competente.
+
+```mermaid
+flowchart LR
+    Q[Mandato y preguntas] --> M[Método reproducible]
+    M --> E[Evidencia y procedencia]
+    E --> F[Hallazgos]
+    F --> L[Limitaciones y alternativas]
+    L --> C[Conclusiones]
+    C --> A[Revisión técnica y legal]
+```
+
+Cada hallazgo cita artefacto, ubicación y procedimiento; capturas ilustran pero no sustituyen evidencia. El lenguaje calibra certeza: observado, consistente con, probablemente o no determinable. Fechas incluyen zona horaria. El resumen ejecutivo explica impacto y decisión sin exagerar atribución. Anexos conservan hashes, herramientas y cadena de custodia.
+
+### Construir una cadena desde la pregunta hasta la conclusión
+
+El informe comienza con mandato, alcance y preguntas autorizadas. Después describe fuentes, adquisición, integridad, herramientas, versiones, parámetros y transformaciones. Un hallazgo conecta una observación concreta con su procedencia y explica el razonamiento que conduce a la interpretación. Así, el lector puede distinguir evidencia primaria, producto derivado y ayuda visual.
+
+La reproducibilidad no exige que toda persona obtenga idéntica interfaz, sino que pueda repetir el procedimiento relevante y evaluar decisiones. Se incluyen hashes, consultas, filtros, zona horaria, parsers y limitaciones. Si una herramienta cerrada no revela su algoritmo, se documenta esa restricción y se corrobora un hallazgo crítico con otra fuente o método cuando sea viable.
+
+### Escribir para audiencias distintas sin cambiar los hechos
+
+El anexo técnico conserva detalle; el resumen ejecutivo explica impacto, alcance conocido, decisiones y riesgo residual. Legal necesita comprender procedencia, privacidad, privilegio y notificación; operaciones necesita acciones; dirección necesita incertidumbre y consecuencias. Se pueden crear vistas diferentes, pero todas deben derivar del mismo conjunto de hechos.
+
+La atribución se formula con especial cuidado. Una cuenta ejecutó una acción no significa que su titular la ejecutó. Una IP puede pertenecer a NAT, VPN o proveedor. El informe presenta explicaciones alternativas evaluadas y evita lenguaje categórico cuando las fuentes solo sostienen compatibilidad.
+
+### El marco legal se determina, no se presume
+
+Admisibilidad, consentimiento, monitoreo laboral, transferencia internacional, retención y notificación dependen de jurisdicción, relación contractual y proceso. NIST SP 800-86 declara expresamente una perspectiva de TI y no ofrece asesoría legal. ISO/IEC 27037 aporta directrices técnicas, pero tampoco decide una regla procesal local.
+
+El GDPR exige notificar a la autoridad de control sin dilación indebida y, cuando sea viable, dentro de 72 horas desde que el responsable tenga conocimiento, salvo que sea improbable un riesgo para derechos y libertades. Esa regla no significa que todo incidente global tenga exactamente el mismo plazo. El equipo registra cuándo se alcanzó conocimiento, hechos disponibles y consulta legal competente.
+
+## 📔 Glosario
+
+- **Mandato:** autoridad y preguntas autorizadas.
+- **Hallazgo:** conclusión respaldada por evidencia citada.
+- **Limitación:** condición que restringe interpretación.
+- **Admisibilidad:** aceptación de evidencia según reglas aplicables.
+- **Legal hold:** obligación de preservar información.
+- **Privilegio:** protección jurídica evaluada por asesoría.
+- **Peer review:** revisión independiente del trabajo.
 
 ## 📖 Definiciones y características
 
 - **Informe forense**: documento que expone método, evidencia y conclusiones. Característica: reproducible por un tercero.
 - **Hecho vs. opinión**: el hecho es observable y verificable; la opinión es interpretación fundada. Característica: deben distinguirse siempre.
-- **Admisibilidad**: que la evidencia sea aceptada en un proceso. Característica: exige método fiable y custodia intacta.
-- **Cadena de custodia**: registro de manejo de la evidencia. Característica: un hueco puede invalidarla.
+- **Admisibilidad**: decisión regida por reglas de la jurisdicción y el proceso. Característica: método, relevancia, autenticidad y manejo pueden ser evaluados de modo distinto según el foro.
+- **Cadena de custodia**: registro cronológico de posesión, transferencia y acciones sobre evidencia. Característica: una discontinuidad debe investigarse y explicarse; su efecto legal no es automático ni universal.
 - **Testigo experto**: perito que explica hallazgos técnicos al tribunal. Característica: debe ser claro, imparcial y defendible.
-- **Notificación de brecha**: obligación legal de informar (p. ej. GDPR: 72 h a la autoridad). Característica: plazos estrictos.
+- **Notificación de brecha**: obligación aplicable bajo un marco y hechos concretos. Característica: autoridad, afectados, umbral y plazo varían; GDPR incorpora la regla condicionada de 72 horas del artículo 33.
+
+## 🔍 Caso razonado — dos timestamps en conflicto
+
+Un informe debe responder si una cuenta exportó datos antes de ser deshabilitada. El log cloud registra la API a `18:04:12 UTC`; un archivo local presenta modificación a `14:03:51` sin zona y el host tenía 38 segundos de deriva. El analista conserva ambos valores, documenta conversión y concluye que son temporalmente consistentes, pero no afirma identidad humana porque el evento representa una sesión asumida.
+
+El resumen ejecutivo declara acceso observado y alcance conocido. El anexo cita evento, request ID, hash de exportación, comando y corrección temporal. La sección legal identifica que existen datos personales y remite la decisión de notificación a asesoría de la jurisdicción aplicable, sin transformar el informe técnico en opinión jurídica.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando cada conclusión puede rastrearse a una fuente, separas hecho e inferencia, declaras alternativas y limitaciones, adaptas profundidad sin cambiar los hechos y reconoces qué decisiones requieren asesoría legal. Tu informe permite repetir los pasos sustantivos y no promete admisibilidad universal.
 - **Privacidad**: límites sobre qué datos se pueden recolectar/analizar. Característica: varía por jurisdicción y contexto laboral.
 
 ## 🧰 Herramientas y preparación
@@ -77,22 +131,22 @@ Al finalizar, el alumno podrá:
 
 Redacta un informe forense completo de un caso que investigaste, con todas las secciones, hallazgos que distingan hecho de opinión, cadena de custodia trazable y una versión ejecutiva aparte.
 
-**Criterio de aceptación**: el informe permite a un tercero reproducir el análisis (herramientas, versiones, hashes), cada hallazgo separa hecho de interpretación, la cadena de custodia no tiene huecos, y existe un resumen ejecutivo comprensible sin conocimientos técnicos.
+**Criterio de aceptación**: el informe permite a un tercero reproducir el análisis (herramientas, versiones, parámetros y hashes), cada hallazgo separa hecho de interpretación, toda discontinuidad de custodia está declarada y evaluada, y existe un resumen ejecutivo comprensible sin conocimientos técnicos.
 
 ## ⚠️ Errores comunes
 
 | Síntoma / mensaje | Causa y cómo arreglar |
 |-------------------|-----------------------|
-| El tribunal rechaza la evidencia | Custodia rota o método no fiable. Documenta todo y usa procesos reconocidos. |
+| Un revisor cuestiona la evidencia | Puede faltar procedencia, explicación del método o validación. Reconstruye la trazabilidad y consulta requisitos del foro aplicable. |
 | Mezclas hecho y opinión | Se pierde credibilidad. Sepáralos explícitamente. |
 | Dirección no entiende el informe | Demasiada jerga. Añade resumen ejecutivo claro. |
 | No puedes reproducir tu análisis | Faltan versiones/comandos. Registra la metodología completa. |
-| Notificaste tarde la brecha | Ignoraste plazos legales. Conoce el marco (72 h en GDPR). |
+| No está claro el plazo de notificación | No se determinó jurisdicción, umbral o momento de conocimiento. Escala temprano a asesoría y documenta los hechos. |
 
 ## ❓ Preguntas frecuentes
 
 **❓ ¿Qué hace admisible la evidencia?**
-Un método fiable y documentado, integridad probada por hashes y una cadena de custodia sin huecos.
+No existe una fórmula universal. Se documentan método, integridad, procedencia, custodia, competencia y limitaciones, y se evalúan las reglas del proceso y jurisdicción con asesoría competente.
 
 **❓ ¿Puedo dar opiniones en el informe?**
 Sí, como perito, pero identificadas como opinión profesional y fundadas en hechos, separadas de estos.
@@ -103,12 +157,12 @@ Depende de la jurisdicción y del dato afectado. GDPR exige notificar a la autor
 **❓ ¿Cuántas versiones del informe hago?**
 Al menos una técnica (detallada) y una ejecutiva (breve, sin jerga). La legal puede requerir formato específico.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- SWGDE — Best Practices for Digital Forensics: <https://www.swgde.org/>
-- NIST SP 800-86: <https://csrc.nist.gov/publications/detail/sp/800-86/final>
-- Reglamento (UE) 2016/679 (GDPR): <https://eur-lex.europa.eu/eli/reg/2016/679/oj>
-- ISO/IEC 27037 — Digital evidence handling: <https://www.iso.org/standard/44381.html>
+- **NIST SP 800-86:** <https://doi.org/10.6028/NIST.SP.800-86> — metodología de TI para recolección, examen, análisis y reporte; el propio documento aclara que no es asesoría legal.
+- **SWGDE Published Documents:** <https://www.swgde.org/documents/published> — buenas prácticas y documentos técnicos publicados; se debe seleccionar la versión y disciplina aplicables.
+- **Reglamento (UE) 2016/679, artículo 33:** <https://eur-lex.europa.eu/eli/reg/2016/679/oj> — fuente normativa primaria de la regla de notificación; su aplicación requiere analizar rol, conocimiento, riesgo y jurisdicción.
+- **ISO/IEC 27037:** <https://www.iso.org/standard/44381.html> — directrices internacionales de identificación, recolección, adquisición y preservación; el texto completo puede requerir acceso de pago y no reemplaza ley local.
 
 ## 📥 Material descargable
 

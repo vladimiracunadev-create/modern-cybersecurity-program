@@ -32,15 +32,70 @@ Al finalizar, el alumno podrá:
 | 7 | Evaluación y métricas | Medir la preparación |
 | 8 | Informe post-ejercicio | Convertir en mejoras |
 
+## 🧠 Explicación en profundidad
+
+Un tabletop es una conversación facilitada para evaluar decisiones, dependencias y autoridad frente a un escenario; no mide la capacidad técnica por sí solo. Los objetivos deben ser observables: decidir aislamiento, activar comunicaciones, obtener evidencia cloud o escalar a dirección.
+
+```mermaid
+flowchart LR
+    O[Objetivos y participantes] --> S[Escenario plausible]
+    S --> I[Inject con nueva información]
+    I --> D[Decisión y justificación]
+    D --> C[Consecuencia simulada]
+    C --> G[Brecha observada]
+    G --> A[Acción, dueño y plazo]
+    A --> R[Reprueba]
+```
+
+Los injects introducen evidencia o restricciones, no trucos. El facilitador separa evaluación de enseñanza y crea seguridad psicológica para exponer vacíos. Se registran decisiones, supuestos y tiempos, no se puntúa memoria de documentos. El after-action report prioriza acciones concretas; sin dueño, fecha y reprueba, el ejercicio produce conversación pero no mejora.
+
+### Diseñar desde objetivos y participantes
+
+«Probar respuesta a ransomware» es demasiado amplio. Un objetivo observable puede ser que operaciones y negocio decidan en quince minutos si aislar un servidor crítico, usando criterios del playbook y autoridad definida. Los participantes se eligen por esa decisión: seguridad, infraestructura, propietario del servicio, continuidad, legal, comunicación y dirección según alcance. Incluir personas sin función concreta agrega ruido; excluir a quien aprueba impide probar el proceso real.
+
+El escenario describe contexto suficiente y deja incertidumbre. Debe ser plausible para arquitectura, datos y amenazas de la organización, pero no necesita copiar un incidente real. Se establecen reglas, supuestos y qué sistemas se simulan. Un tabletop evalúa coordinación y razonamiento declarado; para comprobar que un comando o backup funciona se necesita prueba técnica o ejercicio funcional.
+
+### Los injects revelan decisiones y dependencias
+
+La MSEL ordena hora, inject, canal, destinatario, respuesta esperada, objetivo evaluado y contingencia. Un inject útil aporta nueva evidencia: el EDR pierde conectividad, un cliente publica datos o el backup usa la misma identidad comprometida. No existe para engañar, sino para forzar una decisión vinculada a un objetivo.
+
+El facilitador pregunta qué haría el equipo, quién lo autoriza, con qué información y qué registraría. Si entrega la solución, convierte el ejercicio en clase. Si el grupo se estanca, puede recordar reglas o lanzar una contingencia, dejando registrado que faltaba conocimiento o documentación.
+
+### Evaluar brechas y volver a probar
+
+Se capturan decisiones, tiempo, evidencia solicitada, comunicaciones, supuestos y dependencias. Una puntuación puede ayudar, pero no demuestra «madurez» completa: el desempeño depende del alcance y tipo de ejercicio. El *hotwash* recoge observaciones inmediatas; el after-action report las valida y prioriza.
+
+Cada mejora tiene dueño, fecha, criterio de aceptación y ejercicio de reprueba. Si se detecta que nadie puede aprobar el aislamiento fuera de horario, la acción no es «mejorar coordinación», sino actualizar guardia y delegación, probar el contacto y repetir ese punto de decisión.
+
+## 📔 Glosario
+
+- **Tabletop exercise:** simulación conversacional de decisiones.
+- **Inject:** información añadida durante el escenario.
+- **Facilitador:** persona que guía sin decidir por participantes.
+- **Controller:** administra ritmo y reglas del ejercicio.
+- **Observer:** registra evidencia sin intervenir.
+- **Hotwash:** debrief inmediato.
+- **After-action report:** resultados y plan de mejora.
+
 ## 📖 Definiciones y características
 
-- **Tabletop**: ejercicio de discusión sin sistemas reales. Característica: bajo costo y riesgo, alto valor para procesos y roles.
+- **Tabletop**: ejercicio basado en discusión y escenario. Característica: evalúa decisiones, roles y coordinación dentro de su alcance, no ejecución técnica completa.
 - **Ejercicio funcional**: prueba parcial con sistemas/herramientas reales. Característica: más realista, más costoso.
-- **Simulacro completo (full-scale)**: respuesta real end-to-end. Característica: máximo realismo y coste.
+- **Simulacro completo (full-scale)**: ejercicio amplio con operaciones coordinadas y recursos reales o representativos. Característica: ofrece mayor realismo, complejidad, costo y riesgo controlado.
 - **Inject (inyección)**: nueva información introducida por el facilitador para escalar el escenario. Característica: obliga a decidir.
 - **Facilitador**: guía la sesión, lanza injects, evita que se estanque. Característica: neutral, no resuelve por el equipo.
 - **MSEL (Master Scenario Events List)**: guion de eventos e injects planificados. Característica: estructura el ejercicio.
 - **Hotwash**: debrief inmediato tras el ejercicio. Característica: captura impresiones en caliente.
+
+## 🔍 Caso razonado — ransomware con presión pública y continuidad
+
+El ejercicio inicia con cifrado aparente en un servidor de archivos. El primer inject pide decidir aislamiento; el segundo informa que el sistema soporta despacho y que el procedimiento de continuidad está desactualizado. Luego aparece una publicación del supuesto atacante y legal debe evaluar preservación y notificación. Finalmente se descubre que la cuenta de backup comparte dependencia con el dominio afectado.
+
+El facilitador no confirma si la filtración es real: pide qué evidencia solicitar, quién decide y cómo comunicar incertidumbre. La evaluación observa autoridad, tiempos, uso del playbook y coordinación con negocio. El AAR genera acciones concretas para delegación fuera de horario, segregación de backups y plantilla de comunicación, cada una con reprueba.
+
+## ✅ Criterio de dominio
+
+Dominas la clase cuando cada objetivo es observable, la MSEL vincula injects con decisiones, los participantes tienen una función, el facilitador registra sin resolver y el AAR convierte brechas en acciones verificables. También puedes explicar qué conclusiones no permite un tabletop y qué prueba adicional se necesita.
 
 ## 🧰 Herramientas y preparación
 
@@ -105,12 +160,12 @@ No solo TI/seguridad: incluye legal, comunicación, RR. HH. y dirección, según
 **❓ ¿Qué es la MSEL?**
 El guion maestro de eventos e injects, con tiempos, que estructura el ejercicio y mantiene el ritmo.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- NIST SP 800-84 — Test, Training, and Exercise Programs: <https://csrc.nist.gov/publications/detail/sp/800-84/final>
-- CISA — Tabletop Exercise Packages (CTEP): <https://www.cisa.gov/resources-tools/services/cisa-tabletop-exercise-packages>
-- SANS — Incident Response resources: <https://www.sans.org/>
-- NIST SP 800-61 Rev. 2: <https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final>
+- **NIST SP 800-84:** <https://csrc.nist.gov/pubs/sp/800/84/final> — guía oficial para programas de pruebas, capacitación y ejercicios; debe adaptarse al riesgo y objetivos de la organización.
+- **CISA Tabletop Exercise Package documents:** <https://www.cisa.gov/resources-tools/resources/ctep-package-documents> — plantillas y paquetes oficiales para diseñar escenarios, MSEL y evaluación.
+- **NIST SP 800-61 Rev. 3:** <https://doi.org/10.6028/NIST.SP.800-61r3> — integra aprendizaje y mejora de la capacidad de respuesta en el ciclo de gestión de riesgo.
+- **CISA Incident Response Playbook:** <https://www.cisa.gov/sites/default/files/publications/Cybersecurity_Incident_Vulnerability_Response_Playbooks_508C.pdf> — material para convertir procedimientos en puntos de decisión ejercitables; adaptar a autoridad local.
 
 ## 📥 Material descargable
 

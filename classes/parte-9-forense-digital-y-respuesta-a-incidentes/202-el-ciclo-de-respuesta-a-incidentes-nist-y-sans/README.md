@@ -1,6 +1,6 @@
 # Clase 202 — El ciclo de respuesta a incidentes (NIST y SANS)
 
-> Parte: **9 — Forense digital y respuesta a incidentes** · Fuente: *NIST SP 800-61 Rev. 2 — Computer Security Incident Handling Guide*
+> Parte: **9 — Forense digital y respuesta a incidentes** · Fuente: *NIST SP 800-61 Rev. 3 — Incident Response Recommendations and Considerations for Cybersecurity Risk Management*
 > ⏱️ Duración estimada: **90 min** · Nivel: **Fundamentos**
 
 ---
@@ -23,14 +23,61 @@ Al finalizar, el alumno podrá:
 
 | # | Tema | Por qué importa |
 |---|------|-----------------|
-| 1 | Ciclo NIST de 4 fases | Estructura oficial de referencia |
-| 2 | Preparación | El 80% del éxito se juega antes |
+| 1 | NIST SP 800-61 Rev. 3 y CSF 2.0 | Integra respuesta con gestión de riesgo, no como cuatro cajas aisladas |
+| 2 | Preparación | Define autoridad, datos, comunicaciones y capacidades antes de la crisis |
 | 3 | Detección y análisis | Distinguir ruido de incidente real |
 | 4 | Contención, erradicación y recuperación | El núcleo de la respuesta |
 | 5 | Actividad post-incidente | Sin lecciones, se repite el error |
-| 6 | Modelo PICERL de SANS | La variante mnemotécnica más usada |
+| 6 | Modelo PICERL | Mnemotecnia útil que debe interpretarse como proceso iterativo |
 | 7 | Clasificación y severidad | Prioriza recursos escasos |
 | 8 | Roles y comunicación | Evita el caos organizativo |
+
+## 🧠 Explicación en profundidad
+
+NIST SP 800-61 Rev. 3 ya no presenta la respuesta como una secuencia aislada: la integra con CSF 2.0. Preparación, gobierno e identificación de riesgos ocurren antes; detección, respuesta y recuperación se solapan durante el incidente; las lecciones realimentan todo el sistema.
+
+```mermaid
+flowchart LR
+    G[Govern, Identify, Protect] --> D[Detectar]
+    D --> A[Analizar y priorizar]
+    A --> C[Contener]
+    C --> E[Erradicar]
+    E --> R[Recuperar]
+    R --> L[Lecciones y mejora]
+    L --> G
+    A -. nueva evidencia .-> D
+    R -. recaída .-> C
+```
+
+PICERL sigue siendo una mnemotecnia útil, no una garantía de linealidad. Contención puede preceder al alcance completo y recuperación puede revelar persistencia. Cada transición necesita autoridad, evidencia mínima y criterio de salida. Severidad expresa impacto y urgencia organizacional, no solo sofisticación técnica.
+
+### Qué cambió con NIST SP 800-61 Rev. 3
+
+La revisión final publicada por NIST en 2025 reemplaza Rev. 2 y presenta recomendaciones de respuesta alineadas con CSF 2.0. Govern, Identify y Protect sostienen preparación; Detect descubre y analiza; Respond contiene y comunica; Recover restaura y aprende. La diferencia pedagógica importa: respuesta no pertenece solo al SOC. Dirección define apetito y autoridad, propietarios conocen impacto, legal evalúa obligaciones y tecnología ejecuta acciones.
+
+PICERL —Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned— sigue ayudando a recordar tareas. No debe enseñarse como seis cajas que terminan para siempre. Mientras se contiene un host puede aparecer otro; durante recuperación se descubre una credencial persistente y se vuelve a erradicación. El diagrama usa flechas de retorno para representar ese trabajo iterativo.
+
+### Clasificar y escalar con impacto
+
+Una alerta es una señal; un incidente exige evaluación. Se confirma validez, activos, identidad, alcance inicial y efecto. Severidad combina impacto y urgencia: acceso a un activo crítico puede ser severo aunque la técnica sea simple; malware sofisticado en un laboratorio aislado puede tener menor impacto inmediato. La matriz debe incluir criterios empresariales, regulatorios y de seguridad.
+
+Cada fase tiene condiciones de entrada y salida. Contener requiere autoridad y objetivo; erradicar exige comprender persistencia y vector; recuperar necesita estado confiable, pruebas y monitoreo reforzado. Cerrar un ticket sin comprobar recurrencia no completa recuperación.
+
+### Comunicación y registro de decisiones
+
+El incident commander mantiene objetivos, responsables y ritmo. El case log registra hechos, acciones y decisiones con horas diferentes: cuándo ocurrió, cuándo se conoció y cuándo se actuó. Comunicación técnica y ejecutiva usan distinto detalle pero la misma evidencia. Los canales fuera de banda se preparan por si correo o identidad están afectados.
+
+Las lecciones no son una reunión genérica. Cada brecha se convierte en acción con dueño, plazo y validación: telemetría faltante, autoridad ambigua, backup no probado o regla ruidosa. Así el ciclo alimenta gobierno y protección, tal como plantea el encaje de Rev. 3 con CSF 2.0.
+
+## 📔 Glosario
+
+- **Incidente:** ocurrencia que compromete o amenaza objetivos de seguridad.
+- **Preparación:** capacidades construidas antes del evento.
+- **Contención:** limitación del daño o propagación.
+- **Erradicación:** eliminación de causa y persistencia.
+- **Recuperación:** retorno controlado a operación.
+- **PICERL:** modelo SANS de seis fases.
+- **Criterio de salida:** evidencia requerida para avanzar de fase.
 
 ## 📖 Definiciones y características
 
@@ -40,11 +87,21 @@ Al finalizar, el alumno podrá:
 - **Contención**: limitar la propagación. Característica: puede ser a corto (aislar) o largo plazo (parcheo temporal).
 - **Erradicación**: eliminar la causa (malware, cuentas comprometidas, vulnerabilidad). Característica: incompleta si queda persistencia.
 - **Recuperación**: volver a operación normal con monitoreo reforzado. Característica: gradual y verificada.
-- **PICERL**: Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned. Característica: mnemónico de SANS equivalente al ciclo NIST.
+- **PICERL**: Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned. Característica: mnemotecnia profesional complementaria; no es idéntica a la estructura de CSF 2.0.
+
+## 🔍 Caso razonado — compromiso de una cuenta administrativa
+
+El IdP alerta un inicio de sesión desde una ubicación inusual. Detect todavía no equivale a incidente confirmado: se validan fuente, cuenta, sesión, MFA y actividad posterior. Al encontrar creación de una credencial y cambios de privilegio, el equipo clasifica impacto alto. Respond revoca sesiones y bloquea la credencial con autoridad registrada; al mismo tiempo, análisis busca alcance en otras cuentas y servicios.
+
+Recover no comienza únicamente después de «terminar» Respond. Mientras se restauran configuraciones, aparecen permisos heredados que obligan a volver a erradicación. La comunicación ejecutiva informa impacto y decisiones conocidas; la técnica mantiene indicadores, consultas y desconocidos. Después, una acción mejora la política de credenciales, otra amplía logging y una prueba verifica ambas. Así se lee el bucle de CSF 2.0 en una operación real.
+
+## ✅ Criterio de dominio
+
+El alumno entrega un flujo donde cada transición tiene entrada, responsable, autoridad, evidencia y criterio de salida; distingue alerta, evento e incidente; y muestra al menos un retorno entre análisis, respuesta o recuperación. Repetir nombres de fases sin decisiones ni información requerida no acredita dominio.
 
 ## 🧰 Herramientas y preparación
 
-- **Marcos**: descarga NIST SP 800-61 Rev. 2 y el *Incident Handler's Handbook* de SANS.
+- **Marcos**: consulta NIST SP 800-61 Rev. 3 y CSF 2.0; usa PICERL como mnemotecnia operativa, no como sustituto del marco vigente.
 - **Plantillas**: una matriz de severidad (P1–P4), una plantilla de runbook y una lista de contactos de escalado.
 - **Software de apoyo**: un sistema de tickets (TheHive es ideal y gratuito) para registrar el ciclo de vida del incidente.
 
@@ -99,12 +156,13 @@ A veces se solapan, pero conceptualmente contienes primero para no perder eviden
 **❓ ¿Qué diferencia hay entre contención a corto y largo plazo?**
 Corto: aislar el equipo ya. Largo: solución temporal estable (segmentar red, regla de firewall) mientras se erradica.
 
-## 🔗 Referencias
+## 🔗 Referencias verificables y alcance
 
-- NIST SP 800-61 Rev. 2: <https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final>
-- SANS — *Incident Handler's Handbook*: <https://www.sans.org/white-papers/33901/>
-- TheHive Project: <https://thehive-project.org/>
-- Roberts & Brown — *Intelligence-Driven Incident Response*, O'Reilly 2017.
+- NIST SP 800-61 Rev. 3: fuente primaria vigente para incorporar respuesta a incidentes en las funciones de CSF 2.0; reemplazó Rev. 2 en abril de 2025 — <https://doi.org/10.6028/NIST.SP.800-61r3>
+- NIST CSF 2.0: fuente primaria para Govern, Identify, Protect, Detect, Respond y Recover — <https://doi.org/10.6028/NIST.CSWP.29>
+- SANS, *Incident Handler's Handbook*: material profesional que desarrolla PICERL; se usa como mnemotecnia complementaria — <https://www.sans.org/white-papers/33901/>
+- TheHive: documentación oficial de alertas, casos y observables usada para implementar el registro del caso — <https://docs.strangebee.com/thehive/>
+- Roberts, S. y Brown, R. *Intelligence-Driven Incident Response*. O'Reilly: bibliografía complementaria sobre respuesta orientada por inteligencia.
 
 ## 📥 Material descargable
 
