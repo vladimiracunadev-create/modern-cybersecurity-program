@@ -33,6 +33,31 @@ Al finalizar, el alumno podrá:
 | 6 | Reporte y CVSS | Comunicar impacto con claridad |
 | 7 | Duplicados y triage | Gestionar expectativas |
 
+## 🧠 Explicación en profundidad
+
+Bug bounty requiere política vigente, activo incluido, prueba mínima y comunicación responsable. Hallar un endpoint público no concede permiso ilimitado. La clase convierte el objetivo en una evidencia evaluable, declara supuestos y reserva tiempo para revisión. El resultado profesional incluye lo que no se comprobó.
+
+```mermaid
+flowchart LR
+  A["Política"] --> B["Prueba mínima"] --> C["Reporte"] --> D["Validación"]
+```
+
+### Caso razonado
+
+Un hallazgo parece duplicado. El investigador aporta evidencia nueva sin ampliar impacto ni acceder a datos ajenos.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Safe harbor | Protección declarada condicionada al cumplimiento de política. |
+| Evidencia | Resultado que otra persona puede revisar y relacionar con un criterio. |
+| Retrospectiva | Revisión de decisiones, límites y siguiente mejora. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando planifica, ejecuta y comunica una evidencia completa, respeta alcance y puede defender sus decisiones ante una revisión.
+
 ## 📖 Definiciones y características
 
 - **Scope**: activos y pruebas permitidas por el programa. *Característica*: fuera de él, todo está prohibido.

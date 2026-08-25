@@ -31,6 +31,31 @@ Al finalizar, el alumno podrá:
 | 6 | Cobertura ATT&CK | Medir madurez de detección |
 | 7 | Métricas (MTTD, FP rate) | Demostrar mejora objetiva |
 
+## 🧠 Explicación en profundidad
+
+Detectar exige hipótesis, fuente, lógica, pruebas positivas y negativas, triage y mantenimiento. Una alerta aislada no demuestra cobertura. La clase convierte el objetivo en una evidencia evaluable, declara supuestos y reserva tiempo para revisión. El resultado profesional incluye lo que no se comprobó.
+
+```mermaid
+flowchart LR
+  A["Amenaza"] --> B["Telemetría"] --> C["Detección"] --> D["Respuesta"]
+```
+
+### Caso razonado
+
+La regla detecta el laboratorio pero falla con campos nulos. El alumno añade variantes y mide falsos positivos.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Cobertura | Alcance demostrado frente a comportamientos y fuentes definidos. |
+| Evidencia | Resultado que otra persona puede revisar y relacionar con un criterio. |
+| Retrospectiva | Revisión de decisiones, límites y siguiente mejora. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando planifica, ejecuta y comunica una evidencia completa, respeta alcance y puede defender sus decisiones ante una revisión.
+
 ## 📖 Definiciones y características
 
 - **Sysmon**: sensor de eventos de Windows (procesos, red, hashes). *Característica*: telemetría rica y configurable por XML.

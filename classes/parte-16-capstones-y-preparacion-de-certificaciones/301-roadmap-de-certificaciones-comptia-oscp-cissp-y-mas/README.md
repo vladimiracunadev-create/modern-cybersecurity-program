@@ -31,6 +31,31 @@ Al finalizar, el alumno podrá:
 | 6 | Coste real y vigencia | Presupuesto y renovación por CEU |
 | 7 | Orden por perfil | Evitar saltos sin base |
 
+## 🧠 Explicación en profundidad
+
+Una ruta de certificación parte del rol y de evidencia diagnóstica, no del prestigio de una sigla. La clase convierte el objetivo en una evidencia evaluable, declara supuestos y reserva tiempo para revisión. El resultado profesional incluye lo que no se comprobó.
+
+```mermaid
+flowchart LR
+  A["Rol"] --> B["Brecha"] --> C["Ruta"] --> D["Evidencia"]
+```
+
+### Caso razonado
+
+Dos credenciales cubren temas parecidos pero una exige experiencia. El alumno compara objetivos oficiales, elegibilidad, formato y coste total antes de decidir.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Blueprint | Temario oficial vigente del examen. |
+| Evidencia | Resultado que otra persona puede revisar y relacionar con un criterio. |
+| Retrospectiva | Revisión de decisiones, límites y siguiente mejora. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando planifica, ejecuta y comunica una evidencia completa, respeta alcance y puede defender sus decisiones ante una revisión.
+
 ## 📖 Definiciones y características
 
 - **Certificación baseline**: credencial de nivel de entrada (p. ej. Security+). *Característica*: amplia y teórica, abre el mercado laboral inicial.

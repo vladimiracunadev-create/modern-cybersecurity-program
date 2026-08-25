@@ -33,6 +33,31 @@ Al finalizar, el alumno podrá:
 | 6 | Objetivos y exfiltración | Demostrar impacto de negocio |
 | 7 | Informe y purple teaming | Convertir el ataque en mejora defensiva |
 
+## 🧠 Explicación en profundidad
+
+Una operación red team mide objetivos y controles bajo autorización; no maximiza acceso. Emulación, telemetría, seguridad operacional y cleanup son entregables. La clase convierte el objetivo en una evidencia evaluable, declara supuestos y reserva tiempo para revisión. El resultado profesional incluye lo que no se comprobó.
+
+```mermaid
+flowchart LR
+  A["Objetivo"] --> B["Emulación"] --> C["Detección"] --> D["Mejora"]
+```
+
+### Caso razonado
+
+El objetivo se cumple con una técnica menos invasiva. El equipo detiene escalamiento y conserva evidencia suficiente.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Deconfliction | Coordinación para distinguir ejercicio de incidente real. |
+| Evidencia | Resultado que otra persona puede revisar y relacionar con un criterio. |
+| Retrospectiva | Revisión de decisiones, límites y siguiente mejora. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando planifica, ejecuta y comunica una evidencia completa, respeta alcance y puede defender sus decisiones ante una revisión.
+
 ## 📖 Definiciones y características
 
 - **Threat emulation**: reproducir el TTP de un adversario concreto (p. ej. un grupo APT). *Característica*: guía qué técnicas usar.

@@ -31,6 +31,31 @@ Al finalizar, el alumno podrá:
 | 6 | Mantenerse ético y actualizado | Responsabilidad profesional |
 | 7 | Bienestar y burnout | Carrera sostenible a largo plazo |
 
+## 🧠 Explicación en profundidad
+
+Aprender continuamente es un bucle de objetivos, práctica deliberada, recuperación y revisión. Consumir contenido no equivale a habilidad. La clase convierte el objetivo en una evidencia evaluable, declara supuestos y reserva tiempo para revisión. El resultado profesional incluye lo que no se comprobó.
+
+```mermaid
+flowchart LR
+  A["Objetivo"] --> B["Práctica"] --> C["Feedback"] --> D["Revisión"]
+```
+
+### Caso razonado
+
+El plan semanal falla por sobrecarga. Se reduce alcance, protege descanso y conserva una evidencia pequeña pero terminada.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Práctica deliberada | Ejercicio enfocado con feedback y dificultad calibrada. |
+| Evidencia | Resultado que otra persona puede revisar y relacionar con un criterio. |
+| Retrospectiva | Revisión de decisiones, límites y siguiente mejora. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando planifica, ejecuta y comunica una evidencia completa, respeta alcance y puede defender sus decisiones ante una revisión.
+
 ## 📖 Definiciones y características
 
 - **Aprendizaje continuo**: hábito estructurado de estudio y práctica permanente. *Característica*: cadencia sostenible, no maratones esporádicos.

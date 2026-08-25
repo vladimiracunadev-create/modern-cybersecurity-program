@@ -32,6 +32,31 @@ Al finalizar, el alumno podrá:
 | 7 | D7 Operaciones de seguridad (~13%) | IR, DR, BCP, forense |
 | 8 | D8 Seguridad en el desarrollo de software (~11%) | SDLC seguro, DevSecOps |
 
+## 🧠 Explicación en profundidad
+
+CISSP evalúa razonamiento transversal de gestión y arquitectura; memorizar términos sin distinguir dueño, riesgo y ciclo de vida produce respuestas frágiles. La clase convierte el objetivo en una evidencia evaluable, declara supuestos y reserva tiempo para revisión. El resultado profesional incluye lo que no se comprobó.
+
+```mermaid
+flowchart LR
+  A["Escenario"] --> B["Dominio"] --> C["Decisión"] --> D["Justificación"]
+```
+
+### Caso razonado
+
+Una opción técnica parece más fuerte, pero contradice seguridad física y continuidad. La decisión integra dominios y prioridad de negocio.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| CBK | Cuerpo de conocimiento, no sustituto del esquema oficial vigente. |
+| Evidencia | Resultado que otra persona puede revisar y relacionar con un criterio. |
+| Retrospectiva | Revisión de decisiones, límites y siguiente mejora. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando planifica, ejecuta y comunica una evidencia completa, respeta alcance y puede defender sus decisiones ante una revisión.
+
 ## 📖 Definiciones y características
 
 - **CBK (Common Body of Knowledge)**: temario canónico de (ISC)². *Característica*: organizado en 8 dominios con pesos definidos.

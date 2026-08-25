@@ -33,6 +33,31 @@ Al finalizar, el alumno podrá:
 | 6 | Anonimización y ética | Publicar sin exponer datos |
 | 7 | Marca profesional | Coherencia entre plataformas |
 
+## 🧠 Explicación en profundidad
+
+El portafolio demuestra razonamiento y reproducción sin publicar secretos, datos o material ofensivo dañino. El laboratorio necesita inventario, aislamiento, snapshots y costes sostenibles. La clase convierte el objetivo en una evidencia evaluable, declara supuestos y reserva tiempo para revisión. El resultado profesional incluye lo que no se comprobó.
+
+```mermaid
+flowchart LR
+  A["Pregunta"] --> B["Construcción"] --> C["Evidencia"] --> D["Reflexión"]
+```
+
+### Caso razonado
+
+Un proyecto muestra una herramienta pero ninguna decisión. Se reescribe con hipótesis, alternativas, resultados y limitaciones.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Artefacto | Evidencia concreta de capacidad, contextualizada y sanitizada. |
+| Evidencia | Resultado que otra persona puede revisar y relacionar con un criterio. |
+| Retrospectiva | Revisión de decisiones, límites y siguiente mejora. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando planifica, ejecuta y comunica una evidencia completa, respeta alcance y puede defender sus decisiones ante una revisión.
+
 ## 📖 Definiciones y características
 
 - **Portafolio**: colección curada de trabajo demostrable. *Característica*: prioriza calidad y evidencia sobre cantidad.

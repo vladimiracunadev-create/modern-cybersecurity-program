@@ -33,6 +33,31 @@ Al finalizar, el alumno podrá:
 | 6 | Timeline y correlación | Reconstruir la secuencia real |
 | 7 | Informe y lecciones aprendidas | Cerrar el incidente y mejorar |
 
+## 🧠 Explicación en profundidad
+
+DFIR preserva decisiones temporales: declarar, contener, adquirir, analizar, recuperar y aprender. La evidencia se recoge según volatilidad y propósito. La clase convierte el objetivo en una evidencia evaluable, declara supuestos y reserva tiempo para revisión. El resultado profesional incluye lo que no se comprobó.
+
+```mermaid
+flowchart LR
+  A["Señal"] --> B["Declaración"] --> C["Contención"] --> D["Recuperación"]
+```
+
+### Caso razonado
+
+Aislar inmediatamente perdería una sesión útil y afectaría servicio crítico. El comandante decide con negocio y documenta riesgo.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Decision log | Registro cronológico de opciones, responsables y fundamentos. |
+| Evidencia | Resultado que otra persona puede revisar y relacionar con un criterio. |
+| Retrospectiva | Revisión de decisiones, límites y siguiente mejora. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando planifica, ejecuta y comunica una evidencia completa, respeta alcance y puede defender sus decisiones ante una revisión.
+
 ## 📖 Definiciones y características
 
 - **Cadena de custodia**: registro de quién manipuló la evidencia y cuándo. *Característica*: cualquier ruptura la invalida legalmente.

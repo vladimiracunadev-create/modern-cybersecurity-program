@@ -33,6 +33,31 @@ Al finalizar, el alumno podrá:
 | 6 | Reglas del examen | Metasploit limitado, sin herramientas automáticas prohibidas |
 | 7 | Plan de práctica progresiva | De fácil a difícil hasta simular el examen |
 
+## 🧠 Explicación en profundidad
+
+La persistencia profesional es iterar con hipótesis, notas y límites; no repetir comandos ni ignorar seguridad. La clase convierte el objetivo en una evidencia evaluable, declara supuestos y reserva tiempo para revisión. El resultado profesional incluye lo que no se comprobó.
+
+```mermaid
+flowchart LR
+  A["Objetivo"] --> B["Enumeración"] --> C["Hipótesis"] --> D["Evidencia"]
+```
+
+### Caso razonado
+
+Tras horas sin progreso, el alumno vuelve al inventario, identifica un servicio omitido y documenta el cambio de hipótesis.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Enumeración | Construcción sistemática de superficie y evidencia. |
+| Evidencia | Resultado que otra persona puede revisar y relacionar con un criterio. |
+| Retrospectiva | Revisión de decisiones, límites y siguiente mejora. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando planifica, ejecuta y comunica una evidencia completa, respeta alcance y puede defender sus decisiones ante una revisión.
+
 ## 📖 Definiciones y características
 
 - **Try Harder**: lema de OffSec que promueve la resolución autónoma. *Característica*: persistir con **método**, no repetir lo mismo esperando otro resultado.

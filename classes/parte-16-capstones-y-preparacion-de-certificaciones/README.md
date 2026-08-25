@@ -54,6 +54,15 @@ Esta parte asume **haber cursado las Partes 1–15**. En concreto: fundamentos y
 
 ## 🗺️ Estructura temática
 
+```mermaid
+flowchart LR
+  A["301–302<br/>ruta y método"] --> B["303–308<br/>capstones por función"] --> C["309–310<br/>portafolio y continuidad"]
+```
+
+## 🧭 Recorrido clase a clase
+
+Las clases 301–302 traducen rol y diagnóstico en una preparación verificable. Las clases 303–308 integran pentest, CISSP, red team, blue team, DFIR y bug bounty mediante entregables y límites propios de cada función. Las clases 309–310 convierten resultados en portafolio sanitizado y en un sistema sostenible de aprendizaje. Fechas, precios, versiones y requisitos de credenciales se consultan siempre en el organismo emisor.
+
 | Bloque | Clases | Enfoque |
 |--------|--------|---------|
 | Roadmap y mentalidad | 301, 302 | Certificaciones y preparación OSCP |
