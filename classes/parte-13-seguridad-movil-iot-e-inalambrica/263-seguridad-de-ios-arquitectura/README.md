@@ -32,9 +32,47 @@ Al finalizar, el alumno podrá:
 | 6 | Keychain | Almacén de secretos del sistema |
 | 7 | Jailbreak | Qué habilita y qué rompe |
 
+## 🧠 Explicación en profundidad
+
+### Confianza de arranque, firma y ejecución son capas relacionadas
+
+iOS verifica una cadena de componentes al iniciar y exige firma para el código ejecutable. En runtime, la sandbox restringe archivos y servicios; los *entitlements* conceden capacidades específicas; ASLR y protecciones de memoria elevan el coste de explotación. Apple documenta estas capas como controles separados: una app firmada tiene procedencia aceptada para ejecución, no una garantía de ausencia de defectos.
+
+```mermaid
+flowchart TD
+  ROOT["Root of trust"] --> BOOT["Cadena de arranque"]
+  BOOT --> SIGN["Firma de código y Team ID"]
+  SIGN --> PROC["Proceso de la app"]
+  PROC --> SB["Sandbox"]
+  PROC --> ENT["Entitlements y servicios"]
+  PROC --> DP["Data Protection + Keychain"]
+```
+
+Data Protection asocia clases de archivo con el estado de bloqueo y las claves del dispositivo. Keychain almacena elementos con políticas de accesibilidad y, cuando corresponde, control de acceso. Elegir una clase demasiado disponible puede exponer información tras reinicio o bloqueo; elegir una demasiado restrictiva puede romper tareas en segundo plano. La decisión depende de cuándo necesita el dato y qué consecuencia tendría su acceso.
+
+Los grupos de acceso, extensiones y esquemas URL crean comunicación intencional entre componentes. Universal links incorporan asociación con dominios; un esquema personalizado puede ser reclamado por otra app en ciertos contextos. La app receptora valida origen, estado y autorización, no confía solo en haber sido invocada.
+
+### Caso razonado: token seguro, copia insegura
+
+Un token se guarda en Keychain con una clase apropiada, pero la respuesta completa de login termina en un log y en una copia de preferencias. La fortaleza del Keychain no cubre duplicados. El equipo inventaría todas las representaciones, elimina logging, aplica minimización y prueba comportamiento bloqueado/desbloqueado.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Entitlement | Capacidad firmada que autoriza acceso a determinados servicios. |
+| Sandbox | Restricción del proceso a su contenedor e interfaces permitidas. |
+| Data Protection class | Política que liga acceso a archivos con claves y estado del dispositivo. |
+| Keychain | Almacén de credenciales con clases de accesibilidad y controles. |
+| Team ID | Identidad del equipo firmante usada en controles de plataforma. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la arquitectura si explica qué demuestra cada capa, selecciona una clase de protección según uso, rastrea datos duplicados y analiza una comunicación entre apps sin asumir que firma equivale a seguridad.
+
 ## 📖 Definiciones y características
 
-- **Secure Enclave (SEP):** coprocesador aislado que gestiona claves, Touch/Face ID y cifrado. Característica: el material de clave nunca es accesible por el procesador principal.
+- **Secure Enclave (SEP):** subsistema aislado que protege determinadas claves y operaciones y participa en autenticación y Data Protection. Característica: las claves configuradas para permanecer allí se usan mediante interfaces controladas; no todo secreto de una app reside automáticamente en SEP.
 - **Data Protection:** cifrado de archivos por clases (`Complete`, `CompleteUntilFirstUserAuthentication`, `None`). Característica: las claves se derivan del passcode y del UID de hardware.
 - **Entitlements:** permisos declarados y firmados que autorizan capacidades (Keychain groups, push, etc.). Característica: no se pueden falsificar sin romper la firma.
 - **Code signing:** todo binario ejecutable debe estar firmado por un certificado de confianza de Apple. Característica: impide ejecutar código no firmado sin jailbreak.
@@ -96,7 +134,7 @@ Elabora una **ficha técnica de arquitectura de seguridad iOS** que, para un dat
 Por el code signing obligatorio y el sandbox estricto: sin jailbreak no puedes ejecutar herramientas ni instrumentar apps, y los jailbreaks son cada vez más escasos.
 
 **❓ ¿El Secure Enclave puede extraerse o volcarse?**
-No por software: es un coprocesador aislado con su propio arranque seguro; su clave UID nunca se expone al SoC principal.
+No es una función que una app desactive. Es un subsistema con arranque y memoria protegidos; aun así, la seguridad completa depende de políticas de acceso, código de plataforma, dispositivo y forma en que la app usa las operaciones.
 
 **❓ ¿Puedo hacer algo sin jailbreak?**
 Sí: análisis estático del IPA, revisión de Info.plist y entitlements, y pruebas de red con proxy, aunque el pinning y muchos controles requieren instrumentación.

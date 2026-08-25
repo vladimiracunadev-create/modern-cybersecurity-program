@@ -34,6 +34,47 @@ Al finalizar, el alumno podrá:
 | 6 | SPI y volcado de flash | Extrae el firmware completo |
 | 7 | Contramedidas del fabricante | Fusibles, deshabilitar JTAG |
 
+## 🧠 Explicación en profundidad
+
+### Antes de comunicar, medir voltaje y tierra
+
+UART, JTAG/SWD y SPI cumplen funciones diferentes. UART es una consola serie asíncrona; JTAG/SWD ofrece depuración y prueba del chip; SPI conecta periféricos, con frecuencia flash. Encontrar pines no autoriza aplicar 5 V ni conectar líneas al azar: un error de nivel, orientación o alimentación puede destruir el dispositivo o el adaptador.
+
+```mermaid
+flowchart TD
+  PCB["Placa propia sin energía"] --> VIS["Inspección + datasheets"]
+  VIS --> GND["Identificar GND"]
+  GND --> V["Medir niveles y actividad"]
+  V --> UART["UART: RX/TX y baud"]
+  V --> JTAG["JTAG/SWD: debug"]
+  V --> SPI["SPI: flash y buses"]
+  UART --> E["Evidencia no destructiva"]
+  JTAG --> E
+  SPI --> E
+```
+
+La primera práctica es pasiva: fotografías, continuidad con el equipo apagado y analizador lógico de alta impedancia. En UART se comparte tierra, se confirma nivel —a menudo 3,3 V o 1,8 V— y se escucha TX antes de transmitir. Una consola de boot con shell privilegiada es una decisión de producto; se documenta acceso físico, estado y datos expuestos.
+
+En JTAG/SWD, deshabilitar depuración en producción puede ser apropiado, pero debe conservarse una ruta segura de fabricación y recuperación. Los fusibles son potencialmente irreversibles y nunca se prueban en el laboratorio sin diseño del fabricante. Leer SPI con pinza puede fallar por contención con el resto de la placa; se empieza sin escribir y se hacen varias lecturas comparadas por hash.
+
+### Caso razonado: volcado diferente cada vez
+
+Tres lecturas de flash producen hashes distintos. Antes de analizar «firmware cambiante», el alumno revisa alimentación, contacto y contención del bus. Solo cuando las lecturas coinciden se acepta una imagen. La reproducibilidad eléctrica precede a la interpretación.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| UART | Enlace serie asíncrono con RX/TX y referencia común. |
+| JTAG/SWD | Interfaces de depuración y prueba de circuitos. |
+| SPI | Bus síncrono usado por memorias y periféricos. |
+| Nivel lógico | Tensión que representa estados digitales; no asumir 5 V. |
+| Contención | Dos dispositivos conducen una línea de manera incompatible. |
+
+## ✅ Criterio de dominio
+
+Hay dominio cuando el alumno identifica una interfaz sin dañar la placa, documenta niveles y pinout, obtiene lecturas repetibles en modo no destructivo y explica cómo reducir acceso de producción manteniendo recuperación.
+
 ## 📖 Definiciones y características
 
 - **UART:** comunicación serie asíncrona (TX, RX, GND, VCC) usada para consolas de depuración. Característica: a menudo expone un shell root sin autenticación.
@@ -82,7 +123,7 @@ flashrom -p ch341a_spi -r flash_dump.bin
 
 ## 📝 Reto verificable
 
-Extrae el firmware de un dispositivo propio **por dos vías físicas distintas** (por ejemplo, consola UART que permite `cat` de una partición y volcado directo por SPI), o consigue una consola root por UART. **Criterio de aceptación:** obtienes un shell interactivo por UART **o** un volcado de flash que binwalk desempaqueta correctamente, documentando el pinout que usaste.
+Obtén evidencia de un dispositivo de laboratorio por dos observaciones no destructivas —por ejemplo, log UART y dos lecturas SPI coincidentes—. **Criterio de aceptación:** documentas pinout, niveles, configuración, hashes repetibles y límites; no modificas flash ni exiges obtener privilegios como condición de éxito.
 
 ## ⚠️ Errores comunes
 

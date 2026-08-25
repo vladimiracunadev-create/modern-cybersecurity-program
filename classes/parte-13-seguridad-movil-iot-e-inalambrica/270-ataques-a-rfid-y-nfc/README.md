@@ -34,6 +34,46 @@ Al finalizar, el alumno podrá:
 | 6 | Clonado y magic cards | Demostrar el impacto |
 | 7 | Endurecimiento de accesos | Migrar a DESFire, validar en backend |
 
+## 🧠 Explicación en profundidad
+
+### Frecuencia y forma no determinan el control de acceso
+
+RFID agrupa tecnologías distintas; NFC opera a corta distancia en 13,56 MHz y define modos e interoperabilidad. Una tarjeta puede emitir un identificador fijo, autenticar criptográficamente o ejecutar una aplicación compleja. Leer un UID no equivale a clonar una credencial funcional, y copiar memoria no reproduce necesariamente claves, contadores o backend.
+
+```mermaid
+flowchart LR
+  R["Lector autorizado"] -->|"campo + comando"| T["Tag/tarjeta de laboratorio"]
+  T --> ID["Identificador"]
+  T --> MEM["Memoria y permisos"]
+  T --> CR["Autenticación/criptografía"]
+  ID --> B["Backend y decisión"]
+  MEM --> B
+  CR --> B
+  B --> ACT["Acceso o transacción"]
+```
+
+El diagrama coloca la decisión fuera del medio físico. Un sistema que autoriza solo por UID hereda riesgo de copia; uno con desafío-respuesta debe proteger claves y evitar replay; el backend puede detectar estado y revocar. La distancia corta reduce exposición casual, pero no es autenticación.
+
+El laboratorio utiliza tarjetas compradas para práctica y un lector propio, sin credenciales de transporte, pago o acceso real. Se identifica tecnología, se lee información pública, se cambia una clave de laboratorio y se demuestra restauración. Recuperar claves débiles de MIFARE Classic enseña un diseño histórico concreto; no generaliza a todas las tarjetas ni autoriza clonar terceros.
+
+### Caso razonado: UID copiado sin acceso
+
+Un emulador presenta el mismo UID, pero el lector exige respuesta criptográfica y contador coherente. La copia falla. El informe distingue la exposición del identificador de la resistencia de autenticación y revisa si el backend registra intentos. «Clonable» requería demostrar la transacción completa.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| UID | Identificador de tag; su estabilidad y seguridad dependen de tecnología. |
+| Anticolisión | Procedimiento para seleccionar tags presentes simultáneamente. |
+| Challenge-response | Autenticación que prueba conocimiento sin repetir una respuesta fija. |
+| Replay | Reutilización de una comunicación anterior. |
+| Sector/block | Organización de memoria presente en algunas familias de tarjetas. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno identifica la tecnología, separa UID, memoria, criptografía y backend, reproduce una prueba solo con tarjetas propias y calibra la conclusión al control realmente demostrado.
+
 ## 📖 Definiciones y características
 
 - **RFID LF (125 kHz):** tags simples tipo EM4100/HID Prox que suelen transmitir solo un ID sin cifrado. Característica: clonables trivialmente.
@@ -88,7 +128,7 @@ Recupera todas las claves de una tarjeta MIFARE Classic **de tu propiedad**, vue
 |-------------------|-----------------------|
 | `hf search` no detecta nada | Tag HF fuera de antena o es LF; prueba `lf search` |
 | autopwn no recupera claves | Tarjeta no es Classic (DESFire) o hardened; usa otra técnica |
-| Clon no funciona en el lector | El backend valida más que el UID; clona todos los sectores |
+| La emulación de UID no funciona en el lector | El sistema valida memoria, autenticación, estado o backend. Documenta qué capa rechazó la tarjeta; no intentes copiar una credencial real. |
 | Magic card rechaza el UID | Tipo de magic (gen1a/gen2) equivocado; usa el comando adecuado |
 | Lecturas intermitentes | Mala posición/antena; centra el tag sobre la antena |
 

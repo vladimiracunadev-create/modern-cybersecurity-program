@@ -32,6 +32,45 @@ Al finalizar, el alumno podrá:
 | 6 | Laboratorio aislado | Evita impacto en producción/terceros |
 | 7 | Credenciales y actualización | Fallos endémicos del sector |
 
+## 🧠 Explicación en profundidad
+
+### El producto IoT es un sistema, no solo una placa
+
+Un producto conectado combina dispositivo, aplicación móvil, servicio cloud, identidad, red local, actualización y soporte. Una cerradura puede proteger bien su radio y exponer cuentas en la API; una cámara puede tener firmware firmado y una contraseña compartida. El modelo sigue datos y comandos entre capas durante instalación, operación, actualización, transferencia y retiro.
+
+```mermaid
+flowchart TD
+  U["Usuario/app"] --> C["Servicio cloud/API"]
+  C --> D["Dispositivo"]
+  D --> L["Red local y radio"]
+  V["Fabricante<br/>firmas y soporte"] --> U
+  V --> C
+  V -->|"actualización"| D
+  D --> P["Proceso físico"]
+```
+
+NIST IR 8259A define una base de capacidades técnicas: identificación, configuración, protección de datos, control de interfaces, actualización, conocimiento del estado y seguridad del dispositivo. Es un punto de partida que se adapta al riesgo; no una certificación automática. IR 8259B añade capacidades de soporte del fabricante. El ciclo de soporte, divulgación y fin de vida importa tanto como una contraseña inicial.
+
+La amenaza física cambia supuestos: el atacante puede abrir carcasa, cortar energía o leer flash. La respuesta no siempre es hacer todo inviolable, sino proteger claves, detectar manipulación cuando sea viable, limitar privilegios y recuperar de forma segura. Privacidad considera inferencias: un sensor sin audio puede revelar ocupación por horarios.
+
+### Caso razonado: dispositivo actualizado, cloud abandonado
+
+Un sensor recibe firmware firmado, pero su app usa una API sin separación entre hogares. El control de actualización no cubre autorización cloud. El inventario por capas descubre ambos propietarios y produce pruebas distintas. La seguridad del producto se evalúa por el camino completo del comando.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Producto IoT | Dispositivo y servicios necesarios para su función. |
+| Capability baseline | Conjunto adaptable de capacidades, no lista de aprobación. |
+| Provisioning | Incorporación inicial de identidad, claves y configuración. |
+| Fin de vida | Momento y proceso en que cesa soporte y se gestiona retiro. |
+| Efecto físico | Cambio sobre entorno o seguridad causado por el producto. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno dibuja todas las capas y actores, sigue un dato y un comando, adapta la base NIST al impacto y propone soporte, actualización y retiro verificables.
+
 ## 📖 Definiciones y características
 
 - **Superficie de ataque IoT:** conjunto de todos los puntos de entrada del sistema (app, API, radio, puertos, interfaces físicas). Característica: es multicapa y a menudo se pivota entre capas.
@@ -106,7 +145,7 @@ No siempre. El análisis de red, app y nube da mucho valor sin tocar el hardware
 - OWASP IoT Top 10: <https://owasp.org/www-project-internet-of-things/>
 - OWASP Firmware Security Testing Methodology (FSTM): <https://github.com/scriptingxss/owasp-fstm>
 - *Practical IoT Hacking* — Chantzis, Stais, Calderon, Deirmentzoglou, Woods.
-- NIST IR 8259 — Foundational Cybersecurity Activities for IoT: <https://csrc.nist.gov/pubs/ir/8259/final>
+- NIST IR 8259 Rev. 1 — Foundational Cybersecurity Activities for IoT Product Manufacturers: <https://csrc.nist.gov/pubs/ir/8259/r1/final>
 
 ## 📥 Material descargable
 

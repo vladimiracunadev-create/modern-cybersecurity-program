@@ -34,6 +34,47 @@ Al finalizar, el alumno podrá:
 | 6 | SBOM y gestión de parches | Ciclo de vida largo y difícil de parchear |
 | 7 | Divulgación coordinada | Cómo reportar sin causar daño |
 
+## 🧠 Explicación en profundidad
+
+### El riesgo de ciberseguridad se traduce a daño clínico
+
+Un dispositivo médico puede incluir hardware, software, red hospitalaria, servicio remoto y procesos humanos. La pregunta no termina en «¿puede explotarse?»: se rastrea si una pérdida de integridad, disponibilidad o confidencialidad altera terapia, alarma, diagnóstico o continuidad, y qué controles clínicos limitan el daño. Seguridad y eficacia permanecen durante todo el ciclo de vida.
+
+```mermaid
+flowchart LR
+  M["Fabricante<br/>diseño, SBOM, updates"] --> D["Dispositivo"]
+  H["Hospital<br/>red, inventario, operación"] --> D
+  D --> P["Paciente / función clínica"]
+  D --> C["Cloud y soporte"]
+  V["Investigador/CVD"] -->|"reporte coordinado"| M
+  M -->|"parche + comunicación"| H
+  H -->|"despliegue clínico"| D
+```
+
+La guía final de FDA de febrero de 2026 aborda diseño, sistema de calidad y contenido de presentaciones previas a mercado para dispositivos con riesgo de ciberseguridad. La legislación estadounidense aplicable a *cyber devices* incluye planes para vulnerabilidades, procesos de actualización y SBOM; fuera de EE. UU. cambian obligaciones. La clase usa FDA como fuente primaria concreta, no como norma mundial.
+
+Parchar exige comprobar compatibilidad, validación y ventana clínica. Aplazar indefinidamente tampoco es neutral: se documentan riesgo residual y mitigaciones como segmentación, deshabilitar funciones o monitorizar. El fabricante mantiene divulgación coordinada y soporte; el hospital inventario, configuración, red y respuesta; ninguna parte puede trasladar todo el riesgo a la otra.
+
+Las pruebas se realizan en gemelos, simuladores o dispositivos retirados y descontaminados, sin conexión a pacientes ni redes clínicas. Un hallazgo se comunica coordinadamente y evita detalles que aumenten daño antes de existir mitigación.
+
+### Caso razonado: parche disponible, aplicación clínica pendiente
+
+El fabricante publica una corrección para un monitor. El hospital no la instala de inmediato porque requiere validación con su central, pero segmenta el equipo, bloquea acceso remoto y programa ensayo. Registra riesgo y plazo. La decisión no es «seguridad contra disponibilidad»: es gestión temporal con controles y evidencia clínica.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Cyber device | Categoría legal estadounidense definida por FD&C Act; no todo dispositivo mundial. |
+| TPLC | Gestión del producto durante diseño, mercado, soporte y retiro. |
+| SBOM | Inventario de componentes que acelera evaluación, sin demostrar seguridad. |
+| CVD | Divulgación coordinada de vulnerabilidades. |
+| Daño clínico | Consecuencia sobre paciente, diagnóstico, terapia o continuidad. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando conecta una amenaza con una consecuencia clínica, reparte responsabilidades, diseña parche y mitigación temporal y prepara divulgación sin probar sobre pacientes ni producción.
+
 ## 📖 Definiciones y características
 
 - **Dispositivo médico implantable (IMD):** dispositivo dentro del cuerpo (marcapasos, DAI) con telemetría inalámbrica. Característica: restricciones severas de energía y de seguridad del paciente.
@@ -103,7 +144,7 @@ Permite saber qué componentes de terceros usa el dispositivo para reaccionar cu
 
 ## 🔗 Referencias
 
-- FDA — Cybersecurity in Medical Devices: <https://www.fda.gov/medical-devices/digital-health-center-excellence/cybersecurity>
+- FDA — Cybersecurity in Medical Devices, guía final vigente: <https://www.fda.gov/regulatory-information/search-fda-guidance-documents/cybersecurity-medical-devices-quality-management-system-considerations-and-content-premarket>
 - CISA ICS Medical Advisories: <https://www.cisa.gov/news-events/cybersecurity-advisories>
 - IEC 62304 e IEC 80001 (ciclo de vida y gestión de riesgo en red).
 - *Practical IoT Hacking*, secciones de dispositivos médicos — Chantzis et al.

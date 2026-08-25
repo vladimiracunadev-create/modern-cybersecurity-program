@@ -34,6 +34,45 @@ Al finalizar, el alumno podrá:
 | 6 | Anti-tampering y anti-debug | Controles que hay que evadir |
 | 7 | Parcheo y reempaquetado | Modificar comportamiento en laboratorio |
 
+## 🧠 Explicación en profundidad
+
+### Reconstruir comportamiento requiere varias representaciones
+
+En Android, APK contiene manifiesto, recursos, DEX y posiblemente bibliotecas ELF; en iOS, el bundle contiene Mach-O, recursos y metadatos. Descompilar produce una aproximación, no el fuente original. Optimización, *inlining*, Swift/Kotlin y ofuscación alteran nombres y estructura. La estrategia alterna evidencia estática con observaciones dinámicas sobre una app propia o expresamente autorizada.
+
+```mermaid
+flowchart LR
+  PKG["APK/IPA preservado<br/>hash y versión"] --> MAP["Estructura y metadatos"]
+  MAP --> MAN["Código gestionado<br/>DEX/Swift"]
+  MAP --> NAT["Nativo<br/>ELF/Mach-O"]
+  MAN --> HYP["Hipótesis de flujo"]
+  NAT --> HYP
+  HYP --> DYN["Trazas e instrumentación"]
+  DYN --> MODEL["Modelo de comportamiento<br/>con límites"]
+```
+
+Se comienza por puntos de entrada y flujos de datos, no por leer cada función. Strings, URLs, APIs criptográficas y llamadas nativas orientan; referencias cruzadas revelan quién usa un valor. JNI o bridges conectan capas, de modo que una validación puede estar en Java y una clave derivada en C. La instrumentación confirma argumentos, retornos y estados, pero un hook también puede cambiar tiempos o comportamiento.
+
+La ofuscación eleva coste y reduce señales; no reemplaza proteger secretos ni autorizar en servidor. Reempaquetar una app propia sirve para comprender firma e integridad. Distribuir una app modificada, eliminar controles de licencia o analizar software fuera de permiso puede infringir ley y contrato.
+
+### Caso razonado: secreto que no era secreto
+
+JADX muestra una constante llamada `API_KEY`. La traza revela que identifica el cliente ante un servicio público y que toda operación sensible requiere token por usuario. Se reporta exposición de identificador y posible abuso de cuota, no «compromiso total». Otro valor firma solicitudes administrativas y sí cambia impacto. Los nombres orientan; el flujo decide.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| DEX | Bytecode ejecutado por Android Runtime. |
+| Mach-O | Formato de ejecutables de plataformas Apple. |
+| JNI/bridge | Interfaz entre código gestionado y nativo. |
+| Referencia cruzada | Relación entre uso y definición en un binario. |
+| Reempaquetado | Reconstrucción y firma de una copia autorizada para laboratorio. |
+
+## ✅ Criterio de dominio
+
+El alumno domina RE móvil cuando conserva el artefacto, cruza capas gestionada y nativa, formula hipótesis desde flujos, las valida dinámicamente y calibra el impacto sin confundir nombres u ofuscación con propiedades de seguridad.
+
 ## 📖 Definiciones y características
 
 - **DEX (Dalvik Executable):** bytecode de Android; se desensambla a smali y se decompila a Java aproximado. Característica: legible con jadx.
@@ -100,7 +139,7 @@ Toma un CrackMe móvil y recupera su secreto/flag por **dos vías independientes
 Suelen combinarse. El estático da el mapa general; el dinámico confirma comportamiento y sortea ofuscación de cadenas y control de flujo.
 
 **❓ ¿La ofuscación hace imposible el RE?**
-No. Aumenta el tiempo y la dificultad, pero el código debe ejecutarse en el dispositivo, así que la instrumentación dinámica siempre observa el comportamiento real.
+No. Aumenta tiempo y dificultad. La instrumentación puede observar ejecuciones concretas, pero no garantiza cubrir todas las rutas y puede alterar comportamiento; se combina con análisis estático y pruebas de estados distintos.
 
 **❓ ¿Por qué el `.so` requiere Ghidra y el DEX no?**
 El DEX es bytecode de alto nivel decompilable casi a Java; el `.so` es código máquina ARM/x86 que necesita un decompilador de binarios nativos como Ghidra.

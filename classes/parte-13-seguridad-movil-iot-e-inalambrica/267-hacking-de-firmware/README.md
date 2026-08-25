@@ -34,6 +34,47 @@ Al finalizar, el alumno podrá:
 | 6 | Emulación con QEMU | Prueba dinámica sin el hardware |
 | 7 | Seguridad de la actualización | Firma/cifrado del OTA |
 
+## 🧠 Explicación en profundidad
+
+### Firmware no es sinónimo de un único sistema de archivos
+
+Una imagen puede contener cabecera del fabricante, bootloader, kernel, device tree, rootfs, configuración, particiones de recuperación y firma. `binwalk` reconoce patrones; un patrón es candidato, no prueba. La extracción conserva el original y su hash, identifica arquitectura y offsets y registra cada transformación.
+
+```mermaid
+flowchart LR
+  IMG["Imagen original<br/>hash + procedencia"] --> HDR["Cabecera/tabla<br/>y particiones"]
+  HDR --> BOOT["Bootloader/kernel"]
+  HDR --> FS["Rootfs/configuración"]
+  FS --> ANA["Servicios, claves,<br/>permisos y versiones"]
+  ANA --> EMU["Emulación parcial"]
+  SIG["Firma + anti-rollback"] --> HDR
+  REC["Recuperación segura"] --> HDR
+```
+
+El análisis busca cuentas, scripts de inicio, certificados, claves privadas, servicios y mecanismos de actualización. Una cadena encontrada puede ser una clave pública o dato de prueba; se valida uso. Contraseñas con hash requieren revisar algoritmo y política, no intentar acceso fuera del dispositivo propio.
+
+Firmar actualizaciones protege autenticidad e integridad si la raíz de confianza y la verificación están protegidas. Anti-rollback evita instalar una versión antigua firmada pero vulnerable. NIST SP 800-193 organiza resiliencia en proteger, detectar y recuperar. Cifrar la imagen puede dificultar extracción, pero la clave y el código de descifrado deben existir en algún punto del producto.
+
+La emulación rara vez reproduce hardware, drivers, secure elements o nube. Sirve para observar servicios bajo supuestos y debe marcarse como parcial. Una prueba que funciona en QEMU no demuestra el mismo impacto en el dispositivo.
+
+### Caso razonado: clave privada compartida
+
+Dos imágenes oficiales contienen la misma clave privada de servidor. La evidencia se confirma comparando huellas en unidades propias. El problema no es solo «secreto en firmware»: una clave compartida impide identidad única y complica rotación. La corrección provisiona credenciales por dispositivo y define revocación y actualización.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Rootfs | Sistema de archivos raíz usado por el runtime embebido. |
+| Bootloader | Código inicial que prepara y carga etapas posteriores. |
+| Anti-rollback | Control que rechaza versiones anteriores aun si están firmadas. |
+| Root of trust | Componente protegido en el que comienza una decisión de confianza. |
+| Emulación parcial | Ejecución aproximada que no reproduce todo el hardware. |
+
+## ✅ Criterio de dominio
+
+El alumno domina la clase cuando conserva offsets y hashes, distingue detección de validación, explica firma y rollback, identifica una exposición con flujo de uso y limita las conclusiones de la emulación.
+
 ## 📖 Definiciones y características
 
 - **binwalk:** herramienta que identifica y extrae firmas de archivos dentro de una imagen de firmware. Característica: automatiza la extracción del sistema de ficheros.

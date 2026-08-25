@@ -34,6 +34,45 @@ Al finalizar, el alumno podrá:
 | 6 | UDS y diagnóstico | Servicios y su abuso |
 | 7 | Superficies remotas y defensa | Telemática, TPMS, gateway seguro |
 
+## 🧠 Explicación en profundidad
+
+### CAN transporta mensajes por identificador, no identidades de emisor
+
+En CAN clásico, los nodos comparten bus y arbitran mediante identificador; los valores más dominantes ganan prioridad. El identificador describe prioridad y significado esperado, no autentica qué ECU transmitió. El protocolo detecta errores de transmisión, pero no aporta por sí solo confidencialidad ni autorización de comandos.
+
+```mermaid
+flowchart LR
+  EXT["Telemática/diagnóstico"] --> GW["Gateway"]
+  GW --> CAN1["CAN tren motriz"]
+  GW --> CAN2["CAN carrocería"]
+  ECU1["ECU A"] <--> CAN1
+  ECU2["ECU B"] <--> CAN1
+  SENS["Sensores/actuadores"] --> ECU1
+  LOG["Monitorización y diagnóstico"] --> GW
+```
+
+La seguridad moderna depende de arquitectura: gateway, separación de dominios, arranque y actualización seguros, diagnóstico autenticado, protección de claves, detección y respuesta. Añadir criptografía a cada frame puede enfrentar latencia y compatibilidad; el diseño se decide por función y riesgo de seguridad física.
+
+Analizar tráfico busca periodicidad, contador, checksum y relación con una acción en simulador. Correlación no identifica semántica definitiva. Inyectar en un vehículo real puede accionar sistemas, distraer al conductor o dañar componentes; todo laboratorio usa `vcan` e ICSim, vehículo fuera de vía en banco autorizado o equipos aislados por profesionales.
+
+### Caso razonado: frame correlacionado con velocidad
+
+Un byte aumenta al mover el control de velocidad en ICSim. Puede representar velocidad, valor escalado o parte de un contador. El alumno modifica una variable por vez, repite, prueba límites y documenta hipótesis. No traslada el ID a otro modelo: DBC y diseño cambian entre vehículos.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| ECU | Unidad electrónica que controla una función vehicular. |
+| Arbitration ID | Identificador usado para prioridad y significado, no identidad segura. |
+| DBC | Descripción de señales y codificación de mensajes CAN. |
+| Gateway | Componente que media tráfico entre dominios de red. |
+| vcan | Interfaz CAN virtual de Linux sin bus físico. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno explica arbitraje y falta de identidad, infiere una señal con experimentos repetibles en `vcan`, evita generalizar IDs y propone controles de ciclo de vida alineados con seguridad vehicular.
+
 ## 📖 Definiciones y características
 
 - **ECU (Electronic Control Unit):** microcontrolador que gobierna un subsistema (motor, frenos, puertas). Característica: se comunica por CAN sin autenticar el origen.
@@ -102,7 +141,7 @@ En el simulador ICSim, haz ingeniería inversa de **una función** (velocímetro
 Sí y es lo recomendable para empezar: ICSim sobre CAN virtual reproduce un tablero y su tráfico sin ningún riesgo físico.
 
 **❓ ¿Por qué el bus CAN es tan inseguro?**
-Es un bus de difusión sin autenticación de origen ni cifrado: cualquier ECU (o atacante con acceso) puede leer todo e inyectar tramas que las demás aceptan como legítimas.
+CAN clásico es un bus compartido sin autenticación criptográfica de origen ni confidencialidad incorporadas. Un nodo con acceso al segmento puede observar y transmitir, pero gateways, topología, validaciones y estado de las ECU condicionan qué tramas llegan y qué efecto tienen.
 
 **❓ ¿Cómo llega un atacante remoto al CAN?**
 A través de superficies conectadas (telemática celular, WiFi/Bluetooth del infoentretenimiento, TPMS) que, si no están bien segmentadas por un gateway, permiten pivotar hacia buses críticos.

@@ -34,6 +34,44 @@ Al finalizar, el alumno podrá:
 | 6 | WPA3-SAE y PMF | Por qué resisten los ataques clásicos |
 | 7 | Defensas y detección | Endurecer la red propia |
 
+## 🧠 Explicación en profundidad
+
+### La captura permite una verificación offline solo bajo ciertas condiciones
+
+En WPA2-Personal, la clave de red deriva de la contraseña y SSID; el handshake demuestra posesión sin transmitirla directamente. Una captura suficiente permite comprobar candidatos offline, por lo que la resistencia depende de una contraseña aleatoria y larga. PMKID puede aportar material de verificación en configuraciones compatibles, pero no está disponible en todo AP ni «rompe WPA2» sin adivinar la credencial.
+
+```mermaid
+flowchart LR
+  C["Cliente de laboratorio"] <--> AP["AP aislado propio"]
+  AP --> HS["Handshake/PMKID<br/>captura"]
+  HS --> OFF["Verificación offline<br/>contra lista de prueba"]
+  ROGUE["AP de laboratorio<br/>SSID parecido"] --> VAL["Validación de servidor<br/>y perfil de red"]
+  PMF["PMF / 802.11w"] --> AP
+  SAE["WPA3-SAE"] --> AP
+```
+
+Un Evil Twin explota selección de red y confianza del usuario. En empresa, validar el certificado del servidor EAP y desplegar perfiles gestionados evita aceptar un autenticador impostor. En redes personales, WPA3-SAE resiste la verificación offline pasiva del mismo modo que WPA2-PSK, aunque implementación, transición y contraseña siguen importando. PMF protege determinadas tramas de gestión; no autentica una página web falsa.
+
+El laboratorio usa AP, cliente y canal propios dentro de un entorno controlado. No se desautentican equipos ajenos: la reconexión se provoca manualmente o con el propio cliente. Las listas de prueba contienen una contraseña conocida y pocas alternativas para demostrar el mecanismo, no diccionarios contra redes reales.
+
+### Caso razonado: WPA3 con modo transición
+
+Un AP anuncia WPA2/WPA3 para compatibilidad. Un cliente antiguo usa WPA2 y conserva riesgo de PSK débil; otro usa SAE. El informe no declara «WPA3 roto», sino que identifica negociación por cliente y recomienda eliminar transición cuando el inventario lo permita, contraseña robusta y PMF según soporte.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| 4-way handshake | Intercambio que confirma claves y deriva claves de sesión. |
+| PMKID | Identificador derivado que algunas configuraciones exponen para gestión de claves. |
+| SAE | Autenticación basada en contraseña usada por WPA3-Personal. |
+| PMF | Protección de ciertas tramas de gestión IEEE 802.11. |
+| Evil Twin | AP impostor que imita identidad de una red. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno explica qué prueba una captura, diferencia WPA2, SAE y PMF, ejecuta la demostración sin afectar terceros y recomienda controles según tipo de red y clientes.
+
 ## 📖 Definiciones y características
 
 - **Modo monitor:** estado del adaptador que captura todos los frames 802.11 del canal. Característica: prerequisito para sniffing e inyección.
@@ -55,8 +93,7 @@ sudo airodump-ng wlan0mon                 # descubrir tu AP y su canal
 
 # Captura de handshake (tu red)
 sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w cap wlan0mon
-# (opcional, tu propio cliente) forzar reconexión:
-sudo aireplay-ng --deauth 3 -a AA:BB:CC:DD:EE:FF wlan0mon
+# Para generar un handshake, reconecta manualmente tu cliente de laboratorio.
 
 # Captura de PMKID
 sudo hcxdumptool -i wlan0mon -o pmkid.pcapng --enable_status=1
@@ -70,7 +107,7 @@ hashcat -m 22000 hash.hc22000 wordlist.txt
 
 1. **Prepara el laboratorio:** configura tu propio AP con WPA2-PSK y una contraseña de prueba que esté en tu diccionario.
 2. **Modo monitor:** activa `airmon-ng` y localiza tu AP y su canal con `airodump-ng`.
-3. **Captura el handshake:** filtra por tu BSSID/canal y provoca la reconexión de **tu** cliente con una deauth breve.
+3. **Captura el handshake:** filtra por tu BSSID y canal y reconecta manualmente **tu** cliente. No transmitas tramas de desautenticación, que pueden afectar equipos cercanos.
 4. **Captura el PMKID:** con `hcxdumptool` obtén el PMKID de tu AP sin clientes y conviértelo a `.hc22000`.
 5. **Crackea offline:** usa hashcat modo 22000 con un diccionario; recupera la contraseña de prueba.
 6. **Evil Twin:** con hostapd/wifiphisher levanta un AP con el mismo SSID y un portal cautivo en laboratorio aislado; observa el flujo de captura de credenciales con un cliente de pruebas propio.
@@ -106,7 +143,7 @@ Sobre tu **propia** red WPA2, captura el PMKID, conviértelo y recupera la contr
 No: esa es su ventaja. Se obtiene directamente del AP si este incluye el PMKID, permitiendo crackeo offline sin esperar a un handshake.
 
 **❓ ¿WPA3 es inmune a todo esto?**
-Elimina el crackeo offline del handshake gracias a SAE, pero no a contraseñas triviales ni a todos los fallos de implementación (p. ej. Dragonblood). Sigue siendo mucho más resistente que WPA2.
+SAE evita la verificación offline pasiva propia de WPA2-PSK a partir de una captura equivalente, pero contraseñas débiles, modo transición, configuración e implementación siguen importando. La comparación debe declarar clientes y configuración.
 
 **❓ ¿Por qué el Evil Twin funciona incluso con WPA2 fuerte?**
 Porque ataca al usuario, no al cifrado: si la víctima se conecta al AP falso e introduce credenciales en un portal, la fortaleza del cifrado del AP legítimo es irrelevante. PMF y verificación de servidor lo mitigan.

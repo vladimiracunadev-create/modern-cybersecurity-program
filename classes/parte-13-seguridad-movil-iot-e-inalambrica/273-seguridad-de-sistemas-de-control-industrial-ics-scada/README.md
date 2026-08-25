@@ -7,7 +7,7 @@
 
 ## 🎯 Objetivo
 
-Entender la seguridad de los sistemas de control industrial (ICS) y SCADA que operan infraestructura crítica —agua, energía, manufactura— donde un fallo tiene consecuencias físicas. El alumno aprenderá el modelo Purdue, los protocolos industriales inseguros por diseño (Modbus, DNP3, S7), la diferencia de prioridades entre TI y OT, y practicará enumeración y análisis de protocolos contra un **simulador** de laboratorio, nunca contra sistemas en producción.
+Entender la seguridad de sistemas de control industrial y SCADA donde un fallo puede tener consecuencias físicas. El alumno estudiará Purdue como referencia, zonas y conductos y las propiedades de seguridad variables de protocolos como Modbus, DNP3 y S7; practicará observación contra un simulador aislado, no contra producción.
 
 > ⚠️ **Nota ética y de seguridad crítica:** NUNCA escanees ni pruebes sistemas ICS/SCADA en producción; un simple escaneo puede detener procesos físicos y poner en riesgo vidas. Todo se practica en simuladores/laboratorios aislados (Conpot, GRFICS, PLCs de práctica) de tu propiedad.
 
@@ -34,12 +34,50 @@ Al finalizar, el alumno podrá:
 | 6 | Casos: Stuxnet, TRITON, Ukraine | Impacto real demostrado |
 | 7 | IEC 62443 y SP 800-82 | Marcos de defensa OT |
 
+## 🧠 Explicación en profundidad
+
+### En OT, la seguridad protege un proceso físico
+
+OT mide o cambia el mundo: PLC ejecuta lógica, HMI presenta estado, estaciones de ingeniería modifican programas y sistemas de seguridad llevan el proceso a condición segura. La consecuencia puede ser indisponibilidad, daño ambiental o riesgo humano. NIST SP 800-82 Rev. 3 exige considerar rendimiento, confiabilidad y seguridad funcional; copiar un control IT sin evaluar el proceso puede aumentar riesgo.
+
+```mermaid
+flowchart TD
+  E["Empresa / IT"] --> DMZ["DMZ industrial<br/>servicios intermediarios"]
+  DMZ --> SCADA["Supervisión<br/>SCADA/HMI"]
+  SCADA --> PLC["Control<br/>PLC/RTU"]
+  PLC --> PROC["Proceso físico"]
+  SIS["Sistema instrumentado<br/>de seguridad"] --> PROC
+  ENG["Estación de ingeniería"] --> PLC
+```
+
+Zonas y conductos agrupan activos por función y riesgo y controlan flujos necesarios. El modelo Purdue es una referencia, no una topología obligatoria ni un firewall por nivel. Inventario y diagramas se validan con ingeniería. La monitorización comienza pasiva; escanear o enviar paquetes desconocidos puede alterar dispositivos legados.
+
+Protocolos como Modbus/TCP fueron diseñados sin autenticación en muchos despliegues. Encapsular, segmentar y restringir comandos reduce exposición, pero el control también necesita identidad de operadores, backups de lógica, gestión de cambios y recuperación ensayada. Disponibilidad no significa «nunca parchear»: implica planificar ventana, compatibilidad y rollback.
+
+### Caso razonado: regla de firewall aparentemente segura
+
+Una regla permite todo desde la estación de ingeniería porque «es de confianza». Su cuenta comprometida puede modificar múltiples PLC. El equipo limita destino, función y ventana, usa jump host con MFA, registra cambios y verifica backup. La segmentación reduce caminos; no convierte el endpoint privilegiado en confiable por ubicación.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| PLC | Controlador que ejecuta lógica sobre entradas y salidas. |
+| HMI | Interfaz para observar y operar el proceso. |
+| Zona/conducto | Agrupación y comunicación controlada según riesgo y función. |
+| SIS | Sistema independiente destinado a llevar el proceso a estado seguro. |
+| Passive monitoring | Observación sin generar sondeo hacia activos OT. |
+
+## ✅ Criterio de dominio
+
+El alumno domina OT cuando relaciona activo con consecuencia física, propone zonas y flujos necesarios, prioriza descubrimiento pasivo y diseña cambio, backup y recuperación con participación de ingeniería.
+
 ## 📖 Definiciones y características
 
 - **SCADA:** sistema de supervisión y adquisición de datos que monitoriza y controla procesos distribuidos. Característica: prioriza disponibilidad y tiempo real.
 - **PLC (Controlador Lógico Programable):** dispositivo que ejecuta la lógica de control de un proceso físico. Característica: acepta comandos de escritura sin autenticar en muchos protocolos.
 - **Modelo Purdue:** arquitectura de referencia por niveles (0 proceso físico a 5 red corporativa). Característica: guía la segmentación entre OT y TI.
-- **Modbus:** protocolo industrial simple y ubicuo. Característica: sin autenticación ni cifrado; cualquiera en la red puede leer/escribir registros.
+- **Modbus/TCP tradicional:** protocolo industrial simple que no incorpora autenticación ni cifrado en su forma base. Característica: el acceso de red y controles externos determinan quién puede intentar funciones; existen perfiles y arquitecturas seguras que deben evaluarse por despliegue.
 - **DNP3:** protocolo común en servicios eléctricos/agua. Característica: más rico que Modbus pero también inseguro sin Secure Authentication.
 - **Zona desmilitarizada industrial (iDMZ):** capa intermedia entre TI y OT. Característica: control de flujo estricto entre niveles Purdue.
 

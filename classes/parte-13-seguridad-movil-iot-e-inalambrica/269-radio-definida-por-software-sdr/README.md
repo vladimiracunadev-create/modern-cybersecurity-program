@@ -34,10 +34,48 @@ Al finalizar, el alumno podrá:
 | 6 | GNU Radio y URH | Demodular y decodificar |
 | 7 | Legalidad del espectro | Evita infracciones graves |
 
+## 🧠 Explicación en profundidad
+
+### Una captura IQ conserva amplitud y fase de una banda
+
+SDR traslada filtrado, demodulación y decodificación al software. El receptor mezcla una banda alrededor de la frecuencia central y muestrea componentes I/Q. La tasa de muestreo limita el ancho observable; ganancia excesiva satura y crea productos falsos; osciladores imperfectos desplazan frecuencia. Ver una línea en el espectro no identifica automáticamente protocolo.
+
+```mermaid
+flowchart LR
+  RF["Señal RF"] --> FE["Antena + front-end<br/>filtro y ganancia"]
+  FE --> IQ["Muestras I/Q<br/>frecuencia y sample rate"]
+  IQ --> SPEC["Espectro y tiempo"]
+  SPEC --> DEM["Demodulación"]
+  DEM --> DEC["Símbolos/tramas"]
+  DEC --> VAL["Validación con señal<br/>propia documentada"]
+```
+
+El análisis parte de una transmisión propia de baja potencia o un archivo de captura publicado. Se registra hardware, frecuencia central, tasa, ganancia, reloj y entorno. Primero se distingue ruido, interferencia e imagen; después se estima ancho, duración y periodicidad; por último se prueba modulación y estructura.
+
+Recibir o transmitir está regulado de forma distinta según país, banda y contenido. Algunos servicios no pueden interceptarse ni decodificarse aunque la señal sea físicamente accesible. Transmitir requiere autorización y puede interferir sistemas críticos. El laboratorio principal es **solo recepción** con control remoto propio o captura sintética; cualquier emisión usa carga ficticia, potencia y blindaje permitidos.
+
+### Caso razonado: señal duplicada por el receptor
+
+Un pico aparece simétrico respecto del centro y cambia al variar ganancia. No se atribuye a dos transmisores: se evalúa imagen o saturación del front-end, se reduce ganancia, cambia frecuencia central y compara con otro receptor. La cadena de medición también tiene fallos.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| I/Q | Dos componentes ortogonales que conservan amplitud y fase. |
+| Tasa de muestreo | Número de muestras por segundo y límite práctico de banda observada. |
+| Saturación | Sobrecarga que distorsiona y crea señales espurias. |
+| Demodulación | Recuperación de símbolos o información desde una portadora modulada. |
+| PPM | Error relativo de frecuencia del oscilador. |
+
+## ✅ Criterio de dominio
+
+El alumno domina SDR cuando configura una captura reproducible, distingue artefactos del receptor, explica el camino IQ a trama y mantiene recepción y emisión dentro de permisos y aislamiento.
+
 ## 📖 Definiciones y características
 
 - **SDR:** radio cuyo procesamiento se hace en software sobre muestras digitalizadas. Característica: flexible para muchas bandas y protocolos.
-- **Muestras IQ:** representación compleja (in-phase/quadrature) de la señal. Característica: contienen amplitud y fase para demodular cualquier esquema.
+- **Muestras IQ:** representación compleja de una banda mediante componentes en fase y cuadratura. Característica: conserva información útil de amplitud y fase dentro de ancho, tasa y calidad capturados; no asegura poder demodular cualquier señal.
 - **OOK/ASK:** modulación por presencia/ausencia o amplitud de portadora, típica de mandos baratos. Característica: fácil de demodular visualmente.
 - **FSK:** modulación por desplazamiento de frecuencia. Característica: común en sensores y telemetría.
 - **GNU Radio:** framework de flujogramas para procesar señales. Característica: construye demoduladores por bloques.

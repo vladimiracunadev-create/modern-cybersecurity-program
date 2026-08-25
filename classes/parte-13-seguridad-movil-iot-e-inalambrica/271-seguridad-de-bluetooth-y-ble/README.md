@@ -34,6 +34,44 @@ Al finalizar, el alumno podrá:
 | 6 | Sniffing con nRF/Ubertooth | Capturar el tráfico real |
 | 7 | Replay y manipulación | Demostrar impacto en laboratorio |
 
+## 🧠 Explicación en profundidad
+
+### En BLE, descubrir un servicio no concede autorización
+
+Bluetooth Classic y BLE comparten familia, pero difieren en perfiles y uso. En BLE, advertising anuncia presencia y datos; una conexión descubre servicios y características GATT; seguridad de enlace depende del emparejamiento y sus capacidades; y la aplicación todavía debe autorizar operaciones sensibles. Una característica legible no es vulnerable por definición: importa el dato, el vínculo y el contexto.
+
+```mermaid
+flowchart LR
+  ADV["Advertising<br/>dirección + datos"] --> CON["Conexión"]
+  CON --> PAIR["Pairing / bonding<br/>claves de enlace"]
+  CON --> GATT["GATT<br/>servicios y características"]
+  PAIR --> GATT
+  APP["Autorización de aplicación"] --> GATT
+  GATT --> ACT["Lectura, escritura,<br/>notificación"]
+```
+
+«Just Works» puede ser apropiado cuando no existe interfaz, pero no autentica suficientemente frente a MITM en todos los escenarios. Numeric Comparison y passkey dependen de capacidades y verificación humana. LE Secure Connections mejora el intercambio criptográfico; no arregla un token estático enviado como valor GATT.
+
+Las direcciones privadas reducen seguimiento, aunque payload, ritmo, nombre y comportamiento pueden seguir correlacionando. Capturar tráfico de una conexión propia exige registrar versión, método de pairing y claves disponibles; sin ellas, ver advertising no equivale a descifrar la sesión.
+
+### Caso razonado: cerradura con enlace cifrado
+
+Una cerradura usa enlace BLE cifrado, pero acepta el mismo comando de apertura después de conectar cualquier teléfono emparejado. Falta autorización por usuario y frescura a nivel de aplicación. Se añade identidad, nonce, política de rol y registro; el cifrado de enlace permanece como una capa.
+
+## 📔 Glosario operativo
+
+| Término | Definición útil |
+|---|---|
+| Advertising | Emisión BLE para descubrimiento y datos breves. |
+| GATT | Modelo de servicios, características y operaciones BLE. |
+| Pairing | Proceso que establece parámetros y claves de seguridad. |
+| Bonding | Conservación de claves para conexiones futuras. |
+| Dirección privada | Dirección que rota para reducir seguimiento, con límites. |
+
+## ✅ Criterio de dominio
+
+El alumno domina BLE cuando separa descubrimiento, enlace y autorización, identifica el método de pairing, prueba solo periféricos propios y propone protección contextual para una característica sensible.
+
 ## 📖 Definiciones y características
 
 - **GAP (Generic Access Profile):** define roles (central/periférico) y el advertising. Característica: controla descubrimiento y conexión.
@@ -100,7 +138,7 @@ Toma un dispositivo BLE **propio** (p. ej. una bombilla o candado de juguete) y 
 Solo si capturas el emparejamiento o el enlace no está cifrado. Con Just Works y sin cifrado adicional, el tráfico suele ser legible; con emparejamiento seguro necesitas la clave.
 
 **❓ ¿Por qué tantos dispositivos BLE son inseguros?**
-Muchos usan Just Works sin autenticación y confían en que la app sea el único cliente, sin autorizar comandos a nivel GATT: cualquier central puede escribir sus características.
+Algunos productos usan Just Works y confían demasiado en que solo la app oficial actuará como cliente. Si una característica sensible carece además de permisos de enlace y autorización de aplicación, una central dentro de alcance podría intentar operarla; debe comprobarse en el periférico propio.
 
 **❓ ¿Sirve un dongle barato para empezar?**
 Para escanear e interactuar sí. Para sniffear conexiones necesitas hardware específico como el nRF52840 o Ubertooth One.
