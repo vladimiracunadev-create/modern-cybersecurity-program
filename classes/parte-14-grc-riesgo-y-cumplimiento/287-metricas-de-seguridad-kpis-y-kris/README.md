@@ -31,6 +31,31 @@ Al finalizar, el alumno podrá:
 | 6 | Cuadros de mando por audiencia | Dirección vs. equipo técnico |
 | 7 | Cadencia y tendencia | El valor está en la evolución |
 
+## 🧠 Explicación en profundidad
+
+Una métrica útil conecta una pregunta con definición, fuente, frecuencia, dueño, umbral y decisión. KPI observa desempeño; KRI señala exposición; una medida puede cambiar de función según contexto. Promedios y conteos sin denominador ocultan colas y cobertura.
+
+```mermaid
+flowchart LR
+  Q["Pregunta de decisión"] --> DEF["Definición"] --> DATA["Datos y calidad"] --> SIG["Tendencia/umbral"] --> ACT["Acción"]
+```
+
+### Caso razonado
+
+El tiempo medio de parche baja mientras críticos antiguos permanecen. Percentiles y edad por riesgo revelan la cola.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| KPI | Indicador de desempeño frente a objetivo. |
+| KRI | Indicador de exposición o cambio de riesgo. |
+| Goodhart | Riesgo de degradar una medida al convertirla en objetivo rígido. |
+
+## ✅ Criterio de dominio
+
+El alumno define una métrica reproducible y demuestra qué decisión cambia y cómo evita incentivos adversos.
+
 ## 📖 Definiciones y características
 
 - **KPI (Key Performance Indicator)**: mide el rendimiento hacia un objetivo. *Clave*: mira lo que ya pasó/está pasando (retrospectivo).

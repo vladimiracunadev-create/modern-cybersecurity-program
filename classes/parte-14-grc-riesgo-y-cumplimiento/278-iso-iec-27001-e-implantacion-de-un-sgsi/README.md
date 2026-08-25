@@ -31,6 +31,36 @@ Al finalizar, el alumno podrá:
 | 6 | Auditoría de certificación (etapas 1 y 2) | Cómo se obtiene el sello |
 | 7 | No conformidades y acciones correctivas | Mantener la certificación |
 
+## 🧠 Explicación en profundidad
+
+ISO/IEC 27001 especifica requisitos para un sistema de gestión, no una lista universal de controles técnicos. La organización define contexto, partes interesadas, alcance y criterios; evalúa riesgos; selecciona tratamiento; compara con Anexo A y explica inclusión o exclusión en la Declaración de Aplicabilidad. La certificación evalúa conformidad del SGSI dentro de un alcance, no ausencia de incidentes.
+
+```mermaid
+flowchart LR
+  CTX["Contexto y alcance"] --> R["Riesgos"]
+  R --> TR["Tratamiento"]
+  TR --> SOA["SoA<br/>controles y justificación"]
+  SOA --> OP["Operación y evidencia"]
+  OP --> AUD["Auditoría y mejora"]
+  AUD --> CTX
+```
+
+### Caso razonado
+
+Una empresa copia 93 controles y declara todos aplicables. No puede explicar qué riesgo trata cada uno. Rehace el alcance, enlaza controles con tratamiento y conserva responsables y evidencia; el SGSI se vuelve un mecanismo de decisión.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| SGSI | Sistema de gestión para dirigir y mejorar seguridad de información. |
+| SoA | Declaración que justifica controles aplicables y su estado. |
+| Alcance | Frontera organizativa, tecnológica y física del SGSI. |
+
+## ✅ Criterio de dominio
+
+El alumno puede construir la cadena contexto–riesgo–tratamiento–SoA–evidencia y explicar los límites de certificación.
+
 ## 📖 Definiciones y características
 
 - **SGSI**: sistema de gestión que establece, implementa, mantiene y mejora la seguridad de la información. *Clave*: es un sistema de gestión, no un producto.

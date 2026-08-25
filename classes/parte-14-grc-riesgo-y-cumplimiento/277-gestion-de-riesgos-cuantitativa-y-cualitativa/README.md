@@ -31,6 +31,35 @@ Al finalizar, el alumno podrá:
 | 6 | Simulación de Montecarlo | Modela incertidumbre realista |
 | 7 | Tratamiento del riesgo | Del análisis a la decisión |
 
+## 🧠 Explicación en profundidad
+
+El riesgo combina escenarios, frecuencia y magnitud de pérdida bajo incertidumbre. Una matriz cualitativa facilita conversación, pero multiplicar ordinales no crea dinero ni probabilidad. El análisis cuantitativo explicita distribuciones y supuestos; tampoco elimina incertidumbre. Se selecciona método según decisión, datos y coste del análisis.
+
+```mermaid
+flowchart LR
+  SC["Escenario<br/>activo, amenaza, efecto"] --> F["Frecuencia<br/>rango/distribución"]
+  SC --> M["Magnitud<br/>rango/distribución"]
+  F --> SIM["Modelo / simulación"]
+  M --> SIM
+  SIM --> DEC["Opciones y riesgo residual"]
+```
+
+### Caso razonado
+
+Dos riesgos quedan «altos» en una matriz. Uno puede interrumpir ventas por horas; otro generar daño regulatorio de cola larga. Rangos y escenarios separan decisiones. El resultado se presenta como distribución y sensibilidad, no como cifra exacta inventada.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Escenario de pérdida | Cadena concreta que conecta amenaza, activo y consecuencia. |
+| Incertidumbre | Falta de conocimiento representada y comunicada explícitamente. |
+| Sensibilidad | Cambio del resultado al variar un supuesto. |
+
+## ✅ Criterio de dominio
+
+Hay dominio cuando el alumno formula escenarios, evita falsa precisión, justifica método y compara tratamientos mediante riesgo residual.
+
 ## 📖 Definiciones y características
 
 - **Riesgo**: probabilidad de que una amenaza explote una vulnerabilidad causando un impacto. *Clave*: riesgo = f(probabilidad, impacto).

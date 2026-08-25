@@ -31,6 +31,31 @@ Al finalizar, el alumno podrá:
 | 6 | Derechos del interesado | Acceso, supresión, portabilidad, oposición |
 | 7 | El DPO y la rendición de cuentas | Responsable de vigilar el cumplimiento |
 
+## 🧠 Explicación en profundidad
+
+Privacidad gobierna efectos del tratamiento sobre personas; seguridad protege propiedades de información. El ciclo documenta propósito, base, minimización, acceso, retención, terceros y derechos. Seudonimizar reduce enlace directo, pero no vuelve anónimos datos que pueden recombinarse.
+
+```mermaid
+flowchart LR
+  PUR["Propósito y base"] --> COL["Colección mínima"] --> USE["Uso y acceso"] --> RET["Retención"] --> DEL["Eliminación/derechos"]
+```
+
+### Caso razonado
+
+Un dataset elimina nombres pero conserva ubicación precisa y horarios. La reidentificación sigue plausible; se reduce granularidad y acceso según propósito.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Minimización | Limitar datos a lo necesario para propósito. |
+| Seudonimización | Separar identificadores sin eliminar toda posibilidad de enlace. |
+| DPIA | Evaluación estructurada de impacto de privacidad según aplicabilidad. |
+
+## ✅ Criterio de dominio
+
+El alumno mapea un flujo, justifica propósito y retención y diferencia seguridad, seudonimización y anonimización.
+
 ## 📖 Definiciones y características
 
 - **Privacidad**: derecho de las personas a controlar sus datos personales. *Clave*: protege a la persona, no solo al dato.

@@ -31,6 +31,31 @@ Al finalizar, el alumno podrá:
 | 6 | Estrategia de backups (3-2-1) | Última línea contra ransomware |
 | 7 | Pruebas y mantenimiento del plan | Un plan sin probar no existe |
 
+## 🧠 Explicación en profundidad
+
+Continuidad protege productos y procesos; recuperación restaura tecnología. El BIA identifica impactos y dependencias, mientras RTO y RPO expresan objetivos aprobados, no capacidades reales. Solo una prueba demuestra si arquitectura, personas, datos y proveedores alcanzan esos objetivos.
+
+```mermaid
+flowchart LR
+  BIA["BIA y dependencias"] --> OBJ["RTO/RPO"] --> STR["Estrategia"] --> PLAN["Plan"] --> EX["Ejercicio"] --> IMP["Mejora"]
+```
+
+### Caso razonado
+
+Un backup cumple RPO, pero restaurarlo tarda tres días por claves y red ausentes. El ejercicio revela que copia y recuperación son propiedades distintas.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| BIA | Análisis de impacto y dependencias del negocio. |
+| RTO | Tiempo objetivo para restaurar una capacidad. |
+| RPO | Punto temporal máximo de pérdida de datos aceptada. |
+
+## ✅ Criterio de dominio
+
+El alumno enlaza BIA, objetivos, diseño y evidencia de ejercicio, y comunica brechas sin confundir objetivo con resultado.
+
 ## 📖 Definiciones y características
 
 - **BCP**: plan para mantener las funciones críticas del negocio durante y después de una interrupción. *Clave*: enfoque en procesos de negocio.

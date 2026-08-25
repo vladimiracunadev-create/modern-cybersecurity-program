@@ -52,6 +52,15 @@ Esta parte asume las bases técnicas del programa completo (Partes 1–13): fund
 
 ## 🗺️ Estructura temática
 
+```mermaid
+flowchart LR
+  A["276–280<br/>gobierno, riesgo y marcos"] --> B["281–285<br/>obligaciones, continuidad,<br/>terceros y auditoría"] --> C["286–290<br/>cultura, métricas,<br/>privacidad y carrera"]
+```
+
+## 🧭 Recorrido clase a clase
+
+Las clases 276–280 construyen autoridad, escenarios de riesgo y selección contextual de ISO 27001, CSF y CIS. Las clases 281–285 convierten obligaciones en evidencia, documentos operables, continuidad probada, gobierno de proveedores y auditoría independiente. Las clases 286–290 cierran con conducta, métricas, transferencia financiera, privacidad y desarrollo profesional. Cada clase produce una decisión o evidencia que alimenta la siguiente; ningún marco se enseña como checklist universal.
+
 | Bloque | Clases | Enfoque |
 |--------|--------|---------|
 | Gobernanza y riesgo | 276–277 | Estructura de gobierno y análisis de riesgo cuanti/cualitativo |

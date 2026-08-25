@@ -31,6 +31,31 @@ Al finalizar, el alumno podrá:
 | 6 | Cálculo de la cobertura adecuada | Del ALE a la suma asegurada |
 | 7 | El seguro no sustituye controles | Riesgo moral y denegación de siniestro |
 
+## 🧠 Explicación en profundidad
+
+El seguro transfiere consecuencias financieras definidas; no transfiere responsabilidad operativa ni todo riesgo. Cobertura depende de definiciones, límites, retención, exclusiones, sublímites, notificación y obligaciones del asegurado. La póliza se integra con respuesta y continuidad antes del incidente.
+
+```mermaid
+flowchart LR
+  SC["Escenarios"] --> COV["Cobertura y exclusiones"] --> GAP["Riesgo retenido"] --> IR["Playbook y notificación"] --> CLAIM["Evidencia del siniestro"]
+```
+
+### Caso razonado
+
+Una organización contrata ransomware, pero no prueba restauración y omite el plazo de notificación. Seguro y resiliencia resuelven problemas distintos.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Retención/deducible | Parte inicial de pérdida asumida por asegurado. |
+| Sublímite | Límite específico dentro de la cobertura. |
+| Exclusión | Circunstancia que la póliza no cubre. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno compara escenarios con texto contractual, identifica riesgo retenido y conecta notificación con IR.
+
 ## 📖 Definiciones y características
 
 - **Transferencia de riesgo**: trasladar el impacto financiero a un tercero (aseguradora). *Clave*: transfiere el coste, no la responsabilidad.

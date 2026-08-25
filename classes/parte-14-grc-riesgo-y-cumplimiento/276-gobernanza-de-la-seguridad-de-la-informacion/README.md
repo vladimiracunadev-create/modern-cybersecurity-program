@@ -31,6 +31,35 @@ Al finalizar, el alumno podrá:
 | 6 | Due care y due diligence | Base legal de la responsabilidad de directivos |
 | 7 | Comités y estructuras de reporte | Dónde se toman y escalan las decisiones |
 
+## 🧠 Explicación en profundidad
+
+Gobernar seguridad significa decidir objetivos, autoridad, apetito de riesgo y rendición de cuentas; gestionar significa ejecutar esas decisiones. Un comité que recibe métricas pero no puede priorizar presupuesto no gobierna. La dirección conserva responsabilidad aunque delegue tareas al CISO. El modelo debe conectar misión, activos, riesgos, controles, excepciones y evidencia, evitando que «cumplimiento» sustituya resultados.
+
+```mermaid
+flowchart LR
+  DIR["Directorio<br/>apetito y supervisión"] --> EX["Ejecutivos<br/>prioridades y recursos"]
+  EX --> OWN["Dueños de riesgo y servicio"]
+  OWN --> OPS["Operación de controles"]
+  OPS --> EVI["Evidencia e indicadores"]
+  EVI --> DIR
+```
+
+### Caso razonado
+
+Una excepción de MFA permanece abierta porque nadie acepta el riesgo. El CISO documenta exposición y opciones; el dueño de negocio decide dentro de su autoridad y el comité escala si supera apetito. La trazabilidad importa más que una firma decorativa.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Apetito de riesgo | Cantidad y tipo de riesgo que la organización está dispuesta a perseguir o retener. |
+| Dueño de riesgo | Persona con autoridad para tratar o aceptar un riesgo dentro de límites. |
+| Assurance | Confianza sustentada en evidencia sobre diseño y operación. |
+
+## ✅ Criterio de dominio
+
+El alumno distingue gobierno de gestión y diseña una ruta completa desde riesgo hasta decisión, responsable, evidencia y revisión.
+
 ## 📖 Definiciones y características
 
 - **Gobernanza de seguridad**: conjunto de responsabilidades y prácticas ejercidas por la dirección para dar dirección estratégica, asegurar el logro de objetivos y verificar que el riesgo se gestiona. *Característica clave*: es responsabilidad de la alta dirección, no del equipo técnico.

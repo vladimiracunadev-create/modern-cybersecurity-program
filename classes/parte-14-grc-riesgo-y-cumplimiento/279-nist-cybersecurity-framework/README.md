@@ -31,6 +31,33 @@ Al finalizar, el alumno podrá:
 | 6 | Informative references | Mapeo a 27001, CIS, 800-53 |
 | 7 | CSF vs. ISO 27001 | Cuándo usar cada uno |
 
+## 🧠 Explicación en profundidad
+
+NIST CSF 2.0 organiza resultados en Govern, Identify, Protect, Detect, Respond y Recover. No prescribe productos ni certifica conformidad. El perfil actual describe resultados existentes; el objetivo expresa el estado deseado; el análisis de brechas prioriza acciones según riesgo, misión y recursos. Los *tiers* caracterizan rigor de gobierno y gestión, no son una puntuación de madurez obligatoria.
+
+```mermaid
+flowchart LR
+  GOV["Govern"] --> ID["Identify"] --> PR["Protect"] --> DE["Detect"] --> RS["Respond"] --> RC["Recover"]
+  RC -. "lecciones" .-> GOV
+  CUR["Perfil actual"] --> GAP["Brechas priorizadas"] --> TAR["Perfil objetivo"]
+```
+
+### Caso razonado
+
+Una organización intenta «implementar NIST» marcando subcategorías. Al vincular cada resultado con servicio, riesgo, dueño y evidencia, descubre que recuperación no fue probada. La brecha genera un ejercicio, no otro checkbox.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Core | Taxonomía de resultados del CSF. |
+| Perfil | Selección y priorización contextual de resultados. |
+| Tier | Caracterización del rigor de gestión de riesgo. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno crea perfiles actual y objetivo trazables y evita presentar CSF como auditoría o catálogo de productos.
+
 ## 📖 Definiciones y características
 
 - **CSF Core**: jerarquía de Funciones → Categorías → Subcategorías → Referencias informativas. *Clave*: describe *qué* lograr, no *cómo*.

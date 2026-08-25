@@ -31,6 +31,31 @@ Al finalizar, el alumno podrá:
 | 6 | Hallazgos y CAPA | Del hallazgo a la corrección |
 | 7 | Auditoría continua y automatizada | Evidencia en tiempo real |
 
+## 🧠 Explicación en profundidad
+
+Auditar es obtener evidencia suficiente y apropiada contra criterios acordados. Independencia, muestreo y trazabilidad condicionan la conclusión. Una entrevista describe diseño; una configuración o registro ayuda a comprobar operación; ninguna muestra permite afirmar más que su población y periodo.
+
+```mermaid
+flowchart LR
+  CR["Criterio y alcance"] --> PLAN["Riesgo y muestra"] --> EVI["Evidencia"] --> FIND["Condición-causa-efecto"] --> REP["Conclusión y seguimiento"]
+```
+
+### Caso razonado
+
+Cinco tickets cerrados no demuestran el año completo. El auditor justifica población, selección y limitación antes de concluir.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Criterio | Requisito contra el que se compara evidencia. |
+| Muestra | Subconjunto seleccionado mediante método documentado. |
+| Hallazgo | Diferencia sustentada entre criterio y condición. |
+
+## ✅ Criterio de dominio
+
+El alumno diseña una prueba, conserva evidencia y redacta un hallazgo proporcional sin actuar como dueño del control.
+
 ## 📖 Definiciones y características
 
 - **Auditoría de seguridad**: evaluación sistemática e independiente de controles frente a un criterio. *Clave*: independencia y objetividad.

@@ -31,6 +31,31 @@ Al finalizar, el alumno podrá:
 | 6 | Cultura positiva vs. culpabilización | El miedo esconde incidentes |
 | 7 | Refuerzo continuo | Un curso anual no cambia hábitos |
 
+## 🧠 Explicación en profundidad
+
+Concienciación comunica; formación desarrolla habilidad; cultura se observa en decisiones e incentivos. Completar cursos no prueba que un proceso sea resistente. El programa parte de comportamientos de riesgo, diseña intervención y mide reporte, verificación y reducción de recurrencia sin avergonzar personas.
+
+```mermaid
+flowchart LR
+  R["Riesgo y conducta"] --> INT["Intervención"] --> PRA["Práctica"] --> OBS["Resultado"] --> ADJ["Ajuste de sistema"]
+```
+
+### Caso razonado
+
+Sube la tasa de reporte tras simplificar el botón y mejorar respuesta del SOC. El resultado pertenece al sistema, no solo al curso.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Conducta objetivo | Acción observable que reduce un escenario de riesgo. |
+| Intervención | Cambio educativo, técnico o de proceso. |
+| Seguridad psicológica | Capacidad de informar errores y dudas tempranamente. |
+
+## ✅ Criterio de dominio
+
+Hay dominio cuando el alumno diseña aprendizaje contextual, protección de participantes y métricas de resultado.
+
 ## 📖 Definiciones y características
 
 - **Concienciación (awareness)**: mantener la seguridad presente en la mente del usuario. *Clave*: cambia el foco de atención, es continua.

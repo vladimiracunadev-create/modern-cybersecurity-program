@@ -31,6 +31,31 @@ Al finalizar, el alumno podrá:
 | 6 | Ciclo de vida y control de versiones | Documentos vivos, no muertos |
 | 7 | Excepciones y cumplimiento | Cómo gestionar desviaciones |
 
+## 🧠 Explicación en profundidad
+
+La política expresa intención y autoridad; el estándar fija requisitos obligatorios; el procedimiento describe ejecución; la guía orienta. Mezclarlos produce documentos imposibles de mantener. Cada requisito necesita dueño, audiencia, excepción, evidencia y ciclo de revisión.
+
+```mermaid
+flowchart TD
+  POL["Política: qué y por qué"] --> STD["Estándar: requisito"] --> PROC["Procedimiento: cómo"] --> REC["Registro: evidencia"]
+```
+
+### Caso razonado
+
+Una política exige «parchear inmediatamente». Operaciones no puede medirla. Se crea estándar por riesgo y procedimiento de excepción; los registros permiten comprobar cumplimiento.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Política | Mandato de alto nivel aprobado por autoridad. |
+| Estándar | Requisito obligatorio y verificable. |
+| Procedimiento | Secuencia operativa mantenida por un dueño. |
+
+## ✅ Criterio de dominio
+
+Hay dominio cuando el alumno convierte intención en requisito verificable, ejecución, excepción y registro coherentes.
+
 ## 📖 Definiciones y características
 
 - **Política**: declaración de alto nivel, obligatoria, aprobada por la dirección, que fija la intención y las reglas generales. *Clave*: dice el "qué" y el "por qué", no el "cómo".

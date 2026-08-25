@@ -31,6 +31,31 @@ Al finalizar, el alumno podrá:
 | 6 | Cadena de suministro de software (SBOM) | Log4j, SolarWinds, dependencias |
 | 7 | Monitorización continua | El riesgo no es estático |
 
+## 🧠 Explicación en profundidad
+
+El tercero se evalúa por servicio, datos, accesos, concentración y sustituibilidad, no por cuestionario genérico. La diligencia previa establece condiciones; contrato asigna responsabilidades; monitorización observa cambios; salida recupera datos, accesos y continuidad.
+
+```mermaid
+flowchart LR
+  NEED["Necesidad y criticidad"] --> DD["Diligencia"] --> CON["Contrato"] --> MON["Monitoreo"] --> EXIT["Salida"]
+```
+
+### Caso razonado
+
+Un SaaS posee ISO 27001, pero su subprocesador crítico no está incluido en alcance. Se revisa certificado, SoA, arquitectura y contrato antes de aceptar evidencia.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Cuarta parte | Proveedor utilizado por el tercero. |
+| Concentración | Dependencia común capaz de afectar múltiples servicios. |
+| Exit plan | Ruta probada para terminar relación y recuperar capacidad. |
+
+## ✅ Criterio de dominio
+
+Existe dominio cuando el alumno adapta diligencia al servicio, valida alcance de evidencia y diseña monitoreo, incidente y salida.
+
 ## 📖 Definiciones y características
 
 - **TPRM**: gestión del riesgo de terceros a lo largo de todo su ciclo de vida. *Clave*: proceso continuo, no un chequeo único.

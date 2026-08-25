@@ -31,6 +31,31 @@ Al finalizar, el alumno podrá:
 | 6 | Notificación de brechas | Plazos y a quién notificar |
 | 7 | Sanciones y multas | El coste real del incumplimiento |
 
+## 🧠 Explicación en profundidad
+
+GDPR, HIPAA y PCI DSS no son intercambiables: cambian jurisdicción, sujetos, datos, obligaciones y mecanismos de supervisión. El análisis comienza por aplicabilidad y flujo de datos; después mapea obligaciones a controles y evidencia. Cumplir PCI DSS no demuestra cumplimiento de privacidad ni seguridad total.
+
+```mermaid
+flowchart LR
+  DATA["Datos y flujo"] --> APP["Aplicabilidad y rol"] --> OBL["Obligaciones"] --> CTRL["Controles"] --> EVI["Evidencia y revisión"]
+```
+
+### Caso razonado
+
+Una tienda tokeniza tarjetas y reduce alcance PCI, pero conserva perfiles de clientes sin base ni retención. Un control resolvió parte del flujo, no todas las obligaciones.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Aplicabilidad | Razón documentada por la que una norma obliga a una entidad o flujo. |
+| Rol | Posición jurídica u operativa que determina obligaciones. |
+| Alcance | Sistemas, personas y datos cubiertos. |
+
+## ✅ Criterio de dominio
+
+El alumno determina aplicabilidad por caso, evita asesoría jurídica universal y vincula obligación, control y evidencia.
+
 ## 📖 Definiciones y características
 
 - **GDPR**: reglamento europeo de protección de datos personales. *Clave*: multas hasta 20 M€ o 4% de la facturación global.

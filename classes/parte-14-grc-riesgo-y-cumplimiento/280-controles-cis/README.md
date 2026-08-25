@@ -31,6 +31,35 @@ Al finalizar, el alumno podrá:
 | 6 | CIS Benchmarks | Endurecimiento concreto de sistemas |
 | 7 | Mapeos a CSF, ISO, PCI | Reutilizar el esfuerzo |
 
+## 🧠 Explicación en profundidad
+
+CIS Controls v8.1 prioriza salvaguardas operativas agrupadas en Implementation Groups. IG1 establece higiene esencial; IG2 e IG3 añaden alcance y complejidad para perfiles de riesgo mayores. Adoptar un IG no reemplaza analizar activos, obligaciones ni amenazas. Cada salvaguarda requiere alcance, responsable, frecuencia, evidencia y tratamiento de excepciones.
+
+```mermaid
+flowchart LR
+  INV["Inventario y contexto"] --> IG["IG objetivo"]
+  IG --> SG["Salvaguardas aplicables"]
+  SG --> IMPL["Implementación"]
+  IMPL --> TEST["Prueba de diseño y operación"]
+  TEST --> IMP["Brecha y mejora"]
+```
+
+### Caso razonado
+
+Un equipo declara completo el inventario porque compró una herramienta. La prueba encuentra cuentas cloud y SaaS fuera de cobertura. Se define fuente autoritativa, reconciliación y métrica de activos sin dueño.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Salvaguarda | Acción específica incluida en CIS Controls. |
+| IG | Agrupación priorizada según recursos y perfil de riesgo. |
+| Cobertura | Proporción del alcance donde un control opera y se prueba. |
+
+## ✅ Criterio de dominio
+
+El alumno selecciona IG con contexto y demuestra una salvaguarda mediante alcance, evidencia y prueba, no por presencia de herramienta.
+
 ## 📖 Definiciones y características
 
 - **CIS Controls**: conjunto priorizado de acciones defensivas contra los ataques más comunes. *Clave*: ordenados por impacto, no alfabéticamente.

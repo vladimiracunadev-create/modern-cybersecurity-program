@@ -31,6 +31,31 @@ Al finalizar, el alumno podrá:
 | 6 | Marca profesional y networking | Visibilidad y oportunidades |
 | 7 | Ética profesional | Códigos de conducta y responsabilidad |
 
+## 🧠 Explicación en profundidad
+
+Una certificación valida un temario y un mecanismo de evaluación en un momento; no sustituye experiencia ni garantiza empleo. La selección comienza por rol objetivo, brecha comprobada, requisitos oficiales, coste total y evidencia de práctica. Fechas, precios y políticas se verifican siempre en el organismo emisor.
+
+```mermaid
+flowchart LR
+  ROLE["Rol objetivo"] --> GAP["Brechas"] --> PATH["Formación/certificación"] --> EVI["Proyecto y experiencia"] --> REV["Revisión trimestral"]
+```
+
+### Caso razonado
+
+Un alumno colecciona exámenes pero no puede explicar un informe. Reorienta tiempo a un proyecto trazable y elige una certificación alineada con la siguiente responsabilidad.
+
+## 📔 Glosario operativo
+
+| Término | Definición |
+|---|---|
+| Body of knowledge | Alcance publicado de conocimientos evaluados. |
+| Elegibilidad | Experiencia u otros requisitos para obtener una credencial. |
+| CPE/CE | Desarrollo continuo requerido para mantener algunas credenciales. |
+
+## ✅ Criterio de dominio
+
+Hay dominio cuando el alumno justifica una ruta con fuentes oficiales, presupuesto, práctica y criterio para corregirla.
+
 ## 📖 Definiciones y características
 
 - **NICE Framework**: marco de NIST que describe roles, tareas y competencias en ciberseguridad. *Clave*: lenguaje común para roles y planes de carrera.
