@@ -8,15 +8,54 @@
  *   h2 / h3 / h4 → jerarquía de títulos          li    → viñeta (o número) con sangría
  *   p            → párrafo                       code  → bloque monoespaciado
  *   q            → cita                          table → tabla con scroll horizontal
- *   dg           → aviso de diagrama (la app no dibuja mermaid)
+ *   dg           → el diagrama de la clase, como imagen empaquetada en el APK
  *
  * Un bloque de tipo desconocido se ignora en vez de romper la pantalla: si el
  * generador aprende a emitir uno nuevo, una app vieja sigue abriendo la clase.
  */
 
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { diagramaPorId } from '../data/diagramas';
 import { colors } from '../theme';
+
+/**
+ * Diagrama de la clase. La imagen viene empaquetada dentro del APK (no se
+ * descarga) y se pinta a ancho completo respetando su proporción, que llega en
+ * los datos: preguntarla en runtime con `Image.resolveAssetSource` funciona en
+ * Android pero no existe en react-native-web, y reventaba la pantalla al abrir
+ * una clase desde el navegador.
+ *
+ * Los diagramas se dibujan sobre fondo claro, así que llevan el suyo propio para
+ * que se lean sobre el tema oscuro de la app.
+ */
+const Diagrama = ({ id }) => {
+  const diagrama = diagramaPorId(id);
+  if (!diagrama) {
+    return (
+      <View style={styles.diagram}>
+        <Text style={styles.diagramText}>
+          Diagrama de la clase — ábrela en el sitio para verlo.
+        </Text>
+      </View>
+    );
+  }
+  // La proporción se aplica sobre una View, no sobre la Image: react-native-web
+  // no respeta `aspectRatio` en una imagen y el diagrama salía estirado a su
+  // alto natural.
+  return (
+    <View style={styles.diagramWrap}>
+      <View style={{ width: '100%', aspectRatio: 1 / (diagrama.proporcion || 0.6) }}>
+        <Image
+          source={diagrama.fuente}
+          style={styles.diagramImage}
+          resizeMode="contain"
+          accessibilityLabel="Diagrama de la clase"
+        />
+      </View>
+    </View>
+  );
+};
 
 const Bullet = ({ block }) => (
   <View style={[styles.liRow, block.d > 0 && { marginLeft: 16 * Math.min(block.d, 3) }]}>
@@ -93,14 +132,7 @@ const Block = ({ block }) => {
         </View>
       );
     case 'dg':
-      return (
-        <View style={styles.diagram}>
-          <Text style={styles.diagramText}>
-            Diagrama de la clase — el texto de arriba lo explica; para verlo dibujado, abre la
-            clase en el sitio.
-          </Text>
-        </View>
-      );
+      return <Diagrama id={block.img} />;
     default:
       return null;
   }
@@ -180,6 +212,13 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   quoteText: { color: colors.textMuted, fontSize: 13, lineHeight: 21, fontStyle: 'italic' },
+  diagramWrap: {
+    backgroundColor: '#ffffff',
+    borderRadius: 8,
+    padding: 8,
+    marginVertical: 12,
+  },
+  diagramImage: { width: '100%', height: '100%' },
   diagram: {
     backgroundColor: colors.bgMuted,
     borderRadius: 8,

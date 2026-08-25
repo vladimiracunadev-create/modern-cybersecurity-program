@@ -26,6 +26,12 @@ sitio. Los bloques se reparten en dos pestañas por el emoji de su sección:
 ``practice`` (preparación, laboratorio, ejercicios, reto, errores, preguntas,
 referencias).
 
+Los diagramas viajan como imagen: cada bloque ` ```mermaid ` se convierte en un
+bloque ``{"t": "dg", "img": "<hash>"}`` y su PNG se copia a
+``mobile/assets/diagramas/``. El archivo generado ``mobile/src/data/diagramas.js``
+mapea cada hash a su ``require(...)``, que es lo que Metro necesita —una ruta
+literal— para empaquetar la imagen dentro del APK.
+
 A diferencia del repo de data-science, aquí las clases son solo ``README.md`` (no
 hay notebooks), así que cada clase enlaza a su página del sitio y a su fuente en
 GitHub, no a Colab.
@@ -43,13 +49,25 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 import sys
 from collections import Counter
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from mermaid_svg import clave as clave_diagrama  # noqa: E402
+from mermaid_svg import rasterizar as rasterizar_diagramas  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 CLASSES_DIR = ROOT / "classes"
 OUT_FILE = ROOT / "mobile" / "src" / "data" / "classes.js"
+# Los diagramas se empaquetan como PNG dentro del APK: Metro los mete como
+# recursos (no como texto del bundle), asi que pesan lo que pesan y no inflan el
+# JavaScript. Se usa PNG y no SVG porque el <Image> de React Native no lee SVG
+# sin una dependencia nativa que, ademas, ignoraria el CSS que mermaid incrusta
+# dentro del SVG y dejaria los diagramas en blanco y negro sin estilos.
+DIAG_DIR = ROOT / "mobile" / "assets" / "diagramas"
+DIAG_FILE = ROOT / "mobile" / "src" / "data" / "diagramas.js"
 
 GITHUB_USER = "vladimiracunadev-create"
 GITHUB_REPO = "modern-cybersecurity-program"
@@ -218,6 +236,10 @@ def paragraph(block: str, max_len: int = 600) -> str:
 
 # ── README completo -> bloques que la app sabe pintar ────────────────────────
 
+# Codigo de cada diagrama encontrado al recorrer las clases, en orden. Se
+# recopila aqui para pedir todos los PNG de una vez al terminar el recorrido.
+DIAGRAMAS_USADOS: list[str] = []
+
 SECTION_RE = re.compile(r"^##\s+(.+)$", re.MULTILINE)
 HEADING_RE = re.compile(r"^(#{3,6})\s+(.+)$")
 FENCE_RE = re.compile(r"^\s*```\s*([\w+-]*)\s*$")
@@ -266,11 +288,15 @@ def blocks_from(body: str) -> list[dict]:
                 i += 1
             i += 1  # cierre
             if lang == "mermaid":
-                # La app no dibuja diagramas: en vez de colar el código del
-                # diagrama como prosa (o de borrarlo en silencio, que deja al
-                # texto refiriéndose a un gráfico invisible), se deja una marca
-                # que remite a la versión web.
-                blocks.append({"t": "dg"})
+                # El código del diagrama no se emite como texto (sería prosa
+                # ilegible), sino su imagen: el bloque guarda el hash con el que
+                # la app la encuentra en diagramas.js.
+                fuente = "\n".join(buf).strip()
+                bloque = {"t": "dg"}
+                if fuente:
+                    bloque["img"] = clave_diagrama(fuente)
+                    DIAGRAMAS_USADOS.append(fuente)
+                blocks.append(bloque)
             elif buf:
                 blocks.append({"t": "code", "x": "\n".join(buf).rstrip(), "lang": lang})
             continue
@@ -490,10 +516,98 @@ def render(parts: list[dict], classes: list[dict]) -> str:
     return header + body
 
 
+def proporcion_png(ruta: Path) -> float:
+    """Alto/ancho del PNG, leido de su cabecera IHDR.
+
+    Se hace a mano en vez de con Pillow porque este dato tambien se necesita en
+    modo --check, que corre en CI sin dependencias extra. Y se emite con los
+    datos en vez de preguntarlo en tiempo de ejecucion: el
+    ``Image.resolveAssetSource`` de React Native no existe en react-native-web y
+    reventaba la pantalla al abrir una clase en el navegador.
+    """
+    try:
+        cabecera = ruta.read_bytes()[:24]
+        ancho = int.from_bytes(cabecera[16:20], "big")
+        alto = int.from_bytes(cabecera[20:24], "big")
+        if ancho > 0 and alto > 0:
+            return round(alto / ancho, 4)
+    except OSError:
+        pass
+    return 0.6
+
+
+def render_diagramas(ids: set[str]) -> str:
+    """Genera mobile/src/data/diagramas.js con el require() de cada imagen."""
+    lineas = [
+        "// ============================================================",
+        "// GENERADO AUTOMÁTICAMENTE — NO EDITAR A MANO",
+        "// Fuente: bloques ```mermaid de classes/parte-*/NNN-*/README.md",
+        "// Regenera con:  python scripts/generar_curriculum_movil.py",
+        "// ============================================================",
+        "//",
+        "// Metro necesita una ruta literal en require() para empaquetar la imagen",
+        "// dentro del APK, así que el mapa se escribe entero en vez de construir",
+        "// la ruta en runtime. La proporción (alto/ancho) viaja con los datos para",
+        "// que la app pinte el diagrama a su tamaño sin preguntárselo al sistema:",
+        "// Image.resolveAssetSource no existe en react-native-web.",
+        "",
+        "export const DIAGRAMAS = {",
+    ]
+    for identificador in sorted(ids):
+        proporcion = proporcion_png(DIAG_DIR / f"{identificador}.png")
+        lineas.append(
+            f"  \"{identificador}\": {{ fuente: "
+            f"require('../../assets/diagramas/{identificador}.png'), "
+            f"proporcion: {proporcion} }},"
+        )
+    lineas += [
+        "};",
+        "",
+        "export const diagramaPorId = (id) => (id ? DIAGRAMAS[id] : undefined);",
+        "",
+        f"export const TOTAL_DIAGRAMAS = {len(ids)};",
+        "",
+    ]
+    return "\n".join(lineas)
+
+
+def sincronizar_diagramas(check: bool) -> tuple[str, int]:
+    """Deja en los assets de la app el PNG de cada diagrama usado.
+
+    En modo ``--check`` **no se dibuja nada**: se comprueba contra los PNG que ya
+    estan versionados en ``mobile/assets/diagramas/``. Es deliberado — el check
+    corre en CI antes de compilar el APK, y alli no hay navegador con el que
+    rasterizar; si el check intentara dibujar, el release fallaria siempre.
+    """
+    ids = {clave_diagrama(f) for f in DIAGRAMAS_USADOS}
+    if not ids:
+        return render_diagramas(set()), 0
+
+    if check:
+        presentes = {i for i in ids if (DIAG_DIR / f"{i}.png").is_file()}
+        return render_diagramas(presentes), len(presentes)
+
+    pngs = rasterizar_diagramas(DIAGRAMAS_USADOS, verbose=True)
+    DIAG_DIR.mkdir(parents=True, exist_ok=True)
+    esperados = set()
+    for fuente, origen in pngs.items():
+        destino = DIAG_DIR / f"{clave_diagrama(fuente)}.png"
+        esperados.add(destino.name)
+        if not destino.is_file() or destino.stat().st_size != origen.stat().st_size:
+            shutil.copyfile(origen, destino)
+    # Un diagrama que ya no existe en ninguna clase no debe seguir ocupando
+    # sitio dentro del APK.
+    for sobrante in DIAG_DIR.glob("*.png"):
+        if sobrante.name not in esperados:
+            sobrante.unlink()
+    return render_diagramas({clave_diagrama(f) for f in pngs}), len(pngs)
+
+
 def main() -> int:
     check = "--check" in sys.argv
     parts, classes = collect()
     content = render(parts, classes)
+    contenido_diagramas, total_diagramas = sincronizar_diagramas(check)
 
     if check:
         if not OUT_FILE.exists():
@@ -504,12 +618,29 @@ def main() -> int:
             print("FALLA: mobile/src/data/classes.js está desincronizado con las clases.")
             print("       Ejecuta: python scripts/generar_curriculum_movil.py")
             return 1
-        print(f"OK: {len(classes)} clases en {len(parts)} partes; datos embebidos al día.")
+        if not DIAG_FILE.exists() or DIAG_FILE.read_text(encoding="utf-8") != contenido_diagramas:
+            print("FALLA: mobile/src/data/diagramas.js no coincide con los diagramas de las")
+            print("       clases o faltan PNG en mobile/assets/diagramas/.")
+            print("       Ejecuta: python scripts/generar_curriculum_movil.py")
+            return 1
+        faltan = [
+            b["img"] for c in classes
+            for b in c["content"]["theory"] + c["content"]["practice"]
+            if b.get("t") == "dg" and b.get("img")
+            and not (DIAG_DIR / f"{b['img']}.png").is_file()
+        ]
+        if faltan:
+            print(f"FALLA: {len(faltan)} diagrama(s) sin imagen en mobile/assets/diagramas.")
+            return 1
+        print(f"OK: {len(classes)} clases en {len(parts)} partes y {total_diagramas} "
+              f"diagramas; datos embebidos al día.")
         return 0
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     with OUT_FILE.open("w", encoding="utf-8", newline="\n") as fh:
         fh.write(content)
+    with DIAG_FILE.open("w", encoding="utf-8", newline="\n") as fh:
+        fh.write(contenido_diagramas)
     print(f"Generado {OUT_FILE.relative_to(ROOT)}: {len(classes)} clases en {len(parts)} partes.")
     empty = [c["id"] for c in classes if not c["theory"] or not c["outcomes"]]
     if empty:
@@ -522,7 +653,17 @@ def main() -> int:
         print(f"AVISO: {len(sin_cuerpo)} clases con contenido embebido escaso: {sin_cuerpo[:5]}")
     bloques = sum(len(c["content"]["theory"]) + len(c["content"]["practice"]) for c in classes)
     kb = len(content.encode("utf-8")) / 1024
+    peso_png = sum(f.stat().st_size for f in DIAG_DIR.glob("*.png")) / 1024 / 1024 if DIAG_DIR.is_dir() else 0
     print(f"Contenido embebido: {bloques} bloques, {kb:.0f} KB de catálogo.")
+    print(f"Diagramas empaquetados: {total_diagramas} PNG ({peso_png:.1f} MB) en "
+          f"{DIAG_DIR.relative_to(ROOT)}.")
+    sin_imagen = sum(
+        1 for c in classes
+        for b in c["content"]["theory"] + c["content"]["practice"]
+        if b.get("t") == "dg" and not b.get("img")
+    )
+    if sin_imagen:
+        print(f"AVISO: {sin_imagen} diagrama(s) quedaron sin imagen.")
     return 0
 
 

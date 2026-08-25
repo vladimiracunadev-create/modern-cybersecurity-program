@@ -21,4 +21,9 @@ paths = [
   # El manual (PDF) consolida el mismo texto didactico de las clases (tokens de
   # ejemplo incluidos); se genera con scripts/generar_manual.py.
   '''^manual/MANUAL\.pdf$''',
+  # El catalogo embebido de la app movil es ese mismo texto de las clases
+  # convertido a JS (se genera con scripts/generar_curriculum_movil.py). Desde
+  # que la app lleva la clase completa arrastra tambien los tokens de ejemplo,
+  # p. ej. la clave AWS falsa de la clase de deteccion de secretos.
+  '''^mobile/src/data/classes\.js$''',
 ]

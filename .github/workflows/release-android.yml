@@ -160,6 +160,14 @@ jobs:
           # del bytecode párrafos completos de una muestra de clases; con el
           # catálogo resumido de la 1.0.0 este paso falla.
           python scripts/verificar_bundle.py "$BUNDLE"
+          # Los diagramas no viajan en el bundle JS sino como recursos Android
+          # (Metro los empaqueta en res/drawable*), así que se cuentan aparte:
+          # el programa tiene 360 y la app no debe salir sin ellos.
+          DIAGRAMAS=$(ls mobile/assets/diagramas/*.png | wc -l)
+          EN_APK=$(unzip -l "$APK" | grep -cE 'res/drawable[^/]*/.*\.png' || true)
+          echo "Diagramas en el repositorio: $DIAGRAMAS · imágenes en el APK: $EN_APK"
+          test "$EN_APK" -ge "$DIAGRAMAS"
+          echo "VERIFICADO: los $DIAGRAMAS diagramas viajan dentro del APK."
 
       - name: Generar SHA256SUMS
         working-directory: ${{ steps.sign.outputs.outdir }}
@@ -176,18 +184,15 @@ jobs:
             App móvil **Ciberseguridad Moderna** (Android) — las 340 clases del
             programa, en el teléfono.
 
-            - **Las clases viajan enteras**: explicación en profundidad, glosario,
-              laboratorio, ejercicios, reto, errores comunes, preguntas frecuentes y
-              referencias. Se leen **sin conexión**; ya no hace falta salir al sitio
-              para leer la clase.
+            - **Las clases viajan enteras**: explicación en profundidad, diagramas,
+              glosario, laboratorio, ejercicios, reto, errores comunes, preguntas
+              frecuentes y referencias. Se leen **sin conexión**; ya no hace falta salir
+              al sitio para leer la clase.
             - 340 clases en 19 partes, con progreso guardado solo en el dispositivo.
             - APK compilado y firmado en GitHub Actions. Antes de publicar se abre el
               APK y se comprueba, dentro del bytecode, que el texto de las clases está
               realmente ahí — no basta con que el build salga en verde.
             - Verifica la integridad con `SHA256SUMS.txt`.
-
-            > Los diagramas mermaid no se dibujan en la app: cada clase enlaza a su
-            > página del sitio, donde sí se ven.
 
             > APK de sideload (fuera de Play Store). En Android, permite instalar desde
             > "orígenes desconocidos" para el instalador que uses.

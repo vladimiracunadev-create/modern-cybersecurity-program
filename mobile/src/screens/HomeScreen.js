@@ -101,8 +101,8 @@ export default function HomeScreen({ navigation }) {
       <View style={styles.tipBox}>
         <Text style={styles.tipText}>
           Toca una parte para ver sus clases. Cada clase viaja entera dentro de la app:
-          explicación, glosario, laboratorio, ejercicios y referencias. Los diagramas se ven
-          dibujados en el <Text style={styles.tipAccent}>sitio del curso</Text>.
+          explicación, <Text style={styles.tipAccent}>diagramas</Text>, glosario, laboratorio,
+          ejercicios y referencias.
         </Text>
       </View>
     </View>
@@ -111,8 +111,8 @@ export default function HomeScreen({ navigation }) {
   const renderFooter = () => (
     <View style={styles.footer}>
       <Text style={styles.footerText}>
-        Las 340 clases se leen completas sin conexión. Solo necesitan internet los diagramas y
-        los enlaces al sitio y a GitHub.
+        Las 340 clases se leen completas sin conexión, con sus diagramas. Solo necesitan
+        internet los enlaces al sitio y a GitHub.
       </Text>
     </View>
   );
