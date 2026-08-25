@@ -334,10 +334,22 @@ def rasterizar(fuentes: list[str], nav: str | None = None, verbose: bool = True)
     return pngs
 
 
+# Carpetas cuyo markdown no se publica y no aporta diagramas.
+EXCLUIDAS = {"node_modules", "site", "dist", "dist-web", ".git", "diagramas"}
+
+
 def fuentes_del_repositorio() -> list[str]:
+    """Todos los bloques mermaid del repositorio, no solo los de las clases.
+
+    Los README de cada parte llevan tambien su diagrama —el mapa de la unidad—, y
+    mirar solo ``classes/parte-*/*/README.md`` los dejaba fuera: sus 17 diagramas
+    parecian huerfanos, se borraron, y el build del sitio se quedo sin uno.
+    """
     bloque = re.compile(r"```mermaid\n(.*?)```", re.DOTALL)
     fuentes: list[str] = []
-    for md in sorted((ROOT / "classes").glob("parte-*/*/README.md")):
+    for md in sorted(ROOT.rglob("*.md")):
+        if EXCLUIDAS & set(md.relative_to(ROOT).parts):
+            continue
         fuentes.extend(bloque.findall(md.read_text(encoding="utf-8")))
     return fuentes
 
