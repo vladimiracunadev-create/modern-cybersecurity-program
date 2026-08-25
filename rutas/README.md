@@ -6,6 +6,10 @@ practicar y a qué certificación apuntar. Todas asumen que **empiezas por la Pa
 (fundamentos): es el cimiento común.
 
 > Leyenda: 📚 partes/clases · 🧪 laboratorio · 🚩 reto CTF · 🎓 certificación sugerida.
+>
+> 🗺️ **¿Te suenan todos iguales SOC, SecOps, DevSecOps, AppSec y Cloud Security?** No lo son, y las
+> ofertas de empleo los mezclan. La **[matriz de roles SecOps y DevSecOps](../docs/matriz-roles-secops-devsecops.md)**
+> los separa por lo único que no engaña: qué hace la persona cada día, qué decide y qué entrega.
 
 ---
 
@@ -53,6 +57,22 @@ Detección, monitoreo, threat hunting y respuesta temprana.
 - 🚩 [CTF forense / redes](../ctf/README.md)
 - 🎓 **BTL1** (Blue Team Level 1) · CompTIA CySA+
 - 📖 **[Guía de carrera completa →](soc-blue-team.md)** — qué es, día a día, skills, certis, salario y progresión.
+- ↔️ **No lo confundas con [Analista SecOps](secops-analista.md)**: el SOC trabaja sobre *eventos*; SecOps, sobre *controles y riesgo*.
+
+## 📟 Analista SecOps
+
+Operación de seguridad de punta a punta: vigilancia de controles, ciclo de vulnerabilidades, parcheo y hardening, revisión de accesos, runbooks, SLA y métricas. Más ancho que un SOC L1 y sin ser todavía ingeniería.
+
+1. 📚 **Parte 0** — Fundamentos (001–025) · **003** frameworks · sistemas, redes y scripting de utilidad
+2. 📚 **Parte 3** — **solo 071** (Nessus/OpenVAS): la materia prima de tu semana
+3. 📚 **Parte 8** — **181** SOC · **182** telemetría · **183** SIEM · **189** EDR · **195** threat intel · **196** SOAR · **197** métricas
+4. 📚 **Parte 9** — **202** ciclo de respuesta · **215** playbooks · **216** contención · **217** causa raíz · **219** tabletop
+5. 📚 **Parte 17** — **el núcleo**: **318** programa de vulnerabilidades · **324** hardening · **313**/**315** identidades y PAM · **319** phishing · **321** reporte · **322** threat intel
+6. 📚 **Parte 14** — **279** NIST CSF · **280** CIS · **282** procedimientos · **285** auditoría · **287** KPI/KRI · 📚 **Parte 11** — **240**, **245** · 📚 **Parte 10** — **222**, **231**, **234**
+
+- 🧪 [`blue-team-soc`](../labs/blue-team-soc/README.md) con su **[trayecto Analista SecOps](../labs/blue-team-soc/TRAYECTO-ANALISTA-SECOPS.md)** (alerta → contención → parcheo → SLA → evidencia → mejora) · [`rootcause-windows`](../labs/rootcause-windows/README.md) · [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) (solo la priorización KEV/EPSS/CVSS) · [`cloud-security`](../labs/cloud-security/README.md)
+- 🎓 **CompTIA Security+** → **CySA+** · BTL1
+- 📖 **[Guía de carrera completa →](secops-analista.md)** — qué es, qué no es, día a día, artefactos, métricas, portafolio, entrevista y progresión.
 
 ## 🛡️ Analista de Gestión de Vulnerabilidades
 
@@ -97,6 +117,37 @@ Seguridad de aplicaciones y caza de vulnerabilidades web.
 - 🧪 [`appsec-web`](../labs/appsec-web/README.md) · [`appsec-code`](../labs/appsec-code/README.md) · [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) (el SDLC completo en 8 capas) · 🚩 [CTF web](../ctf/README.md)
 - 🎓 **eWPTX** · Burp Suite Certified Practitioner
 - 📖 **[Guía de carrera completa →](appsec.md)** — qué es, día a día, skills, certis, salario y progresión.
+- ↔️ **AppSec no es DevSecOps**: AppSec mira *hacia dentro del software* (diseño, código, ASVS); DevSecOps mira *el proceso* que lo construye y lo entrega.
+
+## 🧮 Analista DevSecOps
+
+Triaje y gobierno del riesgo del SDLC: convierte la salida de SAST, DAST, SCA, secretos, IaC y contenedores en una lista corta, priorizada y creíble, con SLA, excepciones y verificación.
+
+1. 📚 **Parte 0** — Fundamentos · **015** Python · **018** Git · **019** regex · **022** Docker · **025** ética
+2. 📚 **Parte 11** — DevSecOps y SDLC (236–248) · **el núcleo**, con foco en **238**–**241**, **243**, **245**, **246** y **248**
+3. 📚 **Parte 4** — **087** OWASP Top 10 y **110** APIs: para *entender* el hallazgo que estás triando
+4. 📚 **Parte 17** — **318** programa de vulnerabilidades · **323** pruebas de software · **321** reporte · **330** automatización
+5. 📚 **Parte 14** — **277** riesgo · **282** procedimientos · **284** terceros (tus dependencias) · **287** métricas
+6. 📚 **Parte 10** — **227** contenedores · **230** IaC · **231** CSPM
+
+- 🧪 [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) con su **[trayecto Analista DevSecOps](../labs/devsecops-pipeline/TRAYECTO-ANALISTA-DEVSECOPS.md)** (normalizar → falsos positivos → priorizar → tickets y SLA → excepción → verificar → reportar) · [`appsec-code`](../labs/appsec-code/README.md) · [`appsec-web`](../labs/appsec-web/README.md) · [`cloud-security`](../labs/cloud-security/README.md)
+- 🎓 **CompTIA CySA+** · Security+ · (CISSP a medio plazo)
+- 📖 **[Guía de carrera completa →](devsecops-analista.md)** — qué es, qué no es, día a día, artefactos, métricas, portafolio, entrevista y progresión.
+
+## 🏗️ Ingeniero DevSecOps
+
+Construye la capacidad técnica: pipelines CI/CD seguros, puertas de bloqueo proporcionales, SBOM, firma y procedencia, policy as code, identidades efímeras y secretos. También aparece como **«Especialista DevSecOps»** — la guía explica cómo saber qué perfil pide realmente una oferta.
+
+1. 📚 **Parte 0** — Fundamentos · **007** Bash · **015–016** Python · **018** Git · **022** Docker
+2. 📚 **Parte 11** — DevSecOps y SDLC (236–248) · **entera y en orden**: **242** pipelines · **243** imágenes · **244** OPA · **246** SBOM y SLSA
+3. 📚 **Parte 10** — Nube y contenedores (221–235) · **227** Docker · **228–229** Kubernetes · **230** Terraform · **233** secretos · **222** IAM
+4. 📚 **Parte 2** — firmas y **063** Vault/KMS · 📚 **Parte 4** — **087** y **110**
+5. 📚 **Parte 17** — **330** automatización · **324** hardening · **313**/**315** identidades · **323** pruebas
+6. 📚 **Partes 8, 9 y 14** — **182**, **202** (el pipeline también genera incidentes) · **282**, **284**
+
+- 🧪 [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) con su **[trayecto Ingeniero DevSecOps](../labs/devsecops-pipeline/TRAYECTO-INGENIERO-DEVSECOPS.md)** (gates proporcionales → secretos y permisos → SBOM → firma → policy as code → excepciones que caducan → **reversión demostrada**) · [`cloud-security`](../labs/cloud-security/README.md) · [`appsec-code`](../labs/appsec-code/README.md) · 🧰 **tu propio repositorio** como laboratorio final
+- 🎓 Ninguna certificación lo describe bien todavía: **CySA+** como base y **CKS** (fuera del programa) si el terreno es Kubernetes. Aquí pesa más un repositorio público con un pipeline bien hecho.
+- 📖 **[Guía de carrera completa →](devsecops-engineer.md)** — qué es, qué no es, el alias «Especialista DevSecOps», día a día, artefactos, métricas, portafolio, entrevista y progresión.
 
 ## ☁️ Cloud Security Engineer
 
@@ -111,6 +162,7 @@ Seguridad de nube, contenedores y pipelines.
 - 🧪 [`cloud-security`](../labs/cloud-security/README.md) (auditoría CSPM) · [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) (lo que ocurre **antes** de llegar a la nube: imagen, dependencias y CI/CD)
 - 🎓 AWS Security Specialty · **CKS** (Kubernetes Security)
 - 📖 **[Guía de carrera completa →](cloud-security.md)** — qué es, día a día, skills, certis, salario y progresión.
+- ↔️ **Cloud Security no es DevSecOps**: aquí proteges *la plataforma donde corre* lo desplegado; DevSecOps protege *el camino* hasta ahí (código, pipeline, imagen, firma).
 
 ## 🏛️ GRC / Gestión de seguridad
 
@@ -236,6 +288,7 @@ Seguridad operativa desde el lado de la ingeniería: administras el EDR/XDR de t
 - 🎓 **CompTIA CySA+** · BTL1 · Security+ · (certs de producto del EDR: CrowdStrike, SentinelOne, SC-200)
 - 💡 El programa te da la **base técnica** que pide la oferta (EDR, SIEM, incidentes, Python/Bash, APIs, identidades, hardening). La **experiencia con un producto comercial concreto sobre una flota real** y el **contexto de negocio** (fintech, regulación, escala) los aportas tú.
 - 📖 **[Guía de carrera completa →](secops-engineer.md)** — qué es, día a día, skills, certis, salario y progresión.
+- ↔️ **Frente al [Analista SecOps](secops-analista.md)**: aquí **construyes y automatizas**; allí se **opera y se decide** sobre el riesgo. Son dos puestos, aunque en una empresa pequeña los haga la misma persona.
 
 ## 🏭 Arquitecto de Ciberseguridad IT/OT (industria e infraestructura crítica)
 
@@ -267,6 +320,28 @@ Cooperación institucional, alianzas estratégicas e intercambio de información
 - 📖 **[Guía de carrera completa →](cooperacion-alianzas.md)** — qué es, día a día, skills, certis, salario y progresión.
 
 ---
+
+## 🧩 La familia SecOps / DevSecOps de un vistazo
+
+Siete puestos que las ofertas confunden a diario. Esta tabla es el resumen; la
+**[matriz completa](../docs/matriz-roles-secops-devsecops.md)** desarrolla misión, decisiones,
+entregables, métricas, clases y progresión de cada uno, con un diagrama del ciclo
+desarrollo → pipeline → nube → producción → monitoreo → incidente → aprendizaje.
+
+| Rol | Trabaja sobre | Construye o decide | Momento del ciclo |
+|---|---|---|---|
+| [Analista SOC / Blue Team](soc-blue-team.md) | Eventos y alertas | Decide (clasificar, escalar) | Monitoreo y detección |
+| [Analista SecOps](secops-analista.md) | Controles, vulnerabilidades, accesos | Decide (priorizar, contener, acordar SLA) | Producción y cierre |
+| [Ingeniero SecOps](secops-engineer.md) | Plataforma operativa, EDR, APIs | Construye (automatiza) | Transversal a la operación |
+| [Analista DevSecOps](devsecops-analista.md) | Hallazgos del SDLC | Decide (triar, priorizar, excepciones) | Antes del despliegue |
+| [Ingeniero DevSecOps](devsecops-engineer.md) | Pipeline, cadena de suministro | Construye (gates, SBOM, firma, políticas) | Build y entrega |
+| [AppSec Engineer](appsec.md) | Diseño y código | Decide y corrige | Requisitos, diseño y código |
+| [Cloud Security Engineer](cloud-security.md) | Cuenta, clúster, postura | Construye y decide | Plataforma y producción |
+
+> **«Especialista DevSecOps»** no es un octavo rol: es un título que puede designar al analista, al
+> ingeniero o a los dos en la misma persona. Lee la oferta buscando el verbo —*analizar y priorizar*
+> frente a *implementar y automatizar*— y consulta la
+> [tabla de equivalencias de la guía del Ingeniero DevSecOps](devsecops-engineer.md).
 
 ## Después de tu ruta
 

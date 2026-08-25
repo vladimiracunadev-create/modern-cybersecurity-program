@@ -78,6 +78,16 @@ pivotó. Relaciónalo con la [Clase 192](../../classes/parte-8-blue-team-detecci
 3. **Umbral + geo:** mejora la regla para elevar la severidad si la IP está fuera de `CL`. *Aceptación:* razonas por qué reduce falsos positivos y qué falsos negativos introduce.
 4. **Cadena completa:** dibuja la línea de tiempo fuerza bruta → acceso → movimiento lateral citando las horas de cada evento.
 
+## 🧭 Trayecto por rol
+
+Cuando termines el recorrido de arriba, la detección está hecha — pero el incidente **no está
+cerrado**. Ahí empieza otro oficio:
+
+- 📟 **[Trayecto Analista SecOps](TRAYECTO-ANALISTA-SECOPS.md)** — continúa esta misma alerta hasta
+  el final: validación, relación con activos y vulnerabilidades, contención, runbook, coordinación
+  del parcheo, SLA con tiempos registrados, cierre con evidencia y mejora preventiva. Es la práctica
+  principal de la ruta [Analista SecOps](../../rutas/secops-analista.md).
+
 ## 🧯 Apagar y limpiar
 
 ```bash

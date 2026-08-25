@@ -30,6 +30,25 @@ Sobre esto se apoyan roles vecinos: **respuesta a incidentes (IR)**, **forense (
 **threat intelligence** e **ingeniería de detección**. Muchas carreras defensivas empiezan como
 L1 y de ahí divergen.
 
+### 🚫 Qué NO es este rol (y con quién se confunde)
+
+- **SOC no es SecOps.** Es la confusión más extendida del sector, y las ofertas la alimentan. Tu
+  unidad de trabajo es el **evento**: llega una alerta, la clasificas, la investigas, la escalas.
+  La del [Analista SecOps](secops-analista.md) es el **control y el riesgo**: una vulnerabilidad
+  sin parchear, un agente de EDR que no cubre la mitad de la flota, un acceso que sobra, un SLA que
+  vence. Tú descubres que algo pasó; SecOps se asegura de que la causa desaparezca y no vuelva.
+  Trabajáis sobre los mismos sistemas con preguntas distintas.
+- **No eres quien parchea ni quien coordina con TI.** Escalas y recomiendas; la coordinación
+  operativa del cierre es de SecOps o de infraestructura.
+- **No eres DFIR.** Contienes y escalas; la investigación forense profunda, con cadena de custodia y
+  valor probatorio, es de [DFIR](dfir.md).
+- **No construyes la plataforma.** El SIEM que consumes lo alimenta el
+  [Analista de Seguridad de Infraestructura](seguridad-infraestructura.md) y lo automatiza el
+  [Ingeniero SecOps](secops-engineer.md). Tú lo interrogas — y, en L3, escribes sus detecciones.
+
+> 🗺️ La [matriz de roles SecOps y DevSecOps](../docs/matriz-roles-secops-devsecops.md) desarrolla
+> estas fronteras con misión, decisiones, entregables y métricas de cada puesto.
+
 Un matiz honesto sobre los **turnos**: un SOC que vigila 24/7 necesita cobertura nocturna y de
 fin de semana. En L1 es habitual rotar turnos, incluidos nocturnos. No es para siempre — es el
 peaje de entrada — pero conviene saberlo antes, no después. Lo compensa que **el blue team es de
@@ -204,4 +223,6 @@ depende sobre todo de lo que aprendas en el turno.
 ---
 
 - ⬅️ [Volver al índice de rutas](./README.md)
+- 🔀 Rutas vecinas: [Analista SecOps](secops-analista.md) · [Ingeniero SecOps](secops-engineer.md) · [DFIR](dfir.md) · [Seguridad de infraestructura](seguridad-infraestructura.md)
+- 🗺️ [Matriz comparativa SecOps y DevSecOps](../docs/matriz-roles-secops-devsecops.md)
 - 🏠 [Inicio del programa](../README.md)

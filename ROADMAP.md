@@ -42,6 +42,7 @@ python-pptx). Notebooks **descartados** por decisión.
 - [x] Autoevaluaciones interactivas por parte ([`autoevaluaciones/`](autoevaluaciones/README.md), 97 preguntas).
 - [x] Seguimiento de progreso de las 340 clases (localStorage).
 - [x] Rutas guiadas por rol ([`rutas/`](rutas/README.md)): los roles clásicos (pentester, red team, SOC, DFIR, gestión de vulnerabilidades, AppSec, cloud, GRC y **CISO / director de seguridad de la información**) **más los derivados de ofertas de empleo reales** — analista de ciberseguridad en institución regulada, analista de seguridad ofensiva, SecOps, seguridad de infraestructura, operación de plataformas (MSSP/DLP), jefe de seguridad, **arquitecto de ciberseguridad IT/OT** y cooperación técnica. Cada una con su [examen final](docs/examen-final-por-rol.md); índice completo en [`rutas/README.md`](rutas/README.md).
+- [x] **Familia SecOps y DevSecOps diferenciada**: rutas propias de [analista SecOps](rutas/secops-analista.md), [analista DevSecOps](rutas/devsecops-analista.md) e [ingeniero DevSecOps](rutas/devsecops-engineer.md) (con el alias «Especialista DevSecOps» explicado), la [matriz comparativa transversal](docs/matriz-roles-secops-devsecops.md) frente a SOC, AppSec, Cloud Security y DFIR, tres **trayectos de laboratorio** sobre `blue-team-soc` y `devsecops-pipeline`, y tres exámenes finales nuevos. Sin tocar la numeración de las 340 clases.
 
 ## Fase 5 — App móvil Android ✅ (completa)
 

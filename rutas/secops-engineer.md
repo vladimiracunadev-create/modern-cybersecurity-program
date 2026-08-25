@@ -41,6 +41,26 @@ la única forma de no multiplicar el equipo de seguridad por el número de emple
 > (Linux/macOS/Windows), respuesta a incidentes, SIEM. Es el retrato fiel del puesto de **SecOps
 > Engineer** en una empresa de tecnología o fintech.
 
+### 🚫 Qué NO es este rol (y con quién se confunde)
+
+- **Ingeniero SecOps ≠ [Analista SecOps](secops-analista.md).** Aquí **construyes**: automatizaciones,
+  integraciones, APIs internas, ingeniería de detección. Allí se **opera y se decide** sobre el
+  riesgo: priorizar vulnerabilidades, negociar ventanas de parcheo, ejecutar runbooks, llevar SLA y
+  métricas. En una empresa pequeña lo hará la misma persona, pero son dos puestos con dos rutinas y
+  dos techos distintos. Si en la entrevista no te preguntan por código y APIs, la vacante
+  probablemente sea la de analista con el título de ingeniero.
+- **No es un [Analista SOC](soc-blue-team.md).** El SOC consume la plataforma; tú la administras,
+  la integras y construyes encima de ella.
+- **No es [DevSecOps](devsecops-engineer.md).** Misma mentalidad de ingeniería, distinto dominio:
+  ese rol automatiza la **construcción y la entrega** del software (pipeline, SBOM, firma,
+  políticas); tú automatizas la **operación** (flota, EDR, identidades, respuesta). Muchas carreras
+  pasan por los dos, y el salto es de los más naturales del sector.
+- **No es DevOps ni administración de sistemas** con un producto de seguridad encima: el criterio
+  de riesgo y la respuesta a incidentes forman parte del puesto.
+
+> 🗺️ La [matriz de roles SecOps y DevSecOps](../docs/matriz-roles-secops-devsecops.md) desarrolla
+> estas fronteras con misión, decisiones, entregables y métricas de cada puesto.
+
 ## 🗓️ Un día en el puesto
 
 Es una jornada partida entre **operar** y **construir** — y la proporción entre ambas es la métrica
@@ -264,4 +284,6 @@ asumen contratación por empresas de EE. UU./Europa, con listón alto de inglés
 ---
 
 - ⬅️ [Volver al índice de rutas](./README.md)
+- 🔀 Rutas vecinas: [Analista SecOps](secops-analista.md) · [Analista SOC / Blue Team](soc-blue-team.md) · [Ingeniero DevSecOps](devsecops-engineer.md) · [DFIR](dfir.md)
+- 🗺️ [Matriz comparativa SecOps y DevSecOps](../docs/matriz-roles-secops-devsecops.md)
 - 🏠 [Inicio del programa](../README.md)

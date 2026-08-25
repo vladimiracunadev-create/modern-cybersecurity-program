@@ -180,7 +180,8 @@ comando, más una colección de retos tipo CTF:
 
 ## 🧭 Portal: rutas, autoevaluación y progreso
 
-- 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, DFIR, **gestión de vulnerabilidades**, AppSec, cloud, GRC, **analista de ciberseguridad (institución regulada)**, **analista de seguridad ofensiva**, **security engineer / SecOps**, **seguridad de infraestructura**, **operación de plataformas (MSSP/DLP)**, **jefe de seguridad**, **CISO / director de seguridad de la información**, **arquitecto de ciberseguridad IT/OT** y **cooperación/alianzas técnicas**.
+- 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, **analista SecOps**, DFIR, **gestión de vulnerabilidades**, AppSec, **analista DevSecOps**, **ingeniero DevSecOps**, cloud, GRC, **analista de ciberseguridad (institución regulada)**, **analista de seguridad ofensiva**, **ingeniero SecOps / security engineer**, **seguridad de infraestructura**, **operación de plataformas (MSSP/DLP)**, **jefe de seguridad**, **CISO / director de seguridad de la información**, **arquitecto de ciberseguridad IT/OT** y **cooperación/alianzas técnicas**.
+- 🗺️ **[Matriz de roles SecOps y DevSecOps](docs/matriz-roles-secops-devsecops.md)** — SOC, SecOps, DevSecOps, AppSec, Cloud Security y DFIR comparados por misión, decisiones, entregables, métricas, clases y progresión, con el diagrama del ciclo desarrollo → pipeline → nube → producción → monitoreo → incidente → aprendizaje.
 - 📝 **[Autoevaluaciones](autoevaluaciones/README.md)** — 97 preguntas (una batería por parte). Versión interactiva con puntuación: [quiz](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/quiz.html).
 - ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/progreso.html)** — marca las 340 clases (se guarda en tu navegador).
 - 🔑 **[Soluciones a los retos](soluciones/README.md)** — claves de referencia de los ejercicios y retos (Parte 2 completa; resto por lotes).
@@ -207,8 +208,11 @@ Cada rol tiene una **guía de carrera completa** (qué es, día a día, qué nec
 
 - **[Pentester](rutas/pentester.md) / [Red Team](rutas/red-team.md)** → Partes 0, 1, 3, 4, 5, 7 (+ 12).
 - **[Analista SOC / Blue Team](rutas/soc-blue-team.md)** → Partes 0, 1, 6, 8, 9.
+- **[Analista SecOps](rutas/secops-analista.md)** → Partes 0, 8, 9, 17, 14 (+ 3, 10, 11) · la **operación** de seguridad: cobertura de controles, ciclo de vulnerabilidades, parcheo y hardening, revisión de accesos, runbooks, SLA y métricas. **No es un SOC L1**: el SOC trabaja sobre eventos, este rol sobre controles y riesgo; alineado a **Security+ → CySA+**.
 - **[Analista de Gestión de Vulnerabilidades](rutas/gestion-vulnerabilidades.md)** → Partes 0, 1, 3, 8, 11, 17 (VM, hardening/parcheo, EDR y reporte) · alineado a **CySA+**.
 - **[AppSec / Bug Bounty](rutas/appsec.md)** → Partes 0, 2, 4, 11.
+- **[Analista DevSecOps](rutas/devsecops-analista.md)** → Partes 0, 11, 4, 17, 14 (+ 10) · triaje y gobierno del riesgo del SDLC: falsos positivos con argumento, priorización **KEV/EPSS/CVSS + exposición**, backlog, SLA, excepciones con vencimiento, verificación y evidencia contra **NIST SSDF** y **OWASP SAMM**; alineado a **CySA+**.
+- **[Ingeniero DevSecOps](rutas/devsecops-engineer.md)** → Partes 0, 11 (entera), 10, 2, 17 · construye la capacidad: pipelines CI/CD seguros, puertas de bloqueo proporcionales, **SBOM**, firma y procedencia (**SLSA**), **policy as code** con OPA/Rego, identidades efímeras y secretos. También aparece como **«Especialista DevSecOps»**: la guía explica cómo distinguir qué perfil pide cada oferta.
 - **[DFIR / Forense](rutas/dfir.md)** → Partes 0, 1, 6, 9.
 - **[Cloud Security](rutas/cloud-security.md)** → Partes 0, 2, 10, 11.
 - **[GRC / Gestión](rutas/grc.md)** → Partes 0, 14 (+ 8, 9 para contexto técnico).
@@ -218,7 +222,7 @@ Cada rol tiene una **guía de carrera completa** (qué es, día a día, qué nec
 - **[Jefe de Seguridad de la Información](rutas/ciso-jefe-seguridad.md)** → Partes 0, 14, 17 (+ 8, 9 y base técnica) · el primer rol con equipo a cargo: estrategia, riesgo, cumplimiento ISO 27001/NIST y reporte ejecutivo; alineado a **CISSP** (y CISM/ISO 27001 fuera del programa).
 - **[CISO / Director de Seguridad de la Información](rutas/ciso.md)** → Partes 0, 14, 17 (+ 8, 9, 10, 11, 15) · el **techo de carrera** del programa: el máximo responsable de proteger **datos, sistemas, servicios digitales y continuidad operacional**, con mandato del directorio, presupuesto y responsabilidad ante el regulador; alineado a **CISSP** (y CISM/CRISC/ISO 27001 fuera del programa).
 - **[Analista de Seguridad Ofensiva (consultoría)](rutas/analista-seguridad-ofensiva.md)** → Partes 0, 1, 3, 4 (+ 170 de la 7, y 17) · el **primer escalón** del oficio ofensivo: pentest básico-intermedio de apps/APIs/redes, validación de hallazgos y evidencia técnica; alineado a **eJPT** y **PenTest+**.
-- **[Security Engineer / SecOps](rutas/secops-engineer.md)** → Partes 0, 8, 9, 11, 17 (+ 4) · perfil híbrido seguridad + desarrollo: EDR/XDR multi-SO, automatización con Python/Bash, APIs REST internas y respuesta a incidentes de endpoint; alineado a **CySA+**.
+- **[Ingeniero SecOps / Security Engineer](rutas/secops-engineer.md)** → Partes 0, 8, 9, 11, 17 (+ 4) · perfil híbrido seguridad + desarrollo: EDR/XDR multi-SO, automatización con Python/Bash, APIs REST internas y respuesta a incidentes de endpoint; alineado a **CySA+**.
 - **[Arquitecto de Ciberseguridad IT/OT](rutas/arquitecto-it-ot.md)** → Partes 1, 13, 17, 14, 10 (+ 8, 9, 3) · el rol que **diseña** la seguridad de una planta: modelo **Purdue**, **zonas y conductos IEC 62443**, segmentación IT/OT, integración con nube y SOC y auditoría contra **NIST SP 800-82**, NIST CSF e ISO 27001; alineado a **CISSP** (y ISA/IEC 62443 y GICSP fuera del programa).
 - **[Cooperación y Alianzas Técnicas](rutas/cooperacion-alianzas.md)** → Partes 0, 14 (+ 1, 8 para base técnica) · gobernanza, protección de datos y riesgo de terceros; alineado a **CISSP** e **ISO 27001**.
 

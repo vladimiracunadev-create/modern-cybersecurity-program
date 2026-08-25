@@ -36,6 +36,27 @@ Importa porque prácticamente toda empresa moderna está en la nube, la superfic
 más rápido que los equipos, y el talento que sabe asegurarla **de verdad** escasea. Es de
 los caminos mejor pagados del sector, y no por moda: por escasez real.
 
+### 🚫 Qué NO es este rol (y con quién se confunde)
+
+- **Cloud Security no es DevSecOps.** Es la confusión más frecuente, porque comparten herramientas
+  (Terraform, contenedores, Kubernetes) y a veces equipo. La diferencia es qué proteges: tú
+  proteges **la plataforma donde corre** lo que se despliega —cuentas, identidades, red, clúster,
+  postura, logging y respuesta en la nube—; el [Ingeniero DevSecOps](devsecops-engineer.md)
+  protege **el camino hasta ahí** —código, dependencias, imagen, pipeline, firma y procedencia—.
+  Regla práctica de frontera: *si el artefacto ya está desplegado, es tuyo; si todavía se está
+  construyendo, es suyo*. Escríbelo con tu equipo, porque en IaC y en Kubernetes el solape es real
+  y sin acuerdo explícito ambos asumen que lo cubre el otro.
+- **No eres quien triaja los hallazgos del pipeline.** Los de tu postura de nube sí; los que
+  produce el CI/CD sobre el código son del [Analista DevSecOps](devsecops-analista.md).
+- **No eres AppSec.** La lógica de la aplicación, su diseño y su código son de
+  [AppSec](appsec.md); tú respondes por la configuración que la rodea.
+- **No eres SecOps de endpoint.** La flota de portátiles, el EDR y el parcheo del parque
+  corporativo son del [Analista SecOps](secops-analista.md) y del
+  [Ingeniero SecOps](secops-engineer.md).
+
+> 🗺️ La [matriz de roles SecOps y DevSecOps](../docs/matriz-roles-secops-devsecops.md) desarrolla
+> estas fronteras con misión, decisiones, entregables y métricas de cada puesto.
+
 ## 🗓️ Un día en el puesto
 
 - **Revisión de postura:** empiezas mirando el tablero de CSPM — qué configuraciones nuevas
@@ -206,4 +227,6 @@ media, y **la escasez de gente que la sepa asegurar de verdad** empuja los núme
 ---
 
 - ⬅️ [Volver al índice de rutas](./README.md)
+- 🔀 Rutas vecinas: [Ingeniero DevSecOps](devsecops-engineer.md) · [Analista DevSecOps](devsecops-analista.md) · [AppSec Engineer](appsec.md) · [Ingeniero SecOps](secops-engineer.md)
+- 🗺️ [Matriz comparativa SecOps y DevSecOps](../docs/matriz-roles-secops-devsecops.md)
 - 🏠 [Inicio del programa](../README.md)

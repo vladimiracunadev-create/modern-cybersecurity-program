@@ -32,6 +32,30 @@ contrato. Lo que este programa **no** puede darte es la experiencia de revisar e
 producción de una empresa real ni la constancia de meses cazando sin cobrar: eso lo pone la
 práctica.
 
+### 🚫 Qué NO es este rol (y con quién se confunde)
+
+Dos fronteras que conviene tener claras antes de leer una oferta:
+
+- **AppSec Engineer ≠ Bug Bounty Hunter.** Comparten conocimiento técnico y nada más. El primero
+  es un **empleo** con salario, equipo, alcance definido y responsabilidad sobre un producto
+  entero: su éxito se mide en vulnerabilidades que **no llegaron a existir**. El segundo es una
+  **actividad por resultado**, sin contrato ni ingreso garantizado, cuyo éxito se mide en reportes
+  válidos aceptados. Un AppSec Engineer dedica buena parte de su tiempo a acompañar a quien
+  desarrolla; un cazador de recompensas, no.
+- **AppSec ≠ DevSecOps.** Tú miras **hacia dentro del software**: diseño, modelado de amenazas,
+  revisión de código, OWASP ASVS, requisitos de seguridad y corrección con los equipos. DevSecOps
+  mira **el proceso** que construye y entrega ese software. Dicho corto: **tú defines qué hay que
+  comprobar y por qué; el [Ingeniero DevSecOps](devsecops-engineer.md) hace que se compruebe solo
+  en cada cambio, y el [Analista DevSecOps](devsecops-analista.md) decide qué se arregla primero
+  con lo que esas comprobaciones producen.** Colaboráis constantemente: cuando un hallazgo
+  automático necesita criterio profundo de código, vuelve a ti.
+- **AppSec tampoco es Cloud Security ni pentesting.** No eres el dueño de la postura de la cuenta
+  de nube ([Cloud Security](cloud-security.md)) ni haces campañas de intrusión con contrato y
+  reglas de engagement ([Pentester](pentester.md)), aunque uses muchas de sus técnicas.
+
+> 🗺️ La [matriz de roles SecOps y DevSecOps](../docs/matriz-roles-secops-devsecops.md) desarrolla
+> estas fronteras con misión, decisiones, entregables y métricas de cada puesto.
+
 ## 🗓️ Un día en el puesto
 
 Depende de la cara del rol. Un **AppSec engineer** en un día normal:
@@ -233,4 +257,6 @@ más que cualquier otra cosa.
 ---
 
 - ⬅️ [Volver al índice de rutas](./README.md)
+- 🔀 Rutas vecinas: [Analista DevSecOps](devsecops-analista.md) · [Ingeniero DevSecOps](devsecops-engineer.md) · [Cloud Security](cloud-security.md) · [Pentester](pentester.md)
+- 🗺️ [Matriz comparativa SecOps y DevSecOps](../docs/matriz-roles-secops-devsecops.md)
 - 🏠 [Inicio del programa](../README.md)

@@ -473,6 +473,26 @@ producción un viernes.
 Las respuestas y el detalle de cada capa están en [`SOLUCION.md`](SOLUCION.md) — míralo **después**
 de intentarlo.
 
+## 🧭 Trayectos por rol
+
+Las ocho capas te enseñan a **auditar**. A partir de ahí, el trabajo se bifurca en dos oficios
+distintos que este laboratorio también cubre:
+
+- 🧮 **[Trayecto Analista DevSecOps](TRAYECTO-ANALISTA-DEVSECOPS.md)** — qué hacer con los hallazgos:
+  normalizar y deduplicar, separar falsos positivos con argumento, priorizar con KEV/EPSS/CVSS y
+  exposición, crear tickets y SLA, documentar una excepción con vencimiento, **verificar** la
+  corrección y reportar riesgo y métricas.
+  Ruta: [Analista DevSecOps](../../rutas/devsecops-analista.md).
+- 🏗️ **[Trayecto Ingeniero DevSecOps](TRAYECTO-INGENIERO-DEVSECOPS.md)** — construir la tubería que
+  no falla: controles integrados en CI/CD, bloqueo proporcional con línea base, identidades efímeras
+  y mínimo privilegio, SBOM, firma y verificación, policy as code con OPA/Rego, excepciones
+  auditables que caducan y la **reversión demostrada** de un control defectuoso.
+  Ruta: [Ingeniero DevSecOps](../../rutas/devsecops-engineer.md).
+
+La diferencia entre ambos es la misma que separa a un analista de un ingeniero en cualquier equipo
+de seguridad, y está desarrollada en la
+[matriz de roles SecOps y DevSecOps](../../docs/matriz-roles-secops-devsecops.md).
+
 ## ⚠️ Errores comunes
 
 - **Confundir "sin hallazgos" con "no escaneado".** El error más caro del informe, y por eso el
@@ -494,8 +514,12 @@ de intentarlo.
   [`appsec-web`](../appsec-web/README.md) para entender qué explota el atacante.
 - **Después:** [`cloud-security`](../cloud-security/README.md) lleva el mismo enfoque de auditoría a
   la infraestructura donde acaba desplegándose todo esto.
-- **Rutas que lo usan:** [AppSec](../../rutas/appsec.md) ·
-  [Security Engineer / SecOps](../../rutas/secops-engineer.md) ·
+- **Rutas que lo usan:** [Analista DevSecOps](../../rutas/devsecops-analista.md) e
+  [Ingeniero DevSecOps](../../rutas/devsecops-engineer.md) (con
+  [trayecto propio](TRAYECTO-ANALISTA-DEVSECOPS.md) cada uno) ·
+  [AppSec](../../rutas/appsec.md) ·
+  [Ingeniero SecOps](../../rutas/secops-engineer.md) ·
+  [Analista SecOps](../../rutas/secops-analista.md) (solo la capa de priorización) ·
   [Cloud Security](../../rutas/cloud-security.md) ·
   [Gestión de Vulnerabilidades](../../rutas/gestion-vulnerabilidades.md)
 - **Certificaciones:** dominios de herramientas y análisis de **CompTIA PenTest+** y **CySA+**, y

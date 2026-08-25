@@ -33,6 +33,29 @@ comparten la misma estructura; cambia el contenido.
 - **Teoría:** Partes 8, 6, 1.
 - **Práctica:** en el lab [`blue-team-soc`](../labs/blue-team-soc/README.md): detecta la fuerza bruta + movimiento lateral y escribe una regla (Sigma) que dispare.
 - **Informe:** informe de incidente + regla de detección validada.
+- **Frontera:** este examen termina cuando la detección está escrita. **Lo que viene después
+  —contener, parchear, medir el SLA y cerrar con evidencia— es el examen de Analista SecOps**, no
+  este.
+
+## 📟 Analista SecOps
+
+- **Teoría:** Partes 8 y 9 (operación e incidentes), 17 (**318**, **324**, **313**, **315**) y 14 (**279**, **280**, **287**).
+- **Práctica (operativa, con reloj):** sobre el
+  **[trayecto Analista SecOps](../labs/blue-team-soc/TRAYECTO-ANALISTA-SECOPS.md)** de
+  [`blue-team-soc`](../labs/blue-team-soc/README.md), lleva **una alerta hasta el cierre verificado**
+  registrando las seis marcas de tiempo (recepción, validación, contención, asignación, remediación,
+  verificación). Debes: relacionar la alerta con el **activo y su criticidad**, identificar las
+  causas de configuración que la hicieron posible, priorizarlas con **KEV → EPSS → exposición →
+  criticidad → CVSS** (usando `priorizar.py` de
+  [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md)), **escribir y ejecutar tu propio
+  runbook**, redactar el ticket de remediación con plan de reversión y criterio de verificación
+  escrito **antes** del cambio, documentar **una excepción** con responsable, control compensatorio y
+  vencimiento, y aportar la **prueba negativa** del cierre (el intento que ahora falla).
+- **Informe:** **informe de incidente** con la línea de tiempo y las métricas derivadas + el
+  **runbook** reutilizable + una **propuesta de mejora preventiva** que nombre la métrica que debería
+  moverse + un **informe mensual de una página** para una jefatura sin formación técnica.
+- **Suspende automáticamente** quien cierre el caso sin evidencia de verificación: es el error
+  central que este examen busca detectar.
 
 ## 🛡️ Analista de Gestión de Vulnerabilidades
 
@@ -51,12 +74,61 @@ comparten la misma estructura; cambia el contenido.
 - **Teoría:** Partes 4, 2, 11.
 - **Práctica:** encuentra y explota (en tu lab) 3 vulns del OWASP Top 10 en [`appsec-web`](../labs/appsec-web/README.md); haz code review con [`appsec-code`](../labs/appsec-code/README.md); y audita el SDLC completo en [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md).
 - **Informe:** 3 reportes tipo bug bounty (impacto, PoC, remediación) + la **sección de cobertura** del informe de auditoría: qué quedó fuera del alcance y por qué.
+- **Variante AppSec Engineer (defensiva):** sustituye uno de los tres reportes por un **modelo de
+  amenazas** de la aplicación (STRIDE, clase 237) con los requisitos de seguridad derivados y el
+  mapeo a **OWASP ASVS** de la funcionalidad revisada. Es lo que separa a quien encuentra fallos de
+  quien evita que existan.
+
+## 🧮 Analista DevSecOps
+
+- **Teoría:** Parte 11 (**238**–**241**, **243**, **245**, **246**), Parte 17 (**318**, **323**) y Parte 14 (**277**, **284**).
+- **Práctica (de triaje y decisión):** sobre el
+  **[trayecto Analista DevSecOps](../labs/devsecops-pipeline/TRAYECTO-ANALISTA-DEVSECOPS.md)**, parte
+  de la salida cruda de las ocho capas de [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md)
+  y entrega: registro **normalizado y deduplicado** con la regla de deduplicación escrita;
+  clasificación en **real / falso positivo / real pero no aplicable** con al menos **tres descartes
+  argumentados sobre el código**; **priorización reproducible** de un máximo de doce elementos con la
+  fórmula explícita y la exposición declarada de cada hallazgo; la comparación entre `priorizar.py`
+  normal y `--sin-red`; **cinco tickets** con criterio de verificación escrito antes del cambio; y
+  **una excepción** con sus cuatro elementos innegociables. Cierra con una **verificación con control
+  negativo**: reintroduce el patrón vulnerable y demuestra que el escáner vuelve a detectarlo.
+- **Informe:** **informe de riesgo del SDLC** en dos vistas —una para desarrollo y una de página
+  única para dirección, que termine con una decisión concreta que pedir— + **matriz de evidencia**
+  contra al menos cinco prácticas de **NIST SP 800-218 (SSDF)** + la **sección de cobertura**
+  (qué capa no se ejecutó y por qué).
+- **No se acepta** un informe que confunda *sin hallazgos* con *no escaneado*.
+
+## 🏗️ Ingeniero DevSecOps
+
+- **Teoría:** Parte 11 completa (**236**–**248**), Parte 10 (**227**–**230**, **233**), **063** y Parte 17 (**330**).
+- **Práctica (de construcción, obligatoriamente con código):** sobre el
+  **[trayecto Ingeniero DevSecOps](../labs/devsecops-pipeline/TRAYECTO-INGENIERO-DEVSECOPS.md)** y en
+  **un repositorio propio**, entrega un pipeline funcionando con: controles integrados en el punto
+  correcto del ciclo y **versiones fijadas**; **tres niveles de bloqueo** justificados y con línea
+  base que no bloquee la deuda preexistente; **cero credenciales de larga vida** (federación OIDC o
+  inventario de secretos con su vía de rotación probada); cobertura de las **cinco superficies**
+  (código, dependencias, IaC, imagen y aplicación en ejecución); **SBOM consultable** por artefacto;
+  **firma verificada en el despliegue**, demostrando que un artefacto manipulado **se rechaza**; una
+  **política OPA/Rego con sus pruebas** que rechace un manifiesto real; y un **mecanismo de excepción
+  que caduque** y haga fallar el pipeline al vencer.
+- **Prueba de resiliencia (obligatoria):** introduce a propósito un **control defectuoso** que rompa
+  los despliegues y demuestra la recuperación, midiendo **tiempo hasta la detección**, **tiempo hasta
+  la reversión** y **equipos afectados**.
+- **Informe:** **modelo de amenazas del propio pipeline** en una página + **runbook de reversión** +
+  **postmortem sin culpables** del control defectuoso, con una mejora concreta + **métricas de
+  adopción y de tiempo añadido** al pipeline.
+- **No aprueba** quien entregue un pipeline que solo funciona en su máquina: el criterio es que otra
+  persona lo clone y obtenga el mismo resultado, incluida la verificación de firma.
 
 ## ☁️ Cloud Security Engineer
 
 - **Teoría:** Partes 10, 11, 2.
 - **Práctica:** en el lab [`cloud-security`](../labs/cloud-security/README.md): audita una configuración con Prowler/kube-bench y corrige 3 hallazgos.
 - **Informe:** informe CSPM con hallazgos priorizados y remediación como código.
+- **Frontera con DevSecOps:** aquí se evalúa la **plataforma ya desplegada** (identidades, postura,
+  clúster, logging y respuesta). El pipeline que produjo esos artefactos —gates, SBOM, firma— es el
+  examen de Ingeniero DevSecOps. Añade una **página de acuerdo de frontera**: qué controles de IaC y
+  de contenedores asumes tú y cuáles asume DevSecOps, y quién responde si falla lo que queda en medio.
 
 ## 🏛️ GRC / Gestión de seguridad
 
@@ -89,7 +161,11 @@ Estas ocho rutas están calcadas de anuncios de empleo reales, así que su exame
 - **Práctica (aplicada):** diseña un acuerdo de **intercambio de información de amenazas** entre dos organizaciones ficticias: qué se comparte, con qué clasificación (TLP), bajo qué base legal, con qué controles de protección de datos y qué pasa ante un incumplimiento. Evalúa además el riesgo del tercero (clase 284).
 - **Informe:** memorando de entendimiento + informe de riesgo de terceros + una **nota ejecutiva de una página** dirigida a alguien sin formación técnica.
 
-## ⚙️ Security Engineer / SecOps
+## ⚙️ Ingeniero SecOps / Security Engineer
+
+> Es el examen **de ingeniería** de la familia SecOps: se aprueba escribiendo código. El de
+> **Analista SecOps** (más abajo) evalúa lo contrario —operar, priorizar, coordinar y cerrar—
+> y no comparte ni un solo entregable con este.
 
 - **Teoría:** Partes 8, 9, 11 (+ la programación de la Parte 0).
 - **Práctica (con código, obligatorio):** construye una **API REST** que exponga el estado de seguridad de los hosts a partir de la telemetría del lab [`blue-team-soc`](../labs/blue-team-soc/README.md) —autenticada, con validación de entrada y sin secretos en el código— y automatiza en Python/Bash una tarea de *offboarding* (revocar accesos y dejar registro). Somete tu propio código a las ocho capas de [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md): lo que escribas se audita igual que lo demás.
@@ -131,6 +207,24 @@ Estas ocho rutas están calcadas de anuncios de empleo reales, así que su exame
 
 Quien complete la **Parte 18** puede añadir el [capstone 340](../classes/parte-18-ia-aplicada-a-la-ciberseguridad/340-capstone-pentest-autorizado-asistido-por-ia-con-mcp/README.md): repetir el examen práctico **asistido por IA** (kali-mcp) y comparar — con retrospectiva sobre qué aportó la IA y qué tuvo que corregir.
 
+## 🧭 Familia SecOps y DevSecOps: siete exámenes, ninguno intercambiable
+
+Estos siete puestos se confunden en las ofertas, así que sus exámenes están construidos para **no
+poder aprobarse con el mismo entregable**:
+
+| Examen | Entregable que lo define |
+|---|---|
+| **Analista SOC / Blue Team** | Una regla de detección validada sobre un ataque real |
+| **Analista SecOps** | Un incidente cerrado con SLA, evidencia de verificación y mejora preventiva |
+| **Ingeniero SecOps / Security Engineer** | Una API interna y una automatización en producción, auditadas |
+| **Analista DevSecOps** | Una priorización reproducible con falsos positivos argumentados y excepción |
+| **Ingeniero DevSecOps** | Un pipeline con firma verificada y una reversión demostrada |
+| **AppSec Engineer** (sección *AppSec / Bug Bounty*) | Un modelo de amenazas con requisitos y mapeo a ASVS |
+| **Cloud Security Engineer** | Un informe CSPM con remediación como código y el acuerdo de frontera |
+
+Las diferencias de fondo entre los roles están desarrolladas en la
+**[matriz de roles SecOps y DevSecOps](matriz-roles-secops-devsecops.md)**.
+
 ## 🔗 Relacionado
 
-- [Rutas por rol](../rutas/README.md) · [Rúbrica de evaluación](rubrica-evaluacion.md) · [Syllabus](syllabus.md) · [Certificaciones](../certificaciones/README.md)
+- [Rutas por rol](../rutas/README.md) · [Matriz de roles SecOps y DevSecOps](matriz-roles-secops-devsecops.md) · [Rúbrica de evaluación](rubrica-evaluacion.md) · [Syllabus](syllabus.md) · [Certificaciones](../certificaciones/README.md)

@@ -12,7 +12,12 @@ on:
       - "rutas/**"
       - "autoevaluaciones/**"
       - "certificaciones/**"
-      - "labs/README.md"
+      # El generador publica el arbol completo de labs/, no solo su indice: un
+      # trayecto nuevo dentro de un laboratorio tambien tiene que republicar.
+      - "labs/**/*.md"
+      # docs/ tampoco estaba: syllabus, rubrica, examen final y la matriz de
+      # roles se publican en el sitio, asi que sus cambios deben desplegarse.
+      - "docs/*.md"
       - "ctf/README.md"
       - "manual/MANUAL.pdf"
       # Los diagramas se incrustan en las páginas: si cambian, el sitio publicado

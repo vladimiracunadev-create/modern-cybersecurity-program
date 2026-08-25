@@ -31,7 +31,7 @@ docker compose down -v      # apagar y borrar también los volúmenes/datos
 | Lab | Descripción | Clases relacionadas | Estado |
 |---|---|---|---|
 | [`appsec-web`](appsec-web/README.md) | OWASP Juice Shop + DVWA para practicar el OWASP Top 10 (SQLi, XSS, CSRF, IDOR…) | Parte 4 (086–115) | ✅ Disponible |
-| [`blue-team-soc`](blue-team-soc/README.md) | Elasticsearch + Kibana con telemetría de un ataque real para cazar y detectar | Parte 8 (181–200) | ✅ Disponible |
+| [`blue-team-soc`](blue-team-soc/README.md) | Elasticsearch + Kibana con telemetría de un ataque real para cazar y detectar · [trayecto Analista SecOps](blue-team-soc/TRAYECTO-ANALISTA-SECOPS.md) | Parte 8 (181–200) · 202, 215–217, 318, 324 | ✅ Disponible |
 | [`red-team-ad`](red-team-ad/README.md) | Caja de atacante (Impacket/NetExec/BloodHound) + guía GOAD para atacar Active Directory | Parte 7 (161–180) | ✅ Disponible |
 | [`cripto`](cripto/README.md) | Retos de criptografía aplicada en Python puro (XOR, RSA-Fermat, MD5, ECB) | Parte 2 (046–065) | ✅ Disponible |
 | [`dfir-memoria`](dfir-memoria/README.md) | Estación Volatility 3 + YARA para forense de memoria y malware en IR | Partes 9 y 17 · SANS/BTL1 | ✅ Disponible |
@@ -41,9 +41,20 @@ docker compose down -v      # apagar y borrar también los volúmenes/datos
 | [`redes-nmap`](redes-nmap/README.md) | Objetivos en red aislada + scanner nmap para descubrimiento y enumeración | Parte 1 | ✅ Disponible |
 | [`pwn-binarios`](pwn-binarios/README.md) | Binario vulnerable + gdb/pwntools para explotación de stack overflow | Parte 5 | ✅ Disponible |
 | [`cloud-security`](cloud-security/README.md) | Toolbox Prowler/ScoutSuite/trivy/kube-bench para auditoría CSPM | Parte 10 | ✅ Disponible |
-| [`devsecops-pipeline`](devsecops-pipeline/README.md) | Repo vulnerable + auditoría en **8 capas** (deps, SAST, secretos, Dockerfile, contenedor, CI/CD, typosquat y priorización KEV/EPSS/CVSS) con informe | Parte 11 (236–248) · 227, 318, 330 | ✅ Disponible |
+| [`devsecops-pipeline`](devsecops-pipeline/README.md) | Repo vulnerable + auditoría en **8 capas** (deps, SAST, secretos, Dockerfile, contenedor, CI/CD, typosquat y priorización KEV/EPSS/CVSS) con informe · trayectos [Analista](devsecops-pipeline/TRAYECTO-ANALISTA-DEVSECOPS.md) e [Ingeniero DevSecOps](devsecops-pipeline/TRAYECTO-INGENIERO-DEVSECOPS.md) | Parte 11 (236–248) · 227, 318, 330 | ✅ Disponible |
 
 Además: **[🚩 Retos tipo CTF](../ctf/README.md)** — colección de retos por categoría (web, cripto, redes, forense, OSINT, pwn) con solución.
+
+## Trayectos por rol dentro de un laboratorio
+
+Algunos laboratorios tienen **trayectos**: recorridos que continúan el guiado base con el trabajo
+concreto de un puesto, sin duplicar el entorno ni tocar su funcionamiento.
+
+| Trayecto | Laboratorio base | Ruta | Qué añade |
+|---|---|---|---|
+| [Analista SecOps](blue-team-soc/TRAYECTO-ANALISTA-SECOPS.md) | `blue-team-soc` (+ `rootcause-windows`, `devsecops-pipeline`) | [Analista SecOps](../rutas/secops-analista.md) | Cierra la alerta: activo, vulnerabilidad, contención, runbook, parcheo, SLA con tiempos, evidencia y mejora preventiva |
+| [Analista DevSecOps](devsecops-pipeline/TRAYECTO-ANALISTA-DEVSECOPS.md) | `devsecops-pipeline` | [Analista DevSecOps](../rutas/devsecops-analista.md) | Normalizar, deduplicar, triar falsos positivos, priorizar, tickets y SLA, excepción, verificación e informe |
+| [Ingeniero DevSecOps](devsecops-pipeline/TRAYECTO-INGENIERO-DEVSECOPS.md) | `devsecops-pipeline` | [Ingeniero DevSecOps](../rutas/devsecops-engineer.md) | Construir el pipeline: gates proporcionales, secretos y permisos, SBOM, firma, policy as code, excepciones que caducan y reversión demostrada |
 
 ## Convención de cada laboratorio
 
