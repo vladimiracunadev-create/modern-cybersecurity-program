@@ -224,6 +224,7 @@ El puesto **bisagra** entre administración de sistemas y seguridad: administras
 - 🎓 **CompTIA Security+** → **CySA+** · (fuera del programa: Network+, **SC-200**, AWS CloudOps)
 - 💡 El programa cubre casi todo el stack. Lo que **no** cubre y la oferta pide: **AS/400**, **SOX** como normativa concreta, el **NAC como producto** y la consola comercial de SIEM (Sentinel/QRadar/XSIAM) más allá de Splunk, Elastic y Wazuh.
 - 📖 **[Guía de carrera completa →](seguridad-infraestructura.md)** — qué es, día a día, skills, certis, salario y progresión.
+- ⬆️ **Escalón siguiente:** [Jefe de Infraestructura y Ciberseguridad](jefe-infraestructura-ciberseguridad.md) — el mismo terreno, ya con presupuesto, proveedores y firma sobre el riesgo.
 
 ## 🧩 Ingeniero de Operación de Plataformas de Seguridad (MSSP y DLP)
 
@@ -256,6 +257,25 @@ El primer rol del curso con **equipo a cargo**: defines la estrategia, gestionas
 - 🎓 **CISSP** · CySA+ (si te falta músculo técnico) · (fuera del programa: **CISM**, **ISO 27001 Lead Implementer**, CRISC)
 - 💡 El programa te da la **base normativa y técnica** del cargo. Lo que aportas tú es lo que más pesa en la selección: los **3 años liderando proyectos** y el **año liderando equipo**, la titulación, el trato con **reguladores y auditoría externa**, el inglés y —literal en la oferta— **Excel**.
 - 📖 **[Guía de carrera completa →](ciso-jefe-seguridad.md)** — qué es, día a día, skills, certis, salario y progresión.
+- ↔️ **No lo confundas con [Jefe de Infraestructura y Ciberseguridad](jefe-infraestructura-ciberseguridad.md)**: aquel cargo responde **además** por la disponibilidad de la plataforma (servidores, M365, respaldos); este dirige **solo** el programa de seguridad.
+
+## 🏢 Jefe de Infraestructura y Ciberseguridad
+
+Una sola jefatura para dos oficios que la teoría separa: **la infraestructura funciona porque tú respondes por ella** —servidores, redes, Microsoft 365 y Active Directory, virtualización, respaldos con RTO/RPO y nube— **y está segura porque también respondes por eso** —SGSI ISO 27001, monitoreo, respuesta a incidentes, vulnerabilidades, perímetro y concientización—, con el cumplimiento sectorial encima. El cargo real de la mayoría de las empresas medianas.
+
+1. 📚 **Parte 0** — Fundamentos (001–025) · **003 frameworks** · virtualización (004), Linux (005), **Windows (008)** y PowerShell (009), redes (010–014) y **ética (025)** para las campañas internas
+2. 📚 **Parte 1** — Redes (026–045) · lo que administras: **034 firewalls** · **036 VPN** · **042 segmentación y zero trust** · 035 IDS/IPS · 039 VLAN · 041 DNS · 038 WiFi corporativa
+3. 📚 **Parte 14** — **el bloque de gobierno, casi entero**: **278 ISO 27001** · 277 riesgos · 276 gobernanza · 282 políticas · **283 continuidad y DRP** · **284 proveedores** · **285 auditoría** · 286 cultura · 287 KPI/KRI · 289 privacidad
+4. 📚 **Parte 17** — la capa de jefatura: **320 gobierno y regulación** · **318 vulnerabilidades** · **324 hardening** · **313/315 identidades, MFA y PAM** · **319 phishing** · 321 reporte · 328 continuidad avanzada · 329 zero trust
+5. 📚 **Partes 8 y 9** — **182** telemetría · **183** SIEM · **189** EDR · **190** logs de Windows · 197 métricas · **202** ciclo de incidentes · **215** playbooks · **216** contención · **219 tabletop**
+6. 📚 **Parte 10** — 221 responsabilidad compartida · **222 IAM** · **224 Azure** (M365/Entra) · 223 AWS · 231 CSPM · **234 logging** · 235 respuesta en la nube
+7. 📚 **Partes 3, 7 y 12** — lo que contratas y lo que te atacan: **067 alcance y contratos** · 071 Nessus · 085 reporte · **170–172 ataques a Active Directory** · **258 GoPhish** y 259 defensa
+
+- 🧪 [`blue-team-soc`](../labs/blue-team-soc/README.md) · [`redes-nmap`](../labs/redes-nmap/README.md) · [`rootcause-windows`](../labs/rootcause-windows/README.md) · [`cloud-security`](../labs/cloud-security/README.md) · 🎲 **[219 tabletop](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md)** dirigido por ti · 💾 **restaura un respaldo y cronometra**: es el control que la oferta llama "validación efectiva de restauraciones"
+- 🎓 **CISSP** · Security+ → CySA+ · (fuera del programa: **ISO 27001 Lead Implementer**, **CISM**, CEH, AWS Security Specialty, Fortinet NSE/FCP, **AZ-800**/**SC-300**/**MS-102**)
+- 💡 El programa te da el **criterio completo del cargo** (perímetro, identidad, AD visto desde el ataque, SIEM, EDR, incidentes, vulnerabilidades, nube, ISO 27001, riesgos, continuidad, proveedores, auditoría y reporte). Lo que **no**: **M365/Entra y AD como consola**, VMware/Hyper-V, la plataforma de respaldo, **Fortinet como producto**, el texto de las leyes locales y los **5 años de infraestructura** que se exigen.
+- 📖 **[Guía de carrera completa →](jefe-infraestructura-ciberseguridad.md)** — qué es, la tensión de operar y auditar a la vez, día a día, skills, certis, salario y progresión.
+- ↔️ **Frente al [Analista de Seguridad de Infraestructura](seguridad-infraestructura.md)**: mismo terreno técnico, distinto mandato — allí se **ejecuta y se propone**; aquí se **decide, se firma y se responde**.
 
 ## 🧰 Analista de Seguridad Ofensiva (consultoría)
 

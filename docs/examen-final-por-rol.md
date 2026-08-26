@@ -146,7 +146,7 @@ comparten la misma estructura; cambia el contenido.
 
 ## 🧭 Roles derivados de ofertas reales
 
-Estas ocho rutas están calcadas de anuncios de empleo reales, así que su examen se parece más a una
+Estas nueve rutas están calcadas de anuncios de empleo reales, así que su examen se parece más a una
 **prueba de selección** que a un examen académico: el entregable es el que produce el puesto.
 
 ## 🏦 Analista de Ciberseguridad (institución regulada)
@@ -182,6 +182,12 @@ Estas ocho rutas están calcadas de anuncios de empleo reales, así que su exame
 - **Teoría:** Partes 14, 17 (+ 8).
 - **Práctica (de dirección):** **dirige** un [ejercicio de mesa](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md) sobre un incidente grave, con roles asignados, decisiones cronometradas y comunicación a dirección; construye el registro de riesgos de la organización y un plan de remediación priorizado con responsables y fechas.
 - **Informe:** **informe ejecutivo de una página** con KPIs/KRIs + acta de aceptación formal de un riesgo (con quién lo firma) + plan de tratamiento.
+
+## 🏢 Jefe de Infraestructura y Ciberseguridad
+
+- **Teoría:** Partes 14 y 17 (+ 1, 8, 9 y 10).
+- **Práctica (mitad consola, mitad dirección):** sobre una organización ficticia en sector regulado, entrega **el paquete de jefatura**: análisis de riesgos con dueños, **plan de continuidad con RTO/RPO** y —esto es lo que se evalúa de verdad— la **restauración real de un respaldo en una máquina limpia, cronometrada**, comparando el tiempo obtenido con el RTO comprometido. Además, en [`blue-team-soc`](../labs/blue-team-soc/README.md) verifica la ingesta de al menos tres fuentes y lleva un incidente hasta el cierre, y **dirige** un [ejercicio de mesa](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md) de ransomware que incluya el punto de decisión de **notificar al regulador**.
+- **Informe:** **procedimiento de notificación de incidentes** (quién decide, en qué plazo, con qué contenido) + **matriz de proveedores con SLA** y su escalamiento + informe mensual de una página para dirección. Se evalúa que la evidencia sirva ante un auditor externo, no solo ante ti mismo.
 
 ## 🧱 Analista de Seguridad de Infraestructura
 

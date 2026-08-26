@@ -159,6 +159,14 @@ Cuatro preguntas honestas, respondidas en orden:
 4. **¿Prefieres el tiempo real o el tiempo largo?** Tiempo real (turnos, alertas, incidentes) → SOC
    y DFIR. Tiempo largo (programas, deuda, plataformas) → SecOps, DevSecOps y Cloud Security.
 
+Una casilla que esta matriz **no** contiene, y que conviene reconocer en un anuncio: cuando la oferta
+suma a todo lo anterior la **disponibilidad de la plataforma** —servidores, Microsoft 365 y Active
+Directory, virtualización, respaldos, enlaces— ya no estás mirando ninguno de estos siete puestos,
+sino una **jefatura de infraestructura y ciberseguridad**
+([ruta](../rutas/jefe-infraestructura-ciberseguridad.md)). La señal que lo delata es que el mismo
+cargo responde por que el correo funcione y por el SGSI; ahí el eje deja de ser *analista o
+ingeniero* y pasa a ser *operar y responder*.
+
 Y un consejo que ahorra años: **el primer puesto no define la carrera**. Los cruces entre estas
 casillas son la norma, no la excepción, y casi todos comparten un mismo cimiento — la
 [Parte 0](../classes/parte-0-fundamentos-y-prerrequisitos/README.md).
