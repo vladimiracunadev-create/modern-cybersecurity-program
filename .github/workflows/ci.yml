@@ -31,6 +31,12 @@ jobs:
       - name: Validar navegación bidireccional (anterior/siguiente)
         run: python scripts/generar_navegacion.py --check
 
+      # Complementa al validador de estructura: aquel detecta enlaces rotos,
+      # este detecta lo contrario — una guia de ruta que existe y no esta
+      # enlazada desde ningun indice, que es invisible aunque compile.
+      - name: Validar catálogo de rutas y ecosistema CISO
+        run: python scripts/validar_rutas.py
+
       - name: Validar codificación (sin mojibake, todo UTF-8)
         run: python scripts/validar_encoding.py
 
