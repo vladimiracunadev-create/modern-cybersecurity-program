@@ -15,6 +15,13 @@
 
 ## 🧭 Qué es y por qué importa
 
+> 🗂️ **Una jefatura que opera y protege a la vez.** No es un CISO —respondes por la
+> disponibilidad además de por la seguridad—, y esa doble responsabilidad tiene su propia tensión.
+> Para situarla frente al resto del ecosistema, incluido el
+> [OT CISO](ot-ciso.md) si tu empresa tiene planta, lee
+> **[🗂️ El ecosistema CISO](ecosistema-ciso.md)**. Los siete primeros escenarios del
+> **[laboratorio ejecutivo](../labs/ciso-leadership/README.md)** son directamente tu trabajo.
+
 En el organigrama de los libros, infraestructura y seguridad son dos áreas distintas: una construye y
 opera, la otra define controles y verifica que se cumplan. En una empresa mediana —cien, doscientas,
 quinientas personas— **esas dos áreas son una jefatura y un presupuesto**. Este rol es esa jefatura:

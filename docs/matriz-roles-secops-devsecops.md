@@ -205,6 +205,12 @@ quedaría desactualizada y no sería verificable.
 
 ## 🔗 Relacionado
 
+> 🗂️ **¿Buscas la misma disciplina aplicada a los cargos de dirección?** El
+> **[ecosistema CISO](../rutas/ecosistema-ciso.md)** separa CISO, Field CISO, vCISO, BISO, Product
+> CISO, AI CISO y OT CISO —y los cargos vecinos que **no** son tipos de CISO— con una matriz
+> comparativa equivalente a esta.
+
+
 - [Rutas por rol](../rutas/README.md) · [Examen final por rol](examen-final-por-rol.md) ·
   [Rúbrica de evaluación](rubrica-evaluacion.md) · [Syllabus](syllabus.md)
 - [Laboratorios](../labs/README.md) · [Certificaciones](../certificaciones/README.md)

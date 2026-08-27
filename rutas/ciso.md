@@ -10,6 +10,13 @@
 
 ## 🧭 Qué es y por qué importa
 
+> 🗂️ **¿Te han ofrecido un cargo con «CISO» en el nombre y no sabes si es este?** El programa tiene
+> un mapa completo del ecosistema —Global, Regional, Divisional, Deputy y Associate CISO; Field
+> CISO y Customer CISO; vCISO, fractional e interim; BISO, Product CISO, AI CISO y OT CISO; y los
+> cargos vecinos que **no** son tipos de CISO—, con una matriz comparativa y un test de ocho
+> preguntas para comprobar si un cargo tiene mandato real:
+> **[🗂️ El ecosistema CISO](ecosistema-ciso.md)**.
+
 Un CISO es la persona que tiene **el mandato formal** de la seguridad de la información en la
 organización: define la estrategia, la financia, la ejecuta a través de su equipo y de otras áreas,
 y **responde por el resultado**. No es un rol de consola ni de herramienta. Es un rol de dirección
@@ -46,11 +53,49 @@ Este es el punto donde más gente se pierde, porque los títulos se solapan:
 | [**Jefe de Seguridad de la Información**](ciso-jefe-seguridad.md) | El programa de seguridad y su equipo | Prioriza y ejecuta; el presupuesto lo pide | Gerencia de TI o de riesgo |
 | [**GRC / Gestión de seguridad**](grc.md) | Gobierno, riesgo y cumplimiento | Asesora y mide; no decide | El CISO o auditoría interna |
 | [**Analista de Ciberseguridad**](analista-ciberseguridad.md) / [**SOC**](soc-blue-team.md) | La operación diaria | Ejecuta | Su jefatura directa |
+| [**Field CISO / Customer CISO**](field-ciso.md) | Las cuentas de clientes que atiende | **Ninguna sobre el cliente**: influye, no decide | Su empleador, que es **un proveedor** |
+| [**vCISO / Fractional / Interim**](vciso.md) | Lo que diga el contrato | La que el contrato le conceda | La dirección de la empresa contratante |
+| [**BISO**](biso.md) | Una unidad de negocio | Influencia fuerte, decisión limitada | El CISO y la dirección de su unidad |
+| [**Product CISO**](product-ciso.md) | Lo que la empresa **vende** | Puertas de publicación y requisitos | Ingeniería, producto y clientes |
+| [**AI CISO**](ai-ciso.md) | Los sistemas de IA | Normativa: la evaluación previa | El CISO o un comité de IA |
+| [**OT CISO**](ot-ciso.md) | La planta y el proceso físico | **Compartida** con Operaciones | Tecnología y dirección industrial |
 
 Dicho corto: el [jefe de seguridad](ciso-jefe-seguridad.md) **dirige el programa**; el CISO
 **es dueño del riesgo de seguridad de la empresa**. En organizaciones medianas la misma persona
 hace ambas cosas y el título depende del tamaño; en organizaciones grandes son dos capas distintas
 y el jefe de seguridad reporta al CISO.
+
+La comparación completa —con las diez columnas que de verdad separan estos cargos: interno o
+externo, alcance, autoridad, presupuesto, equipo, responsabilidad por el riesgo, audiencia,
+componente comercial y entregables— está en la
+[**matriz central del ecosistema CISO**](ecosistema-ciso.md#-matriz-comparativa-central).
+
+### Los alcances del cargo: global, regional, divisional, deputy y associate
+
+Estos cinco títulos **no son cargos distintos**: son este mismo cargo con otro alcance. El trabajo
+esencial —mandato, estrategia, riesgo, presupuesto, equipo, crisis y relación con el gobierno de la
+organización— es el que se explica en esta página. Lo que cambia es el perímetro y, con él, dos o
+tres tensiones características.
+
+| Alcance | Qué cambia de verdad | La tensión propia del puesto |
+|---|---|---|
+| **Global CISO** | Responde por todo el grupo, en varios países y varios marcos legales | Decidir qué es **política global vinculante** y qué es adaptación local. Si todo es global, nada se cumple; si todo es local, no hay programa |
+| **Regional CISO** | Una región (LatAm, EMEA, APAC), bajo una política corporativa | Vive entre dos jefes. Ejecuta lo global y a la vez responde por obligaciones locales que la casa matriz no siempre entiende |
+| **Divisional / BU CISO** | Una división o filial con su propio resultado, normalmente con presupuesto propio | Alinearse con el programa corporativo sin ahogar a un negocio que tiene su propio ritmo y sus propios clientes |
+| **Deputy CISO** | Delegación amplia; cubre al CISO y suele llevar la ejecución del programa | Ejecutar sin ser el titular: toma decisiones diarias sin la autoridad formal de firmarlas todas |
+| **Associate CISO** | Un dominio acotado, como escalón de progresión interna | Título poco estandarizado: hay que comprobar qué incluye antes de aceptarlo |
+
+Tres advertencias que valen para los cinco:
+
+1. **El adjetivo no da poder.** «Global» describe geografía, no autoridad. Un Global CISO sin
+   presupuesto consolidado y sin línea al directorio decide menos que un Divisional CISO que sí los
+   tiene.
+2. **En un grupo, la pregunta clave es dónde vive el presupuesto.** Si cada filial financia su
+   seguridad, el CISO de grupo influye; si el presupuesto se consolida arriba, manda. Todo lo demás
+   —comités, políticas, reportes— se deriva de ahí.
+3. **El Divisional CISO no es un [BISO](biso.md).** El primero tiene mandato y presupuesto de su
+   división; el segundo es un enlace sin presupuesto. Si una oferta usa los dos términos como
+   sinónimos, la oferta no sabe lo que ofrece.
 
 ## 🏛️ Mandato, autoridad y línea de reporte
 
@@ -79,6 +124,75 @@ se sostiene solo en la simpatía personal, que se agota en el primer conflicto.
 > **La autoridad real de un CISO es prestada.** Casi nadie de quien depende el arreglo te reporta:
 > lo parchea infraestructura, lo corrige desarrollo, lo firma legal y lo paga finanzas. Se gobierna
 > con datos, con comité y con credibilidad — no con jerarquía.
+
+### Con quién te relacionas y qué negocias con cada uno
+
+Buena parte del cargo es una red de relaciones con pares que no te reportan y a los que no puedes
+dar órdenes. Cada una tiene su propia moneda de cambio:
+
+| Interlocutor | Qué espera de ti | Qué necesitas de él | La tensión que hay que gestionar |
+|---|---|---|---|
+| **CEO** | Que el riesgo no le explote y que no le frenes el negocio | Respaldo público cuando hay que imponer un control impopular | Te mide por ausencia de problemas, que es justo lo que no se puede demostrar |
+| **Directorio y comité de riesgo** | Una página, cifras comparables y decisiones claras | Aprobación de la política, del apetito de riesgo y del presupuesto | Ven seguridad dos veces al año: cada sesión tiene que valer por seis meses |
+| **CIO / CTO** | Que no bloquees entregas ni proyectos | Inventario, arquitectura, capacidad de parcheo y de despliegue | Sus incentivos son entregar rápido; los tuyos, entregar seguro. Si además le reportas, el conflicto es estructural y hay que compensarlo con una vía de escalamiento |
+| **CRO / riesgo operacional** | Riesgo cibernético en su taxonomía y comparable con los demás | Que el riesgo cibernético entre en el mapa de riesgos de la empresa | Traducir controles técnicos a categorías de riesgo empresarial sin perder el significado |
+| **Auditoría interna** | Evidencia, no explicaciones | Que sus hallazgos empujen lo que tú no consigues empujar solo | No puedes auditarte a ti mismo: lo que tú diseñas, otro lo revisa |
+| **Legal y cumplimiento** | Aviso temprano y decisiones documentadas | Interpretación de obligaciones y redacción de cláusulas | Legal responde a la ley; tú, al riesgo. No siempre coinciden |
+| **[DPO](ecosistema-ciso.md#d-cargos-vecinos-que-no-son-tipos-de-ciso)** | Colaboración sin absorción | Criterio de privacidad en decisiones sobre datos | Su independencia está protegida: no se integra en tu equipo ni depende de ti |
+| **Finanzas** | Un caso económico defendible | El presupuesto y su ejecución | Compites con proyectos que sí tienen retorno demostrable |
+| **Recursos humanos** | Un programa de cultura que no moleste | Altas, bajas, disciplina y el proceso de desvinculación | La baja de un empleado es un control de seguridad y casi nunca se trata como tal |
+| **Reguladores** | Interlocución seria y plazos cumplidos | Claridad sobre qué te aplica | No se improvisa en crisis: la relación se construye antes |
+| **Clientes corporativos y aseguradoras** | Evidencia verificable de tus controles | Que sus exigencias financien mejoras reales | Sus cuestionarios pueden ser tu mejor palanca presupuestaria |
+
+### Delegar sin dejar de responder
+
+Un CISO delega la **ejecución**, nunca la **responsabilidad**. La distinción es sencilla de decir y
+difícil de sostener:
+
+- **Se delega:** operar controles, dirigir la respuesta técnica, mantener el registro de riesgos,
+  llevar la relación diaria con un proveedor, preparar el informe.
+- **No se delega:** la relación con el directorio, la firma de la política, la coherencia del
+  programa, la decisión de escalar un riesgo que el negocio quiere enterrar, y la conversación
+  incómoda con un par que no quiere aplicar un control.
+- **Regla práctica:** cada delegación se documenta —qué, a quién, con qué límite y hasta cuándo— y
+  se acompaña de un punto de retorno de información. Delegar sin punto de retorno no es delegar: es
+  desentenderse.
+
+Con [Deputy CISO](ecosistema-ciso.md#a-dirección-interna-y-jerarquía), [BISO](biso.md) o
+[vCISO](vciso.md) contratados, la regla se vuelve más importante, no menos: **cuanto más reparto
+hay, más explícito tiene que ser quién responde por qué**.
+
+### El modelo operativo de la oficina del CISO
+
+En cuanto el cargo pasa de una persona a un área, hay que decidir cómo se organiza. Cinco funciones
+cubren casi todo, y en organizaciones pequeñas las hace la misma persona en días distintos:
+
+| Función | Qué produce | Con quién trabaja |
+|---|---|---|
+| **Gobierno y riesgo** | Política, registro de riesgos, comité, métricas, cumplimiento y auditoría | Legal, riesgo, auditoría, [GRC](grc.md) |
+| **Arquitectura e ingeniería de seguridad** | Estándares, revisión de diseño, controles nuevos | [Arquitectura](arquitecto-it-ot.md), TI, [nube](cloud-security.md) |
+| **Operaciones de seguridad** | Detección, respuesta, vulnerabilidades, accesos | [SOC](soc-blue-team.md), [SecOps](secops-analista.md), TI |
+| **Seguridad de producto o de aplicaciones** | Ciclo de desarrollo seguro, requisitos, revisión de código | [AppSec](appsec.md), [DevSecOps](devsecops-engineer.md), [Product CISO](product-ciso.md) |
+| **Enlace con el negocio** | Traducción, priorización, excepciones | [BISO](biso.md), dueños de proceso |
+
+Dos decisiones definen el modelo más que el organigrama: **qué se externaliza** (el monitoreo
+24 × 7 casi siempre; el criterio, nunca) y **qué se federa** en las unidades de negocio frente a
+qué se centraliza. Ambas se revisan cada año, porque la organización cambia.
+
+### Tener el título frente a tener el mandato
+
+Se puede llevar la tarjeta y no tener el cargo. La prueba está en tres respuestas:
+
+1. ¿Existe un presupuesto de seguridad y lo firmas o lo defiendes tú?
+2. ¿Quién firma la aceptación de un riesgo que decides no tratar? Si la respuesta es «tú», te han
+   dado la responsabilidad sin la autoridad.
+3. ¿Puedes detener un despliegue o una compra, y está escrito en algún sitio?
+
+Si las tres respuestas son negativas, el cargo es **decorativo**: la organización ha nombrado a un
+responsable para poder señalarlo, no para que cambie nada. Es una situación negociable —muchos CISO
+empiezan así y construyen el mandato— pero hay que verla antes de firmar, no después. El
+[test completo de ocho preguntas](ecosistema-ciso.md#-el-test-del-mandato-cómo-comprobar-un-cargo-real)
+está en la página del ecosistema.
 
 ## 🗓️ El año del CISO
 
@@ -244,10 +358,14 @@ La práctica de este cargo **no es un laboratorio de hacking**, y conviene decir
 - 💰 **Haz el ejercicio del presupuesto:** defiende una inversión de seguridad con riesgo cuantificado —pérdida esperada con y sin control, coste del control— ante alguien que no es técnico. Si no consigues la decisión, el problema no fue del oyente.
 - 🧪 [`blue-team-soc`](../labs/blue-team-soc/README.md) y [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) — para **no perder el contacto técnico**: el día que dejas de entender lo que hace tu equipo, empiezas a decidir a ciegas y a comprar humo.
 - ☁️ [`cloud-security`](../labs/cloud-security/README.md) — el tipo de informe de postura que vas a revisar y cuestionar cada trimestre.
+- 🎩 **[`labs/ciso-leadership`](../labs/ciso-leadership/README.md) — el laboratorio ejecutivo del programa.** Catorce escenarios sobre organizaciones ficticias con plantillas y rúbricas; los siete primeros son de este cargo: informe al directorio, registro de riesgos con aceptaciones firmadas, plan director, defensa de presupuesto, ejercicio de mesa, proveedor crítico y plan de 90 días. Trae además las [quince plantillas](../labs/ciso-leadership/PLANTILLAS.md) que producen los diez entregables de la sección anterior.
 
-## 🗓️ Tus primeros 90 días
+## 🗓️ Tus primeros 30, 60 y 90 días
 
-Es la pregunta clásica de la entrevista, y también un buen plan de estudio:
+Es la pregunta clásica de la entrevista, y también un buen plan de estudio. La
+[plantilla completa](../labs/ciso-leadership/PLANTILLAS.md#6--plan-de-306090-días) está en el
+laboratorio ejecutivo, y el [escenario 7](../labs/ciso-leadership/README.md#7--plan-de-90-días) te
+hace construirla sobre una organización ficticia:
 
 - **Días 1–30 · Entender y escuchar.** Reuniones con negocio, TI, legal, riesgo y auditoría. Qué
   procesos son críticos, qué datos existen, qué incidentes hubo, qué hallazgos de auditoría siguen
@@ -262,6 +380,11 @@ Es la pregunta clásica de la entrevista, y también un buen plan de estudio:
 
 Un error frecuente en esa ventana: llegar anunciando la compra de una plataforma. Lo que da
 credibilidad no es el producto, es el diagnóstico.
+
+Y un criterio de cierre que conviene fijarse antes de empezar: **el día 90 debe terminar con una
+decisión pedida a la dirección**, no con un informe. Un plan de 90 días que acaba en diagnóstico ha
+producido conocimiento, pero no ha conseguido mandato — y sin mandato el año siguiente será una
+sucesión de recomendaciones sin dueño.
 
 ## 📏 Cómo se te mide
 
@@ -384,9 +507,17 @@ nominal. Pregúntalo en la entrevista: define el puesto entero.
    pedida. Si tu interlocutor no sabe qué tiene que decidir al terminar, repítelo.
 7. **Planifica CISSP y CISM**, e **ISO 27001 Lead Implementer** si tu organización va hacia un SGSI
    certificado. Y rinde el [examen final de este rol](../docs/examen-final-por-rol.md).
+8. **Sitúate en el ecosistema.** Antes de aceptar cualquier cargo con «CISO» en el nombre, lee
+   [El ecosistema CISO](ecosistema-ciso.md) y aplícale el
+   [test del mandato](ecosistema-ciso.md#-el-test-del-mandato-cómo-comprobar-un-cargo-real). Después
+   resuelve la [evaluación del ecosistema](../labs/ciso-leadership/EVALUACION.md): comprueba que
+   distingues quién decide, quién asesora y quién responde.
 
 ---
 
 - ⬅️ [Volver al índice de rutas](./README.md)
+- 🗂️ **[El ecosistema CISO](ecosistema-ciso.md)** — mapa de cargos, matriz comparativa y test del mandato
 - 👔 [Ruta vecina: Jefe de Seguridad de la Información](ciso-jefe-seguridad.md) · 🏛️ [GRC / Gestión de seguridad](grc.md)
+- 🛰️ [Field CISO](field-ciso.md) · 🧾 [vCISO](vciso.md) · 🔗 [BISO](biso.md) · 📦 [Product CISO](product-ciso.md) · 🤖 [AI CISO](ai-ciso.md) · 🏭 [OT CISO](ot-ciso.md)
+- 🧪 [Laboratorio ejecutivo CISO](../labs/ciso-leadership/README.md)
 - 🏠 [Inicio del programa](../README.md)

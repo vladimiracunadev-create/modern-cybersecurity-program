@@ -32,6 +32,15 @@ Por eso GRC no es un adorno burocrático: es **la capa que conecta la trinchera 
 sala de juntas**. Y es de los caminos con mejor techo salarial del sector, porque desemboca en
 la ruta hacia **CISO**.
 
+> 🗂️ **GRC asesora y mide; no decide.** Esa es la diferencia con los cargos de dirección hacia los
+> que este camino desemboca. Si quieres saber cuál de ellos te corresponde —[CISO](ciso.md) y sus
+> alcances, [BISO](biso.md), [vCISO](vciso.md), [Field CISO](field-ciso.md),
+> [Product CISO](product-ciso.md), [AI CISO](ai-ciso.md) u [OT CISO](ot-ciso.md)— y en qué se
+> separan de verdad, empieza por **[🗂️ El ecosistema CISO](ecosistema-ciso.md)**. Y practica la
+> traducción con el **[laboratorio ejecutivo](../labs/ciso-leadership/README.md)**: sus escenarios
+> **2** (registro de riesgos con dueños), **6** (proveedor crítico) y **11** (roadmap de una unidad
+> de negocio) son GRC puro.
+
 ## 🗓️ Un día en el puesto
 
 No hay turnos ni alertas a las 3 de la mañana. El ritmo lo marcan los proyectos, las auditorías
@@ -190,8 +199,14 @@ USD asumen contratación por empresas de EE. UU./Europa, muy competida y con lis
    directivo pueda leer y decidir. Esa habilidad es tu producto.
 5. Apunta a **Security+** para abrir puertas ya, y planifica **CISSP** (o ISO 27001 Lead / CISM)
    como meta a medio plazo, cuando tengas la experiencia que exigen.
+6. **Elige tu destino de dirección.** Este camino no desemboca solo en CISO: también en
+   [BISO](biso.md), [vCISO](vciso.md) o una especialización como
+   [AI CISO](ai-ciso.md) u [OT CISO](ot-ciso.md). El
+   [ecosistema CISO](ecosistema-ciso.md) los compara con la única vara que no engaña: mandato,
+   presupuesto, equipo y quién acepta el riesgo.
 
 ---
 
 - ⬅️ [Volver al índice de rutas](./README.md)
+- 🗂️ [El ecosistema CISO](ecosistema-ciso.md) · 🧪 [Laboratorio ejecutivo CISO](../labs/ciso-leadership/README.md)
 - 🏠 [Inicio del programa](../README.md)

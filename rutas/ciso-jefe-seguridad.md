@@ -16,6 +16,12 @@
 
 ## 🧭 Qué es y por qué importa
 
+> 🗂️ **Este cargo es la antesala del CISO, no una variante suya.** Diriges el programa pero el
+> presupuesto lo pides. Para ver dónde encaja frente a los demás cargos que usan la palabra CISO
+> —y frente a los que no lo son, como el CSO, el CIO o el DPO—, lee
+> **[🗂️ El ecosistema CISO](ecosistema-ciso.md)**. La práctica de dirección está en el
+> **[laboratorio ejecutivo](../labs/ciso-leadership/README.md)**.
+
 Es el primer rol de este programa donde **diriges personas y respondes por resultados**, no por
 tareas. En una organización mediana el título suele ser *Jefe de Seguridad de la Información*, y en
 algunas *Gerente de Ciberseguridad*: el contenido es el mismo — eres **la persona a la que
