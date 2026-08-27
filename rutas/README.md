@@ -10,6 +10,12 @@ practicar y a qué certificación apuntar. Todas asumen que **empiezas por la Pa
 > 🗺️ **¿Te suenan todos iguales SOC, SecOps, DevSecOps, AppSec y Cloud Security?** No lo son, y las
 > ofertas de empleo los mezclan. La **[matriz de roles SecOps y DevSecOps](../docs/matriz-roles-secops-devsecops.md)**
 > los separa por lo único que no engaña: qué hace la persona cada día, qué decide y qué entrega.
+>
+> 🗂️ **¿Y CISO, Field CISO, vCISO, BISO, Product CISO, AI CISO y OT CISO?** Tampoco son lo mismo:
+> unos tienen mandato, otros asesoran desde un proveedor y otros son un modelo de contratación. El
+> **[ecosistema CISO](ecosistema-ciso.md)** los ordena en cuatro familias, con matriz comparativa,
+> las distinciones que no se pueden confundir y un test de ocho preguntas para saber si un cargo
+> tiene mandato real o es decorativo.
 
 ---
 
@@ -190,7 +196,134 @@ El **máximo responsable** de la seguridad de la información y la cibersegurida
 - 🎲 **[219 · Tabletop](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md)** es la práctica principal · 📋 construye los **diez entregables del cargo** (política, plan director, registro de riesgos, SoA, BIA/BCP, plan de respuesta, programa de vulnerabilidades, marco de terceros, concienciación e informe ejecutivo) · 🧪 [`blue-team-soc`](../labs/blue-team-soc/README.md) y [`cloud-security`](../labs/cloud-security/README.md) para no perder el contacto técnico
 - 🎓 **CISSP** · (fuera del programa: **CISM**, **CRISC**, **ISO 27001 Lead Implementer**, CCISO)
 - 💡 El programa te da **el cuerpo de conocimiento** del cargo. Lo que aportas tú: los años de trayectoria, defender un presupuesto ante un directorio, el trato con reguladores y aseguradoras, el inglés de negocio y haber gestionado una crisis real.
-- 📖 **[Guía de carrera completa →](ciso.md)** — mandato y línea de reporte, el año del CISO, entregables, primeros 90 días, cómo se te mide, certis, salario y progresión.
+- 📖 **[Guía de carrera completa →](ciso.md)** — mandato y línea de reporte, **los alcances del cargo (global, regional, divisional, deputy y associate)**, con quién negocias, delegación, modelo operativo de la oficina del CISO, el año del CISO, entregables, primeros 30/60/90 días, cómo se te mide, certis, salario y progresión.
+- 🗂️ **[Sitúate primero en el ecosistema →](ecosistema-ciso.md)** — porque no todo lo que se llama CISO lo es.
+
+---
+
+## 🗂️ El ecosistema CISO: seis rutas más alrededor del cargo
+
+Hay una sola palabra —**CISO**— y al menos veinte cargos que la usan. La página
+**[🗂️ El ecosistema CISO](ecosistema-ciso.md)** es el índice y el árbitro: mapa de cargos,
+definiciones, clasificación en cuatro familias, matriz comparativa central con diez atributos,
+rutas de progresión, contexto chileno con fuentes oficiales y el
+[test del mandato](ecosistema-ciso.md#-el-test-del-mandato-cómo-comprobar-un-cargo-real).
+
+Las seis rutas que siguen tienen guía propia porque su trabajo, su audiencia y sus entregables son
+distintos. **Todas comparten el mismo laboratorio ejecutivo**:
+🧪 [`ciso-leadership`](../labs/ciso-leadership/README.md) — catorce escenarios sobre organizaciones
+ficticias, [quince plantillas](../labs/ciso-leadership/PLANTILLAS.md) y una
+[evaluación](../labs/ciso-leadership/EVALUACION.md) de quién decide, quién asesora y quién
+responde.
+
+### 🛰️ Field CISO / Customer CISO
+
+El CISO **que no es tu CISO**: trabaja para un proveedor —fabricante, MSSP, consultora, proveedor de nube— y asesora a los clientes de ese proveedor. No controla su presupuesto, no dirige su equipo y **no acepta su riesgo residual**. Puede participar en preventa; lo que no puede es disfrazar una recomendación comercial de auditoría independiente. Aquí caben también los cargos de «Cloud CISO» en un proveedor.
+
+1. 📚 **Parte 0** — **002** amenazas · **003** frameworks · **025** ética (la clase que sostiene el puesto)
+2. 📚 **Parte 14** — **276**/**277**/**278**/**279** gobierno y riesgo · **284** terceros (léela desde el otro lado: el tercero eres tú) · **287** métricas · **288** seguros
+3. 📚 **Parte 17** — **321** comunicación y reporte · **320** gobierno y regulación · **328** riesgo cuantitativo · más **067** alcance y contratos y **085** reporte profesional de la Parte 3
+4. 📚 **Partes 8, 9, 10, 11 y 15** — **181**/**183**/**195**/**197** para no farolear sobre operación · **202**/**219** la crisis · **221**/**231** nube · **236**/**246** SDLC y cadena de suministro · **300** gobernanza de IA
+
+- 🧪 [`ciso-leadership`](../labs/ciso-leadership/README.md) escenarios **8** (descubrimiento) y **9** (recomendación técnico-comercial transparente) · 📋 entrega una recomendación con **hecho, hipótesis, opinión y propuesta** etiquetados y el conflicto de interés declarado
+- 🎓 **CISSP** · (fuera del programa: **CISM**, **CRISC**, y la certificación del fabricante para el que trabajes)
+- 💡 El programa te da el criterio y el vocabulario. Lo que aportas tú: la trayectoria ejecutiva, hablar en público, escribir para no técnicos y sostener una conversación comercial honesta.
+- 📖 **[Guía de carrera completa →](field-ciso.md)**
+
+### 🧾 vCISO, Fractional, Interim y CISO as a Service
+
+Cuatro términos que **no son sinónimos**: «virtual» describe el cómo, «fractional» el cuánto, «interim» el hasta cuándo y «CISO as a Service» el quién responde. Ejerces funciones de CISO **por contrato**, y tu autoridad es exactamente la que ese contrato te conceda — ni más, ni menos. El riesgo residual lo sigue firmando el cliente.
+
+1. 📚 **Parte 0** — **001** · **003** frameworks · **025** ética y alcance
+2. 📚 **Parte 14 entera** — es el núcleo del encargo, sin recortes
+3. 📚 **Parte 17** — **320** · **328** · **321** · **318** vulnerabilidades · **324** hardening · **313**/**315** identidad y PAM · **311**/**312** datos y DLP
+4. 📚 **Partes 8, 9, 10 y 12** — lo que dirigirás sin equipo propio: **181**/**183**/**197** · **202**/**215**/**216**/**219** · **221**/**222**/**234** · **259** ingeniería social · **319** phishing
+5. 📚 **Parte 3** — **067** alcance y contratos · **085** reporte profesional
+
+- 🧪 [`ciso-leadership`](../labs/ciso-leadership/README.md) escenario **10** (alcance contractual) y los escenarios **2** a **7**, que son tu trabajo mensual · 📋 el entregable que te define es la **declaración de trabajo** y el **paquete de traspaso**
+- 🎓 **CISSP** · (fuera del programa: **CISM** —la más alineada—, **ISO 27001 Lead Implementer**, CRISC)
+- 💡 Aquí las certificaciones sí pesan de forma práctica: son parte de la propuesta ante un cliente que no te conoce. Lo que aportas tú: vender, dimensionar, decir «esto no entra en el alcance» y traspasar sin resentimiento.
+- 📖 **[Guía de carrera completa →](vciso.md)**
+
+### 🔗 BISO / Business Information Security Officer
+
+El **traductor bidireccional** entre una unidad de negocio y el programa central de seguridad. Se sienta donde se decide el producto y lleva allí el riesgo en el idioma de esa mesa; después vuelve al programa central con lo que esa unidad necesita de verdad. **No es un CISO pequeño**, y no es lo mismo que un Divisional CISO: aquel tiene presupuesto y mandato.
+
+1. 📚 **Parte 0** — **001** · **002** · **003** · **025**
+2. 📚 **Parte 14** — **277** riesgo (**la clase central**) · 276 · 278 · 279 · 282 · **284** terceros · 285 · 286 · **287** KPI/KRI · 289
+3. 📚 **Parte 17** — **321** comunicación (la competencia que define el puesto) · **328** · 320 · 318 · 311 · 313 · 329
+4. 📚 **Partes 11, 10, 9 y 8** — **236**/**237** para entrar temprano en los proyectos · **245**/**248** priorización y *security champions* · 221/231 nube · **202**/**215**/**219** la crisis · 197 métricas del SOC
+
+- 🧪 [`ciso-leadership`](../labs/ciso-leadership/README.md) escenario **11** (roadmap de una unidad) · 📋 el ejercicio que lo define: **informar el mismo mes dos veces** —a tu unidad y al CISO— sin una sola contradicción
+- 🎓 **CISSP** · CySA+ si vienes de operación · (fuera del programa: **CISM**, CRISC)
+- 💡 Es una de las mejores escuelas de CISO: obliga a traducir riesgo a lenguaje de negocio todos los días.
+- 📖 **[Guía de carrera completa →](biso.md)**
+
+### 📦 Product CISO
+
+Responde por la seguridad y la confianza de **lo que la empresa vende**, no de lo que usa. Su cliente es el cliente. Título emergente —convive con *Head of Product Security*— y la ruta más técnica de todo el ecosistema: su palanca característica es la **puerta de publicación**.
+
+1. 📚 **Parte 0** — **003** · **025** ética y divulgación responsable (sostiene tu política de divulgación)
+2. 📚 **Parte 11 entera** — **236**/**237** las dos clases centrales · 238–244 análisis, pipeline y políticas como código · **245**/**246**/**247**/**248**
+3. 📚 **Parte 4** — **086**/**087**/**115** el producto visto desde el ataque · **114** bug bounty, leída desde el lado del que recibe los reportes
+4. 📚 **Parte 10** — **221** responsabilidad compartida (el modelo que tú escribirás para tus clientes) · 222 · 227 · 233 · 234
+5. 📚 **Partes 14, 17, 15 y 13** — **284** terceros (el tercero eres tú) · 278 · 281 · 289 · 287 · **323**/**330**/**321** · **295**/**297** si el producto lleva IA · **266**/**267**/**274**/**275** si es un dispositivo
+
+- 🧪 [`ciso-leadership`](../labs/ciso-leadership/README.md) escenario **12** (paquete de confianza) · 🧪 [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) y [`appsec-code`](../labs/appsec-code/README.md) · 📋 un paquete de confianza con **al menos tres afirmaciones negativas verificables**
+- 🎓 **CSSLP** · **CISSP** · marcos: **OWASP SAMM** y **ASVS**
+- 💡 El programa te da el ciclo de desarrollo seguro completo. Lo que aportas tú: haber respondido a una vulnerabilidad real y haber publicado el aviso.
+- 📖 **[Guía de carrera completa →](product-ciso.md)**
+
+### 🤖 AI CISO / gobierno de la IA
+
+Responde por los sistemas de inteligencia artificial de la organización: los que construye, los que compra, los que sus empleados usan sin avisar y los que sus proveedores incorporaron sin decírselo. **Es el título menos consolidado del ecosistema**, y la guía lo dice sin adornos: comprueba el mandato antes de aceptarlo.
+
+1. 📚 **Parte 0** — **001** · **003** · **025**
+2. 📚 **Parte 15 entera** — 291–294 ataques a modelos · **295**/**296**/**297** aplicaciones con LLM, RAG y agentes · 298 · 299 · **300** gobernanza y ética (la clase que define la ruta)
+3. 📚 **Parte 18** — **331** capacidades y límites · **332** agentes y MCP · 337 · **339** riesgos, guardrails y ética, leída como catálogo de lo que tienes que gobernar
+4. 📚 **Partes 14, 17, 11 y 10** — 276 · 277 · 282 · 284 · 287 · **289** privacidad · **311**/**312** el dato · 320 · 321 · 236/237/247 la aplicación que rodea al modelo · 222 IAM
+5. 📚 **Parte 9** — **202**/**215**/**219** la crisis de un sistema que actuó por su cuenta
+
+- 🧪 [`ciso-leadership`](../labs/ciso-leadership/README.md) escenario **13** (inventario y riesgos de IA) · 🧪 [`kali-mcp-ia`](../labs/kali-mcp-ia/README.md) recorrido **desde el lado del que gobierna al agente** · 📋 un registro de riesgos donde **cada riesgo es un escenario concreto**, nunca una categoría abstracta
+- 🎓 **No hay certificación consolidada de referencia**, y esta guía no inventa una. Base: **CISM**/**CRISC**/**CISSP** y **CIPP/CIPM** para privacidad. Marcos: **NIST AI RMF**, **ISO/IEC 42001**, **OWASP Top 10 para LLM**
+- 💡 Ninguna vía de origen llega completa a este puesto, y eso es una característica, no un defecto.
+- 📖 **[Guía de carrera completa →](ai-ciso.md)**
+
+### 🏭 OT CISO / CISO industrial
+
+La única ruta del ecosistema donde un fallo puede **herir a una persona**. Eso invierte la jerarquía: primero la seguridad de las personas, después la continuidad del proceso, y solo entonces la confidencialidad. Un control que pueda impedir una parada de emergencia **no se implanta**, por bien que se vea en la política corporativa.
+
+1. 📚 **Parte 0** — **001** · **002** · **003** · **025**
+2. 📚 **Parte 13** — **273** ICS/SCADA (**la clase central**) · 266 · 267 · 268 · 269 · y según tu sector **274** automotriz o **275** dispositivos médicos
+3. 📚 **Parte 1** — **034** firewalls y **042** segmentación (el par que convierte zonas y conductos en reglas reales) · **043**/**044** monitoreo pasivo y Zeek · 026 · 036 · 039
+4. 📚 **Parte 14** — **283** continuidad (la que más pesa aquí) · 277 · 278 · 279 · 284 · 287
+5. 📚 **Parte 17** — **316** · **329** · **317** seguridad física · **315** PAM para el acceso remoto de fabricantes · 318 · 324 · 320 · 328
+6. 📚 **Partes 8, 9, 7 y 12** — **182**/**183**/**191**/**197** · **202**/**215**/**216**/**219** · **170** Active Directory · **258**/**259** lo que te llega desde el lado corporativo
+
+- 🧪 [`ciso-leadership`](../labs/ciso-leadership/README.md) escenario **14** (incidente OT con continuidad y seguridad de las personas) · 🧪 [`redes-nmap`](../labs/redes-nmap/README.md) para entender **qué hace un escaneo activo**, que es justo lo que no lanzarás contra un PLC · 🏗️ la ruta hermana de [Arquitecto IT/OT](arquitecto-it-ot.md) monta el PLC simulado
+- 🎓 **CISSP** · (fuera del programa: credenciales **ISA/IEC 62443**, **GICSP**, CISM)
+- 💡 Lo que más pesa en una entrevista de este puesto es haber estado en una planta y saber por qué no se escanea en producción.
+- 📖 **[Guía de carrera completa →](ot-ciso.md)**
+
+### La familia CISO de un vistazo
+
+| Rol | Interno o externo | Autoridad sobre el riesgo | Componente comercial |
+|---|---|---|---|
+| [CISO](ciso.md) (y global, regional, divisional, deputy, associate) | Interno | Responde por el programa; el residual lo acepta el negocio | No |
+| [Field CISO / Customer CISO](field-ciso.md) | **Externo** (un proveedor) | **Ninguna** sobre el cliente | **Sí, y hay que declararlo** |
+| [vCISO / Fractional / Interim / CISOaaS](vciso.md) | **Externo contratado** | La que fije el contrato; el residual lo firma el cliente | En la venta del contrato, no dentro del encargo |
+| [BISO](biso.md) | Interno | Traduce y prioriza; el dueño es la unidad | No |
+| [Product CISO](product-ciso.md) | Interno | Responde por el riesgo **del producto** | Indirecto |
+| [AI CISO](ai-ciso.md) | Interno | Sobre los sistemas de IA | No |
+| [OT CISO](ot-ciso.md) | Interno | **Compartida** con Operaciones | No |
+
+> **Y los que no son tipos de CISO:** CSO, CIO, CTO, CRO, Chief Trust Officer, **DPO**,
+> [Jefe de Seguridad de la Información](ciso-jefe-seguridad.md),
+> [GRC Manager](grc.md), [Security Architect](arquitecto-it-ot.md),
+> [AppSec Lead](appsec.md), [SOC Manager](soc-blue-team.md),
+> [DevSecOps Lead](devsecops-engineer.md) e [Incident Response Manager](dfir.md). Se comparan en el
+> [ecosistema](ecosistema-ciso.md#d-cargos-vecinos-que-no-son-tipos-de-ciso) para no confundirlos,
+> no porque deriven del CISO.
 
 ---
 
@@ -370,6 +503,9 @@ desarrollo → pipeline → nube → producción → monitoreo → incidente →
 - Refuerza con las [autoevaluaciones](../autoevaluaciones/README.md) por parte.
 - Marca tu avance en el [seguimiento de progreso](../autoevaluaciones/README.md#progreso).
 - Cierra con los **capstones** de la [Parte 16](../classes/parte-16-capstones-y-preparacion-de-certificaciones/README.md).
+- Si apuntas a un cargo de dirección, resuelve además la
+  [evaluación del ecosistema CISO](../labs/ciso-leadership/EVALUACION.md) y su
+  [laboratorio ejecutivo](../labs/ciso-leadership/README.md).
 
 > ¿No encajas en un solo rol? Es normal. Combina rutas: casi todos los perfiles se benefician
 > de entender **el otro lado** (un pentester que sabe cómo lo detectan es mejor pentester).

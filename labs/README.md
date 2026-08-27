@@ -41,6 +41,7 @@ docker compose down -v      # apagar y borrar también los volúmenes/datos
 | [`redes-nmap`](redes-nmap/README.md) | Objetivos en red aislada + scanner nmap para descubrimiento y enumeración | Parte 1 | ✅ Disponible |
 | [`pwn-binarios`](pwn-binarios/README.md) | Binario vulnerable + gdb/pwntools para explotación de stack overflow | Parte 5 | ✅ Disponible |
 | [`cloud-security`](cloud-security/README.md) | Toolbox Prowler/ScoutSuite/trivy/kube-bench para auditoría CSPM | Parte 10 | ✅ Disponible |
+| [`ciso-leadership`](ciso-leadership/README.md) | **Laboratorio ejecutivo**: 14 escenarios de dirección sobre organizaciones ficticias, 15 plantillas y evaluación · [organizaciones](ciso-leadership/ORGANIZACIONES.md) · [plantillas](ciso-leadership/PLANTILLAS.md) · [evaluación](ciso-leadership/EVALUACION.md) | Partes 14 y 17 · 202, 215, 219, 284, 287, 300, 273 | ✅ Disponible · 📄 sin Docker |
 | [`devsecops-pipeline`](devsecops-pipeline/README.md) | Repo vulnerable + auditoría en **8 capas** (deps, SAST, secretos, Dockerfile, contenedor, CI/CD, typosquat y priorización KEV/EPSS/CVSS) con informe · trayectos [Analista](devsecops-pipeline/TRAYECTO-ANALISTA-DEVSECOPS.md) e [Ingeniero DevSecOps](devsecops-pipeline/TRAYECTO-INGENIERO-DEVSECOPS.md) | Parte 11 (236–248) · 227, 318, 330 | ✅ Disponible |
 
 Además: **[🚩 Retos tipo CTF](../ctf/README.md)** — colección de retos por categoría (web, cripto, redes, forense, OSINT, pwn) con solución.
@@ -56,9 +57,25 @@ concreto de un puesto, sin duplicar el entorno ni tocar su funcionamiento.
 | [Analista DevSecOps](devsecops-pipeline/TRAYECTO-ANALISTA-DEVSECOPS.md) | `devsecops-pipeline` | [Analista DevSecOps](../rutas/devsecops-analista.md) | Normalizar, deduplicar, triar falsos positivos, priorizar, tickets y SLA, excepción, verificación e informe |
 | [Ingeniero DevSecOps](devsecops-pipeline/TRAYECTO-INGENIERO-DEVSECOPS.md) | `devsecops-pipeline` | [Ingeniero DevSecOps](../rutas/devsecops-engineer.md) | Construir el pipeline: gates proporcionales, secretos y permisos, SBOM, firma, policy as code, excepciones que caducan y reversión demostrada |
 
+Y en `ciso-leadership` el reparto es por escenario en lugar de por trayecto: los escenarios **1–7**
+son de [CISO](../rutas/ciso.md), el **8** y el **9** de [Field CISO](../rutas/field-ciso.md), el
+**10** de [vCISO](../rutas/vciso.md), el **11** de [BISO](../rutas/biso.md), el **12** de
+[Product CISO](../rutas/product-ciso.md), el **13** de [AI CISO](../rutas/ai-ciso.md) y el **14**
+de [OT CISO](../rutas/ot-ciso.md). El mapa completo de cargos está en el
+[ecosistema CISO](../rutas/ecosistema-ciso.md).
+
 ## Convención de cada laboratorio
 
 Cada carpeta `labs/<lab>/` contiene:
 
 - `docker-compose.yml` — el entorno, con puertos atados a `127.0.0.1` y red aislada.
 - `README.md` — objetivo, cómo levantarlo, **recorrido guiado** paso a paso ligado a las clases, retos con criterio de aceptación y cómo apagarlo.
+
+### La excepción: laboratorios documentales
+
+[`ciso-leadership`](ciso-leadership/README.md) **no tiene `docker-compose.yml` y no ataca nada**, y
+es deliberado: su materia de trabajo son decisiones, documentos y conversaciones, no contenedores.
+Mantiene el resto de la convención —README con recorrido guiado, entregables y criterio de
+aceptación— y añade rúbricas, porque lo que se evalúa no es un resultado técnico reproducible sino
+un juicio profesional. Sus escenarios se trabajan sobre **organizaciones ficticias**, con límites
+éticos y legales explícitos en cada uno.

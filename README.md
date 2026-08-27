@@ -176,11 +176,13 @@ comando, más una colección de retos tipo CTF:
 - 🌐 **[Escaneo de red (nmap)](labs/redes-nmap/README.md)** · 💥 **[Explotación de binarios (pwn)](labs/pwn-binarios/README.md)** · ☁️ **[Auditoría cloud (CSPM)](labs/cloud-security/README.md)** — Partes 1, 5 y 10.
 - 🚩 **[Retos tipo CTF](ctf/README.md)** — web, cripto, redes, forense, OSINT y pwn, con writeups.
 
+- 🎩 **[Laboratorio ejecutivo CISO](labs/ciso-leadership/README.md)** — 14 escenarios de **dirección** sobre organizaciones ficticias (informe al directorio, registro de riesgos, plan director, presupuesto, tabletop, proveedor crítico, 90 días, descubrimiento y recomendación de Field CISO, alcance de vCISO, roadmap de BISO, paquete de confianza de producto, inventario de riesgos de IA e incidente OT), con [15 plantillas](labs/ciso-leadership/PLANTILLAS.md), rúbricas y [evaluación](labs/ciso-leadership/EVALUACION.md). Sin Docker: aquí se practica decidir · Partes 14 y 17.
+
 ➡️ Ver todo en **[labs/](labs/README.md)**.
 
 ## 🧭 Portal: rutas, autoevaluación y progreso
 
-- 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, **analista SecOps**, DFIR, **gestión de vulnerabilidades**, AppSec, **analista DevSecOps**, **ingeniero DevSecOps**, cloud, GRC, **analista de ciberseguridad (institución regulada)**, **analista de seguridad ofensiva**, **ingeniero SecOps / security engineer**, **seguridad de infraestructura**, **operación de plataformas (MSSP/DLP)**, **jefe de seguridad**, **jefe de infraestructura y ciberseguridad**, **CISO / director de seguridad de la información**, **arquitecto de ciberseguridad IT/OT** y **cooperación/alianzas técnicas**.
+- 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, **analista SecOps**, DFIR, **gestión de vulnerabilidades**, AppSec, **analista DevSecOps**, **ingeniero DevSecOps**, cloud, GRC, **analista de ciberseguridad (institución regulada)**, **analista de seguridad ofensiva**, **ingeniero SecOps / security engineer**, **seguridad de infraestructura**, **operación de plataformas (MSSP/DLP)**, **jefe de seguridad**, **jefe de infraestructura y ciberseguridad**, **CISO / director de seguridad de la información**, **arquitecto de ciberseguridad IT/OT** y **cooperación/alianzas técnicas** — más el **[ecosistema CISO](rutas/ecosistema-ciso.md)** con seis rutas propias alrededor del cargo: **Field CISO**, **vCISO**, **BISO**, **Product CISO**, **AI CISO** y **OT CISO**.
 - 🗺️ **[Matriz de roles SecOps y DevSecOps](docs/matriz-roles-secops-devsecops.md)** — SOC, SecOps, DevSecOps, AppSec, Cloud Security y DFIR comparados por misión, decisiones, entregables, métricas, clases y progresión, con el diagrama del ciclo desarrollo → pipeline → nube → producción → monitoreo → incidente → aprendizaje.
 - 📝 **[Autoevaluaciones](autoevaluaciones/README.md)** — 97 preguntas (una batería por parte). Versión interactiva con puntuación: [quiz](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/quiz.html).
 - ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/progreso.html)** — marca las 340 clases (se guarda en tu navegador).
@@ -227,13 +229,33 @@ Cada rol tiene una **guía de carrera completa** (qué es, día a día, qué nec
 - **[Arquitecto de Ciberseguridad IT/OT](rutas/arquitecto-it-ot.md)** → Partes 1, 13, 17, 14, 10 (+ 8, 9, 3) · el rol que **diseña** la seguridad de una planta: modelo **Purdue**, **zonas y conductos IEC 62443**, segmentación IT/OT, integración con nube y SOC y auditoría contra **NIST SP 800-82**, NIST CSF e ISO 27001; alineado a **CISSP** (y ISA/IEC 62443 y GICSP fuera del programa).
 - **[Cooperación y Alianzas Técnicas](rutas/cooperacion-alianzas.md)** → Partes 0, 14 (+ 1, 8 para base técnica) · gobernanza, protección de datos y riesgo de terceros; alineado a **CISSP** e **ISO 27001**.
 
+### 🗂️ El ecosistema CISO
+
+Hay una sola palabra —CISO— y al menos veinte cargos que la usan. Unos tienen mandato, otros
+asesoran desde un proveedor y otros son un modelo de contratación. El
+**[🗂️ ecosistema CISO](rutas/ecosistema-ciso.md)** los ordena en cuatro familias, con **matriz
+comparativa** de diez atributos, las distinciones que no se pueden confundir, rutas de progresión,
+**contexto chileno con fuentes oficiales** y un **test de ocho preguntas** para saber si un cargo
+tiene mandato real o es decorativo. Seis de ellos tienen guía propia:
+
+- **[Field CISO / Customer CISO](rutas/field-ciso.md)** → Partes 0, 14, 17 (+ 8, 9, 10, 11, 15) · asesora a **clientes desde un proveedor**: no controla su presupuesto, no dirige su equipo y **no acepta su riesgo residual**. Puede participar en preventa; no puede disfrazar una recomendación comercial de auditoría independiente.
+- **[vCISO / Fractional / Interim / CISO as a Service](rutas/vciso.md)** → Partes 0, 14 (entera), 17 (+ 8, 9, 10, 12) · cuatro términos que **no son sinónimos**: prestación, dedicación, duración y quién responde. Ejerces funciones de CISO **por contrato**, con la autoridad que ese contrato conceda.
+- **[BISO](rutas/biso.md)** → Partes 0, 14, 17 (+ 11, 10, 9, 8) · el **traductor bidireccional** entre una unidad de negocio y el programa central. No es un CISO pequeño, y no es un Divisional CISO.
+- **[Product CISO](rutas/product-ciso.md)** → Partes 0, 11 (entera), 4, 10, 14, 17 (+ 15 y 13 según el producto) · responde por **lo que la empresa vende**: SDLC con puertas de publicación, paquete de confianza, divulgación y avisos de seguridad.
+- **[AI CISO](rutas/ai-ciso.md)** → Partes 0, 15 (entera), 18, 14, 17 (+ 11, 10, 9) · **título emergente y así se declara**: inventario de sistemas de IA, evaluación previa al despliegue, límites de agentes y riesgo de proveedores. Marcos: **NIST AI RMF**, **ISO/IEC 42001**, **OWASP Top 10 para LLM**.
+- **[OT CISO / CISO industrial](rutas/ot-ciso.md)** → Partes 0, 13 (**273**), 1, 14 (**283**), 17 (+ 8, 9, 7, 12) · la única ruta donde un fallo puede **herir a una persona**: inventario pasivo, zonas y conductos, continuidad de proceso y convivencia con Operaciones. Referencias: **NIST SP 800-82 Rev. 3** e **IEC 62443**.
+
+Todas comparten el **[laboratorio ejecutivo `ciso-leadership`](labs/ciso-leadership/README.md)** y
+la **[evaluación del ecosistema](labs/ciso-leadership/EVALUACION.md)**, que comprueba lo único que
+estos cargos no pueden confundir: **quién decide, quién asesora y quién responde**.
+
 ## ✅ Calidad y CI
 
 El repositorio no se publica a ciegas: cada `push` y cada PR pasan por integración continua que valida estructura, enlaces, codificación y build del sitio. Nada llega a `main` en rojo.
 
 | ⚙️ Workflow | Qué cubre |
 |---|---|
-| 🧪 [ci.yml](.github/workflows/ci.yml) | estructura y enlaces internos, navegación bidireccional (anterior/siguiente), codificación UTF-8 sin mojibake, **trazabilidad de fuentes** (`verify-sources`), `markdownlint` y build del sitio |
+| 🧪 [ci.yml](.github/workflows/ci.yml) | estructura y enlaces internos, **catálogo de rutas** (sin guías huérfanas, con sus secciones, sin clases inexistentes y sin anclas rotas), navegación bidireccional (anterior/siguiente), codificación UTF-8 sin mojibake, **trazabilidad de fuentes** (`verify-sources`), `markdownlint` y build del sitio |
 | 🔒 [security.yml](.github/workflows/security.yml) | escaneo de secretos (`gitleaks`) y análisis estático (`bandit`) de los scripts |
 | 🚀 [deploy-pages.yml](.github/workflows/deploy-pages.yml) | genera y despliega el sitio del curso a GitHub Pages |
 | 📱 [release-android.yml](.github/workflows/release-android.yml) | compila y firma el APK, y **abre el artefacto** para comprobar que las clases viajan completas dentro antes de publicarlo |

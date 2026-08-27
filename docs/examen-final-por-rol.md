@@ -138,9 +138,86 @@ comparten la misma estructura; cambia el contenido.
 
 ## 🎩 CISO / Director de Seguridad de la Información
 
-- **Teoría:** Partes 14 y 17 completas (+ 8, 9 y los bloques de nube/DevSecOps de 10–11).
+- **Teoría:** Partes 14 y 17 completas (+ 8, 9 y los bloques de nube/DevSecOps de 10–11). Aprueba antes la [evaluación del ecosistema CISO](../labs/ciso-leadership/EVALUACION.md).
 - **Práctica (de dirección, sin consola):** sobre una organización ficticia con un contexto dado (sector, tamaño, servicios digitales críticos), entrega el **paquete de gobierno**: evaluación contra NIST CSF (actual vs objetivo), **registro de riesgos** con los diez riesgos principales cuantificados y con dueño, **BIA con RTO/RPO** acordados y **plan director a 24 meses con presupuesto**. Después **dirige** un [ejercicio de mesa](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md) de ransomware con reloj: decisiones de contención, criterio de notificación al regulador y comunicación a clientes.
 - **Informe:** **informe ejecutivo de una página** con KPIs/KRIs para el directorio + **acta de aceptación formal de un riesgo** (quién firma, con qué vigencia) + **defensa del presupuesto** en cinco minutos, con pérdida esperada con y sin control. Se evalúa que un lector sin formación técnica sepa **qué tiene que decidir** al terminar.
+- **Dónde practicarlo:** los escenarios **1 a 7** del laboratorio ejecutivo [`ciso-leadership`](../labs/ciso-leadership/README.md), con sus [plantillas](../labs/ciso-leadership/PLANTILLAS.md) y rúbricas.
+- **Criterio eliminatorio:** ningún riesgo del registro puede figurar aceptado por el CISO ni por el área de seguridad.
+
+---
+
+## 🗂️ El ecosistema CISO: seis exámenes más alrededor del cargo
+
+No todo lo que se llama CISO lo es. Estas seis rutas tienen examen propio porque su trabajo, su
+audiencia y sus entregables son distintos —y **ninguno se puede aprobar con el entregable de
+otro**—. El mapa completo, con la matriz comparativa y el test del mandato, está en
+[🗂️ El ecosistema CISO](../rutas/ecosistema-ciso.md); la práctica, en el laboratorio ejecutivo
+[`ciso-leadership`](../labs/ciso-leadership/README.md).
+
+> **Requisito común a los seis.** Antes del examen práctico hay que aprobar la
+> [evaluación del ecosistema CISO](../labs/ciso-leadership/EVALUACION.md), que comprueba lo único
+> que estos roles no pueden confundir: **quién decide, quién asesora y quién responde**. Se aprueba
+> con las dos partes por separado.
+
+## 🛰️ Field CISO / Customer CISO
+
+- **Teoría:** Partes 14 y 17 (+ 0, y los bloques de operación de 8–11 al nivel de «entenderlo, no operarlo»).
+- **Práctica (de asesoría, sin consola):** sobre *Cumbre Security* y *Andes Retail* del laboratorio, recorre el **ciclo completo de una cuenta**: [sesión de descubrimiento](../labs/ciso-leadership/README.md#8--sesión-de-descubrimiento-como-field-ciso) con acta en las palabras del cliente, evaluación de madurez contra NIST CSF con evidencia por puntuación, y [recomendación técnico-comercial](../labs/ciso-leadership/README.md#9--recomendación-técnico-comercial-transparente) de tres opciones —una explícitamente **sin tu producto**— con las cuatro etiquetas `[HECHO]`, `[HIPÓTESIS]`, `[OPINIÓN PROFESIONAL]` y `[PROPUESTA DEL PROVEEDOR]`, la declaración de interés y la limitación conocida de tu producto declarada con plazo y coste.
+- **Informe:** **nota ejecutiva de una página** para el comité del cliente + el **informe interno de retroalimentación a producto** + la respuesta escrita que le das a tu equipo comercial cuando te pide usar incidentes ajenos como palanca de urgencia.
+- **Criterio eliminatorio:** entrega la recomendación a alguien que **no sepa para quién trabajas**. Si no puede separar sin ayuda los hechos de la propuesta comercial, el examen está suspenso aunque el resto sea impecable.
+
+## 🧾 vCISO / Fractional / Interim / CISO as a Service
+
+- **Teoría:** Parte 14 completa y Parte 17 (+ 0, 8, 9 y 10).
+- **Práctica (de dirección contratada):** sobre *Clínica Los Cipreses*, entrega un **encargo completo**: [declaración de trabajo](../labs/ciso-leadership/README.md#10--alcance-contractual-de-un-vciso) que responda a las doce preguntas de alcance y autoridad, evaluación inicial y brecha contra NIST CSF, **registro de riesgos** con dueño con nombre y cargo **dentro del cliente**, plan director a doce meses **dimensionado a las horas contratadas**, un **acta de aceptación de riesgo** firmada por quien corresponde y el **paquete de traspaso**.
+- **Informe:** informe de una página para la gerencia general + la media página que explica al directorio **qué no compra** con este contrato + las cláusulas de crisis fuera de dedicación y de salida por recomendaciones ignoradas.
+- **Criterio eliminatorio:** tres condiciones, todas obligatorias — (a) ningún riesgo aceptado por ti; (b) el plan cabe en las horas contratadas y lo demuestras; (c) otro profesional podría continuar el encargo solo con el paquete de traspaso.
+
+## 🔗 BISO / Business Information Security Officer
+
+- **Teoría:** Partes 14 y 17 (+ 11, 10 y 9 para dialogar con quien construye y con quien responde).
+- **Práctica (de enlace):** sobre la unidad de comercio electrónico de *Andes Retail*, entrega el [**perfil de riesgo de la unidad**](../labs/ciso-leadership/README.md#11--roadmap-de-seguridad-de-una-unidad-de-negocio) con ocho riesgos y dueño **dentro de la unidad**, el **roadmap a doce meses** alineado a la vez con el plan corporativo y con el plan comercial —incluido qué **no** se hará—, y **una excepción negociada** con control compensatorio, vencimiento y firma.
+- **Informe:** **el mismo mes informado dos veces** —una página para la dirección de la unidad y una para el CISO, con los mismos datos— más un RACI de cinco filas de la unidad que incluya «aceptar un riesgo residual» y «desplegar un sistema de IA».
+- **Criterio eliminatorio:** un lector que vea los dos informes a la vez no puede encontrar **ninguna contradicción**. Si la encuentra, el examen ha demostrado el fallo característico del puesto —la captura por una de las dos mesas— y está suspenso.
+
+## 📦 Product CISO
+
+- **Teoría:** Parte 11 completa y Parte 4 (+ 10, 14 y 17; añade 15 si el producto lleva IA y 13 si es un dispositivo).
+- **Práctica (mitad ingeniería, mitad gobierno):** sobre *NovaPay*, entrega el **modelo de amenazas** del componente que procesa pagos, los **criterios de puerta de publicación** acordados por escrito con ingeniería y producto, y el [**paquete de confianza**](../labs/ciso-leadership/README.md#12--paquete-de-confianza-de-producto) completo con la matriz de responsabilidad compartida. Somete además el pipeline del producto a las ocho capas de [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md).
+- **Informe:** **política de divulgación** publicable + **aviso de seguridad** de la vulnerabilidad crítica (versiones afectadas, impacto, mitigación, solución y cronología) + comunicación en dos capas a un banco cliente + la corrección de la afirmación comercial que el producto no sostiene.
+- **Criterio eliminatorio:** el paquete de confianza debe contener **al menos tres afirmaciones negativas verificables** sobre el producto. Un paquete que solo dice cosas buenas es un folleto y está suspenso.
+
+## 🤖 AI CISO / gobierno de la IA
+
+- **Teoría:** Parte 15 completa y Parte 18 (+ 14, 17 y 11).
+- **Práctica (de gobierno):** sobre *Andes Retail*, entrega el [**inventario de sistemas de IA**](../labs/ciso-leadership/README.md#13--inventario-y-registro-de-riesgos-de-ia) con la columna «cómo se descubrió», el **registro de riesgos de IA** con al menos tres riesgos por sistema, la **evaluación previa al despliegue** del agente interno con sus límites de permisos y qué acciones exigen aprobación humana, y un **informe de pruebas adversariales** con tres escenarios de inyección de instrucciones sobre el asistente de atención al cliente.
+- **Informe:** **política de uso aceptable** de una página que prohíba **y ofrezca alternativa** + nota de una página para el comité con qué se aprueba, qué se condiciona y qué se detiene.
+- **Criterio eliminatorio:** **ningún riesgo puede estar formulado como categoría abstracta.** «Riesgo de sesgo» o «riesgo de alucinación» no son escenarios. Uno solo así invalida el examen.
+
+## 🏭 OT CISO / CISO industrial
+
+- **Teoría:** Parte 13 (**273**), Parte 1, Parte 14 (**283**) y Parte 17 (+ 8 y 9).
+- **Práctica (de planta, sin escanear):** sobre *Minera Alto Cobre*, entrega el [**inventario pasivo**](../labs/ciso-leadership/README.md#14--incidente-ot-con-continuidad-y-seguridad-de-las-personas) indicando el método de cada dato, el **modelo de zonas y conductos** con la matriz de flujos, el **procedimiento de acceso remoto** para los tres fabricantes, el **registro de riesgos OT** con dueño de Operaciones y la **dirección del incidente** de ransomware con cronología y decisiones fechadas. Añade el **roadmap OT** señalando qué entra en la parada de octubre.
+- **Informe:** análisis posterior con qué se implanta, **qué se descarta porque interferiría con la seguridad de las personas** y qué se acepta como riesgo, más el procedimiento de evaluación del deber de reporte (quién decide, con qué información, en qué plazo).
+- **Criterio eliminatorio:** tres condiciones, todas obligatorias — (a) ninguna medida puede interferir con una función instrumentada de seguridad, y hay que demostrar que se comprobó; (b) la decisión de detener o mantener el proceso la toma **Operaciones**; (c) el inventario es íntegramente pasivo, sin escaneo activo en producción.
+
+## 🗂️ Familia CISO: siete exámenes, ninguno intercambiable
+
+Igual que en la familia SecOps, estos exámenes están construidos para **no poder aprobarse con el
+mismo entregable**:
+
+| Examen | Entregable que lo define |
+|---|---|
+| **CISO** | Un paquete de gobierno completo y un tabletop dirigido, con el presupuesto defendido |
+| **Field CISO** | Una recomendación donde se distingue el hecho de la propuesta comercial |
+| **vCISO** | Una declaración de trabajo y un paquete de traspaso que hacen prescindible al autor |
+| **BISO** | El mismo mes informado a dos mesas sin una sola contradicción |
+| **Product CISO** | Un paquete de confianza con afirmaciones negativas verificables |
+| **AI CISO** | Un registro de riesgos de IA con escenarios concretos y comprobables |
+| **OT CISO** | Un control de seguridad descartado por su efecto sobre las personas, documentado |
+
+Las diferencias de fondo están desarrolladas en
+**[🗂️ El ecosistema CISO](../rutas/ecosistema-ciso.md)**.
 
 ---
 
@@ -233,4 +310,5 @@ Las diferencias de fondo entre los roles están desarrolladas en la
 
 ## 🔗 Relacionado
 
-- [Rutas por rol](../rutas/README.md) · [Matriz de roles SecOps y DevSecOps](matriz-roles-secops-devsecops.md) · [Rúbrica de evaluación](rubrica-evaluacion.md) · [Syllabus](syllabus.md) · [Certificaciones](../certificaciones/README.md)
+- [Rutas por rol](../rutas/README.md) · [Matriz de roles SecOps y DevSecOps](matriz-roles-secops-devsecops.md) · [El ecosistema CISO](../rutas/ecosistema-ciso.md) · [Rúbrica de evaluación](rubrica-evaluacion.md) · [Syllabus](syllabus.md) · [Certificaciones](../certificaciones/README.md)
+- [Laboratorio ejecutivo CISO](../labs/ciso-leadership/README.md) · [Evaluación del ecosistema CISO](../labs/ciso-leadership/EVALUACION.md)
