@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Extraccion y resolucion de las fuentes que citan las clases del programa.
+"""Extraccion y resolucion de las fuentes que citan los documentos del programa.
 
 Modulo compartido por `scripts/verify-sources` (offline, bloquea en CI) y
 `scripts/refresh-sources` (en red, no bloquea). Aqui vive la unica definicion
@@ -20,9 +20,12 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 REGISTRO = RAIZ / "sources" / "bibliography.json"
-CLASES_GLOB = "classes/*/*/README.md"
+DOCUMENTOS_FUENTE_GLOBS = (
+    "classes/*/*/README.md",
+    "docs/cruzar-la-linea-consecuencias-reales.md",
+)
 
-# La seccion de fuentes de una clase. El programa usa un unico encabezado, pero
+# La seccion de fuentes de un documento. El programa usa un unico encabezado, pero
 # aceptamos las variantes habituales para que anadir "## Fuentes" no deje un
 # bloque sin detectar en silencio: una fuente no extraida es una fuente no
 # auditada, y ese es justo el fallo que este trabajo viene a cerrar.
@@ -122,7 +125,11 @@ def _clasifica(crudo: str, urls: list, enlaces_md: list) -> str:
 
 
 def lee_clases(raiz: Path = RAIZ) -> list:
-    return sorted(raiz.glob(CLASES_GLOB))
+    """Clases y recursos editoriales que participan en la trazabilidad."""
+    rutas = []
+    for patron in DOCUMENTOS_FUENTE_GLOBS:
+        rutas.extend(raiz.glob(patron))
+    return sorted(set(rutas))
 
 
 def extrae_bloque(ruta: Path) -> tuple:
@@ -143,7 +150,7 @@ def extrae_bloque(ruta: Path) -> tuple:
 
 
 def extrae_usos(raiz: Path = RAIZ) -> tuple:
-    """Extrae todas las vinetas de fuentes y el texto de cada bloque por clase."""
+    """Extrae las vinetas de fuentes y el texto de cada bloque por documento."""
     usos = []
     bloques = {}
     for ruta in lee_clases(raiz):

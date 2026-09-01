@@ -33,6 +33,7 @@ INCLUIR_TOP = ["README.md", "ROADMAP.md", "CONTRIBUTING.md", "SECURITY.md",
                "ctf/README.md", "docs/syllabus.md", "docs/rubrica-evaluacion.md",
                "docs/examen-final-por-rol.md",
                "docs/matriz-roles-secops-devsecops.md",
+               "docs/cruzar-la-linea-consecuencias-reales.md",
                "soluciones/README.md",
                "soluciones/parte-01-redes.md", "soluciones/parte-02-criptografia.md",
                "soluciones/parte-03-pentesting.md", "soluciones/parte-04-web.md",
@@ -291,6 +292,7 @@ def escribir_landing(partes) -> None:
         ("📝", "Autoevaluación", f"{n_preg} preguntas interactivas con puntuación, una batería por parte.", "autoevaluaciones/quiz.html"),
         ("✅", "Tu progreso", f"Marca las {total} clases y sigue tu avance (se guarda en tu navegador).", "autoevaluaciones/progreso.html"),
         ("🎓", "Certificaciones", "Mapeo a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con % de cobertura por dominio.", "certificaciones/README.html"),
+        ("⚠️", "¿Y si cruzas la línea?", "Leyes, investigaciones, condenas y salidas profesionales legítimas, con fuentes oficiales.", "docs/cruzar-la-linea-consecuencias-reales.html"),
         ("📕", "Manual en PDF", f"Las {total} clases en un único PDF (1.302 páginas, con sus diagramas) para leer de corrido o estudiar sin conexión.", "manual/MANUAL.pdf"),
     ]
     feats_html = "".join(

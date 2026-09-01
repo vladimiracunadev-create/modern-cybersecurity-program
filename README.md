@@ -105,7 +105,7 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 | [RFC 7489](https://www.rfc-editor.org/rfc/rfc7489) | obsoleta | 1 |
 | [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446) | obsoleta | 1 |
 
-Las 691 obras que usan las clases — 57 libros, 24 artículos, 151 normas y 459 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-08-19 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
+Las 714 obras que usa el programa — 57 libros, 24 artículos, 158 normas y 475 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-08-19 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
 
 <!-- fuentes:fin -->
 
@@ -248,6 +248,34 @@ tiene mandato real o es decorativo. Seis de ellos tienen guía propia:
 Todas comparten el **[laboratorio ejecutivo `ciso-leadership`](labs/ciso-leadership/README.md)** y
 la **[evaluación del ecosistema](labs/ciso-leadership/EVALUACION.md)**, que comprueba lo único que
 estos cargos no pueden confundir: **quién decide, quién asesora y quién responde**.
+
+---
+
+## ⚠️ ¿Y si cruzas la línea?
+
+### El costo real de utilizar la ciberseguridad para delinquir
+
+Las mismas capacidades que sostienen una carrera como pentester, Red Teamer, analista de malware,
+DFIR, AppSec o Cloud Security también pueden causar víctimas cuando se usan sin autorización. La
+diferencia no es el nivel técnico: es la decisión, el permiso y el alcance.
+
+```mermaid
+flowchart TD
+  K["Mismas capacidades"] --> D{"¿Hay autorización válida y alcance?"}
+  D -->|"Sí"| P["Ejercicio profesional"]
+  P --> C["Carrera · reputación · ingresos"]
+  D -->|"No"| X["Conducta posiblemente delictiva"]
+  X --> I["Investigación: evidencia y atribución"]
+  I --> J["Proceso judicial"]
+  J --> R{"Resultado probado"}
+  R -->|"Sin condena"| F["Archivo o absolución"]
+  R -->|"Condena"| Q["Pena y otras consecuencias"]
+```
+
+**[Leer «¿Y si cruzas la línea?» →](docs/cruzar-la-linea-consecuencias-reales.md)** — el espejo
+de las 19 partes, actividades delictivas sin romantizarlas, Ley 21.459 de Chile, comparación
+internacional, casos con condenas verificables, atribución digital, extradición, patrimonio,
+antecedentes, migración y una salida profesional legítima para cada capacidad.
 
 ## ✅ Calidad y CI
 

@@ -13,10 +13,10 @@ Comprobaciones:
   1. El registro parsea y cumple el esquema.
   2. Todo `book` lleva ISBN-13 con digito de control valido; todo `paper`, DOI.
   3. El `locator` tiene la forma canonica de su tipo.
-  4. Toda obra citada por una clase existe en el registro.
+  4. Toda obra citada por un documento trazado existe en el registro.
   5. Ninguna entrada del registro queda sin usar.
   6. Ningun bloque de fuentes se repite entre clases.
-  7. `used_in` esta sincronizado con lo que citan las clases.
+  7. `used_in` esta sincronizado con lo que citan los documentos trazados.
   8. Las cifras del README coinciden con el recuento del registro.
 
 Uso:
@@ -330,7 +330,7 @@ def render_bloque_readme(m, registro):
             )
     lineas += [
         "",
-        f"Las {m['entradas']} obras que usan las clases — {m['por_tipo'].get('book', 0)} libros, "
+        f"Las {m['entradas']} obras que usa el programa — {m['por_tipo'].get('book', 0)} libros, "
         f"{m['por_tipo'].get('paper', 0)} artículos, {m['por_tipo'].get('standard', 0)} normas y "
         f"{m['por_tipo'].get('reference', 0)} documentaciones oficiales — están en "
         f"[`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. "
@@ -436,9 +436,9 @@ def main():
     print("=" * 74)
     print("  Trazabilidad de fuentes — verificacion offline")
     print("=" * 74)
-    print(f"  Clases con bloque de fuentes ....... {metricas['clases_con_bloque']} de {metricas['clases']}")
+    print(f"  Documentos con bloque de fuentes ... {metricas['clases_con_bloque']} de {metricas['clases']}")
     print(f"  Bloques distintos .................. {metricas['bloques_distintos']}")
-    print(f"  Citas en clase ..................... {metricas['citas']}")
+    print(f"  Citas registradas .................. {metricas['citas']}")
     print(f"  Citas resueltas .................... {metricas['citas_resueltas']} ({metricas['cobertura_pct']} %)")
     print(f"  Citas que declaran su uso .......... {metricas['citas_declaran_uso']} ({metricas['uso_declarado_pct']} %)")
     print(f"  Entradas del registro .............. {metricas['entradas']}"

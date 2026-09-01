@@ -16521,6 +16521,498 @@
     "classes/parte-4-seguridad-de-aplicaciones-web/104-seguridad-de-oauth-2-0-y-openid-connect/README.md"
    ],
    "vigencia": "vigente"
+  },
+  {
+   "id": "chile-ley-21459-delitos-informaticos",
+   "type": "standard",
+   "title": "Ley 21.459: establece normas sobre delitos informáticos",
+   "identifier": "Ley 21.459",
+   "published": "2022",
+   "locator": "https://www.bcn.cl/leychile/Navegar?idNorma=1177743&idParte=10343832&idVersion=2222-02-02",
+   "authority": "Biblioteca del Congreso Nacional de Chile",
+   "status": "verificada",
+   "notes": "Texto oficial vigente consultado el 2026-09-01; la página informa última versión desde el 2025-04-01.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.bcn.cl/leychile/Navegar?idNorma=1177743",
+     "https://www.bcn.cl/leychile/navegar?idNorma=1177743"
+    ],
+    "text_patterns": [
+     "ley 21 459"
+    ]
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": [],
+   "vigencia": "vigente"
+  },
+  {
+   "id": "chile-codigo-penal-articulo-56",
+   "type": "standard",
+   "title": "Código Penal de Chile, artículo 56: grados de las penas divisibles",
+   "identifier": "Código Penal, artículo 56",
+   "published": "1874",
+   "locator": "https://www.bcn.cl/leychile/navegar?idNorma=1984&idParte=9672257&idVersion=2025-11-28",
+   "authority": "Biblioteca del Congreso Nacional de Chile",
+   "status": "verificada",
+   "notes": "Texto oficial consultado el 2026-09-01 para interpretar los grados de presidio menor citados por la Ley 21.459.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.bcn.cl/leychile/navegar?idNorma=1984&idParte=9672257"
+    ],
+    "text_patterns": [
+     "codigo penal articulo 56"
+    ]
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": [],
+   "vigencia": "vigente"
+  },
+  {
+   "id": "fiscalia-chile-cibercriminalidad",
+   "type": "reference",
+   "title": "Cibercriminalidad: delitos y unidad especializada",
+   "locator": "https://www.fiscaliadechile.cl/persecucion-penal/areas-de-persecucion/cibercriminalidad",
+   "authority": "Fiscalía de Chile",
+   "status": "verificada",
+   "notes": "Página institucional consultada el 2026-09-01; enumera las figuras de la Ley 21.459 y la especialización del Ministerio Público.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.fiscaliadechile.cl/persecucion-penal/areas-de-persecucion/cibercriminalidad"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "fiscalia-chile-phishing-ovalle-2017",
+   "type": "reference",
+   "title": "Ovalle: condena por fraude informático mediante página bancaria falsa",
+   "locator": "https://www.fiscaliadechile.cl/actualidad/noticias/regionales/ovalle-condenan-mujer-por-fraude-informatico-en-el-cual-se-falseo",
+   "authority": "Fiscalía de Chile",
+   "status": "verificada",
+   "notes": "Fuente primaria institucional del 2017-01-05; informa hechos, evidencia, condena de 540 días remitidos y recuperación parcial.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.fiscaliadechile.cl/actualidad/noticias/regionales/ovalle-condenan-mujer-por-fraude-informatico-en-el-cual-se-falseo"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "us-code-title-18-section-1030",
+   "type": "standard",
+   "title": "18 U.S.C. § 1030: Fraud and related activity in connection with computers",
+   "identifier": "18 U.S.C. § 1030",
+   "published": "2023",
+   "locator": "https://uscode.house.gov/view.xhtml?edition=2023&num=0&req=granuleid%3AUSC-2023-title18-section1030",
+   "authority": "Office of the Law Revision Counsel, U.S. House of Representatives",
+   "status": "verificada",
+   "notes": "Edición oficial 2023 consultada el 2026-09-01; se usa para mostrar que las penas dependen del inciso y del daño.",
+   "matches": {
+    "url_prefixes": [
+     "https://uscode.house.gov/view.xhtml?edition=2023&num=0&req=granuleid%3AUSC-2023-title18-section1030"
+    ],
+    "text_patterns": [
+     "18 u[.]s[.]c[.] 1030"
+    ]
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": [],
+   "vigencia": "vigente"
+  },
+  {
+   "id": "espana-codigo-penal-delitos-informaticos",
+   "type": "standard",
+   "title": "Código Penal de España: acceso, daños e interferencia informáticos",
+   "identifier": "Ley Orgánica 10/1995, artículos 197 bis, 197 ter y 264 a 264 ter",
+   "published": "1995",
+   "locator": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444",
+   "authority": "Boletín Oficial del Estado de España",
+   "status": "verificada",
+   "notes": "Texto consolidado oficial consultado el 2026-09-01.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": [],
+   "vigencia": "vigente"
+  },
+  {
+   "id": "uk-cps-computer-misuse-act-guidance",
+   "type": "standard",
+   "title": "Computer Misuse Act: prosecution guidance",
+   "identifier": "Computer Misuse Act 1990, sections 1–3ZA",
+   "published": "2023",
+   "locator": "https://www.cps.gov.uk/prosecution-guidance/computer-misuse-act",
+   "authority": "Crown Prosecution Service",
+   "status": "verificada",
+   "notes": "Guía oficial consultada el 2026-09-01; respalda elementos y penas máximas de las secciones citadas.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.cps.gov.uk/prosecution-guidance/computer-misuse-act"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": [],
+   "vigencia": "vigente"
+  },
+  {
+   "id": "eu-directive-2013-40",
+   "type": "standard",
+   "title": "Directiva 2013/40/UE relativa a los ataques contra los sistemas de información",
+   "identifier": "Directiva 2013/40/UE",
+   "published": "2013",
+   "locator": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=celex%3A32013L0040",
+   "authority": "Unión Europea / EUR-Lex",
+   "status": "verificada",
+   "notes": "Texto oficial consultado el 2026-09-01; establece definiciones, delitos y umbrales mínimos para los Estados miembros.",
+   "matches": {
+    "url_prefixes": [
+     "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=celex%3A32013L0040"
+    ],
+    "text_patterns": [
+     "directiva 2013/40/ue"
+    ]
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": [],
+   "vigencia": "vigente"
+  },
+  {
+   "id": "coe-budapest-convention-cybercrime",
+   "type": "standard",
+   "title": "Convention on Cybercrime (Budapest Convention)",
+   "identifier": "ETS No. 185",
+   "published": "2001",
+   "locator": "https://www.coe.int/en/web/cybercrime/convention-on-cybercrime",
+   "authority": "Council of Europe",
+   "status": "verificada",
+   "notes": "Portal oficial consultado el 2026-09-01; respalda el marco de cooperación internacional y sus protocolos.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.coe.int/en/web/cybercrime/convention-on-cybercrime"
+    ],
+    "text_patterns": [
+     "budapest convention"
+    ]
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": [],
+   "vigencia": "vigente"
+  },
+  {
+   "id": "doj-seleznev-sentencing-2017",
+   "type": "reference",
+   "title": "Russian cyber-criminal sentenced to 27 years for hacking and card fraud",
+   "locator": "https://www.justice.gov/usao-wdwa/pr/russian-cyber-criminal-sentenced-27-years-prison-hacking-and-credit-card-fraud-scheme",
+   "authority": "U.S. Department of Justice",
+   "status": "verificada",
+   "notes": "Comunicado oficial del 2017-04-21; informa veredicto, sentencia, modus general y pérdidas atribuidas.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.justice.gov/usao-wdwa/pr/russian-cyber-criminal-sentenced-27-years-prison-hacking-and-credit-card-fraud-scheme"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "doj-revil-vasinskyi-sentencing-2024",
+   "type": "reference",
+   "title": "Sodinokibi/REvil affiliate sentenced for role in ransomware scheme",
+   "locator": "https://www.justice.gov/archives/opa/pr/sodinokibirevil-affiliate-sentenced-role-700m-ransomware-scheme",
+   "authority": "U.S. Department of Justice",
+   "status": "verificada",
+   "notes": "Comunicado oficial del 2024-05-01; informa extradición, sentencia, restitución y magnitud atribuida al esquema.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.justice.gov/archives/opa/pr/sodinokibirevil-affiliate-sentenced-role-700m-ransomware-scheme"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "doj-gregory-king-botnet-sentencing-2008",
+   "type": "reference",
+   "title": "Computer hacker sentenced to two years for botnet DDoS attacks",
+   "locator": "https://www.justice.gov/archive/criminal/cybercrime/press-releases/2008/kingSent.pdf",
+   "authority": "U.S. Department of Justice",
+   "status": "verificada",
+   "notes": "Comunicado oficial del 2008-10-07; documenta logs, órdenes, análisis forense, confesión, prisión y restitución.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.justice.gov/archive/criminal/cybercrime/press-releases/2008/kingSent.pdf"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "doj-adeagbo-bec-sentencing-2024",
+   "type": "reference",
+   "title": "Previously extradited foreign national sentenced for business email compromise schemes",
+   "locator": "https://www.justice.gov/archives/opa/pr/previously-extradited-foreign-national-sentenced-role-multimillion-dollar-business-email",
+   "authority": "U.S. Department of Justice",
+   "status": "verificada",
+   "notes": "Comunicado oficial del 2024-10-02; informa extradición desde Reino Unido, sentencia y restitución.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.justice.gov/archives/opa/pr/previously-extradited-foreign-national-sentenced-role-multimillion-dollar-business-email"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "doj-parks-cryptojacking-sentencing-2025",
+   "type": "reference",
+   "title": "Crypto influencer sentenced in cloud cryptojacking scheme",
+   "locator": "https://www.justice.gov/usao-edny/pr/crypto-influencer-sentenced-prison-multi-million-dollar-cryptojacking-scheme",
+   "authority": "U.S. Department of Justice",
+   "status": "verificada",
+   "notes": "Comunicado oficial del 2025-08-15; informa hechos, trazas financieras, pena y decomiso.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.justice.gov/usao-edny/pr/crypto-influencer-sentenced-prison-multi-million-dollar-cryptojacking-scheme"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "doj-stafford-insider-damage-sentencing-2020",
+   "type": "reference",
+   "title": "Former employee sentenced for intentionally damaging employer computers",
+   "locator": "https://www.justice.gov/usao-md/pr/crofton-man-sentenced-more-one-year-federal-prison-intentionally-damaging-computers-his",
+   "authority": "U.S. Department of Justice",
+   "status": "verificada",
+   "notes": "Comunicado oficial del 2020-09-24; informa acceso, daño, prisión, libertad supervisada y restitución.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.justice.gov/usao-md/pr/crofton-man-sentenced-more-one-year-federal-prison-intentionally-damaging-computers-his"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "doj-chipmixer-affidavit-2023",
+   "type": "reference",
+   "title": "ChipMixer seizure warrant affidavit",
+   "locator": "https://www.justice.gov/opa/press-release/file/1574581/dl",
+   "authority": "U.S. Department of Justice",
+   "status": "verificada",
+   "notes": "Declaración jurada judicial publicada por DOJ; se usa solo para documentar análisis de blockchain dentro de una investigación.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.justice.gov/opa/press-release/file/1574581/dl"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "nca-zain-qaiser-ransomware-sentencing",
+   "type": "reference",
+   "title": "Zain Qaiser jailed for global ransomware and blackmail conspiracy",
+   "locator": "https://nationalcrimeagency.gov.uk/news/hacker-from-russian-crime-group-jailed-for-multi-million-pound-global-blackmail-conspiracy",
+   "authority": "UK National Crime Agency",
+   "status": "verificada",
+   "notes": "Comunicado oficial consultado el 2026-09-01; informa condena y movimientos financieros identificados.",
+   "matches": {
+    "url_prefixes": [
+     "https://nationalcrimeagency.gov.uk/news/hacker-from-russian-crime-group-jailed-for-multi-million-pound-global-blackmail-conspiracy"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "europol-operation-cronos-lockbit",
+   "type": "reference",
+   "title": "Operation Cronos disrupts LockBit ransomware infrastructure",
+   "locator": "https://www.europol.europa.eu/media-press/newsroom/news/law-enforcement-disrupt-worlds-biggest-ransomware-operation",
+   "authority": "Europol",
+   "status": "verificada",
+   "notes": "Comunicado oficial consultado el 2026-09-01; documenta países participantes y servidores intervenidos.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.europol.europa.eu/media-press/newsroom/news/law-enforcement-disrupt-worlds-biggest-ransomware-operation"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "europol-emotet-disruption-2021",
+   "type": "reference",
+   "title": "Emotet disrupted through global action",
+   "locator": "https://www.europol.europa.eu/media-press/newsroom/news/world%E2%80%99s-most-dangerous-malware-emotet-disrupted-through-global-action",
+   "authority": "Europol",
+   "status": "verificada",
+   "notes": "Comunicado oficial consultado el 2026-09-01; documenta coordinación Europol/Eurojust e infraestructura multinacional.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.europol.europa.eu/media-press/newsroom/news/world%E2%80%99s-most-dangerous-malware-emotet-disrupted-through-global-action"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "canada-criminal-inadmissibility",
+   "type": "reference",
+   "title": "Find out if you're inadmissible to Canada",
+   "locator": "https://www.canada.ca/en/immigration-refugees-citizenship/services/admissibility-enforcement/inadmissibility.html",
+   "authority": "Immigration, Refugees and Citizenship Canada",
+   "status": "verificada",
+   "notes": "Guía oficial consultada el 2026-09-01; explica decisión de inadmisibilidad y vías posibles sin prometer resultado.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.canada.ca/en/immigration-refugees-citizenship/services/admissibility-enforcement/inadmissibility.html"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "uk-immigration-criminality-grounds-2026",
+   "type": "reference",
+   "title": "Suitability: grounds for refusal or cancellation — criminality",
+   "locator": "https://www.gov.uk/government/publications/grounds-for-refusal-criminality/grounds-for-refusal-criminality-accessible",
+   "authority": "UK Visas and Immigration",
+   "status": "verificada",
+   "notes": "Versión 5.0 publicada el 2026-03-26 y consultada el 2026-09-01.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.gov.uk/government/publications/grounds-for-refusal-criminality/grounds-for-refusal-criminality-accessible"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "australia-visa-character-requirements",
+   "type": "reference",
+   "title": "Character requirements for Australian visas",
+   "locator": "https://immi.homeaffairs.gov.au/help-support/meeting-our-requirements/character",
+   "authority": "Australian Department of Home Affairs",
+   "status": "verificada",
+   "notes": "Guía oficial consultada el 2026-09-01; describe declaración de cargos y condenas y la posible denegación o cancelación.",
+   "matches": {
+    "url_prefixes": [
+     "https://immi.homeaffairs.gov.au/help-support/meeting-our-requirements/character"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
+  },
+  {
+   "id": "us-state-department-visa-denials",
+   "type": "reference",
+   "title": "Visa denials: ineligibilities and waivers",
+   "locator": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-denials.html",
+   "authority": "U.S. Department of State",
+   "status": "verificada",
+   "notes": "Guía oficial consultada el 2026-09-01; se usa para evitar la afirmación absoluta de que toda condena impide viajar.",
+   "matches": {
+    "url_prefixes": [
+     "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-denials.html"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-01",
+   "used_in": [
+    "docs/cruzar-la-linea-consecuencias-reales.md"
+   ],
+   "authors": []
   }
  ]
 }

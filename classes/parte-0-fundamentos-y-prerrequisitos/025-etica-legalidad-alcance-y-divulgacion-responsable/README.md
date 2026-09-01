@@ -169,6 +169,15 @@ Elabora un paquete de autorización completo para un compromiso ficticio compues
 
 **❓ ¿Por qué esta clase es un prerrequisito de todo el programa?** Porque todas las técnicas que aprenderás después son neutrales: legales con autorización, delictivas sin ella. Sin este marco, el conocimiento ofensivo se convierte en un riesgo para ti y para otros. La ética y la legalidad no son un añadido, son la condición que hace posible ejercer la profesión.
 
+## ⚖️ ¿Qué ocurre después de cruzar la línea?
+
+Esta clase define la frontera: autorización, alcance, reglas de compromiso y divulgación. El
+recurso **[⚠️ ¿Y si cruzas la línea?](../../../docs/cruzar-la-linea-consecuencias-reales.md)**
+continúa desde allí y estudia, sin convertir esta clase en un tratado penal, cómo una conducta
+puede producir investigación, atribución, proceso judicial, condena, restitución, decomiso,
+cooperación internacional y efectos profesionales o migratorios. Incluye la Ley 21.459 de Chile,
+comparación internacional, casos reales y rutas para usar legalmente cada capacidad.
+
 ## 🔗 Referencias
 
 - ISO/IEC 29147 (divulgación de vulnerabilidades) — <https://www.iso.org/standard/72311.html>
