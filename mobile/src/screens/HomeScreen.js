@@ -15,7 +15,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
-import { PARTS, CLASSES, TOTAL_CLASSES, TOTAL_PARTS } from '../data/classes';
+import { PARTS, CLASSES, RESOURCES, TOTAL_CLASSES, TOTAL_PARTS } from '../data/classes';
 import PartCard from '../components/PartCard';
 import { getProgress, clearProgress } from '../utils/progress';
 import { colors, spacing, radius, fontSize, fontWeight } from '../theme';
@@ -55,6 +55,13 @@ export default function HomeScreen({ navigation }) {
     navigation.navigate('Class', {
       classData: nextClass,
       classTitle: `Clase ${nextClass.number}`,
+    });
+  };
+
+  const handleResourcePress = (resource) => {
+    navigation.navigate('Resource', {
+      resourceId: resource.id,
+      resourceTitle: resource.title,
     });
   };
 
@@ -105,14 +112,37 @@ export default function HomeScreen({ navigation }) {
           ejercicios y referencias.
         </Text>
       </View>
+
+      {RESOURCES.map((resource) => (
+        <TouchableOpacity
+          key={resource.id}
+          style={styles.resourceCard}
+          onPress={() => handleResourcePress(resource)}
+          activeOpacity={0.85}
+          accessibilityRole="button"
+          accessibilityLabel={`Abrir recurso ${resource.title}`}
+        >
+          <View style={styles.resourceIcon}>
+            <Text style={styles.resourceIconText}>{resource.icon}</Text>
+          </View>
+          <View style={styles.resourceText}>
+            <Text style={styles.resourceEyebrow}>NUEVO · RECURSO OFFLINE</Text>
+            <Text style={styles.resourceTitle}>{resource.title}</Text>
+            <Text style={styles.resourceDescription} numberOfLines={3}>
+              {resource.description}
+            </Text>
+          </View>
+          <Text style={styles.resourceArrow}>›</Text>
+        </TouchableOpacity>
+      ))}
     </View>
   );
 
   const renderFooter = () => (
     <View style={styles.footer}>
       <Text style={styles.footerText}>
-        Las 340 clases se leen completas sin conexión, con sus diagramas. Solo necesitan
-        internet los enlaces al sitio y a GitHub.
+        Las 340 clases y los recursos transversales se leen completos sin conexión, con
+        sus diagramas. Solo necesitan internet los enlaces al sitio y a GitHub.
       </Text>
     </View>
   );
@@ -197,6 +227,37 @@ const styles = StyleSheet.create({
   },
   tipText: { color: colors.textMuted, fontSize: fontSize.sm, lineHeight: 19 },
   tipAccent: { color: colors.accent, fontWeight: fontWeight.medium },
+  resourceCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.md,
+    backgroundColor: colors.bgCard,
+    borderRadius: radius.lg,
+    borderWidth: 1,
+    borderColor: colors.warning,
+    padding: spacing.md,
+    marginTop: spacing.sm,
+    marginBottom: spacing.md,
+  },
+  resourceIcon: {
+    width: 46,
+    height: 46,
+    borderRadius: radius.md,
+    backgroundColor: '#33230a',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  resourceIconText: { fontSize: 23 },
+  resourceText: { flex: 1, minWidth: 0 },
+  resourceEyebrow: {
+    color: colors.warning,
+    fontSize: fontSize.xs,
+    fontWeight: fontWeight.bold,
+    marginBottom: 2,
+  },
+  resourceTitle: { color: colors.text, fontSize: fontSize.lg, fontWeight: fontWeight.bold },
+  resourceDescription: { color: colors.textMuted, fontSize: fontSize.sm, lineHeight: 18 },
+  resourceArrow: { color: colors.warning, fontSize: 30, fontWeight: fontWeight.bold },
   footer: { paddingHorizontal: spacing.md, paddingTop: spacing.md, alignItems: 'center' },
   footerText: { color: '#475569', fontSize: fontSize.xs, textAlign: 'center' },
 });

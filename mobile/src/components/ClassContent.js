@@ -35,7 +35,7 @@ const Diagrama = ({ id }) => {
     return (
       <View style={styles.diagram}>
         <Text style={styles.diagramText}>
-          Diagrama de la clase — ábrela en el sitio para verlo.
+          Diagrama del contenido — abre la versión web para verlo.
         </Text>
       </View>
     );
@@ -50,7 +50,7 @@ const Diagrama = ({ id }) => {
           source={diagrama.fuente}
           style={styles.diagramImage}
           resizeMode="contain"
-          accessibilityLabel="Diagrama de la clase"
+          accessibilityLabel="Diagrama del contenido"
         />
       </View>
     </View>

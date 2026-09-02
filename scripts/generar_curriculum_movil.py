@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Genera el currículo embebido de la app móvil a partir de las clases.
 
-Recorre ``classes/parte-*/NNN-*/README.md`` — la única fuente de verdad de las
-340 clases — y escribe ``mobile/src/data/classes.js`` con estos exports:
+Recorre ``classes/parte-*/NNN-*/README.md`` y los recursos transversales —las
+fuentes de verdad del programa— y escribe ``mobile/src/data/classes.js`` con:
 
     PARTS            — las 19 partes, con su rango de clases y nivel dominante
     CLASSES          — las 340 clases, planas y ordenadas por número
     CLASSES_BY_PART  — las mismas clases indexadas por slug de parte
+    RESOURCES        — recursos transversales completos para lectura offline
     TOTAL_CLASSES / TOTAL_PARTS
     classesForPart(slug)
 
@@ -60,6 +61,7 @@ from mermaid_svg import rasterizar as rasterizar_diagramas  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 CLASSES_DIR = ROOT / "classes"
+RESOURCE_PATH = ROOT / "docs" / "cruzar-la-linea-consecuencias-reales.md"
 OUT_FILE = ROOT / "mobile" / "src" / "data" / "classes.js"
 # Los diagramas se empaquetan como PNG dentro del APK: Metro los mete como
 # recursos (no como texto del bundle), asi que pesan lo que pesan y no inflan el
@@ -386,6 +388,31 @@ def full_content(md: str) -> tuple[list[dict], list[dict]]:
     return theory, practice
 
 
+def parse_resource(md: str) -> dict:
+    """Convierte el recurso transversal completo en bloques para la app."""
+    blocks: list[dict] = []
+    matches = list(SECTION_RE.finditer(md))
+    for idx, match in enumerate(matches):
+        titulo = match.group(1).strip()
+        fin = matches[idx + 1].start() if idx + 1 < len(matches) else len(md)
+        cuerpo = md[match.end():fin].strip()
+        blocks.append({"t": "h2", "x": strip_inline(titulo)})
+        blocks.extend(blocks_from(cuerpo))
+    return {
+        "id": "cruzar-la-linea",
+        "icon": "⚠️",
+        "title": "¿Y si cruzas la línea?",
+        "subtitle": "Consecuencias reales de utilizar la ciberseguridad para delinquir",
+        "description": (
+            "Leyes, atribución, condenas, patrimonio, extradición y salidas "
+            "profesionales legítimas, con fuentes oficiales."
+        ),
+        "content": blocks,
+        "siteUrl": f"{PAGES_BASE}/docs/cruzar-la-linea-consecuencias-reales.html",
+        "githubUrl": f"{GITHUB_BASE}/docs/cruzar-la-linea-consecuencias-reales.md",
+    }
+
+
 def parse_class(part_slug: str, class_dir: str, md: str) -> dict:
     """Convierte el README de una clase en el objeto que consume la app."""
     title_match = TITLE_RE.search(md)
@@ -434,8 +461,8 @@ def parse_class(part_slug: str, class_dir: str, md: str) -> dict:
     }
 
 
-def collect() -> tuple[list[dict], list[dict]]:
-    """Recorre classes/ y devuelve (partes, clases)."""
+def collect() -> tuple[list[dict], list[dict], list[dict]]:
+    """Recorre las fuentes y devuelve (partes, clases, recursos)."""
     part_dirs = sorted(
         (p for p in CLASSES_DIR.iterdir() if p.is_dir() and PART_DIR_RE.match(p.name)),
         key=lambda p: int(PART_DIR_RE.match(p.name).group(1)),
@@ -478,10 +505,13 @@ def collect() -> tuple[list[dict], list[dict]]:
         )
 
     classes.sort(key=lambda c: c["number"])
-    return parts, classes
+    if not RESOURCE_PATH.is_file():
+        raise FileNotFoundError(f"Falta el recurso transversal: {RESOURCE_PATH}")
+    resources = [parse_resource(RESOURCE_PATH.read_text(encoding="utf-8"))]
+    return parts, classes, resources
 
 
-def render(parts: list[dict], classes: list[dict]) -> str:
+def render(parts: list[dict], classes: list[dict], resources: list[dict]) -> str:
     """Genera el contenido de mobile/src/data/classes.js."""
     def dump(obj) -> str:
         return json.dumps(obj, ensure_ascii=False, indent=2)
@@ -496,7 +526,7 @@ def render(parts: list[dict], classes: list[dict]) -> str:
     header = (
         "// ============================================================\n"
         "// GENERADO AUTOMÁTICAMENTE — NO EDITAR A MANO\n"
-        "// Fuente: classes/parte-*/NNN-*/README.md\n"
+        "// Fuentes: classes/parte-*/NNN-*/README.md + recursos transversales\n"
         "// Regenera con:  python scripts/generar_curriculum_movil.py\n"
         "// Verifica con:  python scripts/generar_curriculum_movil.py --check\n"
         "// ============================================================\n\n"
@@ -504,6 +534,7 @@ def render(parts: list[dict], classes: list[dict]) -> str:
     body = (
         f"export const PARTS = {dump(parts)};\n\n"
         f"export const CLASSES = {dump_classes(classes)};\n\n"
+        f"export const RESOURCES = {dump(resources)};\n\n"
         "// Índice por parte derivado en runtime (evita duplicar los objetos de clase).\n"
         "export const CLASSES_BY_PART = CLASSES.reduce((acc, c) => {\n"
         "  (acc[c.partSlug] = acc[c.partSlug] || []).push(c);\n"
@@ -511,7 +542,9 @@ def render(parts: list[dict], classes: list[dict]) -> str:
         "}, {});\n\n"
         f"export const TOTAL_CLASSES = {len(classes)};\n"
         f"export const TOTAL_PARTS = {len(parts)};\n\n"
+        f"export const TOTAL_RESOURCES = {len(resources)};\n\n"
         "export const classesForPart = (partSlug) => CLASSES_BY_PART[partSlug] || [];\n"
+        "export const resourceById = (id) => RESOURCES.find((r) => r.id === id);\n"
     )
     return header + body
 
@@ -541,7 +574,7 @@ def render_diagramas(ids: set[str]) -> str:
     lineas = [
         "// ============================================================",
         "// GENERADO AUTOMÁTICAMENTE — NO EDITAR A MANO",
-        "// Fuente: bloques ```mermaid de classes/parte-*/NNN-*/README.md",
+        "// Fuente: bloques ```mermaid de clases y recursos transversales",
         "// Regenera con:  python scripts/generar_curriculum_movil.py",
         "// ============================================================",
         "//",
@@ -605,8 +638,9 @@ def sincronizar_diagramas(check: bool) -> tuple[str, int]:
 
 def main() -> int:
     check = "--check" in sys.argv
-    parts, classes = collect()
-    content = render(parts, classes)
+    DIAGRAMAS_USADOS.clear()
+    parts, classes, resources = collect()
+    content = render(parts, classes, resources)
     contenido_diagramas, total_diagramas = sincronizar_diagramas(check)
 
     if check:
@@ -623,17 +657,20 @@ def main() -> int:
             print("       clases o faltan PNG en mobile/assets/diagramas/.")
             print("       Ejecuta: python scripts/generar_curriculum_movil.py")
             return 1
-        faltan = [
-            b["img"] for c in classes
+        bloques_contenido = [
+            b for c in classes
             for b in c["content"]["theory"] + c["content"]["practice"]
+        ] + [b for recurso in resources for b in recurso["content"]]
+        faltan = [
+            b["img"] for b in bloques_contenido
             if b.get("t") == "dg" and b.get("img")
             and not (DIAG_DIR / f"{b['img']}.png").is_file()
         ]
         if faltan:
             print(f"FALLA: {len(faltan)} diagrama(s) sin imagen en mobile/assets/diagramas.")
             return 1
-        print(f"OK: {len(classes)} clases en {len(parts)} partes y {total_diagramas} "
-              f"diagramas; datos embebidos al día.")
+        print(f"OK: {len(classes)} clases, {len(resources)} recurso(s), {len(parts)} partes "
+              f"y {total_diagramas} diagramas; datos embebidos al día.")
         return 0
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -641,7 +678,8 @@ def main() -> int:
         fh.write(content)
     with DIAG_FILE.open("w", encoding="utf-8", newline="\n") as fh:
         fh.write(contenido_diagramas)
-    print(f"Generado {OUT_FILE.relative_to(ROOT)}: {len(classes)} clases en {len(parts)} partes.")
+    print(f"Generado {OUT_FILE.relative_to(ROOT)}: {len(classes)} clases y "
+          f"{len(resources)} recurso(s) en {len(parts)} partes.")
     empty = [c["id"] for c in classes if not c["theory"] or not c["outcomes"]]
     if empty:
         print(f"AVISO: {len(empty)} clases sin objetivo o sin resultados: {empty[:5]}")
@@ -652,6 +690,7 @@ def main() -> int:
     if sin_cuerpo:
         print(f"AVISO: {len(sin_cuerpo)} clases con contenido embebido escaso: {sin_cuerpo[:5]}")
     bloques = sum(len(c["content"]["theory"]) + len(c["content"]["practice"]) for c in classes)
+    bloques += sum(len(r["content"]) for r in resources)
     kb = len(content.encode("utf-8")) / 1024
     peso_png = sum(f.stat().st_size for f in DIAG_DIR.glob("*.png")) / 1024 / 1024 if DIAG_DIR.is_dir() else 0
     print(f"Contenido embebido: {bloques} bloques, {kb:.0f} KB de catálogo.")
@@ -660,6 +699,10 @@ def main() -> int:
     sin_imagen = sum(
         1 for c in classes
         for b in c["content"]["theory"] + c["content"]["practice"]
+        if b.get("t") == "dg" and not b.get("img")
+    )
+    sin_imagen += sum(
+        1 for recurso in resources for b in recurso["content"]
         if b.get("t") == "dg" and not b.get("img")
     )
     if sin_imagen:

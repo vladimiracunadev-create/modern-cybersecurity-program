@@ -91,3 +91,43 @@ jobs:
 
       - name: Generar sitio (verifica que compila)
         run: python scripts/generar_sitio.py
+
+  aplicacion-web:
+    name: App web offline
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Verificar catálogo embebido
+        run: python scripts/generar_curriculum_movil.py --check
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+
+      - name: Instalar dependencias
+        working-directory: mobile
+        run: npm ci
+
+      - name: Exportar aplicación web
+        working-directory: mobile
+        env:
+          EXPO_NO_TELEMETRY: "1"
+          EXPO_BASE_URL: "/app"
+        run: npx expo export --platform web --output-dir dist-web
+
+      - name: Verificar clases y recursos dentro del bundle
+        run: |
+          grep -q '/app/_expo/static/js/web/AppEntry-' mobile/dist-web/index.html
+          BUNDLE="$(find mobile/dist-web -name 'AppEntry-*.js' | head -n1)"
+          test -n "$BUNDLE"
+          python scripts/verificar_bundle.py "$BUNDLE"

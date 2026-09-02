@@ -4,6 +4,7 @@
  *   Home  → las 19 partes del programa, con progreso global
  *   Part  → las clases de una parte, con buscador
  *   Class → detalle de una clase (teoría + práctica + enlaces)
+ *   Resource → recurso transversal completo, disponible sin conexión
  */
 
 import React from 'react';
@@ -11,6 +12,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import PartScreen from '../screens/PartScreen';
 import ClassScreen from '../screens/ClassScreen';
+import ResourceScreen from '../screens/ResourceScreen';
 import { colors } from '../theme';
 
 const Stack = createStackNavigator();
@@ -45,6 +47,11 @@ export default function AppNavigator() {
         name="Class"
         component={ClassScreen}
         options={({ route }) => ({ title: route.params?.classTitle ?? 'Clase' })}
+      />
+      <Stack.Screen
+        name="Resource"
+        component={ResourceScreen}
+        options={({ route }) => ({ title: route.params?.resourceTitle ?? 'Recurso' })}
       />
     </Stack.Navigator>
   );

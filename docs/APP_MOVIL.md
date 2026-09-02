@@ -1,17 +1,23 @@
 # 📱 App móvil Android — guía técnica
 
 La app vive en [`mobile/`](../mobile/README.md) y es una app **Expo / React Native**
-que embebe las **340 clases en 19 partes** para leerlas **sin conexión** desde el
-teléfono. Desde la versión **1.1.0** cada clase viaja **entera** —explicación en
+que embebe las **340 clases en 19 partes** y los recursos transversales para leerlos
+**sin conexión** desde el teléfono o la aplicación web. La edición **1.2.0** mantiene
+cada clase **entera** —explicación en
 profundidad, diagramas, glosario, laboratorio, ejercicios, reto, errores comunes,
 preguntas frecuentes y referencias—, no un resumen: lo que se lee en el móvil es la
 misma clase que se lee en el sitio, **sin conexión y sin salir de la app**. Los enlaces
 al sitio y a GitHub siguen ahí para la versión web y la fuente en Markdown.
 
+Desde la versión **1.2.0**, el recurso **«¿Y si cruzas la línea?»** también viaja
+completo: sus perfiles de actividad, marco legal, casos, atribución, cooperación
+internacional, consecuencias económicas y salidas profesionales, con tres diagramas.
+
 ## 🧩 Fuente de verdad y generación del catálogo
 
-El temario embebido **no se escribe a mano**: se genera desde los `README.md` de las
-clases, que son la única fuente de verdad.
+El contenido embebido **no se escribe a mano**: se genera desde los `README.md` de las
+clases y los recursos transversales declarados por el generador. Esos Markdown son la
+fuente de verdad.
 
 ```bash
 python scripts/generar_curriculum_movil.py          # regenera mobile/src/data/classes.js
@@ -64,15 +70,16 @@ emite **una clase por línea** para que el diff siga siendo legible.
 mobile/
 ├── App.js                       Entrada + NavigationContainer (tema oscuro)
 ├── src/
-│   ├── data/classes.js          GENERADO: 340 clases + 19 partes
+│   ├── data/classes.js          GENERADO: 340 clases + 19 partes + recursos
 │   ├── screens/
 │   │   ├── HomeScreen.js         19 partes + progreso global
 │   │   ├── PartScreen.js         clases de una parte + buscador
-│   │   └── ClassScreen.js        detalle: Teoría / Práctica + enlaces
+│   │   ├── ClassScreen.js        detalle: Teoría / Práctica + enlaces
+│   │   └── ResourceScreen.js     recurso transversal completo + enlaces
 │   ├── components/
 │   │   ├── PartCard.js · ClassCard.js   tarjetas de parte y de clase
 │   │   └── ClassContent.js       pinta los bloques de la clase completa
-│   ├── navigation/AppNavigator.js  stack Home → Part → Class
+│   ├── navigation/AppNavigator.js  stack Home → Part/Class y Home → Resource
 │   ├── utils/enlaces.js          URLs de sitio y GitHub
 │   ├── utils/progress.js         progreso local (AsyncStorage)
 │   └── theme.js                  design system
@@ -86,7 +93,7 @@ abriendo una clase generada por una versión más nueva del generador; y si el c
 embebido no trae `content` (versiones ≤ 1.0.0), `ClassScreen` cae al resumen de
 siempre en lugar de quedarse en blanco.
 
-## 📦 Pipeline de release del APK
+## 📦 Pipeline del release multiplataforma
 
 El APK **se compila y firma en GitHub Actions**, nunca en local ni se commitea ningún
 binario. El workflow [`release-android.yml`](../.github/workflows/release-android.yml)
@@ -101,7 +108,13 @@ se dispara al empujar una etiqueta `v*`:
    efímero como *fallback* que avisa que no permite actualizaciones in-place).
 5. `zipalign` + `apksigner` → APK alineado y firmado.
 6. Se abre el APK y se verifica el contenido dentro del bytecode (ver abajo).
-7. Publica el APK + `SHA256SUMS` como assets de la GitHub Release.
+7. Publica APK Android, ZIP de la aplicación web, manual PDF y `SHA256SUMS` como
+   assets de la GitHub Release.
+
+`mobile/app.config.js` ajusta `experiments.baseUrl` mediante `EXPO_BASE_URL`: Pages
+usa `/modern-cybersecurity-program/app`, el ZIP de la release usa la raíz y el build
+local usa `/app`. Los workflows verifican el `src` resultante en `index.html` para
+impedir que una ruta absoluta incorrecta vuelva a publicar una pantalla en blanco.
 
 ### Verificación obligatoria del artefacto
 
@@ -120,7 +133,8 @@ El verificador **no** se conforma con que el fichero pese: busca dentro de sus b
 3. **párrafos completos** de la teoría y de la práctica de esas mismas clases —la
    comprobación que distingue "viaja el índice" de "viaja la clase";
 4. los encabezados de glosario, errores comunes, preguntas frecuentes y referencias;
-5. que el bundle pese al menos lo que ocupa el texto embebido.
+5. el título, cuerpo y marcadores del recurso transversal;
+6. que el bundle pese al menos lo que ocupa todo el texto embebido.
 
 Los marcadores se derivan de `mobile/src/data/classes.js` en cada ejecución, así que
 no hay que mantener una lista de frases a mano. Cada marcador se busca en las formas
@@ -137,7 +151,8 @@ resumido, que es justo lo que tiene que hacer.
 
 ## 🔒 Privacidad
 
-- El contenido viaja embebido: las 340 clases se leen **enteras y sin conexión**.
-- Solo requieren internet los diagramas y los enlaces al sitio y a GitHub.
+- El contenido viaja embebido: las 340 clases y los recursos transversales se leen
+  **enteros y sin conexión**.
+- Solo requieren internet los enlaces opcionales al sitio y a GitHub.
 - El progreso se guarda **solo en el dispositivo** (AsyncStorage). Sin cuentas, sin
   analítica, sin backend.

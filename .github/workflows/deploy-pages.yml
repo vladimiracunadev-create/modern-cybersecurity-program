@@ -18,6 +18,7 @@ on:
       # docs/ tampoco estaba: syllabus, rubrica, examen final y la matriz de
       # roles se publican en el sitio, asi que sus cambios deben desplegarse.
       - "docs/*.md"
+      - "mobile/**"
       - "ctf/README.md"
       - "manual/MANUAL.pdf"
       # Los diagramas se incrustan en las páginas: si cambian, el sitio publicado
@@ -25,6 +26,8 @@ on:
       - "diagramas/**"
       - "scripts/generar_sitio.py"
       - "scripts/mermaid_svg.py"
+      - "scripts/generar_curriculum_movil.py"
+      - "scripts/verificar_bundle.py"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
@@ -55,6 +58,31 @@ jobs:
 
       - name: Generar HTML del currículo
         run: python scripts/generar_sitio.py
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+
+      - name: Instalar dependencias de la aplicación
+        working-directory: mobile
+        run: npm ci
+
+      - name: Publicar aplicación web dentro de Pages
+        working-directory: mobile
+        env:
+          EXPO_NO_TELEMETRY: "1"
+          EXPO_BASE_URL: "/modern-cybersecurity-program/app"
+        run: npx expo export --platform web --output-dir ../site/app
+
+      - name: Verificar el contenido de la aplicación web
+        run: |
+          grep -q '/modern-cybersecurity-program/app/_expo/static/js/web/AppEntry-' site/app/index.html
+          BUNDLE="$(find site/app -name 'AppEntry-*.js' | head -n1)"
+          test -n "$BUNDLE"
+          python scripts/verificar_bundle.py "$BUNDLE"
 
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v6

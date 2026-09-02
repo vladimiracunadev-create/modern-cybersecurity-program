@@ -1,6 +1,6 @@
 // ============================================================
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR A MANO
-// Fuente: classes/parte-*/NNN-*/README.md
+// Fuentes: classes/parte-*/NNN-*/README.md + recursos transversales
 // Regenera con:  python scripts/generar_curriculum_movil.py
 // Verifica con:  python scripts/generar_curriculum_movil.py --check
 // ============================================================
@@ -541,6 +541,1258 @@ export const CLASSES = [
   {"id": "340-340-capstone-pentest-autorizado-asistido-por-ia-con-mcp", "number": 340, "partSlug": "parte-18-ia-aplicada-a-la-ciberseguridad", "title": "Capstone: pentest autorizado asistido por IA con MCP", "level": "Experto", "duration": "180+ min", "description": "Integrar todo el programa en una operación completa: montar kali-mcp, definir el alcance, ejecutar un pentest supervisado asistido por IA contra tu laboratorio (recon → auditoría → PoC de bajo impacto → informe), aplica…", "theory": "Integrar todo el programa en una operación completa: montar kali-mcp, definir el alcance, ejecutar un pentest supervisado asistido por IA contra tu laboratorio (recon → auditoría → PoC de bajo impacto → informe), aplicando los guardrails y la ética de las clases anteriores. Es la síntesis de las Partes 3–9 (técnica) y 18 (IA como copiloto).", "outcomes": ["Planificar un engagement de laboratorio con alcance, RoE y guardrails escritos.", "Operar un agente de IA con MCP de forma supervisada y trazable.", "Ejecutar el ciclo completo con validación humana en cada fase.", "Producir un informe verificable con hallazgos reproducibles.", "Evaluar críticamente qué aportó la IA y dónde fue necesaria tu intervención."], "topics": ["Alcance y autorización", "Montaje", "Recon y auditoría", "PoC supervisada", "Informe", "Retrospectiva"], "definitions": [], "tools": ["Una VM vulnerable propia (Metasploitable, DVWA, o el lab appsec-web) en red aislada.", "kali-mcp montado (clase 333) y tu cliente de IA con MCP.", "El lab kali-mcp-ia del programa como guía de montaje."], "lab": "1. Escribe tu RoE + guardrails. Alcance = tu VM; matriz de permisos; política de datos; registro de auditoría. 2. Monta kali-mcp y verifica el aislamiento de red del contenedor. 3. Recon y auditoría asistidos, validando manualmente cada hallazgo clave. 4. Elige y aprueba un vector de PoC de bajo impacto; ejecútalo con trazabilidad. 5. Post-explotación mínima para demostrar impacto, sin tocar dato…", "exercises": ["Redacta el documento de alcance/RoE de tu capstone.", "Diseña la matriz de permisos del agente para esta operación.", "Define cómo registrarás la trazabilidad de cada acción.", "Especifica los límites de post-explotación que respetarás.", "Prepara la plantilla del informe final."], "content": {"theory": [{"t": "h2", "x": "🎯 Objetivo"}, {"t": "p", "x": "Integrar todo el programa en una operación completa: montar kali-mcp, definir el alcance, ejecutar un pentest supervisado asistido por IA contra tu laboratorio (recon → auditoría → PoC de bajo impacto → informe), aplicando los guardrails y la ética de las clases anteriores. Es la síntesis de las Partes 3–9 (técnica) y 18 (IA como copiloto)."}, {"t": "h2", "x": "📚 Resultados de aprendizaje"}, {"t": "p", "x": "Al finalizar, el alumno podrá:"}, {"t": "li", "n": 1, "d": 0, "x": "Planificar un engagement de laboratorio con alcance, RoE y guardrails escritos."}, {"t": "li", "n": 2, "d": 0, "x": "Operar un agente de IA con MCP de forma supervisada y trazable."}, {"t": "li", "n": 3, "d": 0, "x": "Ejecutar el ciclo completo con validación humana en cada fase."}, {"t": "li", "n": 4, "d": 0, "x": "Producir un informe verificable con hallazgos reproducibles."}, {"t": "li", "n": 5, "d": 0, "x": "Evaluar críticamente qué aportó la IA y dónde fue necesaria tu intervención."}, {"t": "h2", "x": "🗺️ Fases del capstone"}, {"t": "table", "h": ["#", "Fase", "Entregable"], "r": [["1", "Alcance y autorización", "Documento de RoE + guardrails (clase 339)."], ["2", "Montaje", "kali-mcp operativo contra tu VM (clase 333)."], ["3", "Recon y auditoría", "Mapa de superficie de ataque validado (clases 334, 336)."], ["4", "PoC supervisada", "Demostración de impacto de bajo riesgo (clase 335)."], ["5", "Informe", "Reporte verificado con evidencia (clase 338)."], ["6", "Retrospectiva", "Análisis crítico del uso de IA."]]}, {"t": "h2", "x": "🧠 Explicación en profundidad"}, {"t": "p", "x": "El capstone evalúa el sistema sociotécnico completo: contrato, agente, MCP, Kali aislado, evidencia, informe y cleanup. El éxito no es autonomía máxima, sino decisiones revisables sin exceder autoridad."}, {"t": "dg", "img": "97b53b2ffa3cd063"}, {"t": "p", "x": "El diagrama separa lenguaje de autoridad. El modelo puede proponer; la política determina si la operación pertenece al alcance; la herramienta produce evidencia; y una persona o control determinista decide transiciones de alto impacto. Se registran prompt relevante, parámetros validados, versión, salida, aprobador y cleanup sin almacenar secretos innecesarios."}, {"t": "h3", "x": "Caso razonado"}, {"t": "p", "x": "El agente encuentra una ruta crítica fuera de horario. Se pausa, solicita autorización y conserva contexto sin ejecutarla."}, {"t": "h2", "x": "📔 Glosario operativo"}, {"t": "table", "h": ["Término", "Definición"], "r": [["Human checkpoint", "Punto donde una persona con autoridad aprueba una transición de riesgo."], ["Guardrail", "Capa que reduce una capacidad o detecta su uso; no garantía absoluta."], ["Audit trail", "Registro ordenado de solicitudes, decisiones, ejecuciones y resultados."]]}, {"t": "h2", "x": "📖 Definiciones y características"}, {"t": "p", "x": "Capstone : Proyecto integrador que exige aplicar, de forma coherente y completa, competencias de todo el programa en un caso realista y acotado."}, {"t": "p", "x": "Documento de alcance (RoE) : Define objetivos, límites, ventana y autorización. Aquí lo redactas tú para tu propio laboratorio; en el mundo real lo firma el cliente."}, {"t": "p", "x": "Evidencia reproducible : Cada hallazgo del informe puede repetirse manualmente con la herramienta correspondiente, sin depender de la palabra de la IA."}], "practice": [{"t": "h2", "x": "🧰 Herramientas y preparación"}, {"t": "li", "d": 0, "x": "Una VM vulnerable propia (Metasploitable, DVWA, o el lab appsec-web) en red aislada."}, {"t": "li", "d": 0, "x": "kali-mcp montado (clase 333) y tu cliente de IA con MCP."}, {"t": "li", "d": 0, "x": "El lab kali-mcp-ia del programa como guía de montaje."}, {"t": "h2", "x": "🧪 Desarrollo guiado"}, {"t": "li", "n": 1, "d": 0, "x": "Escribe tu RoE + guardrails. Alcance = tu VM; matriz de permisos; política de datos; registro de auditoría."}, {"t": "li", "n": 2, "d": 0, "x": "Monta kali-mcp y verifica el aislamiento de red del contenedor."}, {"t": "li", "n": 3, "d": 0, "x": "Recon y auditoría asistidos, validando manualmente cada hallazgo clave."}, {"t": "li", "n": 4, "d": 0, "x": "Elige y aprueba un vector de PoC de bajo impacto; ejecútalo con trazabilidad."}, {"t": "li", "n": 5, "d": 0, "x": "Post-explotación mínima para demostrar impacto, sin tocar datos ni salir de alcance."}, {"t": "li", "n": 6, "d": 0, "x": "Genera el informe con IA y verifica cada hallazgo contra la evidencia."}, {"t": "li", "n": 7, "d": 0, "x": "Retrospectiva: ¿qué aceleró la IA? ¿qué alucinó? ¿dónde fue imprescindible tu criterio?"}, {"t": "h2", "x": "✍️ Ejercicios"}, {"t": "li", "n": 1, "d": 0, "x": "Redacta el documento de alcance/RoE de tu capstone."}, {"t": "li", "n": 2, "d": 0, "x": "Diseña la matriz de permisos del agente para esta operación."}, {"t": "li", "n": 3, "d": 0, "x": "Define cómo registrarás la trazabilidad de cada acción."}, {"t": "li", "n": 4, "d": 0, "x": "Especifica los límites de post-explotación que respetarás."}, {"t": "li", "n": 5, "d": 0, "x": "Prepara la plantilla del informe final."}, {"t": "h2", "x": "📝 Reto verificable (entregable del capstone)"}, {"t": "p", "x": "Un paquete de engagement de tu laboratorio que incluya: (a) RoE + guardrails, (b) registro de auditoría de la sesión, (c) informe con hallazgos reproducibles, y (d) una retrospectiva crítica del uso de IA."}, {"t": "p", "x": "Criterio de aceptación: todo ocurrió dentro del alcance (tu VM); cada acción con impacto fue aprobada por ti; cada hallazgo del informe es reproducible manualmente; la retrospectiva identifica al menos un aporte real de la IA y al menos una limitación (p. ej. una alucinación) que tu supervisión corrigió."}, {"t": "h2", "x": "⚠️ Errores comunes"}, {"t": "table", "h": ["Síntoma / mensaje", "Causa y cómo arreglar"], "r": [["Empezar sin RoE ni alcance", "Nunca. Define y limita el alcance por escrito antes de tocar nada."], ["Hallazgos no reproducibles en el informe", "Verifica todo a mano; elimina lo que no puedas respaldar."], ["Dejar que el agente actúe sin aprobación", "Rompe la supervisión. Aprueba cada acción con impacto."], ["Objetivo fuera de tu propiedad", "Ilegal. Solo tu laboratorio."], ["Retrospectiva ausente", "Pierdes el aprendizaje. Analiza críticamente el uso de IA."]]}, {"t": "h2", "x": "❓ Preguntas frecuentes"}, {"t": "p", "x": "❓ ¿Qué nivel de autonomía le doy al agente en el capstone? El mínimo para ser útil: recon y resúmenes pueden ser más automáticos; toda acción activa o con impacto requiere tu aprobación. Tú firmas el informe."}, {"t": "p", "x": "❓ ¿Y si la IA se equivoca en un hallazgo? Por eso verificas todo contra la evidencia. Documentar una alucinación que tu supervisión corrigió es, de hecho, parte del aprendizaje del capstone."}, {"t": "p", "x": "❓ ¿Esto es el final del programa? Sí: integra técnica ofensiva/defensiva con IA como copiloto. A partir de aquí, sigue practicando en tu home lab y mantente al día — el campo cambia rápido."}, {"t": "h2", "x": "🔗 Referencias"}, {"t": "li", "d": 0, "x": "kali-mcp (MIT) — <https://github.com/pabpereza/kali-mcp>"}, {"t": "li", "d": 0, "x": "PTES · OWASP Top 10 for LLM"}, {"t": "li", "d": 0, "x": "Lab kali-mcp-ia y capstones de la Parte 16."}]}, "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/classes/parte-18-ia-aplicada-a-la-ciberseguridad/340-capstone-pentest-autorizado-asistido-por-ia-con-mcp/README.html", "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/classes/parte-18-ia-aplicada-a-la-ciberseguridad/340-capstone-pentest-autorizado-asistido-por-ia-con-mcp/README.md", "partNumber": 18}
 ];
 
+export const RESOURCES = [
+  {
+    "id": "cruzar-la-linea",
+    "icon": "⚠️",
+    "title": "¿Y si cruzas la línea?",
+    "subtitle": "Consecuencias reales de utilizar la ciberseguridad para delinquir",
+    "description": "Leyes, atribución, condenas, patrimonio, extradición y salidas profesionales legítimas, con fuentes oficiales.",
+    "content": [
+      {
+        "t": "h2",
+        "x": "El costo real de utilizar la ciberseguridad para delinquir"
+      },
+      {
+        "t": "q",
+        "x": "Vigencia jurídica y documental: revisado el 1 de septiembre de 2026. Este recurso es educativo y no constituye asesoría legal. La calificación de una conducta, la jurisdicción competente y la pena dependen de los hechos probados, la ley vigente y la decisión de un tribunal."
+      },
+      {
+        "t": "p",
+        "x": "La ciberseguridad no se divide entre técnicas «buenas» y «malas». Un escáner, un depurador, una regla de correlación o un conocimiento de Active Directory pueden proteger o perjudicar. Lo que cambia la naturaleza de la acción es el mandato: quién autorizó, sobre qué activos, durante qué plazo, con qué técnicas y para qué propósito. La Clase 025 enseña dónde está esa frontera. Este documento explica qué puede suceder después de cruzarla."
+      },
+      {
+        "t": "p",
+        "x": "No es una promesa de que todo delito será resuelto ni de que toda acusación terminará en prisión. Es una lectura basada en leyes y casos reales: la aparente distancia entre una pantalla y la víctima no elimina el daño, la evidencia, la jurisdicción ni las consecuencias."
+      },
+      {
+        "t": "dg",
+        "img": "f19c6122d787d925"
+      },
+      {
+        "t": "p",
+        "x": "El diagrama no afirma que el recorrido sea automático. Una alerta no equivale a culpabilidad y una identidad técnica no basta por sí sola para condenar. Muestra la cadena que una investigación intenta construir: conducta → evidencia → persona → norma aplicable → decisión judicial."
+      },
+      {
+        "t": "h2",
+        "x": "🪞 El espejo de las capacidades profesionales"
+      },
+      {
+        "t": "p",
+        "x": "El programa contiene 340 clases y 19 partes. No todas poseen una «versión criminal»: gobernar un SGSI o redactar una política no se transforma mágicamente en delito. Sí existen capacidades de doble uso cuyo propósito cambia al desaparecer el consentimiento o aparecer fraude, daño, apropiación, extorsión o sabotaje."
+      },
+      {
+        "t": "table",
+        "h": [
+          "Parte o capacidad del programa",
+          "Uso profesional legítimo",
+          "Uso ilícito posible",
+          "Punto exacto de ruptura"
+        ],
+        "r": [
+          [
+            "0 · sistemas, scripting y laboratorio",
+            "Administrar activos propios y automatizar tareas",
+            "Automatizar accesos sobre activos ajenos",
+            "Falta de autorización o exceso del alcance"
+          ],
+          [
+            "1 · redes y tráfico",
+            "Diagnóstico, NSM y respuesta",
+            "Interceptación, reconocimiento intrusivo o DDoS",
+            "Captar tráfico o degradar servicios sin derecho"
+          ],
+          [
+            "2 · criptografía",
+            "Confidencialidad, firma, autenticación",
+            "Cifrado usado para extorsionar o proteger ganancias ilícitas",
+            "La herramienta no es ilícita; lo son el daño y el propósito"
+          ],
+          [
+            "3 · pentesting",
+            "Prueba contratada con RoE",
+            "Intrusión y venta de acceso inicial",
+            "Ausencia de permiso o salida deliberada del scope"
+          ],
+          [
+            "4 · AppSec y bug bounty",
+            "Hallar, reportar y corregir fallos",
+            "Explotar aplicaciones y extraer datos",
+            "Probar fuera de la política o apropiarse del resultado"
+          ],
+          [
+            "5 · explotación y reversa",
+            "Validar mitigaciones e investigar binarios",
+            "Desarrollar exploits contra víctimas",
+            "Dirigir la capacidad a sistemas reales sin autorización"
+          ],
+          [
+            "6 · análisis de malware",
+            "Entender, detectar y contener amenazas",
+            "Crear, adaptar o distribuir malware",
+            "Intención y puesta a disposición para delinquir"
+          ],
+          [
+            "7 · Red Team",
+            "Emular adversarios bajo contrato",
+            "Comprometer organizaciones, persistir y extorsionar",
+            "El mandato profesional desaparece"
+          ],
+          [
+            "8 · SOC y detección",
+            "Correlacionar señales y responder",
+            "Abusar de la visibilidad para vigilar o facilitar ataques",
+            "Uso de privilegios para un fin no autorizado"
+          ],
+          [
+            "9 · DFIR",
+            "Preservar, analizar y explicar evidencia",
+            "Alterar, destruir u ocultar evidencia",
+            "Ruptura de integridad y cadena de custodia"
+          ],
+          [
+            "10 · nube",
+            "Proteger IAM, cargas y contenedores",
+            "Secuestrar cuentas o consumir cómputo ajeno",
+            "Uso no consentido de identidad y recursos"
+          ],
+          [
+            "11 · DevSecOps",
+            "Asegurar pipeline y cadena de suministro",
+            "Insertar una puerta trasera en una dependencia o build",
+            "Alteración engañosa de un artefacto confiado"
+          ],
+          [
+            "12 · OSINT e ingeniería social",
+            "Inteligencia legítima y evaluación autorizada",
+            "Phishing, acoso, suplantación o preparación de fraude",
+            "Engaño para obtener acceso, dinero o datos"
+          ],
+          [
+            "13 · móvil, IoT, radio e ICS",
+            "Evaluar dispositivos y resiliencia operacional",
+            "Sabotear equipos, plantas o servicios esenciales",
+            "Interferencia no autorizada y riesgo físico"
+          ],
+          [
+            "14 · GRC",
+            "Gobernar riesgo, cumplimiento y auditoría",
+            "Encubrir deliberadamente una conducta o abusar de confianza",
+            "Fraude, obstrucción o incumplimiento consciente del deber"
+          ],
+          [
+            "15 · seguridad de IA",
+            "Evaluar modelos y automatizar defensa",
+            "Escalar fraude, suplantación o abuso con IA",
+            "La automatización amplifica una conducta ilícita"
+          ],
+          [
+            "16 · capstones",
+            "Integrar capacidades en laboratorios autorizados",
+            "Ejecutar una campaña real contra terceros",
+            "Sustituir el entorno controlado por víctimas reales"
+          ],
+          [
+            "17 · IAM, datos y arquitectura",
+            "Diseñar control y resiliencia",
+            "Robar privilegios, exfiltrar datos o preparar sabotaje",
+            "Apropiación o abuso del acceso confiado"
+          ],
+          [
+            "18 · agentes de IA",
+            "Orquestar auditorías con aprobación humana",
+            "Automatizar acciones ofensivas sin permiso",
+            "Delegar a un agente no crea autorización"
+          ]
+        ]
+      },
+      {
+        "t": "p",
+        "x": "La conclusión no es que aprender ofensiva sea sospechoso. Un pentester, red teamer, analista de malware o investigador de vulnerabilidades puede operar al máximo nivel técnico dentro de la ley. La sofisticación profesional se mide por control, evidencia y responsabilidad, no por atacar a una víctima real."
+      },
+      {
+        "t": "h2",
+        "x": "🟥 Catálogo de actividades y su salida profesional"
+      },
+      {
+        "t": "p",
+        "x": "Estas fichas describen conductas, no «carreras». Evitan instrucciones operativas y relacionan cada riesgo con un camino legítimo ya presente en el programa."
+      },
+      {
+        "t": "h3",
+        "x": "1. Intrusión no autorizada y venta de acceso inicial"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Entrar o mantenerse en un sistema sin permiso; el initial access broker además transfiere o vende ese acceso a otro actor. Qué conocimientos utiliza. Redes, enumeración, vulnerabilidades, credenciales, Active Directory y nube de las Partes 1, 3, 4, 7, 10 y 17. Uso profesional legítimo. Un pentest o Red Team con autorización escrita. Dónde se cruza la línea. Falta de consentimiento, exceso del alcance, persistencia, apropiación de datos o cesión del acceso. A quién perjudica. Usuarios, organización, clientes, proveedores y aseguradoras. 🟢 Utiliza esas capacidades legalmente. Pentester, Analista de Seguridad Ofensiva o Red Teamer."
+      },
+      {
+        "t": "h3",
+        "x": "2. Robo de credenciales y phishing"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Obtener contraseñas, códigos o sesiones mediante engaño, captura o acceso indebido. Qué conocimientos utiliza. Identidad, web, correo, OSINT e ingeniería social de las Partes 4, 12 y 17. Uso profesional legítimo. Simulaciones de phishing expresamente autorizadas, concienciación y evaluación de IAM. Dónde se cruza la línea. Engañar a una persona real para apoderarse de su identidad, dinero o acceso. A quién perjudica. Personas, empleadores, entidades financieras y contactos de la víctima. 🟢 Utiliza esas capacidades legalmente. Analista SecOps, SOC / Blue Team o Gestión de Vulnerabilidades."
+      },
+      {
+        "t": "h3",
+        "x": "3. Business Email Compromise y fraude por ingeniería social"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Comprometer o suplantar correo empresarial para cambiar instrucciones de pago, facturas o beneficiarios. Qué conocimientos utiliza. Correo, dominios, OSINT, identidad y procesos financieros. Uso profesional legítimo. Evaluar controles de correo y procesos de doble aprobación. Dónde se cruza la línea. Suplantación, engaño y desvío de fondos. A quién perjudica. Empresas, universidades, administraciones, proveedores y empleados. 🟢 Utiliza esas capacidades legalmente. Analista de Ciberseguridad, GRC o SOC / Blue Team."
+      },
+      {
+        "t": "h3",
+        "x": "4. Fraude digital y robo de identidad"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Manipular sistemas o usar datos de otra persona para obtener un beneficio económico. Qué conocimientos utiliza. Aplicaciones, autenticación, pagos, OSINT y datos. Uso profesional legítimo. Prevención de fraude, diseño de controles y análisis de transacciones. Dónde se cruza la línea. Falsedad, suplantación, perjuicio y beneficio indebido. A quién perjudica. Personas, bancos, comercios y organismos públicos. 🟢 Utiliza esas capacidades legalmente. Analista de Ciberseguridad, GRC o Security Engineer."
+      },
+      {
+        "t": "h3",
+        "x": "5. Desarrollo o distribución de malware"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Crear, adaptar o entregar software destinado a acceder, espiar, dañar o facilitar otros delitos. Qué conocimientos utiliza. Programación, reversa, persistencia, evasión y formatos binarios de las Partes 5, 6 y 7. Uso profesional legítimo. Analizar muestras, construir simuladores inocuos y desarrollar detecciones. Dónde se cruza la línea. Diseñar o poner a disposición el código con intención delictiva; la mera existencia de una herramienta de doble uso no demuestra esa intención. A quién perjudica. Usuarios, empresas, hospitales, administraciones y proveedores. 🟢 Utiliza esas capacidades legalmente. DFIR, SOC / Blue Team o ingeniería de detección."
+      },
+      {
+        "t": "h3",
+        "x": "6. Ransomware y extorsión digital"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Impedir acceso a sistemas o amenazar con publicar datos para exigir un pago. Qué conocimientos utiliza. Intrusión, malware, movimiento lateral, criptografía, exfiltración y negociación abusiva. Uso profesional legítimo. Investigación de amenazas, respuesta, recuperación y ejercicios de crisis. Dónde se cruza la línea. Cifrado o robo sin permiso, amenaza y exigencia patrimonial. A quién perjudica. Desde pequeñas empresas hasta hospitales, municipios e infraestructura crítica. 🟢 Utiliza esas capacidades legalmente. DFIR, SOC / Blue Team o CISO."
+      },
+      {
+        "t": "h3",
+        "x": "7. Operación de botnet y DDoS criminal"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Controlar dispositivos comprometidos y usarlos para fraude, spam, malware o denegación de servicio. Qué conocimientos utiliza. Redes, automatización, C2, malware e IoT. Uso profesional legítimo. Pruebas de carga acordadas, investigación de C2 y desmantelamiento defensivo. Dónde se cruza la línea. Controlar equipos ajenos o degradar un servicio sin autorización. A quién perjudica. Propietarios de dispositivos, servicios atacados y usuarios que dependen de ellos. 🟢 Utiliza esas capacidades legalmente. Security Engineer, SOC / Blue Team o Seguridad de Infraestructura."
+      },
+      {
+        "t": "h3",
+        "x": "8. Robo, receptación y comercialización de datos"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Extraer, almacenar, transferir o vender datos obtenidos ilícitamente, incluidos credenciales y expedientes personales. Qué conocimientos utiliza. Bases de datos, DLP, nube, web, identidad y canales de exfiltración. Uso profesional legítimo. Clasificación, DLP, privacidad y respuesta a brechas. Dónde se cruza la línea. Apropiación, divulgación o comercio sin derecho, incluso si quien vende no realizó la intrusión original. A quién perjudica. Las personas identificadas, la organización custodio y terceros expuestos a fraude. 🟢 Utiliza esas capacidades legalmente. GRC, Security Engineer o CISO."
+      },
+      {
+        "t": "h3",
+        "x": "9. Abuso de nube y cryptojacking"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Usar cuentas, cómputo, almacenamiento o electricidad ajenos para minería u otras cargas sin pagarlos ni obtener permiso. Qué conocimientos utiliza. IAM, API cloud, contenedores, automatización y facturación. Uso profesional legítimo. Ingeniería y auditoría cloud, optimización y detección de consumo anómalo. Dónde se cruza la línea. Acceso engañoso o no autorizado y apropiación de recursos. A quién perjudica. Titular de la cuenta, proveedor y clientes afectados por costo o indisponibilidad. 🟢 Utiliza esas capacidades legalmente. Cloud Security Engineer o Ingeniero DevSecOps."
+      },
+      {
+        "t": "h3",
+        "x": "10. Ataque a la cadena de suministro"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Alterar código, dependencias, actualizaciones o pipelines confiados para llegar a usuarios posteriores. Qué conocimientos utiliza. Git, CI/CD, artefactos, firma, SBOM, dependencias y secretos de la Parte 11. Uso profesional legítimo. Revisar procedencia, endurecer builds y responder a compromisos. Dónde se cruza la línea. Introducir o distribuir una alteración engañosa sin mandato. A quién perjudica. Proveedor original y todas las organizaciones que confían en él. 🟢 Utiliza esas capacidades legalmente. Ingeniero DevSecOps, AppSec o Product CISO."
+      },
+      {
+        "t": "h3",
+        "x": "11. Abuso de privilegios internos"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Usar un acceso laboral válido para consultar, copiar, alterar o divulgar información fuera del propósito autorizado. Qué conocimientos utiliza. Administración, IAM, registros, datos y procesos internos. Uso profesional legítimo. Operar con mínimo privilegio y trazabilidad. Dónde se cruza la línea. El permiso para cumplir una función no autoriza curiosidad, venganza, beneficio personal ni entrega a terceros. A quién perjudica. Empleador, compañeros, clientes y personas cuyos datos estaban confiados. 🟢 Utiliza esas capacidades legalmente. Analista SecOps, GRC o Jefe de Seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "12. Sabotaje y alteración u ocultación de evidencia"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Dañar sistemas o datos, o manipular evidencia para impedir que se conozcan los hechos. Qué conocimientos utiliza. Administración, scripting, DFIR, almacenamiento y continuidad. Uso profesional legítimo. Contención, borrado autorizado, recuperación y preservación forense. Dónde se cruza la línea. Destrucción o alteración sin derecho y con perjuicio u obstrucción. A quién perjudica. Organización, clientes, investigadores, tribunal y personas que necesitan el servicio. 🟢 Utiliza esas capacidades legalmente. DFIR, Seguridad de Infraestructura o Analista SecOps."
+      },
+      {
+        "t": "h3",
+        "x": "13. Ataques contra infraestructura crítica e ICS"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Interferir con sistemas cuya indisponibilidad puede afectar transporte, energía, agua, salud o seguridad pública. Qué conocimientos utiliza. Segmentación, protocolos industriales, firmware, radio y arquitectura IT/OT. Uso profesional legítimo. Evaluación controlada de resiliencia y diseño seguro. Dónde se cruza la línea. Acceso o interferencia no autorizada, especialmente cuando crea riesgo físico o social grave. A quién perjudica. Operadores, trabajadores y comunidades enteras. 🟢 Utiliza esas capacidades legalmente. Arquitecto IT/OT u OT CISO."
+      },
+      {
+        "t": "h3",
+        "x": "14. Espionaje informático ilegal"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Obtener secretos, comunicaciones o propiedad intelectual sin derecho para ventaja económica, personal o de otra organización. Qué conocimientos utiliza. OSINT, intrusión, persistencia, nube, correo y exfiltración. Uso profesional legítimo. Threat intelligence, investigación autorizada y protección de activos críticos. Dónde se cruza la línea. Interceptación, acceso y apropiación sin consentimiento; el contexto estatal puede añadir reglas de seguridad nacional distintas según la jurisdicción. A quién perjudica. Personas, empresas, universidades y Estados. 🟢 Utiliza esas capacidades legalmente. SOC / Blue Team, DFIR o Cooperación y Alianzas Técnicas."
+      },
+      {
+        "t": "h3",
+        "x": "15. Utilización criminal de IA"
+      },
+      {
+        "t": "p",
+        "x": "Qué es. Emplear modelos o agentes para escalar suplantación, fraude, generación de señuelos o acciones no autorizadas. Qué conocimientos utiliza. LLM, agentes, automatización, deepfakes y seguridad de modelos de las Partes 15 y 18. Uso profesional legítimo. AI Red Team con alcance, gobierno y automatización defensiva. Dónde se cruza la línea. La misma que para una persona: engaño, acceso, daño o apropiación sin derecho. Un agente no absorbe la responsabilidad de quien lo configura y despliega. A quién perjudica. Personas suplantadas, víctimas de fraude, organizaciones y público. 🟢 Utiliza esas capacidades legalmente. AI CISO, AppSec o ingeniería de seguridad de IA."
+      },
+      {
+        "t": "h2",
+        "x": "⚖️ Consecuencias legales reales"
+      },
+      {
+        "t": "h3",
+        "x": "Chile como referencia principal"
+      },
+      {
+        "t": "p",
+        "x": "La Ley 21.459 tipifica ataques a sistemas y datos, acceso e interceptación ilícitos, falsificación, receptación, fraude y abuso de dispositivos. La pena concreta no se obtiene copiando el máximo de una tabla: el tribunal considera forma de participación, tentativa o consumación, agravantes, atenuantes, concurso con otros delitos y reglas procesales. En la escala chilena, presidio menor mínimo abarca 61 a 540 días, medio 541 días a 3 años y máximo 3 años y un día a 5 años."
+      },
+      {
+        "t": "table",
+        "h": [
+          "Conducta",
+          "Norma y artículo",
+          "Pena legal posible",
+          "Qué no debe inferirse"
+        ],
+        "r": [
+          [
+            "Impedir el funcionamiento de un sistema",
+            "Ley 21.459, art. 1",
+            "Presidio menor medio a máximo",
+            "No significa que todo incidente reciba 5 años"
+          ],
+          [
+            "Acceso superando barreras, sin autorización o excediéndola",
+            "Ley 21.459, art. 2 inc. 1",
+            "Presidio menor mínimo o 11–20 UTM",
+            "La multa es alternativa en este inciso, no absolución"
+          ],
+          [
+            "Acceso para apoderarse o usar información",
+            "Ley 21.459, art. 2 inc. 2",
+            "Presidio menor mínimo a medio",
+            "Debe probarse el elemento adicional"
+          ],
+          [
+            "Obtener y divulgar la información",
+            "Ley 21.459, art. 2 inc. 3",
+            "Presidio menor medio a máximo",
+            "La publicación puede agravar la exposición"
+          ],
+          [
+            "Interceptación técnica no pública",
+            "Ley 21.459, art. 3",
+            "Presidio menor medio; ciertas emisiones, medio a máximo",
+            "VPN, Tor o captura autorizada no son ilícitos por sí mismos"
+          ],
+          [
+            "Alterar, dañar o suprimir datos con daño grave",
+            "Ley 21.459, art. 4",
+            "Presidio menor medio",
+            "El daño grave forma parte del supuesto descrito"
+          ],
+          [
+            "Falsificación informática",
+            "Ley 21.459, art. 5",
+            "Presidio menor medio a máximo; puede aumentar para empleado público",
+            "Puede concurrir con fraude u otros delitos"
+          ],
+          [
+            "Comercializar o almacenar datos ilícitos con fin ilícito",
+            "Ley 21.459, art. 6",
+            "Pena del delito de origen rebajada en un grado",
+            "No exige ser quien realizó el acceso original"
+          ],
+          [
+            "Fraude informático",
+            "Ley 21.459, art. 7",
+            "Desde presidio menor mínimo y multa; sobre 400 UTM, máximo y 21–30 UTM",
+            "El tramo depende del perjuicio y hechos probados"
+          ],
+          [
+            "Dispositivos, programas o claves adaptados principalmente para delinquir",
+            "Ley 21.459, art. 8",
+            "Presidio menor mínimo y 5–10 UTM",
+            "Una herramienta legítima no queda prohibida por su sola existencia"
+          ]
+        ]
+      },
+      {
+        "t": "p",
+        "x": "La reforma incorporada por la Ley 21.663 contempla una exclusión específica para determinadas actividades de investigación de vulnerabilidades sujetas a condiciones legales. No es un permiso general para «probar primero y avisar después»: deben cumplirse todas las condiciones aplicables, incluidos registro, comunicación y límites establecidos. La regla segura para este programa sigue siendo trabajar con autorización expresa y alcance escrito."
+      },
+      {
+        "t": "h3",
+        "x": "Comparación internacional seleccionada"
+      },
+      {
+        "t": "table",
+        "h": [
+          "País / marco",
+          "Conducta",
+          "Norma / artículo",
+          "Pena máxima o rango legal citado",
+          "Observación"
+        ],
+        "r": [
+          [
+            "🇺🇸 Estados Unidos",
+            "Acceso, fraude, daño o extorsión sobre computadora protegida",
+            "18 U.S.C. §1030",
+            "Varía por inciso: desde 1 año hasta 20; daño con muerte puede llegar a cadena perpetua",
+            "CFAA no es una sola pena y pueden concurrir fraude, identidad y lavado"
+          ],
+          [
+            "🇪🇸 España",
+            "Acceso vulnerando seguridad",
+            "Código Penal, art. 197 bis.1",
+            "6 meses a 2 años",
+            "Distingue acceso de daños e interferencia"
+          ],
+          [
+            "🇪🇸 España",
+            "Daño o interferencia grave",
+            "Código Penal, arts. 264 y 264 bis",
+            "6 meses a 3 años; supuestos agravados alcanzan 2–5 o 3–8 años y multa",
+            "Infraestructura crítica y daño elevado agravan"
+          ],
+          [
+            "🇬🇧 Reino Unido",
+            "Acceso no autorizado",
+            "Computer Misuse Act 1990, s.1",
+            "Máximo de 2 años en acusación formal",
+            "El contrato y límites de un empleado importan para probar autorización"
+          ],
+          [
+            "🇬🇧 Reino Unido",
+            "Actos que deterioran sistemas",
+            "CMA, s.3",
+            "Máximo de 10 años",
+            "Incluye DDoS cuando concurren sus elementos"
+          ],
+          [
+            "🇬🇧 Reino Unido",
+            "Daño grave o riesgo grave",
+            "CMA, s.3ZA",
+            "Máximo de 14 años; cadena perpetua en ciertos daños a bienestar humano o seguridad nacional",
+            "No se aplica automáticamente a toda intrusión"
+          ],
+          [
+            "🇪🇺 Unión Europea",
+            "Acceso, interferencia, interceptación y herramientas",
+            "Directiva 2013/40/UE, arts. 3–9",
+            "Obliga a máximos mínimos de al menos 2 años y mayores umbrales en supuestos graves",
+            "Es un piso de armonización; la pena la fija cada Estado miembro"
+          ]
+        ]
+      },
+      {
+        "t": "p",
+        "x": "Estas cifras son penas legales posibles, no condenas observadas ni tiempo efectivamente cumplido. Una noticia sobre cargos tampoco es una condena. La tabla siguiente usa únicamente casos en los que la fuente oficial informa sentencia."
+      },
+      {
+        "t": "h2",
+        "x": "🧑‍⚖️ Condenas documentadas"
+      },
+      {
+        "t": "table",
+        "h": [
+          "Caso, país y fecha",
+          "Conducta e investigación publicada",
+          "Resultado judicial informado",
+          "Consecuencias patrimoniales / posteriores"
+        ],
+        "r": [
+          [
+            "Phishing de Ovalle, Chile, 2017",
+            "Página bancaria falsa, transferencias por $15 millones; testimonios, documentación bancaria, PDI y levantamiento del secreto bancario",
+            "540 días de presidio, remitidos",
+            "Se recuperaron $10 millones; $5 millones no fueron reversados"
+          ],
+          [
+            "Roman Seleznev, EE. UU., 21-04-2017",
+            "Malware en POS de más de 500 negocios, millones de tarjetas y venta en mercados criminales; condenado por 38 cargos",
+            "27 años de prisión federal",
+            "DOJ atribuyó más de USD 169 millones en pérdidas; otras sentencias concurrentes incluyeron restitución"
+          ],
+          [
+            "Gregory King, EE. UU., 07-10-2008",
+            "Botnet y DDoS; FBI analizó logs, ejecutó órdenes, examinó sus computadores y obtuvo confesión",
+            "2 años de prisión federal",
+            "Más de USD 69.000 de restitución"
+          ],
+          [
+            "Yaroslav Vasinskyi / REvil, EE. UU., 01-05-2024",
+            "Afiliado de ransomware, extraditado desde Polonia; más de 2.500 ataques atribuidos por el expediente",
+            "13 años y 7 meses de prisión",
+            "Más de USD 16 millones de restitución"
+          ],
+          [
+            "Oludayo Adeagbo, EE. UU., 02-10-2024",
+            "BEC contra entidades educativas y empresas; extraditado desde Reino Unido",
+            "7 años de prisión y 1 año de libertad supervisada",
+            "USD 942.655,03 de restitución"
+          ],
+          [
+            "Charles O. Parks III, EE. UU., 15-08-2025",
+            "Cuentas cloud obtenidas mediante engaño para minería; conversión por exchanges, NFT, pagos y bancos",
+            "1 año y 1 día de prisión",
+            "Decomiso de USD 500.000 y un Mercedes-Benz; restitución pendiente al publicarse la fuente"
+          ],
+          [
+            "Shannon Stafford, EE. UU., 24-09-2020",
+            "Exadministrador accedió y dañó la red de su exempleador",
+            "1 año y 1 día de prisión y 3 años de libertad supervisada",
+            "USD 193.258,10 de restitución"
+          ],
+          [
+            "Zain Qaiser, Reino Unido, 2019",
+            "Publicidad maliciosa y ransomware de bloqueo dentro de un grupo internacional; movimientos financieros formaron parte de la investigación",
+            "6 años y 5 meses de prisión",
+            "La NCA identificó más de GBP 700.000 recibidos en sus cuentas y gasto de lujo"
+          ]
+        ]
+      },
+      {
+        "t": "p",
+        "x": "En Ovalle, «540 días remitidos» no equivale a 540 días de prisión efectiva: la propia fuente informa una modalidad sustitutiva. En Vasinskyi, los USD 700 millones fueron demandas de rescate atribuidas al esquema, mientras la orden judicial de restitución superó USD 16 millones. Separar esas categorías evita inflar o minimizar una consecuencia real."
+      },
+      {
+        "t": "h2",
+        "x": "🔎 ¿Crees que nadie te va a encontrar?"
+      },
+      {
+        "t": "p",
+        "x": "La atribución no suele depender de una «IP mágica». Se construye cuando varias fuentes independientes cuentan una historia compatible y resisten impugnación. Cada una tiene límites: una dirección IP puede identificar una conexión, no necesariamente a la persona; una cuenta puede haber sido robada; un artefacto puede haber sido plantado. La fuerza aparece en la correlación."
+      },
+      {
+        "t": "dg",
+        "img": "fa5067f1be5f6b4f"
+      },
+      {
+        "t": "p",
+        "x": "Una investigación moderna puede combinar:"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "registros de autenticación, aplicaciones, EDR, proxy, DNS y proveedores;"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "dominios, hosting, infraestructura comprometida e historiales de cuentas;"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "dispositivos incautados, análisis forense y copias existentes en otros lugares;"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "horarios, zonas horarias, hábitos, alias, correos y números reutilizados;"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "transferencias bancarias, beneficiarios, compras y retiros;"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "movimientos públicos de determinadas redes blockchain y datos obtenidos legalmente de"
+      },
+      {
+        "t": "p",
+        "x": "intermediarios;"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "telecomunicaciones y datos de suscriptor cuando existe base y autorización legal;"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "evidencia encontrada en cómplices, proveedores o víctimas;"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "errores operacionales y declaraciones del propio investigado;"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "cooperación entre fiscalías, policías y empresas de varios países."
+      },
+      {
+        "t": "p",
+        "x": "El caso Gregory King muestra logs, órdenes de registro y forense de dispositivos en una misma investigación. La documentación judicial de ChipMixer explica cómo el FBI empleó análisis de blockchain para relacionar flujos con pagos de ransomware. Esto no significa que toda criptomoneda identifique automáticamente a una persona: significa que «cripto» no borra el resto de la cadena probatoria."
+      },
+      {
+        "t": "p",
+        "x": "Este documento deliberadamente no enseña a borrar huellas, ocultar fondos, derrotar el forense ni evitar órdenes judiciales. La perspectiva es la de preservación, investigación y control judicial."
+      },
+      {
+        "t": "h2",
+        "x": "🧩 Mitos frente a realidad"
+      },
+      {
+        "t": "table",
+        "h": [
+          "Mito",
+          "Realidad verificable y prudente"
+        ],
+        "r": [
+          [
+            "«Una VPN me vuelve invisible»",
+            "Cambia una parte del trayecto de red; no elimina dispositivos, cuentas, pagos, horarios, proveedores ni evidencia de terceros"
+          ],
+          [
+            "«Tor es ilegal»",
+            "Es una tecnología de privacidad con usos legítimos; la legalidad depende de la conducta, no de instalarla"
+          ],
+          [
+            "«Criptomonedas significa anonimato total»",
+            "Algunas redes conservan un historial público; atribuir una dirección a una persona exige evidencia adicional"
+          ],
+          [
+            "«Si borro el archivo, desapareció»",
+            "Puede persistir en logs, respaldos, snapshots, destinatarios, nube o dispositivos relacionados"
+          ],
+          [
+            "«Un servidor extranjero me protege»",
+            "Puede investigarse o incautarse mediante el derecho del país anfitrión y cooperación internacional"
+          ],
+          [
+            "«Una cuenta falsa no se relaciona conmigo»",
+            "Alias, recuperación, sesiones, pagos, dispositivos y contactos pueden correlacionarse; ninguna señal aislada basta siempre"
+          ],
+          [
+            "«La IA hizo la acción, no yo»",
+            "Automatizar no crea permiso ni elimina la posible responsabilidad de quien configura, ordena o facilita la conducta"
+          ],
+          [
+            "«Si pasan años, ya estoy libre»",
+            "Prescripción, suspensión e interrupción dependen del delito y jurisdicción; una regla universal sería falsa"
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "🌎 ¿Y si estás en otro país?"
+      },
+      {
+        "t": "p",
+        "x": "Un delito transnacional puede tocar varios territorios: donde está el autor, la víctima, el servidor, el proveedor o el perjuicio. Más de un Estado puede reclamar jurisdicción. Eso no significa que todos puedan detener a cualquiera en cualquier lugar. Cada medida requiere una base legal y un procedimiento."
+      },
+      {
+        "t": "p",
+        "x": "El Convenio de Budapest proporciona herramientas para preservar datos, solicitar asistencia y cooperar sobre evidencia electrónica. Su artículo 24 trata la extradición entre Partes bajo sus condiciones. INTERPOL facilita intercambio policial; no es un tribunal y una notificación no reemplaza una orden nacional. Europol apoya cooperación policial en la UE y Eurojust la coordinación judicial. La extradición depende, entre otros factores, del tratado o base aplicable, doble incriminación, pena, nacionalidad, prueba presentada, derechos fundamentales y decisión de las autoridades y tribunales competentes."
+      },
+      {
+        "t": "p",
+        "x": "Dos ejemplos concretos evitan las abstracciones:"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "REvil: Vasinskyi fue detenido en Polonia, extraditado a Estados Unidos y después condenado."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Operation Cronos / LockBit: autoridades de diez países intervinieron 34 servidores en ocho"
+      },
+      {
+        "t": "p",
+        "x": "jurisdicciones. La coordinación logró incautación y disrupción, pero una operación no convierte automáticamente a toda persona investigada en culpable."
+      },
+      {
+        "t": "dg",
+        "img": "2184a4c631977d51"
+      },
+      {
+        "t": "h2",
+        "x": "💰 No solo puedes perder la libertad"
+      },
+      {
+        "t": "p",
+        "x": "Una sentencia puede combinar prisión o pena sustitutiva con consecuencias distintas:"
+      },
+      {
+        "t": "table",
+        "h": [
+          "Consecuencia",
+          "Qué significa",
+          "Ejemplo documentado"
+        ],
+        "r": [
+          [
+            "Multa",
+            "Pago punitivo fijado por ley y sentencia",
+            "La Ley 21.459 combina multas UTM con ciertos delitos"
+          ],
+          [
+            "Restitución",
+            "Devolver a las víctimas pérdidas reconocidas por el tribunal",
+            "Vasinskyi: más de USD 16 millones; Stafford: USD 193.258,10"
+          ],
+          [
+            "Decomiso",
+            "Pérdida de ganancias o bienes vinculados al delito",
+            "Parks: USD 500.000 y un Mercedes-Benz"
+          ],
+          [
+            "Incautación",
+            "Custodia de dispositivos, servidores o fondos como evidencia o medida procesal",
+            "LockBit: 34 servidores intervenidos en la operación internacional"
+          ],
+          [
+            "Responsabilidad civil",
+            "Reclamaciones de víctimas separadas o vinculadas al proceso penal",
+            "Depende de la jurisdicción y del daño probado"
+          ],
+          [
+            "Costos de defensa",
+            "Honorarios, peritajes, tiempo y restricciones durante el proceso",
+            "No son una «pena» y varían caso a caso"
+          ]
+        ]
+      },
+      {
+        "t": "p",
+        "x": "Multa, restitución y decomiso no son sinónimos. Una multa sanciona; la restitución busca compensar pérdidas reconocidas; el decomiso priva de instrumentos o ganancias. Una misma sentencia puede contener las tres. Tampoco todo monto sustraído termina recuperado: el caso chileno de phishing recuperó $10 millones de $15 millones transferidos."
+      },
+      {
+        "t": "h2",
+        "x": "📄 La condena no termina necesariamente al salir del tribunal"
+      },
+      {
+        "t": "p",
+        "x": "Una condena puede generar antecedentes y penas accesorias expresamente previstas por la ley. También puede producir efectos prácticos que no son automáticos: término o pérdida de empleo, rechazo de una habilitación, dificultad para acceder a funciones de confianza, revisión de una autorización de seguridad, mayor escrutinio contractual o daño reputacional."
+      },
+      {
+        "t": "p",
+        "x": "Conviene separar tres preguntas:"
+      },
+      {
+        "t": "li",
+        "n": 1,
+        "d": 0,
+        "x": "¿La sentencia impuso una inhabilitación? Se responde leyendo el fallo y la ley."
+      },
+      {
+        "t": "li",
+        "n": 2,
+        "d": 0,
+        "x": "¿Una regulación excluye a la persona de una función concreta? Se responde con la norma del"
+      },
+      {
+        "t": "p",
+        "x": "sector y su jurisdicción."
+      },
+      {
+        "t": "li",
+        "n": 3,
+        "d": 0,
+        "x": "¿Un empleador o cliente decidirá no contratar? Es una posibilidad práctica, sujeta a leyes"
+      },
+      {
+        "t": "p",
+        "x": "laborales, de datos y no discriminación; no una consecuencia universal."
+      },
+      {
+        "t": "p",
+        "x": "No es correcto afirmar que toda persona condenada queda «inhabilitada para trabajar en TI para siempre». Sí es razonable explicar por qué una condena por abuso de acceso puede ser especialmente relevante en cargos que administran privilegios, dinero, datos sensibles o infraestructura."
+      },
+      {
+        "t": "h2",
+        "x": "🛂 Una condena también puede cruzar fronteras contigo"
+      },
+      {
+        "t": "p",
+        "x": "No existe la regla «con antecedentes nunca podrás viajar». Existen evaluaciones diferentes por país, visa, nacionalidad, delito, pena, tiempo transcurrido y posibles excepciones."
+      },
+      {
+        "t": "table",
+        "h": [
+          "País",
+          "Regla oficial resumida al 01-09-2026",
+          "Por qué no es absoluta"
+        ],
+        "r": [
+          [
+            "🇨🇦 Canadá",
+            "Un delito cometido o una condena puede producir inadmisibilidad; decide un oficial al solicitar visa/eTA o en frontera",
+            "Existen vías como rehabilitación o permiso temporal según el caso"
+          ],
+          [
+            "🇬🇧 Reino Unido",
+            "Las reglas contemplan rechazo obligatorio para ciertas condenas de 12 meses o más y rechazo discrecional para otras",
+            "Cambian según pena, ruta migratoria, tiempo y circunstancias"
+          ],
+          [
+            "🇦🇺 Australia",
+            "Debe cumplirse el requisito de carácter; se declaran cargos y condenas y pueden pedir certificados",
+            "La autoridad evalúa el caso bajo la Migration Act; no toda condena implica idéntico resultado"
+          ],
+          [
+            "🇺🇸 Estados Unidos",
+            "La INA enumera causales, como ciertos delitos de vileza moral o múltiples condenas con 5 años agregados de reclusión",
+            "Hay excepciones y waivers para algunas causales; decide la autoridad competente"
+          ]
+        ]
+      },
+      {
+        "t": "p",
+        "x": "Ocultar deliberadamente una condena puede crear un problema migratorio adicional por falsedad o engaño. La decisión prudente es consultar la regla oficial vigente y obtener asesoría jurídica para el caso concreto, no confiar en foros ni en esta tabla como dictamen."
+      },
+      {
+        "t": "h2",
+        "x": "🏃 La falsa tranquilidad de estar prófugo"
+      },
+      {
+        "t": "p",
+        "x": "Estar fuera del país que investiga no cierra el expediente. Puede significar una orden pendiente, restricciones de movimiento, detención al cruzar una frontera, procesos de extradición y años sin poder regresar con seguridad jurídica. Usar documentos o declaraciones falsas puede añadir nuevos delitos. La separación familiar, laboral y patrimonial no es una pena uniforme escrita en un código, pero puede ser una consecuencia práctica de mantener una vida condicionada por una orden vigente."
+      },
+      {
+        "t": "p",
+        "x": "Adeagbo fue extraditado desde Reino Unido a Estados Unidos en 2022 y condenado en 2024. Vasinskyi fue extraditado desde Polonia. Seleznev fue detenido en Maldivas y trasladado a Estados Unidos, donde un jurado lo condenó. Ninguno de esos casos demuestra que la extradición sea automática; demuestran que cambiar de país no garantiza el cierre de una investigación."
+      },
+      {
+        "t": "h2",
+        "x": "🔬 Estudios de caso: de la señal a la sentencia"
+      },
+      {
+        "t": "h3",
+        "x": "Caso A · Gregory King: botnet y DDoS"
+      },
+      {
+        "t": "code",
+        "x": "Ataques DDoS contra dos servicios\n        ↓\nregistros de Internet y denuncia\n        ↓\nórdenes judiciales de registro\n        ↓\nanálisis forense de computadores\n        ↓\ncorrelación con la operación de la botnet y confesión\n        ↓\ndeclaración de culpabilidad\n        ↓\n2 años de prisión + más de USD 69.000 de restitución",
+        "lang": "text"
+      },
+      {
+        "t": "p",
+        "x": "La enseñanza no es «qué error cometió». Es que logs, dispositivos y declaraciones son fuentes distintas; juntas vincularon actividad, infraestructura y persona. La evidencia estuvo sujeta al proceso penal, no a una conclusión automática del investigador."
+      },
+      {
+        "t": "h3",
+        "x": "Caso B · REvil: ransomware transnacional"
+      },
+      {
+        "t": "code",
+        "x": "Ataques de ransomware a víctimas internacionales\n        ↓\ninvestigaciones en varios países\n        ↓\nidentificación de un afiliado y su papel\n        ↓\ndetención en Polonia\n        ↓\nextradición a Estados Unidos\n        ↓\ndeclaración de culpabilidad\n        ↓\n13 años y 7 meses + más de USD 16 millones de restitución",
+        "lang": "text"
+      },
+      {
+        "t": "p",
+        "x": "Aquí la distancia geográfica no impidió el proceso, pero cada etapa necesitó cooperación y base legal. La cifra de restitución ordenada no debe confundirse con los rescates demandados por toda la campaña."
+      },
+      {
+        "t": "h3",
+        "x": "Caso C · phishing de Ovalle: datos bancarios y rastro financiero"
+      },
+      {
+        "t": "code",
+        "x": "víctima llega a una página bancaria falsa\n        ↓\ntres transferencias por $15 millones\n        ↓\ndocumentación del banco + testimonios + PDI\n        ↓\nlevantamiento judicial del secreto bancario\n        ↓\nidentificación de quien retiró $5 millones\n        ↓\njuicio simplificado y condena\n        ↓\n540 días remitidos; $10 millones recuperados",
+        "lang": "text"
+      },
+      {
+        "t": "p",
+        "x": "El rastro financiero complementó la evidencia digital. La condena publicada se refiere a la persona enjuiciada; la fuente señala que Fiscalía no descartaba participación de otras personas."
+      },
+      {
+        "t": "h3",
+        "x": "Caso D · Charles Parks: cloud, cripto y bienes"
+      },
+      {
+        "t": "code",
+        "x": "cuentas cloud creadas con identidades y empresas declaradas\n        ↓\nconsumo de más de USD 3,5 millones sin pago\n        ↓\nminería y movimientos por exchanges, NFT, pagos y bancos\n        ↓\ninvestigación FBI / NYPD y causa federal\n        ↓\ndeclaración de culpabilidad por fraude electrónico\n        ↓\n1 año y 1 día de prisión\n        ↓\ndecomiso de USD 500.000 y un vehículo de lujo",
+        "lang": "text"
+      },
+      {
+        "t": "p",
+        "x": "La nube y las criptomonedas no borraron la dimensión contractual, contable y bancaria. El caso también muestra que el decomiso puede alcanzar bienes comprados con ganancias del esquema."
+      },
+      {
+        "t": "h2",
+        "x": "🧪 Práctica segura y verificable"
+      },
+      {
+        "t": "p",
+        "x": "Esta práctica es documental; no requiere ni autoriza tocar sistemas ajenos."
+      },
+      {
+        "t": "li",
+        "n": 1,
+        "d": 0,
+        "x": "Elige una de las 15 fichas y dibuja una cadena causal con cinco columnas: conducta, víctima,"
+      },
+      {
+        "t": "p",
+        "x": "evidencia esperable, norma posible y salida profesional legítima."
+      },
+      {
+        "t": "li",
+        "n": 2,
+        "d": 0,
+        "x": "Para Chile, toma los artículos 1 a 8 de la Ley 21.459 y clasifica tres escenarios hipotéticos."
+      },
+      {
+        "t": "p",
+        "x": "Marca explícitamente los hechos que faltan: autorización, barrera técnica, daño grave, ánimo de apoderamiento, perjuicio o beneficio económico."
+      },
+      {
+        "t": "li",
+        "n": 3,
+        "d": 0,
+        "x": "Compara la pena legal máxima con la condena impuesta en dos casos. Explica por qué no son"
+      },
+      {
+        "t": "p",
+        "x": "intercambiables."
+      },
+      {
+        "t": "li",
+        "n": 4,
+        "d": 0,
+        "x": "Construye una matriz de atribución para el caso King. Por cada evidencia indica qué demuestra,"
+      },
+      {
+        "t": "p",
+        "x": "qué no demuestra y qué fuente independiente podría corroborarla."
+      },
+      {
+        "t": "li",
+        "n": 5,
+        "d": 0,
+        "x": "Redacta una reconducción profesional: una persona interesada en malware, OSINT o cloud debe"
+      },
+      {
+        "t": "p",
+        "x": "producir tres artefactos legales de portafolio y enlazarlos con una ruta real del programa."
+      },
+      {
+        "t": "p",
+        "x": "Criterio de aceptación: el trabajo distingue hecho, inferencia y conclusión judicial; no incluye instrucciones de evasión; usa al menos una fuente oficial chilena y una internacional; y diferencia pena teórica, solicitud fiscal, sentencia y cumplimiento efectivo."
+      },
+      {
+        "t": "h2",
+        "x": "⚠️ Errores de razonamiento frecuentes"
+      },
+      {
+        "t": "table",
+        "h": [
+          "Error",
+          "Corrección"
+        ],
+        "r": [
+          [
+            "«Si técnicamente podía hacerlo, estaba autorizado»",
+            "Capacidad y permiso son categorías distintas"
+          ],
+          [
+            "«No causé daño, por tanto no hubo delito»",
+            "Algunas figuras sancionan acceso o interceptación; otras sí exigen daño o perjuicio"
+          ],
+          [
+            "«Fue acusado, entonces es culpable»",
+            "Cargos y formalización son alegaciones; la culpabilidad requiere el proceso aplicable"
+          ],
+          [
+            "«La fiscalía pidió tres años, entonces recibió tres años»",
+            "Petición, pena legal y sentencia son cifras diferentes"
+          ],
+          [
+            "«Le dieron 540 días, así que estuvo 540 días preso»",
+            "Debe verificarse si la pena fue efectiva o sustitutiva"
+          ],
+          [
+            "«USD 700 millones en rescates significa USD 700 millones restituidos»",
+            "Demanda atribuida, pérdida probada y restitución son magnitudes distintas"
+          ],
+          [
+            "«Usar VPN, Tor o cripto demuestra delito»",
+            "Son tecnologías legítimas; importa la conducta y la prueba completa"
+          ],
+          [
+            "«Una IP identifica por sí sola a una persona»",
+            "Identifica un punto de red en un momento; atribución personal exige más evidencia"
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "❓ Preguntas para razonar"
+      },
+      {
+        "t": "li",
+        "n": 1,
+        "d": 0,
+        "x": "¿Por qué un acceso laboral válido puede ser ilícito cuando se usa para consultar datos de un"
+      },
+      {
+        "t": "p",
+        "x": "tercero sin necesidad funcional?"
+      },
+      {
+        "t": "li",
+        "n": 2,
+        "d": 0,
+        "x": "¿Qué hechos separarían un análisis de malware legítimo del abuso de dispositivos previsto en"
+      },
+      {
+        "t": "p",
+        "x": "la legislación chilena?"
+      },
+      {
+        "t": "li",
+        "n": 3,
+        "d": 0,
+        "x": "¿Por qué una cadena de evidencia con cuatro señales débiles e independientes puede ser más"
+      },
+      {
+        "t": "p",
+        "x": "convincente que una sola señal aparentemente fuerte?"
+      },
+      {
+        "t": "li",
+        "n": 4,
+        "d": 0,
+        "x": "¿Qué diferencia existe entre incautar un servidor y condenar a su operador?"
+      },
+      {
+        "t": "li",
+        "n": 5,
+        "d": 0,
+        "x": "¿Qué factores impiden afirmar que toda solicitud de extradición será concedida?"
+      },
+      {
+        "t": "li",
+        "n": 6,
+        "d": 0,
+        "x": "¿Por qué la restitución no reemplaza necesariamente la multa o la prisión?"
+      },
+      {
+        "t": "li",
+        "n": 7,
+        "d": 0,
+        "x": "¿Cómo explicarías a un reclutador que tu portafolio ofensivo demuestra habilidad sin tocar"
+      },
+      {
+        "t": "p",
+        "x": "víctimas reales?"
+      },
+      {
+        "t": "li",
+        "n": 8,
+        "d": 0,
+        "x": "¿Qué información tendrías que verificar antes de aconsejar a una persona condenada sobre una"
+      },
+      {
+        "t": "p",
+        "x": "visa concreta?"
+      },
+      {
+        "t": "h2",
+        "x": "🟢 La salida está dentro de la ley"
+      },
+      {
+        "t": "table",
+        "h": [
+          "Interés técnico",
+          "Trayecto legítimo",
+          "Evidencia de aprendizaje segura"
+        ],
+        "r": [
+          [
+            "Intrusión y explotación",
+            "Pentester / Red Team",
+            "Informe de laboratorio con RoE y remediación"
+          ],
+          [
+            "Malware y ransomware",
+            "DFIR / SOC",
+            "Análisis de una muestra controlada y reglas de detección"
+          ],
+          [
+            "Phishing y fraude",
+            "Analista SecOps / GRC",
+            "Simulación autorizada y rediseño del proceso de pago"
+          ],
+          [
+            "Credenciales e identidad",
+            "Security Engineer",
+            "Modelo IAM, detección y playbook de revocación"
+          ],
+          [
+            "Nube",
+            "Cloud Security",
+            "Auditoría CSPM de una cuenta propia"
+          ],
+          [
+            "Web",
+            "AppSec / Bug Bounty",
+            "Hallazgo en laboratorio o programa dentro de alcance"
+          ],
+          [
+            "Cadena de suministro",
+            "Ingeniero DevSecOps",
+            "Pipeline con SBOM, firma y políticas verificables"
+          ],
+          [
+            "IA",
+            "AI CISO",
+            "Evaluación de riesgo y AI Red Team autorizado"
+          ],
+          [
+            "ICS / infraestructura crítica",
+            "Arquitecto IT/OT",
+            "Arquitectura y tabletop sin interacción con planta real"
+          ]
+        ]
+      },
+      {
+        "t": "p",
+        "x": "Todo lo necesario para llegar lejos en ciberseguridad puede ejercerse legalmente. Cruzar la línea no demuestra mayor habilidad: cambia el consentimiento por víctimas, el informe por evidencia y la carrera por un proceso cuyas consecuencias pueden acompañar a la persona durante años."
+      },
+      {
+        "t": "h2",
+        "x": "🔗 Fuentes oficiales y trazabilidad"
+      },
+      {
+        "t": "p",
+        "x": "Cada fuente indica qué afirmación respalda. Las normas se consultaron en su texto oficial; los casos se usan por el resultado que publica la fiscalía, policía u organismo responsable."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Biblioteca del Congreso Nacional de Chile, Ley 21.459 — tipos penales, sanciones y texto vigente: <https://www.bcn.cl/leychile/Navegar?idNorma=1177743&idParte=10343832&idVersion=2222-02-02>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Biblioteca del Congreso Nacional de Chile, Código Penal, artículo 56 — escala y grados de las penas: <https://www.bcn.cl/leychile/navegar?idNorma=1984&idParte=9672257&idVersion=2025-11-28>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Fiscalía de Chile, Cibercriminalidad — categorías investigadas y especialización institucional: <https://www.fiscaliadechile.cl/persecucion-penal/areas-de-persecucion/cibercriminalidad>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Fiscalía de Chile, phishing de Ovalle — hechos, evidencia, condena y recuperación parcial: <https://www.fiscaliadechile.cl/actualidad/noticias/regionales/ovalle-condenan-mujer-por-fraude-informatico-en-el-cual-se-falseo>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "U.S. House, 18 U.S.C. §1030 — delitos y penas de la CFAA: <https://uscode.house.gov/view.xhtml?edition=2023&num=0&req=granuleid%3AUSC-2023-title18-section1030>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "BOE, Código Penal español — artículos 197 bis/ter y 264 a 264 ter: <https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Crown Prosecution Service, Computer Misuse Act — elementos, jurisdicción y máximos de las secciones 1, 2, 3 y 3ZA: <https://www.cps.gov.uk/prosecution-guidance/computer-misuse-act>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "EUR-Lex, Directiva 2013/40/UE — definiciones, delitos, umbrales mínimos y cooperación: <https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=celex%3A32013L0040>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Consejo de Europa, Convenio de Budapest — cooperación internacional, evidencia y extradición condicionada: <https://www.coe.int/en/web/cybercrime/convention-on-cybercrime>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "DOJ, Roman Seleznev — veredicto, pena y pérdidas atribuidas: <https://www.justice.gov/usao-wdwa/pr/russian-cyber-criminal-sentenced-27-years-prison-hacking-and-credit-card-fraud-scheme>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "DOJ, Yaroslav Vasinskyi / REvil — extradición, pena y restitución: <https://www.justice.gov/archives/opa/pr/sodinokibirevil-affiliate-sentenced-role-700m-ransomware-scheme>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "DOJ, Gregory King — logs, órdenes, forense, pena y restitución: <https://www.justice.gov/archive/criminal/cybercrime/press-releases/2008/kingSent.pdf>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "DOJ, Oludayo Adeagbo — BEC, extradición, pena y restitución: <https://www.justice.gov/archives/opa/pr/previously-extradited-foreign-national-sentenced-role-multimillion-dollar-business-email>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "DOJ, Charles O. Parks III — cryptojacking, trazas financieras, prisión y decomiso: <https://www.justice.gov/usao-edny/pr/crypto-influencer-sentenced-prison-multi-million-dollar-cryptojacking-scheme>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "DOJ, Shannon Stafford — abuso interno, daño, prisión y restitución: <https://www.justice.gov/usao-md/pr/crofton-man-sentenced-more-one-year-federal-prison-intentionally-damaging-computers-his>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "DOJ, declaración jurada ChipMixer — análisis de blockchain como una fuente dentro de una investigación: <https://www.justice.gov/opa/press-release/file/1574581/dl>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "National Crime Agency, Zain Qaiser — investigación de ransomware, condena y movimientos financieros: <https://nationalcrimeagency.gov.uk/news/hacker-from-russian-crime-group-jailed-for-multi-million-pound-global-blackmail-conspiracy>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Europol, Operation Cronos / LockBit — cooperación de diez países e intervención de infraestructura: <https://www.europol.europa.eu/media-press/newsroom/news/law-enforcement-disrupt-worlds-biggest-ransomware-operation>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Europol, Emotet — coordinación Europol/Eurojust e infraestructura distribuida: <https://www.europol.europa.eu/media-press/newsroom/news/world%E2%80%99s-most-dangerous-malware-emotet-disrupted-through-global-action>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Gobierno de Canadá, inadmisibilidad — decisión migratoria, criminalidad y vías posibles: <https://www.canada.ca/en/immigration-refugees-citizenship/services/admissibility-enforcement/inadmissibility.html>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "UK Visas and Immigration, criminality grounds — rechazo obligatorio y discrecional: <https://www.gov.uk/government/publications/grounds-for-refusal-criminality/grounds-for-refusal-criminality-accessible>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Australian Home Affairs, character requirements — declaración, certificados y posible rechazo o cancelación: <https://immi.homeaffairs.gov.au/help-support/meeting-our-requirements/character>"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "U.S. Department of State, visa denials — causales penales, excepciones y waivers: <https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-denials.html>"
+      }
+    ],
+    "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/docs/cruzar-la-linea-consecuencias-reales.html",
+    "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/docs/cruzar-la-linea-consecuencias-reales.md"
+  }
+];
+
 // Índice por parte derivado en runtime (evita duplicar los objetos de clase).
 export const CLASSES_BY_PART = CLASSES.reduce((acc, c) => {
   (acc[c.partSlug] = acc[c.partSlug] || []).push(c);
@@ -550,4 +1802,7 @@ export const CLASSES_BY_PART = CLASSES.reduce((acc, c) => {
 export const TOTAL_CLASSES = 340;
 export const TOTAL_PARTS = 19;
 
+export const TOTAL_RESOURCES = 1;
+
 export const classesForPart = (partSlug) => CLASSES_BY_PART[partSlug] || [];
+export const resourceById = (id) => RESOURCES.find((r) => r.id === id);

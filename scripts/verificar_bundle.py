@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Comprueba que el contenido de las clases viaja DENTRO del bundle de la app.
+"""Comprueba que clases y recursos viajan DENTRO del bundle de la app.
 
 Un build en verde no prueba nada sobre el artefacto: el APK puede compilar,
 firmarse y superar `apksigner verify` con el catalogo vacio o recortado. Este
@@ -18,6 +18,7 @@ Que verifica:
   4. Las secciones: los encabezados de glosario, errores, preguntas y
      referencias estan presentes.
   5. El tamano: el bundle pesa al menos lo que ocupa el texto embebido.
+  6. Los recursos transversales: título, cuerpo y marcadores distintivos.
 
 Los marcadores se derivan de ``mobile/src/data/classes.js`` en cada ejecucion,
 no estan escritos a mano: si el temario cambia, el verificador cambia con el.
@@ -37,6 +38,11 @@ import json
 import re
 import sys
 from pathlib import Path
+
+# Windows suele heredar cp1252 aunque el catálogo sea UTF-8. Un emoji dentro de
+# un marcador no debe abortar la verificación antes de comprobar el bundle.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOGO = ROOT / "mobile" / "src" / "data" / "classes.js"
@@ -110,13 +116,17 @@ def formas(texto: str, minimo: int) -> list[tuple[str, bytes]]:
     return candidatos
 
 
-def cargar_catalogo() -> tuple[list[dict], list[dict]]:
+def cargar_catalogo() -> tuple[list[dict], list[dict], list[dict]]:
     if not CATALOGO.exists():
         raise SystemExit(f"FALLA: no existe {CATALOGO.relative_to(ROOT)}")
     src = CATALOGO.read_text(encoding="utf-8")
     partes = json.loads(re.search(r"export const PARTS = (\[.*?\n\]);", src, re.DOTALL).group(1))
     clases = json.loads(re.search(r"export const CLASSES = (\[.*?\n\]);", src, re.DOTALL).group(1))
-    return partes, clases
+    recursos_match = re.search(
+        r"export const RESOURCES = (\[.*?\n\]);", src, re.DOTALL
+    )
+    recursos = json.loads(recursos_match.group(1)) if recursos_match else []
+    return partes, clases, recursos
 
 
 def parrafo_marcador(bloques: list[dict]) -> str | None:
@@ -136,7 +146,7 @@ def main() -> int:
     datos = bundle_path.read_bytes()
     print(f"Bundle: {bundle_path}  ({len(datos):,} bytes)")
 
-    partes, clases = cargar_catalogo()
+    partes, clases, recursos = cargar_catalogo()
     fallos: list[str] = []
 
     formatos: set[str] = set()
@@ -150,16 +160,16 @@ def main() -> int:
         print(f"  FALTA  {etiqueta}")
         fallos.append(etiqueta)
 
-    print(f"\n[1/5] Las {len(partes)} partes")
+    print(f"\n[1/6] Las {len(partes)} partes")
     for parte in partes:
         exigir(parte["id"], f"parte {parte['number']}: {parte['id']}")
 
     muestra = clases[::PASO_MUESTRA]
-    print(f"\n[2/5] Titulos de {len(muestra)} clases de muestra")
+    print(f"\n[2/6] Titulos de {len(muestra)} clases de muestra")
     for c in muestra:
         exigir(c["title"], f"clase {c['number']}: {c['title'][:52]}")
 
-    print(f"\n[3/5] Cuerpo de esas {len(muestra)} clases (parrafos completos)")
+    print(f"\n[3/6] Cuerpo de esas {len(muestra)} clases (parrafos completos)")
     for c in muestra:
         for nombre, bloques in (("teoria", c["content"]["theory"]),
                                 ("practica", c["content"]["practice"])):
@@ -169,18 +179,39 @@ def main() -> int:
                 continue
             exigir(marcador, f"clase {c['number']} {nombre}: \"{marcador[:48]}...\"")
 
-    print("\n[4/5] Secciones del estandar pedagogico")
+    print("\n[4/6] Secciones del estandar pedagogico")
     for seccion in SECCIONES_ESPERADAS:
         exigir(seccion, f"seccion «{seccion}»")
 
-    print("\n[5/5] Tamano coherente con el texto embebido")
+    print("\n[5/6] Recursos transversales completos")
+    if not recursos:
+        print("  FALTA  no hay recursos transversales en el catálogo")
+        fallos.append("recursos transversales")
+    for recurso in recursos:
+        exigir(recurso["title"], f"recurso: {recurso['title']}")
+        marcador = parrafo_marcador(recurso.get("content", []))
+        if marcador:
+            exigir(marcador, f"cuerpo de {recurso['id']}: \"{marcador[:48]}...\"")
+        else:
+            print(f"  FALTA  {recurso['id']} no contiene un párrafo largo verificable")
+            fallos.append(f"cuerpo de {recurso['id']}")
+    for marcador in ("Ley 21.459", "cooperación internacional", "salida profesional legítima"):
+        exigir(marcador, f"recurso transversal: {marcador}", minimo=10)
+    for diagrama in ("f19c6122d787d925", "fa5067f1be5f6b4f", "2184a4c631977d51"):
+        exigir(diagrama, f"referencia al diagrama {diagrama}", minimo=10)
+
+    print("\n[6/6] Tamano coherente con todo el texto embebido")
     texto_embebido = sum(
         len(b.get("x", "").encode("utf-8"))
         for c in clases
         for b in c["content"]["theory"] + c["content"]["practice"]
     )
+    texto_embebido += sum(
+        len(b.get("x", "").encode("utf-8"))
+        for recurso in recursos for b in recurso.get("content", [])
+    )
     minimo = int(texto_embebido * 0.9)
-    print(f"  texto de las clases: {texto_embebido:,} bytes; minimo exigido al bundle: {minimo:,}")
+    print(f"  texto embebido total: {texto_embebido:,} bytes; minimo exigido al bundle: {minimo:,}")
     if len(datos) < minimo:
         print(f"  FALTA  el bundle ({len(datos):,} B) no alcanza para contener el texto")
         fallos.append("tamano del bundle")
@@ -193,7 +224,8 @@ def main() -> int:
     if fallos:
         print(f"\nFALLA: {len(fallos)} comprobacion(es) sin superar: {fallos[:6]}")
         return 1
-    print(f"\nVERIFICADO: las {len(clases)} clases viajan COMPLETAS dentro del bundle.")
+    print(f"\nVERIFICADO: {len(clases)} clases y {len(recursos)} recurso(s) viajan "
+          "COMPLETOS dentro del bundle.")
     return 0
 
 

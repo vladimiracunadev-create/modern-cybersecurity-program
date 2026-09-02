@@ -1,6 +1,6 @@
 // ============================================================
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR A MANO
-// Fuente: bloques ```mermaid de classes/parte-*/NNN-*/README.md
+// Fuente: bloques ```mermaid de clases y recursos transversales
 // Regenera con:  python scripts/generar_curriculum_movil.py
 // ============================================================
 //
@@ -53,6 +53,7 @@ export const DIAGRAMAS = {
   "201fe0b00acdf44d": { fuente: require('../../assets/diagramas/201fe0b00acdf44d.png'), proporcion: 0.0689 },
   "2088b8266722338b": { fuente: require('../../assets/diagramas/2088b8266722338b.png'), proporcion: 0.108 },
   "210eb4d17723e7bf": { fuente: require('../../assets/diagramas/210eb4d17723e7bf.png'), proporcion: 0.0644 },
+  "2184a4c631977d51": { fuente: require('../../assets/diagramas/2184a4c631977d51.png'), proporcion: 0.4638 },
   "223b08cc4dec47da": { fuente: require('../../assets/diagramas/223b08cc4dec47da.png'), proporcion: 0.2511 },
   "22a7e7ab11cc2d5d": { fuente: require('../../assets/diagramas/22a7e7ab11cc2d5d.png'), proporcion: 0.1 },
   "2369015ee9dc567d": { fuente: require('../../assets/diagramas/2369015ee9dc567d.png'), proporcion: 0.3144 },
@@ -350,6 +351,7 @@ export const DIAGRAMAS = {
   "f06e9da1fa3c0c7b": { fuente: require('../../assets/diagramas/f06e9da1fa3c0c7b.png'), proporcion: 0.1075 },
   "f085e1821eab816f": { fuente: require('../../assets/diagramas/f085e1821eab816f.png'), proporcion: 0.4489 },
   "f0ee1ac41bc0f4c6": { fuente: require('../../assets/diagramas/f0ee1ac41bc0f4c6.png'), proporcion: 0.3533 },
+  "f19c6122d787d925": { fuente: require('../../assets/diagramas/f19c6122d787d925.png'), proporcion: 2.106 },
   "f2f35f9fd1a8b094": { fuente: require('../../assets/diagramas/f2f35f9fd1a8b094.png'), proporcion: 0.2489 },
   "f36705b713d81fd5": { fuente: require('../../assets/diagramas/f36705b713d81fd5.png'), proporcion: 0.8052 },
   "f3993ee9589802bd": { fuente: require('../../assets/diagramas/f3993ee9589802bd.png'), proporcion: 2.2334 },
@@ -357,6 +359,7 @@ export const DIAGRAMAS = {
   "f5be400129bb5de1": { fuente: require('../../assets/diagramas/f5be400129bb5de1.png'), proporcion: 0.7646 },
   "f75d60b0af7fd523": { fuente: require('../../assets/diagramas/f75d60b0af7fd523.png'), proporcion: 0.8122 },
   "f8cb62ca9b287afd": { fuente: require('../../assets/diagramas/f8cb62ca9b287afd.png'), proporcion: 0.1856 },
+  "fa5067f1be5f6b4f": { fuente: require('../../assets/diagramas/fa5067f1be5f6b4f.png'), proporcion: 0.4672 },
   "fa7845027cee8e80": { fuente: require('../../assets/diagramas/fa7845027cee8e80.png'), proporcion: 0.1333 },
   "fb0873888bfd8d6f": { fuente: require('../../assets/diagramas/fb0873888bfd8d6f.png'), proporcion: 0.1009 },
   "fb79bc2d56ef6293": { fuente: require('../../assets/diagramas/fb79bc2d56ef6293.png'), proporcion: 1.0119 },
@@ -375,4 +378,4 @@ export const DIAGRAMAS = {
 
 export const diagramaPorId = (id) => (id ? DIAGRAMAS[id] : undefined);
 
-export const TOTAL_DIAGRAMAS = 360;
+export const TOTAL_DIAGRAMAS = 363;
