@@ -13,7 +13,7 @@ Que verifica:
   2. Los titulos: los de una muestra determinista de clases.
   3. El CUERPO de la clase: parrafos largos de la explicacion en profundidad y
      de la practica de esa misma muestra. Es la comprobacion que distingue
-     "viaja el indice" de "viaja la clase"; hasta la version 1.1.0 la app solo
+     "viaja el indice" de "viaja la clase"; hasta la version 1.0.0 la app solo
      embebia un resumen y este chequeo habria fallado.
   4. Las secciones: los encabezados de glosario, errores, preguntas y
      referencias estan presentes.
