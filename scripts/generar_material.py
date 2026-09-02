@@ -17,6 +17,8 @@ la cache lo rechaza, asi que no se cuela en el material como si fuera contenido.
 Uso:  python scripts/generar_material.py <indice_de_parte>     # p. ej. 0, 1, 2 ...
       python scripts/generar_material.py <idx> --solo-una      # solo la 1ª clase (prueba)
       python scripts/generar_material.py --todas               # todas las partes seguidas
+      python scripts/generar_material.py --clases 025,118,151 [--solo-pdf]
+                                                            # solo clases concretas
 
 Requisitos: python-pptx, markdown, y Microsoft Edge (o Chrome) instalado.
 """
@@ -80,7 +82,8 @@ blockquote { border-left: 3px solid #2e8b57; margin: 8px 0; padding: 2px 12px; b
 a { color: #0b6; text-decoration: none; }
 div.mermaid { background: transparent; border: 0; text-align: center;
               page-break-inside: avoid; padding: 4px 0; }
-div.mermaid svg { max-width: 100%; height: auto; }
+div.mermaid svg { display: block; max-width: 100%; max-height: 245mm;
+                  width: auto; height: auto; margin: 0 auto; }
 """
 
 
@@ -347,14 +350,21 @@ def indices_de_partes() -> list[int]:
     return sorted(nums)
 
 
-def generar_parte(idx: int, solo_una: bool = False) -> int:
+def generar_parte(idx: int, solo_una: bool = False,
+                  numeros: set[str] | None = None,
+                  solo_pdf: bool = False) -> int:
     partes = sorted(glob.glob(os.path.join(CLASSES, f"parte-{idx}-*")))
     if not partes:
         raise SystemExit(f"No existe la parte {idx}")
     pdir = partes[0]
     clases = sorted(d for d in glob.glob(os.path.join(pdir, "*")) if os.path.isdir(d))
+    if numeros is not None:
+        clases = [d for d in clases if os.path.basename(d)[:3] in numeros]
     if solo_una:
         clases = clases[:1]
+
+    if not clases:
+        return 0
 
     nav = navegador()
     tmp = tempfile.mkdtemp(prefix="matcurso_")
@@ -378,13 +388,15 @@ def generar_parte(idx: int, solo_una: bool = False) -> int:
             print(f"  AVISO {slug}: {sin_dibujar} diagrama(s) sin dibujar", flush=True)
         open(html_path, "w", encoding="utf-8").write(html_text)
         generar_pdf(nav, html_path, os.path.join(cdir, pdf_name))
-        # PPTX
-        construir_pptx(md_text, titulo, os.path.basename(pdir).replace("-", " "),
-                       os.path.join(cdir, pptx_name))
+        # PPTX (opcional cuando se actualizan solo las guías PDF)
+        if not solo_pdf:
+            construir_pptx(md_text, titulo, os.path.basename(pdir).replace("-", " "),
+                           os.path.join(cdir, pptx_name))
         # README
         anadir_seccion_descargas(readme, pdf_name, pptx_name)
         hechos += 1
-        print(f"  [OK] {slug}  -> {pdf_name} + {pptx_name}", flush=True)
+        salidas = pdf_name if solo_pdf else f"{pdf_name} + {pptx_name}"
+        print(f"  [OK] {slug}  -> {salidas}", flush=True)
 
     print(f"Parte {idx}: material generado para {hechos} clase(s).", flush=True)
     return hechos
@@ -395,10 +407,34 @@ def main() -> int:
         total = sum(generar_parte(i) for i in indices_de_partes())
         print(f"TOTAL: material generado para {total} clase(s).")
         return 0
+    if "--clases" in sys.argv:
+        pos = sys.argv.index("--clases")
+        if pos + 1 >= len(sys.argv):
+            raise SystemExit("Falta la lista: --clases 025,118,151")
+        numeros = {
+            valor.strip().zfill(3)
+            for valor in sys.argv[pos + 1].split(",")
+            if valor.strip()
+        }
+        invalidos = sorted(n for n in numeros if not re.fullmatch(r"\d{3}", n))
+        if invalidos:
+            raise SystemExit(f"Números de clase inválidos: {invalidos}")
+        solo_pdf = "--solo-pdf" in sys.argv
+        total = sum(
+            generar_parte(i, numeros=numeros, solo_pdf=solo_pdf)
+            for i in indices_de_partes()
+        )
+        if total != len(numeros):
+            raise SystemExit(
+                f"Se pidieron {len(numeros)} clases y se encontraron {total}."
+            )
+        print(f"TOTAL: material actualizado para {total} clase(s) concretas.")
+        return 0
     if len(sys.argv) < 2:
         raise SystemExit(
             "Uso: python scripts/generar_material.py <indice_parte> [--solo-una]\n"
-            "     python scripts/generar_material.py --todas"
+            "     python scripts/generar_material.py --todas\n"
+            "     python scripts/generar_material.py --clases 025,118,151 [--solo-pdf]"
         )
     generar_parte(int(sys.argv[1]), "--solo-una" in sys.argv)
     return 0

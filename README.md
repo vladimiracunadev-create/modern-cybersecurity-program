@@ -22,7 +22,7 @@
 [![Markdown](https://img.shields.io/badge/Markdown-contenido-000000?style=flat-square&logo=markdown&logoColor=white)](classes/README.md)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-sitio%20vivo-222?style=flat-square&logo=githubpages&logoColor=white)](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/)
 
-[📚 Índice completo de clases](classes/README.md) · [📕 Manual completo (PDF)](manual/MANUAL.pdf) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Política de seguridad](SECURITY.md)
+[📚 Índice completo de clases](classes/README.md) · [⚠️ ¿Y si cruzas la línea?](docs/cruzar-la-linea-consecuencias-reales.md) · [📕 Manual completo (PDF)](manual/MANUAL.pdf) · [🌐 Aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Política de seguridad](SECURITY.md)
 
 </div>
 
@@ -139,17 +139,18 @@ Cada parte tiene su **propio README** con narrativa completa: de qué trata, res
 
 ## 📕 Manual completo (todo el curso en un documento)
 
-¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **340 clases** en orden, con portada, aviso ético e índice enlazado.
+¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **340 clases** y el recurso transversal **«¿Y si cruzas la línea?»**, con portada, aviso ético e índice enlazado.
 
-- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — **1.302 páginas** con los 360 diagramas dibujados, listas para imprimir o leer offline.
+- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — **1.308 páginas A4** con **363 diagramas** dibujados, listas para imprimir o leer offline.
 
 > Se genera con `python scripts/generar_manual.py` a partir de las clases, así que siempre refleja el contenido actual del repositorio.
 
-## 📱 App móvil Android
+## 📱 Aplicación Android y web
 
-¿Prefieres estudiar desde el teléfono? La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **340 clases en 19 partes** **completas** para leerlas **sin conexión**, con buscador y seguimiento de progreso local. Desde la versión 1.1.0 no hay que salir de la app para leer la clase: viaja entera, con su explicación en profundidad, sus **diagramas** y su práctica.
+La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **340 clases en 19 partes** y el nuevo recurso transversal **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. En `v1.2.0`, «¿Y si cruzas la línea?» viaja con sus fuentes y tres diagramas en Android y en la versión web.
 
-- 📥 **[Descargar el APK — release v1.1.0](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.1.0)** · verifica la integridad con `SHA256SUMS.txt`.
+- 🌐 **[Abrir la aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/)** — misma experiencia, publicada dentro de GitHub Pages.
+- 📥 **[Descargar Android, web y manual — release v1.2.0](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.2.0)** · verifica los tres artefactos con `SHA256SUMS.txt`.
 - 🧭 **Navegación:** Home (19 partes + progreso global) → Parte (clases + buscador) → Clase, en dos pestañas: *Teoría* (objetivo, resultados, temas, explicación en profundidad, definiciones, glosario) y *Práctica* (preparación, laboratorio, ejercicios, reto, errores comunes, preguntas frecuentes, referencias).
 - 🔌 **Offline-first:** las clases se leen enteras sin conexión, diagramas incluidos; solo necesitan internet los enlaces al sitio y a GitHub. El progreso se guarda **solo en tu dispositivo**.
 
@@ -283,10 +284,10 @@ El repositorio no se publica a ciegas: cada `push` y cada PR pasan por integraci
 
 | ⚙️ Workflow | Qué cubre |
 |---|---|
-| 🧪 [ci.yml](.github/workflows/ci.yml) | estructura y enlaces internos, **catálogo de rutas** (sin guías huérfanas, con sus secciones, sin clases inexistentes y sin anclas rotas), navegación bidireccional (anterior/siguiente), codificación UTF-8 sin mojibake, **trazabilidad de fuentes** (`verify-sources`), `markdownlint` y build del sitio |
+| 🧪 [ci.yml](.github/workflows/ci.yml) | estructura y enlaces internos, **catálogo de rutas** (sin guías huérfanas, con sus secciones, sin clases inexistentes y sin anclas rotas), navegación bidireccional (anterior/siguiente), codificación UTF-8 sin mojibake, **trazabilidad de fuentes** (`verify-sources`), `markdownlint`, build del sitio y exportación/verificación de la aplicación web |
 | 🔒 [security.yml](.github/workflows/security.yml) | escaneo de secretos (`gitleaks`) y análisis estático (`bandit`) de los scripts |
-| 🚀 [deploy-pages.yml](.github/workflows/deploy-pages.yml) | genera y despliega el sitio del curso a GitHub Pages |
-| 📱 [release-android.yml](.github/workflows/release-android.yml) | compila y firma el APK, y **abre el artefacto** para comprobar que las clases viajan completas dentro antes de publicarlo |
+| 🚀 [deploy-pages.yml](.github/workflows/deploy-pages.yml) | genera el sitio, incorpora la aplicación web y despliega ambos en GitHub Pages |
+| 📦 [release-android.yml](.github/workflows/release-android.yml) | compila y firma el APK, verifica el contenido embebido y publica Android, web, manual PDF y sumas SHA-256 |
 
 Los mismos validadores corren en local antes de subir:
 
@@ -302,7 +303,7 @@ python scripts/generar_curriculum_movil.py --check   # catálogo de la app al d�
 Y los generadores que llevan las clases a cada formato:
 
 ```bash
-python scripts/mermaid_svg.py                # dibuja los 360 diagramas a SVG (caché)
+python scripts/mermaid_svg.py                # dibuja y cachea todos los diagramas a SVG
 python scripts/generar_sitio.py              # site/ — el curso en HTML para Pages
 python scripts/generar_manual.py             # manual/MANUAL.pdf — el curso entero
 python scripts/generar_material.py --todas   # guía PDF + presentación PPTX por clase
@@ -314,7 +315,7 @@ python scripts/generar_curriculum_movil.py   # catálogo embebido de la app móv
 > HTML y los PDF y en PNG para las presentaciones y la app. Se versionan a propósito: el CI
 > construye el sitio y no tiene navegador con el que dibujarlos, así que si no estuvieran en el
 > repositorio las páginas publicadas saldrían sin sus gráficos. Dejar que mermaid dibujara durante la impresión no escala —en el
-> manual, con 360 diagramas en una sola página, el PDF salía sin ninguno—, y así el resultado
+> manual, con cientos de diagramas en una sola página, el PDF salía sin ninguno—, y así el resultado
 > tampoco depende de que una CDN responda a tiempo.
 >
 > Que estén **todos** en **todas** las salidas se comprueba con

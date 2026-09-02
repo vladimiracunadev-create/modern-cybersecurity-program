@@ -1,6 +1,6 @@
-name: Release Android
+name: Release multiplataforma
 
-# Compila, firma y publica el APK de la app móvil como asset de la GitHub Release.
+# Compila, verifica y publica Android, web y manual PDF en la GitHub Release.
 # Se dispara al empujar una etiqueta v* (por ejemplo v1.0.0) o manualmente.
 # El APK se construye EN LA NUBE: no se compila en local ni se commitea ningún binario.
 
@@ -13,13 +13,13 @@ on:
       tag:
         description: "Etiqueta de la release (ej. v1.0.0)"
         required: true
-        default: "v1.0.0"
+        default: "v1.2.0"
 
 permissions:
   contents: write
 
 concurrency:
-  group: release-android-${{ github.ref }}
+  group: release-multiplatform-${{ github.ref }}
   cancel-in-progress: false
 
 env:
@@ -64,6 +64,8 @@ jobs:
 
       - name: Sanidad del bundle (export web)
         working-directory: mobile
+        env:
+          EXPO_BASE_URL: ""
         run: npx expo export --platform web --output-dir dist-web
 
       # Se comprueba ya sobre el bundle web (barato, 1 min) para no descubrir
@@ -71,9 +73,18 @@ jobs:
       - name: Verificar el contenido en el bundle web
         run: |
           set -e
+          grep -q 'src="/_expo/static/js/web/AppEntry-' mobile/dist-web/index.html
           BUNDLE="$(find mobile/dist-web -name 'AppEntry-*.js' | head -n1)"
           test -n "$BUNDLE"
           python scripts/verificar_bundle.py "$BUNDLE"
+
+      - name: Preparar aplicación web y manual para la release
+        run: |
+          set -e
+          OUT_DIR="$GITHUB_WORKSPACE/release-artifacts"
+          mkdir -p "$OUT_DIR"
+          (cd mobile/dist-web && zip -qr "$OUT_DIR/CiberseguridadModerna-Web-${TAG_NAME}.zip" .)
+          cp manual/MANUAL.pdf "$OUT_DIR/Programa-Ciberseguridad-Moderna-${TAG_NAME}.pdf"
 
       - name: Generar proyecto Android nativo (prebuild)
         working-directory: mobile
@@ -177,12 +188,15 @@ jobs:
             unzip -l "$APK" | awk '{print $4}' | grep -oE '^[^/]+/' | sort -u | head
             exit 1
           fi
-          echo "VERIFICADO: los $DIAGRAMAS diagramas viajan dentro del APK."
+          echo "VERIFICADO: los $DIAGRAMAS diagramas de clases y recursos viajan dentro del APK."
 
       - name: Generar SHA256SUMS
         working-directory: ${{ steps.sign.outputs.outdir }}
         run: |
-          sha256sum CiberseguridadModerna-${TAG_NAME}.apk > SHA256SUMS.txt
+          sha256sum \
+            CiberseguridadModerna-${TAG_NAME}.apk \
+            CiberseguridadModerna-Web-${TAG_NAME}.zip \
+            Programa-Ciberseguridad-Moderna-${TAG_NAME}.pdf > SHA256SUMS.txt
           cat SHA256SUMS.txt
 
       - name: Publicar en la GitHub Release
@@ -191,14 +205,18 @@ jobs:
           tag_name: ${{ env.TAG_NAME }}
           name: "Ciberseguridad Moderna ${{ env.TAG_NAME }}"
           body: |
-            App móvil **Ciberseguridad Moderna** (Android) — las 340 clases del
-            programa, en el teléfono.
+            **Ciberseguridad Moderna** — release completa para Android, web y PDF.
 
             - **Las clases viajan enteras**: explicación en profundidad, diagramas,
               glosario, laboratorio, ejercicios, reto, errores comunes, preguntas
               frecuentes y referencias. Se leen **sin conexión**; ya no hace falta salir
               al sitio para leer la clase.
+            - **Nuevo recurso transversal «¿Y si cruzas la línea?»**, completo y
+              disponible sin conexión: marco legal comparado, atribución, condenas,
+              extradición, patrimonio, efectos profesionales y salidas legítimas.
             - 340 clases en 19 partes, con progreso guardado solo en el dispositivo.
+            - Incluye el **APK Android**, la **aplicación web estática** y el
+              **manual PDF consolidado** con el recurso nuevo y sus diagramas.
             - APK compilado y firmado en GitHub Actions. Antes de publicar se abre el
               APK y se comprueba, dentro del bytecode, que el texto de las clases está
               realmente ahí — no basta con que el build salga en verde.
@@ -208,5 +226,7 @@ jobs:
             > "orígenes desconocidos" para el instalador que uses.
           files: |
             release-artifacts/CiberseguridadModerna-${{ env.TAG_NAME }}.apk
+            release-artifacts/CiberseguridadModerna-Web-${{ env.TAG_NAME }}.zip
+            release-artifacts/Programa-Ciberseguridad-Moderna-${{ env.TAG_NAME }}.pdf
             release-artifacts/SHA256SUMS.txt
           fail_on_unmatched_files: true

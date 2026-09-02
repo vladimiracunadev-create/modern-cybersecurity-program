@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Genera el MANUAL del curso en PDF: consolida las 340 clases en un unico
-documento ordenado.
+Genera el MANUAL del curso en PDF: consolida las 340 clases y los recursos
+transversales en un unico documento ordenado.
 
   - manual/MANUAL.pdf  render imprimible (via Microsoft Edge/Chrome headless)
 
@@ -45,6 +45,7 @@ from salida_atomica import publicar  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CLASSES = os.path.join(ROOT, "classes")
 OUT_DIR = os.path.join(ROOT, "manual")
+RECURSO_CRUZAR_LINEA = os.path.join(ROOT, "docs", "cruzar-la-linea-consecuencias-reales.md")
 
 REPO = "vladimiracunadev-create/modern-cybersecurity-program"
 BLOB = f"https://github.com/{REPO}/blob/main/"
@@ -89,7 +90,8 @@ a { color: #0b6; text-decoration: none; }
 img { max-width: 100%; }
 div.mermaid { background: transparent; border: 0; text-align: center;
               page-break-inside: avoid; }
-div.mermaid svg { max-width: 100%; height: auto; }
+div.mermaid svg { display: block; max-width: 100%; max-height: 245mm;
+                  width: auto; height: auto; margin: 0 auto; }
 hr { border: 0; border-top: 1px solid #d5ddd8; margin: 18px 0; }
 .portada { page-break-after: always; text-align: center; padding-top: 60mm; }
 .portada h1 { border: 0; page-break-before: avoid; font-size: 30pt; }
@@ -213,6 +215,14 @@ def procesar_clase(num: int, clase_dir_rel: str, readme: str) -> str:
     return ancla + md.rstrip() + "\n"
 
 
+def procesar_recurso_cruzar_linea() -> str:
+    """Convierte el recurso transversal en un capítulo autónomo del manual."""
+    with open(RECURSO_CRUZAR_LINEA, encoding="utf-8") as f:
+        md = f.read()
+    md = reescribir_enlaces(md, "docs")
+    return '<a id="recurso-cruzar-linea"></a>\n\n' + md.rstrip() + "\n"
+
+
 def construir_md(clases) -> str:
     n_clases = len(clases)
     partes_orden = []
@@ -228,7 +238,7 @@ def construir_md(clases) -> str:
         "<h1>🛡️ Programa de Ciberseguridad Moderna</h1>\n"
         '<p class="sub">Manual completo · de fundamentos a nivel experto</p>\n'
         f'<p class="meta">{n_clases} clases · {n_partes} partes · '
-        "generado automáticamente desde el repositorio</p>\n"
+        "1 recurso transversal · generado automáticamente desde el repositorio</p>\n"
         "</div>\n"
     )
 
@@ -240,7 +250,8 @@ def construir_md(clases) -> str:
         "explícito**. Atacar sistemas sin autorización es delito en prácticamente "
         "todos los países.\n"
         ">\n"
-        f"> 📖 Este manual consolida las {n_clases} clases del programa. La versión "
+        f"> 📖 Este manual consolida las {n_clases} clases y el recurso transversal "
+        "**¿Y si cruzas la línea?**. La versión "
         "navegable, los laboratorios y los recursos interactivos están en el "
         f"[repositorio]({BLOB.rstrip('/')}) y en el "
         f"[sitio del curso](https://{REPO.split('/')[0]}.github.io/{REPO.split('/')[1]}/).\n"
@@ -248,6 +259,7 @@ def construir_md(clases) -> str:
 
     # Indice
     p.append("\n---\n\n# 📑 Índice\n")
+    p.append("\n- [⚠️ Recurso transversal: ¿Y si cruzas la línea?](#recurso-cruzar-linea)\n")
     parte_actual = None
     for num, parte, _, readme in clases:
         if parte != parte_actual:
@@ -256,7 +268,11 @@ def construir_md(clases) -> str:
         titulo = h1_de(readme)
         p.append(f"- [{titulo}](#clase-{num:03d})\n")
 
-    # Contenido
+    # Recurso transversal: aparece antes de las partes porque fija el marco de
+    # autorización y consecuencias para todo el contenido de doble uso.
+    p.append("\n---\n\n" + procesar_recurso_cruzar_linea() + "\n")
+
+    # Contenido de las clases
     parte_actual = None
     for num, parte, clase_dir_rel, readme in clases:
         if parte != parte_actual:
@@ -278,7 +294,7 @@ def incrustar_diagramas(html_text: str) -> tuple[str, int, int]:
     """Cambia cada bloque mermaid por su SVG ya dibujado.
 
     Antes esta pagina cargaba mermaid.js y confiaba en que Chrome esperase a que
-    dibujara los 360 diagramas antes de imprimir. No lo hacia: el PDF salia sin
+    dibujara los cientos de diagramas antes de imprimir. No lo hacia: el PDF salia sin
     ninguno, y subir el presupuesto de tiempo virtual de 60 s a 900 s no cambiaba
     nada (mismo tamano de fichero, mismos cero diagramas). Ahora los SVG llegan
     dibujados desde la cache y la pagina que se imprime no ejecuta JavaScript.
@@ -419,6 +435,28 @@ def verificar_diagramas(pdf_path: str, clases) -> bool:
     return True
 
 
+def verificar_recurso(pdf_path: str) -> bool:
+    """Comprueba que el capítulo nuevo y sus ideas distintivas llegaron al PDF."""
+    try:
+        from pypdf import PdfReader
+    except ImportError:
+        return True
+    texto = "\n".join((pagina.extract_text() or "") for pagina in PdfReader(pdf_path).pages)
+    marcadores = (
+        "¿Y si cruzas la línea?",
+        "El espejo de las capacidades profesionales",
+        "Correlación y línea temporal",
+        "Autoridad investigadora",
+        "No solo puedes perder la libertad",
+    )
+    faltan = [m for m in marcadores if m not in texto]
+    if faltan:
+        print(f"FALLA: el recurso transversal quedó incompleto en el PDF: {faltan}")
+        return False
+    print(f"Recurso transversal verificado: {len(marcadores)}/{len(marcadores)} marcadores.")
+    return True
+
+
 def main() -> int:
     clases = clases_ordenadas()
     if not clases:
@@ -459,6 +497,8 @@ def main() -> int:
     print(f"MANUAL.pdf generado: {mb:.1f} MB  ({nav.split(chr(92))[-1]}).")
 
     if not verificar_diagramas(pdf_path, clases):
+        return 1
+    if not verificar_recurso(pdf_path):
         return 1
     return 0
 

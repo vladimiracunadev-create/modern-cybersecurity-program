@@ -42,7 +42,18 @@ def reemplazar(origen: str, destino: str, intentos: int = INTENTOS) -> None:
 
 
 def publicar(origen: str, destino: str, minimo_bytes: int = 0) -> None:
-    """Comprueba que el temporal es plausible y lo publica como definitivo."""
+    """Espera el temporal, comprueba que es plausible y lo publica.
+
+    Edge puede cerrar su proceso principal unas decimas antes de que Windows
+    haga visible el PDF escrito por el subproceso de impresion. Esperar aqui
+    evita diagnosticar ese retraso normal como una generacion fallida.
+    """
+    # Un manual de miles de paginas y cientos de diagramas puede tardar unos
+    # 40 segundos en aparecer aun despues de terminar el proceso lanzador.
+    for _ in range(240):
+        if os.path.isfile(origen):
+            break
+        time.sleep(0.25)
     if not os.path.isfile(origen):
         raise RuntimeError(f"no se genero el fichero temporal: {origen}")
     tam = os.path.getsize(origen)

@@ -293,7 +293,8 @@ def escribir_landing(partes) -> None:
         ("✅", "Tu progreso", f"Marca las {total} clases y sigue tu avance (se guarda en tu navegador).", "autoevaluaciones/progreso.html"),
         ("🎓", "Certificaciones", "Mapeo a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con % de cobertura por dominio.", "certificaciones/README.html"),
         ("⚠️", "¿Y si cruzas la línea?", "Leyes, investigaciones, condenas y salidas profesionales legítimas, con fuentes oficiales.", "docs/cruzar-la-linea-consecuencias-reales.html"),
-        ("📕", "Manual en PDF", f"Las {total} clases en un único PDF (1.302 páginas, con sus diagramas) para leer de corrido o estudiar sin conexión.", "manual/MANUAL.pdf"),
+        ("📱", "Aplicación web", f"Las {total} clases y el recurso transversal completos, con diagramas y progreso local.", "app/"),
+        ("📕", "Manual en PDF", f"Las {total} clases y el recurso transversal en un único PDF (1.308 páginas A4 y 363 diagramas).", "manual/MANUAL.pdf"),
     ]
     feats_html = "".join(
         f'<a class="feat" href="{u}"><div class="ic">{i}</div><h3>{t}</h3><p>{d}</p></a>'
@@ -331,7 +332,7 @@ def escribir_landing(partes) -> None:
   <a href="https://github.com/vladimiracunadev-create/modern-cybersecurity-program">MIT en GitHub</a><br>
   <a href="classes/README.html">Índice de clases</a> · <a href="rutas/README.html">Rutas</a> ·
   <a href="autoevaluaciones/quiz.html">Autoevaluación</a> · <a href="autoevaluaciones/progreso.html">Progreso</a> ·
-  <a href="manual/MANUAL.pdf">Manual en PDF</a>
+  <a href="manual/MANUAL.pdf">Manual en PDF</a> · <a href="app/">Aplicación web</a>
 </div></footer>
 """
     doc = (f"<!doctype html><html lang='es'><head><meta charset='utf-8'>"
