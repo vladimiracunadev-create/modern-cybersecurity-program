@@ -146,6 +146,13 @@ La alerta que dispara el incidente puede venir del capstone Blue Team (Clase 306
 - plaso/log2timeline: <https://github.com/log2timeline/plaso>
 - Luttgens, Pepe, Mandia, *Incident Response & Computer Forensics*.
 
+## 🔬 Capstone alternativo: custodia digital
+
+El [laboratorio Nebula Custody](../../../labs/custodia-activos-digitales/README.md)
+ofrece un capstone financiero multifuente con dataset, analizador, threat model,
+playbooks, plantillas y [rúbrica de 100 puntos](../../../labs/custodia-activos-digitales/EVALUACION.md).
+La entrega debe ser reproducible y separar hechos, inferencias e hipótesis.
+
 ## 📥 Material descargable
 
 - 📄 [Guía en PDF](./clase-307-guia.pdf) — versión imprimible de esta clase.

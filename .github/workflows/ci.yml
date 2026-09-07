@@ -47,6 +47,9 @@ jobs:
       - name: Validar trazabilidad de fuentes (registro, citas y cifras del README)
         run: python scripts/verify-sources
 
+      - name: Probar conciliación del caso de custodia digital
+        run: python -m unittest discover -s labs/custodia-activos-digitales/tests -v
+
       - name: Resumen
         if: always()
         run: |

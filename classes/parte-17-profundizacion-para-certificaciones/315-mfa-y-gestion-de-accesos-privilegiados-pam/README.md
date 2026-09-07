@@ -174,6 +174,13 @@ comunicarse al personal.
 - RFC 6238 — *TOTP: Time-Based One-Time Password Algorithm*. <https://www.rfc-editor.org/rfc/rfc6238>
 - CISA — *Implementing Phishing-Resistant MFA*. <https://www.cisa.gov/resources-tools/resources/implementing-phishing-resistant-mfa>
 
+## 🔬 Aplicación transversal
+
+Evalúa la sesión privilegiada del [caso de custodia de activos digitales](../../../labs/custodia-activos-digitales/README.md):
+autenticación, rol, JIT/JEA, dispositivo, grabación, ticket, aprobación y operación.
+Demuestra por qué autenticar una cuenta y autorizar una API no legitiman por sí
+solos una transferencia concreta.
+
 ## 📥 Material descargable
 
 - 📄 [Guía en PDF](./clase-315-guia.pdf) — versión imprimible de esta clase.

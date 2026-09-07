@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" role="img" aria-label="Árbol de ataque para un retiro no autorizado">
+  <defs><marker id="arrow-54dd" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+  <style>.r{fill:#fee2e2;stroke:#dc2626;stroke-width:2}.b{fill:#fff7ed;stroke:#ea580c;stroke-width:2}.l{fill:#f8fafc;stroke:#64748b;stroke-width:2}.t{font:15px Arial,sans-serif;fill:#172033;text-anchor:middle;dominant-baseline:middle}.a{fill:none;stroke:#475569;stroke-width:2;marker-end:url(#arrow-54dd)}</style>
+  <path class="a" d="M550 95 V145 H145 V190"/><path class="a" d="M550 145 H415 V190"/><path class="a" d="M550 145 H685 V190"/><path class="a" d="M550 145 H955 V190"/>
+  <path class="a" d="M145 250 V320 H80 V370"/><path class="a" d="M145 320 H210 V370"/>
+  <path class="a" d="M415 250 V320 H350 V370"/><path class="a" d="M415 320 H480 V370"/>
+  <path class="a" d="M685 250 V320 H620 V370"/><path class="a" d="M685 320 H750 V370"/>
+  <path class="a" d="M955 250 V320 H890 V370"/><path class="a" d="M955 320 H1020 V370"/>
+  <rect class="r" x="420" y="35" width="260" height="60" rx="10"/><text class="t" x="550" y="65">Retiro no autorizado</text>
+  <rect class="b" x="45" y="190" width="200" height="60" rx="10"/><text class="t" x="145" y="220">Comprometer identidad</text>
+  <rect class="b" x="315" y="190" width="200" height="60" rx="10"/><text class="t" x="415" y="220">Abusar privilegio</text>
+  <rect class="b" x="585" y="190" width="200" height="60" rx="10"/><text class="t" x="685" y="220">Manipular workflow</text>
+  <rect class="b" x="855" y="190" width="200" height="60" rx="10"/><text class="t" x="955" y="220">Comprometer firma</text>
+  <rect class="l" x="20" y="370" width="120" height="55" rx="8"/><text class="t" x="80" y="398">Phishing</text>
+  <rect class="l" x="150" y="370" width="120" height="55" rx="8"/><text class="t" x="210" y="398">Break glass</text>
+  <rect class="l" x="290" y="370" width="120" height="55" rx="8"/><text class="t" x="350" y="398">Rol excesivo</text>
+  <rect class="l" x="420" y="370" width="120" height="55" rx="8"/><text class="t" x="480" y="398">Colusión</text>
+  <rect class="l" x="560" y="370" width="120" height="55" rx="8"/><text class="t" x="620" y="398">Mutar payload</text>
+  <rect class="l" x="690" y="370" width="120" height="55" rx="8"/><text class="t" x="750" y="398">Fail open</text>
+  <rect class="l" x="830" y="370" width="120" height="55" rx="8"/><text class="t" x="890" y="398">Extraer secreto</text>
+  <rect class="l" x="960" y="370" width="120" height="55" rx="8"/><text class="t" x="1020" y="398">Orden ilegítima</text>
+</svg>

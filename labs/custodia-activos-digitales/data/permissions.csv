@@ -1,0 +1,10 @@
+role,resource,action,effect,condition
+treasury_maker,withdrawal,create,allow,amount_btc<=1
+treasury_maker,withdrawal,approve,deny,always
+risk_approver,withdrawal,approve,allow,maker!=approver and risk_score<70
+wallet_operator,wallet,execute,allow,approval_count>=1 and destination_allowlisted=true
+reconciler,reconciliation,close,allow,no_open_critical_alert=true
+auditor,audit,read,allow,always
+platform_admin,platform,maintain,allow,jit_ticket_required=true
+platform_admin,audit,delete,deny,always
+break_glass,platform,admin,allow,two_custodians and expiry<=60m

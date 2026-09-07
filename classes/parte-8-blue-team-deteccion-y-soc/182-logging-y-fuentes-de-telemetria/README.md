@@ -187,6 +187,13 @@ Solo en segmentos críticos y con retención corta. Para hunting histórico, los
 - Elastic Common Schema (ECS): especificación oficial del esquema usado como ejemplo de normalización; adoptar ECS no corrige por sí solo errores de origen o parsing — <https://www.elastic.co/guide/en/ecs/current/index.html>
 - Sanders, C. y Smith, J. *Applied Network Security Monitoring*. Syngress: bibliografía profesional complementaria para el análisis de telemetría de red.
 
+## 🔬 Aplicación transversal
+
+Aplica el contrato de telemetría a las tres fuentes de verdad del
+[caso de custodia de activos digitales](../../../labs/custodia-activos-digitales/README.md):
+verifica los 20 campos mínimos, correlaciona `request_id` con `tx_hash` y explica
+qué conclusión queda impedida si desaparecen los eventos de aprobación.
+
 ## 📥 Material descargable
 
 - 📄 [Guía en PDF](./clase-182-guia.pdf) — versión imprimible de esta clase.

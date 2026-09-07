@@ -52,4 +52,4 @@ jobs:
       - name: Escaneo de seguridad de los scripts
         # -ll: reporta solo severidad media/alta (evita falsos positivos de bajo nivel
         # como el uso legítimo y controlado de subprocess en el generador de PDFs).
-        run: bandit -q -r scripts -ll
+        run: bandit -q -r scripts labs/custodia-activos-digitales -ll

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 500" role="img" aria-label="Arquitectura y fronteras de confianza de Nebula Custody">
+  <defs><marker id="arrow-f052" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+  <style>.n{fill:#ecfeff;stroke:#0891b2;stroke-width:2}.s{fill:#fefce8;stroke:#ca8a04;stroke-width:2}.d{fill:#f8fafc;stroke:#64748b;stroke-width:2}.t{font:15px Arial,sans-serif;fill:#172033;text-anchor:middle;dominant-baseline:middle}.a{fill:none;stroke:#475569;stroke-width:2;marker-end:url(#arrow-f052)}</style>
+  <path class="a" d="M145 105 H185"/><path class="a" d="M305 105 H345"/><path class="a" d="M465 105 H505"/><path class="a" d="M625 105 H665"/><path class="a" d="M785 105 H825"/><path class="a" d="M945 105 V170 H895"/>
+  <path class="a" d="M245 140 V260 H420"/><path class="a" d="M885 140 V260 H700"/><path class="a" d="M145 330 H420"/><path class="a" d="M540 295 V260 H580"/>
+  <path class="a" d="M245 140 V410 H580"/><path class="a" d="M725 140 V410 H700"/><path class="a" d="M640 295 V370"/>
+  <rect class="n" x="25" y="70" width="120" height="70" rx="9"/><text class="t" x="85" y="105">Cliente</text>
+  <rect class="n" x="185" y="70" width="120" height="70" rx="9"/><text class="t" x="245" y="105">IAM</text>
+  <rect class="n" x="345" y="70" width="120" height="70" rx="9"/><text class="t" x="405" y="105">Política</text>
+  <rect class="n" x="505" y="70" width="120" height="70" rx="9"/><text class="t" x="565" y="105">Aprobación</text>
+  <rect class="n" x="665" y="70" width="120" height="70" rx="9"/><text class="t" x="725" y="105">Wallet</text>
+  <rect class="s" x="825" y="70" width="120" height="70" rx="9"/><text class="t" x="885" y="105">Custodia</text>
+  <rect class="s" x="825" y="170" width="140" height="70" rx="9"/><text class="t" x="895" y="205">Blockchain</text>
+  <rect class="d" x="420" y="225" width="120" height="70" rx="9"/><text class="t" x="480" y="260">Ledger</text>
+  <rect class="d" x="25" y="295" width="120" height="70" rx="9"/><text class="t" x="85" y="330">Exchange</text>
+  <rect class="d" x="580" y="225" width="120" height="70" rx="9"/><text class="t" x="640" y="260">Conciliación</text>
+  <rect class="d" x="580" y="370" width="120" height="70" rx="9"/><text class="t" x="640" y="405">Auditoría</text>
+  <rect class="n" x="820" y="370" width="120" height="70" rx="9"/><text class="t" x="880" y="405">SIEM</text>
+  <path class="a" d="M700 405 H820"/>
+</svg>

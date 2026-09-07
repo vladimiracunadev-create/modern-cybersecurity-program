@@ -179,6 +179,13 @@ Documéntalo de inmediato y con honestidad. Ocultarlo destruye tu credibilidad; 
 - SWGDE, publicaciones de buenas prácticas: referencia profesional para procedimientos de evidencia digital; el documento aplicable debe identificarse por título y versión — <https://www.swgde.org/documents/published>
 - Carrier, B. *File System Forensic Analysis*. Addison-Wesley: bibliografía complementaria para estructuras y métodos de análisis de sistemas de archivos.
 
+## 🔬 Aplicación transversal
+
+Practica adquisición lógica, hashing, matriz probatoria y cadena de custodia con las
+doce fuentes sintéticas del [caso de custodia de activos digitales](../../../labs/custodia-activos-digitales/README.md).
+El reto exige declarar que un TXID prueba una transacción observada, no identidad,
+intención o legitimidad corporativa.
+
 ## 📥 Material descargable
 
 - 📄 [Guía en PDF](./clase-201-guia.pdf) — versión imprimible de esta clase.

@@ -1,0 +1,3 @@
+wallet_id,asset,tier,address,opening_balance,policy,owner_service
+w-btc-hot,BTC,hot,tb1qnebula000000000000000000000000000000001,10.00000000,limit-1btc-allowlist,wallet-service
+w-eth-warm,ETH,warm,0x00000000000000000000000000000000a11ce001,200.00000000,mpc-2of3,wallet-service

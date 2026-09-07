@@ -1,0 +1,6 @@
+event_id,timestamp,asset,direction,amount,wallet_id,counterparty,tx_hash,block_number,confirmations,request_id,correlation_id
+bc-001,2026-09-01T10:01:30Z,BTC,in,3.00000000,w-btc-hot,tb1qdeposit000000000000000000000000000001,tx-synth-btc-dep,2500001,120,dep-001,corr-dep-001
+bc-002,2026-09-02T14:05:40Z,BTC,out,0.50000000,w-btc-hot,tb1qcustomer00000000000000000000000000001,tx-synth-btc-001,2500140,80,req-001,corr-001
+bc-003,2026-09-02T22:14:19Z,BTC,out,0.70000000,w-btc-hot,tb1qunknown00000000000000000000000000002,tx-synth-btc-002,2500188,72,req-002,corr-002
+bc-004,2026-09-01T11:00:30Z,ETH,in,60.00000000,w-eth-warm,0x00000000000000000000000000000000de905170,tx-synth-eth-dep,910001,900,dep-002,corr-dep-002
+bc-005,2026-09-03T09:10:20Z,ETH,out,20.00000000,w-eth-warm,0x00000000000000000000000000000000c0570001,tx-synth-eth-003,910420,480,req-003,corr-003

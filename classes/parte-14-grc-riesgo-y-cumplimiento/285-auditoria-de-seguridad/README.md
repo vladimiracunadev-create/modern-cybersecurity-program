@@ -133,6 +133,13 @@ El uso de herramientas que recolectan evidencia automáticamente (configuracione
 - (ISC)² CISSP Official Study Guide, dominio 6 (Security Assessment and Testing).
 - NIST SP 800-53A — Assessing Security Controls. <https://csrc.nist.gov/pubs/sp/800/53/a/r5/final>
 
+## 🔬 Aplicación transversal
+
+Audita diseño y operación de la matriz maker-checker del
+[caso de custodia de activos digitales](../../../labs/custodia-activos-digitales/README.md).
+No aceptes capturas de la UI como única prueba: ensaya permisos negativos por API,
+revisa sesiones PAM y muestrea retiros contra aprobación, firma, asiento y TXID.
+
 ## 📥 Material descargable
 
 - 📄 [Guía en PDF](./clase-285-guia.pdf) — versión imprimible de esta clase.

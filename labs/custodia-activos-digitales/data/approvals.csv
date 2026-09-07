@@ -1,0 +1,3 @@
+approval_id,request_id,timestamp,approver_id,decision,policy_result,correlation_id
+app-001,req-001,2026-09-02T14:03:00Z,u003,approved,allow,corr-001
+app-003,req-003,2026-09-03T09:05:00Z,u003,approved,allow,corr-003

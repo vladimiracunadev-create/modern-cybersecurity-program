@@ -38,6 +38,7 @@ docker compose down -v      # apagar y borrar también los volúmenes/datos
 | [`appsec-code`](appsec-code/README.md) | App vulnerable + Semgrep/Bandit para code review y SAST | Partes 11 y 17 · PenTest+/CISSP | ✅ Disponible |
 | [`kali-mcp-ia`](kali-mcp-ia/README.md) | Agente de IA orquestando Kali vía MCP (usa kali-mcp, MIT) | Parte 18 | ✅ Disponible |
 | [`rootcause-windows`](rootcause-windows/README.md) | Triaje forense de Windows con RootCause (sensor de comportamiento en Rust, Apache-2.0) | Partes 6, 8 y 9 | ✅ Disponible |
+| [`custodia-activos-digitales`](custodia-activos-digitales/README.md) | Caso ficticio profesional: conciliación ledger–operación–blockchain, IAM/PAM/SoD, insider risk, threat model, DFIR, playbooks, dataset y tests | Partes 8, 9, 11, 14, 16 y 17 | ✅ Disponible · Python, sin fondos |
 | [`redes-nmap`](redes-nmap/README.md) | Objetivos en red aislada + scanner nmap para descubrimiento y enumeración | Parte 1 | ✅ Disponible |
 | [`pwn-binarios`](pwn-binarios/README.md) | Binario vulnerable + gdb/pwntools para explotación de stack overflow | Parte 5 | ✅ Disponible |
 | [`cloud-security`](cloud-security/README.md) | Toolbox Prowler/ScoutSuite/trivy/kube-bench para auditoría CSPM | Parte 10 | ✅ Disponible |
@@ -73,8 +74,11 @@ Cada carpeta `labs/<lab>/` contiene:
 
 ### La excepción: laboratorios documentales
 
-[`ciso-leadership`](ciso-leadership/README.md) **no tiene `docker-compose.yml` y no ataca nada**, y
-es deliberado: su materia de trabajo son decisiones, documentos y conversaciones, no contenedores.
+[`ciso-leadership`](ciso-leadership/README.md) y
+[`custodia-activos-digitales`](custodia-activos-digitales/README.md) **no tienen
+`docker-compose.yml` y no atacan nada**. El primero trabaja decisiones y documentos;
+el segundo analiza evidencia sintética offline y ofrece una consulta opcional de
+Bitcoin testnet exclusivamente de lectura.
 Mantiene el resto de la convención —README con recorrido guiado, entregables y criterio de
 aceptación— y añade rúbricas, porque lo que se evalúa no es un resultado técnico reproducible sino
 un juicio profesional. Sus escenarios se trabajan sobre **organizaciones ficticias**, con límites

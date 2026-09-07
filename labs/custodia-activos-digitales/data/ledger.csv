@@ -1,0 +1,7 @@
+record_id,timestamp,asset,account,event_type,amount,reference,correlation_id
+led-001,2026-08-31T23:59:00Z,BTC,custody,opening,10.00000000,period-open,corr-open-btc
+led-002,2026-09-01T10:00:00Z,BTC,custody,deposit,3.00000000,dep-001,corr-dep-001
+led-003,2026-09-02T14:06:00Z,BTC,custody,withdrawal,-0.50000000,req-001,corr-001
+led-004,2026-08-31T23:59:00Z,ETH,custody,opening,200.00000000,period-open,corr-open-eth
+led-005,2026-09-01T11:00:00Z,ETH,custody,deposit,60.00000000,dep-002,corr-dep-002
+led-006,2026-09-03T09:11:00Z,ETH,custody,withdrawal,-20.00000000,req-003,corr-003

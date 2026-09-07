@@ -1,0 +1,9 @@
+user_id,name,status,department,manager_id
+u001,Ana Vega,active,treasury,u006
+u002,Bruno Sol,active,treasury,u006
+u003,Carla Norte,active,risk,u006
+u004,Diego Luna,active,wallet-operations,u006
+u005,Elena Mar,active,reconciliation,u006
+u006,Fabián Río,active,audit,
+u007,Gabriel Cero,active,platform,
+u008,Break Glass,emergency,security,u006

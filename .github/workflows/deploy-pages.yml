@@ -14,7 +14,7 @@ on:
       - "certificaciones/**"
       # El generador publica el arbol completo de labs/, no solo su indice: un
       # trayecto nuevo dentro de un laboratorio tambien tiene que republicar.
-      - "labs/**/*.md"
+      - "labs/**"
       # docs/ tampoco estaba: syllabus, rubrica, examen final y la matriz de
       # roles se publican en el sitio, asi que sus cambios deben desplegarse.
       - "docs/*.md"

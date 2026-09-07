@@ -357,8 +357,8 @@ def main() -> int:
             escribir(rel, open(p, encoding="utf-8").read())
             generados += 1
 
-    # Árbol completo de classes/ y labs/ (los README de cada lab se enlazan
-    # desde las rutas por rol, así que deben existir como página en el sitio).
+    # Markdown de classes/ y labs/. Los README se enlazan desde índices y rutas,
+    # así que deben existir como páginas en el sitio.
     for base in ("classes", "labs"):
         for cur, _, files in os.walk(os.path.join(ROOT, base)):
             for fn in files:
@@ -367,6 +367,19 @@ def main() -> int:
                     rel = os.path.relpath(p, ROOT).replace("\\", "/")
                     escribir(rel, open(p, encoding="utf-8").read())
                     generados += 1
+
+    # Artefactos descargables de laboratorios: datasets, scripts, reglas y
+    # configuraciones. Sin esta copia, el README se publica pero su práctica no.
+    for cur, dirs, files in os.walk(os.path.join(ROOT, "labs")):
+        dirs[:] = [name for name in dirs if name != "__pycache__"]
+        for fn in files:
+            if fn.endswith((".md", ".pyc")):
+                continue
+            origen = os.path.join(cur, fn)
+            rel = os.path.relpath(origen, ROOT)
+            destino = os.path.join(OUT, rel)
+            os.makedirs(os.path.dirname(destino), exist_ok=True)
+            shutil.copy2(origen, destino)
 
     # index.html del sitio = README raíz renderizado.
     # Documentos de certificaciones (uno por cert + índice).

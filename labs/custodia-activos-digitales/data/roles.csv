@@ -1,0 +1,9 @@
+user_id,role,valid_from,valid_to
+u001,treasury_maker,2026-01-01,
+u002,treasury_maker,2026-01-01,
+u003,risk_approver,2026-01-01,
+u004,wallet_operator,2026-01-01,
+u005,reconciler,2026-01-01,
+u006,auditor,2026-01-01,
+u007,platform_admin,2026-01-01,
+u008,break_glass,2026-01-01,

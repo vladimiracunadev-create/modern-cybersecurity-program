@@ -1,0 +1,3 @@
+record_id,timestamp,exchange,account,asset,event_type,amount,external_reference,correlation_id
+ex-001,2026-09-01T08:00:00Z,LabExchange,nebula-ops,BTC,balance_snapshot,0.00000000,snap-001,corr-snap-001
+ex-002,2026-09-03T08:00:00Z,LabExchange,nebula-ops,ETH,balance_snapshot,0.00000000,snap-002,corr-snap-002

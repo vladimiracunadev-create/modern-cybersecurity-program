@@ -168,6 +168,12 @@ Revísalos tras cada incidente y en las lecciones aprendidas; un playbook es un 
 - **TheHive:** <https://docs.strangebee.com/thehive/> — documentación oficial de gestión de casos y observables; la herramienta no define por sí sola autoridad operativa.
 - **Roberts y Brown — *Intelligence-Driven Incident Response*, O’Reilly, 2017:** enfoque de respuesta guiada por inteligencia; complementar con normas y arquitectura actuales.
 
+## 🔬 Aplicación transversal
+
+Extiende la anatomía de esta clase con los [ocho playbooks de custodia](../../../labs/custodia-activos-digitales/PLAYBOOKS.md):
+pérdida de fondos, wallet, insider, exchange, API key, discrepancia, retiro no
+autorizado y ledger. Compara sus decisiones de preservación y contención.
+
 ## 📥 Material descargable
 
 - 📄 [Guía en PDF](./clase-215-guia.pdf) — versión imprimible de esta clase.

@@ -166,6 +166,13 @@ Miden la eficacia del programa de respuesta y permiten fijar objetivos de mejora
 - **MITRE ATT&CK:** <https://attack.mitre.org/> — vocabulario para reconstruir comportamientos; no constituye por sí mismo un análisis causal organizacional.
 - **NIST Cybersecurity Framework 2.0:** <https://www.nist.gov/cyberframework> — marco oficial para relacionar hallazgos con gobierno, identificación, protección, detección, respuesta y recuperación.
 
+## 🔬 Aplicación transversal
+
+Convierte la timeline del [caso Nebula Custody](../../../labs/custodia-activos-digitales/README.md)
+en un modelo causal. Distingue la ejecución privilegiada (causa próxima), los
+fallos de barreras (contribuyentes) y las condiciones de SoD/enforcement
+(sistémicas), sin reemplazar el análisis por el nombre de una cuenta.
+
 ## 📥 Material descargable
 
 - 📄 [Guía en PDF](./clase-217-guia.pdf) — versión imprimible de esta clase.

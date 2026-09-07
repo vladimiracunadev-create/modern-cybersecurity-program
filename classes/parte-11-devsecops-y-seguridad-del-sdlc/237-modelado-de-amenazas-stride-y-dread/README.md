@@ -192,6 +192,12 @@ Parcialmente. Herramientas como pytm generan amenazas candidatas a partir del mo
 - pytm — <https://github.com/OWASP/pytm>
 - Microsoft STRIDE — <https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats>
 
+## 🔬 Aplicación transversal
+
+Revisa el [threat model de custodia](../../../labs/custodia-activos-digitales/THREAT_MODEL.md),
+que complementa STRIDE con árbol de ataque, abuse cases e insider threat. Añade
+una amenaza propia y conviértela en requisito y prueba negativa.
+
 ## 📥 Material descargable
 
 - 📄 [Guía en PDF](./clase-237-guia.pdf) — versión imprimible de esta clase.

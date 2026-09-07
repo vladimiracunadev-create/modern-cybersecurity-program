@@ -150,6 +150,12 @@ Por la identidad y los recursos más críticos. Inventaría sujetos, dispositivo
 - Chapple, Stewart & Gibson. *(ISC)² CISSP Official Study Guide*, 9.ª ed., Sybex — *Security Architecture and Engineering*.
 - CISA. *Zero Trust Maturity Model v2.0* — [cisa.gov/zero-trust-maturity-model](https://www.cisa.gov/zero-trust-maturity-model).
 
+## 🔬 Aplicación transversal
+
+Haz una architecture review del [diseño objetivo de custodia](../../../docs/caso-custodia-activos-digitales.md#arquitectura-objetivo):
+identifica policy enforcement points, señales continuas, dominios administrativos y
+dos fallos comunes capaces de derrotar simultáneamente aprobación y auditoría.
+
 ## 📥 Material descargable
 
 - 📄 [Guía en PDF](./clase-329-guia.pdf) — versión imprimible de esta clase.

@@ -1,0 +1,4 @@
+request_id,timestamp,user_id,asset,amount,source_wallet,destination_wallet,status,approval_id,tx_hash,correlation_id
+req-001,2026-09-02T14:00:00Z,u001,BTC,0.50000000,w-btc-hot,tb1qcustomer00000000000000000000000000001,executed,app-001,tx-synth-btc-001,corr-001
+req-002,2026-09-02T22:14:02Z,u007,BTC,0.70000000,w-btc-hot,tb1qunknown00000000000000000000000000002,executed,,tx-synth-btc-002,corr-002
+req-003,2026-09-03T09:00:00Z,u002,ETH,20.00000000,w-eth-warm,0x00000000000000000000000000000000c0570001,executed,app-003,tx-synth-eth-003,corr-003

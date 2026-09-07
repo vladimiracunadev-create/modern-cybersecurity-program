@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1360 180" role="img" aria-label="Flujo maker-checker desde solicitud hasta auditoría">
+  <defs><marker id="arrow-70ee" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+  <style>.n{fill:#eef2ff;stroke:#4f46e5;stroke-width:2}.t{font:16px Arial,sans-serif;fill:#172033;text-anchor:middle;dominant-baseline:middle}.a{stroke:#475569;stroke-width:2;marker-end:url(#arrow-70ee)}</style>
+  <path class="a" d="M150 90 H185"/><path class="a" d="M315 90 H350"/><path class="a" d="M480 90 H515"/><path class="a" d="M645 90 H680"/><path class="a" d="M810 90 H845"/><path class="a" d="M975 90 H1010"/><path class="a" d="M1140 90 H1175"/>
+  <rect class="n" x="20" y="55" width="130" height="70" rx="10"/><text class="t" x="85" y="90">Maker</text>
+  <rect class="n" x="185" y="55" width="130" height="70" rx="10"/><text class="t" x="250" y="90">Validación</text>
+  <rect class="n" x="350" y="55" width="130" height="70" rx="10"/><text class="t" x="415" y="90">Checker</text>
+  <rect class="n" x="515" y="55" width="130" height="70" rx="10"/><text class="t" x="580" y="90">Firma</text>
+  <rect class="n" x="680" y="55" width="130" height="70" rx="10"/><text class="t" x="745" y="90">Ejecución</text>
+  <rect class="n" x="845" y="55" width="130" height="70" rx="10"/><text class="t" x="910" y="90">Ledger</text>
+  <rect class="n" x="1010" y="55" width="130" height="70" rx="10"/><text class="t" x="1075" y="90">Conciliación</text>
+  <rect class="n" x="1175" y="55" width="150" height="70" rx="10"/><text class="t" x="1250" y="90">Auditoría</text>
+</svg>
