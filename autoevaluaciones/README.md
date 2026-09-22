@@ -1310,3 +1310,161 @@ Lleva la cuenta de todas las clases del programa en [`progreso.html`](progreso.h
 **Correcta: b) Contenido malicioso en los datos que el agente procesa que intenta secuestrar sus instrucciones.** Datos no confiables (banners, webs) pueden manipular al agente; por eso mínimo privilegio y aislamiento.
 
 </details>
+
+## Parte 19 — Seguridad de videojuegos, cheats y anti-cheat
+
+**1. ¿Qué distingue mejor a un servidor autoritativo de uno client-authoritative?**
+
+- a) El servidor cifra todos los paquetes
+- b) El servidor valida intenciones y deriva el estado canónico
+- c) El cliente no renderiza
+- d) El servidor elimina la latencia
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) El servidor valida intenciones y deriva el estado canónico.** El cliente solicita acciones; el servidor comprueba precondiciones e invariantes antes de producir el resultado.
+
+</details>
+
+**2. Un radar educativo funciona principalmente porque…**
+
+- a) Rompe siempre el depth buffer
+- b) El cliente conoce posiciones suficientes para reconstruirlo
+- c) UDP carece de cifrado
+- d) ASLR está desactivado
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) El cliente conoce posiciones suficientes para reconstruirlo.** El problema fundamental suele ser la información excesiva replicada, aunque el overlay sea el síntoma visible.
+
+</details>
+
+**3. En world-to-screen, ¿por qué se divide por w después de la proyección?**
+
+- a) Para cifrar coordenadas
+- b) Para obtener coordenadas normalizadas de dispositivo
+- c) Para medir latencia
+- d) Para aplicar recoil
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Para obtener coordenadas normalizadas de dispositivo.** La división perspectiva lleva coordenadas clip a NDC antes del escalado al viewport.
+
+</details>
+
+**4. Con FOV total de 60°, ¿qué ángulo máximo respecto al forward queda dentro?**
+
+- a) 60°
+- b) 120°
+- c) 30°
+- d) 15°
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: c) 30°.** Se compara la distancia angular con el semiancho del FOV: 30°.
+
+</details>
+
+**5. ¿Qué control evita mejor aceptar una cadencia de disparo imposible?**
+
+- a) Ocultar ammo en la UI
+- b) Cooldown y máquina de estados en el servidor
+- c) Comprimir snapshots
+- d) Cambiar el shader
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Cooldown y máquina de estados en el servidor.** La autoridad del servidor valida tiempo, estado del arma y munición.
+
+</details>
+
+**6. ¿Qué relación es correcta entre prediction y reconciliation?**
+
+- a) Prediction da autoridad permanente al cliente
+- b) El cliente predice para responder y luego corrige/reaplica contra el estado del servidor
+- c) Ambas eliminan packet loss
+- d) Solo se usan con TCP
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) El cliente predice para responder y luego corrige/reaplica contra el estado del servidor.** La experiencia puede ser inmediata sin ceder la verdad canónica.
+
+</details>
+
+**7. Una alerta de snap aim con reacción sub-100 ms significa…**
+
+- a) Culpabilidad concluyente
+- b) Una hipótesis que requiere secuencia, contexto y alternativas legítimas
+- c) Que el kernel fue comprometido
+- d) Que la precisión es 100%
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Una hipótesis que requiere secuencia, contexto y alternativas legítimas.** Anomalía no significa culpabilidad; habilidad, input, FPS y accesibilidad pueden solaparse.
+
+</details>
+
+**8. ¿Por qué accuracy es mala métrica única con clases desbalanceadas?**
+
+- a) No admite porcentajes
+- b) Puede ser alta prediciendo siempre la clase mayoritaria
+- c) Solo sirve para regresión
+- d) Exige datos personales
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Puede ser alta prediciendo siempre la clase mayoritaria.** Precision, recall, F1 y PR deben leerse con prevalencia y costo de error.
+
+</details>
+
+**9. ¿Cuándo aporta ML frente a reglas deterministas?**
+
+- a) Siempre
+- b) Cuando generaliza patrones multivariados con evaluación, drift y explicación mejores que el baseline
+- c) Cuando no hay labels ni objetivo
+- d) Cuando se quiere ocultar el criterio
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Cuando generaliza patrones multivariados con evaluación, drift y explicación mejores que el baseline.** ML debe superar un baseline simple y justificar complejidad, mantenimiento y gobernanza.
+
+</details>
+
+**10. ¿Qué principio limita telemetría anti-cheat a campos que cambian una decisión?**
+
+- a) Data augmentation
+- b) Minimización de datos
+- c) Client prediction
+- d) Delayed ban
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Minimización de datos.** La minimización reduce exposición y obliga a definir propósito, retención y acceso.
+
+</details>
+
+**11. ¿Qué diferencia causa raíz de señal?**
+
+- a) La señal es el control definitivo
+- b) La causa raíz es la condición sistémica que permitió recurrencia; la señal es una observación
+- c) No hay diferencia
+- d) La causa raíz siempre es el jugador
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) La causa raíz es la condición sistémica que permitió recurrencia; la señal es una observación.** Impossible fire rate puede ser señal; ausencia de validación autoritativa puede ser causa raíz.
+
+</details>
+
+**12. ¿Qué debe acompañar una sanción revisable?**
+
+- a) Solo una puntuación del modelo
+- b) Evidencia, versión del detector, política, auditabilidad y appeal
+- c) El nombre del cheat
+- d) Acceso kernel obligatorio
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Evidencia, versión del detector, política, auditabilidad y appeal.** Las consecuencias requieren trazabilidad y una vía proporcional de revisión.
+
+</details>

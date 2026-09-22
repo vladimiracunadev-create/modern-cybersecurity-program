@@ -4,8 +4,8 @@
 Recorre ``classes/parte-*/NNN-*/README.md`` y los recursos transversales —las
 fuentes de verdad del programa— y escribe ``mobile/src/data/classes.js`` con:
 
-    PARTS            — las 19 partes, con su rango de clases y nivel dominante
-    CLASSES          — las 340 clases, planas y ordenadas por número
+    PARTS            — las 20 partes, con su rango de clases y nivel dominante
+    CLASSES          — las 360 clases, planas y ordenadas por número
     CLASSES_BY_PART  — las mismas clases indexadas por slug de parte
     RESOURCES        — recursos transversales completos para lectura offline
     TOTAL_CLASSES / TOTAL_PARTS
@@ -39,7 +39,7 @@ GitHub, no a Colab.
 
 El parseo se ancla en el **emoji** del encabezado, no en su texto: el título de la
 sección puede variar ("🧪 Laboratorio guiado — Diseña tu SOC") pero el emoji es
-estable en las 340 clases. Vuelve a ejecutarlo tras cualquier edición del temario;
+estable en las 360 clases. Vuelve a ejecutarlo tras cualquier edición del temario;
 ``--check`` falla (exit 1) si el archivo generado quedó desincronizado.
 
 Uso:
@@ -98,6 +98,7 @@ PART_SUBTITLE: dict[str, str] = {
     "parte-16-capstones-y-preparacion-de-certificaciones": "Roadmap OSCP/CISSP, proyectos integradores y aprendizaje continuo",
     "parte-17-profundizacion-para-certificaciones": "Gestión de datos, IAM, arquitectura, gestión de vulnerabilidades y gobierno",
     "parte-18-ia-aplicada-a-la-ciberseguridad": "LLMs y agentes: MCP, kali-mcp, pentesting asistido, defensa e informes",
+    "parte-19-seguridad-de-videojuegos-cheats-y-anticheat": "Arquitectura, autoridad, cheats controlados, telemetría, detección y gobernanza",
 }
 
 # Título corto y legible de cada parte para la tarjeta del Home.
@@ -121,6 +122,7 @@ PART_SHORT: dict[str, str] = {
     "parte-16-capstones-y-preparacion-de-certificaciones": "Capstones y certificaciones",
     "parte-17-profundizacion-para-certificaciones": "Profundización para certificaciones",
     "parte-18-ia-aplicada-a-la-ciberseguridad": "IA aplicada a la ciberseguridad",
+    "parte-19-seguridad-de-videojuegos-cheats-y-anticheat": "Game Security y Anti-Cheat",
 }
 
 # ── Reparto de secciones entre las dos pestañas de la app ────────────────────

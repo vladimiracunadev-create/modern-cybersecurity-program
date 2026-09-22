@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Genera el MANUAL del curso en PDF: consolida las 340 clases y los recursos
+Genera el MANUAL del curso en PDF: consolida las 360 clases y los recursos
 transversales en un unico documento ordenado.
 
   - manual/MANUAL.pdf  render imprimible (via Microsoft Edge/Chrome headless)
@@ -8,7 +8,7 @@ transversales en un unico documento ordenado.
 El Markdown consolidado se construye en memoria como paso intermedio (se
 convierte a HTML y de ahi a PDF); no se deja ningun .md en el repositorio.
 
-El manual respeta el orden global 001->340 agrupado en las 19 partes, con
+El manual respeta el orden global 001->360 agrupado en las 20 partes, con
 portada, aviso etico e indice enlazado a cada clase.
 
 Transformaciones sobre cada README de clase para que funcione como documento
@@ -338,7 +338,7 @@ def md_a_html(md_text: str) -> str:
 
 TIMEOUT_S = 1200
 
-# Un manual de 340 clases no baja de varios megas; por debajo de esto la
+# Un manual de 360 clases no baja de varios megas; por debajo de esto la
 # impresion salio mal aunque el navegador diga que termino bien.
 MIN_PDF_BYTES = 5_000_000
 
@@ -359,13 +359,18 @@ def generar_pdf(nav: str, html_path: str, pdf_path: str) -> None:
     if os.path.exists(tmp_pdf):
         os.remove(tmp_pdf)
     uri = "file:///" + html_path.replace("\\", "/")
-    subprocess.run(
-        [nav, "--headless=new", "--disable-gpu", "--no-first-run",
-         "--no-default-browser-check", "--no-pdf-header-footer",
-         f"--print-to-pdf={tmp_pdf}", uri],
-        check=True, timeout=TIMEOUT_S,
-        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-    )
+    playwright_node = os.environ.get("PLAYWRIGHT_NODE")
+    if playwright_node:
+        helper = os.path.join(os.path.dirname(__file__), "imprimir_pdf_playwright.js")
+        subprocess.run([playwright_node, helper, html_path, tmp_pdf], check=True, timeout=TIMEOUT_S)
+    else:
+        subprocess.run(
+            [nav, "--headless=new", "--disable-gpu", "--no-first-run",
+             "--no-default-browser-check", "--no-pdf-header-footer",
+             f"--print-to-pdf={tmp_pdf}", uri],
+            check=True, timeout=TIMEOUT_S,
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+        )
     publicar(tmp_pdf, pdf_path, MIN_PDF_BYTES)
 
 

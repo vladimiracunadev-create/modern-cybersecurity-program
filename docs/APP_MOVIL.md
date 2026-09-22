@@ -1,7 +1,7 @@
 # 📱 App móvil Android — guía técnica
 
 La app vive en [`mobile/`](../mobile/README.md) y es una app **Expo / React Native**
-que embebe las **340 clases en 19 partes** y los recursos transversales para leerlos
+que embebe las **360 clases en 20 partes** y los recursos transversales para leerlos
 **sin conexión** desde el teléfono o la aplicación web. La edición **1.2.0** mantiene
 cada clase **entera** —explicación en
 profundidad, diagramas, glosario, laboratorio, ejercicios, reto, errores comunes,
@@ -25,7 +25,7 @@ python scripts/generar_curriculum_movil.py --check   # falla si quedó desincron
 ```
 
 El generador ancla el parseo en el **emoji** de cada sección, que es estable en las
-340 clases aunque el texto del encabezado varíe ("🧪 Laboratorio guiado (defensivo)"
+360 clases aunque el texto del encabezado varíe ("🧪 Laboratorio guiado (defensivo)"
 sigue siendo el laboratorio). Por cada clase emite dos cosas:
 
 - **Los campos de tarjeta** —número, título, nivel, duración, objetivo, resultados,
@@ -70,9 +70,9 @@ emite **una clase por línea** para que el diff siga siendo legible.
 mobile/
 ├── App.js                       Entrada + NavigationContainer (tema oscuro)
 ├── src/
-│   ├── data/classes.js          GENERADO: 340 clases + 19 partes + recursos
+│   ├── data/classes.js          GENERADO: 360 clases + 20 partes + recursos
 │   ├── screens/
-│   │   ├── HomeScreen.js         19 partes + progreso global
+│   │   ├── HomeScreen.js         20 partes + progreso global
 │   │   ├── PartScreen.js         clases de una parte + buscador
 │   │   ├── ClassScreen.js        detalle: Teoría / Práctica + enlaces
 │   │   └── ResourceScreen.js     recurso transversal completo + enlaces
@@ -128,7 +128,7 @@ python scripts/verificar_bundle.py ruta/al/index.android.bundle
 
 El verificador **no** se conforma con que el fichero pese: busca dentro de sus bytes
 
-1. el slug de las 19 partes;
+1. el slug de las 20 partes;
 2. el título de una muestra determinista de clases (una de cada 40);
 3. **párrafos completos** de la teoría y de la práctica de esas mismas clases —la
    comprobación que distingue "viaja el índice" de "viaja la clase";
@@ -151,7 +151,7 @@ resumido, que es justo lo que tiene que hacer.
 
 ## 🔒 Privacidad
 
-- El contenido viaja embebido: las 340 clases y los recursos transversales se leen
+- El contenido viaja embebido: las 360 clases y los recursos transversales se leen
   **enteros y sin conexión**.
 - Solo requieren internet los enlaces opcionales al sitio y a GitHub.
 - El progreso se guarda **solo en el dispositivo** (AsyncStorage). Sin cuentas, sin

@@ -1,7 +1,7 @@
 /**
  * AppNavigator.js — Rutas de la app.
  *
- *   Home  → las 19 partes del programa, con progreso global
+ *   Home  → las 20 partes del programa, con progreso global
  *   Part  → las clases de una parte, con buscador
  *   Class → detalle de una clase (teoría + práctica + enlaces)
  *   Resource → recurso transversal completo, disponible sin conexión

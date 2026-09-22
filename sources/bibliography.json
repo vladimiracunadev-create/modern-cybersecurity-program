@@ -5,6 +5,126 @@
  "policy": "Toda afirmacion del programa se apoya en una entrada de este registro. Ninguna entrada se acepta sin localizador verificable: ISBN-13 para libros, DOI para articulos, URL https de la fuente primaria para normas y documentacion oficial. Lo que no se pudo comprobar queda como \"pendiente\" con el motivo, nunca borrado ni rellenado por intuicion.",
  "entries": [
   {
+   "id": "epic-unreal-networking-overview",
+   "type": "reference",
+   "title": "Networking Overview for Unreal Engine",
+   "authors": [],
+   "published": "2026",
+   "locator": "https://dev.epicgames.com/documentation/unreal-engine/networking-overview-for-unreal-engine",
+   "authority": "Epic Games",
+   "status": "verificada",
+   "notes": "Documentación primaria comprobada el 2026-09-22; describe estado autoritativo, replicación, relevancia y límites de RPC.",
+   "matches": {
+    "url_prefixes": [
+     "https://dev.epicgames.com/documentation/unreal-engine/networking-overview-for-unreal-engine"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-22",
+   "used_in": [
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/341-introduccion-game-security-modelo-amenazas/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/342-arquitectura-videojuegos-perspectiva-seguridad/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/343-taxonomia-tecnica-cheats/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/344-estado-juego-memoria-manipulacion-controlada/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/345-trainers-instrumentacion-cliente/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/346-informacion-expuesta-radar-esp-world-to-screen/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/347-rendering-visibilidad-occlusion-wallhack/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/348-matematica-aimbot/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/349-aimbot-avanzado-prediccion-smoothing-recoil/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/350-triggerbot-macros-input-automation-bots/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/351-multiplayer-autoridad-nunca-confiar-cliente/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/352-seguridad-protocolo-juego/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/353-arquitecturas-anticheat/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/354-server-side-anticheat-diseno-autoritativo/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/355-telemetria-game-security/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/356-deteccion-aimbot-automatizacion-comportamiento/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/357-estadistica-anomalias-falsos-positivos/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/358-machine-learning-aplicado-anticheat/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/359-privacidad-gobernanza-sanciones-seguridad-anticheat/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/360-capstone-incidente-completo-game-security/README.md"
+   ]
+  },
+  {
+   "id": "valve-latency-compensation",
+   "type": "reference",
+   "title": "Latency Compensating Methods in Client/Server In-game Protocol Design and Optimization",
+   "authors": [
+    "Yahn W. Bernier"
+   ],
+   "published": "2001",
+   "locator": "https://developer.valvesoftware.com/wiki/Latency_Compensating_Methods_in_Client/Server_In-game_Protocol_Design_and_Optimization",
+   "authority": "Valve Developer Community",
+   "status": "verificada",
+   "notes": "Fuente primaria de Valve sobre client-side prediction, interpolación, reconciliación y lag compensation; comprobada el 2026-09-22.",
+   "matches": {
+    "url_prefixes": [
+     "https://developer.valvesoftware.com/wiki/Latency_Compensating_Methods_in_Client/Server_In-game_Protocol_Design_and_Optimization"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-22",
+   "used_in": [
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/341-introduccion-game-security-modelo-amenazas/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/342-arquitectura-videojuegos-perspectiva-seguridad/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/343-taxonomia-tecnica-cheats/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/344-estado-juego-memoria-manipulacion-controlada/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/345-trainers-instrumentacion-cliente/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/346-informacion-expuesta-radar-esp-world-to-screen/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/347-rendering-visibilidad-occlusion-wallhack/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/348-matematica-aimbot/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/349-aimbot-avanzado-prediccion-smoothing-recoil/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/350-triggerbot-macros-input-automation-bots/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/351-multiplayer-autoridad-nunca-confiar-cliente/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/352-seguridad-protocolo-juego/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/353-arquitecturas-anticheat/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/354-server-side-anticheat-diseno-autoritativo/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/355-telemetria-game-security/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/356-deteccion-aimbot-automatizacion-comportamiento/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/357-estadistica-anomalias-falsos-positivos/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/358-machine-learning-aplicado-anticheat/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/359-privacidad-gobernanza-sanciones-seguridad-anticheat/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/360-capstone-incidente-completo-game-security/README.md"
+   ]
+  },
+  {
+   "id": "lukas-tomicic-bernik-anticheat",
+   "type": "paper",
+   "title": "Anticheat System Based on Reinforcement Learning Agents in Unity",
+   "authors": [
+    "Mihael Lukas",
+    "Igor Tomicic",
+    "Andrija Bernik"
+   ],
+   "published": "2022",
+   "doi": "10.3390/info13040173",
+   "locator": "https://doi.org/10.3390/info13040173",
+   "authority": "Information (MDPI)",
+   "status": "verificada",
+   "notes": "Metadatos y DOI comprobados el 2026-09-22 en la publicación primaria.",
+   "matches": {
+    "url_prefixes": [
+     "https://doi.org/10.3390/info13040173"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-22",
+   "used_in": [
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/341-introduccion-game-security-modelo-amenazas/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/342-arquitectura-videojuegos-perspectiva-seguridad/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/343-taxonomia-tecnica-cheats/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/344-estado-juego-memoria-manipulacion-controlada/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/345-trainers-instrumentacion-cliente/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/346-informacion-expuesta-radar-esp-world-to-screen/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/347-rendering-visibilidad-occlusion-wallhack/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/348-matematica-aimbot/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/349-aimbot-avanzado-prediccion-smoothing-recoil/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/350-triggerbot-macros-input-automation-bots/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/351-multiplayer-autoridad-nunca-confiar-cliente/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/352-seguridad-protocolo-juego/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/354-server-side-anticheat-diseno-autoritativo/README.md"
+   ]
+  },
+  {
    "id": "agile-application-security",
    "type": "book",
    "title": "Agile Application Security: Enabling Security in a Continuous Delivery Pipeline",
@@ -10630,7 +10750,10 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-15-seguridad-de-ia-y-machine-learning/298-ia-aplicada-a-la-defensa-deteccion-y-soc/README.md"
+    "classes/parte-15-seguridad-de-ia-y-machine-learning/298-ia-aplicada-a-la-defensa-deteccion-y-soc/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/356-deteccion-aimbot-automatizacion-comportamiento/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/357-estadistica-anomalias-falsos-positivos/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/358-machine-learning-aplicado-anticheat/README.md"
    ],
    "authors": []
   },
@@ -13588,7 +13711,11 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-14-grc-riesgo-y-cumplimiento/289-privacidad-y-proteccion-de-datos/README.md"
+    "classes/parte-14-grc-riesgo-y-cumplimiento/289-privacidad-y-proteccion-de-datos/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/353-arquitecturas-anticheat/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/355-telemetria-game-security/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/359-privacidad-gobernanza-sanciones-seguridad-anticheat/README.md",
+    "classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/360-capstone-incidente-completo-game-security/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"

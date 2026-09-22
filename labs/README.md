@@ -44,6 +44,7 @@ docker compose down -v      # apagar y borrar también los volúmenes/datos
 | [`cloud-security`](cloud-security/README.md) | Toolbox Prowler/ScoutSuite/trivy/kube-bench para auditoría CSPM | Parte 10 | ✅ Disponible |
 | [`ciso-leadership`](ciso-leadership/README.md) | **Laboratorio ejecutivo**: 14 escenarios de dirección sobre organizaciones ficticias, 15 plantillas y evaluación · [organizaciones](ciso-leadership/ORGANIZACIONES.md) · [plantillas](ciso-leadership/PLANTILLAS.md) · [evaluación](ciso-leadership/EVALUACION.md) | Partes 14 y 17 · 202, 215, 219, 284, 287, 300, 273 | ✅ Disponible · 📄 sin Docker |
 | [`devsecops-pipeline`](devsecops-pipeline/README.md) | Repo vulnerable + auditoría en **8 capas** (deps, SAST, secretos, Dockerfile, contenedor, CI/CD, typosquat y priorización KEV/EPSS/CVSS) con informe · trayectos [Analista](devsecops-pipeline/TRAYECTO-ANALISTA-DEVSECOPS.md) e [Ingeniero DevSecOps](devsecops-pipeline/TRAYECTO-INGENIERO-DEVSECOPS.md) | Parte 11 (236–248) · 227, 318, 330 | ✅ Disponible |
+| [`game-security`](game-security/README.md) | Simulación cliente-servidor con modos vulnerable/seguro, matemática de aim, telemetría, datasets y detectores explicables | Parte 19 (341–360) | ✅ Disponible · Python, local |
 
 Además: **[🚩 Retos tipo CTF](../ctf/README.md)** — colección de retos por categoría (web, cripto, redes, forense, OSINT, pwn) con solución.
 

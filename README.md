@@ -2,7 +2,7 @@
 
 # 🛡️ Programa de Ciberseguridad Moderna
 
-## **340 clases · 19 partes · de fundamentos a nivel experto**
+## **360 clases · 20 partes · de fundamentos a nivel experto**
 
 **El programa de ciberseguridad más completo en español — desde redes, criptografía y Linux hasta Red Team, DFIR, cloud security, exploit development y seguridad de IA.**
 
@@ -10,10 +10,11 @@
 [![Security](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/security.yml)
 [![Deploy Pages](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/deploy-pages.yml)
 
-[![Clases](https://img.shields.io/badge/clases-340%20·%2019%20partes-7c5cff?style=for-the-badge)](classes/README.md)
+[![Clases](https://img.shields.io/badge/clases-360%20·%2020%20partes-7c5cff?style=for-the-badge)](classes/README.md)
 [![Nivel](https://img.shields.io/badge/nivel-fundamentos%20→%20experto-2e8b57?style=for-the-badge)](classes/README.md)
 [![Idioma](https://img.shields.io/badge/idioma-español-blue?style=for-the-badge)](README.md)
-[![License](https://img.shields.io/badge/license-MIT-3fb950?style=for-the-badge)](LICENSE)
+[![Código](https://img.shields.io/badge/código-Apache--2.0-3fb950?style=for-the-badge)](LICENSE)
+[![Contenido](https://img.shields.io/badge/contenido-CC%20BY--NC--SA%204.0-7c5cff?style=for-the-badge)](LICENSE-CONTENT.md)
 
 [![Python](https://img.shields.io/badge/Python-scripts%20%26%20labs-3776AB?style=flat-square&logo=python&logoColor=white)](scripts/)
 [![Docker](https://img.shields.io/badge/Docker-labs%20listos-2496ED?style=flat-square&logo=docker&logoColor=white)](labs/README.md)
@@ -22,7 +23,7 @@
 [![Markdown](https://img.shields.io/badge/Markdown-contenido-000000?style=flat-square&logo=markdown&logoColor=white)](classes/README.md)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-sitio%20vivo-222?style=flat-square&logo=githubpages&logoColor=white)](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/)
 
-[📚 Índice completo de clases](classes/README.md) · [⚠️ ¿Y si cruzas la línea?](docs/cruzar-la-linea-consecuencias-reales.md) · [📕 Manual completo (PDF)](manual/MANUAL.pdf) · [🌐 Aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Política de seguridad](SECURITY.md)
+[📚 Índice completo de clases](classes/README.md) · [⚠️ ¿Y si cruzas la línea?](docs/cruzar-la-linea-consecuencias-reales.md) · [📕 Manual completo (PDF)](manual/MANUAL.pdf) · [🌐 Aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad y ética](SECURITY_AND_ETHICS.md)
 
 </div>
 
@@ -32,7 +33,7 @@
 
 ## 🎯 Qué es esto
 
-Un currículo modular y **secuencial** que cubre **todo el espectro de la ciberseguridad moderna**, paso a paso, en 340 clases numeradas (001→340) agrupadas en 19 partes. Cada clase es una carpeta con un `README.md` completo que incluye:
+Un currículo modular y **secuencial** que cubre **todo el espectro de la ciberseguridad moderna**, paso a paso, en 360 clases numeradas (001→360) agrupadas en 20 partes. Cada clase es una carpeta con un `README.md` completo que incluye:
 
 - 🎯 **Objetivo** y **resultados de aprendizaje verificables**.
 - 🗺️ **Temas** con el porqué de cada uno.
@@ -105,11 +106,11 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 | [RFC 7489](https://www.rfc-editor.org/rfc/rfc7489) | obsoleta | 1 |
 | [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446) | obsoleta | 1 |
 
-Las 714 obras que usa el programa — 57 libros, 24 artículos, 158 normas y 475 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-08-19 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
+Las 717 obras que usa el programa — 57 libros, 25 artículos, 158 normas y 477 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-08-19 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
 
 <!-- fuentes:fin -->
 
-## 🗂️ Las 19 partes
+## 🗂️ Las 20 partes
 
 Cada parte tiene su **propio README** con narrativa completa: de qué trata, resultados de aprendizaje, estructura temática y enlaces a las clases.
 
@@ -134,28 +135,29 @@ Cada parte tiene su **propio README** con narrativa completa: de qué trata, res
 | 16 | Capstones y preparación de certificaciones | 10 (301–310) | Roadmap OSCP/CISSP, proyectos integradores y aprendizaje continuo | [📘 leer](classes/parte-16-capstones-y-preparacion-de-certificaciones/README.md) |
 | 17 | Profundización para certificaciones | 20 (311–330) | Gestión de datos, IAM empresarial, arquitectura, seguridad física, gestión de vulnerabilidades y gobierno | [📘 leer](classes/parte-17-profundizacion-para-certificaciones/README.md) |
 | 18 | IA aplicada a la ciberseguridad | 10 (331–340) | LLMs y agentes: MCP, kali-mcp, pentesting asistido, defensa e informes | [📘 leer](classes/parte-18-ia-aplicada-a-la-ciberseguridad/README.md) |
+| 19 | Seguridad de videojuegos, cheats y anti-cheat | 20 (341–360) | Autoridad, memoria, ESP, aim, telemetría, detección, privacidad y RCA | [📘 leer](classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/README.md) |
 
-➡️ **[Ver el índice plano de las 340 clases](classes/README.md)**
+➡️ **[Ver el índice plano de las 360 clases](classes/README.md)**
 
 ## 📕 Manual completo (todo el curso en un documento)
 
-¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **340 clases** y el recurso transversal **«¿Y si cruzas la línea?»**, con portada, aviso ético e índice enlazado.
+¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **360 clases** y el recurso transversal **«¿Y si cruzas la línea?»**, con portada, aviso ético e índice enlazado.
 
-- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — **1.308 páginas A4** con **363 diagramas** dibujados, listas para imprimir o leer offline.
+- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — **1.353 páginas A4** con **383 diagramas** dibujados, listas para imprimir o leer offline.
 
 > Se genera con `python scripts/generar_manual.py` a partir de las clases, así que siempre refleja el contenido actual del repositorio.
 
 ## 📱 Aplicación Android y web
 
-La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **340 clases en 19 partes** y el nuevo recurso transversal **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. En `v1.2.0`, «¿Y si cruzas la línea?» viaja con sus fuentes y tres diagramas en Android y en la versión web.
+La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **360 clases en 20 partes** y el recurso transversal **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. Desde `v1.2.0`, «¿Y si cruzas la línea?» viaja con sus fuentes y tres diagramas en Android y en la versión web.
 
 - 🌐 **[Abrir la aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/)** — misma experiencia, publicada dentro de GitHub Pages.
 - 📥 **[Descargar Android, web y manual — release v1.2.0](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.2.0)** · verifica los tres artefactos con `SHA256SUMS.txt`.
-- 🧭 **Navegación:** Home (19 partes + progreso global) → Parte (clases + buscador) → Clase, en dos pestañas: *Teoría* (objetivo, resultados, temas, explicación en profundidad, definiciones, glosario) y *Práctica* (preparación, laboratorio, ejercicios, reto, errores comunes, preguntas frecuentes, referencias).
+- 🧭 **Navegación:** Home (20 partes + progreso global) → Parte (clases + buscador) → Clase, en dos pestañas: *Teoría* (objetivo, resultados, temas, explicación en profundidad, definiciones, glosario) y *Práctica* (preparación, laboratorio, ejercicios, reto, errores comunes, preguntas frecuentes, referencias).
 - 🔌 **Offline-first:** las clases se leen enteras sin conexión, diagramas incluidos; solo necesitan internet los enlaces al sitio y a GitHub. El progreso se guarda **solo en tu dispositivo**.
 
 <div align="center">
-<img src="docs/img/app-home.png" alt="Pantalla de inicio: 19 partes y progreso" width="30%"> <img src="docs/img/app-parte.png" alt="Clases de una parte con buscador" width="30%"> <img src="docs/img/app-clase.png" alt="Detalle de una clase" width="30%">
+<img src="docs/img/app-home.png" alt="Pantalla de inicio: 20 partes y progreso" width="30%"> <img src="docs/img/app-parte.png" alt="Clases de una parte con buscador" width="30%"> <img src="docs/img/app-clase.png" alt="Detalle de una clase" width="30%">
 </div>
 
 > APK de **sideload** (fuera de Play Store), firmado en el pipeline de release. En Android, permite instalar desde "orígenes desconocidos" para el instalador que uses. Detalle técnico y pipeline en [docs/APP_MOVIL.md](docs/APP_MOVIL.md).
@@ -173,6 +175,7 @@ comando, más una colección de retos tipo CTF:
 - 🔎 **[Code review / SAST](labs/appsec-code/README.md)** — app vulnerable + Semgrep/Bandit · Partes 11 y 17.
 - 🚚 **[Pipeline de despliegue (DevSecOps)](labs/devsecops-pipeline/README.md)** — repo vulnerable auditado en **8 capas** (dependencias, SAST, secretos, Dockerfile, contenedor, CI/CD, typosquatting y priorización KEV/EPSS/CVSS) con informe · Parte 11.
 - 🤖 **[Pentest con IA (kali-mcp)](labs/kali-mcp-ia/README.md)** — agente de IA orquestando Kali vía MCP · Parte 18.
+- 🎮 **[Game Security Range](labs/game-security/README.md)** — cliente/servidor educativo, modos vulnerable/seguro, telemetría, datasets y detectores · Parte 19.
 - 🪟 **[Triaje forense de Windows (RootCause)](labs/rootcause-windows/README.md)** — sensor forense de comportamiento en Rust · Partes 6, 8 y 9.
 - ₿ **[Custodia de activos digitales](labs/custodia-activos-digitales/README.md)** — caso transversal ficticio con conciliación ledger–operación–blockchain, IAM/PAM/SoD, insider risk, threat model, DFIR, ocho playbooks, dataset y tests · Partes 8, 9, 11, 14, 16 y 17; [diagnóstico y arquitectura](docs/caso-custodia-activos-digitales.md).
 - 🌐 **[Escaneo de red (nmap)](labs/redes-nmap/README.md)** · 💥 **[Explotación de binarios (pwn)](labs/pwn-binarios/README.md)** · ☁️ **[Auditoría cloud (CSPM)](labs/cloud-security/README.md)** — Partes 1, 5 y 10.
@@ -186,8 +189,8 @@ comando, más una colección de retos tipo CTF:
 
 - 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, **analista SecOps**, DFIR, **gestión de vulnerabilidades**, AppSec, **analista DevSecOps**, **ingeniero DevSecOps**, cloud, GRC, **analista de ciberseguridad (institución regulada)**, **analista de seguridad ofensiva**, **ingeniero SecOps / security engineer**, **seguridad de infraestructura**, **operación de plataformas (MSSP/DLP)**, **jefe de seguridad**, **jefe de infraestructura y ciberseguridad**, **CISO / director de seguridad de la información**, **arquitecto de ciberseguridad IT/OT** y **cooperación/alianzas técnicas** — más el **[ecosistema CISO](rutas/ecosistema-ciso.md)** con seis rutas propias alrededor del cargo: **Field CISO**, **vCISO**, **BISO**, **Product CISO**, **AI CISO** y **OT CISO**.
 - 🗺️ **[Matriz de roles SecOps y DevSecOps](docs/matriz-roles-secops-devsecops.md)** — SOC, SecOps, DevSecOps, AppSec, Cloud Security y DFIR comparados por misión, decisiones, entregables, métricas, clases y progresión, con el diagrama del ciclo desarrollo → pipeline → nube → producción → monitoreo → incidente → aprendizaje.
-- 📝 **[Autoevaluaciones](autoevaluaciones/README.md)** — 97 preguntas (una batería por parte). Versión interactiva con puntuación: [quiz](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/quiz.html).
-- ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/progreso.html)** — marca las 340 clases (se guarda en tu navegador).
+- 📝 **[Autoevaluaciones](autoevaluaciones/README.md)** — 109 preguntas (una batería por parte). Versión interactiva con puntuación: [quiz](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/quiz.html).
+- ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/progreso.html)** — marca las 360 clases (se guarda en tu navegador).
 - 🔑 **[Soluciones a los retos](soluciones/README.md)** — claves de referencia de los ejercicios y retos (Parte 2 completa; resto por lotes).
 - 🎓 **[Certificaciones](certificaciones/README.md)** — mapeo del programa a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con **% de cobertura ponderado por dominio**.
 
@@ -275,7 +278,7 @@ flowchart TD
 ```
 
 **[Leer «¿Y si cruzas la línea?» →](docs/cruzar-la-linea-consecuencias-reales.md)** — el espejo
-de las 19 partes, actividades delictivas sin romantizarlas, Ley 21.459 de Chile, comparación
+de las 20 partes, actividades delictivas sin romantizarlas, Ley 21.459 de Chile, comparación
 internacional, casos con condenas verificables, atribución digital, extradición, patrimonio,
 antecedentes, migración y una salida profesional legítima para cada capacidad.
 
@@ -293,7 +296,7 @@ El repositorio no se publica a ciegas: cada `push` y cada PR pasan por integraci
 Los mismos validadores corren en local antes de subir:
 
 ```bash
-python scripts/validar_estructura.py       # 340 clases + enlaces .md sin rotos
+python scripts/validar_estructura.py       # 360 clases + enlaces .md sin rotos
 python scripts/validar_encoding.py          # todo UTF-8, sin mojibake
 python scripts/generar_navegacion.py --check # navegación coherente
 python scripts/verify-sources                # fuentes: registro, citas y cifras
@@ -331,7 +334,7 @@ python scripts/generar_curriculum_movil.py   # catálogo embebido de la app móv
 
 ### ✅ Lo que sí es
 
-- 📚 un currículo **secuencial y completo** de 340 clases, de fundamentos a nivel experto;
+- 📚 un currículo **secuencial y completo** de 360 clases, de fundamentos a nivel experto;
 - 🧪 un curso con **práctica real**: 11 laboratorios ejecutables y retos tipo CTF con writeups;
 - 🧭 una guía de **carrera por rol** con día a día, skills, certificaciones y salario orientativo;
 - 🎓 un mapeo honesto a **certificaciones** (Security+, PenTest+, CySA+, OSCP, CISSP, BTL1, SANS) con % de cobertura;
@@ -356,9 +359,16 @@ python scripts/generar_curriculum_movil.py   # catálogo embebido de la app móv
 
 > El valor de este programa no está en presumir herramientas, sino en **traducirlas en aprendizaje real**: secuencia pedagógica, laboratorios que se levantan con un comando, honestidad sobre lo que cada rol implica y una base que puedes recorrer de principio a fin sin quedarte a medias.
 
-## 📄 Licencia
+## 📄 Licencias y propiedad intelectual
 
-[MIT](LICENSE) — úsalo, modifícalo y compártelo. El conocimiento de seguridad debe ser accesible; su **uso**, responsable.
+Este repositorio separa las obras por su naturaleza:
+
+- **Código propio, scripts, aplicación, workflows y configuraciones:** [Apache License 2.0](LICENSE).
+- **Clases, guías, rutas, soluciones, evaluaciones, diagramas, manuales y presentaciones originales:** [CC BY-NC-SA 4.0](LICENSE-CONTENT.md).
+- **Datos sintéticos y activos visuales:** consulta [DATA_LICENSES.md](DATA_LICENSES.md) y [ASSET_LICENSES.md](ASSET_LICENSES.md).
+- **Herramientas, dependencias y material de terceros:** conservan sus licencias originales; consulta [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+Copyright © 2026 **Vladimir Acuña** (`vladimiracunadev-create`). Las revisiones históricas publicadas bajo MIT siguen bajo MIT; la transición está documentada en [docs/LICENSING_HISTORY.md](docs/LICENSING_HISTORY.md). Las licencias no conceden permiso para operar sobre sistemas de terceros: lee [SECURITY_AND_ETHICS.md](SECURITY_AND_ETHICS.md) y [TRADEMARKS.md](TRADEMARKS.md).
 
 ---
 

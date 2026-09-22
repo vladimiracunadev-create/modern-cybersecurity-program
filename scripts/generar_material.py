@@ -146,13 +146,18 @@ def generar_pdf(nav: str, html_path: str, pdf_path: str) -> None:
     if os.path.exists(tmp_pdf):
         os.remove(tmp_pdf)
     uri = "file:///" + html_path.replace("\\", "/")
-    subprocess.run(
-        [nav, "--headless=new", "--disable-gpu", "--no-first-run",
-         "--no-default-browser-check", "--no-pdf-header-footer",
-         f"--print-to-pdf={tmp_pdf}", uri],
-        check=True, timeout=180,
-        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-    )
+    playwright_node = os.environ.get("PLAYWRIGHT_NODE")
+    if playwright_node:
+        helper = os.path.join(os.path.dirname(__file__), "imprimir_pdf_playwright.js")
+        subprocess.run([playwright_node, helper, html_path, tmp_pdf], check=True, timeout=180)
+    else:
+        subprocess.run(
+            [nav, "--headless=new", "--disable-gpu", "--no-first-run",
+             "--no-default-browser-check", "--no-pdf-header-footer",
+             f"--print-to-pdf={tmp_pdf}", uri],
+            check=True, timeout=180,
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+        )
     publicar(tmp_pdf, pdf_path, MIN_PDF_BYTES)
 
 

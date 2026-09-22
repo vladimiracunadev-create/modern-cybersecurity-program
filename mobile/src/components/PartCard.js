@@ -1,5 +1,5 @@
 // ============================================================
-// COMPONENTE: PartCard — tarjeta de una de las 19 partes (Home).
+// COMPONENTE: PartCard — tarjeta de una de las 20 partes (Home).
 // ============================================================
 
 import React from 'react';

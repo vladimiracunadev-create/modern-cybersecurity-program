@@ -9,7 +9,7 @@ reales, de modo que solo pasa si el contenido llego de verdad.
 
 Que verifica:
 
-  1. Las 19 partes: el slug de cada parte aparece en el bundle.
+  1. Las 20 partes: el slug de cada parte aparece en el bundle.
   2. Los titulos: los de una muestra determinista de clases.
   3. El CUERPO de la clase: parrafos largos de la explicacion en profundidad y
      de la practica de esa misma muestra. Es la comprobacion que distingue
@@ -47,7 +47,7 @@ if hasattr(sys.stdout, "reconfigure"):
 ROOT = Path(__file__).resolve().parents[1]
 CATALOGO = ROOT / "mobile" / "src" / "data" / "classes.js"
 
-# Cada cuantas clases se toma una para la muestra. Con 340 clases da 9 clases
+# Cada cuantas clases se toma una para la muestra. Con 360 clases da 9 clases
 # repartidas por todo el programa; suficiente para detectar un truncado y lo
 # bastante barato para correr en cada release.
 PASO_MUESTRA = 40

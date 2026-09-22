@@ -1,6 +1,6 @@
 # 📅 Syllabus y cronograma
 
-Planificación temporal del **Programa de Ciberseguridad Moderna** (340 clases · 19 partes).
+Planificación temporal del **Programa de Ciberseguridad Moderna** (360 clases · 20 partes).
 Las horas son estimadas a partir de la duración de cada clase (~1,5–2,5 h) más práctica.
 
 > Ritmo de referencia: **~10 h/semana**. A ese ritmo el programa completo son **~14 meses**;
@@ -30,7 +30,8 @@ Las horas son estimadas a partir de la duración de cada clase (~1,5–2,5 h) m�
 | 16 | Capstones y preparación de certificaciones | 10 | ~30 | 3,0 |
 | 17 | Profundización para certificaciones | 20 | ~36 | 3,6 |
 | 18 | IA aplicada a la ciberseguridad | 10 | ~22 | 2,2 |
-| | **Total** | **340** | **~675 h** | **~68 sem** |
+| 19 | Seguridad de videojuegos, cheats y anti-cheat | 20 | ~40 | 4,0 |
+| | **Total** | **360** | **~715 h** | **~72 sem** |
 
 *(Las horas incluyen leer la clase, hacer los ejercicios/laboratorio y el reto verificable.)*
 
@@ -42,7 +43,7 @@ Las horas son estimadas a partir de la duración de cada clase (~1,5–2,5 h) m�
 - **2** (cripto) apoya 4, 10, 11.
 - **10, 11** asumen 0, 1, 2, 4.
 - **14** (GRC) es independiente pero se enriquece con 8, 9.
-- **17** profundiza 2, 8, 9, 11, 14; **18** asume 3–9 y 15.
+- **17** profundiza 2, 8, 9, 11, 14; **18** asume 3–9 y 15; **19** asume 5–9 y 15.
 - **16** (capstones) va al final de cada ruta.
 
 ## Cronograma sugerido de 30 semanas (ruta "generalista")
@@ -65,8 +66,8 @@ Un plan realista para cubrir el núcleo empleable en ~2 trimestres a 10 h/semana
 ## Evaluación y progreso
 
 - Cada clase trae **ejercicios** y un **reto verificable** con criterio de aceptación (ver [rúbrica](rubrica-evaluacion.md)).
-- Autoevaluación por parte: [quiz interactivo](../autoevaluaciones/README.md) (97 preguntas).
-- Seguimiento: [progreso de las 340 clases](../autoevaluaciones/README.md#progreso).
+- Autoevaluación por parte: [quiz interactivo](../autoevaluaciones/README.md) (109 preguntas).
+- Seguimiento: [progreso de las 360 clases](../autoevaluaciones/README.md#progreso).
 - Cierre por rol: [examen final por rol](examen-final-por-rol.md).
 
 ## 🔗 Relacionado

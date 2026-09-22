@@ -27,7 +27,7 @@ Claves de referencia para los **ejercicios** y **retos verificables** de las cla
 ## 🗺️ Plan de escalado
 
 Las soluciones se generan **por parte** (una guía por parte con la clave de cada clase). Es un
-trabajo grande (340 clases), así que se hace **incremental y por lotes** para controlar el coste:
+trabajo grande (360 clases), así que se hace **incremental y por lotes** para controlar el coste:
 
 - **Hecho:** Partes **1, 2, 3, 4, 5, 7, 8, 9 y 17** (195 clases con solución del reto + claves de ejercicios).
 - **Siguientes lotes sugeridos:** 6 (malware), 10 (cloud), 11 (DevSecOps), 12 (OSINT), 13 (móvil/IoT), 14 (GRC) y el resto.

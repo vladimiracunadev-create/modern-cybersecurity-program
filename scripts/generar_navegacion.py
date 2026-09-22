@@ -3,7 +3,7 @@
 Genera la navegacion hacia atras ("## ⬅️ Clase anterior") en cada clase, de forma
 que el programa se pueda recorrer en los DOS sentidos.
 
-La numeracion de clases es GLOBAL (001→340) y cruza las partes: la anterior a la
+La numeracion de clases es GLOBAL (001→360) y cruza las partes: la anterior a la
 026 (Parte 1) es la 025 (Parte 0). Por eso el orden se calcula sobre el numero de
 clase, no por carpeta.
 

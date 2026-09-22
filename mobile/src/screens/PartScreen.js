@@ -1,7 +1,7 @@
 /**
  * PartScreen.js — Listado de las clases de una parte.
  *
- * Segundo nivel de navegación: el Home muestra las 19 partes y esta pantalla
+ * Segundo nivel de navegación: el Home muestra las 20 partes y esta pantalla
  * despliega las clases de la parte elegida (entre 10 y 30 según la parte), con
  * un buscador por número, título o tema.
  */

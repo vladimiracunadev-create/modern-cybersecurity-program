@@ -1,6 +1,6 @@
 # 🧭 Rutas guiadas por rol
 
-El programa tiene 340 clases; **no todas son para todos a la vez**. Estas rutas ordenan el
+El programa tiene 360 clases; **no todas son para todos a la vez**. Estas rutas ordenan el
 recorrido según el rol al que apuntas: qué partes hacer, en qué orden, con qué laboratorios
 practicar y a qué certificación apuntar. Todas asumen que **empiezas por la Parte 0**
 (fundamentos): es el cimiento común.
@@ -442,6 +442,21 @@ Seguridad operativa desde el lado de la ingeniería: administras el EDR/XDR de t
 - 💡 El programa te da la **base técnica** que pide la oferta (EDR, SIEM, incidentes, Python/Bash, APIs, identidades, hardening). La **experiencia con un producto comercial concreto sobre una flota real** y el **contexto de negocio** (fintech, regulación, escala) los aportas tú.
 - 📖 **[Guía de carrera completa →](secops-engineer.md)** — qué es, día a día, skills, certis, salario y progresión.
 - ↔️ **Frente al [Analista SecOps](secops-analista.md)**: aquí **construyes y automatizas**; allí se **opera y se decide** sobre el riesgo. Son dos puestos, aunque en una empresa pequeña los haga la misma persona.
+
+## 🎮 Game Security Engineer / Anti-Cheat Engineer
+
+Protege la integridad competitiva desde la arquitectura: servidor autoritativo, minimización de
+información, telemetría, detección conductual, falsos positivos, privacidad y respuesta. Es una ruta
+avanzada que une software, backend, reversing, detection engineering y data/ML.
+
+1. 📚 Partes **0 y 1** — sistemas, memoria, Python y redes.
+2. 📚 Partes **5 y 6** — reversing, debugging y análisis de comportamiento.
+3. 📚 Partes **8 y 9** — telemetría, detección, investigación y RCA.
+4. 📚 Parte **15** — evaluación y límites de ML.
+5. 📚 Parte **19** — especialización completa (341–360).
+
+- 🧪 [`game-security`](../labs/game-security/README.md) · 🚩 [CTF Game Security](../ctf/game-security/README.md) · 📋 capstone 360.
+- 📖 **[Guía de carrera completa →](game-security-engineer.md)** — trabajo diario, competencias, ruta, portafolio, entrevista y progresión.
 
 ## 🏭 Arquitecto de Ciberseguridad IT/OT (industria e infraestructura crítica)
 

@@ -1,6 +1,6 @@
 # Indice del curriculo
 
-**340 clases - 19 partes** - numeracion secuencial 001-340. Cada parte tiene su propio README con la narrativa completa (de que trata, que problemas resuelve, resultados de aprendizaje, estructura tematica y prerrequisitos).
+**360 clases - 20 partes** - numeracion secuencial 001-360. Cada parte tiene su propio README con la narrativa completa (de que trata, que problemas resuelve, resultados de aprendizaje, estructura tematica y prerrequisitos).
 
 | Parte | Tema | Clases | README de la parte |
 |---|---|---:|---|
@@ -23,6 +23,7 @@
 | 16 | Capstones y preparacion de certificaciones | 10 (301-310) | [leer parte 16](parte-16-capstones-y-preparacion-de-certificaciones/README.md) |
 | 17 | Profundizacion para certificaciones (gestion, IAM, arquitectura) | 20 (311-330) | [leer parte 17](parte-17-profundizacion-para-certificaciones/README.md) |
 | 18 | IA aplicada a la ciberseguridad (agentes, MCP, kali-mcp) | 10 (331-340) | [leer parte 18](parte-18-ia-aplicada-a-la-ciberseguridad/README.md) |
+| 19 | Seguridad de videojuegos, cheats y anti-cheat | 20 (341-360) | [leer parte 19](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/README.md) |
 
 ---
 
@@ -424,3 +425,26 @@ A continuacion, el indice plano de las clases. Si buscas la narrativa de una par
 - [338 - Generacion de informes y flujos de trabajo con IA](parte-18-ia-aplicada-a-la-ciberseguridad/338-generacion-de-informes-y-flujos-de-trabajo-con-ia/README.md)
 - [339 - Riesgos, guardrails, OPSEC y etica del hacking con IA](parte-18-ia-aplicada-a-la-ciberseguridad/339-riesgos-guardrails-opsec-y-etica-del-hacking-con-ia/README.md)
 - [340 - Capstone: pentest autorizado asistido por IA con MCP](parte-18-ia-aplicada-a-la-ciberseguridad/340-capstone-pentest-autorizado-asistido-por-ia-con-mcp/README.md)
+
+## [Parte 19 - Seguridad de videojuegos, cheats y anti-cheat](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/README.md)
+
+- [341 - Introducción a Game Security y modelo de amenazas](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/341-introduccion-game-security-modelo-amenazas/README.md)
+- [342 - Arquitectura de videojuegos desde la perspectiva de seguridad](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/342-arquitectura-videojuegos-perspectiva-seguridad/README.md)
+- [343 - Taxonomía técnica de cheats](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/343-taxonomia-tecnica-cheats/README.md)
+- [344 - Estado del juego, memoria y manipulación controlada](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/344-estado-juego-memoria-manipulacion-controlada/README.md)
+- [345 - Trainers e instrumentación del cliente](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/345-trainers-instrumentacion-cliente/README.md)
+- [346 - Información expuesta, radar, ESP y world-to-screen](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/346-informacion-expuesta-radar-esp-world-to-screen/README.md)
+- [347 - Rendering, visibilidad, occlusion y wallhack](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/347-rendering-visibilidad-occlusion-wallhack/README.md)
+- [348 - Matemática de un aimbot](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/348-matematica-aimbot/README.md)
+- [349 - Aimbot avanzado, predicción, smoothing y recoil](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/349-aimbot-avanzado-prediccion-smoothing-recoil/README.md)
+- [350 - Triggerbot, macros, input automation y bots](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/350-triggerbot-macros-input-automation-bots/README.md)
+- [351 - Multiplayer y autoridad: nunca confiar en el cliente](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/351-multiplayer-autoridad-nunca-confiar-cliente/README.md)
+- [352 - Seguridad del protocolo de juego](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/352-seguridad-protocolo-juego/README.md)
+- [353 - Arquitecturas Anti-Cheat](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/353-arquitecturas-anticheat/README.md)
+- [354 - Server-side Anti-Cheat y diseño autoritativo](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/354-server-side-anticheat-diseno-autoritativo/README.md)
+- [355 - Telemetría para Game Security](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/355-telemetria-game-security/README.md)
+- [356 - Detección de aimbot y automatización por comportamiento](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/356-deteccion-aimbot-automatizacion-comportamiento/README.md)
+- [357 - Estadística, anomalías y falsos positivos](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/357-estadistica-anomalias-falsos-positivos/README.md)
+- [358 - Machine Learning aplicado a Anti-Cheat](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/358-machine-learning-aplicado-anticheat/README.md)
+- [359 - Privacidad, gobernanza, sanciones y seguridad del propio Anti-Cheat](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/359-privacidad-gobernanza-sanciones-seguridad-anticheat/README.md)
+- [360 - Capstone: incidente completo de Game Security](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/360-capstone-incidente-completo-game-security/README.md)

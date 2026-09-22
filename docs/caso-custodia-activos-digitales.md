@@ -18,8 +18,10 @@ entrenamiento. No contiene claves privadas, fondos ni datos de clientes reales.
 
 ## Diagnóstico de integración
 
-La auditoría encontró 19 partes y 340 clases. Los temas base ya existen; la brecha
-no era otra clase teórica, sino un artefacto que obligara a usarlos juntos.
+La auditoría inicial de este caso —realizada antes de incorporar la Parte 19— encontró
+19 partes y 340 clases. Los temas base ya existían; la brecha no era otra clase
+teórica, sino un artefacto que obligara a usarlos juntos. El catálogo vigente tiene
+20 partes y 360 clases, sin que ese diagnóstico histórico pierda validez.
 
 | Tema existente | Nivel actual | Brecha aplicada | Mejora propuesta | Punto de integración |
 |---|---|---|---|---|

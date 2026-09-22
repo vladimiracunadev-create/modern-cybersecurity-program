@@ -1,7 +1,7 @@
 /**
- * HomeScreen.js — Pantalla principal: las 19 partes del programa.
+ * HomeScreen.js — Pantalla principal: las 20 partes del programa.
  *
- * Con 340 clases, una lista plana es inmanejable: el Home muestra las partes y
+ * Con 360 clases, una lista plana es inmanejable: el Home muestra las partes y
  * el detalle de cada una vive en PartScreen.
  */
 
@@ -141,7 +141,7 @@ export default function HomeScreen({ navigation }) {
   const renderFooter = () => (
     <View style={styles.footer}>
       <Text style={styles.footerText}>
-        Las 340 clases y los recursos transversales se leen completos sin conexión, con
+        Las 360 clases y los recursos transversales se leen completos sin conexión, con
         sus diagramas. Solo necesitan internet los enlaces al sitio y a GitHub.
       </Text>
     </View>

@@ -1184,6 +1184,84 @@
           "exp": "Datos no confiables (banners, webs) pueden manipular al agente; por eso mínimo privilegio y aislamiento."
         }
       ]
+    },
+    {
+      "idx": 19,
+      "titulo": "Seguridad de videojuegos, cheats y anti-cheat",
+      "preguntas": [
+        {
+          "q": "¿Qué distingue mejor a un servidor autoritativo de uno client-authoritative?",
+          "opciones": ["El servidor cifra todos los paquetes", "El servidor valida intenciones y deriva el estado canónico", "El cliente no renderiza", "El servidor elimina la latencia"],
+          "correcta": 1,
+          "exp": "El cliente solicita acciones; el servidor comprueba precondiciones e invariantes antes de producir el resultado."
+        },
+        {
+          "q": "Un radar educativo funciona principalmente porque…",
+          "opciones": ["Rompe siempre el depth buffer", "El cliente conoce posiciones suficientes para reconstruirlo", "UDP carece de cifrado", "ASLR está desactivado"],
+          "correcta": 1,
+          "exp": "El problema fundamental suele ser la información excesiva replicada, aunque el overlay sea el síntoma visible."
+        },
+        {
+          "q": "En world-to-screen, ¿por qué se divide por w después de la proyección?",
+          "opciones": ["Para cifrar coordenadas", "Para obtener coordenadas normalizadas de dispositivo", "Para medir latencia", "Para aplicar recoil"],
+          "correcta": 1,
+          "exp": "La división perspectiva lleva coordenadas clip a NDC antes del escalado al viewport."
+        },
+        {
+          "q": "Con FOV total de 60°, ¿qué ángulo máximo respecto al forward queda dentro?",
+          "opciones": ["60°", "120°", "30°", "15°"],
+          "correcta": 2,
+          "exp": "Se compara la distancia angular con el semiancho del FOV: 30°."
+        },
+        {
+          "q": "¿Qué control evita mejor aceptar una cadencia de disparo imposible?",
+          "opciones": ["Ocultar ammo en la UI", "Cooldown y máquina de estados en el servidor", "Comprimir snapshots", "Cambiar el shader"],
+          "correcta": 1,
+          "exp": "La autoridad del servidor valida tiempo, estado del arma y munición."
+        },
+        {
+          "q": "¿Qué relación es correcta entre prediction y reconciliation?",
+          "opciones": ["Prediction da autoridad permanente al cliente", "El cliente predice para responder y luego corrige/reaplica contra el estado del servidor", "Ambas eliminan packet loss", "Solo se usan con TCP"],
+          "correcta": 1,
+          "exp": "La experiencia puede ser inmediata sin ceder la verdad canónica."
+        },
+        {
+          "q": "Una alerta de snap aim con reacción sub-100 ms significa…",
+          "opciones": ["Culpabilidad concluyente", "Una hipótesis que requiere secuencia, contexto y alternativas legítimas", "Que el kernel fue comprometido", "Que la precisión es 100%"],
+          "correcta": 1,
+          "exp": "Anomalía no significa culpabilidad; habilidad, input, FPS y accesibilidad pueden solaparse."
+        },
+        {
+          "q": "¿Por qué accuracy es mala métrica única con clases desbalanceadas?",
+          "opciones": ["No admite porcentajes", "Puede ser alta prediciendo siempre la clase mayoritaria", "Solo sirve para regresión", "Exige datos personales"],
+          "correcta": 1,
+          "exp": "Precision, recall, F1 y PR deben leerse con prevalencia y costo de error."
+        },
+        {
+          "q": "¿Cuándo aporta ML frente a reglas deterministas?",
+          "opciones": ["Siempre", "Cuando generaliza patrones multivariados con evaluación, drift y explicación mejores que el baseline", "Cuando no hay labels ni objetivo", "Cuando se quiere ocultar el criterio"],
+          "correcta": 1,
+          "exp": "ML debe superar un baseline simple y justificar complejidad, mantenimiento y gobernanza."
+        },
+        {
+          "q": "¿Qué principio limita telemetría anti-cheat a campos que cambian una decisión?",
+          "opciones": ["Data augmentation", "Minimización de datos", "Client prediction", "Delayed ban"],
+          "correcta": 1,
+          "exp": "La minimización reduce exposición y obliga a definir propósito, retención y acceso."
+        },
+        {
+          "q": "¿Qué diferencia causa raíz de señal?",
+          "opciones": ["La señal es el control definitivo", "La causa raíz es la condición sistémica que permitió recurrencia; la señal es una observación", "No hay diferencia", "La causa raíz siempre es el jugador"],
+          "correcta": 1,
+          "exp": "Impossible fire rate puede ser señal; ausencia de validación autoritativa puede ser causa raíz."
+        },
+        {
+          "q": "¿Qué debe acompañar una sanción revisable?",
+          "opciones": ["Solo una puntuación del modelo", "Evidencia, versión del detector, política, auditabilidad y appeal", "El nombre del cheat", "Acceso kernel obligatorio"],
+          "correcta": 1,
+          "exp": "Las consecuencias requieren trazabilidad y una vía proporcional de revisión."
+        }
+      ]
     }
   ]
 }

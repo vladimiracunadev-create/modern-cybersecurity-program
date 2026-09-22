@@ -1,6 +1,6 @@
 # 📱 App móvil — Ciberseguridad Moderna
 
-App **Android y web** (Expo / React Native) que embebe las **340 clases en 19 partes** y
+App **Android y web** (Expo / React Native) que embebe las **360 clases en 20 partes** y
 los **recursos transversales** del programa completos para leerlos **sin conexión**:
 la explicación en profundidad, **los diagramas**, el glosario, el laboratorio, los ejercicios, los errores
 comunes y las referencias, no un resumen. Lo único que necesita red son los botones de
@@ -13,7 +13,7 @@ enlaces externos al sitio y a GitHub.
 
 ## 🧭 Qué hace
 
-- **Home** — las 19 partes con su foco, nivel y progreso global (X/340).
+- **Home** — las 20 partes con su foco, nivel y progreso global (X/360).
 - **Recursos** — acceso destacado a «¿Y si cruzas la línea?», con leyes, casos,
   atribución, consecuencias y salidas profesionales; texto y diagramas viajan offline.
 - **Parte** — las clases de una parte, con buscador por número, título o tema.
@@ -74,7 +74,7 @@ y `SHA256SUMS`. El APK no se compila localmente ni se commitea. Ver
 
 ## 🔒 Privacidad
 
-- Todo el contenido viaja embebido, diagramas incluidos: las 340 clases y los recursos
+- Todo el contenido viaja embebido, diagramas incluidos: las 360 clases y los recursos
   transversales se leen enteros **sin conexión**.
 - Solo requieren internet los enlaces al sitio y a GitHub.
 - El progreso se guarda **solo en el dispositivo** (AsyncStorage). La app no tiene

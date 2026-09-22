@@ -21,6 +21,7 @@ FLAG{...}
 | 🔬 Forense | [Lo que esconde el binario](forense/reto-01-strings/reto.md) | ⭐ | [9](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/README.md) |
 | 🔎 OSINT | [Postal sin remitente](osint/reto-01-geo/reto.md) | ⭐⭐ | [12](../classes/parte-12-osint-e-ingenieria-social/README.md) |
 | 💥 Pwn / Rev | [Reversa el check](pwn/reto-01-xor/reto.md) | ⭐⭐ | [5](../classes/parte-5-explotacion-de-sistemas-y-binarios/README.md) |
+| 🎮 Game Security | [El cliente que mandaba demasiado](game-security/reto-01-autoridad/reto.md) · [¿Snap o experto?](game-security/reto-02-falso-positivo/reto.md) | ⭐–⭐⭐ | [19](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/README.md) |
 
 ## Cómo se puntúa
 

@@ -290,6 +290,18 @@ Estas nueve rutas están calcadas de anuncios de empleo reales, así que su exam
 
 Quien complete la **Parte 18** puede añadir el [capstone 340](../classes/parte-18-ia-aplicada-a-la-ciberseguridad/340-capstone-pentest-autorizado-asistido-por-ia-con-mcp/README.md): repetir el examen práctico **asistido por IA** (kali-mcp) y comparar — con retrospectiva sobre qué aportó la IA y qué tuvo que corregir.
 
+## 🎮 Game Security Engineer / Anti-Cheat Engineer
+
+- **Teoría:** Parte 19 completa (+ 5, 6, 8, 9 y 15 como prerrequisitos).
+- **Práctica:** en [`game-security`](../labs/game-security/README.md), reproduce una confianza
+  incorrecta en modo VULNERABLE, conserva telemetría, construye una regla explicable, evalúa al
+  menos un escenario legítimo difícil y migra el flujo a autoridad de servidor.
+- **Informe:** arquitectura y threat model, dataset card con semilla, timeline, evidencia, matriz de
+  confusión, alternativas legítimas, RCA, fix, regression tests, análisis de privacidad y resumen
+  ejecutivo. Debe seguir el [capstone 360](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/360-capstone-incidente-completo-game-security/README.md).
+- **Criterio eliminatorio:** sancionar a partir de una métrica aislada, experimentar contra software
+  de terceros o presentar una mitigación sin prueba adversarial y caso normal.
+
 ## 🧭 Familia SecOps y DevSecOps: siete exámenes, ninguno intercambiable
 
 Estos siete puestos se confunden en las ofertas, así que sus exámenes están construidos para **no
