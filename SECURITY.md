@@ -1,5 +1,7 @@
 # Política de seguridad y uso responsable
 
+La política completa que diferencia aprendizaje, laboratorio autorizado, investigación, pruebas defensivas y sistemas de terceros está en [SECURITY_AND_ETHICS.md](SECURITY_AND_ETHICS.md). Este archivo conserva el canal y las reglas para reportar problemas del proyecto.
+
 ## Propósito del repositorio
 
 Este es un **programa educativo de ciberseguridad**. Contiene material didáctico sobre

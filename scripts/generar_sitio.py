@@ -312,7 +312,7 @@ def escribir_landing(partes) -> None:
   <p class="sub">El curso más completo en español — de redes, criptografía y Linux hasta Red Team, DFIR, cloud y seguridad de IA.</p>
   <div class="chips">
     <span class="chip">{total} clases</span><span class="chip">{len(partes)} partes</span>
-    <span class="chip">Fundamentos → Experto</span><span class="chip">Español</span><span class="chip">MIT</span>
+    <span class="chip">Fundamentos → Experto</span><span class="chip">Español</span><span class="chip">Licencias por tipo de obra</span>
   </div>
   <div class="cta">
     <a class="btn btn-1" href="classes/README.html">📚 Empezar el curso</a>
@@ -328,8 +328,8 @@ def escribir_landing(partes) -> None:
   <div class="parts">{parts_html}</div>
 </main>
 <footer><div class="wrap">
-  Programa de Ciberseguridad Moderna · {total} clases · licencia
-  <a href="https://github.com/vladimiracunadev-create/modern-cybersecurity-program">MIT en GitHub</a><br>
+  Programa de Ciberseguridad Moderna · {total} clases ·
+  <a href="https://github.com/vladimiracunadev-create/modern-cybersecurity-program#-licencias-y-propiedad-intelectual">Apache-2.0 para código · CC BY-NC-SA 4.0 para contenido</a><br>
   <a href="classes/README.html">Índice de clases</a> · <a href="rutas/README.html">Rutas</a> ·
   <a href="autoevaluaciones/quiz.html">Autoevaluación</a> · <a href="autoevaluaciones/progreso.html">Progreso</a> ·
   <a href="manual/MANUAL.pdf">Manual en PDF</a> · <a href="app/">Aplicación web</a>

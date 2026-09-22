@@ -28,6 +28,17 @@ Cada clase vive en `classes/parte-N-.../NNN-slug/README.md` y sigue una plantill
 - **Herramientas reales** y comandos reproducibles; nada de pseudocódigo cuando exista la herramienta.
 - Enlaza la clase anterior/siguiente y mantén el índice (`classes/README.md`) coherente.
 
+## Licencia y procedencia de contribuciones
+
+Al enviar una contribución declaras que tienes derecho a aportarla y aceptas que se publique bajo la licencia aplicable a su tipo:
+
+- código, scripts, configuraciones y automatización: [Apache-2.0](LICENSE);
+- texto pedagógico, ejercicios, diagramas, datos y activos originales: [CC BY-NC-SA 4.0](LICENSE-CONTENT.md).
+
+No envíes material copiado, secretos, datos personales, telemetría de terceros, malware real ni activos cuya licencia no permita la distribución. Si incorporas o adaptas material externo permitido, identifica autor, fuente, versión, licencia y cambios en el mismo pull request, y actualiza [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), [ASSET_LICENSES.md](ASSET_LICENSES.md) o [DATA_LICENSES.md](DATA_LICENSES.md), según corresponda.
+
+La licencia de una contribución no autoriza pruebas sobre sistemas ajenos. Toda práctica debe seguir [SECURITY_AND_ETHICS.md](SECURITY_AND_ETHICS.md).
+
 ## Flujo
 
 1. Haz un fork y crea una rama descriptiva.
