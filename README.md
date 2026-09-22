@@ -23,7 +23,7 @@
 [![Markdown](https://img.shields.io/badge/Markdown-contenido-000000?style=flat-square&logo=markdown&logoColor=white)](classes/README.md)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-sitio%20vivo-222?style=flat-square&logo=githubpages&logoColor=white)](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/)
 
-[📚 Índice completo de clases](classes/README.md) · [⚠️ ¿Y si cruzas la línea?](docs/cruzar-la-linea-consecuencias-reales.md) · [📕 Manual completo (PDF)](manual/MANUAL.pdf) · [🌐 Aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad y ética](SECURITY_AND_ETHICS.md)
+[📚 Índice completo de clases](classes/README.md) · [📖 Glosario global](docs/GLOSARIO-GLOBAL.md) · [🧪 Plataformas de práctica](docs/PLATAFORMAS-DE-PRACTICA.md) · [⚠️ ¿Y si cruzas la línea?](docs/cruzar-la-linea-consecuencias-reales.md) · [📕 Manual completo (PDF)](manual/MANUAL.pdf) · [🌐 Aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad y ética](SECURITY_AND_ETHICS.md)
 
 </div>
 
@@ -149,10 +149,10 @@ Cada parte tiene su **propio README** con narrativa completa: de qué trata, res
 
 ## 📱 Aplicación Android y web
 
-La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **360 clases en 20 partes** y el recurso transversal **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. Desde `v1.2.0`, «¿Y si cruzas la línea?» viaja con sus fuentes y tres diagramas en Android y en la versión web.
+La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **360 clases en 20 partes** y tres recursos transversales **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. Desde `v1.2.0`, «¿Y si cruzas la línea?» viaja con sus fuentes y tres diagramas; `v1.3.0` incorpora el glosario global y la guía de plataformas.
 
 - 🌐 **[Abrir la aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/)** — misma experiencia, publicada dentro de GitHub Pages.
-- 📥 **[Descargar Android, web y manual — release v1.2.0](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.2.0)** · verifica los tres artefactos con `SHA256SUMS.txt`.
+- 📥 **[Descargar Android, web y manual — release v1.3.0](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.3.0)** · verifica los tres artefactos con `SHA256SUMS.txt`.
 - 🧭 **Navegación:** Home (20 partes + progreso global) → Parte (clases + buscador) → Clase, en dos pestañas: *Teoría* (objetivo, resultados, temas, explicación en profundidad, definiciones, glosario) y *Práctica* (preparación, laboratorio, ejercicios, reto, errores comunes, preguntas frecuentes, referencias).
 - 🔌 **Offline-first:** las clases se leen enteras sin conexión, diagramas incluidos; solo necesitan internet los enlaces al sitio y a GitHub. El progreso se guarda **solo en tu dispositivo**.
 
@@ -180,6 +180,8 @@ comando, más una colección de retos tipo CTF:
 - ₿ **[Custodia de activos digitales](labs/custodia-activos-digitales/README.md)** — caso transversal ficticio con conciliación ledger–operación–blockchain, IAM/PAM/SoD, insider risk, threat model, DFIR, ocho playbooks, dataset y tests · Partes 8, 9, 11, 14, 16 y 17; [diagnóstico y arquitectura](docs/caso-custodia-activos-digitales.md).
 - 🌐 **[Escaneo de red (nmap)](labs/redes-nmap/README.md)** · 💥 **[Explotación de binarios (pwn)](labs/pwn-binarios/README.md)** · ☁️ **[Auditoría cloud (CSPM)](labs/cloud-security/README.md)** — Partes 1, 5 y 10.
 - 🚩 **[Retos tipo CTF](ctf/README.md)** — web, cripto, redes, forense, OSINT y pwn, con writeups.
+- 📖 **[Glosario global](docs/GLOSARIO-GLOBAL.md)** — términos, siglas, aliases y trazabilidad automática hacia las clases donde aparecen.
+- 🧪 **[Plataformas de práctica](docs/PLATAFORMAS-DE-PRACTICA.md)** — progresión autorizada por perfil, modalidad, nivel y límites de publicación.
 
 - 🎩 **[Laboratorio ejecutivo CISO](labs/ciso-leadership/README.md)** — 14 escenarios de **dirección** sobre organizaciones ficticias (informe al directorio, registro de riesgos, plan director, presupuesto, tabletop, proveedor crítico, 90 días, descubrimiento y recomendación de Field CISO, alcance de vCISO, roadmap de BISO, paquete de confianza de producto, inventario de riesgos de IA e incidente OT), con [15 plantillas](labs/ciso-leadership/PLANTILLAS.md), rúbricas y [evaluación](labs/ciso-leadership/EVALUACION.md). Sin Docker: aquí se practica decidir · Partes 14 y 17.
 

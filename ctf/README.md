@@ -11,6 +11,12 @@ FLAG{...}
 > 🎓 Intenta resolverlo por tu cuenta con `reto.md`; solo después abre `solucion.md`.
 > Todo es material didáctico: resuélvelo con tus herramientas en tu propia máquina.
 
+Una flag prueba que alcanzaste el objetivo, pero no que comprendiste el mecanismo.
+Después de resolver, documenta evidencia, causa raíz, mitigación y detección con la
+[plantilla de writeup](../templates/writeup-ctf.md). Si quieres continuar en un
+entorno externo, elige uno desde la [guía de plataformas autorizadas](../docs/PLATAFORMAS-DE-PRACTICA.md)
+y revisa primero sus reglas de publicación.
+
 ## Categorías
 
 | Categoría | Reto | Dificultad | Parte relacionada |
@@ -29,6 +35,10 @@ No hay servidor de puntuación: te autoverificas con `solucion.md`. Si quieres m
 CTF real para un grupo, puedes cargar estos retos en [CTFd](https://ctfd.io/) usando la flag
 de cada `solucion.md` como respuesta.
 
+Para evaluar aprendizaje profesional, añade cuatro criterios a la flag: reproducción
+del camino, explicación causal, control preventivo y señal de detección. El
+[glosario global](../docs/GLOSARIO-GLOBAL.md) ayuda a mantener el vocabulario consistente.
+
 ## Reglas
 
 - Resuelve con **tus** herramientas y en **tu** máquina.
@@ -38,4 +48,7 @@ de cada `solucion.md` como respuesta.
 ## Aportar retos
 
 ¿Tienes un buen reto? Sigue la estructura `ctf/<categoria>/reto-NN-<slug>/` con `reto.md`
-(enunciado + datos) y `solucion.md` (writeup + flag). Ver [CONTRIBUTING](../CONTRIBUTING.md).
+(enunciado + datos) y `solucion.md` (writeup + flag). Usa la
+[plantilla común](../templates/writeup-ctf.md), declara categoría y dificultad, y
+comprueba que ningún paso necesite atacar servicios externos. Ver
+[CONTRIBUTING](../CONTRIBUTING.md).

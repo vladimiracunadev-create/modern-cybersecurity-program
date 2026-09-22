@@ -51,7 +51,7 @@ python-pptx). Notebooks **descartados** por decisión.
 - [x] Navegación Home (partes + progreso) → Parte (clases + buscador) → Clase, con progreso local.
 - [x] **Las clases enteras dentro del APK** (v1.1.0): explicación en profundidad, diagramas, glosario, laboratorio, ejercicios, reto, errores comunes, preguntas y referencias. Hasta la v1.0.0 la app embebía un resumen y había que salir al sitio para leer la clase.
 - [x] Catálogo **generado** desde los README de las clases (`scripts/generar_curriculum_movil.py`, con `--check` de integridad).
-- [x] **Release multiplataforma por CI** ([`release-android.yml`](.github/workflows/release-android.yml)): compila y firma el APK, exporta la aplicación web y publica ambos junto con el manual PDF y sus sumas SHA-256. Antes de publicar abre los bundles y busca contenido completo de las clases y recursos ([`scripts/verificar_bundle.py`](scripts/verificar_bundle.py)): un build en verde no prueba por sí solo que el contenido viajara. Primer release: [**v1.0.0**](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.0.0) · último: [**v1.2.0**](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.2.0).
+- [x] **Release multiplataforma por CI** ([`release-android.yml`](.github/workflows/release-android.yml)): compila y firma el APK, exporta la aplicación web y publica ambos junto con el manual PDF y sus sumas SHA-256. Antes de publicar abre los bundles y busca contenido completo de las clases y recursos ([`scripts/verificar_bundle.py`](scripts/verificar_bundle.py)): un build en verde no prueba por sí solo que el contenido viajara. Primer release: [**v1.0.0**](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.0.0) · último: [**v1.3.0**](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.3.0).
 
 ## Fase 6 — El ecosistema CISO ✅ (completa)
 
@@ -71,5 +71,13 @@ python-pptx). Notebooks **descartados** por decisión.
 - [x] Game Security Range con modos NORMAL/VULNERABLE/SECURE/DETECTION, tests y datasets.
 - [x] Autoevaluación, CTF, ruta profesional, examen por rol, app, sitio, manual y materiales.
 
-**Las 7 fases del roadmap están completas.** ¿Ideas o mejoras? Abre un *issue* o revisa
+## Fase 8 — CTF, glosario y plataformas de práctica ✅ (completa)
+
+- [x] Glosario global determinista generado desde los glosarios locales, con aliases, siglas y trazabilidad a clases.
+- [x] Guía verificada de plataformas autorizadas, progresión por perfil y límites de publicación.
+- [x] Plantilla transversal de writeup: evidencia, causa raíz, mitigación, detección y lecciones.
+- [x] Integración en README, CTF, GitHub Pages y aplicación móvil offline, con búsqueda por sigla o plataforma.
+- [x] Tests y CI contra deriva; auditoría documentada en [`docs/AUDITORIA-CTF-GLOSARIO-PLATAFORMAS.md`](docs/AUDITORIA-CTF-GLOSARIO-PLATAFORMAS.md).
+
+**Las 8 fases del roadmap están completas.** ¿Ideas o mejoras? Abre un *issue* o revisa
 [CONTRIBUTING.md](CONTRIBUTING.md).

@@ -61,7 +61,36 @@ from mermaid_svg import rasterizar as rasterizar_diagramas  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 CLASSES_DIR = ROOT / "classes"
-RESOURCE_PATH = ROOT / "docs" / "cruzar-la-linea-consecuencias-reales.md"
+RESOURCE_SPECS = (
+    {
+        "path": ROOT / "docs" / "cruzar-la-linea-consecuencias-reales.md",
+        "id": "cruzar-la-linea",
+        "icon": "⚠️",
+        "title": "¿Y si cruzas la línea?",
+        "subtitle": "Consecuencias reales de utilizar la ciberseguridad para delinquir",
+        "description": "Leyes, atribución, condenas, patrimonio, extradición y salidas profesionales legítimas, con fuentes oficiales.",
+        "notice": "Contenido educativo. No constituye asesoría legal; la ley aplicable depende de los hechos, la jurisdicción y la decisión de un tribunal.",
+        "searchTerms": "ley delito ética atribución extradición cooperación condena",
+    },
+    {
+        "path": ROOT / "docs" / "GLOSARIO-GLOBAL.md",
+        "id": "glosario-global",
+        "icon": "📖",
+        "title": "Glosario global",
+        "subtitle": "Términos, siglas, aliases y clases de procedencia",
+        "description": "Índice alfabético generado desde los glosarios locales, con trazabilidad hacia las clases.",
+        "searchTerms": "CTF Capture The Flag HTB THM SOC SIEM DFIR OSINT AppSec IOC TTP pwn reversing writeup",
+    },
+    {
+        "path": ROOT / "docs" / "PLATAFORMAS-DE-PRACTICA.md",
+        "id": "plataformas-practica",
+        "icon": "🧪",
+        "title": "Plataformas de práctica",
+        "subtitle": "Entornos autorizados, progresión y límites de publicación",
+        "description": "Compara plataformas por enfoque, modalidad, nivel y ruta profesional antes de practicar.",
+        "searchTerms": "HTB Hack The Box TryHackMe THM PortSwigger picoCTF CyLab CyberDefenders OverTheWire PentesterLab LetsDefend CTFtime pwn.college ROP Emporium VulnHub crackmes.one",
+    },
+)
 OUT_FILE = ROOT / "mobile" / "src" / "data" / "classes.js"
 # Los diagramas se empaquetan como PNG dentro del APK: Metro los mete como
 # recursos (no como texto del bundle), asi que pesan lo que pesan y no inflan el
@@ -390,7 +419,7 @@ def full_content(md: str) -> tuple[list[dict], list[dict]]:
     return theory, practice
 
 
-def parse_resource(md: str) -> dict:
+def parse_resource(md: str, spec: dict) -> dict:
     """Convierte el recurso transversal completo en bloques para la app."""
     blocks: list[dict] = []
     matches = list(SECTION_RE.finditer(md))
@@ -400,18 +429,12 @@ def parse_resource(md: str) -> dict:
         cuerpo = md[match.end():fin].strip()
         blocks.append({"t": "h2", "x": strip_inline(titulo)})
         blocks.extend(blocks_from(cuerpo))
+    rel = spec["path"].relative_to(ROOT).as_posix()
     return {
-        "id": "cruzar-la-linea",
-        "icon": "⚠️",
-        "title": "¿Y si cruzas la línea?",
-        "subtitle": "Consecuencias reales de utilizar la ciberseguridad para delinquir",
-        "description": (
-            "Leyes, atribución, condenas, patrimonio, extradición y salidas "
-            "profesionales legítimas, con fuentes oficiales."
-        ),
+        **{key: value for key, value in spec.items() if key != "path"},
         "content": blocks,
-        "siteUrl": f"{PAGES_BASE}/docs/cruzar-la-linea-consecuencias-reales.html",
-        "githubUrl": f"{GITHUB_BASE}/docs/cruzar-la-linea-consecuencias-reales.md",
+        "siteUrl": f"{PAGES_BASE}/{rel[:-3]}.html",
+        "githubUrl": f"{GITHUB_BASE}/{rel}",
     }
 
 
@@ -507,9 +530,13 @@ def collect() -> tuple[list[dict], list[dict], list[dict]]:
         )
 
     classes.sort(key=lambda c: c["number"])
-    if not RESOURCE_PATH.is_file():
-        raise FileNotFoundError(f"Falta el recurso transversal: {RESOURCE_PATH}")
-    resources = [parse_resource(RESOURCE_PATH.read_text(encoding="utf-8"))]
+    missing = [spec["path"] for spec in RESOURCE_SPECS if not spec["path"].is_file()]
+    if missing:
+        raise FileNotFoundError(f"Faltan recursos transversales: {missing}")
+    resources = [
+        parse_resource(spec["path"].read_text(encoding="utf-8"), spec)
+        for spec in RESOURCE_SPECS
+    ]
     return parts, classes, resources
 
 

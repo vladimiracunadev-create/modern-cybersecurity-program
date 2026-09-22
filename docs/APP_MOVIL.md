@@ -2,7 +2,7 @@
 
 La app vive en [`mobile/`](../mobile/README.md) y es una app **Expo / React Native**
 que embebe las **360 clases en 20 partes** y los recursos transversales para leerlos
-**sin conexión** desde el teléfono o la aplicación web. La edición **1.2.0** mantiene
+**sin conexión** desde el teléfono o la aplicación web. La edición **1.3.0** mantiene
 cada clase **entera** —explicación en
 profundidad, diagramas, glosario, laboratorio, ejercicios, reto, errores comunes,
 preguntas frecuentes y referencias—, no un resumen: lo que se lee en el móvil es la
@@ -12,6 +12,8 @@ al sitio y a GitHub siguen ahí para la versión web y la fuente en Markdown.
 Desde la versión **1.2.0**, el recurso **«¿Y si cruzas la línea?»** también viaja
 completo: sus perfiles de actividad, marco legal, casos, atribución, cooperación
 internacional, consecuencias económicas y salidas profesionales, con tres diagramas.
+La edición **1.3.0** añade el glosario global y la guía de plataformas, junto con un
+filtro de recursos que reconoce siglas y aliases como CTF, HTB, THM, SOC o DFIR.
 
 ## 🧩 Fuente de verdad y generación del catálogo
 
@@ -75,7 +77,7 @@ mobile/
 │   │   ├── HomeScreen.js         20 partes + progreso global
 │   │   ├── PartScreen.js         clases de una parte + buscador
 │   │   ├── ClassScreen.js        detalle: Teoría / Práctica + enlaces
-│   │   └── ResourceScreen.js     recurso transversal completo + enlaces
+│   │   └── ResourceScreen.js     recursos transversales completos + enlaces
 │   ├── components/
 │   │   ├── PartCard.js · ClassCard.js   tarjetas de parte y de clase
 │   │   └── ClassContent.js       pinta los bloques de la clase completa

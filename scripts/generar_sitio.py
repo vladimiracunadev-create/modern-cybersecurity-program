@@ -30,10 +30,12 @@ OUT = os.path.join(ROOT, "site")
 # Markdown de origen que se publican (rutas relativas al repo).
 INCLUIR_TOP = ["README.md", "ROADMAP.md", "CONTRIBUTING.md", "SECURITY.md",
                "autoevaluaciones/README.md",
-               "ctf/README.md", "docs/syllabus.md", "docs/rubrica-evaluacion.md",
+               "docs/syllabus.md", "docs/rubrica-evaluacion.md",
                "docs/examen-final-por-rol.md",
                "docs/matriz-roles-secops-devsecops.md",
                "docs/cruzar-la-linea-consecuencias-reales.md",
+               "docs/GLOSARIO-GLOBAL.md", "docs/PLATAFORMAS-DE-PRACTICA.md",
+               "docs/AUDITORIA-CTF-GLOSARIO-PLATAFORMAS.md",
                "soluciones/README.md",
                "soluciones/parte-01-redes.md", "soluciones/parte-02-criptografia.md",
                "soluciones/parte-03-pentesting.md", "soluciones/parte-04-web.md",
@@ -289,11 +291,13 @@ def escribir_landing(partes) -> None:
         ("🧭", "Rutas por rol", "Recorridos ordenados para pentester, red team, SOC, DFIR, AppSec, cloud y GRC.", "rutas/README.html"),
         ("🧪", "Laboratorios", "Entornos Docker que se levantan con un comando: web, SOC, Active Directory y criptografía.", "labs/README.html"),
         ("🚩", "Retos CTF", "Colección de retos con solución por categoría: web, cripto, redes, forense, OSINT y pwn.", "ctf/README.html"),
+        ("📖", "Glosario global", "Términos, siglas y aliases consolidados con enlaces a las clases donde se explican.", "docs/GLOSARIO-GLOBAL.html"),
+        ("🧪", "Plataformas de práctica", "Entornos autorizados por perfil, nivel y modalidad, con límites de publicación.", "docs/PLATAFORMAS-DE-PRACTICA.html"),
         ("📝", "Autoevaluación", f"{n_preg} preguntas interactivas con puntuación, una batería por parte.", "autoevaluaciones/quiz.html"),
         ("✅", "Tu progreso", f"Marca las {total} clases y sigue tu avance (se guarda en tu navegador).", "autoevaluaciones/progreso.html"),
         ("🎓", "Certificaciones", "Mapeo a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con % de cobertura por dominio.", "certificaciones/README.html"),
         ("⚠️", "¿Y si cruzas la línea?", "Leyes, investigaciones, condenas y salidas profesionales legítimas, con fuentes oficiales.", "docs/cruzar-la-linea-consecuencias-reales.html"),
-        ("📱", "Aplicación web", f"Las {total} clases y el recurso transversal completos, con diagramas y progreso local.", "app/"),
+        ("📱", "Aplicación web", f"Las {total} clases y tres recursos transversales completos, con diagramas y progreso local.", "app/"),
         ("📕", "Manual en PDF", f"Las {total} clases y el recurso transversal en un único PDF (1.308 páginas A4 y 363 diagramas).", "manual/MANUAL.pdf"),
     ]
     feats_html = "".join(
@@ -357,9 +361,9 @@ def main() -> int:
             escribir(rel, open(p, encoding="utf-8").read())
             generados += 1
 
-    # Markdown de classes/ y labs/. Los README se enlazan desde índices y rutas,
+    # Markdown de classes/, labs/, ctf/ y templates/. Los README se enlazan desde índices y rutas,
     # así que deben existir como páginas en el sitio.
-    for base in ("classes", "labs"):
+    for base in ("classes", "labs", "ctf", "templates"):
         for cur, _, files in os.walk(os.path.join(ROOT, base)):
             for fn in files:
                 if fn.endswith(".md"):

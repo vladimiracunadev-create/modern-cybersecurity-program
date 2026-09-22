@@ -13,7 +13,7 @@ on:
       tag:
         description: "Etiqueta de la release (ej. v1.0.0)"
         required: true
-        default: "v1.2.0"
+        default: "v1.3.0"
 
 permissions:
   contents: write
@@ -31,19 +31,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
       # Un APK no puede salir con el temario desincronizado de las clases.
       - name: Verificar que el catálogo embebido está al día
-        run: python scripts/generar_curriculum_movil.py --check
+        run: |
+          python scripts/generar_glosario_global.py --check
+          python scripts/generar_curriculum_movil.py --check
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: "20"
           cache: npm
@@ -211,12 +213,12 @@ jobs:
               glosario, laboratorio, ejercicios, reto, errores comunes, preguntas
               frecuentes y referencias. Se leen **sin conexión**; ya no hace falta salir
               al sitio para leer la clase.
-            - **Nuevo recurso transversal «¿Y si cruzas la línea?»**, completo y
-              disponible sin conexión: marco legal comparado, atribución, condenas,
-              extradición, patrimonio, efectos profesionales y salidas legítimas.
-            - 340 clases en 19 partes, con progreso guardado solo en el dispositivo.
+            - **Tres recursos transversales offline**: «¿Y si cruzas la línea?»,
+              glosario global generado desde las clases y guía verificada de
+              plataformas de práctica, con búsqueda por siglas y aliases.
+            - 360 clases en 20 partes, con progreso guardado solo en el dispositivo.
             - Incluye el **APK Android**, la **aplicación web estática** y el
-              **manual PDF consolidado** con el recurso nuevo y sus diagramas.
+              **manual PDF consolidado**; todos llevan sumas SHA-256.
             - APK compilado y firmado en GitHub Actions. Antes de publicar se abre el
               APK y se comprueba, dentro del bytecode, que el texto de las clases está
               realmente ahí — no basta con que el build salga en verde.

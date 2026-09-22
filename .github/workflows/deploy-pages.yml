@@ -19,7 +19,8 @@ on:
       # roles se publican en el sitio, asi que sus cambios deben desplegarse.
       - "docs/*.md"
       - "mobile/**"
-      - "ctf/README.md"
+      - "ctf/**"
+      - "templates/**"
       - "manual/MANUAL.pdf"
       # Los diagramas se incrustan en las páginas: si cambian, el sitio publicado
       # se queda con los de antes hasta que otro cambio lo reconstruya.
@@ -27,6 +28,7 @@ on:
       - "scripts/generar_sitio.py"
       - "scripts/mermaid_svg.py"
       - "scripts/generar_curriculum_movil.py"
+      - "scripts/generar_glosario_global.py"
       - "scripts/verificar_bundle.py"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:

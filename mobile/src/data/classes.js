@@ -578,6 +578,8 @@ export const RESOURCES = [
     "title": "¿Y si cruzas la línea?",
     "subtitle": "Consecuencias reales de utilizar la ciberseguridad para delinquir",
     "description": "Leyes, atribución, condenas, patrimonio, extradición y salidas profesionales legítimas, con fuentes oficiales.",
+    "notice": "Contenido educativo. No constituye asesoría legal; la ley aplicable depende de los hechos, la jurisdicción y la decisión de un tribunal.",
+    "searchTerms": "ley delito ética atribución extradición cooperación condena",
     "content": [
       {
         "t": "h2",
@@ -1820,6 +1822,29667 @@ export const RESOURCES = [
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/docs/cruzar-la-linea-consecuencias-reales.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/docs/cruzar-la-linea-consecuencias-reales.md"
+  },
+  {
+    "id": "glosario-global",
+    "icon": "📖",
+    "title": "Glosario global",
+    "subtitle": "Términos, siglas, aliases y clases de procedencia",
+    "description": "Índice alfabético generado desde los glosarios locales, con trazabilidad hacia las clases.",
+    "searchTerms": "CTF Capture The Flag HTB THM SOC SIEM DFIR OSINT AppSec IOC TTP pwn reversing writeup",
+    "content": [
+      {
+        "t": "h2",
+        "x": "Cómo usarlo"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Busca la sigla o el nombre completo: ambos apuntan a la misma entrada cuando son aliases."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Abre las clases de procedencia para recuperar mecanismo, límites, laboratorio y referencias."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Para elegir un entorno autorizado, consulta Plataformas de práctica."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Para documentar una resolución, usa la plantilla de writeup."
+      },
+      {
+        "t": "h2",
+        "x": "Índice alfabético"
+      },
+      {
+        "t": "p",
+        "x": "0 · 1 · 2 · 4 · 5 · 8 · A · B · C · D · E · F · G · H · I · J · K · L · M · N · O · Otros · P · Q · R · S · T · U · V · W · X · Y · Z"
+      },
+      {
+        "t": "h2",
+        "x": "0"
+      },
+      {
+        "t": "h3",
+        "x": "0-day"
+      },
+      {
+        "t": "p",
+        "x": "Vulnerabilidad sin parche disponible"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable."
+      },
+      {
+        "t": "h3",
+        "x": "0-RTT"
+      },
+      {
+        "t": "p",
+        "x": "Datos en el primer mensaje; sin forward secrecy y con riesgo de replay"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h2",
+        "x": "1"
+      },
+      {
+        "t": "h3",
+        "x": "1-RTT"
+      },
+      {
+        "t": "p",
+        "x": "Handshake completo en una sola vuelta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h2",
+        "x": "2"
+      },
+      {
+        "t": "h3",
+        "x": "2>&1"
+      },
+      {
+        "t": "p",
+        "x": "Fusiona stderr con stdout hacia el mismo destino"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos."
+      },
+      {
+        "t": "h2",
+        "x": "4"
+      },
+      {
+        "t": "h3",
+        "x": "4-way handshake"
+      },
+      {
+        "t": "p",
+        "x": "Intercambio que confirma claves y deriva claves de sesión."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque, Clase 272 — Ataques WiFi avanzados: Evil Twin y PMKID."
+      },
+      {
+        "t": "h2",
+        "x": "5"
+      },
+      {
+        "t": "h3",
+        "x": "5-tupla"
+      },
+      {
+        "t": "p",
+        "x": "IP origen, IP destino, puerto origen, puerto destino y protocolo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 45 — NetFlow y análisis de metadatos de tráfico."
+      },
+      {
+        "t": "h2",
+        "x": "8"
+      },
+      {
+        "t": "h3",
+        "x": "802.1Q"
+      },
+      {
+        "t": "p",
+        "x": "Estándar de etiquetado de VLAN"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h2",
+        "x": "A"
+      },
+      {
+        "t": "h3",
+        "x": "A01 Broken Access Control"
+      },
+      {
+        "t": "p",
+        "x": "Acceder a lo que no corresponde; el nº1 de 2021"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 87 — OWASP Top 10: panorama general."
+      },
+      {
+        "t": "h3",
+        "x": "A02 Cryptographic Failures"
+      },
+      {
+        "t": "p",
+        "x": "Datos sensibles mal protegidos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 87 — OWASP Top 10: panorama general."
+      },
+      {
+        "t": "h3",
+        "x": "A03 Injection"
+      },
+      {
+        "t": "p",
+        "x": "Datos interpretados como código; incluye XSS desde 2021"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 87 — OWASP Top 10: panorama general, Clase 96 — Cross-Site Scripting (XSS) reflejado."
+      },
+      {
+        "t": "h3",
+        "x": "A04 Insecure Design"
+      },
+      {
+        "t": "p",
+        "x": "Fallo de diseño, no de implementación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 87 — OWASP Top 10: panorama general."
+      },
+      {
+        "t": "h3",
+        "x": "A05 Security Misconfiguration"
+      },
+      {
+        "t": "p",
+        "x": "Inseguro por defecto o mal configurado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 87 — OWASP Top 10: panorama general."
+      },
+      {
+        "t": "h3",
+        "x": "A06 Componentes vulnerables"
+      },
+      {
+        "t": "p",
+        "x": "Dependencias con fallos conocidos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 87 — OWASP Top 10: panorama general."
+      },
+      {
+        "t": "h3",
+        "x": "A07 Fallos de autenticación"
+      },
+      {
+        "t": "p",
+        "x": "Identificación y gestión de sesión débiles"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 87 — OWASP Top 10: panorama general."
+      },
+      {
+        "t": "h3",
+        "x": "A08 Fallos de integridad"
+      },
+      {
+        "t": "p",
+        "x": "Software o datos sin verificar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 87 — OWASP Top 10: panorama general."
+      },
+      {
+        "t": "h3",
+        "x": "A09 Fallos de registro"
+      },
+      {
+        "t": "p",
+        "x": "Falta de logging y monitorización"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 87 — OWASP Top 10: panorama general."
+      },
+      {
+        "t": "h3",
+        "x": "A10 SSRF"
+      },
+      {
+        "t": "p",
+        "x": "Server-Side Request Forgery; añadido por la comunidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 87 — OWASP Top 10: panorama general."
+      },
+      {
+        "t": "h3",
+        "x": "AAA"
+      },
+      {
+        "t": "p",
+        "x": "Autenticación, Autorización y Accounting; el modelo de gobierno del acceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad, Clase 132 — IDA Pro y radare2."
+      },
+      {
+        "t": "h3",
+        "x": "AAD"
+      },
+      {
+        "t": "p",
+        "x": "Datos asociados: se autentican pero no se cifran"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 59 — Cifrado autenticado (AEAD)."
+      },
+      {
+        "t": "h3",
+        "x": "ABAC"
+      },
+      {
+        "t": "p",
+        "x": "Control de acceso basado en atributos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Abierto"
+      },
+      {
+        "t": "p",
+        "x": "Una aplicación acepta conexiones en ese puerto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 30 — Nmap: escaneo de puertos y tipos de escaneo."
+      },
+      {
+        "t": "h3",
+        "x": "Abuso de cupones"
+      },
+      {
+        "t": "p",
+        "x": "Apilar o reutilizar descuentos excluyentes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 109 — Vulnerabilidades de lógica de negocio."
+      },
+      {
+        "t": "h3",
+        "x": "Acceso no autorizado"
+      },
+      {
+        "t": "p",
+        "x": "Interacción con un sistema sin permiso, delito común"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable."
+      },
+      {
+        "t": "h3",
+        "x": "Acceso remoto"
+      },
+      {
+        "t": "p",
+        "x": "Túnel de un usuario individual hacia la red de la organización"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN."
+      },
+      {
+        "t": "h3",
+        "x": "Access-Control-Allow-Origin"
+      },
+      {
+        "t": "p",
+        "x": "Cabecera que dice qué orígenes pueden leer la respuesta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution."
+      },
+      {
+        "t": "h3",
+        "x": "Accessibility"
+      },
+      {
+        "t": "p",
+        "x": "API abusada para leer pantalla y simular toques"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 155 — Malware en Android."
+      },
+      {
+        "t": "h3",
+        "x": "accesstoken"
+      },
+      {
+        "t": "p",
+        "x": "Token que dice qué puede hacer el cliente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect."
+      },
+      {
+        "t": "h3",
+        "x": "Acción que cambia estado"
+      },
+      {
+        "t": "p",
+        "x": "Requisito: transferir, cambiar correo, borrar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 98 — Cross-Site Request Forgery (CSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Aceleración por GPU"
+      },
+      {
+        "t": "p",
+        "x": "Miles de millones de candidatos por segundo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 80 — Cracking de contraseñas con John y Hashcat."
+      },
+      {
+        "t": "h3",
+        "x": "ACK"
+      },
+      {
+        "t": "p",
+        "x": "Flag que confirma la recepción de datos hasta un número de secuencia."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "ACK scan (-sA)"
+      },
+      {
+        "t": "p",
+        "x": "No determina apertura: mapea si hay firewall con estado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 30 — Nmap: escaneo de puertos y tipos de escaneo."
+      },
+      {
+        "t": "h3",
+        "x": "ACL"
+      },
+      {
+        "t": "p",
+        "x": "Permisos granulares por usuario o grupo (setfacl/getfacl)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios, Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios."
+      },
+      {
+        "t": "h3",
+        "x": "Activo"
+      },
+      {
+        "t": "p",
+        "x": "Información, capacidad o servicio cuyo daño importa al negocio o usuario."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 237 — Modelado de amenazas: STRIDE y DREAD."
+      },
+      {
+        "t": "h3",
+        "x": "Activo candidato"
+      },
+      {
+        "t": "p",
+        "x": "Recurso relacionado que aún requiere validar propiedad y vigencia."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 251 — OSINT de empresas y dominios, Clase 254 — OSINT técnico: Shodan y Censys."
+      },
+      {
+        "t": "h3",
+        "x": "Activo de IA"
+      },
+      {
+        "t": "p",
+        "x": "Componente o resultado cuyo daño importa."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 291 — Introducción a la seguridad de IA y ML."
+      },
+      {
+        "t": "h3",
+        "x": "Activos,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 341 — Introducción a Game Security y modelo de amenazas."
+      },
+      {
+        "t": "h3",
+        "x": "Addresses,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 344 — Estado del juego, memoria y manipulación controlada."
+      },
+      {
+        "t": "h3",
+        "x": "AddressSanitizer (ASan)"
+      },
+      {
+        "t": "p",
+        "x": "Detecta UAF y double free durante las pruebas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 127 — Heap: use-after-free y double free."
+      },
+      {
+        "t": "h3",
+        "x": "Administrador local"
+      },
+      {
+        "t": "p",
+        "x": "Nivel intermedio; puente hacia SYSTEM"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 77 — Escalada de privilegios en Windows."
+      },
+      {
+        "t": "h3",
+        "x": "Admisión"
+      },
+      {
+        "t": "p",
+        "x": "Decisión previa a ejecutar basada en identidad y política del artefacto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 243 — Imágenes y contenedores seguros en el pipeline."
+      },
+      {
+        "t": "h3",
+        "x": "Adversary emulation"
+      },
+      {
+        "t": "p",
+        "x": "Reproducción fiel del comportamiento de un actor real, basada en CTI"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 163 — Emulación de adversarios."
+      },
+      {
+        "t": "h3",
+        "x": "Adversary simulation"
+      },
+      {
+        "t": "p",
+        "x": "Uso de comportamientos adversariales genéricos, sin atarse a un actor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 163 — Emulación de adversarios."
+      },
+      {
+        "t": "h3",
+        "x": "Advertencia de certificado"
+      },
+      {
+        "t": "p",
+        "x": "Aviso del navegador que, ignorado, reabre el MitM"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 40 — Man-in-the-Middle: técnicas y defensa."
+      },
+      {
+        "t": "h3",
+        "x": "Advertising"
+      },
+      {
+        "t": "p",
+        "x": "Emisión BLE para descubrimiento y datos breves."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 271 — Seguridad de Bluetooth y BLE."
+      },
+      {
+        "t": "h3",
+        "x": "AEAD"
+      },
+      {
+        "t": "p",
+        "x": "Cifrado autenticado: confidencialidad e integridad juntas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 21 — Criptografía: conceptos fundamentales e intuición, Clase 47 — Cifrado simétrico: AES y modos de operación, Clase 59 — Cifrado autenticado (AEAD)."
+      },
+      {
+        "t": "h3",
+        "x": "AES"
+      },
+      {
+        "t": "p",
+        "x": "Cifrado por bloques simétrico estándar, claves de 128/192/256 bits"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 21 — Criptografía: conceptos fundamentales e intuición, Clase 47 — Cifrado simétrico: AES y modos de operación."
+      },
+      {
+        "t": "h3",
+        "x": "AES-GCM"
+      },
+      {
+        "t": "p",
+        "x": "AEAD dominante; muy rápido con AES-NI"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 59 — Cifrado autenticado (AEAD)."
+      },
+      {
+        "t": "h3",
+        "x": "AES-NI"
+      },
+      {
+        "t": "p",
+        "x": "Instrucciones de CPU que implementan AES en hardware"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 47 — Cifrado simétrico: AES y modos de operación."
+      },
+      {
+        "t": "h3",
+        "x": "Afiliado"
+      },
+      {
+        "t": "p",
+        "x": "Quien despliega el ransomware a cambio de un porcentaje"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 150 — Ransomware: anatomía y análisis."
+      },
+      {
+        "t": "h3",
+        "x": "Afinado (tuning)"
+      },
+      {
+        "t": "p",
+        "x": "Reducir el ruido para que las alertas sean investigables"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "AFINET"
+      },
+      {
+        "t": "p",
+        "x": "Familia de direcciones IPv4"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 16 — Python para seguridad: sockets y programación de red."
+      },
+      {
+        "t": "h3",
+        "x": "afl"
+      },
+      {
+        "t": "p",
+        "x": "Lista las funciones encontradas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 132 — IDA Pro y radare2."
+      },
+      {
+        "t": "h3",
+        "x": "AFL / AFL++"
+      },
+      {
+        "t": "p",
+        "x": "Fuzzer estándar guiado por cobertura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 136 — Fuzzing con AFL++ y libFuzzer."
+      },
+      {
+        "t": "h3",
+        "x": "Aislamiento"
+      },
+      {
+        "t": "p",
+        "x": "VM dedicada con snapshots para ejecutar con seguridad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 134 — Análisis dinámico y debugging de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Aislamiento de red"
+      },
+      {
+        "t": "p",
+        "x": "Host-only o interna, sin ruta a Internet real"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 142 — Laboratorio seguro de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "AJAX Spider"
+      },
+      {
+        "t": "p",
+        "x": "Ejecuta JS con un navegador real para descubrir rutas de SPA"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 89 — OWASP ZAP."
+      },
+      {
+        "t": "h3",
+        "x": "Alcance"
+      },
+      {
+        "t": "p",
+        "x": "Frontera organizativa, tecnológica y física del SGSI."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 278 — ISO/IEC 27001 e implantación de un SGSI, Clase 281 — Cumplimiento: GDPR, HIPAA y PCI-DSS."
+      },
+      {
+        "t": "h3",
+        "x": "Alcance autorizado"
+      },
+      {
+        "t": "p",
+        "x": "Conjunto de sistemas y acciones permitidos por escrito"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 33 — Enumeración de servicios de red."
+      },
+      {
+        "t": "h3",
+        "x": "Alcance (scope)"
+      },
+      {
+        "t": "p",
+        "x": "Lista de sistemas y acciones permitidos; negación por defecto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable, Clase 67 — Reglas de engagement, alcance y contratos."
+      },
+      {
+        "t": "h3",
+        "x": "Aleatorización de puerto"
+      },
+      {
+        "t": "p",
+        "x": "Mitigación que amplió el espacio a adivinar del atacante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling."
+      },
+      {
+        "t": "h3",
+        "x": "Alerta"
+      },
+      {
+        "t": "p",
+        "x": "Hallazgo del escáner, con nivel de riesgo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 89 — OWASP ZAP."
+      },
+      {
+        "t": "h3",
+        "x": "Alertas"
+      },
+      {
+        "t": "p",
+        "x": "Salida de los IDS/IPS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 43 — Network Security Monitoring (NSM): fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "alg:none"
+      },
+      {
+        "t": "p",
+        "x": "Algoritmo \"ninguno\"; aceptarlo permite tokens sin firma"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 103 — Ataques y seguridad de JWT."
+      },
+      {
+        "t": "h3",
+        "x": "Algoritmo de Grover"
+      },
+      {
+        "t": "p",
+        "x": "Acelera búsqueda; reduce la simétrica a la mitad de bits"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 62 — Criptografía post-cuántica."
+      },
+      {
+        "t": "h3",
+        "x": "Algoritmo de Shor"
+      },
+      {
+        "t": "p",
+        "x": "Factoriza y resuelve logaritmos discretos; rompe RSA, DH y ECC"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 62 — Criptografía post-cuántica."
+      },
+      {
+        "t": "h3",
+        "x": "Alias"
+      },
+      {
+        "t": "p",
+        "x": "Repetir operaciones con nombres distintos para evadir límites"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 111 — Seguridad de APIs GraphQL."
+      },
+      {
+        "t": "h3",
+        "x": "Alineación a 16 bytes"
+      },
+      {
+        "t": "p",
+        "x": "RSP alineado en el call; su ausencia crashea libc"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 117 — El stack, los registros y las convenciones de llamada, Clase 120 — Buffer overflow en stack: explotación práctica, Clase 123 — Bypass de protecciones: ret2libc."
+      },
+      {
+        "t": "h3",
+        "x": "Allocator"
+      },
+      {
+        "t": "p",
+        "x": "Gestor que decide dónde colocar cada asignación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Allow-Credentials"
+      },
+      {
+        "t": "p",
+        "x": "Permite enviar cookies en la petición cross-origin"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution."
+      },
+      {
+        "t": "h3",
+        "x": "AllowedIPs"
+      },
+      {
+        "t": "p",
+        "x": "En WireGuard, destinos enrutados y orígenes aceptados por par"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN."
+      },
+      {
+        "t": "h3",
+        "x": "Allowlist"
+      },
+      {
+        "t": "p",
+        "x": "Lista de valores permitidos cuando hay que llamar a un programa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 95 — Inyección de comandos del sistema operativo, Clase 108 — Vulnerabilidades en carga de archivos."
+      },
+      {
+        "t": "h3",
+        "x": "Allowlist de campos"
+      },
+      {
+        "t": "p",
+        "x": "Definir qué campos entran y cuáles salen"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 110 — Seguridad de APIs REST."
+      },
+      {
+        "t": "h3",
+        "x": "Allowlist de clases"
+      },
+      {
+        "t": "p",
+        "x": "Restringir qué clases se pueden deserializar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 106 — Deserialización insegura."
+      },
+      {
+        "t": "h3",
+        "x": "Allowlist de destinos"
+      },
+      {
+        "t": "p",
+        "x": "Solo destinos permitidos; la defensa correcta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 99 — Server-Side Request Forgery (SSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Almacenamiento append-only"
+      },
+      {
+        "t": "p",
+        "x": "Inmutable: no permite modificar ni borrar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 84 — Anti-forense y borrado de huellas (concepto y límites)."
+      },
+      {
+        "t": "h3",
+        "x": "Almacenamiento sin ejecución"
+      },
+      {
+        "t": "p",
+        "x": "Guardar donde el fichero no se pueda ejecutar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 108 — Vulnerabilidades en carga de archivos."
+      },
+      {
+        "t": "h3",
+        "x": "Alternativas acotadas"
+      },
+      {
+        "t": "p",
+        "x": "strncpy, snprintf, fgets reciben el tamaño"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 119 — Buffer overflow en stack: teoría."
+      },
+      {
+        "t": "h3",
+        "x": "AlwaysInstallElevated"
+      },
+      {
+        "t": "p",
+        "x": "Política que instala MSI como SYSTEM"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 77 — Escalada de privilegios en Windows."
+      },
+      {
+        "t": "h3",
+        "x": "AMSI"
+      },
+      {
+        "t": "p",
+        "x": "Interfaz que inspecciona el script desofuscado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva, Clase 153 — Análisis de malware en scripts: PowerShell y JavaScript."
+      },
+      {
+        "t": "h3",
+        "x": "Análisis de comportamiento"
+      },
+      {
+        "t": "p",
+        "x": "Entender el malware como sistema con ciclo de vida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 148 — Análisis de comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Análisis de frecuencias"
+      },
+      {
+        "t": "p",
+        "x": "Romper una sustitución explotando la estadística del idioma"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 46 — Historia y fundamentos de la criptografía."
+      },
+      {
+        "t": "h3",
+        "x": "Análisis de JavaScript"
+      },
+      {
+        "t": "p",
+        "x": "Extraer endpoints y secretos del código cliente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 90 — Mapeo, spidering y descubrimiento de contenido."
+      },
+      {
+        "t": "h3",
+        "x": "Análisis de vulnerabilidades"
+      },
+      {
+        "t": "p",
+        "x": "Identificar debilidades sin explotarlas; amplitud"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 66 — Metodología de pentesting: PTES y OSSTMM."
+      },
+      {
+        "t": "h3",
+        "x": "Análisis dinámico"
+      },
+      {
+        "t": "p",
+        "x": "Ejecutar el binario y observar su comportamiento"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 130 — Ingeniería inversa: introducción, Clase 134 — Análisis dinámico y debugging de binarios, Clase 144 — Análisis dinámico básico y sandboxing."
+      },
+      {
+        "t": "h3",
+        "x": "Análisis estático"
+      },
+      {
+        "t": "p",
+        "x": "Examinar el binario sin ejecutarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 130 — Ingeniería inversa: introducción, Clase 133 — Análisis estático de binarios, Clase 143 — Análisis estático básico."
+      },
+      {
+        "t": "h3",
+        "x": "Análisis estático avanzado"
+      },
+      {
+        "t": "p",
+        "x": "Desensamblar y decompilar la muestra"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 146 — Análisis con IDA y Ghidra aplicado a malware."
+      },
+      {
+        "t": "h3",
+        "x": "Análisis manual"
+      },
+      {
+        "t": "p",
+        "x": "Lo que ningún escáner sustituye"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 89 — OWASP ZAP."
+      },
+      {
+        "t": "h3",
+        "x": "Ancho (%100c)"
+      },
+      {
+        "t": "p",
+        "x": "Controla cuántos bytes se imprimen antes de %n"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 125 — Vulnerabilidades de format string."
+      },
+      {
+        "t": "h3",
+        "x": "Ancla"
+      },
+      {
+        "t": "p",
+        "x": "Posición sin consumir (^, $, \\b)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 19 — Expresiones regulares para análisis de logs y datos."
+      },
+      {
+        "t": "h3",
+        "x": "Anclaje de confianza"
+      },
+      {
+        "t": "p",
+        "x": "Raíz en la que se confía por decisión, no por criptografía"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "AndroidManifest.xml"
+      },
+      {
+        "t": "p",
+        "x": "Declara permisos y componentes de la app"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 155 — Malware en Android."
+      },
+      {
+        "t": "h3",
+        "x": "Anexo A"
+      },
+      {
+        "t": "p",
+        "x": "Catálogo de 93 controles de referencia (versión 2022)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model."
+      },
+      {
+        "t": "h3",
+        "x": "Anillo de privilegio"
+      },
+      {
+        "t": "p",
+        "x": "Nivel del procesador: ring 3 usuario, ring 0 kernel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 139 — Kernel exploitation: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "Announced / unannounced"
+      },
+      {
+        "t": "p",
+        "x": "Si el equipo azul sabe o no del test"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 66 — Metodología de pentesting: PTES y OSSTMM."
+      },
+      {
+        "t": "h3",
+        "x": "Anomalía PE"
+      },
+      {
+        "t": "p",
+        "x": "Sección rara, entropía alta, IAT mínima: delata malware"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 145 — El formato PE de Windows."
+      },
+      {
+        "t": "h3",
+        "x": "Anonimato"
+      },
+      {
+        "t": "p",
+        "x": "Dificultad de vincular una acción con una identidad dentro de un conjunto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 260 — OPSEC personal y anonimato."
+      },
+      {
+        "t": "h3",
+        "x": "Anti-análisis dinámico"
+      },
+      {
+        "t": "p",
+        "x": "Malware que detecta el sandbox y se inhibe"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 144 — Análisis dinámico básico y sandboxing."
+      },
+      {
+        "t": "h3",
+        "x": "Anti-debug / anti-VM"
+      },
+      {
+        "t": "p",
+        "x": "Defensas del packer que hay que evadir"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 147 — Ofuscación, packing y unpacking."
+      },
+      {
+        "t": "h3",
+        "x": "Anti-debugging"
+      },
+      {
+        "t": "p",
+        "x": "Detecta la presencia de un depurador"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 135 — Ofuscación y técnicas anti-reversing."
+      },
+      {
+        "t": "h3",
+        "x": "Anti-emulación"
+      },
+      {
+        "t": "p",
+        "x": "Malware que detecta el entorno emulado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 158 — Emulación y unpacking automatizado."
+      },
+      {
+        "t": "h3",
+        "x": "Anti-forense"
+      },
+      {
+        "t": "p",
+        "x": "Técnicas para borrar o falsear las huellas de una intrusión"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 84 — Anti-forense y borrado de huellas (concepto y límites)."
+      },
+      {
+        "t": "h3",
+        "x": "Anti-reversing"
+      },
+      {
+        "t": "p",
+        "x": "Medidas que impiden o encarecen la RE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 135 — Ofuscación y técnicas anti-reversing."
+      },
+      {
+        "t": "h3",
+        "x": "Anti-rollback"
+      },
+      {
+        "t": "p",
+        "x": "Control que rechaza versiones anteriores aun si están firmadas."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 267 — Hacking de firmware."
+      },
+      {
+        "t": "h3",
+        "x": "Anti-VM"
+      },
+      {
+        "t": "p",
+        "x": "El malware detecta el entorno de análisis y se inhibe"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 142 — Laboratorio seguro de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Anti-VM / anti-sandbox"
+      },
+      {
+        "t": "p",
+        "x": "Detecta el entorno de análisis y se inhibe"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 135 — Ofuscación y técnicas anti-reversing."
+      },
+      {
+        "t": "h3",
+        "x": "Anticolisión"
+      },
+      {
+        "t": "p",
+        "x": "Procedimiento para seleccionar tags presentes simultáneamente."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 270 — Ataques a RFID y NFC."
+      },
+      {
+        "t": "h3",
+        "x": "APC injection"
+      },
+      {
+        "t": "p",
+        "x": "Inyección mediante colas de procedimientos asíncronos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 148 — Análisis de comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Apetito de riesgo"
+      },
+      {
+        "t": "p",
+        "x": "Cantidad y tipo de riesgo que la organización está dispuesta a perseguir o retener."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 276 — Gobernanza de la seguridad de la información."
+      },
+      {
+        "t": "h3",
+        "x": "API de alto nivel"
+      },
+      {
+        "t": "p",
+        "x": "Biblioteca que no deja elegir modo, relleno ni IV"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h3",
+        "x": "API de Windows"
+      },
+      {
+        "t": "p",
+        "x": "Interfaz por la que el malware habla con el SO"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 146 — Análisis con IDA y Ghidra aplicado a malware."
+      },
+      {
+        "t": "h3",
+        "x": "API hashing"
+      },
+      {
+        "t": "p",
+        "x": "Buscar la API por un hash de su nombre"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 146 — Análisis con IDA y Ghidra aplicado a malware."
+      },
+      {
+        "t": "h3",
+        "x": "API hooking"
+      },
+      {
+        "t": "p",
+        "x": "Interceptar llamadas para filtrar los resultados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 151 — Rootkits y bootkits."
+      },
+      {
+        "t": "h3",
+        "x": "API hooking en Linux"
+      },
+      {
+        "t": "p",
+        "x": "Redefinir funciones de libc para ocultar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 154 — Malware en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "API REST"
+      },
+      {
+        "t": "p",
+        "x": "Backend que expone datos y lógica en endpoints estructurados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 110 — Seguridad de APIs REST."
+      },
+      {
+        "t": "h3",
+        "x": "API REST / GraphQL"
+      },
+      {
+        "t": "p",
+        "x": "Backend que devuelve datos estructurados, no HTML"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 86 — Arquitectura web moderna y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "API Security Top 10"
+      },
+      {
+        "t": "p",
+        "x": "Lista OWASP específica de riesgos de API"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 110 — Seguridad de APIs REST."
+      },
+      {
+        "t": "h3",
+        "x": "APIPA"
+      },
+      {
+        "t": "p",
+        "x": "169.254.0.0/16; autoasignación cuando falla DHCP."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 14 — Direccionamiento IP y subnetting."
+      },
+      {
+        "t": "h3",
+        "x": "APK"
+      },
+      {
+        "t": "p",
+        "x": "Archivo ZIP que empaqueta una app Android"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 155 — Malware en Android."
+      },
+      {
+        "t": "h3",
+        "x": "APKTool"
+      },
+      {
+        "t": "p",
+        "x": "Desempaqueta el APK y decodifica el manifiesto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 155 — Malware en Android."
+      },
+      {
+        "t": "h3",
+        "x": "Aplicabilidad"
+      },
+      {
+        "t": "p",
+        "x": "Razón documentada por la que una norma obliga a una entidad o flujo."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 281 — Cumplimiento: GDPR, HIPAA y PCI-DSS."
+      },
+      {
+        "t": "h3",
+        "x": "AppSec — Application Security"
+      },
+      {
+        "t": "p",
+        "x": "Práctica de reducir y verificar riesgos de seguridad durante el diseño, desarrollo, despliegue y operación de aplicaciones."
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: appsec."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "Aprender haciendo"
+      },
+      {
+        "t": "p",
+        "x": "La explotación se domina resolviendo retos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 140 — CTFs de pwn e ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "APT"
+      },
+      {
+        "t": "p",
+        "x": "Advanced Persistent Threat: adversario sofisticado, persistente y con recursos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain."
+      },
+      {
+        "t": "h3",
+        "x": "APT29"
+      },
+      {
+        "t": "p",
+        "x": "Actor estatal (Cozy Bear) frecuente en planes de emulación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 163 — Emulación de adversarios."
+      },
+      {
+        "t": "h3",
+        "x": "Arbitration ID"
+      },
+      {
+        "t": "p",
+        "x": "Identificador usado para prioridad y significado, no identidad segura."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 274 — Seguridad automotriz y bus CAN."
+      },
+      {
+        "t": "h3",
+        "x": "Archivo canario"
+      },
+      {
+        "t": "p",
+        "x": "Fichero señuelo para probar el riesgo sin datos reales"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 83 — Exfiltración de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Arena"
+      },
+      {
+        "t": "p",
+        "x": "Región del heap que atiende a un conjunto de hilos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Argon2 / Argon2id"
+      },
+      {
+        "t": "p",
+        "x": "KDF recomendada actual; memoria, iteraciones y paralelismo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2."
+      },
+      {
+        "t": "h3",
+        "x": "argparse"
+      },
+      {
+        "t": "p",
+        "x": "Módulo estándar para crear CLIs."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje."
+      },
+      {
+        "t": "h3",
+        "x": "Arista"
+      },
+      {
+        "t": "p",
+        "x": "Relación tipada entre nodos, con fuente y tiempo."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 255 — Automatización de OSINT: SpiderFoot y Maltego."
+      },
+      {
+        "t": "h3",
+        "x": "Aritmética segura"
+      },
+      {
+        "t": "p",
+        "x": "Comprobar límites antes de operar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 128 — Integer overflows y errores aritméticos."
+      },
+      {
+        "t": "h3",
+        "x": "ARP"
+      },
+      {
+        "t": "p",
+        "x": "Traduce una IP en la MAC correspondiente; sin autenticación por diseño"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos, Clase 17 — Python para seguridad: manipulación de paquetes con Scapy, Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h3",
+        "x": "ARP discovery"
+      },
+      {
+        "t": "p",
+        "x": "Descubrimiento en la LAN mediante consultas ARP; el más fiable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 29 — Nmap: descubrimiento de hosts y técnicas de ping."
+      },
+      {
+        "t": "h3",
+        "x": "ARP spoofing"
+      },
+      {
+        "t": "p",
+        "x": "Envenenamiento de la tabla IP-a-MAC en la red local"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas."
+      },
+      {
+        "t": "h3",
+        "x": "ARP spoofing / poisoning"
+      },
+      {
+        "t": "p",
+        "x": "Respuestas ARP falsas para interceptar tráfico en la LAN"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h3",
+        "x": "Artefacto"
+      },
+      {
+        "t": "p",
+        "x": "Evidencia concreta de capacidad, contextualizada y sanitizada."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 75 — msfvenom: generación de payloads, Clase 144 — Análisis dinámico básico y sandboxing, Clase 309 — Construcción de portafolio y home lab permanente."
+      },
+      {
+        "t": "h3",
+        "x": "Artefacto detectable"
+      },
+      {
+        "t": "p",
+        "x": "Rastro que cada técnica deja para el defensor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 82 — Persistencia en sistemas comprometidos."
+      },
+      {
+        "t": "h3",
+        "x": "ARX"
+      },
+      {
+        "t": "p",
+        "x": "Suma, rotación y XOR; rápidas y en tiempo constante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4."
+      },
+      {
+        "t": "h3",
+        "x": "ASCII"
+      },
+      {
+        "t": "p",
+        "x": "Mapeo de caracteres a 7 bits"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "ASCII / ORD"
+      },
+      {
+        "t": "p",
+        "x": "Compara un carácter por su valor numérico"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 92 — Inyección SQL avanzada y ciega (blind)."
+      },
+      {
+        "t": "h3",
+        "x": "ASLR"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 5 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls, Clase 24 — Arquitectura de computadores: CPU, registros y memoria, Clase 119 — Buffer overflow en stack: teoría, Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE, Clase 344 — Estado del juego, memoria y manipulación controlada."
+      },
+      {
+        "t": "h3",
+        "x": "ASN"
+      },
+      {
+        "t": "p",
+        "x": "Identificador de un sistema autónomo que anuncia prefijos, no sinónimo de empresa."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 251 — OSINT de empresas y dominios."
+      },
+      {
+        "t": "h3",
+        "x": "Assumed breach"
+      },
+      {
+        "t": "p",
+        "x": "Empezar con un punto de apoyo ya concedido para evaluar la post-explotación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 161 — Red Team vs pentest: filosofía y objetivos."
+      },
+      {
+        "t": "h3",
+        "x": "Assurance"
+      },
+      {
+        "t": "p",
+        "x": "Confianza sustentada en evidencia sobre diseño y operación."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 276 — Gobernanza de la seguridad de la información."
+      },
+      {
+        "t": "h3",
+        "x": "AST"
+      },
+      {
+        "t": "p",
+        "x": "Árbol que representa la estructura sintáctica del código."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 238 — SAST: análisis estático de código."
+      },
+      {
+        "t": "h3",
+        "x": "Ataque de complejidad"
+      },
+      {
+        "t": "p",
+        "x": "Consultas anidadas o recursivas que provocan DoS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 111 — Seguridad de APIs GraphQL."
+      },
+      {
+        "t": "h3",
+        "x": "Ataque de diccionario"
+      },
+      {
+        "t": "p",
+        "x": "Probar listas de contraseñas conocidas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 80 — Cracking de contraseñas con John y Hashcat."
+      },
+      {
+        "t": "h3",
+        "x": "Ataque de Kaminsky"
+      },
+      {
+        "t": "p",
+        "x": "Técnica que multiplicó las opciones de envenenar una caché"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling."
+      },
+      {
+        "t": "h3",
+        "x": "Ataque de máscara"
+      },
+      {
+        "t": "p",
+        "x": "Fuerza bruta dirigida por un patrón conocido"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 80 — Cracking de contraseñas con John y Hashcat."
+      },
+      {
+        "t": "h3",
+        "x": "Ataque de timing"
+      },
+      {
+        "t": "p",
+        "x": "Explota que el tiempo dependa de datos secretos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 60 — Ataques criptográficos: padding oracle y timing."
+      },
+      {
+        "t": "h3",
+        "x": "Ataque híbrido"
+      },
+      {
+        "t": "p",
+        "x": "Combina diccionario y máscara"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 80 — Cracking de contraseñas con John y Hashcat."
+      },
+      {
+        "t": "h3",
+        "x": "Ataque por caché"
+      },
+      {
+        "t": "p",
+        "x": "Recuperar claves observando accesos a memoria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 60 — Ataques criptográficos: padding oracle y timing."
+      },
+      {
+        "t": "h3",
+        "x": "Ataque por diccionario"
+      },
+      {
+        "t": "p",
+        "x": "Prueba de contraseñas frecuentes y sus mutaciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2."
+      },
+      {
+        "t": "h3",
+        "x": "Ataques Potato"
+      },
+      {
+        "t": "p",
+        "x": "Familia que abusa de la suplantación para llegar a SYSTEM"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 77 — Escalada de privilegios en Windows."
+      },
+      {
+        "t": "h3",
+        "x": "Atomic Red Team"
+      },
+      {
+        "t": "p",
+        "x": "Biblioteca de pruebas atómicas para simular TTPs"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 163 — Emulación de adversarios."
+      },
+      {
+        "t": "h3",
+        "x": "Atribución"
+      },
+      {
+        "t": "p",
+        "x": "Determinar quién está detrás; con niveles de confianza"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 157 — Threat intelligence a partir de malware."
+      },
+      {
+        "t": "h3",
+        "x": "ATT&CK"
+      },
+      {
+        "t": "p",
+        "x": "Base de conocimiento de tácticas y técnicas adversarias observadas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model, Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios, Clase 162 — MITRE ATT&CK como lenguaje ofensivo."
+      },
+      {
+        "t": "h3",
+        "x": "ATT&CK Navigator"
+      },
+      {
+        "t": "p",
+        "x": "Herramienta para colorear la matriz y visualizar cobertura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 162 — MITRE ATT&CK como lenguaje ofensivo."
+      },
+      {
+        "t": "h3",
+        "x": "Attack-defense"
+      },
+      {
+        "t": "p",
+        "x": "Formato de parchear los servicios propios y atacar los ajenos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 140 — CTFs de pwn e ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "Attestation"
+      },
+      {
+        "t": "p",
+        "x": "Declaración firmable sobre una propiedad o proceso."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 246 — Supply chain security: SBOM y SLSA."
+      },
+      {
+        "t": "h3",
+        "x": "Audiencia"
+      },
+      {
+        "t": "p",
+        "x": "Lector con necesidades específicas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 160 — Reporte de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Audit mode"
+      },
+      {
+        "t": "p",
+        "x": "Evaluación y registro sin bloqueo, útil para adopción gradual."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 244 — Políticas como código con OPA."
+      },
+      {
+        "t": "h3",
+        "x": "Audit trail"
+      },
+      {
+        "t": "p",
+        "x": "Registro ordenado de solicitudes, decisiones, ejecuciones y resultados."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 10 clase(s): Clase 331 — IA generativa y LLMs en ciberseguridad: panorama, capacidades y límites, Clase 332 — Agentes de IA y el Model Context Protocol (MCP) para seguridad, Clase 333 — kali-mcp: orquestar herramientas de Kali desde un agente de IA, Clase 334 — Reconocimiento y escaneo asistidos por IA, Clase 335 — Explotación y post-explotación autorizada asistida por IA, Clase 336 — OSINT y auditoría web con agentes de IA, Clase 337 — IA para el lado defensivo: SOC, triaje y forense, Clase 338 — Generación de informes y flujos de trabajo con IA, Clase 339 — Riesgos, guardrails, OPSEC y ética del hacking con IA, Clase 340 — Capstone: pentest autorizado asistido por IA con MCP."
+      },
+      {
+        "t": "h3",
+        "x": "Autenticación"
+      },
+      {
+        "t": "p",
+        "x": "Control que verifica la identidad del usuario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 101 — Fallos de autenticación y bypass."
+      },
+      {
+        "t": "h3",
+        "x": "Autenticación de transacción"
+      },
+      {
+        "t": "p",
+        "x": "Verificación específica de la acción, no solo de la persona."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 257 — Pretexting y vishing."
+      },
+      {
+        "t": "h3",
+        "x": "Autenticación del acuerdo"
+      },
+      {
+        "t": "p",
+        "x": "Firma o certificado que ata el DH a una identidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 53 — Intercambio de claves: Diffie-Hellman."
+      },
+      {
+        "t": "h3",
+        "x": "Autenticación por cookie"
+      },
+      {
+        "t": "p",
+        "x": "Requisito: la sesión depende solo de la cookie"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 98 — Cross-Site Request Forgery (CSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Autenticidad"
+      },
+      {
+        "t": "p",
+        "x": "Garantía de que el mensaje viene de quien dice"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 52 — HMAC y autenticación de mensajes."
+      },
+      {
+        "t": "h3",
+        "x": "Auth bypass con $ne"
+      },
+      {
+        "t": "p",
+        "x": "password: {$ne: \"\"} entra sin conocer la contraseña"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 94 — Inyección NoSQL."
+      },
+      {
+        "t": "h3",
+        "x": "Authorization Code"
+      },
+      {
+        "t": "p",
+        "x": "Flujo recomendado: código canjeado por token"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect."
+      },
+      {
+        "t": "h3",
+        "x": "Authorization server"
+      },
+      {
+        "t": "p",
+        "x": "Autentica y emite tokens"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect."
+      },
+      {
+        "t": "h3",
+        "x": "authorizedkeys"
+      },
+      {
+        "t": "p",
+        "x": "Clave SSH que da acceso sin contraseña"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 82 — Persistencia en sistemas comprometidos, Clase 154 — Malware en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Auto-análisis"
+      },
+      {
+        "t": "p",
+        "x": "Analizadores que identifican funciones y generan la decompilación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 131 — Ghidra para ingeniería inversa, Clase 146 — Análisis con IDA y Ghidra aplicado a malware."
+      },
+      {
+        "t": "h3",
+        "x": "Auto-binding"
+      },
+      {
+        "t": "p",
+        "x": "Mapeo automático de la petición al objeto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 110 — Seguridad de APIs REST."
+      },
+      {
+        "t": "h3",
+        "x": "Automation Framework"
+      },
+      {
+        "t": "p",
+        "x": "Escaneos reproducibles definidos en fichero"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 89 — OWASP ZAP."
+      },
+      {
+        "t": "h3",
+        "x": "Automatización"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 343 — Taxonomía técnica de cheats."
+      },
+      {
+        "t": "h3",
+        "x": "AutoOpen / DocumentOpen"
+      },
+      {
+        "t": "p",
+        "x": "Macros que se ejecutan al abrir el documento"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 152 — Análisis de documentos maliciosos: macros y PDF."
+      },
+      {
+        "t": "h3",
+        "x": "Autoritativo"
+      },
+      {
+        "t": "p",
+        "x": "Servidor que posee los datos oficiales de una zona DNS."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos."
+      },
+      {
+        "t": "h3",
+        "x": "Autorización"
+      },
+      {
+        "t": "p",
+        "x": "Comprobar si una identidad puede hacer una acción"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable, Clase 105 — Control de acceso roto: IDOR y path traversal."
+      },
+      {
+        "t": "h3",
+        "x": "Autorización ≠ autenticación"
+      },
+      {
+        "t": "p",
+        "x": "OAuth da acceso; no prueba identidad por sí solo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect."
+      },
+      {
+        "t": "h3",
+        "x": "Autorización en servidor"
+      },
+      {
+        "t": "p",
+        "x": "Por objeto y denegando por defecto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 115 — Secure coding y defensa de aplicaciones web."
+      },
+      {
+        "t": "h3",
+        "x": "Autorización escrita"
+      },
+      {
+        "t": "p",
+        "x": "Permiso firmado; la línea que separa el pentest del delito"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 67 — Reglas de engagement, alcance y contratos."
+      },
+      {
+        "t": "h3",
+        "x": "Autorización granular"
+      },
+      {
+        "t": "p",
+        "x": "Comprobar permiso por objeto y función en el servidor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 110 — Seguridad de APIs REST."
+      },
+      {
+        "t": "h3",
+        "x": "Autorización por resolver"
+      },
+      {
+        "t": "p",
+        "x": "Comprobar el permiso en cada campo, no solo el endpoint"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 111 — Seguridad de APIs GraphQL."
+      },
+      {
+        "t": "h3",
+        "x": "autoroute"
+      },
+      {
+        "t": "p",
+        "x": "Ruta de Metasploit hacia una subred vía Meterpreter"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 79 — Pivoting y reenvío de puertos."
+      },
+      {
+        "t": "h3",
+        "x": "Autoruns"
+      },
+      {
+        "t": "p",
+        "x": "Herramienta de Sysinternals que lista puntos de auto-arranque"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 82 — Persistencia en sistemas comprometidos."
+      },
+      {
+        "t": "h3",
+        "x": "Auxiliary"
+      },
+      {
+        "t": "p",
+        "x": "Módulo de escaneo, enumeración o fuzzing sin explotar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 72 — Metasploit Framework: arquitectura y uso."
+      },
+      {
+        "t": "h3",
+        "x": "AXFR"
+      },
+      {
+        "t": "p",
+        "x": "Transferencia de zona DNS; entrega la zona completa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 33 — Enumeración de servicios de red."
+      },
+      {
+        "t": "h2",
+        "x": "B"
+      },
+      {
+        "t": "h3",
+        "x": "Backdoor"
+      },
+      {
+        "t": "p",
+        "x": "Deja una puerta abierta para volver a entrar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 141 — Introducción al malware: tipos y taxonomía."
+      },
+      {
+        "t": "h3",
+        "x": "Backend"
+      },
+      {
+        "t": "p",
+        "x": "Servidor de aplicación y sus servicios internos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 86 — Arquitectura web moderna y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Backlog"
+      },
+      {
+        "t": "p",
+        "x": "Cola de conexiones pendientes que fija listen()"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 16 — Python para seguridad: sockets y programación de red."
+      },
+      {
+        "t": "h3",
+        "x": "Backport"
+      },
+      {
+        "t": "p",
+        "x": "Parche aplicado sin subir el número de versión; falsea el cruce con CVE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 31 — Nmap: detección de servicios y fingerprinting de OS."
+      },
+      {
+        "t": "h3",
+        "x": "Backup offline / inmutable"
+      },
+      {
+        "t": "p",
+        "x": "La defensa que el ransomware no puede alcanzar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 150 — Ransomware: anatomía y análisis."
+      },
+      {
+        "t": "h3",
+        "x": "Bad character (-b)"
+      },
+      {
+        "t": "p",
+        "x": "Byte que rompe el payload en cierto contexto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 75 — msfvenom: generación de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Badchars"
+      },
+      {
+        "t": "p",
+        "x": "Bytes prohibidos que el shellcode debe esquivar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 121 — Escritura de shellcode."
+      },
+      {
+        "t": "h3",
+        "x": "Balanceador"
+      },
+      {
+        "t": "p",
+        "x": "Reparte la carga entre servidores"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 86 — Arquitectura web moderna y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Banner"
+      },
+      {
+        "t": "p",
+        "x": "Respuesta o metadato de servicio; puede ser incompleto o engañoso."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 16 — Python para seguridad: sockets y programación de red, Clase 31 — Nmap: detección de servicios y fingerprinting de OS, Clase 254 — OSINT técnico: Shodan y Censys."
+      },
+      {
+        "t": "h3",
+        "x": "Bans,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 359 — Privacidad, gobernanza, sanciones y seguridad del propio Anti-Cheat."
+      },
+      {
+        "t": "h3",
+        "x": "BApp Store"
+      },
+      {
+        "t": "p",
+        "x": "Catálogo de extensiones de Burp"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 88 — Burp Suite: configuración y flujo de trabajo."
+      },
+      {
+        "t": "h3",
+        "x": "Base"
+      },
+      {
+        "t": "p",
+        "x": "Sistema de numeración (2, 8, 10, 16)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "Base de firmas"
+      },
+      {
+        "t": "p",
+        "x": "Catálogo de problemas conocidos que el escáner busca"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS."
+      },
+      {
+        "t": "h3",
+        "x": "Base de libc"
+      },
+      {
+        "t": "p",
+        "x": "Dirección de carga; leak menos offset conocido"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 123 — Bypass de protecciones: ret2libc."
+      },
+      {
+        "t": "h3",
+        "x": "Base de región"
+      },
+      {
+        "t": "p",
+        "x": "Dirección de inicio; las distancias internas son fijas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 138 — Desarrollo de exploits moderno."
+      },
+      {
+        "t": "h3",
+        "x": "Base de una región"
+      },
+      {
+        "t": "p",
+        "x": "Dirección de inicio; las distancias internas son fijas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE."
+      },
+      {
+        "t": "h3",
+        "x": "Base64"
+      },
+      {
+        "t": "p",
+        "x": "Binario como 64 caracteres imprimibles"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "Baseline"
+      },
+      {
+        "t": "p",
+        "x": "Estado del sistema limpio para comparar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 144 — Análisis dinámico básico y sandboxing."
+      },
+      {
+        "t": "h3",
+        "x": "Baseline scan"
+      },
+      {
+        "t": "p",
+        "x": "Escaneo rápido y no intrusivo para CI/CD"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 89 — OWASP ZAP."
+      },
+      {
+        "t": "h3",
+        "x": "Batching"
+      },
+      {
+        "t": "p",
+        "x": "Muchas operaciones en una sola petición"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 111 — Seguridad de APIs GraphQL."
+      },
+      {
+        "t": "h3",
+        "x": "bcrypt"
+      },
+      {
+        "t": "p",
+        "x": "KDF clásica con coste ajustable; memoria fija y límite de 72 bytes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2."
+      },
+      {
+        "t": "h3",
+        "x": "bcrypt/scrypt/argon2"
+      },
+      {
+        "t": "p",
+        "x": "Algoritmos de hash de contraseñas con factor de coste"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 21 — Criptografía: conceptos fundamentales e intuición."
+      },
+      {
+        "t": "h3",
+        "x": "BCryptGenRandom"
+      },
+      {
+        "t": "p",
+        "x": "API equivalente en Windows"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG)."
+      },
+      {
+        "t": "h3",
+        "x": "Beacon"
+      },
+      {
+        "t": "p",
+        "x": "Implante que llama a casa a intervalos configurables"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 149 — Comunicaciones de comando y control (C2) del malware, Clase 164 — Diseño de infraestructura de comando y control (C2), Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "Beaconing"
+      },
+      {
+        "t": "p",
+        "x": "Conexiones periódicas a un mismo destino; firma de C2"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 45 — NetFlow y análisis de metadatos de tráfico, Clase 149 — Comunicaciones de comando y control (C2) del malware."
+      },
+      {
+        "t": "h3",
+        "x": "BEAST / POODLE"
+      },
+      {
+        "t": "p",
+        "x": "Ataques sobre CBC y sobre el relleno de SSL 3.0"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "BEC"
+      },
+      {
+        "t": "p",
+        "x": "Compromiso o suplantación de correo para inducir acciones de negocio."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 256 — Fundamentos de ingeniería social."
+      },
+      {
+        "t": "h3",
+        "x": "Bejtlich"
+      },
+      {
+        "t": "p",
+        "x": "Autor que formalizó la disciplina de NSM"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 43 — Network Security Monitoring (NSM): fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "BFLA (API5)"
+      },
+      {
+        "t": "p",
+        "x": "Forced browsing; llamar a funciones de nivel superior"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 110 — Seguridad de APIs REST."
+      },
+      {
+        "t": "h3",
+        "x": "BIA"
+      },
+      {
+        "t": "p",
+        "x": "Análisis de impacto y dependencias del negocio."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 283 — Continuidad de negocio y plan de recuperación ante desastres."
+      },
+      {
+        "t": "h3",
+        "x": "Bin"
+      },
+      {
+        "t": "p",
+        "x": "Lista de chunks libres para reutilizar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Binario firmado de confianza"
+      },
+      {
+        "t": "p",
+        "x": "Su uso no levanta las alarmas de un binario nuevo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "BinaryFormatter"
+      },
+      {
+        "t": "p",
+        "x": "Serializador .NET peligroso, desaconsejado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 106 — Deserialización insegura."
+      },
+      {
+        "t": "h3",
+        "x": "Bind mount"
+      },
+      {
+        "t": "p",
+        "x": "Montaje de una ruta del host en el contenedor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 22 — Docker y contenedores para laboratorios de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Bind shell"
+      },
+      {
+        "t": "p",
+        "x": "El objetivo abre un puerto; el atacante se conecta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 73 — Metasploit: explotación y payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Binder"
+      },
+      {
+        "t": "p",
+        "x": "Mecanismo principal de IPC en Android."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 261 — Seguridad de Android: arquitectura."
+      },
+      {
+        "t": "h3",
+        "x": "Bit"
+      },
+      {
+        "t": "p",
+        "x": "Dígito binario, 0 o 1"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "Bit-flipping"
+      },
+      {
+        "t": "p",
+        "x": "Voltear bits del cifrado para cambiar el claro de forma predecible"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 59 — Cifrado autenticado (AEAD)."
+      },
+      {
+        "t": "h3",
+        "x": "Bit SUID"
+      },
+      {
+        "t": "p",
+        "x": "El binario corre con los privilegios de su propietario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 76 — Escalada de privilegios en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Bits de seguridad"
+      },
+      {
+        "t": "p",
+        "x": "Coste real del mejor ataque conocido, en potencias de 2"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades, Clase 61 — Introducción al criptoanálisis."
+      },
+      {
+        "t": "h3",
+        "x": "Black box"
+      },
+      {
+        "t": "p",
+        "x": "El equipo no recibe información previa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 66 — Metodología de pentesting: PTES y OSSTMM."
+      },
+      {
+        "t": "h3",
+        "x": "Black hat"
+      },
+      {
+        "t": "p",
+        "x": "Hacker malicioso sin autorización"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable."
+      },
+      {
+        "t": "h3",
+        "x": "BLAKE2 / BLAKE3"
+      },
+      {
+        "t": "p",
+        "x": "Hashes modernos orientados a velocidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades."
+      },
+      {
+        "t": "h3",
+        "x": "Bleichenbacher"
+      },
+      {
+        "t": "p",
+        "x": "Oráculo análogo sobre el relleno PKCS#1 v1.5 de RSA"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 60 — Ataques criptográficos: padding oracle y timing."
+      },
+      {
+        "t": "h3",
+        "x": "Blocklist"
+      },
+      {
+        "t": "p",
+        "x": "Filtrar caracteres prohibidos; siempre evadible"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 91 — Inyección SQL: fundamentos, Clase 96 — Cross-Site Scripting (XSS) reflejado, Clase 99 — Server-Side Request Forgery (SSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "BloodHound"
+      },
+      {
+        "t": "p",
+        "x": "Grafo de AD que calcula rutas hacia Domain Admin"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 78 — Movimiento lateral en la red."
+      },
+      {
+        "t": "h3",
+        "x": "Bloque básico"
+      },
+      {
+        "t": "p",
+        "x": "Secuencia de instrucciones sin saltos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 132 — IDA Pro y radare2, Clase 133 — Análisis estático de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Bloqueo de cuenta"
+      },
+      {
+        "t": "p",
+        "x": "Defensa que congela la cuenta tras N fallos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 81 — Ataques a credenciales: fuerza bruta y password spraying."
+      },
+      {
+        "t": "h3",
+        "x": "Bloqueo de cuentas"
+      },
+      {
+        "t": "p",
+        "x": "Efecto colateral de la fuerza bruta contra un directorio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 33 — Enumeración de servicios de red."
+      },
+      {
+        "t": "h3",
+        "x": "Blueprint"
+      },
+      {
+        "t": "p",
+        "x": "Temario oficial vigente del examen."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 301 — Roadmap de certificaciones: CompTIA, OSCP, CISSP y más."
+      },
+      {
+        "t": "h3",
+        "x": "Body of knowledge"
+      },
+      {
+        "t": "p",
+        "x": "Alcance publicado de conocimientos evaluados."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 290 — Certificaciones y desarrollo de carrera."
+      },
+      {
+        "t": "h3",
+        "x": "BOLA"
+      },
+      {
+        "t": "p",
+        "x": "Acceso indebido a objetos por faltar una comprobación contextual."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 247 — Seguridad de APIs en el ciclo de desarrollo."
+      },
+      {
+        "t": "h3",
+        "x": "BOLA (API1)"
+      },
+      {
+        "t": "p",
+        "x": "IDOR de las APIs; acceder al objeto de otro usuario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 110 — Seguridad de APIs REST."
+      },
+      {
+        "t": "h3",
+        "x": "BOLA en GraphQL"
+      },
+      {
+        "t": "p",
+        "x": "Acceder a datos de otro navegando relaciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 111 — Seguridad de APIs GraphQL."
+      },
+      {
+        "t": "h3",
+        "x": "Bonding"
+      },
+      {
+        "t": "p",
+        "x": "Conservación de claves para conexiones futuras."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 271 — Seguridad de Bluetooth y BLE."
+      },
+      {
+        "t": "h3",
+        "x": "Booleana"
+      },
+      {
+        "t": "p",
+        "x": "Deducir datos por la diferencia entre condición verdadera y falsa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 92 — Inyección SQL avanzada y ciega (blind)."
+      },
+      {
+        "t": "h3",
+        "x": "Bootkit"
+      },
+      {
+        "t": "p",
+        "x": "Se carga antes que el SO durante el arranque"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 151 — Rootkits y bootkits."
+      },
+      {
+        "t": "h3",
+        "x": "Bootloader"
+      },
+      {
+        "t": "p",
+        "x": "Código inicial que prepara y carga etapas posteriores."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 267 — Hacking de firmware."
+      },
+      {
+        "t": "h3",
+        "x": "Borrado de logs (T1070)"
+      },
+      {
+        "t": "p",
+        "x": "Eliminar registros; deja un hueco detectable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 84 — Anti-forense y borrado de huellas (concepto y límites)."
+      },
+      {
+        "t": "h3",
+        "x": "Bot / botnet"
+      },
+      {
+        "t": "p",
+        "x": "Máquina enrolada en una red controlada en masa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 141 — Introducción al malware: tipos y taxonomía."
+      },
+      {
+        "t": "h3",
+        "x": "Botnet de IoT"
+      },
+      {
+        "t": "p",
+        "x": "Red de dispositivos infectados para DDoS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 154 — Malware en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Bounding"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 346 — Información expuesta, radar, ESP y world-to-screen."
+      },
+      {
+        "t": "h3",
+        "x": "BPDU Guard"
+      },
+      {
+        "t": "p",
+        "x": "Protege STP desactivando puertos con anuncios indebidos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h3",
+        "x": "BPF"
+      },
+      {
+        "t": "p",
+        "x": "Berkeley Packet Filter: lenguaje de filtrado en captura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 17 — Python para seguridad: manipulación de paquetes con Scapy, Clase 26 — Wireshark: captura y análisis de paquetes, Clase 28 — tcpdump y captura de tráfico en línea de comandos."
+      },
+      {
+        "t": "h3",
+        "x": "BRE"
+      },
+      {
+        "t": "p",
+        "x": "Basic Regular Expressions (modo por defecto de grep)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos."
+      },
+      {
+        "t": "h3",
+        "x": "Breakpoint"
+      },
+      {
+        "t": "p",
+        "x": "Pausa la ejecución al llegar a un punto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "Brecha de datos"
+      },
+      {
+        "t": "p",
+        "x": "Volcado de credenciales previo reutilizable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas."
+      },
+      {
+        "t": "h3",
+        "x": "Brecha previa"
+      },
+      {
+        "t": "p",
+        "x": "Indicio de compromiso anterior; se escala de inmediato"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 67 — Reglas de engagement, alcance y contratos."
+      },
+      {
+        "t": "h3",
+        "x": "Bridged"
+      },
+      {
+        "t": "p",
+        "x": "Modo de red: la VM es un equipo más de la LAN"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red."
+      },
+      {
+        "t": "h3",
+        "x": "Broadcast"
+      },
+      {
+        "t": "p",
+        "x": "Última dirección del bloque; alcanza a todos los hosts."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 14 — Direccionamiento IP y subnetting."
+      },
+      {
+        "t": "h3",
+        "x": "Broker de herramientas"
+      },
+      {
+        "t": "p",
+        "x": "Capa que valida y media cada ejecución."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 333 — kali-mcp: orquestar herramientas de Kali desde un agente de IA."
+      },
+      {
+        "t": "h3",
+        "x": "BSS"
+      },
+      {
+        "t": "p",
+        "x": "Segmento de globales sin inicializar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls."
+      },
+      {
+        "t": "h3",
+        "x": "BSSID"
+      },
+      {
+        "t": "p",
+        "x": "Dirección MAC del punto de acceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Buffer"
+      },
+      {
+        "t": "p",
+        "x": "Región de tamaño fijo reservada para datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 119 — Buffer overflow en stack: teoría."
+      },
+      {
+        "t": "h3",
+        "x": "Buffer de protocolo"
+      },
+      {
+        "t": "p",
+        "x": "Campo concreto donde buscar (http.uri, tls.sni, dns.query)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "Buffer overflow"
+      },
+      {
+        "t": "p",
+        "x": "Escribir más datos de los que caben en el buffer"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 119 — Buffer overflow en stack: teoría."
+      },
+      {
+        "t": "h3",
+        "x": "Bug bounty"
+      },
+      {
+        "t": "p",
+        "x": "Programa que recompensa reportes autorizados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable, Clase 114 — Bug bounty: metodología y plataformas."
+      },
+      {
+        "t": "h3",
+        "x": "builtinmuloverflow"
+      },
+      {
+        "t": "p",
+        "x": "Multiplicación con detección de overflow"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 128 — Integer overflows y errores aritméticos."
+      },
+      {
+        "t": "h3",
+        "x": "Burp Suite"
+      },
+      {
+        "t": "p",
+        "x": "Proxy de pentesting web estándar de la industria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 88 — Burp Suite: configuración y flujo de trabajo."
+      },
+      {
+        "t": "h3",
+        "x": "Búsqueda binaria"
+      },
+      {
+        "t": "p",
+        "x": "Acota el carácter con comparaciones >/<"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 92 — Inyección SQL avanzada y ciega (blind)."
+      },
+      {
+        "t": "h3",
+        "x": "BYOVD"
+      },
+      {
+        "t": "p",
+        "x": "Cargar un driver vulnerable firmado y explotarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 151 — Rootkits y bootkits."
+      },
+      {
+        "t": "h3",
+        "x": "Bypass con negativo"
+      },
+      {
+        "t": "p",
+        "x": "Un valor firmado negativo que se vuelve enorme sin signo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 128 — Integer overflows y errores aritméticos."
+      },
+      {
+        "t": "h3",
+        "x": "Bypass de login"
+      },
+      {
+        "t": "p",
+        "x": "admin' -- para entrar sin contraseña"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 91 — Inyección SQL: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Bypass en caliente"
+      },
+      {
+        "t": "p",
+        "x": "Alterar una comprobación cambiando el retorno en vivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 134 — Análisis dinámico y debugging de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Bypass encadenado"
+      },
+      {
+        "t": "p",
+        "x": "Combinar leak + ROP + ataque a GOT/heap"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE."
+      },
+      {
+        "t": "h3",
+        "x": "Byte"
+      },
+      {
+        "t": "p",
+        "x": "Grupo de 8 bits"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "Byte nulo"
+      },
+      {
+        "t": "p",
+        "x": "shell.php%00.jpg; truco histórico de bypass"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 108 — Vulnerabilidades en carga de archivos."
+      },
+      {
+        "t": "h3",
+        "x": "Byte nulo (0x00)"
+      },
+      {
+        "t": "p",
+        "x": "Bad character que trunca cadenas; hay que evitarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 75 — msfvenom: generación de payloads, Clase 121 — Escritura de shellcode."
+      },
+      {
+        "t": "h3",
+        "x": "Bytecode Dalvik"
+      },
+      {
+        "t": "p",
+        "x": "Código compilado que corre en ART/Dalvik"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 155 — Malware en Android."
+      },
+      {
+        "t": "h3",
+        "x": "bytes"
+      },
+      {
+        "t": "p",
+        "x": "Secuencia de octetos crudos (datos binarios)."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje."
+      },
+      {
+        "t": "h3",
+        "x": "Bytes prohibidos (badchars)"
+      },
+      {
+        "t": "p",
+        "x": "Bytes que rompen el payload (p. ej. el nulo en strcpy)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 119 — Buffer overflow en stack: teoría."
+      },
+      {
+        "t": "h2",
+        "x": "C"
+      },
+      {
+        "t": "h3",
+        "x": "C2 / C&C"
+      },
+      {
+        "t": "p",
+        "x": "Command and Control: canal de órdenes entre implante y atacante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain."
+      },
+      {
+        "t": "h3",
+        "x": "C2 (command and control)"
+      },
+      {
+        "t": "p",
+        "x": "Canal por el que el operador controla el malware"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 83 — Exfiltración de datos, Clase 149 — Comunicaciones de comando y control (C2) del malware."
+      },
+      {
+        "t": "h3",
+        "x": "C2 framework"
+      },
+      {
+        "t": "p",
+        "x": "Plataforma que genera implantes y gestiona sesiones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "C2 profile"
+      },
+      {
+        "t": "p",
+        "x": "Plantilla que define cómo se ve el tráfico C2"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "CA"
+      },
+      {
+        "t": "p",
+        "x": "Autoridad de certificación que firma certificados de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna, Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "CA de Burp"
+      },
+      {
+        "t": "p",
+        "x": "Certificado propio que hay que instalar para interceptar HTTPS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 88 — Burp Suite: configuración y flujo de trabajo."
+      },
+      {
+        "t": "h3",
+        "x": "CA de ZAP"
+      },
+      {
+        "t": "p",
+        "x": "Certificado propio para interceptar HTTPS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 89 — OWASP ZAP."
+      },
+      {
+        "t": "h3",
+        "x": "CA intermedia"
+      },
+      {
+        "t": "p",
+        "x": "Firma los certificados finales; protege la clave raíz"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "CA maliciosa"
+      },
+      {
+        "t": "p",
+        "x": "Autoridad instalada en el dispositivo que legitima certificados falsos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 40 — Man-in-the-Middle: técnicas y defensa."
+      },
+      {
+        "t": "h3",
+        "x": "CA raíz"
+      },
+      {
+        "t": "p",
+        "x": "Certificado autofirmado preinstalado; anclaje de confianza"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "Cabecera"
+      },
+      {
+        "t": "p",
+        "x": "Par clave-valor con metadatos de una petición o respuesta."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna."
+      },
+      {
+        "t": "h3",
+        "x": "Cabecera de regla"
+      },
+      {
+        "t": "p",
+        "x": "Acción, protocolo, origen, dirección y destino"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "Cabecera HTTP"
+      },
+      {
+        "t": "p",
+        "x": "Metadato de la petición; también es entrada del usuario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 86 — Arquitectura web moderna y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Caché ARP"
+      },
+      {
+        "t": "p",
+        "x": "Tabla local de correspondencias IP-MAC aprendidas."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos, Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h3",
+        "x": "Cache poisoning"
+      },
+      {
+        "t": "p",
+        "x": "Inyectar una respuesta falsa en la caché de un resolver"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling, Clase 112 — Web cache poisoning y HTTP request smuggling."
+      },
+      {
+        "t": "h3",
+        "x": "Caché web"
+      },
+      {
+        "t": "p",
+        "x": "Guarda respuestas y las sirve a muchos usuarios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 112 — Web cache poisoning y HTTP request smuggling."
+      },
+      {
+        "t": "h3",
+        "x": "Cadena de ataque"
+      },
+      {
+        "t": "p",
+        "x": "Acceso, lateral, exfiltración y cifrado final"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 150 — Ransomware: anatomía y análisis."
+      },
+      {
+        "t": "h3",
+        "x": "Cadena de comunidad"
+      },
+      {
+        "t": "p",
+        "x": "\"Contraseña\" de SNMP; public y private son los valores por defecto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 33 — Enumeración de servicios de red, Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP."
+      },
+      {
+        "t": "h3",
+        "x": "Cadena de confianza"
+      },
+      {
+        "t": "p",
+        "x": "Recorrido de firmas desde el certificado hasta una raíz"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "Cadena de entrega"
+      },
+      {
+        "t": "p",
+        "x": "Secuencia que lleva de abrir el doc a la carga final"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 152 — Análisis de documentos maliciosos: macros y PDF."
+      },
+      {
+        "t": "h3",
+        "x": "Cadena de texto"
+      },
+      {
+        "t": "p",
+        "x": "Literal, con nocase, wide, ascii"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "Cadena en la pila"
+      },
+      {
+        "t": "p",
+        "x": "Construir \"/bin/sh\" con instrucciones para evitar nulos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 121 — Escritura de shellcode."
+      },
+      {
+        "t": "h3",
+        "x": "Cadena hexadecimal"
+      },
+      {
+        "t": "p",
+        "x": "Secuencia de bytes con comodines ??"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "Cadena ROP"
+      },
+      {
+        "t": "p",
+        "x": "Secuencia ordenada de gadgets y valores en la pila"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 124 — Return-Oriented Programming (ROP)."
+      },
+      {
+        "t": "h3",
+        "x": "Cadena SEH"
+      },
+      {
+        "t": "p",
+        "x": "Lista de manejadores registrados, en la pila"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 129 — Explotación en Windows: manejo de SEH."
+      },
+      {
+        "t": "h3",
+        "x": "Cadenas cifradas"
+      },
+      {
+        "t": "p",
+        "x": "Textos descifrados solo en ejecución; evaden strings"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 135 — Ofuscación y técnicas anti-reversing."
+      },
+      {
+        "t": "h3",
+        "x": "Cálculo dinámico de direcciones"
+      },
+      {
+        "t": "p",
+        "x": "Derivar direcciones a partir de un leak"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 138 — Desarrollo de exploits moderno."
+      },
+      {
+        "t": "h3",
+        "x": "Calentamiento de dominio"
+      },
+      {
+        "t": "p",
+        "x": "Enviar tráfico legítimo creciente para construir reputación de envío"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Call graph"
+      },
+      {
+        "t": "p",
+        "x": "Grafo de qué función llama a qué"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 133 — Análisis estático de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "call / ret"
+      },
+      {
+        "t": "p",
+        "x": "Llamar (apila retorno) / volver (desapila a RIP)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria, Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador."
+      },
+      {
+        "t": "h3",
+        "x": "Callback"
+      },
+      {
+        "t": "p",
+        "x": "Devolución por un número obtenido de una fuente confiable."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 149 — Comunicaciones de comando y control (C2) del malware, Clase 257 — Pretexting y vishing, Clase 259 — Defensa contra la ingeniería social."
+      },
+      {
+        "t": "h3",
+        "x": "Cámara,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 342 — Arquitectura de videojuegos desde la perspectiva de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Camino ejecutado"
+      },
+      {
+        "t": "p",
+        "x": "El dinámico solo ve los caminos que corren"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 134 — Análisis dinámico y debugging de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Camino nuevo"
+      },
+      {
+        "t": "p",
+        "x": "Entrada que alcanza código no visto; se guarda como semilla"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 136 — Fuzzing con AFL++ y libFuzzer."
+      },
+      {
+        "t": "h3",
+        "x": "Campo de protocolo"
+      },
+      {
+        "t": "p",
+        "x": "Dato direccionable de una cabecera (ip.src, tcp.flags.syn)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "Campo finito"
+      },
+      {
+        "t": "p",
+        "x": "Aritmética modular sobre un primo, donde vive la curva"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 50 — Criptografía de curva elíptica (ECC)."
+      },
+      {
+        "t": "h3",
+        "x": "Canal encubierto"
+      },
+      {
+        "t": "p",
+        "x": "Vía de comunicación no prevista por el diseño"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 64 — Esteganografía y ocultación de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Canal HTTP(S)"
+      },
+      {
+        "t": "p",
+        "x": "Se mezcla con la navegación; oculta contenido con TLS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 83 — Exfiltración de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Canal independiente"
+      },
+      {
+        "t": "p",
+        "x": "Medio de verificación no proporcionado por la propia solicitud."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 256 — Fundamentos de ingeniería social."
+      },
+      {
+        "t": "h3",
+        "x": "Canal lateral"
+      },
+      {
+        "t": "p",
+        "x": "Fuga por tiempo, consumo o caché al ejecutar la operación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 50 — Criptografía de curva elíptica (ECC), Clase 60 — Ataques criptográficos: padding oracle y timing."
+      },
+      {
+        "t": "h3",
+        "x": "Canal lateral temporal"
+      },
+      {
+        "t": "p",
+        "x": "Tiempo de respuesta distinto que filtra si la cuenta existe"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 101 — Fallos de autenticación y bypass."
+      },
+      {
+        "t": "h3",
+        "x": "Canal OOB"
+      },
+      {
+        "t": "p",
+        "x": "Los logs del servidor del atacante reciben el dato"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 92 — Inyección SQL avanzada y ciega (blind)."
+      },
+      {
+        "t": "h3",
+        "x": "Canario"
+      },
+      {
+        "t": "p",
+        "x": "Centinela que detecta overflow de pila"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria."
+      },
+      {
+        "t": "h3",
+        "x": "Canonicalización de ruta"
+      },
+      {
+        "t": "p",
+        "x": "Normalizar la ruta antes de usarla"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 105 — Control de acceso roto: IDOR y path traversal."
+      },
+      {
+        "t": "h3",
+        "x": "Cantidad negativa"
+      },
+      {
+        "t": "p",
+        "x": "Valor que un cálculo mal hecho convierte en abono"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 109 — Vulnerabilidades de lógica de negocio."
+      },
+      {
+        "t": "h3",
+        "x": "Capa"
+      },
+      {
+        "t": "p",
+        "x": "Nivel del paquete (Ether/IP/TCP/UDP/ICMP) como objeto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 17 — Python para seguridad: manipulación de paquetes con Scapy."
+      },
+      {
+        "t": "h3",
+        "x": "Capa (layer)"
+      },
+      {
+        "t": "p",
+        "x": "Unidad incremental de una imagen, cacheable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 22 — Docker y contenedores para laboratorios de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Capability"
+      },
+      {
+        "t": "p",
+        "x": "Operación concreta que un componente ofrece bajo permisos."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 332 — Agentes de IA y el Model Context Protocol (MCP) para seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Capability baseline"
+      },
+      {
+        "t": "p",
+        "x": "Conjunto adaptable de capacidades, no lista de aprobación."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 266 — Seguridad de IoT: panorama y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Capacidad"
+      },
+      {
+        "t": "p",
+        "x": "Cantidad de datos que un portador puede ocultar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 64 — Esteganografía y ocultación de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Capacidad Linux"
+      },
+      {
+        "t": "p",
+        "x": "Privilegio granular que puede retirarse del proceso."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 243 — Imágenes y contenedores seguros en el pipeline."
+      },
+      {
+        "t": "h3",
+        "x": "Capital One"
+      },
+      {
+        "t": "p",
+        "x": "Brecha de 2019 causada por SSRF al metadata de AWS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 99 — Server-Side Request Forgery (SSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "capstone / pyelftools"
+      },
+      {
+        "t": "p",
+        "x": "Librerías para construir herramientas de análisis"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 133 — Análisis estático de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Carga de archivos"
+      },
+      {
+        "t": "p",
+        "x": "Funcionalidad de subir ficheros; superficie de ataque frecuente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 108 — Vulnerabilidades en carga de archivos."
+      },
+      {
+        "t": "h3",
+        "x": "Cargador"
+      },
+      {
+        "t": "p",
+        "x": "Primera etapa que descarga o despliega la carga real"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 152 — Análisis de documentos maliciosos: macros y PDF."
+      },
+      {
+        "t": "h3",
+        "x": "Cargador de pruebas"
+      },
+      {
+        "t": "p",
+        "x": "Programa que ejecuta el shellcode para validarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 121 — Escritura de shellcode."
+      },
+      {
+        "t": "h3",
+        "x": "Catálogo de detección"
+      },
+      {
+        "t": "p",
+        "x": "El mapa de dónde mirar que se entrega al cliente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 82 — Persistencia en sistemas comprometidos."
+      },
+      {
+        "t": "h3",
+        "x": "Categoría de riesgo"
+      },
+      {
+        "t": "p",
+        "x": "Agrupación de fallos por naturaleza, no un bug concreto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 87 — OWASP Top 10: panorama general."
+      },
+      {
+        "t": "h3",
+        "x": "Categoría default"
+      },
+      {
+        "t": "p",
+        "x": "Conjunto que ejecutan -sC y -A"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 32 — Nmap Scripting Engine (NSE)."
+      },
+      {
+        "t": "h3",
+        "x": "Categoría intrusive / dos / exploit"
+      },
+      {
+        "t": "p",
+        "x": "Pueden degradar, tumbar o explotar el objetivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 32 — Nmap Scripting Engine (NSE)."
+      },
+      {
+        "t": "h3",
+        "x": "Categoría safe"
+      },
+      {
+        "t": "p",
+        "x": "Scripts que no afectan al objetivo de forma apreciable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 32 — Nmap Scripting Engine (NSE)."
+      },
+      {
+        "t": "h3",
+        "x": "Categoría vuln"
+      },
+      {
+        "t": "p",
+        "x": "Comprobación de vulnerabilidades conocidas; a menudo intrusiva"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 32 — Nmap Scripting Engine (NSE)."
+      },
+      {
+        "t": "h3",
+        "x": "Categorización de dominio"
+      },
+      {
+        "t": "p",
+        "x": "Clasificar un dominio (business/health) para pasar filtros"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 164 — Diseño de infraestructura de comando y control (C2)."
+      },
+      {
+        "t": "h3",
+        "x": "CBC"
+      },
+      {
+        "t": "p",
+        "x": "Encadenamiento por XOR con el cifrado anterior"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 47 — Cifrado simétrico: AES y modos de operación."
+      },
+      {
+        "t": "h3",
+        "x": "CBK"
+      },
+      {
+        "t": "p",
+        "x": "Cuerpo de conocimiento, no sustituto del esquema oficial vigente."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 304 — Preparación CISSP: los 8 dominios."
+      },
+      {
+        "t": "h3",
+        "x": "CCA"
+      },
+      {
+        "t": "p",
+        "x": "Puede pedir descifrados y observar el resultado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 61 — Introducción al criptoanálisis."
+      },
+      {
+        "t": "h3",
+        "x": "cdecl / stdcall"
+      },
+      {
+        "t": "p",
+        "x": "Convenciones de x86; pasan argumentos por la pila"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 117 — El stack, los registros y las convenciones de llamada."
+      },
+      {
+        "t": "h3",
+        "x": "CDN"
+      },
+      {
+        "t": "p",
+        "x": "Red de distribución que cachea contenido cerca del usuario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 86 — Arquitectura web moderna y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Centro,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 357 — Estadística, anomalías y falsos positivos."
+      },
+      {
+        "t": "h3",
+        "x": "Cerrado"
+      },
+      {
+        "t": "p",
+        "x": "El host responde pero nadie escucha; prueba que el host existe"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 30 — Nmap: escaneo de puertos y tipos de escaneo."
+      },
+      {
+        "t": "h3",
+        "x": "Certificado"
+      },
+      {
+        "t": "p",
+        "x": "Documento firmado por una CA que prueba la identidad del servidor."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna."
+      },
+      {
+        "t": "h3",
+        "x": "Certificado X.509"
+      },
+      {
+        "t": "p",
+        "x": "Documento con clave pública, identidad y firma de la CA"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "Certificate pinning"
+      },
+      {
+        "t": "p",
+        "x": "Restricción adicional de confianza TLS; no sustituye autorización."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 40 — Man-in-the-Middle: técnicas y defensa, Clase 262 — Pentest de aplicaciones Android."
+      },
+      {
+        "t": "h3",
+        "x": "Certificate Transparency"
+      },
+      {
+        "t": "p",
+        "x": "Registros públicos auditables de certificados emitidos."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 55 — PKI, certificados X.509 y autoridades de certificación, Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas, Clase 251 — OSINT de empresas y dominios."
+      },
+      {
+        "t": "h3",
+        "x": "certutil / mshta / regsvr32"
+      },
+      {
+        "t": "p",
+        "x": "LOLBins comunes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "CFAA"
+      },
+      {
+        "t": "p",
+        "x": "Ley estadounidense de fraude y abuso informático"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable."
+      },
+      {
+        "t": "h3",
+        "x": "CFG"
+      },
+      {
+        "t": "p",
+        "x": "Grafo de flujo de control de una función"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 133 — Análisis estático de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "cgroup"
+      },
+      {
+        "t": "p",
+        "x": "Límite de recursos del kernel por contenedor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 22 — Docker y contenedores para laboratorios de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "ChaCha20"
+      },
+      {
+        "t": "p",
+        "x": "Cifrado de flujo moderno basado en operaciones ARX"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4."
+      },
+      {
+        "t": "h3",
+        "x": "ChaCha20-Poly1305"
+      },
+      {
+        "t": "p",
+        "x": "AEAD para software y móviles sin aceleración AES"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 59 — Cifrado autenticado (AEAD)."
+      },
+      {
+        "t": "h3",
+        "x": "Challenge-response"
+      },
+      {
+        "t": "p",
+        "x": "Autenticación que prueba conocimiento sin repetir una respuesta fija."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 270 — Ataques a RFID y NFC."
+      },
+      {
+        "t": "h3",
+        "x": "check"
+      },
+      {
+        "t": "p",
+        "x": "Verifica la condición vulnerable sin ejecutar el ataque"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 73 — Metasploit: explotación y payloads."
+      },
+      {
+        "t": "h3",
+        "x": "checksec"
+      },
+      {
+        "t": "p",
+        "x": "Herramienta que reporta las mitigaciones activas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE."
+      },
+      {
+        "t": "h3",
+        "x": "Checksum offloading"
+      },
+      {
+        "t": "p",
+        "x": "La NIC calcula el checksum tras la captura; produce falsos rojos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 26 — Wireshark: captura y análisis de paquetes."
+      },
+      {
+        "t": "h3",
+        "x": "Checksum / SHA-256"
+      },
+      {
+        "t": "p",
+        "x": "Hash para verificar integridad de una descarga"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red."
+      },
+      {
+        "t": "h3",
+        "x": "Chi-cuadrado / RS analysis"
+      },
+      {
+        "t": "p",
+        "x": "Pruebas estadísticas que detectan LSB"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 64 — Esteganografía y ocultación de datos."
+      },
+      {
+        "t": "h3",
+        "x": "chisel / ligolo-ng"
+      },
+      {
+        "t": "p",
+        "x": "Túneles sobre HTTP(S) cuando no hay SSH"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 79 — Pivoting y reenvío de puertos."
+      },
+      {
+        "t": "h3",
+        "x": "chmod / chown"
+      },
+      {
+        "t": "p",
+        "x": "Cambian permisos / propietario de archivos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios."
+      },
+      {
+        "t": "h3",
+        "x": "Chunk"
+      },
+      {
+        "t": "p",
+        "x": "Bloque de memoria con metadatos delante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Chunking"
+      },
+      {
+        "t": "p",
+        "x": "Fragmentar el dato en trozos pequeños"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 83 — Exfiltración de datos."
+      },
+      {
+        "t": "h3",
+        "x": "CI/CD"
+      },
+      {
+        "t": "p",
+        "x": "Integración continua donde encaja el escaneo automatizado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 89 — OWASP ZAP."
+      },
+      {
+        "t": "h3",
+        "x": "CIA"
+      },
+      {
+        "t": "p",
+        "x": "Confidencialidad, Integridad y Disponibilidad; las tres propiedades base a proteger"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Ciclo de vida"
+      },
+      {
+        "t": "p",
+        "x": "Ejecución, persistencia, evasión, objetivo, C2"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 148 — Análisis de comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Ciclo estático↔dinámico"
+      },
+      {
+        "t": "p",
+        "x": "Alternar entre ambos para reconstruir el comportamiento"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 134 — Análisis dinámico y debugging de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "CIDR"
+      },
+      {
+        "t": "p",
+        "x": "Notación IP/prefijo que indica cuántos bits son de red."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 14 — Direccionamiento IP y subnetting."
+      },
+      {
+        "t": "h3",
+        "x": "Cierre del engagement"
+      },
+      {
+        "t": "p",
+        "x": "Fin formal: informe entregado y correcciones verificadas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 85 — Reporte profesional de pentest."
+      },
+      {
+        "t": "h3",
+        "x": "Cifrado"
+      },
+      {
+        "t": "p",
+        "x": "Transformación reversible con clave"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "Cifrado de César"
+      },
+      {
+        "t": "p",
+        "x": "Sustitución por desplazamiento fijo del alfabeto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 46 — Historia y fundamentos de la criptografía."
+      },
+      {
+        "t": "h3",
+        "x": "Cifrado de flujo"
+      },
+      {
+        "t": "p",
+        "x": "Genera keystream y lo combina con XOR con el mensaje"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4."
+      },
+      {
+        "t": "h3",
+        "x": "Cifrado extremo a extremo"
+      },
+      {
+        "t": "p",
+        "x": "Confidencialidad entre los extremos; ni la red ni el servidor leen"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 40 — Man-in-the-Middle: técnicas y defensa."
+      },
+      {
+        "t": "h3",
+        "x": "Cifrado híbrido"
+      },
+      {
+        "t": "p",
+        "x": "RSA transporta una clave AES que cifra los datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 46 — Historia y fundamentos de la criptografía, Clase 49 — Cifrado asimétrico: RSA."
+      },
+      {
+        "t": "h3",
+        "x": "Cifrado por bloques"
+      },
+      {
+        "t": "p",
+        "x": "Primitiva que transforma bloques de tamaño fijo (AES: 128 bits)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 47 — Cifrado simétrico: AES y modos de operación."
+      },
+      {
+        "t": "h3",
+        "x": "Cifrado sin autenticar"
+      },
+      {
+        "t": "p",
+        "x": "Deja el mensaje maleable; usar AEAD"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h3",
+        "x": "Cipher suite"
+      },
+      {
+        "t": "p",
+        "x": "Conjunto de algoritmos negociados; en TLS 1.3 solo AEAD y hash"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "CL.TE / TE.CL / TE.TE"
+      },
+      {
+        "t": "p",
+        "x": "Variantes según qué servidor prioriza qué cabecera"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 112 — Web cache poisoning y HTTP request smuggling."
+      },
+      {
+        "t": "h3",
+        "x": "Claim"
+      },
+      {
+        "t": "p",
+        "x": "Dato del payload: sub, exp, iss, aud, roles"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 103 — Ataques y seguridad de JWT."
+      },
+      {
+        "t": "h3",
+        "x": "Clase negada"
+      },
+      {
+        "t": "p",
+        "x": "[^...]: casa todo salvo lo listado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 19 — Expresiones regulares para análisis de logs y datos."
+      },
+      {
+        "t": "h3",
+        "x": "Clasificación,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 358 — Machine Learning aplicado a Anti-Cheat."
+      },
+      {
+        "t": "h3",
+        "x": "classes.dex"
+      },
+      {
+        "t": "p",
+        "x": "Fichero con el bytecode de la app"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 155 — Malware en Android."
+      },
+      {
+        "t": "h3",
+        "x": "Classic McEliece"
+      },
+      {
+        "t": "p",
+        "x": "Esquema basado en códigos; claves muy grandes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 62 — Criptografía post-cuántica."
+      },
+      {
+        "t": "h3",
+        "x": "Clave de caché"
+      },
+      {
+        "t": "p",
+        "x": "URL y cabeceras que identifican qué respuesta corresponde"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 112 — Web cache poisoning y HTTP request smuggling."
+      },
+      {
+        "t": "h3",
+        "x": "Clave incrustada"
+      },
+      {
+        "t": "p",
+        "x": "Credencial escrita en el código fuente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h3",
+        "x": "Clave privada RSA"
+      },
+      {
+        "t": "p",
+        "x": "La tiene solo el atacante; hace irreversible el cifrado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 150 — Ransomware: anatomía y análisis."
+      },
+      {
+        "t": "h3",
+        "x": "Clave pública / privada"
+      },
+      {
+        "t": "p",
+        "x": "Par relacionado: una se publica, la otra se guarda"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 49 — Cifrado asimétrico: RSA."
+      },
+      {
+        "t": "h3",
+        "x": "Clave simétrica compartida"
+      },
+      {
+        "t": "p",
+        "x": "La misma clave genera y verifica el MAC"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 52 — HMAC y autenticación de mensajes."
+      },
+      {
+        "t": "h3",
+        "x": "Client"
+      },
+      {
+        "t": "p",
+        "x": "La aplicación que solicita acceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect."
+      },
+      {
+        "t": "h3",
+        "x": "Client-authoritative"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 351 — Multiplayer y autoridad: nunca confiar en el cliente."
+      },
+      {
+        "t": "h3",
+        "x": "Cliente,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 341 — Introducción a Game Security y modelo de amenazas."
+      },
+      {
+        "t": "h3",
+        "x": "Cliente-servidor"
+      },
+      {
+        "t": "p",
+        "x": "El navegador pide, el servidor responde sobre HTTP/HTTPS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 86 — Arquitectura web moderna y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "ClientHello / ServerHello"
+      },
+      {
+        "t": "p",
+        "x": "Primeros mensajes del handshake"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "CLM"
+      },
+      {
+        "t": "p",
+        "x": "Constrained Language Mode: limita APIs peligrosas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva."
+      },
+      {
+        "t": "h3",
+        "x": "Clúster Zeek"
+      },
+      {
+        "t": "p",
+        "x": "Despliegue con workers, proxy y manager para gran escala"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 44 — Zeek para análisis de red a gran escala."
+      },
+      {
+        "t": "h3",
+        "x": "Cmdlet"
+      },
+      {
+        "t": "p",
+        "x": "Comando Verbo-Nombre que devuelve objetos .NET"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva."
+      },
+      {
+        "t": "h3",
+        "x": "cmp / jmp"
+      },
+      {
+        "t": "p",
+        "x": "Comparar ajustando flags / saltar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador."
+      },
+      {
+        "t": "h3",
+        "x": "CNAME"
+      },
+      {
+        "t": "p",
+        "x": "Alias que apunta un nombre a otro nombre canónico."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos."
+      },
+      {
+        "t": "h3",
+        "x": "COA"
+      },
+      {
+        "t": "p",
+        "x": "El adversario solo ve texto cifrado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 61 — Introducción al criptoanálisis."
+      },
+      {
+        "t": "h3",
+        "x": "Cobalt Strike"
+      },
+      {
+        "t": "p",
+        "x": "C2 comercial de referencia; Beacon y Malleable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 149 — Comunicaciones de comando y control (C2) del malware, Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "Cobertura"
+      },
+      {
+        "t": "p",
+        "x": "Alcance demostrado frente a comportamientos y fuentes definidos."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 4 clase(s): Clase 43 — Network Security Monitoring (NSM): fundamentos, Clase 162 — MITRE ATT&CK como lenguaje ofensivo, Clase 280 — Controles CIS, Clase 306 — Capstone: detección Blue Team end-to-end."
+      },
+      {
+        "t": "h3",
+        "x": "Cobertura de detección"
+      },
+      {
+        "t": "p",
+        "x": "Porcentaje de técnicas ejecutadas que generaron alerta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 161 — Red Team vs pentest: filosofía y objetivos."
+      },
+      {
+        "t": "h3",
+        "x": "CodeQL"
+      },
+      {
+        "t": "p",
+        "x": "Consultar el código como una base de datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 137 — Descubrimiento de vulnerabilidades en código."
+      },
+      {
+        "t": "h3",
+        "x": "Codicioso"
+      },
+      {
+        "t": "p",
+        "x": "Casa lo máximo y retrocede"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 19 — Expresiones regulares para análisis de logs y datos."
+      },
+      {
+        "t": "h3",
+        "x": "Codificación"
+      },
+      {
+        "t": "p",
+        "x": "Transformación reversible sin secreto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "Codificación de payload"
+      },
+      {
+        "t": "p",
+        "x": "%2e%2e%2f para saltar filtros de traversal"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 105 — Control de acceso roto: IDOR y path traversal."
+      },
+      {
+        "t": "h3",
+        "x": "Codificación de salida"
+      },
+      {
+        "t": "p",
+        "x": "Codificar el dato según su contexto; defensa primaria del XSS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 115 — Secure coding y defensa de aplicaciones web."
+      },
+      {
+        "t": "h3",
+        "x": "Código de estado"
+      },
+      {
+        "t": "p",
+        "x": "Número que resume el resultado de una respuesta HTTP."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna."
+      },
+      {
+        "t": "h3",
+        "x": "Código de respuesta"
+      },
+      {
+        "t": "p",
+        "x": "200, 403, 401… revelan la existencia y protección de una ruta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 90 — Mapeo, spidering y descubrimiento de contenido."
+      },
+      {
+        "t": "h3",
+        "x": "Colector"
+      },
+      {
+        "t": "p",
+        "x": "Servidor que recibe, almacena e indexa los flujos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 45 — NetFlow y análisis de metadatos de tráfico."
+      },
+      {
+        "t": "h3",
+        "x": "Colisión"
+      },
+      {
+        "t": "p",
+        "x": "Dos entradas distintas que producen el mismo hash"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 21 — Criptografía: conceptos fundamentales e intuición, Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades."
+      },
+      {
+        "t": "h3",
+        "x": "Colisión y firmas"
+      },
+      {
+        "t": "p",
+        "x": "Dos mensajes con el mismo digest comparten firma válida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 54 — Firmas digitales."
+      },
+      {
+        "t": "h3",
+        "x": "Collection"
+      },
+      {
+        "t": "p",
+        "x": "Reunir los datos dentro de la red objetivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 83 — Exfiltración de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Colocación de sensores"
+      },
+      {
+        "t": "p",
+        "x": "Dónde se observa el tráfico; determina la visibilidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 43 — Network Security Monitoring (NSM): fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Colorización"
+      },
+      {
+        "t": "p",
+        "x": "Reglas que pintan filas según una condición, para triaje visual"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 26 — Wireshark: captura y análisis de paquetes."
+      },
+      {
+        "t": "h3",
+        "x": "Comentario SQL"
+      },
+      {
+        "t": "p",
+        "x": "--, #, / /; corta el resto de la consulta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 91 — Inyección SQL: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Command and control (C2)"
+      },
+      {
+        "t": "p",
+        "x": "Canal por el que el malware recibe órdenes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 45 — NetFlow y análisis de metadatos de tráfico."
+      },
+      {
+        "t": "h3",
+        "x": "Commit"
+      },
+      {
+        "t": "p",
+        "x": "Snapshot inmutable del proyecto con hash único"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "commitcreds(preparekernelcred(0))"
+      },
+      {
+        "t": "p",
+        "x": "Patrón para darse root desde el kernel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 139 — Kernel exploitation: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "Comparación"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 345 — Trainers e instrumentación del cliente."
+      },
+      {
+        "t": "h3",
+        "x": "Comparación con =="
+      },
+      {
+        "t": "p",
+        "x": "Fuga por timing en etiquetas y tokens"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h3",
+        "x": "Comparación de estado"
+      },
+      {
+        "t": "p",
+        "x": "Diferencial antes/después que aísla la actividad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 144 — Análisis dinámico básico y sandboxing."
+      },
+      {
+        "t": "h3",
+        "x": "Comparación en tiempo constante"
+      },
+      {
+        "t": "p",
+        "x": "Recorre toda la longitud sin salir antes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 60 — Ataques criptográficos: padding oracle y timing."
+      },
+      {
+        "t": "h3",
+        "x": "comparedigest"
+      },
+      {
+        "t": "p",
+        "x": "Función de comparación segura en la stdlib de Python"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 52 — HMAC y autenticación de mensajes."
+      },
+      {
+        "t": "h3",
+        "x": "Comparer"
+      },
+      {
+        "t": "p",
+        "x": "Resalta diferencias entre dos respuestas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 88 — Burp Suite: configuración y flujo de trabajo."
+      },
+      {
+        "t": "h3",
+        "x": "Compartición (share)"
+      },
+      {
+        "t": "p",
+        "x": "Recurso publicado por SMB; puede contener secretos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 33 — Enumeración de servicios de red, Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP."
+      },
+      {
+        "t": "h3",
+        "x": "Compartimentación"
+      },
+      {
+        "t": "p",
+        "x": "Separación consistente para limitar correlación e impacto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 164 — Diseño de infraestructura de comando y control (C2), Clase 260 — OPSEC personal y anonimato."
+      },
+      {
+        "t": "h3",
+        "x": "Complejidad inútil"
+      },
+      {
+        "t": "p",
+        "x": "Endurecer reglas solo produce variantes predecibles"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 81 — Ataques a credenciales: fuerza bruta y password spraying."
+      },
+      {
+        "t": "h3",
+        "x": "Complementa el análisis"
+      },
+      {
+        "t": "p",
+        "x": "La emulación escala, no reemplaza el manual"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 158 — Emulación y unpacking automatizado."
+      },
+      {
+        "t": "h3",
+        "x": "Componente exportado"
+      },
+      {
+        "t": "p",
+        "x": "Punto de entrada accesible desde otras aplicaciones según manifiesto y permisos."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 155 — Malware en Android, Clase 261 — Seguridad de Android: arquitectura."
+      },
+      {
+        "t": "h3",
+        "x": "Componentes vulnerables"
+      },
+      {
+        "t": "p",
+        "x": "A06; heredar CVE de las dependencias"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 115 — Secure coding y defensa de aplicaciones web."
+      },
+      {
+        "t": "h3",
+        "x": "Compose"
+      },
+      {
+        "t": "p",
+        "x": "Orquestador declarativo multi-servicio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 22 — Docker y contenedores para laboratorios de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Comprensión"
+      },
+      {
+        "t": "p",
+        "x": "Expresión que construye una colección filtrando y transformando."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje."
+      },
+      {
+        "t": "h3",
+        "x": "Concatenación"
+      },
+      {
+        "t": "p",
+        "x": "Construir la consulta pegando entrada con texto; la causa raíz"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 91 — Inyección SQL: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Concentración"
+      },
+      {
+        "t": "p",
+        "x": "Dependencia común capaz de afectar múltiples servicios."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 284 — Gestión de riesgo de terceros y proveedores."
+      },
+      {
+        "t": "h3",
+        "x": "condition"
+      },
+      {
+        "t": "p",
+        "x": "Expresión booleana que dispara la regla"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "Conducta objetivo"
+      },
+      {
+        "t": "p",
+        "x": "Acción observable que reduce un escenario de riesgo."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 286 — Concienciación y cultura de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Confianza analítica"
+      },
+      {
+        "t": "p",
+        "x": "Juicio explicado sobre la solidez de una conclusión."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 249 — Fundamentos de OSINT."
+      },
+      {
+        "t": "h3",
+        "x": "Confirmación por tiempo"
+      },
+      {
+        "t": "p",
+        "x": "sleep/timeout para detectar sin ver la salida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 95 — Inyección de comandos del sistema operativo."
+      },
+      {
+        "t": "h3",
+        "x": "Conflicto"
+      },
+      {
+        "t": "p",
+        "x": "Choque de ediciones en la misma línea"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Confusión de algoritmos"
+      },
+      {
+        "t": "p",
+        "x": "Firmar HS256 con la clave pública RS256 como secreto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 103 — Ataques y seguridad de JWT."
+      },
+      {
+        "t": "h3",
+        "x": "Confusión de tipo"
+      },
+      {
+        "t": "p",
+        "x": "Enviar un objeto donde se espera una cadena"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 94 — Inyección NoSQL."
+      },
+      {
+        "t": "h3",
+        "x": "Confusión de tokens/scopes"
+      },
+      {
+        "t": "p",
+        "x": "Usar un token fuera de su propósito o audiencia"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect."
+      },
+      {
+        "t": "h3",
+        "x": "Confusión / difusión"
+      },
+      {
+        "t": "p",
+        "x": "Ocultar la relación con la clave / propagar cada bit de entrada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 47 — Cifrado simétrico: AES y modos de operación."
+      },
+      {
+        "t": "h3",
+        "x": "conn.log"
+      },
+      {
+        "t": "p",
+        "x": "Registro maestro: una línea por conexión con su 5-tupla y bytes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 44 — Zeek para análisis de red a gran escala."
+      },
+      {
+        "t": "h3",
+        "x": "Connect scan"
+      },
+      {
+        "t": "p",
+        "x": "Escaneo que completa el handshake TCP para detectar puertos abiertos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 16 — Python para seguridad: sockets y programación de red."
+      },
+      {
+        "t": "h3",
+        "x": "Connect scan (-sT)"
+      },
+      {
+        "t": "p",
+        "x": "Usa connect(); sin privilegios, pero visible en los logs"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 30 — Nmap: escaneo de puertos y tipos de escaneo, Clase 69 — Reconocimiento activo."
+      },
+      {
+        "t": "h3",
+        "x": "conntrack"
+      },
+      {
+        "t": "p",
+        "x": "Subsistema del kernel Linux que sigue el estado de las conexiones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "Conocido"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 347 — Rendering, visibilidad, occlusion y wallhack."
+      },
+      {
+        "t": "h3",
+        "x": "Consulta parametrizada"
+      },
+      {
+        "t": "p",
+        "x": "Marcadores + datos aparte; la BD no interpreta el dato"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 91 — Inyección SQL: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Contacto de emergencia"
+      },
+      {
+        "t": "p",
+        "x": "Persona a la que escalar un incidente durante el test"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 67 — Reglas de engagement, alcance y contratos."
+      },
+      {
+        "t": "h3",
+        "x": "contains / matches"
+      },
+      {
+        "t": "p",
+        "x": "Operadores de subcadena y de expresión regular"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "Contención"
+      },
+      {
+        "t": "p",
+        "x": "Dos dispositivos conducen una línea de manera incompatible."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 42 — Segmentación de red y arquitectura Zero Trust, Clase 268 — Análisis de hardware: UART, JTAG y SPI."
+      },
+      {
+        "t": "h3",
+        "x": "Contenedor"
+      },
+      {
+        "t": "p",
+        "x": "Instancia en ejecución de una imagen"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 22 — Docker y contenedores para laboratorios de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Contenedor (ISO/VHD)"
+      },
+      {
+        "t": "p",
+        "x": "Formato de disco cuyo contenido interno puede no heredar el MOTW"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Contenido completo"
+      },
+      {
+        "t": "p",
+        "x": "Captura íntegra de paquetes; máxima fidelidad, alto coste"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 43 — Network Security Monitoring (NSM): fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "content"
+      },
+      {
+        "t": "p",
+        "x": "Búsqueda de cadena literal; rápida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "Content discovery / dirbusting"
+      },
+      {
+        "t": "p",
+        "x": "Adivinar rutas no enlazadas con diccionarios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 90 — Mapeo, spidering y descubrimiento de contenido."
+      },
+      {
+        "t": "h3",
+        "x": "Content-Disposition"
+      },
+      {
+        "t": "p",
+        "x": "Forzar descarga en lugar de interpretación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 108 — Vulnerabilidades en carga de archivos."
+      },
+      {
+        "t": "h3",
+        "x": "Content-Length (CL)"
+      },
+      {
+        "t": "p",
+        "x": "Cabecera que indica la longitud del cuerpo en bytes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 112 — Web cache poisoning y HTTP request smuggling."
+      },
+      {
+        "t": "h3",
+        "x": "Content-Type"
+      },
+      {
+        "t": "p",
+        "x": "Cabecera puesta por el cliente; se falsea"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 108 — Vulnerabilidades en carga de archivos."
+      },
+      {
+        "t": "h3",
+        "x": "context"
+      },
+      {
+        "t": "p",
+        "x": "Vista de pwndbg con registros, pila y desensamblado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "Contexto"
+      },
+      {
+        "t": "p",
+        "x": "Alcance, autenticación y reglas usadas para explorar una aplicación."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 89 — OWASP ZAP, Clase 239 — DAST: análisis dinámico de aplicaciones."
+      },
+      {
+        "t": "h3",
+        "x": "Contexto conversacional"
+      },
+      {
+        "t": "p",
+        "x": "Publicaciones y respuestas necesarias para interpretar un mensaje."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 252 — OSINT en redes sociales."
+      },
+      {
+        "t": "h3",
+        "x": "Contexto de inyección"
+      },
+      {
+        "t": "p",
+        "x": "Dónde cae la entrada: HTML, atributo, script, URL"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 96 — Cross-Site Scripting (XSS) reflejado."
+      },
+      {
+        "t": "h3",
+        "x": "Contradicción"
+      },
+      {
+        "t": "p",
+        "x": "Evidencia que reduce la plausibilidad de una hipótesis de identidad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 250 — OSINT de personas."
+      },
+      {
+        "t": "h3",
+        "x": "Contramedida dinámica"
+      },
+      {
+        "t": "p",
+        "x": "El código acaba ejecutándose y ahí se observa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 135 — Ofuscación y técnicas anti-reversing."
+      },
+      {
+        "t": "h3",
+        "x": "Contraseña contextual"
+      },
+      {
+        "t": "p",
+        "x": "Empresa2024! y similares; cumplen la política pero son obvias"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 81 — Ataques a credenciales: fuerza bruta y password spraying."
+      },
+      {
+        "t": "h3",
+        "x": "Contrato"
+      },
+      {
+        "t": "p",
+        "x": "Descripción interoperable de operaciones y mensajes; no prueba autorización."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 247 — Seguridad de APIs en el ciclo de desarrollo."
+      },
+      {
+        "t": "h3",
+        "x": "Control compensatorio"
+      },
+      {
+        "t": "p",
+        "x": "Medida alternativa que reduce riesgo sin eliminar la causa."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 245 — Gestión de vulnerabilidades a escala."
+      },
+      {
+        "t": "h3",
+        "x": "Control de acceso roto"
+      },
+      {
+        "t": "p",
+        "x": "No verificar bien los permisos; A01 de OWASP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 105 — Control de acceso roto: IDOR y path traversal."
+      },
+      {
+        "t": "h3",
+        "x": "Control de flujo"
+      },
+      {
+        "t": "p",
+        "x": "Primitiva de fijar RIP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 138 — Desarrollo de exploits moderno."
+      },
+      {
+        "t": "h3",
+        "x": "Control de RIP"
+      },
+      {
+        "t": "p",
+        "x": "Objetivo: fijar la dirección a la que salta ret"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 119 — Buffer overflow en stack: teoría."
+      },
+      {
+        "t": "h3",
+        "x": "Control en el servidor"
+      },
+      {
+        "t": "p",
+        "x": "La autorización no se delega al cliente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 105 — Control de acceso roto: IDOR y path traversal."
+      },
+      {
+        "t": "h3",
+        "x": "Control-flow flattening"
+      },
+      {
+        "t": "p",
+        "x": "Aplana la lógica en una máquina de estados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 135 — Ofuscación y técnicas anti-reversing."
+      },
+      {
+        "t": "h3",
+        "x": "Convención de llamada"
+      },
+      {
+        "t": "p",
+        "x": "Contrato de paso de argumentos (System V)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria, Clase 117 — El stack, los registros y las convenciones de llamada."
+      },
+      {
+        "t": "h3",
+        "x": "Convenciones CARO"
+      },
+      {
+        "t": "p",
+        "x": "Estándar de nombres poco seguido por los vendors"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 141 — Introducción al malware: tipos y taxonomía."
+      },
+      {
+        "t": "h3",
+        "x": "Conversations"
+      },
+      {
+        "t": "p",
+        "x": "Estadística por pares de interlocutores (bytes, paquetes, duración)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "Cookie"
+      },
+      {
+        "t": "p",
+        "x": "Dato guardado por el navegador y reenviado al servidor."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna, Clase 102 — Gestión de sesiones y ataques asociados."
+      },
+      {
+        "t": "h3",
+        "x": "Cookies / autenticación"
+      },
+      {
+        "t": "p",
+        "x": "Contexto que -r preserva para atacar zonas logueadas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 93 — SQLMap."
+      },
+      {
+        "t": "h3",
+        "x": "Coordinación"
+      },
+      {
+        "t": "p",
+        "x": "Comportamiento conjunto que requiere más evidencia que contenido parecido."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 252 — OSINT en redes sociales."
+      },
+      {
+        "t": "h3",
+        "x": "Core"
+      },
+      {
+        "t": "p",
+        "x": "Taxonomía de resultados del CSF."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 279 — NIST Cybersecurity Framework."
+      },
+      {
+        "t": "h3",
+        "x": "Corpus semilla"
+      },
+      {
+        "t": "p",
+        "x": "Entradas válidas de ejemplo desde las que mutar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 136 — Fuzzing con AFL++ y libFuzzer."
+      },
+      {
+        "t": "h3",
+        "x": "Correlación"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP, Clase 355 — Telemetría para Game Security."
+      },
+      {
+        "t": "h3",
+        "x": "Corroboración"
+      },
+      {
+        "t": "p",
+        "x": "Apoyo mediante evidencia con origen suficientemente independiente."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 249 — Fundamentos de OSINT."
+      },
+      {
+        "t": "h3",
+        "x": "CORS"
+      },
+      {
+        "t": "p",
+        "x": "Mecanismo que relaja la SOP de forma controlada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution."
+      },
+      {
+        "t": "h3",
+        "x": "CPA"
+      },
+      {
+        "t": "p",
+        "x": "Puede elegir qué textos se cifran; exigencia mínima moderna"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 61 — Introducción al criptoanálisis."
+      },
+      {
+        "t": "h3",
+        "x": "CPE"
+      },
+      {
+        "t": "p",
+        "x": "Identificador normalizado de plataforma (cpe:/a:apache:tomcat:9.0.30)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 31 — Nmap: detección de servicios y fingerprinting de OS, Clase 69 — Reconocimiento activo."
+      },
+      {
+        "t": "h3",
+        "x": "CPE/CE"
+      },
+      {
+        "t": "p",
+        "x": "Desarrollo continuo requerido para mantener algunas credenciales."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 290 — Certificaciones y desarrollo de carrera."
+      },
+      {
+        "t": "h3",
+        "x": "cppcheck / clang / Semgrep"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas SAST por patrones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 137 — Descubrimiento de vulnerabilidades en código."
+      },
+      {
+        "t": "h3",
+        "x": "CPU"
+      },
+      {
+        "t": "p",
+        "x": "Unidad de procesamiento que ejecuta instrucciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria."
+      },
+      {
+        "t": "h3",
+        "x": "Crackeo offline"
+      },
+      {
+        "t": "p",
+        "x": "Prueba de contraseñas contra una captura, sin tocar la red"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Cracking"
+      },
+      {
+        "t": "p",
+        "x": "Recuperar la contraseña en claro a partir de su hash"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 80 — Cracking de contraseñas con John y Hashcat."
+      },
+      {
+        "t": "h3",
+        "x": "crackmapexec / NetExec"
+      },
+      {
+        "t": "p",
+        "x": "Valida credenciales y privilegios a escala en una subred"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP, Clase 78 — Movimiento lateral en la red."
+      },
+      {
+        "t": "h3",
+        "x": "crackmes.one"
+      },
+      {
+        "t": "p",
+        "x": "Repositorio de crackmes para practicar ingeniería inversa sobre binarios creados con ese propósito."
+      },
+      {
+        "t": "p",
+        "x": "Sitio oficial: crackmes.one."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "Crash"
+      },
+      {
+        "t": "p",
+        "x": "Fallo que suele indicar una corrupción de memoria explotable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 136 — Fuzzing con AFL++ y libFuzzer."
+      },
+      {
+        "t": "h3",
+        "x": "Crawler"
+      },
+      {
+        "t": "p",
+        "x": "Componente que descubre rutas y transiciones accesibles."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 239 — DAST: análisis dinámico de aplicaciones."
+      },
+      {
+        "t": "h3",
+        "x": "CreateRemoteThread"
+      },
+      {
+        "t": "p",
+        "x": "Import típico de inyección de código"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 143 — Análisis estático básico."
+      },
+      {
+        "t": "h3",
+        "x": "Crece hacia abajo"
+      },
+      {
+        "t": "p",
+        "x": "Apilar resta de RSP; desapilar le suma"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 117 — El stack, los registros y las convenciones de llamada."
+      },
+      {
+        "t": "h3",
+        "x": "Credencial efímera"
+      },
+      {
+        "t": "p",
+        "x": "Autorización de corta duración emitida para un contexto concreto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 241 — Secretos en el código y pre-commit hooks."
+      },
+      {
+        "t": "h3",
+        "x": "Credenciales por defecto"
+      },
+      {
+        "t": "p",
+        "x": "Vector de infección de IoT"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 154 — Malware en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Credential stuffing"
+      },
+      {
+        "t": "p",
+        "x": "Reutilizar credenciales filtradas de otras brechas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 81 — Ataques a credenciales: fuerza bruta y password spraying, Clase 101 — Fallos de autenticación y bypass."
+      },
+      {
+        "t": "h3",
+        "x": "CRIME / BREACH"
+      },
+      {
+        "t": "p",
+        "x": "Deducción de secretos mediante la compresión"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Criptoagilidad"
+      },
+      {
+        "t": "p",
+        "x": "Diseñar para poder cambiar de algoritmo sin rehacer el sistema"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 62 — Criptografía post-cuántica, Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h3",
+        "x": "Criptoanálisis"
+      },
+      {
+        "t": "p",
+        "x": "Estudio de cómo romper sistemas criptográficos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 61 — Introducción al criptoanálisis."
+      },
+      {
+        "t": "h3",
+        "x": "Criptoanálisis diferencial"
+      },
+      {
+        "t": "p",
+        "x": "Estudia la propagación de diferencias entre entradas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 61 — Introducción al criptoanálisis."
+      },
+      {
+        "t": "h3",
+        "x": "Criptoanálisis lineal"
+      },
+      {
+        "t": "p",
+        "x": "Busca aproximaciones lineales sesgadas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 61 — Introducción al criptoanálisis."
+      },
+      {
+        "t": "h3",
+        "x": "Criptografía"
+      },
+      {
+        "t": "p",
+        "x": "Ocultar el contenido del mensaje"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 64 — Esteganografía y ocultación de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Criptografía asimétrica"
+      },
+      {
+        "t": "p",
+        "x": "Par de claves: pública y privada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 46 — Historia y fundamentos de la criptografía."
+      },
+      {
+        "t": "h3",
+        "x": "Criptografía simétrica"
+      },
+      {
+        "t": "p",
+        "x": "La misma clave cifra y descifra"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 46 — Historia y fundamentos de la criptografía."
+      },
+      {
+        "t": "h3",
+        "x": "Criterio"
+      },
+      {
+        "t": "p",
+        "x": "Requisito contra el que se compara evidencia."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 285 — Auditoría de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "CRL"
+      },
+      {
+        "t": "p",
+        "x": "Lista de certificados revocados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "Cron job"
+      },
+      {
+        "t": "p",
+        "x": "Tarea programada; si es editable y la corre root, es escalada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 76 — Escalada de privilegios en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "cron / systemd timer"
+      },
+      {
+        "t": "p",
+        "x": "Reejecución programada en Linux"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 82 — Persistencia en sistemas comprometidos."
+      },
+      {
+        "t": "h3",
+        "x": "Cronolocalización"
+      },
+      {
+        "t": "p",
+        "x": "Inferencia de fecha o periodo de captura."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 253 — Geolocalización y análisis de imágenes."
+      },
+      {
+        "t": "h3",
+        "x": "Crown jewels"
+      },
+      {
+        "t": "p",
+        "x": "Activos críticos cuyo compromiso define el éxito del ejercicio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 161 — Red Team vs pentest: filosofía y objetivos."
+      },
+      {
+        "t": "h3",
+        "x": "crt.sh"
+      },
+      {
+        "t": "p",
+        "x": "Buscador de CT usado para enumerar subdominios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas."
+      },
+      {
+        "t": "h3",
+        "x": "Cryptominer"
+      },
+      {
+        "t": "p",
+        "x": "Malware que mina criptomoneda con recursos de la víctima"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 154 — Malware en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "CSP"
+      },
+      {
+        "t": "p",
+        "x": "Cabecera que restringe qué scripts puede ejecutar el navegador"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna, Clase 96 — Cross-Site Scripting (XSS) reflejado, Clase 97 — XSS almacenado y basado en DOM."
+      },
+      {
+        "t": "h3",
+        "x": "CSP / HSTS"
+      },
+      {
+        "t": "p",
+        "x": "Cabeceras que restringen scripts y fuerzan HTTPS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 115 — Secure coding y defensa de aplicaciones web."
+      },
+      {
+        "t": "h3",
+        "x": "CSPRNG"
+      },
+      {
+        "t": "p",
+        "x": "Generador apto para criptografía: impredecible hacia delante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG), Clase 102 — Gestión de sesiones y ataques asociados."
+      },
+      {
+        "t": "h3",
+        "x": "CSR"
+      },
+      {
+        "t": "p",
+        "x": "Petición de firma con la clave pública y los datos del sujeto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "CSRF"
+      },
+      {
+        "t": "p",
+        "x": "Forzar al navegador de la víctima a hacer una acción autenticada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 98 — Cross-Site Request Forgery (CSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "CSRF en APIs JSON"
+      },
+      {
+        "t": "p",
+        "x": "Posible si el endpoint acepta formularios o ignora el Content-Type"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 98 — Cross-Site Request Forgery (CSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "CTF — Capture The Flag"
+      },
+      {
+        "t": "p",
+        "x": "Competición de seguridad basada en retos y flags"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: capture the flag, ctf."
+      },
+      {
+        "t": "p",
+        "x": "Relacionados: Flag, Writeup, Jeopardy, Attack-Defense, KOTH — King of the Hill."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 140 — CTFs de pwn e ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "CTFtime"
+      },
+      {
+        "t": "p",
+        "x": "Directorio comunitario de eventos CTF, equipos, resultados y writeups; no es por sí mismo una ruta guiada."
+      },
+      {
+        "t": "p",
+        "x": "Sitio oficial: CTFtime."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "CTI"
+      },
+      {
+        "t": "p",
+        "x": "Cyber Threat Intelligence: información sobre actores, campañas y TTPs"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 163 — Emulación de adversarios."
+      },
+      {
+        "t": "h3",
+        "x": "CTID"
+      },
+      {
+        "t": "p",
+        "x": "Center for Threat-Informed Defense, impulsor de las micro-emulaciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 163 — Emulación de adversarios."
+      },
+      {
+        "t": "h3",
+        "x": "CTR"
+      },
+      {
+        "t": "p",
+        "x": "Cifra un contador para generar keystream; convierte AES en flujo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 47 — Cifrado simétrico: AES y modos de operación."
+      },
+      {
+        "t": "h3",
+        "x": "Cuantificador"
+      },
+      {
+        "t": "p",
+        "x": "Nº de repeticiones (*, +, ?, {n,m})"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 19 — Expresiones regulares para análisis de logs y datos."
+      },
+      {
+        "t": "h3",
+        "x": "Cuarta parte"
+      },
+      {
+        "t": "p",
+        "x": "Proveedor utilizado por el tercero."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 284 — Gestión de riesgo de terceros y proveedores."
+      },
+      {
+        "t": "h3",
+        "x": "Cuckoo / CAPE / Any.Run"
+      },
+      {
+        "t": "p",
+        "x": "Sandboxes de análisis de malware"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 144 — Análisis dinámico básico y sandboxing."
+      },
+      {
+        "t": "h3",
+        "x": "Cuerpo técnico"
+      },
+      {
+        "t": "p",
+        "x": "Sección para TI y desarrollo; hallazgos y remediación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 85 — Reporte profesional de pentest."
+      },
+      {
+        "t": "h3",
+        "x": "Culpa a la víctima"
+      },
+      {
+        "t": "p",
+        "x": "Enfoque que atribuye el fallo a la persona e ignora controles del sistema."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 256 — Fundamentos de ingeniería social."
+      },
+      {
+        "t": "h3",
+        "x": "Curva elíptica"
+      },
+      {
+        "t": "p",
+        "x": "Conjunto de puntos que cumplen y² = x³ + ax + b sobre un campo finito"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 50 — Criptografía de curva elíptica (ECC)."
+      },
+      {
+        "t": "h3",
+        "x": "Curvas NIST (P-256…)"
+      },
+      {
+        "t": "p",
+        "x": "Estándares extendidos; parámetros de origen discutido"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 50 — Criptografía de curva elíptica (ECC)."
+      },
+      {
+        "t": "h3",
+        "x": "Curve25519"
+      },
+      {
+        "t": "p",
+        "x": "Curva de Bernstein con parámetros verificablemente rígidos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 50 — Criptografía de curva elíptica (ECC)."
+      },
+      {
+        "t": "h3",
+        "x": "Custodia de credenciales"
+      },
+      {
+        "t": "p",
+        "x": "Responsabilidad de proteger y destruir lo extraído"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 74 — Meterpreter y post-explotación."
+      },
+      {
+        "t": "h3",
+        "x": "Cutter"
+      },
+      {
+        "t": "p",
+        "x": "GUI construida sobre rizin"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 132 — IDA Pro y radare2."
+      },
+      {
+        "t": "h3",
+        "x": "CVD"
+      },
+      {
+        "t": "p",
+        "x": "Divulgación coordinada de vulnerabilidades."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable, Clase 275 — Seguridad de dispositivos médicos."
+      },
+      {
+        "t": "h3",
+        "x": "CVE"
+      },
+      {
+        "t": "p",
+        "x": "Identificador público de una vulnerabilidad conocida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 22 — Docker y contenedores para laboratorios de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "CVSS"
+      },
+      {
+        "t": "p",
+        "x": "Puntuación que ayuda a fijar la recompensa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS, Clase 114 — Bug bounty: metodología y plataformas."
+      },
+      {
+        "t": "h3",
+        "x": "Cyber device"
+      },
+      {
+        "t": "p",
+        "x": "Categoría legal estadounidense definida por FD&C Act; no todo dispositivo mundial."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 275 — Seguridad de dispositivos médicos."
+      },
+      {
+        "t": "h3",
+        "x": "Cyber Kill Chain"
+      },
+      {
+        "t": "p",
+        "x": "Modelo lineal de fases de intrusión (Lockheed Martin)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 162 — MITRE ATT&CK como lenguaje ofensivo."
+      },
+      {
+        "t": "h3",
+        "x": "CyberChef"
+      },
+      {
+        "t": "p",
+        "x": "Herramienta web para encadenar operaciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "CyberDefenders"
+      },
+      {
+        "t": "p",
+        "x": "Cyber range orientado a investigaciones defensivas, SOC y DFIR."
+      },
+      {
+        "t": "p",
+        "x": "Sitio oficial: CyberDefenders."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "cyclic"
+      },
+      {
+        "t": "p",
+        "x": "Genera un patrón de De Bruijn para hallar offsets"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "cyclic -l"
+      },
+      {
+        "t": "p",
+        "x": "Calcula el offset a partir del valor en RIP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "CyLab Security Academy"
+      },
+      {
+        "t": "p",
+        "x": "Plataforma educativa gratuita de Carnegie Mellon que continúa el ecosistema de picoCTF."
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: picoctf, picoctf cylab."
+      },
+      {
+        "t": "p",
+        "x": "Sitio oficial: CyLab Security Academy."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h2",
+        "x": "D"
+      },
+      {
+        "t": "h3",
+        "x": "d (exponente privado)"
+      },
+      {
+        "t": "p",
+        "x": "Inverso de e módulo φ(n)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 49 — Cifrado asimétrico: RSA."
+      },
+      {
+        "t": "h3",
+        "x": "DAI"
+      },
+      {
+        "t": "p",
+        "x": "Dynamic ARP Inspection: valida respuestas ARP contra concesiones DHCP."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos, Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h3",
+        "x": "dangerouslySetInnerHTML"
+      },
+      {
+        "t": "p",
+        "x": "Desactiva el escape de React; punto caliente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 97 — XSS almacenado y basado en DOM."
+      },
+      {
+        "t": "h3",
+        "x": "Daño clínico"
+      },
+      {
+        "t": "p",
+        "x": "Consecuencia sobre paciente, diagnóstico, terapia o continuidad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 275 — Seguridad de dispositivos médicos."
+      },
+      {
+        "t": "h3",
+        "x": "DAST"
+      },
+      {
+        "t": "p",
+        "x": "Análisis dinámico de la aplicación en ejecución"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 115 — Secure coding y defensa de aplicaciones web."
+      },
+      {
+        "t": "h3",
+        "x": "Data"
+      },
+      {
+        "t": "p",
+        "x": "Información auxiliar confiable usada por las reglas."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 244 — Políticas como código con OPA."
+      },
+      {
+        "t": "h3",
+        "x": "Data flow"
+      },
+      {
+        "t": "p",
+        "x": "Seguir de dónde viene y a dónde va un valor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 133 — Análisis estático de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Data lineage"
+      },
+      {
+        "t": "p",
+        "x": "Procedencia y transformaciones de datos."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 293 — Envenenamiento de datos y modelos."
+      },
+      {
+        "t": "h3",
+        "x": "Data Protection class"
+      },
+      {
+        "t": "p",
+        "x": "Política que liga acceso a archivos con claves y estado del dispositivo."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 263 — Seguridad de iOS: arquitectura."
+      },
+      {
+        "t": "h3",
+        "x": "Data Source"
+      },
+      {
+        "t": "p",
+        "x": "Telemetría que permite observar una técnica"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 162 — MITRE ATT&CK como lenguaje ofensivo."
+      },
+      {
+        "t": "h3",
+        "x": "Dataset,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 360 — Capstone: incidente completo de Game Security."
+      },
+      {
+        "t": "h3",
+        "x": "Datasets"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 356 — Detección de aimbot y automatización por comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Datastore"
+      },
+      {
+        "t": "p",
+        "x": "Almacén de parámetros del módulo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 72 — Metasploit Framework: arquitectura y uso."
+      },
+      {
+        "t": "h3",
+        "x": "Dato contaminado (tainted)"
+      },
+      {
+        "t": "p",
+        "x": "Valor que procede de una fuente no confiable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 137 — Descubrimiento de vulnerabilidades en código."
+      },
+      {
+        "t": "h3",
+        "x": "Dato → información → inteligencia"
+      },
+      {
+        "t": "p",
+        "x": "Jerarquía de valor de la CTI"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 157 — Threat intelligence a partir de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Datos de sesión / flujo"
+      },
+      {
+        "t": "p",
+        "x": "Metadatos por conexión (5-tupla, bytes, duración); baratos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 43 — Network Security Monitoring (NSM): fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Datos de transacción"
+      },
+      {
+        "t": "p",
+        "x": "Resumen estructurado de la actividad; la aportación de Zeek a NSM"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 43 — Network Security Monitoring (NSM): fundamentos, Clase 44 — Zeek para análisis de red a gran escala."
+      },
+      {
+        "t": "h3",
+        "x": "Datos estadísticos"
+      },
+      {
+        "t": "p",
+        "x": "Descripción agregada de la forma del tráfico"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 43 — Network Security Monitoring (NSM): fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Datos sensibles hallados"
+      },
+      {
+        "t": "p",
+        "x": "Se documentan, no se descargan"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 67 — Reglas de engagement, alcance y contratos."
+      },
+      {
+        "t": "h3",
+        "x": "DBC"
+      },
+      {
+        "t": "p",
+        "x": "Descripción de señales y codificación de mensajes CAN."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 274 — Seguridad automotriz y bus CAN."
+      },
+      {
+        "t": "h3",
+        "x": "DBIR"
+      },
+      {
+        "t": "p",
+        "x": "Verizon Data Breach Investigations Report, informe anual de brechas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain."
+      },
+      {
+        "t": "h3",
+        "x": "dbnmap / dbimport"
+      },
+      {
+        "t": "p",
+        "x": "Integran el reconocimiento con la base de datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 72 — Metasploit Framework: arquitectura y uso."
+      },
+      {
+        "t": "h3",
+        "x": "Dead drop resolver"
+      },
+      {
+        "t": "p",
+        "x": "Config del C2 oculta en un sitio legítimo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 149 — Comunicaciones de comando y control (C2) del malware."
+      },
+      {
+        "t": "h3",
+        "x": "Deauth"
+      },
+      {
+        "t": "p",
+        "x": "Trama de gestión que expulsa a un cliente y fuerza reconexión"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Debian OpenSSL"
+      },
+      {
+        "t": "p",
+        "x": "Fallo que redujo el espacio de claves a 32 768"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG)."
+      },
+      {
+        "t": "h3",
+        "x": "Debrief"
+      },
+      {
+        "t": "p",
+        "x": "Explicación posterior que conecta señales, proceso y aprendizaje."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 258 — Campañas de phishing con GoPhish."
+      },
+      {
+        "t": "h3",
+        "x": "Decisión"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 350 — Triggerbot, macros, input automation y bots."
+      },
+      {
+        "t": "h3",
+        "x": "Decision log"
+      },
+      {
+        "t": "p",
+        "x": "Registro cronológico de opciones, responsables y fundamentos."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 307 — Capstone: respuesta a incidentes DFIR end-to-end."
+      },
+      {
+        "t": "h3",
+        "x": "Decode As"
+      },
+      {
+        "t": "p",
+        "x": "Forzar un disector concreto cuando el puerto no es el estándar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 26 — Wireshark: captura y análisis de paquetes."
+      },
+      {
+        "t": "h3",
+        "x": "Decoder"
+      },
+      {
+        "t": "p",
+        "x": "Codifica y descodifica (URL, Base64, hex, HTML)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 88 — Burp Suite: configuración y flujo de trabajo."
+      },
+      {
+        "t": "h3",
+        "x": "Decompilar"
+      },
+      {
+        "t": "p",
+        "x": "Reconstruir pseudo-C del código original"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 131 — Ghidra para ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "Decompiler"
+      },
+      {
+        "t": "p",
+        "x": "Vista de pseudo-C legible"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 131 — Ghidra para ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "Deconfliction"
+      },
+      {
+        "t": "p",
+        "x": "Proceso para distinguir una alerta del ejercicio de un incidente real"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 161 — Red Team vs pentest: filosofía y objetivos, Clase 163 — Emulación de adversarios, Clase 305 — Capstone: operación Red Team end-to-end."
+      },
+      {
+        "t": "h3",
+        "x": "Deep link"
+      },
+      {
+        "t": "p",
+        "x": "URI que puede activar una ruta o componente de la aplicación."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 262 — Pentest de aplicaciones Android."
+      },
+      {
+        "t": "h3",
+        "x": "Deepfake"
+      },
+      {
+        "t": "p",
+        "x": "Medio sintético o manipulado que imita atributos humanos."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 299 — IA ofensiva y deepfakes."
+      },
+      {
+        "t": "h3",
+        "x": "Defensa"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 353 — Arquitecturas Anti-Cheat."
+      },
+      {
+        "t": "h3",
+        "x": "Defensa en profundidad"
+      },
+      {
+        "t": "p",
+        "x": "AEAD + error único + tiempo constante + límites"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 60 — Ataques criptográficos: padding oracle y timing."
+      },
+      {
+        "t": "h3",
+        "x": "Defensa por vector"
+      },
+      {
+        "t": "p",
+        "x": "Cada mecanismo se protege de forma específica"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution."
+      },
+      {
+        "t": "h3",
+        "x": "defusedxml"
+      },
+      {
+        "t": "p",
+        "x": "Librería Python segura frente a XXE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 100 — XML External Entities (XXE)."
+      },
+      {
+        "t": "h3",
+        "x": "DEK"
+      },
+      {
+        "t": "p",
+        "x": "Clave de datos que cifra el contenido; se guarda cifrada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 63 — Gestión de secretos: Vault y KMS."
+      },
+      {
+        "t": "h3",
+        "x": "Demodulación"
+      },
+      {
+        "t": "p",
+        "x": "Recuperación de símbolos o información desde una portadora modulada."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 269 — Radio definida por software (SDR)."
+      },
+      {
+        "t": "h3",
+        "x": "Demostración"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 347 — Rendering, visibilidad, occlusion y wallhack."
+      },
+      {
+        "t": "h3",
+        "x": "Denegar por defecto"
+      },
+      {
+        "t": "p",
+        "x": "El acceso se concede explícitamente, nunca se asume"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 105 — Control de acceso roto: IDOR y path traversal."
+      },
+      {
+        "t": "h3",
+        "x": "DEP / NX"
+      },
+      {
+        "t": "p",
+        "x": "Marca los datos como no ejecutables (bit NX)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 119 — Buffer overflow en stack: teoría, Clase 121 — Escritura de shellcode, Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE."
+      },
+      {
+        "t": "h3",
+        "x": "Dependencia del motor"
+      },
+      {
+        "t": "p",
+        "x": "Las funciones OOB y de tiempo varían por base de datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 91 — Inyección SQL: fundamentos, Clase 92 — Inyección SQL avanzada y ciega (blind)."
+      },
+      {
+        "t": "h3",
+        "x": "Dependencia externa"
+      },
+      {
+        "t": "p",
+        "x": "Servicio de un tercero que soporta una función de la organización."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 251 — OSINT de empresas y dominios."
+      },
+      {
+        "t": "h3",
+        "x": "Dependencia transitiva"
+      },
+      {
+        "t": "p",
+        "x": "Componente incorporado por otra dependencia, no declarado directamente."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 240 — SCA: dependencias y riesgo de terceros."
+      },
+      {
+        "t": "h3",
+        "x": "Depurar cadenas ROP"
+      },
+      {
+        "t": "p",
+        "x": "Avanzar con stepi viendo cada salto y registro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 124 — Return-Oriented Programming (ROP)."
+      },
+      {
+        "t": "h3",
+        "x": "Derrota a NX"
+      },
+      {
+        "t": "p",
+        "x": "Reutiliza código ya ejecutable; no inyecta nada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 124 — Return-Oriented Programming (ROP)."
+      },
+      {
+        "t": "h3",
+        "x": "DES"
+      },
+      {
+        "t": "p",
+        "x": "Cifrado de los setenta, endurecido contra diferencial en secreto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 61 — Introducción al criptoanálisis."
+      },
+      {
+        "t": "h3",
+        "x": "Desarrollo de exploits"
+      },
+      {
+        "t": "p",
+        "x": "Convertir un crash en un exploit fiable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 138 — Desarrollo de exploits moderno."
+      },
+      {
+        "t": "h3",
+        "x": "Descarrilamiento"
+      },
+      {
+        "t": "p",
+        "x": "Interpretar datos como instrucciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 133 — Análisis estático de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Descarte (drop)"
+      },
+      {
+        "t": "p",
+        "x": "Paquete perdido por saturación del buffer de captura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 28 — tcpdump y captura de tráfico en línea de comandos."
+      },
+      {
+        "t": "h3",
+        "x": "Descifrador gratuito"
+      },
+      {
+        "t": "p",
+        "x": "Existe solo si el ransomware tuvo un fallo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 150 — Ransomware: anatomía y análisis."
+      },
+      {
+        "t": "h3",
+        "x": "Descontextualización"
+      },
+      {
+        "t": "p",
+        "x": "Uso de material auténtico con fecha, lugar o significado incorrecto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 252 — OSINT en redes sociales."
+      },
+      {
+        "t": "h3",
+        "x": "Descubrimiento de hosts"
+      },
+      {
+        "t": "p",
+        "x": "Determinar qué direcciones están vivas (-sn)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 69 — Reconocimiento activo."
+      },
+      {
+        "t": "h3",
+        "x": "Descubrimiento de parámetros"
+      },
+      {
+        "t": "p",
+        "x": "Encontrar campos de entrada no documentados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 90 — Mapeo, spidering y descubrimiento de contenido."
+      },
+      {
+        "t": "h3",
+        "x": "Descubrimiento de vulnerabilidades"
+      },
+      {
+        "t": "p",
+        "x": "Encontrar fallos analizando el código"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 137 — Descubrimiento de vulnerabilidades en código."
+      },
+      {
+        "t": "h3",
+        "x": "Desempaquetado en memoria"
+      },
+      {
+        "t": "p",
+        "x": "El binario revela su código real al ejecutarse"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 134 — Análisis dinámico y debugging de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Desensamblado lineal"
+      },
+      {
+        "t": "p",
+        "x": "Recorre los bytes en orden; se descarrila con datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 133 — Análisis estático de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Desensamblado recursivo"
+      },
+      {
+        "t": "p",
+        "x": "Sigue el flujo de control; pierde saltos indirectos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 133 — Análisis estático de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Desensamblar"
+      },
+      {
+        "t": "p",
+        "x": "Mostrar el ensamblador del binario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 131 — Ghidra para ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "Deserialización"
+      },
+      {
+        "t": "p",
+        "x": "Reconstruir el objeto a partir de los bytes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 106 — Deserialización insegura."
+      },
+      {
+        "t": "h3",
+        "x": "Deserialización insegura"
+      },
+      {
+        "t": "p",
+        "x": "Reconstruir datos del usuario que ejecutan código"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 106 — Deserialización insegura."
+      },
+      {
+        "t": "h3",
+        "x": "Deshabilitar AMSI"
+      },
+      {
+        "t": "p",
+        "x": "Intento del malware de cegar la inspección; es un IOC"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 153 — Análisis de malware en scripts: PowerShell y JavaScript."
+      },
+      {
+        "t": "h3",
+        "x": "Deshabilitar DTD"
+      },
+      {
+        "t": "p",
+        "x": "La defensa: apagar entidades externas y DOCTYPE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 100 — XML External Entities (XXE)."
+      },
+      {
+        "t": "h3",
+        "x": "Desofuscación en lote"
+      },
+      {
+        "t": "p",
+        "x": "Aplicar la rutina de descifrado a muchas cadenas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 146 — Análisis con IDA y Ghidra aplicado a malware."
+      },
+      {
+        "t": "h3",
+        "x": "Desofuscación segura"
+      },
+      {
+        "t": "p",
+        "x": "Imprimir en vez de ejecutar cada capa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 153 — Análisis de malware en scripts: PowerShell y JavaScript."
+      },
+      {
+        "t": "h3",
+        "x": "Detección de funciones"
+      },
+      {
+        "t": "p",
+        "x": "Reconocer límites de función en un binario stripped"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 133 — Análisis estático de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Detección de patrones"
+      },
+      {
+        "t": "p",
+        "x": "Fallos masivos por IP o accesos geográficamente imposibles"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 81 — Ataques a credenciales: fuerza bruta y password spraying."
+      },
+      {
+        "t": "h3",
+        "x": "Detección de versión (-sV)"
+      },
+      {
+        "t": "p",
+        "x": "Identifica servicio y versión exactos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 69 — Reconocimiento activo."
+      },
+      {
+        "t": "h3",
+        "x": "Detección esperada"
+      },
+      {
+        "t": "p",
+        "x": "Evento que un TTP debería generar y quién debería verlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 163 — Emulación de adversarios."
+      },
+      {
+        "t": "h3",
+        "x": "Detección por comportamiento"
+      },
+      {
+        "t": "p",
+        "x": "Basada en qué se hace, no en qué fichero hay"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "Detección por familiaridad"
+      },
+      {
+        "t": "p",
+        "x": "El AV caza patrones conocidos, no \"maldad\""
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 75 — msfvenom: generación de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Detección por indicadores"
+      },
+      {
+        "t": "p",
+        "x": "Reglas y firmas sobre lo conocido; reactiva"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 43 — Network Security Monitoring (NSM): fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Detección temprana"
+      },
+      {
+        "t": "p",
+        "x": "Cazar la intrusión antes del cifrado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 150 — Ransomware: anatomía y análisis."
+      },
+      {
+        "t": "h3",
+        "x": "Detonar"
+      },
+      {
+        "t": "p",
+        "x": "Ejecutar la muestra para observar su comportamiento"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 142 — Laboratorio seguro de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "DEX"
+      },
+      {
+        "t": "p",
+        "x": "Bytecode ejecutado por Android Runtime."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 265 — Ingeniería inversa de aplicaciones móviles."
+      },
+      {
+        "t": "h3",
+        "x": "DFD"
+      },
+      {
+        "t": "p",
+        "x": "Representación de entidades, procesos, almacenes y flujos de datos."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 237 — Modelado de amenazas: STRIDE y DREAD."
+      },
+      {
+        "t": "h3",
+        "x": "DFIR — Digital Forensics and Incident Response"
+      },
+      {
+        "t": "p",
+        "x": "Disciplina que combina preservación y análisis forense con contención, erradicación, recuperación y aprendizaje de incidentes."
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: dfir."
+      },
+      {
+        "t": "p",
+        "x": "Relacionados: Triage, IOC — Indicador de compromiso, RCA — Análisis de causa raíz."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "DGA"
+      },
+      {
+        "t": "p",
+        "x": "Algoritmo que genera miles de dominios por día"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 149 — Comunicaciones de comando y control (C2) del malware."
+      },
+      {
+        "t": "h3",
+        "x": "DH estático"
+      },
+      {
+        "t": "p",
+        "x": "Secreto fijo reutilizado; sin forward secrecy"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 53 — Intercambio de claves: Diffie-Hellman."
+      },
+      {
+        "t": "h3",
+        "x": "DHCP"
+      },
+      {
+        "t": "p",
+        "x": "Protocolo de asignación automática de direcciones y parámetros de red."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos."
+      },
+      {
+        "t": "h3",
+        "x": "DHCP snooping"
+      },
+      {
+        "t": "p",
+        "x": "Control de switch que solo confía en puertos DHCP autorizados."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos."
+      },
+      {
+        "t": "h3",
+        "x": "DHE / ECDHE"
+      },
+      {
+        "t": "p",
+        "x": "Diffie-Hellman efímero: par nuevo por sesión"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 53 — Intercambio de claves: Diffie-Hellman."
+      },
+      {
+        "t": "h3",
+        "x": "Diamond Model"
+      },
+      {
+        "t": "p",
+        "x": "Análisis de intrusión por adversario, capacidad, infraestructura y víctima"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model, Clase 157 — Threat intelligence a partir de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Diccionario"
+      },
+      {
+        "t": "p",
+        "x": "Tokens del formato que el fuzzer combina"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 136 — Fuzzing con AFL++ y libFuzzer."
+      },
+      {
+        "t": "h3",
+        "x": "dict"
+      },
+      {
+        "t": "p",
+        "x": "Mapa clave-valor con acceso rápido."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje."
+      },
+      {
+        "t": "h3",
+        "x": "DIE / PEiD"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas que identifican el packer"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 147 — Ofuscación, packing y unpacking."
+      },
+      {
+        "t": "h3",
+        "x": "Diferencias Linux/Windows"
+      },
+      {
+        "t": "p",
+        "x": "Comandos y sintaxis distintos según el SO"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 95 — Inyección de comandos del sistema operativo."
+      },
+      {
+        "t": "h3",
+        "x": "Diffie-Hellman"
+      },
+      {
+        "t": "p",
+        "x": "Acuerdo de clave secreta mediante mensajes públicos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 53 — Intercambio de claves: Diffie-Hellman."
+      },
+      {
+        "t": "h3",
+        "x": "Digest"
+      },
+      {
+        "t": "p",
+        "x": "Identificador criptográfico del contenido exacto de una imagen."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades, Clase 243 — Imágenes y contenedores seguros en el pipeline."
+      },
+      {
+        "t": "h3",
+        "x": "DigiNotar"
+      },
+      {
+        "t": "p",
+        "x": "CA comprometida en 2011; caso canónico del fallo del modelo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "Dirección"
+      },
+      {
+        "t": "p",
+        "x": "Necesita impacto de negocio y riesgo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 160 — Reporte de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Dirección de red"
+      },
+      {
+        "t": "p",
+        "x": "Primera dirección del bloque; identifica el segmento."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 14 — Direccionamiento IP y subnetting."
+      },
+      {
+        "t": "h3",
+        "x": "Dirección de retorno"
+      },
+      {
+        "t": "p",
+        "x": "Valor que ret carga en RIP; objetivo del overflow"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria, Clase 117 — El stack, los registros y las convenciones de llamada."
+      },
+      {
+        "t": "h3",
+        "x": "Dirección privada"
+      },
+      {
+        "t": "p",
+        "x": "Dirección que rota para reducir seguimiento, con límites."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 271 — Seguridad de Bluetooth y BLE."
+      },
+      {
+        "t": "h3",
+        "x": "Directorio .git expuesto"
+      },
+      {
+        "t": "p",
+        "x": "Permite descargar el código fuente completo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 90 — Mapeo, spidering y descubrimiento de contenido."
+      },
+      {
+        "t": "h3",
+        "x": "Dirigido por eventos"
+      },
+      {
+        "t": "p",
+        "x": "Arquitectura en que cada actividad dispara un evento programable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 44 — Zeek para análisis de red a gran escala."
+      },
+      {
+        "t": "h3",
+        "x": "Dirigido por objetivos"
+      },
+      {
+        "t": "p",
+        "x": "Buscar responder una pregunta, no leer todo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 146 — Análisis con IDA y Ghidra aplicado a malware."
+      },
+      {
+        "t": "h3",
+        "x": "Disclosure"
+      },
+      {
+        "t": "p",
+        "x": "Revelación no autorizada de información (rompe confidencialidad)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Disector"
+      },
+      {
+        "t": "p",
+        "x": "Módulo que interpreta los bytes de un protocolo como campos con nombre"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 26 — Wireshark: captura y análisis de paquetes."
+      },
+      {
+        "t": "h3",
+        "x": "Diseño seguro"
+      },
+      {
+        "t": "p",
+        "x": "Modelar amenazas antes de programar (A04)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 115 — Secure coding y defensa de aplicaciones web."
+      },
+      {
+        "t": "h3",
+        "x": "Distroless"
+      },
+      {
+        "t": "p",
+        "x": "Imagen de runtime sin distribución de propósito general; no implica invulnerabilidad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 243 — Imágenes y contenedores seguros en el pipeline."
+      },
+      {
+        "t": "h3",
+        "x": "Divulgación responsable"
+      },
+      {
+        "t": "p",
+        "x": "Reportar en privado y dar tiempo a corregir"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 114 — Bug bounty: metodología y plataformas."
+      },
+      {
+        "t": "h3",
+        "x": "DKIM"
+      },
+      {
+        "t": "p",
+        "x": "Firma criptográfica del correo que prueba que no se alteró en tránsito"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "DKOM"
+      },
+      {
+        "t": "p",
+        "x": "Modificar directamente las estructuras del kernel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 151 — Rootkits y bootkits."
+      },
+      {
+        "t": "h3",
+        "x": "DLL hijacking"
+      },
+      {
+        "t": "p",
+        "x": "Cargar una DLL maliciosa desde una ubicación escribible"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 77 — Escalada de privilegios en Windows."
+      },
+      {
+        "t": "h3",
+        "x": "DLP"
+      },
+      {
+        "t": "p",
+        "x": "Inspección de contenido para detectar datos sensibles"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 83 — Exfiltración de datos."
+      },
+      {
+        "t": "h3",
+        "x": "DMARC"
+      },
+      {
+        "t": "p",
+        "x": "Política que indica al receptor qué hacer si SPF o DKIM fallan"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "DMZ"
+      },
+      {
+        "t": "p",
+        "x": "Zona aislada para los servicios expuestos a Internet"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 42 — Segmentación de red y arquitectura Zero Trust."
+      },
+      {
+        "t": "h3",
+        "x": "DNAT"
+      },
+      {
+        "t": "p",
+        "x": "Reescribe la dirección de destino (port forwarding)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 37 — Proxies, NAT y pivoting de red."
+      },
+      {
+        "t": "h3",
+        "x": "DNS"
+      },
+      {
+        "t": "p",
+        "x": "Servicio que traduce nombres de dominio a direcciones IP."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos."
+      },
+      {
+        "t": "h3",
+        "x": "DNS rebinding"
+      },
+      {
+        "t": "p",
+        "x": "Un dominio que resuelve a una IP interna"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 99 — Server-Side Request Forgery (SSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "DNS tunneling"
+      },
+      {
+        "t": "p",
+        "x": "Codificar datos en los nombres para crear un canal encubierto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling, Clase 149 — Comunicaciones de comando y control (C2) del malware."
+      },
+      {
+        "t": "h3",
+        "x": "DNSKEY / RRSIG / DS"
+      },
+      {
+        "t": "p",
+        "x": "Clave, firma y enlace de confianza de DNSSEC"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling."
+      },
+      {
+        "t": "h3",
+        "x": "DNSSEC"
+      },
+      {
+        "t": "p",
+        "x": "Firma de registros: aporta integridad y autenticidad, no confidencialidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos, Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling."
+      },
+      {
+        "t": "h3",
+        "x": "Doble control"
+      },
+      {
+        "t": "p",
+        "x": "Participación de dos autorizadores en una acción crítica."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 259 — Defensa contra la ingeniería social."
+      },
+      {
+        "t": "h3",
+        "x": "Doble extensión"
+      },
+      {
+        "t": "p",
+        "x": "archivo.php.jpg en servidores mal configurados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 108 — Vulnerabilidades en carga de archivos."
+      },
+      {
+        "t": "h3",
+        "x": "Doble extorsión"
+      },
+      {
+        "t": "p",
+        "x": "Exfiltrar y amenazar con publicar además de cifrar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 150 — Ransomware: anatomía y análisis."
+      },
+      {
+        "t": "h3",
+        "x": "Doble pivote"
+      },
+      {
+        "t": "p",
+        "x": "Encadenar dos saltos para redes doblemente segmentadas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 79 — Pivoting y reenvío de puertos."
+      },
+      {
+        "t": "h3",
+        "x": "Dockerfile"
+      },
+      {
+        "t": "p",
+        "x": "Receta declarativa para construir una imagen"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 22 — Docker y contenedores para laboratorios de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Documento malicioso (maldoc)"
+      },
+      {
+        "t": "p",
+        "x": "Documento que contiene y ejecuta código"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 152 — Análisis de documentos maliciosos: macros y PDF."
+      },
+      {
+        "t": "h3",
+        "x": "DoH"
+      },
+      {
+        "t": "p",
+        "x": "DNS over HTTPS; cifra y se mezcla con el tráfico web del 443"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling."
+      },
+      {
+        "t": "h3",
+        "x": "DoH / DoT"
+      },
+      {
+        "t": "p",
+        "x": "DNS cifrado sobre HTTPS o TLS para proteger la confidencialidad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos."
+      },
+      {
+        "t": "h3",
+        "x": "DOM Invader"
+      },
+      {
+        "t": "p",
+        "x": "Herramienta de Burp para sources, sinks y gadgets"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution."
+      },
+      {
+        "t": "h3",
+        "x": "DOM XSS"
+      },
+      {
+        "t": "p",
+        "x": "Vulnerabilidad enteramente en el JavaScript del cliente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 97 — XSS almacenado y basado en DOM."
+      },
+      {
+        "t": "h3",
+        "x": "Domain fronting"
+      },
+      {
+        "t": "p",
+        "x": "Ocultar el destino real tras el SNI de un CDN legítimo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 164 — Diseño de infraestructura de comando y control (C2)."
+      },
+      {
+        "t": "h3",
+        "x": "Dominio recién registrado"
+      },
+      {
+        "t": "p",
+        "x": "Señal frecuente de infraestructura maliciosa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling."
+      },
+      {
+        "t": "h3",
+        "x": "DOMPurify"
+      },
+      {
+        "t": "p",
+        "x": "Librería estándar de sanitización de HTML"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 97 — XSS almacenado y basado en DOM."
+      },
+      {
+        "t": "h3",
+        "x": "DORA"
+      },
+      {
+        "t": "p",
+        "x": "Discover, Offer, Request, Acknowledge: el intercambio DHCP."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos."
+      },
+      {
+        "t": "h3",
+        "x": "DoS / DDoS"
+      },
+      {
+        "t": "p",
+        "x": "Denegación de servicio (distribuida): ataque contra la disponibilidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "DOS header / MZ"
+      },
+      {
+        "t": "p",
+        "x": "Cabecera inicial con los bytes mágicos MZ"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 145 — El formato PE de Windows."
+      },
+      {
+        "t": "h3",
+        "x": "DoT"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling, Clase 348 — Matemática de un aimbot."
+      },
+      {
+        "t": "h3",
+        "x": "Double free"
+      },
+      {
+        "t": "p",
+        "x": "Liberar el mismo chunk dos veces"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 127 — Heap: use-after-free y double free."
+      },
+      {
+        "t": "h3",
+        "x": "Double tagging"
+      },
+      {
+        "t": "p",
+        "x": "Insertar dos etiquetas 802.1Q para alcanzar otra VLAN"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h3",
+        "x": "Downgrade"
+      },
+      {
+        "t": "p",
+        "x": "Forzar un protocolo o cifrado más débil"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 40 — Man-in-the-Middle: técnicas y defensa, Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Download cradle"
+      },
+      {
+        "t": "p",
+        "x": "Descarga y ejecución en memoria de un payload, típica de PowerShell"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 163 — Emulación de adversarios."
+      },
+      {
+        "t": "h3",
+        "x": "Downloader / dropper"
+      },
+      {
+        "t": "p",
+        "x": "Descarga / deposita la carga maliciosa real"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 141 — Introducción al malware: tipos y taxonomía."
+      },
+      {
+        "t": "h3",
+        "x": "DPIA"
+      },
+      {
+        "t": "p",
+        "x": "Evaluación estructurada de impacto de privacidad según aplicabilidad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 289 — Privacidad y protección de datos."
+      },
+      {
+        "t": "h3",
+        "x": "DRBG"
+      },
+      {
+        "t": "p",
+        "x": "Generador determinista normalizado (NIST SP 800-90A)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG)."
+      },
+      {
+        "t": "h3",
+        "x": "Drift,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 358 — Machine Learning aplicado a Anti-Cheat."
+      },
+      {
+        "t": "h3",
+        "x": "Driver"
+      },
+      {
+        "t": "p",
+        "x": "Mayor fuente de bugs de kernel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 139 — Kernel exploitation: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "DROP vs. REJECT"
+      },
+      {
+        "t": "p",
+        "x": "Descartar en silencio o responder con un error explícito"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "DSE / HVCI"
+      },
+      {
+        "t": "p",
+        "x": "Firma de drivers / integridad de código por hipervisor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 151 — Rootkits y bootkits."
+      },
+      {
+        "t": "h3",
+        "x": "DTD"
+      },
+      {
+        "t": "p",
+        "x": "Definición de tipo de documento; donde se declaran entidades"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 100 — XML External Entities (XXE)."
+      },
+      {
+        "t": "h3",
+        "x": "DTD externa maliciosa"
+      },
+      {
+        "t": "p",
+        "x": "Cargada del servidor del atacante para exfiltrar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 100 — XML External Entities (XXE)."
+      },
+      {
+        "t": "h3",
+        "x": "DTP"
+      },
+      {
+        "t": "p",
+        "x": "Protocolo de negociación de trunk; conviene desactivarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h3",
+        "x": "DualECDRBG"
+      },
+      {
+        "t": "p",
+        "x": "Generador retirado por sospecha de puerta trasera"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 50 — Criptografía de curva elíptica (ECC)."
+      },
+      {
+        "t": "h3",
+        "x": "Dueño de riesgo"
+      },
+      {
+        "t": "p",
+        "x": "Persona con autoridad para tratar o aceptar un riesgo dentro de límites."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 276 — Gobernanza de la seguridad de la información."
+      },
+      {
+        "t": "h3",
+        "x": "Dump de memoria"
+      },
+      {
+        "t": "p",
+        "x": "Capturar el código ya desempaquetado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 134 — Análisis dinámico y debugging de binarios, Clase 147 — Ofuscación, packing y unpacking."
+      },
+      {
+        "t": "h3",
+        "x": "Dup ACK"
+      },
+      {
+        "t": "p",
+        "x": "ACK repetido que señala un hueco en la secuencia recibida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "Duplicado"
+      },
+      {
+        "t": "p",
+        "x": "Bug ya reportado; no se recompensa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 114 — Bug bounty: metodología y plataformas."
+      },
+      {
+        "t": "h3",
+        "x": "DV / OV / EV"
+      },
+      {
+        "t": "p",
+        "x": "Niveles de validación: dominio, organización, extendida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "DVWA"
+      },
+      {
+        "t": "p",
+        "x": "Damn Vulnerable Web Application, lab de práctica"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red, Clase 22 — Docker y contenedores para laboratorios de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Dynamic forwarding (-D)"
+      },
+      {
+        "t": "p",
+        "x": "Proxy SOCKS: acceso a toda la subred por un túnel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 79 — Pivoting y reenvío de puertos."
+      },
+      {
+        "t": "h2",
+        "x": "E"
+      },
+      {
+        "t": "h3",
+        "x": "e (exponente público)"
+      },
+      {
+        "t": "p",
+        "x": "Coprimo con φ(n); habitualmente 65537"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 49 — Cifrado asimétrico: RSA."
+      },
+      {
+        "t": "h3",
+        "x": "ECB"
+      },
+      {
+        "t": "p",
+        "x": "Cada bloque por separado; filtra la estructura. No usar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 47 — Cifrado simétrico: AES y modos de operación."
+      },
+      {
+        "t": "h3",
+        "x": "ECC"
+      },
+      {
+        "t": "p",
+        "x": "Criptografía de curva elíptica; misma seguridad con claves más pequeñas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 21 — Criptografía: conceptos fundamentales e intuición."
+      },
+      {
+        "t": "h3",
+        "x": "ECDLP"
+      },
+      {
+        "t": "p",
+        "x": "Hallar k conocidos G y k·G; base de la seguridad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 50 — Criptografía de curva elíptica (ECC)."
+      },
+      {
+        "t": "h3",
+        "x": "ECDSA"
+      },
+      {
+        "t": "p",
+        "x": "Firma sobre curvas NIST; el nonce filtrado revela la clave"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 50 — Criptografía de curva elíptica (ECC), Clase 54 — Firmas digitales."
+      },
+      {
+        "t": "h3",
+        "x": "Economía,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 341 — Introducción a Game Security y modelo de amenazas."
+      },
+      {
+        "t": "h3",
+        "x": "ECS"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 342 — Arquitectura de videojuegos desde la perspectiva de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "ECU"
+      },
+      {
+        "t": "p",
+        "x": "Unidad electrónica que controla una función vehicular."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 274 — Seguridad automotriz y bus CAN."
+      },
+      {
+        "t": "h3",
+        "x": "Ed25519"
+      },
+      {
+        "t": "p",
+        "x": "Firma con nonce determinista; elimina ese riesgo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 50 — Criptografía de curva elíptica (ECC), Clase 54 — Firmas digitales."
+      },
+      {
+        "t": "h3",
+        "x": "Edición Community"
+      },
+      {
+        "t": "p",
+        "x": "Versión gratuita con Intruder limitado en velocidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 88 — Burp Suite: configuración y flujo de trabajo."
+      },
+      {
+        "t": "h3",
+        "x": "EDR"
+      },
+      {
+        "t": "p",
+        "x": "Endpoint Detection and Response: detección y respuesta en el host"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad, Clase 23 — Sistemas operativos: procesos, memoria y syscalls, Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "Efecto avalancha"
+      },
+      {
+        "t": "p",
+        "x": "Un cambio mínimo en la entrada altera medio hash de salida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 21 — Criptografía: conceptos fundamentales e intuición, Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades."
+      },
+      {
+        "t": "h3",
+        "x": "Efecto físico"
+      },
+      {
+        "t": "p",
+        "x": "Cambio sobre entorno o seguridad causado por el producto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 266 — Seguridad de IoT: panorama y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Egress filtering"
+      },
+      {
+        "t": "p",
+        "x": "Restringir el tráfico saliente; la defensa más eficaz"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 83 — Exfiltración de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Ejecución en memoria"
+      },
+      {
+        "t": "p",
+        "x": "No escribe en disco; reduce la huella forense"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 74 — Meterpreter y post-explotación, Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "Elegibilidad"
+      },
+      {
+        "t": "p",
+        "x": "Experiencia u otros requisitos para obtener una credencial."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 290 — Certificaciones y desarrollo de carrera."
+      },
+      {
+        "t": "h3",
+        "x": "ELF"
+      },
+      {
+        "t": "p",
+        "x": "Formato de ejecutable de Linux"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 130 — Ingeniería inversa: introducción, Clase 154 — Malware en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "ELF / ROP / DynELF"
+      },
+      {
+        "t": "p",
+        "x": "Instrumental avanzado de pwntools"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 138 — Desarrollo de exploits moderno."
+      },
+      {
+        "t": "h3",
+        "x": "elf.symbols / elf.got"
+      },
+      {
+        "t": "p",
+        "x": "pwntools: direcciones de funciones y GOT"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 123 — Bypass de protecciones: ret2libc."
+      },
+      {
+        "t": "h3",
+        "x": "Emparejamiento exploit-vulnerabilidad"
+      },
+      {
+        "t": "p",
+        "x": "El exploit debe coincidir con la versión y arquitectura exactas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 73 — Metasploit: explotación y payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Emulación"
+      },
+      {
+        "t": "p",
+        "x": "Ejecutar código en un CPU virtual, con control y sin riesgo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 134 — Análisis dinámico y debugging de binarios, Clase 158 — Emulación y unpacking automatizado."
+      },
+      {
+        "t": "h3",
+        "x": "Emulación incompleta"
+      },
+      {
+        "t": "p",
+        "x": "No toda la API está implementada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 158 — Emulación y unpacking automatizado."
+      },
+      {
+        "t": "h3",
+        "x": "Emulación parcial"
+      },
+      {
+        "t": "p",
+        "x": "Ejecución aproximada que no reproduce todo el hardware."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 267 — Hacking de firmware."
+      },
+      {
+        "t": "h3",
+        "x": "Emulación vs ejecución vs depuración"
+      },
+      {
+        "t": "p",
+        "x": "Simulada vs real vs manual"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 158 — Emulación y unpacking automatizado."
+      },
+      {
+        "t": "h3",
+        "x": "Emulador / Frida"
+      },
+      {
+        "t": "p",
+        "x": "Entorno y herramienta de análisis dinámico"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 155 — Malware en Android."
+      },
+      {
+        "t": "h3",
+        "x": "Emular un fragmento"
+      },
+      {
+        "t": "p",
+        "x": "Ejecutar una rutina aislada (descifrado, DGA)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 158 — Emulación y unpacking automatizado."
+      },
+      {
+        "t": "h3",
+        "x": "Emulation Library"
+      },
+      {
+        "t": "p",
+        "x": "Colección pública de planes validados por MITRE/CTID"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 163 — Emulación de adversarios."
+      },
+      {
+        "t": "h3",
+        "x": "Emulation Plan"
+      },
+      {
+        "t": "p",
+        "x": "Documento paso a paso que reproduce a un actor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 163 — Emulación de adversarios."
+      },
+      {
+        "t": "h3",
+        "x": "Encadenar primitivas"
+      },
+      {
+        "t": "p",
+        "x": "Combinar capacidades para escalar el exploit"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 138 — Desarrollo de exploits moderno."
+      },
+      {
+        "t": "h3",
+        "x": "Encapsulación"
+      },
+      {
+        "t": "p",
+        "x": "Añadir la cabecera de cada capa al bajar la pila"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas."
+      },
+      {
+        "t": "h3",
+        "x": "encode / decode"
+      },
+      {
+        "t": "p",
+        "x": "Conversión entre texto y bytes eligiendo codificación."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje."
+      },
+      {
+        "t": "h3",
+        "x": "EncodedCommand"
+      },
+      {
+        "t": "p",
+        "x": "Comando PowerShell codificado en Base64"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 153 — Análisis de malware en scripts: PowerShell y JavaScript."
+      },
+      {
+        "t": "h3",
+        "x": "Encoder (-e, -i)"
+      },
+      {
+        "t": "p",
+        "x": "Transforma el payload; no ofusca contra AV moderno"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 75 — msfvenom: generación de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Encoder / nop"
+      },
+      {
+        "t": "p",
+        "x": "Transforma y rellena payloads"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 72 — Metasploit Framework: arquitectura y uso."
+      },
+      {
+        "t": "h3",
+        "x": "Encrypt-and-MAC"
+      },
+      {
+        "t": "p",
+        "x": "Orden que puede filtrar información del texto claro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 52 — HMAC y autenticación de mensajes."
+      },
+      {
+        "t": "h3",
+        "x": "Encrypt-then-MAC"
+      },
+      {
+        "t": "p",
+        "x": "Cifrar y luego autenticar el cifrado; la composición segura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 52 — HMAC y autenticación de mensajes, Clase 59 — Cifrado autenticado (AEAD)."
+      },
+      {
+        "t": "h3",
+        "x": "Endianness"
+      },
+      {
+        "t": "p",
+        "x": "Orden de bytes en memoria (x86 = little-endian)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria, Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador."
+      },
+      {
+        "t": "h3",
+        "x": "Endpoints"
+      },
+      {
+        "t": "p",
+        "x": "Estadística por host individual; delata escaneos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "Endurecer la VM"
+      },
+      {
+        "t": "p",
+        "x": "Hacer que la VM parezca un sistema real"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 142 — Laboratorio seguro de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Enigma"
+      },
+      {
+        "t": "p",
+        "x": "Máquina de rotores alemana; rota por fallos de operación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 46 — Historia y fundamentos de la criptografía."
+      },
+      {
+        "t": "h3",
+        "x": "Ensamblador"
+      },
+      {
+        "t": "p",
+        "x": "Representación legible del código máquina"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria."
+      },
+      {
+        "t": "h3",
+        "x": "Entidad externa"
+      },
+      {
+        "t": "p",
+        "x": "Entidad que apunta a un fichero o URL"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 100 — XML External Entities (XXE)."
+      },
+      {
+        "t": "h3",
+        "x": "Entidad XML"
+      },
+      {
+        "t": "p",
+        "x": "Variable definida en la DTD que se expande en el cuerpo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 100 — XML External Entities (XXE)."
+      },
+      {
+        "t": "h3",
+        "x": "Entidades"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 346 — Información expuesta, radar, ESP y world-to-screen."
+      },
+      {
+        "t": "h3",
+        "x": "Entitlement"
+      },
+      {
+        "t": "p",
+        "x": "Capacidad firmada que autoriza acceso a determinados servicios."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 263 — Seguridad de iOS: arquitectura."
+      },
+      {
+        "t": "h3",
+        "x": "Entity resolution"
+      },
+      {
+        "t": "p",
+        "x": "Evaluación de si registros representan la misma entidad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 336 — OSINT y auditoría web con agentes de IA."
+      },
+      {
+        "t": "h3",
+        "x": "Entrada como dato"
+      },
+      {
+        "t": "p",
+        "x": "La defensa: pasar la entrada a una plantilla fija"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 107 — Server-Side Template Injection (SSTI)."
+      },
+      {
+        "t": "h3",
+        "x": "Entregable"
+      },
+      {
+        "t": "p",
+        "x": "Producto de cada fase; el informe es el final"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 66 — Metodología de pentesting: PTES y OSSTMM."
+      },
+      {
+        "t": "h3",
+        "x": "Entregables"
+      },
+      {
+        "t": "p",
+        "x": "Formatos adaptados a cada destinatario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 160 — Reporte de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Entropía"
+      },
+      {
+        "t": "p",
+        "x": "Medida estadística usada como señal, no prueba de que un valor sea secreto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 4 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG), Clase 135 — Ofuscación y técnicas anti-reversing, Clase 143 — Análisis estático básico, Clase 241 — Secretos en el código y pre-commit hooks."
+      },
+      {
+        "t": "h3",
+        "x": "Entropía anómala"
+      },
+      {
+        "t": "p",
+        "x": "Indicio de que un plano de bits contiene datos cifrados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 64 — Esteganografía y ocultación de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Entropía del ID"
+      },
+      {
+        "t": "p",
+        "x": "Longitud y aleatoriedad; impide adivinarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 102 — Gestión de sesiones y ataques asociados."
+      },
+      {
+        "t": "h3",
+        "x": "Entropía del nombre"
+      },
+      {
+        "t": "p",
+        "x": "Aleatoriedad de un subdominio; indicio de tunneling"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling."
+      },
+      {
+        "t": "h3",
+        "x": "Entry point"
+      },
+      {
+        "t": "p",
+        "x": "Dirección donde empieza la ejecución"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 145 — El formato PE de Windows."
+      },
+      {
+        "t": "h3",
+        "x": "enum4linux / smbclient"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas de enumeración y navegación SMB"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP."
+      },
+      {
+        "t": "h3",
+        "x": "Enumeración"
+      },
+      {
+        "t": "p",
+        "x": "Extraer información detallada de un servicio ya identificado"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: enumeration."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 33 — Enumeración de servicios de red, Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP, Clase 302 — Preparación OSCP: mentalidad Try Harder."
+      },
+      {
+        "t": "h3",
+        "x": "Enumeración de endpoints"
+      },
+      {
+        "t": "p",
+        "x": "Descubrir rutas por docs, versiones y JS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 110 — Seguridad de APIs REST."
+      },
+      {
+        "t": "h3",
+        "x": "Enumeración de esquema"
+      },
+      {
+        "t": "p",
+        "x": "Descubrir tablas y columnas existentes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 91 — Inyección SQL: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Enumeración de ficheros"
+      },
+      {
+        "t": "p",
+        "x": "Selección por extensión de qué cifrar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 150 — Ransomware: anatomía y análisis."
+      },
+      {
+        "t": "h3",
+        "x": "Enumeración de subdominios"
+      },
+      {
+        "t": "p",
+        "x": "Descubre entornos dev/staging/api peor protegidos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 90 — Mapeo, spidering y descubrimiento de contenido."
+      },
+      {
+        "t": "h3",
+        "x": "Enumeración de usuarios"
+      },
+      {
+        "t": "p",
+        "x": "Descubrir qué cuentas existen por respuestas o tiempos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 101 — Fallos de autenticación y bypass."
+      },
+      {
+        "t": "h3",
+        "x": "Enumeración post-explotación"
+      },
+      {
+        "t": "p",
+        "x": "Inspeccionar el sistema en busca de vectores"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 76 — Escalada de privilegios en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Envelope encryption"
+      },
+      {
+        "t": "p",
+        "x": "Cifrar datos con la DEK y la DEK con la KEK"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 63 — Gestión de secretos: Vault y KMS."
+      },
+      {
+        "t": "h3",
+        "x": "Envío automático de cookies"
+      },
+      {
+        "t": "p",
+        "x": "El navegador adjunta la cookie sin importar el origen"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 98 — Cross-Site Request Forgery (CSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "EPSS"
+      },
+      {
+        "t": "p",
+        "x": "Estimación probabilística de explotación; no mide impacto propio."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 240 — SCA: dependencias y riesgo de terceros."
+      },
+      {
+        "t": "h3",
+        "x": "Equivalencia de tamaños"
+      },
+      {
+        "t": "p",
+        "x": "ECC 256 bits ≈ RSA 3072 bits"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 50 — Criptografía de curva elíptica (ECC)."
+      },
+      {
+        "t": "h3",
+        "x": "ERE"
+      },
+      {
+        "t": "p",
+        "x": "Extended Regular Expressions (activadas con grep -E)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos."
+      },
+      {
+        "t": "h3",
+        "x": "Error aritmético"
+      },
+      {
+        "t": "p",
+        "x": "Bug de enteros que habilita otra vulnerabilidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 128 — Integer overflows y errores aritméticos."
+      },
+      {
+        "t": "h3",
+        "x": "Error genérico"
+      },
+      {
+        "t": "p",
+        "x": "Respuesta única ante fallo, para no dar información"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 59 — Cifrado autenticado (AEAD), Clase 60 — Ataques criptográficos: padding oracle y timing."
+      },
+      {
+        "t": "h3",
+        "x": "Escalada a RCE"
+      },
+      {
+        "t": "p",
+        "x": "Navegar a objetos del lenguaje hasta ejecutar comandos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 107 — Server-Side Template Injection (SSTI)."
+      },
+      {
+        "t": "h3",
+        "x": "Escalada de privilegios"
+      },
+      {
+        "t": "p",
+        "x": "Pasar de un usuario limitado a root"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: privesc, privilege escalation."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 76 — Escalada de privilegios en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Escalada horizontal"
+      },
+      {
+        "t": "p",
+        "x": "Acceder a datos de otro usuario del mismo nivel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 105 — Control de acceso roto: IDOR y path traversal."
+      },
+      {
+        "t": "h3",
+        "x": "Escalada vertical"
+      },
+      {
+        "t": "p",
+        "x": "Acceder a funciones de un nivel superior"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 105 — Control de acceso roto: IDOR y path traversal."
+      },
+      {
+        "t": "h3",
+        "x": "Escaneo activo"
+      },
+      {
+        "t": "p",
+        "x": "Pruebas que modifican deliberadamente entradas y pueden alterar el objetivo."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 89 — OWASP ZAP, Clase 239 — DAST: análisis dinámico de aplicaciones."
+      },
+      {
+        "t": "h3",
+        "x": "Escaneo autenticado"
+      },
+      {
+        "t": "p",
+        "x": "Con credenciales; audita desde dentro, menos falsos positivos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS."
+      },
+      {
+        "t": "h3",
+        "x": "Escaneo interno"
+      },
+      {
+        "t": "p",
+        "x": "Sondear puertos internos por tiempos o errores"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 99 — Server-Side Request Forgery (SSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Escaneo intrusivo"
+      },
+      {
+        "t": "p",
+        "x": "El que puede alterar datos o disparar acciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 89 — OWASP ZAP."
+      },
+      {
+        "t": "h3",
+        "x": "Escaneo no autenticado"
+      },
+      {
+        "t": "p",
+        "x": "Sin credenciales; vista de atacante externo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS."
+      },
+      {
+        "t": "h3",
+        "x": "Escaneo pasivo"
+      },
+      {
+        "t": "p",
+        "x": "Análisis del tráfico observado sin enviar cargas de ataque."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 89 — OWASP ZAP, Clase 239 — DAST: análisis dinámico de aplicaciones."
+      },
+      {
+        "t": "h3",
+        "x": "Escaneo UDP (-sU)"
+      },
+      {
+        "t": "p",
+        "x": "Cubre DNS, SNMP, NTP; lento y ambiguo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 69 — Reconocimiento activo."
+      },
+      {
+        "t": "h3",
+        "x": "Escáner automático"
+      },
+      {
+        "t": "p",
+        "x": "Sistema que puede abrir enlaces y contaminar métricas."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 258 — Campañas de phishing con GoPhish."
+      },
+      {
+        "t": "h3",
+        "x": "Escáner de vulnerabilidades"
+      },
+      {
+        "t": "p",
+        "x": "Herramienta que compara el objetivo con firmas conocidas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS."
+      },
+      {
+        "t": "h3",
+        "x": "Escape"
+      },
+      {
+        "t": "p",
+        "x": "Ruptura del aislamiento del contenedor hacia el host"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 22 — Docker y contenedores para laboratorios de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Escape de contexto"
+      },
+      {
+        "t": "p",
+        "x": "Cerrar comillas o etiquetas para salir del contexto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 96 — Cross-Site Scripting (XSS) reflejado."
+      },
+      {
+        "t": "h3",
+        "x": "Escape por defecto"
+      },
+      {
+        "t": "p",
+        "x": "React/Angular/Vue codifican lo que insertan"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 97 — XSS almacenado y basado en DOM."
+      },
+      {
+        "t": "h3",
+        "x": "Escenario de amenaza"
+      },
+      {
+        "t": "p",
+        "x": "Cadena concreta de precondición, acción, activo e impacto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 237 — Modelado de amenazas: STRIDE y DREAD."
+      },
+      {
+        "t": "h3",
+        "x": "Escenario de pérdida"
+      },
+      {
+        "t": "p",
+        "x": "Cadena concreta que conecta amenaza, activo y consecuencia."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 277 — Gestión de riesgos: cuantitativa y cualitativa."
+      },
+      {
+        "t": "h3",
+        "x": "Escenarios"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 357 — Estadística, anomalías y falsos positivos."
+      },
+      {
+        "t": "h3",
+        "x": "Escritura arbitraria"
+      },
+      {
+        "t": "p",
+        "x": "Escribir cualquier valor en cualquier dirección"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 125 — Vulnerabilidades de format string, Clase 127 — Heap: use-after-free y double free, Clase 138 — Desarrollo de exploits moderno."
+      },
+      {
+        "t": "h3",
+        "x": "Escritura fuera de límites"
+      },
+      {
+        "t": "p",
+        "x": "El exceso sobrescribe memoria adyacente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 119 — Buffer overflow en stack: teoría."
+      },
+      {
+        "t": "h3",
+        "x": "ESP / AH"
+      },
+      {
+        "t": "p",
+        "x": "Cifrado+autenticación / solo autenticación en IPsec"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN."
+      },
+      {
+        "t": "h3",
+        "x": "Especificador"
+      },
+      {
+        "t": "p",
+        "x": "%x, %p, %s, %n de la familia printf"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 125 — Vulnerabilidades de format string."
+      },
+      {
+        "t": "h3",
+        "x": "Esquema"
+      },
+      {
+        "t": "p",
+        "x": "Todos los tipos, campos y operaciones disponibles"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 111 — Seguridad de APIs GraphQL."
+      },
+      {
+        "t": "h3",
+        "x": "Esquema alternativo"
+      },
+      {
+        "t": "p",
+        "x": "file://, gopher://, dict:// amplían el ataque"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 99 — Server-Side Request Forgery (SSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Esquema de validación"
+      },
+      {
+        "t": "p",
+        "x": "Mongoose u otros que fuerzan el tipo de cada campo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 94 — Inyección NoSQL."
+      },
+      {
+        "t": "h3",
+        "x": "Esquema híbrido"
+      },
+      {
+        "t": "p",
+        "x": "AES por fichero + RSA para la clave AES"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 150 — Ransomware: anatomía y análisis."
+      },
+      {
+        "t": "h3",
+        "x": "Estabilidad de sesión"
+      },
+      {
+        "t": "p",
+        "x": "Evitar perder el acceso si el proceso original muere"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 74 — Meterpreter y post-explotación."
+      },
+      {
+        "t": "h3",
+        "x": "ESTABLISHED"
+      },
+      {
+        "t": "p",
+        "x": "Paquete perteneciente a una conexión ya aceptada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "Estado,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 343 — Taxonomía técnica de cheats, Clase 344 — Estado del juego, memoria y manipulación controlada."
+      },
+      {
+        "t": "h3",
+        "x": "Estado interno"
+      },
+      {
+        "t": "p",
+        "x": "Datos del generador cuyo conocimiento predice las salidas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG)."
+      },
+      {
+        "t": "h3",
+        "x": "Estándar"
+      },
+      {
+        "t": "p",
+        "x": "Requisito obligatorio y verificable."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 282 — Políticas, estándares y procedimientos."
+      },
+      {
+        "t": "h3",
+        "x": "Esteganografía"
+      },
+      {
+        "t": "p",
+        "x": "Ocultar la existencia del mensaje"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 64 — Esteganografía y ocultación de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Estego-objeto"
+      },
+      {
+        "t": "p",
+        "x": "Portador con la carga ya oculta dentro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 64 — Esteganografía y ocultación de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Estegoanálisis"
+      },
+      {
+        "t": "p",
+        "x": "Detección de contenido oculto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 64 — Esteganografía y ocultación de datos."
+      },
+      {
+        "t": "h3",
+        "x": "ET Open"
+      },
+      {
+        "t": "p",
+        "x": "Conjunto de reglas abierto de Emerging Threats"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "ETW"
+      },
+      {
+        "t": "p",
+        "x": "Event Tracing for Windows; telemetría profunda"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "eval / setTimeout"
+      },
+      {
+        "t": "p",
+        "x": "Sinks que interpretan JavaScript"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 97 — XSS almacenado y basado en DOM."
+      },
+      {
+        "t": "h3",
+        "x": "Evaluación"
+      },
+      {
+        "t": "p",
+        "x": "Experimento reproducible ligado a un riesgo y criterio."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 10 clase(s): Clase 291 — Introducción a la seguridad de IA y ML, Clase 292 — Ataques adversariales a modelos, Clase 293 — Envenenamiento de datos y modelos, Clase 294 — Robo y extracción de modelos, Clase 295 — OWASP Top 10 para aplicaciones con LLM, Clase 296 — Prompt injection y jailbreaks, Clase 297 — Seguridad de aplicaciones con LLM: RAG y agentes, Clase 298 — IA aplicada a la defensa: detección y SOC, Clase 299 — IA ofensiva y deepfakes, Clase 300 — Gobernanza y ética de la IA segura."
+      },
+      {
+        "t": "h3",
+        "x": "Evasión de defensas"
+      },
+      {
+        "t": "p",
+        "x": "Deshabilitar AV, borrar logs, detectar análisis"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 148 — Análisis de comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Evasión de filtros"
+      },
+      {
+        "t": "p",
+        "x": "Payloads alternativos que saltan el filtro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 96 — Cross-Site Scripting (XSS) reflejado."
+      },
+      {
+        "t": "h3",
+        "x": "Evasión de rate limiting"
+      },
+      {
+        "t": "p",
+        "x": "Rotar IPs, spraying, o atacar la API sin límite"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 101 — Fallos de autenticación y bypass."
+      },
+      {
+        "t": "h3",
+        "x": "Evasión de WAF"
+      },
+      {
+        "t": "p",
+        "x": "Codificar el payload para no coincidir con sus firmas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 86 — Arquitectura web moderna y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Evasión por diseño"
+      },
+      {
+        "t": "p",
+        "x": "No hay fichero que escanear"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "EVE JSON"
+      },
+      {
+        "t": "p",
+        "x": "Salida estructurada de Suricata: alertas y transacciones, una por línea"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "event.origin"
+      },
+      {
+        "t": "p",
+        "x": "Origen del mensaje; hay que validarlo siempre"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution."
+      },
+      {
+        "t": "h3",
+        "x": "Evento"
+      },
+      {
+        "t": "p",
+        "x": "Señal que emite el motor (conexión, petición HTTP, handshake TLS…)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 44 — Zeek para análisis de red a gran escala."
+      },
+      {
+        "t": "h3",
+        "x": "Evento 4104"
+      },
+      {
+        "t": "p",
+        "x": "Registro que contiene el bloque de script ejecutado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva."
+      },
+      {
+        "t": "h3",
+        "x": "Evento privilegiado"
+      },
+      {
+        "t": "p",
+        "x": "Disparador cuyo token o secretos tienen más autoridad que la entrada evaluada."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 242 — Seguridad en pipelines CI/CD."
+      },
+      {
+        "t": "h3",
+        "x": "Evidence pointer"
+      },
+      {
+        "t": "p",
+        "x": "Referencia estable al artefacto original que sustenta una frase."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 337 — IA para el lado defensivo: SOC, triaje y forense."
+      },
+      {
+        "t": "h3",
+        "x": "Evidencia"
+      },
+      {
+        "t": "p",
+        "x": "Información cuya procedencia y relación con un criterio pueden revisarse."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 31 clase(s): Clase 301 — Roadmap de certificaciones: CompTIA, OSCP, CISSP y más, Clase 302 — Preparación OSCP: mentalidad Try Harder, Clase 303 — Capstone: laboratorio completo de pentest, Clase 304 — Preparación CISSP: los 8 dominios, Clase 305 — Capstone: operación Red Team end-to-end, Clase 306 — Capstone: detección Blue Team end-to-end, Clase 307 — Capstone: respuesta a incidentes DFIR end-to-end, Clase 308 — Capstone: campaña de bug bounty, Clase 309 — Construcción de portafolio y home lab permanente, Clase 310 — Plan de aprendizaje continuo y comunidad y 21 más."
+      },
+      {
+        "t": "h3",
+        "x": "Evidencia con marca de tiempo"
+      },
+      {
+        "t": "p",
+        "x": "Registro del recon exigido por el método"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 69 — Reconocimiento activo."
+      },
+      {
+        "t": "h3",
+        "x": "Evidencia reproducible"
+      },
+      {
+        "t": "p",
+        "x": "Registro de la orden exacta que produjo cada hallazgo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP, Clase 85 — Reporte profesional de pentest."
+      },
+      {
+        "t": "h3",
+        "x": "Evil twin"
+      },
+      {
+        "t": "p",
+        "x": "AP falso que imita un SSID legítimo para captar clientes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque, Clase 272 — Ataques WiFi avanzados: Evil Twin y PMKID."
+      },
+      {
+        "t": "h3",
+        "x": "Excepción"
+      },
+      {
+        "t": "p",
+        "x": "Error (acceso inválido, división por cero) que dispara el manejo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje, Clase 129 — Explotación en Windows: manejo de SEH."
+      },
+      {
+        "t": "h3",
+        "x": "Exclusión"
+      },
+      {
+        "t": "p",
+        "x": "Circunstancia que la póliza no cubre."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 288 — Seguros cibernéticos."
+      },
+      {
+        "t": "h3",
+        "x": "Exclusiones"
+      },
+      {
+        "t": "p",
+        "x": "Dominios o técnicas explícitamente prohibidos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 114 — Bug bounty: metodología y plataformas."
+      },
+      {
+        "t": "h3",
+        "x": "execFile / subprocess"
+      },
+      {
+        "t": "p",
+        "x": "APIs que separan programa y argumentos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 95 — Inyección de comandos del sistema operativo."
+      },
+      {
+        "t": "h3",
+        "x": "execstack"
+      },
+      {
+        "t": "p",
+        "x": "Marca la pila como ejecutable para probar shellcode"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 121 — Escritura de shellcode."
+      },
+      {
+        "t": "h3",
+        "x": "Execution Policy"
+      },
+      {
+        "t": "p",
+        "x": "Ajuste que limita la ejecución de scripts (no es seguridad)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva."
+      },
+      {
+        "t": "h3",
+        "x": "execve"
+      },
+      {
+        "t": "p",
+        "x": "Syscall que reemplaza el proceso por otro (/bin/sh)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 121 — Escritura de shellcode."
+      },
+      {
+        "t": "h3",
+        "x": "Exfiltración"
+      },
+      {
+        "t": "p",
+        "x": "Salida anómala de datos hacia un destino externo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 45 — NetFlow y análisis de metadatos de tráfico, Clase 83 — Exfiltración de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Exfiltración por DNS"
+      },
+      {
+        "t": "p",
+        "x": "Sacar datos usando consultas DNS que casi nadie bloquea"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling, Clase 83 — Exfiltración de datos."
+      },
+      {
+        "t": "h3",
+        "x": "EXIF"
+      },
+      {
+        "t": "p",
+        "x": "Metadatos de captura que pueden faltar o modificarse."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 253 — Geolocalización y análisis de imágenes."
+      },
+      {
+        "t": "h3",
+        "x": "Exit plan"
+      },
+      {
+        "t": "p",
+        "x": "Ruta probada para terminar relación y recuperar capacidad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 284 — Gestión de riesgo de terceros y proveedores."
+      },
+      {
+        "t": "h3",
+        "x": "exp / iss / aud"
+      },
+      {
+        "t": "p",
+        "x": "Claims que hay que validar además de la firma"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 103 — Ataques y seguridad de JWT."
+      },
+      {
+        "t": "h3",
+        "x": "Expert Information"
+      },
+      {
+        "t": "p",
+        "x": "Anomalías detectadas por Wireshark, agrupadas por severidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "Expiración"
+      },
+      {
+        "t": "p",
+        "x": "Caducidad por inactividad y por tiempo absoluto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 102 — Gestión de sesiones y ataques asociados."
+      },
+      {
+        "t": "h3",
+        "x": "exploit -j"
+      },
+      {
+        "t": "p",
+        "x": "Lanza el handler como job en segundo plano"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 73 — Metasploit: explotación y payloads."
+      },
+      {
+        "t": "h3",
+        "x": "exploit/multi/handler"
+      },
+      {
+        "t": "p",
+        "x": "Listener que debe coincidir con el payload generado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 75 — msfvenom: generación de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Exploit suggester"
+      },
+      {
+        "t": "p",
+        "x": "Módulo que propone rutas de escalada para el objetivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 74 — Meterpreter y post-explotación."
+      },
+      {
+        "t": "h3",
+        "x": "Explotación"
+      },
+      {
+        "t": "p",
+        "x": "Módulo que aprovecha una vulnerabilidad para lograr ejecución"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: exploit, exploitation."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 72 — Metasploit Framework: arquitectura y uso."
+      },
+      {
+        "t": "h3",
+        "x": "Export Directory"
+      },
+      {
+        "t": "p",
+        "x": "Funciones que ofrece una DLL"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 145 — El formato PE de Windows."
+      },
+      {
+        "t": "h3",
+        "x": "Exportador"
+      },
+      {
+        "t": "p",
+        "x": "Dispositivo que observa el tráfico y emite los registros de flujo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 45 — NetFlow y análisis de metadatos de tráfico."
+      },
+      {
+        "t": "h3",
+        "x": "Exposición"
+      },
+      {
+        "t": "p",
+        "x": "Servicio accesible desde una posición de red determinada."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 254 — OSINT técnico: Shodan y Censys."
+      },
+      {
+        "t": "h3",
+        "x": "Exposición excesiva de datos"
+      },
+      {
+        "t": "p",
+        "x": "La API devuelve más campos de los que la UI muestra"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 110 — Seguridad de APIs REST."
+      },
+      {
+        "t": "h3",
+        "x": "Expresión regular"
+      },
+      {
+        "t": "p",
+        "x": "Patrón flexible en la regla"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "Extensión de longitud"
+      },
+      {
+        "t": "p",
+        "x": "Extender un hash con secreto sin conocer el secreto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades, Clase 52 — HMAC y autenticación de mensajes."
+      },
+      {
+        "t": "h3",
+        "x": "Extracción carácter a carácter"
+      },
+      {
+        "t": "p",
+        "x": "Reconstruir el dato preguntando bit a bit"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 92 — Inyección SQL avanzada y ciega (blind)."
+      },
+      {
+        "t": "h3",
+        "x": "Extracción de configuración"
+      },
+      {
+        "t": "p",
+        "x": "Recuperar dominios y claves embebidos en la muestra"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 149 — Comunicaciones de comando y control (C2) del malware, Clase 158 — Emulación y unpacking automatizado."
+      },
+      {
+        "t": "h3",
+        "x": "Extracción de IOCs"
+      },
+      {
+        "t": "p",
+        "x": "URLs, comandos y hashes obtenidos del análisis"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 152 — Análisis de documentos maliciosos: macros y PDF."
+      },
+      {
+        "t": "h3",
+        "x": "Extractor de configuración"
+      },
+      {
+        "t": "p",
+        "x": "Script que localiza y descifra el bloque de config"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 149 — Comunicaciones de comando y control (C2) del malware, Clase 158 — Emulación y unpacking automatizado."
+      },
+      {
+        "t": "h2",
+        "x": "F"
+      },
+      {
+        "t": "h3",
+        "x": "Factor de coste"
+      },
+      {
+        "t": "p",
+        "x": "Parámetro que encarece cada intento; se sube con el tiempo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2."
+      },
+      {
+        "t": "h3",
+        "x": "Fail closed"
+      },
+      {
+        "t": "p",
+        "x": "Comportamiento que niega la operación cuando falta validación."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 339 — Riesgos, guardrails, OPSEC y ética del hacking con IA."
+      },
+      {
+        "t": "h3",
+        "x": "Fallo de lógica"
+      },
+      {
+        "t": "p",
+        "x": "Abuso permitido por la lógica; el código funciona \"bien\""
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 109 — Vulnerabilidades de lógica de negocio."
+      },
+      {
+        "t": "h3",
+        "x": "False flag"
+      },
+      {
+        "t": "p",
+        "x": "Pista plantada para desviar la atribución"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 157 — Threat intelligence a partir de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Falsificación de tag"
+      },
+      {
+        "t": "p",
+        "x": "Consecuencia de repetir nonce en GCM: permite escribir"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 59 — Cifrado autenticado (AEAD)."
+      },
+      {
+        "t": "h3",
+        "x": "Falso negativo de descubrimiento"
+      },
+      {
+        "t": "p",
+        "x": "Host activo descartado por no responder; se corrige con -Pn"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 29 — Nmap: descubrimiento de hosts y técnicas de ping."
+      },
+      {
+        "t": "h3",
+        "x": "Falso positivo"
+      },
+      {
+        "t": "p",
+        "x": "Hallazgo reportado que no se sostiene al verificarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 4 clase(s): Clase 31 — Nmap: detección de servicios y fingerprinting de OS, Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS, Clase 89 — OWASP ZAP, Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "Falso positivo / negativo"
+      },
+      {
+        "t": "p",
+        "x": "Alerta falsa / bug real no detectado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 137 — Descubrimiento de vulnerabilidades en código."
+      },
+      {
+        "t": "h3",
+        "x": "Familia / variante / campaña"
+      },
+      {
+        "t": "p",
+        "x": "Linaje / versión / operación concreta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 141 — Introducción al malware: tipos y taxonomía."
+      },
+      {
+        "t": "h3",
+        "x": "Fase"
+      },
+      {
+        "t": "p",
+        "x": "Etapa del plan que agrupa TTPs con una meta común"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 163 — Emulación de adversarios."
+      },
+      {
+        "t": "h3",
+        "x": "Fases de Nmap"
+      },
+      {
+        "t": "p",
+        "x": "Objetivos → descubrimiento → DNS → puertos → versión/OS → NSE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 29 — Nmap: descubrimiento de hosts y técnicas de ping."
+      },
+      {
+        "t": "h3",
+        "x": "fastbins"
+      },
+      {
+        "t": "p",
+        "x": "Listas LIFO de chunks pequeños"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Fatiga de MFA"
+      },
+      {
+        "t": "p",
+        "x": "Bombardear con push hasta que la víctima acepte"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 101 — Fallos de autenticación y bypass."
+      },
+      {
+        "t": "h3",
+        "x": "Features"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 358 — Machine Learning aplicado a Anti-Cheat."
+      },
+      {
+        "t": "h3",
+        "x": "ffuf / feroxbuster / gobuster"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas de fuzzing de rutas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 90 — Mapeo, spidering y descubrimiento de contenido."
+      },
+      {
+        "t": "h3",
+        "x": "FHS"
+      },
+      {
+        "t": "p",
+        "x": "Estándar que define el propósito de cada directorio en Linux"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios."
+      },
+      {
+        "t": "h3",
+        "x": "FIDO2 / passkeys"
+      },
+      {
+        "t": "p",
+        "x": "Factores resistentes a phishing"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 101 — Fallos de autenticación y bypass."
+      },
+      {
+        "t": "h3",
+        "x": "Fijar el algoritmo"
+      },
+      {
+        "t": "p",
+        "x": "El servidor decide el algoritmo, no el token"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 103 — Ataques y seguridad de JWT."
+      },
+      {
+        "t": "h3",
+        "x": "file"
+      },
+      {
+        "t": "p",
+        "x": "Identifica tipo, arquitectura y si está stripped"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 130 — Ingeniería inversa: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "File Header"
+      },
+      {
+        "t": "p",
+        "x": "Arquitectura, nº de secciones, marca de tiempo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 145 — El formato PE de Windows."
+      },
+      {
+        "t": "h3",
+        "x": "Fileless"
+      },
+      {
+        "t": "p",
+        "x": "Sin artefacto en disco; se busca en memoria y configuración"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva, Clase 82 — Persistencia en sistemas comprometidos, Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "Filtrado"
+      },
+      {
+        "t": "p",
+        "x": "Sin respuesta o error ICMP: un filtro descarta el tráfico"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 30 — Nmap: escaneo de puertos y tipos de escaneo."
+      },
+      {
+        "t": "h3",
+        "x": "Filtro de visualización"
+      },
+      {
+        "t": "p",
+        "x": "Expresión booleana sobre campos disecados; oculta paquetes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 26 — Wireshark: captura y análisis de paquetes, Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "FIN"
+      },
+      {
+        "t": "p",
+        "x": "Flag que solicita cerrar la conexión de forma ordenada."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Fin de vida"
+      },
+      {
+        "t": "p",
+        "x": "Momento y proceso en que cesa soporte y se gestiona retiro."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 266 — Seguridad de IoT: panorama y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "FIN / NULL / Xmas"
+      },
+      {
+        "t": "p",
+        "x": "Escaneos con flags atípicos para eludir filtros simples"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 30 — Nmap: escaneo de puertos y tipos de escaneo."
+      },
+      {
+        "t": "h3",
+        "x": "FIN7"
+      },
+      {
+        "t": "p",
+        "x": "Actor con motivación financiera y TTPs bien documentados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 163 — Emulación de adversarios."
+      },
+      {
+        "t": "h3",
+        "x": "Fingerprinting del motor"
+      },
+      {
+        "t": "p",
+        "x": "Identificar el motor por que sintaxis evalua"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 107 — Server-Side Template Injection (SSTI)."
+      },
+      {
+        "t": "h3",
+        "x": "finish"
+      },
+      {
+        "t": "p",
+        "x": "Ejecutar hasta que la función actual retorna"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "Firewall con estado"
+      },
+      {
+        "t": "p",
+        "x": "Recuerda las conexiones vistas y permite sus respuestas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "Firewall sin estado"
+      },
+      {
+        "t": "p",
+        "x": "Juzga cada paquete de forma aislada; exige reglas de vuelta inseguras"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "Firma de código"
+      },
+      {
+        "t": "p",
+        "x": "Firma de binarios y paquetes para verificar procedencia"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 54 — Firmas digitales."
+      },
+      {
+        "t": "h3",
+        "x": "Firma de módulos"
+      },
+      {
+        "t": "p",
+        "x": "Defensa que restringe qué LKM se cargan"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 154 — Malware en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Firma del dato"
+      },
+      {
+        "t": "p",
+        "x": "HMAC que impide alterar el objeto serializado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 106 — Deserialización insegura."
+      },
+      {
+        "t": "h3",
+        "x": "Firma digital"
+      },
+      {
+        "t": "p",
+        "x": "Se genera con clave privada y se verifica con la pública"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 54 — Firmas digitales."
+      },
+      {
+        "t": "h3",
+        "x": "Firma / regla"
+      },
+      {
+        "t": "p",
+        "x": "Descripción de un patrón de tráfico considerado malicioso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "Flag"
+      },
+      {
+        "t": "p",
+        "x": "Meta técnica verificable derivada del objetivo de negocio"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: bandera."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 140 — CTFs de pwn e ingeniería inversa, Clase 161 — Red Team vs pentest: filosofía y objetivos."
+      },
+      {
+        "t": "h3",
+        "x": "Flag TCP"
+      },
+      {
+        "t": "p",
+        "x": "Bit de control (SYN, ACK, RST, FIN...) del segmento TCP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 17 — Python para seguridad: manipulación de paquetes con Scapy."
+      },
+      {
+        "t": "h3",
+        "x": "Flags de cookie"
+      },
+      {
+        "t": "p",
+        "x": "HttpOnly, Secure, SameSite"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 115 — Secure coding y defensa de aplicaciones web."
+      },
+      {
+        "t": "h3",
+        "x": "FLARE VM"
+      },
+      {
+        "t": "p",
+        "x": "Distribución Windows con el instrumental de análisis"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 142 — Laboratorio seguro de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "FLIRT / firmas"
+      },
+      {
+        "t": "p",
+        "x": "Reconocer funciones de librería enlazadas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 133 — Análisis estático de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "flow"
+      },
+      {
+        "t": "p",
+        "x": "Acota dirección y estado de la conexión en la que aplica la regla"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "Flow bypass"
+      },
+      {
+        "t": "p",
+        "x": "Saltarse pasos obligatorios de un proceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 109 — Vulnerabilidades de lógica de negocio."
+      },
+      {
+        "t": "h3",
+        "x": "flowbits"
+      },
+      {
+        "t": "p",
+        "x": "Marca de estado que encadena condiciones entre paquetes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "Flujo"
+      },
+      {
+        "t": "p",
+        "x": "Secuencia unidireccional de paquetes con una 5-tupla común"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 45 — NetFlow y análisis de metadatos de tráfico."
+      },
+      {
+        "t": "h3",
+        "x": "Flujo de control"
+      },
+      {
+        "t": "p",
+        "x": "Estructura de decisiones y bucles de una función"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 132 — IDA Pro y radare2."
+      },
+      {
+        "t": "h3",
+        "x": "Flujo de datos"
+      },
+      {
+        "t": "p",
+        "x": "Rastro del dato guardado hasta donde se usa sin sanear"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 92 — Inyección SQL avanzada y ciega (blind)."
+      },
+      {
+        "t": "h3",
+        "x": "fmtstrpayload"
+      },
+      {
+        "t": "p",
+        "x": "pwntools genera el payload de escritura automáticamente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 125 — Vulnerabilidades de format string."
+      },
+      {
+        "t": "h3",
+        "x": "Follow Stream"
+      },
+      {
+        "t": "p",
+        "x": "Reensamblado de una conversación completa en orden"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "Forced browsing"
+      },
+      {
+        "t": "p",
+        "x": "Acceder a funciones ocultas que no validan el rol"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 105 — Control de acceso roto: IDOR y path traversal."
+      },
+      {
+        "t": "h3",
+        "x": "Forense de memoria"
+      },
+      {
+        "t": "p",
+        "x": "Detecta rootkits comparando listas del kernel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 148 — Análisis de comportamiento, Clase 151 — Rootkits y bootkits, Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "Format string"
+      },
+      {
+        "t": "p",
+        "x": "Vulnerabilidad por pasar entrada como cadena de formato"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 125 — Vulnerabilidades de format string."
+      },
+      {
+        "t": "h3",
+        "x": "Formato de datos"
+      },
+      {
+        "t": "p",
+        "x": "JSON u otros que transportan datos sin instanciar clases"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 106 — Deserialización insegura."
+      },
+      {
+        "t": "h3",
+        "x": "Formato grepable"
+      },
+      {
+        "t": "p",
+        "x": "Salida de una línea por host, pensada para grep/awk"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 29 — Nmap: descubrimiento de hosts y técnicas de ping."
+      },
+      {
+        "t": "h3",
+        "x": "Formato sin pérdida"
+      },
+      {
+        "t": "p",
+        "x": "PNG, BMP, WAV; necesarios para que el LSB sobreviva"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 64 — Esteganografía y ocultación de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Formatos con XML"
+      },
+      {
+        "t": "p",
+        "x": "DOCX, XLSX, SVG, SAML, RSS lo llevan por dentro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 100 — XML External Entities (XXE)."
+      },
+      {
+        "t": "h3",
+        "x": "Formulario auto-enviado"
+      },
+      {
+        "t": "p",
+        "x": "PoC clásica alojada en la página del atacante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 98 — Cross-Site Request Forgery (CSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "FORTIFY / -Wformat"
+      },
+      {
+        "t": "p",
+        "x": "Mitigaciones del compilador contra format string"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 125 — Vulnerabilidades de format string."
+      },
+      {
+        "t": "h3",
+        "x": "Forward secrecy"
+      },
+      {
+        "t": "p",
+        "x": "Robar la clave a largo plazo no descifra sesiones pasadas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque, Clase 53 — Intercambio de claves: Diffie-Hellman, Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Fragmentación"
+      },
+      {
+        "t": "p",
+        "x": "División de un paquete IP en fragmentos según el MTU del enlace."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Framework de notices"
+      },
+      {
+        "t": "p",
+        "x": "Mecanismo para elevar algo a \"merece atención\""
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 44 — Zeek para análisis de red a gran escala."
+      },
+      {
+        "t": "h3",
+        "x": "FREAK / Logjam"
+      },
+      {
+        "t": "p",
+        "x": "Explotación de cifrados de exportación debilitados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Freemarker"
+      },
+      {
+        "t": "p",
+        "x": "Motor Java con sintaxis de dolar y llaves"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 107 — Server-Side Template Injection (SSTI)."
+      },
+      {
+        "t": "h3",
+        "x": "Frida"
+      },
+      {
+        "t": "p",
+        "x": "Instrumentación dinámica; inyecta código en un proceso vivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 134 — Análisis dinámico y debugging de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Frontend vs backend"
+      },
+      {
+        "t": "p",
+        "x": "Proxy/CDN y servidor de aplicación que interpretan distinto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 112 — Web cache poisoning y HTTP request smuggling."
+      },
+      {
+        "t": "h3",
+        "x": "Frontera de confianza"
+      },
+      {
+        "t": "p",
+        "x": "Punto donde cambia quién controla o valida una interacción."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 237 — Modelado de amenazas: STRIDE y DREAD."
+      },
+      {
+        "t": "h3",
+        "x": "Frontera pasivo/activo"
+      },
+      {
+        "t": "p",
+        "x": "Cruzarla es enviar la primera consulta al objetivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas."
+      },
+      {
+        "t": "h3",
+        "x": "FS"
+      },
+      {
+        "t": "p",
+        "x": "Variable de awk: separador de campos de entrada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos."
+      },
+      {
+        "t": "h3",
+        "x": "FSM,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 350 — Triggerbot, macros, input automation y bots."
+      },
+      {
+        "t": "h3",
+        "x": "FTP anónimo"
+      },
+      {
+        "t": "p",
+        "x": "Acceso sin credenciales con el usuario anonymous"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 33 — Enumeración de servicios de red."
+      },
+      {
+        "t": "h3",
+        "x": "Fuente"
+      },
+      {
+        "t": "p",
+        "x": "Origen potencial de datos no confiables."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 238 — SAST: análisis estático de código."
+      },
+      {
+        "t": "h3",
+        "x": "Fuente primaria"
+      },
+      {
+        "t": "p",
+        "x": "Material cercano al hecho; no garantiza neutralidad ni autenticidad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 249 — Fundamentos de OSINT."
+      },
+      {
+        "t": "h3",
+        "x": "Fuente (source)"
+      },
+      {
+        "t": "p",
+        "x": "Origen de un dato controlable (recv, read, argv)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 137 — Descubrimiento de vulnerabilidades en código."
+      },
+      {
+        "t": "h3",
+        "x": "Fuerza bruta"
+      },
+      {
+        "t": "p",
+        "x": "Prueba masiva de credenciales; fuera de la enumeración pasiva"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 33 — Enumeración de servicios de red, Clase 61 — Introducción al criptoanálisis, Clase 101 — Fallos de autenticación y bypass."
+      },
+      {
+        "t": "h3",
+        "x": "Fuerza bruta en línea"
+      },
+      {
+        "t": "p",
+        "x": "Muchas contraseñas contra una cuenta; se bloquea"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 81 — Ataques a credenciales: fuerza bruta y password spraying."
+      },
+      {
+        "t": "h3",
+        "x": "Fuga de DNS"
+      },
+      {
+        "t": "p",
+        "x": "Resolver nombres fuera del túnel, revelando los dominios visitados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN."
+      },
+      {
+        "t": "h3",
+        "x": "Función"
+      },
+      {
+        "t": "p",
+        "x": "Bloque reutilizable con nombre que encapsula lógica."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje."
+      },
+      {
+        "t": "h3",
+        "x": "Función hash criptográfica"
+      },
+      {
+        "t": "p",
+        "x": "Salida de tamaño fijo, determinista y no invertible"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades."
+      },
+      {
+        "t": "h3",
+        "x": "Función unidireccional con trampilla"
+      },
+      {
+        "t": "p",
+        "x": "Fácil de calcular, difícil de invertir salvo con un secreto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 49 — Cifrado asimétrico: RSA."
+      },
+      {
+        "t": "h3",
+        "x": "Funciones peligrosas"
+      },
+      {
+        "t": "p",
+        "x": "gets, strcpy, strcat, sprintf, scanf(\"%s\")"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 119 — Buffer overflow en stack: teoría."
+      },
+      {
+        "t": "h3",
+        "x": "Fuzzing"
+      },
+      {
+        "t": "p",
+        "x": "Alimentar el programa con muchas entradas para provocar crashes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 136 — Fuzzing con AFL++ y libFuzzer."
+      },
+      {
+        "t": "h3",
+        "x": "Fuzzy hashing (ssdeep)"
+      },
+      {
+        "t": "p",
+        "x": "Hash de similitud; agrupa variantes parecidas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 143 — Análisis estático básico."
+      },
+      {
+        "t": "h2",
+        "x": "G"
+      },
+      {
+        "t": "h3",
+        "x": "Gadget"
+      },
+      {
+        "t": "p",
+        "x": "Método que se ejecuta al deserializar y es útil al atacante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 4 clase(s): Clase 106 — Deserialización insegura, Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution, Clase 123 — Bypass de protecciones: ret2libc, Clase 124 — Return-Oriented Programming (ROP)."
+      },
+      {
+        "t": "h3",
+        "x": "Gadget chain"
+      },
+      {
+        "t": "p",
+        "x": "Encadenar gadgets ya presentes para lograr RCE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 106 — Deserialización insegura."
+      },
+      {
+        "t": "h3",
+        "x": "Gadget ret de relleno"
+      },
+      {
+        "t": "p",
+        "x": "Un ret extra que realinea la pila"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 120 — Buffer overflow en stack: explotación práctica."
+      },
+      {
+        "t": "h3",
+        "x": "Game"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 342 — Arquitectura de videojuegos desde la perspectiva de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Gate"
+      },
+      {
+        "t": "p",
+        "x": "Regla de decisión del flujo, con evidencia, umbral y tratamiento de excepciones."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 236 — Secure SDLC y filosofía shift-left."
+      },
+      {
+        "t": "h3",
+        "x": "Gateway"
+      },
+      {
+        "t": "p",
+        "x": "Componente que media tráfico entre dominios de red."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 274 — Seguridad automotriz y bus CAN."
+      },
+      {
+        "t": "h3",
+        "x": "GATT"
+      },
+      {
+        "t": "p",
+        "x": "Modelo de servicios, características y operaciones BLE."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 271 — Seguridad de Bluetooth y BLE."
+      },
+      {
+        "t": "h3",
+        "x": "gcc -S"
+      },
+      {
+        "t": "p",
+        "x": "Genera el ensamblador de un fuente C, para aprender a leerlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador."
+      },
+      {
+        "t": "h3",
+        "x": "GDB"
+      },
+      {
+        "t": "p",
+        "x": "Depurador estándar de Linux"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "gdb.attach()"
+      },
+      {
+        "t": "p",
+        "x": "Engancha GDB al proceso para depurar el exploit"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 120 — Buffer overflow en stack: explotación práctica."
+      },
+      {
+        "t": "h3",
+        "x": "GDB scripting"
+      },
+      {
+        "t": "p",
+        "x": "Automatizar breakpoints y volcado de argumentos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 134 — Análisis dinámico y debugging de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Geolocalización"
+      },
+      {
+        "t": "p",
+        "x": "Inferencia del lugar representado."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 253 — Geolocalización y análisis de imágenes."
+      },
+      {
+        "t": "h3",
+        "x": "Gestión de secretos"
+      },
+      {
+        "t": "p",
+        "x": "Fuera del código, con escaneo automático"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 115 — Secure coding y defensa de aplicaciones web."
+      },
+      {
+        "t": "h3",
+        "x": "Get-Member"
+      },
+      {
+        "t": "p",
+        "x": "Revela propiedades y métodos reales de un objeto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva."
+      },
+      {
+        "t": "h3",
+        "x": "Get out of jail letter"
+      },
+      {
+        "t": "p",
+        "x": "Autorización que el pentester lleva encima durante el test"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 67 — Reglas de engagement, alcance y contratos."
+      },
+      {
+        "t": "h3",
+        "x": "getopts"
+      },
+      {
+        "t": "p",
+        "x": "Parser incorporado de opciones de línea de comandos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 7 — Bash scripting para tareas de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "GetProcAddress"
+      },
+      {
+        "t": "p",
+        "x": "Resuelve la dirección de una función por nombre"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 146 — Análisis con IDA y Ghidra aplicado a malware."
+      },
+      {
+        "t": "h3",
+        "x": "getrandom()"
+      },
+      {
+        "t": "p",
+        "x": "Llamada al sistema recomendada en Linux"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG)."
+      },
+      {
+        "t": "h3",
+        "x": "gets"
+      },
+      {
+        "t": "p",
+        "x": "Lee sin límite; eliminada del estándar de C"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 119 — Buffer overflow en stack: teoría."
+      },
+      {
+        "t": "h3",
+        "x": "getsystem"
+      },
+      {
+        "t": "p",
+        "x": "Eleva de administrador local a SYSTEM"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 74 — Meterpreter y post-explotación."
+      },
+      {
+        "t": "h3",
+        "x": "Ghidra"
+      },
+      {
+        "t": "p",
+        "x": "Suite de RE libre de la NSA, con decompilador"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 131 — Ghidra para ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "GhidraScript"
+      },
+      {
+        "t": "p",
+        "x": "Scripting para automatizar tareas de RE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 131 — Ghidra para ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "GhidraScript / IDAPython"
+      },
+      {
+        "t": "p",
+        "x": "Scripting para tareas repetitivas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 146 — Análisis con IDA y Ghidra aplicado a malware."
+      },
+      {
+        "t": "h3",
+        "x": "GIL"
+      },
+      {
+        "t": "p",
+        "x": "Cerrojo del intérprete CPython que serializa el bytecode"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 16 — Python para seguridad: sockets y programación de red."
+      },
+      {
+        "t": "h3",
+        "x": "git add"
+      },
+      {
+        "t": "p",
+        "x": "Mueve cambios al área de staging"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "git rm --cached"
+      },
+      {
+        "t": "p",
+        "x": "Deja de rastrear un fichero sin borrarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "gitleaks"
+      },
+      {
+        "t": "p",
+        "x": "Escáner de secretos en el historial"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "gitleaks / detect-secrets"
+      },
+      {
+        "t": "p",
+        "x": "Escáneres de secretos en repositorios y CI"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 63 — Gestión de secretos: Vault y KMS."
+      },
+      {
+        "t": "h3",
+        "x": "Globbing"
+      },
+      {
+        "t": "p",
+        "x": "Expansión de comodines (*, ?) a nombres de archivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 7 — Bash scripting para tareas de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Goodhart"
+      },
+      {
+        "t": "p",
+        "x": "Riesgo de degradar una medida al convertirla en objetivo rígido."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 287 — Métricas de seguridad: KPIs y KRIs."
+      },
+      {
+        "t": "h3",
+        "x": "Goodware"
+      },
+      {
+        "t": "p",
+        "x": "Software legítimo; hay que evitar cazarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "GoPhish"
+      },
+      {
+        "t": "p",
+        "x": "Plataforma para lanzar y medir campañas de phishing controladas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "GOT"
+      },
+      {
+        "t": "p",
+        "x": "Tabla de punteros resueltos a funciones de librería"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE, Clase 123 — Bypass de protecciones: ret2libc."
+      },
+      {
+        "t": "h3",
+        "x": "Govern"
+      },
+      {
+        "t": "p",
+        "x": "Función de gobernanza, novedad del CSF 2.0"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model."
+      },
+      {
+        "t": "h3",
+        "x": "Grafo observado"
+      },
+      {
+        "t": "p",
+        "x": "Red limitada por la muestra y las relaciones disponibles."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 252 — OSINT en redes sociales."
+      },
+      {
+        "t": "h3",
+        "x": "GraphiQL / InQL"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas que reconstruyen el esquema"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 111 — Seguridad de APIs GraphQL."
+      },
+      {
+        "t": "h3",
+        "x": "GraphQL"
+      },
+      {
+        "t": "p",
+        "x": "API de un solo endpoint con lenguaje de consulta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 111 — Seguridad de APIs GraphQL."
+      },
+      {
+        "t": "h3",
+        "x": "Gravedad"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 349 — Aimbot avanzado, predicción, smoothing y recoil."
+      },
+      {
+        "t": "h3",
+        "x": "Gray box"
+      },
+      {
+        "t": "p",
+        "x": "Información parcial, como un usuario estándar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 66 — Metodología de pentesting: PTES y OSSTMM."
+      },
+      {
+        "t": "h3",
+        "x": "Grey hat"
+      },
+      {
+        "t": "p",
+        "x": "Hacker sin permiso pero sin intención dañina clara"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable."
+      },
+      {
+        "t": "h3",
+        "x": "Grounding"
+      },
+      {
+        "t": "p",
+        "x": "Vinculación de una salida con evidencia accesible."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 331 — IA generativa y LLMs en ciberseguridad: panorama, capacidades y límites."
+      },
+      {
+        "t": "h3",
+        "x": "Grupo con nombre"
+      },
+      {
+        "t": "p",
+        "x": "(?P<n>...) en Python"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 19 — Expresiones regulares para análisis de logs y datos."
+      },
+      {
+        "t": "h3",
+        "x": "Grupo de captura"
+      },
+      {
+        "t": "p",
+        "x": "(...) guarda lo coincidido"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 19 — Expresiones regulares para análisis de logs y datos."
+      },
+      {
+        "t": "h3",
+        "x": "Grupo débil"
+      },
+      {
+        "t": "p",
+        "x": "Parámetros pequeños o reutilizados que permiten precomputación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 53 — Intercambio de claves: Diffie-Hellman."
+      },
+      {
+        "t": "h3",
+        "x": "Grupo (Gxxxx)"
+      },
+      {
+        "t": "p",
+        "x": "Actor de amenaza catalogado con sus técnicas atribuidas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 162 — MITRE ATT&CK como lenguaje ofensivo."
+      },
+      {
+        "t": "h3",
+        "x": "GTFOBins"
+      },
+      {
+        "t": "p",
+        "x": "Catálogo de binarios abusables para escalar privilegios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios, Clase 76 — Escalada de privilegios en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Guardrail"
+      },
+      {
+        "t": "p",
+        "x": "Capa que reduce una capacidad o detecta su uso; no garantía absoluta."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 10 clase(s): Clase 331 — IA generativa y LLMs en ciberseguridad: panorama, capacidades y límites, Clase 332 — Agentes de IA y el Model Context Protocol (MCP) para seguridad, Clase 333 — kali-mcp: orquestar herramientas de Kali desde un agente de IA, Clase 334 — Reconocimiento y escaneo asistidos por IA, Clase 335 — Explotación y post-explotación autorizada asistida por IA, Clase 336 — OSINT y auditoría web con agentes de IA, Clase 337 — IA para el lado defensivo: SOC, triaje y forense, Clase 338 — Generación de informes y flujos de trabajo con IA, Clase 339 — Riesgos, guardrails, OPSEC y ética del hacking con IA, Clase 340 — Capstone: pentest autorizado asistido por IA con MCP."
+      },
+      {
+        "t": "h3",
+        "x": "Guiado por cobertura"
+      },
+      {
+        "t": "p",
+        "x": "El fuzzer usa qué código se ejecuta como brújula"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 136 — Fuzzing con AFL++ y libFuzzer."
+      },
+      {
+        "t": "h3",
+        "x": "Gusano (worm)"
+      },
+      {
+        "t": "p",
+        "x": "Se propaga solo, sin intervención humana"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 141 — Introducción al malware: tipos y taxonomía."
+      },
+      {
+        "t": "h3",
+        "x": "Gusano XSS"
+      },
+      {
+        "t": "p",
+        "x": "Payload que se propaga publicándose a sí mismo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 97 — XSS almacenado y basado en DOM."
+      },
+      {
+        "t": "h2",
+        "x": "H"
+      },
+      {
+        "t": "h3",
+        "x": "Hack The Box (HTB)"
+      },
+      {
+        "t": "p",
+        "x": "Plataforma de laboratorios prácticos de ciberseguridad; sus reglas limitan la publicación de soluciones de contenido activo."
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: hack the box, htb."
+      },
+      {
+        "t": "p",
+        "x": "Sitio oficial: Hack The Box (HTB)."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "HackerOne / Bugcrowd / Intigriti"
+      },
+      {
+        "t": "p",
+        "x": "Plataformas que alojan programas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 114 — Bug bounty: metodología y plataformas."
+      },
+      {
+        "t": "h3",
+        "x": "Hacktivismo"
+      },
+      {
+        "t": "p",
+        "x": "Ataques motivados por fines políticos o sociales"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain."
+      },
+      {
+        "t": "h3",
+        "x": "HAL"
+      },
+      {
+        "t": "p",
+        "x": "Capa de abstracción de hardware en kernel mode"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios."
+      },
+      {
+        "t": "h3",
+        "x": "Half-open"
+      },
+      {
+        "t": "p",
+        "x": "Escaneo que no completa el handshake, aborta con RST"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 17 — Python para seguridad: manipulación de paquetes con Scapy."
+      },
+      {
+        "t": "h3",
+        "x": "Half-open scan"
+      },
+      {
+        "t": "p",
+        "x": "Escaneo SYN que no completa el handshake para pasar inadvertido."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Hallazgo"
+      },
+      {
+        "t": "p",
+        "x": "Diferencia sustentada entre criterio y condición."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 85 — Reporte profesional de pentest, Clase 285 — Auditoría de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Hallazgo reportable"
+      },
+      {
+        "t": "p",
+        "x": "Cada vector con su remediación para el informe"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 76 — Escalada de privilegios en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Hallazgo trazable"
+      },
+      {
+        "t": "p",
+        "x": "Afirmación respaldada por evidencia reproducible"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 160 — Reporte de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Handler"
+      },
+      {
+        "t": "p",
+        "x": "Puntero a la función manejadora de esta entrada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 73 — Metasploit: explotación y payloads, Clase 129 — Explotación en Windows: manejo de SEH."
+      },
+      {
+        "t": "h3",
+        "x": "Handshake"
+      },
+      {
+        "t": "p",
+        "x": "Intercambio de tres segmentos que establece una conexión TCP."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad, Clase 16 — Python para seguridad: sockets y programación de red."
+      },
+      {
+        "t": "h3",
+        "x": "Hardening"
+      },
+      {
+        "t": "p",
+        "x": "Reducir la superficie de ataque desactivando y reforzando componentes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Harness"
+      },
+      {
+        "t": "p",
+        "x": "Función que conecta el fuzzer con el código objetivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 136 — Fuzzing con AFL++ y libFuzzer."
+      },
+      {
+        "t": "h3",
+        "x": "Harvest now, decrypt later"
+      },
+      {
+        "t": "p",
+        "x": "Capturar hoy para descifrar cuando exista la máquina"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 62 — Criptografía post-cuántica."
+      },
+      {
+        "t": "h3",
+        "x": "Hash"
+      },
+      {
+        "t": "p",
+        "x": "Huella de longitud fija de una entrada arbitraria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 21 — Criptografía: conceptos fundamentales e intuición."
+      },
+      {
+        "t": "h3",
+        "x": "Hash criptográfico"
+      },
+      {
+        "t": "p",
+        "x": "Huella exacta (SHA-256); un byte cambia todo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 143 — Análisis estático básico."
+      },
+      {
+        "t": "h3",
+        "x": "Hash / IP"
+      },
+      {
+        "t": "p",
+        "x": "IOCs triviales de cambiar (base de la pirámide)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 157 — Threat intelligence a partir de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Hash rápido"
+      },
+      {
+        "t": "p",
+        "x": "MD5, NTLM, SHA-*; vulnerable al cracking a escala"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 80 — Cracking de contraseñas con John y Hashcat."
+      },
+      {
+        "t": "h3",
+        "x": "Hash SHA"
+      },
+      {
+        "t": "p",
+        "x": "Identificador de contenido de un objeto Git"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Hash-then-sign"
+      },
+      {
+        "t": "p",
+        "x": "Firmar el digest en lugar del mensaje completo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 54 — Firmas digitales."
+      },
+      {
+        "t": "h3",
+        "x": "hashcat / John the Ripper"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas de crackeo usadas para medir resistencia"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2."
+      },
+      {
+        "t": "h3",
+        "x": "hashdump"
+      },
+      {
+        "t": "p",
+        "x": "Extrae los hashes de cuentas locales (SAM)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 74 — Meterpreter y post-explotación."
+      },
+      {
+        "t": "h3",
+        "x": "Hashing"
+      },
+      {
+        "t": "p",
+        "x": "Función unidireccional de longitud fija"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "hashlib"
+      },
+      {
+        "t": "p",
+        "x": "Módulo estándar de funciones hash criptográficas."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje."
+      },
+      {
+        "t": "h3",
+        "x": "Header / payload / firma"
+      },
+      {
+        "t": "p",
+        "x": "Las tres partes del JWT, en Base64URL"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 103 — Ataques y seguridad de JWT."
+      },
+      {
+        "t": "h3",
+        "x": "Heap"
+      },
+      {
+        "t": "p",
+        "x": "Región de asignación dinámica (malloc/free)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls, Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Heap grooming / feng shui"
+      },
+      {
+        "t": "p",
+        "x": "Ordenar los chunks con malloc/free precisos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Heartbleed"
+      },
+      {
+        "t": "p",
+        "x": "Fallo de implementación de OpenSSL que filtraba memoria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Heurístico"
+      },
+      {
+        "t": "p",
+        "x": "El auto-análisis acierta casi siempre pero puede fallar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 131 — Ghidra para ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "Hex dump"
+      },
+      {
+        "t": "p",
+        "x": "Vista de datos crudos en hex y ASCII"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "Hex-Rays"
+      },
+      {
+        "t": "p",
+        "x": "Decompilador de IDA, referencia de calidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 132 — IDA Pro y radare2."
+      },
+      {
+        "t": "h3",
+        "x": "Hexadecimal"
+      },
+      {
+        "t": "p",
+        "x": "Base 16 (0-9, A-F), prefijo 0x"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "Higiene del host"
+      },
+      {
+        "t": "p",
+        "x": "El anfitrión nunca ejecuta la muestra y está protegido"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 142 — Laboratorio seguro de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Hilo"
+      },
+      {
+        "t": "p",
+        "x": "Flujo de ejecución que comparte memoria dentro de un proceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls."
+      },
+      {
+        "t": "h3",
+        "x": "Hipervisor"
+      },
+      {
+        "t": "p",
+        "x": "Software que ejecuta máquinas virtuales"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red."
+      },
+      {
+        "t": "h3",
+        "x": "Historial"
+      },
+      {
+        "t": "p",
+        "x": "Cadena inmutable de commits"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "HKCU"
+      },
+      {
+        "t": "p",
+        "x": "Colmena del Registro del usuario actual"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios."
+      },
+      {
+        "t": "h3",
+        "x": "HKDF"
+      },
+      {
+        "t": "p",
+        "x": "KDF estándar en dos fases: extraer y expandir"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 53 — Intercambio de claves: Diffie-Hellman."
+      },
+      {
+        "t": "h3",
+        "x": "HKLM"
+      },
+      {
+        "t": "p",
+        "x": "Colmena del Registro de ámbito de máquina"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios."
+      },
+      {
+        "t": "h3",
+        "x": "HMAC"
+      },
+      {
+        "t": "p",
+        "x": "MAC estándar con dos pasadas de hash anidadas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 21 — Criptografía: conceptos fundamentales e intuición, Clase 52 — HMAC y autenticación de mensajes."
+      },
+      {
+        "t": "h3",
+        "x": "HMI"
+      },
+      {
+        "t": "p",
+        "x": "Interfaz para observar y operar el proceso."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 273 — Seguridad de sistemas de control industrial (ICS/SCADA)."
+      },
+      {
+        "t": "h3",
+        "x": "Homónimo"
+      },
+      {
+        "t": "p",
+        "x": "Persona diferente que comparte nombre u otro atributo."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 250 — OSINT de personas."
+      },
+      {
+        "t": "h3",
+        "x": "Host-only"
+      },
+      {
+        "t": "p",
+        "x": "Red VM ↔ host, sin Internet"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red."
+      },
+      {
+        "t": "h3",
+        "x": "Host pivote"
+      },
+      {
+        "t": "p",
+        "x": "Máquina con acceso a la subred objetivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 79 — Pivoting y reenvío de puertos."
+      },
+      {
+        "t": "h3",
+        "x": "Host utilizable"
+      },
+      {
+        "t": "p",
+        "x": "Dirección asignable a una máquina dentro del rango."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 14 — Direccionamiento IP y subnetting."
+      },
+      {
+        "t": "h3",
+        "x": "Host vivo"
+      },
+      {
+        "t": "p",
+        "x": "Objetivo que respondió a alguna sonda de descubrimiento"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 29 — Nmap: descubrimiento de hosts y técnicas de ping."
+      },
+      {
+        "t": "h3",
+        "x": "hostrule"
+      },
+      {
+        "t": "p",
+        "x": "Se ejecuta una vez por host que cumpla la condición"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 32 — Nmap Scripting Engine (NSE)."
+      },
+      {
+        "t": "h3",
+        "x": "HS256"
+      },
+      {
+        "t": "p",
+        "x": "Firma simétrica; el mismo secreto firma y verifica"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 103 — Ataques y seguridad de JWT."
+      },
+      {
+        "t": "h3",
+        "x": "HSM"
+      },
+      {
+        "t": "p",
+        "x": "Dispositivo que guarda claves y solo expone operaciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 63 — Gestión de secretos: Vault y KMS."
+      },
+      {
+        "t": "h3",
+        "x": "HSTS"
+      },
+      {
+        "t": "p",
+        "x": "Cabecera que fuerza al navegador a usar solo HTTPS con ese sitio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna, Clase 40 — Man-in-the-Middle: técnicas y defensa."
+      },
+      {
+        "t": "h3",
+        "x": "HSTS preload"
+      },
+      {
+        "t": "p",
+        "x": "Lista integrada en el navegador; protege incluso la primera visita"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 40 — Man-in-the-Middle: técnicas y defensa."
+      },
+      {
+        "t": "h3",
+        "x": "HTA"
+      },
+      {
+        "t": "p",
+        "x": "HTML Application ejecutada por mshta con plenos privilegios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 153 — Análisis de malware en scripts: PowerShell y JavaScript."
+      },
+      {
+        "t": "h3",
+        "x": "HTML smuggling"
+      },
+      {
+        "t": "p",
+        "x": "Reconstruir el payload en el navegador vía JS/Blob para evadir proxies"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "HTTP"
+      },
+      {
+        "t": "p",
+        "x": "Protocolo de aplicación sin estado para transferir recursos web."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna."
+      },
+      {
+        "t": "h3",
+        "x": "HTTP/2 downgrade"
+      },
+      {
+        "t": "p",
+        "x": "Traducir HTTP/2 a HTTP/1.1 reintroduce ambigüedades"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 112 — Web cache poisoning y HTTP request smuggling."
+      },
+      {
+        "t": "h3",
+        "x": "http.log / dns.log / ssl.log"
+      },
+      {
+        "t": "p",
+        "x": "Logs detallados por protocolo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 44 — Zeek para análisis de red a gran escala."
+      },
+      {
+        "t": "h3",
+        "x": "HTTP/S como C2"
+      },
+      {
+        "t": "p",
+        "x": "Se mezcla con la navegación; el más común"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 149 — Comunicaciones de comando y control (C2) del malware."
+      },
+      {
+        "t": "h3",
+        "x": "HttpOnly"
+      },
+      {
+        "t": "p",
+        "x": "Flag que oculta la cookie a JavaScript; mitiga el robo por XSS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna, Clase 96 — Cross-Site Scripting (XSS) reflejado, Clase 102 — Gestión de sesiones y ataques asociados."
+      },
+      {
+        "t": "h3",
+        "x": "HTTPS"
+      },
+      {
+        "t": "p",
+        "x": "HTTP transportado sobre TLS: canal cifrado y autenticado."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna."
+      },
+      {
+        "t": "h3",
+        "x": "Huella de pila"
+      },
+      {
+        "t": "p",
+        "x": "Conjunto de rasgos de implementación (TTL, ventana, opciones, ISN)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 31 — Nmap: detección de servicios y fingerprinting de OS."
+      },
+      {
+        "t": "h3",
+        "x": "Human checkpoint"
+      },
+      {
+        "t": "p",
+        "x": "Punto donde una persona con autoridad aprueba una transición de riesgo."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 340 — Capstone: pentest autorizado asistido por IA con MCP."
+      },
+      {
+        "t": "h3",
+        "x": "Human-in-the-loop"
+      },
+      {
+        "t": "p",
+        "x": "Diseño que asigna revisión humana con autoridad real."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 298 — IA aplicada a la defensa: detección y SOC."
+      },
+      {
+        "t": "h3",
+        "x": "Hydra / Medusa"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas de ataque a credenciales multiprotocolo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 81 — Ataques a credenciales: fuerza bruta y password spraying."
+      },
+      {
+        "t": "h2",
+        "x": "I"
+      },
+      {
+        "t": "h3",
+        "x": "I/O-bound"
+      },
+      {
+        "t": "p",
+        "x": "Tarea limitada por espera de entrada/salida, no por CPU"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 16 — Python para seguridad: sockets y programación de red."
+      },
+      {
+        "t": "h3",
+        "x": "I/Q"
+      },
+      {
+        "t": "p",
+        "x": "Dos componentes ortogonales que conservan amplitud y fase."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 269 — Radio definida por software (SDR)."
+      },
+      {
+        "t": "h3",
+        "x": "IAT vacía"
+      },
+      {
+        "t": "p",
+        "x": "Síntoma de resolución dinámica"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 146 — Análisis con IDA y Ghidra aplicado a malware."
+      },
+      {
+        "t": "h3",
+        "x": "ICMP"
+      },
+      {
+        "t": "p",
+        "x": "Protocolo de control y diagnóstico de IP (ping, traceroute, errores)."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "ID en la URL"
+      },
+      {
+        "t": "p",
+        "x": "Mala práctica; queda en logs e historial"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 102 — Gestión de sesiones y ataques asociados."
+      },
+      {
+        "t": "h3",
+        "x": "IDA Pro"
+      },
+      {
+        "t": "p",
+        "x": "Desensamblador comercial estándar de la industria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 132 — IDA Pro y radare2."
+      },
+      {
+        "t": "h3",
+        "x": "IDAPython"
+      },
+      {
+        "t": "p",
+        "x": "Scripting de IDA"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 132 — IDA Pro y radare2."
+      },
+      {
+        "t": "h3",
+        "x": "Idempotente"
+      },
+      {
+        "t": "p",
+        "x": "Operación que repetida produce el mismo efecto que una sola vez."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna."
+      },
+      {
+        "t": "h3",
+        "x": "Identidad"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 355 — Telemetría para Game Security."
+      },
+      {
+        "t": "h3",
+        "x": "Identidad como perímetro"
+      },
+      {
+        "t": "p",
+        "x": "La verificación se centra en quién y con qué, no en dónde"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 42 — Segmentación de red y arquitectura Zero Trust."
+      },
+      {
+        "t": "h3",
+        "x": "Identificación de hash"
+      },
+      {
+        "t": "p",
+        "x": "Determinar el algoritmo antes de atacar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 80 — Cracking de contraseñas con John y Hashcat."
+      },
+      {
+        "t": "h3",
+        "x": "Identificación por comportamiento"
+      },
+      {
+        "t": "p",
+        "x": "Reconocer un protocolo aunque use un puerto no estándar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 44 — Zeek para análisis de red a gran escala."
+      },
+      {
+        "t": "h3",
+        "x": "Identificador"
+      },
+      {
+        "t": "p",
+        "x": "Atributo usado para relacionar registros, con fuerza y riesgo variables."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 250 — OSINT de personas."
+      },
+      {
+        "t": "h3",
+        "x": "Identificador de publicación"
+      },
+      {
+        "t": "p",
+        "x": "Clave estable de plataforma preferible a una captura aislada."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 252 — OSINT en redes sociales."
+      },
+      {
+        "t": "h3",
+        "x": "Identificador no obvio"
+      },
+      {
+        "t": "p",
+        "x": "UUID que dificulta adivinar, pero no es una defensa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 105 — Control de acceso roto: IDOR y path traversal."
+      },
+      {
+        "t": "h3",
+        "x": "IDOR"
+      },
+      {
+        "t": "p",
+        "x": "Referenciar un objeto sin comprobar la propiedad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 105 — Control de acceso roto: IDOR y path traversal."
+      },
+      {
+        "t": "h3",
+        "x": "IDS"
+      },
+      {
+        "t": "p",
+        "x": "Detecta y alerta observando una copia del tráfico"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "idtoken"
+      },
+      {
+        "t": "p",
+        "x": "JWT que prueba la identidad; se valida como tal"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect."
+      },
+      {
+        "t": "h3",
+        "x": "IEX (Invoke-Expression)"
+      },
+      {
+        "t": "p",
+        "x": "Ejecuta una cadena como código"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 153 — Análisis de malware en scripts: PowerShell y JavaScript."
+      },
+      {
+        "t": "h3",
+        "x": "IG"
+      },
+      {
+        "t": "p",
+        "x": "Agrupación priorizada según recursos y perfil de riesgo."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 280 — Controles CIS."
+      },
+      {
+        "t": "h3",
+        "x": "IKE"
+      },
+      {
+        "t": "p",
+        "x": "Protocolo de intercambio de claves de IPsec"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN."
+      },
+      {
+        "t": "h3",
+        "x": "Imagen"
+      },
+      {
+        "t": "p",
+        "x": "Plantilla inmutable en capas para crear contenedores"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 22 — Docker y contenedores para laboratorios de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "IMDSv2"
+      },
+      {
+        "t": "p",
+        "x": "Metadata con token que un SSRF simple no puede alcanzar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 99 — Server-Side Request Forgery (SSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Immunity / WinDbg"
+      },
+      {
+        "t": "p",
+        "x": "Depuradores usados en el exploiting de Windows"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 129 — Explotación en Windows: manejo de SEH."
+      },
+      {
+        "t": "h3",
+        "x": "impacket"
+      },
+      {
+        "t": "p",
+        "x": "Suite de Python con implementaciones de PsExec, WMI, etc."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 78 — Movimiento lateral en la red."
+      },
+      {
+        "t": "h3",
+        "x": "Impact assessment"
+      },
+      {
+        "t": "p",
+        "x": "Evaluación contextual de efectos, afectados y mitigaciones."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 300 — Gobernanza y ética de la IA segura."
+      },
+      {
+        "t": "h3",
+        "x": "Impacto"
+      },
+      {
+        "t": "p",
+        "x": "Lo que el bug permite; justifica la severidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 85 — Reporte profesional de pentest, Clase 107 — Server-Side Template Injection (SSTI), Clase 114 — Bug bounty: metodología y plataformas."
+      },
+      {
+        "t": "h3",
+        "x": "Impacto y severidad"
+      },
+      {
+        "t": "p",
+        "x": "Qué significa para la organización y con qué urgencia"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 160 — Reporte de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "imphash"
+      },
+      {
+        "t": "p",
+        "x": "Hash de la tabla de imports; agrupa por APIs usadas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 143 — Análisis estático básico."
+      },
+      {
+        "t": "h3",
+        "x": "Implante / agente"
+      },
+      {
+        "t": "p",
+        "x": "Código que corre en la víctima y llama a casa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "Import Directory / IAT"
+      },
+      {
+        "t": "p",
+        "x": "Tabla de APIs que usa el binario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 145 — El formato PE de Windows."
+      },
+      {
+        "t": "h3",
+        "x": "Incertidumbre"
+      },
+      {
+        "t": "p",
+        "x": "Falta de conocimiento representada y comunicada explícitamente."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 277 — Gestión de riesgos: cuantitativa y cualitativa."
+      },
+      {
+        "t": "h3",
+        "x": "Indemnización / seguro"
+      },
+      {
+        "t": "p",
+        "x": "Reparto de responsabilidad ante daños accidentales"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 67 — Reglas de engagement, alcance y contratos."
+      },
+      {
+        "t": "h3",
+        "x": "Índice de medición"
+      },
+      {
+        "t": "p",
+        "x": "Base construida con observaciones realizadas en momentos concretos."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 254 — OSINT técnico: Shodan y Censys."
+      },
+      {
+        "t": "h3",
+        "x": "INetSim"
+      },
+      {
+        "t": "p",
+        "x": "Simula Internet (DNS, HTTP, SMTP) para el malware"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 142 — Laboratorio seguro de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Info leak"
+      },
+      {
+        "t": "p",
+        "x": "Filtrar una dirección de libc en tiempo de ejecución"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE, Clase 123 — Bypass de protecciones: ret2libc, Clase 138 — Desarrollo de exploits moderno."
+      },
+      {
+        "t": "h3",
+        "x": "Info.plist"
+      },
+      {
+        "t": "p",
+        "x": "Configuración declarativa del bundle y varias superficies."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 264 — Pentest de aplicaciones iOS."
+      },
+      {
+        "t": "h3",
+        "x": "Información,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 343 — Taxonomía técnica de cheats."
+      },
+      {
+        "t": "h3",
+        "x": "informationschema"
+      },
+      {
+        "t": "p",
+        "x": "Tablas de metadatos con el esquema de la BD"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 91 — Inyección SQL: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Informe"
+      },
+      {
+        "t": "p",
+        "x": "El producto real del pentest; lo que el cliente compra"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 85 — Reporte profesional de pentest."
+      },
+      {
+        "t": "h3",
+        "x": "Infostealer"
+      },
+      {
+        "t": "p",
+        "x": "Roba credenciales, cookies y carteras"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 141 — Introducción al malware: tipos y taxonomía."
+      },
+      {
+        "t": "h3",
+        "x": "Ingeniería de detección"
+      },
+      {
+        "t": "p",
+        "x": "Necesita TTPs para construir detecciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 160 — Reporte de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "innerHTML"
+      },
+      {
+        "t": "p",
+        "x": "Sink que interpreta HTML; peligroso con datos del usuario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 97 — XSS almacenado y basado en DOM."
+      },
+      {
+        "t": "h3",
+        "x": "Input"
+      },
+      {
+        "t": "p",
+        "x": "Documento evaluado en una consulta concreta."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 244 — Políticas como código con OPA."
+      },
+      {
+        "t": "h3",
+        "x": "INPUT / OUTPUT / FORWARD"
+      },
+      {
+        "t": "p",
+        "x": "Tráfico hacia, desde y a través del equipo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "Insider"
+      },
+      {
+        "t": "p",
+        "x": "Actor con acceso legítimo interno, malicioso o negligente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain."
+      },
+      {
+        "t": "h3",
+        "x": "Instancia"
+      },
+      {
+        "t": "p",
+        "x": "Aparición concreta de una vulnerabilidad en un activo o artefacto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 245 — Gestión de vulnerabilidades a escala."
+      },
+      {
+        "t": "h3",
+        "x": "Instrumentación"
+      },
+      {
+        "t": "p",
+        "x": "Añadir al binario el reporte de caminos ejecutados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 136 — Fuzzing con AFL++ y libFuzzer."
+      },
+      {
+        "t": "h3",
+        "x": "Instrumentación dinámica"
+      },
+      {
+        "t": "p",
+        "x": "Observación o modificación controlada del proceso en ejecución."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 262 — Pentest de aplicaciones Android."
+      },
+      {
+        "t": "h3",
+        "x": "Integridad,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 345 — Trainers e instrumentación del cliente, Clase 353 — Arquitecturas Anti-Cheat."
+      },
+      {
+        "t": "h3",
+        "x": "Integridad, no confidencialidad"
+      },
+      {
+        "t": "p",
+        "x": "La firma protege de manipulación, no de lectura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 103 — Ataques y seguridad de JWT."
+      },
+      {
+        "t": "h3",
+        "x": "interactive()"
+      },
+      {
+        "t": "p",
+        "x": "Entrega una shell interactiva tras el éxito"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 120 — Buffer overflow en stack: explotación práctica."
+      },
+      {
+        "t": "h3",
+        "x": "Interceptación de SMS"
+      },
+      {
+        "t": "p",
+        "x": "Robo de códigos de doble factor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 155 — Malware en Android."
+      },
+      {
+        "t": "h3",
+        "x": "Interceptar"
+      },
+      {
+        "t": "p",
+        "x": "Pausar una petición para modificarla antes de enviarla"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 88 — Burp Suite: configuración y flujo de trabajo."
+      },
+      {
+        "t": "h3",
+        "x": "Interceptar función"
+      },
+      {
+        "t": "p",
+        "x": "Ver y modificar argumentos y retorno en caliente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 134 — Análisis dinámico y debugging de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Internal,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red, Clase 343 — Taxonomía técnica de cheats."
+      },
+      {
+        "t": "h3",
+        "x": "Intérprete de confianza"
+      },
+      {
+        "t": "p",
+        "x": "powershell/wscript/mshta, firmados por Microsoft"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 153 — Análisis de malware en scripts: PowerShell y JavaScript."
+      },
+      {
+        "t": "h3",
+        "x": "Intervención"
+      },
+      {
+        "t": "p",
+        "x": "Cambio educativo, técnico o de proceso."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 286 — Concienciación y cultura de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Introspección"
+      },
+      {
+        "t": "p",
+        "x": "Consultar el propio esquema de la API"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 111 — Seguridad de APIs GraphQL."
+      },
+      {
+        "t": "h3",
+        "x": "Intruder"
+      },
+      {
+        "t": "p",
+        "x": "Automatiza cargas sobre posiciones marcadas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 88 — Burp Suite: configuración y flujo de trabajo."
+      },
+      {
+        "t": "h3",
+        "x": "INVALID"
+      },
+      {
+        "t": "p",
+        "x": "Paquete que no encaja en ningún flujo conocido; se descarta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "Invalidación en servidor"
+      },
+      {
+        "t": "p",
+        "x": "El logout debe anular el ID, no solo borrar la cookie"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 102 — Gestión de sesiones y ataques asociados."
+      },
+      {
+        "t": "h3",
+        "x": "Invariants"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 354 — Server-side Anti-Cheat y diseño autoritativo."
+      },
+      {
+        "t": "h3",
+        "x": "Inventario,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 351 — Multiplayer y autoridad: nunca confiar en el cliente."
+      },
+      {
+        "t": "h3",
+        "x": "Inventario de persistencia"
+      },
+      {
+        "t": "p",
+        "x": "Registro de lo instalado para poder retirarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 82 — Persistencia en sistemas comprometidos."
+      },
+      {
+        "t": "h3",
+        "x": "Inventario de superficie"
+      },
+      {
+        "t": "p",
+        "x": "Resultado del mapeo; base de las pruebas posteriores"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 90 — Mapeo, spidering y descubrimiento de contenido."
+      },
+      {
+        "t": "h3",
+        "x": "Invisible a escáneres"
+      },
+      {
+        "t": "p",
+        "x": "No hay patrón que detectar automáticamente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 109 — Vulnerabilidades de lógica de negocio."
+      },
+      {
+        "t": "h3",
+        "x": "Inyección ciega"
+      },
+      {
+        "t": "p",
+        "x": "El comando se ejecuta pero no se ve la salida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 95 — Inyección de comandos del sistema operativo."
+      },
+      {
+        "t": "h3",
+        "x": "Inyección ciega (blind)"
+      },
+      {
+        "t": "p",
+        "x": "La inyección funciona pero no se ven los datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 92 — Inyección SQL avanzada y ciega (blind)."
+      },
+      {
+        "t": "h3",
+        "x": "Inyección de código"
+      },
+      {
+        "t": "p",
+        "x": "VirtualAllocEx + WriteProcessMemory + CreateRemoteThread"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 146 — Análisis con IDA y Ghidra aplicado a malware, Clase 148 — Análisis de comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Inyección de comandos"
+      },
+      {
+        "t": "p",
+        "x": "Entrada del usuario ejecutada como comando del sistema"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 95 — Inyección de comandos del sistema operativo."
+      },
+      {
+        "t": "h3",
+        "x": "Inyección indirecta"
+      },
+      {
+        "t": "p",
+        "x": "Instrucción hostil incorporada en contenido externo."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 296 — Prompt injection y jailbreaks."
+      },
+      {
+        "t": "h3",
+        "x": "Inyección NoSQL"
+      },
+      {
+        "t": "p",
+        "x": "Alterar la estructura o el tipo de la consulta con operadores"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 94 — Inyección NoSQL."
+      },
+      {
+        "t": "h3",
+        "x": "Inyección SQL (SQLi)"
+      },
+      {
+        "t": "p",
+        "x": "Datos del usuario interpretados como parte de una consulta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 91 — Inyección SQL: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Inyección temporal"
+      },
+      {
+        "t": "p",
+        "x": "Deducir por el tiempo de respuesta (SLEEP, WAITFOR)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 92 — Inyección SQL avanzada y ciega (blind)."
+      },
+      {
+        "t": "h3",
+        "x": "IOC — Indicador de compromiso"
+      },
+      {
+        "t": "p",
+        "x": "Indicator of Compromise: dato observable de una intrusión"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: indicator of compromise, ioc."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 6 clase(s): Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain, Clase 19 — Expresiones regulares para análisis de logs y datos, Clase 43 — Network Security Monitoring (NSM): fundamentos, Clase 143 — Análisis estático básico, Clase 157 — Threat intelligence a partir de malware, Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "IOCs estructurados"
+      },
+      {
+        "t": "p",
+        "x": "Indicadores en tablas o formato estándar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 160 — Reporte de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "IP"
+      },
+      {
+        "t": "p",
+        "x": "Protocolo de red best-effort que direcciona y enruta paquetes sin garantías."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas, Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "IPA"
+      },
+      {
+        "t": "p",
+        "x": "Paquete distribuible que contiene bundle y binarios de una app iOS."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 264 — Pentest de aplicaciones iOS."
+      },
+      {
+        "t": "h3",
+        "x": "ipad / opad"
+      },
+      {
+        "t": "p",
+        "x": "Constantes de relleno interno y externo de HMAC"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 52 — HMAC y autenticación de mensajes."
+      },
+      {
+        "t": "h3",
+        "x": "IPFIX"
+      },
+      {
+        "t": "p",
+        "x": "Estándar abierto derivado de NetFlow v9"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 45 — NetFlow y análisis de metadatos de tráfico."
+      },
+      {
+        "t": "h3",
+        "x": "IPS"
+      },
+      {
+        "t": "p",
+        "x": "Se sitúa en línea y puede descartar el tráfico"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "IPsec"
+      },
+      {
+        "t": "p",
+        "x": "Suite estándar de VPN: IKE, ESP y AH"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN."
+      },
+      {
+        "t": "h3",
+        "x": "IPv4"
+      },
+      {
+        "t": "p",
+        "x": "Dirección de 32 bits escrita en cuatro octetos decimales."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 14 — Direccionamiento IP y subnetting."
+      },
+      {
+        "t": "h3",
+        "x": "IR"
+      },
+      {
+        "t": "p",
+        "x": "Respuesta a incidentes (Incident Response)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva."
+      },
+      {
+        "t": "h3",
+        "x": "ISN"
+      },
+      {
+        "t": "p",
+        "x": "Número de secuencia inicial aleatorio que abre una conexión TCP."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "ISO 27001"
+      },
+      {
+        "t": "p",
+        "x": "Estándar certificable de requisitos del SGSI"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model."
+      },
+      {
+        "t": "h3",
+        "x": "ISO 27002"
+      },
+      {
+        "t": "p",
+        "x": "Guía detallada de los controles del Anexo A"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model."
+      },
+      {
+        "t": "h3",
+        "x": "ISO/IEC 29147"
+      },
+      {
+        "t": "p",
+        "x": "Estándar de divulgación de vulnerabilidades"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable."
+      },
+      {
+        "t": "h3",
+        "x": "ISO/IEC 30111"
+      },
+      {
+        "t": "p",
+        "x": "Estándar de gestión de vulnerabilidades"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable."
+      },
+      {
+        "t": "h3",
+        "x": "IV"
+      },
+      {
+        "t": "p",
+        "x": "Vector de inicialización; impredecible, único y no secreto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 47 — Cifrado simétrico: AES y modos de operación."
+      },
+      {
+        "t": "h3",
+        "x": "IV predecible"
+      },
+      {
+        "t": "p",
+        "x": "Vector de inicialización fijo o adivinable en CBC"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h2",
+        "x": "J"
+      },
+      {
+        "t": "h3",
+        "x": "JA3"
+      },
+      {
+        "t": "p",
+        "x": "Huella del cliente TLS; identifica software sin descifrar el tráfico"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "JA3 / JA3S"
+      },
+      {
+        "t": "p",
+        "x": "Huella del cliente/servidor TLS; delata beacons"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 149 — Comunicaciones de comando y control (C2) del malware."
+      },
+      {
+        "t": "h3",
+        "x": "jadx"
+      },
+      {
+        "t": "p",
+        "x": "Decompilador de Dalvik a Java casi legible"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 155 — Malware en Android."
+      },
+      {
+        "t": "h3",
+        "x": "Jailbreak"
+      },
+      {
+        "t": "p",
+        "x": "Modificación que amplía acceso; altera el modelo del dispositivo de prueba."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 264 — Pentest de aplicaciones iOS."
+      },
+      {
+        "t": "h3",
+        "x": "Jeopardy"
+      },
+      {
+        "t": "p",
+        "x": "Formato de tablero de retos por categorías"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 140 — CTFs de pwn e ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "Jerarquía de protocolos"
+      },
+      {
+        "t": "p",
+        "x": "Composición porcentual del tráfico de la captura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "Jinja2 / Twig"
+      },
+      {
+        "t": "p",
+        "x": "Motores con sintaxis de dobles llaves"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 107 — Server-Side Template Injection (SSTI)."
+      },
+      {
+        "t": "h3",
+        "x": "Jitter"
+      },
+      {
+        "t": "p",
+        "x": "Variación aleatoria del intervalo de check-in"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 149 — Comunicaciones de comando y control (C2) del malware, Clase 164 — Diseño de infraestructura de comando y control (C2)."
+      },
+      {
+        "t": "h3",
+        "x": "Jitter / sleep"
+      },
+      {
+        "t": "p",
+        "x": "Aleatoriedad e intervalo del check-in"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "JNI/bridge"
+      },
+      {
+        "t": "p",
+        "x": "Interfaz entre código gestionado y nativo."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 265 — Ingeniería inversa de aplicaciones móviles."
+      },
+      {
+        "t": "h3",
+        "x": "Job"
+      },
+      {
+        "t": "p",
+        "x": "Tarea gestionada por el control de trabajos de la shell"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos."
+      },
+      {
+        "t": "h3",
+        "x": "Job / handler"
+      },
+      {
+        "t": "p",
+        "x": "Tarea en segundo plano que espera conexiones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 72 — Metasploit Framework: arquitectura y uso."
+      },
+      {
+        "t": "h3",
+        "x": "John the Ripper / Hashcat"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas de cracking (CPU y GPU)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 80 — Cracking de contraseñas con John y Hashcat."
+      },
+      {
+        "t": "h3",
+        "x": "Journaling"
+      },
+      {
+        "t": "p",
+        "x": "Registro del sistema de ficheros que persiste cambios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 84 — Anti-forense y borrado de huellas (concepto y límites)."
+      },
+      {
+        "t": "h3",
+        "x": "JTAG/SWD"
+      },
+      {
+        "t": "p",
+        "x": "Interfaces de depuración y prueba de circuitos."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 268 — Análisis de hardware: UART, JTAG y SPI."
+      },
+      {
+        "t": "h3",
+        "x": "Juice Shop"
+      },
+      {
+        "t": "p",
+        "x": "Aplicación web vulnerable de OWASP para práctica"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 22 — Docker y contenedores para laboratorios de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "JWT"
+      },
+      {
+        "t": "p",
+        "x": "Token que contiene sus datos y una firma; sesión sin estado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 103 — Ataques y seguridad de JWT."
+      },
+      {
+        "t": "h3",
+        "x": "JWT alg: none"
+      },
+      {
+        "t": "p",
+        "x": "Aceptar el algoritmo que declara el propio token"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h3",
+        "x": "JWT (HS256)"
+      },
+      {
+        "t": "p",
+        "x": "Token web firmado con HMAC-SHA256"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 52 — HMAC y autenticación de mensajes."
+      },
+      {
+        "t": "h2",
+        "x": "K"
+      },
+      {
+        "t": "h3",
+        "x": "Kali Linux"
+      },
+      {
+        "t": "p",
+        "x": "Distribución con herramientas de seguridad ofensiva"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red."
+      },
+      {
+        "t": "h3",
+        "x": "KASLR"
+      },
+      {
+        "t": "p",
+        "x": "ASLR del kernel; exige un leak de kernel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 139 — Kernel exploitation: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "KDF"
+      },
+      {
+        "t": "p",
+        "x": "Función de derivación de clave, lenta a propósito para contraseñas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 21 — Criptografía: conceptos fundamentales e intuición, Clase 53 — Intercambio de claves: Diffie-Hellman."
+      },
+      {
+        "t": "h3",
+        "x": "KDF de contraseñas"
+      },
+      {
+        "t": "p",
+        "x": "Función deliberadamente lenta para almacenar contraseñas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2."
+      },
+      {
+        "t": "h3",
+        "x": "KDF lento"
+      },
+      {
+        "t": "p",
+        "x": "bcrypt, scrypt, Argon2; diseñado para resistir el cracking"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 80 — Cracking de contraseñas con John y Hashcat."
+      },
+      {
+        "t": "h3",
+        "x": "KEK"
+      },
+      {
+        "t": "p",
+        "x": "Clave maestra que cifra otras claves; vive en el KMS/HSM"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 63 — Gestión de secretos: Vault y KMS."
+      },
+      {
+        "t": "h3",
+        "x": "Kerberos"
+      },
+      {
+        "t": "p",
+        "x": "Protocolo de autenticación de AD basado en tickets"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 78 — Movimiento lateral en la red."
+      },
+      {
+        "t": "h3",
+        "x": "Kernel exploit"
+      },
+      {
+        "t": "p",
+        "x": "Vulnerabilidad del núcleo; último recurso, puede tumbar la máquina"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 76 — Escalada de privilegios en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Kernel exploitation"
+      },
+      {
+        "t": "p",
+        "x": "Explotar el núcleo del sistema operativo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 139 — Kernel exploitation: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "Kernel panic"
+      },
+      {
+        "t": "p",
+        "x": "Caída del sistema; riesgo de los exploits de kernel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 76 — Escalada de privilegios en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "KEV"
+      },
+      {
+        "t": "p",
+        "x": "Catálogo de CISA de vulnerabilidades conocidas como explotadas."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 240 — SCA: dependencias y riesgo de terceros."
+      },
+      {
+        "t": "h3",
+        "x": "Keychain"
+      },
+      {
+        "t": "p",
+        "x": "Almacén de credenciales con clases de accesibilidad y controles."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 263 — Seguridad de iOS: arquitectura."
+      },
+      {
+        "t": "h3",
+        "x": "keyshare"
+      },
+      {
+        "t": "p",
+        "x": "Parte del ECDHE adelantada en TLS 1.3"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Keystore"
+      },
+      {
+        "t": "p",
+        "x": "Servicio para claves y operaciones criptográficas con opciones de respaldo hardware."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 261 — Seguridad de Android: arquitectura."
+      },
+      {
+        "t": "h3",
+        "x": "Keystream"
+      },
+      {
+        "t": "p",
+        "x": "Flujo pseudoaleatorio que se combina con XOR con el mensaje"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 47 — Cifrado simétrico: AES y modos de operación, Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4."
+      },
+      {
+        "t": "h3",
+        "x": "kid"
+      },
+      {
+        "t": "p",
+        "x": "Key ID del header; vector de inyección si no se valida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 103 — Ataques y seguridad de JWT."
+      },
+      {
+        "t": "h3",
+        "x": "Kill Chain"
+      },
+      {
+        "t": "p",
+        "x": "Modelo de 7 fases de un ataque dirigido de Lockheed Martin"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain."
+      },
+      {
+        "t": "h3",
+        "x": "kiwi / Mimikatz"
+      },
+      {
+        "t": "p",
+        "x": "Recupera credenciales de la memoria de LSASS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 74 — Meterpreter y post-explotación."
+      },
+      {
+        "t": "h3",
+        "x": "KMS"
+      },
+      {
+        "t": "p",
+        "x": "Servicio gestionado de claves en la nube"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 63 — Gestión de secretos: Vault y KMS."
+      },
+      {
+        "t": "h3",
+        "x": "KOTH — King of the Hill"
+      },
+      {
+        "t": "p",
+        "x": "Formato competitivo en el que se obtiene y conserva control de un objetivo autorizado durante un intervalo."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "KPA"
+      },
+      {
+        "t": "p",
+        "x": "Conoce pares de texto claro y su cifrado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 61 — Introducción al criptoanálisis."
+      },
+      {
+        "t": "h3",
+        "x": "KPI"
+      },
+      {
+        "t": "p",
+        "x": "Indicador de desempeño frente a objetivo."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 287 — Métricas de seguridad: KPIs y KRIs."
+      },
+      {
+        "t": "h3",
+        "x": "KPTI"
+      },
+      {
+        "t": "p",
+        "x": "Aísla las tablas de páginas de usuario y kernel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 139 — Kernel exploitation: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "KRI"
+      },
+      {
+        "t": "p",
+        "x": "Indicador de exposición o cambio de riesgo."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 287 — Métricas de seguridad: KPIs y KRIs."
+      },
+      {
+        "t": "h2",
+        "x": "L"
+      },
+      {
+        "t": "h3",
+        "x": "Laboratorio aislado"
+      },
+      {
+        "t": "p",
+        "x": "Entorno donde el malware no puede escapar ni dañar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 142 — Laboratorio seguro de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Landing de simulación"
+      },
+      {
+        "t": "p",
+        "x": "Página controlada que educa y no captura secretos reales."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 258 — Campañas de phishing con GoPhish."
+      },
+      {
+        "t": "h3",
+        "x": "Landing page"
+      },
+      {
+        "t": "p",
+        "x": "Página controlada que captura credenciales o entrega el payload"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "LAPS"
+      },
+      {
+        "t": "p",
+        "x": "Contraseña de administrador local única por máquina"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 78 — Movimiento lateral en la red."
+      },
+      {
+        "t": "h3",
+        "x": "Latencia por salto"
+      },
+      {
+        "t": "p",
+        "x": "Cada pivote añade retardo y fragilidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 79 — Pivoting y reenvío de puertos."
+      },
+      {
+        "t": "h3",
+        "x": "Layer"
+      },
+      {
+        "t": "p",
+        "x": "Capa de Navigator que representa un plan o una cobertura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 162 — MITRE ATT&CK como lenguaje ofensivo."
+      },
+      {
+        "t": "h3",
+        "x": "LDAP anónimo"
+      },
+      {
+        "t": "p",
+        "x": "Consulta al directorio sin autenticar; expone la estructura del dominio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 33 — Enumeración de servicios de red, Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP."
+      },
+      {
+        "t": "h3",
+        "x": "LDPRELOAD"
+      },
+      {
+        "t": "p",
+        "x": "Carga una librería antes que las demás; secuestra libc"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 154 — Malware en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Leak → base → derivar"
+      },
+      {
+        "t": "p",
+        "x": "Patrón central de la explotación con ASLR"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 123 — Bypass de protecciones: ret2libc."
+      },
+      {
+        "t": "h3",
+        "x": "Leak de kernel"
+      },
+      {
+        "t": "p",
+        "x": "Filtrar una dirección para derrotar KASLR"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 139 — Kernel exploitation: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "Leak del canario"
+      },
+      {
+        "t": "p",
+        "x": "Leer el canario para reescribirlo y evadirlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE, Clase 125 — Vulnerabilidades de format string."
+      },
+      {
+        "t": "h3",
+        "x": "Lease"
+      },
+      {
+        "t": "p",
+        "x": "Concesión temporal de una IP a un cliente DHCP."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos."
+      },
+      {
+        "t": "h3",
+        "x": "leave; ret"
+      },
+      {
+        "t": "p",
+        "x": "Gadget típico de pivote de pila"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 124 — Return-Oriented Programming (ROP)."
+      },
+      {
+        "t": "h3",
+        "x": "Lectura de ficheros"
+      },
+      {
+        "t": "p",
+        "x": "file:///etc/passwd insertado en la respuesta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 100 — XML External Entities (XXE)."
+      },
+      {
+        "t": "h3",
+        "x": "Legítimo,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 350 — Triggerbot, macros, input automation y bots."
+      },
+      {
+        "t": "h3",
+        "x": "Let's Encrypt / ACME"
+      },
+      {
+        "t": "p",
+        "x": "CA gratuita y protocolo de emisión y renovación automáticas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "LetsDefend"
+      },
+      {
+        "t": "p",
+        "x": "Plataforma de entrenamiento SOC con investigaciones simuladas y modalidades gratuita y de pago."
+      },
+      {
+        "t": "p",
+        "x": "Sitio oficial: LetsDefend."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "LHOST / LPORT"
+      },
+      {
+        "t": "p",
+        "x": "Dirección y puerto de escucha del atacante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 73 — Metasploit: explotación y payloads, Clase 75 — msfvenom: generación de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "libc"
+      },
+      {
+        "t": "p",
+        "x": "Biblioteca C, cargada en todo proceso; llena de código útil"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 123 — Bypass de protecciones: ret2libc."
+      },
+      {
+        "t": "h3",
+        "x": "libc-database"
+      },
+      {
+        "t": "p",
+        "x": "Identifica la versión de libc por direcciones filtradas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 138 — Desarrollo de exploits moderno."
+      },
+      {
+        "t": "h3",
+        "x": "Libc del reto"
+      },
+      {
+        "t": "p",
+        "x": "La libc del servidor, que hay que usar para los offsets"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 140 — CTFs de pwn e ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "libFuzzer"
+      },
+      {
+        "t": "p",
+        "x": "Fuzzing in-process, dirigido a una función"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 136 — Fuzzing con AFL++ y libFuzzer."
+      },
+      {
+        "t": "h3",
+        "x": "libpcap"
+      },
+      {
+        "t": "p",
+        "x": "Librería de captura sobre la que se apoyan tcpdump, Wireshark y Zeek"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 28 — tcpdump y captura de tráfico en línea de comandos."
+      },
+      {
+        "t": "h3",
+        "x": "libsodium / Tink / age"
+      },
+      {
+        "t": "p",
+        "x": "Bibliotecas con el camino fácil ya seguro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h3",
+        "x": "LIKELY VULNERABLE"
+      },
+      {
+        "t": "p",
+        "x": "Veredicto por versión, no por comprobación efectiva"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 32 — Nmap Scripting Engine (NSE)."
+      },
+      {
+        "t": "h3",
+        "x": "Limitación de tasa"
+      },
+      {
+        "t": "p",
+        "x": "Encarece los ataques que necesitan muchas peticiones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 60 — Ataques criptográficos: padding oracle y timing."
+      },
+      {
+        "t": "h3",
+        "x": "Límite de profundidad"
+      },
+      {
+        "t": "p",
+        "x": "Restringir cuán anidada puede ser una consulta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 111 — Seguridad de APIs GraphQL."
+      },
+      {
+        "t": "h3",
+        "x": "Límite del estático"
+      },
+      {
+        "t": "p",
+        "x": "Ofuscación e indirección lo hacen incompleto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 133 — Análisis estático de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Limpieza"
+      },
+      {
+        "t": "p",
+        "x": "Eliminar toda persistencia al cerrar el engagement"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 82 — Persistencia en sistemas comprometidos."
+      },
+      {
+        "t": "h3",
+        "x": "Line-of-sight"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 348 — Matemática de un aimbot."
+      },
+      {
+        "t": "h3",
+        "x": "Línea base"
+      },
+      {
+        "t": "p",
+        "x": "Conjunto heredado que se gestiona sin permitir nuevos hallazgos equivalentes."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 236 — Secure SDLC y filosofía shift-left, Clase 238 — SAST: análisis estático de código."
+      },
+      {
+        "t": "h3",
+        "x": "Línea de comandos"
+      },
+      {
+        "t": "p",
+        "x": "Revela el uso malicioso de un binario legítimo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "LinkFinder"
+      },
+      {
+        "t": "p",
+        "x": "Herramienta que extrae URLs de ficheros JS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 90 — Mapeo, spidering y descubrimiento de contenido."
+      },
+      {
+        "t": "h3",
+        "x": "LinPEAS / LinEnum"
+      },
+      {
+        "t": "p",
+        "x": "Scripts que automatizan la detección de vectores"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 76 — Escalada de privilegios en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "list"
+      },
+      {
+        "t": "p",
+        "x": "Secuencia ordenada y mutable."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje."
+      },
+      {
+        "t": "h3",
+        "x": "Lista de filtradas"
+      },
+      {
+        "t": "p",
+        "x": "Rechazar contraseñas ya comprometidas al crearlas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 81 — Ataques a credenciales: fuerza bruta y password spraying."
+      },
+      {
+        "t": "h3",
+        "x": "Listener"
+      },
+      {
+        "t": "p",
+        "x": "Servicio que espera conexiones de implantes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "Listing"
+      },
+      {
+        "t": "p",
+        "x": "Vista de desensamblado, dirección a dirección"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 131 — Ghidra para ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "Literal"
+      },
+      {
+        "t": "p",
+        "x": "Carácter que casa consigo mismo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 19 — Expresiones regulares para análisis de logs y datos."
+      },
+      {
+        "t": "h3",
+        "x": "Little-endian"
+      },
+      {
+        "t": "p",
+        "x": "El byte menos significativo se almacena primero"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador."
+      },
+      {
+        "t": "h3",
+        "x": "Living off the land (LotL)"
+      },
+      {
+        "t": "p",
+        "x": "Abusar de herramientas legítimas del sistema"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "LKM"
+      },
+      {
+        "t": "p",
+        "x": "Loadable Kernel Module; vía de los rootkits de kernel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 154 — Malware en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "LNK"
+      },
+      {
+        "t": "p",
+        "x": "Acceso directo de Windows usado como lanzador dentro de un contenedor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "local"
+      },
+      {
+        "t": "p",
+        "x": "Declara una variable con ámbito de función"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 7 — Bash scripting para tareas de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Local a remoto"
+      },
+      {
+        "t": "p",
+        "x": "Cambiar process por remote para atacar el servicio real"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 120 — Buffer overflow en stack: explotación práctica."
+      },
+      {
+        "t": "h3",
+        "x": "Local forwarding (-L)"
+      },
+      {
+        "t": "p",
+        "x": "Expone un servicio interno concreto en el atacante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 79 — Pivoting y reenvío de puertos."
+      },
+      {
+        "t": "h3",
+        "x": "Local → remoto"
+      },
+      {
+        "t": "p",
+        "x": "Hacer que el exploit funcione contra el objetivo real"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 138 — Desarrollo de exploits moderno."
+      },
+      {
+        "t": "h3",
+        "x": "Lockfile"
+      },
+      {
+        "t": "p",
+        "x": "Registro reproducible de versiones e integridad resueltas."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 240 — SCA: dependencias y riesgo de terceros."
+      },
+      {
+        "t": "h3",
+        "x": "Logaritmo discreto"
+      },
+      {
+        "t": "p",
+        "x": "Hallar a conocidos g y gᵃ mod p; base de la seguridad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 53 — Intercambio de claves: Diffie-Hellman."
+      },
+      {
+        "t": "h3",
+        "x": "Lógica de negocio"
+      },
+      {
+        "t": "p",
+        "x": "Reglas específicas de la aplicación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 109 — Vulnerabilidades de lógica de negocio."
+      },
+      {
+        "t": "h3",
+        "x": "Logjam"
+      },
+      {
+        "t": "p",
+        "x": "Ataque que explotó grupos DH de 1024 bits compartidos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 53 — Intercambio de claves: Diffie-Hellman."
+      },
+      {
+        "t": "h3",
+        "x": "Logon Type"
+      },
+      {
+        "t": "p",
+        "x": "Campo del evento 4624/4625 que indica el tipo de acceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios."
+      },
+      {
+        "t": "h3",
+        "x": "LOLBAS"
+      },
+      {
+        "t": "p",
+        "x": "Catálogo de LOLBins en Windows"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "LOLBin"
+      },
+      {
+        "t": "p",
+        "x": "Binario legítimo del sistema abusado por el malware"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva, Clase 152 — Análisis de documentos maliciosos: macros y PDF, Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "Long-haul C2"
+      },
+      {
+        "t": "p",
+        "x": "Canal lento y sigiloso para persistencia"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 164 — Diseño de infraestructura de comando y control (C2)."
+      },
+      {
+        "t": "h3",
+        "x": "Lookaround"
+      },
+      {
+        "t": "p",
+        "x": "Aserción de contexto sin consumir"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 19 — Expresiones regulares para análisis de logs y datos."
+      },
+      {
+        "t": "h3",
+        "x": "Loopback"
+      },
+      {
+        "t": "p",
+        "x": "127.0.0.0/8; se refiere a la propia máquina."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 14 — Direccionamiento IP y subnetting."
+      },
+      {
+        "t": "h3",
+        "x": "Loot"
+      },
+      {
+        "t": "p",
+        "x": "Evidencia recolectada, guardada en la base de datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 74 — Meterpreter y post-explotación."
+      },
+      {
+        "t": "h3",
+        "x": "LotL"
+      },
+      {
+        "t": "p",
+        "x": "Living off the land: abusar de herramientas legítimas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva."
+      },
+      {
+        "t": "h3",
+        "x": "Low and slow"
+      },
+      {
+        "t": "p",
+        "x": "Exfiltrar despacio para evadir umbrales de volumen"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 81 — Ataques a credenciales: fuerza bruta y password spraying, Clase 83 — Exfiltración de datos."
+      },
+      {
+        "t": "h3",
+        "x": "LSASS"
+      },
+      {
+        "t": "p",
+        "x": "Proceso de Windows que custodia credenciales en memoria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios, Clase 74 — Meterpreter y post-explotación."
+      },
+      {
+        "t": "h3",
+        "x": "LSB"
+      },
+      {
+        "t": "p",
+        "x": "Sustitución del bit menos significativo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 64 — Esteganografía y ocultación de datos."
+      },
+      {
+        "t": "h3",
+        "x": "ltrace"
+      },
+      {
+        "t": "p",
+        "x": "Registra las llamadas a funciones de librería"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls, Clase 134 — Análisis dinámico y debugging de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Lua"
+      },
+      {
+        "t": "p",
+        "x": "Lenguaje de scripting ligero en el que se escriben los scripts NSE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 32 — Nmap Scripting Engine (NSE)."
+      },
+      {
+        "t": "h3",
+        "x": "Lucky13"
+      },
+      {
+        "t": "p",
+        "x": "Ataque de timing sobre MAC-then-encrypt"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 56 — TLS/SSL en profundidad, Clase 60 — Ataques criptográficos: padding oracle y timing."
+      },
+      {
+        "t": "h2",
+        "x": "M"
+      },
+      {
+        "t": "h3",
+        "x": "MAC"
+      },
+      {
+        "t": "p",
+        "x": "Etiqueta con clave secreta que prueba integridad y origen"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas, Clase 21 — Criptografía: conceptos fundamentales e intuición, Clase 52 — HMAC y autenticación de mensajes."
+      },
+      {
+        "t": "h3",
+        "x": "MAC flooding"
+      },
+      {
+        "t": "p",
+        "x": "Saturar la CAM para degradar el switch a comportamiento de hub"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h3",
+        "x": "MAC-then-encrypt"
+      },
+      {
+        "t": "p",
+        "x": "Orden inseguro usado por TLS 1.2; habilita Lucky13"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 52 — HMAC y autenticación de mensajes."
+      },
+      {
+        "t": "h3",
+        "x": "Mach-O"
+      },
+      {
+        "t": "p",
+        "x": "Formato de ejecutables de plataformas Apple."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 265 — Ingeniería inversa de aplicaciones móviles."
+      },
+      {
+        "t": "h3",
+        "x": "Macro VBA"
+      },
+      {
+        "t": "p",
+        "x": "Código embebido en documentos Office"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 152 — Análisis de documentos maliciosos: macros y PDF."
+      },
+      {
+        "t": "h3",
+        "x": "Macros"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 350 — Triggerbot, macros, input automation y bots."
+      },
+      {
+        "t": "h3",
+        "x": "Magic bytes"
+      },
+      {
+        "t": "p",
+        "x": "Primeros bytes que identifican el tipo real"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 108 — Vulnerabilidades en carga de archivos."
+      },
+      {
+        "t": "h3",
+        "x": "main"
+      },
+      {
+        "t": "p",
+        "x": "Rama principal por convención"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Maleabilidad"
+      },
+      {
+        "t": "p",
+        "x": "Poder alterar el texto claro manipulando el cifrado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 49 — Cifrado asimétrico: RSA, Clase 59 — Cifrado autenticado (AEAD)."
+      },
+      {
+        "t": "h3",
+        "x": "malfind"
+      },
+      {
+        "t": "p",
+        "x": "Plugin que detecta código inyectado en memoria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 148 — Análisis de comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Malleable C2"
+      },
+      {
+        "t": "p",
+        "x": "Lenguaje de perfiles de tráfico de Cobalt Strike"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "Malleable profile"
+      },
+      {
+        "t": "p",
+        "x": "Configuración que define cómo se ve el tráfico C2"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 164 — Diseño de infraestructura de comando y control (C2)."
+      },
+      {
+        "t": "h3",
+        "x": "Malware"
+      },
+      {
+        "t": "p",
+        "x": "Software diseñado para dañar o acceder sin autorización"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 141 — Introducción al malware: tipos y taxonomía."
+      },
+      {
+        "t": "h3",
+        "x": "Malware de Android"
+      },
+      {
+        "t": "p",
+        "x": "Malware móvil distribuido como APK"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 155 — Malware en Android."
+      },
+      {
+        "t": "h3",
+        "x": "Malware de Linux"
+      },
+      {
+        "t": "p",
+        "x": "Malware dirigido a servidores e IoT"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 154 — Malware en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Malware en scripts"
+      },
+      {
+        "t": "p",
+        "x": "Malware escrito en PowerShell, JScript, VBScript"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 153 — Análisis de malware en scripts: PowerShell y JavaScript."
+      },
+      {
+        "t": "h3",
+        "x": "Man-in-the-middle"
+      },
+      {
+        "t": "p",
+        "x": "Posición entre dos partes que permite leer, alterar e inyectar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 40 — Man-in-the-Middle: técnicas y defensa."
+      },
+      {
+        "t": "h3",
+        "x": "Man-in-the-middle L2"
+      },
+      {
+        "t": "p",
+        "x": "Interposición del atacante entre dos hosts del mismo segmento"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h3",
+        "x": "Manejador de eventos"
+      },
+      {
+        "t": "p",
+        "x": "onerror, onload; ejecuta JS sin la etiqueta script"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 96 — Cross-Site Scripting (XSS) reflejado."
+      },
+      {
+        "t": "h3",
+        "x": "Manejo seguro"
+      },
+      {
+        "t": "p",
+        "x": "Guardar muestras cifradas (contraseña infected)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 142 — Laboratorio seguro de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Manipulación de precio"
+      },
+      {
+        "t": "p",
+        "x": "Aceptar el precio o total que envía el cliente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 109 — Vulnerabilidades de lógica de negocio."
+      },
+      {
+        "t": "h3",
+        "x": "Mapeo"
+      },
+      {
+        "t": "p",
+        "x": "Descubrir toda la estructura de la aplicación antes de atacar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 90 — Mapeo, spidering y descubrimiento de contenido."
+      },
+      {
+        "t": "h3",
+        "x": "Marca de tiempo"
+      },
+      {
+        "t": "p",
+        "x": "Prueba de que la firma existía antes de una fecha"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 54 — Firmas digitales."
+      },
+      {
+        "t": "h3",
+        "x": "Marco (stack frame)"
+      },
+      {
+        "t": "p",
+        "x": "Espacio de una función en la pila"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria."
+      },
+      {
+        "t": "h3",
+        "x": "Margen de seguridad"
+      },
+      {
+        "t": "p",
+        "x": "Rondas de sobra frente al mejor ataque conocido"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 61 — Introducción al criptoanálisis."
+      },
+      {
+        "t": "h3",
+        "x": "Mark-of-the-Web (MOTW)"
+      },
+      {
+        "t": "p",
+        "x": "Marca que Windows pone a ficheros de internet; dispara advertencias y bloqueos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Máscara"
+      },
+      {
+        "t": "p",
+        "x": "Patrón que distingue los bits de red de los de host."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 14 — Direccionamiento IP y subnetting."
+      },
+      {
+        "t": "h3",
+        "x": "Mass assignment"
+      },
+      {
+        "t": "p",
+        "x": "Modificación de campos internos al enlazar entrada sin lista permitida."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 110 — Seguridad de APIs REST, Clase 247 — Seguridad de APIs en el ciclo de desarrollo."
+      },
+      {
+        "t": "h3",
+        "x": "MASTG"
+      },
+      {
+        "t": "p",
+        "x": "Guía de técnicas y casos de prueba móviles."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 262 — Pentest de aplicaciones Android."
+      },
+      {
+        "t": "h3",
+        "x": "MASVS"
+      },
+      {
+        "t": "p",
+        "x": "Estándar de verificación para controles de aplicaciones móviles."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 262 — Pentest de aplicaciones Android."
+      },
+      {
+        "t": "h3",
+        "x": "Matriz de comportamiento"
+      },
+      {
+        "t": "p",
+        "x": "Acciones mapeadas a tácticas y técnicas ATT&CK"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 148 — Análisis de comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Matriz Enterprise"
+      },
+      {
+        "t": "p",
+        "x": "ATT&CK para Windows, Linux, macOS, nube y contenedores"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 162 — MITRE ATT&CK como lenguaje ofensivo."
+      },
+      {
+        "t": "h3",
+        "x": "Matriz ICS"
+      },
+      {
+        "t": "p",
+        "x": "ATT&CK para entornos de control industrial"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 162 — MITRE ATT&CK como lenguaje ofensivo."
+      },
+      {
+        "t": "h3",
+        "x": "MBR / VBR"
+      },
+      {
+        "t": "p",
+        "x": "Código de arranque que infectan los bootkits clásicos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 151 — Rootkits y bootkits."
+      },
+      {
+        "t": "h3",
+        "x": "MD5 / SHA-1"
+      },
+      {
+        "t": "p",
+        "x": "Rotos para integridad; colisiones prácticas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades."
+      },
+      {
+        "t": "h3",
+        "x": "Memoria virtual"
+      },
+      {
+        "t": "p",
+        "x": "Espacio de direcciones propio por proceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls."
+      },
+      {
+        "t": "h3",
+        "x": "Memory-hard"
+      },
+      {
+        "t": "p",
+        "x": "Exige mucha memoria; anula la ventaja de las GPU"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2."
+      },
+      {
+        "t": "h3",
+        "x": "Merge"
+      },
+      {
+        "t": "p",
+        "x": "Integra una rama en otra"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Merkle-Damgård"
+      },
+      {
+        "t": "p",
+        "x": "Construcción por bloques encadenados; sufre extensión de longitud"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades."
+      },
+      {
+        "t": "h3",
+        "x": "Mersenne Twister"
+      },
+      {
+        "t": "p",
+        "x": "PRNG estadístico común; nunca para criptografía"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG)."
+      },
+      {
+        "t": "h3",
+        "x": "meta"
+      },
+      {
+        "t": "p",
+        "x": "Metadatos de la regla (autor, familia, referencia)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "Metacarácter"
+      },
+      {
+        "t": "p",
+        "x": "; && backtick $() y la barra vertical; encadenan o sustituyen comandos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 19 — Expresiones regulares para análisis de logs y datos, Clase 95 — Inyección de comandos del sistema operativo."
+      },
+      {
+        "t": "h3",
+        "x": "Metadato"
+      },
+      {
+        "t": "p",
+        "x": "Información sobre creación, comunicación o contexto, distinta del contenido principal."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 260 — OPSEC personal y anonimato."
+      },
+      {
+        "t": "h3",
+        "x": "Metadatos"
+      },
+      {
+        "t": "p",
+        "x": "Con quién, cuándo y cuánto; visibles aun con TLS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 40 — Man-in-the-Middle: técnicas y defensa."
+      },
+      {
+        "t": "h3",
+        "x": "Metadatos de documento"
+      },
+      {
+        "t": "p",
+        "x": "Usuarios, software y rutas filtrados en las propiedades"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas."
+      },
+      {
+        "t": "h3",
+        "x": "Metadatos de tráfico"
+      },
+      {
+        "t": "p",
+        "x": "Quién, cuándo, cuánto y con qué ritmo; sin el contenido"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 45 — NetFlow y análisis de metadatos de tráfico."
+      },
+      {
+        "t": "h3",
+        "x": "Metadatos EXIF / ID3"
+      },
+      {
+        "t": "p",
+        "x": "Campos de imagen y audio usados para ocultar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 64 — Esteganografía y ocultación de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Metadatos vs. contenido"
+      },
+      {
+        "t": "p",
+        "x": "Barato y resistente al cifrado frente a fiel pero caro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 45 — NetFlow y análisis de metadatos de tráfico."
+      },
+      {
+        "t": "h3",
+        "x": "Metasploit Framework"
+      },
+      {
+        "t": "p",
+        "x": "Marco de explotación que estandariza la cadena de ataque"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 72 — Metasploit Framework: arquitectura y uso."
+      },
+      {
+        "t": "h3",
+        "x": "Metasploitable"
+      },
+      {
+        "t": "p",
+        "x": "VM deliberadamente vulnerable para practicar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red."
+      },
+      {
+        "t": "h3",
+        "x": "Meterpreter"
+      },
+      {
+        "t": "p",
+        "x": "Payload avanzado que se ejecuta en memoria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 74 — Meterpreter y post-explotación."
+      },
+      {
+        "t": "h3",
+        "x": "Método"
+      },
+      {
+        "t": "p",
+        "x": "Verbo HTTP que declara la acción sobre un recurso."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna."
+      },
+      {
+        "t": "h3",
+        "x": "Método de Kasiski"
+      },
+      {
+        "t": "p",
+        "x": "Deduce la longitud de la clave por las repeticiones del cifrado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 46 — Historia y fundamentos de la criptografía."
+      },
+      {
+        "t": "h3",
+        "x": "Método HTTP"
+      },
+      {
+        "t": "p",
+        "x": "Cambiarlo puede saltar controles (GET protegido, DELETE no)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 110 — Seguridad de APIs REST."
+      },
+      {
+        "t": "h3",
+        "x": "Metodología"
+      },
+      {
+        "t": "p",
+        "x": "Proceso repetible que da cobertura, defensa legal y valor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 66 — Metodología de pentesting: PTES y OSSTMM."
+      },
+      {
+        "t": "h3",
+        "x": "Metodología por objetivos"
+      },
+      {
+        "t": "p",
+        "x": "Partir de una pregunta y navegar hacia ella"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 130 — Ingeniería inversa: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "Métodos HTTP"
+      },
+      {
+        "t": "p",
+        "x": "Un endpoint puede proteger GET pero no DELETE/PUT"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 105 — Control de acceso roto: IDOR y path traversal."
+      },
+      {
+        "t": "h3",
+        "x": "Métodos mágicos"
+      },
+      {
+        "t": "p",
+        "x": "__wakeup, readObject, __reduce__ invocados al deserializar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 106 — Deserialización insegura."
+      },
+      {
+        "t": "h3",
+        "x": "Métrica agregada"
+      },
+      {
+        "t": "p",
+        "x": "Resultado grupal que reduce exposición individual."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 258 — Campañas de phishing con GoPhish."
+      },
+      {
+        "t": "h3",
+        "x": "Métrica ambiental"
+      },
+      {
+        "t": "p",
+        "x": "Ajuste por el contexto del activo; la más olvidada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS."
+      },
+      {
+        "t": "h3",
+        "x": "Métrica base"
+      },
+      {
+        "t": "p",
+        "x": "Severidad intrínseca del fallo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS."
+      },
+      {
+        "t": "h3",
+        "x": "Métrica de resistencia"
+      },
+      {
+        "t": "p",
+        "x": "Cuántas contraseñas caen y en cuánto tiempo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 80 — Cracking de contraseñas con John y Hashcat."
+      },
+      {
+        "t": "h3",
+        "x": "Métrica de resultado"
+      },
+      {
+        "t": "p",
+        "x": "Señal del cambio de riesgo o comportamiento, no mera actividad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 248 — Cultura DevSecOps y security champions."
+      },
+      {
+        "t": "h3",
+        "x": "Métrica temporal"
+      },
+      {
+        "t": "p",
+        "x": "Ajuste por existencia y madurez de exploit"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS."
+      },
+      {
+        "t": "h3",
+        "x": "MFA"
+      },
+      {
+        "t": "p",
+        "x": "Autenticación multifactor: combinar dos o más factores independientes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad, Clase 81 — Ataques a credenciales: fuerza bruta y password spraying, Clase 101 — Fallos de autenticación y bypass."
+      },
+      {
+        "t": "h3",
+        "x": "MFA fatigue"
+      },
+      {
+        "t": "p",
+        "x": "Presión mediante solicitudes repetidas de aprobación."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 257 — Pretexting y vishing."
+      },
+      {
+        "t": "h3",
+        "x": "MFT"
+      },
+      {
+        "t": "p",
+        "x": "Tabla maestra de ficheros de NTFS; guarda varios timestamps"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 84 — Anti-forense y borrado de huellas (concepto y límites)."
+      },
+      {
+        "t": "h3",
+        "x": "Micro-emulación"
+      },
+      {
+        "t": "p",
+        "x": "Emulación atómica de un comportamiento aislado y reutilizable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 163 — Emulación de adversarios."
+      },
+      {
+        "t": "h3",
+        "x": "Microsegmentación"
+      },
+      {
+        "t": "p",
+        "x": "Políticas por carga de trabajo individual"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 42 — Segmentación de red y arquitectura Zero Trust."
+      },
+      {
+        "t": "h3",
+        "x": "Migración híbrida"
+      },
+      {
+        "t": "p",
+        "x": "Combinar clásico y PQC; seguro si uno de los dos resiste"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 62 — Criptografía post-cuántica."
+      },
+      {
+        "t": "h3",
+        "x": "migrate"
+      },
+      {
+        "t": "p",
+        "x": "Traslada la sesión a un proceso estable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 74 — Meterpreter y post-explotación."
+      },
+      {
+        "t": "h3",
+        "x": "Minimización"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 6 clase(s): Clase 136 — Fuzzing con AFL++ y libFuzzer, Clase 250 — OSINT de personas, Clase 289 — Privacidad y protección de datos, Clase 346 — Información expuesta, radar, ESP y world-to-screen, Clase 355 — Telemetría para Game Security, Clase 359 — Privacidad, gobernanza, sanciones y seguridad del propio Anti-Cheat."
+      },
+      {
+        "t": "h3",
+        "x": "Mínimo privilegio"
+      },
+      {
+        "t": "p",
+        "x": "Cada servicio con su credencial y solo sus permisos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad, Clase 42 — Segmentación de red y arquitectura Zero Trust, Clase 63 — Gestión de secretos: Vault y KMS."
+      },
+      {
+        "t": "h3",
+        "x": "Mínimo privilegio de BD"
+      },
+      {
+        "t": "p",
+        "x": "La cuenta de la app solo con los permisos necesarios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 91 — Inyección SQL: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Mirai"
+      },
+      {
+        "t": "p",
+        "x": "Botnet IoT que abusa de credenciales por defecto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 154 — Malware en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "MISP"
+      },
+      {
+        "t": "p",
+        "x": "Plataforma de compartición de IOCs y CTI"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 157 — Threat intelligence a partir de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Mitigación"
+      },
+      {
+        "t": "p",
+        "x": "Cambio que reduce probabilidad o impacto y puede verificarse."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE, Clase 237 — Modelado de amenazas: STRIDE y DREAD."
+      },
+      {
+        "t": "h3",
+        "x": "MITM"
+      },
+      {
+        "t": "p",
+        "x": "Man-in-the-middle: atacante interpuesto que intercepta el tráfico."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos."
+      },
+      {
+        "t": "h3",
+        "x": "MitM en DH"
+      },
+      {
+        "t": "p",
+        "x": "Un intermediario acuerda una clave con cada parte"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 53 — Intercambio de claves: Diffie-Hellman."
+      },
+      {
+        "t": "h3",
+        "x": "MITRE ATT&CK"
+      },
+      {
+        "t": "p",
+        "x": "Taxonomía de técnicas; táctica Lateral Movement"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 78 — Movimiento lateral en la red, Clase 141 — Introducción al malware: tipos y taxonomía, Clase 148 — Análisis de comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "MITRE ATT&CK Defense Evasion"
+      },
+      {
+        "t": "p",
+        "x": "Táctica que cataloga estas técnicas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 84 — Anti-forense y borrado de huellas (concepto y límites)."
+      },
+      {
+        "t": "h3",
+        "x": "MITRE ATT&CK Persistence"
+      },
+      {
+        "t": "p",
+        "x": "Táctica que cataloga estas técnicas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 82 — Persistencia en sistemas comprometidos."
+      },
+      {
+        "t": "h3",
+        "x": "ML-DSA (FIPS 204)"
+      },
+      {
+        "t": "p",
+        "x": "Firma post-cuántica de propósito general"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 62 — Criptografía post-cuántica."
+      },
+      {
+        "t": "h3",
+        "x": "ML-KEM (FIPS 203)"
+      },
+      {
+        "t": "p",
+        "x": "Encapsulado de claves post-cuántico; sustituto de ECDH"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 62 — Criptografía post-cuántica."
+      },
+      {
+        "t": "h3",
+        "x": "MMU"
+      },
+      {
+        "t": "p",
+        "x": "Unidad de hardware que traduce direcciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls."
+      },
+      {
+        "t": "h3",
+        "x": "Model extraction"
+      },
+      {
+        "t": "p",
+        "x": "Construcción de un sustituto desde observaciones."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 294 — Robo y extracción de modelos."
+      },
+      {
+        "t": "h3",
+        "x": "Modelado de amenazas"
+      },
+      {
+        "t": "p",
+        "x": "Decidir qué atacar y por qué antes de atacar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 66 — Metodología de pentesting: PTES y OSSTMM, Clase 109 — Vulnerabilidades de lógica de negocio."
+      },
+      {
+        "t": "h3",
+        "x": "Modelo de amenaza"
+      },
+      {
+        "t": "p",
+        "x": "Relación entre activos, adversarios, capacidades y consecuencias."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 46 — Historia y fundamentos de la criptografía, Clase 260 — OPSEC personal y anonimato."
+      },
+      {
+        "t": "h3",
+        "x": "Modo de operación"
+      },
+      {
+        "t": "p",
+        "x": "Receta para aplicar la primitiva a mensajes largos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 47 — Cifrado simétrico: AES y modos de operación."
+      },
+      {
+        "t": "h3",
+        "x": "Modo en línea"
+      },
+      {
+        "t": "p",
+        "x": "Despliegue en el camino del tráfico; un fallo corta el servicio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "Modo kernel"
+      },
+      {
+        "t": "p",
+        "x": "Nivel de privilegio total de la CPU"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls."
+      },
+      {
+        "t": "h3",
+        "x": "Modo monitor"
+      },
+      {
+        "t": "p",
+        "x": "Captura de tramas 802.11 crudas sin asociarse a una red"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 26 — Wireshark: captura y análisis de paquetes, Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Modo promiscuo"
+      },
+      {
+        "t": "p",
+        "x": "La NIC entrega todas las tramas Ethernet que ve, no solo las suyas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 26 — Wireshark: captura y análisis de paquetes."
+      },
+      {
+        "t": "h3",
+        "x": "Modo real / protegido / largo"
+      },
+      {
+        "t": "p",
+        "x": "16, 32 y 64 bits; modo largo es el actual"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador."
+      },
+      {
+        "t": "h3",
+        "x": "Modo túnel vs. transporte"
+      },
+      {
+        "t": "p",
+        "x": "Cifrar el paquete entero o solo su carga útil"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN."
+      },
+      {
+        "t": "h3",
+        "x": "Modo usuario"
+      },
+      {
+        "t": "p",
+        "x": "Nivel de privilegio restringido"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls."
+      },
+      {
+        "t": "h3",
+        "x": "Modo visual / grafo"
+      },
+      {
+        "t": "p",
+        "x": "Navegación interactiva en r2 (V / VV)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 132 — IDA Pro y radare2."
+      },
+      {
+        "t": "h3",
+        "x": "Módulo"
+      },
+      {
+        "t": "p",
+        "x": "Archivo .py que agrupa funciones y datos relacionados."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje, Clase 72 — Metasploit Framework: arquitectura y uso."
+      },
+      {
+        "t": "h3",
+        "x": "Módulo pe"
+      },
+      {
+        "t": "p",
+        "x": "Condiciones sobre la estructura del PE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "Módulo post"
+      },
+      {
+        "t": "p",
+        "x": "Automatiza enumeración local y sugerencias de escalada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 74 — Meterpreter y post-explotación."
+      },
+      {
+        "t": "h3",
+        "x": "mona.py"
+      },
+      {
+        "t": "p",
+        "x": "Extensión que automatiza la explotación en Windows"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 129 — Explotación en Windows: manejo de SEH."
+      },
+      {
+        "t": "h3",
+        "x": "Motor de plantillas"
+      },
+      {
+        "t": "p",
+        "x": "Genera HTML combinando plantilla y datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 107 — Server-Side Template Injection (SSTI)."
+      },
+      {
+        "t": "h3",
+        "x": "Motor logic-less"
+      },
+      {
+        "t": "p",
+        "x": "Mustache y similares; solo sustituyen, no evaluan"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 107 — Server-Side Template Injection (SSTI)."
+      },
+      {
+        "t": "h3",
+        "x": "mov / lea"
+      },
+      {
+        "t": "p",
+        "x": "Copiar datos / calcular una dirección sin leer memoria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador."
+      },
+      {
+        "t": "h3",
+        "x": "movaps"
+      },
+      {
+        "t": "p",
+        "x": "Instrucción SSE que falla si la pila no está alineada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 117 — El stack, los registros y las convenciones de llamada."
+      },
+      {
+        "t": "h3",
+        "x": "movaps SIGSEGV"
+      },
+      {
+        "t": "p",
+        "x": "Síntoma del desalineamiento de pila"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 120 — Buffer overflow en stack: explotación práctica."
+      },
+      {
+        "t": "h3",
+        "x": "Movimiento,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 351 — Multiplayer y autoridad: nunca confiar en el cliente."
+      },
+      {
+        "t": "h3",
+        "x": "Movimiento lateral"
+      },
+      {
+        "t": "p",
+        "x": "Desplazamiento del atacante entre sistemas ya dentro de la red"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: lateral movement."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 4 clase(s): Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain, Clase 37 — Proxies, NAT y pivoting de red, Clase 42 — Segmentación de red y arquitectura Zero Trust, Clase 78 — Movimiento lateral en la red."
+      },
+      {
+        "t": "h3",
+        "x": "msfconsole"
+      },
+      {
+        "t": "p",
+        "x": "Interfaz principal del framework"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 72 — Metasploit Framework: arquitectura y uso."
+      },
+      {
+        "t": "h3",
+        "x": "msfdb / PostgreSQL"
+      },
+      {
+        "t": "p",
+        "x": "Base de datos que persiste hosts, servicios y loot"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 72 — Metasploit Framework: arquitectura y uso."
+      },
+      {
+        "t": "h3",
+        "x": "msfvenom"
+      },
+      {
+        "t": "p",
+        "x": "Generador de payloads autónomos de Metasploit"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 75 — msfvenom: generación de payloads, Clase 121 — Escritura de shellcode."
+      },
+      {
+        "t": "h3",
+        "x": "mTLS"
+      },
+      {
+        "t": "p",
+        "x": "TLS mutuo; ambos extremos se autentican con certificado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "MTU"
+      },
+      {
+        "t": "p",
+        "x": "Tamaño máximo de trama que un enlace puede transmitir sin fragmentar."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas, Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Muestra"
+      },
+      {
+        "t": "p",
+        "x": "Subconjunto seleccionado mediante método documentado."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 285 — Auditoría de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Multi-stage build"
+      },
+      {
+        "t": "p",
+        "x": "Construcción con etapas separadas para no distribuir todas las herramientas."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 243 — Imágenes y contenedores seguros en el pipeline."
+      },
+      {
+        "t": "h3",
+        "x": "Multiplicación escalar"
+      },
+      {
+        "t": "p",
+        "x": "Sumar G consigo mismo k veces; operación fundamental"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 50 — Criptografía de curva elíptica (ECC)."
+      },
+      {
+        "t": "h3",
+        "x": "Mutation"
+      },
+      {
+        "t": "p",
+        "x": "Operación que modifica datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 111 — Seguridad de APIs GraphQL."
+      },
+      {
+        "t": "h3",
+        "x": "Mutex"
+      },
+      {
+        "t": "p",
+        "x": "Marcador que el malware crea para no reinfectar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 144 — Análisis dinámico básico y sandboxing."
+      },
+      {
+        "t": "h3",
+        "x": "Mythic"
+      },
+      {
+        "t": "p",
+        "x": "C2 modular sobre Docker con agentes y perfiles"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h2",
+        "x": "N"
+      },
+      {
+        "t": "h3",
+        "x": "n (módulo)"
+      },
+      {
+        "t": "p",
+        "x": "Producto de dos primos grandes; parte de ambas claves"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 49 — Cifrado asimétrico: RSA."
+      },
+      {
+        "t": "h3",
+        "x": "Named pipe"
+      },
+      {
+        "t": "p",
+        "x": "Canal IPC de Windows usado por algunos implantes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "Namespace"
+      },
+      {
+        "t": "p",
+        "x": "Aislamiento de recursos del kernel por contenedor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 22 — Docker y contenedores para laboratorios de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "NAT"
+      },
+      {
+        "t": "p",
+        "x": "Modo de red: la VM sale, no es alcanzable desde fuera"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red, Clase 37 — Proxies, NAT y pivoting de red."
+      },
+      {
+        "t": "h3",
+        "x": "NDA"
+      },
+      {
+        "t": "p",
+        "x": "Acuerdo de confidencialidad sobre lo descubierto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable, Clase 67 — Reglas de engagement, alcance y contratos."
+      },
+      {
+        "t": "h3",
+        "x": "Nessus"
+      },
+      {
+        "t": "p",
+        "x": "Escáner comercial estándar de la industria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS."
+      },
+      {
+        "t": "h3",
+        "x": "netcat (nc)"
+      },
+      {
+        "t": "p",
+        "x": "Utilidad para leer/escribir en conexiones TCP/UDP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 16 — Python para seguridad: sockets y programación de red."
+      },
+      {
+        "t": "h3",
+        "x": "netfilter"
+      },
+      {
+        "t": "p",
+        "x": "Subsistema del kernel que intercepta paquetes; el motor real"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "NetFlow v5"
+      },
+      {
+        "t": "p",
+        "x": "Formato clásico de Cisco, de campos fijos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 45 — NetFlow y análisis de metadatos de tráfico."
+      },
+      {
+        "t": "h3",
+        "x": "NetFlow v9"
+      },
+      {
+        "t": "p",
+        "x": "Formato extensible mediante plantillas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 45 — NetFlow y análisis de metadatos de tráfico."
+      },
+      {
+        "t": "h3",
+        "x": "Networking,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 342 — Arquitectura de videojuegos desde la perspectiva de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "NEW"
+      },
+      {
+        "t": "p",
+        "x": "Paquete que inicia una conexión nueva"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "NF"
+      },
+      {
+        "t": "p",
+        "x": "Variable de awk: número de campos de la línea"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos."
+      },
+      {
+        "t": "h3",
+        "x": "nfdump / SiLK"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas de captura y consulta de flujos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 45 — NetFlow y análisis de metadatos de tráfico."
+      },
+      {
+        "t": "h3",
+        "x": "nftables"
+      },
+      {
+        "t": "p",
+        "x": "Sustituto moderno y unificado de iptables/ip6tables/arptables/ebtables"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "Nibble"
+      },
+      {
+        "t": "p",
+        "x": "Grupo de 4 bits = un dígito hex"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "NIST CSF"
+      },
+      {
+        "t": "p",
+        "x": "Cybersecurity Framework del NIST, marco voluntario de gestión de riesgo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model."
+      },
+      {
+        "t": "h3",
+        "x": "NIST SP 800-115"
+      },
+      {
+        "t": "p",
+        "x": "Guía oficial de pruebas de seguridad para cumplimiento"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 66 — Metodología de pentesting: PTES y OSSTMM."
+      },
+      {
+        "t": "h3",
+        "x": "NIST SP 800-207"
+      },
+      {
+        "t": "p",
+        "x": "Documento de referencia de la arquitectura zero trust"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 42 — Segmentación de red y arquitectura Zero Trust."
+      },
+      {
+        "t": "h3",
+        "x": "NIST SP 800-63B"
+      },
+      {
+        "t": "p",
+        "x": "Guía moderna: listas de filtradas en vez de reglas de composición"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2, Clase 81 — Ataques a credenciales: fuerza bruta y password spraying."
+      },
+      {
+        "t": "h3",
+        "x": "Nivel de confianza"
+      },
+      {
+        "t": "p",
+        "x": "Cautela explícita en las afirmaciones de CTI"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 157 — Threat intelligence a partir de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Nivel lógico"
+      },
+      {
+        "t": "p",
+        "x": "Tensión que representa estados digitales; no asumir 5 V."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 268 — Análisis de hardware: UART, JTAG y SPI."
+      },
+      {
+        "t": "h3",
+        "x": "nmap-os-db"
+      },
+      {
+        "t": "p",
+        "x": "Base de firmas de sistemas operativos de Nmap"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 31 — Nmap: detección de servicios y fingerprinting de OS."
+      },
+      {
+        "t": "h3",
+        "x": "nmap-service-probes"
+      },
+      {
+        "t": "p",
+        "x": "Base de sondas y expresiones regulares de identificación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 31 — Nmap: detección de servicios y fingerprinting de OS."
+      },
+      {
+        "t": "h3",
+        "x": "No filtrar, no invocar"
+      },
+      {
+        "t": "p",
+        "x": "La defensa: evitar la shell, no perseguir metacaracteres"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 95 — Inyección de comandos del sistema operativo."
+      },
+      {
+        "t": "h3",
+        "x": "No inventes criptografía"
+      },
+      {
+        "t": "p",
+        "x": "Usar bibliotecas maduras en vez de implementaciones propias"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h3",
+        "x": "No repudio"
+      },
+      {
+        "t": "p",
+        "x": "Imposibilidad de negar de forma creíble una acción realizada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 4 clase(s): Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad, Clase 21 — Criptografía: conceptos fundamentales e intuición, Clase 52 — HMAC y autenticación de mensajes, Clase 54 — Firmas digitales."
+      },
+      {
+        "t": "h3",
+        "x": "Nonce"
+      },
+      {
+        "t": "p",
+        "x": "Number used once; hace único el keystream de cada mensaje"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4."
+      },
+      {
+        "t": "h3",
+        "x": "Nonce en AEAD"
+      },
+      {
+        "t": "p",
+        "x": "Debe ser único por clave; repetirlo es catastrófico"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 59 — Cifrado autenticado (AEAD)."
+      },
+      {
+        "t": "h3",
+        "x": "Nonce/IV"
+      },
+      {
+        "t": "p",
+        "x": "Valor único por mensaje que aleatoriza el cifrado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 21 — Criptografía: conceptos fundamentales e intuición."
+      },
+      {
+        "t": "h3",
+        "x": "Nonce k de ECDSA"
+      },
+      {
+        "t": "p",
+        "x": "Repetirlo o filtrarlo revela la clave privada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 54 — Firmas digitales."
+      },
+      {
+        "t": "h3",
+        "x": "Nonce repetido"
+      },
+      {
+        "t": "p",
+        "x": "Fallo catastrófico en GCM y en cifrados de flujo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG), Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h3",
+        "x": "Normalización"
+      },
+      {
+        "t": "p",
+        "x": "Conversión a formas comparables sin asumir identidad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 255 — Automatización de OSINT: SpiderFoot y Maltego."
+      },
+      {
+        "t": "h3",
+        "x": "Normalizar peticiones"
+      },
+      {
+        "t": "p",
+        "x": "Defensa: rechazar peticiones ambiguas en el frontend"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 112 — Web cache poisoning y HTTP request smuggling."
+      },
+      {
+        "t": "h3",
+        "x": "NoSQL"
+      },
+      {
+        "t": "p",
+        "x": "Bases no relacionales; MongoDB es documental (JSON)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 94 — Inyección NoSQL."
+      },
+      {
+        "t": "h3",
+        "x": "NoSQLi ciega"
+      },
+      {
+        "t": "p",
+        "x": "Extraer datos con $regex carácter a carácter"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 94 — Inyección NoSQL."
+      },
+      {
+        "t": "h3",
+        "x": "Nota de rescate"
+      },
+      {
+        "t": "p",
+        "x": "Mensaje con branding que identifica la familia"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 150 — Ransomware: anatomía y análisis."
+      },
+      {
+        "t": "h3",
+        "x": "Notice"
+      },
+      {
+        "t": "p",
+        "x": "Evento destacado por un script como digno de revisión"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 44 — Zeek para análisis de red a gran escala."
+      },
+      {
+        "t": "h3",
+        "x": "NR"
+      },
+      {
+        "t": "p",
+        "x": "Variable de awk: número de registro (línea) actual"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos."
+      },
+      {
+        "t": "h3",
+        "x": "NSE"
+      },
+      {
+        "t": "p",
+        "x": "Nmap Scripting Engine: intérprete Lua embebido en Nmap"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 32 — Nmap Scripting Engine (NSE), Clase 69 — Reconocimiento activo."
+      },
+      {
+        "t": "h3",
+        "x": "nSEH"
+      },
+      {
+        "t": "p",
+        "x": "Puntero al siguiente registro de la cadena"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 129 — Explotación en Windows: manejo de SEH."
+      },
+      {
+        "t": "h3",
+        "x": "NSM"
+      },
+      {
+        "t": "p",
+        "x": "Recolección y análisis de datos de red para detectar y responder"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 43 — Network Security Monitoring (NSM): fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "NT"
+      },
+      {
+        "t": "p",
+        "x": "Núcleo de las versiones modernas de Windows"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios."
+      },
+      {
+        "t": "h3",
+        "x": "NT headers"
+      },
+      {
+        "t": "p",
+        "x": "File Header + Optional Header; núcleo del PE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 145 — El formato PE de Windows."
+      },
+      {
+        "t": "h3",
+        "x": "NTLM"
+      },
+      {
+        "t": "p",
+        "x": "Protocolo de autenticación de Windows basado en hash"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 78 — Movimiento lateral en la red."
+      },
+      {
+        "t": "h3",
+        "x": "Número de syscall"
+      },
+      {
+        "t": "p",
+        "x": "Va en RAX (execve = 59 en x64)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 121 — Escritura de shellcode."
+      },
+      {
+        "t": "h3",
+        "x": "Nunca confíes en el cliente"
+      },
+      {
+        "t": "p",
+        "x": "La validación real ocurre en el servidor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 86 — Arquitectura web moderna y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "NVD"
+      },
+      {
+        "t": "p",
+        "x": "Base de datos nacional de vulnerabilidades; indexa CVE por CPE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 31 — Nmap: detección de servicios y fingerprinting de OS."
+      },
+      {
+        "t": "h3",
+        "x": "NX/DEP"
+      },
+      {
+        "t": "p",
+        "x": "Marca de memoria no ejecutable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria."
+      },
+      {
+        "t": "h2",
+        "x": "O"
+      },
+      {
+        "t": "h3",
+        "x": "OAEP"
+      },
+      {
+        "t": "p",
+        "x": "Relleno probabilístico para cifrar con RSA"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 49 — Cifrado asimétrico: RSA."
+      },
+      {
+        "t": "h3",
+        "x": "OAuth 2.0"
+      },
+      {
+        "t": "p",
+        "x": "Delegar acceso a recursos sin entregar la contraseña"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect."
+      },
+      {
+        "t": "h3",
+        "x": "Object.create(null)"
+      },
+      {
+        "t": "p",
+        "x": "Objeto sin prototipo; mitiga la pollution"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution."
+      },
+      {
+        "t": "h3",
+        "x": "Objeto"
+      },
+      {
+        "t": "p",
+        "x": "Dato tipado con propiedades y métodos que fluye por el pipeline"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva."
+      },
+      {
+        "t": "h3",
+        "x": "Objeto PDF"
+      },
+      {
+        "t": "p",
+        "x": "Elemento del árbol de un PDF"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 152 — Análisis de documentos maliciosos: macros y PDF."
+      },
+      {
+        "t": "h3",
+        "x": "Observación,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 345 — Trainers e instrumentación del cliente."
+      },
+      {
+        "t": "h3",
+        "x": "Occlusion,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 347 — Rendering, visibilidad, occlusion y wallhack."
+      },
+      {
+        "t": "h3",
+        "x": "OCSP"
+      },
+      {
+        "t": "p",
+        "x": "Consulta en línea del estado de un certificado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "OCSP stapling"
+      },
+      {
+        "t": "p",
+        "x": "El servidor adjunta una respuesta OCSP firmada y reciente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "Octal"
+      },
+      {
+        "t": "p",
+        "x": "Notación numérica de permisos (r=4, w=2, x=1)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios."
+      },
+      {
+        "t": "h3",
+        "x": "Octeto"
+      },
+      {
+        "t": "p",
+        "x": "Grupo de 8 bits; cada uno de los cuatro números de una IPv4."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 14 — Direccionamiento IP y subnetting."
+      },
+      {
+        "t": "h3",
+        "x": "OEP"
+      },
+      {
+        "t": "p",
+        "x": "Original Entry Point; donde el stub salta al código real"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 135 — Ofuscación y técnicas anti-reversing, Clase 147 — Ofuscación, packing y unpacking."
+      },
+      {
+        "t": "h3",
+        "x": "Off-by-one"
+      },
+      {
+        "t": "p",
+        "x": "Error de uno en un límite; a menudo pisa metadatos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 128 — Integer overflows y errores aritméticos."
+      },
+      {
+        "t": "h3",
+        "x": "Offset"
+      },
+      {
+        "t": "p",
+        "x": "Bytes desde el inicio del buffer hasta la dirección de retorno"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 119 — Buffer overflow en stack: teoría."
+      },
+      {
+        "t": "h3",
+        "x": "Offset de argumento"
+      },
+      {
+        "t": "p",
+        "x": "Índice %N$p que apunta a la entrada del atacante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 125 — Vulnerabilidades de format string."
+      },
+      {
+        "t": "h3",
+        "x": "Offset en libc"
+      },
+      {
+        "t": "p",
+        "x": "Distancia fija de una función respecto a la base"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 123 — Bypass de protecciones: ret2libc."
+      },
+      {
+        "t": "h3",
+        "x": "Ofuscación"
+      },
+      {
+        "t": "p",
+        "x": "Cifrar, codificar o trocear para evadir DLP por firmas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 83 — Exfiltración de datos, Clase 135 — Ofuscación y técnicas anti-reversing, Clase 147 — Ofuscación, packing y unpacking."
+      },
+      {
+        "t": "h3",
+        "x": "OIDC federation"
+      },
+      {
+        "t": "p",
+        "x": "Intercambio de identidad verificable por credenciales breves del proveedor."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 242 — Seguridad en pipelines CI/CD."
+      },
+      {
+        "t": "h3",
+        "x": "OLE"
+      },
+      {
+        "t": "p",
+        "x": "Formato binario compuesto de Office antiguo (.doc/.xls)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 152 — Análisis de documentos maliciosos: macros y PDF."
+      },
+      {
+        "t": "h3",
+        "x": "oletools / olevba"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas que extraen el VBA"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 152 — Análisis de documentos maliciosos: macros y PDF."
+      },
+      {
+        "t": "h3",
+        "x": "One-time pad"
+      },
+      {
+        "t": "p",
+        "x": "Keystream verdaderamente aleatorio y de un solo uso; irrompible"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4."
+      },
+      {
+        "t": "h3",
+        "x": "OOXML"
+      },
+      {
+        "t": "p",
+        "x": "Formato ZIP de Office moderno (.docx/.xlsx)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 152 — Análisis de documentos maliciosos: macros y PDF."
+      },
+      {
+        "t": "h3",
+        "x": "Opcodes"
+      },
+      {
+        "t": "p",
+        "x": "Bytes en crudo de las instrucciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 121 — Escritura de shellcode."
+      },
+      {
+        "t": "h3",
+        "x": "open / filtered (ambiguo)"
+      },
+      {
+        "t": "p",
+        "x": "Estado indeterminado típico de UDP y de FIN/NULL/Xmas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 30 — Nmap: escaneo de puertos y tipos de escaneo."
+      },
+      {
+        "t": "h3",
+        "x": "OpenID Connect (OIDC)"
+      },
+      {
+        "t": "p",
+        "x": "Capa de autenticación sobre OAuth"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect."
+      },
+      {
+        "t": "h3",
+        "x": "OpenVAS / Greenbone (GVM)"
+      },
+      {
+        "t": "p",
+        "x": "Alternativa open source"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS."
+      },
+      {
+        "t": "h3",
+        "x": "OpenVPN"
+      },
+      {
+        "t": "p",
+        "x": "VPN en espacio de usuario basada en TLS y PKI; muy flexible"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN."
+      },
+      {
+        "t": "h3",
+        "x": "Operación atómica"
+      },
+      {
+        "t": "p",
+        "x": "Comprobar y actuar sin ventana intermedia"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 109 — Vulnerabilidades de lógica de negocio."
+      },
+      {
+        "t": "h3",
+        "x": "Operador /"
+      },
+      {
+        "t": "p",
+        "x": "Apila una capa dentro de otra en Scapy"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 17 — Python para seguridad: manipulación de paquetes con Scapy."
+      },
+      {
+        "t": "h3",
+        "x": "Operador de consulta"
+      },
+      {
+        "t": "p",
+        "x": "$ne, $gt, $regex, $where de MongoDB"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 94 — Inyección NoSQL."
+      },
+      {
+        "t": "h3",
+        "x": "Operation Charter"
+      },
+      {
+        "t": "p",
+        "x": "Documento breve que fija objetivo, flags, RoE y métricas del ejercicio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 161 — Red Team vs pentest: filosofía y objetivos."
+      },
+      {
+        "t": "h3",
+        "x": "Optional Header"
+      },
+      {
+        "t": "p",
+        "x": "Entry point, base, subsistema, data directories"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 145 — El formato PE de Windows."
+      },
+      {
+        "t": "h3",
+        "x": "Oráculo"
+      },
+      {
+        "t": "p",
+        "x": "Condición observable que permite decidir si una prueba pasó o falló."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 60 — Ataques criptográficos: padding oracle y timing, Clase 239 — DAST: análisis dinámico de aplicaciones."
+      },
+      {
+        "t": "h3",
+        "x": "Origen null"
+      },
+      {
+        "t": "p",
+        "x": "Valor que ciertos contextos envían; peligroso confiarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution."
+      },
+      {
+        "t": "h3",
+        "x": "OSI"
+      },
+      {
+        "t": "p",
+        "x": "Modelo conceptual de referencia de 7 capas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas."
+      },
+      {
+        "t": "h3",
+        "x": "OSINT — Open Source Intelligence"
+      },
+      {
+        "t": "p",
+        "x": "Recogida de información de fuentes públicas para dar verosimilitud al pretexto"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: osint."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain, Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas, Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "OSS-Fuzz"
+      },
+      {
+        "t": "p",
+        "x": "Servicio de fuzzing continuo de proyectos abiertos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 136 — Fuzzing con AFL++ y libFuzzer."
+      },
+      {
+        "t": "h3",
+        "x": "OSSTMM"
+      },
+      {
+        "t": "p",
+        "x": "Metodología con métricas (RAV) y enfoque científico"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 66 — Metodología de pentesting: PTES y OSSTMM."
+      },
+      {
+        "t": "h3",
+        "x": "Out-of-band"
+      },
+      {
+        "t": "p",
+        "x": "Exfiltrar por DNS/HTTP a un servidor del atacante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 95 — Inyección de comandos del sistema operativo."
+      },
+      {
+        "t": "h3",
+        "x": "Out-of-band (OOB)"
+      },
+      {
+        "t": "p",
+        "x": "Forzar a la BD a conectar fuera y exfiltrar por DNS/HTTP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 92 — Inyección SQL avanzada y ciega (blind)."
+      },
+      {
+        "t": "h3",
+        "x": "Output encoding"
+      },
+      {
+        "t": "p",
+        "x": "Codificar el dato según contexto antes de insertarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 96 — Cross-Site Scripting (XSS) reflejado."
+      },
+      {
+        "t": "h3",
+        "x": "OVA / OVF"
+      },
+      {
+        "t": "p",
+        "x": "Formato de empaquetado e importación de VMs"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red."
+      },
+      {
+        "t": "h3",
+        "x": "Overflow de entero"
+      },
+      {
+        "t": "p",
+        "x": "Resultado que excede la capacidad del tipo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 128 — Integer overflows y errores aritméticos."
+      },
+      {
+        "t": "h3",
+        "x": "Overflow en el tamaño"
+      },
+      {
+        "t": "p",
+        "x": "La reserva desborda y queda pequeña; copia posterior desborda"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 128 — Integer overflows y errores aritméticos."
+      },
+      {
+        "t": "h3",
+        "x": "Overlay"
+      },
+      {
+        "t": "p",
+        "x": "Datos añadidos al final, fuera de las secciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 145 — El formato PE de Windows, Clase 155 — Malware en Android."
+      },
+      {
+        "t": "h3",
+        "x": "OverTheWire"
+      },
+      {
+        "t": "p",
+        "x": "Colección de wargames que comienza con Bandit para fundamentos de terminal y seguridad."
+      },
+      {
+        "t": "p",
+        "x": "Sitio oficial: OverTheWire."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "OWASP A02"
+      },
+      {
+        "t": "p",
+        "x": "Cryptographic Failures: categoría del Top 10"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h3",
+        "x": "OWASP ASVS"
+      },
+      {
+        "t": "p",
+        "x": "Estándar de verificación más detallado que el Top 10"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 87 — OWASP Top 10: panorama general, Clase 115 — Secure coding y defensa de aplicaciones web."
+      },
+      {
+        "t": "h3",
+        "x": "OWASP Top 10"
+      },
+      {
+        "t": "p",
+        "x": "Consenso de las diez categorías de riesgo web más críticas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 87 — OWASP Top 10: panorama general."
+      },
+      {
+        "t": "h3",
+        "x": "OWASP WSTG"
+      },
+      {
+        "t": "p",
+        "x": "Guía de pruebas de seguridad para aplicaciones web"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 66 — Metodología de pentesting: PTES y OSSTMM."
+      },
+      {
+        "t": "h3",
+        "x": "OWASP ZAP"
+      },
+      {
+        "t": "p",
+        "x": "Proxy de pentesting web libre y gratuito de OWASP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 89 — OWASP ZAP."
+      },
+      {
+        "t": "h3",
+        "x": "OWE"
+      },
+      {
+        "t": "p",
+        "x": "Cifrado oportunista para redes abiertas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Ownership"
+      },
+      {
+        "t": "p",
+        "x": "Autoridad y obligación explícitas sobre decisiones y resultados."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 248 — Cultura DevSecOps y security champions."
+      },
+      {
+        "t": "h2",
+        "x": "Otros"
+      },
+      {
+        "t": "h3",
+        "x": "$(...)"
+      },
+      {
+        "t": "p",
+        "x": "Código de salida del último comando ejecutado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 7 — Bash scripting para tareas de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "-A"
+      },
+      {
+        "t": "p",
+        "x": "Modo agresivo: versión, OS, scripts por defecto y traceroute"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 31 — Nmap: detección de servicios y fingerprinting de OS."
+      },
+      {
+        "t": "h3",
+        "x": "-C"
+      },
+      {
+        "t": "p",
+        "x": "Rotación por tamaño de fichero (MB)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 28 — tcpdump y captura de tráfico en línea de comandos."
+      },
+      {
+        "t": "h3",
+        "x": "\\d \\w \\s"
+      },
+      {
+        "t": "p",
+        "x": "Atajos: dígito, alfanumérico, espacio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 19 — Expresiones regulares para análisis de logs y datos."
+      },
+      {
+        "t": "h3",
+        "x": "--dbs"
+      },
+      {
+        "t": "p",
+        "x": "Lista las bases de datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 93 — SQLMap."
+      },
+      {
+        "t": "h3",
+        "x": "/dev/urandom"
+      },
+      {
+        "t": "p",
+        "x": "Fuente de aleatoriedad del kernel; equivalente en calidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG)."
+      },
+      {
+        "t": "h3",
+        "x": "--dump"
+      },
+      {
+        "t": "p",
+        "x": "Vuelca el contenido de una tabla"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 93 — SQLMap."
+      },
+      {
+        "t": "h3",
+        "x": "/etc/group"
+      },
+      {
+        "t": "p",
+        "x": "Definición de grupos del sistema"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios."
+      },
+      {
+        "t": "h3",
+        "x": "/etc/passwd"
+      },
+      {
+        "t": "p",
+        "x": "Definición de cuentas, legible por todos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios."
+      },
+      {
+        "t": "h3",
+        "x": "/etc/shadow"
+      },
+      {
+        "t": "p",
+        "x": "Hashes de contraseñas, legible solo por root"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios."
+      },
+      {
+        "t": "h3",
+        "x": "/etc/sudoers"
+      },
+      {
+        "t": "p",
+        "x": "Configuración de reglas de sudo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 76 — Escalada de privilegios en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "-f (formato)"
+      },
+      {
+        "t": "p",
+        "x": "Envoltorio de salida: exe, elf, apk, psh, war, raw"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 75 — msfvenom: generación de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "-G"
+      },
+      {
+        "t": "p",
+        "x": "Rotación por tiempo (segundos)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 28 — tcpdump y captura de tráfico en línea de comandos."
+      },
+      {
+        "t": "h3",
+        "x": ".gitignore"
+      },
+      {
+        "t": "p",
+        "x": "Patrones de ficheros no rastreados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "%hn / %hhn"
+      },
+      {
+        "t": "p",
+        "x": "Escriben 2 y 1 byte; para construir valores por partes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 125 — Vulnerabilidades de format string."
+      },
+      {
+        "t": "h3",
+        "x": "-k"
+      },
+      {
+        "t": "p",
+        "x": "Intenta preservar la función del binario anfitrión"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 75 — msfvenom: generación de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "--level (1-5)"
+      },
+      {
+        "t": "p",
+        "x": "Amplía dónde busca (cabeceras, cookies…); más peticiones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 93 — SQLMap."
+      },
+      {
+        "t": "h3",
+        "x": "--min-rate"
+      },
+      {
+        "t": "p",
+        "x": "Fuerza un mínimo de paquetes por segundo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 30 — Nmap: escaneo de puertos y tipos de escaneo."
+      },
+      {
+        "t": "h3",
+        "x": "φ(n)"
+      },
+      {
+        "t": "p",
+        "x": "No resolver nombres; evita DNS que contamina la propia captura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 28 — tcpdump y captura de tráfico en línea de comandos, Clase 49 — Cifrado asimétrico: RSA, Clase 125 — Vulnerabilidades de format string."
+      },
+      {
+        "t": "h3",
+        "x": "-n / -R"
+      },
+      {
+        "t": "p",
+        "x": "Nunca resolver DNS / resolver siempre"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 29 — Nmap: descubrimiento de hosts y técnicas de ping."
+      },
+      {
+        "t": "h3",
+        "x": "$ne"
+      },
+      {
+        "t": "p",
+        "x": "\"Distinto de\"; con \"\" coincide con cualquier valor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 94 — Inyección NoSQL."
+      },
+      {
+        "t": "h3",
+        "x": "-O"
+      },
+      {
+        "t": "p",
+        "x": "Detección de sistema operativo por huella de pila TCP/IP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 31 — Nmap: detección de servicios y fingerprinting de OS, Clase 75 — msfvenom: generación de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "-oA"
+      },
+      {
+        "t": "p",
+        "x": "Guarda salida en los tres formatos (normal, grepable y XML)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 29 — Nmap: descubrimiento de hosts y técnicas de ping, Clase 69 — Reconocimiento activo."
+      },
+      {
+        "t": "h3",
+        "x": "/OpenAction"
+      },
+      {
+        "t": "p",
+        "x": "Acción que ejecuta código al abrir el PDF"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 152 — Análisis de documentos maliciosos: macros y PDF."
+      },
+      {
+        "t": "h3",
+        "x": "--os-shell"
+      },
+      {
+        "t": "p",
+        "x": "Intenta ejecución de comandos; la opción más peligrosa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 93 — SQLMap."
+      },
+      {
+        "t": "h3",
+        "x": "--osscan-guess"
+      },
+      {
+        "t": "p",
+        "x": "Propone la coincidencia más próxima cuando no hay una exacta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 31 — Nmap: detección de servicios y fingerprinting de OS."
+      },
+      {
+        "t": "h3",
+        "x": "-p"
+      },
+      {
+        "t": "p",
+        "x": "Desactiva el modo promiscuo (captura solo lo dirigido al host)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 28 — tcpdump y captura de tráfico en línea de comandos, Clase 75 — msfvenom: generación de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "-p / -F / -p-"
+      },
+      {
+        "t": "p",
+        "x": "Selección de puertos: lista, los 100 frecuentes, todos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 30 — Nmap: escaneo de puertos y tipos de escaneo."
+      },
+      {
+        "t": "h3",
+        "x": "%p / %x"
+      },
+      {
+        "t": "p",
+        "x": "Leen valores de la pila; base del info leak"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 125 — Vulnerabilidades de format string."
+      },
+      {
+        "t": "h3",
+        "x": "-PA"
+      },
+      {
+        "t": "p",
+        "x": "Sonda TCP ACK; atraviesa filtros sin estado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 29 — Nmap: descubrimiento de hosts y técnicas de ping."
+      },
+      {
+        "t": "h3",
+        "x": "-PE / -PP / -PM"
+      },
+      {
+        "t": "p",
+        "x": "Sondas ICMP: echo, timestamp y address mask"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 29 — Nmap: descubrimiento de hosts y técnicas de ping."
+      },
+      {
+        "t": "h3",
+        "x": "-Pn"
+      },
+      {
+        "t": "p",
+        "x": "Omite el descubrimiento y trata todo objetivo como vivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 29 — Nmap: descubrimiento de hosts y técnicas de ping."
+      },
+      {
+        "t": "h3",
+        "x": "-PS"
+      },
+      {
+        "t": "p",
+        "x": "Sonda TCP SYN a un puerto para probar existencia del host"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 29 — Nmap: descubrimiento de hosts y técnicas de ping."
+      },
+      {
+        "t": "h3",
+        "x": "-PU"
+      },
+      {
+        "t": "p",
+        "x": "Sonda UDP; busca el ICMP port unreachable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 29 — Nmap: descubrimiento de hosts y técnicas de ping."
+      },
+      {
+        "t": "h3",
+        "x": "-r"
+      },
+      {
+        "t": "p",
+        "x": "Objetivo tomado de una petición HTTP capturada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 93 — SQLMap."
+      },
+      {
+        "t": "h3",
+        "x": "$regex"
+      },
+      {
+        "t": "p",
+        "x": "Coincidencia por patrón; base de la inyección ciega"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 19 — Expresiones regulares para análisis de logs y datos, Clase 94 — Inyección NoSQL."
+      },
+      {
+        "t": "h3",
+        "x": "--risk (1-3)"
+      },
+      {
+        "t": "p",
+        "x": "Amplía qué payloads prueba; el alto puede modificar datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 93 — SQLMap."
+      },
+      {
+        "t": "h3",
+        "x": "--scan-delay"
+      },
+      {
+        "t": "p",
+        "x": "Espaciado entre sondas para evadir umbrales"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 69 — Reconocimiento activo."
+      },
+      {
+        "t": "h3",
+        "x": "--script"
+      },
+      {
+        "t": "p",
+        "x": "Selecciona scripts por nombre, categoría, patrón o expresión lógica"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 32 — Nmap Scripting Engine (NSE)."
+      },
+      {
+        "t": "h3",
+        "x": "--script-args"
+      },
+      {
+        "t": "p",
+        "x": "Pasa parámetros a los scripts seleccionados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 32 — Nmap Scripting Engine (NSE)."
+      },
+      {
+        "t": "h3",
+        "x": "--script-help"
+      },
+      {
+        "t": "p",
+        "x": "Muestra la documentación de un script sin ejecutarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 32 — Nmap Scripting Engine (NSE)."
+      },
+      {
+        "t": "h3",
+        "x": "--script-updatedb"
+      },
+      {
+        "t": "p",
+        "x": "Reconstruye el índice tras añadir scripts propios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 32 — Nmap Scripting Engine (NSE)."
+      },
+      {
+        "t": "h3",
+        "x": "-sn"
+      },
+      {
+        "t": "p",
+        "x": "Solo descubrimiento de hosts; no escanea puertos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 29 — Nmap: descubrimiento de hosts y técnicas de ping."
+      },
+      {
+        "t": "h3",
+        "x": "$STANDARDINFORMATION / $FILENAME"
+      },
+      {
+        "t": "p",
+        "x": "Atributos NTFS cuya incoherencia delata manipulación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 84 — Anti-forense y borrado de huellas (concepto y límites)."
+      },
+      {
+        "t": "h3",
+        "x": "-sV"
+      },
+      {
+        "t": "p",
+        "x": "Detección de versión de servicio mediante banners y sondas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 31 — Nmap: detección de servicios y fingerprinting de OS."
+      },
+      {
+        "t": "h3",
+        "x": "-T0…-T5"
+      },
+      {
+        "t": "p",
+        "x": "Plantillas de temporización: de sigiloso y lento a agresivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 30 — Nmap: escaneo de puertos y tipos de escaneo."
+      },
+      {
+        "t": "h3",
+        "x": "--tables / --columns"
+      },
+      {
+        "t": "p",
+        "x": "Enumera tablas y columnas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 93 — SQLMap."
+      },
+      {
+        "t": "h3",
+        "x": ".text / .rodata / .data"
+      },
+      {
+        "t": "p",
+        "x": "Código / cadenas y constantes / datos inicializados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 130 — Ingeniería inversa: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "--top-ports"
+      },
+      {
+        "t": "p",
+        "x": "Escanea los N puertos más frecuentes según nmap-services"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 30 — Nmap: escaneo de puertos y tipos de escaneo."
+      },
+      {
+        "t": "h3",
+        "x": "-u"
+      },
+      {
+        "t": "p",
+        "x": "Objetivo indicado como URL"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 93 — SQLMap."
+      },
+      {
+        "t": "h3",
+        "x": "--version-intensity"
+      },
+      {
+        "t": "p",
+        "x": "Número de sondas a lanzar (0 = mínimo, 9 = exhaustivo)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 31 — Nmap: detección de servicios y fingerprinting de OS."
+      },
+      {
+        "t": "h3",
+        "x": "-W"
+      },
+      {
+        "t": "p",
+        "x": "Número máximo de ficheros conservados (buffer circular)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 28 — tcpdump y captura de tráfico en línea de comandos."
+      },
+      {
+        "t": "h3",
+        "x": "-w / -r"
+      },
+      {
+        "t": "p",
+        "x": "Escribir la captura a fichero / leer un fichero existente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 28 — tcpdump y captura de tráfico en línea de comandos."
+      },
+      {
+        "t": "h3",
+        "x": "$where"
+      },
+      {
+        "t": "p",
+        "x": "Evalúa JavaScript en el servidor; riesgo de RCE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 94 — Inyección NoSQL."
+      },
+      {
+        "t": "h2",
+        "x": "P"
+      },
+      {
+        "t": "h3",
+        "x": "p y g"
+      },
+      {
+        "t": "p",
+        "x": "Primo y generador públicos que definen el grupo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 53 — Intercambio de claves: Diffie-Hellman."
+      },
+      {
+        "t": "h3",
+        "x": "p64 / p32"
+      },
+      {
+        "t": "p",
+        "x": "Empaquetan un número en bytes little-endian (pwntools)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador, Clase 120 — Buffer overflow en stack: explotación práctica."
+      },
+      {
+        "t": "h3",
+        "x": "Packer personalizado"
+      },
+      {
+        "t": "p",
+        "x": "Requiere unpacking manual o dinámico"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 147 — Ofuscación, packing y unpacking."
+      },
+      {
+        "t": "h3",
+        "x": "Packing"
+      },
+      {
+        "t": "p",
+        "x": "Comprimir/cifrar el código; un stub lo revela en memoria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 4 clase(s): Clase 133 — Análisis estático de binarios, Clase 135 — Ofuscación y técnicas anti-reversing, Clase 143 — Análisis estático básico, Clase 147 — Ofuscación, packing y unpacking."
+      },
+      {
+        "t": "h3",
+        "x": "Padding"
+      },
+      {
+        "t": "p",
+        "x": "Relleno = al final de un Base64"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "Padding oracle"
+      },
+      {
+        "t": "p",
+        "x": "Oráculo que revela si el relleno era válido; descifra sin clave"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 47 — Cifrado simétrico: AES y modos de operación, Clase 60 — Ataques criptográficos: padding oracle y timing."
+      },
+      {
+        "t": "h3",
+        "x": "Página"
+      },
+      {
+        "t": "p",
+        "x": "Unidad de memoria virtual (típicamente 4 KiB)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls."
+      },
+      {
+        "t": "h3",
+        "x": "Pairing"
+      },
+      {
+        "t": "p",
+        "x": "Proceso que establece parámetros y claves de seguridad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 271 — Seguridad de Bluetooth y BLE."
+      },
+      {
+        "t": "h3",
+        "x": "Paquete"
+      },
+      {
+        "t": "p",
+        "x": "PDU de la capa de red (lleva la cabecera IP)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas."
+      },
+      {
+        "t": "h3",
+        "x": "Parada de emergencia"
+      },
+      {
+        "t": "p",
+        "x": "Procedimiento para detener envíos y retirar infraestructura."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 258 — Campañas de phishing con GoPhish."
+      },
+      {
+        "t": "h3",
+        "x": "Paradoja del cumpleaños"
+      },
+      {
+        "t": "p",
+        "x": "Las colisiones cuestan 2^(n/2), no 2^n"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades, Clase 61 — Introducción al criptoanálisis."
+      },
+      {
+        "t": "h3",
+        "x": "Parámetros predecibles"
+      },
+      {
+        "t": "p",
+        "x": "Requisito: sin un secreto que el atacante no pueda poner"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 98 — Cross-Site Request Forgery (CSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Parseo de parámetros"
+      },
+      {
+        "t": "p",
+        "x": "Frameworks que convierten la query string en objetos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 94 — Inyección NoSQL."
+      },
+      {
+        "t": "h3",
+        "x": "Parser XML"
+      },
+      {
+        "t": "p",
+        "x": "Componente que procesa el XML; suele traer entidades activas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 100 — XML External Entities (XXE)."
+      },
+      {
+        "t": "h3",
+        "x": "Pass-the-Hash"
+      },
+      {
+        "t": "p",
+        "x": "Autenticarse con el hash NTLM sin la contraseña en claro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 78 — Movimiento lateral en la red."
+      },
+      {
+        "t": "h3",
+        "x": "Pass-the-Ticket"
+      },
+      {
+        "t": "p",
+        "x": "Reutilizar tickets Kerberos robados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 78 — Movimiento lateral en la red."
+      },
+      {
+        "t": "h3",
+        "x": "Passive monitoring"
+      },
+      {
+        "t": "p",
+        "x": "Observación sin generar sondeo hacia activos OT."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 273 — Seguridad de sistemas de control industrial (ICS/SCADA)."
+      },
+      {
+        "t": "h3",
+        "x": "Password Hashing Competition"
+      },
+      {
+        "t": "p",
+        "x": "Concurso que seleccionó Argon2 en 2015"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2."
+      },
+      {
+        "t": "h3",
+        "x": "Password spraying"
+      },
+      {
+        "t": "p",
+        "x": "Una contraseña común contra muchas cuentas; evade el bloqueo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 81 — Ataques a credenciales: fuerza bruta y password spraying, Clase 101 — Fallos de autenticación y bypass."
+      },
+      {
+        "t": "h3",
+        "x": "PAT"
+      },
+      {
+        "t": "p",
+        "x": "SNAT multiplexado por puerto; la forma doméstica habitual"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 37 — Proxies, NAT y pivoting de red."
+      },
+      {
+        "t": "h3",
+        "x": "PatchGuard"
+      },
+      {
+        "t": "p",
+        "x": "Impide modificar estructuras críticas del kernel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 151 — Rootkits y bootkits."
+      },
+      {
+        "t": "h3",
+        "x": "PATH"
+      },
+      {
+        "t": "p",
+        "x": "Lista de directorios donde la shell busca ejecutables"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 7 — Bash scripting para tareas de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "PATH escribible"
+      },
+      {
+        "t": "p",
+        "x": "Permite suplantar un binario invocado sin ruta absoluta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 76 — Escalada de privilegios en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Path traversal"
+      },
+      {
+        "t": "p",
+        "x": "../ para leer ficheros fuera del directorio previsto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 105 — Control de acceso roto: IDOR y path traversal."
+      },
+      {
+        "t": "h3",
+        "x": "Path traversal en el nombre"
+      },
+      {
+        "t": "p",
+        "x": "../ en el nombre para colocar el fichero donde sea"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 108 — Vulnerabilidades en carga de archivos."
+      },
+      {
+        "t": "h3",
+        "x": "Patrón de APIs"
+      },
+      {
+        "t": "p",
+        "x": "Combinación que revela una técnica conocida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 146 — Análisis con IDA y Ghidra aplicado a malware."
+      },
+      {
+        "t": "h3",
+        "x": "Patrón de correo"
+      },
+      {
+        "t": "p",
+        "x": "Formato nombre.apellido@ para construir listas de usuarios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas."
+      },
+      {
+        "t": "h3",
+        "x": "Patrón de De Bruijn"
+      },
+      {
+        "t": "p",
+        "x": "Secuencia con subcadenas únicas para localizar el offset"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "Patrón peligroso"
+      },
+      {
+        "t": "p",
+        "x": "Construcción con fallo conocido (strcpy, malloc(n*m)…)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 137 — Descubrimiento de vulnerabilidades en código."
+      },
+      {
+        "t": "h3",
+        "x": "Paved road"
+      },
+      {
+        "t": "p",
+        "x": "Camino de desarrollo mantenido con controles seguros por defecto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 248 — Cultura DevSecOps y security champions."
+      },
+      {
+        "t": "h3",
+        "x": "Payload"
+      },
+      {
+        "t": "p",
+        "x": "Carga que se prueba en una posición de inyección"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: carga util."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 4 clase(s): Clase 72 — Metasploit Framework: arquitectura y uso, Clase 88 — Burp Suite: configuración y flujo de trabajo, Clase 96 — Cross-Site Scripting (XSS) reflejado, Clase 120 — Buffer overflow en stack: explotación práctica."
+      },
+      {
+        "t": "h3",
+        "x": "Payload no cifrado"
+      },
+      {
+        "t": "p",
+        "x": "Solo codificado; cualquiera lo lee"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 103 — Ataques y seguridad de JWT."
+      },
+      {
+        "t": "h3",
+        "x": "Payload staged"
+      },
+      {
+        "t": "p",
+        "x": "Se envía en dos partes (stager + stage); notación con /"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 73 — Metasploit: explotación y payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Payload stageless"
+      },
+      {
+        "t": "p",
+        "x": "Se envía completo; más grande y fiable; notación con _"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 73 — Metasploit: explotación y payloads."
+      },
+      {
+        "t": "h3",
+        "x": "pcap"
+      },
+      {
+        "t": "p",
+        "x": "Formato de archivo de captura de tráfico de red"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas."
+      },
+      {
+        "t": "h3",
+        "x": "pcapng"
+      },
+      {
+        "t": "p",
+        "x": "Formato de captura moderno, con metadatos y comentarios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 26 — Wireshark: captura y análisis de paquetes."
+      },
+      {
+        "t": "h3",
+        "x": "PCRE"
+      },
+      {
+        "t": "p",
+        "x": "Expresión regular; precisa pero costosa, se pone tras un content"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 19 — Expresiones regulares para análisis de logs y datos, Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "PDCA"
+      },
+      {
+        "t": "p",
+        "x": "Ciclo de mejora continua: Plan, Do, Check, Act"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model."
+      },
+      {
+        "t": "h3",
+        "x": "pdf"
+      },
+      {
+        "t": "p",
+        "x": "Desensambla la función actual"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 132 — IDA Pro y radare2."
+      },
+      {
+        "t": "h3",
+        "x": "PDP"
+      },
+      {
+        "t": "p",
+        "x": "Policy Decision Point: motor que decide permitir o denegar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 42 — Segmentación de red y arquitectura Zero Trust, Clase 244 — Políticas como código con OPA."
+      },
+      {
+        "t": "h3",
+        "x": "PDU"
+      },
+      {
+        "t": "p",
+        "x": "Unidad de datos de protocolo (nombre por capa)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos, Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas."
+      },
+      {
+        "t": "h3",
+        "x": "PE"
+      },
+      {
+        "t": "p",
+        "x": "Portable Executable; formato de ejecutables de Windows"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 130 — Ingeniería inversa: introducción, Clase 145 — El formato PE de Windows."
+      },
+      {
+        "t": "h3",
+        "x": "pe.imphash"
+      },
+      {
+        "t": "p",
+        "x": "Función que agrupa por tabla de imports"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "peepdf / pdfid"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas de análisis de PDF"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 152 — Análisis de documentos maliciosos: macros y PDF."
+      },
+      {
+        "t": "h3",
+        "x": "Pelado por capas"
+      },
+      {
+        "t": "p",
+        "x": "Revelar la ofuscación una capa cada vez"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 153 — Análisis de malware en scripts: PowerShell y JavaScript."
+      },
+      {
+        "t": "h3",
+        "x": "Penetration test"
+      },
+      {
+        "t": "p",
+        "x": "Evaluación técnica que busca demostrar el máximo de vías explotables"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 161 — Red Team vs pentest: filosofía y objetivos."
+      },
+      {
+        "t": "h3",
+        "x": "Pentest"
+      },
+      {
+        "t": "p",
+        "x": "Explotar debilidades para demostrar impacto; profundidad acotada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable, Clase 66 — Metodología de pentesting: PTES y OSSTMM."
+      },
+      {
+        "t": "h3",
+        "x": "PentesterLab"
+      },
+      {
+        "t": "p",
+        "x": "Plataforma centrada en seguridad web y revisión de código, con ejercicios guiados y contenido de pago."
+      },
+      {
+        "t": "p",
+        "x": "Sitio oficial: PentesterLab."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "Pentesting"
+      },
+      {
+        "t": "p",
+        "x": "Evaluación autorizada que busca demostrar y documentar rutas de ataque dentro de un alcance, tiempo y reglas acordados."
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: penetration testing, prueba de penetracion."
+      },
+      {
+        "t": "p",
+        "x": "Relacionados: Reconocimiento, Enumeración, Explotación, Post-explotación."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "PEP"
+      },
+      {
+        "t": "p",
+        "x": "Policy Enforcement Point: aplica la decisión en cada acceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 42 — Segmentación de red y arquitectura Zero Trust, Clase 244 — Políticas como código con OPA."
+      },
+      {
+        "t": "h3",
+        "x": "Pepper"
+      },
+      {
+        "t": "p",
+        "x": "Secreto global fuera de la base de datos; defensa adicional"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2."
+      },
+      {
+        "t": "h3",
+        "x": "Percent encoding"
+      },
+      {
+        "t": "p",
+        "x": "Sustitución %XX en URLs"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "Perezoso"
+      },
+      {
+        "t": "p",
+        "x": "Casa lo mínimo (*?)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 19 — Expresiones regulares para análisis de logs y datos."
+      },
+      {
+        "t": "h3",
+        "x": "Perfil"
+      },
+      {
+        "t": "p",
+        "x": "Estado actual frente a objetivo en las funciones del CSF"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model, Clase 26 — Wireshark: captura y análisis de paquetes, Clase 279 — NIST Cybersecurity Framework."
+      },
+      {
+        "t": "h3",
+        "x": "Perímetro"
+      },
+      {
+        "t": "p",
+        "x": "Modelo que confía en todo lo que está \"dentro\" del firewall"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 42 — Segmentación de red y arquitectura Zero Trust."
+      },
+      {
+        "t": "h3",
+        "x": "Permiso peligroso"
+      },
+      {
+        "t": "p",
+        "x": "SMS, contactos, ubicación, Accessibility"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 155 — Malware en Android."
+      },
+      {
+        "t": "h3",
+        "x": "Permisos débiles de servicio"
+      },
+      {
+        "t": "p",
+        "x": "Permiten reconfigurar el binario del servicio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 77 — Escalada de privilegios en Windows."
+      },
+      {
+        "t": "h3",
+        "x": "Persistencia"
+      },
+      {
+        "t": "p",
+        "x": "Mecanismo para sobrevivir al reinicio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 4 clase(s): Clase 82 — Persistencia en sistemas comprometidos, Clase 97 — XSS almacenado y basado en DOM, Clase 144 — Análisis dinámico básico y sandboxing, Clase 148 — Análisis de comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Persistencia Linux"
+      },
+      {
+        "t": "p",
+        "x": "cron, systemd, rc.local, .bashrc, SSH keys"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 154 — Malware en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Persistencia sin fichero"
+      },
+      {
+        "t": "p",
+        "x": "Código en el registro o en suscripciones WMI"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "Peticiones en paralelo"
+      },
+      {
+        "t": "p",
+        "x": "Enviar muchas a la vez para colarse en la ventana"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 109 — Vulnerabilidades de lógica de negocio."
+      },
+      {
+        "t": "h3",
+        "x": "Phishing resistance"
+      },
+      {
+        "t": "p",
+        "x": "Propiedad protocolaria que evita entregar una salida válida a un verificador impostor."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 259 — Defensa contra la ingeniería social."
+      },
+      {
+        "t": "h3",
+        "x": "Phishing (T1566)"
+      },
+      {
+        "t": "p",
+        "x": "Envío de mensajes engañosos para inducir una acción (clic, credenciales, ejecución)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "phpggc"
+      },
+      {
+        "t": "p",
+        "x": "Equivalente para PHP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 106 — Deserialización insegura."
+      },
+      {
+        "t": "h3",
+        "x": "pickle"
+      },
+      {
+        "t": "p",
+        "x": "Módulo de Python que ejecuta código al deserializar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 106 — Deserialización insegura."
+      },
+      {
+        "t": "h3",
+        "x": "PID"
+      },
+      {
+        "t": "p",
+        "x": "Identificador numérico único de un proceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos, Clase 23 — Sistemas operativos: procesos, memoria y syscalls."
+      },
+      {
+        "t": "h3",
+        "x": "PIE"
+      },
+      {
+        "t": "p",
+        "x": "Aleatoriza la dirección de carga del propio binario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 119 — Buffer overflow en stack: teoría, Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE."
+      },
+      {
+        "t": "h3",
+        "x": "Pila como programa"
+      },
+      {
+        "t": "p",
+        "x": "La pila contiene la lista de direcciones de gadgets"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 124 — Return-Oriented Programming (ROP)."
+      },
+      {
+        "t": "h3",
+        "x": "Pila (stack)"
+      },
+      {
+        "t": "p",
+        "x": "Región LIFO con locales, argumentos y dirección de retorno"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria, Clase 117 — El stack, los registros y las convenciones de llamada."
+      },
+      {
+        "t": "h3",
+        "x": "Ping sweep"
+      },
+      {
+        "t": "p",
+        "x": "Barrido que descubre hosts activos mediante ICMP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 7 — Bash scripting para tareas de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Pinning"
+      },
+      {
+        "t": "p",
+        "x": "Fijación de una dependencia a una identidad inmutable, como SHA o digest."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 242 — Seguridad en pipelines CI/CD."
+      },
+      {
+        "t": "h3",
+        "x": "pip"
+      },
+      {
+        "t": "p",
+        "x": "Gestor de paquetes de Python."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje."
+      },
+      {
+        "t": "h3",
+        "x": "Pipe (|)"
+      },
+      {
+        "t": "p",
+        "x": "Conecta la salida de un comando con la entrada de otro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos."
+      },
+      {
+        "t": "h3",
+        "x": "pipefail"
+      },
+      {
+        "t": "p",
+        "x": "Hace fallar una tubería si cualquier etapa falla"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 7 — Bash scripting para tareas de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Pipeline"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 347 — Rendering, visibilidad, occlusion y wallhack."
+      },
+      {
+        "t": "h3",
+        "x": "Pipeline de triaje"
+      },
+      {
+        "t": "p",
+        "x": "Sistema que analiza muestras automáticamente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 158 — Emulación y unpacking automatizado."
+      },
+      {
+        "t": "h3",
+        "x": "Pirámide del dolor"
+      },
+      {
+        "t": "p",
+        "x": "Jerarquía de indicadores según lo caro que es evadirlos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain."
+      },
+      {
+        "t": "h3",
+        "x": "Pista discriminante"
+      },
+      {
+        "t": "p",
+        "x": "Rasgo que diferencia candidatos de manera comprobable."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 253 — Geolocalización y análisis de imágenes."
+      },
+      {
+        "t": "h3",
+        "x": "Pivoteo de infraestructura"
+      },
+      {
+        "t": "p",
+        "x": "Descubrir indicadores relacionados desde uno"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 157 — Threat intelligence a partir de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Pivoting"
+      },
+      {
+        "t": "p",
+        "x": "Usar un host comprometido para alcanzar redes inaccesibles"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: pivot."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 37 — Proxies, NAT y pivoting de red, Clase 79 — Pivoting y reenvío de puertos."
+      },
+      {
+        "t": "h3",
+        "x": "PKCE"
+      },
+      {
+        "t": "p",
+        "x": "Protección del código para apps públicas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect."
+      },
+      {
+        "t": "h3",
+        "x": "PKCS#1 v1.5"
+      },
+      {
+        "t": "p",
+        "x": "Relleno de firma antiguo, aún presente por compatibilidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 49 — Cifrado asimétrico: RSA, Clase 54 — Firmas digitales."
+      },
+      {
+        "t": "h3",
+        "x": "PKCS#7"
+      },
+      {
+        "t": "p",
+        "x": "Relleno cuya validez se puede comprobar y por tanto filtrar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 47 — Cifrado simétrico: AES y modos de operación, Clase 60 — Ataques criptográficos: padding oracle y timing."
+      },
+      {
+        "t": "h3",
+        "x": "PKI"
+      },
+      {
+        "t": "p",
+        "x": "Infraestructura que ata claves públicas a identidades vía certificados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 21 — Criptografía: conceptos fundamentales e intuición, Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN, Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "Plan de colección"
+      },
+      {
+        "t": "p",
+        "x": "Conjunto acotado de observaciones ligado a una pregunta."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 334 — Reconocimiento y escaneo asistidos por IA."
+      },
+      {
+        "t": "h3",
+        "x": "Plantilla como dato vs. como codigo"
+      },
+      {
+        "t": "p",
+        "x": "El fallo es construir la plantilla con entrada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 107 — Server-Side Template Injection (SSTI)."
+      },
+      {
+        "t": "h3",
+        "x": "Plantilla de política"
+      },
+      {
+        "t": "p",
+        "x": "Perfil de escaneo que acota intensidad y riesgo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS."
+      },
+      {
+        "t": "h3",
+        "x": "Plantilla pwntools"
+      },
+      {
+        "t": "p",
+        "x": "Esqueleto de exploit con local/remoto conmutables"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 140 — CTFs de pwn e ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "Plantilla (-x)"
+      },
+      {
+        "t": "p",
+        "x": "Incrustar el payload en un binario legítimo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 75 — msfvenom: generación de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Plataforma de práctica"
+      },
+      {
+        "t": "p",
+        "x": "pwn.college, ROP Emporium, picoCTF, HackTheBox"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 140 — CTFs de pwn e ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "PLC"
+      },
+      {
+        "t": "p",
+        "x": "Controlador que ejecuta lógica sobre entradas y salidas."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 273 — Seguridad de sistemas de control industrial (ICS/SCADA)."
+      },
+      {
+        "t": "h3",
+        "x": "PLT"
+      },
+      {
+        "t": "p",
+        "x": "Maquinaria que resuelve y llama a funciones externas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 123 — Bypass de protecciones: ret2libc."
+      },
+      {
+        "t": "h3",
+        "x": "Plugin / NVT"
+      },
+      {
+        "t": "p",
+        "x": "Comprobación individual de un escáner"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS."
+      },
+      {
+        "t": "h3",
+        "x": "PMF"
+      },
+      {
+        "t": "p",
+        "x": "Protección de ciertas tramas de gestión IEEE 802.11."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 272 — Ataques WiFi avanzados: Evil Twin y PMKID."
+      },
+      {
+        "t": "h3",
+        "x": "PMF (802.11w)"
+      },
+      {
+        "t": "p",
+        "x": "Autenticación de tramas de gestión; neutraliza el deauth"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "PMKID"
+      },
+      {
+        "t": "p",
+        "x": "Identificador derivado que algunas configuraciones exponen para gestión de claves."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque, Clase 272 — Ataques WiFi avanzados: Evil Twin y PMKID."
+      },
+      {
+        "t": "h3",
+        "x": "Política"
+      },
+      {
+        "t": "p",
+        "x": "Mandato de alto nivel aprobado por autoridad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 282 — Políticas, estándares y procedimientos."
+      },
+      {
+        "t": "h3",
+        "x": "Política de contraseñas"
+      },
+      {
+        "t": "p",
+        "x": "Umbral de bloqueo; decide la estrategia de spraying"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP, Clase 81 — Ataques a credenciales: fuerza bruta y password spraying."
+      },
+      {
+        "t": "h3",
+        "x": "Política del mismo origen"
+      },
+      {
+        "t": "p",
+        "x": "Impide que otro sitio lea el token"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 98 — Cross-Site Request Forgery (CSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Política por defecto"
+      },
+      {
+        "t": "p",
+        "x": "Veredicto si ninguna regla coincide; en un firewall serio, DROP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "Poly1305"
+      },
+      {
+        "t": "p",
+        "x": "Autenticador que acompaña a ChaCha20 para formar un AEAD"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4."
+      },
+      {
+        "t": "h3",
+        "x": "Polyglot"
+      },
+      {
+        "t": "p",
+        "x": "Fichero válido como imagen que además contiene código"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 108 — Vulnerabilidades en carga de archivos."
+      },
+      {
+        "t": "h3",
+        "x": "POODLE"
+      },
+      {
+        "t": "p",
+        "x": "Downgrade a SSL 3.0 para explotar su relleno"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 60 — Ataques criptográficos: padding oracle y timing."
+      },
+      {
+        "t": "h3",
+        "x": "POP POP RET"
+      },
+      {
+        "t": "p",
+        "x": "Gadget que salta de vuelta a nSEH controlado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 129 — Explotación en Windows: manejo de SEH."
+      },
+      {
+        "t": "h3",
+        "x": "pop rax; ret"
+      },
+      {
+        "t": "p",
+        "x": "Gadget para cargar el número de syscall"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 124 — Return-Oriented Programming (ROP)."
+      },
+      {
+        "t": "h3",
+        "x": "pop rdi; ret"
+      },
+      {
+        "t": "p",
+        "x": "Gadget que carga RDI con el argumento y continúa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 123 — Bypass de protecciones: ret2libc."
+      },
+      {
+        "t": "h3",
+        "x": "Port security"
+      },
+      {
+        "t": "p",
+        "x": "Limita las MAC aceptadas por puerto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h3",
+        "x": "Portador (cover)"
+      },
+      {
+        "t": "p",
+        "x": "Fichero o canal de apariencia inocente que aloja el mensaje"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 64 — Esteganografía y ocultación de datos."
+      },
+      {
+        "t": "h3",
+        "x": "portrule"
+      },
+      {
+        "t": "p",
+        "x": "Se ejecuta una vez por puerto que cumpla la condición"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 32 — Nmap Scripting Engine (NSE)."
+      },
+      {
+        "t": "h3",
+        "x": "Posicionamiento"
+      },
+      {
+        "t": "p",
+        "x": "Técnica para llegar a estar en medio (ARP, DNS, rogue AP…)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 40 — Man-in-the-Middle: técnicas y defensa."
+      },
+      {
+        "t": "h3",
+        "x": "Post"
+      },
+      {
+        "t": "p",
+        "x": "Módulo que opera sobre una sesión ya establecida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 72 — Metasploit Framework: arquitectura y uso."
+      },
+      {
+        "t": "h3",
+        "x": "Post-explotación"
+      },
+      {
+        "t": "p",
+        "x": "Fase que demuestra el alcance real tras obtener acceso"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: post exploitation."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 74 — Meterpreter y post-explotación."
+      },
+      {
+        "t": "h3",
+        "x": "postMessage"
+      },
+      {
+        "t": "p",
+        "x": "API de comunicación entre ventanas de distinto origen"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution."
+      },
+      {
+        "t": "h3",
+        "x": "postrule"
+      },
+      {
+        "t": "p",
+        "x": "Se ejecuta al final para agregar resultados globales"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 32 — Nmap Scripting Engine (NSE)."
+      },
+      {
+        "t": "h3",
+        "x": "Potestad para autorizar"
+      },
+      {
+        "t": "p",
+        "x": "Quien firma debe poder consentir sobre el activo (nube, SaaS)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 67 — Reglas de engagement, alcance y contratos."
+      },
+      {
+        "t": "h3",
+        "x": "powershell / mshta / certutil"
+      },
+      {
+        "t": "p",
+        "x": "LOLBins comunes en cadenas de entrega"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 152 — Análisis de documentos maliciosos: macros y PDF."
+      },
+      {
+        "t": "h3",
+        "x": "PowerShell ofensivo"
+      },
+      {
+        "t": "p",
+        "x": "Acceso a la API y a .NET; carga en memoria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 153 — Análisis de malware en scripts: PowerShell y JavaScript."
+      },
+      {
+        "t": "h3",
+        "x": "PowerSploit"
+      },
+      {
+        "t": "p",
+        "x": "Conjunto de módulos ofensivos en PowerShell"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 77 — Escalada de privilegios en Windows."
+      },
+      {
+        "t": "h3",
+        "x": "PPM"
+      },
+      {
+        "t": "p",
+        "x": "Error relativo de frecuencia del oscilador."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 269 — Radio definida por software (SDR)."
+      },
+      {
+        "t": "h3",
+        "x": "PQC"
+      },
+      {
+        "t": "p",
+        "x": "Criptografía post-cuántica, resistente a computadores cuánticos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 21 — Criptografía: conceptos fundamentales e intuición, Clase 62 — Criptografía post-cuántica."
+      },
+      {
+        "t": "h3",
+        "x": "Práctica deliberada"
+      },
+      {
+        "t": "p",
+        "x": "Ejercicio enfocado con feedback y dificultad calibrada."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 310 — Plan de aprendizaje continuo y comunidad."
+      },
+      {
+        "t": "h3",
+        "x": "Precision,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 357 — Estadística, anomalías y falsos positivos."
+      },
+      {
+        "t": "h3",
+        "x": "Predicción,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 351 — Multiplayer y autoridad: nunca confiar en el cliente, Clase 352 — Seguridad del protocolo de juego."
+      },
+      {
+        "t": "h3",
+        "x": "Prefijo"
+      },
+      {
+        "t": "p",
+        "x": "Número de bits de red en notación CIDR (por ejemplo /26)."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 14 — Direccionamiento IP y subnetting."
+      },
+      {
+        "t": "h3",
+        "x": "Preimagen"
+      },
+      {
+        "t": "p",
+        "x": "Encontrar una entrada que produzca un digest dado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades."
+      },
+      {
+        "t": "h3",
+        "x": "Prepared statement"
+      },
+      {
+        "t": "p",
+        "x": "Nombre técnico de la consulta parametrizada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 91 — Inyección SQL: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "PREROUTING / POSTROUTING"
+      },
+      {
+        "t": "p",
+        "x": "Ganchos antes y después de la decisión de ruta (NAT)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "prerule"
+      },
+      {
+        "t": "p",
+        "x": "Fase previa al escaneo; no depende de ningún host"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 32 — Nmap Scripting Engine (NSE)."
+      },
+      {
+        "t": "h3",
+        "x": "Preservación de evidencia"
+      },
+      {
+        "t": "p",
+        "x": "Deber ético del consultor; no destruir huellas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 84 — Anti-forense y borrado de huellas (concepto y límites)."
+      },
+      {
+        "t": "h3",
+        "x": "Pretexting"
+      },
+      {
+        "t": "p",
+        "x": "Uso de una historia para legitimar identidad y solicitud."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 257 — Pretexting y vishing."
+      },
+      {
+        "t": "h3",
+        "x": "Pretexto"
+      },
+      {
+        "t": "p",
+        "x": "Historia que motiva la acción del objetivo; el verdadero \"exploit\" de la campaña"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 166 — Phishing y entrega de payloads, Clase 256 — Fundamentos de ingeniería social."
+      },
+      {
+        "t": "h3",
+        "x": "Prevalencia"
+      },
+      {
+        "t": "p",
+        "x": "Con qué frecuencia aparece un fallo en aplicaciones reales"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 87 — OWASP Top 10: panorama general."
+      },
+      {
+        "t": "h3",
+        "x": "PREVINUSE"
+      },
+      {
+        "t": "p",
+        "x": "Flag que indica si el chunk anterior está en uso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Primitiva"
+      },
+      {
+        "t": "p",
+        "x": "Capacidad elemental que concede una vulnerabilidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 138 — Desarrollo de exploits moderno."
+      },
+      {
+        "t": "h3",
+        "x": "Primitiva BPF"
+      },
+      {
+        "t": "p",
+        "x": "Pieza del filtro: tipo (host), dirección (src) o protocolo (tcp)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 28 — tcpdump y captura de tráfico en línea de comandos."
+      },
+      {
+        "t": "h3",
+        "x": "Primitiva obsoleta"
+      },
+      {
+        "t": "p",
+        "x": "DES, 3DES, MD5, SHA-1, RC4, ECB"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h3",
+        "x": "Principio de Kerckhoffs"
+      },
+      {
+        "t": "p",
+        "x": "Todo puede ser público salvo la clave"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 46 — Historia y fundamentos de la criptografía."
+      },
+      {
+        "t": "h3",
+        "x": "printf(entrada)"
+      },
+      {
+        "t": "p",
+        "x": "Uso vulnerable; lo correcto es printf(\"%s\", entrada)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 125 — Vulnerabilidades de format string."
+      },
+      {
+        "t": "h3",
+        "x": "PrintSpoofer / JuicyPotato"
+      },
+      {
+        "t": "p",
+        "x": "Implementaciones concretas del ataque Potato"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 77 — Escalada de privilegios en Windows."
+      },
+      {
+        "t": "h3",
+        "x": "Priorización"
+      },
+      {
+        "t": "p",
+        "x": "Ordenar por riesgo real para no malgastar recursos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS, Clase 85 — Reporte profesional de pentest."
+      },
+      {
+        "t": "h3",
+        "x": "Priorización por explotabilidad"
+      },
+      {
+        "t": "p",
+        "x": "Centrarse en los bugs realmente alcanzables"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 137 — Descubrimiento de vulnerabilidades en código."
+      },
+      {
+        "t": "h3",
+        "x": "Priorización por retorno"
+      },
+      {
+        "t": "p",
+        "x": "Ir donde es probable un bug pagado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 114 — Bug bounty: metodología y plataformas."
+      },
+      {
+        "t": "h3",
+        "x": "Privacidad,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 353 — Arquitecturas Anti-Cheat."
+      },
+      {
+        "t": "h3",
+        "x": "Privilegios"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 359 — Privacidad, gobernanza, sanciones y seguridad del propio Anti-Cheat."
+      },
+      {
+        "t": "h3",
+        "x": "PRNG"
+      },
+      {
+        "t": "p",
+        "x": "Generador determinista; parece aleatorio pero es predecible"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG)."
+      },
+      {
+        "t": "h3",
+        "x": "Problema de factorización"
+      },
+      {
+        "t": "p",
+        "x": "Base de la seguridad de RSA"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 49 — Cifrado asimétrico: RSA."
+      },
+      {
+        "t": "h3",
+        "x": "Procedencia"
+      },
+      {
+        "t": "p",
+        "x": "Evidencia de qué proceso e insumos produjeron un artefacto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 242 — Seguridad en pipelines CI/CD, Clase 249 — Fundamentos de OSINT."
+      },
+      {
+        "t": "h3",
+        "x": "Procedimiento"
+      },
+      {
+        "t": "p",
+        "x": "Implementación concreta de una técnica por un actor real"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 162 — MITRE ATT&CK como lenguaje ofensivo, Clase 282 — Políticas, estándares y procedimientos."
+      },
+      {
+        "t": "h3",
+        "x": "Proceso"
+      },
+      {
+        "t": "p",
+        "x": "Programa en ejecución con memoria propia"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls."
+      },
+      {
+        "t": "h3",
+        "x": "Proceso desenlazado"
+      },
+      {
+        "t": "p",
+        "x": "Sacado de la lista del kernel; sigue ejecutándose"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 151 — Rootkits y bootkits."
+      },
+      {
+        "t": "h3",
+        "x": "Proceso oculto"
+      },
+      {
+        "t": "p",
+        "x": "Proceso que un rootkit esconde; visible en memoria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 148 — Análisis de comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "process()"
+      },
+      {
+        "t": "p",
+        "x": "Lanza el binario local"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 120 — Buffer overflow en stack: explotación práctica."
+      },
+      {
+        "t": "h3",
+        "x": "Process Hacker"
+      },
+      {
+        "t": "p",
+        "x": "Muestra el árbol de procesos, memoria y handles"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 144 — Análisis dinámico básico y sandboxing."
+      },
+      {
+        "t": "h3",
+        "x": "Process hollowing"
+      },
+      {
+        "t": "p",
+        "x": "Vaciar un proceso suspendido y reemplazar su código"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 146 — Análisis con IDA y Ghidra aplicado a malware, Clase 148 — Análisis de comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Process Monitor (ProcMon)"
+      },
+      {
+        "t": "p",
+        "x": "Registra operaciones de ficheros, registro, procesos, red"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 144 — Análisis dinámico básico y sandboxing."
+      },
+      {
+        "t": "h3",
+        "x": "process() / remote()"
+      },
+      {
+        "t": "p",
+        "x": "Ejecución local / conexión al servicio del reto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 140 — CTFs de pwn e ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "Producto IoT"
+      },
+      {
+        "t": "p",
+        "x": "Dispositivo y servicios necesarios para su función."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 266 — Seguridad de IoT: panorama y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Programa"
+      },
+      {
+        "t": "p",
+        "x": "Reglas y alcance de una organización"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 114 — Bug bounty: metodología y plataformas."
+      },
+      {
+        "t": "h3",
+        "x": "ProGuard / R8"
+      },
+      {
+        "t": "p",
+        "x": "Ofuscadores que renombran clases y métodos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 155 — Malware en Android."
+      },
+      {
+        "t": "h3",
+        "x": "Prólogo / epílogo"
+      },
+      {
+        "t": "p",
+        "x": "Código que crea/destruye el marco de función"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria, Clase 117 — El stack, los registros y las convenciones de llamada."
+      },
+      {
+        "t": "h3",
+        "x": "Proof of impact"
+      },
+      {
+        "t": "p",
+        "x": "Evidencia mínima suficiente del efecto autorizado."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 335 — Explotación y post-explotación autorizada asistida por IA."
+      },
+      {
+        "t": "h3",
+        "x": "Propagación de error"
+      },
+      {
+        "t": "p",
+        "x": "Ampliación de una asociación incorrecta a resultados posteriores."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 255 — Automatización de OSINT: SpiderFoot y Maltego."
+      },
+      {
+        "t": "h3",
+        "x": "Propiedad de seguridad"
+      },
+      {
+        "t": "p",
+        "x": "Condición verificable que debe mantenerse, incluso ante entradas hostiles."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 236 — Secure SDLC y filosofía shift-left."
+      },
+      {
+        "t": "h3",
+        "x": "Proporcionalidad"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 359 — Privacidad, gobernanza, sanciones y seguridad del propio Anti-Cheat."
+      },
+      {
+        "t": "h3",
+        "x": "proto"
+      },
+      {
+        "t": "p",
+        "x": "Propiedad cuya escritura provoca la contaminación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution."
+      },
+      {
+        "t": "h3",
+        "x": "proto[off:len]"
+      },
+      {
+        "t": "p",
+        "x": "Acceso directo a bytes de una cabecera dentro del filtro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 28 — tcpdump y captura de tráfico en línea de comandos."
+      },
+      {
+        "t": "h3",
+        "x": "Protocolo de handshake"
+      },
+      {
+        "t": "p",
+        "x": "Negocia parámetros, autentica y establece claves"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Protocolo de registro"
+      },
+      {
+        "t": "p",
+        "x": "Trocea y protege los datos ya con las claves de sesión"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Prototype pollution"
+      },
+      {
+        "t": "p",
+        "x": "Contaminar Object.prototype desde el que heredan todos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution."
+      },
+      {
+        "t": "h3",
+        "x": "Provenance"
+      },
+      {
+        "t": "p",
+        "x": "Evidencia de materiales, builder y pasos que produjeron un artefacto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 246 — Supply chain security: SBOM y SLSA."
+      },
+      {
+        "t": "h3",
+        "x": "Provenance de informe"
+      },
+      {
+        "t": "p",
+        "x": "Relación entre afirmación, fuente, transformación y aprobador."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 338 — Generación de informes y flujos de trabajo con IA."
+      },
+      {
+        "t": "h3",
+        "x": "Provisioning"
+      },
+      {
+        "t": "p",
+        "x": "Incorporación inicial de identidad, claves y configuración."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 266 — Seguridad de IoT: panorama y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Provocar excepción"
+      },
+      {
+        "t": "p",
+        "x": "Forzar el fallo para que se invoque el Handler"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 129 — Explotación en Windows: manejo de SEH."
+      },
+      {
+        "t": "h3",
+        "x": "Proxy"
+      },
+      {
+        "t": "p",
+        "x": "Intermediario que reenvía tráfico en nombre de otro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 37 — Proxies, NAT y pivoting de red."
+      },
+      {
+        "t": "h3",
+        "x": "Proxy de interceptación"
+      },
+      {
+        "t": "p",
+        "x": "Se sitúa entre navegador y servidor para ver y editar el tráfico"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 88 — Burp Suite: configuración y flujo de trabajo."
+      },
+      {
+        "t": "h3",
+        "x": "Proxy hacia dentro"
+      },
+      {
+        "t": "p",
+        "x": "El servidor alcanza lo que el atacante no puede"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 99 — Server-Side Request Forgery (SSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Proxy transparente"
+      },
+      {
+        "t": "p",
+        "x": "Intermediario que intercepta sin que el cliente lo configure"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 40 — Man-in-the-Middle: técnicas y defensa."
+      },
+      {
+        "t": "h3",
+        "x": "proxychains"
+      },
+      {
+        "t": "p",
+        "x": "Fuerza el tráfico de una herramienta a través de un proxy"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 37 — Proxies, NAT y pivoting de red, Clase 79 — Pivoting y reenvío de puertos."
+      },
+      {
+        "t": "h3",
+        "x": "Proyecto"
+      },
+      {
+        "t": "p",
+        "x": "Agrupación de binarios en Ghidra"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 131 — Ghidra para ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "Prueba de concepto"
+      },
+      {
+        "t": "p",
+        "x": "alert(1); demuestra la ejecución sin causar daño"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 96 — Cross-Site Scripting (XSS) reflejado."
+      },
+      {
+        "t": "h3",
+        "x": "Prueba lógica"
+      },
+      {
+        "t": "p",
+        "x": "AND 1=1 vs AND 1=2 para confirmar sin errores"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 91 — Inyección SQL: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Prueba negativa"
+      },
+      {
+        "t": "p",
+        "x": "Caso que exige rechazar una acción inválida o no autorizada."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 247 — Seguridad de APIs en el ciclo de desarrollo."
+      },
+      {
+        "t": "h3",
+        "x": "Pruebas de aleatoriedad"
+      },
+      {
+        "t": "p",
+        "x": "Baterías estadísticas que detectan sesgos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG)."
+      },
+      {
+        "t": "h3",
+        "x": "Pseudo-C"
+      },
+      {
+        "t": "p",
+        "x": "Aproximación en C que produce el decompilador"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 131 — Ghidra para ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "PsExec"
+      },
+      {
+        "t": "p",
+        "x": "Ejecución remota vía SMB creando un servicio temporal"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 78 — Movimiento lateral en la red."
+      },
+      {
+        "t": "h3",
+        "x": "PSS"
+      },
+      {
+        "t": "p",
+        "x": "Relleno probabilístico para firmar con RSA"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 49 — Cifrado asimétrico: RSA."
+      },
+      {
+        "t": "h3",
+        "x": "PTES"
+      },
+      {
+        "t": "p",
+        "x": "Estándar de facto en siete fases para estructurar un pentest"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 66 — Metodología de pentesting: PTES y OSSTMM."
+      },
+      {
+        "t": "h3",
+        "x": "ptmalloc"
+      },
+      {
+        "t": "p",
+        "x": "Allocator por defecto de glibc"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "ptrace"
+      },
+      {
+        "t": "p",
+        "x": "Syscall usada para detectar depuradores en Linux"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls, Clase 135 — Ofuscación y técnicas anti-reversing."
+      },
+      {
+        "t": "h3",
+        "x": "Puente a heap overflow"
+      },
+      {
+        "t": "p",
+        "x": "El bug numérico habilita la corrupción de memoria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 128 — Integer overflows y errores aritméticos."
+      },
+      {
+        "t": "h3",
+        "x": "Puerto"
+      },
+      {
+        "t": "p",
+        "x": "Identificador de aplicación dentro de un host (capa 4)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas."
+      },
+      {
+        "t": "h3",
+        "x": "Puntero colgante"
+      },
+      {
+        "t": "p",
+        "x": "Puntero que sobrevive al free de su memoria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 127 — Heap: use-after-free y double free."
+      },
+      {
+        "t": "h3",
+        "x": "Puntero next"
+      },
+      {
+        "t": "p",
+        "x": "Enlace de la lista tcache, dentro del chunk"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 127 — Heap: use-after-free y double free."
+      },
+      {
+        "t": "h3",
+        "x": "Punteros en chunks liberados"
+      },
+      {
+        "t": "p",
+        "x": "Enlaces de las listas; objetivo de la corrupción"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Punto de entrada"
+      },
+      {
+        "t": "p",
+        "x": "Lugar por donde el atacante introduce datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 86 — Arquitectura web moderna y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Punto de estrangulamiento"
+      },
+      {
+        "t": "p",
+        "x": "Enlace por el que pasa el tráfico que interesa vigilar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 43 — Network Security Monitoring (NSM): fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Punto generador G"
+      },
+      {
+        "t": "p",
+        "x": "Punto base público fijado por los parámetros de la curva"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 50 — Criptografía de curva elíptica (ECC)."
+      },
+      {
+        "t": "h3",
+        "x": "Puntuación de riesgo"
+      },
+      {
+        "t": "p",
+        "x": "CVSS combinado con el contexto de negocio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 85 — Reporte profesional de pentest."
+      },
+      {
+        "t": "h3",
+        "x": "Purple team"
+      },
+      {
+        "t": "p",
+        "x": "Colaboración en tiempo real de Red y Blue para mejorar detecciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 161 — Red Team vs pentest: filosofía y objetivos."
+      },
+      {
+        "t": "h3",
+        "x": "push / pop"
+      },
+      {
+        "t": "p",
+        "x": "Apilar y desapilar datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 117 — El stack, los registros y las convenciones de llamada."
+      },
+      {
+        "t": "h3",
+        "x": "push / pull"
+      },
+      {
+        "t": "p",
+        "x": "Sincronizan con el remoto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Pwn"
+      },
+      {
+        "t": "p",
+        "x": "Categoría de explotación de binarios"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: binary exploitation."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 140 — CTFs de pwn e ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "pwn.college"
+      },
+      {
+        "t": "p",
+        "x": "Plataforma educativa gratuita de seguridad práctica; sus reglas restringen publicar walkthroughs de desafíos."
+      },
+      {
+        "t": "p",
+        "x": "Sitio oficial: pwn.college."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "pwndbg"
+      },
+      {
+        "t": "p",
+        "x": "Extensión de GDB orientada al exploiting"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "pwninit"
+      },
+      {
+        "t": "p",
+        "x": "Herramienta que engancha la libc del reto al binario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 140 — CTFs de pwn e ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "pwntools"
+      },
+      {
+        "t": "p",
+        "x": "Librería de Python para construir y lanzar exploits"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 120 — Buffer overflow en stack: explotación práctica."
+      },
+      {
+        "t": "h3",
+        "x": "Pyramid of Pain"
+      },
+      {
+        "t": "p",
+        "x": "Modelo que jerarquiza los IOC por su coste para el adversario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 157 — Threat intelligence a partir de malware, Clase 162 — MITRE ATT&CK como lenguaje ofensivo."
+      },
+      {
+        "t": "h2",
+        "x": "Q"
+      },
+      {
+        "t": "h3",
+        "x": "QEMU + módulo"
+      },
+      {
+        "t": "p",
+        "x": "Entorno de práctica aislado para kernel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 139 — Kernel exploitation: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "Qiling"
+      },
+      {
+        "t": "p",
+        "x": "Emula CPU y SO; ejecuta binarios completos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 158 — Emulación y unpacking automatizado."
+      },
+      {
+        "t": "h3",
+        "x": "Qubit"
+      },
+      {
+        "t": "p",
+        "x": "Unidad cuántica que puede estar en superposición de estados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 62 — Criptografía post-cuántica."
+      },
+      {
+        "t": "h3",
+        "x": "Qubit lógico"
+      },
+      {
+        "t": "p",
+        "x": "Qubit corregido de errores; hacen falta muchos físicos por cada uno"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 62 — Criptografía post-cuántica."
+      },
+      {
+        "t": "h3",
+        "x": "Quemado (burned)"
+      },
+      {
+        "t": "p",
+        "x": "Activo detectado o bloqueado por el defensor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 164 — Diseño de infraestructura de comando y control (C2)."
+      },
+      {
+        "t": "h3",
+        "x": "Query"
+      },
+      {
+        "t": "p",
+        "x": "Consulta que expresa un patrón de vulnerabilidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 111 — Seguridad de APIs GraphQL, Clase 137 — Descubrimiento de vulnerabilidades en código."
+      },
+      {
+        "t": "h3",
+        "x": "QUIC"
+      },
+      {
+        "t": "p",
+        "x": "Transporte sobre UDP que sustenta HTTP/3 y reduce latencia."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna."
+      },
+      {
+        "t": "h2",
+        "x": "R"
+      },
+      {
+        "t": "h3",
+        "x": "r2pipe"
+      },
+      {
+        "t": "p",
+        "x": "API para controlar r2 desde un script"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 132 — IDA Pro y radare2."
+      },
+      {
+        "t": "h3",
+        "x": "RaaS"
+      },
+      {
+        "t": "p",
+        "x": "Ransomware as a Service: modelo de alquiler del malware"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain, Clase 150 — Ransomware: anatomía y análisis."
+      },
+      {
+        "t": "h3",
+        "x": "Race condition"
+      },
+      {
+        "t": "p",
+        "x": "Explotar la ventana entre comprobar y actuar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 109 — Vulnerabilidades de lógica de negocio."
+      },
+      {
+        "t": "h3",
+        "x": "radare2 / rizin"
+      },
+      {
+        "t": "p",
+        "x": "Suite de RE libre, ligera y de línea de comandos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 132 — IDA Pro y radare2."
+      },
+      {
+        "t": "h3",
+        "x": "Rainbow table"
+      },
+      {
+        "t": "p",
+        "x": "Tabla precomputada contraseña→hash; el salt la inutiliza"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2, Clase 80 — Cracking de contraseñas con John y Hashcat."
+      },
+      {
+        "t": "h3",
+        "x": "Rama"
+      },
+      {
+        "t": "p",
+        "x": "Puntero móvil a un commit"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Randomización en GDB"
+      },
+      {
+        "t": "p",
+        "x": "GDB desactiva ASLR por defecto; puede falsear pruebas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "Ransomware"
+      },
+      {
+        "t": "p",
+        "x": "Cifra los datos y exige un rescate"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 141 — Introducción al malware: tipos y taxonomía, Clase 150 — Ransomware: anatomía y análisis."
+      },
+      {
+        "t": "h3",
+        "x": "RAT"
+      },
+      {
+        "t": "p",
+        "x": "Troyano de acceso remoto interactivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 141 — Introducción al malware: tipos y taxonomía."
+      },
+      {
+        "t": "h3",
+        "x": "Rate"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 354 — Server-side Anti-Cheat y diseño autoritativo."
+      },
+      {
+        "t": "h3",
+        "x": "Rate limit"
+      },
+      {
+        "t": "p",
+        "x": "Restricción de frecuencia; debe considerar identidad, operación y coste."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 247 — Seguridad de APIs en el ciclo de desarrollo."
+      },
+      {
+        "t": "h3",
+        "x": "Rate limiting"
+      },
+      {
+        "t": "p",
+        "x": "Limitar llamadas; crítico en consumo programático"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 101 — Fallos de autenticación y bypass, Clase 110 — Seguridad de APIs REST."
+      },
+      {
+        "t": "h3",
+        "x": "Rate limiting por operación"
+      },
+      {
+        "t": "p",
+        "x": "Contar operaciones, no peticiones HTTP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 111 — Seguridad de APIs GraphQL."
+      },
+      {
+        "t": "h3",
+        "x": "Raw offset"
+      },
+      {
+        "t": "p",
+        "x": "Desplazamiento en el fichero en disco"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 145 — El formato PE de Windows."
+      },
+      {
+        "t": "h3",
+        "x": "Raw socket"
+      },
+      {
+        "t": "p",
+        "x": "Socket que permite construir cabeceras a mano; exige privilegios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 17 — Python para seguridad: manipulación de paquetes con Scapy, Clase 30 — Nmap: escaneo de puertos y tipos de escaneo."
+      },
+      {
+        "t": "h3",
+        "x": "RAX"
+      },
+      {
+        "t": "p",
+        "x": "Registro que suele contener el valor de retorno"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria, Clase 117 — El stack, los registros y las convenciones de llamada."
+      },
+      {
+        "t": "h3",
+        "x": "RAX / EAX / AX / AL"
+      },
+      {
+        "t": "p",
+        "x": "El mismo registro en 64, 32, 16 y 8 bits"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador."
+      },
+      {
+        "t": "h3",
+        "x": "RBAC"
+      },
+      {
+        "t": "p",
+        "x": "Control de acceso basado en roles"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "RBP"
+      },
+      {
+        "t": "p",
+        "x": "Puntero a la base del marco actual"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria."
+      },
+      {
+        "t": "h3",
+        "x": "RC4"
+      },
+      {
+        "t": "p",
+        "x": "Cifrado de flujo obsoleto; keystream con sesgos explotables"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4."
+      },
+      {
+        "t": "h3",
+        "x": "RCA — Análisis de causa raíz"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: rca, root cause analysis."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 360 — Capstone: incidente completo de Game Security."
+      },
+      {
+        "t": "h3",
+        "x": "RCE"
+      },
+      {
+        "t": "p",
+        "x": "Ejecución remota de código; el impacto de esta clase"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 95 — Inyección de comandos del sistema operativo."
+      },
+      {
+        "t": "h3",
+        "x": "RDAP"
+      },
+      {
+        "t": "p",
+        "x": "Protocolo estructurado para consultar datos de registro de recursos de Internet."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 251 — OSINT de empresas y dominios."
+      },
+      {
+        "t": "h3",
+        "x": "RDI, RSI, RDX, RCX, R8, R9"
+      },
+      {
+        "t": "p",
+        "x": "Los seis primeros argumentos en x64, en ese orden"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 117 — El stack, los registros y las convenciones de llamada."
+      },
+      {
+        "t": "h3",
+        "x": "Reachability"
+      },
+      {
+        "t": "p",
+        "x": "Evidencia de que el código vulnerable puede alcanzarse desde el producto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 240 — SCA: dependencias y riesgo de terceros."
+      },
+      {
+        "t": "h3",
+        "x": "Reaction"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 356 — Detección de aimbot y automatización por comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Reapertura"
+      },
+      {
+        "t": "p",
+        "x": "Evidencia de que la corrección no eliminó o reintrodujo el problema."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 245 — Gestión de vulnerabilidades a escala."
+      },
+      {
+        "t": "h3",
+        "x": "Reasignación"
+      },
+      {
+        "t": "p",
+        "x": "El allocator entrega el chunk liberado a otra petición"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 127 — Heap: use-after-free y double free."
+      },
+      {
+        "t": "h3",
+        "x": "Reciclar el chunk"
+      },
+      {
+        "t": "p",
+        "x": "Pedir memoria del mismo tamaño para controlar el contenido"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 127 — Heap: use-after-free y double free."
+      },
+      {
+        "t": "h3",
+        "x": "Recoil,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 349 — Aimbot avanzado, predicción, smoothing y recoil."
+      },
+      {
+        "t": "h3",
+        "x": "Recolección del offset"
+      },
+      {
+        "t": "p",
+        "x": "Medir la distancia a RIP con cyclic"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 120 — Buffer overflow en stack: explotación práctica."
+      },
+      {
+        "t": "h3",
+        "x": "Recomendación accionable"
+      },
+      {
+        "t": "p",
+        "x": "Acción concreta que reduce el riesgo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 160 — Reporte de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Recon iterativo"
+      },
+      {
+        "t": "p",
+        "x": "Cada dato hallado abre nuevas consultas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas."
+      },
+      {
+        "t": "h3",
+        "x": "Reconciliación"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 354 — Server-side Anti-Cheat y diseño autoritativo."
+      },
+      {
+        "t": "h3",
+        "x": "Reconocimiento activo"
+      },
+      {
+        "t": "p",
+        "x": "Recolección enviando tráfico directo al objetivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 69 — Reconocimiento activo."
+      },
+      {
+        "t": "h3",
+        "x": "Reconocimiento eficiente"
+      },
+      {
+        "t": "p",
+        "x": "Subdominios, JS y endpoints con buen retorno"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 114 — Bug bounty: metodología y plataformas."
+      },
+      {
+        "t": "h3",
+        "x": "Reconocimiento pasivo"
+      },
+      {
+        "t": "p",
+        "x": "Recolección sin enviar tráfico al objetivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas."
+      },
+      {
+        "t": "h3",
+        "x": "Reconstrucción de IAT"
+      },
+      {
+        "t": "p",
+        "x": "Regenerar la tabla de imports del binario volcado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 147 — Ofuscación, packing y unpacking."
+      },
+      {
+        "t": "h3",
+        "x": "Recuperación a userland"
+      },
+      {
+        "t": "p",
+        "x": "Volver limpio tras ganar privilegios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 139 — Kernel exploitation: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "Recuperación de contraseña"
+      },
+      {
+        "t": "p",
+        "x": "Camino alternativo al login, a menudo el más débil"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 101 — Fallos de autenticación y bypass."
+      },
+      {
+        "t": "h3",
+        "x": "Recursos incrustados"
+      },
+      {
+        "t": "p",
+        "x": "Binarios o datos escondidos dentro del PE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 143 — Análisis estático básico."
+      },
+      {
+        "t": "h3",
+        "x": "Red interna"
+      },
+      {
+        "t": "p",
+        "x": "Servicios que confían en el tráfico de dentro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 99 — Server-Side Request Forgery (SSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Red team"
+      },
+      {
+        "t": "p",
+        "x": "Emulación de un adversario con objetivo para medir detección y respuesta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 66 — Metodología de pentesting: PTES y OSSTMM, Clase 161 — Red Team vs pentest: filosofía y objetivos."
+      },
+      {
+        "t": "h3",
+        "x": "Red zone"
+      },
+      {
+        "t": "p",
+        "x": "128 bytes bajo RSP usables por funciones hoja"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 117 — El stack, los registros y las convenciones de llamada."
+      },
+      {
+        "t": "h3",
+        "x": "Redirección"
+      },
+      {
+        "t": "p",
+        "x": "La URL permitida redirige a una interna"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 99 — Server-Side Request Forgery (SSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Redirector"
+      },
+      {
+        "t": "p",
+        "x": "Proxy sacrificable que reenvía tráfico válido y descarta el resto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 164 — Diseño de infraestructura de comando y control (C2)."
+      },
+      {
+        "t": "h3",
+        "x": "Redirector DNS"
+      },
+      {
+        "t": "p",
+        "x": "Redirector que reenvía tráfico C2 sobre consultas DNS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 164 — Diseño de infraestructura de comando y control (C2)."
+      },
+      {
+        "t": "h3",
+        "x": "redirecturi"
+      },
+      {
+        "t": "p",
+        "x": "URL de retorno; debe validarse con allowlist estricto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect."
+      },
+      {
+        "t": "h3",
+        "x": "ReDoS"
+      },
+      {
+        "t": "p",
+        "x": "DoS por retroceso catastrófico de una regex"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 19 — Expresiones regulares para análisis de logs y datos."
+      },
+      {
+        "t": "h3",
+        "x": "Reempaquetado"
+      },
+      {
+        "t": "p",
+        "x": "Reconstrucción y firma de una copia autorizada para laboratorio."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 265 — Ingeniería inversa de aplicaciones móviles."
+      },
+      {
+        "t": "h3",
+        "x": "Reenvío inmediato de logs"
+      },
+      {
+        "t": "p",
+        "x": "Enviar los registros fuera antes de que se borren"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 84 — Anti-forense y borrado de huellas (concepto y límites)."
+      },
+      {
+        "t": "h3",
+        "x": "Referencia cruzada"
+      },
+      {
+        "t": "p",
+        "x": "Relación entre uso y definición en un binario."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 265 — Ingeniería inversa de aplicaciones móviles."
+      },
+      {
+        "t": "h3",
+        "x": "Referencias"
+      },
+      {
+        "t": "p",
+        "x": "Fuentes que respaldan hallazgo y remediación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 85 — Reporte profesional de pentest."
+      },
+      {
+        "t": "h3",
+        "x": "Reflective loading"
+      },
+      {
+        "t": "p",
+        "x": "Cargar un ensamblado en memoria sin tocar disco"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 153 — Análisis de malware en scripts: PowerShell y JavaScript."
+      },
+      {
+        "t": "h3",
+        "x": "Reflejar el Origin"
+      },
+      {
+        "t": "p",
+        "x": "Fallo: devolver el Origin recibido con credenciales"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution."
+      },
+      {
+        "t": "h3",
+        "x": "Refutación"
+      },
+      {
+        "t": "p",
+        "x": "Búsqueda deliberada de incompatibilidades con una hipótesis."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 253 — Geolocalización y análisis de imágenes."
+      },
+      {
+        "t": "h3",
+        "x": "Regeneración de ID"
+      },
+      {
+        "t": "p",
+        "x": "Cambiar el ID al autenticar; anula la fixation"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 102 — Gestión de sesiones y ataques asociados."
+      },
+      {
+        "t": "h3",
+        "x": "Registro"
+      },
+      {
+        "t": "p",
+        "x": "Almacenamiento interno rapidísimo de la CPU"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 22 — Docker y contenedores para laboratorios de seguridad, Clase 24 — Arquitectura de computadores: CPU, registros y memoria."
+      },
+      {
+        "t": "h3",
+        "x": "Registro A"
+      },
+      {
+        "t": "p",
+        "x": "Mapeo de nombre a dirección IPv4."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos."
+      },
+      {
+        "t": "h3",
+        "x": "Registro (GPR)"
+      },
+      {
+        "t": "p",
+        "x": "Celda de memoria ultrarrápida de la CPU (RAX…R15)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador."
+      },
+      {
+        "t": "h3",
+        "x": "Registros de syscall"
+      },
+      {
+        "t": "p",
+        "x": "RAX (número), RDI/RSI/RDX (argumentos)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 121 — Escritura de shellcode."
+      },
+      {
+        "t": "h3",
+        "x": "Registros DNS públicos"
+      },
+      {
+        "t": "p",
+        "x": "MX, TXT, SPF que revelan infraestructura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas."
+      },
+      {
+        "t": "h3",
+        "x": "Regla"
+      },
+      {
+        "t": "p",
+        "x": "Unidad de YARA: meta, strings y condition"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "Regla por familia"
+      },
+      {
+        "t": "p",
+        "x": "Captura lo común al linaje; caza variantes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "Regla YARA / MISP"
+      },
+      {
+        "t": "p",
+        "x": "Entregables de detección y de compartición"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 160 — Reporte de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Reglas de mutación"
+      },
+      {
+        "t": "p",
+        "x": "Transforman el diccionario imitando hábitos humanos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 80 — Cracking de contraseñas con John y Hashcat."
+      },
+      {
+        "t": "h3",
+        "x": "Rego"
+      },
+      {
+        "t": "p",
+        "x": "Lenguaje declarativo usado por OPA."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 244 — Políticas como código con OPA."
+      },
+      {
+        "t": "h3",
+        "x": "Regshot"
+      },
+      {
+        "t": "p",
+        "x": "Diff del registro antes y después"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 144 — Análisis dinámico básico y sandboxing."
+      },
+      {
+        "t": "h3",
+        "x": "Rehash en login"
+      },
+      {
+        "t": "p",
+        "x": "Recalcular el hash de contraseña con parámetros más fuertes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h3",
+        "x": "RELATED"
+      },
+      {
+        "t": "p",
+        "x": "Tráfico asociado a otra conexión (datos de FTP, ICMP correspondiente)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "Relleno (padding)"
+      },
+      {
+        "t": "p",
+        "x": "Bytes de relación hasta la dirección de retorno"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 120 — Buffer overflow en stack: explotación práctica."
+      },
+      {
+        "t": "h3",
+        "x": "RELRO"
+      },
+      {
+        "t": "p",
+        "x": "Protege la GOT (partial: escribible; full: solo lectura)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE."
+      },
+      {
+        "t": "h3",
+        "x": "Remediación"
+      },
+      {
+        "t": "p",
+        "x": "Consultas parametrizadas, igual que en la inyección directa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 92 — Inyección SQL avanzada y ciega (blind)."
+      },
+      {
+        "t": "h3",
+        "x": "Remediación accionable"
+      },
+      {
+        "t": "p",
+        "x": "Corrección concreta y realista, no genérica"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 85 — Reporte profesional de pentest."
+      },
+      {
+        "t": "h3",
+        "x": "REMnux"
+      },
+      {
+        "t": "p",
+        "x": "Distro Linux de análisis de malware"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 142 — Laboratorio seguro de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "remote()"
+      },
+      {
+        "t": "p",
+        "x": "Conecta al servicio remoto; misma lógica que local"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 120 — Buffer overflow en stack: explotación práctica."
+      },
+      {
+        "t": "h3",
+        "x": "Remote forwarding (-R)"
+      },
+      {
+        "t": "p",
+        "x": "Puerto de vuelta cuando el pivote no puede salir"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 79 — Pivoting y reenvío de puertos."
+      },
+      {
+        "t": "h3",
+        "x": "Remoto"
+      },
+      {
+        "t": "p",
+        "x": "Copia del repo en otra máquina"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Renombrar"
+      },
+      {
+        "t": "p",
+        "x": "Descartar el nombre original; anula traversal y doble ext."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 108 — Vulnerabilidades en carga de archivos."
+      },
+      {
+        "t": "h3",
+        "x": "Renombrar / comentar"
+      },
+      {
+        "t": "p",
+        "x": "Añadir el significado que el compilador borró"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 131 — Ghidra para ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "Repeater"
+      },
+      {
+        "t": "p",
+        "x": "Reenvío manual y reproducible de peticiones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 88 — Burp Suite: configuración y flujo de trabajo."
+      },
+      {
+        "t": "h3",
+        "x": "Replay,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 270 — Ataques a RFID y NFC, Clase 352 — Seguridad del protocolo de juego."
+      },
+      {
+        "t": "h3",
+        "x": "Reporte"
+      },
+      {
+        "t": "p",
+        "x": "Producto que se paga; claro y reproducible"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 114 — Bug bounty: metodología y plataformas."
+      },
+      {
+        "t": "h3",
+        "x": "Reporte de análisis"
+      },
+      {
+        "t": "p",
+        "x": "Documento que comunica los resultados del análisis"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 160 — Reporte de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Representación"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 344 — Estado del juego, memoria y manipulación controlada."
+      },
+      {
+        "t": "h3",
+        "x": "Request smuggling"
+      },
+      {
+        "t": "p",
+        "x": "Colar parte de una petición en la de otro usuario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 112 — Web cache poisoning y HTTP request smuggling."
+      },
+      {
+        "t": "h3",
+        "x": "Requisito de inteligencia"
+      },
+      {
+        "t": "p",
+        "x": "Pregunta ligada a una decisión y a un alcance."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 249 — Fundamentos de OSINT."
+      },
+      {
+        "t": "h3",
+        "x": "Resistencia a manipulación"
+      },
+      {
+        "t": "p",
+        "x": "Propiedad física del HSM frente a extracción"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 63 — Gestión de secretos: Vault y KMS."
+      },
+      {
+        "t": "h3",
+        "x": "Resolución de entidades"
+      },
+      {
+        "t": "p",
+        "x": "Evaluación de si registros distintos representan al mismo sujeto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 250 — OSINT de personas."
+      },
+      {
+        "t": "h3",
+        "x": "Resolución dinámica de APIs"
+      },
+      {
+        "t": "p",
+        "x": "Obtener funciones en ejecución para ocultarlas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 146 — Análisis con IDA y Ghidra aplicado a malware."
+      },
+      {
+        "t": "h3",
+        "x": "Resolver"
+      },
+      {
+        "t": "p",
+        "x": "Servidor recursivo que resuelve consultas en nombre del cliente."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos, Clase 111 — Seguridad de APIs GraphQL."
+      },
+      {
+        "t": "h3",
+        "x": "Resolver API hashing"
+      },
+      {
+        "t": "p",
+        "x": "Emular la rutina que resuelve las APIs por hash"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 158 — Emulación y unpacking automatizado."
+      },
+      {
+        "t": "h3",
+        "x": "Resolver recursivo"
+      },
+      {
+        "t": "p",
+        "x": "Servidor que resuelve consultas por el cliente y cachea el resultado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling."
+      },
+      {
+        "t": "h3",
+        "x": "Resource owner"
+      },
+      {
+        "t": "p",
+        "x": "El usuario dueño de los datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect."
+      },
+      {
+        "t": "h3",
+        "x": "Resource server"
+      },
+      {
+        "t": "p",
+        "x": "Donde están los datos protegidos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect."
+      },
+      {
+        "t": "h3",
+        "x": "Respuesta a incidentes"
+      },
+      {
+        "t": "p",
+        "x": "Necesita IOCs accionables para contener"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 160 — Reporte de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Respuestas neutras"
+      },
+      {
+        "t": "p",
+        "x": "Mensaje y tiempo idénticos existan o no las cuentas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 101 — Fallos de autenticación y bypass."
+      },
+      {
+        "t": "h3",
+        "x": "Resumen ejecutivo"
+      },
+      {
+        "t": "p",
+        "x": "Sección para la dirección; riesgo de negocio, sin jerga"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 85 — Reporte profesional de pentest, Clase 160 — Reporte de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "ret como pegamento"
+      },
+      {
+        "t": "p",
+        "x": "Cada ret salta al siguiente gadget de la pila"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 124 — Return-Oriented Programming (ROP)."
+      },
+      {
+        "t": "h3",
+        "x": "ret2dlresolve"
+      },
+      {
+        "t": "p",
+        "x": "Resolver funciones sin leak, abusando del enlazador"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 138 — Desarrollo de exploits moderno."
+      },
+      {
+        "t": "h3",
+        "x": "ret2libc"
+      },
+      {
+        "t": "p",
+        "x": "Saltar a funciones de libc en vez de inyectar shellcode"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 123 — Bypass de protecciones: ret2libc."
+      },
+      {
+        "t": "h3",
+        "x": "ret2syscall"
+      },
+      {
+        "t": "p",
+        "x": "Cadena que prepara y ejecuta una syscall (execve)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 124 — Return-Oriented Programming (ROP)."
+      },
+      {
+        "t": "h3",
+        "x": "ret2usr"
+      },
+      {
+        "t": "p",
+        "x": "Ataque que SMEP bloquea"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 139 — Kernel exploitation: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "ret2win"
+      },
+      {
+        "t": "p",
+        "x": "Redirigir RIP a una función \"ganadora\" del propio binario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 120 — Buffer overflow en stack: explotación práctica."
+      },
+      {
+        "t": "h3",
+        "x": "Retención/deducible"
+      },
+      {
+        "t": "p",
+        "x": "Parte inicial de pérdida asumida por asegurado."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 288 — Seguros cibernéticos."
+      },
+      {
+        "t": "h3",
+        "x": "Retención y destrucción"
+      },
+      {
+        "t": "p",
+        "x": "Cómo se custodia y elimina la evidencia tras el cierre"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 67 — Reglas de engagement, alcance y contratos."
+      },
+      {
+        "t": "h3",
+        "x": "Retest"
+      },
+      {
+        "t": "p",
+        "x": "Volver a comprobar que las correcciones funcionan"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 85 — Reporte profesional de pentest."
+      },
+      {
+        "t": "h3",
+        "x": "Retículos"
+      },
+      {
+        "t": "p",
+        "x": "Familia matemática base de ML-KEM y ML-DSA"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 62 — Criptografía post-cuántica."
+      },
+      {
+        "t": "h3",
+        "x": "Retipar estructuras"
+      },
+      {
+        "t": "p",
+        "x": "Declarar tipos para que la decompilación sea legible"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 131 — Ghidra para ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "Retransmisión"
+      },
+      {
+        "t": "p",
+        "x": "Reenvío de un segmento no confirmado; indica pérdida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "Retrohunt"
+      },
+      {
+        "t": "p",
+        "x": "Buscar en el histórico de VirusTotal con una regla"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "Retrospectiva"
+      },
+      {
+        "t": "p",
+        "x": "Revisión de decisiones, límites y siguiente mejora."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 10 clase(s): Clase 301 — Roadmap de certificaciones: CompTIA, OSCP, CISSP y más, Clase 302 — Preparación OSCP: mentalidad Try Harder, Clase 303 — Capstone: laboratorio completo de pentest, Clase 304 — Preparación CISSP: los 8 dominios, Clase 305 — Capstone: operación Red Team end-to-end, Clase 306 — Capstone: detección Blue Team end-to-end, Clase 307 — Capstone: respuesta a incidentes DFIR end-to-end, Clase 308 — Capstone: campaña de bug bounty, Clase 309 — Construcción de portafolio y home lab permanente, Clase 310 — Plan de aprendizaje continuo y comunidad."
+      },
+      {
+        "t": "h3",
+        "x": "Reutilización de código"
+      },
+      {
+        "t": "p",
+        "x": "ret2libc y ROP en vez de inyectar shellcode"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 119 — Buffer overflow en stack: teoría, Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE."
+      },
+      {
+        "t": "h3",
+        "x": "Reutilización de conexión"
+      },
+      {
+        "t": "p",
+        "x": "Varias peticiones sobre la misma conexión TCP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 112 — Web cache poisoning y HTTP request smuggling."
+      },
+      {
+        "t": "h3",
+        "x": "Reutilización de contraseñas"
+      },
+      {
+        "t": "p",
+        "x": "Motivo por el que una filtración da acceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas."
+      },
+      {
+        "t": "h3",
+        "x": "Reutilización de credenciales"
+      },
+      {
+        "t": "p",
+        "x": "Un administrador compartido abre muchas máquinas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 78 — Movimiento lateral en la red."
+      },
+      {
+        "t": "h3",
+        "x": "Reutilización de nonce"
+      },
+      {
+        "t": "p",
+        "x": "Cancela el keystream y destruye la confidencialidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4."
+      },
+      {
+        "t": "h3",
+        "x": "rev"
+      },
+      {
+        "t": "p",
+        "x": "Categoría de ingeniería inversa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 140 — CTFs de pwn e ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "Reverse shell"
+      },
+      {
+        "t": "p",
+        "x": "El objetivo conecta hacia el atacante; atraviesa NAT/firewall"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 73 — Metasploit: explotación y payloads, Clase 95 — Inyección de comandos del sistema operativo."
+      },
+      {
+        "t": "h3",
+        "x": "Reversibilidad"
+      },
+      {
+        "t": "p",
+        "x": "Volver a un estado limpio tras cada ejecución"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 142 — Laboratorio seguro de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Reversing"
+      },
+      {
+        "t": "p",
+        "x": "Entender un programa desde su forma compilada"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: ingenieria inversa, reverse engineering."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 130 — Ingeniería inversa: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "Revocación"
+      },
+      {
+        "t": "p",
+        "x": "Invalidar una clave o certificado comprometido"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 54 — Firmas digitales, Clase 241 — Secretos en el código y pre-commit hooks."
+      },
+      {
+        "t": "h3",
+        "x": "Revocación de JWT"
+      },
+      {
+        "t": "p",
+        "x": "Difícil antes de expirar; exige TTL cortos o lista negra"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 103 — Ataques y seguridad de JWT."
+      },
+      {
+        "t": "h3",
+        "x": "RFC 1918"
+      },
+      {
+        "t": "p",
+        "x": "Rangos privados no enrutables en Internet."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 14 — Direccionamiento IP y subnetting."
+      },
+      {
+        "t": "h3",
+        "x": "RFLAGS"
+      },
+      {
+        "t": "p",
+        "x": "Indicadores (cero, acarreo, signo) que rigen los saltos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador."
+      },
+      {
+        "t": "h3",
+        "x": "RHOSTS"
+      },
+      {
+        "t": "p",
+        "x": "Objetivo del exploit"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 73 — Metasploit: explotación y payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Riesgo de negocio"
+      },
+      {
+        "t": "p",
+        "x": "Impacto en dinero, reputación, cumplimiento, continuidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 85 — Reporte profesional de pentest."
+      },
+      {
+        "t": "h3",
+        "x": "Riesgo residual"
+      },
+      {
+        "t": "p",
+        "x": "Exposición que permanece después del tratamiento."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 31 clase(s): Clase 245 — Gestión de vulnerabilidades a escala, Clase 291 — Introducción a la seguridad de IA y ML, Clase 292 — Ataques adversariales a modelos, Clase 293 — Envenenamiento de datos y modelos, Clase 294 — Robo y extracción de modelos, Clase 295 — OWASP Top 10 para aplicaciones con LLM, Clase 296 — Prompt injection y jailbreaks, Clase 297 — Seguridad de aplicaciones con LLM: RAG y agentes, Clase 298 — IA aplicada a la defensa: detección y SOC, Clase 299 — IA ofensiva y deepfakes y 21 más."
+      },
+      {
+        "t": "h3",
+        "x": "Rigidez (rigidity)"
+      },
+      {
+        "t": "p",
+        "x": "Que los parámetros se elijan por criterios públicos y sin margen"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 50 — Criptografía de curva elíptica (ECC)."
+      },
+      {
+        "t": "h3",
+        "x": "Ring 0"
+      },
+      {
+        "t": "p",
+        "x": "Máximo privilegio; control total del sistema"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 139 — Kernel exploitation: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "RIP"
+      },
+      {
+        "t": "p",
+        "x": "Puntero de instrucción; controlarlo controla la ejecución"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria, Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador."
+      },
+      {
+        "t": "h3",
+        "x": "Robo de sesión"
+      },
+      {
+        "t": "p",
+        "x": "Enviar document.cookie al atacante para suplantar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 96 — Cross-Site Scripting (XSS) reflejado."
+      },
+      {
+        "t": "h3",
+        "x": "robots.txt"
+      },
+      {
+        "t": "p",
+        "x": "Lista rutas que el dueño no quiere indexar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 90 — Mapeo, spidering y descubrimiento de contenido."
+      },
+      {
+        "t": "h3",
+        "x": "Robustez"
+      },
+      {
+        "t": "p",
+        "x": "Desempeño bajo variaciones definidas, no inmunidad universal."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 138 — Desarrollo de exploits moderno, Clase 292 — Ataques adversariales a modelos."
+      },
+      {
+        "t": "h3",
+        "x": "rockyou"
+      },
+      {
+        "t": "p",
+        "x": "Diccionario clásico de contraseñas filtradas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 80 — Cracking de contraseñas con John y Hashcat."
+      },
+      {
+        "t": "h3",
+        "x": "RoE"
+      },
+      {
+        "t": "p",
+        "x": "Reglas de engagement: ventanas, técnicas y límites operativos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable, Clase 67 — Reglas de engagement, alcance y contratos."
+      },
+      {
+        "t": "h3",
+        "x": "Rol"
+      },
+      {
+        "t": "p",
+        "x": "Posición jurídica u operativa que determina obligaciones."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 281 — Cumplimiento: GDPR, HIPAA y PCI-DSS."
+      },
+      {
+        "t": "h3",
+        "x": "Ronda"
+      },
+      {
+        "t": "p",
+        "x": "Repetición de las operaciones internas de AES (10, 12 o 14)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 47 — Cifrado simétrico: AES y modos de operación."
+      },
+      {
+        "t": "h3",
+        "x": "root"
+      },
+      {
+        "t": "p",
+        "x": "Superusuario (UID 0) que ignora los permisos tradicionales"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios."
+      },
+      {
+        "t": "h3",
+        "x": "Root of trust"
+      },
+      {
+        "t": "p",
+        "x": "Componente protegido en el que comienza una decisión de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 267 — Hacking de firmware."
+      },
+      {
+        "t": "h3",
+        "x": "Rootfs"
+      },
+      {
+        "t": "p",
+        "x": "Sistema de archivos raíz usado por el runtime embebido."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 267 — Hacking de firmware."
+      },
+      {
+        "t": "h3",
+        "x": "Rootkit"
+      },
+      {
+        "t": "p",
+        "x": "Malware cuyo fin es ocultarse manipulando el SO"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 151 — Rootkits y bootkits."
+      },
+      {
+        "t": "h3",
+        "x": "Rootkit / bootkit"
+      },
+      {
+        "t": "p",
+        "x": "Oculta su presencia / se carga antes que el SO"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 141 — Introducción al malware: tipos y taxonomía."
+      },
+      {
+        "t": "h3",
+        "x": "Rootkit de kernel"
+      },
+      {
+        "t": "p",
+        "x": "Opera en ring 0; manipula el núcleo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 151 — Rootkits y bootkits."
+      },
+      {
+        "t": "h3",
+        "x": "Rootkit de usuario"
+      },
+      {
+        "t": "p",
+        "x": "Opera en ring 3; más fácil de detectar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 151 — Rootkits y bootkits."
+      },
+      {
+        "t": "h3",
+        "x": "Rootkit LKM"
+      },
+      {
+        "t": "p",
+        "x": "Oculta procesos y ficheros desde ring 0"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 154 — Malware en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "ROP"
+      },
+      {
+        "t": "p",
+        "x": "Encadenar gadgets existentes para construir comportamiento"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria, Clase 123 — Bypass de protecciones: ret2libc, Clase 124 — Return-Oriented Programming (ROP)."
+      },
+      {
+        "t": "h3",
+        "x": "ROP + ret2libc"
+      },
+      {
+        "t": "p",
+        "x": "Combinación típica de técnicas modernas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 138 — Desarrollo de exploits moderno."
+      },
+      {
+        "t": "h3",
+        "x": "ROP() de pwntools"
+      },
+      {
+        "t": "p",
+        "x": "Construye cadenas localizando gadgets automáticamente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 124 — Return-Oriented Programming (ROP)."
+      },
+      {
+        "t": "h3",
+        "x": "ROP Emporium"
+      },
+      {
+        "t": "p",
+        "x": "Serie de retos progresivos para practicar return-oriented programming en binarios deliberadamente vulnerables."
+      },
+      {
+        "t": "p",
+        "x": "Sitio oficial: ROP Emporium."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "ROPgadget / ropper"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas que buscan gadgets en el binario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 124 — Return-Oriented Programming (ROP)."
+      },
+      {
+        "t": "h3",
+        "x": "Rotación"
+      },
+      {
+        "t": "p",
+        "x": "Sustitución controlada de una credencial y actualización de consumidores."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 63 — Gestión de secretos: Vault y KMS, Clase 164 — Diseño de infraestructura de comando y control (C2), Clase 241 — Secretos en el código y pre-commit hooks."
+      },
+      {
+        "t": "h3",
+        "x": "Rotación de claves"
+      },
+      {
+        "t": "p",
+        "x": "Renovar periódicamente la clave del MAC"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 52 — HMAC y autenticación de mensajes."
+      },
+      {
+        "t": "h3",
+        "x": "Rotar credencial"
+      },
+      {
+        "t": "p",
+        "x": "Invalidar y reemitir una clave expuesta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Roto académicamente"
+      },
+      {
+        "t": "p",
+        "x": "Existe algún ataque mejor que la fuerza bruta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 61 — Introducción al criptoanálisis."
+      },
+      {
+        "t": "h3",
+        "x": "Roto prácticamente"
+      },
+      {
+        "t": "p",
+        "x": "El ataque es alcanzable con recursos reales"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 61 — Introducción al criptoanálisis."
+      },
+      {
+        "t": "h3",
+        "x": "RPO"
+      },
+      {
+        "t": "p",
+        "x": "Punto temporal máximo de pérdida de datos aceptada."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 283 — Continuidad de negocio y plan de recuperación ante desastres."
+      },
+      {
+        "t": "h3",
+        "x": "RS256"
+      },
+      {
+        "t": "p",
+        "x": "Firma asimétrica; privada firma, pública verifica"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 103 — Ataques y seguridad de JWT."
+      },
+      {
+        "t": "h3",
+        "x": "RSA"
+      },
+      {
+        "t": "p",
+        "x": "Cifrado/firma asimétrico basado en la factorización de enteros grandes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 21 — Criptografía: conceptos fundamentales e intuición."
+      },
+      {
+        "t": "h3",
+        "x": "RSA-PSS"
+      },
+      {
+        "t": "p",
+        "x": "Relleno probabilístico moderno para firmar con RSA"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 54 — Firmas digitales."
+      },
+      {
+        "t": "h3",
+        "x": "RSP"
+      },
+      {
+        "t": "p",
+        "x": "Puntero a la cima de la pila"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 24 — Arquitectura de computadores: CPU, registros y memoria, Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador."
+      },
+      {
+        "t": "h3",
+        "x": "RSP / RBP"
+      },
+      {
+        "t": "p",
+        "x": "Cima de la pila / base del marco actual"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 117 — El stack, los registros y las convenciones de llamada."
+      },
+      {
+        "t": "h3",
+        "x": "RST"
+      },
+      {
+        "t": "p",
+        "x": "Cierre abrupto de conexión: puerto cerrado, firewall o aborto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad, Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "RST (0x14)"
+      },
+      {
+        "t": "p",
+        "x": "Respuesta que indica puerto cerrado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 17 — Python para seguridad: manipulación de paquetes con Scapy."
+      },
+      {
+        "t": "h3",
+        "x": "RTO"
+      },
+      {
+        "t": "p",
+        "x": "Tiempo objetivo para restaurar una capacidad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 283 — Continuidad de negocio y plan de recuperación ante desastres."
+      },
+      {
+        "t": "h3",
+        "x": "RTT"
+      },
+      {
+        "t": "p",
+        "x": "Round-trip time: latencia de ida y vuelta medida sobre el flujo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "Rules of engagement"
+      },
+      {
+        "t": "p",
+        "x": "Reglas de autorización, tiempo, objetivos y parada."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 303 — Capstone: laboratorio completo de pentest."
+      },
+      {
+        "t": "h3",
+        "x": "Rules of Engagement (RoE)"
+      },
+      {
+        "t": "p",
+        "x": "Contrato que fija alcance, técnicas permitidas, ventanas y contactos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 161 — Red Team vs pentest: filosofía y objetivos."
+      },
+      {
+        "t": "h3",
+        "x": "Run key"
+      },
+      {
+        "t": "p",
+        "x": "Clave del Registro que ejecuta algo al iniciar sesión"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios."
+      },
+      {
+        "t": "h3",
+        "x": "Run keys"
+      },
+      {
+        "t": "p",
+        "x": "Claves del registro que ejecutan en el inicio de sesión"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 82 — Persistencia en sistemas comprometidos."
+      },
+      {
+        "t": "h3",
+        "x": "Run keys / servicios / tareas / WMI"
+      },
+      {
+        "t": "p",
+        "x": "Vectores de persistencia"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 148 — Análisis de comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Runner"
+      },
+      {
+        "t": "p",
+        "x": "Entorno que ejecuta los pasos del workflow."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 242 — Seguridad en pipelines CI/CD."
+      },
+      {
+        "t": "h3",
+        "x": "Ruta absoluta"
+      },
+      {
+        "t": "p",
+        "x": "Invocar un comando con su ruta completa evita el secuestro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 76 — Escalada de privilegios en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "RVA"
+      },
+      {
+        "t": "p",
+        "x": "Desplazamiento relativo en memoria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 145 — El formato PE de Windows."
+      },
+      {
+        "t": "h3",
+        "x": "rwx"
+      },
+      {
+        "t": "p",
+        "x": "Permisos de lectura, escritura y ejecución"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios."
+      },
+      {
+        "t": "h2",
+        "x": "S"
+      },
+      {
+        "t": "h3",
+        "x": "S-box"
+      },
+      {
+        "t": "p",
+        "x": "Componente no lineal cuyo diseño resiste ambas técnicas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 47 — Cifrado simétrico: AES y modos de operación, Clase 61 — Introducción al criptoanálisis."
+      },
+      {
+        "t": "h3",
+        "x": "s (seek)"
+      },
+      {
+        "t": "p",
+        "x": "Mueve el cursor a una dirección"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 132 — IDA Pro y radare2."
+      },
+      {
+        "t": "h3",
+        "x": "SAE"
+      },
+      {
+        "t": "p",
+        "x": "Autenticación basada en contraseña usada por WPA3-Personal."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 272 — Ataques WiFi avanzados: Evil Twin y PMKID."
+      },
+      {
+        "t": "h3",
+        "x": "Safe harbor"
+      },
+      {
+        "t": "p",
+        "x": "Protección declarada condicionada al cumplimiento de política."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable, Clase 308 — Capstone: campaña de bug bounty."
+      },
+      {
+        "t": "h3",
+        "x": "safe-linking"
+      },
+      {
+        "t": "p",
+        "x": "Ofusca los punteros next del tcache"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 127 — Heap: use-after-free y double free."
+      },
+      {
+        "t": "h3",
+        "x": "SafeSEH"
+      },
+      {
+        "t": "p",
+        "x": "Valida que el manejador sea legítimo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 129 — Explotación en Windows: manejo de SEH."
+      },
+      {
+        "t": "h3",
+        "x": "Sal (salt)"
+      },
+      {
+        "t": "p",
+        "x": "Valor aleatorio por contraseña contra tablas precomputadas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 21 — Criptografía: conceptos fundamentales e intuición."
+      },
+      {
+        "t": "h3",
+        "x": "Salt"
+      },
+      {
+        "t": "p",
+        "x": "Valor aleatorio único por usuario, almacenado en claro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2, Clase 80 — Cracking de contraseñas con John y Hashcat."
+      },
+      {
+        "t": "h3",
+        "x": "Salto corto (jmp short)"
+      },
+      {
+        "t": "p",
+        "x": "Redirige desde nSEH al shellcode"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 129 — Explotación en Windows: manejo de SEH."
+      },
+      {
+        "t": "h3",
+        "x": "Salto indirecto"
+      },
+      {
+        "t": "p",
+        "x": "Destino calculado en ejecución; invisible en estático"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 133 — Análisis estático de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "Salvaguarda"
+      },
+      {
+        "t": "p",
+        "x": "Acción específica incluida en CIS Controls."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 280 — Controles CIS."
+      },
+      {
+        "t": "h3",
+        "x": "Same-Origin Policy (SOP)"
+      },
+      {
+        "t": "p",
+        "x": "Aísla el JS de un origen de los datos de otro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution."
+      },
+      {
+        "t": "h3",
+        "x": "SameSite"
+      },
+      {
+        "t": "p",
+        "x": "Atributo que limita el envío de cookies entre orígenes."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna, Clase 98 — Cross-Site Request Forgery (CSRF), Clase 102 — Gestión de sesiones y ataques asociados."
+      },
+      {
+        "t": "h3",
+        "x": "SameSite=Lax"
+      },
+      {
+        "t": "p",
+        "x": "Valor por defecto moderno; no la envía en envíos de fondo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 98 — Cross-Site Request Forgery (CSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "SameSite=Strict"
+      },
+      {
+        "t": "p",
+        "x": "No envía la cookie en ninguna petición cross-site"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 98 — Cross-Site Request Forgery (CSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "SAML"
+      },
+      {
+        "t": "p",
+        "x": "Autenticación basada en XML firmado; candidata a XXE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 100 — XML External Entities (XXE)."
+      },
+      {
+        "t": "h3",
+        "x": "SAN del certificado"
+      },
+      {
+        "t": "p",
+        "x": "Subject Alternative Names; suele filtrar nombres internos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 33 — Enumeración de servicios de red."
+      },
+      {
+        "t": "h3",
+        "x": "Sandbox"
+      },
+      {
+        "t": "p",
+        "x": "Restricción del proceso a su contenedor e interfaces permitidas."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 107 — Server-Side Template Injection (SSTI), Clase 263 — Seguridad de iOS: arquitectura."
+      },
+      {
+        "t": "h3",
+        "x": "Sandbox automático"
+      },
+      {
+        "t": "p",
+        "x": "Entorno que genera un informe de comportamiento"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 144 — Análisis dinámico básico y sandboxing."
+      },
+      {
+        "t": "h3",
+        "x": "Sanitización"
+      },
+      {
+        "t": "p",
+        "x": "Recomprimir o escalar para destruir la carga oculta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 64 — Esteganografía y ocultación de datos, Clase 97 — XSS almacenado y basado en DOM."
+      },
+      {
+        "t": "h3",
+        "x": "Sanitizador"
+      },
+      {
+        "t": "p",
+        "x": "Transformación válida para un contexto específico; no es universal."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 238 — SAST: análisis estático de código."
+      },
+      {
+        "t": "h3",
+        "x": "Sanitizer (ASan/UBSan)"
+      },
+      {
+        "t": "p",
+        "x": "Convierte corrupciones silenciosas en crashes claros"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 136 — Fuzzing con AFL++ y libFuzzer."
+      },
+      {
+        "t": "h3",
+        "x": "SAST"
+      },
+      {
+        "t": "p",
+        "x": "Análisis estático de seguridad del código"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 115 — Secure coding y defensa de aplicaciones web, Clase 137 — Descubrimiento de vulnerabilidades en código."
+      },
+      {
+        "t": "h3",
+        "x": "Saturación"
+      },
+      {
+        "t": "p",
+        "x": "Sobrecarga que distorsiona y crea señales espurias."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 269 — Radio definida por software (SDR)."
+      },
+      {
+        "t": "h3",
+        "x": "Saved RBP"
+      },
+      {
+        "t": "p",
+        "x": "Copia del RBP anterior, adyacente a la dirección de retorno"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 119 — Buffer overflow en stack: teoría."
+      },
+      {
+        "t": "h3",
+        "x": "SBOM"
+      },
+      {
+        "t": "p",
+        "x": "Inventario de componentes que acelera evaluación, sin demostrar seguridad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 246 — Supply chain security: SBOM y SLSA, Clase 275 — Seguridad de dispositivos médicos."
+      },
+      {
+        "t": "h3",
+        "x": "SCA"
+      },
+      {
+        "t": "p",
+        "x": "Análisis de las dependencias contra CVE"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 115 — Secure coding y defensa de aplicaciones web."
+      },
+      {
+        "t": "h3",
+        "x": "Scapy"
+      },
+      {
+        "t": "p",
+        "x": "Librería Python de forja y análisis de paquetes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 17 — Python para seguridad: manipulación de paquetes con Scapy."
+      },
+      {
+        "t": "h3",
+        "x": "Schema"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 355 — Telemetría para Game Security."
+      },
+      {
+        "t": "h3",
+        "x": "SCM"
+      },
+      {
+        "t": "p",
+        "x": "Service Control Manager (gestor de servicios)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios."
+      },
+      {
+        "t": "h3",
+        "x": "Scope"
+      },
+      {
+        "t": "p",
+        "x": "Activos autorizados; fuera de él es acceso no autorizado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 114 — Bug bounty: metodología y plataformas."
+      },
+      {
+        "t": "h3",
+        "x": "Scope creep"
+      },
+      {
+        "t": "p",
+        "x": "Ampliar el alcance sobre la marcha; riesgo legal"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 67 — Reglas de engagement, alcance y contratos."
+      },
+      {
+        "t": "h3",
+        "x": "Script Block Logging"
+      },
+      {
+        "t": "p",
+        "x": "Registro del contenido de los bloques ejecutados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva, Clase 153 — Análisis de malware en scripts: PowerShell y JavaScript."
+      },
+      {
+        "t": "h3",
+        "x": "Script de Zeek"
+      },
+      {
+        "t": "p",
+        "x": "Código que reacciona a eventos para generar logs o detección"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 44 — Zeek para análisis de red a gran escala."
+      },
+      {
+        "t": "h3",
+        "x": "Script kiddie"
+      },
+      {
+        "t": "p",
+        "x": "Atacante de baja capacidad que reutiliza herramientas ajenas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain."
+      },
+      {
+        "t": "h3",
+        "x": "scrypt"
+      },
+      {
+        "t": "p",
+        "x": "Primera KDF memory-hard ampliamente usada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2."
+      },
+      {
+        "t": "h3",
+        "x": "Scylla / ImpREC"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas de reconstrucción de la IAT"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 147 — Ofuscación, packing y unpacking."
+      },
+      {
+        "t": "h3",
+        "x": "Sección"
+      },
+      {
+        "t": "p",
+        "x": "Parte del binario con un propósito (.text, .rodata…)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 130 — Ingeniería inversa: introducción, Clase 145 — El formato PE de Windows."
+      },
+      {
+        "t": "h3",
+        "x": "SecLists"
+      },
+      {
+        "t": "p",
+        "x": "Colección de referencia de rutas, parámetros y payloads"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 90 — Mapeo, spidering y descubrimiento de contenido."
+      },
+      {
+        "t": "h3",
+        "x": "Secreto"
+      },
+      {
+        "t": "p",
+        "x": "Material que permite autenticar, firmar, descifrar o autorizar."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 241 — Secretos en el código y pre-commit hooks."
+      },
+      {
+        "t": "h3",
+        "x": "Secreto compartido"
+      },
+      {
+        "t": "p",
+        "x": "gᵃᵇ mod p, al que llegan ambas partes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 53 — Intercambio de claves: Diffie-Hellman."
+      },
+      {
+        "t": "h3",
+        "x": "Secreto dinámico"
+      },
+      {
+        "t": "p",
+        "x": "Credencial creada al vuelo, con TTL corto y revocación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 63 — Gestión de secretos: Vault y KMS."
+      },
+      {
+        "t": "h3",
+        "x": "Secreto en el código"
+      },
+      {
+        "t": "p",
+        "x": "Credencial en el repositorio; anti-patrón que persiste en el historial"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 63 — Gestión de secretos: Vault y KMS."
+      },
+      {
+        "t": "h3",
+        "x": "Secreto HMAC débil"
+      },
+      {
+        "t": "p",
+        "x": "Crackeable offline; permite forjar tokens"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 103 — Ataques y seguridad de JWT."
+      },
+      {
+        "t": "h3",
+        "x": "secrets / os.urandom"
+      },
+      {
+        "t": "p",
+        "x": "APIs seguras en Python"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG)."
+      },
+      {
+        "t": "h3",
+        "x": "Sector/block"
+      },
+      {
+        "t": "p",
+        "x": "Organización de memoria presente en algunas familias de tarjetas."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 270 — Ataques a RFID y NFC."
+      },
+      {
+        "t": "h3",
+        "x": "Secuestro de petición"
+      },
+      {
+        "t": "p",
+        "x": "Robar la petición o respuesta de otro usuario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 112 — Web cache poisoning y HTTP request smuggling."
+      },
+      {
+        "t": "h3",
+        "x": "Secuestro de vtable"
+      },
+      {
+        "t": "p",
+        "x": "Vtable falsa que redirige una llamada a método"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 127 — Heap: use-after-free y double free."
+      },
+      {
+        "t": "h3",
+        "x": "Secure"
+      },
+      {
+        "t": "p",
+        "x": "Flag que restringe la cookie a HTTPS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 102 — Gestión de sesiones y ataques asociados."
+      },
+      {
+        "t": "h3",
+        "x": "Secure Boot"
+      },
+      {
+        "t": "p",
+        "x": "El firmware solo arranca código firmado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 151 — Rootkits y bootkits."
+      },
+      {
+        "t": "h3",
+        "x": "Secure coding"
+      },
+      {
+        "t": "p",
+        "x": "Construir software seguro por diseño, no por parche"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 115 — Secure coding y defensa de aplicaciones web."
+      },
+      {
+        "t": "h3",
+        "x": "Security champion"
+      },
+      {
+        "t": "p",
+        "x": "Miembro del equipo que facilita prácticas y conexión con especialistas."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 248 — Cultura DevSecOps y security champions."
+      },
+      {
+        "t": "h3",
+        "x": "Security Onion"
+      },
+      {
+        "t": "p",
+        "x": "Distribución que integra Suricata, Zeek y análisis para NSM"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 43 — Network Security Monitoring (NSM): fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Segmentación"
+      },
+      {
+        "t": "p",
+        "x": "Separar una red en subredes para limitar el alcance de un ataque."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 14 — Direccionamiento IP y subnetting, Clase 42 — Segmentación de red y arquitectura Zero Trust, Clase 79 — Pivoting y reenvío de puertos."
+      },
+      {
+        "t": "h3",
+        "x": "Segmento"
+      },
+      {
+        "t": "p",
+        "x": "PDU de transporte con TCP (datagrama con UDP)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas."
+      },
+      {
+        "t": "h3",
+        "x": "Segunda preimagen"
+      },
+      {
+        "t": "p",
+        "x": "Encontrar otra entrada con el mismo digest que una dada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades."
+      },
+      {
+        "t": "h3",
+        "x": "Segundo orden"
+      },
+      {
+        "t": "p",
+        "x": "El payload se guarda y se ejecuta después, en otro sitio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 92 — Inyección SQL avanzada y ciega (blind)."
+      },
+      {
+        "t": "h3",
+        "x": "Seguridad de la cadena"
+      },
+      {
+        "t": "p",
+        "x": "El riesgo nace de cómo encajan los componentes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 112 — Web cache poisoning y HTTP request smuggling."
+      },
+      {
+        "t": "h3",
+        "x": "Seguridad por oscuridad"
+      },
+      {
+        "t": "p",
+        "x": "Confiar en el secreto del diseño; anti-patrón"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 46 — Historia y fundamentos de la criptografía."
+      },
+      {
+        "t": "h3",
+        "x": "Seguridad psicológica"
+      },
+      {
+        "t": "p",
+        "x": "Posibilidad de informar problemas temprano sin represalia improductiva."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 248 — Cultura DevSecOps y security champions, Clase 286 — Concienciación y cultura de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "SEH"
+      },
+      {
+        "t": "p",
+        "x": "Structured Exception Handling de Windows"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 129 — Explotación en Windows: manejo de SEH."
+      },
+      {
+        "t": "h3",
+        "x": "SEH overwrite"
+      },
+      {
+        "t": "p",
+        "x": "Sobrescribir nSEH y Handler con un overflow"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 129 — Explotación en Windows: manejo de SEH."
+      },
+      {
+        "t": "h3",
+        "x": "SEHOP"
+      },
+      {
+        "t": "p",
+        "x": "Comprueba la integridad de la cadena SEH"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 129 — Explotación en Windows: manejo de SEH."
+      },
+      {
+        "t": "h3",
+        "x": "SeImpersonatePrivilege"
+      },
+      {
+        "t": "p",
+        "x": "Privilegio que permite suplantar otro token"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 77 — Escalada de privilegios en Windows."
+      },
+      {
+        "t": "h3",
+        "x": "Select-Object"
+      },
+      {
+        "t": "p",
+        "x": "Selecciona propiedades o un número de objetos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva."
+      },
+      {
+        "t": "h3",
+        "x": "Sellado / desellado"
+      },
+      {
+        "t": "p",
+        "x": "Arranque de Vault con claves repartidas entre personas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 63 — Gestión de secretos: Vault y KMS."
+      },
+      {
+        "t": "h3",
+        "x": "Semilla"
+      },
+      {
+        "t": "p",
+        "x": "Entidad inicial autorizada desde la que comienza la expansión."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 255 — Automatización de OSINT: SpiderFoot y Maltego."
+      },
+      {
+        "t": "h3",
+        "x": "Semilla (seed)"
+      },
+      {
+        "t": "p",
+        "x": "Valor inicial del generador; si es adivinable, todo lo es"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG)."
+      },
+      {
+        "t": "h3",
+        "x": "send"
+      },
+      {
+        "t": "p",
+        "x": "Envía paquetes de capa 3 sin esperar respuesta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 17 — Python para seguridad: manipulación de paquetes con Scapy."
+      },
+      {
+        "t": "h3",
+        "x": "sendline / recvline"
+      },
+      {
+        "t": "p",
+        "x": "Enviar y recibir datos del proceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 120 — Buffer overflow en stack: explotación práctica."
+      },
+      {
+        "t": "h3",
+        "x": "Sensibilidad"
+      },
+      {
+        "t": "p",
+        "x": "Cambio del resultado al variar un supuesto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 277 — Gestión de riesgos: cuantitativa y cualitativa."
+      },
+      {
+        "t": "h3",
+        "x": "Separar código y datos"
+      },
+      {
+        "t": "p",
+        "x": "Parametrizar, no invocar shell, no deserializar input"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 115 — Secure coding y defensa de aplicaciones web."
+      },
+      {
+        "t": "h3",
+        "x": "Serialización"
+      },
+      {
+        "t": "p",
+        "x": "Convertir un objeto en bytes para guardar o transmitir"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 106 — Deserialización insegura."
+      },
+      {
+        "t": "h3",
+        "x": "Servicio"
+      },
+      {
+        "t": "p",
+        "x": "Proceso privilegiado que arranca con el sistema"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 82 — Persistencia en sistemas comprometidos."
+      },
+      {
+        "t": "h3",
+        "x": "Servicio de metadatos"
+      },
+      {
+        "t": "p",
+        "x": "169.254.169.254; devuelve credenciales de la instancia"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 86 — Arquitectura web moderna y superficie de ataque, Clase 99 — Server-Side Request Forgery (SSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Servicio frágil"
+      },
+      {
+        "t": "p",
+        "x": "Dispositivo que un escaneo agresivo puede tumbar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 69 — Reconocimiento activo."
+      },
+      {
+        "t": "h3",
+        "x": "Servidor autoritativo"
+      },
+      {
+        "t": "p",
+        "x": "El que tiene la verdad de una zona DNS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling."
+      },
+      {
+        "t": "h3",
+        "x": "Sesgo estadístico"
+      },
+      {
+        "t": "p",
+        "x": "Desviación de la uniformidad que acaba siendo explotable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4."
+      },
+      {
+        "t": "h3",
+        "x": "Sesión"
+      },
+      {
+        "t": "p",
+        "x": "Asociación de peticiones al mismo usuario autenticado."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 5 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna, Clase 72 — Metasploit Framework: arquitectura y uso, Clase 73 — Metasploit: explotación y payloads, Clase 102 — Gestión de sesiones y ataques asociados, Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "Sesión nula"
+      },
+      {
+        "t": "p",
+        "x": "Conexión SMB sin credenciales que puede filtrar usuarios y shares"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 33 — Enumeración de servicios de red, Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP."
+      },
+      {
+        "t": "h3",
+        "x": "Session fixation"
+      },
+      {
+        "t": "p",
+        "x": "Imponer a la víctima un ID conocido por el atacante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 102 — Gestión de sesiones y ataques asociados."
+      },
+      {
+        "t": "h3",
+        "x": "Session hijacking"
+      },
+      {
+        "t": "p",
+        "x": "Robar el ID para suplantar la sesión"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 102 — Gestión de sesiones y ataques asociados."
+      },
+      {
+        "t": "h3",
+        "x": "Session ID"
+      },
+      {
+        "t": "p",
+        "x": "Identificador que equivale a la contraseña durante la sesión"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 102 — Gestión de sesiones y ataques asociados."
+      },
+      {
+        "t": "h3",
+        "x": "Session revocation"
+      },
+      {
+        "t": "p",
+        "x": "Invalidación de sesiones y tokens ya emitidos."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 259 — Defensa contra la ingeniería social."
+      },
+      {
+        "t": "h3",
+        "x": "set"
+      },
+      {
+        "t": "p",
+        "x": "Colección de elementos únicos sin orden."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje."
+      },
+      {
+        "t": "h3",
+        "x": "set -e"
+      },
+      {
+        "t": "p",
+        "x": "Aborta el script si un comando falla"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 7 — Bash scripting para tareas de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Set / mapa"
+      },
+      {
+        "t": "p",
+        "x": "Estructura de nftables que agrupa puertos o redes en una sola regla"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "set -u"
+      },
+      {
+        "t": "p",
+        "x": "Aborta si se usa una variable no definida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 7 — Bash scripting para tareas de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "set vs setg"
+      },
+      {
+        "t": "p",
+        "x": "Variable local del módulo vs global de la sesión"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 72 — Metasploit Framework: arquitectura y uso."
+      },
+      {
+        "t": "h3",
+        "x": "setcap"
+      },
+      {
+        "t": "p",
+        "x": "Concede capacidades concretas a un binario sin darle root entero"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 28 — tcpdump y captura de tráfico en línea de comandos."
+      },
+      {
+        "t": "h3",
+        "x": "Seudonimato"
+      },
+      {
+        "t": "p",
+        "x": "Uso de identidad alternativa que puede mantener continuidad."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 260 — OPSEC personal y anonimato."
+      },
+      {
+        "t": "h3",
+        "x": "Seudonimización"
+      },
+      {
+        "t": "p",
+        "x": "Separar identificadores sin eliminar toda posibilidad de enlace."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 289 — Privacidad y protección de datos."
+      },
+      {
+        "t": "h3",
+        "x": "sFlow"
+      },
+      {
+        "t": "p",
+        "x": "Muestreo de paquetes (uno de cada N); más ligero, menos preciso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 45 — NetFlow y análisis de metadatos de tráfico."
+      },
+      {
+        "t": "h3",
+        "x": "SGID"
+      },
+      {
+        "t": "p",
+        "x": "Bit análogo para el grupo; en directorios, hereda el grupo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios, Clase 76 — Escalada de privilegios en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "SGSI"
+      },
+      {
+        "t": "p",
+        "x": "Sistema de gestión para dirigir y mejorar seguridad de información."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 278 — ISO/IEC 27001 e implantación de un SGSI."
+      },
+      {
+        "t": "h3",
+        "x": "SGSI / ISMS"
+      },
+      {
+        "t": "p",
+        "x": "Sistema de Gestión de Seguridad de la Información"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model."
+      },
+      {
+        "t": "h3",
+        "x": "SHA-2"
+      },
+      {
+        "t": "p",
+        "x": "Familia estándar (SHA-256, SHA-512); Merkle-Damgård"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades."
+      },
+      {
+        "t": "h3",
+        "x": "SHA-3 / Keccak"
+      },
+      {
+        "t": "p",
+        "x": "Construcción de esponja; inmune a extensión de longitud"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades."
+      },
+      {
+        "t": "h3",
+        "x": "Shadow copies"
+      },
+      {
+        "t": "p",
+        "x": "Copias de Windows que el ransomware borra"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 150 — Ransomware: anatomía y análisis."
+      },
+      {
+        "t": "h3",
+        "x": "SHAttered"
+      },
+      {
+        "t": "p",
+        "x": "Colisión real de SHA-1 demostrada por Google en 2017"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades."
+      },
+      {
+        "t": "h3",
+        "x": "Shebang"
+      },
+      {
+        "t": "p",
+        "x": "Línea #! inicial que fija el intérprete del script"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 7 — Bash scripting para tareas de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Shell del sistema"
+      },
+      {
+        "t": "p",
+        "x": "Intérprete al que llega la entrada sin controlar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 95 — Inyección de comandos del sistema operativo."
+      },
+      {
+        "t": "h3",
+        "x": "shell=False"
+      },
+      {
+        "t": "p",
+        "x": "Ejecutar con argumentos como lista, sin invocar la shell"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 95 — Inyección de comandos del sistema operativo."
+      },
+      {
+        "t": "h3",
+        "x": "ShellCheck"
+      },
+      {
+        "t": "p",
+        "x": "Linter estático para scripts de shell"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 7 — Bash scripting para tareas de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Shellcode"
+      },
+      {
+        "t": "p",
+        "x": "Código máquina que se inyecta y ejecuta, típico para lanzar shell"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 121 — Escritura de shellcode."
+      },
+      {
+        "t": "h3",
+        "x": "shellcraft"
+      },
+      {
+        "t": "p",
+        "x": "Generador de shellcode de pwntools"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 121 — Escritura de shellcode."
+      },
+      {
+        "t": "h3",
+        "x": "Shift-left"
+      },
+      {
+        "t": "p",
+        "x": "Retroalimentar seguridad antes, sin prometer eliminar los fallos de producción."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 236 — Secure SDLC y filosofía shift-left."
+      },
+      {
+        "t": "h3",
+        "x": "Shift-right"
+      },
+      {
+        "t": "p",
+        "x": "Validar hipótesis mediante observación y respuesta durante la operación."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 236 — Secure SDLC y filosofía shift-left."
+      },
+      {
+        "t": "h3",
+        "x": "shikataganai"
+      },
+      {
+        "t": "p",
+        "x": "Encoder popular; su patrón está en las firmas de AV"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 75 — msfvenom: generación de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Shodan / Censys"
+      },
+      {
+        "t": "p",
+        "x": "Buscadores de servicios expuestos en Internet"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas."
+      },
+      {
+        "t": "h3",
+        "x": "Short-haul C2"
+      },
+      {
+        "t": "p",
+        "x": "Canal rápido para trabajo interactivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 164 — Diseño de infraestructura de comando y control (C2)."
+      },
+      {
+        "t": "h3",
+        "x": "SID"
+      },
+      {
+        "t": "p",
+        "x": "Identificador único de seguridad de un principal"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios."
+      },
+      {
+        "t": "h3",
+        "x": "sid / rev"
+      },
+      {
+        "t": "p",
+        "x": "Identificador y versión de la regla; el rango local empieza en 1000000"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "SIEM — Security Information and Event Management"
+      },
+      {
+        "t": "p",
+        "x": "Sistema central de eventos, fuera del alcance del atacante"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: siem."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 84 — Anti-forense y borrado de huellas (concepto y límites)."
+      },
+      {
+        "t": "h3",
+        "x": "SIGKILL"
+      },
+      {
+        "t": "p",
+        "x": "Señal 9: terminación forzada e inmediata"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos."
+      },
+      {
+        "t": "h3",
+        "x": "Signed / unsigned"
+      },
+      {
+        "t": "p",
+        "x": "Interpretación del mismo patrón de bits"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 128 — Integer overflows y errores aritméticos."
+      },
+      {
+        "t": "h3",
+        "x": "Sigstore"
+      },
+      {
+        "t": "p",
+        "x": "Infraestructura moderna de firma de artefactos de software"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 54 — Firmas digitales."
+      },
+      {
+        "t": "h3",
+        "x": "SIGTERM"
+      },
+      {
+        "t": "p",
+        "x": "Señal 15: petición ordenada de terminación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos."
+      },
+      {
+        "t": "h3",
+        "x": "SIKE"
+      },
+      {
+        "t": "p",
+        "x": "Candidato de isogenias roto en 2022 con un portátil"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 62 — Criptografía post-cuántica."
+      },
+      {
+        "t": "h3",
+        "x": "Simulación"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 256 — Fundamentos de ingeniería social, Clase 354 — Server-side Anti-Cheat y diseño autoritativo."
+      },
+      {
+        "t": "h3",
+        "x": "Sink"
+      },
+      {
+        "t": "p",
+        "x": "Función que interpreta el dato como código o HTML"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 97 — XSS almacenado y basado en DOM."
+      },
+      {
+        "t": "h3",
+        "x": "Sink peligroso"
+      },
+      {
+        "t": "p",
+        "x": "Punto donde un dato contaminado causa daño"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 137 — Descubrimiento de vulnerabilidades en código."
+      },
+      {
+        "t": "h3",
+        "x": "Sinkholing"
+      },
+      {
+        "t": "p",
+        "x": "Redirigir los dominios DGA a un servidor controlado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 149 — Comunicaciones de comando y control (C2) del malware."
+      },
+      {
+        "t": "h3",
+        "x": "Sintaxis AT&T"
+      },
+      {
+        "t": "p",
+        "x": "mov $5, %rax; origen primero, con % y $"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador."
+      },
+      {
+        "t": "h3",
+        "x": "Sintaxis Intel"
+      },
+      {
+        "t": "p",
+        "x": "mov rax, 5; destino primero"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador."
+      },
+      {
+        "t": "h3",
+        "x": "SIS"
+      },
+      {
+        "t": "p",
+        "x": "Sistema independiente destinado a llevar el proceso a estado seguro."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 273 — Seguridad de sistemas de control industrial (ICS/SCADA)."
+      },
+      {
+        "t": "h3",
+        "x": "Site-to-site"
+      },
+      {
+        "t": "p",
+        "x": "Túnel entre dos redes completas, gateway a gateway"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN."
+      },
+      {
+        "t": "h3",
+        "x": "Sitemap"
+      },
+      {
+        "t": "p",
+        "x": "Árbol del contenido descubierto del objetivo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 88 — Burp Suite: configuración y flujo de trabajo."
+      },
+      {
+        "t": "h3",
+        "x": "sitemap.xml"
+      },
+      {
+        "t": "p",
+        "x": "Enumera páginas de la aplicación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 90 — Mapeo, spidering y descubrimiento de contenido."
+      },
+      {
+        "t": "h3",
+        "x": "size / flags"
+      },
+      {
+        "t": "p",
+        "x": "Tamaño del chunk y bits de estado en la cabecera"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "SLA"
+      },
+      {
+        "t": "p",
+        "x": "Compromiso temporal condicionado por riesgo y proceso definido."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 245 — Gestión de vulnerabilidades a escala."
+      },
+      {
+        "t": "h3",
+        "x": "Slack space"
+      },
+      {
+        "t": "p",
+        "x": "Espacio sobrante de un bloque de disco"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 64 — Esteganografía y ocultación de datos."
+      },
+      {
+        "t": "h3",
+        "x": "SLEEP / pgsleep / WAITFOR"
+      },
+      {
+        "t": "p",
+        "x": "Funciones de retardo por motor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 92 — Inyección SQL avanzada y ciega (blind)."
+      },
+      {
+        "t": "h3",
+        "x": "SLH-DSA (FIPS 205)"
+      },
+      {
+        "t": "p",
+        "x": "Firma basada solo en hashes; opción conservadora"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 62 — Criptografía post-cuántica."
+      },
+      {
+        "t": "h3",
+        "x": "Sliver"
+      },
+      {
+        "t": "p",
+        "x": "C2 open source en Go, multiplataforma, mTLS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "Sliver / Metasploit"
+      },
+      {
+        "t": "p",
+        "x": "Otros frameworks de C2"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 149 — Comunicaciones de comando y control (C2) del malware."
+      },
+      {
+        "t": "h3",
+        "x": "SLSA track"
+      },
+      {
+        "t": "p",
+        "x": "Conjunto de garantías y niveles para un aspecto de la cadena."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 246 — Supply chain security: SBOM y SLSA."
+      },
+      {
+        "t": "h3",
+        "x": "Smali"
+      },
+      {
+        "t": "p",
+        "x": "Ensamblador legible de Dalvik"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 155 — Malware en Android."
+      },
+      {
+        "t": "h3",
+        "x": "SMAP"
+      },
+      {
+        "t": "p",
+        "x": "Impide al kernel acceder a memoria de usuario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 139 — Kernel exploitation: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "SMB (139/445)"
+      },
+      {
+        "t": "p",
+        "x": "Protocolo de compartición de Windows; muy rico en datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP."
+      },
+      {
+        "t": "h3",
+        "x": "SMBv1"
+      },
+      {
+        "t": "p",
+        "x": "Dialecto obsoleto e inseguro; su presencia ya es un hallazgo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 33 — Enumeración de servicios de red, Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP."
+      },
+      {
+        "t": "h3",
+        "x": "SMEP"
+      },
+      {
+        "t": "p",
+        "x": "Impide al kernel ejecutar memoria de usuario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 139 — Kernel exploitation: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "Snap,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 349 — Aimbot avanzado, predicción, smoothing y recoil."
+      },
+      {
+        "t": "h3",
+        "x": "Snap length (-s)"
+      },
+      {
+        "t": "p",
+        "x": "Bytes que se guardan de cada paquete"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 28 — tcpdump y captura de tráfico en línea de comandos."
+      },
+      {
+        "t": "h3",
+        "x": "Snapshot"
+      },
+      {
+        "t": "p",
+        "x": "Imagen de interfaz que puede persistir al pasar a segundo plano."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 4 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red, Clase 134 — Análisis dinámico y debugging de binarios, Clase 142 — Laboratorio seguro de análisis de malware, Clase 264 — Pentest de aplicaciones iOS."
+      },
+      {
+        "t": "h3",
+        "x": "Snapshot de VM"
+      },
+      {
+        "t": "p",
+        "x": "Restaurar estado del generador y repetir valores"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 58 — Generación de aleatoriedad segura (CSPRNG)."
+      },
+      {
+        "t": "h3",
+        "x": "Snapshots,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 352 — Seguridad del protocolo de juego."
+      },
+      {
+        "t": "h3",
+        "x": "SNAT"
+      },
+      {
+        "t": "p",
+        "x": "Reescribe la dirección de origen (salida de una red privada)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 37 — Proxies, NAT y pivoting de red."
+      },
+      {
+        "t": "h3",
+        "x": "SNI"
+      },
+      {
+        "t": "p",
+        "x": "Server Name Indication; el host del handshake TLS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 164 — Diseño de infraestructura de comando y control (C2)."
+      },
+      {
+        "t": "h3",
+        "x": "Sniffing"
+      },
+      {
+        "t": "p",
+        "x": "Captura pasiva de tráfico de una interfaz"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 17 — Python para seguridad: manipulación de paquetes con Scapy."
+      },
+      {
+        "t": "h3",
+        "x": "Sniper / Cluster bomb"
+      },
+      {
+        "t": "p",
+        "x": "Modos de Intruder según posiciones y combinaciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 88 — Burp Suite: configuración y flujo de trabajo."
+      },
+      {
+        "t": "h3",
+        "x": "SNMP (161/udp)"
+      },
+      {
+        "t": "p",
+        "x": "Gestión de dispositivos; filtra inventario y configuración"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP."
+      },
+      {
+        "t": "h3",
+        "x": "SoA"
+      },
+      {
+        "t": "p",
+        "x": "Statement of Applicability: justificación de controles ISO aplicados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model, Clase 278 — ISO/IEC 27001 e implantación de un SGSI."
+      },
+      {
+        "t": "h3",
+        "x": "Sobrescritura de la GOT"
+      },
+      {
+        "t": "p",
+        "x": "Objetivo clásico: redirigir una función de libc"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 125 — Vulnerabilidades de format string."
+      },
+      {
+        "t": "h3",
+        "x": "SOC — Security Operations Center"
+      },
+      {
+        "t": "p",
+        "x": "Función organizativa que monitorea, investiga y coordina la respuesta ante señales de seguridad."
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: soc."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "SOCKDGRAM"
+      },
+      {
+        "t": "p",
+        "x": "Tipo de socket de datagramas sin conexión (UDP)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 16 — Python para seguridad: sockets y programación de red."
+      },
+      {
+        "t": "h3",
+        "x": "Socket"
+      },
+      {
+        "t": "p",
+        "x": "Extremo de comunicación (IP + puerto) gestionado por el kernel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 16 — Python para seguridad: sockets y programación de red."
+      },
+      {
+        "t": "h3",
+        "x": "SOCKS"
+      },
+      {
+        "t": "p",
+        "x": "Protocolo de proxy genérico; transporta TCP con conexión completa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 37 — Proxies, NAT y pivoting de red, Clase 79 — Pivoting y reenvío de puertos."
+      },
+      {
+        "t": "h3",
+        "x": "socksproxy"
+      },
+      {
+        "t": "p",
+        "x": "Módulo de Metasploit que levanta un SOCKS local"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 79 — Pivoting y reenvío de puertos."
+      },
+      {
+        "t": "h3",
+        "x": "SOCKSTREAM"
+      },
+      {
+        "t": "p",
+        "x": "Tipo de socket orientado a flujo fiable (TCP)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 16 — Python para seguridad: sockets y programación de red."
+      },
+      {
+        "t": "h3",
+        "x": "Software (Sxxxx)"
+      },
+      {
+        "t": "p",
+        "x": "Malware o herramienta con las técnicas que implementa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 162 — MITRE ATT&CK como lenguaje ofensivo."
+      },
+      {
+        "t": "h3",
+        "x": "Solapamiento"
+      },
+      {
+        "t": "p",
+        "x": "Dos malloc devuelven el mismo puntero"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 127 — Heap: use-after-free y double free."
+      },
+      {
+        "t": "h3",
+        "x": "Sonda 77"
+      },
+      {
+        "t": "p",
+        "x": "Deteccion; si la expresion se evalua, hay SSTI"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 107 — Server-Side Template Injection (SSTI)."
+      },
+      {
+        "t": "h3",
+        "x": "Sonda con comilla"
+      },
+      {
+        "t": "p",
+        "x": "' para provocar un error o cambio y detectar SQLi"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 91 — Inyección SQL: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Source"
+      },
+      {
+        "t": "p",
+        "x": "Dato controlable por el atacante (location.hash, referrer)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 97 — XSS almacenado y basado en DOM."
+      },
+      {
+        "t": "h3",
+        "x": "SOW"
+      },
+      {
+        "t": "p",
+        "x": "Statement of Work: servicio, plazos, precio y entregables"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 67 — Reglas de engagement, alcance y contratos."
+      },
+      {
+        "t": "h3",
+        "x": "SPA"
+      },
+      {
+        "t": "p",
+        "x": "Aplicación de una página; JS en el cliente habla con una API"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 86 — Arquitectura web moderna y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "SPAN / mirror port"
+      },
+      {
+        "t": "p",
+        "x": "Puerto del switch que copia el tráfico de otros puertos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 26 — Wireshark: captura y análisis de paquetes."
+      },
+      {
+        "t": "h3",
+        "x": "Speakeasy / dumpulator"
+      },
+      {
+        "t": "p",
+        "x": "Emuladores especializados en malware de Windows"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 158 — Emulación y unpacking automatizado."
+      },
+      {
+        "t": "h3",
+        "x": "Spear phishing"
+      },
+      {
+        "t": "p",
+        "x": "Phishing dirigido y personalizado contra personas u organizaciones concretas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "SPF"
+      },
+      {
+        "t": "p",
+        "x": "Registro DNS que declara qué servidores pueden enviar correo en nombre del dominio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "SPI"
+      },
+      {
+        "t": "p",
+        "x": "Bus síncrono usado por memorias y periféricos."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 268 — Análisis de hardware: UART, JTAG y SPI."
+      },
+      {
+        "t": "h3",
+        "x": "Spider tradicional"
+      },
+      {
+        "t": "p",
+        "x": "Descubre páginas siguiendo enlaces del HTML"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 89 — OWASP ZAP."
+      },
+      {
+        "t": "h3",
+        "x": "Spidering"
+      },
+      {
+        "t": "p",
+        "x": "Descubrimiento siguiendo enlaces visibles"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 90 — Mapeo, spidering y descubrimiento de contenido."
+      },
+      {
+        "t": "h3",
+        "x": "Split,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 358 — Machine Learning aplicado a Anti-Cheat."
+      },
+      {
+        "t": "h3",
+        "x": "Split tunneling"
+      },
+      {
+        "t": "p",
+        "x": "Enrutar solo parte del tráfico por el túnel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN."
+      },
+      {
+        "t": "h3",
+        "x": "Spraying en AD"
+      },
+      {
+        "t": "p",
+        "x": "Contra Kerberos, SMB u OWA"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 81 — Ataques a credenciales: fuerza bruta y password spraying."
+      },
+      {
+        "t": "h3",
+        "x": "SQLMap"
+      },
+      {
+        "t": "p",
+        "x": "Herramienta que automatiza detección y explotación de SQLi"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 93 — SQLMap."
+      },
+      {
+        "t": "h3",
+        "x": "sr1"
+      },
+      {
+        "t": "p",
+        "x": "Envía capa 3 y devuelve la primera respuesta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 17 — Python para seguridad: manipulación de paquetes con Scapy."
+      },
+      {
+        "t": "h3",
+        "x": "srp"
+      },
+      {
+        "t": "p",
+        "x": "Envía/recibe en capa 2 (Ethernet), necesario para ARP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 17 — Python para seguridad: manipulación de paquetes con Scapy."
+      },
+      {
+        "t": "h3",
+        "x": "SSDT hooking"
+      },
+      {
+        "t": "p",
+        "x": "Interceptar las llamadas al sistema en su raíz"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 151 — Rootkits y bootkits."
+      },
+      {
+        "t": "h3",
+        "x": "SSH -D (dinámico)"
+      },
+      {
+        "t": "p",
+        "x": "Convierte el cliente SSH en un proxy SOCKS genérico"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 37 — Proxies, NAT y pivoting de red."
+      },
+      {
+        "t": "h3",
+        "x": "SSH -L (local)"
+      },
+      {
+        "t": "p",
+        "x": "Túnel hacia un servicio interno concreto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 37 — Proxies, NAT y pivoting de red."
+      },
+      {
+        "t": "h3",
+        "x": "SSH -R (remoto)"
+      },
+      {
+        "t": "p",
+        "x": "Túnel de vuelta desde el servidor hacia el atacante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 37 — Proxies, NAT y pivoting de red."
+      },
+      {
+        "t": "h3",
+        "x": "SSID"
+      },
+      {
+        "t": "p",
+        "x": "Nombre de la red inalámbrica"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "SSL stripping"
+      },
+      {
+        "t": "p",
+        "x": "Degradar HTTPS a HTTP aprovechando la primera petición en claro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 40 — Man-in-the-Middle: técnicas y defensa."
+      },
+      {
+        "t": "h3",
+        "x": "SSR"
+      },
+      {
+        "t": "p",
+        "x": "Renderizado en servidor; cada acción pide una página nueva"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 86 — Arquitectura web moderna y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "SSRF"
+      },
+      {
+        "t": "p",
+        "x": "La aplicación hace una petición a una URL que controla el atacante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 99 — Server-Side Request Forgery (SSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "SSRF ciega"
+      },
+      {
+        "t": "p",
+        "x": "La app no devuelve el resultado; se confirma por OOB"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 99 — Server-Side Request Forgery (SSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "SSTI"
+      },
+      {
+        "t": "p",
+        "x": "Inyeccion en la plantilla, evaluada en el servidor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 107 — Server-Side Template Injection (SSTI)."
+      },
+      {
+        "t": "h3",
+        "x": "SSTI vs XSS"
+      },
+      {
+        "t": "p",
+        "x": "SSTI ejecuta en el servidor; XSS en el navegador"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 107 — Server-Side Template Injection (SSTI)."
+      },
+      {
+        "t": "h3",
+        "x": "Stack"
+      },
+      {
+        "t": "p",
+        "x": "Pila LIFO de marcos de llamada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls."
+      },
+      {
+        "t": "h3",
+        "x": "Stack canary"
+      },
+      {
+        "t": "p",
+        "x": "Valor secreto que detecta la sobrescritura de la pila"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 119 — Buffer overflow en stack: teoría, Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE."
+      },
+      {
+        "t": "h3",
+        "x": "Stack frame"
+      },
+      {
+        "t": "p",
+        "x": "Marco de pila de una función"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 117 — El stack, los registros y las convenciones de llamada."
+      },
+      {
+        "t": "h3",
+        "x": "Stack pivot"
+      },
+      {
+        "t": "p",
+        "x": "Cambiar RSP a una región mayor para cadenas largas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 124 — Return-Oriented Programming (ROP)."
+      },
+      {
+        "t": "h3",
+        "x": "Stack smashing detected"
+      },
+      {
+        "t": "p",
+        "x": "Mensaje al fallar la comprobación del canario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE."
+      },
+      {
+        "t": "h3",
+        "x": "Staged vs stageless"
+      },
+      {
+        "t": "p",
+        "x": "El nombre (/ vs _) fija qué handler configurar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 75 — msfvenom: generación de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Stageless"
+      },
+      {
+        "t": "p",
+        "x": "Payload que lleva el implante completo de una vez"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "Stager"
+      },
+      {
+        "t": "p",
+        "x": "Payload pequeño que descarga y lanza el implante completo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 73 — Metasploit: explotación y payloads, Clase 163 — Emulación de adversarios, Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic."
+      },
+      {
+        "t": "h3",
+        "x": "Staging"
+      },
+      {
+        "t": "p",
+        "x": "Infraestructura dedicada a la entrega inicial del payload"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 83 — Exfiltración de datos, Clase 164 — Diseño de infraestructura de comando y control (C2)."
+      },
+      {
+        "t": "h3",
+        "x": "Staging (índice)"
+      },
+      {
+        "t": "p",
+        "x": "Zona intermedia de cambios preparados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 18 — Git y control de versiones para profesionales de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "state"
+      },
+      {
+        "t": "p",
+        "x": "Valor que ata petición y respuesta; anti-CSRF"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect."
+      },
+      {
+        "t": "h3",
+        "x": "stderr (fd 2)"
+      },
+      {
+        "t": "p",
+        "x": "Canal de mensajes de error y diagnóstico"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos."
+      },
+      {
+        "t": "h3",
+        "x": "stdin (fd 0)"
+      },
+      {
+        "t": "p",
+        "x": "Canal de entrada estándar de un proceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos."
+      },
+      {
+        "t": "h3",
+        "x": "stdlib"
+      },
+      {
+        "t": "p",
+        "x": "Librería estándar incluida con Python."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje."
+      },
+      {
+        "t": "h3",
+        "x": "stdout (fd 1)"
+      },
+      {
+        "t": "p",
+        "x": "Canal de salida normal de un proceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 6 — Línea de comandos Linux avanzada: grep, sed, awk, pipes y procesos."
+      },
+      {
+        "t": "h3",
+        "x": "stepi / nexti"
+      },
+      {
+        "t": "p",
+        "x": "Ejecutar una instrucción entrando / pasando por encima"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "Sticky bit"
+      },
+      {
+        "t": "p",
+        "x": "Restringe el borrado en un directorio a cada propietario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios."
+      },
+      {
+        "t": "h3",
+        "x": "STIX"
+      },
+      {
+        "t": "p",
+        "x": "Formato estándar para describir amenazas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 157 — Threat intelligence a partir de malware, Clase 160 — Reporte de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "STIX/TAXII"
+      },
+      {
+        "t": "p",
+        "x": "Formato y protocolo para intercambiar conocimiento de amenazas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 162 — MITRE ATT&CK como lenguaje ofensivo."
+      },
+      {
+        "t": "h3",
+        "x": "STP"
+      },
+      {
+        "t": "p",
+        "x": "Spanning Tree Protocol; evita bucles y es manipulable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h3",
+        "x": "str"
+      },
+      {
+        "t": "p",
+        "x": "Secuencia de caracteres Unicode (texto)."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje."
+      },
+      {
+        "t": "h3",
+        "x": "strace"
+      },
+      {
+        "t": "p",
+        "x": "Registra las llamadas al sistema del programa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls, Clase 134 — Análisis dinámico y debugging de binarios."
+      },
+      {
+        "t": "h3",
+        "x": "strace / ltrace"
+      },
+      {
+        "t": "p",
+        "x": "Observan syscalls y funciones de librería"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 154 — Malware en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "Stream index"
+      },
+      {
+        "t": "p",
+        "x": "Identificador que Wireshark asigna a cada conversación TCP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 26 — Wireshark: captura y análisis de paquetes."
+      },
+      {
+        "t": "h3",
+        "x": "strings"
+      },
+      {
+        "t": "p",
+        "x": "Cadenas legibles (ASCII y Unicode); revelan intenciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 130 — Ingeniería inversa: introducción, Clase 143 — Análisis estático básico, Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "Stripped"
+      },
+      {
+        "t": "p",
+        "x": "Binario sin símbolos; solo direcciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 130 — Ingeniería inversa: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "Stub"
+      },
+      {
+        "t": "p",
+        "x": "Desempaquetador que revela el código en ejecución"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 147 — Ofuscación, packing y unpacking."
+      },
+      {
+        "t": "h3",
+        "x": "Stub / desempaquetador"
+      },
+      {
+        "t": "p",
+        "x": "Código que descomprime el binario real al ejecutarse"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 135 — Ofuscación y técnicas anti-reversing."
+      },
+      {
+        "t": "h3",
+        "x": "Stub DOS"
+      },
+      {
+        "t": "p",
+        "x": "Mensaje \"cannot be run in DOS mode\""
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 145 — El formato PE de Windows."
+      },
+      {
+        "t": "h3",
+        "x": "subclasses"
+      },
+      {
+        "t": "p",
+        "x": "Via tipica de escalada en Jinja2/Python"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 107 — Server-Side Template Injection (SSTI)."
+      },
+      {
+        "t": "h3",
+        "x": "Subir vs buscar por hash"
+      },
+      {
+        "t": "p",
+        "x": "Subir hace pública la muestra; buscar por hash no"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 143 — Análisis estático básico."
+      },
+      {
+        "t": "h3",
+        "x": "Subject / SAN"
+      },
+      {
+        "t": "p",
+        "x": "Identidad del titular; los SAN son los nombres que se validan"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 55 — PKI, certificados X.509 y autoridades de certificación."
+      },
+      {
+        "t": "h3",
+        "x": "Sublímite"
+      },
+      {
+        "t": "p",
+        "x": "Límite específico dentro de la cobertura."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 288 — Seguros cibernéticos."
+      },
+      {
+        "t": "h3",
+        "x": "Subnetting"
+      },
+      {
+        "t": "p",
+        "x": "División de una red en subredes iguales."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 14 — Direccionamiento IP y subnetting."
+      },
+      {
+        "t": "h3",
+        "x": "Subred"
+      },
+      {
+        "t": "p",
+        "x": "Porción de una red mayor delimitada por una máscara."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 14 — Direccionamiento IP y subnetting."
+      },
+      {
+        "t": "h3",
+        "x": "SUBSTRING / SUBSTR"
+      },
+      {
+        "t": "p",
+        "x": "Aísla un carácter del dato buscado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 92 — Inyección SQL avanzada y ciega (blind)."
+      },
+      {
+        "t": "h3",
+        "x": "Subtécnica"
+      },
+      {
+        "t": "p",
+        "x": "Variante específica de una técnica (Txxxx.00x)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 162 — MITRE ATT&CK como lenguaje ofensivo."
+      },
+      {
+        "t": "h3",
+        "x": "sudo -l"
+      },
+      {
+        "t": "p",
+        "x": "Lista lo que el usuario puede ejecutar con privilegios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 76 — Escalada de privilegios en Linux."
+      },
+      {
+        "t": "h3",
+        "x": "SUID"
+      },
+      {
+        "t": "p",
+        "x": "Bit que ejecuta un binario con privilegios del propietario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios."
+      },
+      {
+        "t": "h3",
+        "x": "Sumidero"
+      },
+      {
+        "t": "p",
+        "x": "Operación sensible que puede convertir esos datos en impacto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 238 — SAST: análisis estático de código."
+      },
+      {
+        "t": "h3",
+        "x": "Superficie de ataque"
+      },
+      {
+        "t": "p",
+        "x": "Conjunto de todos los puntos de entrada posibles a un sistema"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad, Clase 86 — Arquitectura web moderna y superficie de ataque, Clase 137 — Descubrimiento de vulnerabilidades en código."
+      },
+      {
+        "t": "h3",
+        "x": "Superficie de kernel"
+      },
+      {
+        "t": "p",
+        "x": "syscalls, ioctl y drivers"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 139 — Kernel exploitation: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "Superficie humana"
+      },
+      {
+        "t": "p",
+        "x": "Empleados como vector de ingeniería social"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas."
+      },
+      {
+        "t": "h3",
+        "x": "Suposición del desarrollador"
+      },
+      {
+        "t": "p",
+        "x": "Premisa no verificada que el atacante viola"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 109 — Vulnerabilidades de lógica de negocio."
+      },
+      {
+        "t": "h3",
+        "x": "Supuesto"
+      },
+      {
+        "t": "p",
+        "x": "Condición declarada de la que depende una conclusión."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 20 clase(s): Clase 311 — Clasificación y ciclo de vida de los datos, Clase 312 — Retención, destrucción segura de datos y DLP, Clase 313 — Gestión del ciclo de vida de identidades (IAM empresarial), Clase 314 — Federación, SSO, SAML y OpenID Connect, Clase 315 — MFA y gestión de accesos privilegiados (PAM), Clase 316 — Modelos de seguridad y arquitectura (Bell-LaPadula, Biba, Clark-Wilson), Clase 317 — Seguridad física y ambiental, Clase 318 — Gestión del programa de vulnerabilidades, Clase 319 — Análisis avanzado de phishing y correo malicioso, Clase 320 — Gobierno, aspectos legales/regulatorios y gestión del programa y 10 más."
+      },
+      {
+        "t": "h3",
+        "x": "Sustitución"
+      },
+      {
+        "t": "p",
+        "x": "Reemplazar cada símbolo por otro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 46 — Historia y fundamentos de la criptografía."
+      },
+      {
+        "t": "h3",
+        "x": "Sustitución de contexto"
+      },
+      {
+        "t": "p",
+        "x": "Reutilizar un cifrado válido en otro lugar; el AAD lo impide"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 59 — Cifrado autenticado (AEAD)."
+      },
+      {
+        "t": "h3",
+        "x": "SVG malicioso"
+      },
+      {
+        "t": "p",
+        "x": "XML con JavaScript; provoca XSS al visualizarse"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 108 — Vulnerabilidades en carga de archivos."
+      },
+      {
+        "t": "h3",
+        "x": "Swagger / OpenAPI"
+      },
+      {
+        "t": "p",
+        "x": "Documentación que revela los endpoints"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 110 — Seguridad de APIs REST."
+      },
+      {
+        "t": "h3",
+        "x": "Switch spoofing"
+      },
+      {
+        "t": "p",
+        "x": "Negociar un trunk haciéndose pasar por switch para ver todas las VLAN"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h3",
+        "x": "Symbol tree / bookmarks"
+      },
+      {
+        "t": "p",
+        "x": "Organización del trabajo en binarios grandes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 131 — Ghidra para ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "SYN"
+      },
+      {
+        "t": "p",
+        "x": "Flag que solicita abrir una conexión TCP."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "SYN-ACK (0x12)"
+      },
+      {
+        "t": "p",
+        "x": "Respuesta que indica puerto abierto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 17 — Python para seguridad: manipulación de paquetes con Scapy."
+      },
+      {
+        "t": "h3",
+        "x": "SYN flood"
+      },
+      {
+        "t": "p",
+        "x": "Agotamiento de recursos de conexión en transporte"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas."
+      },
+      {
+        "t": "h3",
+        "x": "SYN scan (-sS)"
+      },
+      {
+        "t": "p",
+        "x": "Escaneo semiabierto; requiere raw sockets y privilegios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 30 — Nmap: escaneo de puertos y tipos de escaneo, Clase 69 — Reconocimiento activo."
+      },
+      {
+        "t": "h3",
+        "x": "Synchronizer token"
+      },
+      {
+        "t": "p",
+        "x": "Nombre técnico del token anti-CSRF"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 98 — Cross-Site Request Forgery (CSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Syscall"
+      },
+      {
+        "t": "p",
+        "x": "Llamada al sistema; la vía directa al kernel"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 23 — Sistemas operativos: procesos, memoria y syscalls, Clase 121 — Escritura de shellcode."
+      },
+      {
+        "t": "h3",
+        "x": "Sysmon"
+      },
+      {
+        "t": "p",
+        "x": "Registra procesos, líneas de comando, red, registro"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 159 — Fileless malware y living-off-the-land."
+      },
+      {
+        "t": "h3",
+        "x": "SYSTEM"
+      },
+      {
+        "t": "p",
+        "x": "Cuenta local de máximo privilegio (S-1-5-18)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 4 clase(s): Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios, Clase 74 — Meterpreter y post-explotación, Clase 77 — Escalada de privilegios en Windows, Clase 100 — XML External Entities (XXE)."
+      },
+      {
+        "t": "h3",
+        "x": "system(\"/bin/sh\")"
+      },
+      {
+        "t": "p",
+        "x": "Objetivo típico: función de libc que lanza una shell"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 123 — Bypass de protecciones: ret2libc."
+      },
+      {
+        "t": "h3",
+        "x": "system() / exec()"
+      },
+      {
+        "t": "p",
+        "x": "Funciones que pasan una cadena a la shell; la causa raíz"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 95 — Inyección de comandos del sistema operativo."
+      },
+      {
+        "t": "h3",
+        "x": "System V AMD64"
+      },
+      {
+        "t": "p",
+        "x": "ABI de Linux x64"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 117 — El stack, los registros y las convenciones de llamada."
+      },
+      {
+        "t": "h2",
+        "x": "T"
+      },
+      {
+        "t": "h3",
+        "x": "T1041 vs T1048"
+      },
+      {
+        "t": "p",
+        "x": "Exfiltrar sobre el C2 o por un canal alternativo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 83 — Exfiltración de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Tabla CAM"
+      },
+      {
+        "t": "p",
+        "x": "Tabla del switch que asocia cada MAC a un puerto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h3",
+        "x": "Tabla de imports (IAT)"
+      },
+      {
+        "t": "p",
+        "x": "APIs que usa el binario; mapea a capacidades"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 143 — Análisis estático básico."
+      },
+      {
+        "t": "h3",
+        "x": "Tabla de símbolos"
+      },
+      {
+        "t": "p",
+        "x": "Asocia direcciones con nombres de funciones"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 130 — Ingeniería inversa: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "Tabla de traducción"
+      },
+      {
+        "t": "p",
+        "x": "Registro que asocia cada conexión interna con su puerto reescrito"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 37 — Proxies, NAT y pivoting de red."
+      },
+      {
+        "t": "h3",
+        "x": "Tabla inet"
+      },
+      {
+        "t": "p",
+        "x": "Tabla de nftables que cubre IPv4 e IPv6 con un solo conjunto de reglas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 34 — Firewalls: tipos, iptables y nftables."
+      },
+      {
+        "t": "h3",
+        "x": "Táctica"
+      },
+      {
+        "t": "p",
+        "x": "Objetivo del adversario; el \"por qué\" (14 en Enterprise)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model, Clase 162 — MITRE ATT&CK como lenguaje ofensivo."
+      },
+      {
+        "t": "h3",
+        "x": "Tag"
+      },
+      {
+        "t": "p",
+        "x": "Etiqueta de versión de una imagen"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 22 — Docker y contenedores para laboratorios de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Tag de autenticación"
+      },
+      {
+        "t": "p",
+        "x": "Etiqueta que detecta cualquier manipulación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 59 — Cifrado autenticado (AEAD)."
+      },
+      {
+        "t": "h3",
+        "x": "Taint analysis"
+      },
+      {
+        "t": "p",
+        "x": "Seguimiento de datos desde fuentes hasta sumideros."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 238 — SAST: análisis estático de código."
+      },
+      {
+        "t": "h3",
+        "x": "Taint tracking"
+      },
+      {
+        "t": "p",
+        "x": "Rastrear la propagación de un dato contaminado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 137 — Descubrimiento de vulnerabilidades en código."
+      },
+      {
+        "t": "h3",
+        "x": "Tamaño de clave"
+      },
+      {
+        "t": "p",
+        "x": "2048 bits mínimo actual; 3072–4096 recomendable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 49 — Cifrado asimétrico: RSA."
+      },
+      {
+        "t": "h3",
+        "x": "Tamaño fijo"
+      },
+      {
+        "t": "p",
+        "x": "Los enteros no representan cualquier valor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 128 — Integer overflows y errores aritméticos."
+      },
+      {
+        "t": "h3",
+        "x": "Tamper script (--tamper)"
+      },
+      {
+        "t": "p",
+        "x": "Transforma payloads para evadir un WAF"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 93 — SQLMap."
+      },
+      {
+        "t": "h3",
+        "x": "Tampering"
+      },
+      {
+        "t": "p",
+        "x": "Alteración no autorizada de datos (rompe integridad)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "TAP"
+      },
+      {
+        "t": "p",
+        "x": "Dispositivo pasivo que duplica el tráfico de un enlace sin participar en él"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 26 — Wireshark: captura y análisis de paquetes."
+      },
+      {
+        "t": "h3",
+        "x": "Tarea programada"
+      },
+      {
+        "t": "p",
+        "x": "Ejecución con privilegios al arranque en Windows"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 82 — Persistencia en sistemas comprometidos."
+      },
+      {
+        "t": "h3",
+        "x": "Target"
+      },
+      {
+        "t": "p",
+        "x": "Variante del exploit según sistema, versión y arquitectura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 73 — Metasploit: explotación y payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Target scope"
+      },
+      {
+        "t": "p",
+        "x": "Dominios autorizados; limita las herramientas automáticas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 88 — Burp Suite: configuración y flujo de trabajo."
+      },
+      {
+        "t": "h3",
+        "x": "Tasa de clic"
+      },
+      {
+        "t": "p",
+        "x": "Porcentaje de objetivos que abrieron el enlace; métrica central de la campaña"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Tasa de muestreo"
+      },
+      {
+        "t": "p",
+        "x": "Número de muestras por segundo y límite práctico de banda observada."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 269 — Radio definida por software (SDR)."
+      },
+      {
+        "t": "h3",
+        "x": "TAXII"
+      },
+      {
+        "t": "p",
+        "x": "Protocolo para transportar CTI (STIX)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 157 — Threat intelligence a partir de malware."
+      },
+      {
+        "t": "h3",
+        "x": "Taxonomía"
+      },
+      {
+        "t": "p",
+        "x": "Lenguaje común de riesgos, no veredicto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 295 — OWASP Top 10 para aplicaciones con LLM."
+      },
+      {
+        "t": "h3",
+        "x": "tcache"
+      },
+      {
+        "t": "p",
+        "x": "Caché por hilo, LIFO por tamaño (glibc ≥ 2.26)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "tcache key"
+      },
+      {
+        "t": "p",
+        "x": "Valor que detecta el double free obvio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 127 — Heap: use-after-free y double free."
+      },
+      {
+        "t": "h3",
+        "x": "tcache poisoning"
+      },
+      {
+        "t": "p",
+        "x": "Sobrescribir el next del tcache para malloc arbitrario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 127 — Heap: use-after-free y double free."
+      },
+      {
+        "t": "h3",
+        "x": "TCP,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad, Clase 352 — Seguridad del protocolo de juego."
+      },
+      {
+        "t": "h3",
+        "x": "TCP/IP"
+      },
+      {
+        "t": "p",
+        "x": "Modelo práctico de 4 capas que implementa Internet"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas."
+      },
+      {
+        "t": "h3",
+        "x": "tcp.stream"
+      },
+      {
+        "t": "p",
+        "x": "Índice que identifica cada conversación TCP de la captura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "TCP ZeroWindow"
+      },
+      {
+        "t": "p",
+        "x": "El receptor anuncia buffer lleno; cuello de botella en la aplicación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "tcpdump"
+      },
+      {
+        "t": "p",
+        "x": "Capturador de paquetes en línea de comandos, basado en libpcap"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 28 — tcpdump y captura de tráfico en línea de comandos."
+      },
+      {
+        "t": "h3",
+        "x": "Team ID"
+      },
+      {
+        "t": "p",
+        "x": "Identidad del equipo firmante usada en controles de plataforma."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 263 — Seguridad de iOS: arquitectura."
+      },
+      {
+        "t": "h3",
+        "x": "Team server"
+      },
+      {
+        "t": "p",
+        "x": "Servidor central que gestiona implantes y operadores; nunca se expone"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 164 — Diseño de infraestructura de comando y control (C2)."
+      },
+      {
+        "t": "h3",
+        "x": "Técnica"
+      },
+      {
+        "t": "p",
+        "x": "Manera concreta de lograr una táctica (el cómo), con ID Txxxx"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model, Clase 162 — MITRE ATT&CK como lenguaje ofensivo."
+      },
+      {
+        "t": "h3",
+        "x": "Técnica prohibida"
+      },
+      {
+        "t": "p",
+        "x": "DoS, ingeniería social, escaneo agresivo (habitual)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 114 — Bug bounty: metodología y plataformas."
+      },
+      {
+        "t": "h3",
+        "x": "Telemetría"
+      },
+      {
+        "t": "p",
+        "x": "Rastro que el recon activo deja para un SOC"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 69 — Reconocimiento activo."
+      },
+      {
+        "t": "h3",
+        "x": "Telemetría resistente"
+      },
+      {
+        "t": "p",
+        "x": "Registro que la manipulación local no puede alterar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 84 — Anti-forense y borrado de huellas (concepto y límites)."
+      },
+      {
+        "t": "h3",
+        "x": "telescope"
+      },
+      {
+        "t": "p",
+        "x": "Vuelca la pila siguiendo punteros recursivamente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "Temporización (-T)"
+      },
+      {
+        "t": "p",
+        "x": "Equilibrio entre velocidad, sigilo y estabilidad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 69 — Reconocimiento activo."
+      },
+      {
+        "t": "h3",
+        "x": "testssl.sh / SSL Labs"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas de auditoría de configuración TLS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Textbook RSA"
+      },
+      {
+        "t": "p",
+        "x": "Aplicar la fórmula sin relleno; determinista y maleable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 49 — Cifrado asimétrico: RSA."
+      },
+      {
+        "t": "h3",
+        "x": "Texto claro / texto cifrado"
+      },
+      {
+        "t": "p",
+        "x": "Mensaje legible / resultado de cifrarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 46 — Historia y fundamentos de la criptografía."
+      },
+      {
+        "t": "h3",
+        "x": "TGT / TGS"
+      },
+      {
+        "t": "p",
+        "x": "Tickets de Kerberos (concesión y servicio)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 78 — Movimiento lateral en la red."
+      },
+      {
+        "t": "h3",
+        "x": "ThreadPoolExecutor"
+      },
+      {
+        "t": "p",
+        "x": "Gestor de un pool de hilos reutilizables de concurrent.futures"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 16 — Python para seguridad: sockets y programación de red."
+      },
+      {
+        "t": "h3",
+        "x": "Threat"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 360 — Capstone: incidente completo de Game Security."
+      },
+      {
+        "t": "h3",
+        "x": "Threat hunting"
+      },
+      {
+        "t": "p",
+        "x": "Búsqueda proactiva a partir de hipótesis, sin alerta previa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 43 — Network Security Monitoring (NSM): fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Threat-informed"
+      },
+      {
+        "t": "p",
+        "x": "Ejercicio guiado por la inteligencia de un adversario real"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 161 — Red Team vs pentest: filosofía y objetivos."
+      },
+      {
+        "t": "h3",
+        "x": "Threat intelligence (CTI)"
+      },
+      {
+        "t": "p",
+        "x": "Conocimiento accionable sobre los adversarios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 157 — Threat intelligence a partir de malware."
+      },
+      {
+        "t": "h3",
+        "x": "threshold / suppress"
+      },
+      {
+        "t": "p",
+        "x": "Limitar repeticiones y silenciar orígenes conocidos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 35 — IDS/IPS con Snort y Suricata."
+      },
+      {
+        "t": "h3",
+        "x": "Tiempo constante"
+      },
+      {
+        "t": "p",
+        "x": "Comparación que no depende de dónde falla la coincidencia"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4, Clase 52 — HMAC y autenticación de mensajes."
+      },
+      {
+        "t": "h3",
+        "x": "Tier"
+      },
+      {
+        "t": "p",
+        "x": "Nivel de madurez del proceso de gestión de riesgo (1 a 4)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model, Clase 279 — NIST Cybersecurity Framework."
+      },
+      {
+        "t": "h3",
+        "x": "Timeout"
+      },
+      {
+        "t": "p",
+        "x": "Tiempo máximo de espera de una operación de red"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 16 — Python para seguridad: sockets y programación de red."
+      },
+      {
+        "t": "h3",
+        "x": "Timestomping"
+      },
+      {
+        "t": "p",
+        "x": "Falsear las marcas de tiempo de un fichero"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 84 — Anti-forense y borrado de huellas (concepto y límites)."
+      },
+      {
+        "t": "h3",
+        "x": "TIMEWAIT"
+      },
+      {
+        "t": "p",
+        "x": "Estado de espera tras cerrar que evita solapamiento con conexiones nuevas."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "Tipo 1 / bare-metal"
+      },
+      {
+        "t": "p",
+        "x": "Hipervisor que corre directo sobre el hardware"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red."
+      },
+      {
+        "t": "h3",
+        "x": "Tipo 2 / hosted"
+      },
+      {
+        "t": "p",
+        "x": "Hipervisor que corre sobre un sistema operativo anfitrión"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red."
+      },
+      {
+        "t": "h3",
+        "x": "TLS"
+      },
+      {
+        "t": "p",
+        "x": "Protocolo que da confidencialidad, integridad y autenticación al canal"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna, Clase 56 — TLS/SSL en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "TLS callback"
+      },
+      {
+        "t": "p",
+        "x": "Código ejecutado antes del entry point; anti-debug"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 145 — El formato PE de Windows."
+      },
+      {
+        "t": "h3",
+        "x": "Toggles"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 345 — Trainers e instrumentación del cliente."
+      },
+      {
+        "t": "h3",
+        "x": "Token"
+      },
+      {
+        "t": "p",
+        "x": "Estructura con la identidad y privilegios de un proceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios."
+      },
+      {
+        "t": "h3",
+        "x": "Token anti-CSRF"
+      },
+      {
+        "t": "p",
+        "x": "Valor secreto e impredecible que debe volver con la petición"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 98 — Cross-Site Request Forgery (CSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Token de acceso"
+      },
+      {
+        "t": "p",
+        "x": "Representa el contexto de seguridad de un proceso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 77 — Escalada de privilegios en Windows."
+      },
+      {
+        "t": "h3",
+        "x": "Token de reseteo"
+      },
+      {
+        "t": "p",
+        "x": "Debe ser impredecible, corto y de un solo uso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 101 — Fallos de autenticación y bypass."
+      },
+      {
+        "t": "h3",
+        "x": "Tool boundary"
+      },
+      {
+        "t": "p",
+        "x": "Frontera donde texto puede provocar una operación."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 297 — Seguridad de aplicaciones con LLM: RAG y agentes."
+      },
+      {
+        "t": "h3",
+        "x": "top chunk"
+      },
+      {
+        "t": "p",
+        "x": "Bloque grande contiguo del que se recorta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "TPLC"
+      },
+      {
+        "t": "p",
+        "x": "Gestión del producto durante diseño, mercado, soporte y retiro."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 275 — Seguridad de dispositivos médicos."
+      },
+      {
+        "t": "h3",
+        "x": "Tráfico este-oeste"
+      },
+      {
+        "t": "p",
+        "x": "Comunicación entre hosts internos; objeto de la microsegmentación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 37 — Proxies, NAT y pivoting de red, Clase 42 — Segmentación de red y arquitectura Zero Trust, Clase 79 — Pivoting y reenvío de puertos."
+      },
+      {
+        "t": "h3",
+        "x": "Trama"
+      },
+      {
+        "t": "p",
+        "x": "PDU de la capa de enlace (lleva MAC y FCS)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas."
+      },
+      {
+        "t": "h3",
+        "x": "Trama (frame)"
+      },
+      {
+        "t": "p",
+        "x": "Unidad de datos en el cable, con todas las cabeceras encapsuladas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 26 — Wireshark: captura y análisis de paquetes."
+      },
+      {
+        "t": "h3",
+        "x": "Tramas de gestión"
+      },
+      {
+        "t": "p",
+        "x": "Asociación, autenticación y beacons; superficie de ataque clave"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Transfer-Encoding (TE)"
+      },
+      {
+        "t": "p",
+        "x": "Cuerpo por chunks; termina con un chunk vacío"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 112 — Web cache poisoning y HTTP request smuggling."
+      },
+      {
+        "t": "h3",
+        "x": "Transform/módulo"
+      },
+      {
+        "t": "p",
+        "x": "Operación que consulta o deriva relaciones."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 255 — Automatización de OSINT: SpiderFoot y Maltego."
+      },
+      {
+        "t": "h3",
+        "x": "Transposición"
+      },
+      {
+        "t": "p",
+        "x": "Reordenar los símbolos sin cambiarlos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 46 — Historia y fundamentos de la criptografía."
+      },
+      {
+        "t": "h3",
+        "x": "trap"
+      },
+      {
+        "t": "p",
+        "x": "Ejecuta código ante señales o al salir del script"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 7 — Bash scripting para tareas de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Trayectoria,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 356 — Detección de aimbot y automatización por comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Trazabilidad"
+      },
+      {
+        "t": "p",
+        "x": "Cada afirmación respaldada por evidencia registrada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 85 — Reporte profesional de pentest."
+      },
+      {
+        "t": "h3",
+        "x": "Triage"
+      },
+      {
+        "t": "p",
+        "x": "Clasificación inicial que determina alcance, urgencia y respuesta."
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: triaje."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 114 — Bug bounty: metodología y plataformas, Clase 130 — Ingeniería inversa: introducción, Clase 259 — Defensa contra la ingeniería social."
+      },
+      {
+        "t": "h3",
+        "x": "Triage / dedup"
+      },
+      {
+        "t": "p",
+        "x": "Agrupar crashes por su causa raíz"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 136 — Fuzzing con AFL++ y libFuzzer."
+      },
+      {
+        "t": "h3",
+        "x": "Triage del reto"
+      },
+      {
+        "t": "p",
+        "x": "file, checksec, strings, abrir en Ghidra"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 140 — CTFs de pwn e ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "Troubleshooting"
+      },
+      {
+        "t": "p",
+        "x": "Depurar fallos, casi siempre de configuración"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 73 — Metasploit: explotación y payloads."
+      },
+      {
+        "t": "h3",
+        "x": "Troyano"
+      },
+      {
+        "t": "p",
+        "x": "Se disfraza de software legítimo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 141 — Introducción al malware: tipos y taxonomía."
+      },
+      {
+        "t": "h3",
+        "x": "Truncamiento"
+      },
+      {
+        "t": "p",
+        "x": "Asignar a un tipo más pequeño descarta bits altos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 128 — Integer overflows y errores aritméticos."
+      },
+      {
+        "t": "h3",
+        "x": "Trust"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 341 — Introducción a Game Security y modelo de amenazas."
+      },
+      {
+        "t": "h3",
+        "x": "Trusted agent"
+      },
+      {
+        "t": "p",
+        "x": "Contacto autorizado que confirma o desmiente actividad del ejercicio"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 161 — Red Team vs pentest: filosofía y objetivos."
+      },
+      {
+        "t": "h3",
+        "x": "Trusted Types"
+      },
+      {
+        "t": "p",
+        "x": "Política del navegador que elimina el DOM XSS por diseño"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 97 — XSS almacenado y basado en DOM."
+      },
+      {
+        "t": "h3",
+        "x": "TryHackMe (THM)"
+      },
+      {
+        "t": "p",
+        "x": "Plataforma de aprendizaje guiado mediante rutas, salas explicativas y salas de desafío."
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: thm, tryhackme."
+      },
+      {
+        "t": "p",
+        "x": "Sitio oficial: TryHackMe (THM)."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "tshark"
+      },
+      {
+        "t": "p",
+        "x": "Wireshark en línea de comandos; mismo lenguaje de filtros"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas."
+      },
+      {
+        "t": "h3",
+        "x": "TTD"
+      },
+      {
+        "t": "p",
+        "x": "Tiempo a detección: cuánto tarda la defensa en ver la actividad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 161 — Red Team vs pentest: filosofía y objetivos."
+      },
+      {
+        "t": "h3",
+        "x": "TTL"
+      },
+      {
+        "t": "p",
+        "x": "Contador de saltos que evita bucles y sirve para fingerprinting."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad, Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling, Clase 63 — Gestión de secretos: Vault y KMS."
+      },
+      {
+        "t": "h3",
+        "x": "TTL (DNS)"
+      },
+      {
+        "t": "p",
+        "x": "Tiempo que una respuesta puede permanecer en caché."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos."
+      },
+      {
+        "t": "h3",
+        "x": "TTP / ATT&CK"
+      },
+      {
+        "t": "p",
+        "x": "Comportamiento mapeado a la taxonomía"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 160 — Reporte de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "TTP — Tácticas, técnicas y procedimientos"
+      },
+      {
+        "t": "p",
+        "x": "Tácticas, técnicas y procedimientos; la firma comportamental de un actor"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: ttp, ttps."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 4 clase(s): Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain, Clase 153 — Análisis de malware en scripts: PowerShell y JavaScript, Clase 157 — Threat intelligence a partir de malware, Clase 163 — Emulación de adversarios."
+      },
+      {
+        "t": "h3",
+        "x": "TTR"
+      },
+      {
+        "t": "p",
+        "x": "Tiempo a respuesta: cuánto tarda en contener la actividad"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 161 — Red Team vs pentest: filosofía y objetivos."
+      },
+      {
+        "t": "h3",
+        "x": "Túnel"
+      },
+      {
+        "t": "p",
+        "x": "Encapsulación de un paquete dentro de otro para atravesar una red"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN."
+      },
+      {
+        "t": "h3",
+        "x": "Túnel ICMP"
+      },
+      {
+        "t": "p",
+        "x": "Datos ocultos en el payload de los ping"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 83 — Exfiltración de datos."
+      },
+      {
+        "t": "h3",
+        "x": "tuple"
+      },
+      {
+        "t": "p",
+        "x": "Secuencia ordenada e inmutable."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje."
+      },
+      {
+        "t": "h3",
+        "x": "Turbo Intruder"
+      },
+      {
+        "t": "p",
+        "x": "Herramienta para lanzar peticiones simultáneas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 109 — Vulnerabilidades de lógica de negocio."
+      },
+      {
+        "t": "h3",
+        "x": "Turing-completitud"
+      },
+      {
+        "t": "p",
+        "x": "Con suficientes gadgets se computa cualquier cosa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 124 — Return-Oriented Programming (ROP)."
+      },
+      {
+        "t": "h2",
+        "x": "U"
+      },
+      {
+        "t": "h3",
+        "x": "UAC"
+      },
+      {
+        "t": "p",
+        "x": "Control de cuentas de usuario (elevación de privilegios)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios, Clase 77 — Escalada de privilegios en Windows."
+      },
+      {
+        "t": "h3",
+        "x": "UAC bypass"
+      },
+      {
+        "t": "p",
+        "x": "Técnicas para elevar sin el aviso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 77 — Escalada de privilegios en Windows."
+      },
+      {
+        "t": "h3",
+        "x": "UART"
+      },
+      {
+        "t": "p",
+        "x": "Enlace serie asíncrono con RX/TX y referencia común."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 268 — Análisis de hardware: UART, JTAG y SPI."
+      },
+      {
+        "t": "h3",
+        "x": "UBSan"
+      },
+      {
+        "t": "p",
+        "x": "Sanitizer que detecta overflows de enteros en pruebas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 128 — Integer overflows y errores aritméticos."
+      },
+      {
+        "t": "h3",
+        "x": "UDP"
+      },
+      {
+        "t": "p",
+        "x": "Transporte sin conexión, rápido y sin garantías de entrega ni orden."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 11 — Protocolos de red: IP, TCP, UDP e ICMP en profundidad."
+      },
+      {
+        "t": "h3",
+        "x": "UDP scan (-sU)"
+      },
+      {
+        "t": "p",
+        "x": "Escaneo UDP; lento y ambiguo, pero cubre DNS, SNMP y NTP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 30 — Nmap: escaneo de puertos y tipos de escaneo."
+      },
+      {
+        "t": "h3",
+        "x": "UEFI bootkit"
+      },
+      {
+        "t": "p",
+        "x": "Se instala en el firmware; sobrevive al formateo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 151 — Rootkits y bootkits."
+      },
+      {
+        "t": "h3",
+        "x": "UID"
+      },
+      {
+        "t": "p",
+        "x": "Identificador de tag; su estabilidad y seguridad dependen de tecnología."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 44 — Zeek para análisis de red a gran escala, Clase 270 — Ataques a RFID y NFC."
+      },
+      {
+        "t": "h3",
+        "x": "UID de aplicación"
+      },
+      {
+        "t": "p",
+        "x": "Identidad Linux usada para aislar procesos y archivos."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 261 — Seguridad de Android: arquitectura."
+      },
+      {
+        "t": "h3",
+        "x": "UID / GID"
+      },
+      {
+        "t": "p",
+        "x": "Identificadores numéricos de usuario y grupo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios."
+      },
+      {
+        "t": "h3",
+        "x": "umask"
+      },
+      {
+        "t": "p",
+        "x": "Máscara que resta permisos a los archivos nuevos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios."
+      },
+      {
+        "t": "h3",
+        "x": "Unicode"
+      },
+      {
+        "t": "p",
+        "x": "Catálogo universal de code points"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h3",
+        "x": "Unicode / UTF-16"
+      },
+      {
+        "t": "p",
+        "x": "Codificación de cadenas en Windows"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 143 — Análisis estático básico."
+      },
+      {
+        "t": "h3",
+        "x": "Unicorn Engine"
+      },
+      {
+        "t": "p",
+        "x": "Emula solo la CPU; ideal para fragmentos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 158 — Emulación y unpacking automatizado."
+      },
+      {
+        "t": "h3",
+        "x": "UNION-based"
+      },
+      {
+        "t": "p",
+        "x": "UNION SELECT para leer datos de otras tablas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 91 — Inyección SQL: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Universal link"
+      },
+      {
+        "t": "p",
+        "x": "Enlace web asociado criptográficamente con una aplicación y dominio."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 264 — Pentest de aplicaciones iOS."
+      },
+      {
+        "t": "h3",
+        "x": "Unkeyed input"
+      },
+      {
+        "t": "p",
+        "x": "Entrada que afecta a la respuesta pero no a la clave"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 112 — Web cache poisoning y HTTP request smuggling."
+      },
+      {
+        "t": "h3",
+        "x": "Unpacking"
+      },
+      {
+        "t": "p",
+        "x": "Recuperar el código real del malware empaquetado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 147 — Ofuscación, packing y unpacking."
+      },
+      {
+        "t": "h3",
+        "x": "Unpacking automático"
+      },
+      {
+        "t": "p",
+        "x": "Emular el stub y volcar el código desempaquetado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 158 — Emulación y unpacking automatizado."
+      },
+      {
+        "t": "h3",
+        "x": "Unquoted path"
+      },
+      {
+        "t": "p",
+        "x": "Ruta de servicio con espacios y sin comillas (escalada)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios."
+      },
+      {
+        "t": "h3",
+        "x": "Unquoted service path"
+      },
+      {
+        "t": "p",
+        "x": "Ruta de servicio con espacios sin comillas; explotable"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 77 — Escalada de privilegios en Windows."
+      },
+      {
+        "t": "h3",
+        "x": "unserialize()"
+      },
+      {
+        "t": "p",
+        "x": "Función de PHP vulnerable con datos del usuario"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 106 — Deserialización insegura."
+      },
+      {
+        "t": "h3",
+        "x": "unsorted/small/large bins"
+      },
+      {
+        "t": "p",
+        "x": "Otras listas de chunks libres"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "UPX"
+      },
+      {
+        "t": "p",
+        "x": "Packer común que se deshace con un comando"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 135 — Ofuscación y técnicas anti-reversing, Clase 147 — Ofuscación, packing y unpacking."
+      },
+      {
+        "t": "h3",
+        "x": "Use-after-free (UAF)"
+      },
+      {
+        "t": "p",
+        "x": "Usar un puntero a memoria ya liberada"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 127 — Heap: use-after-free y double free."
+      },
+      {
+        "t": "h3",
+        "x": "User-mode"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 353 — Arquitecturas Anti-Cheat."
+      },
+      {
+        "t": "h3",
+        "x": "Uso responsable"
+      },
+      {
+        "t": "p",
+        "x": "Solo dentro del alcance autorizado; intrusiva por diseño"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 93 — SQLMap."
+      },
+      {
+        "t": "h3",
+        "x": "Usos legítimos"
+      },
+      {
+        "t": "p",
+        "x": "Análisis de malware, RE de vulnerabilidades, forense"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 130 — Ingeniería inversa: introducción."
+      },
+      {
+        "t": "h3",
+        "x": "UTF-8"
+      },
+      {
+        "t": "p",
+        "x": "Codificación de Unicode en 1-4 bytes"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL."
+      },
+      {
+        "t": "h2",
+        "x": "V"
+      },
+      {
+        "t": "h3",
+        "x": "Vacunación"
+      },
+      {
+        "t": "p",
+        "x": "Crear el mutex para engañar al malware"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 144 — Análisis dinámico básico y sandboxing."
+      },
+      {
+        "t": "h3",
+        "x": "Validación activa"
+      },
+      {
+        "t": "p",
+        "x": "Interacción directa con el servicio, sujeta a autorización."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 254 — OSINT técnico: Shodan y Censys."
+      },
+      {
+        "t": "h3",
+        "x": "Validación de entrada"
+      },
+      {
+        "t": "p",
+        "x": "Rechazar lo que no encaja, con allowlists"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 115 — Secure coding y defensa de aplicaciones web."
+      },
+      {
+        "t": "h3",
+        "x": "Validación de Referer"
+      },
+      {
+        "t": "p",
+        "x": "Defensa débil; el Referer puede faltar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 98 — Cross-Site Request Forgery (CSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Validación de tipos"
+      },
+      {
+        "t": "p",
+        "x": "Rechazar objetos donde se espera texto; la defensa clave"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 94 — Inyección NoSQL."
+      },
+      {
+        "t": "h3",
+        "x": "Validación por extensión"
+      },
+      {
+        "t": "p",
+        "x": "Comprobar el sufijo; evadible con blocklist"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 108 — Vulnerabilidades en carga de archivos."
+      },
+      {
+        "t": "h3",
+        "x": "Validado ≠ usado"
+      },
+      {
+        "t": "p",
+        "x": "El número comprobado difiere del realmente usado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 128 — Integer overflows y errores aritméticos."
+      },
+      {
+        "t": "h3",
+        "x": "Validar IP resuelta"
+      },
+      {
+        "t": "p",
+        "x": "Comprobar la IP real antes de conectar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 99 — Server-Side Request Forgery (SSRF)."
+      },
+      {
+        "t": "h3",
+        "x": "Valor autoritativo en servidor"
+      },
+      {
+        "t": "p",
+        "x": "Precios y saldos calculados en el servidor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 109 — Vulnerabilidades de lógica de negocio."
+      },
+      {
+        "t": "h3",
+        "x": "Variable de entorno"
+      },
+      {
+        "t": "p",
+        "x": "Mejor que el código, pero visible en procesos y volcados"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 63 — Gestión de secretos: Vault y KMS."
+      },
+      {
+        "t": "h3",
+        "x": "Vaudenay (2002)"
+      },
+      {
+        "t": "p",
+        "x": "Descripción original del ataque de padding oracle"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 60 — Ataques criptográficos: padding oracle y timing."
+      },
+      {
+        "t": "h3",
+        "x": "Vault"
+      },
+      {
+        "t": "p",
+        "x": "Gestor de secretos con autenticación, políticas y auditoría"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 63 — Gestión de secretos: Vault y KMS."
+      },
+      {
+        "t": "h3",
+        "x": "vcan"
+      },
+      {
+        "t": "p",
+        "x": "Interfaz CAN virtual de Linux sin bus físico."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 274 — Seguridad automotriz y bus CAN."
+      },
+      {
+        "t": "h3",
+        "x": "Vector2/Vector3"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 348 — Matemática de un aimbot."
+      },
+      {
+        "t": "h3",
+        "x": "Velocidad,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 349 — Aimbot avanzado, predicción, smoothing y recoil."
+      },
+      {
+        "t": "h3",
+        "x": "Velocidad/aceleración"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 356 — Detección de aimbot y automatización por comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Ventana de pruebas"
+      },
+      {
+        "t": "p",
+        "x": "Franja horaria autorizada para operar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 67 — Reglas de engagement, alcance y contratos."
+      },
+      {
+        "t": "h3",
+        "x": "venv"
+      },
+      {
+        "t": "p",
+        "x": "Entorno virtual que aísla dependencias por proyecto."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 15 — Python para seguridad: fundamentos del lenguaje."
+      },
+      {
+        "t": "h3",
+        "x": "Verificación en tiempo constante"
+      },
+      {
+        "t": "p",
+        "x": "Comparación que no filtra información por timing"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2."
+      },
+      {
+        "t": "h3",
+        "x": "Verificación manual"
+      },
+      {
+        "t": "p",
+        "x": "Confirmar un hallazgo cruzando CVE, CPE y exploits"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS."
+      },
+      {
+        "t": "h3",
+        "x": "Verificación por objeto"
+      },
+      {
+        "t": "p",
+        "x": "Comprobar el permiso sobre el recurso concreto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 105 — Control de acceso roto: IDOR y path traversal."
+      },
+      {
+        "t": "h3",
+        "x": "Verificación pública"
+      },
+      {
+        "t": "p",
+        "x": "Cualquiera con la clave pública puede comprobar la firma"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 54 — Firmas digitales."
+      },
+      {
+        "t": "h3",
+        "x": "Verificar antes de descifrar"
+      },
+      {
+        "t": "p",
+        "x": "Orden que elimina el padding oracle"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 59 — Cifrado autenticado (AEAD)."
+      },
+      {
+        "t": "h3",
+        "x": "Verified Boot"
+      },
+      {
+        "t": "p",
+        "x": "Cadena de verificación de integridad de componentes de arranque."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 261 — Seguridad de Android: arquitectura."
+      },
+      {
+        "t": "h3",
+        "x": "verify=False"
+      },
+      {
+        "t": "p",
+        "x": "Desactivar la validación de certificados; anula TLS"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h3",
+        "x": "Versionado del cifrado"
+      },
+      {
+        "t": "p",
+        "x": "Guardar algoritmo y parámetros junto al dato"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 65 — Implementaciones seguras y errores criptográficos comunes."
+      },
+      {
+        "t": "h3",
+        "x": "Versiones antiguas"
+      },
+      {
+        "t": "p",
+        "x": "/api/v1 puede seguir vivo sin protección"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 110 — Seguridad de APIs REST."
+      },
+      {
+        "t": "h3",
+        "x": "VEX"
+      },
+      {
+        "t": "p",
+        "x": "Declaración del estado de afectación de un producto respecto de vulnerabilidades."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 240 — SCA: dependencias y riesgo de terceros, Clase 246 — Supply chain security: SBOM y SLSA."
+      },
+      {
+        "t": "h3",
+        "x": "Vía JSON"
+      },
+      {
+        "t": "p",
+        "x": "La API acepta JSON y el atacante controla la estructura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 94 — Inyección NoSQL."
+      },
+      {
+        "t": "h3",
+        "x": "Vía query string"
+      },
+      {
+        "t": "p",
+        "x": "user[$ne]=x se parsea a objeto automáticamente"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 94 — Inyección NoSQL."
+      },
+      {
+        "t": "h3",
+        "x": "Vigenère"
+      },
+      {
+        "t": "p",
+        "x": "Cifrado polialfabético con clave repetida"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 46 — Historia y fundamentos de la criptografía."
+      },
+      {
+        "t": "h3",
+        "x": "ViperMonkey"
+      },
+      {
+        "t": "p",
+        "x": "Emulador de VBA para desofuscar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 152 — Análisis de documentos maliciosos: macros y PDF."
+      },
+      {
+        "t": "h3",
+        "x": "Virtual host"
+      },
+      {
+        "t": "p",
+        "x": "Sitio que responde según la cabecera Host; oculta contenido"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 33 — Enumeración de servicios de red."
+      },
+      {
+        "t": "h3",
+        "x": "Virtualización"
+      },
+      {
+        "t": "p",
+        "x": "Traducir a bytecode propio con intérprete"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 147 — Ofuscación, packing y unpacking."
+      },
+      {
+        "t": "h3",
+        "x": "Virtualización de código"
+      },
+      {
+        "t": "p",
+        "x": "Bytecode propio con intérprete embebido"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 135 — Ofuscación y técnicas anti-reversing."
+      },
+      {
+        "t": "h3",
+        "x": "Virus"
+      },
+      {
+        "t": "p",
+        "x": "Se inserta en otro programa y se propaga al ejecutarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 141 — Introducción al malware: tipos y taxonomía."
+      },
+      {
+        "t": "h3",
+        "x": "VirusTotal"
+      },
+      {
+        "t": "p",
+        "x": "Servicio que agrega detecciones de múltiples motores"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 143 — Análisis estático básico."
+      },
+      {
+        "t": "h3",
+        "x": "visheapchunks"
+      },
+      {
+        "t": "p",
+        "x": "Comando de pwndbg que visualiza el heap"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 126 — Explotación de heap: fundamentos."
+      },
+      {
+        "t": "h3",
+        "x": "Vishing"
+      },
+      {
+        "t": "p",
+        "x": "Ingeniería social mediante voz o telefonía."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 257 — Pretexting y vishing."
+      },
+      {
+        "t": "h3",
+        "x": "Vista de grafo"
+      },
+      {
+        "t": "p",
+        "x": "Código como bloques básicos conectados por saltos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 132 — IDA Pro y radare2."
+      },
+      {
+        "t": "h3",
+        "x": "VLAN hopping"
+      },
+      {
+        "t": "p",
+        "x": "Saltar de una VLAN a otra rompiendo la segmentación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping."
+      },
+      {
+        "t": "h3",
+        "x": "VLAN / subred"
+      },
+      {
+        "t": "p",
+        "x": "Separación de la red en grandes bloques lógicos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 42 — Segmentación de red y arquitectura Zero Trust."
+      },
+      {
+        "t": "h3",
+        "x": "VLSM"
+      },
+      {
+        "t": "p",
+        "x": "Subredes de longitud variable ajustadas a cada segmento."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 14 — Direccionamiento IP y subnetting."
+      },
+      {
+        "t": "h3",
+        "x": "VM"
+      },
+      {
+        "t": "p",
+        "x": "Máquina virtual: entorno de cómputo aislado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red."
+      },
+      {
+        "t": "h3",
+        "x": "VM de análisis"
+      },
+      {
+        "t": "p",
+        "x": "Máquina donde se ejecuta y estudia la muestra"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 142 — Laboratorio seguro de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "VM de servicios"
+      },
+      {
+        "t": "p",
+        "x": "Máquina que simula los servicios de red"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 142 — Laboratorio seguro de análisis de malware."
+      },
+      {
+        "t": "h3",
+        "x": "vmmap"
+      },
+      {
+        "t": "p",
+        "x": "Mapa de memoria del proceso con permisos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "Volatility"
+      },
+      {
+        "t": "p",
+        "x": "Framework de forense de memoria"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 148 — Análisis de comportamiento."
+      },
+      {
+        "t": "h3",
+        "x": "Volcado de memoria"
+      },
+      {
+        "t": "p",
+        "x": "Captura de RAM con datos ausentes del disco"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 84 — Anti-forense y borrado de huellas (concepto y límites)."
+      },
+      {
+        "t": "h3",
+        "x": "Volcado de pila"
+      },
+      {
+        "t": "p",
+        "x": "%p %p %p... imprime el contenido de la pila"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 125 — Vulnerabilidades de format string."
+      },
+      {
+        "t": "h3",
+        "x": "Volcado mínimo"
+      },
+      {
+        "t": "p",
+        "x": "Extraer solo lo necesario para probar el impacto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 93 — SQLMap."
+      },
+      {
+        "t": "h3",
+        "x": "Volumen"
+      },
+      {
+        "t": "p",
+        "x": "Almacenamiento persistente fuera del contenedor"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 22 — Docker y contenedores para laboratorios de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "VPN"
+      },
+      {
+        "t": "p",
+        "x": "Red privada extendida sobre una infraestructura pública mediante cifrado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN."
+      },
+      {
+        "t": "h3",
+        "x": "VPS"
+      },
+      {
+        "t": "p",
+        "x": "Servidor virtual donde se despliega la infraestructura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 164 — Diseño de infraestructura de comando y control (C2)."
+      },
+      {
+        "t": "h3",
+        "x": "VRFY / EXPN"
+      },
+      {
+        "t": "p",
+        "x": "Órdenes SMTP que permiten validar o expandir usuarios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 33 — Enumeración de servicios de red, Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP."
+      },
+      {
+        "t": "h3",
+        "x": "VSS"
+      },
+      {
+        "t": "p",
+        "x": "Instantáneas de volumen de Windows"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 84 — Anti-forense y borrado de huellas (concepto y límites)."
+      },
+      {
+        "t": "h3",
+        "x": "vssadmin delete"
+      },
+      {
+        "t": "p",
+        "x": "Comando de destrucción de respaldos; alerta temprana"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 150 — Ransomware: anatomía y análisis."
+      },
+      {
+        "t": "h3",
+        "x": "VT-x / AMD-V"
+      },
+      {
+        "t": "p",
+        "x": "Virtualización asistida por hardware de Intel / AMD"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red."
+      },
+      {
+        "t": "h3",
+        "x": "vtable"
+      },
+      {
+        "t": "p",
+        "x": "Tabla de punteros a métodos virtuales de un objeto"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 127 — Heap: use-after-free y double free."
+      },
+      {
+        "t": "h3",
+        "x": "Vulnerabilidad candidata"
+      },
+      {
+        "t": "p",
+        "x": "Source que alcanza un sink sin validación"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 137 — Descubrimiento de vulnerabilidades en código."
+      },
+      {
+        "t": "h3",
+        "x": "Vulnerability Assessment (VA)"
+      },
+      {
+        "t": "p",
+        "x": "Inventario de debilidades conocidas, sin explotación profunda"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 161 — Red Team vs pentest: filosofía y objetivos."
+      },
+      {
+        "t": "h3",
+        "x": "VulnHub"
+      },
+      {
+        "t": "p",
+        "x": "Catálogo de máquinas virtuales vulnerables descargables para practicar en una red local aislada."
+      },
+      {
+        "t": "p",
+        "x": "Sitio oficial: VulnHub."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "vulnserver"
+      },
+      {
+        "t": "p",
+        "x": "Servidor vulnerable para practicar en Windows"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 129 — Explotación en Windows: manejo de SEH."
+      },
+      {
+        "t": "h2",
+        "x": "W"
+      },
+      {
+        "t": "h3",
+        "x": "WAF"
+      },
+      {
+        "t": "p",
+        "x": "Firewall de aplicación que filtra peticiones maliciosas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 3 clase(s): Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad, Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas, Clase 86 — Arquitectura web moderna y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Watchpoint"
+      },
+      {
+        "t": "p",
+        "x": "Pausa cuando una posición de memoria cambia"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "Watermarking"
+      },
+      {
+        "t": "p",
+        "x": "Marca de agua robusta para trazar procedencia"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 64 — Esteganografía y ocultación de datos."
+      },
+      {
+        "t": "h3",
+        "x": "Weaponization"
+      },
+      {
+        "t": "p",
+        "x": "Fase de preparación del artefacto malicioso"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain."
+      },
+      {
+        "t": "h3",
+        "x": "Web Security Academy"
+      },
+      {
+        "t": "p",
+        "x": "Plataforma gratuita de PortSwigger con material y laboratorios interactivos de seguridad web."
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: portswigger web security academy, wsa."
+      },
+      {
+        "t": "p",
+        "x": "Sitio oficial: Web Security Academy."
+      },
+      {
+        "t": "p",
+        "x": "Entrada transversal: sin glosario local todavía; consulta el recurso oficial enlazado."
+      },
+      {
+        "t": "h3",
+        "x": "Web shell"
+      },
+      {
+        "t": "p",
+        "x": "Fichero ejecutable subido que da RCE al visitarlo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 108 — Vulnerabilidades en carga de archivos."
+      },
+      {
+        "t": "h3",
+        "x": "WEP"
+      },
+      {
+        "t": "p",
+        "x": "Cifrado WiFi roto en parte por reutilización de nonce"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4."
+      },
+      {
+        "t": "h3",
+        "x": "Where-Object"
+      },
+      {
+        "t": "p",
+        "x": "Filtra objetos del pipeline por una condición"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva."
+      },
+      {
+        "t": "h3",
+        "x": "White box"
+      },
+      {
+        "t": "p",
+        "x": "Acceso total a código y arquitectura"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 66 — Metodología de pentesting: PTES y OSSTMM."
+      },
+      {
+        "t": "h3",
+        "x": "White cell"
+      },
+      {
+        "t": "p",
+        "x": "Personas informadas que supervisan el ejercicio y protegen a los objetivos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 161 — Red Team vs pentest: filosofía y objetivos, Clase 166 — Phishing y entrega de payloads."
+      },
+      {
+        "t": "h3",
+        "x": "White hat"
+      },
+      {
+        "t": "p",
+        "x": "Hacker ético con autorización"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 25 — Ética, legalidad, alcance y divulgación responsable."
+      },
+      {
+        "t": "h3",
+        "x": "WHOIS / RDAP"
+      },
+      {
+        "t": "p",
+        "x": "Propietario, contactos y rangos de un dominio o IP"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas."
+      },
+      {
+        "t": "h3",
+        "x": "wide"
+      },
+      {
+        "t": "p",
+        "x": "Busca la versión Unicode/UTF-16 de la cadena"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "WinPEAS / PowerUp"
+      },
+      {
+        "t": "p",
+        "x": "Herramientas de enumeración de escalada en Windows"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 77 — Escalada de privilegios en Windows."
+      },
+      {
+        "t": "h3",
+        "x": "Wiper"
+      },
+      {
+        "t": "p",
+        "x": "Destruye datos sin recuperación posible"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 141 — Introducción al malware: tipos y taxonomía."
+      },
+      {
+        "t": "h3",
+        "x": "WireGuard"
+      },
+      {
+        "t": "p",
+        "x": "VPN moderna en kernel, con criptografía fija y configuración mínima"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN."
+      },
+      {
+        "t": "h3",
+        "x": "Wireshark + INetSim"
+      },
+      {
+        "t": "p",
+        "x": "Captura de red con Internet simulado"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 144 — Análisis dinámico básico y sandboxing."
+      },
+      {
+        "t": "h3",
+        "x": "WMI"
+      },
+      {
+        "t": "p",
+        "x": "Interfaz de gestión de Windows accesible desde PowerShell"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 9 — PowerShell para seguridad ofensiva y defensiva."
+      },
+      {
+        "t": "h3",
+        "x": "WMI event subscription"
+      },
+      {
+        "t": "p",
+        "x": "Persistencia fileless disparada por eventos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 82 — Persistencia en sistemas comprometidos."
+      },
+      {
+        "t": "h3",
+        "x": "WMI / WinRM"
+      },
+      {
+        "t": "p",
+        "x": "Ejecución remota más sigilosa, sobre gestión legítima"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 78 — Movimiento lateral en la red."
+      },
+      {
+        "t": "h3",
+        "x": "Word splitting"
+      },
+      {
+        "t": "p",
+        "x": "Partición de un valor no entrecomillado por espacios"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 7 — Bash scripting para tareas de seguridad."
+      },
+      {
+        "t": "h3",
+        "x": "Worker / manager"
+      },
+      {
+        "t": "p",
+        "x": "Procesos que reparten el tráfico y consolidan los logs"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 44 — Zeek para análisis de red a gran escala."
+      },
+      {
+        "t": "h3",
+        "x": "Workspace"
+      },
+      {
+        "t": "p",
+        "x": "Aislamiento de los datos por cliente o fase"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 72 — Metasploit Framework: arquitectura y uso."
+      },
+      {
+        "t": "h3",
+        "x": "WORLD→VIEW→PROJECTION→SCREEN"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 346 — Información expuesta, radar, ESP y world-to-screen."
+      },
+      {
+        "t": "h3",
+        "x": "WPA2-PSK"
+      },
+      {
+        "t": "p",
+        "x": "Cifrado con clave precompartida; vulnerable a crackeo offline"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "WPA3-SAE (Dragonfly)"
+      },
+      {
+        "t": "p",
+        "x": "Handshake que no expone material para crackeo offline"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque."
+      },
+      {
+        "t": "h3",
+        "x": "Wrap-around"
+      },
+      {
+        "t": "p",
+        "x": "El valor da la vuelta al superar el máximo del tipo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 128 — Integer overflows y errores aritméticos."
+      },
+      {
+        "t": "h3",
+        "x": "Writeup"
+      },
+      {
+        "t": "p",
+        "x": "Documentación de la solución de un reto"
+      },
+      {
+        "t": "p",
+        "x": "Claves de búsqueda normalizadas: informe de resolucion, write up."
+      },
+      {
+        "t": "p",
+        "x": "Relacionados: CTF — Capture The Flag, RCA — Análisis de causa raíz, Mitigación, IOC — Indicador de compromiso."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 140 — CTFs de pwn e ingeniería inversa."
+      },
+      {
+        "t": "h3",
+        "x": "WSH"
+      },
+      {
+        "t": "p",
+        "x": "Windows Script Host; ejecuta JScript y VBScript"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 153 — Análisis de malware en scripts: PowerShell y JavaScript."
+      },
+      {
+        "t": "h2",
+        "x": "X"
+      },
+      {
+        "t": "h3",
+        "x": "x/ (examine)"
+      },
+      {
+        "t": "p",
+        "x": "Leer memoria en cualquier formato (x/8gx $rsp)"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "X-Frame-Options"
+      },
+      {
+        "t": "p",
+        "x": "Cabecera contra clickjacking"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 115 — Secure coding y defensa de aplicaciones web."
+      },
+      {
+        "t": "h3",
+        "x": "x/NFU"
+      },
+      {
+        "t": "p",
+        "x": "Número, formato y unidad del comando examine"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 118 — Debugging con GDB y pwndbg."
+      },
+      {
+        "t": "h3",
+        "x": "X25519"
+      },
+      {
+        "t": "p",
+        "x": "DH sobre Curve25519; rápido y sin parámetros débiles"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 50 — Criptografía de curva elíptica (ECC), Clase 53 — Intercambio de claves: Diffie-Hellman."
+      },
+      {
+        "t": "h3",
+        "x": "x64dbg"
+      },
+      {
+        "t": "p",
+        "x": "Depurador usado para el unpacking manual"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 147 — Ofuscación, packing y unpacking."
+      },
+      {
+        "t": "h3",
+        "x": "XChaCha20"
+      },
+      {
+        "t": "p",
+        "x": "Variante con nonce de 192 bits; seguro elegirlo al azar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4."
+      },
+      {
+        "t": "h3",
+        "x": "XChaCha20-Poly1305"
+      },
+      {
+        "t": "p",
+        "x": "Variante con nonce de 192 bits; seguro al azar"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 59 — Cifrado autenticado (AEAD)."
+      },
+      {
+        "t": "h3",
+        "x": "XOR"
+      },
+      {
+        "t": "p",
+        "x": "Operación reversible: (M ⊕ K) ⊕ K = M"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4."
+      },
+      {
+        "t": "h3",
+        "x": "xor rax, rax"
+      },
+      {
+        "t": "p",
+        "x": "Poner a cero sin generar bytes nulos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 121 — Escritura de shellcode."
+      },
+      {
+        "t": "h3",
+        "x": "xpcmdshell / INTO OUTFILE"
+      },
+      {
+        "t": "p",
+        "x": "Vías de RCE desde la base de datos"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 93 — SQLMap."
+      },
+      {
+        "t": "h3",
+        "x": "Xref"
+      },
+      {
+        "t": "p",
+        "x": "Referencia cruzada: quién llama o usa algo"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 2 clase(s): Clase 131 — Ghidra para ingeniería inversa, Clase 146 — Análisis con IDA y Ghidra aplicado a malware."
+      },
+      {
+        "t": "h3",
+        "x": "XSS"
+      },
+      {
+        "t": "p",
+        "x": "Inyección de JavaScript en el navegador de otra víctima"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 96 — Cross-Site Scripting (XSS) reflejado."
+      },
+      {
+        "t": "h3",
+        "x": "XSS almacenado (stored)"
+      },
+      {
+        "t": "p",
+        "x": "El payload se guarda y se ejecuta para cada visitante"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 97 — XSS almacenado y basado en DOM."
+      },
+      {
+        "t": "h3",
+        "x": "XSS reflejado"
+      },
+      {
+        "t": "p",
+        "x": "El payload viaja en la petición y se refleja en la respuesta"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 96 — Cross-Site Scripting (XSS) reflejado."
+      },
+      {
+        "t": "h3",
+        "x": "XXE"
+      },
+      {
+        "t": "p",
+        "x": "Abuso de las entidades externas de XML"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 100 — XML External Entities (XXE)."
+      },
+      {
+        "t": "h3",
+        "x": "XXE ciega"
+      },
+      {
+        "t": "p",
+        "x": "Sin reflejo; se exfiltra por OOB con DTD externa"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 100 — XML External Entities (XXE)."
+      },
+      {
+        "t": "h3",
+        "x": "XXE → SSRF"
+      },
+      {
+        "t": "p",
+        "x": "La entidad apunta a una URL interna o al metadata"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 100 — XML External Entities (XXE)."
+      },
+      {
+        "t": "h2",
+        "x": "Y"
+      },
+      {
+        "t": "h3",
+        "x": "YARA"
+      },
+      {
+        "t": "p",
+        "x": "Lenguaje para describir patrones que identifican malware"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 156 — Reglas YARA para detección."
+      },
+      {
+        "t": "h3",
+        "x": "Yaw,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 348 — Matemática de un aimbot."
+      },
+      {
+        "t": "h3",
+        "x": "ysoserial"
+      },
+      {
+        "t": "p",
+        "x": "Herramienta que genera gadget chains para Java"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 106 — Deserialización insegura."
+      },
+      {
+        "t": "h2",
+        "x": "Z"
+      },
+      {
+        "t": "h3",
+        "x": "Z-score,"
+      },
+      {
+        "t": "p",
+        "x": "Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 357 — Estadística, anomalías y falsos positivos."
+      },
+      {
+        "t": "h3",
+        "x": "Zeek"
+      },
+      {
+        "t": "p",
+        "x": "Motor de análisis de red que genera logs de transacción, no firmas"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 44 — Zeek para análisis de red a gran escala."
+      },
+      {
+        "t": "h3",
+        "x": "zeek-cut"
+      },
+      {
+        "t": "p",
+        "x": "Extrae columnas de los logs por nombre, para análisis por CLI"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 44 — Zeek para análisis de red a gran escala."
+      },
+      {
+        "t": "h3",
+        "x": "Zero Trust"
+      },
+      {
+        "t": "p",
+        "x": "Modelo que elimina la confianza implícita por ubicación de red"
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 42 — Segmentación de red y arquitectura Zero Trust."
+      },
+      {
+        "t": "h3",
+        "x": "Zona/conducto"
+      },
+      {
+        "t": "p",
+        "x": "Agrupación y comunicación controlada según riesgo y función."
+      },
+      {
+        "t": "p",
+        "x": "Aparece en 1 clase(s): Clase 273 — Seguridad de sistemas de control industrial (ICS/SCADA)."
+      }
+    ],
+    "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/docs/GLOSARIO-GLOBAL.html",
+    "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/docs/GLOSARIO-GLOBAL.md"
+  },
+  {
+    "id": "plataformas-practica",
+    "icon": "🧪",
+    "title": "Plataformas de práctica",
+    "subtitle": "Entornos autorizados, progresión y límites de publicación",
+    "description": "Compara plataformas por enfoque, modalidad, nivel y ruta profesional antes de practicar.",
+    "searchTerms": "HTB Hack The Box TryHackMe THM PortSwigger picoCTF CyLab CyberDefenders OverTheWire PentesterLab LetsDefend CTFtime pwn.college ROP Emporium VulnHub crackmes.one",
+    "content": [
+      {
+        "t": "h2",
+        "x": "Flujo de aprendizaje transversal"
+      },
+      {
+        "t": "p",
+        "x": "Teoría → laboratorio guiado → reto interno → plataforma autorizada → flag y evidencia → writeup reproducible → causa raíz → mitigación → detección → lecciones."
+      },
+      {
+        "t": "p",
+        "x": "La flag solo confirma una condición del reto. El aprendizaje aparece cuando el writeup permite reconstruir qué observaste, por qué funcionó, qué alternativa descartaste y qué control habría prevenido o detectado el problema. Usa la plantilla común y relaciona el resultado con el glosario global."
+      },
+      {
+        "t": "h2",
+        "x": "Matriz de plataformas"
+      },
+      {
+        "t": "table",
+        "h": [
+          "Plataforma",
+          "Enfoque principal",
+          "Modalidad",
+          "Nivel útil",
+          "Ruta o parte relacionada",
+          "Uso recomendado",
+          "Límite importante"
+        ],
+        "r": [
+          [
+            "Hack The Box Labs",
+            "Máquinas y escenarios ofensivos",
+            "Mixta: contenido gratuito y planes de pago",
+            "Intermedio–avanzado",
+            "Pentester, Red Team, partes 3–7",
+            "Consolidar enumeración, explotación y reporte después de los labs locales",
+            "La AUP permite publicar soluciones solo para contenido retirado; no difundas flags ni soluciones activas"
+          ],
+          [
+            "HTB Academy",
+            "Cursos modulares y rutas con Pwnbox",
+            "Mixta; módulos Tier 0 gratuitos y planes de pago",
+            "Inicial–avanzado",
+            "Pentesting, SOC, AppSec y DFIR",
+            "Cubrir prerrequisitos y repetir técnicas en módulos guiados",
+            "No asumir que una suscripción o módulo sigue igual: comprobar el catálogo vigente"
+          ],
+          [
+            "TryHackMe",
+            "Rutas, salas guiadas y salas de desafío",
+            "Mixta: plan gratuito y planes de pago",
+            "Inicial–intermedio",
+            "Fundamentos, SOC, pentesting y cloud",
+            "Empezar con walkthroughs; después repetir en una sala de desafío sin pistas",
+            "Separar la guía de la evidencia propia; no copiar respuestas como si fueran razonamiento"
+          ],
+          [
+            "PortSwigger Web Security Academy",
+            "Seguridad web con teoría y laboratorios interactivos",
+            "Gratuita",
+            "Inicial–avanzado",
+            "AppSec, pentesting, parte 4",
+            "Practicar una vulnerabilidad web inmediatamente después de su clase",
+            "Los labs autorizan ese entorno, no ataques a sitios públicos"
+          ],
+          [
+            "CyLab Security Academy — antes picoCTF",
+            "Fundamentos y desafíos Jeopardy",
+            "Gratuita",
+            "Inicial–intermedio",
+            "Fundamentos, cripto, web, forense y reversing",
+            "Primera experiencia CTF y trabajo por categorías; la transición conserva cuentas y progreso de picoCTF",
+            "Distinguir contenido educativo de eventos con reglas y ventanas propias"
+          ],
+          [
+            "CyberDefenders",
+            "Investigaciones SOC, forense y DFIR",
+            "Acceso sujeto al plan vigente",
+            "Intermedio",
+            "SOC, DFIR, partes 8–9",
+            "Producir timeline, hipótesis, IOC y recomendación defensiva",
+            "Una respuesta correcta sin cadena de evidencia no equivale a un informe de incidente"
+          ],
+          [
+            "OverTheWire",
+            "Wargames de terminal, web, cripto y explotación",
+            "Gratuita",
+            "Inicial–intermedio",
+            "Fundamentos, web, cripto y pwn",
+            "Seguir la progresión oficial Bandit → Natas/Krypton/Leviathan → niveles posteriores",
+            "Las credenciales de nivel son flags: no publicarlas"
+          ],
+          [
+            "PentesterLab",
+            "Seguridad web y revisión de código",
+            "Principalmente de pago, con ejercicios accesibles sin PRO",
+            "Intermedio–avanzado",
+            "AppSec y pentesting",
+            "Explicar no solo el exploit, sino la línea de código y la corrección",
+            "Confirmar que el ejercicio elegido está incluido en el plan disponible"
+          ],
+          [
+            "LetsDefend",
+            "SOC simulado e investigaciones defensivas",
+            "Mixta: Basic gratuito y planes de pago",
+            "Inicial–intermedio",
+            "SOC y DFIR",
+            "Practicar triage, escalado, consultas y cierre de alertas",
+            "No confundir la simulación con acceso autorizado a infraestructura real"
+          ],
+          [
+            "CTFtime",
+            "Directorio de eventos, equipos, resultados y writeups",
+            "Gratuita",
+            "Todos",
+            "Todas las rutas, según evento",
+            "Descubrir un evento adecuado y estudiar writeups una vez permitido",
+            "No es una ruta guiada; cada evento define sus reglas y política de publicación"
+          ],
+          [
+            "pwn.college",
+            "Fundamentos de sistemas, pwn y seguridad práctica",
+            "Gratuita",
+            "Inicial–avanzado",
+            "Fundamentos, pwn, reversing",
+            "Aprender por módulos y conservar notas privadas de resolución",
+            "Sus reglas piden no publicar walkthroughs ni soluciones de desafíos"
+          ],
+          [
+            "ROP Emporium",
+            "Return-oriented programming",
+            "Gratuita",
+            "Intermedio–avanzado",
+            "Parte 5, pentesting avanzado",
+            "Progresar desde ret2win y justificar cada gadget y restricción",
+            "Trabajar solo sobre los binarios de práctica proporcionados"
+          ],
+          [
+            "VulnHub",
+            "Máquinas virtuales vulnerables descargables",
+            "Gratuita",
+            "Intermedio",
+            "Pentesting, Red Team, forense",
+            "Montar una red local aislada y practicar el ciclo completo",
+            "La antigüedad y mantenimiento varían; aislar la VM y no puentearla a redes sensibles"
+          ],
+          [
+            "crackmes.one",
+            "Crackmes para ingeniería inversa",
+            "Gratuita con cuenta",
+            "Inicial–avanzado",
+            "Reversing, malware, Game Security",
+            "Comparar análisis estático y dinámico sobre binarios hechos para ser analizados",
+            "Tratar descargas como código no confiable: sandbox, hashes y aislamiento"
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Progresión recomendada"
+      },
+      {
+        "t": "h3",
+        "x": "Si partes desde cero"
+      },
+      {
+        "t": "li",
+        "n": 1,
+        "d": 0,
+        "x": "Completa fundamentos y el laboratorio local de la clase."
+      },
+      {
+        "t": "li",
+        "n": 2,
+        "d": 0,
+        "x": "Practica terminal en OverTheWire Bandit o una ruta inicial de TryHackMe."
+      },
+      {
+        "t": "li",
+        "n": 3,
+        "d": 0,
+        "x": "Resuelve un reto interno en ctf/ sin abrir su solución."
+      },
+      {
+        "t": "li",
+        "n": 4,
+        "d": 0,
+        "x": "Usa CyLab Security Academy para probar varias categorías y redacta un writeup."
+      },
+      {
+        "t": "h3",
+        "x": "Si buscas ofensiva o AppSec"
+      },
+      {
+        "t": "li",
+        "n": 1,
+        "d": 0,
+        "x": "Web Security Academy para aislar una vulnerabilidad y su defensa."
+      },
+      {
+        "t": "li",
+        "n": 2,
+        "d": 0,
+        "x": "HTB Academy o PentesterLab para unir técnica, revisión y reporte."
+      },
+      {
+        "t": "li",
+        "n": 3,
+        "d": 0,
+        "x": "HTB Labs o una VM aislada de VulnHub para recorrer el ciclo completo."
+      },
+      {
+        "t": "li",
+        "n": 4,
+        "d": 0,
+        "x": "ROP Emporium, pwn.college o crackmes.one para pwn/reversing, respetando sus reglas."
+      },
+      {
+        "t": "h3",
+        "x": "Si buscas SOC o DFIR"
+      },
+      {
+        "t": "li",
+        "n": 1,
+        "d": 0,
+        "x": "Completa los labs internos de telemetría, triage y timeline."
+      },
+      {
+        "t": "li",
+        "n": 2,
+        "d": 0,
+        "x": "Usa TryHackMe o LetsDefend para practicar decisiones de analista."
+      },
+      {
+        "t": "li",
+        "n": 3,
+        "d": 0,
+        "x": "Usa CyberDefenders para una investigación más abierta."
+      },
+      {
+        "t": "li",
+        "n": 4,
+        "d": 0,
+        "x": "Entrega IOC, consultas de detección, causa raíz y acciones; no solo respuestas."
+      },
+      {
+        "t": "h2",
+        "x": "Criterio para elegir una actividad"
+      },
+      {
+        "t": "p",
+        "x": "Antes de empezar, registra: objetivo de aprendizaje, alcance autorizado, costo o plan disponible, prerequisitos, tiempo límite, política de writeups y evidencia que producirás. Después, comprueba que puedes explicar el mecanismo sin depender de la flag. Si no puedes, vuelve a la clase o al laboratorio anterior."
+      },
+      {
+        "t": "h2",
+        "x": "Fuentes verificadas"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Hack The Box documenta Labs, Academy y su política de uso aceptable."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "TryHackMe describe sus tipos de salas y rutas y los planes disponibles."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "PortSwigger mantiene la Web Security Academy como recurso gratuito con laboratorios interactivos."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Carnegie Mellon anunció la evolución de picoCTF a CyLab Security Academy."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Las demás filas enlazan directamente al sitio o a las reglas oficiales de cada plataforma."
+      },
+      {
+        "t": "p",
+        "x": "Verificación editorial: 22 de septiembre de 2026. Los enlaces respaldan el tipo de plataforma y sus límites; las recomendaciones de secuencia son decisiones pedagógicas de este programa."
+      }
+    ],
+    "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/docs/PLATAFORMAS-DE-PRACTICA.html",
+    "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/docs/PLATAFORMAS-DE-PRACTICA.md"
   }
 ];
 
@@ -1832,7 +31495,7 @@ export const CLASSES_BY_PART = CLASSES.reduce((acc, c) => {
 export const TOTAL_CLASSES = 360;
 export const TOTAL_PARTS = 20;
 
-export const TOTAL_RESOURCES = 1;
+export const TOTAL_RESOURCES = 3;
 
 export const classesForPart = (partSlug) => CLASSES_BY_PART[partSlug] || [];
 export const resourceById = (id) => RESOURCES.find((r) => r.id === id);

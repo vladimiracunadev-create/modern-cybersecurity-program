@@ -13,6 +13,7 @@ import {
   StyleSheet,
   SafeAreaView,
   TouchableOpacity,
+  TextInput,
 } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { PARTS, CLASSES, RESOURCES, TOTAL_CLASSES, TOTAL_PARTS } from '../data/classes';
@@ -22,6 +23,7 @@ import { colors, spacing, radius, fontSize, fontWeight } from '../theme';
 
 export default function HomeScreen({ navigation }) {
   const [completedIds, setCompletedIds] = useState(new Set());
+  const [resourceQuery, setResourceQuery] = useState('');
 
   useFocusEffect(
     useCallback(() => {
@@ -69,6 +71,14 @@ export default function HomeScreen({ navigation }) {
     clearProgress().then(() => setCompletedIds(new Set()));
   };
 
+  const normalizedResourceQuery = resourceQuery.trim().toLocaleLowerCase('es');
+  const filteredResources = RESOURCES.filter((resource) =>
+    [resource.title, resource.subtitle, resource.description, resource.searchTerms]
+      .join(' ')
+      .toLocaleLowerCase('es')
+      .includes(normalizedResourceQuery)
+  );
+
   const renderHeader = () => (
     <View style={styles.headerContainer}>
       <Text style={styles.mainTitle}>🛡️ Ciberseguridad Moderna</Text>
@@ -113,7 +123,16 @@ export default function HomeScreen({ navigation }) {
         </Text>
       </View>
 
-      {RESOURCES.map((resource) => (
+      <TextInput
+        style={styles.resourceSearch}
+        value={resourceQuery}
+        onChangeText={setResourceQuery}
+        placeholder="Buscar sigla, concepto o plataforma"
+        placeholderTextColor={colors.textMuted}
+        accessibilityLabel="Buscar en recursos transversales"
+      />
+
+      {filteredResources.map((resource) => (
         <TouchableOpacity
           key={resource.id}
           style={styles.resourceCard}
@@ -238,6 +257,17 @@ const styles = StyleSheet.create({
     padding: spacing.md,
     marginTop: spacing.sm,
     marginBottom: spacing.md,
+  },
+  resourceSearch: {
+    color: colors.text,
+    backgroundColor: colors.bgCard,
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: radius.md,
+    paddingHorizontal: spacing.md,
+    paddingVertical: 11,
+    marginTop: spacing.sm,
+    marginBottom: spacing.sm,
   },
   resourceIcon: {
     width: 46,

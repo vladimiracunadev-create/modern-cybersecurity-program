@@ -67,12 +67,11 @@ export default function ResourceScreen({ route }) {
           </View>
         </View>
 
-        <View style={styles.notice}>
-          <Text style={styles.noticeText}>
-            Contenido educativo. No constituye asesoría legal; la ley aplicable depende de los
-            hechos, la jurisdicción y la decisión de un tribunal.
-          </Text>
-        </View>
+        {resource.notice ? (
+          <View style={styles.notice}>
+            <Text style={styles.noticeText}>{resource.notice}</Text>
+          </View>
+        ) : null}
 
         <ClassContent
           blocks={resource.content}
