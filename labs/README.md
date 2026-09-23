@@ -31,7 +31,7 @@ docker compose down -v      # apagar y borrar también los volúmenes/datos
 | Lab | Descripción | Clases relacionadas | Estado |
 |---|---|---|---|
 | [`appsec-web`](appsec-web/README.md) | OWASP Juice Shop + DVWA para practicar el OWASP Top 10 (SQLi, XSS, CSRF, IDOR…) | Parte 4 (086–115) | ✅ Disponible |
-| [`blue-team-soc`](blue-team-soc/README.md) | Elasticsearch + Kibana con telemetría de un ataque real para cazar y detectar · [trayecto Analista SecOps](blue-team-soc/TRAYECTO-ANALISTA-SECOPS.md) | Parte 8 (181–200) · 202, 215–217, 318, 324 | ✅ Disponible |
+| [`blue-team-soc`](blue-team-soc/README.md) | Elasticsearch + Kibana para autenticación y escenario DDoS sintético con analizador y playbook · [trayecto Analista SecOps](blue-team-soc/TRAYECTO-ANALISTA-SECOPS.md) | Partes 1, 8 y 17 · 202, 215–217, 318, 324 | ✅ Disponible |
 | [`red-team-ad`](red-team-ad/README.md) | Caja de atacante (Impacket/NetExec/BloodHound) + guía GOAD para atacar Active Directory | Parte 7 (161–180) | ✅ Disponible |
 | [`cripto`](cripto/README.md) | Retos de criptografía aplicada en Python puro (XOR, RSA-Fermat, MD5, ECB) | Parte 2 (046–065) | ✅ Disponible |
 | [`dfir-memoria`](dfir-memoria/README.md) | Estación Volatility 3 + YARA para forense de memoria y malware en IR | Partes 9 y 17 · SANS/BTL1 | ✅ Disponible |

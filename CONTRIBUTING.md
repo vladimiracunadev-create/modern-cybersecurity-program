@@ -60,6 +60,12 @@ python scripts/generar_manual.py                     # manual completo
 
 El sitio lo reconstruye el CI en cada `push` a `main`, así que no hace falta commitear `site/`.
 
+La revisión no termina en la carpeta de la clase. Si cambia una capacidad profesional, una práctica
+o un concepto transversal, revisa también el README de la parte, `rutas/`, `labs/README.md`, el
+glosario global, los recursos transversales, la bibliografía, el manual y el catálogo móvil. Declara
+qué superficies no aplican y por qué; no asumas que una revisión anterior sigue vigente después de
+añadir clases, roles, laboratorios o recursos.
+
 ### Diagramas
 
 Los diagramas van en bloques ` ```mermaid `. Antes de dar una clase por terminada, comprueba que

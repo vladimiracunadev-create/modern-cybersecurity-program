@@ -194,6 +194,11 @@ Clases concretas por las que empezar:
 
 ## 🎓 Certificaciones
 
+Practica la ingeniería de controles con el [escenario DDoS](../labs/blue-team-soc/PLAYBOOK-DDOS.md):
+telemetría de PPS/BPS y aplicación, límites y *circuit breakers*, protección del origen y automatización
+reversible. Si el enlace se satura, diseña la coordinación upstream en lugar de prometer autoscaling.
+
+
 Con archivo en el programa (mapean a partes concretas):
 
 - 📋 [**CompTIA CySA+** (CS0-003)](../certificaciones/comptia-cysa-plus-cs0-003.md) — **la

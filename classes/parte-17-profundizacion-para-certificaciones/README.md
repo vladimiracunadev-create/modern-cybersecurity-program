@@ -67,7 +67,7 @@ Las clases 311–315 gobiernan datos e identidades durante todo su ciclo. Las 31
 | Análisis de phishing | 319 | BTL1, Security+ |
 | Gobierno y gestión del programa | 320 | Security+ *Program Management*, CISSP *Risk Management* |
 | Comunicación y reporte | 321 | CySA+ *Reporting and Communication* |
-| Threat intelligence operacional | 322 | BTL1 *Threat Intelligence*, CySA+ |
+| Threat intelligence operacional | 322 | BTL1 *Threat Intelligence*, CySA+; cadenas CaaS y atribución con límites |
 | Pruebas de seguridad del software | 323 | CISSP *Assessment & Software Dev Security* |
 | Operaciones y hardening | 324 | Security+ / CISSP *Security Operations* |
 | Forense de memoria y malware para IR | 325–326 | SANS *GCFA/GCIH*, BTL1 |

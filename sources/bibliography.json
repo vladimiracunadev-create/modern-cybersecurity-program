@@ -1,9 +1,125 @@
 {
  "schema_version": 1,
- "verified_on": "2026-08-19",
+ "verified_on": "2026-09-23",
  "min_uso_declarado_pct": 66.0,
  "policy": "Toda afirmacion del programa se apoya en una entrada de este registro. Ninguna entrada se acepta sin localizador verificable: ISBN-13 para libros, DOI para articulos, URL https de la fuente primaria para normas y documentacion oficial. Lo que no se pudo comprobar queda como \"pendiente\" con el motivo, nunca borrado ni rellenado por intuicion.",
  "entries": [
+  {
+   "id": "mitre-attack-t1498",
+   "type": "standard",
+   "title": "Network Denial of Service (T1498)",
+   "authors": [
+    "MITRE ATT&CK"
+   ],
+   "published": "2025",
+   "locator": "https://attack.mitre.org/techniques/T1498/",
+   "authority": "MITRE",
+   "status": "verificada",
+   "notes": "Fuente primaria para T1498, T1498.001 y T1498.002; versión 1.2 modificada el 24 de octubre de 2025, consultada el 2026-09-23.",
+   "matches": {
+    "url_prefixes": [
+     "https://attack.mitre.org/techniques/T1498"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-23",
+   "used_in": [
+    "classes/parte-1-redes-y-seguridad-de-redes/045-netflow-y-analisis-de-metadatos-de-trafico/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/195-threat-intelligence-operacional/README.md"
+   ]
+  },
+  {
+   "id": "cisa-volumetric-ddos-guidance",
+   "type": "reference",
+   "title": "Volumetric DDoS Technical Guidance for FCEB Agencies",
+   "authors": [
+    "Cybersecurity and Infrastructure Security Agency"
+   ],
+   "published": "2023",
+   "locator": "https://www.cisa.gov/sites/default/files/2023-09/TLP%20CLEAR%20-DDOS%20Mitigations%20Guidance_508c.pdf",
+   "authority": "CISA",
+   "status": "verificada",
+   "notes": "Guía oficial sobre capacidad y mitigación volumétrica; consultada el 2026-09-23.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.cisa.gov/sites/default/files/2023-09/TLP%20CLEAR%20-DDOS%20Mitigations%20Guidance_508c.pdf"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-23",
+   "used_in": [
+    "classes/parte-1-redes-y-seguridad-de-redes/045-netflow-y-analisis-de-metadatos-de-trafico/README.md"
+   ]
+  },
+  {
+   "id": "europol-iocta",
+   "type": "reference",
+   "title": "Internet Organised Crime Threat Assessment",
+   "authors": [
+    "Europol European Cybercrime Centre"
+   ],
+   "published": "2026",
+   "locator": "https://www.europol.europa.eu/publications-events/main-reports/internet-organised-crime-threat-assessment",
+   "authority": "Europol",
+   "status": "verificada",
+   "notes": "Página oficial de la serie; IOCTA 2026 publicada el 28 de abril de 2026, consultada el 2026-09-23.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.europol.europa.eu/publications-events/main-reports/internet-organised-crime-threat-assessment"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-23",
+   "used_in": [
+    "classes/parte-6-analisis-de-malware/150-ransomware-anatomia-y-analisis/README.md"
+   ]
+  },
+  {
+   "id": "fbi-booter-stresser-ddos",
+   "type": "reference",
+   "title": "The FBI and International Law Enforcement Partners Intensify Efforts to Combat Illegal DDoS Attacks",
+   "authors": [
+    "Federal Bureau of Investigation"
+   ],
+   "published": "2022",
+   "locator": "https://www.fbi.gov/contact-us/field-offices/anchorage/fbi-intensify-efforts-to-combat-illegal-ddos-attacks",
+   "authority": "FBI",
+   "status": "verificada",
+   "notes": "Fuente pública oficial sobre booter, stresser y DDoS-for-hire; consultada el 2026-09-23.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.fbi.gov/contact-us/field-offices/anchorage/fbi-intensify-efforts-to-combat-illegal-ddos-attacks"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-23",
+   "used_in": [
+    "classes/parte-6-analisis-de-malware/154-malware-en-linux/README.md"
+   ]
+  },
+  {
+   "id": "doj-ddos-for-hire-2025",
+   "type": "reference",
+   "title": "Law Enforcement Seizes 9 DDoS-for-Hire Webpages",
+   "authors": [
+    "United States Department of Justice"
+   ],
+   "published": "2025",
+   "locator": "https://www.justice.gov/usao-cdca/pr/law-enforcement-seizes-9-ddos-hire-webpages-part-global-crackdown-booter-and-stresser",
+   "authority": "United States Department of Justice",
+   "status": "verificada",
+   "notes": "Comunicado oficial del 7 de mayo de 2025 usado como caso de estudio; consultado el 2026-09-23.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.justice.gov/usao-cdca/pr/law-enforcement-seizes-9-ddos-hire-webpages-part-global-crackdown-booter-and-stresser"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-23",
+   "used_in": [
+    "classes/parte-8-blue-team-deteccion-y-soc/195-threat-intelligence-operacional/README.md"
+   ]
+  },
   {
    "id": "epic-unreal-networking-overview",
    "type": "reference",
@@ -12590,6 +12706,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-1-redes-y-seguridad-de-redes/045-netflow-y-analisis-de-metadatos-de-trafico/README.md",
     "classes/parte-6-analisis-de-malware/160-reporte-de-analisis-de-malware/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/195-threat-intelligence-operacional/README.md"
    ],
@@ -13064,6 +13181,7 @@
     "classes/parte-1-redes-y-seguridad-de-redes/037-proxies-nat-y-pivoting-de-red/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/039-ataques-de-capa-2-arp-spoofing-y-vlan-hopping/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/040-man-in-the-middle-tecnicas-y-defensa/README.md",
+    "classes/parte-1-redes-y-seguridad-de-redes/045-netflow-y-analisis-de-metadatos-de-trafico/README.md",
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/226-ataques-y-pentest-en-entornos-cloud/README.md",
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/234-logging-y-deteccion-en-la-nube/README.md",
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/235-respuesta-a-incidentes-en-la-nube/README.md",
@@ -13136,6 +13254,7 @@
     "classes/parte-8-blue-team-deteccion-y-soc/189-analisis-de-endpoints-con-edr/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/192-deteccion-de-movimiento-lateral/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/193-deteccion-de-c2-y-beaconing/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/195-threat-intelligence-operacional/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/197-metricas-y-madurez-del-soc/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/198-casos-de-estudio-de-deteccion/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md",

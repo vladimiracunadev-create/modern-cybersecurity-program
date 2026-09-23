@@ -325,6 +325,11 @@ escribiendo.
 
 ## 🎓 Certificaciones
 
+Incluye DDoS en continuidad: capacidad del enlace, exposición del origen, CDN/Anycast, *scrubbing*,
+runbook, contacto upstream y prueba anual. El [escenario SOC](../labs/blue-team-soc/PLAYBOOK-DDOS.md)
+permite demostrar recuperación y causa raíz con evidencia reproducible.
+
+
 La oferta las lista como **opcionales**, y conviene leer eso con precisión: no filtran la candidatura,
 pero desempatan y sostienen tu credibilidad ante auditoría.
 

@@ -34,6 +34,29 @@ Al finalizar, el alumno podrá:
 
 ## 🧠 Modelo mental y caso de decisión
 
+### La amenaza como cadena de proveedores
+
+En CaaS la unidad de análisis rara vez es “un hacker”. Un broker puede aportar acceso, un cliente
+combinarlo con malware o RaaS y varios proveedores sostener proxies, alojamiento y monetización. En
+DDoS-for-hire, panel o servicio, infraestructura, botnet o reflectores abusados, campaña y víctima
+son entidades distintas. Estos grafos son modelos pedagógicos: no toda operación contiene cada nodo
+ni una relación compartida demuestra control común.
+
+```mermaid
+flowchart LR
+  B["Broker de acceso"] --> C["Cliente criminal"]
+  C --> M["Malware / RaaS"]
+  M --> I["Infraestructura"]
+  I --> X["Monetización"]
+  S["Servicio DDoS-for-hire"] --> P["Capacidad e infraestructura"]
+  P --> A["Campaña"]
+  A --> V["Víctima"]
+```
+
+Etiqueta cada arista como hecho documentado, inferencia o hipótesis; registra fuente, tiempo y
+confianza; busca explicaciones alternativas; y decide qué colección adicional cambiaría la
+conclusión. Consulta el [recurso CaaS](../../../docs/cybercrime-as-a-service.md) antes del grafo.
+
 Inteligencia reduce incertidumbre para una decisión; indicadores caducan y las hipótesis deben competir.
 
 ```mermaid

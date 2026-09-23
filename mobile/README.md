@@ -1,7 +1,7 @@
 # 📱 App móvil — Ciberseguridad Moderna
 
 App **Android y web** (Expo / React Native) que embebe las **360 clases en 20 partes** y
-los **recursos transversales** del programa completos para leerlos **sin conexión**:
+los **cuatro recursos transversales** del programa completos para leerlos **sin conexión**:
 la explicación en profundidad, **los diagramas**, el glosario, el laboratorio, los ejercicios, los errores
 comunes y las referencias, no un resumen. Lo único que necesita red son los botones de
 enlaces externos al sitio y a GitHub.
@@ -14,8 +14,8 @@ enlaces externos al sitio y a GitHub.
 ## 🧭 Qué hace
 
 - **Home** — las 20 partes con su foco, nivel y progreso global (X/360).
-- **Recursos** — acceso destacado a «¿Y si cruzas la línea?», con leyes, casos,
-  atribución, consecuencias y salidas profesionales; texto y diagramas viajan offline.
+- **Recursos** — acceso destacado a «¿Y si cruzas la línea?», el glosario, las plataformas de
+  práctica y «Cybercrime-as-a-Service»; texto y diagramas viajan offline.
 - **Parte** — las clases de una parte, con buscador por número, título o tema.
 - **Clase** — el README entero, repartido en dos pestañas por el emoji de cada
   sección: *Teoría* (objetivo, resultados, temas, explicación en profundidad,

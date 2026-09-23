@@ -46,6 +46,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CLASSES = os.path.join(ROOT, "classes")
 OUT_DIR = os.path.join(ROOT, "manual")
 RECURSO_CRUZAR_LINEA = os.path.join(ROOT, "docs", "cruzar-la-linea-consecuencias-reales.md")
+RECURSO_CAAS = os.path.join(ROOT, "docs", "cybercrime-as-a-service.md")
 
 REPO = "vladimiracunadev-create/modern-cybersecurity-program"
 BLOB = f"https://github.com/{REPO}/blob/main/"
@@ -223,6 +224,14 @@ def procesar_recurso_cruzar_linea() -> str:
     return '<a id="recurso-cruzar-linea"></a>\n\n' + md.rstrip() + "\n"
 
 
+def procesar_recurso_caas() -> str:
+    """Convierte el recurso CaaS en un capítulo autónomo del manual."""
+    with open(RECURSO_CAAS, encoding="utf-8") as f:
+        md = f.read()
+    md = reescribir_enlaces(md, "docs")
+    return '<a id="recurso-caas"></a>\n\n' + md.rstrip() + "\n"
+
+
 def construir_md(clases) -> str:
     n_clases = len(clases)
     partes_orden = []
@@ -238,7 +247,7 @@ def construir_md(clases) -> str:
         "<h1>🛡️ Programa de Ciberseguridad Moderna</h1>\n"
         '<p class="sub">Manual completo · de fundamentos a nivel experto</p>\n'
         f'<p class="meta">{n_clases} clases · {n_partes} partes · '
-        "1 recurso transversal · generado automáticamente desde el repositorio</p>\n"
+        "2 recursos transversales · generado automáticamente desde el repositorio</p>\n"
         "</div>\n"
     )
 
@@ -250,8 +259,8 @@ def construir_md(clases) -> str:
         "explícito**. Atacar sistemas sin autorización es delito en prácticamente "
         "todos los países.\n"
         ">\n"
-        f"> 📖 Este manual consolida las {n_clases} clases y el recurso transversal "
-        "**¿Y si cruzas la línea?**. La versión "
+        f"> 📖 Este manual consolida las {n_clases} clases y los recursos transversales "
+        "**¿Y si cruzas la línea?** y **Cybercrime-as-a-Service**. La versión "
         "navegable, los laboratorios y los recursos interactivos están en el "
         f"[repositorio]({BLOB.rstrip('/')}) y en el "
         f"[sitio del curso](https://{REPO.split('/')[0]}.github.io/{REPO.split('/')[1]}/).\n"
@@ -260,6 +269,7 @@ def construir_md(clases) -> str:
     # Indice
     p.append("\n---\n\n# 📑 Índice\n")
     p.append("\n- [⚠️ Recurso transversal: ¿Y si cruzas la línea?](#recurso-cruzar-linea)\n")
+    p.append("- [🕸️ Recurso transversal: Cybercrime-as-a-Service](#recurso-caas)\n")
     parte_actual = None
     for num, parte, _, readme in clases:
         if parte != parte_actual:
@@ -271,6 +281,7 @@ def construir_md(clases) -> str:
     # Recurso transversal: aparece antes de las partes porque fija el marco de
     # autorización y consecuencias para todo el contenido de doble uso.
     p.append("\n---\n\n" + procesar_recurso_cruzar_linea() + "\n")
+    p.append("\n---\n\n" + procesar_recurso_caas() + "\n")
 
     # Contenido de las clases
     parte_actual = None
@@ -441,7 +452,7 @@ def verificar_diagramas(pdf_path: str, clases) -> bool:
 
 
 def verificar_recurso(pdf_path: str) -> bool:
-    """Comprueba que el capítulo nuevo y sus ideas distintivas llegaron al PDF."""
+    """Comprueba que los recursos transversales llegaron completos al PDF."""
     try:
         from pypdf import PdfReader
     except ImportError:
@@ -453,8 +464,15 @@ def verificar_recurso(pdf_path: str) -> bool:
         "Correlación y línea temporal",
         "Autoridad investigadora",
         "No solo puedes perder la libertad",
+        "Cybercrime-as-a-Service",
+        "Stresser, booter y prueba de carga autorizada",
+        "observación ≠ indicador ≠ inferencia ≠ atribución",
+        "acciones contra servicios DDoS-for-hire en 2025",
     )
-    faltan = [m for m in marcadores if m not in texto]
+    def esta(marcador: str) -> bool:
+        return re.search(r"\s*".join(re.escape(p) for p in marcador.split()), texto) is not None
+
+    faltan = [m for m in marcadores if not esta(m)]
     if faltan:
         print(f"FALLA: el recurso transversal quedó incompleto en el PDF: {faltan}")
         return False

@@ -8,7 +8,7 @@ el generador; la modalidad y disponibilidad pueden cambiar en sus sitios oficial
 > **Archivo generado.** No lo edites a mano. Ejecuta
 > `python scripts/generar_glosario_global.py` y valida con `--check`.
 
-**Cobertura:** 2418 términos consolidados · 345 clases con glosario.
+**Cobertura:** 2424 términos consolidados · 345 clases con glosario.
 
 ## Cómo usarlo
 
@@ -1775,6 +1775,12 @@ Certificado autofirmado preinstalado; anclaje de confianza
 
 **Aparece en 1 clase(s):** [Clase 55 — PKI, certificados X.509 y autoridades de certificación](../classes/parte-2-criptografia-aplicada/055-pki-certificados-x-509-y-autoridades-de-certificacion/README.md).
 
+### CaaS
+
+Mercado de capacidades criminales especializadas; aquí, Cybercrime-as-a-Service
+
+**Aparece en 1 clase(s):** [Clase 150 — Ransomware: anatomía y análisis](../classes/parte-6-analisis-de-malware/150-ransomware-anatomia-y-analisis/README.md).
+
 ### Cabecera
 
 Par clave-valor con metadatos de una petición o respuesta.
@@ -3518,6 +3524,12 @@ Verizon Data Breach Investigations Report, informe anual de brechas
 Integran el reconocimiento con la base de datos
 
 **Aparece en 1 clase(s):** [Clase 72 — Metasploit Framework: arquitectura y uso](../classes/parte-3-hacking-etico-y-pentesting-metodologia/072-metasploit-framework-arquitectura-y-uso/README.md).
+
+### DDoS-for-hire
+
+Capacidad de denegación ofrecida a clientes; no prueba quién la contrató
+
+**Aparece en 2 clase(s):** [Clase 150 — Ransomware: anatomía y análisis](../classes/parte-6-analisis-de-malware/150-ransomware-anatomia-y-analisis/README.md), [Clase 154 — Malware en Linux](../classes/parte-6-analisis-de-malware/154-malware-en-linux/README.md).
 
 ### Dead drop resolver
 
@@ -5297,6 +5309,12 @@ Linaje / versión / operación concreta
 
 **Aparece en 1 clase(s):** [Clase 141 — Introducción al malware: tipos y taxonomía](../classes/parte-6-analisis-de-malware/141-introduccion-al-malware-tipos-y-taxonomia/README.md).
 
+### Fan-in / fan-out
+
+Concentración hacia un destino / dispersión desde un origen
+
+**Aparece en 1 clase(s):** [Clase 45 — NetFlow y análisis de metadatos de tráfico](../classes/parte-1-redes-y-seguridad-de-redes/045-netflow-y-analisis-de-metadatos-de-trafico/README.md).
+
 ### Fase
 
 Etapa del plan que agrupa TTPs con una meta común
@@ -6676,6 +6694,12 @@ Roba credenciales, cookies y carteras
 Necesita TTPs para construir detecciones
 
 **Aparece en 1 clase(s):** [Clase 160 — Reporte de análisis de malware](../classes/parte-6-analisis-de-malware/160-reporte-de-analisis-de-malware/README.md).
+
+### Initial access broker
+
+Intermediario que transfiere acceso obtenido a otro actor
+
+**Aparece en 1 clase(s):** [Clase 150 — Ransomware: anatomía y análisis](../classes/parte-6-analisis-de-malware/150-ransomware-anatomia-y-analisis/README.md).
 
 ### innerHTML
 
@@ -10027,6 +10051,12 @@ Error relativo de frecuencia del oscilador.
 
 **Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR)](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
 
+### PPS / BPS
+
+Paquetes y bits por segundo; miden presiones distintas frente a un baseline
+
+**Aparece en 1 clase(s):** [Clase 45 — NetFlow y análisis de metadatos de tráfico](../classes/parte-1-redes-y-seguridad-de-redes/045-netflow-y-analisis-de-metadatos-de-trafico/README.md).
+
 ### PQC
 
 Criptografía post-cuántica, resistente a computadores cuánticos
@@ -11872,6 +11902,12 @@ Código que reacciona a eventos para generar logs o detección
 Atacante de baja capacidad que reutiliza herramientas ajenas
 
 **Aparece en 1 clase(s):** [Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain](../classes/parte-0-fundamentos-y-prerrequisitos/002-el-panorama-de-amenazas-moderno-actores-motivaciones-y-cyber-kill-chain/README.md).
+
+### Scrubbing
+
+Limpieza upstream antes de que el volumen alcance el enlace protegido
+
+**Aparece en 1 clase(s):** [Clase 45 — NetFlow y análisis de metadatos de tráfico](../classes/parte-1-redes-y-seguridad-de-redes/045-netflow-y-analisis-de-metadatos-de-trafico/README.md).
 
 ### scrypt
 

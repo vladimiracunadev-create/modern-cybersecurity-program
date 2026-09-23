@@ -126,7 +126,7 @@ La secuencia no es una colección de herramientas. Cada clase resuelve una parte
 
 ### Bloque 6 — Llevar conocimiento a la operación
 
-**[Clase 195 — Threat intelligence operacional](195-threat-intelligence-operacional/README.md).** Parte de un requerimiento del consumidor y diferencia observable, indicador y TTP. Desarrolla procedencia, confianza, vigencia, STIX, TAXII y TLP, y muestra cuándo observar, detectar, bloquear o retirar. El producto se evalúa por la decisión que cambió, no por la cantidad de indicadores importados.
+**[Clase 195 — Threat intelligence operacional](195-threat-intelligence-operacional/README.md).** Parte de un requerimiento del consumidor y diferencia observable, indicador, inferencia y atribución. Usa DDoS-for-hire para separar actor, capacidad, infraestructura, servicio, cliente y campaña; desarrolla procedencia, confianza, vigencia, STIX, TAXII y TLP. El producto se evalúa por la decisión que cambió, no por la cantidad de indicadores importados.
 
 **[Clase 196 — Automatización con SOAR](196-automatizacion-con-soar/README.md).** Convierte playbooks en estados con entradas, errores, reintentos, aprobaciones y rollback. Separa orquestación de automatización y aplica mínimo privilegio e idempotencia. El alumno automatiza primero enriquecimiento y demuestra manejo seguro de casos incompletos antes de ejecutar contención.
 

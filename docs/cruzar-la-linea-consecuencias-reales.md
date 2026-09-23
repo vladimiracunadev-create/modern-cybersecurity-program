@@ -144,6 +144,14 @@ municipios e infraestructura crítica. **🟢 Utiliza esas capacidades legalment
 
 **Qué es.** Controlar dispositivos comprometidos y usarlos para fraude, spam, malware o
 denegación de servicio. **Qué conocimientos utiliza.** Redes, automatización, C2, malware e IoT.
+
+También incluye contratar u operar **DDoS-for-hire**, *booter* o *stresser* contra terceros. La
+etiqueta “prueba de estrés” no sustituye autorización. Una prueba de carga legítima exige propiedad
+o permiso escrito sobre el objetivo, alcance y ventana acordados, límites de tasa, contactos,
+observabilidad y parada de emergencia. Si el cliente puede señalar un objetivo ajeno sin que el
+servicio verifique control, la actividad cruza esa línea aunque la interfaz use lenguaje de pruebas.
+Cybercrime-as-a-Service (CaaS) explica la división de trabajo; no diluye la responsabilidad de quien
+opera, facilita o encarga el daño. Consulta el [recurso transversal CaaS](cybercrime-as-a-service.md).
 **Uso profesional legítimo.** Pruebas de carga acordadas, investigación de C2 y desmantelamiento
 defensivo. **Dónde se cruza la línea.** Controlar equipos ajenos o degradar un servicio sin
 autorización. **A quién perjudica.** Propietarios de dispositivos, servicios atacados y usuarios

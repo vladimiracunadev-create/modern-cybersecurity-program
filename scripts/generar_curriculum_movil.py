@@ -90,6 +90,16 @@ RESOURCE_SPECS = (
         "description": "Compara plataformas por enfoque, modalidad, nivel y ruta profesional antes de practicar.",
         "searchTerms": "HTB Hack The Box TryHackMe THM PortSwigger picoCTF CyLab CyberDefenders OverTheWire PentesterLab LetsDefend CTFtime pwn.college ROP Emporium VulnHub crackmes.one",
     },
+    {
+        "path": ROOT / "docs" / "cybercrime-as-a-service.md",
+        "id": "cybercrime-as-a-service",
+        "icon": "🕸️",
+        "title": "Cybercrime-as-a-Service",
+        "subtitle": "Economía criminal, DDoS-for-hire y defensa verificable",
+        "description": "Conecta CaaS, booter/stresser, botnets, CTI, detección, mitigación y causa raíz.",
+        "notice": "Contenido defensivo. No interactúes con servicios criminales ni pruebes objetivos sin autorización.",
+        "searchTerms": "CaaS Crime as a Service DDoS booter stresser botnet T1498 CTI scrubbing Anycast",
+    },
 )
 OUT_FILE = ROOT / "mobile" / "src" / "data" / "classes.js"
 # Los diagramas se empaquetan como PNG dentro del APK: Metro los mete como

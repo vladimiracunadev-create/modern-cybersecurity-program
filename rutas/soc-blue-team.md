@@ -149,6 +149,11 @@ Refuerzo desde las Partes 1, 6 y 9:
 
 ## 🎓 Certificaciones
 
+Antes de certificarte, completa el [escenario DDoS del laboratorio SOC](../labs/blue-team-soc/PLAYBOOK-DDOS.md).
+Tu responsabilidad es reconocer degradación, descartar picos legítimos, conservar evidencia, escalar
+al proveedor y medir recuperación; la IP de origen o la etiqueta T1498 no bastan para atribuir.
+
+
 Con archivo en el programa (mapean a partes concretas):
 
 - 🥇 [**BTL1** (Blue Team Level 1)](../certificaciones/btl1.md) — la **certificación faro** del rol:

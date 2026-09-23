@@ -404,6 +404,11 @@ sí sostienen una conversación de directorio:
 
 ## 🎓 Certificaciones
 
+Trata DDoS-for-hire como riesgo de continuidad y dependencia de terceros: propietario del servicio,
+SLA, contactos de ISP/CDN/CSP, autoridad para activar mitigación, comunicación y ejercicio anual. El
+[recurso CaaS](../docs/cybercrime-as-a-service.md) conecta esa decisión con SOC, CTI, IR y legal.
+
+
 En este cargo la certificación es **credencial de credibilidad** ante comités de selección,
 auditores, reguladores y aseguradoras. No sustituyen la experiencia, pero sin ellas hay puertas
 que no se abren.

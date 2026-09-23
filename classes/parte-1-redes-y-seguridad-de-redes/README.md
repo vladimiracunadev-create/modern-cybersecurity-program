@@ -202,6 +202,10 @@ Los bloques son bastante independientes, pero dentro de cada uno el orden encade
 
 ## ▶️ Empezar
 
+La clase 045 cierra la parte aplicando NetFlow/IPFIX a DDoS: el alumno distingue PPS/BPS,
+cardinalidad y *fan-in*, contrasta explicaciones benignas y decide cuándo escalar a mitigación
+upstream. Su evidencia se reutiliza en el [escenario SOC DDoS](../../labs/blue-team-soc/PLAYBOOK-DDOS.md).
+
 Si vas a hacer la parte entera, empieza por el principio:
 
 [Clase 026 — Wireshark: captura y análisis de paquetes](026-wireshark-captura-y-analisis-de-paquetes/README.md)

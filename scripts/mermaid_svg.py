@@ -4,7 +4,7 @@
 
 Por que existe
 --------------
-El manual junta las 360 clases en una sola pagina HTML de 1.353 paginas con 383
+El manual junta las 360 clases y recursos en una sola pagina HTML de más de 1.300 páginas y 390
 diagramas. La forma facil de dibujarlos —cargar mermaid.js y dejar que Chrome
 imprima— **no funciona a esa escala**: Chrome imprime cuando se agota el
 presupuesto de tiempo virtual, y con 360 diagramas mermaid no ha empezado
@@ -52,6 +52,7 @@ Uso directo (calienta la cache de todas las clases del repositorio):
 from __future__ import annotations
 
 import hashlib
+import os
 import re
 import subprocess
 import sys
@@ -79,6 +80,7 @@ NAVEGADORES = [
 ]
 
 MERMAID_ESM = "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs"
+MERMAID_CLI = "@mermaid-js/mermaid-cli@11.12.0"
 
 # Rasterizado. El ancho maximo mantiene los PNG manejables (la app movil los
 # empaqueta dentro del APK) y la escala 2x evita que el texto salga borroso en
@@ -151,10 +153,34 @@ def _dibujar_uno(nav: str, fuente: str) -> str | None:
         Path(ruta).unlink(missing_ok=True)
 
     match = PRE_RE.search(resultado.stdout.decode("utf-8", "replace"))
-    if not match:
+    if match:
+        svg = match.group(1).strip()
+        if "<svg" in svg and _dibujado(svg):
+            return svg
+    return _dibujar_con_cli(fuente)
+
+
+def _dibujar_con_cli(fuente: str) -> str | None:
+    """Fallback reproducible cuando el navegador no puede importar Mermaid desde el CDN."""
+    with tempfile.NamedTemporaryFile("w", suffix=".mmd", delete=False, encoding="utf-8") as tmp:
+        tmp.write(fuente)
+        entrada = Path(tmp.name)
+    salida = entrada.with_suffix(".svg")
+    try:
+        subprocess.run(
+            ["npx.cmd" if os.name == "nt" else "npx", "--yes", MERMAID_CLI,
+             "-i", str(entrada), "-o", str(salida), "-q"],
+            capture_output=True, timeout=max(120, TIMEOUT_S * 2),
+        )
+        if not salida.is_file():
+            return None
+        svg = salida.read_text(encoding="utf-8")
+        return svg if "<svg" in svg and _dibujado(svg) else None
+    except (OSError, subprocess.TimeoutExpired):
         return None
-    svg = match.group(1).strip()
-    return svg if "<svg" in svg and _dibujado(svg) else None
+    finally:
+        entrada.unlink(missing_ok=True)
+        salida.unlink(missing_ok=True)
 
 
 # Cache en memoria del proceso: el generador del sitio pide diagramas una vez
@@ -315,6 +341,22 @@ def rasterizar(fuentes: list[str], nav: str | None = None, verbose: bool = True)
             return None
         finally:
             Path(ruta_html).unlink(missing_ok=True)
+        if not destino.is_file() or destino.stat().st_size == 0:
+            with tempfile.NamedTemporaryFile("w", suffix=".mmd", delete=False,
+                                             encoding="utf-8") as tmp:
+                tmp.write(fuente)
+                ruta_mmd = Path(tmp.name)
+            try:
+                subprocess.run(
+                    ["npx.cmd" if os.name == "nt" else "npx", "--yes", MERMAID_CLI,
+                     "-i", str(ruta_mmd), "-o", str(destino), "-q",
+                     "-w", str(PNG_ANCHO_MAX), "-s", str(PNG_ESCALA)],
+                    capture_output=True, timeout=max(120, TIMEOUT_S),
+                )
+            except (OSError, subprocess.TimeoutExpired):
+                return None
+            finally:
+                ruta_mmd.unlink(missing_ok=True)
         if not destino.is_file() or destino.stat().st_size == 0:
             return None
         _optimizar_png(destino)

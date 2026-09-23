@@ -1,5 +1,11 @@
 # Lab: Blue Team / SOC — detección y threat hunting
 
+Además del escenario de autenticación, este laboratorio incluye un caso de disponibilidad que no
+genera tráfico: el dataset [`datos/ddos-telemetria.csv`](datos/ddos-telemetria.csv), el analizador
+[`analizar_ddos.py`](analizar_ddos.py) y el [playbook defensivo DDoS](PLAYBOOK-DDOS.md). El alumno
+compara baseline e incidente, descarta explicaciones alternativas, mapea T1498 y separa evento
+desencadenante de causa raíz.
+
 Entorno de práctica para la **Parte 8 — Blue Team, detección y SOC** (clases 181–200).
 Levanta un mini-SIEM (Elasticsearch + Kibana), carga un conjunto de eventos de
 autenticación que **contiene un ataque real de fuerza bruta con éxito y movimiento

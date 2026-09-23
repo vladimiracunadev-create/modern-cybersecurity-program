@@ -82,8 +82,22 @@ El valor del análisis de flujos está en los **patrones temporales y volumétri
 un puñado que conviene reconocer de memoria. Un **escaneo** se ve como un origen que
 contacta con muchísimos destinos o puertos en poco tiempo, con flujos minúsculos. Una
 **exfiltración** aparece como un volumen de subida anómalo hacia un destino externo, a
-menudo fuera de horario. Un **DDoS** es la imagen especular: muchísimos orígenes
-convergiendo en un destino. Y el más valioso y sutil es el **beaconing** de un canal de
+menudo fuera de horario. Un **DDoS** puede mostrar muchísimos orígenes convergiendo en un destino,
+pero esa forma por sí sola no es un veredicto. Para caracterizarlo se comparan **PPS**, **BPS**,
+duración, protocolos, cardinalidad de orígenes y concentración o *fan-in*. Un salto de BPS apunta a
+presión volumétrica; muchos flujos cortos y sesiones incompletas pueden apuntar a agotamiento de
+estado; un aumento de solicitudes con poco caudal pero latencia y errores puede apuntar a capa 7.
+Muestreo, NAT, direcciones falsificadas y expiración de flujos limitan esas inferencias: se corroboran
+con métricas del servicio, edge e ISP.
+
+Una campaña legítima, crawler, *retry storm* o dependencia degradada puede producir señales
+parecidas. El recorrido es **observar → caracterizar → contrastar → confirmar → escalar → mitigar**.
+Si el volumen satura el enlace local, ni el firewall interno ni el autoscaling recuperan los bits que
+no llegan: se necesita coordinación upstream, CDN o *scrubbing*. El
+[recurso transversal CaaS](../../../docs/cybercrime-as-a-service.md) explica por qué un patrón
+compatible con DDoS-for-hire no identifica por sí solo servicio, cliente o actor.
+
+El patrón más valioso y sutil para C2 es el **beaconing** de un canal de
 *command and control*: conexiones **periódicas** a un mismo destino —cada 60 segundos, con
 tamaño casi constante— que denuncian a un malware "llamando a casa" aunque cada conexión
 individual parezca inocente y aunque todo el contenido esté cifrado. La regularidad es la
@@ -120,6 +134,9 @@ empezó con un solo paquete en Wireshark.
 | Colector | Servidor que recibe, almacena e indexa los flujos |
 | nfdump / SiLK | Herramientas de captura y consulta de flujos |
 | Beaconing | Conexiones periódicas a un mismo destino; firma de C2 |
+| PPS / BPS | Paquetes y bits por segundo; miden presiones distintas frente a un baseline |
+| Fan-in / fan-out | Concentración hacia un destino / dispersión desde un origen |
+| Scrubbing | Limpieza upstream antes de que el volumen alcance el enlace protegido |
 | Command and control (C2) | Canal por el que el malware recibe órdenes |
 | Exfiltración | Salida anómala de datos hacia un destino externo |
 | Metadatos vs. contenido | Barato y resistente al cifrado frente a fiel pero caro |
@@ -178,7 +195,7 @@ empezó con un solo paquete en Wireshark.
 
 1. Identifica los cinco pares de hosts que más bytes intercambiaron en tu captura de flujos.
 2. Detecta un escaneo horizontal (una IP contra muchas) en los flujos y descríbelo.
-3. Explica cómo se vería un ataque DDoS volumétrico en los metadatos de flujo.
+3. Explica cómo se vería un posible DDoS volumétrico y qué descartaría un pico legítimo.
 4. Busca un patrón de beaconing y argumenta por qué la regularidad temporal es sospechosa.
 5. Compara el tamaño en disco de los flujos frente al pcap equivalente y comenta el ahorro.
 6. Diseña qué campos de flujo alimentarías a un SIEM para alertas de anomalía de red.
@@ -219,6 +236,8 @@ Buscando beaconing: conexiones periódicas y regulares hacia un mismo destino, a
 - RFC 3954 — Cisco NetFlow v9. <https://www.rfc-editor.org/rfc/rfc3954>
 - nfdump/NfSen. <https://github.com/phaag/nfdump>
 - CERT NetSA — SiLK. <https://tools.netsa.cert.org/silk/>
+- MITRE ATT&CK — Network Denial of Service (T1498). <https://attack.mitre.org/techniques/T1498/>
+- CISA — Volumetric DDoS Technical Guidance. <https://www.cisa.gov/sites/default/files/2023-09/TLP%20CLEAR%20-DDOS%20Mitigations%20Guidance_508c.pdf>
 
 ## 📥 Material descargable
 

@@ -49,6 +49,28 @@ flowchart LR
 
 Un observable es un hecho técnico; un indicador añade afirmación y contexto; una TTP suele persistir más que una IP. Cada objeto necesita procedencia, confianza, vigencia y retirada. STIX modela objetos y relaciones; TAXII los transporta. TLP orienta compartición, no sustituye clasificación legal ni controles de acceso. Operacionalizar implica probar, medir y retirar indicadores caducos.
 
+### Caso operacional: el ecosistema DDoS-for-hire
+
+Un servicio DDoS-for-hire obliga a separar **actor, capacidad, infraestructura, servicio, cliente,
+campaña, objetivo, observable, indicador y TTP**. Una IP puede ser infraestructura compartida; un
+certificado puede reutilizarse; un ASN aloja también actividad legítima. STIX expresa relaciones y
+MISP/OpenCTI conserva procedencia, confianza y vigencia. El Diamond Model ayuda a contrastar
+adversario, capacidad, infraestructura y víctima, pero no convierte una relación técnica en atribución.
+
+```mermaid
+flowchart LR
+  O["Observación"] --> C["Contexto y procedencia"]
+  C --> I["Indicador"]
+  I --> R["Relaciones"]
+  R --> T["TTP"]
+  T --> D["Decisión defensiva"]
+```
+
+La lectura debe conservar esta desigualdad: **observación ≠ indicador ≠ inferencia ≠ atribución**.
+Modela los datos sintéticos de [posible DDoS](../../../labs/blue-team-soc/PLAYBOOK-DDOS.md): indica
+qué hechos son observables, qué hipótesis quedan abiertas y cuándo retirarías cada indicador. El
+[recurso CaaS](../../../docs/cybercrime-as-a-service.md) aporta contexto y un caso público de 2025.
+
 ### Requerimientos antes que feeds
 
 «Recibir más indicadores» no define éxito. Un requerimiento podría ser: «¿qué infraestructura y procedimientos de campañas contra nuestro sector podemos convertir esta semana en controles para correo e identidad?». Nombra consumidor, decisión y tiempo. A partir de él se eligen fuentes y se descarta información interesante pero no accionable.
@@ -178,6 +200,8 @@ El Traffic Light Protocol clasifica cuánto puedes difundir una información (RE
 - FIRST TLP 2.0: fuente oficial de las marcas y reglas de compartición TLP; no reemplaza controles legales, contractuales o de privacidad — <https://www.first.org/tlp/>
 - MISP: documentación oficial de eventos, atributos, objetos, taxonomías y compartición — <https://www.misp-project.org/documentation/>
 - OpenCTI: documentación oficial de su modelo de grafo basado en STIX 2.1; respalda relaciones y procedencia, no la atribución automática — <https://docs.opencti.io/latest/usage/data-model/>
+- MITRE ATT&CK: T1498 y sus subtécnicas modelan Network Denial of Service — <https://attack.mitre.org/techniques/T1498/>
+- DOJ: acción coordinada contra servicios DDoS-for-hire de mayo de 2025 — <https://www.justice.gov/usao-cdca/pr/law-enforcement-seizes-9-ddos-hire-webpages-part-global-crackdown-booter-and-stresser>
 - Murdoch, D. *Blue Team Handbook: SOC, SIEM, and Threat Hunting Use Cases*: bibliografía profesional complementaria para operacionalización.
 
 ## 📥 Material descargable

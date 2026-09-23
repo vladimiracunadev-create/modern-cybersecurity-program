@@ -199,6 +199,11 @@ Clases concretas por las que empezar:
 
 ## 🎓 Certificaciones
 
+La disponibilidad frente a DDoS exige arquitectura y operación conjunta. Usa el
+[recurso CaaS](../docs/cybercrime-as-a-service.md) para justificar CDN/Anycast, *scrubbing*, contactos
+ISP, capacidad, runbook y prueba; documenta qué controla tu perímetro y qué depende del upstream.
+
+
 Con archivo en el programa (mapean a partes concretas):
 
 - 🎓 [**CompTIA Security+** (SY0-701)](../certificaciones/comptia-security-plus-sy0-701.md) — **la

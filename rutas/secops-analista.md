@@ -329,6 +329,11 @@ distingue a un analista de un operador de consola.
 
 ## 🎓 Certificaciones
 
+Añade al portafolio el [playbook DDoS](../labs/blue-team-soc/PLAYBOOK-DDOS.md): baseline, decisión de
+escalamiento, ticket con dueño, rollback, causa raíz y prueba de regresión. Demuestra el puente entre
+operación diaria, continuidad y coordinación con infraestructura.
+
+
 Con archivo en el programa:
 
 - 🎓 [**CompTIA Security+** (SY0-701)](../certificaciones/comptia-security-plus-sy0-701.md) — la

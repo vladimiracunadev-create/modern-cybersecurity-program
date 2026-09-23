@@ -23,7 +23,7 @@
 [![Markdown](https://img.shields.io/badge/Markdown-contenido-000000?style=flat-square&logo=markdown&logoColor=white)](classes/README.md)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-sitio%20vivo-222?style=flat-square&logo=githubpages&logoColor=white)](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/)
 
-[📚 Índice completo de clases](classes/README.md) · [📖 Glosario global](docs/GLOSARIO-GLOBAL.md) · [🧪 Plataformas de práctica](docs/PLATAFORMAS-DE-PRACTICA.md) · [⚠️ ¿Y si cruzas la línea?](docs/cruzar-la-linea-consecuencias-reales.md) · [📕 Manual completo (PDF)](manual/MANUAL.pdf) · [🌐 Aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad y ética](SECURITY_AND_ETHICS.md)
+[📚 Índice completo de clases](classes/README.md) · [📖 Glosario global](docs/GLOSARIO-GLOBAL.md) · [🧪 Plataformas de práctica](docs/PLATAFORMAS-DE-PRACTICA.md) · [🕸️ Cybercrime-as-a-Service](docs/cybercrime-as-a-service.md) · [⚠️ ¿Y si cruzas la línea?](docs/cruzar-la-linea-consecuencias-reales.md) · [📕 Manual completo (PDF)](manual/MANUAL.pdf) · [🌐 Aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad y ética](SECURITY_AND_ETHICS.md)
 
 </div>
 
@@ -106,7 +106,7 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 | [RFC 7489](https://www.rfc-editor.org/rfc/rfc7489) | obsoleta | 1 |
 | [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446) | obsoleta | 1 |
 
-Las 717 obras que usa el programa — 57 libros, 25 artículos, 158 normas y 477 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-08-19 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
+Las 722 obras que usa el programa — 57 libros, 25 artículos, 159 normas y 481 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-09-23 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
 
 <!-- fuentes:fin -->
 
@@ -141,15 +141,15 @@ Cada parte tiene su **propio README** con narrativa completa: de qué trata, res
 
 ## 📕 Manual completo (todo el curso en un documento)
 
-¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **360 clases** y el recurso transversal **«¿Y si cruzas la línea?»**, con portada, aviso ético e índice enlazado.
+¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **360 clases** y los recursos transversales **«¿Y si cruzas la línea?»** y **«Cybercrime-as-a-Service»**, con portada, aviso ético e índice enlazado.
 
-- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — **1.353 páginas A4** con **383 diagramas** dibujados, listas para imprimir o leer offline.
+- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — **1.362 páginas A4** con **390 diagramas** dibujados, listas para imprimir o leer offline.
 
 > Se genera con `python scripts/generar_manual.py` a partir de las clases, así que siempre refleja el contenido actual del repositorio.
 
 ## 📱 Aplicación Android y web
 
-La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **360 clases en 20 partes** y tres recursos transversales **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. Desde `v1.2.0`, «¿Y si cruzas la línea?» viaja con sus fuentes y tres diagramas; `v1.3.0` incorpora el glosario global y la guía de plataformas.
+La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **360 clases en 20 partes** y cuatro recursos transversales **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. Desde `v1.2.0`, «¿Y si cruzas la línea?» viaja con sus fuentes y tres diagramas; `v1.3.0` incorpora el glosario global y la guía de plataformas; el recurso CaaS conecta DDoS-for-hire con CTI y respuesta.
 
 - 🌐 **[Abrir la aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/)** — misma experiencia, publicada dentro de GitHub Pages.
 - 📥 **[Descargar Android, web y manual — release v1.3.0](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.3.0)** · verifica los tres artefactos con `SHA256SUMS.txt`.
@@ -168,7 +168,7 @@ Además de las clases, el programa incluye **entornos de práctica** que se leva
 comando, más una colección de retos tipo CTF:
 
 - 🕸️ **[AppSec Web](labs/appsec-web/README.md)** — OWASP Juice Shop + DVWA (OWASP Top 10) · Parte 4.
-- 🛡️ **[Blue Team / SOC](labs/blue-team-soc/README.md)** — Elasticsearch + Kibana con telemetría de un ataque para detección · Parte 8.
+- 🛡️ **[Blue Team / SOC](labs/blue-team-soc/README.md)** — Elasticsearch + Kibana para autenticación y escenario DDoS sintético con analizador y playbook · Partes 1, 8 y 17.
 - 🎯 **[Red Team / Active Directory](labs/red-team-ad/README.md)** — caja de atacante + guía GOAD · Parte 7.
 - 🔐 **[Criptografía](labs/cripto/README.md)** — retos con solución en Python (XOR, RSA-Fermat, MD5, ECB) · Parte 2.
 - 🧠 **[DFIR memoria/malware](labs/dfir-memoria/README.md)** — Volatility 3 + YARA para forense de memoria · Partes 9 y 17.
@@ -182,6 +182,7 @@ comando, más una colección de retos tipo CTF:
 - 🚩 **[Retos tipo CTF](ctf/README.md)** — web, cripto, redes, forense, OSINT y pwn, con writeups.
 - 📖 **[Glosario global](docs/GLOSARIO-GLOBAL.md)** — términos, siglas, aliases y trazabilidad automática hacia las clases donde aparecen.
 - 🧪 **[Plataformas de práctica](docs/PLATAFORMAS-DE-PRACTICA.md)** — progresión autorizada por perfil, modalidad, nivel y límites de publicación.
+- 🕸️ **[Cybercrime-as-a-Service](docs/cybercrime-as-a-service.md)** — economía criminal, DDoS-for-hire, booter/stresser, CTI, defensa por capas y causa raíz.
 
 - 🎩 **[Laboratorio ejecutivo CISO](labs/ciso-leadership/README.md)** — 14 escenarios de **dirección** sobre organizaciones ficticias (informe al directorio, registro de riesgos, plan director, presupuesto, tabletop, proveedor crítico, 90 días, descubrimiento y recomendación de Field CISO, alcance de vCISO, roadmap de BISO, paquete de confianza de producto, inventario de riesgos de IA e incidente OT), con [15 plantillas](labs/ciso-leadership/PLANTILLAS.md), rúbricas y [evaluación](labs/ciso-leadership/EVALUACION.md). Sin Docker: aquí se practica decidir · Partes 14 y 17.
 

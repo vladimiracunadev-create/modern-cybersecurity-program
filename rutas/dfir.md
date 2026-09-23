@@ -146,6 +146,11 @@ Refuerzo desde las Partes 6 y 9:
 
 ## 🎓 Certificaciones
 
+En incidentes DDoS, DFIR preserva la línea temporal, consultas, cambios de mitigación y comunicaciones;
+distingue el evento desencadenante de la debilidad que permitió el impacto. Practícalo con el
+[playbook y dataset sintético](../labs/blue-team-soc/PLAYBOOK-DDOS.md), sin generar tráfico.
+
+
 Con archivo en el programa (mapean a partes concretas):
 
 - 🏛️ [**SANS GCFA / GCIH**](../certificaciones/sans-gcih-gcfa.md) — la **referencia faro** del
