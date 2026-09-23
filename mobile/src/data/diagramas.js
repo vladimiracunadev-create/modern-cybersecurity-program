@@ -259,6 +259,7 @@ export const DIAGRAMAS = {
   "a8ee0ef61e2a58cd": { fuente: require('../../assets/diagramas/a8ee0ef61e2a58cd.png'), proporcion: 0.6911 },
   "aa3ee9ae90bd4c12": { fuente: require('../../assets/diagramas/aa3ee9ae90bd4c12.png'), proporcion: 2.8333 },
   "aa514191108ed19e": { fuente: require('../../assets/diagramas/aa514191108ed19e.png'), proporcion: 0.107 },
+  "ab13116deb5b5938": { fuente: require('../../assets/diagramas/ab13116deb5b5938.png'), proporcion: 0.2251 },
   "abaf9762b6ded7d6": { fuente: require('../../assets/diagramas/abaf9762b6ded7d6.png'), proporcion: 0.1933 },
   "ac2935fd2ae0e34e": { fuente: require('../../assets/diagramas/ac2935fd2ae0e34e.png'), proporcion: 0.2122 },
   "accc3b458de0faea": { fuente: require('../../assets/diagramas/accc3b458de0faea.png'), proporcion: 0.0667 },
@@ -295,6 +296,7 @@ export const DIAGRAMAS = {
   "bf791b98cbebae3c": { fuente: require('../../assets/diagramas/bf791b98cbebae3c.png'), proporcion: 0.0411 },
   "c07ebffbcbdeac0c": { fuente: require('../../assets/diagramas/c07ebffbcbdeac0c.png'), proporcion: 0.1016 },
   "c1b0ef604f4d1dda": { fuente: require('../../assets/diagramas/c1b0ef604f4d1dda.png'), proporcion: 0.2156 },
+  "c269cfcec6e38171": { fuente: require('../../assets/diagramas/c269cfcec6e38171.png'), proporcion: 0.2432 },
   "c306db86c5d337c3": { fuente: require('../../assets/diagramas/c306db86c5d337c3.png'), proporcion: 1.7577 },
   "c445b2c7a1c74574": { fuente: require('../../assets/diagramas/c445b2c7a1c74574.png'), proporcion: 1.2229 },
   "c511829b1b739307": { fuente: require('../../assets/diagramas/c511829b1b739307.png'), proporcion: 0.2289 },
@@ -405,4 +407,4 @@ export const DIAGRAMAS = {
 
 export const diagramaPorId = (id) => (id ? DIAGRAMAS[id] : undefined);
 
-export const TOTAL_DIAGRAMAS = 390;
+export const TOTAL_DIAGRAMAS = 392;

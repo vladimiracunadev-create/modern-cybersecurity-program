@@ -2,9 +2,9 @@
 
 # 🛡️ Programa de Ciberseguridad Moderna
 
-## **360 clases · 20 partes · de fundamentos a nivel experto**
+## **360 clases · 20 partes (0–19) · de fundamentos a nivel experto**
 
-**El programa de ciberseguridad más completo en español — desde redes, criptografía y Linux hasta Red Team, DFIR, cloud security, exploit development y seguridad de IA.**
+**El programa de ciberseguridad más completo en español — desde redes, criptografía y Linux hasta Red Team, DFIR, cloud security, exploit development, seguridad de IA y Game Security.**
 
 [![CI](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/ci.yml)
 [![Security](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/security.yml)
@@ -23,7 +23,7 @@
 [![Markdown](https://img.shields.io/badge/Markdown-contenido-000000?style=flat-square&logo=markdown&logoColor=white)](classes/README.md)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-sitio%20vivo-222?style=flat-square&logo=githubpages&logoColor=white)](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/)
 
-[📚 Índice completo de clases](classes/README.md) · [📖 Glosario global](docs/GLOSARIO-GLOBAL.md) · [🧪 Plataformas de práctica](docs/PLATAFORMAS-DE-PRACTICA.md) · [🕸️ Cybercrime-as-a-Service](docs/cybercrime-as-a-service.md) · [⚠️ ¿Y si cruzas la línea?](docs/cruzar-la-linea-consecuencias-reales.md) · [📕 Manual completo (PDF)](manual/MANUAL.pdf) · [🌐 Aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad y ética](SECURITY_AND_ETHICS.md)
+[📚 Índice completo de clases](classes/README.md) · [📖 Glosario global](docs/GLOSARIO-GLOBAL.md) · [🧪 Plataformas de práctica](docs/PLATAFORMAS-DE-PRACTICA.md) · [🕸️ Cybercrime-as-a-Service](docs/cybercrime-as-a-service.md) · [🎮 Modelo operativo de Game Security](docs/modelo-operativo-game-security.md) · [⚠️ ¿Y si cruzas la línea?](docs/cruzar-la-linea-consecuencias-reales.md) · [📕 Manual completo (PDF)](manual/MANUAL.pdf) · [🌐 Aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad y ética](SECURITY_AND_ETHICS.md)
 
 </div>
 
@@ -60,8 +60,9 @@ Cada parte sigue explícitamente la secuencia y los énfasis de la literatura de
 | **Cloud / DevSecOps** | Rice — *Container Security* · Martin — *Hacking Kubernetes* · Bird — *Securing DevOps* |
 | **OSINT / Social** | Bazzell — *Open Source Intelligence Techniques* · Hadnagy — *Social Engineering* |
 | **GRC** | *CISSP Official Study Guide* · Hubbard — *How to Measure Anything in Cybersecurity Risk* |
+| **Game Security** | Documentación de redes de Epic Games · diseño cliente-servidor de Valve · NIST Privacy Framework |
 
-> Las referencias apuntan a las obras; **no se reproduce su contenido**. El material del curso es original y original en su redacción.
+> Las referencias apuntan a las obras; **no se reproduce su contenido**. El material del curso tiene redacción propia.
 
 ## 📖 De dónde sale el material
 
@@ -110,9 +111,12 @@ Las 722 obras que usa el programa — 57 libros, 25 artículos, 159 normas y 481
 
 <!-- fuentes:fin -->
 
-## 🗂️ Las 20 partes
+## 🗂️ Las 20 partes, numeradas de 0 a 19
 
 Cada parte tiene su **propio README** con narrativa completa: de qué trata, resultados de aprendizaje, estructura temática y enlaces a las clases.
+
+> La Parte 0 cuenta como la primera unidad; por eso la vigésima y última unidad se identifica como
+> **Parte 19**. «20 partes» expresa la cantidad, no la existencia de una carpeta `parte-20`.
 
 | # | Parte | Clases | Foco | README |
 |---|---|---:|---|---|
@@ -141,15 +145,15 @@ Cada parte tiene su **propio README** con narrativa completa: de qué trata, res
 
 ## 📕 Manual completo (todo el curso en un documento)
 
-¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **360 clases** y los recursos transversales **«¿Y si cruzas la línea?»** y **«Cybercrime-as-a-Service»**, con portada, aviso ético e índice enlazado.
+¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **360 clases** y los recursos transversales **«¿Y si cruzas la línea?»**, **«Cybercrime-as-a-Service»** y **«Modelo operativo de Game Security»**, con portada, aviso ético e índice enlazado.
 
-- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — **1.362 páginas A4** con **390 diagramas** dibujados, listas para imprimir o leer offline.
+- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — **1.365 páginas A4** con **392 diagramas** dibujados, listas para imprimir o leer offline.
 
 > Se genera con `python scripts/generar_manual.py` a partir de las clases, así que siempre refleja el contenido actual del repositorio.
 
 ## 📱 Aplicación Android y web
 
-La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **360 clases en 20 partes** y cuatro recursos transversales **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. Desde `v1.2.0`, «¿Y si cruzas la línea?» viaja con sus fuentes y tres diagramas; `v1.3.0` incorpora el glosario global y la guía de plataformas; el recurso CaaS conecta DDoS-for-hire con CTI y respuesta.
+La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **360 clases en 20 partes** y cinco recursos transversales **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. Desde `v1.2.0`, «¿Y si cruzas la línea?» viaja con sus fuentes y tres diagramas; `v1.3.0` incorpora el glosario global y la guía de plataformas; CaaS conecta DDoS-for-hire con CTI y respuesta; el modelo de Game Security conecta la Parte 19 con sus roles, decisiones y límites.
 
 - 🌐 **[Abrir la aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/)** — misma experiencia, publicada dentro de GitHub Pages.
 - 📥 **[Descargar Android, web y manual — release v1.3.0](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.3.0)** · verifica los tres artefactos con `SHA256SUMS.txt`.
@@ -183,6 +187,7 @@ comando, más una colección de retos tipo CTF:
 - 📖 **[Glosario global](docs/GLOSARIO-GLOBAL.md)** — términos, siglas, aliases y trazabilidad automática hacia las clases donde aparecen.
 - 🧪 **[Plataformas de práctica](docs/PLATAFORMAS-DE-PRACTICA.md)** — progresión autorizada por perfil, modalidad, nivel y límites de publicación.
 - 🕸️ **[Cybercrime-as-a-Service](docs/cybercrime-as-a-service.md)** — economía criminal, DDoS-for-hire, booter/stresser, CTI, defensa por capas y causa raíz.
+- 🎮 **[Modelo operativo de Game Security](docs/modelo-operativo-game-security.md)** — responsabilidades, evidencia y límites para ingeniería, investigación, sanción, apelación, privacidad y DFIR.
 
 - 🎩 **[Laboratorio ejecutivo CISO](labs/ciso-leadership/README.md)** — 14 escenarios de **dirección** sobre organizaciones ficticias (informe al directorio, registro de riesgos, plan director, presupuesto, tabletop, proveedor crítico, 90 días, descubrimiento y recomendación de Field CISO, alcance de vCISO, roadmap de BISO, paquete de confianza de producto, inventario de riesgos de IA e incidente OT), con [15 plantillas](labs/ciso-leadership/PLANTILLAS.md), rúbricas y [evaluación](labs/ciso-leadership/EVALUACION.md). Sin Docker: aquí se practica decidir · Partes 14 y 17.
 
@@ -190,7 +195,8 @@ comando, más una colección de retos tipo CTF:
 
 ## 🧭 Portal: rutas, autoevaluación y progreso
 
-- 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, **analista SecOps**, DFIR, **gestión de vulnerabilidades**, AppSec, **analista DevSecOps**, **ingeniero DevSecOps**, cloud, GRC, **analista de ciberseguridad (institución regulada)**, **analista de seguridad ofensiva**, **ingeniero SecOps / security engineer**, **seguridad de infraestructura**, **operación de plataformas (MSSP/DLP)**, **jefe de seguridad**, **jefe de infraestructura y ciberseguridad**, **CISO / director de seguridad de la información**, **arquitecto de ciberseguridad IT/OT** y **cooperación/alianzas técnicas** — más el **[ecosistema CISO](rutas/ecosistema-ciso.md)** con seis rutas propias alrededor del cargo: **Field CISO**, **vCISO**, **BISO**, **Product CISO**, **AI CISO** y **OT CISO**.
+- 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, **analista SecOps**, DFIR, **Threat Intelligence / CTI**, **gestión de vulnerabilidades**, AppSec, **analista DevSecOps**, **ingeniero DevSecOps**, cloud, GRC, **Game Security / Anti-Cheat Engineer**, **Game Integrity / Anti-Cheat Analyst**, **analista de ciberseguridad (institución regulada)**, **analista de seguridad ofensiva**, **ingeniero SecOps / security engineer**, **seguridad de infraestructura**, **operación de plataformas (MSSP/DLP)**, **jefe de seguridad**, **jefe de infraestructura y ciberseguridad**, **CISO / director de seguridad de la información**, **arquitecto de ciberseguridad IT/OT** y **cooperación/alianzas técnicas** — más el **[ecosistema CISO](rutas/ecosistema-ciso.md)** con seis rutas propias alrededor del cargo: **Field CISO**, **vCISO**, **BISO**, **Product CISO**, **AI CISO** y **OT CISO**.
+- 🎮 **[Modelo operativo de Game Security](docs/modelo-operativo-game-security.md)** — separa ingeniería, investigación, sanción, apelación, privacidad y respuesta a incidentes; define evidencia y límites de práctica.
 - 🗺️ **[Matriz de roles SecOps y DevSecOps](docs/matriz-roles-secops-devsecops.md)** — SOC, SecOps, DevSecOps, AppSec, Cloud Security y DFIR comparados por misión, decisiones, entregables, métricas, clases y progresión, con el diagrama del ciclo desarrollo → pipeline → nube → producción → monitoreo → incidente → aprendizaje.
 - 📝 **[Autoevaluaciones](autoevaluaciones/README.md)** — 109 preguntas (una batería por parte). Versión interactiva con puntuación: [quiz](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/quiz.html).
 - ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/progreso.html)** — marca las 360 clases (se guarda en tu navegador).
@@ -224,6 +230,7 @@ Cada rol tiene una **guía de carrera completa** (qué es, día a día, qué nec
 - **[Analista DevSecOps](rutas/devsecops-analista.md)** → Partes 0, 11, 4, 17, 14 (+ 10) · triaje y gobierno del riesgo del SDLC: falsos positivos con argumento, priorización **KEV/EPSS/CVSS + exposición**, backlog, SLA, excepciones con vencimiento, verificación y evidencia contra **NIST SSDF** y **OWASP SAMM**; alineado a **CySA+**.
 - **[Ingeniero DevSecOps](rutas/devsecops-engineer.md)** → Partes 0, 11 (entera), 10, 2, 17 · construye la capacidad: pipelines CI/CD seguros, puertas de bloqueo proporcionales, **SBOM**, firma y procedencia (**SLSA**), **policy as code** con OPA/Rego, identidades efímeras y secretos. También aparece como **«Especialista DevSecOps»**: la guía explica cómo distinguir qué perfil pide cada oferta.
 - **[DFIR / Forense](rutas/dfir.md)** → Partes 0, 1, 6, 9.
+- **[Threat Intelligence Analyst / CTI](rutas/threat-intelligence-analyst.md)** → Partes 0, 1, 6, 7, 8, 9, 12 y 17 · convierte observables en estimaciones con procedencia, confianza y vigencia; entrega contexto distinto a SOC, DFIR, infraestructura y dirección.
 - **[Cloud Security](rutas/cloud-security.md)** → Partes 0, 2, 10, 11.
 - **[GRC / Gestión](rutas/grc.md)** → Partes 0, 14 (+ 8, 9 para contexto técnico).
 - **[Analista de Ciberseguridad (institución regulada)](rutas/analista-ciberseguridad.md)** → Partes 0, 8, 9, 14 (+ 3, 17) · perfil híbrido Blue/DFIR/GRC: SIEM, eventos, vulnerabilidades, incidentes y marcos NIST/ISO 27001/27035/22301; alineado a **CySA+**.
@@ -234,6 +241,8 @@ Cada rol tiene una **guía de carrera completa** (qué es, día a día, qué nec
 - **[CISO / Director de Seguridad de la Información](rutas/ciso.md)** → Partes 0, 14, 17 (+ 8, 9, 10, 11, 15) · el **techo de carrera** del programa: el máximo responsable de proteger **datos, sistemas, servicios digitales y continuidad operacional**, con mandato del directorio, presupuesto y responsabilidad ante el regulador; alineado a **CISSP** (y CISM/CRISC/ISO 27001 fuera del programa).
 - **[Analista de Seguridad Ofensiva (consultoría)](rutas/analista-seguridad-ofensiva.md)** → Partes 0, 1, 3, 4 (+ 170 de la 7, y 17) · el **primer escalón** del oficio ofensivo: pentest básico-intermedio de apps/APIs/redes, validación de hallazgos y evidencia técnica; alineado a **eJPT** y **PenTest+**.
 - **[Ingeniero SecOps / Security Engineer](rutas/secops-engineer.md)** → Partes 0, 8, 9, 11, 17 (+ 4) · perfil híbrido seguridad + desarrollo: EDR/XDR multi-SO, automatización con Python/Bash, APIs REST internas y respuesta a incidentes de endpoint; alineado a **CySA+**.
+- **[Game Security / Anti-Cheat Engineer](rutas/game-security-engineer.md)** → Partes 0, 5, 6, 8, 9, 15 y 19 · diseña autoridad cliente-servidor, instrumentación, detección y regresiones sin convertir una señal en culpabilidad.
+- **[Game Integrity / Anti-Cheat Analyst](rutas/game-integrity-analyst.md)** → Partes 0, 1, 8, 9, 14, 15 y 19 · investiga telemetría, falsos positivos y abuso competitivo; entrega casos reproducibles y recomendaciones revisables.
 - **[Arquitecto de Ciberseguridad IT/OT](rutas/arquitecto-it-ot.md)** → Partes 1, 13, 17, 14, 10 (+ 8, 9, 3) · el rol que **diseña** la seguridad de una planta: modelo **Purdue**, **zonas y conductos IEC 62443**, segmentación IT/OT, integración con nube y SOC y auditoría contra **NIST SP 800-82**, NIST CSF e ISO 27001; alineado a **CISSP** (y ISA/IEC 62443 y GICSP fuera del programa).
 - **[Cooperación y Alianzas Técnicas](rutas/cooperacion-alianzas.md)** → Partes 0, 14 (+ 1, 8 para base técnica) · gobernanza, protección de datos y riesgo de terceros; alineado a **CISSP** e **ISO 27001**.
 

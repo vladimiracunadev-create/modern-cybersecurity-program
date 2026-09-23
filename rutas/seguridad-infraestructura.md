@@ -197,12 +197,16 @@ Clases concretas por las que empezar:
 - 🚩 [CTF de redes y forense](../ctf/README.md) — leer una captura y reconstruir un flujo: el
   músculo del análisis de eventos.
 
-## 🎓 Certificaciones
+## CaaS y arquitectura de disponibilidad
 
 La disponibilidad frente a DDoS exige arquitectura y operación conjunta. Usa el
 [recurso CaaS](../docs/cybercrime-as-a-service.md) para justificar CDN/Anycast, *scrubbing*, contactos
 ISP, capacidad, runbook y prueba; documenta qué controla tu perímetro y qué depende del upstream.
 
+La [matriz de responsabilidades CaaS](../docs/cybercrime-as-a-service.md#modelo-operativo-y-responsabilidades-por-rol)
+explicita las fronteras con SOC, SecOps, CTI, DFIR y dirección.
+
+## 🎓 Certificaciones
 
 Con archivo en el programa (mapean a partes concretas):
 

@@ -144,6 +144,37 @@ en tráfico es un hecho. Convertirla en indicador requiere contexto y ventana. R
 servicio es una inferencia sustentada. Nombrar al responsable exige evidencia adicional e
 independiente.
 
+## Modelo operativo y responsabilidades por rol
+
+CaaS no crea un puesto llamado «analista CaaS». Es un contexto de amenaza que atraviesa varios
+roles. La responsabilidad cambia con la decisión que debe tomarse:
+
+| Rol | Pregunta que responde | Entregable | Límite |
+|---|---|---|---|
+| [Threat Intelligence Analyst](../rutas/threat-intelligence-analyst.md) | ¿Qué capacidad, infraestructura y campaña están relacionadas, con qué confianza? | PIR, grafo con procedencia, estimación e indicadores con caducidad | No atribuye identidad por una IP, marca o relación técnica |
+| [SOC / Blue Team](../rutas/soc-blue-team.md) | ¿Qué está ocurriendo ahora en nuestra telemetría? | Caso, timeline inicial, consultas y escalamiento | Detecta y confirma impacto; no dirige mitigación upstream ni atribución |
+| [Analista SecOps](../rutas/secops-analista.md) | ¿Quién cierra el riesgo operativo y en qué SLA? | Ticket, runbook, excepción, verificación y mejora | Coordina controles; no sustituye al dueño del servicio ni a DFIR |
+| [Ingeniero SecOps](../rutas/secops-engineer.md) | ¿Qué telemetría, límite o automatización reversible falta? | Integración, control, prueba, rollback y observabilidad | No promete que autoscaling resuelva un enlace saturado |
+| [Seguridad de infraestructura](../rutas/seguridad-infraestructura.md) | ¿Dónde se absorbe o filtra el tráfico y quién activa la capacidad? | Arquitectura de borde, contactos, capacidad y prueba | Distingue control local de dependencia ISP/CDN/CSP |
+| [DFIR](../rutas/dfir.md) | ¿Qué pasó, qué cambió y por qué produjo impacto? | Evidencia, timeline, RCA y lecciones | Distingue desencadenante de causa raíz; no inventa actor |
+| [CISO](../rutas/ciso.md) / jefatura | ¿Qué riesgo de continuidad se acepta y quién tiene autoridad? | BIA, SLA, decisión, comunicación y ejercicio | El riesgo residual lo acepta el dueño autorizado, no CTI o SOC |
+| Legal, privacidad y autoridades | ¿Qué puede conservarse, compartirse o investigarse? | Base, preservación, canal y solicitud formal | La atribución jurídica exige proceso y evidencia adicionales |
+
+```mermaid
+flowchart LR
+  CTI["CTI<br/>contexto y confianza"] --> SOC["SOC<br/>detección e impacto"]
+  SOC --> OPS["SecOps e infraestructura<br/>mitigación y continuidad"]
+  OPS --> DFIR["DFIR<br/>timeline y causa raíz"]
+  DFIR --> CTI
+  CISO["CISO / dueño del servicio<br/>riesgo y autoridad"] --> OPS
+  LEGAL["Legal / privacidad / autoridades<br/>límites y proceso"] -. gobierna .-> CTI
+  LEGAL -. preservación .-> DFIR
+```
+
+CTI entrega contexto, SOC confirma lo observable, operación e infraestructura mitigan, DFIR
+reconstruye y el dueño autorizado decide riesgo y continuidad. El ciclo vuelve a CTI porque una
+mitigación o un takedown cambia infraestructura, indicadores y prioridades de colección.
+
 ## Caso público: acciones contra servicios DDoS-for-hire en 2025
 
 En mayo de 2025, el Departamento de Justicia de Estados Unidos informó de la incautación judicial

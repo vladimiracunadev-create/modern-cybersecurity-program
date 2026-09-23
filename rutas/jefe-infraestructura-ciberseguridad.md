@@ -323,12 +323,16 @@ escribiendo.
   máquina limpia y cronometra**. Ese número —cuánto tardaste y qué faltó— es la respuesta a lo que la
   oferta llama "validación efectiva de restauraciones".
 
-## 🎓 Certificaciones
+## CaaS, continuidad y coordinación upstream
 
 Incluye DDoS en continuidad: capacidad del enlace, exposición del origen, CDN/Anycast, *scrubbing*,
 runbook, contacto upstream y prueba anual. El [escenario SOC](../labs/blue-team-soc/PLAYBOOK-DDOS.md)
 permite demostrar recuperación y causa raíz con evidencia reproducible.
 
+La [matriz de responsabilidades CaaS](../docs/cybercrime-as-a-service.md#modelo-operativo-y-responsabilidades-por-rol)
+define la frontera entre jefatura, SOC, CTI, SecOps, DFIR y proveedores.
+
+## 🎓 Certificaciones
 
 La oferta las lista como **opcionales**, y conviene leer eso con precisión: no filtran la candidatura,
 pero desempatan y sostienen tu credibilidad ante auditoría.

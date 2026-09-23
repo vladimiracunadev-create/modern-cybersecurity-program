@@ -144,12 +144,16 @@ Refuerzo desde las Partes 6 y 9:
 - 🚩 [CTF de forense](../ctf/README.md) — los retos de **forense** son el entrenamiento más
   directo del rol: leer una imagen, tirar de un timeline, seguir el rastro y contar la historia.
 
-## 🎓 Certificaciones
+## CaaS, evidencia y causa raíz
 
 En incidentes DDoS, DFIR preserva la línea temporal, consultas, cambios de mitigación y comunicaciones;
 distingue el evento desencadenante de la debilidad que permitió el impacto. Practícalo con el
 [playbook y dataset sintético](../labs/blue-team-soc/PLAYBOOK-DDOS.md), sin generar tráfico.
 
+La [matriz de responsabilidades CaaS](../docs/cybercrime-as-a-service.md#modelo-operativo-y-responsabilidades-por-rol)
+separa el trabajo forense del contexto CTI y de la decisión de continuidad.
+
+## 🎓 Certificaciones
 
 Con archivo en el programa (mapean a partes concretas):
 

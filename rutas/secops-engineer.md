@@ -192,12 +192,16 @@ Clases concretas por las que empezar:
 - 🚩 [CTF de forense y redes](../ctf/README.md) — reconstruir qué pasó a partir de artefactos:
   exactamente el músculo de la investigación de una alerta de endpoint.
 
-## 🎓 Certificaciones
+## CaaS e ingeniería de resiliencia DDoS
 
 Practica la ingeniería de controles con el [escenario DDoS](../labs/blue-team-soc/PLAYBOOK-DDOS.md):
 telemetría de PPS/BPS y aplicación, límites y *circuit breakers*, protección del origen y automatización
 reversible. Si el enlace se satura, diseña la coordinación upstream en lugar de prometer autoscaling.
 
+La [matriz de responsabilidades CaaS](../docs/cybercrime-as-a-service.md#modelo-operativo-y-responsabilidades-por-rol)
+sitúa esta ingeniería dentro del ciclo CTI–SOC–operación–DFIR.
+
+## 🎓 Certificaciones
 
 Con archivo en el programa (mapean a partes concretas):
 

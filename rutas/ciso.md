@@ -402,12 +402,16 @@ sí sostienen una conversación de directorio:
 | Riesgo de terceros críticos evaluado | Dónde está el riesgo que no controlas |
 | Presupuesto ejecutado vs plan | Si sabes gestionar recursos |
 
-## 🎓 Certificaciones
+## CaaS, continuidad y autoridad
 
 Trata DDoS-for-hire como riesgo de continuidad y dependencia de terceros: propietario del servicio,
 SLA, contactos de ISP/CDN/CSP, autoridad para activar mitigación, comunicación y ejercicio anual. El
 [recurso CaaS](../docs/cybercrime-as-a-service.md) conecta esa decisión con SOC, CTI, IR y legal.
 
+La [matriz de responsabilidades](../docs/cybercrime-as-a-service.md#modelo-operativo-y-responsabilidades-por-rol)
+deja explícito quién detecta, mitiga, investiga, asesora y acepta el riesgo.
+
+## 🎓 Certificaciones
 
 En este cargo la certificación es **credencial de credibilidad** ante comités de selección,
 auditores, reguladores y aseguradoras. No sustituyen la experiencia, pero sin ellas hay puertas

@@ -16,6 +16,10 @@ Se intersecta con Software/Backend Engineer al construir simulación autoritativ
 Reverse Engineer al analizar superficie de cliente; Detection/Data/ML Engineer al diseñar eventos,
 features y evaluación; Trust & Safety al gobernar revisión, bans y appeals.
 
+No es el mismo puesto que [Game Integrity / Anti-Cheat Analyst](game-integrity-analyst.md): este
+último opera las señales, investiga casos y mide errores; el engineer cambia arquitectura y
+controles. El [modelo operativo](../docs/modelo-operativo-game-security.md) define cómo colaboran.
+
 ## 🧠 Qué necesitas saber
 
 - Arquitectura de motores, game loop, ECS, física, rendering, input y persistencia.
@@ -86,4 +90,5 @@ falsos positivos ni privilegios.
 
 ## 🔗 Volver
 
-- [Índice de rutas](README.md) · [Examen por rol](../docs/examen-final-por-rol.md)
+- [Índice de rutas](README.md) · [Examen por rol](../docs/examen-final-por-rol.md) ·
+  [Modelo operativo](../docs/modelo-operativo-game-security.md)

@@ -46,6 +46,17 @@ Las horas son estimadas a partir de la duración de cada clase (~1,5–2,5 h) m�
 - **17** profundiza 2, 8, 9, 11, 14; **18** asume 3–9 y 15; **19** asume 5–9 y 15.
 - **16** (capstones) va al final de cada ruta.
 
+La Parte 19 cierra dos rutas distintas: [Game Security Engineer](../rutas/game-security-engineer.md)
+prioriza arquitectura, autoridad y controles; [Game Integrity Analyst](../rutas/game-integrity-analyst.md)
+prioriza telemetría, investigación, falsos positivos y decisiones revisables. El
+[modelo operativo](modelo-operativo-game-security.md) explica su colaboración con gameplay,
+backend, Data/ML, Trust & Safety, privacidad y DFIR.
+
+La ruta [Threat Intelligence Analyst](../rutas/threat-intelligence-analyst.md) cruza 1, 6, 7, 8,
+9, 12 y 17. El recurso [Cybercrime-as-a-Service](cybercrime-as-a-service.md) funciona como caso
+integrador: obliga a separar actor, capacidad, infraestructura, servicio, campaña e indicador y a
+entregar productos distintos a SOC, SecOps, infraestructura, DFIR y dirección.
+
 ## Cronograma sugerido de 30 semanas (ruta "generalista")
 
 Un plan realista para cubrir el núcleo empleable en ~2 trimestres a 10 h/semana:

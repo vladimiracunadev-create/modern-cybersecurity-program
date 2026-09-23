@@ -205,6 +205,13 @@ quedaría desactualizada y no sería verificable.
 
 ## 🔗 Relacionado
 
+> 🎮 La especialización de videojuegos tiene una matriz propia porque añade autoridad de juego,
+> integridad competitiva, sanciones y apelaciones: [modelo operativo de Game Security](modelo-operativo-game-security.md),
+> [Game Security Engineer](../rutas/game-security-engineer.md) y
+> [Game Integrity Analyst](../rutas/game-integrity-analyst.md).
+
+<!-- separador semántico entre notas relacionadas -->
+
 > 🗂️ **¿Buscas la misma disciplina aplicada a los cargos de dirección?** El
 > **[ecosistema CISO](../rutas/ecosistema-ciso.md)** separa CISO, Field CISO, vCISO, BISO, Product
 > CISO, AI CISO y OT CISO —y los cargos vecinos que **no** son tipos de CISO— con una matriz

@@ -39,7 +39,7 @@ Para los [laboratorios](../labs/README.md):
 | Validación | Valida hallazgos con una 2.ª fuente y descarta falsos positivos | Valida algunos | No valida |
 | Retos | Resuelve los retos con criterio de aceptación | Resuelve alguno | No los intenta |
 
-## 4. Rúbrica de capstone (Parte 16 y clase 340)
+## 4. Rúbrica de capstone (Parte 16 y clases 340 y 360)
 
 Los capstones son el entregable de mayor peso. Evalúa sobre 100:
 
@@ -53,6 +53,11 @@ Los capstones son el entregable de mayor peso. Evalúa sobre 100:
 | Retrospectiva | 10 | Reflexión crítica (qué funcionó, qué no, qué mejorar). |
 
 **Aprobado:** ≥ 70/100 **y** cero hallazgos sin evidencia (un hallazgo inventado invalida el informe).
+
+Para el capstone 360 de Game Security, «análisis y priorización» incluye calidad del baseline,
+falsos positivos por segmento y separación entre señal e inferencia; «alcance y ética» incluye
+minimización de telemetría, autorización del target y trazabilidad de sanción/apelación. La
+[matriz de roles](modelo-operativo-game-security.md) indica quién produce y quién revisa cada evidencia.
 
 ## 5. Integridad académica
 

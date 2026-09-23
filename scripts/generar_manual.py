@@ -47,6 +47,7 @@ CLASSES = os.path.join(ROOT, "classes")
 OUT_DIR = os.path.join(ROOT, "manual")
 RECURSO_CRUZAR_LINEA = os.path.join(ROOT, "docs", "cruzar-la-linea-consecuencias-reales.md")
 RECURSO_CAAS = os.path.join(ROOT, "docs", "cybercrime-as-a-service.md")
+RECURSO_GAME_SECURITY = os.path.join(ROOT, "docs", "modelo-operativo-game-security.md")
 
 REPO = "vladimiracunadev-create/modern-cybersecurity-program"
 BLOB = f"https://github.com/{REPO}/blob/main/"
@@ -232,6 +233,14 @@ def procesar_recurso_caas() -> str:
     return '<a id="recurso-caas"></a>\n\n' + md.rstrip() + "\n"
 
 
+def procesar_recurso_game_security() -> str:
+    """Convierte el modelo operativo de Game Security en capítulo del manual."""
+    with open(RECURSO_GAME_SECURITY, encoding="utf-8") as f:
+        md = f.read()
+    md = reescribir_enlaces(md, "docs")
+    return '<a id="recurso-game-security"></a>\n\n' + md.rstrip() + "\n"
+
+
 def construir_md(clases) -> str:
     n_clases = len(clases)
     partes_orden = []
@@ -247,7 +256,7 @@ def construir_md(clases) -> str:
         "<h1>🛡️ Programa de Ciberseguridad Moderna</h1>\n"
         '<p class="sub">Manual completo · de fundamentos a nivel experto</p>\n'
         f'<p class="meta">{n_clases} clases · {n_partes} partes · '
-        "2 recursos transversales · generado automáticamente desde el repositorio</p>\n"
+        "3 recursos transversales · generado automáticamente desde el repositorio</p>\n"
         "</div>\n"
     )
 
@@ -260,7 +269,8 @@ def construir_md(clases) -> str:
         "todos los países.\n"
         ">\n"
         f"> 📖 Este manual consolida las {n_clases} clases y los recursos transversales "
-        "**¿Y si cruzas la línea?** y **Cybercrime-as-a-Service**. La versión "
+        "**¿Y si cruzas la línea?**, **Cybercrime-as-a-Service** y el "
+        "**Modelo operativo de Game Security**. La versión "
         "navegable, los laboratorios y los recursos interactivos están en el "
         f"[repositorio]({BLOB.rstrip('/')}) y en el "
         f"[sitio del curso](https://{REPO.split('/')[0]}.github.io/{REPO.split('/')[1]}/).\n"
@@ -270,6 +280,7 @@ def construir_md(clases) -> str:
     p.append("\n---\n\n# 📑 Índice\n")
     p.append("\n- [⚠️ Recurso transversal: ¿Y si cruzas la línea?](#recurso-cruzar-linea)\n")
     p.append("- [🕸️ Recurso transversal: Cybercrime-as-a-Service](#recurso-caas)\n")
+    p.append("- [🎮 Recurso transversal: Modelo operativo de Game Security](#recurso-game-security)\n")
     parte_actual = None
     for num, parte, _, readme in clases:
         if parte != parte_actual:
@@ -282,6 +293,7 @@ def construir_md(clases) -> str:
     # autorización y consecuencias para todo el contenido de doble uso.
     p.append("\n---\n\n" + procesar_recurso_cruzar_linea() + "\n")
     p.append("\n---\n\n" + procesar_recurso_caas() + "\n")
+    p.append("\n---\n\n" + procesar_recurso_game_security() + "\n")
 
     # Contenido de las clases
     parte_actual = None
@@ -468,6 +480,10 @@ def verificar_recurso(pdf_path: str) -> bool:
         "Stresser, booter y prueba de carga autorizada",
         "observación ≠ indicador ≠ inferencia ≠ atribución",
         "acciones contra servicios DDoS-for-hire en 2025",
+        "Modelo operativo y responsabilidades por rol",
+        "Modelo operativo de Game Security",
+        "Dos perfiles centrales, no un cargo universal",
+        "Límites de seguridad de la práctica",
     )
     def esta(marcador: str) -> bool:
         return re.search(r"\s*".join(re.escape(p) for p in marcador.split()), texto) is not None

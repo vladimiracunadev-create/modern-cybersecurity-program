@@ -100,6 +100,16 @@ RESOURCE_SPECS = (
         "notice": "Contenido defensivo. No interactúes con servicios criminales ni pruebes objetivos sin autorización.",
         "searchTerms": "CaaS Crime as a Service DDoS booter stresser botnet T1498 CTI scrubbing Anycast",
     },
+    {
+        "path": ROOT / "docs" / "modelo-operativo-game-security.md",
+        "id": "modelo-operativo-game-security",
+        "icon": "🎮",
+        "title": "Modelo operativo de Game Security",
+        "subtitle": "Roles, decisiones, evidencia y límites de la operación anti-cheat",
+        "description": "Separa ingeniería, investigación, sanción, apelación, privacidad y respuesta a incidentes.",
+        "notice": "Practica únicamente en el rango local, software propio o targets expresamente autorizados.",
+        "searchTerms": "Game Security Anti-Cheat Game Integrity Trust Safety telemetría sanción apelación privacidad roles",
+    },
 )
 OUT_FILE = ROOT / "mobile" / "src" / "data" / "classes.js"
 # Los diagramas se empaquetan como PNG dentro del APK: Metro los mete como

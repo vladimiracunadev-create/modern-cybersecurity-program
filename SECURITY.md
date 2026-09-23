@@ -28,6 +28,12 @@ Si encuentras un error técnico, una imprecisión o contenido que pueda facilita
 indebido más allá de lo educativo, abre un *issue* describiendo el problema. No incluyas
 en los issues datos reales, credenciales ni información de sistemas de terceros.
 
+Para una vulnerabilidad descubierta al estudiar Game Security, distingue el target: si afecta al
+[rango educativo](labs/game-security/README.md) o al material del repositorio, repórtala aquí; si
+afecta a un juego, plataforma o anti-cheat de terceros, usa el canal oficial del proveedor. No
+publiques bypasses, datos de jugadores, instrucciones operativas ni evidencia que facilite abuso.
+Consulta el [modelo operativo y sus límites](docs/modelo-operativo-game-security.md).
+
 ## Divulgación responsable
 
 Si el material te ayuda a descubrir una vulnerabilidad real en un sistema de terceros,

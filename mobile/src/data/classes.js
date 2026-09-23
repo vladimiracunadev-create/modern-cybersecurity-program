@@ -31751,6 +31751,81 @@ export const RESOURCES = [
       },
       {
         "t": "h2",
+        "x": "Modelo operativo y responsabilidades por rol"
+      },
+      {
+        "t": "p",
+        "x": "CaaS no crea un puesto llamado «analista CaaS». Es un contexto de amenaza que atraviesa varios roles. La responsabilidad cambia con la decisión que debe tomarse:"
+      },
+      {
+        "t": "table",
+        "h": [
+          "Rol",
+          "Pregunta que responde",
+          "Entregable",
+          "Límite"
+        ],
+        "r": [
+          [
+            "Threat Intelligence Analyst",
+            "¿Qué capacidad, infraestructura y campaña están relacionadas, con qué confianza?",
+            "PIR, grafo con procedencia, estimación e indicadores con caducidad",
+            "No atribuye identidad por una IP, marca o relación técnica"
+          ],
+          [
+            "SOC / Blue Team",
+            "¿Qué está ocurriendo ahora en nuestra telemetría?",
+            "Caso, timeline inicial, consultas y escalamiento",
+            "Detecta y confirma impacto; no dirige mitigación upstream ni atribución"
+          ],
+          [
+            "Analista SecOps",
+            "¿Quién cierra el riesgo operativo y en qué SLA?",
+            "Ticket, runbook, excepción, verificación y mejora",
+            "Coordina controles; no sustituye al dueño del servicio ni a DFIR"
+          ],
+          [
+            "Ingeniero SecOps",
+            "¿Qué telemetría, límite o automatización reversible falta?",
+            "Integración, control, prueba, rollback y observabilidad",
+            "No promete que autoscaling resuelva un enlace saturado"
+          ],
+          [
+            "Seguridad de infraestructura",
+            "¿Dónde se absorbe o filtra el tráfico y quién activa la capacidad?",
+            "Arquitectura de borde, contactos, capacidad y prueba",
+            "Distingue control local de dependencia ISP/CDN/CSP"
+          ],
+          [
+            "DFIR",
+            "¿Qué pasó, qué cambió y por qué produjo impacto?",
+            "Evidencia, timeline, RCA y lecciones",
+            "Distingue desencadenante de causa raíz; no inventa actor"
+          ],
+          [
+            "CISO / jefatura",
+            "¿Qué riesgo de continuidad se acepta y quién tiene autoridad?",
+            "BIA, SLA, decisión, comunicación y ejercicio",
+            "El riesgo residual lo acepta el dueño autorizado, no CTI o SOC"
+          ],
+          [
+            "Legal, privacidad y autoridades",
+            "¿Qué puede conservarse, compartirse o investigarse?",
+            "Base, preservación, canal y solicitud formal",
+            "La atribución jurídica exige proceso y evidencia adicionales"
+          ]
+        ]
+      },
+      {
+        "t": "dg",
+        "img": "ab13116deb5b5938"
+      },
+      {
+        "t": "p",
+        "x": "CTI entrega contexto, SOC confirma lo observable, operación e infraestructura mitigan, DFIR reconstruye y el dueño autorizado decide riesgo y continuidad. El ciclo vuelve a CTI porque una mitigación o un takedown cambia infraestructura, indicadores y prioridades de colección."
+      },
+      {
+        "t": "h2",
         "x": "Caso público: acciones contra servicios DDoS-for-hire en 2025"
       },
       {
@@ -31834,6 +31909,310 @@ export const RESOURCES = [
     ],
     "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/docs/cybercrime-as-a-service.html",
     "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/docs/cybercrime-as-a-service.md"
+  },
+  {
+    "id": "modelo-operativo-game-security",
+    "icon": "🎮",
+    "title": "Modelo operativo de Game Security",
+    "subtitle": "Roles, decisiones, evidencia y límites de la operación anti-cheat",
+    "description": "Separa ingeniería, investigación, sanción, apelación, privacidad y respuesta a incidentes.",
+    "notice": "Practica únicamente en el rango local, software propio o targets expresamente autorizados.",
+    "searchTerms": "Game Security Anti-Cheat Game Integrity Trust Safety telemetría sanción apelación privacidad roles",
+    "content": [
+      {
+        "t": "h2",
+        "x": "Dos perfiles centrales, no un cargo universal"
+      },
+      {
+        "t": "table",
+        "h": [
+          "Perfil",
+          "Misión",
+          "Decide",
+          "Entregables principales"
+        ],
+        "r": [
+          [
+            "Game Security / Anti-Cheat Engineer",
+            "Reducir confianza incorrecta en el cliente y construir prevención, telemetría y detección",
+            "Arquitectura de autoridad, invariantes, esquema de eventos y controles técnicos",
+            "Threat model, validaciones de servidor, reglas, pruebas de regresión y RCA"
+          ],
+          [
+            "Game Integrity / Anti-Cheat Analyst",
+            "Convertir señales ambiguas en casos reproducibles y decisiones revisables",
+            "Triaje, suficiencia de evidencia, escalamiento y propuesta de acción",
+            "Caso investigado, consulta, paquete de evidencia, métricas de falsos positivos y recomendación"
+          ]
+        ]
+      },
+      {
+        "t": "p",
+        "x": "El ingeniero construye la capacidad; el analista la opera y cuestiona su salida. En equipos pequeños una persona puede cubrir ambos perfiles, pero debe conservar la separación entre crear una señal y declararla prueba suficiente."
+      },
+      {
+        "t": "h2",
+        "x": "Roles adyacentes y límites de decisión"
+      },
+      {
+        "t": "table",
+        "h": [
+          "Rol adyacente",
+          "Responsabilidad en Game Security",
+          "No debe decidir por sí solo"
+        ],
+        "r": [
+          [
+            "Gameplay / Backend Engineer",
+            "Estado canónico, economía, inventario, matchmaking y corrección funcional",
+            "Que una anomalía implica intención maliciosa"
+          ],
+          [
+            "Data / ML Engineer",
+            "Calidad del dataset, features, evaluación, drift y reproducibilidad",
+            "Una sanción basada sólo en el score del modelo"
+          ],
+          [
+            "Trust & Safety / Player Support",
+            "Política, revisión humana, apelaciones y comunicación con jugadores",
+            "Arquitectura técnica o retención ilimitada de datos"
+          ],
+          [
+            "Privacidad / Legal",
+            "Base, finalidad, minimización, retención, transferencias y derechos aplicables",
+            "La conclusión técnica de un caso sin revisar su evidencia"
+          ],
+          [
+            "SOC / DFIR",
+            "Incidentes contra cuentas, backend, pipeline o el propio anti-cheat",
+            "Confundir respuesta a un incidente con enforcement competitivo"
+          ],
+          [
+            "Product / liderazgo",
+            "Riesgo aceptado, recursos, experiencia del jugador y métricas de negocio",
+            "Suprimir controles de debido proceso para mejorar una métrica"
+          ]
+        ]
+      },
+      {
+        "t": "dg",
+        "img": "c269cfcec6e38171"
+      },
+      {
+        "t": "p",
+        "x": "La flecha de regreso evita que el programa anti-cheat se reduzca a sancionar. Un caso debe mejorar la autoridad, el diseño o la telemetría para que la misma causa no reaparezca."
+      },
+      {
+        "t": "h2",
+        "x": "Flujo de decisión auditable"
+      },
+      {
+        "t": "li",
+        "n": 1,
+        "d": 0,
+        "x": "Definir el abuso y el activo: ventaja, economía, cuenta, disponibilidad o privacidad."
+      },
+      {
+        "t": "li",
+        "n": 2,
+        "d": 0,
+        "x": "Reproducir en un entorno propio: el Game Security Range o"
+      },
+      {
+        "t": "p",
+        "x": "un target interno expresamente autorizado."
+      },
+      {
+        "t": "li",
+        "n": 3,
+        "d": 0,
+        "x": "Corregir autoridad e invariantes: retirar del cliente decisiones que el servidor puede validar."
+      },
+      {
+        "t": "li",
+        "n": 4,
+        "d": 0,
+        "x": "Instrumentar lo mínimo: propósito, campos, versión, acceso, retención y condición de borrado."
+      },
+      {
+        "t": "li",
+        "n": 5,
+        "d": 0,
+        "x": "Evaluar la señal: baseline, casos legítimos difíciles, precision/recall, segmentos y drift."
+      },
+      {
+        "t": "li",
+        "n": 6,
+        "d": 0,
+        "x": "Investigar el caso: separar observación, indicador, inferencia y conclusión; conservar contexto."
+      },
+      {
+        "t": "li",
+        "n": 7,
+        "d": 0,
+        "x": "Aplicar revisión proporcional: escalamiento, acción reversible cuando sea posible y apelación."
+      },
+      {
+        "t": "li",
+        "n": 8,
+        "d": 0,
+        "x": "Cerrar con RCA y regresión: documentar causa raíz, control, prueba y métrica posterior."
+      },
+      {
+        "t": "p",
+        "x": "Una puntuación, una coincidencia de memoria o una trayectoria anómala son señales. Ninguna prueba por sí sola la identidad, la intención o la culpabilidad de una persona."
+      },
+      {
+        "t": "h2",
+        "x": "Límites de seguridad de la práctica"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Usa únicamente el rango local, software propio o un entorno con autorización escrita que nombre"
+      },
+      {
+        "t": "p",
+        "x": "versión, cuentas, técnicas, horario, datos, contactos y criterio de parada."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "No conectes trainers, automatizaciones, instrumentación o proxies del curso a juegos o servicios"
+      },
+      {
+        "t": "p",
+        "x": "de terceros, aunque sean gratuitos o la prueba no altere una clasificación."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "No desarrolles ni distribuyas bypasses contra anti-cheat de terceros. Reporta vulnerabilidades al"
+      },
+      {
+        "t": "p",
+        "x": "proveedor mediante su canal oficial y sigue su política de divulgación."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "No recolectes telemetría «por si acaso». Justifica finalidad, minimiza campos y privilegios, limita"
+      },
+      {
+        "t": "p",
+        "x": "retención y registra quién consultó cada caso."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Prueba reglas y modelos con jugadores legítimos difíciles, accesibilidad, latencia y hardware"
+      },
+      {
+        "t": "p",
+        "x": "diverso. Una tasa global puede ocultar daño concentrado en un segmento."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Separa investigación técnica, decisión de sanción y apelación. Registra versión de la regla o"
+      },
+      {
+        "t": "p",
+        "x": "modelo, datos utilizados, explicación y revisor."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Trata el propio anti-cheat como software sensible: firma, actualización segura, mínimo privilegio,"
+      },
+      {
+        "t": "p",
+        "x": "rollback, respuesta a vulnerabilidades y monitoreo de abuso interno."
+      },
+      {
+        "t": "p",
+        "x": "Estas reglas complementan Seguridad y ética, la Clase 025 y la Clase 359."
+      },
+      {
+        "t": "h2",
+        "x": "Evidencia mínima por responsabilidad"
+      },
+      {
+        "t": "table",
+        "h": [
+          "Decisión",
+          "Evidencia mínima"
+        ],
+        "r": [
+          [
+            "Cambiar autoridad cliente-servidor",
+            "Threat model, invariante, prueba vulnerable/segura y regresión"
+          ],
+          [
+            "Añadir telemetría",
+            "Finalidad, diccionario de datos, acceso, retención y prueba de calidad"
+          ],
+          [
+            "Publicar una detección",
+            "Dataset card, baseline, matriz de confusión, segmentos y plan de drift"
+          ],
+          [
+            "Escalar un caso",
+            "Consulta reproducible, timeline, versión del detector y alternativas descartadas"
+          ],
+          [
+            "Sancionar",
+            "Política aplicable, evidencia suficiente, revisor, proporcionalidad y vía de apelación"
+          ],
+          [
+            "Cerrar un incidente",
+            "RCA, mitigación, prueba de regresión, comunicación y métrica posterior"
+          ]
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Fuentes que sostienen el modelo"
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Epic Games — Networking Overview:"
+      },
+      {
+        "t": "p",
+        "x": "autoridad y replicación cliente-servidor usadas para asignar responsabilidades técnicas."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "Valve — Latency Compensating Methods:"
+      },
+      {
+        "t": "p",
+        "x": "predicción, reconciliación y latencia que impiden interpretar toda divergencia como abuso."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "NIST Privacy Framework: gestión del riesgo de privacidad"
+      },
+      {
+        "t": "p",
+        "x": "aplicada a telemetría, acceso, retención y decisiones sobre personas."
+      },
+      {
+        "t": "li",
+        "d": 0,
+        "x": "scikit-learn — Outlier detection:"
+      },
+      {
+        "t": "p",
+        "x": "diferencia entre novelty/outlier detection y límites de inferir conducta desde anomalías."
+      }
+    ],
+    "siteUrl": "https://vladimiracunadev-create.github.io/modern-cybersecurity-program/docs/modelo-operativo-game-security.html",
+    "githubUrl": "https://github.com/vladimiracunadev-create/modern-cybersecurity-program/blob/main/docs/modelo-operativo-game-security.md"
   }
 ];
 
@@ -31846,7 +32225,7 @@ export const CLASSES_BY_PART = CLASSES.reduce((acc, c) => {
 export const TOTAL_CLASSES = 360;
 export const TOTAL_PARTS = 20;
 
-export const TOTAL_RESOURCES = 4;
+export const TOTAL_RESOURCES = 5;
 
 export const classesForPart = (partSlug) => CLASSES_BY_PART[partSlug] || [];
 export const resourceById = (id) => RESOURCES.find((r) => r.id === id);

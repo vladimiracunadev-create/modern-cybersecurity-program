@@ -36,6 +36,7 @@ INCLUIR_TOP = ["README.md", "ROADMAP.md", "CONTRIBUTING.md", "SECURITY.md",
                "docs/cruzar-la-linea-consecuencias-reales.md",
                "docs/GLOSARIO-GLOBAL.md", "docs/PLATAFORMAS-DE-PRACTICA.md",
                "docs/AUDITORIA-CTF-GLOSARIO-PLATAFORMAS.md",
+               "docs/modelo-operativo-game-security.md",
                "soluciones/README.md",
                "soluciones/parte-01-redes.md", "soluciones/parte-02-criptografia.md",
                "soluciones/parte-03-pentesting.md", "soluciones/parte-04-web.md",
@@ -294,12 +295,13 @@ def escribir_landing(partes) -> None:
         ("📖", "Glosario global", "Términos, siglas y aliases consolidados con enlaces a las clases donde se explican.", "docs/GLOSARIO-GLOBAL.html"),
         ("🧪", "Plataformas de práctica", "Entornos autorizados por perfil, nivel y modalidad, con límites de publicación.", "docs/PLATAFORMAS-DE-PRACTICA.html"),
         ("🕸️", "Cybercrime-as-a-Service", "DDoS-for-hire, booter/stresser, CTI, mitigación y causa raíz.", "docs/cybercrime-as-a-service.html"),
+        ("🎮", "Modelo operativo de Game Security", "Roles, decisiones, evidencia y límites para ingeniería, investigación, sanción y apelación.", "docs/modelo-operativo-game-security.html"),
         ("📝", "Autoevaluación", f"{n_preg} preguntas interactivas con puntuación, una batería por parte.", "autoevaluaciones/quiz.html"),
         ("✅", "Tu progreso", f"Marca las {total} clases y sigue tu avance (se guarda en tu navegador).", "autoevaluaciones/progreso.html"),
         ("🎓", "Certificaciones", "Mapeo a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con % de cobertura por dominio.", "certificaciones/README.html"),
         ("⚠️", "¿Y si cruzas la línea?", "Leyes, investigaciones, condenas y salidas profesionales legítimas, con fuentes oficiales.", "docs/cruzar-la-linea-consecuencias-reales.html"),
-        ("📱", "Aplicación web", f"Las {total} clases y cuatro recursos transversales completos, con diagramas y progreso local.", "app/"),
-        ("📕", "Manual en PDF", f"Las {total} clases y dos recursos transversales en un único PDF (1.362 páginas A4 y 390 diagramas).", "manual/MANUAL.pdf"),
+        ("📱", "Aplicación web", f"Las {total} clases y cinco recursos transversales completos, con diagramas y progreso local.", "app/"),
+        ("📕", "Manual en PDF", f"Las {total} clases y tres recursos transversales en un único PDF (1.365 páginas A4 y 392 diagramas).", "manual/MANUAL.pdf"),
     ]
     feats_html = "".join(
         f'<a class="feat" href="{u}"><div class="ic">{i}</div><h3>{t}</h3><p>{d}</p></a>'

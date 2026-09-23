@@ -61,13 +61,19 @@ La progresión avanza de **qué se protege** a **por qué puede romperse**, lueg
 
 Lee la explicación, interpreta el diagrama y ejecuta el laboratorio antes del reto. Conserva un cuaderno con comando, versión, semilla, evento, decisión y limitación. Todos los experimentos ofensivos se restringen al [Game Security Range](../../labs/game-security/README.md); los componentes invasivos se estudian arquitectónicamente y no se implementan.
 
+## Roles y separación de responsabilidades
+
+Esta parte habilita dos salidas principales: [Game Security / Anti-Cheat Engineer](../../rutas/game-security-engineer.md), que construye autoridad, telemetría y controles; y [Game Integrity / Anti-Cheat Analyst](../../rutas/game-integrity-analyst.md), que investiga señales, falsos positivos y casos. Gameplay/backend, Data/ML, Trust & Safety, privacidad/legal y SOC/DFIR conservan responsabilidades distintas. El [modelo operativo de Game Security](../../docs/modelo-operativo-game-security.md) documenta esas fronteras, los entregables y quién puede proponer, revisar o aplicar una sanción.
+
+La separación importa: quien crea una detección no debe tratar automáticamente su salida como veredicto. Toda decisión necesita política aplicable, evidencia contextual, revisión proporcionada, trazabilidad y apelación.
+
 ## Anatomía y evaluación
 
 Cada clase incluye objetivo, resultados verificables, temas, explicación causal, diagrama interpretado, definiciones, glosario, preparación, laboratorio, ejercicios, reto con aceptación, errores, FAQ y fuentes. La evidencia de bloque culmina en un paquete profesional: threat model, reglas del servidor, dataset documentado, evaluación de falsos positivos, ficha de privacidad y reporte de incidente.
 
 ## Después de terminar
 
-Continúa con la [ruta Game Security Engineer / Anti-Cheat Engineer](../../rutas/game-security-engineer.md), resuelve la [autoevaluación](../../autoevaluaciones/README.md#parte-19--seguridad-de-videojuegos-cheats-y-anti-cheat), los [retos CTF](../../ctf/game-security/README.md) y presenta el capstone según el [examen final por rol](../../docs/examen-final-por-rol.md).
+Continúa con la ruta [Game Security Engineer / Anti-Cheat Engineer](../../rutas/game-security-engineer.md) o [Game Integrity / Anti-Cheat Analyst](../../rutas/game-integrity-analyst.md), resuelve la [autoevaluación](../../autoevaluaciones/README.md#parte-19--seguridad-de-videojuegos-cheats-y-anti-cheat), los [retos CTF](../../ctf/game-security/README.md) y presenta el capstone según el [examen final por rol](../../docs/examen-final-por-rol.md).
 
 ## Navegación
 

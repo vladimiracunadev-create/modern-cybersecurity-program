@@ -69,6 +69,18 @@ comparten la misma estructura; cambia el contenido.
 - **Práctica:** en el lab [`dfir-memoria`](../labs/dfir-memoria/README.md): identifica el proceso malicioso, el C2 y extrae IOCs.
 - **Informe:** informe forense con línea de tiempo y cadena de custodia.
 
+## 🕸️ Threat Intelligence Analyst / Analista CTI
+
+- **Teoría:** 045, 149, 154, 157, 161–180, 187–195, 201–220, 249–255, 260, 284, 321–322 y el recurso [CaaS](cybercrime-as-a-service.md).
+- **Práctica:** formula un PIR sobre un escenario DDoS ficticio, construye un plan de colección sólo
+  con fuentes oficiales y telemetría sintética, y modela actor, capacidad, infraestructura,
+  servicio, campaña, objetivo e indicador sin fusionarlos.
+- **Informe:** tabla de procedencia, grafo de relaciones, dos hipótesis alternativas, estimación con
+  nivel de confianza, indicadores con ventana/caducidad y dos entregables: uno accionable para SOC y
+  un briefing ejecutivo que declare qué no está demostrado.
+- **Criterio eliminatorio:** interactuar con servicios criminales, atribuir por una IP/marca aislada
+  o presentar datos sin procedencia como inteligencia.
+
 ## 🕸️ AppSec / Bug Bounty
 
 - **Teoría:** Partes 4, 2, 11.
@@ -301,6 +313,18 @@ Quien complete la **Parte 18** puede añadir el [capstone 340](../classes/parte-
   ejecutivo. Debe seguir el [capstone 360](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/360-capstone-incidente-completo-game-security/README.md).
 - **Criterio eliminatorio:** sancionar a partir de una métrica aislada, experimentar contra software
   de terceros o presentar una mitigación sin prueba adversarial y caso normal.
+
+## 🔎 Game Integrity / Anti-Cheat Analyst
+
+- **Teoría:** Parte 19, con foco en 351–360 (+ 182, 188, 197–199, 208–209, 217, 282, 287 y 289).
+- **Práctica:** en [`game-security`](../labs/game-security/README.md), recibe un dataset y una alerta
+  sin etiqueta final; fija baseline, reproduce la consulta, contrasta al menos dos explicaciones
+  legítimas, calcula matriz de confusión por segmento y documenta qué evidencia falta.
+- **Informe:** caso de investigación con timeline, versión del schema/detector, consultas, hipótesis
+  descartadas, riesgo de privacidad, recomendación proporcionada y condición de apelación. Cierra
+  con un cambio propuesto de telemetría, control o regresión.
+- **Frontera:** el score no es el veredicto. Se evalúa la separación entre señal, investigación,
+  recomendación y decisión descrita en el [modelo operativo](modelo-operativo-game-security.md).
 
 ## 🧭 Familia SecOps y DevSecOps: siete exámenes, ninguno intercambiable
 

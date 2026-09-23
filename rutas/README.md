@@ -110,6 +110,22 @@ Adquisición, memoria, timelines y respuesta a incidentes.
 - 🎓 **GCFA / GCFE** (SANS) · CHFI
 - 📖 **[Guía de carrera completa →](dfir.md)** — qué es, día a día, skills, certis, salario y progresión.
 
+## 🕸️ Threat Intelligence Analyst / Analista CTI
+
+Convierte observables, campañas y fuentes públicas en inteligencia trazable para una decisión. No
+es un agregador de feeds ni una autoridad investigadora: mantiene procedencia, ventana, confianza,
+hipótesis alternativas y caducidad.
+
+1. 📚 **Parte 0** — redes, sistemas, Python y ética (011, 023–025).
+2. 📚 **Partes 1 y 6** — tráfico, NetFlow, malware, C2 e inteligencia derivada.
+3. 📚 **Partes 7–9** — TTP, detección, CTI operacional, IR y timelines.
+4. 📚 **Parte 12** — OSINT y OPSEC · **Parte 17** — comunicación y CTI avanzada (321–322).
+5. 🕸️ **[Cybercrime-as-a-Service](../docs/cybercrime-as-a-service.md)** — mercado, DDoS-for-hire,
+   evidencia y coordinación con SOC, SecOps, infraestructura, DFIR, CISO y legal.
+
+- 📖 **[Guía de carrera completa →](threat-intelligence-analyst.md)** ·
+  🧪 [escenario DDoS sintético](../labs/blue-team-soc/PLAYBOOK-DDOS.md).
+
 ## 🕸️ AppSec / Bug Bounty
 
 Seguridad de aplicaciones y caza de vulnerabilidades web.
@@ -457,6 +473,24 @@ avanzada que une software, backend, reversing, detection engineering y data/ML.
 
 - 🧪 [`game-security`](../labs/game-security/README.md) · 🚩 [CTF Game Security](../ctf/game-security/README.md) · 📋 capstone 360.
 - 📖 **[Guía de carrera completa →](game-security-engineer.md)** — trabajo diario, competencias, ruta, portafolio, entrevista y progresión.
+
+## 🔎 Game Integrity / Anti-Cheat Analyst
+
+Opera telemetría y detecciones de integridad competitiva: investiga alertas y reportes, reconstruye
+sesiones, descarta explicaciones legítimas, mide falsos positivos y entrega una recomendación
+auditable. Separa alerta, evidencia y sanción; trabaja con ingeniería, Data/ML, Trust & Safety,
+soporte, privacidad y DFIR.
+
+1. 📚 **Parte 0** — 011, 023–025: redes, procesos, Python, ética y autorización.
+2. 📚 **Parte 1** — 026–027 y 045: tráfico, flujos y metadatos.
+3. 📚 **Partes 8 y 9** — logging, hunting, métricas, investigación, timeline y RCA.
+4. 📚 **Partes 14 y 15** — políticas, privacidad, evaluación y gobernanza de modelos.
+5. 📚 **Parte 19** — 341–343, 351–354 y núcleo operativo 355–360.
+
+- 🧪 [`game-security`](../labs/game-security/README.md) · 📋 caso reproducible, matriz de confusión,
+  recomendación y capstone 360.
+- 📖 **[Guía de carrera completa →](game-integrity-analyst.md)** ·
+  **[modelo operativo y límites →](../docs/modelo-operativo-game-security.md)**.
 
 ## 🏭 Arquitecto de Ciberseguridad IT/OT (industria e infraestructura crítica)
 

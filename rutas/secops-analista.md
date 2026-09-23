@@ -327,12 +327,16 @@ distingue a un analista de un operador de consola.
 - ¿Qué métricas llevarías a tu jefatura cada mes y cuáles no?
 - ¿Cuándo escalas a DFIR en vez de seguir tú?
 
-## 🎓 Certificaciones
+## CaaS y cierre operativo de DDoS
 
 Añade al portafolio el [playbook DDoS](../labs/blue-team-soc/PLAYBOOK-DDOS.md): baseline, decisión de
 escalamiento, ticket con dueño, rollback, causa raíz y prueba de regresión. Demuestra el puente entre
 operación diaria, continuidad y coordinación con infraestructura.
 
+Usa la [matriz de responsabilidades CaaS](../docs/cybercrime-as-a-service.md#modelo-operativo-y-responsabilidades-por-rol)
+para separar detección, mitigación, investigación y aceptación del riesgo.
+
+## 🎓 Certificaciones
 
 Con archivo en el programa:
 

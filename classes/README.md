@@ -1,6 +1,6 @@
 # Indice del curriculo
 
-**360 clases - 20 partes** - numeracion secuencial 001-360. Cada parte tiene su propio README con la narrativa completa (de que trata, que problemas resuelve, resultados de aprendizaje, estructura tematica y prerrequisitos).
+**360 clases - 20 partes numeradas 0-19** - numeracion secuencial 001-360. La Parte 0 es la primera unidad y la Parte 19, la vigésima. Cada parte tiene su propio README con la narrativa completa (de que trata, que problemas resuelve, resultados de aprendizaje, estructura tematica y prerrequisitos).
 
 | Parte | Tema | Clases | README de la parte |
 |---|---|---:|---|
