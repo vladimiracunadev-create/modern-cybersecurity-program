@@ -5,6 +5,50 @@
  "policy": "Toda afirmacion del programa se apoya en una entrada de este registro. Ninguna entrada se acepta sin localizador verificable: ISBN-13 para libros, DOI para articulos, URL https de la fuente primaria para normas y documentacion oficial. Lo que no se pudo comprobar queda como \"pendiente\" con el motivo, nunca borrado ni rellenado por intuicion.",
  "entries": [
   {
+   "id": "parrotsec-org-docs",
+   "type": "reference",
+   "title": "ParrotOS Documentation",
+   "authors": [
+    "Parrot Security"
+   ],
+   "locator": "https://www.parrotsec.org/docs/",
+   "authority": "Parrot Security",
+   "status": "verificada",
+   "notes": "Documentacion oficial consultada el 2026-09-24 para ediciones, instalacion y gestion de software.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.parrotsec.org/docs/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-24",
+   "used_in": [
+    "classes/parte-0-fundamentos-y-prerrequisitos/004-montaje-del-laboratorio-virtualizacion-kali-snapshots-y-aislamiento-de-red/README.md"
+   ]
+  },
+  {
+   "id": "blackarch-org",
+   "type": "reference",
+   "title": "BlackArch Linux official documentation and downloads",
+   "authors": [
+    "BlackArch Linux project"
+   ],
+   "locator": "https://blackarch.org/",
+   "authority": "BlackArch Linux project",
+   "status": "verificada",
+   "notes": "Sitio oficial consultado el 2026-09-24 para imagenes, repositorio e instalacion.",
+   "matches": {
+    "url_prefixes": [
+     "https://blackarch.org/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-24",
+   "used_in": [
+    "classes/parte-0-fundamentos-y-prerrequisitos/004-montaje-del-laboratorio-virtualizacion-kali-snapshots-y-aislamiento-de-red/README.md"
+   ]
+  },
+  {
    "id": "mitre-attack-t1498",
    "type": "standard",
    "title": "Network Denial of Service (T1498)",
@@ -4572,6 +4616,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-0-fundamentos-y-prerrequisitos/004-montaje-del-laboratorio-virtualizacion-kali-snapshots-y-aislamiento-de-red/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/043-network-security-monitoring-nsm-fundamentos/README.md"
    ],
    "authors": []

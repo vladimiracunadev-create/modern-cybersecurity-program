@@ -115,7 +115,7 @@ El CI del repositorio verifica que ninguna clase de esta parte pierda las seccio
 | Bloque | Clases | Contenido | Tiempo |
 |--------|--------|-----------|--------|
 | Marco conceptual | 001–003 | CIA/AAA, panorama de amenazas, frameworks | ≈ 4 h 40 |
-| Laboratorio | 004 | Virtualización, Kali, snapshots, aislamiento | ≈ 2 h |
+| Laboratorio | 004 | Virtualización, distribuciones de seguridad, snapshots, aislamiento y operación portable | ≈ 3 h |
 | Linux | 005–007 | Filesystem, permisos, CLI avanzada, Bash | ≈ 5 h 30 |
 | Windows | 008–009 | Arquitectura, registro, servicios, PowerShell | ≈ 3 h 40 |
 | Redes | 010–014 | OSI/TCP-IP, protocolos, DNS/DHCP/ARP, HTTP, subnetting | ≈ 8 h 40 |
@@ -160,7 +160,7 @@ Tres clases sin teclado, y son las que más te ahorrarán después. Aquí se fij
 
 Una sola clase, pero es la bisagra de todo el programa: hasta aquí has leído, a partir de aquí ejecutas. Y ejecutas donde el error no tiene consecuencias.
 
-- **[004 · Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red](004-montaje-del-laboratorio-virtualizacion-kali-snapshots-y-aislamiento-de-red/README.md)** · 120 min — Construyes una máquina atacante (Kali) y una o más víctimas en una red interna **sin salida a Internet ni a tu red doméstica**, y aprendes a usar *snapshots* para volver a un estado limpio en segundos. Los dos conceptos clave —aislamiento y reversibilidad— son los que hacen que practicar sea seguro; todos los laboratorios posteriores dan este entorno por hecho.
+- **[004 · Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red](004-montaje-del-laboratorio-virtualizacion-kali-snapshots-y-aislamiento-de-red/README.md)** · 180 min — Comparas Kali, Parrot, BlackArch, Security Onion y un Linux general por misión y coste operativo; instalas desde una imagen oficial verificada, administras paquetes y actualizaciones con reversión, y construyes una estación más una víctima en una red interna **sin salida a Internet ni a tu red doméstica**. La evidencia se define por capacidad y resultado, no por una distribución obligatoria.
 
 ### 🐧 Bloque 3 · Linux — clases 005 a 007
 
@@ -254,7 +254,12 @@ Tres clases **no se saltan nunca**, aunque vengas con experiencia: la [001](001-
 
 **❓ ¿Puedo hacer los laboratorios en mi equipo de trabajo?** No lo hagas. Usa un equipo personal o una VM claramente separada: varios laboratorios levantan servicios deliberadamente vulnerables, y muchas políticas corporativas prohíben instalar herramientas ofensivas.
 
-**❓ ¿Hace falta Kali, o me vale mi Linux de siempre?** Vale cualquier Linux, pero Kali trae el instrumental ya integrado y las clases dan por hechas sus rutas y sus paquetes. Si usas otra distribución, cuenta con dedicar tiempo a instalar herramientas.
+**❓ ¿Hace falta Kali, o me vale mi sistema habitual?** No hace falta Kali. Es el entorno de
+referencia porque trae instrumental integrado, pero las actividades se evalúan por objetivo,
+evidencia y seguridad. Puedes usar Linux, Windows, macOS, una VM especializada o un contenedor
+cuando ofrezca la capacidad necesaria. La [Clase 004](004-montaje-del-laboratorio-virtualizacion-kali-snapshots-y-aislamiento-de-red/README.md)
+compara Kali, Parrot, BlackArch y Security Onion, explica instalación y mantenimiento, y enseña a
+traducir instrucciones sin hacer el curso dependiente de un sistema operativo.
 
 **❓ ¿Por qué hay tanta teoría antes de tocar herramientas?** Porque las herramientas cambian cada dos años y los fundamentos no. Quien aprende `nmap` sin entender TCP sabe teclear un comando; quien entiende TCP puede interpretar cualquier escáner y escribir el suyo —que es exactamente lo que harás en la clase [017](017-python-para-seguridad-manipulacion-de-paquetes-con-scapy/README.md).
 

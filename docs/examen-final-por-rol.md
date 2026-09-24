@@ -81,6 +81,29 @@ comparten la misma estructura; cambia el contenido.
 - **Criterio eliminatorio:** interactuar con servicios criminales, atribuir por una IP/marca aislada
   o presentar datos sin procedencia como inteligencia.
 
+## 📨 Responsable de divulgación coordinada
+
+- **Teoría:** 025, 066–067, 071, 084–085, 114–115, 195, 202, 215–217, 236–246, 277, 282, 284–285, 318 y 320–324.
+- **Práctica:** recibe un reporte sintético incompleto, solicita solo la información necesaria,
+  reproduce el fallo en `appsec-code`, identifica proveedor y desplegadores, y conduce un caso con
+  un mantenedor inicialmente no responsivo y una dependencia compartida.
+- **Informe:** expediente con reporte original, cronología, matriz de actores, hechos e hipótesis,
+  decisión de triaje, comunicaciones, plan de coordinación, aviso y prueba del arreglo desplegado.
+- **Criterio eliminatorio:** divulgar antes de mitigar sin una decisión de riesgo documentada,
+  prometer *safe harbor* o recompensa sin autoridad, o cerrar solo porque se asignó un CVE.
+
+## 🔬 Investigador/a de seguridad
+
+- **Teoría:** Parte 0 completa, Partes 1–2 y la especialidad elegida: 4, 5, 6 o 13.
+- **Práctica:** sobre un activo propio o laboratorio autorizado, formula una hipótesis falsable,
+  fija versiones, ejecuta controles positivo y negativo, reduce la entrada y repite desde un
+  snapshot limpio. Después aplica y verifica una mitigación con una prueba de regresión.
+- **Informe:** repositorio reproducible, bitácora, hashes, análisis causal, precondiciones,
+  explicaciones alternativas, límites y dos comunicaciones: reporte privado y artículo público
+  simulado posterior a la corrección.
+- **Criterio eliminatorio:** probar fuera de alcance, usar datos de terceros, confundir una caída con
+  explotabilidad o presentar como hecho un impacto que el experimento no demostró.
+
 ## 🕸️ AppSec / Bug Bounty
 
 - **Teoría:** Partes 4, 2, 11.

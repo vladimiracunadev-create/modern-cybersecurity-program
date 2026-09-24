@@ -126,6 +126,43 @@ hipótesis alternativas y caducidad.
 - 📖 **[Guía de carrera completa →](threat-intelligence-analyst.md)** ·
   🧪 [escenario DDoS sintético](../labs/blue-team-soc/PLAYBOOK-DDOS.md).
 
+## 📨 Responsable de divulgación coordinada (Responsible Disclosure)
+
+Recibe y valida reportes, identifica a los propietarios técnicos, coordina proveedor,
+investigador y desplegadores, protege la información previa a publicación y conserva una cronología
+defendible hasta que exista una mitigación verificada. Suele vivir en PSIRT, Product Security,
+CSIRT/CERT o en el equipo que opera el VDP.
+
+1. 📚 **Parte 0** — sistemas, redes, Git, criptografía y **025** ética/CVD
+2. 📚 **Parte 3** — **066–067**, **071**, **084–085**: alcance, validación, severidad y reporte
+3. 📚 **Parte 4** — **087**, **110**, **114–115**: reportes web, bounty y corrección
+4. 📚 **Partes 8–9** — inteligencia, respuesta, contención y aprendizaje
+5. 📚 **Partes 11, 14 y 17** — SDLC, terceros, gobierno y ciclo de vulnerabilidades
+
+- 🧪 [`appsec-code`](../labs/appsec-code/README.md) ·
+  [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) ·
+  [`blue-team-soc`](../labs/blue-team-soc/README.md)
+- 📖 **[Guía completa →](divulgacion-responsable.md)** — ingreso, reproducción, triaje,
+  coordinación multiparte, publicación, métricas y portafolio.
+
+## 🔬 Investigador/a de seguridad
+
+Formula preguntas técnicas, construye experimentos autorizados y reproducibles, explica el
+mecanismo causal y comunica hallazgos con sus precondiciones y límites. Puede especializarse en
+vulnerabilidades, binarios, web, malware, hardware, defensa o IA; no es sinónimo de pentester.
+
+1. 📚 **Parte 0 completa** — laboratorio, sistemas, redes, programación, arquitectura y legalidad
+2. 📚 **Partes 1 y 2** — protocolos, captura, criptografía e implementaciones
+3. 📚 **Especialidad** — Parte 4 (web), 5 (binarios), 6 (malware) o 13 (IoT/OT)
+4. 📚 **Partes 7 y 8** — mecanismo ofensivo, telemetría, detección y límites
+5. 📚 **Partes 11, 15 y 18** — automatización, cadena de suministro e investigación de IA
+
+- 🧪 [`appsec-code`](../labs/appsec-code/README.md) ·
+  [`dfir-memoria`](../labs/dfir-memoria/README.md) ·
+  [`pwn-binarios`](../labs/pwn-binarios/README.md) · [CTF autorizados](../ctf/README.md)
+- 📖 **[Guía completa →](investigador-seguridad.md)** — método experimental, especialidades,
+  evidencia, divulgación, portafolio y progresión.
+
 ## 🕸️ AppSec / Bug Bounty
 
 Seguridad de aplicaciones y caza de vulnerabilidades web.
