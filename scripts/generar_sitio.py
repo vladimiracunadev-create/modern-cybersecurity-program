@@ -300,7 +300,7 @@ def escribir_landing(partes) -> None:
         ("✅", "Tu progreso", f"Marca las {total} clases y sigue tu avance (se guarda en tu navegador).", "autoevaluaciones/progreso.html"),
         ("🎓", "Certificaciones", "Mapeo a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con % de cobertura por dominio.", "certificaciones/README.html"),
         ("⚠️", "¿Y si cruzas la línea?", "Leyes, investigaciones, condenas y salidas profesionales legítimas, con fuentes oficiales.", "docs/cruzar-la-linea-consecuencias-reales.html"),
-        ("📱", "Aplicación web", f"Las {total} clases y cinco recursos transversales completos, con diagramas y progreso local.", "app/"),
+        ("📱", "Aplicación web", f"Las {total} clases y siete recursos transversales completos, con diagramas y progreso local.", "app/"),
         ("📕", "Manual en PDF", f"Las {total} clases y tres recursos transversales en un único PDF (1.365 páginas A4 y 392 diagramas).", "manual/MANUAL.pdf"),
     ]
     feats_html = "".join(

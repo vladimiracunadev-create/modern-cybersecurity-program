@@ -153,7 +153,7 @@ Cada parte tiene su **propio README** con narrativa completa: de qué trata, res
 
 ## 📱 Aplicación Android y web
 
-La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **360 clases en 20 partes** y cinco recursos transversales **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. Desde `v1.2.0`, «¿Y si cruzas la línea?» viaja con sus fuentes y tres diagramas; `v1.3.0` incorpora el glosario global y la guía de plataformas; CaaS conecta DDoS-for-hire con CTI y respuesta; el modelo de Game Security conecta la Parte 19 con sus roles, decisiones y límites.
+La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **360 clases en 20 partes** y siete recursos transversales **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. Incluye «¿Y si cruzas la línea?», glosario, plataformas de práctica, CaaS, Game Security y las rutas de **Responsible Disclosure / CVD** e **Investigador/a de seguridad** como tarjetas visibles y buscables.
 
 - 🌐 **[Abrir la aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/)** — misma experiencia, publicada dentro de GitHub Pages.
 - 📥 **[Descargar Android, web y manual — release v1.3.0](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.3.0)** · verifica los tres artefactos con `SHA256SUMS.txt`.

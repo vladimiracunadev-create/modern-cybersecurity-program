@@ -15,6 +15,10 @@ internacional, consecuencias económicas y salidas profesionales, con tres diagr
 La edición **1.3.0** añade el glosario global y la guía de plataformas, junto con un
 filtro de recursos que reconoce siglas y aliases como CTF, HTB, THM, SOC o DFIR.
 
+El catálogo actual incorpora además las rutas completas de **Responsible Disclosure / CVD** e
+**Investigador/a de seguridad** como recursos offline visibles y buscables desde el Home. Sus
+fuentes de verdad son `rutas/divulgacion-responsable.md` y `rutas/investigador-seguridad.md`.
+
 ## 🧩 Fuente de verdad y generación del catálogo
 
 El contenido embebido **no se escribe a mano**: se genera desde los `README.md` de las

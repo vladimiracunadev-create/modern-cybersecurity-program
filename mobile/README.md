@@ -1,23 +1,25 @@
 # 📱 App móvil — Ciberseguridad Moderna
 
 App **Android y web** (Expo / React Native) que embebe las **360 clases en 20 partes (0–19)** y
-los **cinco recursos transversales** del programa completos para leerlos **sin conexión**:
+los **siete recursos transversales** del programa completos para leerlos **sin conexión**:
 la explicación en profundidad, **los diagramas**, el glosario, el laboratorio, los ejercicios, los errores
 comunes y las referencias, no un resumen. Lo único que necesita red son los botones de
 enlaces externos al sitio y a GitHub.
 
 > El catálogo (`src/data/classes.js`) **se genera** desde `classes/**/README.md` con
 > `python scripts/generar_curriculum_movil.py` — **no se edita a mano**. También incorpora
-> `docs/cruzar-la-linea-consecuencias-reales.md`, `docs/cybercrime-as-a-service.md` y
-> `docs/modelo-operativo-game-security.md`. Un check de integridad (`--check`)
+> `docs/cruzar-la-linea-consecuencias-reales.md`, `docs/cybercrime-as-a-service.md`,
+> `docs/modelo-operativo-game-security.md`, `rutas/divulgacion-responsable.md` y
+> `rutas/investigador-seguridad.md`. Un check de integridad (`--check`)
 > falla si el archivo quedó desincronizado con cualquiera de sus fuentes.
 
 ## 🧭 Qué hace
 
 - **Home** — las 20 partes con su foco, nivel y progreso global (X/360).
 - **Recursos** — acceso destacado a «¿Y si cruzas la línea?», el glosario, las plataformas de
-  práctica, «Cybercrime-as-a-Service» y el modelo operativo de Game Security; texto y diagramas
-  viajan offline.
+  práctica, las rutas de **Responsible Disclosure / CVD** e **Investigador/a de seguridad**,
+  «Cybercrime-as-a-Service» y el modelo operativo de Game Security; texto y diagramas viajan
+  offline.
 - **Parte** — las clases de una parte, con buscador por número, título o tema.
 - **Clase** — el README entero, repartido en dos pestañas por el emoji de cada
   sección: *Teoría* (objetivo, resultados, temas, explicación en profundidad,
