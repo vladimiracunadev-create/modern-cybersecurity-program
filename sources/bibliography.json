@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "verified_on": "2026-09-23",
+ "verified_on": "2026-09-28",
  "min_uso_declarado_pct": 66.0,
  "policy": "Toda afirmacion del programa se apoya en una entrada de este registro. Ninguna entrada se acepta sin localizador verificable: ISBN-13 para libros, DOI para articulos, URL https de la fuente primaria para normas y documentacion oficial. Lo que no se pudo comprobar queda como \"pendiente\" con el motivo, nunca borrado ni rellenado por intuicion.",
  "entries": [
@@ -17304,6 +17304,191 @@
     "docs/cruzar-la-linea-consecuencias-reales.md"
    ],
    "authors": []
+  },
+  {
+   "id": "doj-onecoin-greenwood-sentencing-2023",
+   "type": "reference",
+   "title": "Co-Founder of Multibillion-Dollar Cryptocurrency Scheme OneCoin Sentenced to 20 Years in Prison",
+   "authors": [
+    "U.S. Attorney's Office, Southern District of New York"
+   ],
+   "published": "2023",
+   "locator": "https://www.justice.gov/usao-sdny/pr/co-founder-multibillion-dollar-cryptocurrency-scheme-onecoin-sentenced-20-years-prison",
+   "authority": "U.S. Department of Justice",
+   "status": "verificada",
+   "notes": "Comunicado oficial consultado el 2026-09-28; documenta la sentencia de Karl Sebastian Greenwood y los hechos fijados sobre las afirmaciones de cadena, mineria y valor de OneCoin.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.justice.gov/usao-sdny/pr/co-founder-multibillion-dollar-cryptocurrency-scheme-onecoin-sentenced-20-years-prison"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-28",
+   "used_in": [
+    "classes/parte-12-osint-e-ingenieria-social/249-fundamentos-de-osint/README.md"
+   ]
+  },
+  {
+   "id": "us-house-ray-ftx-testimony-2022",
+   "type": "reference",
+   "title": "Testimony of John J. Ray III before the House Committee on Financial Services",
+   "authors": [
+    "John J. Ray III"
+   ],
+   "published": "2022",
+   "locator": "https://docs.house.gov/meetings/BA/BA00/20221213/115246/HHRG-117-BA00-Wstate-RayJ-20221213.pdf",
+   "authority": "U.S. House Committee on Financial Services",
+   "status": "verificada",
+   "notes": "Testimonio oficial consultado el 2026-09-28; respalda los hallazgos iniciales declarados sobre concentracion de control, acceso a activos, gobierno y registros de FTX, con las limitaciones de una investigacion entonces en curso.",
+   "matches": {
+    "url_prefixes": [
+     "https://docs.house.gov/meetings/BA/BA00/20221213/115246/HHRG-117-BA00-Wstate-RayJ-20221213.pdf"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-28",
+   "used_in": [
+    "classes/parte-14-grc-riesgo-y-cumplimiento/276-gobernanza-de-la-seguridad-de-la-informacion/README.md"
+   ]
+  },
+  {
+   "id": "ftx-debtors-control-failures-report-2023",
+   "type": "reference",
+   "title": "First Interim Report of John J. Ray III to the Independent Directors on Control Failures at the FTX Exchanges",
+   "authors": [
+    "FTX Debtors",
+    "John J. Ray III"
+   ],
+   "published": "2023",
+   "locator": "https://document.epiq11.com/document/getdocumentbycode?docId=4200216&projectCode=FTX&source=DM",
+   "authority": "FTX Debtors; filed in U.S. Bankruptcy Court, District of Delaware",
+   "status": "verificada",
+   "notes": "Copia del documento judicial 22-11068-JTD, Doc. 1242-1, consultada el 2026-09-28; respalda los hallazgos y limites declarados por el informe sobre gobierno, privilegios, registros, IAM, deteccion e integridad de cambios.",
+   "matches": {
+    "url_prefixes": [
+     "https://document.epiq11.com/document/getdocumentbycode?docId=4200216&projectCode=FTX&source=DM"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-28",
+   "used_in": [
+    "classes/parte-14-grc-riesgo-y-cumplimiento/276-gobernanza-de-la-seguridad-de-la-informacion/README.md"
+   ]
+  },
+  {
+   "id": "ftc-celsius-settlement-charges-2023",
+   "type": "reference",
+   "title": "FTC Reaches Settlement with Crypto Platform Celsius Network; Charges Former Executives",
+   "authors": [
+    "U.S. Federal Trade Commission"
+   ],
+   "published": "2023",
+   "locator": "https://www.ftc.gov/news-events/news/press-releases/2023/07/ftc-reaches-settlement-crypto-platform-celsius-network-charges-former-executives-duping-consumers",
+   "authority": "U.S. Federal Trade Commission",
+   "status": "verificada",
+   "notes": "Comunicado oficial consultado el 2026-09-28; distingue el acuerdo con las sociedades de los cargos contra antiguos ejecutivos y atribuye a la demanda las alegaciones sobre activos, pasivos, reservas, disponibilidad y riesgo.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.ftc.gov/news-events/news/press-releases/2023/07/ftc-reaches-settlement-crypto-platform-celsius-network-charges-former-executives-duping-consumers"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-28",
+   "used_in": [
+    "classes/parte-14-grc-riesgo-y-cumplimiento/276-gobernanza-de-la-seguridad-de-la-informacion/README.md"
+   ]
+  },
+  {
+   "id": "sec-terraform-ust-verdict-settlement-2024",
+   "type": "reference",
+   "title": "Terraform and Kwon to Pay $4.5 Billion Following Fraud Verdict",
+   "authors": [
+    "U.S. Securities and Exchange Commission"
+   ],
+   "published": "2024",
+   "locator": "https://www.sec.gov/newsroom/press-releases/2024-73",
+   "authority": "U.S. Securities and Exchange Commission",
+   "status": "verificada",
+   "notes": "Comunicado oficial consultado el 2026-09-28; documenta el veredicto, el acuerdo y las declaraciones falsas establecidas sobre UST y el uso de la blockchain, sin atribuir una causa de intrusiones o vulnerabilidades tecnicas.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.sec.gov/newsroom/press-releases/2024-73"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-28",
+   "used_in": [
+    "classes/parte-14-grc-riesgo-y-cumplimiento/277-gestion-de-riesgos-cuantitativa-y-cualitativa/README.md"
+   ]
+  },
+  {
+   "id": "sec-oig-madoff-investigation-2009",
+   "type": "reference",
+   "title": "Investigation of Failure of the SEC to Uncover Bernard Madoff's Ponzi Scheme",
+   "authors": [
+    "SEC Office of Inspector General"
+   ],
+   "published": "2009",
+   "locator": "https://www.sec.gov/oig/oig-reports-investigation-failure-madoff-ponzi-scheme",
+   "authority": "U.S. Securities and Exchange Commission, Office of Inspector General",
+   "status": "verificada",
+   "notes": "Informe oficial OIG-509 consultado el 2026-09-28; respalda el fallo documentado al obtener a traves de Madoff copias de registros que debian confirmarse con un tercero independiente.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.sec.gov/oig/oig-reports-investigation-failure-madoff-ponzi-scheme"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-28",
+   "used_in": [
+    "classes/parte-14-grc-riesgo-y-cumplimiento/285-auditoria-de-seguridad/README.md"
+   ]
+  },
+  {
+   "id": "sec-custody-rules-statement-2009",
+   "type": "reference",
+   "title": "Statement at SEC Open Meeting: Custody Rules for Investment Advisers",
+   "authors": [
+    "U.S. Securities and Exchange Commission"
+   ],
+   "published": "2009",
+   "locator": "https://www.sec.gov/newsroom/speeches-statements/spch121609mls-custody-statement-sec-open-meeting-custody-rules-investment-advisers",
+   "authority": "U.S. Securities and Exchange Commission",
+   "status": "verificada",
+   "notes": "Declaracion oficial consultada el 2026-09-28; respalda el papel de custodios independientes, estados enviados directamente, examenes sorpresa y revisiones de controles de custodia.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.sec.gov/newsroom/speeches-statements/spch121609mls-custody-statement-sec-open-meeting-custody-rules-investment-advisers"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-28",
+   "used_in": [
+    "classes/parte-14-grc-riesgo-y-cumplimiento/285-auditoria-de-seguridad/README.md"
+   ]
+  },
+  {
+   "id": "fiscalia-chile-ac-inversions-reformalizacion-2018",
+   "type": "reference",
+   "title": "Caso AC Inversions: Fiscalia de Alta Complejidad reformalizo investigacion",
+   "authors": [
+    "Fiscalia de Chile"
+   ],
+   "published": "2018",
+   "locator": "https://www.fiscaliadechile.cl/actualidad/noticias/regionales/caso-ac-inversions-fiscalia-de-alta-complejidad-reformalizo",
+   "authority": "Ministerio Publico de Chile",
+   "status": "verificada",
+   "notes": "Comunicacion oficial consultada el 2026-09-28; respalda el estado de reformalizacion y lo informado por la Fiscalia sobre peritajes contables, montos y personas formalizadas en esa fecha, no una condena ni una conclusion tecnica.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.fiscaliadechile.cl/actualidad/noticias/regionales/caso-ac-inversions-fiscalia-de-alta-complejidad-reformalizo"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-09-28",
+   "used_in": [
+    "classes/parte-14-grc-riesgo-y-cumplimiento/285-auditoria-de-seguridad/README.md"
+   ]
   }
  ]
 }

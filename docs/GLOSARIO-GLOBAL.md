@@ -8,7 +8,7 @@ el generador; la modalidad y disponibilidad pueden cambiar en sus sitios oficial
 > **Archivo generado.** No lo edites a mano. Ejecuta
 > `python scripts/generar_glosario_global.py` y valida con `--check`.
 
-**Cobertura:** 2424 términos consolidados · 345 clases con glosario.
+**Cobertura:** 2429 términos consolidados · 345 clases con glosario.
 
 ## Cómo usarlo
 
@@ -2711,6 +2711,12 @@ Juicio explicado sobre la solidez de una conclusión.
 
 **Aparece en 1 clase(s):** [Clase 249 — Fundamentos de OSINT](../classes/parte-12-osint-e-ingenieria-social/249-fundamentos-de-osint/README.md).
 
+### Confirmación externa
+
+Evidencia solicitada y recibida directamente de una fuente independiente.
+
+**Aparece en 1 clase(s):** [Clase 285 — Auditoría de seguridad](../classes/parte-14-grc-riesgo-y-cumplimiento/285-auditoria-de-seguridad/README.md).
+
 ### Confirmación por tiempo
 
 `sleep`/`timeout` para detectar sin ver la salida
@@ -5047,6 +5053,12 @@ Registro que contiene el bloque de script ejecutado
 
 **Aparece en 1 clase(s):** [Clase 9 — PowerShell para seguridad ofensiva y defensiva](../classes/parte-0-fundamentos-y-prerrequisitos/009-powershell-para-seguridad-ofensiva-y-defensiva/README.md).
 
+### Evento observable
+
+Hecho medido; requiere análisis adicional antes de atribuir causa, intención o categoría de riesgo.
+
+**Aparece en 1 clase(s):** [Clase 277 — Gestión de riesgos: cuantitativa y cualitativa](../classes/parte-14-grc-riesgo-y-cumplimiento/277-gestion-de-riesgos-cuantitativa-y-cualitativa/README.md).
+
 ### Evento privilegiado
 
 Disparador cuyo token o secretos tienen más autoridad que la entrada evaluada.
@@ -5085,9 +5097,9 @@ AP falso que imita un SSID legítimo para captar clientes
 
 ### Excepción
 
-Error (acceso inválido, división por cero) que dispara el manejo
+Desviación autorizada, acotada, temporal y revisable; no un permiso informal permanente.
 
-**Aparece en 2 clase(s):** [Clase 15 — Python para seguridad: fundamentos del lenguaje](../classes/parte-0-fundamentos-y-prerrequisitos/015-python-para-seguridad-fundamentos-del-lenguaje/README.md), [Clase 129 — Explotación en Windows: manejo de SEH](../classes/parte-5-explotacion-de-sistemas-y-binarios/129-explotacion-en-windows-manejo-de-seh/README.md).
+**Aparece en 3 clase(s):** [Clase 15 — Python para seguridad: fundamentos del lenguaje](../classes/parte-0-fundamentos-y-prerrequisitos/015-python-para-seguridad-fundamentos-del-lenguaje/README.md), [Clase 129 — Explotación en Windows: manejo de SEH](../classes/parte-5-explotacion-de-sistemas-y-binarios/129-explotacion-en-windows-manejo-de-seh/README.md), [Clase 276 — Gobernanza de la seguridad de la información](../classes/parte-14-grc-riesgo-y-cumplimiento/276-gobernanza-de-la-seguridad-de-la-informacion/README.md).
 
 ### Exclusión
 
@@ -10221,9 +10233,9 @@ Base de la seguridad de RSA
 
 ### Procedencia
 
-Evidencia de qué proceso e insumos produjeron un artefacto.
+Historia del origen, adquisición y transformaciones de una evidencia.
 
-**Aparece en 2 clase(s):** [Clase 242 — Seguridad en pipelines CI/CD](../classes/parte-11-devsecops-y-seguridad-del-sdlc/242-seguridad-en-pipelines-ci-cd/README.md), [Clase 249 — Fundamentos de OSINT](../classes/parte-12-osint-e-ingenieria-social/249-fundamentos-de-osint/README.md).
+**Aparece en 3 clase(s):** [Clase 242 — Seguridad en pipelines CI/CD](../classes/parte-11-devsecops-y-seguridad-del-sdlc/242-seguridad-en-pipelines-ci-cd/README.md), [Clase 249 — Fundamentos de OSINT](../classes/parte-12-osint-e-ingenieria-social/249-fundamentos-de-osint/README.md), [Clase 285 — Auditoría de seguridad](../classes/parte-14-grc-riesgo-y-cumplimiento/285-auditoria-de-seguridad/README.md).
 
 ### Procedimiento
 
@@ -10320,6 +10332,12 @@ Ampliación de una asociación incorrecta a resultados posteriores.
 Condición verificable que debe mantenerse, incluso ante entradas hostiles.
 
 **Aparece en 1 clase(s):** [Clase 236 — Secure SDLC y filosofía shift-left](../classes/parte-11-devsecops-y-seguridad-del-sdlc/236-secure-sdlc-y-filosofia-shift-left/README.md).
+
+### Propiedad verificable
+
+Característica formulada de modo que un tercero pueda observarla o refutarla.
+
+**Aparece en 1 clase(s):** [Clase 249 — Fundamentos de OSINT](../classes/parte-12-osint-e-ingenieria-social/249-fundamentos-de-osint/README.md).
 
 ### Proporcionalidad
 
@@ -11395,6 +11413,12 @@ Objetivo del exploit
 
 **Aparece en 1 clase(s):** [Clase 73 — Metasploit: explotación y payloads](../classes/parte-3-hacking-etico-y-pentesting-metodologia/073-metasploit-explotacion-y-payloads/README.md).
 
+### Riesgo de modelo
+
+Pérdida por supuestos, relaciones o implementación inadecuados para la decisión modelada.
+
+**Aparece en 1 clase(s):** [Clase 277 — Gestión de riesgos: cuantitativa y cualitativa](../classes/parte-14-grc-riesgo-y-cumplimiento/277-gestion-de-riesgos-cuantitativa-y-cualitativa/README.md).
+
 ### Riesgo de negocio
 
 Impacto en dinero, reputación, cumplimiento, continuidad
@@ -12028,6 +12052,12 @@ Separar una red en subredes para limitar el alcance de un ataque.
 PDU de transporte con TCP (datagrama con UDP)
 
 **Aparece en 1 clase(s):** [Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas](../classes/parte-0-fundamentos-y-prerrequisitos/010-redes-tcp-ip-modelo-osi-encapsulacion-y-capas/README.md).
+
+### Segregación de funciones
+
+Separación de capacidades incompatibles para que una acción sensible requiera control independiente.
+
+**Aparece en 1 clase(s):** [Clase 276 — Gobernanza de la seguridad de la información](../classes/parte-14-grc-riesgo-y-cumplimiento/276-gobernanza-de-la-seguridad-de-la-informacion/README.md).
 
 ### Segunda preimagen
 
