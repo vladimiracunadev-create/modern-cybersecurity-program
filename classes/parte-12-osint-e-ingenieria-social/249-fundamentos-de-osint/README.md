@@ -21,6 +21,7 @@ Al finalizar, el alumno podrá:
 3. **Distinguir** OSINT pasivo de activo y sus implicaciones de detección y legalidad.
 4. **Preparar** un entorno de investigación aislado con cuentas "sock puppet" y máquina desechable.
 5. **Documentar** hallazgos con procedencia, transformaciones y control de sesgos; reconocer cuándo un proceso formal exige cadena de custodia adicional.
+6. **Validar** una afirmación tecnológica pública mediante propiedades observables y fuentes independientes, sin confundir falta de verificación con prueba de fraude.
 
 ## 🗺️ Temas
 
@@ -34,6 +35,7 @@ Al finalizar, el alumno podrá:
 | 6 | Sock puppets (identidades ficticias) | Separan al investigador del objetivo |
 | 7 | Ética, legalidad y sesgos | Mantiene la operación lícita y objetiva |
 | 8 | Documentación y trazabilidad | Hace el hallazgo verificable y reutilizable |
+| 9 | Validación de afirmaciones tecnológicas | Convierte marketing en preguntas comprobables sin inventar fallos técnicos |
 
 ## 🧠 Explicación en profundidad
 
@@ -70,6 +72,29 @@ Recopilar solo lo necesario reduce daño y sesgo. Datos públicos pueden seguir 
 
 Cinco artículos afirman que una empresa cerrará una planta. Todos enlazan un mismo mensaje anónimo. El investigador no cuenta cinco corroboraciones; registra una raíz con cinco republicaciones, busca comunicaciones regulatorias, declaraciones, ofertas laborales y cambios operacionales, y mantiene dos hipótesis. El informe concluye «evidencia insuficiente» en vez de rellenar el vacío con certeza.
 
+### OneCoin: verificar propiedades, no repetir etiquetas
+
+Una afirmación tecnológica debe descomponerse en propiedades que un tercero pueda observar. Si una
+organización afirma operar una *blockchain pública y verificable*, el plan de colección puede buscar
+documentación del protocolo, software de nodo, exploradores independientes, identificadores de
+transacción reproducibles, reglas de consenso y fuentes que no dependan de la propia organización.
+Una interfaz web, una presentación o una cifra mostrada por el emisor prueban únicamente que ese
+emisor publicó esos elementos; no prueban que exista el sistema descrito detrás.
+
+El caso OneCoin permite ver la diferencia entre una evaluación preventiva y un hecho establecido
+posteriormente. Antes de una resolución judicial, que una supuesta cadena no pudiera verificarse de
+forma independiente habría justificado una conclusión limitada: **«la afirmación no está
+corroborada; no invertir ni elevar confianza hasta obtener evidencia externa»**. No habría bastado
+para afirmar intención, inexistencia o delito. Años después, la sentencia de Karl Sebastian
+Greenwood permitió al Departamento de Justicia de Estados Unidos describir como hechos del caso que
+OneCoin carecía de una cadena pública y verificable y que el condenado promovió falsas afirmaciones
+sobre minería y valor. El estado probatorio cambió; el método OSINT no debe anticipar ese resultado.
+
+La lección de ciberseguridad no es llamar «hackeo» a OneCoin. Es diseñar una prueba de afirmaciones,
+preservar qué se observó en cada fecha y escalar la discrepancia a cumplimiento, riesgo o asesoría
+legal. Un hash de una captura ayuda a detectar cambios posteriores en esos bytes, pero no demuestra
+que la captura sea auténtica, completa ni que la afirmación representada sea cierta.
+
 ## 📔 Glosario operativo
 
 | Término | Definición útil |
@@ -79,6 +104,7 @@ Cinco artículos afirman que una empresa cerrará una planta. Todos enlazan un m
 | Corroboración | Apoyo mediante evidencia con origen suficientemente independiente. |
 | Procedencia | Registro del origen y transformaciones de un elemento. |
 | Confianza analítica | Juicio explicado sobre la solidez de una conclusión. |
+| Propiedad verificable | Característica formulada de modo que un tercero pueda observarla o refutarla. |
 
 ## ✅ Criterio de dominio
 
@@ -105,7 +131,10 @@ El alumno domina la clase cuando convierte una necesidad en pregunta y plan, pre
 
 ## 🧪 Laboratorio guiado
 
-Ejercicio aplicado y **autorizado**: OSINT sobre ti mismo (autoevaluación de huella).
+Ejercicio aplicado y **autorizado**, con dos fases: autoevaluación de huella y validación de una
+afirmación tecnológica ficticia.
+
+**Fase A — huella propia**
 
 1. Crea un snapshot limpio de tu VM de investigación y anota fecha/hora de inicio del caso.
 2. Define la **dirección**: escribe la pregunta de inteligencia (ej.: "¿qué datos míos son públicos y podrían usarse en un pretexto contra mí?").
@@ -117,6 +146,24 @@ Ejercicio aplicado y **autorizado**: OSINT sobre ti mismo (autoevaluación de hu
 8. **Difusión:** redacta un mini-informe de 1 página con hallazgos y recomendaciones de reducción de huella.
 9. Cierra el caso: exporta notas, restaura el snapshot y documenta lecciones aprendidas.
 
+**Fase B — afirmación ficticia**
+
+10. Recibes un dossier ficticio de `AureaLedger`, que afirma mantener un «registro público,
+    inmutable y verificable» y ofrece como respaldo una captura de su panel, un hash sin archivo de
+    origen y tres artículos que copian el mismo comunicado.
+11. Traduce la frase comercial a cinco propiedades observables: por ejemplo, disponibilidad de
+    historial, verificación por un tercero, reglas documentadas, identificadores reproducibles y
+    control de escritura declarado.
+12. Construye una matriz con `afirmación`, `evidencia esperada`, `fuente encontrada`, `independencia`,
+    `resultado` y `límite`. No visites sistemas reales ni crees datos sobre una empresa existente.
+13. Marca los tres artículos como una sola raíz informativa y clasifica la captura y el hash como
+    evidencia dependiente del emisor. Explica por qué ninguno autentica por sí solo el origen.
+14. Redacta dos conclusiones: una permitida —«no se pudo verificar independientemente la propiedad
+    X»— y otra prohibida —«la empresa defrauda»—. Enumera qué autoridad o evidencia adicional sería
+    necesaria para pasar de la primera a una conclusión más fuerte.
+15. Conserva el dossier, la matriz y tu informe con fecha, procedencia y hashes. Otro alumno debe
+    poder reproducir tu clasificación sin conocer tu razonamiento previo.
+
 ## ✍️ Ejercicios
 
 1. Clasifica 10 fuentes de datos como pasivas o activas y justifica cada una.
@@ -125,6 +172,8 @@ Ejercicio aplicado y **autorizado**: OSINT sobre ti mismo (autoevaluación de hu
 4. Redacta una hipótesis y luego lista 3 datos que la **refutarían**, para combatir el sesgo de confirmación.
 5. Diseña la plantilla de tabla de hallazgos con columnas de confianza y verificación cruzada.
 6. Investiga la diferencia entre OSINT y "doxing" y explica dónde está la frontera legal/ética.
+7. Lee la comunicación del DOJ sobre OneCoin y separa en una tabla: afirmaciones comerciales,
+   hechos fijados en la sentencia, inferencias defensivas y elementos que la fuente no documenta.
 
 ## 📝 Reto verificable
 
@@ -132,7 +181,8 @@ Produce un **informe OSINT de tu propia huella** (máx. 2 páginas) que incluya:
 inteligencia, al menos 8 hallazgos con fuente y nivel de confianza, un diagrama de correlación y 5
 recomendaciones concretas de reducción de exposición.
 **Criterio de aceptación:** cada hallazgo es reproducible por un tercero siguiendo la fuente citada,
-y el informe distingue explícitamente hechos verificados de inferencias.
+y el informe distingue explícitamente hechos verificados de inferencias. Adjunta además la matriz
+de la fase B: debe rechazar la afirmación no corroborada sin atribuir fraude, autor o vulnerabilidad.
 
 ## ⚠️ Errores comunes
 
@@ -143,6 +193,8 @@ y el informe distingue explícitamente hechos verificados de inferencias.
 | Conclusiones sesgadas | Se buscó confirmar una hipótesis. Formula hipótesis rivales y busca refutarlas. |
 | Cuenta personal filtrada al objetivo | Se usó el navegador/sesión propios. Investiga siempre desde la VM aislada. |
 | Datos "públicos" pero de origen ilegal | Un leak robado no es fuente lícita. Verifica la legalidad de la fuente. |
+| Una captura o un hash «demuestran la blockchain» | Solo preservan una representación o comparan bytes; busca verificación independiente y procedencia. |
+| «No pude verificarlo, por tanto es fraude» | La ausencia de evidencia no establece intención ni delito; limita la conclusión y escala. |
 
 ## ❓ Preguntas frecuentes
 
@@ -158,6 +210,11 @@ No existe una respuesta universal. Depende del adversario, la legislación, las 
 Es una identidad de investigación, no una suplantación de una persona real. No lo uses para acceder a
 sistemas privados ni para manipular a personas fuera de un engagement autorizado.
 
+**❓ ¿OneCoin fue un incidente de ciberseguridad?**
+No se presenta aquí como intrusión, malware o explotación. Se usa porque la validación defensiva de
+afirmaciones tecnológicas es una competencia OSINT: comprobar procedencia, independencia y límites
+antes de confiar o escalar.
+
 ## 🔗 Referencias
 
 - Bazzell, M. *Open Source Intelligence Techniques*. <https://inteltechniques.com/book1.html>
@@ -166,6 +223,7 @@ sistemas privados ni para manipular a personas fuera de un engagement autorizado
 - Trace Labs OSINT VM. <https://www.tracelabs.org/initiatives/osint-vm>
 - Have I Been Pwned. <https://haveibeenpwned.com/>
 - OHCHR y UC Berkeley — *Berkeley Protocol on Digital Open Source Investigations*. <https://www.ohchr.org/sites/default/files/2022-04/OHCHR_BerkeleyProtocol.pdf>
+- U.S. Department of Justice — sentencia de Karl Sebastian Greenwood y hechos establecidos sobre las afirmaciones tecnológicas de OneCoin (2023). <https://www.justice.gov/usao-sdny/pr/co-founder-multibillion-dollar-cryptocurrency-scheme-onecoin-sentenced-20-years-prison>
 
 ## 📥 Material descargable
 

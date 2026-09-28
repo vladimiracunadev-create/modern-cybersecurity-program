@@ -40,6 +40,7 @@ mejor forma de comprender cómo se vulnera la de otros.
 
 - Mapear la superficie de exposición pública de una organización antes de un pentest.
 - Verificar identidades, detectar suplantaciones y validar fuentes en investigaciones.
+- Someter afirmaciones tecnológicas públicas a propiedades observables sin convertir falta de corroboración en acusación.
 - Descubrir subdominios, correos y tecnologías filtradas que amplían el vector de ataque.
 - Localizar dispositivos expuestos en Internet (Shodan/Censys) y priorizar su remediación.
 - Medir la resiliencia humana de una empresa mediante simulacros de phishing éticos y medibles.
@@ -51,6 +52,7 @@ mejor forma de comprender cómo se vulnera la de otros.
 Al terminar la parte, el alumno podrá:
 
 - Aplicar un ciclo de inteligencia (dirección, recolección, procesamiento, análisis, difusión) sobre un objetivo autorizado.
+- Traducir una afirmación tecnológica en evidencia esperada, contrastarla con fuentes independientes y declarar límites.
 - Realizar OSINT de personas, empresas, dominios y redes sociales documentando procedencia y transformaciones; aplicar cadena de custodia solo cuando el contexto probatorio lo requiera.
 - Geolocalizar imágenes y verificar contenido combinando metadatos y análisis visual.
 - Consultar Shodan y Censys con dorks precisos para inventariar exposición técnica.
@@ -89,7 +91,7 @@ flowchart LR
   D --> E["259–260<br/>defensa sistémica<br/>y OPSEC"]
 ```
 
-1. **Clase 249 — Fundamentos de OSINT.** Distingue una búsqueda de un ciclo de inteligencia. El alumno formula una pregunta, preserva procedencia y separa observación, inferencia e hipótesis con confianza calibrada.
+1. **Clase 249 — Fundamentos de OSINT.** Distingue una búsqueda de un ciclo de inteligencia. El alumno formula una pregunta, preserva procedencia y separa observación, inferencia e hipótesis con confianza calibrada. El contraste OneCoin enseña a convertir marketing tecnológico en propiedades verificables y a no confundir una afirmación no corroborada con prueba de fraude.
 2. **Clase 250 — OSINT de personas.** Introduce resolución de entidades y minimización. La evidencia esperada no es un dossier intrusivo, sino una matriz sobre una identidad propia o ficticia con coincidencias, contradicciones y límites.
 3. **Clase 251 — Empresas y dominios.** Extiende la atribución a relaciones entre entidades, DNS, certificados, ASN y proveedores. El alumno separa propiedad, alojamiento, vigencia y alcance autorizado.
 4. **Clase 252 — Redes sociales.** Enseña a preservar publicaciones con contexto y a evaluar cuenta, multimedia, tiempo y relaciones sin inferir intención o liderazgo desde una arista.
@@ -125,6 +127,8 @@ datos, fraude, usurpación de identidad). Ante la duda, no lo hagas: pide autori
 - OSINT Framework. <https://osintframework.com/>
 - OHCHR y UC Berkeley — *Berkeley Protocol on Digital Open Source Investigations*. <https://www.ohchr.org/sites/default/files/2022-04/OHCHR_BerkeleyProtocol.pdf>
 - NIST SP 800-63B-4 — *Authentication and Authenticator Management*. <https://pages.nist.gov/800-63-4/sp800-63b/authenticators/>
+- U.S. Department of Justice — sentencia de Karl Sebastian Greenwood y hechos establecidos sobre
+  OneCoin (2023). <https://www.justice.gov/usao-sdny/pr/co-founder-multibillion-dollar-cryptocurrency-scheme-onecoin-sentenced-20-years-prison>
 
 ## ▶️ Empezar
 
