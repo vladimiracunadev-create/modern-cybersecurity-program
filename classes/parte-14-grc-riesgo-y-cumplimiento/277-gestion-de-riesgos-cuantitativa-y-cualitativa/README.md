@@ -18,6 +18,7 @@ Al finalizar, el alumno podrá:
 3. **Comparar** el ALE antes y después de un control para justificar la inversión (ROSI).
 4. **Aplicar** una estimación probabilística por rangos con intervalos de confianza del 90%.
 5. **Elegir** el tratamiento adecuado: mitigar, transferir, evitar o aceptar.
+6. **Separar** riesgo de ciberseguridad, riesgo económico y de modelo, riesgo de liquidez, incumplimiento y alegaciones de fraude antes de seleccionar controles.
 
 ## 🗺️ Temas
 
@@ -30,6 +31,7 @@ Al finalizar, el alumno podrá:
 | 5 | Estimación calibrada y rangos | Supera la falacia de la "medición imposible" |
 | 6 | Simulación de Montecarlo | Modela incertidumbre realista |
 | 7 | Tratamiento del riesgo | Del análisis a la decisión |
+| 8 | Taxonomía y frontera del escenario | Evita tratar toda pérdida digital como vulnerabilidad o ataque |
 
 ## 🧠 Explicación en profundidad
 
@@ -48,6 +50,29 @@ flowchart LR
 
 Dos riesgos quedan «altos» en una matriz. Uno puede interrumpir ventas por horas; otro generar daño regulatorio de cola larga. Rangos y escenarios separan decisiones. El resultado se presenta como distribución y sensibilidad, no como cifra exacta inventada.
 
+### Terra/UST: una pérdida digital no identifica por sí sola un ciberriesgo
+
+TerraUSD (UST) es un contraste útil porque su colapso no debe reescribirse como «hackeo». La SEC
+describió UST como una supuesta *stablecoin* algorítmica y, después de un veredicto unánime por
+fraude de valores, informó en 2024 del acuerdo y de las declaraciones falsas sobre la estabilidad de
+UST y el uso de la blockchain de Terraform para liquidar transacciones. Esa fuente establece el
+resultado del litigio que documenta; no identifica por sí misma una CVE, malware, credencial robada
+o intrusión como causa del *de-peg*.
+
+Antes de calcular frecuencia e impacto hay que nombrar el escenario sin mezclar mecanismos:
+
+| Pregunta | Categoría posible | Evidencia mínima | Control que sí corresponde |
+|---|---|---|---|
+| ¿El mecanismo mantiene la paridad bajo ventas y contracción? | modelo, mercado y liquidez | reglas, reservas, profundidad, escenarios de estrés | límites, reservas, pruebas de estrés, gatillos de suspensión |
+| ¿Una clave o cuenta puede cambiar parámetros críticos? | ciberseguridad y privilegios | IAM, aprobaciones, historial de cambios, firmas | mínimo privilegio, quórum, control de cambios, alertas |
+| ¿La comunicación representa fielmente el mecanismo y sus intervenciones? | cumplimiento y conducta | versiones publicadas, evidencia independiente, aprobaciones | revisión legal, trazabilidad, divulgación y escalamiento |
+| ¿Existe una discrepancia entre registro interno y estado externo? | integridad y conciliación | fuentes con semántica y fecha compatibles | conciliación independiente y gestión de excepciones |
+
+Las categorías pueden coexistir, pero no son intercambiables. Ver un precio alejarse de la paridad
+demuestra la desviación en ese mercado y momento; no demuestra cómo se produjo, quién fue responsable
+ni si existió una intrusión. Del mismo modo, auditar código puede encontrar defectos técnicos, pero
+no valida por sí solo reservas, liquidez, incentivos o veracidad comercial.
+
 ## 📔 Glosario operativo
 
 | Término | Definición |
@@ -55,6 +80,8 @@ Dos riesgos quedan «altos» en una matriz. Uno puede interrumpir ventas por hor
 | Escenario de pérdida | Cadena concreta que conecta amenaza, activo y consecuencia. |
 | Incertidumbre | Falta de conocimiento representada y comunicada explícitamente. |
 | Sensibilidad | Cambio del resultado al variar un supuesto. |
+| Riesgo de modelo | Pérdida por supuestos, relaciones o implementación inadecuados para la decisión modelada. |
+| Evento observable | Hecho medido; requiere análisis adicional antes de atribuir causa, intención o categoría de riesgo. |
 
 ## ✅ Criterio de dominio
 
@@ -81,6 +108,10 @@ Hay dominio cuando el alumno formula escenarios, evita falsa precisión, justifi
 
 **Escenario**: ransomware contra la plataforma de e-commerce de "Ferretería del Sur S.A.".
 
+0. **Delimita el escenario**: registra activo, actor o fuente de incertidumbre, evento, efecto,
+   horizonte y evidencia. No uses «riesgo tecnológico» como categoría única: este caso modela
+   indisponibilidad por ransomware, no fraude, liquidez ni un fallo de modelo financiero.
+
 1. **Valora el activo (AV)**: estima el valor de la plataforma en 500.000 €.
 2. **Factor de exposición (EF)**: un cifrado por ransomware deja el sistema inoperante; estima EF = 0,6 (pérdida del 60%).
 3. **SLE**: calcula `SLE = 500.000 × 0,6 = 300.000 €`.
@@ -101,6 +132,14 @@ ale = av * ef * aro
 print(f"ALE medio: {ale.mean():,.0f} €  P90: {np.percentile(ale, 90):,.0f} €")
 ```
 
+10. **Contraste de clasificación**: recibe el escenario ficticio «el activo digital estable
+    `SUR` cotiza a 0,82 durante dos horas». Propón por separado hipótesis de liquidez, modelo,
+    operación, ciberseguridad y datos. Para cada una indica evidencia que la apoyaría y la
+    refutaría. La desviación de precio es el único hecho inicial.
+11. **Prueba de límites**: elimina de tu informe cualquier frase que concluya «hackeo», «fraude» o
+    «código vulnerable» sin evidencia específica. Explica qué equipo —riesgo, seguridad,
+    cumplimiento o auditoría— debe investigar cada hipótesis y qué decisión no puede esperar.
+
 ## ✍️ Ejercicios
 
 1. Calcula el ALE de un robo de portátil: AV=1.500 €, EF=1, ARO=3.
@@ -109,6 +148,8 @@ print(f"ALE medio: {ale.mean():,.0f} €  P90: {np.percentile(ale, 90):,.0f} €
 4. Da un intervalo de confianza del 90% para "cuántos empleados hará clic en un phishing de 100 enviados". Justifica.
 5. Explica por qué el ALE puede engañar cuando el impacto es raro pero catastrófico (cola larga).
 6. Diseña un Montecarlo para una brecha de datos con multa GDPR variable.
+7. Explica por qué revisar un contrato inteligente no basta para evaluar liquidez, reservas,
+   incentivos ni afirmaciones comerciales de una stablecoin.
 
 ## 📝 Reto verificable
 
@@ -125,6 +166,8 @@ Entrega una **hoja de cálculo de análisis de riesgo cuantitativo** para tres e
 | ROSI negativo pero se compra el control | Decisión emocional; revisa si hay factor regulatorio o reputacional no modelado |
 | "El riesgo no se puede medir" | Falacia; toda reducción de incertidumbre es medición (Hubbard) |
 | Ignorar el riesgo residual | Documenta y acepta formalmente lo que queda |
+| Clasificar un *de-peg* como «hackeo» sin evidencia | Se confundió el efecto con la causa; abre hipótesis separadas y exige artefactos específicos |
+| Usar «blockchain» como garantía de estabilidad | La integridad de ciertas transacciones no elimina riesgo de mercado, liquidez, modelo o gobierno |
 
 ## ❓ Preguntas frecuentes
 
@@ -140,12 +183,18 @@ Un marco cuantitativo estándar que descompone el riesgo en frecuencia y magnitu
 **❓ ¿La matriz 5×5 tiene problemas?**
 Sí: distorsiona por rangos arbitrarios y "colores". Úsala como triaje, no como única base de decisión (crítica de Hubbard).
 
+**❓ ¿Terra/UST pertenece a una clase de ciberseguridad?**
+Solo como ejercicio de límites y gobierno del riesgo. El caso ayuda a no inventar una causa técnica:
+la pérdida económica, el diseño de estabilización, las afirmaciones comerciales y un incidente de
+seguridad requieren preguntas y evidencias distintas.
+
 ## 🔗 Referencias
 
 - Hubbard & Seiersen — How to Measure Anything in Cybersecurity Risk. <https://www.howtomeasureanything.com/cybersecurity/>
 - NIST SP 800-30 Rev.1 — Guide for Conducting Risk Assessments. <https://csrc.nist.gov/pubs/sp/800/30/r1/final>
 - The Open Group — FAIR Risk Analysis Standard. <https://www.opengroup.org/forum/security/fair>
 - Verizon Data Breach Investigations Report (DBIR). <https://www.verizon.com/business/resources/reports/dbir/>
+- U.S. Securities and Exchange Commission — acuerdo posterior al veredicto contra Terraform Labs y Do Kwon (2024); respalda el estado judicial y las afirmaciones sobre UST y el uso declarado de la blockchain, no una hipótesis de intrusión. <https://www.sec.gov/newsroom/press-releases/2024-73>
 - (ISC)² CISSP Official Study Guide, dominio 1.
 
 ## 📥 Material descargable

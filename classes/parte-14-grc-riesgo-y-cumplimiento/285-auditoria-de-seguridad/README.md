@@ -18,6 +18,7 @@ Al finalizar, el alumno podrá:
 3. **Recopilar** y organizar evidencia de auditoría trazable.
 4. **Interpretar** informes SOC 1/SOC 2 (Type I vs Type II).
 5. **Gestionar** hallazgos, no conformidades y planes de acción correctiva.
+6. **Contrastar** registros internos con confirmaciones externas y redactar conclusiones proporcionales al estado de la evidencia.
 
 ## 🗺️ Temas
 
@@ -30,6 +31,8 @@ Al finalizar, el alumno podrá:
 | 5 | Informes SOC 1/2/3 y Type I/II | El estándar de aseguramiento de proveedores |
 | 6 | Hallazgos y CAPA | Del hallazgo a la corrección |
 | 7 | Auditoría continua y automatizada | Evidencia en tiempo real |
+| 8 | Confirmación y conciliación independiente | Evita que la misma fuente cree la operación y certifique su resultado |
+| 9 | Estado probatorio | Separa alegación, hallazgo de auditoría, condena e inferencia pedagógica |
 
 ## 🧠 Explicación en profundidad
 
@@ -44,6 +47,51 @@ flowchart LR
 
 Cinco tickets cerrados no demuestran el año completo. El auditor justifica población, selección y limitación antes de concluir.
 
+### Madoff: la independencia cambia el valor de la evidencia
+
+El informe del Inspector General de la SEC sobre la incapacidad del organismo para descubrir el
+esquema de Bernard Madoff documentó que se pidieron registros de un tercero independiente, pero se
+obtuvieron copias a través del propio Madoff. Ese recorrido destruye la independencia que se buscaba:
+el documento puede parecer externo mientras su canal de adquisición sigue controlado por el sujeto
+examinado. La respuesta de control no es «confiar más en la captura», sino confirmar directamente
+con custodio, contraparte o infraestructura independiente, registrar el método y resolver
+discrepancias.
+
+La SEC explicó después que el uso de un custodio independiente y estados enviados directamente al
+cliente limitan la oportunidad de uso indebido, y reforzó exámenes sorpresa y revisiones de control
+para ciertos asesores con custodia. Esto no convierte toda autocustodia en fraude ni garantiza que
+un tercero nunca falle. Cambia la arquitectura de confianza: separar quien administra de quien
+mantiene o confirma el activo crea una fuente capaz de contradecir al operador.
+
+### AC Inversions: contraste chileno y lenguaje procesal
+
+En febrero de 2018, la Fiscalía de Chile comunicó una **reformalización** dentro de la investigación
+de AC Inversions. Informó que peritajes contables de la Fiscalía cuantificaban fondos captados,
+perjuicios y víctimas, y que existían personas formalizadas. Esa fuente oficial respalda lo que la
+Fiscalía afirmó sobre la indagatoria en esa fecha; una formalización no es una condena y el texto no
+documenta arquitectura informática, malware, logs ni una intrusión.
+
+Para una auditoría, el aprendizaje es metodológico: preservar contratos y comunicaciones, obtener
+cartolas y confirmaciones desde sus emisores, conciliar entradas, salidas y obligaciones, documentar
+quién controla cada registro y escalar discrepancias al órgano competente. Si un pago existe, prueba
+ese pago; no prueba la existencia ni rentabilidad de la inversión alegada. Si una hoja cuadra, no
+demuestra que su origen sea independiente. La evidencia contable y digital se complementan, pero el
+auditor de seguridad no dicta responsabilidad penal.
+
+### Matriz de estados: no mezclar fuente con conclusión
+
+| Etiqueta | Qué significa | Cómo debe escribirse |
+|---|---|---|
+| Hecho observado | El artefacto muestra un valor o evento concreto | «El registro A contiene X a la hora Y» |
+| Alegación | Una parte o autoridad sostiene algo pendiente de resolución | «La demanda/Fiscalía alega X» |
+| Hallazgo de examen o auditoría | Un profesional reporta evidencia y límites bajo un encargo | «El informe identificó X dentro de su alcance» |
+| Condena o veredicto | Un tribunal fijó responsabilidad en el procedimiento indicado | «El tribunal declaró culpable/responsable por X» |
+| Inferencia pedagógica | Control propuesto a partir del patrón, no hecho del caso | «Este patrón justifica ensayar segregación y confirmación» |
+
+FTX, Celsius, Terra/UST, OneCoin, Madoff y AC Inversions tienen fuentes y estados procesales
+distintos. No deben resumirse como una colección homogénea de «hackeos». El auditor cita el documento
+exacto, su fecha, alcance y autoridad antes de derivar un control.
+
 ## 📔 Glosario operativo
 
 | Término | Definición |
@@ -51,6 +99,8 @@ Cinco tickets cerrados no demuestran el año completo. El auditor justifica pobl
 | Criterio | Requisito contra el que se compara evidencia. |
 | Muestra | Subconjunto seleccionado mediante método documentado. |
 | Hallazgo | Diferencia sustentada entre criterio y condición. |
+| Confirmación externa | Evidencia solicitada y recibida directamente de una fuente independiente. |
+| Procedencia | Historia del origen, adquisición y transformaciones de una evidencia. |
 
 ## ✅ Criterio de dominio
 
@@ -76,6 +126,7 @@ El alumno diseña una prueba, conserva evidencia y redacta un hallazgo proporcio
 ## 🧪 Laboratorio guiado (ejercicio aplicado)
 
 Vas a preparar y "ejecutar" una auditoría interna de control de acceso en "Ferretería del Sur S.A.".
+Todos los usuarios, eventos, transferencias y documentos son ficticios.
 
 1. **Alcance y criterio**: define el alcance ("gestión de accesos a la plataforma de e-commerce") y el criterio (la política de la clase 282 y el control ISO 27001 A.5.15/A.8.2).
 2. **Plan de auditoría**: redacta un plan con objetivos, criterio, áreas, entrevistados, fechas y método (revisión documental + muestreo técnico).
@@ -85,6 +136,22 @@ Vas a preparar y "ejecutar" una auditoría interna de control de acceso en "Ferr
 6. **CAPA**: para cada hallazgo redacta la acción correctiva, la causa raíz y la fecha de cierre.
 7. **Informe**: escribe un resumen ejecutivo de media página con conclusión (conforme con salvedades) y las recomendaciones priorizadas.
 8. **SOC 2**: explica en 3 líneas si pedirías a tu proveedor cloud un SOC 2 Type I o Type II y por qué.
+9. **Conciliación sintética**: amplía la muestra con diez transferencias ficticias. Cada fila debe
+   unir `request_id`, solicitante, `approval_id`, aprobador, ejecutor, asiento, confirmación externa y
+   timestamp. Incluye deliberadamente una operación sin aprobación, una confirmación ausente y una
+   discrepancia de importe.
+10. **Pruebas de segregación**: verifica que solicitante, aprobador, ejecutor y conciliador sean
+    distintos según la política. Ensaya una prueba negativa: el mismo usuario no debe poder crear y
+    aprobar. Una mera columna de rol no demuestra que la autorización técnica lo impida.
+11. **Integridad y origen**: calcula el hash de los archivos de evidencia y registra adquisición.
+    Escribe al lado: «el hash permite comprobar igualdad de bytes; no demuestra autoría,
+    autenticidad del origen ni exhaustividad».
+12. **Conclusiones limitadas**: redacta cada hallazgo con condición, criterio, evidencia, población,
+    impacto y límite. La operación sin aprobación demuestra una ruptura del control en la muestra;
+    no demuestra fraude, intención ni qué persona usó la cuenta.
+13. **Extensión natural**: ejecuta el
+    [laboratorio de custodia de activos digitales](../../../labs/custodia-activos-digitales/README.md)
+    y audita su matriz maker-checker. Usa su dataset sintético, no construyas otro framework.
 
 ## ✍️ Ejercicios
 
@@ -94,12 +161,19 @@ Vas a preparar y "ejecutar" una auditoría interna de control de acceso en "Ferr
 4. Explica la diferencia entre SOC 2 Type I y Type II.
 5. Clasifica en mayor/menor: falta total de MFA en administradores; una excepción documentada y aprobada.
 6. Redacta una CAPA para el hallazgo "logs del SIEM se retienen 7 días en lugar de 90".
+7. Compara Madoff y AC Inversions sin equipararlos: identifica una lección común sobre evidencia
+   externa y dos diferencias de fuente, jurisdicción o estado procesal.
+8. Clasifica cinco enunciados sobre los seis casos como hecho, alegación, hallazgo, condena,
+   inferencia o hipótesis pedagógica; corrige cualquier frase que los llame «hackeos» sin respaldo.
 
 ## 📝 Reto verificable
 
 Entrega un **paquete de auditoría interna** con: plan de auditoría, diseño de pruebas para 4 controles, muestreo ejecutado con hallazgos clasificados, CAPA por hallazgo y un informe ejecutivo con conclusión.
 
 **Criterio de aceptación**: cada hallazgo cita evidencia y criterio incumplido, cada CAPA identifica causa raíz y fecha de cierre, y el informe distingue hallazgos mayores de menores con recomendaciones priorizadas.
+La muestra ampliada debe ser reproducible, señalar las tres anomalías sembradas y declarar al menos
+cuatro conclusiones no soportadas: fraude, intención, identidad humana y autenticidad de origen por
+el solo hecho de disponer de un hash.
 
 ## ⚠️ Errores comunes
 
@@ -110,6 +184,9 @@ Entrega un **paquete de auditoría interna** con: plan de auditoría, diseño de
 | Auditor sin independencia | Conflicto de interés; separa quien opera de quien audita |
 | Hallazgos sin causa raíz | Se repiten; en la CAPA analiza el porqué, no solo el qué |
 | Confundir SOC 2 Type I con Type II | Type I es diseño puntual; Type II prueba eficacia en el tiempo |
+| Pedir una confirmación «externa» al auditado | El canal sigue bajo control de la fuente examinada; solicita y recibe directamente del tercero |
+| Una conciliación cuadra y se da por auténtica | Cuadrar prueba consistencia entre datos seleccionados, no procedencia, completitud ni legitimidad |
+| Una anomalía se etiqueta como fraude | El hallazgo de control no establece intención ni responsabilidad penal; limita y escala la conclusión |
 
 ## ❓ Preguntas frecuentes
 
@@ -125,6 +202,11 @@ Normalmente no si se aborda con una CAPA; una mayor sí suele bloquearla hasta c
 **❓ ¿Qué es la auditoría continua?**
 El uso de herramientas que recolectan evidencia automáticamente (configuraciones, logs, controles) de forma permanente, en lugar de una foto anual.
 
+**❓ ¿Un hash convierte un archivo en evidencia auténtica?**
+No. Permite comparar bytes con un valor previo si la adquisición y el algoritmo están documentados.
+La autenticidad del origen, la identidad del emisor y la completitud requieren controles y evidencia
+adicionales.
+
 ## 🔗 Referencias
 
 - ISO 19011:2018 — Directrices para la auditoría de sistemas de gestión. <https://www.iso.org/standard/70017.html>
@@ -132,6 +214,9 @@ El uso de herramientas que recolectan evidencia automáticamente (configuracione
 - ISACA — IT Audit Framework (ITAF). <https://www.isaca.org/resources/itaf>
 - (ISC)² CISSP Official Study Guide, dominio 6 (Security Assessment and Testing).
 - NIST SP 800-53A — Assessing Security Controls. <https://csrc.nist.gov/pubs/sp/800/53/a/r5/final>
+- SEC Office of Inspector General — *Investigation of Failure of the SEC to Uncover Bernard Madoff's Ponzi Scheme* (2009); respalda el fallo de confirmación independiente y los límites de las revisiones. <https://www.sec.gov/oig/oig-reports-investigation-failure-madoff-ponzi-scheme>
+- U.S. Securities and Exchange Commission — declaración sobre reglas de custodia posteriores a Madoff; respalda la función de custodio independiente, estados directos y exámenes sorpresa. <https://www.sec.gov/newsroom/speeches-statements/spch121609mls-custody-statement-sec-open-meeting-custody-rules-investment-advisers>
+- Fiscalía de Chile — reformalización e información de peritajes contables en la investigación de AC Inversions (2018). La referencia respalda alegaciones y estado de la indagatoria en esa fecha, no una conclusión técnica ni una condena. <https://www.fiscaliadechile.cl/actualidad/noticias/regionales/caso-ac-inversions-fiscalia-de-alta-complejidad-reformalizo>
 
 ## 🔬 Aplicación transversal
 

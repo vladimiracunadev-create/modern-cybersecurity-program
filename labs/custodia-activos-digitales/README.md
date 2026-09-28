@@ -165,6 +165,24 @@ del conciliador. Acceso JIT/JEA limita duración y comandos; MFA resistente al
 phishing reduce account takeover; PAM graba sesión y rota credenciales. La cuenta
 break-glass requiere doble custodia, alerta inmediata, motivo, expiración y revisión.
 
+## Por qué este laboratorio usa esos controles
+
+El escenario **no reconstruye FTX, Celsius ni ningún caso real**. Nebula Custody,
+sus usuarios, eventos, direcciones, saldos y transferencias son ficticios. El diseño
+practica controles que documentos públicos permiten justificar sin copiar ni inventar
+la arquitectura de una organización real:
+
+| Evidencia pública | Competencia que se practica | Límite de la traslación |
+|---|---|---|
+| El testimonio oficial del nuevo CEO de FTX describió concentración de control, acceso de alta dirección a sistemas con activos de clientes, mezcla de activos y registros incompletos. | mínimo privilegio, segregación maker-checker, conciliación y trazabilidad | no afirma que el dataset, campos o reglas de Nebula existieran en FTX |
+| El informe del OIG de la SEC sobre Madoff documentó una confirmación supuestamente externa obtenida a través del propio examinado. | adquisición directa desde una fuente independiente y registro de procedencia | no convierte a Madoff en caso blockchain ni en incidente de ciberseguridad |
+
+Las fuentes inspiran **preguntas de control**, no hechos del escenario. Por eso el
+alumno busca quién podía solicitar, aprobar, ejecutar, registrar y conciliar; también
+contrasta una API externa. Una anomalía abre investigación. No prueba fraude, autor,
+intención ni una causa técnica, y el explorador externo tampoco demuestra por sí solo
+propiedad económica o autorización interna.
+
 ## Seguridad de wallets: decisión, no catálogo
 
 | Modelo | Ventaja | Riesgo/límite | Uso razonado |
@@ -221,3 +239,11 @@ eliminan colusión, políticas erróneas, administración excesiva ni recuperaci
 - [Solución docente](SOLUCION.md)
 - [← Caso transversal y diagnóstico](../../docs/caso-custodia-activos-digitales.md)
 - [← Índice de laboratorios](../README.md)
+
+## Fuentes del fundamento de control
+
+- U.S. House Committee on Financial Services — testimonio de John J. Ray III sobre
+  FTX (2022). <https://docs.house.gov/meetings/BA/BA00/20221213/115246/HHRG-117-BA00-Wstate-RayJ-20221213.pdf>
+- SEC Office of Inspector General — *Investigation of Failure of the SEC to Uncover
+  Bernard Madoff's Ponzi Scheme* (2009).
+  <https://www.sec.gov/oig/oig-reports-investigation-failure-madoff-ponzi-scheme>
