@@ -25,6 +25,7 @@ Sirve a pentesters web, cazadores de bugs (bug bounty), desarrolladores que quie
 ## 🧩 Problemas que resuelve
 
 - Identificar la **superficie de ataque** real de una aplicación web moderna (SPA, API, microservicios).
+- Modelar integraciones donde un frontend solicita autoridad a una wallet, proveedor de identidad o red externa sin confundir interfaz con efecto.
 - Detectar y explotar las **10 categorías de OWASP** con evidencia reproducible.
 - Usar **Burp Suite y ZAP** con fluidez para interceptar, modificar y automatizar peticiones.
 - Encadenar vulnerabilidades (p. ej. SSRF → metadata cloud → RCE) para demostrar impacto real.
@@ -44,6 +45,7 @@ Al terminar la parte, el alumno podrá:
 - Evaluar la seguridad de APIs REST/GraphQL y ataques de protocolo (request smuggling, cache poisoning).
 - Ejecutar una metodología de bug bounty y redactar reportes con impacto y remediación.
 - Recomendar controles de secure coding alineados con OWASP ASVS.
+- Separar origen web, proveedor de firma y operación autorizada al analizar sitios falsos y frontends comprometidos.
 
 ## 🧱 Prerrequisitos
 
@@ -130,7 +132,7 @@ flowchart TD
 
 ### 🧰 Bloque 1 · Fundamentos y herramientas — clases 086 a 090
 
-- **[086 · Arquitectura web moderna y superficie de ataque](086-arquitectura-web-moderna-y-superficie-de-ataque/README.md)** · 90 min — Cada componente (navegador, CDN, WAF, API, backend) procesa la entrada distinto y por eso es un punto de ataque distinto. El desplazamiento al cliente, la regla "nunca confíes en el cliente" y la joya del metadata cloud.
+- **[086 · Arquitectura web moderna y superficie de ataque](086-arquitectura-web-moderna-y-superficie-de-ataque/README.md)** · 90 min — Cada componente (navegador, CDN, WAF, API, backend) procesa la entrada distinto y por eso es un punto de ataque distinto. Añade la frontera frontend–wallet–contrato/programa: conectar, firmar y producir un efecto son eventos distintos que deben observarse por separado.
 - **[087 · OWASP Top 10: panorama general](087-owasp-top-10-panorama-general/README.md)** · 75 min — El mapa consensuado del riesgo web. Las tres primeras categorías (control de acceso, cripto, inyección) y por qué el Top 10 es el índice mental de todo pentest web.
 - **[088 · Burp Suite: configuración y flujo de trabajo](088-burp-suite-configuracion-y-flujo-de-trabajo/README.md)** · 120 min — El proxy que se pone en medio de tu navegador y hace moldeable todo lo que envía. La CA para HTTPS, Repeater e Intruder, y por qué Burp amplifica el criterio pero no lo sustituye.
 - **[089 · OWASP ZAP](089-owasp-zap/README.md)** · 90 min — La alternativa abierta. Spider tradicional frente a AJAX spider, la distinción pasivo/activo que evita incidentes, y el Automation Framework para CI/CD.

@@ -55,6 +55,9 @@ jobs:
       - name: Probar conciliación del caso de custodia digital
         run: python -m unittest discover -s labs/custodia-activos-digitales/tests -v
 
+      - name: Probar el caso de lanzamientos virales
+        run: python -m unittest discover -s labs/lanzamientos-virales/tests -v
+
       - name: Probar Game Security Range
         working-directory: labs/game-security
         run: python -m unittest discover -s tests -v

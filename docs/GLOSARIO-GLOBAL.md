@@ -8,7 +8,7 @@ el generador; la modalidad y disponibilidad pueden cambiar en sus sitios oficial
 > **Archivo generado.** No lo edites a mano. Ejecuta
 > `python scripts/generar_glosario_global.py` y valida con `--check`.
 
-**Cobertura:** 2429 términos consolidados · 345 clases con glosario.
+**Cobertura:** 2443 términos consolidados · 345 clases con glosario.
 
 ## Cómo usarlo
 
@@ -202,6 +202,12 @@ Token que dice qué puede hacer el cliente
 Requisito: transferir, cambiar correo, borrar
 
 **Aparece en 1 clase(s):** [Clase 98 — Cross-Site Request Forgery (CSRF)](../classes/parte-4-seguridad-de-aplicaciones-web/098-cross-site-request-forgery-csrf/README.md).
+
+### Account takeover
+
+Control no autorizado de una cuenta auténtica; conserva el handle de la víctima.
+
+**Aparece en 1 clase(s):** [Clase 252 — OSINT en redes sociales](../classes/parte-12-osint-e-ingenieria-social/252-osint-en-redes-sociales/README.md).
 
 ### Aceleración por GPU
 
@@ -754,6 +760,12 @@ Desempaqueta el APK y decodifica el manifiesto
 Razón documentada por la que una norma obliga a una entidad o flujo.
 
 **Aparece en 1 clase(s):** [Clase 281 — Cumplimiento: GDPR, HIPAA y PCI-DSS](../classes/parte-14-grc-riesgo-y-cumplimiento/281-cumplimiento-gdpr-hipaa-y-pci-dss/README.md).
+
+### Approval / permiso
+
+Autoridad concedida a un tercero para actuar sobre un activo según el protocolo.
+
+**Aparece en 1 clase(s):** [Clase 259 — Defensa contra la ingeniería social](../classes/parte-12-osint-e-ingenieria-social/259-defensa-contra-la-ingenieria-social/README.md).
 
 ### AppSec — Application Security
 
@@ -2903,6 +2915,12 @@ Descripción interoperable de operaciones y mensajes; no prueba autorización.
 
 **Aparece en 1 clase(s):** [Clase 247 — Seguridad de APIs en el ciclo de desarrollo](../classes/parte-11-devsecops-y-seguridad-del-sdlc/247-seguridad-de-apis-en-el-ciclo-de-desarrollo/README.md).
 
+### Contrato/programa
+
+Código ejecutado por una red; su modelo de estado y autorización depende de la plataforma
+
+**Aparece en 1 clase(s):** [Clase 86 — Arquitectura web moderna y superficie de ataque](../classes/parte-4-seguridad-de-aplicaciones-web/086-arquitectura-web-moderna-y-superficie-de-ataque/README.md).
+
 ### Control compensatorio
 
 Medida alternativa que reduce riesgo sin eliminar la causa.
@@ -3288,6 +3306,12 @@ Proveedor utilizado por el tercero.
 Sandboxes de análisis de malware
 
 **Aparece en 1 clase(s):** [Clase 144 — Análisis dinámico básico y sandboxing](../classes/parte-6-analisis-de-malware/144-analisis-dinamico-basico-y-sandboxing/README.md).
+
+### Cuenta imitadora
+
+Perfil distinto que copia señales visuales o un identificador parecido.
+
+**Aparece en 1 clase(s):** [Clase 252 — OSINT en redes sociales](../classes/parte-12-osint-e-ingenieria-social/252-osint-en-redes-sociales/README.md).
 
 ### Cuerpo técnico
 
@@ -5641,6 +5665,12 @@ Mecanismo para elevar algo a "merece atención"
 
 **Aparece en 1 clase(s):** [Clase 44 — Zeek para análisis de red a gran escala](../classes/parte-1-redes-y-seguridad-de-redes/044-zeek-para-analisis-de-red-a-gran-escala/README.md).
 
+### Frase semilla
+
+Secreto raíz del que pueden derivarse claves; exponerla exige tratar la wallet como comprometida.
+
+**Aparece en 1 clase(s):** [Clase 259 — Defensa contra la ingeniería social](../classes/parte-12-osint-e-ingenieria-social/259-defensa-contra-la-ingenieria-social/README.md).
+
 ### FREAK / Logjam
 
 Explotación de cifrados de exportación debilitados
@@ -6665,6 +6695,12 @@ Simula Internet (DNS, HTTP, SMTP) para el malware
 
 **Aparece en 1 clase(s):** [Clase 142 — Laboratorio seguro de análisis de malware](../classes/parte-6-analisis-de-malware/142-laboratorio-seguro-de-analisis-de-malware/README.md).
 
+### Influencer no corroborado
+
+Cuenta cuya autoridad o vínculo no está demostrado por fuentes independientes.
+
+**Aparece en 1 clase(s):** [Clase 252 — OSINT en redes sociales](../classes/parte-12-osint-e-ingenieria-social/252-osint-en-redes-sociales/README.md).
+
 ### Info leak
 
 Filtrar una dirección de libc en tiempo de ejecución
@@ -7640,6 +7676,12 @@ Living off the land: abusar de herramientas legítimas
 Exfiltrar despacio para evadir umbrales de volumen
 
 **Aparece en 2 clase(s):** [Clase 81 — Ataques a credenciales: fuerza bruta y password spraying](../classes/parte-3-hacking-etico-y-pentesting-metodologia/081-ataques-a-credenciales-fuerza-bruta-y-password-spraying/README.md), [Clase 83 — Exfiltración de datos](../classes/parte-3-hacking-etico-y-pentesting-metodologia/083-exfiltracion-de-datos/README.md).
+
+### LP token
+
+Representación del aporte a un pool que puede otorgar derecho a retirar liquidez según el protocolo.
+
+**Aparece en 1 clase(s):** [Clase 277 — Gestión de riesgos: cuantitativa y cualitativa](../classes/parte-14-grc-riesgo-y-cumplimiento/277-gestion-de-riesgos-cuantitativa-y-cualitativa/README.md).
 
 ### LSASS
 
@@ -11413,6 +11455,12 @@ Objetivo del exploit
 
 **Aparece en 1 clase(s):** [Clase 73 — Metasploit: explotación y payloads](../classes/parte-3-hacking-etico-y-pentesting-metodologia/073-metasploit-explotacion-y-payloads/README.md).
 
+### Riesgo de liquidez
+
+Incapacidad de comprar o vender al tamaño/precio esperado sin impacto material.
+
+**Aparece en 1 clase(s):** [Clase 277 — Gestión de riesgos: cuantitativa y cualitativa](../classes/parte-14-grc-riesgo-y-cumplimiento/277-gestion-de-riesgos-cuantitativa-y-cualitativa/README.md).
+
 ### Riesgo de modelo
 
 Pérdida por supuestos, relaciones o implementación inadecuados para la decisión modelada.
@@ -11424,6 +11472,12 @@ Pérdida por supuestos, relaciones o implementación inadecuados para la decisi�
 Impacto en dinero, reputación, cumplimiento, continuidad
 
 **Aparece en 1 clase(s):** [Clase 85 — Reporte profesional de pentest](../classes/parte-3-hacking-etico-y-pentesting-metodologia/085-reporte-profesional-de-pentest/README.md).
+
+### Riesgo de promotor
+
+Pérdida por privilegios, concentración o conducta de quienes controlan el proyecto.
+
+**Aparece en 1 clase(s):** [Clase 277 — Gestión de riesgos: cuantitativa y cualitativa](../classes/parte-14-grc-riesgo-y-cumplimiento/277-gestion-de-riesgos-cuantitativa-y-cualitativa/README.md).
 
 ### Riesgo residual
 
@@ -11660,6 +11714,12 @@ Tiempo objetivo para restaurar una capacidad.
 *Round-trip time*: latencia de ida y vuelta medida sobre el flujo
 
 **Aparece en 1 clase(s):** [Clase 27 — Análisis de tráfico: filtros, seguimiento de flujos y estadísticas](../classes/parte-1-redes-y-seguridad-de-redes/027-analisis-de-trafico-filtros-seguimiento-de-flujos-y-estadisticas/README.md).
+
+### Rug pull
+
+Riesgo de promotor/liquidez o abandono; no es sinónimo de phishing ni de drainer.
+
+**Aparece en 1 clase(s):** [Clase 259 — Defensa contra la ingeniería social](../classes/parte-12-osint-e-ingenieria-social/259-defensa-contra-la-ingenieria-social/README.md).
 
 ### Rules of engagement
 
@@ -12753,6 +12813,12 @@ Phishing dirigido y personalizado contra personas u organizaciones concretas
 
 **Aparece en 1 clase(s):** [Clase 166 — Phishing y entrega de payloads](../classes/parte-7-red-team-y-operaciones-ofensivas/166-phishing-y-entrega-de-payloads/README.md).
 
+### Spender
+
+Identidad autorizada para gastar un activo bajo las reglas del protocolo
+
+**Aparece en 1 clase(s):** [Clase 86 — Arquitectura web moderna y superficie de ataque](../classes/parte-4-seguridad-de-aplicaciones-web/086-arquitectura-web-moderna-y-superficie-de-ataque/README.md).
+
 ### SPF
 
 Registro DNS que declara qué servidores pueden enviar correo en nombre del dominio
@@ -13161,6 +13227,12 @@ Reutilizar un cifrado válido en otro lugar; el AAD lo impide
 
 **Aparece en 1 clase(s):** [Clase 59 — Cifrado autenticado (AEAD)](../classes/parte-2-criptografia-aplicada/059-cifrado-autenticado-aead/README.md).
 
+### Sustitución de portapapeles
+
+Escritura de otro valor; requiere correlación para demostrar impacto
+
+**Aparece en 1 clase(s):** [Clase 148 — Análisis de comportamiento](../classes/parte-6-analisis-de-malware/148-analisis-de-comportamiento/README.md).
+
 ### SVG malicioso
 
 XML con JavaScript; provoca XSS al visualizarse
@@ -13258,6 +13330,12 @@ ABI de Linux x64
 Exfiltrar sobre el C2 o por un canal alternativo
 
 **Aparece en 1 clase(s):** [Clase 83 — Exfiltración de datos](../classes/parte-3-hacking-etico-y-pentesting-metodologia/083-exfiltracion-de-datos/README.md).
+
+### T1115 Clipboard Data
+
+Acceso del adversario a datos almacenados en el portapapeles
+
+**Aparece en 1 clase(s):** [Clase 148 — Análisis de comportamiento](../classes/parte-6-analisis-de-malware/148-analisis-de-comportamiento/README.md).
 
 ### Tabla CAM
 
@@ -14414,6 +14492,12 @@ Servidor vulnerable para practicar en Windows
 Firewall de aplicación que filtra peticiones maliciosas
 
 **Aparece en 3 clase(s):** [Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad](../classes/parte-0-fundamentos-y-prerrequisitos/001-que-es-la-ciberseguridad-triada-cia-aaa-superficie-de-ataque-y-defensa-en-profundidad/README.md), [Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas](../classes/parte-0-fundamentos-y-prerrequisitos/010-redes-tcp-ip-modelo-osi-encapsulacion-y-capas/README.md), [Clase 86 — Arquitectura web moderna y superficie de ataque](../classes/parte-4-seguridad-de-aplicaciones-web/086-arquitectura-web-moderna-y-superficie-de-ataque/README.md).
+
+### Wallet drainer
+
+Cadena que obtiene y usa autoridad para mover activos; requiere identificar el mecanismo concreto.
+
+**Aparece en 1 clase(s):** [Clase 259 — Defensa contra la ingeniería social](../classes/parte-12-osint-e-ingenieria-social/259-defensa-contra-la-ingenieria-social/README.md).
 
 ### Watchpoint
 

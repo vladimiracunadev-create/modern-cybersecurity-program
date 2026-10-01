@@ -1,0 +1,144 @@
+{
+  "case_id": "LV-001",
+  "scenario": "Lanzamiento viral ficticio de OrbitPup",
+  "all_entities_are_fictional": true,
+  "official_reference": {
+    "project_domain": "orbitpup.example",
+    "social_account": "@orbitpup",
+    "network": "training-evm",
+    "asset_id": "0x1111111111111111111111111111111111111111",
+    "symbol": "PUP"
+  },
+  "timeline": [
+    {
+      "event_id": "evt-001",
+      "timestamp": "2026-09-14T18:00:00Z",
+      "source": "video-platform-export",
+      "type": "viral_video",
+      "account": "@LiaNovaLive",
+      "text": "PUP sale hoy; busca el airdrop antes de que cierre",
+      "account_created_days_ago": 3,
+      "links_from_known_official_channels": false,
+      "media_origin_verified": false
+    },
+    {
+      "event_id": "evt-002",
+      "timestamp": "2026-09-14T18:04:00Z",
+      "source": "browser-history",
+      "type": "search_result_visit",
+      "domain": "orbitpup-airdrop.example",
+      "referrer": "search.example",
+      "tls": true,
+      "first_seen_days_ago": 2,
+      "linked_from_official_domain": false
+    },
+    {
+      "event_id": "evt-003",
+      "timestamp": "2026-09-14T18:05:00Z",
+      "source": "social-platform-export",
+      "type": "social_post",
+      "account": "@0rbitpup",
+      "display_name": "OrbitPup Official",
+      "linked_domain": "orbitpup-airdrop.example",
+      "account_matches_official": false,
+      "message": "Últimos 10 minutos: reclama el airdrop"
+    },
+    {
+      "event_id": "evt-004",
+      "timestamp": "2026-09-14T18:06:00Z",
+      "source": "identity-provider-export",
+      "type": "account_session_anomaly",
+      "account": "@orbitpup",
+      "new_device": true,
+      "new_country": true,
+      "phishing_resistant_mfa": false,
+      "session_revoked_at": "2026-09-14T18:31:00Z"
+    },
+    {
+      "event_id": "evt-005",
+      "timestamp": "2026-09-14T18:07:00Z",
+      "source": "social-platform-export",
+      "type": "social_post",
+      "account": "@orbitpup",
+      "display_name": "OrbitPup",
+      "linked_domain": "orbitpup-airdrop.example",
+      "account_matches_official": true,
+      "message": "Migración urgente: usa este airdrop"
+    },
+    {
+      "event_id": "evt-006",
+      "timestamp": "2026-09-14T18:09:00Z",
+      "source": "landing-page-capture",
+      "type": "airdrop_page",
+      "domain": "orbitpup-airdrop.example",
+      "advertised_network": "training-evm",
+      "advertised_asset_id": "0x9999999999999999999999999999999999999999",
+      "advertised_symbol": "PUP",
+      "asks_for_seed_phrase": true,
+      "countdown_seconds": 420
+    },
+    {
+      "event_id": "evt-007",
+      "timestamp": "2026-09-14T18:10:00Z",
+      "source": "wallet-export",
+      "type": "wallet_connection",
+      "origin": "https://orbitpup-airdrop.example",
+      "public_address_disclosed": true,
+      "state_change": false
+    },
+    {
+      "event_id": "evt-008",
+      "timestamp": "2026-09-14T18:11:00Z",
+      "source": "wallet-export",
+      "type": "transaction_request",
+      "origin": "https://orbitpup-airdrop.example",
+      "network": "training-evm",
+      "displayed_action": "Claim 250 PUP",
+      "decoded_actions": [
+        {
+          "operation": "approve",
+          "asset_id": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "spender": "0xdddddddddddddddddddddddddddddddddddddddd",
+          "amount": "unlimited"
+        }
+      ],
+      "simulation_warning": "unlimited-token-approval",
+      "signed": true
+    },
+    {
+      "event_id": "evt-009",
+      "timestamp": "2026-09-14T18:12:00Z",
+      "source": "chain-observation",
+      "type": "asset_transfer",
+      "mechanism": "delegated-spend",
+      "spender": "0xdddddddddddddddddddddddddddddddddddddddd",
+      "destination": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "asset_id": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "amount": "1250.00",
+      "transaction_id": "0xtrain0001"
+    },
+    {
+      "event_id": "evt-010",
+      "timestamp": "2026-09-14T18:13:00Z",
+      "source": "endpoint-edr",
+      "type": "clipboard_replacement",
+      "process": "clipwatch-training.exe",
+      "parent_process": "unknown-loader.exe",
+      "original_value": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "replacement_value": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "network_destination": "198.51.100.25"
+    }
+  ],
+  "liquidity_case": {
+    "case_id": "LV-002",
+    "same_campaign_as_lv_001": false,
+    "asset_id_verified": true,
+    "promoter_claim": "liquidity locked for 12 months",
+    "lp_control": "promoter-wallet",
+    "lock_verified": false,
+    "liquidity_before": "500000.00",
+    "liquidity_after": "2500.00",
+    "withdrawal_event_id": "liq-044",
+    "project_channels_deleted_after_withdrawal": true
+  }
+}

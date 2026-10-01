@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "verified_on": "2026-09-28",
+ "verified_on": "2026-10-01",
  "min_uso_declarado_pct": 66.0,
  "policy": "Toda afirmacion del programa se apoya en una entrada de este registro. Ninguna entrada se acepta sin localizador verificable: ISBN-13 para libros, DOI para articulos, URL https de la fuente primaria para normas y documentacion oficial. Lo que no se pudo comprobar queda como \"pendiente\" con el motivo, nunca borrado ni rellenado por intuicion.",
  "entries": [
@@ -17488,6 +17488,142 @@
    "accessed": "2026-09-28",
    "used_in": [
     "classes/parte-14-grc-riesgo-y-cumplimiento/285-auditoria-de-seguridad/README.md"
+   ]
+  },
+  {
+   "id": "sec-investor-alert-crypto-scams-2024",
+   "type": "reference",
+   "title": "5 Ways Fraudsters May Lure Victims Into Scams Involving Crypto Asset Securities",
+   "authors": [
+    "U.S. Securities and Exchange Commission, Office of Investor Education and Advocacy"
+   ],
+   "published": "2024",
+   "locator": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/crypto-scams",
+   "authority": "U.S. Securities and Exchange Commission",
+   "status": "verificada",
+   "notes": "Alerta oficial consultada el 2026-10-01; respalda mecanismos de captacion por redes sociales, suplantacion, cuentas comprometidas, deepfakes y promocion de memecoins, sin calificar automaticamente una promocion concreta como fraude.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/crypto-scams"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-01",
+   "used_in": [
+    "classes/parte-12-osint-e-ingenieria-social/252-osint-en-redes-sociales/README.md",
+    "classes/parte-12-osint-e-ingenieria-social/259-defensa-contra-la-ingenieria-social/README.md"
+   ]
+  },
+  {
+   "id": "metamask-token-approval",
+   "type": "reference",
+   "title": "What is a token approval?",
+   "authors": [
+    "MetaMask"
+   ],
+   "locator": "https://support.metamask.io/stay-safe/safety-in-web3/what-is-a-token-approval/",
+   "authority": "MetaMask",
+   "status": "verificada",
+   "notes": "Documentacion oficial consultada el 2026-10-01; respalda permisos de gasto, approvals maliciosos y revocacion en el ecosistema descrito, no una semantica universal para todas las redes.",
+   "matches": {
+    "url_prefixes": [
+     "https://support.metamask.io/stay-safe/safety-in-web3/what-is-a-token-approval/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-01",
+   "used_in": [
+    "classes/parte-12-osint-e-ingenieria-social/259-defensa-contra-la-ingenieria-social/README.md"
+   ]
+  },
+  {
+   "id": "metamask-official-support-channels",
+   "type": "reference",
+   "title": "MetaMask's official support channels",
+   "authors": [
+    "MetaMask"
+   ],
+   "locator": "https://support.metamask.io/stay-safe/safety-in-web3/what-are-metamasks-official-support-channels/",
+   "authority": "MetaMask",
+   "status": "verificada",
+   "notes": "Documentacion oficial consultada el 2026-10-01; respalda los canales declarados por MetaMask y que su soporte no solicita la frase de recuperacion.",
+   "matches": {
+    "url_prefixes": [
+     "https://support.metamask.io/stay-safe/safety-in-web3/what-are-metamasks-official-support-channels/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-01",
+   "used_in": [
+    "classes/parte-12-osint-e-ingenieria-social/259-defensa-contra-la-ingenieria-social/README.md"
+   ]
+  },
+  {
+   "id": "ethereum-trillion-dollar-security",
+   "type": "reference",
+   "title": "Trillion Dollar Security Project - Security Challenges Overview Report",
+   "authors": [
+    "Ethereum Foundation"
+   ],
+   "published": "2025",
+   "locator": "https://ethereum.org/reports/trillion-dollar-security/",
+   "authority": "Ethereum Foundation",
+   "status": "verificada",
+   "notes": "Informe oficial consultado el 2026-10-01; respalda riesgos de firma ciega, approvals persistentes, aplicaciones maliciosas y frontends comprometidos dentro del ecosistema Ethereum.",
+   "matches": {
+    "url_prefixes": [
+     "https://ethereum.org/reports/trillion-dollar-security/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-01",
+   "used_in": [
+    "classes/parte-4-seguridad-de-aplicaciones-web/086-arquitectura-web-moderna-y-superficie-de-ataque/README.md"
+   ]
+  },
+  {
+   "id": "solana-core-concepts",
+   "type": "reference",
+   "title": "Solana Core Concepts",
+   "authors": [
+    "Solana Foundation"
+   ],
+   "locator": "https://solana.com/docs/core",
+   "authority": "Solana Foundation",
+   "status": "verificada",
+   "notes": "Documentacion oficial consultada el 2026-10-01; respalda la relacion entre cuentas, programas, instrucciones y transacciones en Solana y se usa para evitar generalizar el modelo de otra red.",
+   "matches": {
+    "url_prefixes": [
+     "https://solana.com/docs/core"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-01",
+   "used_in": [
+    "classes/parte-4-seguridad-de-aplicaciones-web/086-arquitectura-web-moderna-y-superficie-de-ataque/README.md"
+   ]
+  },
+  {
+   "id": "sec-game-coin-rug-pull-2025",
+   "type": "reference",
+   "title": "SEC Charges New York Blockchain Engineer with Perpetrating Rug Pull Fraud",
+   "authors": [
+    "U.S. Securities and Exchange Commission"
+   ],
+   "published": "2025",
+   "locator": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26223",
+   "authority": "U.S. Securities and Exchange Commission",
+   "status": "verificada",
+   "notes": "Litigation Release No. 26223 consultado el 2026-10-01; respalda el mecanismo alegado de control de LP tokens no bloqueados y retiro de liquidez. Las alegaciones de la demanda no se trasladan a otros proyectos.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26223"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-01",
+   "used_in": [
+    "classes/parte-14-grc-riesgo-y-cumplimiento/277-gestion-de-riesgos-cuantitativa-y-cualitativa/README.md"
    ]
   }
  ]

@@ -107,7 +107,7 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 | [RFC 7489](https://www.rfc-editor.org/rfc/rfc7489) | obsoleta | 1 |
 | [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446) | obsoleta | 1 |
 
-Las 732 obras que usa el programa — 57 libros, 25 artículos, 159 normas y 491 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-09-28 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
+Las 738 obras que usa el programa — 57 libros, 25 artículos, 159 normas y 497 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-10-01 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
 
 <!-- fuentes:fin -->
 
@@ -182,6 +182,7 @@ comando, más una colección de retos tipo CTF:
 - 🎮 **[Game Security Range](labs/game-security/README.md)** — cliente/servidor educativo, modos vulnerable/seguro, telemetría, datasets y detectores · Parte 19.
 - 🪟 **[Triaje forense de Windows (RootCause)](labs/rootcause-windows/README.md)** — sensor forense de comportamiento en Rust · Partes 6, 8 y 9.
 - ₿ **[Custodia de activos digitales](labs/custodia-activos-digitales/README.md)** — caso transversal ficticio con conciliación ledger–operación–blockchain, IAM/PAM/SoD, insider risk, threat model, DFIR, ocho playbooks, dataset y tests · Partes 8, 9, 11, 14, 16 y 17; [diagnóstico y arquitectura](docs/caso-custodia-activos-digitales.md).
+- 📣 **[Lanzamientos virales y memecoins](labs/lanzamientos-virales/README.md)** — caso offline ficticio: video viral, token/sitio/cuentas/airdrop falsos, account takeover, autorización maliciosa, drainer, seed theft, clipboard y rug pull, con analizador y tests · Partes 4, 6, 9, 12 y 14; [auditoría curricular](docs/caso-lanzamientos-virales.md).
 - 🌐 **[Escaneo de red (nmap)](labs/redes-nmap/README.md)** · 💥 **[Explotación de binarios (pwn)](labs/pwn-binarios/README.md)** · ☁️ **[Auditoría cloud (CSPM)](labs/cloud-security/README.md)** — Partes 1, 5 y 10.
 - 🚩 **[Retos tipo CTF](ctf/README.md)** — web, cripto, redes, forense, OSINT y pwn, con writeups.
 - 📖 **[Glosario global](docs/GLOSARIO-GLOBAL.md)** — términos, siglas, aliases y trazabilidad automática hacia las clases donde aparecen.

@@ -32,6 +32,7 @@ Sirve a quien aspire a roles de gestión (CISO, GRC analyst, auditor, DPO, risk 
 - Cómo mantener la operación tras un incidente grave, un ransomware o un desastre físico (BCP/DRP).
 - Cómo gestionar el riesgo que introducen proveedores y terceros en tu cadena de suministro.
 - Cómo medir si el programa de seguridad realmente mejora, con KPIs y KRIs accionables.
+- Cómo separar token imitador, drainer, rug pull y caída de mercado antes de asignar controles o responsabilidad.
 
 ## 🎓 Resultados de aprendizaje
 
@@ -46,6 +47,7 @@ Al terminar esta parte, el alumno podrá:
 7. Construir un BCP/DRP con BIA, RTO y RPO calculados y estrategias de recuperación.
 8. Definir un cuadro de mando de métricas (KPI/KRI) y evaluar la cobertura de un ciberseguro.
 9. Evaluar privilegios, segregación, trazabilidad y evidencia externa sin atribuir fraude o causa técnica más allá de la fuente.
+10. Formular escenarios distintos para riesgo técnico, de promotor, liquidez y mercado aunque produzcan una pérdida parecida.
 
 ## 🧱 Prerrequisitos
 
@@ -63,7 +65,7 @@ flowchart LR
 Las clases 276–280 construyen autoridad, escenarios de riesgo y selección contextual de ISO 27001, CSF y CIS. Las clases 281–285 convierten obligaciones en evidencia, documentos operables, continuidad probada, gobierno de proveedores y auditoría independiente. Las clases 286–290 cierran con conducta, métricas, transferencia financiera, privacidad y desarrollo profesional. Cada clase produce una decisión o evidencia que alimenta la siguiente; ningún marco se enseña como checklist universal.
 
 1. **[Clase 276 — Gobernanza de la seguridad de la información](276-gobernanza-de-la-seguridad-de-la-informacion/README.md).** Separa gobierno, gestión y operación; asigna autoridad, apetito de riesgo y rendición de cuentas. FTX y Celsius se usan con fuentes y estados procesales explícitos para convertir concentración de privilegios, excepciones e información incompleta en requisitos verificables. La evidencia es una RACI, un charter y una excepción sintética con prueba negativa y revisión.
-2. **[Clase 277 — Gestión de riesgos cuantitativa y cualitativa](277-gestion-de-riesgos-cuantitativa-y-cualitativa/README.md).** Convierte escenarios en frecuencia, magnitud, incertidumbre y tratamiento. Terra/UST sirve para separar riesgo económico, de modelo, liquidez, cumplimiento y ciberseguridad: un *de-peg* no demuestra una intrusión. La evidencia es una hoja enlazada y una clasificación de hipótesis con datos que podrían confirmarlas o refutarlas.
+2. **[Clase 277 — Gestión de riesgos cuantitativa y cualitativa](277-gestion-de-riesgos-cuantitativa-y-cualitativa/README.md).** Convierte escenarios en frecuencia, magnitud, incertidumbre y tratamiento. Terra/UST sirve para separar riesgo económico, de modelo, liquidez, cumplimiento y ciberseguridad; el caso viral contrasta token imitador, drainer, retiro de liquidez y caída de mercado. La evidencia es una hoja enlazada y una clasificación de hipótesis con datos que podrían confirmarlas o refutarlas.
 3. **[Clase 278 — ISO/IEC 27001 e implantación de un SGSI](278-iso-iec-27001-e-implantacion-de-un-sgsi/README.md).** Toma riesgos y decisiones de las dos clases anteriores y los integra en alcance, liderazgo, tratamiento, Declaración de Aplicabilidad y mejora continua. La evidencia es un diseño de SGSI cuyo control seleccionado conserva justificación, dueño y revisión.
 4. **[Clase 279 — NIST Cybersecurity Framework](279-nist-cybersecurity-framework/README.md).** Organiza resultados de ciberseguridad con las seis funciones de CSF 2.0 y compara perfil actual con objetivo. La evidencia es un perfil priorizado que comunica brechas sin convertir el *Tier* en una certificación.
 5. **[Clase 280 — Controles CIS](280-controles-cis/README.md).** Pasa del lenguaje de resultados a salvaguardas priorizadas mediante Implementation Groups y Benchmarks. La evidencia es una selección contextual de controles con criterio técnico de verificación, no la adopción ciega de un catálogo.

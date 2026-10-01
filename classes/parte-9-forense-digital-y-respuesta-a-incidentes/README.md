@@ -32,6 +32,7 @@ Esta parte sirve a analistas de SOC que quieren pasar de la alerta al análisis 
 - Cómo contener y erradicar una amenaza sin destruir los datos que necesitas para el análisis.
 - Cómo escribir un informe forense y una cadena de custodia que resistan escrutinio legal.
 - Cómo ensayar la respuesta antes de que ocurra el incidente real mediante ejercicios de mesa.
+- Cómo adaptar adquisición y contención a incidentes donde las fuentes centrales son identidad, navegador, wallet y observación transaccional.
 
 ## 🎓 Resultados de aprendizaje
 
@@ -45,6 +46,7 @@ Al terminar la parte, el alumno podrá:
 6. Construir super-timelines con plaso/log2timeline y analizarlas con criterio.
 7. Redactar playbooks de respuesta y ejecutar el ciclo completo PICERL/NIST.
 8. Producir un informe forense defendible y coordinar un ejercicio tabletop.
+9. Seleccionar fuentes por pregunta investigativa sin forzar el patrón disco–memoria–red a todos los incidentes.
 
 ## 🧱 Prerrequisitos
 
@@ -110,7 +112,7 @@ La progresión sigue una pregunta profesional: **¿cómo se pasa de una señal i
 
 **[Clase 219 — Ejercicios tabletop](219-ejercicios-de-mesa-tabletop/README.md).** Diseña objetivos observables, participantes, injects, decisiones y consecuencias simuladas. Explica qué puede medir una conversación facilitada y qué requiere una prueba técnica distinta. La evidencia es un after-action report con brechas, responsables, plazos y una reprueba planificada.
 
-**[Clase 220 — Caso completo end-to-end](220-caso-completo-de-respuesta-a-incidentes-end-to-end/README.md).** Integra alerta, adquisición, disco, memoria, red, timeline, contención, recuperación, RCA e informe sin imponer una historia de antemano. El alumno debe justificar decisiones con la información disponible en cada momento y registrar desconocidos. La evidencia final es un expediente reproducible y un conjunto de mejoras revalidadas.
+**[Clase 220 — Caso completo end-to-end](220-caso-completo-de-respuesta-a-incidentes-end-to-end/README.md).** Integra alerta, adquisición, disco, memoria, red, timeline, contención, recuperación, RCA e informe sin imponer una historia de antemano. Añade una variante de lanzamiento viral donde cuenta, navegador, wallet, autorización y observación de cadena sustituyen las fuentes tradicionales; la evidencia final sigue siendo un expediente reproducible y un conjunto de mejoras revalidadas.
 
 ## 🧭 Método de investigación de la parte
 

@@ -18,6 +18,7 @@ Al finalizar, el alumno podrá:
 3. **Construir** una super-timeline que sostenga las conclusiones.
 4. **Contener y erradicar** con preservación de evidencia.
 5. **Entregar** un informe forense y un post-mortem defendibles.
+6. **Adaptar** el método a incidentes centrados en identidad, navegador, wallet y evidencia transaccional sin forzar artefactos de disco o memoria inexistentes.
 
 ## 🗺️ Temas
 
@@ -31,6 +32,7 @@ Al finalizar, el alumno podrá:
 | 6 | Contención y erradicación | Detener y limpiar |
 | 7 | RCA y lecciones | Prevenir recurrencia |
 | 8 | Informe final | Cerrar con calidad |
+| 9 | Variantes de evidencia | El método se conserva aunque cambien las fuentes y el activo |
 
 ## 🧠 Explicación en profundidad
 
@@ -103,6 +105,27 @@ El equipo preserva memoria, PCAP, perfil, eventos Windows, autenticación y logs
 
 El RCA encuentra privilegio excesivo y telemetría cloud incompleta como condiciones contribuyentes. Las acciones incluyen privilegio temporal, habilitación de data events relevantes y prueba de una regla de detección. El informe declara un intervalo sin visibilidad en un servicio, en vez de completar la historia con suposiciones.
 
+### Variante razonada — lanzamiento viral y autorización maliciosa
+
+Un incidente puede comenzar con un video y terminar en un movimiento de activos sin que exista
+PowerShell, C2 o persistencia. El alcance inicial incluye publicación, cuentas sociales, dominio,
+perfil de navegador, exportación de la wallet, datos de la petición firmada y observación de cadena.
+Si además aparece sustitución del portapapeles, se añade el endpoint y su evidencia volátil; no se
+supone que esa ruta causó el movimiento ya explicado por otro mecanismo.
+
+La timeline separa buscar, visitar, conectar, firmar, conceder permiso y transferir. La identidad del
+activo se fija como red + contrato/mint, y la del sitio como origen y procedencia, no como símbolo o
+logo. Una cuenta auténtica puede estar tomada; una dirección de blockchain no identifica por sí sola
+a una persona; una conexión de wallet sin cambio de estado no prueba robo. El caso se cierra solo
+cuando la contención responde a lo realmente expuesto: revocación para un permiso, migración para una
+seed, recuperación de cuenta para una sesión social y adquisición/erradicación para malware de
+endpoint.
+
+El [laboratorio OrbitPup](../../../labs/lanzamientos-virales/README.md) proporciona diez eventos
+sintéticos y un analizador offline para practicar esta variante sin fondos ni sistemas reales. Su
+segundo expediente de liquidez se mantiene separado: un rug pull es una hipótesis de promotor y
+liquidez, no el nombre genérico de cualquier robo.
+
 ## ✅ Criterio de dominio
 
 Dominas la Parte 9 cuando puedes conducir el caso desde una alerta incierta hasta un cierre defendible: formulas hipótesis competidoras, preservas por volatilidad y riesgo, mantienes custodia y bitácora, correlacionas sin forzar concordancia, justificas contención, verificas recuperación y conviertes causas en controles reprobados.
@@ -135,6 +158,10 @@ Dominas la Parte 9 cuando puedes conducir el caso desde una alerta incierta hast
 7. **Contención y erradicación**: busca persistencia en las superficies definidas, elimina mecanismos hallados, rota credenciales y valida recuperación declarando límites (clase 216).
 8. **RCA e informe**: aplica 5 Porqués e Ishikawa (clase 217) y redacta el informe forense y el post-mortem blameless (clases 217, 218).
 
+**Variante sin malware real:** sustituye los pasos 1–8 por el laboratorio OrbitPup. Preserva su JSON,
+ejecuta el analizador, construye la timeline y entrega el mismo paquete de decisión. Justifica por qué
+browser, identidad, wallet y observación de cadena reemplazan —y no imitan— memoria, disco y PCAP.
+
 ## ✍️ Ejercicios
 
 1. Escribe la decisión de triage y su justificación de severidad.
@@ -143,6 +170,7 @@ Dominas la Parte 9 cuando puedes conducir el caso desde una alerta incierta hast
 4. Enumera las superficies de persistencia examinadas, los mecanismos hallados y lo que queda fuera de cobertura.
 5. Deriva cinco IOCs del incidente para búsqueda retroactiva.
 6. Formula tres acciones correctivas contra causas raíz.
+7. Para el caso viral, explica qué demuestra un TXID y qué fuentes faltan para atribuir operador, intención o legitimidad.
 
 ## 📝 Reto verificable
 
@@ -159,6 +187,8 @@ Resuelve el incidente completo y entrega el paquete final: cadena de custodia, h
 | Timeline caótica | No la acotaste ni pivoteaste. Filtra por ventana y parte de eventos conocidos. |
 | Erradicación incompleta | Persistencia sin enumerar. Revísala toda antes de cerrar. |
 | Informe no reproducible | Faltan hashes/versiones. Documenta la metodología completa. |
+| Forzar el playbook de malware a otro incidente | Adquiere las fuentes que responden la pregunta: identidad, navegador, wallet y cadena pueden ser centrales. |
+| Resetear o migrar antes de preservar | La urgencia no elimina la trazabilidad; registra lo viable sin retrasar una contención crítica. |
 
 ## ❓ Preguntas frecuentes
 

@@ -40,6 +40,7 @@ mejor forma de comprender cómo se vulnera la de otros.
 
 - Mapear la superficie de exposición pública de una organización antes de un pentest.
 - Verificar identidades, detectar suplantaciones y validar fuentes en investigaciones.
+- Desmontar campañas virales que encadenan cuentas falsas o tomadas, sitios imitadores, airdrops y solicitudes de wallet.
 - Someter afirmaciones tecnológicas públicas a propiedades observables sin convertir falta de corroboración en acusación.
 - Descubrir subdominios, correos y tecnologías filtradas que amplían el vector de ataque.
 - Localizar dispositivos expuestos en Internet (Shodan/Censys) y priorizar su remediación.
@@ -60,6 +61,7 @@ Al terminar la parte, el alumno podrá:
 - Diseñar y ejecutar una campaña de phishing controlada con GoPhish, con métricas y reporte.
 - Explicar los principios de influencia y evaluar pretextos ficticios para diseñar controles verificables.
 - Implementar controles de defensa contra ingeniería social y un plan de OPSEC personal.
+- Separar identidad social, origen web, identidad del activo, secreto y autorización antes de ejecutar una acción sensible.
 
 ## 🧱 Prerrequisitos
 
@@ -94,17 +96,17 @@ flowchart LR
 1. **Clase 249 — Fundamentos de OSINT.** Distingue una búsqueda de un ciclo de inteligencia. El alumno formula una pregunta, preserva procedencia y separa observación, inferencia e hipótesis con confianza calibrada. El contraste OneCoin enseña a convertir marketing tecnológico en propiedades verificables y a no confundir una afirmación no corroborada con prueba de fraude.
 2. **Clase 250 — OSINT de personas.** Introduce resolución de entidades y minimización. La evidencia esperada no es un dossier intrusivo, sino una matriz sobre una identidad propia o ficticia con coincidencias, contradicciones y límites.
 3. **Clase 251 — Empresas y dominios.** Extiende la atribución a relaciones entre entidades, DNS, certificados, ASN y proveedores. El alumno separa propiedad, alojamiento, vigencia y alcance autorizado.
-4. **Clase 252 — Redes sociales.** Enseña a preservar publicaciones con contexto y a evaluar cuenta, multimedia, tiempo y relaciones sin inferir intención o liderazgo desde una arista.
+4. **Clase 252 — Redes sociales.** Enseña a preservar publicaciones con contexto y a evaluar cuenta, multimedia, tiempo y relaciones sin inferir intención o liderazgo desde una arista. El caso viral diferencia cuenta imitadora, influencer no corroborado y cuenta auténtica tomada; la evidencia es una matriz de procedencia y sesión, no un veredicto por avatar o seguidores.
 5. **Clase 253 — Geolocalización e imágenes.** Convierte detalles visuales y metadatos en candidatos refutables. El producto declara la granularidad realmente demostrada y protege ubicaciones sensibles.
 6. **Clase 254 — Shodan y Censys.** Analiza índices de medición como observaciones temporales. El alumno valida activos propios y diferencia banner, exposición y vulnerabilidad sin realizar interacción fuera de alcance.
 7. **Clase 255 — Automatización.** Usa SpiderFoot y Maltego para ampliar una pregunta definida. Cada relación conserva fuente y fecha, y la revisión humana detiene la propagación de asociaciones falsas.
 8. **Clase 256 — Fundamentos de ingeniería social.** Cambia del inventario a los mecanismos de decisión. El alumno diseña controles que no dependen de atención perfecta ni culpan a la víctima.
 9. **Clase 257 — Pretexting y vishing.** Practica protocolos de verificación independiente mediante escenarios ficticios y aprobados. La habilidad es proteger una acción sensible bajo presión, no construir un engaño real.
 10. **Clase 258 — Simulaciones con GoPhish.** Diseña una intervención educativa completa: aprobaciones, minimización, piloto, parada, métricas, debrief y eliminación. Nunca se capturan secretos reales.
-11. **Clase 259 — Defensa contra ingeniería social.** Integra autenticación resistente al phishing, procesos de negocio, reporte y respuesta. El alumno diferencia recibir, hacer clic, entregar credenciales y autorizar una transacción.
+11. **Clase 259 — Defensa contra ingeniería social.** Integra autenticación resistente al phishing, procesos de negocio, reporte y respuesta. El alumno diferencia recibir, hacer clic, conectar, firmar, conceder permiso, entregar una seed y observar una transferencia; la evidencia es un playbook ramificado por lo realmente expuesto.
 12. **Clase 260 — OPSEC personal.** Cierra protegiendo cuentas, dispositivos, red, contenido y bienestar bajo un modelo de amenaza. Explica por qué seudónimo, VPN o Tor no ofrecen anonimato universal.
 
-El proyecto integrador utiliza una organización y personas ficticias: produce un informe OSINT con fuentes y confianza, modela qué exposición habilitaría un pretexto, propone una simulación de mínimo daño y diseña controles técnicos, de proceso y OPSEC. Toda interacción queda dentro del laboratorio y el resultado evita datos personales reales.
+El proyecto integrador utiliza una organización y personas ficticias: produce un informe OSINT con fuentes y confianza, modela qué exposición habilitaría un pretexto, propone una simulación de mínimo daño y diseña controles técnicos, de proceso y OPSEC. El [laboratorio OrbitPup](../../labs/lanzamientos-virales/README.md) añade una variante completamente offline: video viral → búsqueda → cuentas falsas o tomadas → airdrop → autorización maliciosa → movimiento de activos. Toda interacción queda dentro del laboratorio y el resultado evita datos personales, wallets y fondos reales.
 
 ## ⚖️ Nota ética y legal (léela antes de empezar)
 
@@ -129,6 +131,7 @@ datos, fraude, usurpación de identidad). Ante la duda, no lo hagas: pide autori
 - NIST SP 800-63B-4 — *Authentication and Authenticator Management*. <https://pages.nist.gov/800-63-4/sp800-63b/authenticators/>
 - U.S. Department of Justice — sentencia de Karl Sebastian Greenwood y hechos establecidos sobre
   OneCoin (2023). <https://www.justice.gov/usao-sdny/pr/co-founder-multibillion-dollar-cryptocurrency-scheme-onecoin-sentenced-20-years-prison>
+- SEC — alerta sobre estafas con criptoactivos: redes sociales, suplantación, cuentas tomadas y promoción de memecoins. <https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/crypto-scams>
 
 ## ▶️ Empezar
 

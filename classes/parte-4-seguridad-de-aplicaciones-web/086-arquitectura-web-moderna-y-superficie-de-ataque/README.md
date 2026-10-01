@@ -7,7 +7,10 @@
 
 ## 🎯 Objetivo
 
-Entender cómo está construida una aplicación web moderna —navegador, SPA, API, backend, base de datos, servicios cloud— y aprender a dibujar su **superficie de ataque** completa. Sin este mapa mental, el resto de la parte se convierte en probar payloads a ciegas; con él, cada prueba tiene un porqué.
+Entender cómo está construida una aplicación web moderna —navegador, SPA, API, backend, base de datos,
+servicios cloud e integraciones externas— y aprender a dibujar su **superficie de ataque** completa.
+Sin este mapa mental, el resto de la parte se convierte en probar payloads a ciegas; con él, cada
+prueba tiene un porqué y cada frontera conserva su propia autoridad.
 
 ## 📚 Resultados de aprendizaje
 
@@ -18,6 +21,7 @@ Al finalizar, el alumno podrá:
 3. **Diferenciar** controles de seguridad del lado cliente y del lado servidor.
 4. **Construir** un diagrama de superficie de ataque a partir de la observación del tráfico HTTP.
 5. **Clasificar** activos por sensibilidad para priorizar el testing.
+6. **Separar** la identidad y seguridad de un frontend de los efectos que solicita a un proveedor externo, como una wallet.
 
 ## 🗺️ Temas
 
@@ -30,6 +34,7 @@ Al finalizar, el alumno podrá:
 | 5 | Proxies, CDN, WAF y balanceadores | Añaden capas que alteran las peticiones |
 | 6 | Servicios cloud y metadata | Amplían el impacto de fallos como SSRF |
 | 7 | Puntos de entrada de datos | Cada input es un vector potencial |
+| 8 | Frontends e integraciones de wallet | La página describe una intención; la operación firmada determina el efecto |
 
 ## 🧠 Explicación en profundidad
 
@@ -99,6 +104,31 @@ backend puede ser inducido a pedirle algo a esa dirección —un SSRF, clase 099
 llaves de la infraestructura. Tener el mapa de entradas y de servicios internos es lo que
 convierte el pentest web de un tanteo a ciegas en una búsqueda dirigida.
 
+### Cuando el frontend pide autoridad fuera de la web
+
+Una interfaz puede iniciar una operación cuyo efecto no ocurre en su backend. Una dapp, por ejemplo,
+puede pedir a una extensión o aplicación de wallet que revele una dirección pública, firme un mensaje
+o autorice una transacción dirigida a un contrato o programa. Son acciones diferentes. **Conectar**
+suele establecer una sesión y compartir identificadores; no implica por sí solo una transferencia.
+El cambio de estado aparece cuando una operación firmada concede permiso, transfiere valor o invoca
+lógica con los efectos definidos por esa red. También puede existir una firma usada fuera de cadena
+para construir después una autorización. Por eso el analista no puede resumir todo como «el sitio
+drenó la wallet»: debe identificar origen, red, identificadores, datos firmados, spender o cuentas,
+resultado de simulación y estado finalmente observado.
+
+La secuencia que debe añadirse al mapa es: **página/origen → wallet/proveedor de firma → mensaje,
+permiso o transacción → contrato/programa y cuentas → efecto observado**. En paralelo, el texto del
+botón expresa la intención declarada, mientras los datos decodificados expresan la autoridad real
+solicitada. Ambas ramas se comparan; no se sustituyen.
+
+El frontend puede ser falso aunque el contrato sea legítimo, o estar comprometido aunque su dominio
+sea correcto. El contrato/programa puede ser malicioso aunque la interfaz sea pulida. Incluso una
+aprobación a un componente legítimo puede quedar expuesta si ese componente se compromete. TLS solo
+protege el canal hacia el dominio visitado; una auditoría de código solo cubre versión y alcance
+declarados; una simulación reduce incertidumbre sobre una ejecución concreta, pero no prueba identidad
+comercial, controles administrativos o comportamiento futuro. El mapa de superficie debe mantener
+esas fronteras separadas.
+
 ## 📖 Definiciones y características
 
 - **Superficie de ataque**: conjunto de todos los puntos donde un atacante puede introducir o extraer datos. Característica clave: crece con cada parámetro, endpoint y cabecera nuevos.
@@ -107,6 +137,9 @@ convierte el pentest web de un tanteo a ciegas en una búsqueda dirigida.
 - **SPA (Single Page Application)**: app que renderiza en el navegador y habla con una API. Característica: el código fuente JS es visible y revela endpoints.
 - **Endpoint de API**: URL que expone una operación del backend. Característica: suele tener menos protección visual pero igual necesidad de autorización.
 - **Metadata endpoint (cloud)**: servicio interno (169.254.169.254) que entrega credenciales temporales. Característica: alcanzable vía SSRF si no se protege.
+- **Origen web**: combinación de esquema, host y puerto que delimita confianza en el navegador. Característica: un lookalike con TLS sigue siendo otro origen.
+- **Wallet connection**: sesión en la que una wallet permite a un sitio solicitar datos u operaciones. Característica: no equivale por sí sola a firmar o transferir.
+- **Autorización decodificada**: significado legible de lo que se firmará. Característica: debe compararse con la intención visible y con el efecto observado.
 
 ## 📔 Glosario
 
@@ -126,6 +159,8 @@ convierte el pentest web de un tanteo a ciegas en una búsqueda dirigida.
 | Servicio de metadatos | `169.254.169.254`; devuelve credenciales de la instancia |
 | Superficie de ataque | Conjunto de todos los puntos de entrada y componentes |
 | Backend | Servidor de aplicación y sus servicios internos |
+| Spender | Identidad autorizada para gastar un activo bajo las reglas del protocolo |
+| Contrato/programa | Código ejecutado por una red; su modelo de estado y autorización depende de la plataforma |
 
 ## 🧰 Herramientas y preparación
 
@@ -152,6 +187,7 @@ docker run --rm -d -p 3000:3000 bkimminich/juice-shop
 6. Repite la navegación con Burp interceptando: revisa **HTTP history** y filtra por `In-scope`.
 7. Dibuja el diagrama: cliente → API (`/rest`, `/api`) → base de datos → servicios (mail, upload). Marca fronteras de confianza.
 8. Clasifica endpoints por sensibilidad (login, perfil, pedidos, admin) del 1 al 3.
+9. Sin conectar ninguna wallet real, abre el dataset del [caso de lanzamiento viral](../../../labs/lanzamientos-virales/README.md). Añade al diagrama el origen falso, la wallet, la autorización, el spender y la observación de cadena. Marca qué frontera produce cada evidencia.
 
 ## ✍️ Ejercicios
 
@@ -161,6 +197,7 @@ docker run --rm -d -p 3000:3000 bkimminich/juice-shop
 4. Marca en tu diagrama dónde entra un token de sesión y hasta dónde viaja.
 5. Investiga qué es el endpoint de metadata en AWS/GCP/Azure y por qué es sensible.
 6. Compara la superficie de ataque de una SPA vs. una app SSR clásica.
+7. Explica por qué un dominio correcto, un contrato verificado y una simulación sin alerta responden preguntas distintas y ninguno basta por sí solo para demostrar seguridad integral.
 
 ## 📝 Reto verificable
 
@@ -176,6 +213,8 @@ Entrega un **diagrama de superficie de ataque** de Juice Shop con al menos 12 pu
 | Se ignoran cabeceras y cookies | Son inputs válidos; inclúyelos en el mapa |
 | Escanear fuera del laboratorio | Ilegal sin permiso; limita el scope en Burp |
 | Confundir HTTP/2 con HTTP/1 | Afecta a ataques de smuggling; identifica el protocolo |
+| Tratar «conectar wallet» como sinónimo de transferencia | Revisa la petición firmada y el cambio de estado; la conexión puede no producirlo |
+| Validar el sitio por el candado TLS | El certificado protege el canal al origen visitado; corrobora dominio y relación oficial |
 
 ## ❓ Preguntas frecuentes
 
@@ -188,12 +227,19 @@ Es la misma lógica, pero la API suele exponer más operaciones y menos protecci
 **❓ ¿Necesito Burp Professional?**
 No para empezar. Community cubre esta parte; Pro añade el scanner automático y algunas utilidades de Intruder.
 
+**❓ ¿Un contrato/programa malicioso es una vulnerabilidad web?**
+No necesariamente. La web puede ser solo el canal que presenta la operación. El fallo puede estar en
+la identidad del sitio, en el frontend, en lo que el usuario autoriza, en el código on-chain o en sus
+claves administrativas. El modelo debe ubicar cada mecanismo antes de elegir una prueba o control.
+
 ## 🔗 Referencias
 
 - Stuttard & Pinto, *The Web Application Hacker's Handbook*, cap. 1–4.
 - OWASP WSTG — Information Gathering: <https://owasp.org/www-project-web-security-testing-guide/>
 - MDN — Cómo funciona la web: <https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/How_the_Web_works>
 - OWASP Juice Shop: <https://owasp.org/www-project-juice-shop/>
+- Ethereum Foundation — *Trillion Dollar Security Project*: frontends comprometidos, firma ciega y permisos persistentes como fronteras distintas. <https://ethereum.org/reports/trillion-dollar-security/>
+- Solana — *Core Concepts*: relación entre transacciones, instrucciones, programas y cuentas en ese modelo de ejecución. <https://solana.com/docs/core>
 
 ## 📥 Material descargable
 

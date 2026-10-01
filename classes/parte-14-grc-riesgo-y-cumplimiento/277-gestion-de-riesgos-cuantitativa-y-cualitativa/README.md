@@ -19,6 +19,7 @@ Al finalizar, el alumno podrá:
 4. **Aplicar** una estimación probabilística por rangos con intervalos de confianza del 90%.
 5. **Elegir** el tratamiento adecuado: mitigar, transferir, evitar o aceptar.
 6. **Separar** riesgo de ciberseguridad, riesgo económico y de modelo, riesgo de liquidez, incumplimiento y alegaciones de fraude antes de seleccionar controles.
+7. **Distinguir** un rug pull de un token imitador, un drainer y una caída de mercado mediante escenarios y evidencia discriminante.
 
 ## 🗺️ Temas
 
@@ -32,6 +33,7 @@ Al finalizar, el alumno podrá:
 | 6 | Simulación de Montecarlo | Modela incertidumbre realista |
 | 7 | Tratamiento del riesgo | Del análisis a la decisión |
 | 8 | Taxonomía y frontera del escenario | Evita tratar toda pérdida digital como vulnerabilidad o ataque |
+| 9 | Promotor, liquidez y rug pull | El mecanismo de pérdida determina evidencia, dueño y tratamiento |
 
 ## 🧠 Explicación en profundidad
 
@@ -73,6 +75,29 @@ demuestra la desviación en ese mercado y momento; no demuestra cómo se produjo
 ni si existió una intrusión. Del mismo modo, auditar código puede encontrar defectos técnicos, pero
 no valida por sí solo reservas, liquidez, incentivos o veracidad comercial.
 
+### Rug pull, drainer y fake token: mismo impacto, escenarios distintos
+
+Que una persona pierda valor no define el riesgo. Un **fake token** imita nombre o símbolo pero usa
+otro identificador; el control inicial es verificar red y contrato/mint. Un **wallet drainer** obtiene
+capacidad de gasto mediante una firma, permiso o secreto; el control se centra en autorización,
+custodia y respuesta. Un **rug pull** se refiere a promotores que retiran liquidez, venden posiciones
+controladas o abandonan el proyecto en contradicción con lo comunicado. El activo puede ser el
+correcto y la compra exactamente la pretendida.
+
+| Escenario | Hecho inicial | Evidencia discriminante | Tratamientos posibles |
+|---|---|---|---|
+| token imitador | mismo ticker/logo, distinto ID | red, contrato/mint y canal canónico | allowlist, verificación de origen, bloqueo de suplantación |
+| drainer | movimiento tras interacción | petición decodificada, firma/approval, spender, secreto y TXID | límites, revocación/migración, wallet separada, respuesta |
+| rug pull de liquidez | profundidad desaparece tras promesa de lock | control de LP/admin, lock real, retiros y comunicaciones versionadas | due diligence, límites de exposición, gobierno y acción legal aplicable |
+| caída de mercado | precio/volumen cambian | profundidad, concentración, noticias y flujos sin control demostrado | tolerancia, diversificación, stress y aceptación/evitación |
+
+La alegación «liquidez bloqueada» debe traducirse en una propiedad verificable: qué activo o derecho
+controla el retiro, quién lo posee, hasta cuándo y bajo qué mecanismo puede cambiar. La SEC ha descrito
+en litigio cómo el control de LP tokens no bloqueados puede permitir retirar liquidez; esa fuente
+explica un mecanismo alegado, no autoriza a etiquetar cualquier proyecto o caída como fraude. En un
+análisis de riesgo se modelan frecuencia, magnitud, detectabilidad y dependencia de terceros; una
+investigación jurídica decide responsabilidad bajo la ley aplicable.
+
 ## 📔 Glosario operativo
 
 | Término | Definición |
@@ -82,6 +107,9 @@ no valida por sí solo reservas, liquidez, incentivos o veracidad comercial.
 | Sensibilidad | Cambio del resultado al variar un supuesto. |
 | Riesgo de modelo | Pérdida por supuestos, relaciones o implementación inadecuados para la decisión modelada. |
 | Evento observable | Hecho medido; requiere análisis adicional antes de atribuir causa, intención o categoría de riesgo. |
+| Riesgo de promotor | Pérdida por privilegios, concentración o conducta de quienes controlan el proyecto. |
+| Riesgo de liquidez | Incapacidad de comprar o vender al tamaño/precio esperado sin impacto material. |
+| LP token | Representación del aporte a un pool que puede otorgar derecho a retirar liquidez según el protocolo. |
 
 ## ✅ Criterio de dominio
 
@@ -139,6 +167,7 @@ print(f"ALE medio: {ale.mean():,.0f} €  P90: {np.percentile(ale, 90):,.0f} €
 11. **Prueba de límites**: elimina de tu informe cualquier frase que concluya «hackeo», «fraude» o
     «código vulnerable» sin evidencia específica. Explica qué equipo —riesgo, seguridad,
     cumplimiento o auditoría— debe investigar cada hipótesis y qué decisión no puede esperar.
+12. **Lanzamiento viral**: usa `liquidity_case` del [laboratorio OrbitPup](../../../labs/lanzamientos-virales/README.md). Construye dos escenarios cuantitativos separados: pérdida por drainer y pérdida por retiro de liquidez. No mezcles frecuencias, controles ni evidencias.
 
 ## ✍️ Ejercicios
 
@@ -150,6 +179,7 @@ print(f"ALE medio: {ale.mean():,.0f} €  P90: {np.percentile(ale, 90):,.0f} €
 6. Diseña un Montecarlo para una brecha de datos con multa GDPR variable.
 7. Explica por qué revisar un contrato inteligente no basta para evaluar liquidez, reservas,
    incentivos ni afirmaciones comerciales de una stablecoin.
+8. Un token cae 85 % en una hora. Enumera la evidencia necesaria para distinguir venta concentrada, baja liquidez, token imitador, drainer y rug pull; no elijas causa con el precio solamente.
 
 ## 📝 Reto verificable
 
@@ -168,6 +198,8 @@ Entrega una **hoja de cálculo de análisis de riesgo cuantitativo** para tres e
 | Ignorar el riesgo residual | Documenta y acepta formalmente lo que queda |
 | Clasificar un *de-peg* como «hackeo» sin evidencia | Se confundió el efecto con la causa; abre hipótesis separadas y exige artefactos específicos |
 | Usar «blockchain» como garantía de estabilidad | La integridad de ciertas transacciones no elimina riesgo de mercado, liquidez, modelo o gobierno |
+| Llamar rug pull a cualquier pérdida | El efecto no identifica el mecanismo; verifica control, retiro/venta/abandono y promesas relevantes. |
+| Tratar auditoría de código como due diligence completa | Código no prueba identidad, distribución, liquidez, claves administrativas ni veracidad comercial. |
 
 ## ❓ Preguntas frecuentes
 
@@ -188,6 +220,11 @@ Solo como ejercicio de límites y gobierno del riesgo. El caso ayuda a no invent
 la pérdida económica, el diseño de estabilización, las afirmaciones comerciales y un incidente de
 seguridad requieren preguntas y evidencias distintas.
 
+**❓ ¿Un proyecto con contrato verificado no puede hacer rug pull?**
+La verificación de código responde qué fuente corresponde al bytecode publicado bajo cierto alcance.
+No elimina claves de administración, control de liquidez, concentración, actualizaciones, frontends ni
+afirmaciones falsas. Es una evidencia útil dentro de un escenario, no una garantía del proyecto.
+
 ## 🔗 Referencias
 
 - Hubbard & Seiersen — How to Measure Anything in Cybersecurity Risk. <https://www.howtomeasureanything.com/cybersecurity/>
@@ -195,6 +232,7 @@ seguridad requieren preguntas y evidencias distintas.
 - The Open Group — FAIR Risk Analysis Standard. <https://www.opengroup.org/forum/security/fair>
 - Verizon Data Breach Investigations Report (DBIR). <https://www.verizon.com/business/resources/reports/dbir/>
 - U.S. Securities and Exchange Commission — acuerdo posterior al veredicto contra Terraform Labs y Do Kwon (2024); respalda el estado judicial y las afirmaciones sobre UST y el uso declarado de la blockchain, no una hipótesis de intrusión. <https://www.sec.gov/newsroom/press-releases/2024-73>
+- U.S. Securities and Exchange Commission — litigio sobre Game Coin (2025); respalda el mecanismo alegado de control de LP tokens y retiro de liquidez, no una conclusión sobre otros proyectos. <https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26223>
 - (ISC)² CISSP Official Study Guide, dominio 1.
 
 ## 📥 Material descargable
