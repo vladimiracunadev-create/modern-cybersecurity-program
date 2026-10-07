@@ -63,7 +63,7 @@ Al terminar la parte, el alumno podrá:
 | Infraestructura y entrega | 164–167 | Diseño de C2, frameworks C2, phishing, acceso inicial |
 | Evasión de defensas | 168–169 | Evasión de AV/EDR, ofuscación y bypass de AMSI |
 | Active Directory | 170–175 | Enumeración, Kerberoasting, PtH/PtT, BloodHound, DCSync/Golden Ticket, persistencia |
-| Operación y cierre | 176–180 | OPSEC, red team físico, purple teaming, reporte/métricas, Atomic Red Team y Caldera |
+| Operación y cierre | 176–180 | OPSEC; acceso físico y USB/red; purple teaming; reporte/métricas; Atomic Red Team y Caldera |
 
 ## 🧭 Mapa de aprendizaje de la parte
 
@@ -82,6 +82,8 @@ flowchart LR
 ```
 
 La flecha de regreso importa: una operación madura no termina al obtener acceso. Los resultados ajustan las hipótesis de amenaza, las reglas de enfrentamiento y el siguiente plan de validación.
+
+En ese cierre, la **Clase 177** no trata el hardware como una caja mágica. Retoma el marco legal de la Clase 025 y explica enumeración USB, HID, dispositivos compuestos, O.MG Cable, Rubber Ducky, Bash Bunny, Cynthion y equipos compactos de red. Su evidencia es una demostración HID inocua, telemetría correlacionada, un control probado y la restauración del dispositivo. Esa salida alimenta la **Clase 178**: el purple team puede comprobar si existe dato, analítica, alerta y respuesta sin abrir shells, dejar implantes ni tocar producción.
 
 ## 📖 Cómo estudiar cada clase
 
