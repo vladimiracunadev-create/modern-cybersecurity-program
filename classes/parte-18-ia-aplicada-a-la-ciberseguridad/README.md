@@ -70,6 +70,28 @@ flowchart LR
 
 Las clases 331–333 construyen límites del modelo y la arquitectura de agentes, MCP y herramientas aisladas. Las 334–336 aplican esa arquitectura a colección, pruebas mínimas y OSINT sin ampliar alcance. Las 337–339 trasladan el método a SOC, forense, informes y guardrails. La clase 340 integra autorización, checkpoints, evidencia, comunicación y cleanup. El principio común es verificable: una salida del modelo puede ser hipótesis o propuesta, nunca permiso ni prueba por sí sola.
 
+### Capítulos enlazados
+
+**[Clase 331 — IA generativa y LLMs en ciberseguridad: panorama, capacidades y límites](331-ia-generativa-y-llms-en-ciberseguridad-panorama-y-limites/README.md).** Entender qué son los modelos generativos de lenguaje (LLM) y qué papel real juegan como **herramienta de trabajo** para hacer ciberseguridad: dónde aportan valor (acelerar tareas repetitivas, sintetizar información, redactar) y dónde fallan (alucinaciones, falta de contexto, datos desactualizados).
+
+**[Clase 332 — Agentes de IA y el Model Context Protocol (MCP) para seguridad](332-agentes-de-ia-y-el-model-context-protocol-mcp-para-seguridad/README.md).** Entender qué es un **agente de IA** y cómo el **Model Context Protocol (MCP)** le permite usar herramientas reales (escáneres, bases de datos, sistemas de archivos) de forma estandarizada.
+
+**[Clase 333 — kali-mcp: orquestar herramientas de Kali desde un agente de IA](333-kali-mcp-orquestar-herramientas-de-kali-desde-un-agente-de-ia/README.md).** Montar y entender **kali-mcp**, un servidor MCP (de código abierto, MIT) que conecta un agente de IA con más de 50 herramientas de Kali Linux dentro de un contenedor Docker.
+
+**[Clase 334 — Reconocimiento y escaneo asistidos por IA](334-reconocimiento-y-escaneo-asistidos-por-ia/README.md).** Ver cómo un agente de IA coordina las fases de **reconocimiento y escaneo** (descubrimiento de hosts, puertos, servicios, subdominios) usando kali-mcp, y —lo más importante— cómo el profesional **valida** los resultados y evita que la IA saque conclusiones falsas o toque objetivos fuera de alcance.
+
+**[Clase 335 — Explotación y post-explotación autorizada asistida por IA](335-explotacion-y-post-explotacion-autorizada-asistida-por-ia/README.md).** Comprender el rol —y los **límites**— de un agente de IA en las fases de explotación y post-explotación de un pentest autorizado: la IA **propone y documenta**, el profesional **decide y ejecuta** las acciones con impacto.
+
+**[Clase 336 — OSINT y auditoría web con agentes de IA](336-osint-y-auditoria-web-con-agentes-de-ia/README.md).** Ver cómo un agente de IA acelera dos tareas muy repetitivas —**OSINT** (recolección de información de fuentes abiertas) y **auditoría web**— coordinando herramientas y sintetizando resultados, y cómo el profesional filtra el ruido, evita falsos positivos y respeta la legalidad.
+
+**[Clase 337 — IA para el lado defensivo: SOC, triaje y forense](337-ia-para-el-lado-defensivo-soc-triaje-y-forense/README.md).** Aplicar la IA al **lado azul**: resumir y correlacionar alertas, asistir el triaje del SOC y apoyar el análisis forense, entendiendo dónde ayuda (velocidad, reducción de ruido) y dónde es peligrosa (falsos negativos, decisiones automáticas sin contexto).
+
+**[Clase 338 — Generación de informes y flujos de trabajo con IA](338-generacion-de-informes-y-flujos-de-trabajo-con-ia/README.md).** Usar la IA para lo que mejor hace en un engagement: **compilar hallazgos y redactar informes** consistentes y legibles — sin que "invente" hallazgos.
+
+**[Clase 339 — Riesgos, guardrails, OPSEC y ética del hacking con IA](339-riesgos-guardrails-opsec-y-etica-del-hacking-con-ia/README.md).** Cerrar el círculo: los **riesgos de usar IA para hacer seguridad** y cómo mitigarlos.
+
+**[Clase 340 — Capstone: pentest autorizado asistido por IA con MCP](340-capstone-pentest-autorizado-asistido-por-ia-con-mcp/README.md).** Integrar todo el programa en una operación completa: montar kali-mcp, definir el alcance, ejecutar un pentest **supervisado** asistido por IA contra tu laboratorio (recon → auditoría → PoC de bajo impacto → informe), aplicando los guardrails y la ética de las clases anteriores.
+
 | Bloque | Clases | Enfoque |
 |---|---|---|
 | Fundamentos: LLMs y MCP | 331–332 | Qué aportan, arquitectura de agentes |

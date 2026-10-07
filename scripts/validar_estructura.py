@@ -5,11 +5,12 @@ Valida la integridad del currículo del Programa de Ciberseguridad Moderna.
 
 Comprueba:
   1. Cada parte (classes/parte-*/) tiene su README.md.
-  2. Cada carpeta de clase (classes/parte-*/NNN-slug/) tiene su README.md no trivial.
-  3. La numeración de clases es secuencial y sin huecos (001..N).
-  4. Todos los enlaces internos a archivos .md resuelven (no hay enlaces rotos).
+  2. El README de cada parte enlaza directamente a todas sus clases.
+  3. Cada carpeta de clase (classes/parte-*/NNN-slug/) tiene su README.md no trivial.
+  4. La numeración de clases es secuencial y sin huecos (001..N).
+  5. Todos los enlaces internos a archivos .md resuelven (no hay enlaces rotos).
 
-Sobre el punto 4: se revisa **todo el repositorio**, no solo classes/, y se
+Sobre el punto 5: se revisa **todo el repositorio**, no solo classes/, y se
 aceptan las tres formas de escribir un enlace relativo —`../otra/README.md`,
 `./otra/README.md` y `otra/README.md`—. La versión anterior exigía el prefijo `./` o
 `../`, así que un enlace a una clase hermana escrito sin prefijo quedaba fuera
@@ -86,8 +87,32 @@ def main() -> int:
         if not (os.path.isdir(pdir) and parte.startswith("parte-")):
             continue
         n_partes += 1
-        if not os.path.isfile(os.path.join(pdir, "README.md")):
+        readme_parte = os.path.join(pdir, "README.md")
+        if not os.path.isfile(readme_parte):
             errores.append(f"Falta README de parte: {parte}/README.md")
+        else:
+            contenido_parte = open(readme_parte, encoding="utf-8").read()
+            destinos = {
+                os.path.normpath(m.group(1))
+                for m in LINK_RE.finditer(contenido_parte)
+                if not LINK_EXTERNO.match(m.group(1))
+            }
+            clases_de_parte = [
+                nombre
+                for nombre in sorted(os.listdir(pdir))
+                if os.path.isdir(os.path.join(pdir, nombre))
+                and re.match(r"^\d{3}-", nombre)
+            ]
+            sin_enlace = [
+                clase
+                for clase in clases_de_parte
+                if os.path.normpath(f"{clase}/README.md") not in destinos
+            ]
+            if sin_enlace:
+                errores.append(
+                    f"Clases sin enlace directo en {parte}/README.md: "
+                    + ", ".join(sin_enlace)
+                )
 
         for clase in sorted(os.listdir(pdir)):
             cdir = os.path.join(pdir, clase)

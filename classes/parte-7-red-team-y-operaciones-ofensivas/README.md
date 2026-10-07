@@ -85,6 +85,48 @@ La flecha de regreso importa: una operación madura no termina al obtener acceso
 
 En ese cierre, la **Clase 177** no trata el hardware como una caja mágica. Retoma el marco legal de la Clase 025 y explica enumeración USB, HID, dispositivos compuestos, O.MG Cable, Rubber Ducky, Bash Bunny, Cynthion y equipos compactos de red. Su evidencia es una demostración HID inocua, telemetría correlacionada, un control probado y la restauración del dispositivo. Esa salida alimenta la **Clase 178**: el purple team puede comprobar si existe dato, analítica, alerta y respuesta sin abrir shells, dejar implantes ni tocar producción.
 
+## 📚 Recorrido enlazado, clase por clase
+
+**[Clase 161 — Red Team vs pentest: filosofía y objetivos](161-red-team-vs-pentest-filosofia-y-objetivos/README.md).** Entender qué distingue realmente a un ejercicio de Red Team de un pentest tradicional: no es "hacking más avanzado", sino un cambio de filosofía.
+
+**[Clase 162 — MITRE ATT&CK como lenguaje ofensivo](162-mitre-att-ck-como-lenguaje-ofensivo/README.md).** Dominar MITRE ATT&CK como el vocabulario común entre atacantes y defensores.
+
+**[Clase 163 — Emulación de adversarios](163-emulacion-de-adversarios/README.md).** Aprender a transformar threat intelligence sobre un actor real en un **plan de emulación** ejecutable: qué técnicas usa, en qué orden, con qué herramientas, y cómo reproducir su comportamiento de forma controlada para poner a prueba las defensas.
+
+**[Clase 164 — Diseño de infraestructura de comando y control (C2)](164-diseno-de-infraestructura-de-comando-y-control-c2/README.md).** Diseñar infraestructura de C2 resiliente y sigilosa: la red de servidores, redirectores, dominios y canales que un operador usa para controlar sus implantes sin exponer el servidor de comando ni facilitar el bloqueo por parte del defensor.
+
+**[Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic](165-frameworks-c2-cobalt-strike-sliver-y-mythic/README.md).** Conocer y operar los principales frameworks de C2.
+
+**[Clase 166 — Phishing y entrega de payloads](166-phishing-y-entrega-de-payloads/README.md).** Diseñar y ejecutar campañas de phishing controladas como vector de acceso inicial: pretextos creíbles, infraestructura de correo con buena reputación, y payloads que superen los filtros sin quemar la operación.
+
+**[Clase 167 — Acceso inicial: técnicas](167-acceso-inicial-tecnicas/README.md).** Cubrir el abanico de técnicas de **acceso inicial** más allá del phishing: servicios expuestos, credenciales válidas, abuso de aplicaciones de cara a internet, drive-by y supply chain.
+
+**[Clase 168 — Evasión de defensas: antivirus y EDR](168-evasion-de-defensas-antivirus-y-edr/README.md).** Entender cómo funcionan los antivirus y EDR modernos para poder evadirlos de forma comprendida (no por copiar-pegar).
+
+**[Clase 169 — Ofuscación de payloads y bypass de AMSI](169-ofuscacion-de-payloads-y-bypass-de-amsi/README.md).** Comprender AMSI (Antimalware Scan Interface) y las técnicas de ofuscación de payloads que lo evaden, entendiendo el mecanismo en profundidad.
+
+**[Clase 170 — Active Directory: enumeración](170-active-directory-enumeracion/README.md).** Aprender a enumerar un dominio de Active Directory desde una posición de foothold: usuarios, grupos, equipos, políticas, confianzas, SPNs y relaciones.
+
+**[Clase 171 — Active Directory: Kerberoasting y ataques a Kerberos](171-active-directory-kerberoasting-y-ataques-a-kerberos/README.md).** Entender el protocolo Kerberos lo suficiente para atacar sus puntos débiles: Kerberoasting (robo y crackeo offline de tickets de servicio), AS-REP Roasting (usuarios sin preautenticación) y las bases de los ataques de tickets.
+
+**[Clase 172 — Active Directory: Pass-the-Hash y Pass-the-Ticket](172-active-directory-pass-the-hash-y-pass-the-ticket/README.md).** Dominar el movimiento lateral en Active Directory mediante reutilización de credenciales sin conocer la contraseña en claro: Pass-the-Hash (PtH), Pass-the-Ticket (PtT) y Overpass-the-Hash.
+
+**[Clase 173 — BloodHound y análisis de rutas de ataque](173-bloodhound-y-analisis-de-rutas-de-ataque/README.md).** Usar BloodHound para modelar Active Directory como un grafo y descubrir rutas de ataque hacia el compromiso de dominio que serían invisibles a simple vista.
+
+**[Clase 174 — Compromiso total de dominio: DCSync y Golden Ticket](174-compromiso-total-de-dominio-dcsync-y-golden-ticket/README.md).** Ejecutar las técnicas que representan el "game over" de un dominio: DCSync (replicar el directorio para robar todos los hashes, incluido el de `krbtgt`) y Golden Ticket (forjar un TGT válido para cualquier usuario).
+
+**[Clase 175 — Persistencia en Active Directory](175-persistencia-en-active-directory/README.md).** Estudiar las técnicas para mantener el acceso a un dominio comprometido a lo largo del tiempo, sobreviviendo a reinicios y remediaciones parciales: DCShadow, AdminSDHolder, delegación abusiva, ACLs persistentes, Golden/Diamond Ticket y cuentas ocultas.
+
+**[Clase 176 — OPSEC ofensiva](176-opsec-ofensiva/README.md).** Interiorizar la seguridad operacional (OPSEC) del operador: el conjunto de hábitos y decisiones que evitan que la operación sea detectada, atribuida o quemada.
+
+**[Clase 177 — Red teaming físico](177-red-teaming-fisico/README.md).** Evaluar de forma autorizada cómo el acceso físico, los accesorios USB y los dispositivos compactos de red pueden atravesar o poner a prueba controles técnicos y humanos.
+
+**[Clase 178 — Purple teaming](178-purple-teaming/README.md).** Convertir el conocimiento ofensivo en mejora defensiva mediante el purple teaming: la colaboración estructurada entre Red y Blue para probar, medir y afinar detecciones técnica por técnica.
+
+**[Clase 179 — Reporte y métricas de Red Team](179-reporte-y-metricas-de-red-team/README.md).** Cerrar el ciclo de una operación con el entregable que le da valor: un informe claro, honesto y accionable, respaldado por métricas defensivas.
+
+**[Clase 180 — Adversary emulation con Atomic Red Team y Caldera](180-adversary-emulation-con-atomic-red-team-y-caldera/README.md).** Automatizar la emulación de adversarios con dos herramientas complementarias: Atomic Red Team (tests atómicos por técnica ATT&CK) y Apache Caldera (framework de emulación con agentes y planificadores, originado en MITRE y transferido a Apache Incubator en mayo de 2026).
+
 ## 📖 Cómo estudiar cada clase
 
 Cada clase se trabaja en cinco momentos. El orden evita que el laboratorio se convierta en una serie de comandos sin comprensión:

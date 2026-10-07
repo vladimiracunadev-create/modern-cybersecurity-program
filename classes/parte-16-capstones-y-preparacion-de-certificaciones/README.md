@@ -63,6 +63,28 @@ flowchart LR
 
 Las clases 301–302 traducen rol y diagnóstico en una preparación verificable. Las clases 303–308 integran pentest, CISSP, red team, blue team, DFIR y bug bounty mediante entregables y límites propios de cada función. Las clases 309–310 convierten resultados en portafolio sanitizado y en un sistema sostenible de aprendizaje. Fechas, precios, versiones y requisitos de credenciales se consultan siempre en el organismo emisor.
 
+### Capítulos enlazados
+
+**[Clase 301 — Roadmap de certificaciones: CompTIA, OSCP, CISSP y más](301-roadmap-de-certificaciones-comptia-oscp-cissp-y-mas/README.md).** Que el alumno construya un **roadmap de certificaciones personalizado**, entendiendo qué credencial demuestra qué competencia, cuál es el orden lógico según su perfil (ofensivo, defensivo o de gestión), y cuánto cuesta en dinero, tiempo y esfuerzo.
+
+**[Clase 302 — Preparación OSCP: mentalidad Try Harder](302-preparacion-oscp-mentalidad-try-harder/README.md).** Que el alumno interiorice la **metodología y la mentalidad** que exige el OSCP: enumeración exhaustiva, toma de notas disciplinada, gestión del tiempo bajo presión y persistencia ("Try Harder") sin caer en la frustración improductiva.
+
+**[Clase 303 — Capstone: laboratorio completo de pentest](303-capstone-laboratorio-completo-de-pentest/README.md).** Ejecutar un **pentest end-to-end** contra un laboratorio propio multi-máquina, siguiendo una metodología profesional (PTES / NIST SP 800-115) y entregando un **informe formal** con hallazgos, puntuación CVSS y recomendaciones de remediación.
+
+**[Clase 304 — Preparación CISSP: los 8 dominios](304-preparacion-cissp-los-8-dominios/README.md).** Que el alumno obtenga un **mapa completo de los 8 dominios del CISSP**, entienda su peso relativo en el examen y la mentalidad "manager" que exige (pensar en riesgo y negocio antes que en la solución técnica), y elabore un **plan de estudio** con autoevaluación por dominio.
+
+**[Clase 305 — Capstone: operación Red Team end-to-end](305-capstone-operacion-red-team-end-to-end/README.md).** Ejecutar una **operación Red Team completa** contra tu laboratorio, simulando un adversario con objetivos de negocio (no solo "hackear máquinas"): reconocimiento, acceso inicial, establecimiento de C2, movimiento lateral, escalada, consecución de objetivos y evasión, todo mapeado a **MITRE ATT&CK**.
+
+**[Clase 306 — Capstone: detección Blue Team end-to-end](306-capstone-deteccion-blue-team-end-to-end/README.md).** Construir una **capacidad de detección Blue Team end-to-end**: instrumentar hosts y red, centralizar logs en un SIEM, escribir reglas de detección, generar alertas y medir la **cobertura ATT&CK** frente a la operación Red Team de la Clase 305.
+
+**[Clase 307 — Capstone: respuesta a incidentes DFIR end-to-end](307-capstone-respuesta-a-incidentes-dfir-end-to-end/README.md).** Conducir una **investigación DFIR completa** sobre un incidente simulado: desde la detección y contención hasta la adquisición forense, el análisis (disco, memoria, línea de tiempo), la erradicación, la recuperación y el informe con lecciones aprendidas.
+
+**[Clase 308 — Capstone: campaña de bug bounty](308-capstone-campana-de-bug-bounty/README.md).** Ejecutar una **campaña de bug bounty ética y estructurada**: elegir un programa, leer y respetar su alcance, hacer reconocimiento eficiente, priorizar vectores de alto impacto, validar hallazgos con PoC reproducibles y **redactar reportes aceptables** que maximicen la probabilidad de triage positivo.
+
+**[Clase 309 — Construcción de portafolio y home lab permanente](309-construccion-de-portafolio-y-home-lab-permanente/README.md).** Convertir el trabajo de las 308 clases anteriores en **evidencia empleable**: un portafolio público (writeups, informes anonimizados, repos) y un **home lab permanente y reproducible** donde seguir practicando.
+
+**[Clase 310 — Plan de aprendizaje continuo y comunidad](310-plan-de-aprendizaje-continuo-y-comunidad/README.md).** Cerrar el programa con un **plan de aprendizaje continuo** que sostenga tu carrera durante años: fuentes de calidad, una cadencia de práctica, participación en comunidad, contribución (charlas, blog, open source) y una hoja de ruta de especialización.
+
 | Bloque | Clases | Enfoque |
 |--------|--------|---------|
 | Roadmap y mentalidad | 301, 302 | Certificaciones y preparación OSCP |

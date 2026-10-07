@@ -63,6 +63,28 @@ flowchart LR
 
 Las clases 291–294 construyen el modelo de amenaza desde el ciclo de datos hasta inferencia y extracción. Las clases 295–297 trasladan ese razonamiento a aplicaciones LLM, contenido no confiable, RAG y herramientas. Las clases 298–300 evalúan uso defensivo, abuso y gobierno durante todo el ciclo. Cada clase produce evidencia reproducible y declara incertidumbre; ninguna taxonomía ni benchmark funciona como certificado de seguridad.
 
+### Capítulos enlazados
+
+**[Clase 291 — Introducción a la seguridad de IA y ML](291-introduccion-a-la-seguridad-de-ia-y-ml/README.md).** Construir el mapa mental de la seguridad de la IA: entender por qué un sistema de machine learning tiene una superficie de ataque propia, distinta de la del software tradicional, y aprender a describir esa superficie con marcos estándar (MITRE ATLAS y NIST AI RMF).
+
+**[Clase 292 — Ataques adversariales a modelos](292-ataques-adversariales-a-modelos/README.md).** Comprender por qué existen los ejemplos adversariales y aprender a generarlos, evaluarlos y defenderlos con herramientas reales.
+
+**[Clase 293 — Envenenamiento de datos y modelos](293-envenenamiento-de-datos-y-modelos/README.md).** Entender cómo un adversario contamina el proceso de aprendizaje —no la inferencia— para degradar el modelo o instalar una puerta trasera.
+
+**[Clase 294 — Robo y extracción de modelos](294-robo-y-extraccion-de-modelos/README.md).** Aprender cómo un adversario con solo acceso a la API de predicción puede robar la funcionalidad de un modelo (model extraction), reconstruir datos de entrenamiento (model inversion) o determinar si un registro estuvo en el entrenamiento (membership inference).
+
+**[Clase 295 — OWASP Top 10 para aplicaciones con LLM](295-owasp-top-10-para-aplicaciones-con-llm/README.md).** Dominar la taxonomía OWASP Top 10 para aplicaciones con LLM como marco de referencia para auditar y asegurar sistemas basados en modelos de lenguaje.
+
+**[Clase 296 — Prompt injection y jailbreaks](296-prompt-injection-y-jailbreaks/README.md).** Entender a fondo la vulnerabilidad número uno de las aplicaciones con LLM: la prompt injection, y su primo el jailbreak.
+
+**[Clase 297 — Seguridad de aplicaciones con LLM: RAG y agentes](297-seguridad-de-aplicaciones-con-llm-rag-y-agentes/README.md).** Asegurar las arquitecturas de LLM más potentes y más peligrosas: RAG (Retrieval-Augmented Generation) y agentes con herramientas.
+
+**[Clase 298 — IA aplicada a la defensa: detección y SOC](298-ia-aplicada-a-la-defensa-deteccion-y-soc/README.md).** Usar la IA como herramienta defensiva de forma realista: detección de anomalías, priorización de alertas, triage y apoyo al analista en el SOC, sin caer en el "AI washing".
+
+**[Clase 299 — IA ofensiva y deepfakes](299-ia-ofensiva-y-deepfakes/README.md).** Comprender cómo los atacantes aprovechan la IA generativa —phishing hiperpersonalizado, deepfakes de voz e imagen, malware asistido, automatización de reconocimiento— y, sobre todo, cómo defenderse: detección de contenido sintético, procedencia (C2PA), verificación fuera de banda y concienciación.
+
+**[Clase 300 — Gobernanza y ética de la IA segura](300-gobernanza-y-etica-de-la-ia-segura/README.md).** Cerrar la parte llevando todo lo aprendido al plano de la gobernanza: cómo una organización adopta IA de forma segura, responsable y conforme a la regulación.
+
 | Bloque | Clases | Foco |
 |--------|--------|------|
 | Fundamentos y superficie de ataque | 291 | Panorama, ciclo de vida, MITRE ATLAS, NIST AI RMF |
