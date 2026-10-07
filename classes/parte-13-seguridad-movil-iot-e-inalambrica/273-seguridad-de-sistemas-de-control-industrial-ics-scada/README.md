@@ -153,7 +153,7 @@ IEC 62443 (zonas y conductos, niveles de seguridad SL) y NIST SP 800-82 son las 
 
 ## ⬅️ Clase anterior
 
-[Clase 272 — Ataques WiFi avanzados: Evil Twin y PMKID](../272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md)
+[Clase 272 — Auditoría WiFi avanzada: Evil Twin, PMKID y defensa](../272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md)
 
 ## ➡️ Siguiente clase
 

@@ -1,168 +1,251 @@
-# Clase 272 — Ataques WiFi avanzados: Evil Twin y PMKID
+# Clase 272 — Auditoría WiFi avanzada: Evil Twin, PMKID y defensa
 
-> Parte: **13 — Seguridad móvil, IoT e inalámbrica** · Fuente: *Hacking Exposed Wireless* (Wright, Cache) y documentación de hcxtools
-> ⏱️ Duración estimada: **120 min** · Nivel: **Avanzado**
+> Parte: **13 — Seguridad móvil, IoT e inalámbrica** · Fuentes principales: IEEE 802.11, Wi-Fi Alliance, hostapd, Wireshark y documentación de WiFi Pineapple
+> ⏱️ Duración estimada: **240 min** · Nivel: **Experto**
 
 ---
 
 ## 🎯 Objetivo
 
-Ejecutar ataques modernos contra redes WiFi WPA2/WPA3-PSK en un entorno **propio y controlado**: captura del handshake de 4 vías y del PMKID (sin necesidad de clientes conectados), crackeo offline con hashcat, y montaje de un Evil Twin con portal cautivo para capturar credenciales. El alumno entenderá por qué el PMKID cambió el juego, cómo WPA3-SAE resiste estos ataques, y qué defensas aplicar.
-
-> ⚠️ **Nota ética y legal:** monta tu propio AP de laboratorio y ataca solo tu red. Capturar handshakes, clonar SSIDs o desautenticar clientes de redes ajenas es ilegal en la mayoría de jurisdicciones. Nunca operes sobre redes que no controlas.
+Evaluar en un laboratorio aislado cómo los clientes eligen una red WiFi, qué demuestra una captura de autenticación y cómo detectar puntos de acceso no autorizados. WiFi Pineapple se estudia como plataforma administrable de auditoría —reconocimiento, AP de prueba y captura—, no como sinónimo de Evil Twin. La práctica no desautentica terceros, no recolecta credenciales y no interpreta tráfico cifrado sin claves y alcance.
 
 ## 📚 Resultados de aprendizaje
 
 Al finalizar, el alumno podrá:
 
-1. **Poner** una tarjeta WiFi en modo monitor y capturar tráfico 802.11.
-2. **Capturar** un handshake WPA2 de 4 vías y un PMKID.
-3. **Crackear** el hash resultante offline con hashcat.
-4. **Montar** un Evil Twin con portal cautivo en laboratorio.
-5. **Explicar** por qué WPA3-SAE mitiga el crackeo offline.
-6. **Recomendar** defensas (contraseñas fuertes, WPA3, 802.1X, PMF).
+1. **Explicar** SSID, BSSID, canal, RSN, autenticación, asociación, 4-way handshake, PMKID, SAE y PMF.
+2. **Distinguir** observación pasiva, conexión a una red, captura de frames e interpretación del contenido.
+3. **Configurar y administrar** un AP de laboratorio o WiFi Pineapple con firmware, país, red de gestión, filtros, credenciales y restauración.
+4. **Construir** un Evil Twin inocuo con clientes propios y portal sin captura de datos.
+5. **Capturar** una asociación iniciada manualmente y evaluar una contraseña sintética offline.
+6. **Detectar** un AP no autorizado correlacionando inventario, beacon/RSN, infraestructura y comportamiento del cliente.
+7. **Validar** controles como perfiles gestionados, validación de certificados, PMF, WPA3-SAE, segmentación y WIDS.
+8. **Responder** preservando evidencia y evitando deautenticaciones o interferencia como método de contención.
 
 ## 🗺️ Temas
 
-| # | Tema | Por qué importa |
-|---|------|-----------------|
-| 1 | 802.11, modo monitor e inyección | Base de toda auditoría WiFi |
-| 2 | Handshake WPA2 de 4 vías | Material para crackeo offline |
-| 3 | Ataque PMKID (clientless) | Captura sin clientes conectados |
-| 4 | Crackeo con hashcat | Convertir captura en contraseña |
-| 5 | Evil Twin y portal cautivo | Robo de credenciales/phishing WiFi |
-| 6 | WPA3-SAE y PMF | Por qué resisten los ataques clásicos |
-| 7 | Defensas y detección | Endurecer la red propia |
+| # | Tema | Decisión profesional |
+|---|---|---|
+| 1 | Identidad WiFi | ¿Qué identifica SSID y qué identifica BSSID/RSN? |
+| 2 | Captura y cifrado | ¿Qué metadatos y contenido puede ver cada actor? |
+| 3 | Handshake/PMKID | ¿Qué permite una verificación offline y bajo qué condiciones? |
+| 4 | Evil Twin | ¿Por qué un cliente elige el AP equivocado? |
+| 5 | WiFi Pineapple | ¿Qué funciones ofrece el modelo/firmware y cómo se administra? |
+| 6 | Detección | ¿Cómo se distingue un AP vecino de uno que suplanta? |
+| 7 | Controles | ¿Qué evita conexión, qué limita impacto y qué aporta evidencia? |
+| 8 | Respuesta | ¿Cómo contener sin interferir el espectro? |
 
 ## 🧠 Explicación en profundidad
 
-### La captura permite una verificación offline solo bajo ciertas condiciones
+### SSID es un nombre, no una identidad autenticada
 
-En WPA2-Personal, la clave de red deriva de la contraseña y SSID; el handshake demuestra posesión sin transmitirla directamente. Una captura suficiente permite comprobar candidatos offline, por lo que la resistencia depende de una contraseña aleatoria y larga. PMKID puede aportar material de verificación en configuraciones compatibles, pero no está disponible en todo AP ni «rompe WPA2» sin adivinar la credencial.
+El **SSID** es el nombre de red que el usuario reconoce; múltiples AP legítimos pueden compartirlo. El **BSSID** suele identificar una interfaz de radio concreta, pero puede modificarse. Los beacons anuncian canal, capacidades y elementos RSN; tampoco prueban pertenencia a la organización. En WPA2-Enterprise, la confianza fuerte llega cuando el cliente valida el certificado del servidor de autenticación y su identidad esperada. Si acepta cualquier certificado o el usuario ignora el aviso, un SSID conocido no protege.
+
+Un Evil Twin reproduce suficientes señales de una red esperada para atraer conexiones. Puede ser abierto, usar una contraseña de laboratorio conocida o imitar una configuración Enterprise en un banco. No «rompe WiFi» por existir: necesita que el cliente lo seleccione, que la configuración sea compatible y que el usuario/sistema continúe. Perfiles gestionados, validación estricta del servidor, desactivar autojoin a redes abiertas y protección de datos de aplicación reducen el efecto.
 
 ```mermaid
 flowchart LR
-  C["Cliente de laboratorio"] <--> AP["AP aislado propio"]
-  AP --> HS["Handshake/PMKID<br/>captura"]
-  HS --> OFF["Verificación offline<br/>contra lista de prueba"]
-  ROGUE["AP de laboratorio<br/>SSID parecido"] --> VAL["Validación de servidor<br/>y perfil de red"]
-  PMF["PMF / 802.11w"] --> AP
-  SAE["WPA3-SAE"] --> AP
+  C[Cliente propio] --> O{Selección de red}
+  L[AP legítimo de lab<br/>SSID+BSSID+RSN] --> O
+  T[AP gemelo de lab<br/>SSID parecido/igual] --> O
+  O --> V{Validar seguridad}
+  V -->|certificado/perfil correctos| L
+  V -->|solo nombre o aviso ignorado| T
+  L --> R[Red autorizada]
+  T --> P[Portal inocuo y telemetría]
+  S[WIDS + inventario + switch] -. observa .-> L
+  S -. observa .-> T
 ```
 
-Un Evil Twin explota selección de red y confianza del usuario. En empresa, validar el certificado del servidor EAP y desplegar perfiles gestionados evita aceptar un autenticador impostor. En redes personales, WPA3-SAE resiste la verificación offline pasiva del mismo modo que WPA2-PSK, aunque implementación, transición y contraseña siguen importando. PMF protege determinadas tramas de gestión; no autentica una página web falsa.
+El diagrama muestra dos planos. El cliente toma una decisión con datos que pueden o no autenticar la red; el defensor observa radio e infraestructura. Ver dos BSSID para un SSID no basta para alertar: una red empresarial legítima tiene muchos. La detección compara el conjunto esperado de BSSID, canal, RSN, certificado, ubicación y conexión al switch.
 
-El laboratorio usa AP, cliente y canal propios dentro de un entorno controlado. No se desautentican equipos ajenos: la reconexión se provoca manualmente o con el propio cliente. Las listas de prueba contienen una contraseña conocida y pocas alternativas para demostrar el mecanismo, no diccionarios contra redes reales.
+### Capturar no significa acceder ni leer
 
-### Caso razonado: WPA3 con modo transición
+En modo monitor, un adaptador recibe frames del canal y ancho configurados. Puede perder frames de otros canales, por señal débil, saturación o capacidades del driver. Los frames de gestión revelan SSID/BSSID/capacidades; los de datos pueden estar cifrados. Con una captura completa y material de clave autorizado, Wireshark puede descifrar determinadas sesiones; sin ello, se observan metadatos, no automáticamente contenido de aplicaciones.
 
-Un AP anuncia WPA2/WPA3 para compatibilidad. Un cliente antiguo usa WPA2 y conserva riesgo de PSK débil; otro usa SAE. El informe no declara «WPA3 roto», sino que identifica negociación por cliente y recomienda eliminar transición cuando el inventario lo permita, contraseña robusta y PMF según soporte.
+Incluso tras descifrar la capa WiFi, TLS u otro cifrado de aplicación sigue protegiendo payload. Asociarse a un AP tampoco concede acceso a Internet, a una VLAN interna ni a datos. Son afirmaciones diferentes y deben probarse por separado.
+
+### 4-way handshake y PMKID: verificadores, no contraseñas
+
+En WPA2-Personal, la contraseña y el SSID intervienen en la derivación de material de clave. Un 4-way handshake contiene nonces e integridad suficientes para comprobar offline si una candidata produce la clave esperada; no contiene la contraseña en claro. Algunas configuraciones exponen un PMKID que también puede permitir verificación de candidatas. El resultado depende de una captura válida y de que la contraseña aparezca en el conjunto probado. «No se encontró» no significa «es segura»; solo que ese conjunto/tiempo no la incluyó.
+
+WPA3-Personal usa SAE, diseñado para resistir el ataque pasivo offline basado en una sola captura que caracteriza WPA2-PSK. Modo transición puede seguir ofreciendo WPA2 y ampliar superficie. **PMF/802.11w** protege ciertos frames de gestión después de establecer seguridad; no autentica por sí solo el SSID ni elimina todo ataque de disponibilidad.
+
+Esta clase captura solo una reconexión **manual** de un cliente propio. No envía tramas de desautenticación. La documentación de herramientas que ofrece «deauth» se estudia para reconocer la función y sus riesgos, no para ejecutarla.
+
+### WiFi Pineapple: plataforma, modelo y administración
+
+WiFi Pineapple integra radios, Linux y una interfaz de gestión. En Mark VII, la documentación describe Recon, PineAP, filtros, AP abierto/gestión, captura de handshakes y UI/terminal; otros modelos y firmware difieren. Que una función exista en un PDF de Mark VII no autoriza atribuirla a NANO, TETRA, Enterprise o Pager.
+
+Administrar el equipo de laboratorio incluye:
+
+1. registrar modelo exacto, firmware, región/país y radios;
+2. descargar firmware oficial, verificar checksum cuando se publique y respaldar configuración antes de actualizar;
+3. configurar contraseña única, AP de gestión protegido y, preferentemente, administración por USB/Ethernet aislado;
+4. mantener sin Internet la red de clientes del ejercicio y aplicar filtros allowlist de SSID/MAC del banco;
+5. desactivar funciones activas por defecto; no conservar SSIDs o MAC incidentales;
+6. exportar solo logs autorizados, restablecer el equipo y comprobar que no quedan campañas, clientes ni claves.
+
+La UI puede indicar clientes, probes, asociaciones y handshakes, pero cada campo depende de firmware/módulo. PineAP/Recon no sustituyen una captura PCAP ni la telemetría del AP legítimo. La administración remota/Cloud C² amplía la superficie y no se habilita para este laboratorio.
+
+### Telemetría y reglas verificables
+
+| Fuente | Campos útiles | Conducta esperada/anómala | Limitaciones |
+|---|---|---|---|
+| Captura 802.11 | `wlan.ssid`, `wlan.bssid`, canal, subtype, RSN, radiotap RSSI | SSID protegido anunciado con RSN/canal/capacidad inesperados | pérdida por canal/cobertura; BSSID falsificable |
+| Controlador/WIDS | AP/radio, ubicación, canal, potencia, clasificación | radio no inventariada cerca de zona protegida | vecinos legítimos; sensores ciegos |
+| RADIUS/EAP | identidad externa, NAS/AP, método, certificado/resultado, hora según producto | intentos desde AP/NAS no esperado o fallo de certificado | esquema es específico; privacidad de identidades |
+| Cliente gestionado | perfil, BSSID, método, certificado, resultado | conexión a SSID homónimo fuera del perfil | telemetría desigual por SO/MDM |
+| Switch/NAC | puerto, MAC de AP, LLDP, VLAN, autenticación | AP no autorizado conectado a infraestructura | un AP externo no aparece en el switch |
+| DNS/proxy/EDR | interfaz, gateway, DNS, procesos y destinos | cambio de red seguido de portal o ruta nueva | no identifica por sí solo el AP físico |
+
+Una regla portable se formula como relación: `SSID protegido` + `BSSID fuera de inventario` + `RSN/certificado incompatible` + `observado por sensor en zona` dentro de una ventana. Al implementarla se usan los nombres reales del WIDS/SIEM. Falsos positivos: AP nuevo no inventariado, radio de reemplazo, hotspot personal con nombre coincidente. Falsos negativos: atacante copia BSSID/capacidades, sensor está fuera de canal o el cliente se conecta lejos de sensores.
+
+### Controles y cómo demostrar eficacia
+
+- **WPA2/3-Enterprise con validación estricta:** el cliente de prueba rechaza un servidor con certificado no confiable/nombre incorrecto y no ofrece credenciales.
+- **Perfiles MDM y autojoin controlado:** el cliente no se conecta al gemelo aun con señal superior; el perfil legítimo sigue funcionando.
+- **WPA3-SAE y PMF requerido cuando proceda:** el AP/cliente negocian el modo esperado; un cliente incompatible queda documentado, no silenciosamente degradado.
+- **Segmentación/aislamiento de cliente:** un cliente conectado al AP de invitados no alcanza activos internos; se verifica con destinos sintéticos.
+- **WIDS e inventario:** la radio de laboratorio genera alerta con ubicación/clasificación y el AP nuevo autorizado puede aprobarse sin ruido permanente.
+- **TLS y VPN gestionada:** aun en red hostil, la app rechaza certificados inválidos y el contenido permanece protegido; no corrige la conexión equivocada, limita impacto.
+
+### Respuesta sin convertir defensa en interferencia
+
+Ante un AP sospechoso se preservan beacon/RSN, BSSID, canal, RSSI relativo desde varios sensores, capturas, horarios, clientes afectados y evidencia de switch/NAC. Se verifica primero si es activo corporativo, hotspot o vecino. Contener significa retirar el AP si está en infraestructura propia, deshabilitar su puerto, corregir perfiles y avisar a usuarios; no enviar deauth ni interferir radio.
+
+Si clientes enviaron credenciales, se revocan sesiones y secretos afectados, se revisa MFA y se buscan eventos correlacionados. Para recuperar, se redistribuye el perfil/certificado correcto, se comprueba conexión solo al AP legítimo y se retira la campaña del equipo de auditoría.
+
+## 📖 Definiciones y características
+
+- **SSID:** nombre lógico de red; no autentica al operador.
+- **BSSID:** identificador de una interfaz/AP en una BSS; útil para correlación, falsificable.
+- **RSN:** información de seguridad anunciada/negociada para WPA2/WPA3.
+- **4-way handshake:** confirma material de clave y deriva claves temporales; no transporta la contraseña en claro.
+- **PMKID:** identificador derivado de PMK y participantes; su disponibilidad/utilidad depende de configuración.
+- **SAE:** intercambio autenticado usado por WPA3-Personal, resistente a verificación pasiva offline tradicional.
+- **PMF:** protección de determinados frames de gestión; opcional/requerida según modo.
+- **Evil Twin:** AP no autorizado que imita características de una red para inducir conexión.
+- **WIDS/WIPS:** detección/prevención inalámbrica; la prevención activa está sujeta a límites técnicos y legales.
 
 ## 📔 Glosario operativo
 
 | Término | Definición útil |
 |---|---|
-| 4-way handshake | Intercambio que confirma claves y deriva claves de sesión. |
-| PMKID | Identificador derivado que algunas configuraciones exponen para gestión de claves. |
-| SAE | Autenticación basada en contraseña usada por WPA3-Personal. |
-| PMF | Protección de ciertas tramas de gestión IEEE 802.11. |
-| Evil Twin | AP impostor que imita identidad de una red. |
+| Beacon | Frame periódico con identidad y capacidades del AP. |
+| Probe | Solicitud/respuesta de descubrimiento; el comportamiento depende del cliente. |
+| Association | Paso por el que cliente y AP establecen relación 802.11; no garantiza acceso superior. |
+| Radiotap | Metadatos de captura como canal, tasa y RSSI aportados por el driver. |
+| Canal | Porción del espectro; una captura fija no ve simultáneamente todos. |
+| Captive portal | Aplicación web posterior a la conexión; no es autenticación WiFi. |
+| Transition mode | Compatibilidad simultánea WPA2/WPA3 que puede mantener superficie antigua. |
+| Rogue AP | AP no autorizado conectado o presente según política; no siempre es Evil Twin. |
 
 ## ✅ Criterio de dominio
 
-Existe dominio cuando el alumno explica qué prueba una captura, diferencia WPA2, SAE y PMF, ejecuta la demostración sin afectar terceros y recomienda controles según tipo de red y clientes.
-
-## 📖 Definiciones y características
-
-- **Modo monitor:** estado del adaptador que captura todos los frames 802.11 del canal. Característica: prerequisito para sniffing e inyección.
-- **Handshake de 4 vías:** intercambio WPA2 que deriva las claves de sesión a partir del PSK. Característica: capturable durante la asociación de un cliente.
-- **PMKID:** identificador incluido opcionalmente por el AP en el primer mensaje EAPOL, derivado del PMK. Característica: permite crackeo offline sin clientes.
-- **hcxdumptool/hcxtools:** utilidades para capturar PMKID/handshakes y convertirlos al formato de hashcat. Característica: automatizan la captura clientless.
-- **Evil Twin:** AP falso que imita el SSID legítimo para atraer clientes. Característica: combinado con portal cautivo, captura credenciales.
-- **WPA3-SAE (Dragonfly):** handshake con autenticación simultánea de iguales resistente a diccionario offline. Característica: elimina el crackeo del handshake capturado.
+Hay dominio cuando el alumno explica exactamente qué contiene la captura, prueba controles sin desautenticar ni recolectar credenciales, administra/restaura el equipo y produce una alerta con esquema real, falsos positivos y límites de atribución.
 
 ## 🧰 Herramientas y preparación
 
-- **Adaptador WiFi** con soporte de modo monitor e inyección (chipsets Atheros/Ralink/MediaTek), **AP propio** de laboratorio.
-- **Aircrack-ng**, **hcxdumptool**/**hcxtools**, **hashcat**, **hostapd**/**hostapd-mana** o **wifiphisher** para Evil Twin.
+**Banco mínimo:** dos AP/routers propios o un AP software con `hostapd`, un cliente desechable, adaptador monitor compatible y Wireshark. **Opcional:** WiFi Pineapple del modelo documentado. **Aislamiento:** radios a mínima potencia necesaria, canal elegido tras inspección, sin uplink a Internet, sin nombres de redes reales y con clientes en allowlist.
 
 ```bash
-# Modo monitor
-sudo airmon-ng start wlan0
-sudo airodump-ng wlan0mon                 # descubrir tu AP y su canal
+# Ver capacidades del adaptador; no todos soportan monitor/inyección.
+iw list
 
-# Captura de handshake (tu red)
-sudo airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w cap wlan0mon
-# Para generar un handshake, reconecta manualmente tu cliente de laboratorio.
-
-# Captura de PMKID
-sudo hcxdumptool -i wlan0mon -o pmkid.pcapng --enable_status=1
-hcxpcapngtool -o hash.hc22000 pmkid.pcapng
-
-# Crackeo offline
-hashcat -m 22000 hash.hc22000 wordlist.txt
+# Leer una captura proporcionada y filtrar beacons del SSID sintético.
+tshark -r laboratorio.pcapng \
+  -Y 'wlan.fc.type_subtype == 0x08 && wlan.ssid == "LAB-SECURE"' \
+  -T fields -e frame.time_epoch -e wlan.bssid -e wlan.ssid -e radiotap.channel.freq
 ```
 
-## 🧪 Laboratorio guiado
+Los nombres de campo se verifican contra la referencia de filtros de la versión instalada. Si `radiotap.channel.freq` no existe en la captura, no se inventa: se declara ausencia.
 
-1. **Prepara el laboratorio:** configura tu propio AP con WPA2-PSK y una contraseña de prueba que esté en tu diccionario.
-2. **Modo monitor:** activa `airmon-ng` y localiza tu AP y su canal con `airodump-ng`.
-3. **Captura el handshake:** filtra por tu BSSID y canal y reconecta manualmente **tu** cliente. No transmitas tramas de desautenticación, que pueden afectar equipos cercanos.
-4. **Captura el PMKID:** con `hcxdumptool` obtén el PMKID de tu AP sin clientes y conviértelo a `.hc22000`.
-5. **Crackea offline:** usa hashcat modo 22000 con un diccionario; recupera la contraseña de prueba.
-6. **Evil Twin:** con hostapd/wifiphisher levanta un AP con el mismo SSID y un portal cautivo en laboratorio aislado; observa el flujo de captura de credenciales con un cliente de pruebas propio.
-7. **Compara con WPA3:** reconfigura el AP a WPA3-SAE e intenta el mismo ataque; constata que el crackeo offline ya no aplica.
-8. **Documenta** defensas: contraseñas largas, WPA3, PMF obligatorio, 802.1X.
+## 🧪 Laboratorio guiado — Gemelo inocuo y control medible
+
+**Objetivo.** Demostrar que confiar solo en SSID induce una conexión equivocada y que un perfil seguro la impide.
+
+**Prerrequisitos.** Clases 025, 036–040 y 026; dos AP propios; cliente restaurable; consentimiento; ausencia de terceros en el banco.
+
+**Topología.** AP-A legítimo `LAB-SECURE` → servicio local `10.20.0.10`; AP-B de auditoría → portal estático «LAB AUTORIZADO, NO INGRESE DATOS» sin formularios ni Internet; sensor monitor; cliente propio.
+
+**Procedimiento.**
+
+1. Documenta modelo, firmware, país, canales, potencias, BSSID, RSN y credenciales sintéticas. Verifica que ningún AP enruta fuera del laboratorio.
+2. Configura AP-A y conecta manualmente el cliente. Captura beacons y asociación; exporta el perfil/estado esperado.
+3. Configura AP-B con el mismo SSID solo dentro del banco, pero con un BSSID controlado y portal inocuo. Deshabilita captura de credenciales y funciones de deauth.
+4. Olvida la red en el cliente y observa la selección manual; no fuerces conexión. Registra qué indicadores permiten distinguir AP-A/B.
+5. Instala un perfil de laboratorio que valide seguridad/certificado según el modo elegido. Repite y confirma que AP-B es rechazado y AP-A funciona.
+6. Inicia una reconexión manual al AP WPA2-Personal de laboratorio y captura su handshake. Usa una contraseña sintética contenida en una lista de cinco candidatos para comprobar offline el mecanismo; no uses diccionarios reales ni redes de terceros.
+7. Activa la regla WIDS/SIEM sobre el esquema real disponible y confirma una alerta por AP-B. Autoriza AP-B temporalmente y comprueba que el ruido desaparece sin ocultar APs desconocidos.
+8. Exporta PCAP/logs, calcula hashes, elimina perfiles/campañas/clientes/SSID del equipo de auditoría, restablece ambos AP y verifica que no emiten `LAB-SECURE`.
+
+**Resultados esperados.** El cliente distingue o rechaza el gemelo mediante el control definido; el portal no recibe datos; la candidata sintética se verifica solo con captura válida; el WIDS alerta; la restauración elimina la campaña.
+
+**Ruta sin hardware.** PCAPNG, exportación WIDS, configuración de perfiles y capturas de UI previamente preparadas. Se evalúa análisis, regla, controles y respuesta. No se evalúan cobertura, coexistencia, drivers, potencia, selección real del cliente ni eficacia física de sensores.
+
+## 🔍 Caso integrador — De radio a respuesta
+
+El SOC detecta `CORP-WIFI` con BSSID no inventariado y RSN WPA2-Personal, mientras la red oficial usa WPA2-Enterprise. Un cliente gestionado registra rechazo de certificado y el switch no conoce la MAC del AP. La evidencia demuestra un AP homónimo cercano y un intento fallido del cliente; no demuestra quién lo operó ni que estuviera conectado a la LAN. Se preserva captura, se busca físicamente con personal autorizado, se corrige un grupo de clientes sin validación estricta y se valida que el perfil nuevo rechaza el banco gemelo. El caso conecta mecanismo, telemetría, control y retest.
 
 ## ✍️ Ejercicios
 
-1. Pon tu adaptador en modo monitor y lista las redes de tu entorno de laboratorio.
-2. Captura un handshake de 4 vías de tu propia red.
-3. Obtén el PMKID de tu AP y conviértelo al formato de hashcat.
-4. Crackea el hash con un diccionario y mide el tiempo.
-5. Levanta un Evil Twin con portal cautivo en laboratorio.
-6. Repite el ataque contra WPA3 y explica por qué falla.
+1. Explica por qué BSSID no es identidad criptográfica y aun así es útil.
+2. Distingue «capturé handshake», «verifiqué una candidata» y «leí tráfico de aplicación».
+3. Compara AP software, WiFi Pineapple y WIDS como objetivo, herramienta y control.
+4. Diseña una regla para SSID corporativo con RSN inesperado usando un esquema de captura dado.
+5. Enumera falsos negativos de un sensor que salta canales.
+6. Redacta respuesta a un rogue AP sin deauth ni interferencia.
 
 ## 📝 Reto verificable
 
-Sobre tu **propia** red WPA2, captura el PMKID, conviértelo y recupera la contraseña con hashcat. **Criterio de aceptación:** hashcat muestra la clave crackeada correspondiente a la contraseña que configuraste, y explicas la diferencia con el intento equivalente sobre WPA3-SAE, que no debe ser crackeable offline.
+Entrega topología, inventario, PCAPNG, análisis de selección, validación de perfil/certificado, regla WIDS, prueba offline sintética, respuesta y restauración.
+
+**Criterio de aceptación:** no hay terceros, deauth, Internet ni recolección de credenciales; las afirmaciones distinguen captura/asociación/contenido; el control bloquea AP-B y conserva AP-A; y el equipo de auditoría queda sin datos/campañas.
 
 ## ⚠️ Errores comunes
 
-| Síntoma / mensaje | Causa y cómo arreglar |
-|-------------------|-----------------------|
-| No entra en modo monitor | Chipset sin soporte; usa un adaptador compatible y mata procesos con `airmon-ng check kill` |
-| Handshake no válido | Captura incompleta; asegura los 4 mensajes EAPOL o usa PMKID |
-| PMKID vacío | El AP no lo expone o usa WPA3; prueba el handshake tradicional |
-| hashcat muy lento | Diccionario/hardware; usa GPU y reglas, o un diccionario dirigido |
-| Evil Twin sin clientes | Señal débil o PMF activo; ajusta potencia en tu laboratorio aislado |
+| Error | Por qué falla | Corrección |
+|---|---|---|
+| «Mismo SSID = misma red» | el nombre no autentica operador | validar RSN, certificado, perfil e inventario |
+| «Tengo PCAP, veo todo» | canal, pérdida y cifrado limitan | declarar posición, claves y capas visibles |
+| Deauth para obtener handshake | afecta disponibilidad y puede ser ilegal | reconexión manual de cliente propio |
+| Capturar contraseñas en portal | impacto innecesario | portal estático sin formularios |
+| Generalizar funciones entre Pineapple | modelos/firmware difieren | citar modelo y documentación específica |
+| WIDS alerta todo BSSID nuevo | alta tasa de vecinos y reemplazos | correlacionar RSN, zona, inventario y switch |
 
 ## ❓ Preguntas frecuentes
 
-**❓ ¿El ataque PMKID necesita clientes conectados?**
-No: esa es su ventaja. Se obtiene directamente del AP si este incluye el PMKID, permitiendo crackeo offline sin esperar a un handshake.
+**¿Capturar un handshake rompe WPA2?** No. Permite verificar candidatas offline bajo condiciones concretas. Una contraseña fuerte fuera del conjunto no se revela.
 
-**❓ ¿WPA3 es inmune a todo esto?**
-SAE evita la verificación offline pasiva propia de WPA2-PSK a partir de una captura equivalente, pero contraseñas débiles, modo transición, configuración e implementación siguen importando. La comparación debe declarar clientes y configuración.
+**¿PMF evita Evil Twin?** No por sí solo. Protege ciertos frames de gestión una vez establecida la seguridad; la autenticación de red/perfil sigue siendo esencial.
 
-**❓ ¿Por qué el Evil Twin funciona incluso con WPA2 fuerte?**
-Porque ataca al usuario, no al cifrado: si la víctima se conecta al AP falso e introduce credenciales en un portal, la fortaleza del cifrado del AP legítimo es irrelevante. PMF y verificación de servidor lo mitigan.
+**¿WiFi Pineapple es necesario?** No. APs propios, hostapd y un adaptador monitor permiten aprender el mecanismo. Pineapple integra flujos y facilita comparar administración/telemetría.
 
-## 🔗 Referencias
+**¿Puedo leer HTTPS al controlar el AP?** Normalmente no: TLS sigue protegiendo contenido si el cliente valida certificados. Controlar la red no concede claves de aplicación.
 
-- Aircrack-ng: <https://www.aircrack-ng.org/>
-- hcxdumptool/hcxtools: <https://github.com/ZerBea/hcxdumptool>
-- hashcat (modo 22000): <https://hashcat.net/wiki/doku.php?id=cracking_wpawpa2>
-- *Hacking Exposed Wireless* — Joshua Wright, Johnny Cache.
+## 🔗 Referencias verificables y alcance
+
+- IEEE, [802.11](https://standards.ieee.org/ieee/802.11/10548/) — base normativa de MAC/PHY; acceso completo puede requerir licencia.
+- Wi-Fi Alliance, [WPA3](https://www.wi-fi.org/discover-wi-fi/security) — SAE y PMF en certificación WiFi; la configuración concreta importa.
+- Wireshark, [Display Filter Reference: WLAN](https://www.wireshark.org/docs/dfref/w/wlan.html) — nombres reales de campos para filtros reproducibles.
+- hostapd, [documentación y código](https://w1.fi/hostapd/) — AP software y autenticación para bancos controlados.
+- Hak5, [WiFi Pineapple Mark VII: UI](https://docs.hak5.org/wifi-pineapple/ui-overview/introduction), [Recon/handshakes](https://docs.hak5.org/wifi-pineapple/ui-overview/recon-1) y [manual Mark VII](https://docs.hak5.org/wifi-pineapple/images/wifi_pineapple_mk7_2022_06_v1x.pdf) — funciones del modelo/firmware documentado, incluida la advertencia de uso de deauth.
+- NIST, [SP 800-153](https://csrc.nist.gov/pubs/sp/800/153/final) — seguridad de WLAN, configuración, monitoreo y rogue AP.
+- NIST, [SP 800-97](https://csrc.nist.gov/pubs/sp/800/97/final) — fundamentos de seguridad IEEE 802.11; se complementa con estándares posteriores.
+- Wright y Cache, *Hacking Exposed Wireless, 3rd ed.* (ISBN 9780071827638) — contexto histórico y metodología inalámbrica; las afirmaciones vigentes se contrastan con estándares y documentación actual.
+- [hcxdumptool](https://github.com/ZerBea/hcxdumptool) — referencia de herramienta de captura; el laboratorio de esta clase usa reconexión manual y no desautenticación.
+
+Fuentes consultadas el **6 de octubre de 2026**. Las funciones de fabricante no se extrapolan a otros modelos ni sustituyen el cumplimiento legal del espectro.
 
 ## 📥 Material descargable
 
-- 📄 [Guía en PDF](./clase-272-guia.pdf) — versión imprimible de esta clase.
-- 🎞️ [Presentación (PPTX)](./clase-272-presentacion.pptx) — deck para proyectar en clase.
+- 📄 [Guía en PDF](./clase-272-guia.pdf) — se regenera desde esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-272-presentacion.pptx) — material docente complementario.
 
 ## ⬅️ Clase anterior
 
-[Clase 271 — Seguridad de Bluetooth y BLE](../271-seguridad-de-bluetooth-y-ble/README.md)
+[Clase 271 — Seguridad de Bluetooth, BLE y radio IoT de corto alcance](../271-seguridad-de-bluetooth-y-ble/README.md)
 
 ## ➡️ Siguiente clase
 

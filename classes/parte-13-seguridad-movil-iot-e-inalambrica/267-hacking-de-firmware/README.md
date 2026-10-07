@@ -166,4 +166,4 @@ Para muchas pruebas de la interfaz web y servicios sí, pero periféricos y comp
 
 ## ➡️ Siguiente clase
 
-[Clase 268 — Análisis de hardware: UART, JTAG y SPI](../268-analisis-de-hardware-uart-jtag-y-spi/README.md)
+[Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../268-analisis-de-hardware-uart-jtag-y-spi/README.md)

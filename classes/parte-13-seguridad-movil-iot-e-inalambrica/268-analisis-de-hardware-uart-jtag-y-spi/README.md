@@ -1,162 +1,241 @@
-# Clase 268 — Análisis de hardware: UART, JTAG y SPI
+# Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI
 
-> Parte: **13 — Seguridad móvil, IoT e inalámbrica** · Fuente: *Practical IoT Hacking* (Chantzis et al.) y *The Hardware Hacking Handbook* (Woudenberg, O'Flynn)
-> ⏱️ Duración estimada: **150 min** · Nivel: **Experto**
+> Parte: **13 — Seguridad móvil, IoT e inalámbrica** · Fuentes principales: documentación de OpenOCD, flashrom, Bus Pirate, sigrok y ChipWhisperer
+> ⏱️ Duración estimada: **240 min** · Nivel: **Experto**
 
 ---
 
 ## 🎯 Objetivo
 
-Acceder al nivel más bajo de un dispositivo embebido a través de sus interfaces de depuración físicas: UART para obtener una consola serie, JTAG/SWD para control del procesador y volcado de memoria, y SPI para leer/escribir el chip de flash directamente. El alumno aprenderá a identificar puntos de prueba en una PCB, conectar un adaptador, y extraer firmware o consolas root del hardware propio.
-
-> ⚠️ **Nota ética y de seguridad:** trabaja solo con dispositivos de tu propiedad. Manipular electrónica implica riesgo de dañar el equipo o de descarga; respeta voltajes (3.3 V típico) y nunca alimentes pines a ciegas.
+Investigar de forma no destructiva las interfaces físicas de un dispositivo embebido propio: reconocer la placa, medir niveles, observar UART/SPI, identificar JTAG o SWD, adquirir evidencia repetible y convertir los hallazgos en controles de producto. La clase diferencia instrumento, objetivo y control: el multímetro o analizador lógico mide; el adaptador UART, Bus Pirate o sonda JTAG comunica; la placa es el objetivo; el bloqueo de depuración, la autenticación de consola y el arranque verificado reducen el riesgo.
 
 ## 📚 Resultados de aprendizaje
 
 Al finalizar, el alumno podrá:
 
-1. **Identificar** interfaces UART, JTAG/SWD y SPI en una placa por inspección y medición.
-2. **Conectar** un adaptador USB-serie/lógico y obtener una consola UART.
-3. **Usar** JTAG/SWD con OpenOCD para detener el CPU y volcar memoria.
-4. **Leer** un chip de flash SPI con un programador (CH341A/Bus Pirate/flashrom).
-5. **Interpretar** señales con un analizador lógico para identificar protocolos.
-6. **Extraer** firmware o credenciales aprovechando el acceso físico.
+1. **Preparar** un banco seguro con límite de corriente, tierra común, ESD, documentación y restauración.
+2. **Identificar** UART, JTAG/SWD y SPI mediante inspección, datasheet, continuidad y captura pasiva.
+3. **Configurar** adaptadores con el nivel lógico, orientación, velocidad y target correctos.
+4. **Capturar** un arranque UART y decodificar una transacción SPI sin escribir sobre el dispositivo.
+5. **Adquirir** dos lecturas de flash y aceptar la imagen solo si tamaño y hashes son coherentes.
+6. **Explicar** qué prueba una consola, un IDCODE, una traza o un volcado y qué permanece incierto.
+7. **Administrar** firmware de sondas y respaldos sin mezclar herramientas, evidencia y secretos.
+8. **Relacionar** depuración y firmware con controles de producción, respuesta y especialización en canales laterales.
 
 ## 🗺️ Temas
 
-| # | Tema | Por qué importa |
-|---|------|-----------------|
-| 1 | Seguridad eléctrica y voltajes | Evita dañar el equipo y a ti mismo |
-| 2 | Identificación de puertos en PCB | Localiza los puntos de acceso |
-| 3 | UART: consola serie | Suele dar shell/logs de arranque |
-| 4 | Analizador lógico | Descubre pinout y protocolo |
-| 5 | JTAG/SWD con OpenOCD | Control total del procesador |
-| 6 | SPI y volcado de flash | Extrae el firmware completo |
-| 7 | Contramedidas del fabricante | Fusibles, deshabilitar JTAG |
+| # | Tema | Decisión que habilita |
+|---|---|---|
+| 1 | Seguridad eléctrica y ESD | Observar sin dañar ni energizar dos veces |
+| 2 | Reconocimiento de PCB | Formular hipótesis de pinout trazables |
+| 3 | UART | Capturar consola y estado de arranque |
+| 4 | Analizador lógico y Bus Pirate | Verificar protocolo antes de conducir líneas |
+| 5 | JTAG/SWD y OpenOCD | Comprobar superficie de depuración por target |
+| 6 | SPI y flashrom | Adquirir firmware de modo reproducible |
+| 7 | Protección de producción | Equilibrar bloqueo, fabricación y recuperación |
+| 8 | Canales laterales y fallos | Ubicar ChipWhisperer como especialización, no atajo |
 
 ## 🧠 Explicación en profundidad
 
-### Antes de comunicar, medir voltaje y tierra
+### Primero electricidad, después protocolo
 
-UART, JTAG/SWD y SPI cumplen funciones diferentes. UART es una consola serie asíncrona; JTAG/SWD ofrece depuración y prueba del chip; SPI conecta periféricos, con frecuencia flash. Encontrar pines no autoriza aplicar 5 V ni conectar líneas al azar: un error de nivel, orientación o alimentación puede destruir el dispositivo o el adaptador.
+Una hilera de cuatro pines no «es UART» por su forma. Puede transportar alimentación, I²C, SWD o señales propietarias. El análisis empieza con el dispositivo apagado: fotografía ambas caras, identifica componentes y marcas, busca documentación, localiza tierra por continuidad y dibuja el conector. Luego, con alimentación controlada, mide tensión respecto de GND y usa una sonda de alta impedancia. Nunca conectes `VCC` del adaptador a una placa que ya se alimenta; compartir tierra no significa compartir alimentación.
+
+El nivel lógico es una propiedad eléctrica, no el número «serial» en el sistema operativo. TTL/CMOS de 1,8 V o 3,3 V no es RS-232, que usa tensiones incompatibles. Una línea que parece inactiva puede cambiar durante boot. Por ello la secuencia segura es **inspeccionar → medir → escuchar → comunicar → escribir solo si está autorizado**.
 
 ```mermaid
 flowchart TD
-  PCB["Placa propia sin energía"] --> VIS["Inspección + datasheets"]
-  VIS --> GND["Identificar GND"]
-  GND --> V["Medir niveles y actividad"]
-  V --> UART["UART: RX/TX y baud"]
-  V --> JTAG["JTAG/SWD: debug"]
-  V --> SPI["SPI: flash y buses"]
-  UART --> E["Evidencia no destructiva"]
-  JTAG --> E
-  SPI --> E
+  A[Placa apagada e inventariada] --> B[Foto, datasheet, continuidad]
+  B --> C[GND y posibles pines]
+  C --> D[Medir tensión y actividad]
+  D --> E[Captura pasiva con analizador lógico]
+  E --> F{Hipótesis confirmada}
+  F -->|UART| U[RX/TX, baud, log]
+  F -->|JTAG/SWD| J[IDCODE/target, debug]
+  F -->|SPI| S[CS/CLK/MOSI/MISO, lectura]
+  U & J & S --> H[Hash, límites y restauración]
 ```
 
-La primera práctica es pasiva: fotografías, continuidad con el equipo apagado y analizador lógico de alta impedancia. En UART se comparte tierra, se confirma nivel —a menudo 3,3 V o 1,8 V— y se escucha TX antes de transmitir. Una consola de boot con shell privilegiada es una decisión de producto; se documenta acceso físico, estado y datos expuestos.
+El diagrama no promete que toda rama produzca acceso. Muestra un embudo de reducción de incertidumbre. Solo después de confirmar señales se selecciona un instrumento activo. El resultado válido puede ser «interfaz presente pero bloqueada»; forzarla no es un requisito de aprendizaje.
 
-En JTAG/SWD, deshabilitar depuración en producción puede ser apropiado, pero debe conservarse una ruta segura de fabricación y recuperación. Los fusibles son potencialmente irreversibles y nunca se prueban en el laboratorio sin diseño del fabricante. Leer SPI con pinza puede fallar por contención con el resto de la placa; se empieza sin escribir y se hacen varias lecturas comparadas por hash.
+### UART: ver un log no equivale a obtener una shell
 
-### Caso razonado: volcado diferente cada vez
+UART es comunicación serie asíncrona: no lleva reloj compartido y depende de velocidad, bits de datos, paridad y parada. En una placa suelen interesar TX del objetivo, RX del objetivo y GND. Escuchar TX durante arranque permite estimar baud y observar bootloader, kernel y servicios. Texto legible prueba que nivel y parámetros son compatibles; un prompt prueba una interfaz interactiva, pero no que acepte entrada ni que otorgue privilegios.
 
-Tres lecturas de flash producen hashes distintos. Antes de analizar «firmware cambiante», el alumno revisa alimentación, contacto y contención del bus. Solo cuando las lecturas coinciden se acepta una imagen. La reproducibilidad eléctrica precede a la interpretación.
+Los logs pueden revelar versiones, particiones, argumentos de kernel, errores y nombres de interfaces. Son evidencia sensible. El control no consiste únicamente en quitar el header: se eliminan secretos de logs, se autentica o deshabilita consola en producción, se protege el bootloader y se verifica que la ruta de recuperación del fabricante siga funcionando.
+
+### JTAG y SWD: depuración depende del chip y su estado
+
+JTAG es un estándar de prueba y depuración con cadena de dispositivos; SWD es una interfaz de depuración de dos señales común en microcontroladores Arm. Un pinout supuesto y un archivo de target equivocado pueden producir errores o escribir registros no deseados. OpenOCD separa la configuración de la sonda (`interface`/`adapter`) de la del target; ambas deben coincidir con hardware y versión.
+
+Leer un IDCODE consistente o conectar al Debug Access Port demuestra que la ruta responde. No demuestra que toda memoria sea legible. Los microcontroladores implementan niveles de protección, autenticación o fusibles con semántica propia; en algunos, cambiar el estado borra la flash. Por eso la práctica básica no programa fusibles ni usa comandos de desbloqueo. La mitigación se diseña con el fabricante: deshabilitar depuración de producción, proteger secretos fuera de flash legible, firmar firmware y conservar recuperación autorizada.
+
+### SPI: una captura es distinta de un volcado
+
+SPI sincroniza un controlador y uno o más periféricos mediante reloj, selección y líneas de datos. En memorias NOR son comunes `CS`, `CLK`, `MOSI` y `MISO`, pero encapsulado y comandos dependen del chip. Un analizador lógico observa transacciones y permite confirmar modo, frecuencia y comandos. Un programador o Bus Pirate puede iniciar transacciones; eso aumenta el riesgo de contención si el SoC sigue conectado o alimentado.
+
+Leer con pinza *in circuit* puede fallar porque otros componentes cargan el bus o porque el programador alimenta parcialmente la placa. Antes de culpar al firmware, se comparan dos o más lecturas completas. Tamaño esperado, ausencia de bytes inestables y hashes iguales son criterios mínimos. El hash no demuestra autenticidad del firmware: solo identidad entre esos archivos. La comparación con una imagen oficial requiere además origen, versión y formato compatibles.
+
+### Elegir instrumento por pregunta
+
+| Equipo | Tipo | Aporta | No sustituye |
+|---|---|---|---|
+| Multímetro | medición | continuidad y tensión estática | forma temporal o decodificación |
+| Analizador lógico + sigrok/PulseView | medición | muestras digitales, temporización y decodificadores | tolerancia eléctrica ni acceso al firmware |
+| USB-UART | interfaz | recepción/transmisión serie | análisis de SPI/JTAG |
+| Bus Pirate 5/6 | interfaz multiprotocolo | UART, SPI, I²C y captura lógica según modelo/firmware | sonda JTAG de alto rendimiento |
+| ST-Link/J-Link/FTDI | sonda de depuración | JTAG/SWD con target compatible | conocimiento automático del pinout |
+| CH341A u otro programador | programador | acceso a memorias compatibles | garantía de voltaje o lectura *in circuit* |
+| ChipWhisperer | plataforma especializada | captura de potencia y *glitching* sobre targets educativos | fundamentos de electrónica, estadística ni autorización |
+
+Bus Pirate 5 y 6 no deben tratarse como idénticos: la documentación actual destaca en Bus Pirate 6 el búfer adicional para *follow-along logic analyzer*. Siempre registra revisión de hardware y firmware. El modo inicial HiZ, con salidas deshabilitadas, es una salvaguarda útil; cambiar de modo o habilitar fuentes de alimentación es una acción deliberada.
+
+### ChipWhisperer: especialización después de dominar lo observable
+
+Un **canal lateral** usa información no funcional —por ejemplo, variaciones de consumo— correlacionada con una operación. La **inyección de fallos** perturba reloj o alimentación para provocar comportamiento anómalo. ChipWhisperer reúne hardware de captura, targets educativos, firmware y API Python para enseñar esos métodos.
+
+No es «otro programador» ni convierte cualquier equipo en un target. Requiere electrónica, sincronización, estadística, conocimiento criptográfico y una plataforma preparada. Esta clase solo sitúa la competencia: tras obtener capturas repetibles y comprender la implementación de la [Parte 2 — Criptografía aplicada](../../parte-2-criptografia-aplicada/README.md), el alumno puede seguir los notebooks oficiales sobre una placa objetivo del kit. No se practica *glitching* sobre productos desconocidos ni equipos conectados a procesos reales.
+
+### Evidencia, detección y respuesta del fabricante
+
+En un incidente de laboratorio, desconectar inmediatamente puede destruir estado volátil, pero dejar una sonda conectada puede permitir escritura. La decisión depende del riesgo físico y del alcance. Registra fotos, conexiones, LEDs, alimentación, consola y hora; preserva logs y archivos con hashes; etiqueta adaptadores y cables. Nunca conectes una evidencia a una estación productiva «para ver qué hace».
+
+En producto, los indicadores posibles son sellos alterados, soldadura o marcas en test points, cambios de boot, lectura de fusibles, logs de mantenimiento y firmware no firmado. Su ausencia no demuestra que no hubo acceso. La respuesta combina inspección, verificación criptográfica del software, rotación de secretos si pudieron exponerse y revisión del proceso de fabricación/servicio.
+
+## 📖 Definiciones y características
+
+- **UART:** enlace serie asíncrono; una consola puede ser solo salida, interactiva o autenticada.
+- **JTAG:** interfaz de prueba/depuración con cadena y señales de reloj/datos/control.
+- **SWD:** interfaz de depuración Arm con menos señales que JTAG; las capacidades dependen del target.
+- **SPI:** bus serie síncrono controlador-periférico; el chip select delimita el dispositivo activo.
+- **HiZ:** alta impedancia; estado que evita conducir activamente una línea.
+- **Contención eléctrica:** dos salidas conducen valores incompatibles sobre la misma línea.
+- **IDCODE:** identificador leído por ciertas rutas JTAG; orienta la identificación, no autoriza memoria.
+- **Canal lateral:** información física correlacionada con cómputo interno.
+- **Fault injection:** perturbación controlada para estudiar respuesta ante fallos.
 
 ## 📔 Glosario operativo
 
 | Término | Definición útil |
 |---|---|
-| UART | Enlace serie asíncrono con RX/TX y referencia común. |
-| JTAG/SWD | Interfaces de depuración y prueba de circuitos. |
-| SPI | Bus síncrono usado por memorias y periféricos. |
-| Nivel lógico | Tensión que representa estados digitales; no asumir 5 V. |
-| Contención | Dos dispositivos conducen una línea de manera incompatible. |
+| DUT/target | Dispositivo bajo prueba. |
+| GND | Referencia eléctrica común; se identifica antes de conectar señales. |
+| Baud | Tasa de símbolos de UART; no siempre equivale a bits útiles por segundo. |
+| Pinout | Asignación documentada de función a cada pin. |
+| SoC | Sistema en chip que integra procesador y periféricos. |
+| NOR flash | Memoria no volátil común en firmware embebido. |
+| SOIC clip | Pinza para contactar encapsulados sin desoldar; no elimina contención. |
+| OpenOCD | Software de depuración que coordina sonda y target configurados. |
+| flashrom | Herramienta para identificar, leer, verificar y escribir flash compatible. |
+| ESD | Descarga electrostática capaz de dañar componentes. |
 
 ## ✅ Criterio de dominio
 
-Hay dominio cuando el alumno identifica una interfaz sin dañar la placa, documenta niveles y pinout, obtiene lecturas repetibles en modo no destructivo y explica cómo reducir acceso de producción manteniendo recuperación.
-
-## 📖 Definiciones y características
-
-- **UART:** comunicación serie asíncrona (TX, RX, GND, VCC) usada para consolas de depuración. Característica: a menudo expone un shell root sin autenticación.
-- **JTAG/SWD:** interfaz de depuración que controla el procesador (leer/escribir registros y memoria). Característica: permite volcar RAM/flash y saltar protecciones.
-- **SPI:** bus serie síncrono (MOSI, MISO, CLK, CS) que conecta el CPU al chip de flash. Característica: se puede leer el flash directamente con un programador.
-- **Analizador lógico:** dispositivo que captura señales digitales para decodificar protocolos. Característica: identifica baud rate y pinout desconocidos.
-- **OpenOCD:** software que habla JTAG/SWD con adaptadores para depuración y volcado. Característica: soporta multitud de targets ARM/MIPS.
-- **flashrom:** utilidad para leer/escribir chips de flash SPI. Característica: soporta muchos programadores (CH341A, Bus Pirate).
+Hay dominio cuando el alumno formula y confirma un pinout sin depender de la forma del conector, registra tensión y parámetros, obtiene evidencia pasiva interpretable, acepta un volcado solo por criterios reproducibles y propone controles que no destruyen la capacidad legítima de fabricación y recuperación.
 
 ## 🧰 Herramientas y preparación
 
-- **Adaptador USB-UART** (FTDI/CP2102), **multímetro**, **analizador lógico** (Saleae/clon), **programador SPI** (CH341A) o **Bus Pirate**, **JTAG/SWD** (J-Link, FT2232, ST-Link).
-- Cables Dupont, pinza de test (SOIC clip) para leer flash sin desoldar.
+**Banco recomendado:** placa educativa o router retirado y propio; fuente con límite de corriente; tapete ESD; multímetro; analizador lógico compatible con sigrok; adaptador USB-UART con nivel seleccionable; y, solo para la rama elegida, sonda JTAG/SWD o programador SPI. Consulta datasheet de la placa y del chip antes de energizar.
+
+**Administración del instrumental:** anota modelo, revisión, firmware y controladores; actualiza desde el proyecto/fabricante; respalda configuraciones; no guardes firmware de clientes en almacenamiento interno sin cifrado; restaura el modo HiZ y borra capturas al cerrar el caso.
 
 ```bash
-# UART: abrir consola serie
-screen /dev/ttyUSB0 115200          # o: picocom -b 115200 /dev/ttyUSB0
+# Inventario, no prueba conectividad con el target.
+lsusb
 
-# JTAG/SWD con OpenOCD
-openocd -f interface/jlink.cfg -f target/<soc>.cfg
-# luego, en telnet 4444:  halt ; dump_image dump.bin 0x0 0x100000
+# UART: escucha con parámetros conocidos; no conecta VCC.
+picocom -b 115200 /dev/ttyUSB0
 
-# SPI: leer el chip de flash
-flashrom -p ch341a_spi -r flash_dump.bin
+# OpenOCD: los archivos son ejemplos de estructura, no universales.
+openocd -f interface/<sonda>.cfg -f target/<mcu-exacto>.cfg
+
+# Flash: primero identificar; luego dos lecturas. Sustituye el programador real.
+flashrom -p <programador> --flash-name
+flashrom -p <programador> -r lectura-1.bin
+flashrom -p <programador> -r lectura-2.bin
+sha256sum lectura-1.bin lectura-2.bin
 ```
 
-## 🧪 Laboratorio guiado
+No copies literalmente `<sonda>`, `<mcu-exacto>` ni `<programador>`: son marcadores que obligan a seleccionar configuración documentada. No se usa `-w` en esta práctica.
 
-1. **Inspecciona la PCB** de un dispositivo propio: busca cabeceras de 4 pines (UART) y de 2x5/10 pines (JTAG), y el chip de flash (SOIC-8).
-2. **Identifica el pinout UART:** con el multímetro localiza GND (continuidad al plano de tierra), VCC (~3.3 V), y usa el analizador lógico para hallar TX (actividad al arrancar) y el baud rate.
-3. **Conecta el adaptador UART** (TX↔RX cruzados, GND común, sin conectar VCC si el equipo se auto-alimenta) y abre la consola con `screen`.
-4. **Captura el arranque:** observa los logs de U-Boot; intenta interrumpirlo para entrar a su consola.
-5. **Busca shell:** al terminar el arranque, comprueba si hay una consola root sin contraseña.
-6. **JTAG/SWD:** conecta el adaptador, lanza OpenOCD, `halt` el CPU y `dump_image` de la flash/RAM.
-7. **SPI directo:** con la pinza SOIC sobre el chip de flash, vuelca su contenido con `flashrom` y analízalo con binwalk (clase 267).
-8. **Documenta** pinout, comandos y hallazgos.
+## 🧪 Laboratorio guiado — Del pin desconocido a una captura defendible
+
+**Objetivo.** Identificar UART y una segunda evidencia pasiva —captura SPI o segundo log— en una placa educativa, sin modificarla.
+
+**Prerrequisitos.** Clases 004, 026, 267 y 025; habilidades básicas de multímetro; autorización del propietario; placa sin conexión a producción.
+
+**Topología.** Placa objetivo alimentada por su fuente → GND común → analizador lógico. El adaptador UART se conecta solo después de confirmar nivel. El portátil de análisis permanece sin conexión a redes sensibles.
+
+**Procedimiento.**
+
+1. Asigna un ID al DUT y registra modelo, revisión, estado, firmware visible y fotos. Descarga datasheets desde fuentes primarias.
+2. Con el DUT apagado, localiza GND por continuidad. Marca pines candidatos sin soldar ni raspar pistas.
+3. Alimenta con su fuente y mide cada candidato respecto de GND. Detén la práctica ante tensión inesperada, calentamiento u olor.
+4. Conecta solo entradas del analizador. Captura desde antes del encendido hasta 30 segundos después. Busca una línea UART por actividad y decodifica varias velocidades plausibles.
+5. Cuando el texto sea estable, conecta RX del adaptador a TX del DUT y GND. Captura el arranque con `picocom`; no conectes TX del adaptador todavía.
+6. Si hay un chip SPI documentado, observa `CS`, `CLK`, `MOSI` y `MISO` durante boot. Confirma modo y comandos con el datasheet. Esta captura satisface la segunda evidencia sin adquirir la flash.
+7. Solo si el instructor ha preparado un chip de práctica separado, ejecuta dos lecturas con `flashrom`, compara tamaño y SHA-256 y conserva ambas como evidencia. Si difieren, no analices contenido: corrige contacto/alimentación y repite.
+8. Retira sondas con el equipo apagado, revisa que la placa arranque igual que antes y registra restauración.
+
+**Resultados esperados.** Pinout sustentado por medidas, log UART legible o conclusión negativa documentada, captura SPI decodificada o lecturas idénticas, hashes y registro de no modificación.
+
+**Ruta sin hardware.** El instructor entrega fotos de PCB, datasheet, CSV de tensión, archivo sigrok y dos imágenes de flash —una pareja coincidente y otra inestable—. Se pueden evaluar identificación, protocolo, aceptación del volcado y recomendación. No se evalúan destreza de sonda, ESD, calidad de contacto ni síntomas físicos.
 
 ## ✍️ Ejercicios
 
-1. Identifica y etiqueta el pinout UART de una placa propia usando multímetro y analizador lógico.
-2. Captura y guarda el log de arranque completo por UART.
-3. Interrumpe U-Boot y lista sus variables de entorno.
-4. Vuelca el flash SPI con flashrom y verifica su tamaño esperado.
-5. Con OpenOCD, detén el CPU y lee una región de memoria.
-6. Compara el firmware obtenido por SPI con la descarga oficial (si existe).
+1. Explica por qué RX/TX cruzados no justifican conectar VCC.
+2. Dado un log UART de solo salida, enumera qué evidencia falta para afirmar «shell root».
+3. Compara analizador lógico, Bus Pirate y sonda SWD para investigar una EEPROM SPI.
+4. Diseña un control de producción que deshabilite debug sin impedir recuperación autorizada.
+5. Ante dos volcados diferentes en 37 bytes, plantea un diagnóstico eléctrico antes de interpretar firmware.
+6. Define los prerrequisitos que faltan antes de iniciar un laboratorio ChipWhisperer.
 
 ## 📝 Reto verificable
 
-Obtén evidencia de un dispositivo de laboratorio por dos observaciones no destructivas —por ejemplo, log UART y dos lecturas SPI coincidentes—. **Criterio de aceptación:** documentas pinout, niveles, configuración, hashes repetibles y límites; no modificas flash ni exiges obtener privilegios como condición de éxito.
+Entrega un cuaderno de banco con fotos, hipótesis, medidas, pinout, parámetros, captura anotada, comandos exactos, hashes, límites, controles y restauración.
+
+**Criterio de aceptación:** ninguna conexión se basó solo en apariencia; el alumno demuestra por qué la captura corresponde al protocolo; toda lectura activa es repetible; no se escribe flash ni se cambia protección; y la recomendación considera seguridad, fabricación y recuperación.
 
 ## ⚠️ Errores comunes
 
-| Síntoma / mensaje | Causa y cómo arreglar |
-|-------------------|-----------------------|
-| Consola serie muestra basura | Baud rate incorrecto; prueba 9600/57600/115200 |
-| No hay salida por UART | TX/RX invertidos o pin equivocado; cruza TX↔RX y reidentifica |
-| Dispositivo se reinicia al conectar | Alimentaste VCC indebidamente; no conectes VCC si se auto-alimenta |
-| OpenOCD no detecta el target | Archivo de config equivocado o JTAG deshabilitado por fusible |
-| flashrom no reconoce el chip | Mal contacto de la pinza o chip no soportado; especifica `-c` manualmente |
+| Síntoma | Causa probable | Acción segura |
+|---|---|---|
+| Texto ilegible en UART | baud/formato/nivel incorrecto o ruido | medir nivel y revisar parámetros; no aumentar tensión |
+| No hay salida | pin equivocado, consola deshabilitada o ventana perdida | capturar desde antes de encender y conservar resultado negativo |
+| OpenOCD no encuentra target | sonda, pinout, reset o archivo incorrectos; protección activa | revisar datasheet y configuración; no ejecutar desbloqueo |
+| Hashes SPI difieren | contacto, alimentación o contención | detener análisis y corregir banco |
+| El DUT deja de arrancar | alimentación o escritura accidental | cortar energía, preservar estado y seguir plan de recuperación |
+| «JTAG presente = memoria extraíble» | confunde interfaz con autorización/capacidad | probar solo operaciones de identificación permitidas |
 
 ## ❓ Preguntas frecuentes
 
-**❓ ¿Cómo sé qué pin es UART sin documentación?**
-Mide con multímetro (GND por continuidad, VCC ~3.3 V estable) y con el analizador lógico observa qué pin tiene ráfagas de datos al encender: ese es TX.
+**¿Puedo usar un CH341A directamente?** Solo si la revisión, tensión y chip son compatibles. El nombre del programador no garantiza nivel correcto ni seguridad *in circuit*.
 
-**❓ ¿Puedo dañar el dispositivo?**
-Sí, si aplicas voltaje incorrecto o cortocircuitas pines. Trabaja a 3.3 V, verifica antes de conectar VCC y usa un adaptador con el mismo nivel lógico.
+**¿Quitar el conector protege JTAG?** Dificulta acceso, pero test points y pistas pueden seguir disponibles. Debe combinarse con protección del silicio y firmware firmado.
 
-**❓ ¿Por qué usar SPI si ya tengo UART?**
-UART puede no dar shell o exponer solo parte del sistema; leer el flash por SPI extrae la imagen completa aunque el software lo impida.
+**¿Bus Pirate reemplaza todo el banco?** No. Integra muchas funciones de baja velocidad, pero multímetro, analizador dedicado y sonda de depuración responden preguntas distintas.
 
-## 🔗 Referencias
+**¿ChipWhisperer prueba que una implementación es insegura?** Una práctica sobre un target educativo demuestra un fenómeno bajo condiciones concretas. Evaluar un producto exige modelo de amenaza, repetibilidad, parámetros y contramedidas.
 
-- *The Hardware Hacking Handbook* — Jasper van Woudenberg, Colin O'Flynn (No Starch Press).
-- OpenOCD: <https://openocd.org/> · flashrom: <https://www.flashrom.org/>
-- *Practical IoT Hacking*, caps. de hardware — Chantzis et al.
-- JTAGulator (identificación de pinout): <http://www.grandideastudio.com/jtagulator/>
+## 🔗 Referencias verificables y alcance
+
+- OpenOCD, [User's Guide](https://openocd.org/doc/html/index.html) — separación entre configuración de adaptador, transporte y target.
+- flashrom, [documentación oficial](https://flashrom.org/) — identificación, lectura, verificación, programadores y soporte por chip.
+- Bus Pirate, [Hardware](https://docs.buspirate.com/docs/overview/hardware/) y [Logic analyzers](https://docs.buspirate.com/docs/logic-analyzer/logicanalyzer/) — protocolos, diferencias de revisión y capacidades de captura.
+- sigrok, [proyecto oficial](https://sigrok.org/wiki/Main_Page) — captura y decodificación con hardware compatible.
+- Arm, [Debug Interface Architecture Specification](https://developer.arm.com/documentation/ihi0031/latest/) — arquitectura JTAG/SWD; el soporte concreto depende del procesador.
+- IEEE, [IEEE 1149.1](https://standards.ieee.org/ieee/1149.1/774/) — estándar de acceso de prueba JTAG.
+- NewAE, [ChipWhisperer: Getting Started](https://chipwhisperer.readthedocs.io/en/latest/getting-started.html) — plataforma, componentes, análisis de potencia e inyección de fallos.
+- NIST, [IR 8259A](https://csrc.nist.gov/pubs/ir/8259/a/final) — capacidades de ciberseguridad que el fabricante debe considerar en dispositivos IoT.
+- Woudenberg y O'Flynn, *The Hardware Hacking Handbook* (ISBN 9781593278755) — método experimental y contexto de ataques físicos; se contrasta con datasheets y documentación del instrumento.
+- Grand Idea Studio, [JTAGulator](https://www.grandideastudio.com/portfolio/security/jtagulator/) — ejemplo de instrumento para identificación de pinout; no reemplaza la medición eléctrica previa.
+
+Fuentes consultadas el **6 de octubre de 2026**. Los comandos deben adaptarse al chip, sonda, revisión y documentación de cada banco.
 
 ## 📥 Material descargable
 
-- 📄 [Guía en PDF](./clase-268-guia.pdf) — versión imprimible de esta clase.
-- 🎞️ [Presentación (PPTX)](./clase-268-presentacion.pptx) — deck para proyectar en clase.
+- 📄 [Guía en PDF](./clase-268-guia.pdf) — se regenera desde esta clase.
+- 🎞️ [Presentación (PPTX)](./clase-268-presentacion.pptx) — material docente complementario.
 
 ## ⬅️ Clase anterior
 
@@ -164,4 +243,4 @@ UART puede no dar shell o exponer solo parte del sistema; leer el flash por SPI 
 
 ## ➡️ Siguiente clase
 
-[Clase 269 — Radio definida por software (SDR)](../269-radio-definida-por-software-sdr/README.md)
+[Clase 269 — Radio definida por software (SDR) e investigación de interferencias](../269-radio-definida-por-software-sdr/README.md)

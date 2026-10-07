@@ -18,7 +18,7 @@
 
 Esta parte estudia sistemas donde software, hardware, radio y procesos físicos se encuentran: aplicaciones móviles, dispositivos conectados, vehículos, equipos médicos y OT. Lleva la evaluación más allá del navegador, pero evita una explicación única para dominios distintos. El alumno audita aplicaciones Android e iOS, analiza firmware, identifica interfaces de depuración sin dañar placas, interpreta capturas de radio propias y comprende cómo seguridad, disponibilidad y seguridad física condicionan OT y sistemas regulados.
 
-El hilo conductor es que cada uno de estos dispositivos tiene una **superficie de ataque multicapa**: aplicación, comunicaciones, nube, firmware y hardware físico. Un atacante competente pivota entre capas; un defensor competente las modela todas. Verás herramientas reales y estándares de la industria, no juguetes: Frida, MobSF, apktool, Aircrack-ng, hcxdumptool, GNU Radio, Proxmark3, Ghidra, Bus Pirate y `can-utils`.
+El hilo conductor es que cada producto tiene una **superficie de ataque multicapa**: aplicación, comunicaciones, nube, firmware y hardware físico. Las marcas aparecen como ejemplos verificables, no como competencias aisladas: HackRF One enseña límites de un transceptor SDR; Proxmark3 y Flipper Zero permiten comparar instrumentación especializada y multiprotocolo; Bus Pirate, sondas y analizadores responden preguntas eléctricas distintas; WiFi Pineapple integra tareas que también pueden reproducirse con APs y adaptadores compatibles. El estudiante aprende a elegir por mecanismo y evidencia, no por catálogo.
 
 Esta parte sirve a pentesters que quieren expandir su alcance, a ingenieros de producto que diseñan dispositivos conectados, a equipos de OT/ICS que heredaron infraestructura crítica insegura, y a investigadores de seguridad que quieren entrar en RE móvil o hardware hacking.
 
@@ -28,8 +28,9 @@ Esta parte sirve a pentesters que quieren expandir su alcance, a ingenieros de p
 - Instrumentar apps propias o autorizadas para evaluar qué propiedades dependen de controles locales, root/jailbreak detection o certificate pinning.
 - Extraer, desempaquetar y analizar firmware de dispositivos embebidos en busca de credenciales, claves y binarios vulnerables.
 - Identificar interfaces UART, JTAG/SWD y SPI en placas propias, medir niveles y obtener evidencia reproducible mediante técnicas no destructivas.
-- Capturar y analizar tráfico inalámbrico no-WiFi (RFID/NFC, BLE, señales sub-GHz) con SDR y lectores dedicados.
-- Reproducir en un AP y clientes aislados capturas WPA2/PMKID y un Evil Twin controlado, explicando límites, WPA3-SAE y PMF sin afectar terceros.
+- Capturar y analizar tráfico inalámbrico no-WiFi (RFID/NFC, BLE, IEEE 802.15.4 y señales sub-GHz) con SDR, placas y lectores dedicados, declarando qué queda cifrado o fuera de captura.
+- Diagnosticar interferencias mediante grabaciones, telemetría y simulación; los inhibidores se estudian sin adquirirlos, poseerlos ni emitir interferencias.
+- Reproducir en un AP y clientes aislados capturas WPA2/PMKID y un Evil Twin inocuo, explicando límites, WPA3-SAE, PMF y validación de certificados sin afectar terceros ni recolectar credenciales.
 - Evaluar riesgos en entornos donde un fallo de seguridad tiene consecuencias físicas: plantas industriales, vehículos y dispositivos médicos.
 
 ## 🎓 Resultados de aprendizaje
@@ -40,8 +41,9 @@ Al terminar la parte, el alumno podrá:
 - Montar un entorno de pentest móvil con emuladores/dispositivos rooteados o con jailbreak y proxy interceptor.
 - Realizar RE estático y dinámico de una app usando apktool, Ghidra/Hopper y Frida.
 - Extraer firmware con `binwalk`/`dd` y analizar sistemas de archivos y binarios embebidos.
-- Conectar y usar un adaptador UART/JTAG para obtener acceso de bajo nivel a un dispositivo propio.
-- Capturar un handshake/PMKID de WiFi y crackearlo offline, y montar un Evil Twin controlado en laboratorio.
+- Medir e instrumentar UART, JTAG/SWD y SPI de un dispositivo propio sin asumir voltajes, pinout ni acceso; aceptar lecturas solo cuando son reproducibles.
+- Administrar herramientas de laboratorio —firmware, credenciales, configuración, evidencia y restauración— y controlar separadamente el riesgo que representan.
+- Capturar una autenticación WiFi propia, verificar una lista sintética offline y montar un Evil Twin inocuo que permita evaluar perfiles, certificados y WIDS.
 - Explicar el modelo Purdue, protocolos ICS (Modbus/DNP3), el bus CAN y los riesgos de dispositivos médicos conectados.
 - Redactar hallazgos y recomendaciones alineados a OWASP MASVS, NIST SP 800-82 e IEC 62443.
 
@@ -60,8 +62,8 @@ Al terminar la parte, el alumno podrá:
 | Móvil iOS | 263–264 | Arquitectura de seguridad y pentest de apps iOS |
 | RE móvil | 265 | Ingeniería inversa estática y dinámica de apps |
 | IoT y firmware | 266–267 | Superficie de ataque IoT y hacking de firmware |
-| Hardware y radio | 268–271 | UART/JTAG/SPI, SDR, RFID/NFC, Bluetooth/BLE |
-| Inalámbrica WiFi | 272 | Evil Twin, captura PMKID y crackeo |
+| Hardware y radio | 268–271 | Medición UART/JTAG/SPI, SDR e interferencia, RFID/NFC, BLE y 802.15.4 |
+| Inalámbrica WiFi | 272 | Evil Twin inocuo, handshake/PMKID, WiFi Pineapple, detección y respuesta |
 | OT y sistemas críticos | 273–275 | ICS/SCADA, automotriz/CAN y dispositivos médicos |
 
 ## 🧭 Recorrido pedagógico clase a clase
@@ -82,16 +84,16 @@ flowchart LR
 5. **Clase 265 — Ingeniería inversa móvil.** Sigue DEX, ELF, Mach-O y bridges con análisis estático y dinámico. La salida es un modelo de comportamiento con incertidumbre, no una copia imaginaria del código fuente.
 6. **Clase 266 — Superficie IoT.** Amplía el objeto desde la placa al producto completo: app, cloud, identidad, actualización, soporte y efecto físico. Adapta las capacidades de NIST al riesgo concreto.
 7. **Clase 267 — Firmware.** Separa cabecera, bootloader, kernel, rootfs, firma y recuperación. El alumno conserva hashes y offsets, valida secretos en contexto y comprende firma, anti-rollback y límites de emulación.
-8. **Clase 268 — UART, JTAG/SWD y SPI.** Introduce medición eléctrica y acceso físico no destructivo. Antes de interpretar datos, exige niveles correctos, pinout documentado y lecturas repetibles.
-9. **Clase 269 — SDR.** Explica muestras I/Q, ganancia, tasa, espectro y demodulación. La práctica principal es recepción de una señal propia o archivo publicado, separando emisiones reales de artefactos del receptor.
-10. **Clase 270 — RFID y NFC.** Distingue identificador, memoria, autenticación y backend. Las pruebas usan tarjetas de laboratorio y evitan generalizar debilidades históricas de una familia a todas las credenciales.
-11. **Clase 271 — Bluetooth y BLE.** Separa advertising, pairing/bonding, seguridad de enlace, GATT y autorización de aplicación. El producto es una prueba sobre periféricos propios y características sensibles.
-12. **Clase 272 — WiFi.** Explica qué permiten verificar handshake y PMKID, cómo opera un Evil Twin y qué cambian SAE y PMF. No usa desautenticación sobre terceros ni redes reales.
+8. **Clase 268 — UART, JTAG/SWD y SPI.** Introduce el banco eléctrico seguro y separa multímetro, analizador lógico, Bus Pirate, sonda y programador. La evidencia es un pinout sustentado, una captura pasiva y, cuando el kit lo permite, dos lecturas coincidentes. ChipWhisperer aparece después como especialización en canales laterales con prerrequisitos explícitos.
+9. **Clase 269 — SDR e interferencias.** Explica la cadena RF–I/Q, capacidades concretas de HackRF One y diferencias con un receptor o instrumento calibrado. La práctica correlaciona archivos SigMF, AP, cliente y backhaul; distingue cobertura, congestión, avería e interferencia. Los jammers se tratan solo con simulación y normativa chilena vigente.
+10. **Clase 270 — RFID y NFC.** Distingue credencial, lector, controlador, backend y herramienta. Compara Proxmark3, Flipper Zero y PC/SC; separa UID, datos, autenticación, emulación y autorización, y valida controles con tarjetas y lector de mesa.
+11. **Clase 271 — Bluetooth y BLE.** Separa advertising, pairing/bonding, seguridad de enlace, GATT y autorización de aplicación. Compara HCI, captura aérea y trazas de placa, y extiende el método a Zigbee/Thread sin confundir protocolos que comparten IEEE 802.15.4.
+12. **Clase 272 — WiFi.** Explica handshake/PMKID, SAE, PMF, selección del cliente y cifrado por capas. WiFi Pineapple se administra por modelo y firmware dentro de un banco sin Internet; el Evil Twin no desautentica ni recopila credenciales y la evaluación exige detección, contención y restauración.
 13. **Clase 273 — ICS/SCADA.** Sitúa PLC, HMI, ingeniería y SIS alrededor de un proceso físico. El alumno diseña zonas y conductos, monitorización pasiva, backups y cambio seguro con participación operacional.
 14. **Clase 274 — Automoción y CAN.** Enseña arbitraje, ausencia de identidad de emisor y papel del gateway. Toda inferencia e inyección ocurre sobre `vcan`/ICSim y no se traslada a vehículos reales.
 15. **Clase 275 — Dispositivos médicos.** Cierra relacionando vulnerabilidad, daño clínico, TPLC, SBOM, parche y divulgación coordinada según la guía vigente de FDA, sin presentar su jurisdicción como norma mundial.
 
-El proyecto integrador selecciona un producto ficticio y entrega arquitectura multicapa, modelo de amenazas, análisis de un firmware de práctica, una captura o bus simulado y un plan de actualización y respuesta. La evaluación exige trazabilidad y seguridad del banco de pruebas; ejecutar más comandos no compensa una conclusión sin contexto.
+El proyecto integrador selecciona un producto ficticio y entrega arquitectura multicapa, modelo de amenazas, análisis de firmware de práctica, una captura o bus simulado, telemetría defensiva, control seleccionado, validación posterior y plan de respuesta. Quien no dispone de hardware trabaja con fotos, logs, PCAPNG, SigMF y trazas suministradas: puede demostrar interpretación y decisión, pero no se certifican conexión eléctrica, acoplamiento de antena, temporización física, alcance ni calidad de captura. La evaluación exige trazabilidad y seguridad del banco; ejecutar más comandos no compensa una conclusión sin contexto.
 
 ## 🔗 Referencias de la parte
 
@@ -101,10 +103,14 @@ El proyecto integrador selecciona un producto ficticio y entrega arquitectura mu
 - Frida — <https://frida.re/> · MobSF — <https://github.com/MobSF/Mobile-Security-Framework-MobSF>
 - Aircrack-ng — <https://www.aircrack-ng.org/> · hcxdumptool — <https://github.com/ZerBea/hcxdumptool>
 - GNU Radio — <https://www.gnuradio.org/> · Proxmark3 — <https://github.com/RfidResearchGroup/proxmark3>
+- HackRF One — <https://hackrf.readthedocs.io/en/stable/hackrf_one.html> · Flipper Zero — <https://docs.flipper.net/zero>
+- ChipWhisperer — <https://chipwhisperer.readthedocs.io/en/latest/getting-started.html> · Bus Pirate — <https://docs.buspirate.com/>
+- Bluetooth SIG — <https://www.bluetooth.com/specifications/specs/> · Thread Group — <https://threadgroup.org/What-is-Thread/Overview>
+- SUBTEL — <https://www.subtel.gob.cl/> · Ley Chile — <https://www.bcn.cl/leychile/navegar?idNorma=29591>
 - NIST IR 8259 Rev. 1 — <https://csrc.nist.gov/pubs/ir/8259/r1/final>
 - FDA — *Cybersecurity in Medical Devices* (guía final vigente). <https://www.fda.gov/regulatory-information/search-fda-guidance-documents/cybersecurity-medical-devices-quality-management-system-considerations-and-content-premarket>
 
-> ⚠️ **Nota ética:** todo el contenido ofensivo de esta parte se practica **solo** en dispositivos, redes y sistemas de tu propiedad o con autorización explícita por escrito. Interceptar comunicaciones ajenas, clonar credenciales de terceros o manipular sistemas industriales/médicos en producción es ilegal y peligroso.
+> ⚠️ **Nota ética:** todo el contenido de doble uso se practica **solo** en dispositivos, redes y sistemas propios o autorizados por escrito, según el marco de la [Clase 025](../parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.md). Interceptar comunicaciones ajenas, clonar credenciales de terceros o manipular sistemas industriales/médicos en producción es ilegal y peligroso. La autorización sobre un activo no reemplaza la normativa del espectro; en Chile, los inhibidores quedan fuera del laboratorio.
 
 ## ▶️ Empezar
 
