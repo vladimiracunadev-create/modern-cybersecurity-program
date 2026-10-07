@@ -62,6 +62,10 @@ En phishing se preserva mensaje, se busca alcance entre destinatarios, se correl
 
 ATT&CK ayuda a describir comportamientos y diseñar búsquedas, pero no reemplaza la lógica de respuesta. Un IOC puede caducar o compartirse con infraestructura legítima; un playbook incluye validación, expiración y reversión de bloqueos.
 
+Un **dispositivo físico o radio sospechosa** cambia de nuevo las preguntas. Ante un cable, adaptador USB, puente de red, lector RFID o AP desconocido, se documentan ubicación, conexiones, alimentación, hora, custodio y riesgo antes de manipularlo. Desconectarlo puede cortar una comunicación o perder estado; dejarlo conectado puede prolongar impacto. El punto de decisión debe declarar qué prima: seguridad de personas, continuidad, preservación o contención. La respuesta no conecta la evidencia a otro equipo productivo «para probarla» ni usa deautenticación/jamming para contener radio.
+
+Las clases [177](../../parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md) y [268–272](../../parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md) aportan fuentes específicas. El playbook separa cuatro conclusiones: presencia del dispositivo, conducta correlacionada, impacto y atribución. Preserva logs PnP/USBGuard/EDR, rutas e interfaces, WIDS/AP/cliente, controlador de acceso y capturas RF según el caso. La ausencia de una fuente no se convierte en evidencia negativa.
+
 ### Mantener, probar y automatizar con límites
 
 Cada playbook tiene propietario, versión, cambios, dependencias y fecha de la última prueba. Un tabletop prueba autoridad y coordinación; una prueba técnica valida comandos y permisos. Los hallazgos generan cambios trazables y una reprueba. Revisarlo solo por calendario es insuficiente si cambió una API, proveedor, arquitectura o obligación.
@@ -129,6 +133,7 @@ Dominas la clase cuando otra persona puede ejecutar tu playbook sin interpretaci
 4. Diseña los criterios de escalado a legal y dirección.
 5. Identifica qué tres pasos automatizarías con SOAR y por qué.
 6. Crea un diagrama de flujo del playbook de phishing.
+7. Adapta la plantilla a un adaptador USB-Ethernet desconocido: incluye seguridad física, estado volátil, custodia, aislamiento, análisis en banco y recuperación.
 
 ## 📝 Reto verificable
 
@@ -167,6 +172,7 @@ Revísalos tras cada incidente y en las lecciones aprendidas; un playbook es un 
 - **MITRE ATT&CK:** <https://attack.mitre.org/> — lenguaje y conocimiento de comportamientos para búsquedas y cobertura; no es un procedimiento de respuesta.
 - **TheHive:** <https://docs.strangebee.com/thehive/> — documentación oficial de gestión de casos y observables; la herramienta no define por sí sola autoridad operativa.
 - **Roberts y Brown — *Intelligence-Driven Incident Response*, O’Reilly, 2017:** enfoque de respuesta guiada por inteligencia; complementar con normas y arquitectura actuales.
+- **NIST SP 800-53 Rev. 5, familias PE e IR:** <https://doi.org/10.6028/NIST.SP.800-53r5> — integra protección física, monitoreo y respuesta; los controles se adaptan al riesgo del sistema.
 
 ## 🔬 Aplicación transversal
 
