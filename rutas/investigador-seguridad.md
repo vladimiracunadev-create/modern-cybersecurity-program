@@ -74,6 +74,10 @@ demostrable en una o dos superficies.
    para web/API; [**Parte 5**](../classes/parte-5-explotacion-de-sistemas-y-binarios/README.md) para binarios;
    [**Parte 6**](../classes/parte-6-analisis-de-malware/README.md) para malware; o
    [**Parte 13**](../classes/parte-13-seguridad-movil-iot-e-inalambrica/README.md) para móvil, IoT y firmware.
+   Si eliges hardware, estudia primero [**177**](../classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md)
+   para USB, acceso físico y evidencia; continúa con [**268–272**](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md)
+   para placa, RF, credenciales, BLE/802.15.4 y WiFi. La secuencia va de medición pasiva a una
+   prueba controlada y termina siempre con detección, respuesta y restauración.
 4. 📚 [**Parte 7**](../classes/parte-7-red-team-y-operaciones-ofensivas/README.md) y
    [**Parte 8**](../classes/parte-8-blue-team-deteccion-y-soc/README.md): relaciona mecanismo,
    telemetría, detección y límites de evasión sin convertir una técnica en una conclusión universal.

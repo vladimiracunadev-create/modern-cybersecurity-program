@@ -8,7 +8,7 @@ el generador; la modalidad y disponibilidad pueden cambiar en sus sitios oficial
 > **Archivo generado.** No lo edites a mano. Ejecuta
 > `python scripts/generar_glosario_global.py` y valida con `--check`.
 
-**Cobertura:** 2443 términos consolidados · 345 clases con glosario.
+**Cobertura:** 2472 términos consolidados · 345 clases con glosario.
 
 ## Cómo usarlo
 
@@ -19,7 +19,7 @@ el generador; la modalidad y disponibilidad pueden cambiar en sus sitios oficial
 
 ## Índice alfabético
 
-[0](#0) · [1](#1) · [2](#2) · [4](#4) · [5](#5) · [8](#8) · [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#g) · [H](#h) · [I](#i) · [J](#j) · [K](#k) · [L](#l) · [M](#m) · [N](#n) · [O](#o) · [Otros](#otros) · [P](#p) · [Q](#q) · [R](#r) · [S](#s) · [T](#t) · [U](#u) · [V](#v) · [W](#w) · [X](#x) · [Y](#y) · [Z](#z)
+[0](#0) · [1](#1) · [2](#2) · [4](#4) · [5](#5) · [6](#6) · [8](#8) · [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#g) · [H](#h) · [I](#i) · [J](#j) · [K](#k) · [L](#l) · [M](#m) · [N](#n) · [O](#o) · [Otros](#otros) · [P](#p) · [Q](#q) · [R](#r) · [S](#s) · [T](#t) · [U](#u) · [V](#v) · [W](#w) · [X](#x) · [Y](#y) · [Z](#z)
 
 ## 0
 
@@ -55,9 +55,9 @@ Fusiona stderr con stdout hacia el mismo destino
 
 ### 4-way handshake
 
-Intercambio que confirma claves y deriva claves de sesión.
+Intercambio que deriva la clave de sesión; capturable
 
-**Aparece en 2 clase(s):** [Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque](../classes/parte-1-redes-y-seguridad-de-redes/038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md), [Clase 272 — Ataques WiFi avanzados: Evil Twin y PMKID](../classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md).
+**Aparece en 1 clase(s):** [Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque](../classes/parte-1-redes-y-seguridad-de-redes/038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md).
 
 ## 5
 
@@ -66,6 +66,14 @@ Intercambio que confirma claves y deriva claves de sesión.
 IP origen, IP destino, puerto origen, puerto destino y protocolo
 
 **Aparece en 1 clase(s):** [Clase 45 — NetFlow y análisis de metadatos de tráfico](../classes/parte-1-redes-y-seguridad-de-redes/045-netflow-y-analisis-de-metadatos-de-trafico/README.md).
+
+## 6
+
+### 6LoWPAN
+
+Adaptación de IPv6 a redes de baja potencia IEEE 802.15.4.
+
+**Aparece en 1 clase(s):** [Clase 271 — Seguridad de Bluetooth, BLE y radio IoT de corto alcance](../classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md).
 
 ## 8
 
@@ -178,6 +186,12 @@ Interacción con un sistema sin permiso, delito común
 Túnel de un usuario individual hacia la red de la organización
 
 **Aparece en 1 clase(s):** [Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN](../classes/parte-1-redes-y-seguridad-de-redes/036-vpn-y-tuneles-ipsec-wireguard-y-openvpn/README.md).
+
+### Access Address
+
+Valor que identifica una conexión BLE en la capa de enlace.
+
+**Aparece en 1 clase(s):** [Clase 271 — Seguridad de Bluetooth, BLE y radio IoT de corto alcance](../classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md).
 
 ### Access-Control-Allow-Origin
 
@@ -298,12 +312,6 @@ Uso de comportamientos adversariales genéricos, sin atarse a un actor
 Aviso del navegador que, ignorado, reabre el MitM
 
 **Aparece en 1 clase(s):** [Clase 40 — Man-in-the-Middle: técnicas y defensa](../classes/parte-1-redes-y-seguridad-de-redes/040-man-in-the-middle-tecnicas-y-defensa/README.md).
-
-### Advertising
-
-Emisión BLE para descubrimiento y datos breves.
-
-**Aparece en 1 clase(s):** [Clase 271 — Seguridad de Bluetooth y BLE](../classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md).
 
 ### AEAD
 
@@ -463,9 +471,9 @@ En WireGuard, destinos enrutados y orígenes aceptados por par
 
 ### Allowlist
 
-Lista de valores permitidos cuando hay que llamar a un programa
+Política que autoriza solo identidades, interfaces o puertos esperados.
 
-**Aparece en 2 clase(s):** [Clase 95 — Inyección de comandos del sistema operativo](../classes/parte-4-seguridad-de-aplicaciones-web/095-inyeccion-de-comandos-del-sistema-operativo/README.md), [Clase 108 — Vulnerabilidades en carga de archivos](../classes/parte-4-seguridad-de-aplicaciones-web/108-vulnerabilidades-en-carga-de-archivos/README.md).
+**Aparece en 3 clase(s):** [Clase 95 — Inyección de comandos del sistema operativo](../classes/parte-4-seguridad-de-aplicaciones-web/095-inyeccion-de-comandos-del-sistema-operativo/README.md), [Clase 108 — Vulnerabilidades en carga de archivos](../classes/parte-4-seguridad-de-aplicaciones-web/108-vulnerabilidades-en-carga-de-archivos/README.md), [Clase 177 — Red teaming físico](../classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md).
 
 ### Allowlist de campos
 
@@ -671,17 +679,17 @@ Detecta el entorno de análisis y se inhibe
 
 **Aparece en 1 clase(s):** [Clase 135 — Ofuscación y técnicas anti-reversing](../classes/parte-5-explotacion-de-sistemas-y-binarios/135-ofuscacion-y-tecnicas-anti-reversing/README.md).
 
-### Anticolisión
-
-Procedimiento para seleccionar tags presentes simultáneamente.
-
-**Aparece en 1 clase(s):** [Clase 270 — Ataques a RFID y NFC](../classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md).
-
 ### APC injection
 
 Inyección mediante colas de procedimientos asíncronos
 
 **Aparece en 1 clase(s):** [Clase 148 — Análisis de comportamiento](../classes/parte-6-analisis-de-malware/148-analisis-de-comportamiento/README.md).
+
+### APDU
+
+Unidad de comando/respuesta usada por aplicaciones de tarjetas inteligentes.
+
+**Aparece en 1 clase(s):** [Clase 270 — Auditoría de RFID, NFC y credenciales de proximidad](../classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md).
 
 ### Apetito de riesgo
 
@@ -835,6 +843,12 @@ Comprobar límites antes de operar
 
 **Aparece en 1 clase(s):** [Clase 128 — Integer overflows y errores aritméticos](../classes/parte-5-explotacion-de-sistemas-y-binarios/128-integer-overflows-y-errores-aritmeticos/README.md).
 
+### Arming mode
+
+Estado de administración separado de la ejecución en algunos equipos.
+
+**Aparece en 1 clase(s):** [Clase 177 — Red teaming físico](../classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md).
+
 ### ARP
 
 Traduce una IP en la MAC correspondiente; sin autenticación por diseño
@@ -900,6 +914,12 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 Identificador de un sistema autónomo que anuncia prefijos, no sinónimo de empresa.
 
 **Aparece en 1 clase(s):** [Clase 251 — OSINT de empresas y dominios](../classes/parte-12-osint-e-ingenieria-social/251-osint-de-empresas-y-dominios/README.md).
+
+### Association
+
+Paso por el que cliente y AP establecen relación 802.11; no garantiza acceso superior.
+
+**Aparece en 1 clase(s):** [Clase 272 — Auditoría WiFi avanzada: Evil Twin, PMKID y defensa](../classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md).
 
 ### Assumed breach
 
@@ -973,11 +993,23 @@ Familia que abusa de la suplantación para llegar a SYSTEM
 
 **Aparece en 1 clase(s):** [Clase 77 — Escalada de privilegios en Windows](../classes/parte-3-hacking-etico-y-pentesting-metodologia/077-escalada-de-privilegios-en-windows/README.md).
 
+### Atenuador
+
+Reduce nivel para proteger entrada o evitar saturación.
+
+**Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR) e investigación de interferencias](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
+
 ### Atomic Red Team
 
 Biblioteca de pruebas atómicas para simular TTPs
 
 **Aparece en 1 clase(s):** [Clase 163 — Emulación de adversarios](../classes/parte-7-red-team-y-operaciones-ofensivas/163-emulacion-de-adversarios/README.md).
+
+### ATQA/SAK
+
+Respuestas de selección ISO 14443A que ayudan a caracterizar tarjeta.
+
+**Aparece en 1 clase(s):** [Clase 270 — Auditoría de RFID, NFC y credenciales de proximidad](../classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md).
 
 ### Atribución
 
@@ -1299,6 +1331,12 @@ Muchas operaciones en una sola petición
 
 **Aparece en 1 clase(s):** [Clase 111 — Seguridad de APIs GraphQL](../classes/parte-4-seguridad-de-aplicaciones-web/111-seguridad-de-apis-graphql/README.md).
 
+### Baud
+
+Tasa de símbolos de UART; no siempre equivale a bits útiles por segundo.
+
+**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
+
 ### bcrypt
 
 KDF clásica con coste ajustable; memoria fija y límite de 72 bytes
@@ -1321,7 +1359,7 @@ API equivalente en Windows
 
 Implante que llama a casa a intervalos configurables
 
-**Aparece en 3 clase(s):** [Clase 149 — Comunicaciones de comando y control (C2) del malware](../classes/parte-6-analisis-de-malware/149-comunicaciones-de-comando-y-control-c2-del-malware/README.md), [Clase 164 — Diseño de infraestructura de comando y control (C2)](../classes/parte-7-red-team-y-operaciones-ofensivas/164-diseno-de-infraestructura-de-comando-y-control-c2/README.md), [Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic](../classes/parte-7-red-team-y-operaciones-ofensivas/165-frameworks-c2-cobalt-strike-sliver-y-mythic/README.md).
+**Aparece en 4 clase(s):** [Clase 149 — Comunicaciones de comando y control (C2) del malware](../classes/parte-6-analisis-de-malware/149-comunicaciones-de-comando-y-control-c2-del-malware/README.md), [Clase 164 — Diseño de infraestructura de comando y control (C2)](../classes/parte-7-red-team-y-operaciones-ofensivas/164-diseno-de-infraestructura-de-comando-y-control-c2/README.md), [Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic](../classes/parte-7-red-team-y-operaciones-ofensivas/165-frameworks-c2-cobalt-strike-sliver-y-mythic/README.md), [Clase 272 — Auditoría WiFi avanzada: Evil Twin, PMKID y defensa](../classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md).
 
 ### Beaconing
 
@@ -1503,12 +1541,6 @@ Acceder a datos de otro navegando relaciones
 
 **Aparece en 1 clase(s):** [Clase 111 — Seguridad de APIs GraphQL](../classes/parte-4-seguridad-de-aplicaciones-web/111-seguridad-de-apis-graphql/README.md).
 
-### Bonding
-
-Conservación de claves para conexiones futuras.
-
-**Aparece en 1 clase(s):** [Clase 271 — Seguridad de Bluetooth y BLE](../classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md).
-
 ### Booleana
 
 Deducir datos por la diferencia entre condición verdadera y falsa
@@ -1526,6 +1558,12 @@ Se carga antes que el SO durante el arranque
 Código inicial que prepara y carga etapas posteriores.
 
 **Aparece en 1 clase(s):** [Clase 267 — Hacking de firmware](../classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md).
+
+### Border router
+
+Enrutador entre Thread y otras redes IP; no es solo un «hub».
+
+**Aparece en 1 clase(s):** [Clase 271 — Seguridad de Bluetooth, BLE y radio IoT de corto alcance](../classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md).
 
 ### Borrado de logs (T1070)
 
@@ -1949,6 +1987,12 @@ Aritmética modular sobre un primo, donde vive la curva
 
 **Aparece en 1 clase(s):** [Clase 50 — Criptografía de curva elíptica (ECC)](../classes/parte-2-criptografia-aplicada/050-criptografia-de-curva-eliptica-ecc/README.md).
 
+### Canal
+
+Porción del espectro; una captura fija no ve simultáneamente todos.
+
+**Aparece en 1 clase(s):** [Clase 272 — Auditoría WiFi avanzada: Evil Twin, PMKID y defensa](../classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md).
+
 ### Canal encubierto
 
 Vía de comunicación no prevista por el diseño
@@ -2050,6 +2094,12 @@ Brecha de 2019 causada por SSRF al metadata de AWS
 Librerías para construir herramientas de análisis
 
 **Aparece en 1 clase(s):** [Clase 133 — Análisis estático de binarios](../classes/parte-5-explotacion-de-sistemas-y-binarios/133-analisis-estatico-de-binarios/README.md).
+
+### Captive portal
+
+Aplicación web posterior a la conexión; no es autenticación WiFi.
+
+**Aparece en 1 clase(s):** [Clase 272 — Auditoría WiFi avanzada: Evil Twin, PMKID y defensa](../classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md).
 
 ### Carga de archivos
 
@@ -2212,12 +2262,6 @@ Cifrado de flujo moderno basado en operaciones ARX
 AEAD para software y móviles sin aceleración AES
 
 **Aparece en 1 clase(s):** [Clase 59 — Cifrado autenticado (AEAD)](../classes/parte-2-criptografia-aplicada/059-cifrado-autenticado-aead/README.md).
-
-### Challenge-response
-
-Autenticación que prueba conocimiento sin repetir una respuesta fija.
-
-**Aparece en 1 clase(s):** [Clase 270 — Ataques a RFID y NFC](../classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md).
 
 ### check
 
@@ -2783,6 +2827,12 @@ Usa `connect()`; sin privilegios, pero visible en los logs
 
 **Aparece en 2 clase(s):** [Clase 30 — Nmap: escaneo de puertos y tipos de escaneo](../classes/parte-1-redes-y-seguridad-de-redes/030-nmap-escaneo-de-puertos-y-tipos-de-escaneo/README.md), [Clase 69 — Reconocimiento activo](../classes/parte-3-hacking-etico-y-pentesting-metodologia/069-reconocimiento-activo/README.md).
 
+### Connection interval
+
+Periodicidad negociada de eventos de conexión.
+
+**Aparece en 1 clase(s):** [Clase 271 — Seguridad de Bluetooth, BLE y radio IoT de corto alcance](../classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md).
+
 ### conntrack
 
 Subsistema del kernel Linux que sigue el estado de las conexiones
@@ -2815,9 +2865,9 @@ Operadores de subcadena y de expresión regular
 
 ### Contención
 
-Dos dispositivos conducen una línea de manera incompatible.
+Limitar el alcance de una brecha a una zona
 
-**Aparece en 2 clase(s):** [Clase 42 — Segmentación de red y arquitectura Zero Trust](../classes/parte-1-redes-y-seguridad-de-redes/042-segmentacion-de-red-y-arquitectura-zero-trust/README.md), [Clase 268 — Análisis de hardware: UART, JTAG y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
+**Aparece en 1 clase(s):** [Clase 42 — Segmentación de red y arquitectura Zero Trust](../classes/parte-1-redes-y-seguridad-de-redes/042-segmentacion-de-red-y-arquitectura-zero-trust/README.md).
 
 ### Contenedor
 
@@ -3210,6 +3260,12 @@ Activos críticos cuyo compromiso define el éxito del ejercicio
 Buscador de CT usado para enumerar subdominios
 
 **Aparece en 1 clase(s):** [Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas](../classes/parte-3-hacking-etico-y-pentesting-metodologia/068-reconocimiento-pasivo-e-inteligencia-de-fuentes-abiertas/README.md).
+
+### Crypto-1
+
+Cifrado histórico asociado a MIFARE Classic; no representa toda MIFARE.
+
+**Aparece en 1 clase(s):** [Clase 270 — Auditoría de RFID, NFC y credenciales de proximidad](../classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md).
 
 ### Cryptominer
 
@@ -3669,12 +3725,6 @@ Clave de datos que cifra el contenido; se guarda cifrada
 
 **Aparece en 1 clase(s):** [Clase 63 — Gestión de secretos: Vault y KMS](../classes/parte-2-criptografia-aplicada/063-gestion-de-secretos-vault-y-kms/README.md).
 
-### Demodulación
-
-Recuperación de símbolos o información desde una portadora modulada.
-
-**Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR)](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
-
 ### Demostración
 
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
@@ -3759,6 +3809,12 @@ Uso de material auténtico con fecha, lugar o significado incorrecto.
 
 **Aparece en 1 clase(s):** [Clase 252 — OSINT en redes sociales](../classes/parte-12-osint-e-ingenieria-social/252-osint-en-redes-sociales/README.md).
 
+### Descriptor
+
+Estructura USB que anuncia configuración, interfaces y endpoints.
+
+**Aparece en 1 clase(s):** [Clase 177 — Red teaming físico](../classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md).
+
 ### Descubrimiento de hosts
 
 Determinar qué direcciones están vivas (`-sn`)
@@ -3812,6 +3868,12 @@ Reconstruir el objeto a partir de los bytes
 Reconstruir datos del usuario que ejecutan código
 
 **Aparece en 1 clase(s):** [Clase 106 — Deserialización insegura](../classes/parte-4-seguridad-de-aplicaciones-web/106-deserializacion-insegura/README.md).
+
+### DESFire
+
+Familia con aplicaciones y autenticación criptográfica; la seguridad depende de versión/configuración.
+
+**Aparece en 1 clase(s):** [Clase 270 — Auditoría de RFID, NFC y credenciales de proximidad](../classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md).
 
 ### Deshabilitar AMSI
 
@@ -4008,12 +4070,6 @@ Primera dirección del bloque; identifica el segmento.
 Valor que `ret` carga en RIP; objetivo del overflow
 
 **Aparece en 2 clase(s):** [Clase 24 — Arquitectura de computadores: CPU, registros y memoria](../classes/parte-0-fundamentos-y-prerrequisitos/024-arquitectura-de-computadores-cpu-registros-y-memoria/README.md), [Clase 117 — El stack, los registros y las convenciones de llamada](../classes/parte-5-explotacion-de-sistemas-y-binarios/117-el-stack-los-registros-y-las-convenciones-de-llamada/README.md).
-
-### Dirección privada
-
-Dirección que rota para reducir seguimiento, con límites.
-
-**Aparece en 1 clase(s):** [Clase 271 — Seguridad de Bluetooth y BLE](../classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md).
 
 ### Directorio .git expuesto
 
@@ -4351,6 +4407,12 @@ Bug ya reportado; no se recompensa
 
 **Aparece en 1 clase(s):** [Clase 114 — Bug bounty: metodología y plataformas](../classes/parte-4-seguridad-de-aplicaciones-web/114-bug-bounty-metodologia-y-plataformas/README.md).
 
+### DUT/target
+
+Dispositivo bajo prueba.
+
+**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
+
 ### DV / OV / EV
 
 Niveles de validación: dominio, organización, extendida
@@ -4400,6 +4462,12 @@ Hallar `k` conocidos `G` y `k·G`; base de la seguridad
 Firma sobre curvas NIST; el nonce filtrado revela la clave
 
 **Aparece en 2 clase(s):** [Clase 50 — Criptografía de curva elíptica (ECC)](../classes/parte-2-criptografia-aplicada/050-criptografia-de-curva-eliptica-ecc/README.md), [Clase 54 — Firmas digitales](../classes/parte-2-criptografia-aplicada/054-firmas-digitales/README.md).
+
+### ECM/RNDIS
+
+Formas de presentar un adaptador Ethernet por USB en diferentes sistemas.
+
+**Aparece en 1 clase(s):** [Clase 177 — Red teaming físico](../classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md).
 
 ### Economía,
 
@@ -4915,6 +4983,12 @@ El exceso sobrescribe memoria adyacente
 
 **Aparece en 1 clase(s):** [Clase 119 — Buffer overflow en stack: teoría](../classes/parte-5-explotacion-de-sistemas-y-binarios/119-buffer-overflow-en-stack-teoria/README.md).
 
+### ESD
+
+Descarga electrostática capaz de dañar componentes.
+
+**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
+
 ### ESP / AH
 
 Cifrado+autenticación / solo autenticación en IPsec
@@ -5117,7 +5191,7 @@ Registro de la orden exacta que produjo cada hallazgo
 
 AP falso que imita un SSID legítimo para captar clientes
 
-**Aparece en 2 clase(s):** [Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque](../classes/parte-1-redes-y-seguridad-de-redes/038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md), [Clase 272 — Ataques WiFi avanzados: Evil Twin y PMKID](../classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md).
+**Aparece en 1 clase(s):** [Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque](../classes/parte-1-redes-y-seguridad-de-redes/038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md).
 
 ### Excepción
 
@@ -5381,6 +5455,12 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 
 **Aparece en 1 clase(s):** [Clase 358 — Machine Learning aplicado a Anti-Cheat](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/358-machine-learning-aplicado-anticheat/README.md).
 
+### FFT
+
+Transformación que aproxima contenido por frecuencia en una ventana.
+
+**Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR) e investigación de interferencias](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
+
 ### ffuf / feroxbuster / gobuster
 
 Herramientas de fuzzing de rutas
@@ -5539,6 +5619,12 @@ Distribución Windows con el instrumental de análisis
 
 **Aparece en 1 clase(s):** [Clase 142 — Laboratorio seguro de análisis de malware](../classes/parte-6-analisis-de-malware/142-laboratorio-seguro-de-analisis-de-malware/README.md).
 
+### flashrom
+
+Herramienta para identificar, leer, verificar y escribir flash compatible.
+
+**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
+
 ### FLIRT / firmas
 
 Reconocer funciones de librería enlazadas
@@ -5676,6 +5762,12 @@ Secreto raíz del que pueden derivarse claves; exponerla exige tratar la wallet 
 Explotación de cifrados de exportación debilitados
 
 **Aparece en 1 clase(s):** [Clase 56 — TLS/SSL en profundidad](../classes/parte-2-criptografia-aplicada/056-tls-ssl-en-profundidad/README.md).
+
+### Frecuencia imagen
+
+Respuesta no deseada que puede parecer señal real.
+
+**Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR) e investigación de interferencias](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
 
 ### Freemarker
 
@@ -5835,12 +5927,6 @@ Componente que media tráfico entre dominios de red.
 
 **Aparece en 1 clase(s):** [Clase 274 — Seguridad automotriz y bus CAN](../classes/parte-13-seguridad-movil-iot-e-inalambrica/274-seguridad-automotriz-y-bus-can/README.md).
 
-### GATT
-
-Modelo de servicios, características y operaciones BLE.
-
-**Aparece en 1 clase(s):** [Clase 271 — Seguridad de Bluetooth y BLE](../classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md).
-
 ### gcc -S
 
 Genera el ensamblador de un fuente C, para aprender a leerlo
@@ -5972,6 +6058,12 @@ Escáneres de secretos en repositorios y CI
 Expansión de comodines (`*`, `?`) a nombres de archivo
 
 **Aparece en 1 clase(s):** [Clase 7 — Bash scripting para tareas de seguridad](../classes/parte-0-fundamentos-y-prerrequisitos/007-bash-scripting-para-tareas-de-seguridad/README.md).
+
+### GND
+
+Referencia eléctrica común; se identifica antes de conectar señales.
+
+**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
 
 ### Goodhart
 
@@ -6491,12 +6583,6 @@ Tarea limitada por espera de entrada/salida, no por CPU
 
 **Aparece en 1 clase(s):** [Clase 16 — Python para seguridad: sockets y programación de red](../classes/parte-0-fundamentos-y-prerrequisitos/016-python-para-seguridad-sockets-y-programacion-de-red/README.md).
 
-### I/Q
-
-Dos componentes ortogonales que conservan amplitud y fase.
-
-**Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR)](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
-
 ### IAT vacía
 
 Síntoma de resolución dinámica
@@ -6683,6 +6769,12 @@ Reparto de responsabilidad ante daños accidentales
 
 **Aparece en 1 clase(s):** [Clase 67 — Reglas de engagement, alcance y contratos](../classes/parte-3-hacking-etico-y-pentesting-metodologia/067-reglas-de-engagement-alcance-y-contratos/README.md).
 
+### Indication
+
+Actualización GATT que requiere confirmación.
+
+**Aparece en 1 clase(s):** [Clase 271 — Seguridad de Bluetooth, BLE y radio IoT de corto alcance](../classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md).
+
 ### Índice de medición
 
 Base construida con observaciones realizadas en momentos concretos.
@@ -6826,6 +6918,12 @@ Pausar una petición para modificarla antes de enviarla
 Ver y modificar argumentos y retorno en caliente
 
 **Aparece en 1 clase(s):** [Clase 134 — Análisis dinámico y debugging de binarios](../classes/parte-5-explotacion-de-sistemas-y-binarios/134-analisis-dinamico-y-debugging-de-binarios/README.md).
+
+### Interfaz
+
+Función lógica dentro de un dispositivo USB.
+
+**Aparece en 1 clase(s):** [Clase 177 — Red teaming físico](../classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md).
 
 ### Internal,
 
@@ -7136,12 +7234,6 @@ Herramientas de cracking (CPU y GPU)
 Registro del sistema de ficheros que persiste cambios
 
 **Aparece en 1 clase(s):** [Clase 84 — Anti-forense y borrado de huellas (concepto y límites)](../classes/parte-3-hacking-etico-y-pentesting-metodologia/084-anti-forense-y-borrado-de-huellas-concepto-y-limites/README.md).
-
-### JTAG/SWD
-
-Interfaces de depuración y prueba de circuitos.
-
-**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
 
 ### Juice Shop
 
@@ -7569,6 +7661,12 @@ Loadable Kernel Module; vía de los rootkits de kernel
 
 **Aparece en 1 clase(s):** [Clase 154 — Malware en Linux](../classes/parte-6-analisis-de-malware/154-malware-en-linux/README.md).
 
+### LNA
+
+Amplificador de bajo ruido; no corrige saturación previa.
+
+**Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR) e investigación de interferencias](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
+
 ### LNK
 
 Acceso directo de Windows usado como lanzador dentro de un contenedor
@@ -7852,6 +7950,12 @@ Descubrir toda la estructura de la aplicación antes de atacar
 Prueba de que la firma existía antes de una fecha
 
 **Aparece en 1 clase(s):** [Clase 54 — Firmas digitales](../classes/parte-2-criptografia-aplicada/054-firmas-digitales/README.md).
+
+### Marcador inocuo
+
+Resultado preparado que prueba la acción sin acceder a datos reales.
+
+**Aparece en 1 clase(s):** [Clase 177 — Red teaming físico](../classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md).
 
 ### Marco (stack frame)
 
@@ -8559,12 +8663,6 @@ Cautela explícita en las afirmaciones de CTI
 
 **Aparece en 1 clase(s):** [Clase 157 — Threat intelligence a partir de malware](../classes/parte-6-analisis-de-malware/157-threat-intelligence-a-partir-de-malware/README.md).
 
-### Nivel lógico
-
-Tensión que representa estados digitales; no asumir 5 V.
-
-**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
-
 ### nmap-os-db
 
 Base de firmas de sistemas operativos de Nmap
@@ -8625,6 +8723,12 @@ Fallo catastrófico en GCM y en cifrados de flujo
 
 **Aparece en 2 clase(s):** [Clase 58 — Generación de aleatoriedad segura (CSPRNG)](../classes/parte-2-criptografia-aplicada/058-generacion-de-aleatoriedad-segura-csprng/README.md), [Clase 65 — Implementaciones seguras y errores criptográficos comunes](../classes/parte-2-criptografia-aplicada/065-implementaciones-seguras-y-errores-criptograficos-comunes/README.md).
 
+### NOR flash
+
+Memoria no volátil común en firmware embebido.
+
+**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
+
 ### Normalización
 
 Conversión a formas comparables sin asumir identidad.
@@ -8660,6 +8764,12 @@ Mensaje con branding que identifica la familia
 Evento destacado por un script como digno de revisión
 
 **Aparece en 1 clase(s):** [Clase 44 — Zeek para análisis de red a gran escala](../classes/parte-1-redes-y-seguridad-de-redes/044-zeek-para-analisis-de-red-a-gran-escala/README.md).
+
+### Notification
+
+Actualización GATT sin confirmación ATT.
+
+**Aparece en 1 clase(s):** [Clase 271 — Seguridad de Bluetooth, BLE y radio IoT de corto alcance](../classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md).
 
 ### NR
 
@@ -8878,6 +8988,12 @@ Estado indeterminado típico de UDP y de FIN/NULL/Xmas
 Capa de autenticación sobre OAuth
 
 **Aparece en 1 clase(s):** [Clase 104 — Seguridad de OAuth 2.0 y OpenID Connect](../classes/parte-4-seguridad-de-aplicaciones-web/104-seguridad-de-oauth-2-0-y-openid-connect/README.md).
+
+### OpenOCD
+
+Software de depuración que coordina sonda y target configurados.
+
+**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
 
 ### OpenVAS / Greenbone (GVM)
 
@@ -9421,12 +9537,6 @@ Unidad de memoria virtual (típicamente 4 KiB)
 
 **Aparece en 1 clase(s):** [Clase 23 — Sistemas operativos: procesos, memoria y syscalls](../classes/parte-0-fundamentos-y-prerrequisitos/023-sistemas-operativos-procesos-memoria-y-syscalls/README.md).
 
-### Pairing
-
-Proceso que establece parámetros y claves de seguridad.
-
-**Aparece en 1 clase(s):** [Clase 271 — Seguridad de Bluetooth y BLE](../classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md).
-
 ### Paquete
 
 PDU de la capa de red (lleva la cabecera IP)
@@ -9585,6 +9695,12 @@ Se envía completo; más grande y fiable; notación con `_`
 
 **Aparece en 1 clase(s):** [Clase 73 — Metasploit: explotación y payloads](../classes/parte-3-hacking-etico-y-pentesting-metodologia/073-metasploit-explotacion-y-payloads/README.md).
 
+### PC/SC
+
+API común para lectores y tarjetas inteligentes en sistemas operativos.
+
+**Aparece en 1 clase(s):** [Clase 270 — Auditoría de RFID, NFC y credenciales de proximidad](../classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md).
+
 ### pcap
 
 Formato de archivo de captura de tráfico de red
@@ -9596,6 +9712,12 @@ Formato de archivo de captura de tráfico de red
 Formato de captura moderno, con metadatos y comentarios
 
 **Aparece en 1 clase(s):** [Clase 26 — Wireshark: captura y análisis de paquetes](../classes/parte-1-redes-y-seguridad-de-redes/026-wireshark-captura-y-analisis-de-paquetes/README.md).
+
+### PCD
+
+Dispositivo lector que genera el campo e inicia comunicación.
+
+**Aparece en 1 clase(s):** [Clase 270 — Auditoría de RFID, NFC y credenciales de proximidad](../classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md).
 
 ### PCRE
 
@@ -9771,6 +9893,12 @@ Equivalente para PHP
 
 **Aparece en 1 clase(s):** [Clase 106 — Deserialización insegura](../classes/parte-4-seguridad-de-aplicaciones-web/106-deserializacion-insegura/README.md).
 
+### PICC
+
+Tarjeta/objeto sin contacto en terminología ISO 14443.
+
+**Aparece en 1 clase(s):** [Clase 270 — Auditoría de RFID, NFC y credenciales de proximidad](../classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md).
+
 ### pickle
 
 Módulo de Python que ejecuta código al deserializar
@@ -9812,6 +9940,12 @@ Barrido que descubre hosts activos mediante ICMP
 Fijación de una dependencia a una identidad inmutable, como SHA o digest.
 
 **Aparece en 1 clase(s):** [Clase 242 — Seguridad en pipelines CI/CD](../classes/parte-11-devsecops-y-seguridad-del-sdlc/242-seguridad-en-pipelines-ci-cd/README.md).
+
+### Pinout
+
+Asignación documentada de función a cada pin.
+
+**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
 
 ### pip
 
@@ -9947,12 +10081,6 @@ Comprobación individual de un escáner
 
 **Aparece en 1 clase(s):** [Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS](../classes/parte-3-hacking-etico-y-pentesting-metodologia/071-analisis-de-vulnerabilidades-con-nessus-y-openvas/README.md).
 
-### PMF
-
-Protección de ciertas tramas de gestión IEEE 802.11.
-
-**Aparece en 1 clase(s):** [Clase 272 — Ataques WiFi avanzados: Evil Twin y PMKID](../classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md).
-
 ### PMF (802.11w)
 
 Autenticación de tramas de gestión; neutraliza el deauth
@@ -9961,9 +10089,9 @@ Autenticación de tramas de gestión; neutraliza el deauth
 
 ### PMKID
 
-Identificador derivado que algunas configuraciones exponen para gestión de claves.
+Material crackeable obtenible del AP sin cliente conectado
 
-**Aparece en 2 clase(s):** [Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque](../classes/parte-1-redes-y-seguridad-de-redes/038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md), [Clase 272 — Ataques WiFi avanzados: Evil Twin y PMKID](../classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md).
+**Aparece en 1 clase(s):** [Clase 38 — Seguridad WiFi: WPA2, WPA3 y superficie de ataque](../classes/parte-1-redes-y-seguridad-de-redes/038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md).
 
 ### Política
 
@@ -10101,9 +10229,9 @@ Conjunto de módulos ofensivos en PowerShell
 
 ### PPM
 
-Error relativo de frecuencia del oscilador.
+Error relativo de frecuencia del reloj.
 
-**Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR)](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
+**Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR) e investigación de interferencias](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
 
 ### PPS / BPS
 
@@ -10266,6 +10394,12 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 Generador determinista; parece aleatorio pero es predecible
 
 **Aparece en 1 clase(s):** [Clase 58 — Generación de aleatoriedad segura (CSPRNG)](../classes/parte-2-criptografia-aplicada/058-generacion-de-aleatoriedad-segura-csprng/README.md).
+
+### Probe
+
+Solicitud/respuesta de descubrimiento; el comportamiento depende del cliente.
+
+**Aparece en 1 clase(s):** [Clase 272 — Auditoría WiFi avanzada: Evil Twin, PMKID y defensa](../classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md).
 
 ### Problema de factorización
 
@@ -10718,6 +10852,18 @@ Explotar la ventana entre comprobar y actuar
 Suite de RE libre, ligera y de línea de comandos
 
 **Aparece en 1 clase(s):** [Clase 132 — IDA Pro y radare2](../classes/parte-5-explotacion-de-sistemas-y-binarios/132-ida-pro-y-radare2/README.md).
+
+### Radiogoniometría
+
+Estimación de dirección con antenas y método apropiados.
+
+**Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR) e investigación de interferencias](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
+
+### Radiotap
+
+Metadatos de captura como canal, tasa y RSSI aportados por el driver.
+
+**Aparece en 1 clase(s):** [Clase 272 — Auditoría WiFi avanzada: Evil Twin, PMKID y defensa](../classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md).
 
 ### Rainbow table
 
@@ -11187,7 +11333,7 @@ Reenvío manual y reproducible de peticiones
 
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
 
-**Aparece en 2 clase(s):** [Clase 270 — Ataques a RFID y NFC](../classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md), [Clase 352 — Seguridad del protocolo de juego](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/352-seguridad-protocolo-juego/README.md).
+**Aparece en 1 clase(s):** [Clase 352 — Seguridad del protocolo de juego](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/352-seguridad-protocolo-juego/README.md).
 
 ### Reporte
 
@@ -11278,6 +11424,12 @@ Necesita IOCs accionables para contener
 Mensaje y tiempo idénticos existan o no las cuentas
 
 **Aparece en 1 clase(s):** [Clase 101 — Fallos de autenticación y bypass](../classes/parte-4-seguridad-de-aplicaciones-web/101-fallos-de-autenticacion-y-bypass/README.md).
+
+### Restauración
+
+Eliminación de cargas, credenciales, datos y cambios tras la prueba.
+
+**Aparece en 1 clase(s):** [Clase 177 — Red teaming físico](../classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md).
 
 ### Resumen ejecutivo
 
@@ -11533,11 +11685,23 @@ Reglas de engagement: ventanas, técnicas y límites operativos
 
 **Aparece en 2 clase(s):** [Clase 25 — Ética, legalidad, alcance y divulgación responsable](../classes/parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.md), [Clase 67 — Reglas de engagement, alcance y contratos](../classes/parte-3-hacking-etico-y-pentesting-metodologia/067-reglas-de-engagement-alcance-y-contratos/README.md).
 
+### Rogue AP
+
+AP no autorizado conectado o presente según política; no siempre es Evil Twin.
+
+**Aparece en 1 clase(s):** [Clase 272 — Auditoría WiFi avanzada: Evil Twin, PMKID y defensa](../classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md).
+
 ### Rol
 
 Posición jurídica u operativa que determina obligaciones.
 
 **Aparece en 1 clase(s):** [Clase 281 — Cumplimiento: GDPR, HIPAA y PCI-DSS](../classes/parte-14-grc-riesgo-y-cumplimiento/281-cumplimiento-gdpr-hipaa-y-pci-dss/README.md).
+
+### Rolling code
+
+Código que cambia con estado; una grabación antigua suele no ser reutilizable.
+
+**Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR) e investigación de interferencias](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
 
 ### Ronda
 
@@ -11654,6 +11818,12 @@ Existe algún ataque mejor que la fuerza bruta
 El ataque es alcanzable con recursos reales
 
 **Aparece en 1 clase(s):** [Clase 61 — Introducción al criptoanálisis](../classes/parte-2-criptografia-aplicada/061-introduccion-al-criptoanalisis/README.md).
+
+### RPA
+
+Dirección privada resoluble que rota y puede resolverse con IRK.
+
+**Aparece en 1 clase(s):** [Clase 271 — Seguridad de Bluetooth, BLE y radio IoT de corto alcance](../classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md).
 
 ### RPO
 
@@ -11789,12 +11959,6 @@ Mueve el cursor a una dirección
 
 **Aparece en 1 clase(s):** [Clase 132 — IDA Pro y radare2](../classes/parte-5-explotacion-de-sistemas-y-binarios/132-ida-pro-y-radare2/README.md).
 
-### SAE
-
-Autenticación basada en contraseña usada por WPA3-Personal.
-
-**Aparece en 1 clase(s):** [Clase 272 — Ataques WiFi avanzados: Evil Twin y PMKID](../classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md).
-
 ### Safe harbor
 
 Protección declarada condicionada al cumplimiento de política.
@@ -11917,9 +12081,9 @@ Análisis estático de seguridad del código
 
 ### Saturación
 
-Sobrecarga que distorsiona y crea señales espurias.
+Entrada excede rango y distorsiona la captura.
 
-**Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR)](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
+**Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR) e investigación de interferencias](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
 
 ### Saved RBP
 
@@ -12052,12 +12216,6 @@ Crackeable offline; permite forjar tokens
 APIs seguras en Python
 
 **Aparece en 1 clase(s):** [Clase 58 — Generación de aleatoriedad segura (CSPRNG)](../classes/parte-2-criptografia-aplicada/058-generacion-de-aleatoriedad-segura-csprng/README.md).
-
-### Sector/block
-
-Organización de memoria presente en algunas familias de tarjetas.
-
-**Aparece en 1 clase(s):** [Clase 270 — Ataques a RFID y NFC](../classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md).
 
 ### Secuestro de petición
 
@@ -12703,6 +12861,12 @@ Gestión de dispositivos; filtra inventario y configuración
 
 **Aparece en 1 clase(s):** [Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP](../classes/parte-3-hacking-etico-y-pentesting-metodologia/070-enumeracion-smb-snmp-smtp-y-ldap/README.md).
 
+### SNR
+
+Relación entre señal y ruido bajo condiciones definidas.
+
+**Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR) e investigación de interferencias](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
+
 ### SoA
 
 Statement of Applicability: justificación de controles ISO aplicados
@@ -12717,11 +12881,11 @@ Objetivo clásico: redirigir una función de libc
 
 ### SOC — Security Operations Center
 
-Función organizativa que monitorea, investiga y coordina la respuesta ante señales de seguridad.
+Sistema en chip que integra procesador y periféricos.
 
 **Claves de búsqueda normalizadas:** `soc`.
 
-**Entrada transversal:** sin glosario local todavía; consulta el recurso oficial enlazado.
+**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
 
 ### SOCKDGRAM
 
@@ -12758,6 +12922,12 @@ Tipo de socket orientado a flujo fiable (TCP)
 Malware o herramienta con las técnicas que implementa
 
 **Aparece en 1 clase(s):** [Clase 162 — MITRE ATT&CK como lenguaje ofensivo](../classes/parte-7-red-team-y-operaciones-ofensivas/162-mitre-att-ck-como-lenguaje-ofensivo/README.md).
+
+### SOIC clip
+
+Pinza para contactar encapsulados sin desoldar; no elimina contención.
+
+**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
 
 ### Solapamiento
 
@@ -12824,12 +12994,6 @@ Identidad autorizada para gastar un activo bajo las reglas del protocolo
 Registro DNS que declara qué servidores pueden enviar correo en nombre del dominio
 
 **Aparece en 1 clase(s):** [Clase 166 — Phishing y entrega de payloads](../classes/parte-7-red-team-y-operaciones-ofensivas/166-phishing-y-entrega-de-payloads/README.md).
-
-### SPI
-
-Bus síncrono usado por memorias y periféricos.
-
-**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
 
 ### Spider tradicional
 
@@ -13451,12 +13615,6 @@ Porcentaje de objetivos que abrieron el enlace; métrica central de la campaña
 
 **Aparece en 1 clase(s):** [Clase 166 — Phishing y entrega de payloads](../classes/parte-7-red-team-y-operaciones-ofensivas/166-phishing-y-entrega-de-payloads/README.md).
 
-### Tasa de muestreo
-
-Número de muestras por segundo y límite práctico de banda observada.
-
-**Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR)](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
-
 ### TAXII
 
 Protocolo para transportar CTI (STIX)
@@ -13763,6 +13921,12 @@ Operación que consulta o deriva relaciones.
 
 **Aparece en 1 clase(s):** [Clase 255 — Automatización de OSINT: SpiderFoot y Maltego](../classes/parte-12-osint-e-ingenieria-social/255-automatizacion-de-osint-spiderfoot-y-maltego/README.md).
 
+### Transition mode
+
+Compatibilidad simultánea WPA2/WPA3 que puede mantener superficie antigua.
+
+**Aparece en 1 clase(s):** [Clase 272 — Auditoría WiFi avanzada: Evil Twin, PMKID y defensa](../classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md).
+
 ### Transposición
 
 Reordenar los símbolos sin cambiarlos
@@ -13941,12 +14105,6 @@ Técnicas para elevar sin el aviso
 
 **Aparece en 1 clase(s):** [Clase 77 — Escalada de privilegios en Windows](../classes/parte-3-hacking-etico-y-pentesting-metodologia/077-escalada-de-privilegios-en-windows/README.md).
 
-### UART
-
-Enlace serie asíncrono con RX/TX y referencia común.
-
-**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
-
 ### UBSan
 
 Sanitizer que detecta overflows de enteros en pruebas
@@ -13973,9 +14131,9 @@ Se instala en el firmware; sobrevive al formateo
 
 ### UID
 
-Identificador de tag; su estabilidad y seguridad dependen de tecnología.
+Identificador de conexión común a todos los logs; permite correlacionar
 
-**Aparece en 2 clase(s):** [Clase 44 — Zeek para análisis de red a gran escala](../classes/parte-1-redes-y-seguridad-de-redes/044-zeek-para-analisis-de-red-a-gran-escala/README.md), [Clase 270 — Ataques a RFID y NFC](../classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md).
+**Aparece en 1 clase(s):** [Clase 44 — Zeek para análisis de red a gran escala](../classes/parte-1-redes-y-seguridad-de-redes/044-zeek-para-analisis-de-red-a-gran-escala/README.md).
 
 ### UID de aplicación
 
@@ -14102,6 +14260,12 @@ Análisis de malware, RE de vulnerabilidades, forense
 Codificación de Unicode en 1-4 bytes
 
 **Aparece en 1 clase(s):** [Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL](../classes/parte-0-fundamentos-y-prerrequisitos/020-sistemas-de-numeracion-y-encoding-binario-hex-base64-y-url/README.md).
+
+### UUID
+
+Identificador de servicio/característica; estándar o propietario.
+
+**Aparece en 1 clase(s):** [Clase 271 — Seguridad de Bluetooth, BLE y radio IoT de corto alcance](../classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md).
 
 ## V
 
@@ -14284,6 +14448,12 @@ La API acepta JSON y el atacante controla la estructura
 `user[$ne]=x` se parsea a objeto automáticamente
 
 **Aparece en 1 clase(s):** [Clase 94 — Inyección NoSQL](../classes/parte-4-seguridad-de-aplicaciones-web/094-inyeccion-nosql/README.md).
+
+### VID/PID
+
+Valores declarados por el dispositivo para fabricante/producto; útiles para inventario, falsificables.
+
+**Aparece en 1 clase(s):** [Clase 177 — Red teaming físico](../classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md).
 
 ### Vigenère
 
@@ -14553,9 +14723,9 @@ Acceso total a código y arquitectura
 
 ### White cell
 
-Personas informadas que supervisan el ejercicio y protegen a los objetivos
+Equipo que conoce y controla el ejercicio, alcance y condiciones de parada.
 
-**Aparece en 2 clase(s):** [Clase 161 — Red Team vs pentest: filosofía y objetivos](../classes/parte-7-red-team-y-operaciones-ofensivas/161-red-team-vs-pentest-filosofia-y-objetivos/README.md), [Clase 166 — Phishing y entrega de payloads](../classes/parte-7-red-team-y-operaciones-ofensivas/166-phishing-y-entrega-de-payloads/README.md).
+**Aparece en 3 clase(s):** [Clase 161 — Red Team vs pentest: filosofía y objetivos](../classes/parte-7-red-team-y-operaciones-ofensivas/161-red-team-vs-pentest-filosofia-y-objetivos/README.md), [Clase 166 — Phishing y entrega de payloads](../classes/parte-7-red-team-y-operaciones-ofensivas/166-phishing-y-entrega-de-payloads/README.md), [Clase 177 — Red teaming físico](../classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md).
 
 ### White hat
 
@@ -14574,6 +14744,12 @@ Propietario, contactos y rangos de un dominio o IP
 Busca la versión Unicode/UTF-16 de la cadena
 
 **Aparece en 1 clase(s):** [Clase 156 — Reglas YARA para detección](../classes/parte-6-analisis-de-malware/156-reglas-yara-para-deteccion/README.md).
+
+### Wiegand/OSDP
+
+Enlaces lector-controlador; OSDP Secure Channel puede proteger comunicación si se configura.
+
+**Aparece en 1 clase(s):** [Clase 270 — Auditoría de RFID, NFC y credenciales de proximidad](../classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md).
 
 ### WinPEAS / PowerUp
 

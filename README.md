@@ -23,7 +23,7 @@
 [![Markdown](https://img.shields.io/badge/Markdown-contenido-000000?style=flat-square&logo=markdown&logoColor=white)](classes/README.md)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-sitio%20vivo-222?style=flat-square&logo=githubpages&logoColor=white)](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/)
 
-[📚 Índice completo de clases](classes/README.md) · [📖 Glosario global](docs/GLOSARIO-GLOBAL.md) · [🧪 Plataformas de práctica](docs/PLATAFORMAS-DE-PRACTICA.md) · [🕸️ Cybercrime-as-a-Service](docs/cybercrime-as-a-service.md) · [🎮 Modelo operativo de Game Security](docs/modelo-operativo-game-security.md) · [⚠️ ¿Y si cruzas la línea?](docs/cruzar-la-linea-consecuencias-reales.md) · [📕 Manual completo (PDF)](manual/MANUAL.pdf) · [🌐 Aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad y ética](SECURITY_AND_ETHICS.md)
+[📚 Índice completo de clases](classes/README.md) · [🧰 Ruta de hardware](classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md) · [📖 Glosario global](docs/GLOSARIO-GLOBAL.md) · [🧪 Plataformas de práctica](docs/PLATAFORMAS-DE-PRACTICA.md) · [🕸️ Cybercrime-as-a-Service](docs/cybercrime-as-a-service.md) · [🎮 Modelo operativo de Game Security](docs/modelo-operativo-game-security.md) · [⚠️ ¿Y si cruzas la línea?](docs/cruzar-la-linea-consecuencias-reales.md) · [📕 Manual completo (PDF)](manual/MANUAL.pdf) · [🌐 Aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/) · [🗺️ Roadmap](ROADMAP.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad y ética](SECURITY_AND_ETHICS.md)
 
 </div>
 
@@ -84,10 +84,10 @@ Eso también permite detectar cuándo una norma deja de estar vigente, que es cu
 | [OWASP Community: fichas de ataques y vulnerabilidades](https://owasp.org/www-community/) | OWASP Community | 5 (0, 1, 4, 5, 11) |
 | [MITRE ATLAS: Adversarial Threat Landscape for…](https://atlas.mitre.org/) | MITRE ATLAS v2026.07 | 2 (15, 18) |
 | [The NIST Cybersecurity Framework (CSF) 2.0](https://www.nist.gov/cyberframework) | NIST CSF 2.0 | 6 (0, 8, 9, 10, 14, 17) |
+| [Security and Privacy Controls for Information Systems and…](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) | NIST SP 800-53 Rev. 5 | 7 (7, 8, 9, 13, 14, 16, 17) |
 | [Incident Response Recommendations and Considerations for…](https://doi.org/10.6028/NIST.SP.800-61r3) | NIST SP 800-61 Rev. 3 | 4 (7, 8, 9, 10) |
 | [CIS Benchmarks: guías de configuración segura](https://www.cisecurity.org/cis-benchmarks) | CIS Benchmarks | 4 (0, 10, 14, 17) |
 | [Technical Guide to Information Security Testing and Assessment](https://csrc.nist.gov/pubs/sp/800/115/final) | NIST SP 800-115 | 4 (3, 7, 8, 16) |
-| [Artificial Intelligence Risk Management Framework (AI RMF 1.0)](https://www.nist.gov/itl/ai-risk-management-framework) | NIST AI 100-1 (AI RMF 1.0) | 2 (15, 18) |
 
 ### Normas citadas que ya no están vigentes
 
@@ -97,8 +97,8 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 |---|---|---:|
 | [NIST SP 800-61 Rev. 2](https://csrc.nist.gov/pubs/sp/800/61/r2/final) | retirada | 12 |
 | [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html) | superada | 4 |
+| [NIST IR 8259](https://csrc.nist.gov/pubs/ir/8259/final) | retirada | 3 |
 | [RFC 793](https://www.rfc-editor.org/rfc/rfc793) | obsoleta | 2 |
-| [NIST IR 8259](https://csrc.nist.gov/pubs/ir/8259/final) | retirada | 1 |
 | [NIST SP 800-161 Rev. 1](https://csrc.nist.gov/pubs/sp/800/161/r1/final) | retirada | 1 |
 | [NIST SP 800-162](https://csrc.nist.gov/pubs/sp/800/162/final) | retirada | 1 |
 | [NIST SP 800-88 Rev. 1](https://csrc.nist.gov/pubs/sp/800/88/r1/final) | retirada | 1 |
@@ -107,7 +107,7 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 | [RFC 7489](https://www.rfc-editor.org/rfc/rfc7489) | obsoleta | 1 |
 | [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446) | obsoleta | 1 |
 
-Las 738 obras que usa el programa — 57 libros, 25 artículos, 159 normas y 497 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-10-01 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
+Las 759 obras que usa el programa — 57 libros, 25 artículos, 167 normas y 510 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-10-01 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
 
 <!-- fuentes:fin -->
 

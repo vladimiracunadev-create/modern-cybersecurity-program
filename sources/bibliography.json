@@ -1340,10 +1340,6 @@
    "used_in": [
     "classes/parte-13-seguridad-movil-iot-e-inalambrica/266-seguridad-de-iot-panorama-y-superficie-de-ataque/README.md",
     "classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md",
-    "classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md",
-    "classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md",
-    "classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md",
-    "classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md",
     "classes/parte-13-seguridad-movil-iot-e-inalambrica/275-seguridad-de-dispositivos-medicos/README.md"
    ]
   },
@@ -2609,8 +2605,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-1-redes-y-seguridad-de-redes/038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md",
-    "classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md"
+    "classes/parte-1-redes-y-seguridad-de-redes/038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md"
    ],
    "authors": []
   },
@@ -2888,8 +2883,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-1-redes-y-seguridad-de-redes/039-ataques-de-capa-2-arp-spoofing-y-vlan-hopping/README.md",
-    "classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md"
+    "classes/parte-1-redes-y-seguridad-de-redes/039-ataques-de-capa-2-arp-spoofing-y-vlan-hopping/README.md"
    ],
    "authors": []
   },
@@ -5327,7 +5321,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md",
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md",
     "classes/parte-16-capstones-y-preparacion-de-certificaciones/308-capstone-campana-de-bug-bounty/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/204-forense-de-sistemas-de-archivos-ntfs-y-ext4/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/211-forense-movil/README.md"
@@ -7377,8 +7371,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md"
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md"
    ],
    "authors": []
   },
@@ -8404,6 +8397,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md"
    ],
    "authors": []
@@ -8426,7 +8420,6 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-1-redes-y-seguridad-de-redes/038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md",
-    "classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md",
     "classes/parte-2-criptografia-aplicada/057-almacenamiento-seguro-de-contrasenas-bcrypt-scrypt-y-argon2/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/080-cracking-de-contrasenas-con-john-y-hashcat/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/171-active-directory-kerberoasting-y-ataques-a-kerberos/README.md"
@@ -10456,8 +10449,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md",
-    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md"
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md"
    ],
    "authors": []
   },
@@ -12249,7 +12241,8 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-1-redes-y-seguridad-de-redes/038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md"
+    "classes/parte-1-redes-y-seguridad-de-redes/038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md",
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md"
    ],
    "authors": []
   },
@@ -12334,7 +12327,8 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-1-redes-y-seguridad-de-redes/026-wireshark-captura-y-analisis-de-paquetes/README.md",
-    "classes/parte-1-redes-y-seguridad-de-redes/028-tcpdump-y-captura-de-trafico-en-linea-de-comandos/README.md"
+    "classes/parte-1-redes-y-seguridad-de-redes/028-tcpdump-y-captura-de-trafico-en-linea-de-comandos/README.md",
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md"
    ],
    "authors": []
   },
@@ -12379,6 +12373,8 @@
     "classes/parte-0-fundamentos-y-prerrequisitos/010-redes-tcp-ip-modelo-osi-encapsulacion-y-capas/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/026-wireshark-captura-y-analisis-de-paquetes/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/027-analisis-de-trafico-filtros-seguimiento-de-flujos-y-estadisticas/README.md",
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md",
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/208-forense-de-red/README.md"
    ],
    "authors": []
@@ -12825,7 +12821,8 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-1-redes-y-seguridad-de-redes/038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md"
+    "classes/parte-1-redes-y-seguridad-de-redes/038-seguridad-wifi-wpa2-wpa3-y-superficie-de-ataque/README.md",
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -13571,6 +13568,8 @@
    "used_in": [
     "classes/parte-0-fundamentos-y-prerrequisitos/001-que-es-la-ciberseguridad-triada-cia-aaa-superficie-de-ataque-y-defensa-en-profundidad/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/042-segmentacion-de-red-y-arquitectura-zero-trust/README.md",
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md",
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md",
     "classes/parte-2-criptografia-aplicada/046-historia-y-fundamentos-de-la-criptografia/README.md"
    ],
    "authors": [],
@@ -13804,7 +13803,9 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-13-seguridad-movil-iot-e-inalambrica/266-seguridad-de-iot-panorama-y-superficie-de-ataque/README.md"
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/266-seguridad-de-iot-panorama-y-superficie-de-ataque/README.md",
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md",
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md"
    ],
    "authors": [],
    "vigencia": "retirada"
@@ -14456,6 +14457,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md",
     "classes/parte-14-grc-riesgo-y-cumplimiento/279-nist-cybersecurity-framework/README.md",
     "classes/parte-16-capstones-y-preparacion-de-certificaciones/304-preparacion-cissp-los-8-dominios/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/311-clasificacion-y-ciclo-de-vida-de-los-datos/README.md",
@@ -14463,7 +14465,8 @@
     "classes/parte-17-profundizacion-para-certificaciones/317-seguridad-fisica-y-ambiental/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/320-gobierno-aspectos-legales-regulatorios-y-gestion-del-programa/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md",
-    "classes/parte-8-blue-team-deteccion-y-soc/182-logging-y-fuentes-de-telemetria/README.md"
+    "classes/parte-8-blue-team-deteccion-y-soc/182-logging-y-fuentes-de-telemetria/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/215-playbooks-de-respuesta-a-incidentes/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -17624,6 +17627,473 @@
    "accessed": "2026-10-01",
    "used_in": [
     "classes/parte-14-grc-riesgo-y-cumplimiento/277-gestion-de-riesgos-cuantitativa-y-cualitativa/README.md"
+   ]
+  },
+  {
+   "id": "bus-pirate-documentation",
+   "type": "reference",
+   "title": "Bus Pirate Documentation",
+   "authors": [
+    "Bus Pirate project"
+   ],
+   "locator": "https://docs.buspirate.com/",
+   "authority": "Bus Pirate project",
+   "status": "verificada",
+   "notes": "Documentacion oficial consultada el 2026-10-06 para revisiones, protocolos, modo HiZ y analizador logico.",
+   "matches": {
+    "url_prefixes": [
+     "https://docs.buspirate.com"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md"
+   ]
+  },
+  {
+   "id": "sigrok-documentation",
+   "type": "reference",
+   "title": "sigrok Project Documentation",
+   "authors": [
+    "sigrok project"
+   ],
+   "locator": "https://sigrok.org/wiki/Main_Page",
+   "authority": "sigrok project",
+   "status": "verificada",
+   "notes": "Proyecto oficial consultado el 2026-10-06 para captura y decodificacion logica.",
+   "matches": {
+    "url_prefixes": [
+     "https://sigrok.org/wiki/Main_Page"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md"
+   ]
+  },
+  {
+   "id": "arm-debug-interface-architecture",
+   "type": "standard",
+   "title": "Arm Debug Interface Architecture Specification",
+   "authors": [
+    "Arm"
+   ],
+   "locator": "https://developer.arm.com/documentation/ihi0031/latest",
+   "authority": "Arm",
+   "status": "verificada",
+   "notes": "Especificacion oficial consultada el 2026-10-06 para JTAG y SWD.",
+   "matches": {
+    "url_prefixes": [
+     "https://developer.arm.com/documentation/ihi0031"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md"
+   ]
+  },
+  {
+   "id": "ieee-1149-1",
+   "type": "standard",
+   "title": "IEEE 1149.1 Standard Test Access Port and Boundary-Scan Architecture",
+   "authors": [
+    "IEEE"
+   ],
+   "locator": "https://standards.ieee.org/ieee/1149.1/774/",
+   "authority": "IEEE",
+   "status": "verificada",
+   "notes": "Pagina oficial del estandar consultada el 2026-10-06; el texto completo puede requerir licencia.",
+   "matches": {
+    "url_prefixes": [
+     "https://standards.ieee.org/ieee/1149.1"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md"
+   ]
+  },
+  {
+   "id": "chipwhisperer-getting-started",
+   "type": "reference",
+   "title": "ChipWhisperer Getting Started",
+   "authors": [
+    "NewAE Technology"
+   ],
+   "locator": "https://chipwhisperer.readthedocs.io/en/latest/getting-started.html",
+   "authority": "NewAE Technology",
+   "status": "verificada",
+   "notes": "Documentacion oficial consultada el 2026-10-06 para captura de potencia e inyeccion de fallos sobre targets educativos.",
+   "matches": {
+    "url_prefixes": [
+     "https://chipwhisperer.readthedocs.io/en/latest/getting-started.html"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md"
+   ]
+  },
+  {
+   "id": "hackrf-documentation",
+   "type": "reference",
+   "title": "HackRF Documentation",
+   "authors": [
+    "Great Scott Gadgets"
+   ],
+   "locator": "https://hackrf.readthedocs.io/en/stable/",
+   "authority": "Great Scott Gadgets",
+   "status": "verificada",
+   "notes": "Documentacion estable consultada el 2026-10-06 para HackRF One y hackrf-tools.",
+   "matches": {
+    "url_prefixes": [
+     "https://hackrf.readthedocs.io/en/stable"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md"
+   ]
+  },
+  {
+   "id": "subtel-resolucion-1985",
+   "type": "standard",
+   "title": "Resolucion Exenta 1985 sobre equipos de alcance reducido",
+   "authors": [
+    "Subsecretaria de Telecomunicaciones de Chile"
+   ],
+   "locator": "https://www.subtel.gob.cl/wp-content/uploads/2023/05/Resolucion_1985_EXENTA_17_OCT_2017_Actualizada_al_2021.pdf",
+   "authority": "SUBTEL",
+   "status": "verificada",
+   "notes": "Documento oficial consultado el 2026-10-06; antes de emitir debe comprobarse si existe una version posterior.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.subtel.gob.cl/wp-content/uploads/2023/05/Resolucion_1985_EXENTA_17_OCT_2017_Actualizada_al_2021.pdf"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md"
+   ]
+  },
+  {
+   "id": "chile-ley-18168",
+   "type": "standard",
+   "title": "Ley 18.168 General de Telecomunicaciones",
+   "authors": [
+    "Biblioteca del Congreso Nacional de Chile"
+   ],
+   "locator": "https://www.bcn.cl/leychile/navegar?idNorma=29591",
+   "authority": "Biblioteca del Congreso Nacional de Chile",
+   "status": "verificada",
+   "notes": "Texto oficial vigente consultado el 2026-10-06 para interferencia, interceptacion y prohibicion de dispositivos del articulo 36 B.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.bcn.cl/leychile/navegar?idNorma=29591"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md"
+   ]
+  },
+  {
+   "id": "chile-decreto-15-espectro",
+   "type": "standard",
+   "title": "Plan General de Uso del Espectro Radioelectrico, Decreto 15",
+   "authors": [
+    "Biblioteca del Congreso Nacional de Chile"
+   ],
+   "locator": "https://www.bcn.cl/leychile/navegar?idNorma=122795",
+   "authority": "Biblioteca del Congreso Nacional de Chile",
+   "status": "verificada",
+   "notes": "Texto oficial consultado el 2026-10-06 para definiciones de interferencia e interferencia perjudicial.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.bcn.cl/leychile/navegar?idNorma=122795"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md"
+   ]
+  },
+  {
+   "id": "flipper-zero-documentation",
+   "type": "reference",
+   "title": "Flipper Zero Documentation",
+   "authors": [
+    "Flipper Devices"
+   ],
+   "locator": "https://docs.flipper.net/zero",
+   "authority": "Flipper Devices",
+   "status": "verificada",
+   "notes": "Documentacion oficial consultada el 2026-10-06 para hardware, NFC, RFID, Sub-GHz, firmware y limites regionales.",
+   "matches": {
+    "url_prefixes": [
+     "https://docs.flipper.net/zero"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md",
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md"
+   ]
+  },
+  {
+   "id": "nfc-forum-specifications",
+   "type": "standard",
+   "title": "NFC Forum Specifications",
+   "authors": [
+    "NFC Forum"
+   ],
+   "locator": "https://nfc-forum.org/build/specifications/",
+   "authority": "NFC Forum",
+   "status": "verificada",
+   "notes": "Indice oficial consultado el 2026-10-06; algunas especificaciones requieren acceso de miembro.",
+   "matches": {
+    "url_prefixes": [
+     "https://nfc-forum.org/build/specifications"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md"
+   ]
+  },
+  {
+   "id": "sia-osdp",
+   "type": "standard",
+   "title": "Open Supervised Device Protocol",
+   "authors": [
+    "Security Industry Association"
+   ],
+   "locator": "https://www.securityindustry.org/industry-standards/open-supervised-device-protocol/",
+   "authority": "Security Industry Association",
+   "status": "verificada",
+   "notes": "Pagina oficial consultada el 2026-10-06 para OSDP y Secure Channel.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.securityindustry.org/industry-standards/open-supervised-device-protocol"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/270-ataques-a-rfid-y-nfc/README.md"
+   ]
+  },
+  {
+   "id": "nrf-sniffer-ble",
+   "type": "reference",
+   "title": "nRF Sniffer for Bluetooth LE",
+   "authors": [
+    "Nordic Semiconductor"
+   ],
+   "locator": "https://docs.nordicsemi.com/r/bundle/nrfutil/page/nrfutil-ble-sniffer/guides/overview.html",
+   "authority": "Nordic Semiconductor",
+   "status": "verificada",
+   "notes": "Documentacion oficial consultada el 2026-10-06 para hardware compatible, Wireshark, claves y limitaciones.",
+   "matches": {
+    "url_prefixes": [
+     "https://docs.nordicsemi.com/r/bundle/nrfutil/page/nrfutil-ble-sniffer"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md"
+   ]
+  },
+  {
+   "id": "ubuntu-bluez-manpages",
+   "type": "reference",
+   "title": "Ubuntu BlueZ manual pages",
+   "authors": [
+    "Ubuntu and BlueZ projects"
+   ],
+   "locator": "https://manpages.ubuntu.com/manpages/noble/man1/bluetoothctl.1.html",
+   "authority": "Ubuntu",
+   "status": "verificada",
+   "notes": "Manuales de bluetoothctl y btmon consultados el 2026-10-06; las opciones dependen de la version instalada.",
+   "matches": {
+    "url_prefixes": [
+     "https://manpages.ubuntu.com/manpages/noble/man1/bluetoothctl.1.html",
+     "https://manpages.ubuntu.com/manpages/noble/man1/btmon.1.html"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md"
+   ]
+  },
+  {
+   "id": "thread-group-overview",
+   "type": "standard",
+   "title": "Thread Overview",
+   "authors": [
+    "Thread Group"
+   ],
+   "locator": "https://threadgroup.org/What-is-Thread/Overview",
+   "authority": "Thread Group",
+   "status": "verificada",
+   "notes": "Fuente oficial consultada el 2026-10-06 para IPv6, IEEE 802.15.4, seguridad y bajo consumo.",
+   "matches": {
+    "url_prefixes": [
+     "https://threadgroup.org/What-is-Thread/Overview"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md"
+   ]
+  },
+  {
+   "id": "silicon-labs-network-analyzer",
+   "type": "reference",
+   "title": "Silicon Labs Network Analyzer",
+   "authors": [
+    "Silicon Laboratories"
+   ],
+   "locator": "https://docs.silabs.com/network-analyzer/latest/network-analyzer-start/",
+   "authority": "Silicon Laboratories",
+   "status": "verificada",
+   "notes": "Documentacion oficial consultada el 2026-10-06 para PTI, timestamps, RSSI/LQI, CRC y trazas por nodo.",
+   "matches": {
+    "url_prefixes": [
+     "https://docs.silabs.com/network-analyzer/latest/network-analyzer-start"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/271-seguridad-de-bluetooth-y-ble/README.md"
+   ]
+  },
+  {
+   "id": "hostapd-official",
+   "type": "reference",
+   "title": "hostapd",
+   "authors": [
+    "Jouni Malinen and contributors"
+   ],
+   "locator": "https://w1.fi/hostapd/",
+   "authority": "hostapd project",
+   "status": "verificada",
+   "notes": "Sitio oficial consultado el 2026-10-06 para AP software y autenticacion en bancos controlados.",
+   "matches": {
+    "url_prefixes": [
+     "https://w1.fi/hostapd"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/272-ataques-wifi-avanzados-evil-twin-y-pmkid/README.md"
+   ]
+  },
+  {
+   "id": "cynthion",
+   "type": "reference",
+   "title": "Cynthion",
+   "authors": [
+    "Great Scott Gadgets"
+   ],
+   "locator": "https://greatscottgadgets.com/cynthion/",
+   "authority": "Great Scott Gadgets",
+   "status": "verificada",
+   "notes": "Pagina oficial consultada el 2026-10-06 para analisis USB 2.0, Packetry, LUNA y Facedancer.",
+   "matches": {
+    "url_prefixes": [
+     "https://greatscottgadgets.com/cynthion"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md"
+   ]
+  },
+  {
+   "id": "usbguard-rule-language",
+   "type": "reference",
+   "title": "USBGuard Rule Language",
+   "authors": [
+    "USBGuard project"
+   ],
+   "locator": "https://usbguard.github.io/documentation/rule-language",
+   "authority": "USBGuard project",
+   "status": "verificada",
+   "notes": "Documentacion oficial consultada el 2026-10-06 para reglas, interfaces y atributos de dispositivo.",
+   "matches": {
+    "url_prefixes": [
+     "https://usbguard.github.io/documentation/rule-language"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md"
+   ]
+  },
+  {
+   "id": "linux-usb-authorization",
+   "type": "reference",
+   "title": "Linux USB authorization",
+   "authors": [
+    "Linux kernel documentation project"
+   ],
+   "locator": "https://docs.kernel.org/usb/authorization.html",
+   "authority": "Linux kernel project",
+   "status": "verificada",
+   "notes": "Documentacion oficial consultada el 2026-10-06 para autorizacion de dispositivos e interfaces USB.",
+   "matches": {
+    "url_prefixes": [
+     "https://docs.kernel.org/usb/authorization.html"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md"
+   ]
+  },
+  {
+   "id": "microsoft-usb-device-evidence-control",
+   "type": "reference",
+   "title": "Microsoft USB device installation evidence and Device Control",
+   "authors": [
+    "Microsoft"
+   ],
+   "locator": "https://learn.microsoft.com/windows-hardware/drivers/install/setupapi-device-installation-log-entries",
+   "authority": "Microsoft",
+   "status": "verificada",
+   "notes": "Documentacion oficial consultada el 2026-10-06 para SetupAPI.dev.log y alcance de Device Control sobre medios extraibles.",
+   "matches": {
+    "url_prefixes": [
+     "https://learn.microsoft.com/windows-hardware/drivers/install/setupapi-device-installation-log-entries",
+     "https://learn.microsoft.com/defender-endpoint/device-control-removable-storage-access-control"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-06",
+   "used_in": [
+    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md"
    ]
   }
  ]
