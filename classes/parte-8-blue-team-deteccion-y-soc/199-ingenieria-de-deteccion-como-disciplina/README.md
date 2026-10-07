@@ -78,6 +78,12 @@ Calidad incluye fidelidad, cobertura declarada, coste, explicabilidad y utilidad
 
 Red team describe procedimiento, prerequisitos y variaciones; blue team declara datos y lógica. No se entrega únicamente el IOC al final, porque eso crea una detección frágil. Juntos identifican qué conducta permaneció estable y qué control debería observarla. El ingeniero convierte el resultado en test de regresión, y operaciones confirma que la alerta contiene contexto accionable. Esta colaboración prepara la clase 200: purple team es el ciclo de trabajo, no un color adicional en el organigrama.
 
+### Hardware: detectar conexión, conducta y atribución son productos distintos
+
+Las prácticas de hardware de las clases [177](../../parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md) y [268–272](../../parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md) exigen contratos específicos. Una fuente PnP/USBGuard puede demostrar que apareció una interfaz; EDR o red puede mostrar el proceso, ruta o asociación posterior; inventario físico y custodia pueden vincular el equipo examinado. Ninguna capa debe rellenar las otras por inferencia.
+
+Una detección portable se diseña como correlación temporal, no como una lista de marcas: *nuevo dispositivo USB con interfaz HID o red no inventariada* seguido de *conducta sensible* dentro de una ventana. El fixture positivo conserva descriptores e interfaz más la acción inocua de la Clase 177; los negativos incluyen un teclado de reemplazo y un dock corporativo. En WiFi, el positivo combina SSID protegido, BSSID fuera de inventario y RSN/certificado incompatible; el negativo contiene APs legítimos nuevos y redes vecinas. Si la fuente no aporta un campo, la regla declara el hueco en vez de inventarlo.
+
 ## 📔 Glosario
 
 - **Contrato de datos:** requisitos verificables de telemetría.
@@ -139,6 +145,7 @@ Las validaciones con Atomic Red Team se ejecutan solo en tu laboratorio propio y
 4. Define criterios objetivos para retirar una detección.
 5. Calcula la precisión de una regla con TP/FP de ejemplo.
 6. Explica cómo el versionado ayuda a auditar cambios de detección.
+7. Diseña contratos separados para conexión USB, conducta posterior y atribución física; indica qué decisión puede tomar el SOC con cada uno.
 
 ## 📝 Reto verificable
 
@@ -172,6 +179,8 @@ Cuando su ratio de falsos positivos es insostenible, la técnica ya no aplica, o
 - Atomic Red Team: documentación oficial de pruebas focalizadas, prerrequisitos, permisos y limpieza; una prueba valida el procedimiento y entorno ejecutados, no toda variante de una técnica — <https://www.atomicredteam.io/docs/atomic-red-team>
 - Palantir, *Alerting and Detection Strategy Framework*: marco público para documentar objetivos, lógica, respuesta y prueba; se usa como referencia de diseño, no como estándar normativo — <https://github.com/palantir/alerting-detection-strategy-framework>
 - SigmaHQ Rules: repositorio comunitario de contenido que debe adaptarse, probarse, versionarse y mantenerse localmente — <https://github.com/SigmaHQ/sigma>
+- USBGuard Rule Language: campos y semántica verificables para decisiones de autorización USB; VID/PID, nombre y serie no constituyen identidad criptográfica — <https://usbguard.github.io/documentation/rule-language>
+- Microsoft SetupAPI device installation log: alcance real del registro de instalación de dispositivos en Windows — <https://learn.microsoft.com/windows-hardware/drivers/install/setupapi-device-installation-log-entries>
 
 ## 📥 Material descargable
 
