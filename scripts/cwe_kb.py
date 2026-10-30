@@ -242,8 +242,8 @@ def _cargar_top25() -> dict:
 def cmd_top25(a: argparse.Namespace) -> int:
     if a.descargar:
         try:
-            peticion = urllib.request.Request(L.URL_TOP25, headers={"User-Agent": "modern-cybersecurity-program/cwe-kb"})
-            with urllib.request.urlopen(peticion, timeout=60) as r:
+            peticion = urllib.request.Request(L.exigir_https(L.URL_TOP25), headers={"User-Agent": "modern-cybersecurity-program/cwe-kb"})
+            with urllib.request.urlopen(peticion, timeout=60) as r:  # nosec B310
                 crudo = r.read().decode("utf-8", "replace")
             doc = L.importar_top25(crudo)
         except (urllib.error.URLError, TimeoutError, OSError, ValueError) as exc:
@@ -529,9 +529,9 @@ def cmd_cobertura(a: argparse.Namespace) -> int:
 
 
 def _head(url: str, timeout: int = 20) -> int:
-    peticion = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "modern-cybersecurity-program/cwe-kb"})
+    peticion = urllib.request.Request(L.exigir_https(url), method="HEAD", headers={"User-Agent": "modern-cybersecurity-program/cwe-kb"})
     try:
-        with urllib.request.urlopen(peticion, timeout=timeout) as r:
+        with urllib.request.urlopen(peticion, timeout=timeout) as r:  # nosec B310
             return r.status
     except urllib.error.HTTPError as exc:
         return exc.code

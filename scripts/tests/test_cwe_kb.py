@@ -66,9 +66,18 @@ class IdentificadoresYTexto(unittest.TestCase):
     def test_busqueda_ignora_acentos_y_mayusculas(self):
         self.assertEqual(L.tokens("Inyección de CÓDIGO SQL"), ["inyeccion", "codigo", "sql"])
 
+    def test_solo_se_descarga_por_https(self):
+        self.assertEqual(L.exigir_https("https://cwe.mitre.org/data/xml/x.zip"), "https://cwe.mitre.org/data/xml/x.zip")
+        for url in ("file:///etc/passwd", "ftp://cwe.mitre.org/x", "http://cwe.mitre.org/x", "//cwe.mitre.org/x"):
+            with self.subTest(url=url):
+                with self.assertRaises(ValueError):
+                    L.exigir_https(url)
+        with self.assertRaises(ValueError):
+            L.descargar("file:///etc/passwd", Path("salida-inexistente") / "x.zip")
+
     def test_aplanado_de_xhtml_separa_parrafos(self):
         import xml.etree.ElementTree as ET
-        el = ET.fromstring(
+        el = ET.fromstring(  # nosec B314
             '<d xmlns:x="http://www.w3.org/1999/xhtml"><x:p>Primero</x:p><x:p>Segundo <x:b>negrita</x:b>.</x:p></d>'
         )
         self.assertEqual(L.texto_plano(el), "Primero\nSegundo negrita.")

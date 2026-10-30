@@ -39,6 +39,7 @@ import re
 import sys
 import unicodedata
 import urllib.error
+import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 import zipfile
@@ -182,12 +183,20 @@ def sha256_texto(ruta: Path) -> str:
 # --------------------------------------------------------------------------
 # 1. Importar
 # --------------------------------------------------------------------------
+def exigir_https(url: str) -> str:
+    """Solo se descarga por HTTPS: rechaza `file:`, `ftp:` y cualquier otro esquema."""
+    if urllib.parse.urlsplit(url).scheme != "https":
+        raise ValueError(f"Solo se admiten URL https: {url!r}")
+    return url
+
+
 def descargar(url: str, destino: Path, timeout: int = 120) -> str:
     """Descarga `url` a `destino` y devuelve su SHA-256. Sin credenciales ni cookies."""
+    exigir_https(url)
     destino.parent.mkdir(parents=True, exist_ok=True)
     peticion = urllib.request.Request(url, headers={"User-Agent": "modern-cybersecurity-program/cwe-kb"})
     try:
-        with urllib.request.urlopen(peticion, timeout=timeout) as resp, open(destino, "wb") as out:
+        with urllib.request.urlopen(peticion, timeout=timeout) as resp, open(destino, "wb") as out:  # nosec B310
             total = 0
             while True:
                 bloque = resp.read(1 << 20)
@@ -225,7 +234,8 @@ def parsear_xml(datos: bytes) -> ET.Element:
     cabecera = datos[:4096].lower()
     if b"<!doctype" in cabecera or b"<!entity" in cabecera:
         raise ValueError("El XML declara DTD/entidades; se rechaza por seguridad")
-    return ET.fromstring(datos)
+    # Sin DTD ni entidades (comprobado arriba), ElementTree no tiene nada que expandir: el riesgo de B314 no aplica.
+    return ET.fromstring(datos)  # nosec B314
 
 
 def _historial(e: ET.Element) -> dict:
