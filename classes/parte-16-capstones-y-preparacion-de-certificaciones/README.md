@@ -17,7 +17,7 @@
 
 ## 🎯 ¿De qué trata esta parte?
 
-Esta es la **última parte del programa** y funciona como puente entre el aprendizaje y la carrera profesional. Aquí no se introduce un dominio nuevo: se **integra todo** lo construido en las Partes 1–15 mediante capstones end-to-end que reproducen trabajo real —una operación Red Team, una cacería Blue Team, una investigación DFIR, una campaña de bug bounty— con objetivos, entregables y criterios de aceptación explícitos.
+Esta es la **parte de cierre del itinerario base** (las Partes 17 a 20 profundizan y especializan después) y funciona como puente entre el aprendizaje y la carrera profesional. Aquí no se introduce un dominio nuevo: se **integra todo** lo construido en las Partes 1–15 mediante capstones end-to-end que reproducen trabajo real —una operación Red Team, una cacería Blue Team, una investigación DFIR, una campaña de bug bounty— con objetivos, entregables y criterios de aceptación explícitos.
 
 Además, esta parte traza el **roadmap de certificaciones** que ordena tu progresión profesional (CompTIA Security+/PenTest+/CySA+, OSCP, CISSP y más), con planes de estudio concretos para OSCP y CISSP. Las certificaciones no son el objetivo final, pero son señales de mercado que abren puertas y estructuran el conocimiento.
 

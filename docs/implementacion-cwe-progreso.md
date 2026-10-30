@@ -42,18 +42,18 @@ Se actualiza al cerrar cada bloque de trabajo. Las decisiones de diseño están 
 ### Hecho y verificado
 
 - [x] **Base de conocimiento CWE** (`knowledge/cwe/`, CWE 5.0 de 2026-10-28): 1415 entradas (984 debilidades, 431 agrupaciones), 62 vistas, 1081 referencias externas. `scripts/cwe_lib.py`, `cwe_analisis.py`, `cwe_kb.py`.
-- [x] **Pruebas de la base**: `scripts/tests/test_cwe_kb.py` (69 pruebas, 1 omitida si no existe la matriz).
+- [x] **Pruebas de la base**: `scripts/tests/test_cwe_kb.py` (84 pruebas al cierre).
 - [x] **Calculadora CVSS v3.1 y v4.0** (`labs/devsecops-pipeline/cvss.py`): reproduce 26 puntuaciones v3.1 de NVD/CNA y 36 v4.0 de CNA + 11 ejemplos oficiales de FIRST. Tablas de v4.0 de FIRST (BSD-2-Clause) con su licencia.
 - [x] **Instantánea de 14 casos reales** (`datos/casos-cwe-cve.json`) + actualizador reproducible (`actualizar_casos.py`) + `priorizar.py` ampliado (CWE, vector CVSS, `--instantanea`).
-- [x] **Laboratorio `appsec-code`**: `app_corregida.py`, `cwe-map.json`, 25 pruebas de regresión, `SOLUCION.md` reescrita con mediciones reales de Bandit 1.9.4.
-- [x] Pruebas del laboratorio `devsecops-pipeline`: `tests/` (46 pruebas).
+- [x] **Laboratorio `appsec-code`**: `app_corregida.py`, `cwe-map.json`, pruebas de regresión que fallan antes y pasan después, `SOLUCION.md` reescrita con mediciones reales de Bandit 1.9.4.
+- [x] Pruebas del laboratorio `devsecops-pipeline`: `tests/` (87 pruebas al cierre).
 
 - [x] **Clases 361–365 redactadas** (`classes/parte-20-...`): CWE, causa raíz y mapeo, familias de entradas no confiables, identidad/acceso/criptografía y memoria/concurrencia/recursos. Pendientes de registrar fuentes y generar PDF/PPTX.
-- [x] **Prácticas ejecutables** `labs/appsec-code/practicas/` (autorización, memoria y carreras, límites) con 56 pruebas del laboratorio.
+- [x] **Prácticas ejecutables** `labs/appsec-code/practicas/` (autorización, memoria y carreras, límites); el laboratorio suma 81 pruebas al cierre.
 - [x] `cwe_kb.py`: comandos `miembros`, `top25`, `sast --mapa`; auditor de referencias afinado (vistas, obsoletas explicadas, listas).
 - [x] `bod2604.py` (tabla oficial de plazos de CISA BOD 26-04, 16 filas) integrada con `priorizar.py --bod-26-04`.
 
-### Hallazgos de la auditoría hasta ahora (para el informe)
+### Hallazgos iniciales de la auditoría (recogidos en el informe final)
 
 - `priorizar.py` fallaba al imprimir en consolas Windows (cp1252) por el carácter `→` cuando no se pasaba `--salida`. **Corregido.**
 - La docstring de `priorizar.py` citaba una opción `--exposicion` inexistente. **Corregido.**
@@ -66,7 +66,7 @@ Se actualiza al cerrar cada bloque de trabajo. Las decisiones de diseño están 
 - CISA derogó BOD 22-01 y BOD 19-02 con BOD 26-04 (2026-06-10); el temario no cita directivas, así que se añade en la clase 369.
 - Las páginas web de NVD y CISA bloquean clientes sin navegador (403): se consultan por API o con el navegador integrado; no se elude el bloqueo.
 - 83 clases de las partes 4, 5, 11 y 17 no citaban ningún CWE al empezar.
-- De las 25 CWE del Top 25 de 2025: 0 completas, 11 solo mencionadas, 14 sin mención. 83 clases de las partes 4, 5, 11 y 17 no citan ningún CWE.
+- Estado inicial del Top 25 de 2025: 0 completas, 11 solo mencionadas y 14 sin mención.
 
 ### Completado después (2026-10-30)
 
@@ -74,7 +74,7 @@ Se actualiza al cerrar cada bloque de trabajo. Las decisiones de diseño están 
 - [x] **Mapa curricular** `knowledge/cwe/pedagogico/mapa-curricular.json` (81 CWE) y **matriz** `docs/matriz-cobertura-cwe.md` (32 completos, 49 parciales, 0 pendientes; 18 de las 25 del Top 25 completas). `cobertura --check` va en CI.
 - [x] La evidencia de evaluación de un CWE ahora debe **citar el identificador** (prueba nueva en `test_cwe_kb.py`); la batería de autoevaluación de la Parte 20 tiene 25 preguntas.
 - [x] **Enriquecimiento** de 51 clases (Partes 3, 4, 5, 11 y 17) con la sección «Cómo lo nombra el catálogo CWE y qué cambia al priorizar», reescritura de la 087 (OWASP Top 10:2025) y correcciones de afirmaciones absolutas en 065, 115, 240 y 318.
-- [x] **Prácticas nuevas** `appsec-code/practicas/ssrf.py` y `subida.py` (CWE-918 y CWE-434) con 25 pruebas; el reto de la clase 363 enlaza su solución de referencia.
+- [x] **Prácticas nuevas** `appsec-code/practicas/ssrf.py` y `subida.py` (CWE-918 y CWE-434) con 25 pruebas propias; el reto de la clase 363 enlaza su solución de referencia.
 - [x] **READMEs de los laboratorios**, `escanear.sh` con contraste CWE, fuentes (765 entradas), licencias, rutas (5 rutas con el paso de la Parte 20), cifras (370 clases · 21 partes) en README, índices, silabo, hoja de ruta, app móvil y generadores, catálogo móvil, glosario global, sitio y manual PDF regenerados.
 - [x] **CI**: pruebas y validaciones de la base CWE, la matriz y los dos laboratorios.
 - [x] **Auditoría** `docs/auditoria-cobertura-cwe-cve-cvss.md`.
@@ -92,7 +92,7 @@ Se actualiza al cerrar cada bloque de trabajo. Las decisiones de diseño están 
 | `scripts/generar_curriculum_movil.py --check` | OK |
 | `scripts/verificar_diagramas.py` | OK (404 diagramas) |
 | `scripts/cwe_kb.py validar`, `referencias`, `cobertura --check` | OK |
-| `python -m unittest discover -s scripts/tests` | 88 pruebas OK |
+| `python -m unittest discover -s scripts/tests` | 89 pruebas OK |
 | `python -m unittest discover -s labs/appsec-code/tests` | 81 pruebas OK (2 omitidas por sistema operativo) |
 | `python -m unittest discover -s labs/devsecops-pipeline/tests` | 87 pruebas OK |
 | Pruebas de custodia, lanzamientos virales y Game Security Range | OK |

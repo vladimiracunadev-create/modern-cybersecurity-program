@@ -206,6 +206,10 @@ Casi no. Esta parte es una escalera: cada peldaño se apoya en el anterior. Sál
 | Heap (126) | ¿Cómo enlaza el tcache sus chunks libres y por qué importa? | Haz 126 |
 | Exploit dev (138) | ¿Por qué casi ningún exploit moderno funciona sin un info leak? | Haz 138 |
 
+## 🔗 Conexión con la Parte 20
+
+Las clases listadas llevan una sección «Cómo lo nombra el catálogo CWE y qué cambia al priorizar» que da a cada vulnerabilidad su entrada del catálogo CWE (nivel, padre, categoría OWASP 2025) y el criterio de prioridad (CVSS, EPSS, KEV, exposición). Sirve para ver la misma debilidad desde la técnica de esta parte y desde la taxonomía de la [Parte 20](../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md): las 119, 120, 122, 125 a 128, 136 y 137.
+
 ## 🔗 Referencias de la parte
 
 - Erickson, J. *Hacking: The Art of Exploitation, 2e*. No Starch Press — <https://nostarch.com/hacking2.htm>

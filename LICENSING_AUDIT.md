@@ -24,7 +24,7 @@ No se modificó la funcionalidad ni se ampliaron capacidades ofensivas. Las revi
 
 Las cifras de esta sección y de «Validación ejecutada» son la instantánea histórica
 tomada para la auditoría de licencias, inmediatamente antes de añadir la Parte 19.
-El catálogo vigente tiene 20 partes y 360 clases; conservar la instantánea permite
+El catálogo vigente tiene 21 partes y 370 clases; conservar la instantánea permite
 reproducir qué árbol se examinó para adoptar la nueva política.
 
 - 2.393 archivos versionados y 115 commits del historial local;

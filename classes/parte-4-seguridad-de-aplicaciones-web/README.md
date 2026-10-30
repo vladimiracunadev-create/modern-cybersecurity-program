@@ -203,6 +203,10 @@ Los bloques de vulnerabilidades son bastante independientes, pero 086–088 son 
 | Control de acceso (105) | ¿Por qué usar UUIDs no arregla un IDOR? | Haz 105 |
 | APIs (110) | ¿Qué es BOLA y por qué domina las brechas de API? | Haz 110 |
 
+## 🔗 Conexión con la Parte 20
+
+Las clases listadas llevan una sección «Cómo lo nombra el catálogo CWE y qué cambia al priorizar» que da a cada vulnerabilidad su entrada del catálogo CWE (nivel, padre, categoría OWASP 2025) y el criterio de prioridad (CVSS, EPSS, KEV, exposición). Sirve para ver la misma debilidad desde la técnica de esta parte y desde la taxonomía de la [Parte 20](../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md): la 087 (reescrita con OWASP Top 10:2025) y las 091 a 115 (salvo 088 a 090).
+
 ## 🔗 Referencias de la parte
 
 - Stuttard & Pinto, *The Web Application Hacker's Handbook*, 2ª ed., Wiley.

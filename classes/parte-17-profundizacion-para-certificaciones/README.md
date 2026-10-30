@@ -118,6 +118,10 @@ Las clases 311–315 gobiernan datos e identidades durante todo su ciclo. Las 31
 | Arquitectura empresarial y Zero Trust | 329 | Security+ / CISSP *Architecture* |
 | Análisis de código y automatización | 330 | PenTest+ *Tools*, CISSP *Software Dev* |
 
+## 🔗 Conexión con la Parte 20
+
+Las clases listadas llevan una sección «Cómo lo nombra el catálogo CWE y qué cambia al priorizar» que da a cada vulnerabilidad su entrada del catálogo CWE (nivel, padre, categoría OWASP 2025) y el criterio de prioridad (CVSS, EPSS, KEV, exposición). Sirve para ver la misma debilidad desde la técnica de esta parte y desde la taxonomía de la [Parte 20](../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md): las 318, 321, 323, 324 y 330.
+
 ## 🔗 Referencias de la parte
 
 - (ISC)² — [CISSP](https://www.isc2.org/certifications/cissp)

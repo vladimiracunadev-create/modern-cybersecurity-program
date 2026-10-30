@@ -387,13 +387,17 @@ def generar_pdf(nav: str, html_path: str, pdf_path: str) -> None:
         helper = os.path.join(os.path.dirname(__file__), "imprimir_pdf_playwright.js")
         subprocess.run([playwright_node, helper, html_path, tmp_pdf], check=True, timeout=TIMEOUT_S)
     else:
-        subprocess.run(
-            [nav, "--headless=new", "--disable-gpu", "--no-first-run",
-             "--no-default-browser-check", "--no-pdf-header-footer",
-             f"--print-to-pdf={tmp_pdf}", uri],
-            check=True, timeout=TIMEOUT_S,
-            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-        )
+        # Perfil propio y desechable: sin él, si ya hay un Edge abierto el comando se delega en esa
+        # instancia, termina con código 0 y no escribe ningún PDF.
+        with tempfile.TemporaryDirectory(prefix="manual-edge-") as perfil:
+            subprocess.run(
+                [nav, "--headless=new", "--disable-gpu", "--no-first-run",
+                 "--no-default-browser-check", "--no-pdf-header-footer",
+                 f"--user-data-dir={perfil}",
+                 f"--print-to-pdf={tmp_pdf}", uri],
+                check=True, timeout=TIMEOUT_S,
+                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            )
     publicar(tmp_pdf, pdf_path, MIN_PDF_BYTES)
 
 

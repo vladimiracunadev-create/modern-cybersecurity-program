@@ -35,7 +35,7 @@ docker compose down -v      # apagar y borrar también los volúmenes/datos
 | [`red-team-ad`](red-team-ad/README.md) | Caja de atacante (Impacket/NetExec/BloodHound) + guía GOAD para atacar Active Directory | Parte 7 (161–180) | ✅ Disponible |
 | [`cripto`](cripto/README.md) | Retos de criptografía aplicada en Python puro (XOR, RSA-Fermat, MD5, ECB) | Parte 2 (046–065) | ✅ Disponible |
 | [`dfir-memoria`](dfir-memoria/README.md) | Estación Volatility 3 + YARA para forense de memoria y malware en IR | Partes 9 y 17 · SANS/BTL1 | ✅ Disponible |
-| [`appsec-code`](appsec-code/README.md) | App vulnerable + Semgrep/Bandit para code review y SAST | Partes 11 y 17 · PenTest+/CISSP | ✅ Disponible |
+| [`appsec-code`](appsec-code/README.md) | App vulnerable con 8 debilidades, versión corregida, mapa CWE y pruebas que fallan antes y pasan después (+ Semgrep/Bandit) | Partes 11, 17 y 20 · PenTest+/CISSP | ✅ Disponible |
 | [`kali-mcp-ia`](kali-mcp-ia/README.md) | Agente de IA orquestando Kali vía MCP (usa kali-mcp, MIT) | Parte 18 | ✅ Disponible |
 | [`rootcause-windows`](rootcause-windows/README.md) | Triaje forense de Windows con RootCause (sensor de comportamiento en Rust, Apache-2.0) | Partes 6, 8 y 9 | ✅ Disponible |
 | [`custodia-activos-digitales`](custodia-activos-digitales/README.md) | Caso ficticio profesional: conciliación ledger–operación–blockchain, IAM/PAM/SoD, insider risk, threat model, DFIR, playbooks, dataset y tests | Partes 8, 9, 11, 14, 16 y 17 | ✅ Disponible · Python, sin fondos |
@@ -44,7 +44,7 @@ docker compose down -v      # apagar y borrar también los volúmenes/datos
 | [`pwn-binarios`](pwn-binarios/README.md) | Binario vulnerable + gdb/pwntools para explotación de stack overflow | Parte 5 | ✅ Disponible |
 | [`cloud-security`](cloud-security/README.md) | Toolbox Prowler/ScoutSuite/trivy/kube-bench para auditoría CSPM | Parte 10 | ✅ Disponible |
 | [`ciso-leadership`](ciso-leadership/README.md) | **Laboratorio ejecutivo**: 14 escenarios de dirección sobre organizaciones ficticias, 15 plantillas y evaluación · [organizaciones](ciso-leadership/ORGANIZACIONES.md) · [plantillas](ciso-leadership/PLANTILLAS.md) · [evaluación](ciso-leadership/EVALUACION.md) | Partes 14 y 17 · 202, 215, 219, 284, 287, 300, 273 | ✅ Disponible · 📄 sin Docker |
-| [`devsecops-pipeline`](devsecops-pipeline/README.md) | Repo vulnerable + auditoría en **8 capas** (deps, SAST, secretos, Dockerfile, contenedor, CI/CD, typosquat y priorización KEV/EPSS/CVSS) con informe · trayectos [Analista](devsecops-pipeline/TRAYECTO-ANALISTA-DEVSECOPS.md) e [Ingeniero DevSecOps](devsecops-pipeline/TRAYECTO-INGENIERO-DEVSECOPS.md) | Parte 11 (236–248) · 227, 318, 330 | ✅ Disponible |
+| [`devsecops-pipeline`](devsecops-pipeline/README.md) | Repo vulnerable + auditoría en **8 capas** (deps, SAST, secretos, Dockerfile, contenedor, CI/CD, typosquat y priorización KEV/EPSS/CVSS) con informe, calculadora CVSS v3.1/v4.0, plazos de CISA BOD 26-04 y comparación de fuentes CNA/ADP/NVD (Parte 20) · trayectos [Analista](devsecops-pipeline/TRAYECTO-ANALISTA-DEVSECOPS.md) e [Ingeniero DevSecOps](devsecops-pipeline/TRAYECTO-INGENIERO-DEVSECOPS.md) | Parte 11 (236–248) · 227, 318, 330 | ✅ Disponible |
 | [`game-security`](game-security/README.md) | Simulación cliente-servidor con modos vulnerable/seguro, matemática de aim, telemetría, datasets y detectores explicables | Parte 19 (341–360) | ✅ Disponible · Python, local |
 
 Además: **[🚩 Retos tipo CTF](../ctf/README.md)** — colección de retos por categoría (web, cripto, redes, forense, OSINT, pwn) con solución.

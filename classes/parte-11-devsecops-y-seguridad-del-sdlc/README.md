@@ -112,6 +112,10 @@ El gráfico representa una progresión de evidencias: las propiedades del diseñ
 
 El proyecto integrador de la parte consiste en tomar un servicio pequeño y entregar, de manera vinculada, su modelo de amenazas, pipeline endurecido, resultados triageados, artefacto por digest, SBOM/procedencia, política verificable y una propuesta operativa de ownership. La calidad se evalúa por la coherencia entre decisiones, no por la cantidad de herramientas ejecutadas.
 
+## 🔗 Conexión con la Parte 20
+
+Las clases listadas llevan una sección «Cómo lo nombra el catálogo CWE y qué cambia al priorizar» que da a cada vulnerabilidad su entrada del catálogo CWE (nivel, padre, categoría OWASP 2025) y el criterio de prioridad (CVSS, EPSS, KEV, exposición). Sirve para ver la misma debilidad desde la técnica de esta parte y desde la taxonomía de la [Parte 20](../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md): las 237 a 243 y 245 a 247 (salvo la 244).
+
 ## 🔗 Referencias de la parte
 
 - OWASP SAMM v2 — <https://owaspsamm.org/>

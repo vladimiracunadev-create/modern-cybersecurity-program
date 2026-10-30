@@ -30,6 +30,7 @@ Las soluciones se generan **por parte** (una guía por parte con la clave de cad
 trabajo grande (370 clases), así que se hace **incremental y por lotes** para controlar el coste:
 
 - **Hecho:** Partes **1, 2, 3, 4, 5, 7, 8, 9 y 17** (195 clases con solución del reto + claves de ejercicios).
+- **Parte 20:** las soluciones razonadas de ejercicios y retos van dentro de cada clase (361–370), no en una guía aparte.
 - **Siguientes lotes sugeridos:** 6 (malware), 10 (cloud), 11 (DevSecOps), 12 (OSINT), 13 (móvil/IoT), 14 (GRC) y el resto.
 - **Formato por clase:** _Solución del reto verificable_ (pasos + evidencia que cumple el criterio
   de aceptación) + _Claves de los ejercicios_ (respuesta breve y correcta a cada uno).

@@ -206,6 +206,10 @@ Esta es la parte más acumulativa del programa; conviene saltar poco. Sáltate u
 | Contraseñas (057) | ¿Qué diferencia hay entre salt y pepper? | Haz 057 |
 | Implementación (059–060) | ¿Por qué AEAD elimina el padding oracle? | Haz 059 y 060 |
 
+## 🔗 Conexión con la Parte 20
+
+Las clases listadas llevan una sección «Cómo lo nombra el catálogo CWE y qué cambia al priorizar» que da a cada vulnerabilidad su entrada del catálogo CWE (nivel, padre, categoría OWASP 2025) y el criterio de prioridad (CVSS, EPSS, KEV, exposición). Sirve para ver la misma debilidad desde la técnica de esta parte y desde la taxonomía de la [Parte 20](../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md): la 065.
+
 ## 🔗 Referencias de la parte
 
 - Aumasson, *Serious Cryptography*, No Starch Press — <https://nostarch.com/serious-cryptography-2nd-edition>

@@ -64,6 +64,8 @@ apropiación, extorsión o sabotaje.
 | 16 · capstones | Integrar capacidades en laboratorios autorizados | Ejecutar una campaña real contra terceros | Sustituir el entorno controlado por víctimas reales |
 | 17 · IAM, datos y arquitectura | Diseñar control y resiliencia | Robar privilegios, exfiltrar datos o preparar sabotaje | Apropiación o abuso del acceso confiado |
 | 18 · agentes de IA | Orquestar auditorías con aprobación humana | Automatizar acciones ofensivas sin permiso | Delegar a un agente no crea autorización |
+| 19 · Game Security y anti-cheat | Entender cheats en un rango propio para diseñar autoridad, telemetría y detección | Desarrollar, vender o usar cheats y automatizaciones contra servicios de terceros | Salir del rango controlado hacia un servicio real sin permiso |
+| 20 · CWE, CVE, CVSS y su gestión | Clasificar, priorizar, corregir y coordinar la divulgación de vulnerabilidades | Usar la información de vulnerabilidades para atacar sistemas sin parchear o comerciar con ella | Pasar de analizar y corregir a explotar sistemas ajenos, o retener la información en lugar de coordinarla |
 
 La conclusión no es que aprender ofensiva sea sospechoso. Un pentester, *red teamer*, analista de
 malware o investigador de vulnerabilidades puede operar al máximo nivel técnico dentro de la ley.

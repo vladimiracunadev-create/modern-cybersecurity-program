@@ -6,7 +6,7 @@ para practicar competencias que ya pertenecen a identidad, OSINT, web, malware, 
 
 ## Inventario y resultado de la auditoría
 
-El catálogo verificado contiene **20 partes y 360 clases (001–360)**. La validación inicial revisó
+En la fecha de la auditoría el catálogo verificado contenía **20 partes y 360 clases (001–360)**; hoy son 21 partes y 370 clases, y la Parte 20 (CWE, CVE, CVSS) no cambia las decisiones de la tabla siguiente. La validación inicial revisó
 516 documentos y 7.200 enlaces Markdown sin encontrar rutas rotas; el catálogo de rutas tampoco
 tenía clases huérfanas y el corpus estaba en UTF-8 válido. Se revisaron los títulos y recorridos de
 todas las partes, y se buscaron explícitamente los trece mecanismos solicitados.

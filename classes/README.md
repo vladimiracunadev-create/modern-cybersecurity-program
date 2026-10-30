@@ -25,9 +25,6 @@
 | 18 | IA aplicada a la ciberseguridad (agentes, MCP, kali-mcp) | 10 (331-340) | [leer parte 18](parte-18-ia-aplicada-a-la-ciberseguridad/README.md) |
 | 19 | Seguridad de videojuegos, cheats y anti-cheat | 20 (341-360) | [leer parte 19](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/README.md) |
 | 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestion | 10 (361-370) | [leer parte 20](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
-| 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestion | 10 (361-370) | [leer parte 20](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
-| 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestion | 10 (361-370) | [leer parte 20](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
-| 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestion | 10 (361-370) | [leer parte 20](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
 
 ---
 

@@ -33,8 +33,8 @@ de las 370 clases) es la base y el primer entregable.
 Generado con `scripts/generar_material.py <parte>` (PDF vía navegador headless, PPTX vía
 python-pptx). Notebooks **descartados** por decisión.
 
-- [x] Guías **PDF** imprimibles por clase — **las 360 clases** (partes 0–19).
-- [x] Presentaciones **PPTX** por clase — **las 360 clases** (partes 0–19).
+- [x] Guías **PDF** imprimibles por clase — **las 370 clases** (partes 0–20).
+- [x] Presentaciones **PPTX** por clase — **las 370 clases** (partes 0–20).
 - [x] Sección "📥 Material descargable" enlazada en cada README de clase.
 - [x] ~~Notebooks~~ — descartado.
 

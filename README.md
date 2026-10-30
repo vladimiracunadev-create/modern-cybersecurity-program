@@ -142,9 +142,6 @@ Cada parte tiene su **propio README** con narrativa completa: de qué trata, res
 | 18 | IA aplicada a la ciberseguridad | 10 (331–340) | LLMs y agentes: MCP, kali-mcp, pentesting asistido, defensa e informes | [📘 leer](classes/parte-18-ia-aplicada-a-la-ciberseguridad/README.md) |
 | 19 | Seguridad de videojuegos, cheats y anti-cheat | 20 (341–360) | Autoridad, memoria, ESP, aim, telemetría, detección, privacidad y RCA | [📘 leer](classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/README.md) |
 | 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS | 10 (361–370) | Catálogo CWE, causa raíz, familias de debilidades, CVE, CVSS v3.1/v4.0, EPSS, KEV y corrección verificada | [📘 leer](classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
-| 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS | 10 (361–370) | Catálogo CWE, causa raíz, familias de debilidades, CVE, CVSS v3.1/v4.0, EPSS, KEV y corrección verificada | [📘 leer](classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
-| 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS | 10 (361–370) | Catálogo CWE, causa raíz, familias de debilidades, CVE, CVSS v3.1/v4.0, EPSS, KEV y corrección verificada | [📘 leer](classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
-| 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS | 10 (361–370) | Catálogo CWE, causa raíz, familias de debilidades, CVE, CVSS v3.1/v4.0, EPSS, KEV y corrección verificada | [📘 leer](classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
 
 ➡️ **[Ver el índice plano de las 370 clases](classes/README.md)**
 
@@ -298,7 +295,7 @@ flowchart TD
 ```
 
 **[Leer «¿Y si cruzas la línea?» →](docs/cruzar-la-linea-consecuencias-reales.md)** — el espejo
-de las 20 partes, actividades delictivas sin romantizarlas, Ley 21.459 de Chile, comparación
+de las partes del programa, actividades delictivas sin romantizarlas, Ley 21.459 de Chile, comparación
 internacional, casos con condenas verificables, atribución digital, extradición, patrimonio,
 antecedentes, migración y una salida profesional legítima para cada capacidad.
 
