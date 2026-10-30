@@ -243,16 +243,20 @@ Parte 17 para el gobierno del programa.
 3. 📚 [**Parte 4 — Seguridad web**](../classes/parte-4-seguridad-de-aplicaciones-web/README.md)
    · **087** OWASP Top 10 y las clases de las vulnerabilidades que más vas a triar; **110** APIs REST.
    No para explotarlas, para **entender el hallazgo** que tienes delante.
-4. 📚 [**Parte 17 — Profundización**](../classes/parte-17-profundizacion-para-certificaciones/README.md)
+4. 📚 [**Parte 20 — Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestión**](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md).
+   El criterio para triar con argumento: [362 — causa raíz y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md) (no copiar la etiqueta de
+   la herramienta), [367 — CVE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md), [368 — CVSS](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md) y [369 — EPSS, KEV y priorización](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md) (exposición
+   y plazos de referencia de BOD 26-04), y [370 — ciclo completo](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md) como plantilla de expediente.
+5. 📚 [**Parte 17 — Profundización**](../classes/parte-17-profundizacion-para-certificaciones/README.md)
    · **318** gestión del programa de vulnerabilidades · **323** pruebas de seguridad del software ·
    **321** comunicación y reporte · **330** análisis de código y automatización.
-5. 📚 [**Parte 14 — GRC**](../classes/parte-14-grc-riesgo-y-cumplimiento/README.md)
+6. 📚 [**Parte 14 — GRC**](../classes/parte-14-grc-riesgo-y-cumplimiento/README.md)
    · **277** gestión de riesgos · **282** políticas y procedimientos · **284** riesgo de terceros
    (que es exactamente lo que son tus dependencias) · **287** métricas.
-6. 📚 [**Parte 10 — Nube y contenedores**](../classes/parte-10-seguridad-en-la-nube-y-contenedores/README.md)
+7. 📚 [**Parte 10 — Nube y contenedores**](../classes/parte-10-seguridad-en-la-nube-y-contenedores/README.md)
    · **227** contenedores · **230** IaC/Terraform · **231** CSPM: la superficie que compartes con
    [Cloud Security](cloud-security.md).
-7. 📚 [**Parte 15 — Seguridad de IA**](../classes/parte-15-seguridad-de-ia-y-machine-learning/README.md)
+8. 📚 [**Parte 15 — Seguridad de IA**](../classes/parte-15-seguridad-de-ia-y-machine-learning/README.md)
    · opcional pero cada vez menos: modelos y bibliotecas de IA ya entran por el mismo pipeline.
 
 Clases concretas por las que empezar:

@@ -83,6 +83,12 @@ Una imagen distroless de 30 MB pasa el escáner de paquetes, pero ejecuta como U
 
 El alumno domina la clase cuando puede seguir una imagen desde su base hasta runtime, demostrar su identidad por digest, explicar qué cubren escaneo y firma, evitar secretos en capas y justificar controles de ejecución sin confundir tamaño con seguridad.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Un archivo de construcción de contenedores es un buen sitio donde ver el **límite del catálogo CWE**. El `Dockerfile` vulnerable del laboratorio (`labs/devsecops-pipeline/repo-vulnerable`) contiene defectos con correspondencia **oficial** (un secreto en `ENV`, `CWE-798`), **inferida** (la imagen base `latest`, `CWE-1357`; `COPY . /app` que arrastra `.git` y credenciales, `CWE-538`; ejecutar como root, `CWE-250`; un puerto de depuración expuesto, `CWE-489`; instalar dependencias sin verificar integridad, `CWE-494`) y **ninguna** (`apt-get upgrade` dentro de la imagen, instalar paquetes sin limpiar la caché, herramientas innecesarias en el runtime, `CMD` en forma *shell*).
+
+Que haya buenas prácticas sin CWE es una lección de honestidad: no todo mal hábito es una debilidad catalogada, y un informe que fuerce un identificador para parecer completo pierde credibilidad. El caso razonado de la clase, «imagen pequeña con riesgo grande», es justo el caso en que el tamaño no mide el riesgo, y las comprobaciones asociadas se tratan en la [clase 366](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
+
 ## 📖 Definiciones y características
 
 - **Multi-stage build**: separar la fase de compilación de la imagen final. *Característica*: la imagen de producción no lleva compiladores ni herramientas de build.

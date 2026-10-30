@@ -107,6 +107,12 @@ aplica la **divulgación responsable** de la [Clase 025](../../parte-0-fundament
 dar tiempo para corregir, coordinar la publicación —la ética que separa la investigación de la
 actividad delictiva—.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Buscar fallos en el código es, en el fondo, **reconocer patrones de CWE**: cada «patrón peligroso» de la clase corresponde a una o varias entradas del catálogo. El uso de funciones sin límite (`strcpy`, `gets`) es `CWE-120`; una copia con una longitud mal calculada, `CWE-131`; la concatenación de cadenas en una consulta, `CWE-89`; la ejecución de órdenes con entrada externa, `CWE-78`; la deserialización de datos no confiables, `CWE-502`. Los analizadores como CodeQL y Semgrep etiquetan sus reglas con identificadores CWE, y esa etiqueta es la que llega a los informes y a los cuadros de mando.
+
+La lección importante, comprobada con datos del laboratorio, es que **la etiqueta de la herramienta no es el CWE correcto**. En `labs/appsec-code`, Bandit 1.9.4 etiqueta `eval` con `CWE-78` cuando el defecto es `CWE-95`, asigna a un hash débil de contraseña la clase genérica `CWE-327` en lugar de `CWE-916`, y no detecta en absoluto el *path traversal* (`CWE-22`). El programa incluye una herramienta que contrasta cada hallazgo con el mapa de un laboratorio (`python scripts/cwe_kb.py sast ... --mapa ...`). Cómo se resuelve este trabajo de clasificación y por qué el análisis estático debe combinarse con pruebas se desarrolla en la [clase 370](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
+
 ## 📖 Definiciones y características
 
 - **Superficie de ataque:** conjunto de puntos donde entran datos no confiables. *Clave:* prioriza

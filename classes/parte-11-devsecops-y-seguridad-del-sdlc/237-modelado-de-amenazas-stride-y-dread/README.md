@@ -83,6 +83,12 @@ El equipo modela un flujo de recuperación de contraseña. Identifica suplantaci
 
 El alumno domina la técnica cuando puede justificar el alcance de un DFD, encontrar amenazas específicas en sus cruces, evitar duplicados vagos, priorizar sin falsa precisión y convertir cada tratamiento en requisito, propietario y prueba.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Cuando un modelo de amenazas desemboca en una lista de defectos, el catálogo CWE aporta el vocabulario para convertir cada amenaza de STRIDE en una **debilidad con nombre**, y de ahí en un requisito comprobable. La correspondencia es orientativa, no mecánica: la suplantación apunta a las debilidades de identidad (`CWE-287`, `CWE-306`), la manipulación a la verificación insuficiente de la integridad (`CWE-345`), la revelación de información a `CWE-200`, la denegación de servicio a los recursos sin límite (`CWE-770`) y la elevación de privilegios al control de acceso (`CWE-284`, `CWE-862`, `CWE-863`). El repudio, en cambio, apunta sobre todo a la falta de registro (`CWE-778`), y varias de estas entradas son clases que MITRE desaconseja usar, de modo que sirven para orientar y se concretan con una entrada de nivel *Base* al revisar el código.
+
+Esto responde a la limitación que esta clase señala en DREAD: una cifra subjetiva no ordena mejor que un conjunto de señales objetivas. Una vez descubiertas las amenazas, la prioridad de corregir una concreta se razona con severidad (clase 368), probabilidad y explotación observada (clase 369) y la exposición del activo. En la OWASP 2025, además, **Insecure Design** ocupa el sexto puesto y OWASP observa mejoras de la industria en modelado de amenazas, lo que da sentido a invertir en esta práctica.
+
 ## 📖 Definiciones y características
 
 - **Modelo de amenazas**: representación estructurada de qué puede atacar a un sistema y cómo mitigarlo. *Característica*: se hace en fase de diseño, es barato y preventivo.

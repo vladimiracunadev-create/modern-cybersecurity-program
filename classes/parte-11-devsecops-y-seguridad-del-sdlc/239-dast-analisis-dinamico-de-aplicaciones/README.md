@@ -81,6 +81,12 @@ Un pipeline informa cero alertas. El mapa de sitios contiene `/login` y recursos
 
 El alumno demuestra dominio cuando puede configurar un objetivo autorizado, medir cobertura antes de interpretar resultados, conservar una sesión válida, reproducir una alerta con evidencia y explicar qué vulnerabilidades quedan fuera del alcance de DAST.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Un DAST observa síntomas y no sabe qué línea los produce, así que el CWE de un hallazgo suyo es una **hipótesis sobre la causa**, no un dato. Un escáner que informa «posible inyección SQL» tras una respuesta con error de base de datos sugiere `CWE-89`; uno que refleja un `<script>` sugiere `CWE-79`; uno que lee un archivo fuera de la raíz sugiere `CWE-22`. Esas etiquetas suelen ser razonables, pero la validación manual debe confirmar el mecanismo y la ubicación antes de asignar el CWE definitivo, porque de ello depende la corrección: no es lo mismo corregir una consulta concreta que añadir un filtro genérico.
+
+Dos límites que se relacionan con lo que dice la clase sobre complementar técnicas: el DAST no ve lo que su sonda no alcanza (el caso razonado del escaneo verde detrás del login), y tampoco ve las debilidades que no producen un comportamiento observable en la superficie, como una credencial embebida (`CWE-798`) o una configuración insegura del contenedor. Por eso un informe honesto declara qué clases de debilidad quedaron **fuera de cobertura** de la técnica usada. La [clase 370](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md) muestra cómo se combinan análisis estático, dinámico y pruebas, y la matriz de cobertura CWE del programa (`docs/matriz-cobertura-cwe.md`) aplica el mismo criterio al propio temario.
+
 ## 📖 Definiciones y características
 
 - **DAST**: prueba de seguridad sobre la app en ejecución sin acceso al código. *Característica*: encuentra fallos de runtime/config; ciego a código no alcanzado por el crawler.

@@ -103,6 +103,12 @@ de formato** —usar siempre `printf("%s", entrada)`—; los compiladores modern
 escribibles. Es, como casi todo en esta parte, un fallo de **no separar datos de control**: la cadena
 de formato es código, y darle al usuario control sobre ella es darle control sobre el programa.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+El catálogo nombra esta clase de fallo como `CWE-134` (*uso de una cadena de formato controlada externamente*), de nivel *Base*, cuyo padre es `CWE-668` (exposición de un recurso a una esfera equivocada). El padre es una pista de lo que viste en la clase: la cadena de formato es un recurso que debería pertenecer al programa y se entrega a quien controla la entrada. Observa además que la misma entrada de CWE reúne **dos consecuencias distintas** que estudiaste por separado: la fuga de memoria con `%x` o `%s` (exposición de información) y la escritura arbitraria con `%n` (integridad y ejecución de código). Un buen informe separa el defecto (cadena de formato controlada) de su impacto en el caso concreto.
+
+La corrección es la más sencilla de toda la Parte 5 —pasar una cadena de formato fija y los datos como argumentos— y por eso su prevención es sobre todo de proceso: los compiladores modernos avisan de estos usos (`-Wformat-security`) y un análisis estático lo detecta con facilidad, lo que explica que hoy se vea poco en software mantenido. Aun así, `CWE-134` sigue apareciendo en código antiguo y embebido; la [clase 365](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md) recoge cómo se incorpora al resto de debilidades de memoria.
+
 ## 📖 Definiciones y características
 
 - **Format string bug:** el usuario controla la cadena de formato de `printf`. *Clave:* CWE-134;

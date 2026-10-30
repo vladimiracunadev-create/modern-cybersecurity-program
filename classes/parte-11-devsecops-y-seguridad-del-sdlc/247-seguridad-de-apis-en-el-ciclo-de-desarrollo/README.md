@@ -82,6 +82,12 @@ La UI oculta «exportar todos» a usuarios normales, pero la API acepta la opera
 
 El alumno domina la clase si transforma propiedades de negocio en contrato, implementación y pruebas negativas; diferencia gateway de autorización de dominio; controla recursos; y conserva evidencia operativa sin filtrar secretos.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+El caso razonado de la clase, «autorización solo en la interfaz», tiene nombre en el catálogo: `CWE-602` (*aplicación en el cliente de una seguridad que corresponde al servidor*), una entrada de nivel *Class* con uso «permitido con revisión», hija de `CWE-693` (fallo de un mecanismo de protección). Es la causa de que un contrato OpenAPI que describe campos y tipos no proteja nada por sí mismo: el contrato describe mensajes, y la autorización es otra propiedad. Cuando el servidor sí omite la comprobación, la debilidad concreta es `CWE-862` (falta de autorización) o `CWE-863` (autorización incorrecta), y si la clave del objeto la controla el cliente, `CWE-639`.
+
+Las tres son las que la [clase 364](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md) practica con una matriz de acceso: una prueba que recorre todas las parejas usuario–recurso y comprueba la política, en lugar de un solo caso feliz. Esa es la forma de volver «probar desde propiedades» (el tema de esta clase) algo ejecutable: `labs/appsec-code/practicas/autorizacion.py` y sus pruebas muestran la versión vulnerable que viola la política, la que tiene la comprobación equivocada y la correcta.
+
 ## 📖 Definiciones y características
 
 - **BOLA (Broken Object Level Authorization)**: acceder a objetos de otros usuarios cambiando un ID. *Característica*: API1, la vulnerabilidad más común; se previene autorizando por objeto en cada request.

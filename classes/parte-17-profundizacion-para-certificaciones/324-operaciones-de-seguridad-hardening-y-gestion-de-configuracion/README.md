@@ -55,6 +55,12 @@ flowchart LR
 
 El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+El endurecimiento (hardening) es la corrección de una familia de debilidades que el catálogo CWE nombra, y conocerla ayuda a justificar cada control de un benchmark. Valores por defecto inseguros: `CWE-1188` (inicialización de un recurso con un valor por defecto inseguro). Permisos excesivos: `CWE-732` (asignación incorrecta de permisos a un recurso crítico). Procesos con privilegios innecesarios: `CWE-250`. Depuración o interfaces de administración activas: `CWE-489`. Todas son debilidades de **configuración**, pero OWASP no las agrupa igual: `CWE-489` está en A02:2025 Security Misconfiguration (que subió del quinto al segundo puesto), `CWE-732` en A01 y `CWE-250` y `CWE-1188` no pertenecen a ninguna categoría del Top 10 en el catálogo 5.0. La categoría orienta; la debilidad concreta es la que se registra.
+
+Dos cautelas de rigor. Primera, **no todo control de un benchmark equivale a un CWE**: en el laboratorio del programa varios defectos de un Dockerfile (instalar herramientas innecesarias, usar `apt-get upgrade` en la imagen) no tienen entrada catalogada, y es mejor decir «ninguna» que forzar un identificador. Segunda, un benchmark describe un estado deseable; un CWE describe un defecto. Cuando un control no se cumple, el hallazgo se redacta por su efecto en el activo, y el CWE sirve para agrupar y comparar. La [clase 366](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md) desarrolla la clasificación de configuración, dependencias y contenedores con su mapa de correspondencias oficiales, inferidas y «ninguna».
+
 ## 📖 Definiciones y características
 
 - **Baseline de seguridad:** conjunto mínimo y documentado de ajustes de configuración que define el estado "seguro conocido" de un sistema. Característica clave: es el punto de referencia contra el que se mide la deriva y el cumplimiento.

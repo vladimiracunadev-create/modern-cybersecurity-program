@@ -1,0 +1,39 @@
+{
+ "catalogo": {
+  "entradas": 1415,
+  "fecha": "2026-10-28",
+  "por_tipo": {
+   "Base": 536,
+   "Class": 131,
+   "Compound": 7,
+   "Pillar": 10,
+   "Variant": 300,
+   "grouping": 431
+  },
+  "referencias_externas": 1081,
+  "version": "5.0",
+  "vistas": 62
+ },
+ "esquema": 1,
+ "huellas": {
+  "indices/indice.json": "a1018dacae38dcf6ddb51f6b78c6c7f3bb85653d57ef33f651de8b5133c6800a",
+  "indices/invertido.json": "50fe9c981b6dcbd75c01bd997429e40a3f46582c729bf1d825e21edde309645f",
+  "indices/jerarquia.json": "f3a5513e3fb8c80084cced05691f4ba24dd768e04f188ea27b870f3d36b83b82",
+  "normalizado/cwe.jsonl": "2116a5bac16e33c097d9c4504b31cbef95dec13315d17c7d62b94e3b8a9a979e",
+  "normalizado/referencias.json": "a057fb43373e105ffd68c4a8e84c2dc4bcdbf27fea01644ac09d70484b7b8fba",
+  "normalizado/vistas.json": "e32dea91229df69b4008b579e14ae295dad3ca9dca238b3aa5c6ec1b7f5d57cb"
+ },
+ "licencia": "Ver LICENCIA-MITRE.md. CWE es © The MITRE Corporation; uso libre con la condición de reproducir su aviso de copyright y licencia.",
+ "origen": {
+  "archivo_xml": "cwec_v5.0.xml",
+  "fecha_consulta": "2026-10-30",
+  "sha256_zip": "bcda44c9abf61ff977f50c3c6649eea5a97a7b0626b0396c2c3ec4bfb973a3dc",
+  "terminos_de_uso": "https://cwe.mitre.org/about/termsofuse.html",
+  "url": "https://cwe.mitre.org/data/xml/cwec_latest.xml.zip"
+ },
+ "ultima_actualizacion": {
+  "anadidas": 0,
+  "eliminadas": 0,
+  "modificadas": 0
+ }
+}

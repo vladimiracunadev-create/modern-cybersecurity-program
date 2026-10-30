@@ -99,6 +99,12 @@ usuario es **siempre** un argumento y **nunca** puede convertirse en un comando.
 **allowlists** de valores permitidos cuando de verdad hay que llamar a un programa externo, esto
 elimina la clase entera de fallo, igual que las consultas parametrizadas eliminan la SQLi.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+`CWE-78` (*neutralización incorrecta de elementos especiales en un comando del sistema operativo*) es la entrada que describe esta clase. Es de nivel *Base*, estable, y su padre es `CWE-77` (inyección de comandos en general, nivel *Class*). La distinción entre ambas decide qué escribes en un informe: si el atacante inyecta metacaracteres que el intérprete de órdenes interpreta (`;`, `&&`, `$(...)`), es `CWE-78`; si controla solo un **argumento** de una herramienta legítima (una opción que cambia su comportamiento), la entrada es `CWE-88`, hermana de `CWE-78` bajo `CWE-77`. Es una diferencia que cambia la defensa: la lista de argumentos sin *shell* evita la primera, y la segunda exige además validar qué argumentos son aceptables.
+
+Los datos de 2025 explican por qué esta clase es prioritaria. `CWE-78` ocupa el puesto 9 del Top 25 de MITRE, pero en el **Top 10 de debilidades de KEV** de MITRE y CISA es la **primera**, con **20 CVE** en el catálogo de explotación conocida, el máximo de cualquier debilidad de la lista. Una inyección que da ejecución de órdenes sin interacción de un usuario es fácil de automatizar y de aprovechar a escala, y eso se refleja en la explotación observada. Lo que sigue es la lectura de esas cifras en la [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md), y la corrección verificada (argumentos como lista y validación del destino) se demuestra en la [clase 370](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
+
 ## 📖 Definiciones y características
 
 - **OS command injection**: ejecución de comandos del sistema vía input no sanitizado. Característica: suele acabar en RCE.

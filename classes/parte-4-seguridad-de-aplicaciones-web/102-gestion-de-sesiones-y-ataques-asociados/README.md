@@ -96,6 +96,12 @@ servidor lo sigue aceptando—. Un fallo muy común es un logout que solo borra 
 sigue viva para quien copió el ID. Regenerar al elevar privilegios e invalidar de verdad al cerrar:
 esas dos, más los flags y la entropía, son el núcleo de una gestión de sesión segura.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Las sesiones tienen en el catálogo una estructura reciente que conviene conocer porque un informe puede toparse con una entrada **obsoleta**. `CWE-613` (*expiración insuficiente de la sesión*) está marcada como **retirada** por MITRE, con la nota de que era poco clara y de que debe consultarse `CWE-1462` (*gestión incorrecta de sesiones*) y sus descendientes. Esa clase nueva agrupa, entre otras, la **fijación de sesión** (`CWE-384`), que es de estructura *Compuesta*: un problema que solo existe cuando coinciden varias condiciones (aceptar un identificador de sesión impuesto desde fuera y no renovarlo al autenticarse). Por eso la defensa de tu clase —regenerar el identificador en el inicio de sesión— rompe una de esas condiciones.
+
+Los atributos de la cookie tienen cada uno su CWE, y son de nivel *Variant*: la ausencia de `HttpOnly` es `CWE-1004`, la de `Secure` es `CWE-614` y un `SameSite` inadecuado es `CWE-1275`. Dos observaciones útiles: primera, **cada CWE se atribuye a un defecto verificable** (la cookie se emitió sin el atributo), con lo que una revisión automática puede comprobarlo; segunda, OWASP los reparte entre categorías (`HttpOnly` y `Secure` en A02:2025 Security Misconfiguration, `SameSite` en A01), de modo que las categorías no son una partición limpia por técnica. Un informe que cite una entrada retirada pasa una revisión de referencias mal: el programa incluye una herramienta que lo detecta (`python scripts/cwe_kb.py referencias`).
+
 ## 📖 Definiciones y características
 
 - **Session ID**: identificador que liga peticiones a una sesión autenticada. Característica: debe ser largo, aleatorio e impredecible.

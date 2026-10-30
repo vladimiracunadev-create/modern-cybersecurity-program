@@ -1,0 +1,431 @@
+{
+ "procedencia": {
+  "fecha_consulta": "2026-10-30",
+  "v31": "Puntuaciones base que lista la API de NVD para cada CVE; cada registro indica la fuente (NVD, CISA-ADP o la organización que la aportó). CISA-ADP no es un CNA.",
+  "v40_cna": "Vectores y puntuaciones publicados por CNA en registros CVE (cveawg.mitre.org/api/cve/<id>), tomados de entradas recientes del catalogo CISA KEV.",
+  "v40_ejemplos_first": "Ejemplos oficiales de FIRST con metricas de amenaza y entorno: https://www.first.org/cvss/v4-0/examples",
+  "nota": "Son el oraculo de las pruebas: la calculadora debe reproducir exactamente estos numeros."
+ },
+ "v31": [
+  {
+   "cve": "CVE-2014-0160",
+   "fuente": "CISA-ADP",
+   "puntuacion": 7.5,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+  },
+  {
+   "cve": "CVE-2014-0160",
+   "fuente": "NVD",
+   "puntuacion": 7.5,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+  },
+  {
+   "cve": "CVE-2017-5638",
+   "fuente": "CISA-ADP",
+   "puntuacion": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2017-5638",
+   "fuente": "NVD",
+   "puntuacion": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2019-0708",
+   "fuente": "CISA-ADP",
+   "puntuacion": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2019-0708",
+   "fuente": "NVD",
+   "puntuacion": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2021-3156",
+   "fuente": "CISA-ADP",
+   "puntuacion": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2021-3156",
+   "fuente": "NVD",
+   "puntuacion": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2021-41773",
+   "fuente": "CISA-ADP",
+   "puntuacion": 7.5,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+  },
+  {
+   "cve": "CVE-2021-41773",
+   "fuente": "NVD",
+   "puntuacion": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2021-44228",
+   "fuente": "CISA-ADP",
+   "puntuacion": 10.0,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2021-44228",
+   "fuente": "NVD",
+   "puntuacion": 10.0,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2022-22965",
+   "fuente": "CISA-ADP",
+   "puntuacion": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2022-22965",
+   "fuente": "NVD",
+   "puntuacion": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2023-34362",
+   "fuente": "CISA-ADP",
+   "puntuacion": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2023-34362",
+   "fuente": "NVD",
+   "puntuacion": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2023-44487",
+   "fuente": "CISA-ADP",
+   "puntuacion": 7.5,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+  },
+  {
+   "cve": "CVE-2023-44487",
+   "fuente": "NVD",
+   "puntuacion": 7.5,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+  },
+  {
+   "cve": "CVE-2023-4863",
+   "fuente": "CISA-ADP",
+   "puntuacion": 8.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2023-4863",
+   "fuente": "NVD",
+   "puntuacion": 8.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2023-50716",
+   "fuente": "Otra fuente de NVD: security-advisories@github.com",
+   "puntuacion": 9.6,
+   "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2023-50716",
+   "fuente": "NVD",
+   "puntuacion": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2024-2021",
+   "fuente": "Otra fuente de NVD: cna@vuldb.com",
+   "puntuacion": 6.3,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L"
+  },
+  {
+   "cve": "CVE-2024-2021",
+   "fuente": "NVD",
+   "puntuacion": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2024-27565",
+   "fuente": "CISA-ADP",
+   "puntuacion": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+  },
+  {
+   "cve": "CVE-2024-27565",
+   "fuente": "NVD",
+   "puntuacion": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+  }
+ ],
+ "v40_cna": [
+  {
+   "cve": "CVE-2026-8452",
+   "proveedor": "NetScaler",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:H/SC:L/SI:L/SA:L",
+   "puntuacion": 8.8
+  },
+  {
+   "cve": "CVE-2026-82078",
+   "proveedor": "PaperCut",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+   "puntuacion": 9.4
+  },
+  {
+   "cve": "CVE-2026-81578",
+   "proveedor": "PaperCut",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:H/VA:L/SC:N/SI:N/SA:N",
+   "puntuacion": 8.8
+  },
+  {
+   "cve": "CVE-2026-59822",
+   "proveedor": "GitHub_M",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N",
+   "puntuacion": 8.8
+  },
+  {
+   "cve": "CVE-2026-9586",
+   "proveedor": "SRA",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+   "puntuacion": 9.3
+  },
+  {
+   "cve": "CVE-2026-86218",
+   "proveedor": "N-able",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+   "puntuacion": 10
+  },
+  {
+   "cve": "CVE-2026-19490",
+   "proveedor": "NetScaler",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L",
+   "puntuacion": 9.3
+  },
+  {
+   "cve": "CVE-2026-86060",
+   "proveedor": "CERT-PL",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+   "puntuacion": 9.2
+  },
+  {
+   "cve": "CVE-2026-67277",
+   "proveedor": "CERT-PL",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:H/SC:N/SI:N/SA:N",
+   "puntuacion": 8.8
+  },
+  {
+   "cve": "CVE-2026-93952",
+   "proveedor": "Arista",
+   "vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+   "puntuacion": 9.5
+  },
+  {
+   "cve": "CVE-2026-94127",
+   "proveedor": "f5",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+   "puntuacion": 9.3
+  },
+  {
+   "cve": "CVE-2026-67279",
+   "proveedor": "CERT-PL",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+   "puntuacion": 6.9
+  },
+  {
+   "cve": "CVE-2026-88772",
+   "proveedor": "NetScaler",
+   "vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+   "puntuacion": 9.5
+  },
+  {
+   "cve": "CVE-2026-88771",
+   "proveedor": "NetScaler",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+   "puntuacion": 9.5
+  },
+  {
+   "cve": "CVE-2026-102490",
+   "proveedor": "DIVD",
+   "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A/AU:Y/V:D",
+   "puntuacion": 8.5
+  },
+  {
+   "cve": "CVE-2026-102490",
+   "proveedor": "DIVD",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A/AU:Y/V:C",
+   "puntuacion": 9.4
+  },
+  {
+   "cve": "CVE-2026-102489",
+   "proveedor": "DIVD",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/E:A/AU:Y/V:C",
+   "puntuacion": 8.7
+  },
+  {
+   "cve": "CVE-2026-102489",
+   "proveedor": "DIVD",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A/AU:Y/V:C",
+   "puntuacion": 9.4
+  },
+  {
+   "cve": "CVE-2026-88779",
+   "proveedor": "NetScaler",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+   "puntuacion": 8.7
+  },
+  {
+   "cve": "CVE-2026-105134",
+   "proveedor": "VulDB",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A",
+   "puntuacion": 10
+  },
+  {
+   "cve": "CVE-2026-105133",
+   "proveedor": "VulDB",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:A",
+   "puntuacion": 6.9
+  },
+  {
+   "cve": "CVE-2026-0322",
+   "proveedor": "palo_alto",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A/AU:N/R:U/V:D/RE:M/U:Red",
+   "puntuacion": 8.6
+  },
+  {
+   "cve": "CVE-2026-0322",
+   "proveedor": "palo_alto",
+   "vector": "CVSS:4.0/AV:A/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A/AU:N/R:U/V:D/RE:M/U:Red",
+   "puntuacion": 8.5
+  },
+  {
+   "cve": "CVE-2026-21589",
+   "proveedor": "atlassian",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H",
+   "puntuacion": 9.3
+  },
+  {
+   "cve": "CVE-2026-102764",
+   "proveedor": "BT",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+   "puntuacion": 9.3
+  },
+  {
+   "cve": "CVE-2026-106931",
+   "proveedor": "jpcert",
+   "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+   "puntuacion": 8.5
+  },
+  {
+   "cve": "CVE-2026-96656",
+   "proveedor": "cisa-cg",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+   "puntuacion": 8.6
+  },
+  {
+   "cve": "CVE-2026-96655",
+   "proveedor": "cisa-cg",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+   "puntuacion": 5.3
+  },
+  {
+   "cve": "CVE-2026-96654",
+   "proveedor": "cisa-cg",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+   "puntuacion": 6.9
+  },
+  {
+   "cve": "CVE-2026-96652",
+   "proveedor": "cisa-cg",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+   "puntuacion": 5.3
+  },
+  {
+   "cve": "CVE-2026-110936",
+   "proveedor": "siemens",
+   "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+   "puntuacion": 8.4
+  },
+  {
+   "cve": "CVE-2026-114625",
+   "proveedor": "Arista",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+   "puntuacion": 9.4
+  },
+  {
+   "cve": "CVE-2026-110447",
+   "proveedor": "mitre",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+   "puntuacion": 9.2
+  },
+  {
+   "cve": "CVE-2026-109618",
+   "proveedor": "php",
+   "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+   "puntuacion": 9.2
+  },
+  {
+   "cve": "CVE-2026-109619",
+   "proveedor": "php",
+   "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+   "puntuacion": 9.2
+  },
+  {
+   "cve": "CVE-2026-111497",
+   "proveedor": "Google",
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+   "puntuacion": 9.2
+  }
+ ],
+ "v40_ejemplos_first": [
+  {
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:L/VA:L/SC:N/SI:N/SA:N/CR:H/IR:L/AR:L/MAV:N/MAC:H/MVC:H/MVI:L/MVA:L",
+   "puntuacion": 8.1
+  },
+  {
+   "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:P/MAC:L/MAT:N/MVC:N/MVI:N/MVA:L",
+   "puntuacion": 5.5
+  },
+  {
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:L/E:U/MVA:H/MSA:N",
+   "puntuacion": 6.6
+  },
+  {
+   "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:U/MUI:A",
+   "puntuacion": 5.7
+  },
+  {
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:N/SI:L/SA:N/E:U/CR:L/IR:L/AR:L",
+   "puntuacion": 2.7
+  },
+  {
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:L/SI:L/SA:L/MSI:N/MSA:N",
+   "puntuacion": 6.9
+  },
+  {
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:P/CR:L/IR:H/AR:L/MAV:L/MAC:H/MAT:N/MPR:N/MUI:N/MVC:N/MVI:H/MVA:L/MSC:N/MSI:S/MSA:L",
+   "puntuacion": 7.0
+  },
+  {
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/MAV:A/MAC:H/MAT:N/MPR:L/MUI:N/MVC:L/MVI:H/MVA:H/MSC:L/MSI:S/MSA:S/CR:L/IR:H/AR:H/E:P",
+   "puntuacion": 7.4
+  },
+  {
+   "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/MAV:N/MAC:H/MAT:N/MPR:L/MUI:N/MVC:H/MVI:H/MVA:H/MSC:H/MSI:S/MSA:H/CR:M/IR:H/AR:M/E:P",
+   "puntuacion": 8.7
+  },
+  {
+   "vector": "CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/MSI:S/S:P",
+   "puntuacion": 9.7
+  },
+  {
+   "vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+   "puntuacion": 7.3
+  }
+ ]
+}

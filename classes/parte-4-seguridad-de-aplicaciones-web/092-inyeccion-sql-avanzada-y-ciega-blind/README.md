@@ -96,6 +96,12 @@ aislada. Toda esta clase, más lenta y precisa que la anterior, es la que las he
 automatizan —motivo de la clase 093—, y toda ella se cierra con la misma remediación:
 consultas parametrizadas, que hacen imposible tanto la inyección directa como la ciega.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Todo lo de esta clase —booleana, temporal, fuera de banda, de segundo orden— es **una sola debilidad vista a través de canales distintos**: `CWE-89`. Esto tiene una consecuencia práctica al clasificar: que el atacante no vea la salida cambia la *técnica de explotación* y la *dificultad de detectarla*, pero no la causa raíz, así que no existe un CWE «inyección SQL ciega» y un informe no debe inventarlo. El catálogo de patrones de ataque CAPEC sí distingue la variante ciega (`CAPEC-7`) y la enlaza con la misma debilidad: CWE describe el defecto, CAPEC describe cómo se ataca.
+
+La inyección de **segundo orden** merece una precisión: el dato peligroso se almacena en un punto y se usa en otro, y el defecto —la consulta que concatena— está en el punto de uso. Si te piden el CWE, es `CWE-89` en esa consulta, no en el formulario donde el dato entró. Y la corrección es la misma de siempre, parametrizar *toda* consulta que incorpore datos, incluso los que vienen de tu propia base de datos; por eso la ceguera del atacante nunca es una defensa. En la práctica de priorización, recuerda lo que muestran los casos de la [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md): una inyección SQL puede estar en el catálogo KEV (MOVEit) o tener una probabilidad de explotación inferior al 1 % (otro caso real de la misma clase de debilidad), de modo que el tipo de técnica no decide la urgencia.
+
 ## 📖 Definiciones y características
 
 - **Blind SQLi**: la respuesta no incluye datos, solo cambia de forma observable. Característica: se infiere info por diferencias sutiles.

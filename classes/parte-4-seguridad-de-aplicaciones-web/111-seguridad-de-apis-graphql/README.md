@@ -100,6 +100,12 @@ necesarios. Como en REST, la seguridad de GraphQL es, en su núcleo, **autorizac
 que la flexibilidad del lenguaje añade la complejidad y el batching como vectores propios que un
 pentester debe probar siempre.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+GraphQL concentra en un único endpoint debilidades que en REST se reparten, y el catálogo permite nombrarlas por separado. Las consultas anidadas o muy costosas que agotan el servidor son `CWE-770` (asignación de recursos sin límites) y, si el agotamiento es el efecto, `CWE-400`. El truco de agrupar muchos intentos de inicio de sesión mediante alias para esquivar un limitador por petición es un caso de `CWE-307` (intentos de autenticación sin restricción adecuada). La autorización que falta en un resolver concreto es `CWE-862` o `CWE-639`, igual que en cualquier API, y la introspección habilitada en producción es un caso de exposición de información (`CWE-200`) cuya gravedad depende de qué revele el esquema.
+
+Esto desmonta la idea de que existe un «CWE de GraphQL»: la tecnología cambia el vector, no la debilidad. Es una consecuencia directa del método de la [clase 362](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md): se clasifica por lo que falló (un límite, una comprobación, una exposición), y las defensas se verifican por separado con pruebas como las de límites de la [clase 365](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
+
 ## 📖 Definiciones y características
 
 - **GraphQL**: lenguaje de consulta con un único endpoint donde el cliente define qué datos quiere. Característica: flexibilidad que amplía la superficie.

@@ -103,6 +103,12 @@ transaccionalmente. El **modelado de amenazas** —pensar antes de programar "¿
 esto?"— es la única defensa preventiva real, y por eso OWASP creó la categoría A04 *Insecure Design*
 (clase 087): estos fallos no se parchean, se diseñan para que no existan.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Los errores de lógica de negocio tienen en el catálogo una trampa de clasificación: `CWE-840` («errores de lógica de negocio») existe, pero es una **agrupación** marcada por MITRE como *prohibida* para mapear. No se asigna a un hallazgo. Lo que sí puedes usar son las entradas concretas que cuelgan de la gestión del flujo de control: `CWE-841` (aplicación incorrecta de un flujo de comportamiento, es decir, saltarse pasos), `CWE-799` (control incorrecto de la frecuencia de interacción) y su hija `CWE-837` (permitir repetir una acción que debía ser única, como canjear dos veces un cupón). OWASP las sitúa en A06 Insecure Design (A04 en 2021).
+
+Las condiciones de carrera de esta clase («la ventana entre comprobar y actuar») tienen su propio nombre: `CWE-362` (ejecución concurrente con sincronización incorrecta) y su hija `CWE-367` (*time-of-check, time-of-use*). La corrección que defiende la clase —validar en el servidor y hacer atómica la comprobación y la acción— se demuestra con una prueba concurrente en `labs/appsec-code` (la cuenta que se vacía dos veces) y se explica en la [clase 365](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md). La moraleja de clasificación es que «lógica de negocio» describe dónde ocurre el fallo, no cuál es: el CWE sale del mecanismo que se rompió.
+
 ## 📖 Definiciones y características
 
 - **Falla de lógica**: violación de una regla de negocio, no de una tecnología. Característica: invisible para los escáneres.

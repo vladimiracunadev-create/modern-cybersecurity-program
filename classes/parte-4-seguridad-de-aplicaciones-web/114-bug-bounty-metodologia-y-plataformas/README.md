@@ -94,6 +94,12 @@ el programa lo autorice. Publicar un bug sin resolver, extorsionar con él, o us
 datos de los necesarios para demostrarlo, cruza la línea de la investigación a la actividad
 delictiva. El bug bounty es hacking **ético y legal** precisamente porque respeta esas reglas.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Un reporte de bug bounty se parece a un expediente de la [clase 370](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md) en miniatura, y se beneficia del mismo vocabulario. Cita la **debilidad** con su entrada de CWE (el triaje lo usa para clasificar y detectar duplicados), no solo el nombre coloquial; y si el programa publica la severidad con CVSS, calcula tu vector con honestidad y declara **versión y grupo de métricas** (CVSS-B v3.1 o v4.0): una nota mal etiquetada o inflada es motivo de rechazo o de conversación incómoda con el equipo de triaje. Los asuntos de clasificación más frecuentes son confundir síntoma y causa (informar «ejecución de código» cuando la debilidad es una deserialización insegura) y mapear a una categoría de OWASP en lugar de a una debilidad.
+
+Si tu hallazgo se convierte en un CVE, ten presente que el identificador lo asigna una **CNA**, que el CVSS que acaba en las bases públicas puede diferir del que propusiste (distintas fuentes asumen distintos privilegios y alcance) y que la prioridad real la dará la explotación y la exposición, no tu número. Todo esto se explica en la [clase 367](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md) y la [clase 368](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
+
 ## 📖 Definiciones y características
 
 - **Bug bounty**: programa que recompensa el reporte de vulnerabilidades bajo reglas definidas. Característica: hacking autorizado y con límites.

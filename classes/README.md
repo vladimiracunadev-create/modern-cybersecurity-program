@@ -1,6 +1,6 @@
 # Indice del curriculo
 
-**360 clases - 20 partes numeradas 0-19** - numeracion secuencial 001-360. La Parte 0 es la primera unidad y la Parte 19, la vigésima. Cada parte tiene su propio README con la narrativa completa (de que trata, que problemas resuelve, resultados de aprendizaje, estructura tematica y prerrequisitos).
+**370 clases - 21 partes numeradas 0-20** - numeracion secuencial 001-370. La Parte 0 es la primera unidad y la Parte 20, la vigésima primera. Cada parte tiene su propio README con la narrativa completa (de que trata, que problemas resuelve, resultados de aprendizaje, estructura tematica y prerrequisitos).
 
 | Parte | Tema | Clases | README de la parte |
 |---|---|---:|---|
@@ -24,6 +24,10 @@
 | 17 | Profundizacion para certificaciones (gestion, IAM, arquitectura) | 20 (311-330) | [leer parte 17](parte-17-profundizacion-para-certificaciones/README.md) |
 | 18 | IA aplicada a la ciberseguridad (agentes, MCP, kali-mcp) | 10 (331-340) | [leer parte 18](parte-18-ia-aplicada-a-la-ciberseguridad/README.md) |
 | 19 | Seguridad de videojuegos, cheats y anti-cheat | 20 (341-360) | [leer parte 19](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/README.md) |
+| 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestion | 10 (361-370) | [leer parte 20](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
+| 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestion | 10 (361-370) | [leer parte 20](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
+| 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestion | 10 (361-370) | [leer parte 20](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
+| 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestion | 10 (361-370) | [leer parte 20](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
 
 ---
 
@@ -448,3 +452,16 @@ A continuacion, el indice plano de las clases. Si buscas la narrativa de una par
 - [358 - Machine Learning aplicado a Anti-Cheat](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/358-machine-learning-aplicado-anticheat/README.md)
 - [359 - Privacidad, gobernanza, sanciones y seguridad del propio Anti-Cheat](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/359-privacidad-gobernanza-sanciones-seguridad-anticheat/README.md)
 - [360 - Capstone: incidente completo de Game Security](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/360-capstone-incidente-completo-game-security/README.md)
+
+## [Parte 20 - Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestion](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md)
+
+- [361 - CWE: qué es, quién lo mantiene y cómo está construido](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md)
+- [362 - Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md)
+- [363 - Familias CWE (1): entradas no confiables](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md)
+- [364 - Familias CWE (2): identidad, acceso, criptografía y exposición de información](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md)
+- [365 - Familias CWE (3): memoria, enteros, concurrencia y recursos](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md)
+- [366 - Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md)
+- [367 - CVE: identificar vulnerabilidades concretas](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md)
+- [368 - CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md)
+- [369 - EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md)
+- [370 - Ciclo completo: de la debilidad a la corrección verificada](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md)

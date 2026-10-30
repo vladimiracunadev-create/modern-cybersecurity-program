@@ -98,6 +98,12 @@ modernas —ret2libc (123), ROP (124)— **reutilizan código existente** en lug
 teoría del buffer overflow es el cimiento; todo lo demás es cómo sortear las defensas que se
 construyeron para pararlo.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Lo que acabas de estudiar tiene en el catálogo CWE tres nombres que conviene no mezclar, porque describen **niveles** distintos del mismo fenómeno. `CWE-787` (*escritura fuera de límites*) es la entrada de nivel *Base* que describe el efecto genérico: se escribe en memoria fuera del buffer previsto. `CWE-120` (*copia de buffer sin comprobar el tamaño de la entrada*, el «desbordamiento clásico») describe la **causa** más habitual, la que viste con `strcpy` y `gets`, y es hija de `CWE-787`. `CWE-121` (*desbordamiento en la pila*) es una variante que añade **dónde** ocurre y también cuelga de `CWE-787` (y de `CWE-788`, acceso tras el final del buffer). La entrada antigua `CWE-119`, que muchos informes y herramientas de hace años usan todavía, es hoy una *clase* que MITRE desaconseja para mapear por ser demasiado general: para escritura, `CWE-787`; para lectura, `CWE-125`.
+
+Los datos de 2025 colocan la familia en lo más alto. `CWE-787` es la **quinta** del Top 25 de MITRE con **12 CVE en KEV**, y el desbordamiento de montón (`CWE-122`) figura en el Top 10 de debilidades de KEV. Un hecho importante para entender la prioridad es que **las protecciones de la clase 122 (canarios, ASLR, DEP) reducen la explotabilidad, no la debilidad**: un binario con canario sigue teniendo `CWE-121`, y la corrección es comprobar el límite. Esa distinción entre mitigar y corregir reaparece al priorizar (ver [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md)). Los CWE de memoria no pertenecen a ninguna categoría del Top 10 web de OWASP, como se explica en la [clase 365](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md), que trata la familia con una práctica de comprobación de límites.
+
 ## 📖 Definiciones y características
 
 - **Buffer overflow:** escritura de más datos de los que caben en un buffer, invadiendo memoria

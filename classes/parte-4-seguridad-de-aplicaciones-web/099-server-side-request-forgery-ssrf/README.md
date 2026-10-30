@@ -98,6 +98,12 @@ internos ni al metadata que no necesita. En cloud, exigir **IMDSv2** (que requie
 cabeceras que un SSRF simple no puede poner) mitiga específicamente el ataque al metadata. Defensa
 en profundidad, porque ninguna capa por sí sola basta.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+`CWE-918` (*Server-Side Request Forgery*) es de nivel *Base* y su padre es `CWE-441`, «proxy o intermediario no intencionado»: la entrada del catálogo describe literalmente la idea con que empieza tu clase, convertir al servidor en un proxy hacia dentro. El cambio de categoría es una buena lección de taxonomía: SSRF era la categoría propia **A10 en OWASP 2021** y en la edición 2025 se **integró en A01 Broken Access Control**, porque en esencia hace que el servidor acceda a un recurso al que el usuario no debería llegar. Un informe debe indicar con qué edición clasificó, o dos lectores verán categorías distintas para el mismo hallazgo.
+
+Un caso real del programa muestra el contraste entre severidad y probabilidad. **CVE-2024-27565**, un SSRF en un proyecto de ChatGPT para WeChat, tiene CVSS 3.1 de 9,8 según NVD y CISA-ADP lo clasifica como automatizable con control total, pero su EPSS era de 0,66 % y no figuraba en KEV el 2026-10-30. Con la tabla de BOD 26-04 como referencia, el plazo sería de 3 días si el activo está expuesto y de 60 si es interno. Y `CWE-918` ocupa el puesto 22 del Top 25 con cero CVE en KEV. La conclusión no es que el SSRF sea menor: en la nube su impacto potencial (credenciales de metadatos) es enorme, y por eso la decisión depende de la exposición de *tu* servicio. La técnica de defensa verificada (resolver y validar la dirección final) se practica en la [clase 363](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
+
 ## 📖 Definiciones y características
 
 - **SSRF**: el servidor hace una petición a una URL controlada por el atacante. Característica: usa la posición de red del servidor.

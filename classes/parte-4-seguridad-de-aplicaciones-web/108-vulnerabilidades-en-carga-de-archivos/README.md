@@ -99,6 +99,12 @@ Content-Type seguro para que el navegador los descargue en lugar de interpretarl
 y escanear** el contenido. La combinación —renombrar, aislar del entorno de ejecución y validar por
 allowlist— convierte un vector crítico en un riesgo manejable, y es el patrón que se lleva al informe.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+`CWE-434` (*subida sin restricciones de archivo con tipo peligroso*) es una debilidad de nivel *Base* y ocupa el puesto 12 del Top 25 de 2025 con **4 CVE en KEV**. Lo llamativo para quien llega desde la taxonomía es su ubicación en OWASP: en 2025 la categoría es **A06 Insecure Design** (A04 en 2021), no una categoría de inyección ni de configuración. Es coherente con lo que defiende tu clase: la validación de extensión o de tipo MIME es un parche, y la corrección real es **diseñar** dónde y cómo se guarda y se sirve lo subido (fuera de la raíz web, con nombre generado, sin permisos de ejecución). Una debilidad de implementación se corrige en el código; una de diseño obliga a replantear el flujo.
+
+La subida de archivos suele ser el primer eslabón de una **cadena**: `CWE-434` permite colocar un archivo, y otra debilidad (ejecución de la plantilla, `CWE-94`, o un recorrido de ruta, `CWE-22`) lo convierte en ejecución. Cuando dos CWE intervienen, el informe debe decir cuál es el eslabón raíz y cuál el siguiente: corregir la subida sin tocar la ejecución deja la segunda puerta abierta, y a la inversa. Esta idea de cadena se desarrolla en la [clase 365](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
+
 ## 📖 Definiciones y características
 
 - **File upload inseguro**: aceptar archivos sin validar tipo, contenido o ubicación. Característica: puede llevar a RCE.

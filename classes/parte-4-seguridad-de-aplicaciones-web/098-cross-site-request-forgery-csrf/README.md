@@ -101,6 +101,12 @@ puede alcanzarlo. La combinación recomendada hoy es **`SameSite` como base de p
 anti-CSRF en las acciones sensibles**, defensa en profundidad que cubre tanto los navegadores
 modernos como los casos límite.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+La falsificación de peticiones tiene en el catálogo un tratamiento que explica por qué tu clase la descompone en **tres condiciones** (cookies automáticas, acción con efecto, ausencia de un valor impredecible): `CWE-352` es de estructura **Compuesta** (*Compound*), es decir, una debilidad formada por la combinación de otras. Una entrada compuesta describe un problema que solo existe cuando coinciden varias condiciones, y las tres de tu clase son la forma práctica de verlo; su padre es `CWE-345` (verificación insuficiente de la autenticidad de los datos). Esa es la razón de que la defensa consista en romper una condición: el *token* anti-CSRF y el atributo `SameSite` atacan, cada uno, un eslabón.
+
+Los datos de 2025 son un buen ejercicio de lectura. `CWE-352` es la **tercera** debilidad del Top 25 de MITRE (13,64 puntos) y está en la categoría A01 de OWASP, pero tiene **cero** CVE en el catálogo KEV. Hay muchos CVE de CSRF y ninguno con explotación confirmada en KEV. Que figure alto en el Top 25 dice que es frecuente y de gravedad apreciable en conjunto; que no esté en KEV dice que, hoy, no se ha observado su explotación por los criterios de CISA. Ninguna de las dos cosas anula la otra, y ambas son necesarias para decidir cuánto esfuerzo dedicarle (ver [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md)).
+
 ## 📖 Definiciones y características
 
 - **CSRF**: forzar una acción autenticada usando la sesión de la víctima desde otro sitio. Característica: explota que el navegador envía cookies automáticamente.

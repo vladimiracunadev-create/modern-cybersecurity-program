@@ -83,6 +83,12 @@ Un desarrollador publica una clave cloud, hace un segundo commit borrándola y c
 
 El alumno domina la materia si puede diseñar prevención local y central, clasificar un hallazgo, ejecutar una respuesta en el orden correcto y reemplazar un secreto permanente por identidad limitada sin afirmar que limpiar el historial elimina la exposición pasada.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Un secreto en el código es, en el catálogo CWE, `CWE-798` (*uso de credenciales embebidas*), de nivel *Base*, con dos hijas que afinan: `CWE-259` (contraseña embebida) y `CWE-321` (clave criptográfica embebida). Los escáneres de secretos detectan por patrones y entropía, pero la **clasificación** que asignes importa menos que la acción: se trata como credencial comprometida y se rota, tal como enseña la clase. Lo que el CWE aporta es el vocabulario común para contarlo: OWASP incluye `CWE-798` y `CWE-259` en **A07:2025 Authentication Failures**, no en una categoría de «configuración», porque el fallo es que la credencial deja de ser un secreto de verdad.
+
+Dos variantes afines tienen su propia entrada. Un secreto escrito en un registro de ejecución es `CWE-532` (*inserción de información sensible en un archivo de registro*), hija de `CWE-538`; y un token enviado en la cadena de consulta de una URL es `CWE-598`. Ambas aparecen en el flujo de CI del laboratorio `devsecops-pipeline` y se tratan en la [clase 364](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md) (gestión de secretos) y en la [clase 366](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md) (pipelines y contenedores). La corrección verificada para el caso de código —leer del entorno y probar que el secreto ya no figura en el fuente— se demuestra en `labs/appsec-code`.
+
 ## 📖 Definiciones y características
 
 - **Secreto**: credencial que da acceso (API key, token, password, clave privada). *Característica*: si toca un repo, asume compromiso y rota.

@@ -1262,6 +1262,162 @@
           "exp": "Las consecuencias requieren trazabilidad y una vía proporcional de revisión."
         }
       ]
+    },
+    {
+      "idx": 20,
+      "titulo": "Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestión",
+      "preguntas": [
+        {
+          "q": "¿Qué identifica un CVE y qué identifica un CWE?",
+          "opciones": ["CVE: un tipo de defecto; CWE: una ocurrencia concreta", "CVE: una ocurrencia concreta en un producto; CWE: un tipo de defecto", "Ambos identifican el tipo de defecto, uno en software y otro en hardware", "CVE: la severidad; CWE: la probabilidad de explotación"],
+          "correcta": 1,
+          "exp": "El CVE nombra una vulnerabilidad concreta (producto y versiones afectadas); el CWE nombra la clase de debilidad de la que es ejemplo. Severidad y probabilidad son CVSS y EPSS."
+        },
+        {
+          "q": "Bandit etiqueta una llamada a eval con CWE-78. ¿Qué CWE describe mejor el defecto?",
+          "opciones": ["La vista 1000, que es la raíz del catálogo", "CWE-78, porque eval ejecuta comandos del sistema operativo", "CWE-95, porque eval evalúa código a partir de entrada no confiable", "CWE-20, porque todo fallo es de validación"],
+          "correcta": 2,
+          "exp": "eval ejecuta código del propio lenguaje, no comandos del sistema operativo. Copiar la etiqueta de la herramienta clasifica con el CWE de otro defecto; el correcto sale de leer la ficha oficial (CWE-95)."
+        },
+        {
+          "q": "Para clasificar una inyección SQL concreta, ¿qué entrada del catálogo es la preferida?",
+          "opciones": ["Una agrupación (Grouping) de inyecciones", "CWE-707, un Pillar", "CWE-74, la clase abstracta de inyección", "CWE-89, de nivel Base, que describe la causa con la precisión adecuada"],
+          "correcta": 3,
+          "exp": "La guía de mapeo por causa raíz prefiere entradas de nivel Base o Variant. Las clases y los Pillar son demasiado generales y las agrupaciones no se usan para mapear."
+        },
+        {
+          "q": "¿Qué describe la cadena con nombre CWE-680?",
+          "opciones": ["Un XSS (CWE-79) seguido de un CSRF (CWE-352)", "Un uso después de liberar (CWE-416) seguido de una doble liberación (CWE-415)", "Un path traversal (CWE-22) seguido de una inyección de comandos (CWE-78)", "Un desbordamiento de enteros (CWE-190) que produce una escritura fuera de límites (CWE-787)"],
+          "correcta": 3,
+          "exp": "CWE-680 es la cadena «desbordamiento de enteros a desbordamiento de buffer». Se corrige en el eslabón raíz: el cálculo del tamaño."
+        },
+        {
+          "q": "La comprobación «la ruta empieza por /var/data» no corrige CWE-22. ¿Por qué?",
+          "opciones": ["Python no permite comparar rutas como texto", "Un directorio hermano como /var/data-secretos empieza igual y los «..» no se normalizan con una comparación de texto", "El sistema operativo ignora los prefijos", "Solo afecta a Windows"],
+          "correcta": 1,
+          "exp": "La defensa correcta resuelve la ruta canónica y comprueba que queda dentro del directorio permitido; la prueba debe incluir el directorio hermano y las rutas absolutas."
+        },
+        {
+          "q": "¿Qué distingue a CWE-862 de CWE-863?",
+          "opciones": ["862 afecta a memoria y 863 a red", "862: no existe comprobación de autorización; 863: existe pero es incorrecta", "862 es de autenticación y 863 de autorización", "Son sinónimos"],
+          "correcta": 1,
+          "exp": "Missing Authorization frente a Incorrect Authorization. Para ambas se prueba la política completa con una matriz de usuarios y recursos."
+        },
+        {
+          "q": "Un código guarda contraseñas con MD5 sin sal. ¿Qué CWE es más específico que CWE-327?",
+          "opciones": ["CWE-259, contraseña embebida", "CWE-20, validación de entrada", "CWE-916, uso de un hash de contraseña con esfuerzo computacional insuficiente", "CWE-798, credenciales embebidas"],
+          "correcta": 2,
+          "exp": "CWE-327 es una clase general sobre algoritmos arriesgados; CWE-916 nombra la causa concreta. Se corrige con un algoritmo de coste ajustable y sal (scrypt, Argon2, bcrypt)."
+        },
+        {
+          "q": "NVD puntúa un CVE con 9,8 y CISA-ADP con 7,5. ¿Cómo se interpreta?",
+          "opciones": ["Cada fuente asumió supuestos distintos: se conserva la fuente de cada cifra y se valida la puntuación contra su vector", "Se promedian: 8,65", "La de NVD prevalece siempre", "Una de las dos se equivoca necesariamente"],
+          "correcta": 0,
+          "exp": "Las discrepancias suelen venir de supuestos sobre privilegios, alcance o configuración. Lo que sí es un error mecánico es una puntuación que no coincide con su propio vector."
+        },
+        {
+          "q": "¿Qué mide la puntuación base de CVSS?",
+          "opciones": ["La probabilidad de explotación en 30 días", "La severidad intrínseca bajo los supuestos del evaluador, no el riesgo", "Si el CVE está en KEV", "El valor del activo afectado"],
+          "correcta": 1,
+          "exp": "Las métricas ambientales y de amenaza existen para contextualizar. Sin ellas, CVSS-B no conoce tu entorno ni la explotación."
+        },
+        {
+          "q": "¿Qué expresa una puntuación EPSS?",
+          "opciones": ["Que existe un parche disponible", "Que la vulnerabilidad se explotará con certeza", "Una probabilidad estimada de que se observe explotación en los próximos 30 días, recalculada a diario", "El daño máximo posible"],
+          "correcta": 2,
+          "exp": "EPSS es un pronóstico de la amenaza. No incorpora el daño ni el entorno, y no existe un umbral universal."
+        },
+        {
+          "q": "¿Cuál de estos hechos no cumple por sí solo el criterio de explotación para entrar en KEV?",
+          "opciones": ["Un exploit público de prueba de concepto sin uso hostil observado", "Un identificador CVE", "Evidencia fiable de explotación activa", "Una acción de corrección clara"],
+          "correcta": 0,
+          "exp": "KEV exige identificador, evidencia fiable de explotación activa y una vía de corrección. Los escaneos, la investigación y las pruebas de concepto no cuentan como explotación."
+        },
+        {
+          "q": "Con los 14 casos de la clase 369, ¿qué ocurre al corregir solo lo que tiene CVSS ≥ 9,0?",
+          "opciones": ["Se dejan fuera cuatro CVE de KEV (como Heartbleed, 7,5) y se incluyen tres sin evidencia de explotación", "Es la política oficial de CISA", "Equivale a usar EPSS ≥ 0,10", "Se cubren todos los CVE de KEV"],
+          "correcta": 0,
+          "exp": "Nueve casos pasan el corte: seis están en KEV y tres no; y cuatro casos de KEV quedan por debajo. La severidad no ordena por explotación."
+        },
+        {
+          "q": "Según BOD 26-04 (usada como referencia), el mismo CVE de KEV, no automatizable y con impacto total, ¿qué plazo tiene?",
+          "opciones": ["El mismo en cualquier activo", "Más corto si el activo está expuesto que si es interno", "Más largo si está expuesto", "No depende de KEV"],
+          "correcta": 1,
+          "exp": "La exposición es una de las cuatro variables de la tabla: en el caso de libwebp el plazo pasa de 3 días y triaje forense (expuesto) a 14 días (interno)."
+        },
+        {
+          "q": "En el Top 25 de 2025, CWE-79 es la nº 1 y CWE-78 la nº 9. ¿Qué enseña su número de CVE en KEV (7 y 20)?",
+          "opciones": ["Que el Top 25 solo cuenta CVE de KEV", "Que la frecuencia de una debilidad equivale a su nivel de explotación", "Que una debilidad menos frecuente puede explotarse más, así que el puesto no sustituye a KEV ni a EPSS", "Que CWE-79 no tiene corrección"],
+          "correcta": 2,
+          "exp": "El Top 25 puntúa por frecuencia y severidad; el recuento de KEV muestra la explotación observada. Son señales distintas."
+        },
+        {
+          "q": "¿Qué convierte una corrección en una corrección verificada?",
+          "opciones": ["Que la herramienta SAST deje de avisar", "Que el equipo la apruebe en una reunión", "Haber instalado la versión parcheada", "Una prueba de ataque que funciona contra el original y falla contra el corregido, más casos legítimos y de borde"],
+          "correcta": 3,
+          "exp": "Sin una prueba que falle antes y pase después es un parche asumido. Y conviene repetirla tras el parche: hay correcciones incompletas, como la que siguió a CVE-2021-41773."
+        },
+        {
+          "q": "Un servicio descarga la URL que le indica el usuario (CWE-918). ¿Qué defensa cierra el caso de un nombre permitido cuyo DNS apunta a 127.0.0.1?",
+          "opciones": ["Resolver el nombre, exigir que todas las direcciones sean públicas y conectar a la dirección ya validada", "Comprobar solo que el esquema sea http o https", "Convertir la URL a minúsculas", "Bloquear la cadena «127.0.0.1» en el texto de la URL"],
+          "correcta": 0,
+          "exp": "Hay que validar el destino final, no el texto: lista de nombres permitidos, todas las direcciones públicas y conexión a la dirección comprobada para que un DNS cambiante no sirva. Cada salto de una redirección se valida igual."
+        },
+        {
+          "q": "¿Por qué validar solo la extensión de un archivo subido no corrige CWE-434?",
+          "opciones": ["La extensión la elige el cliente y no demuestra qué contiene el archivo: hay que validar el contenido, limitar el tamaño y guardar con un nombre generado por el servidor", "Porque las extensiones no existen en Linux", "Porque CWE-434 solo ocurre con archivos PDF", "Porque el tamaño del archivo no importa"],
+          "correcta": 0,
+          "exp": "La defensa es en capas: lista de extensiones, firma del contenido, tamaño máximo, nombre generado y almacenamiento sin ejecución. En la clase 363 la subida cae en A06 Insecure Design: es también un problema de diseño."
+        },
+        {
+          "q": "¿Qué diferencia hay entre CWE-78 y CWE-94?",
+          "opciones": ["CWE-78 solo afecta a las bases de datos", "CWE-78 inyecta comandos del sistema operativo; CWE-94 inyecta código del propio lenguaje o de una plantilla", "Son idénticas", "CWE-94 es una categoría de OWASP"],
+          "correcta": 1,
+          "exp": "Ambas son inyección (cuelgan de CWE-74; CWE-78 lo hace a través de CWE-77, la inyección de comandos en general). La corrección cambia: argumentos como lista y sin shell para CWE-78, y no evaluar entrada ni construir plantillas con ella para CWE-94."
+        },
+        {
+          "q": "Un panel de administración responde sin pedir autenticación. ¿Qué entrada describe el defecto y qué dato de 2025 la hace prioritaria?",
+          "opciones": ["CWE-79, con 7 CVE en KEV", "CWE-20, una clase desaconsejada para mapear", "CWE-306, que figura en el Top 25 de 2025 con 11 CVE en KEV", "CWE-352, con 0 CVE en KEV"],
+          "correcta": 2,
+          "exp": "CWE-306 (falta de autenticación en una función crítica) es una de las debilidades con más presencia en KEV. Su hija CWE-288 (autenticación evitada por una ruta alternativa) también está en el Top 10 de debilidades de KEV."
+        },
+        {
+          "q": "Heartbleed (CVE-2014-0160) está clasificado como CWE-125. ¿Qué tipo de defecto es?",
+          "opciones": ["Una escritura fuera de límites que ejecuta código", "Una inyección SQL", "Un desbordamiento de enteros", "Una lectura fuera de límites que filtra memoria"],
+          "correcta": 3,
+          "exp": "CWE-125 es la lectura fuera de límites: afecta sobre todo a la confidencialidad (su CVSS 3.1 es 7,5 con impacto alto solo en confidencialidad) y, aun así, está en KEV con EPSS cercano a 1."
+        },
+        {
+          "q": "¿Qué distingue CWE-120, CWE-121 y CWE-122?",
+          "opciones": ["CWE-120 describe la causa (copiar sin comprobar el tamaño) y CWE-121 y CWE-122 indican dónde ocurre (pila y montón); las tres cuelgan de la escritura fuera de límites CWE-787", "Son tres nombres del mismo CVE", "CWE-121 y CWE-122 son categorías de OWASP", "CWE-120 es un defecto de red"],
+          "correcta": 0,
+          "exp": "Las protecciones del sistema (canario, ASLR, DEP) reducen la explotabilidad pero no eliminan la debilidad: la corrección es comprobar el límite."
+        },
+        {
+          "q": "¿Por qué MITRE desaconseja usar CWE-20 (validación de entrada incorrecta) para mapear una vulnerabilidad?",
+          "opciones": ["Porque OWASP la prohíbe", "Es una clase tan general que casi cualquier debilidad podría describirse así; se prefieren entradas de nivel Base o Variant que describan la causa concreta", "Porque está obsoleta", "Porque solo existe en C"],
+          "correcta": 1,
+          "exp": "La validación es un complemento, no la corrección en el punto de uso (la consulta parametrizada, la codificación de salida). Que CWE-20 aparezca en el Top 25 no la convierte en una buena etiqueta."
+        },
+        {
+          "q": "Un CVE tiene EPSS 0,03 y percentil 0,90. ¿Cómo se lee?",
+          "opciones": ["Está en el catálogo KEV", "Su CVSS es 3", "Se espera que se explote 3 de cada 100 CVE como este en 30 días, y su probabilidad es mayor que la del 90 % de los CVE puntuados", "Hay un 90 % de probabilidad de que se explote"],
+          "correcta": 2,
+          "exp": "La probabilidad estima la amenaza y el percentil ordena. No hay un umbral universal: el 0,10 que se usa a menudo no tiene autoridad especial."
+        },
+        {
+          "q": "Un token JWT se acepta con la cabecera alg:none o con otro algoritmo que elige el cliente. ¿Qué entrada del catálogo describe el defecto?",
+          "opciones": ["CWE-89", "CWE-434", "CWE-79", "CWE-347, verificación incorrecta de una firma criptográfica"],
+          "correcta": 3,
+          "exp": "CWE-347 cuelga de CWE-345, una clase desaconsejada para mapear. La corrección es verificar siempre con el algoritmo y la clave que fija el servidor."
+        },
+        {
+          "q": "¿En qué categoría de OWASP Top 10:2025 está ahora la falsificación de peticiones del lado del servidor (CWE-918)?",
+          "opciones": ["A01 Broken Access Control", "A10 Server-Side Request Forgery", "A05 Injection", "A03 Software Supply Chain Failures"],
+          "correcta": 0,
+          "exp": "En 2021 era la categoría propia A10; en 2025 se integró en A01. La A10 de 2025 es ahora Mishandling of Exceptional Conditions."
+        }
+      ]
     }
   ]
 }

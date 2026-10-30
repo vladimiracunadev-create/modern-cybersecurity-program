@@ -97,6 +97,12 @@ autorizó acceso, no **quién**—. Las defensas de todo el tema se resumen en: 
 cada token. OAuth y OIDC son potentes pero llenos de matices, y la mayoría de las brechas vienen de
 saltarse uno de estos controles, no de romper la criptografía.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+OAuth no tiene un CWE propio: sus fallos se clasifican **por el defecto concreto**, y por eso esta clase es un buen ejercicio de la regla de causa raíz de la [clase 362](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md). Una `redirect_uri` que no se valida de forma estricta y permite enviar al usuario (y su código de autorización) a un destino arbitrario es, en el catálogo, `CWE-601` (*redirección de URL a un sitio no confiable*), de nivel *Base*, que OWASP incluye en A01. La ausencia o el mal uso del parámetro `state` es una falsificación de petición (`CWE-352`), la misma debilidad que estudiaste en la clase 098. Y la confusión de tokens entre aplicaciones es un problema de verificación del destinatario del token, que se describe mejor por el defecto (qué dejó de comprobar el servidor) que por la palabra «OAuth».
+
+Esta es la situación en la que la tabla de tres tipos de correspondencia sirve: algunos fallos tienen una entrada **oficial** que describe literalmente el defecto (`CWE-601`), otros requieren una correspondencia **inferida** con razonamiento declarado, y en algunos casos de protocolo mal implementado lo honesto es decir que ninguna entrada encaja y describir el comportamiento. Forzar un CWE que no describe el defecto estropea las estadísticas por debilidad de toda una organización.
+
 ## 📖 Definiciones y características
 
 - **OAuth 2.0**: marco de delegación de acceso a recursos sin compartir credenciales. Característica: autorización, no autenticación.

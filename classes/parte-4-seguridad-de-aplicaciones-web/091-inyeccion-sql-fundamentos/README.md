@@ -107,6 +107,12 @@ informe: la **remediación real es la consulta parametrizada** en todo el códig
 con ORMs bien usados, mínimo privilegio de la cuenta de base de datos y validación de tipos.
 Filtrar entradas es un parche que se evade; parametrizar elimina la clase entera de fallo.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+El nombre que el catálogo de MITRE da a lo que acabas de estudiar es **`CWE-89`**: *neutralización incorrecta de elementos especiales en un comando SQL*. Es una debilidad de nivel *Base*, estable y apta para mapear vulnerabilidades. Su lugar en la jerarquía confirma la causa raíz de esta clase: cuelga de `CWE-943` (neutralización incorrecta en la lógica de consultas de datos) y esta, a su vez, de `CWE-74` (inyección en general), de modo que la inyección en LDAP (`CWE-90`) o en XPath (`CWE-643`) son sus hermanas: el mismo error —mezclar datos y control— sobre otro lenguaje de consulta. En 2025 es la segunda debilidad del Top 25 de MITRE y pertenece a la categoría A05 Injection de OWASP (A03 en 2021).
+
+Conviene separar tres planos que la clase ya te dio sin nombrarlos: la **debilidad** (`CWE-89`: la concatenación), la **vulnerabilidad** concreta (un CVE en un producto y unas versiones) y el **impacto** (leer tablas, saltarse el inicio de sesión), que MITRE lista como consecuencias técnicas pero que no son la debilidad. Esa distinción importa al priorizar, porque dos casos reales con el mismo CWE pueden estar en extremos opuestos. **CVE-2023-34362** (MOVEit Transfer) es una inyección SQL con explotación confirmada en el catálogo KEV de CISA y uso en campañas de *ransomware*. **CVE-2024-2021** (una pasarela de Netentsec) es también una inyección SQL, con un EPSS de 0,74 % y sin entrada en KEV en la consulta del 2026-10-30. Misma debilidad, prioridad muy distinta: cómo decidirlo con datos se explica en la [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md). La corrección en la causa (consulta parametrizada) y su prueba se practican en la [clase 363](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md) y en `labs/appsec-code`.
+
 ## 📖 Definiciones y características
 
 - **Inyección SQL**: inserción de sintaxis SQL en una entrada que se concatena a una consulta. Característica: rompe la separación entre datos y código.

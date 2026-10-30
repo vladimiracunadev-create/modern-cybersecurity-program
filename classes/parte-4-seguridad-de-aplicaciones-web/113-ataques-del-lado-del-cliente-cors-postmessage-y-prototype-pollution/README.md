@@ -99,6 +99,12 @@ prototipo. La lección conjunta es que el navegador es un entorno hostil donde e
 comunicación entre orígenes se manejan con cuidado: la SOP protege mucho, pero cada mecanismo que la
 relaja —por necesidad legítima— es una superficie que hay que configurar con precisión.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Las tres piezas de esta clase tienen entradas distintas. Una política CORS que acepta orígenes de confianza excesiva es `CWE-942` (*política de dominio cruzado permisiva con dominios no confiables*), de nivel *Variant*, que OWASP incluye en A02 Security Misconfiguration. Un manejador de `postMessage` que no comprueba el origen del emisor es `CWE-346` (*error de validación del origen*), una entrada de nivel *Class* con uso «permitido con revisión». Y la contaminación de prototipo es `CWE-1321` (*modificación incorrectamente controlada de atributos del prototipo de un objeto*), hija de la asignación masiva `CWE-915`, lo cual cuadra con el mecanismo: se modifican atributos de un objeto que nadie debía poder modificar.
+
+Un dato de rigor: en el catálogo 5.0 `CWE-1321` no pertenece a ninguna categoría OWASP 2025. Esto no significa que no importe, sino que **las listas de OWASP y MITRE no son la totalidad del catálogo**. Si tu programa de pruebas se limita a lo que está en una lista, dejas fuera debilidades reales; la cobertura se comprueba contra el catálogo y contra tu propia superficie, no contra una lista (ver la matriz de cobertura del programa).
+
 ## 📖 Definiciones y características
 
 - **SOP (Same-Origin Policy)**: política que aísla orígenes distintos. Característica: CORS la relaja de forma controlada.

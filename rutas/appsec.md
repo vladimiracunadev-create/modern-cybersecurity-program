@@ -141,18 +141,24 @@ El orden importa. Cada parte apoya a la siguiente; saltarte los fundamentos se p
    [096 — XSS reflejado](../classes/parte-4-seguridad-de-aplicaciones-web/096-cross-site-scripting-xss-reflejado/README.md),
    [099 — SSRF](../classes/parte-4-seguridad-de-aplicaciones-web/099-server-side-request-forgery-ssrf/README.md)
    y [114 — Bug bounty: metodología y plataformas](../classes/parte-4-seguridad-de-aplicaciones-web/114-bug-bounty-metodologia-y-plataformas/README.md).
-4. 📚 [**Parte 11 — DevSecOps y SDLC**](../classes/parte-11-devsecops-y-seguridad-del-sdlc/README.md)
+4. 📚 [**Parte 20 — Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestión**](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md).
+   Lo que Parte 4 te enseñó a explotar, ahora con su nombre y su corrección verificada:
+   [361 — el catálogo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md), [362 — causa raíz y mapeo](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md), las familias de debilidades
+   ([363 — entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md), [364 — identidad y acceso](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md),
+   [365 — memoria y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md)) y [370 — el ciclo completo](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md), donde una corrección solo se da
+   por buena si una prueba falla antes y pasa después.
+5. 📚 [**Parte 11 — DevSecOps y SDLC**](../classes/parte-11-devsecops-y-seguridad-del-sdlc/README.md)
    (236–248). **El lado defensivo del rol.** Aquí aprendes a integrar la seguridad en el ciclo
    de desarrollo y a hacer del hallazgo un proceso, no un incendio. Empieza por
    [236 — Secure SDLC y shift-left](../classes/parte-11-devsecops-y-seguridad-del-sdlc/236-secure-sdlc-y-filosofia-shift-left/README.md)
    y [238 — SAST](../classes/parte-11-devsecops-y-seguridad-del-sdlc/238-sast-analisis-estatico-de-codigo/README.md).
    Si apuntas a AppSec engineer, esta parte es tan importante como la 4.
-5. 📚 [**Parte 15 — Seguridad de IA/LLM**](../classes/parte-15-seguridad-de-ia-y-machine-learning/README.md)
+6. 📚 [**Parte 15 — Seguridad de IA/LLM**](../classes/parte-15-seguridad-de-ia-y-machine-learning/README.md)
    (291–300). **La superficie moderna.** Las aplicaciones con LLM son la nueva clase de
    objetivo. Empieza por
    [295 — OWASP Top 10 para LLM](../classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md)
    y [296 — Prompt injection y jailbreaks](../classes/parte-15-seguridad-de-ia-y-machine-learning/296-prompt-injection-y-jailbreaks/README.md).
-6. 📚 Cierra el círculo con
+7. 📚 Cierra el círculo con
    [115 — Secure coding y defensa web](../classes/parte-4-seguridad-de-aplicaciones-web/115-secure-coding-y-defensa-de-aplicaciones-web/README.md):
    el puente entre romper y construir, imprescindible para el engineer.
 

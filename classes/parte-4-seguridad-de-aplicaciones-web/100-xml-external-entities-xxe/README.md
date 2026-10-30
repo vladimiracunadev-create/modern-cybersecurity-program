@@ -96,6 +96,12 @@ mensaje de la clase es claro: el XXE es un fallo de **configuración por defecto
 una línea de configuración, no una reescritura —lo que lo hace, cuando se conoce, uno de los fallos
 más fáciles de cerrar del Top 10—.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+El catálogo nombra el XXE como `CWE-611` (*restricción incorrecta de una referencia a entidad externa XML*), una debilidad de nivel *Base* cuyo padre es `CWE-610` (referencia a un recurso controlada externamente). Que su padre sea una *referencia a recurso* y no una «inyección» explica lo que viste en la clase: no se trata de ejecutar código inyectado, sino de que el analizador **resuelve una referencia** que el atacante controla. Por eso el XXE enlaza tan fácilmente con el SSRF de la clase anterior (`CWE-918`): ambas hacen que el servidor acceda a un recurso por orden del atacante. En OWASP, el XXE pasó de A05:2021 a **A02:2025 Security Misconfiguration**, lo que refleja su defensa: apagar la característica en la configuración del analizador.
+
+Un detalle que evita errores de clasificación: la expansión recursiva de entidades para agotar memoria (el *billion laughs*) no es `CWE-611` sino `CWE-776` (*restricción incorrecta de referencias recursivas de entidades en DTD*), una debilidad distinta cuyos padres son el consumo asimétrico de recursos y la recursión incontrolada. El mismo analizador mal configurado puede dar dos CWE, y el informe debe separarlos porque su impacto (lectura de archivos frente a denegación de servicio) y su prioridad difieren. La configuración segura de analizadores se recoge en la [clase 366](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
+
 ## 📖 Definiciones y características
 
 - **XXE**: abuso de entidades externas en un parser XML. Característica: permite leer archivos y hacer SSRF.

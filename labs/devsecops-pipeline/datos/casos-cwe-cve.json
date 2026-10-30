@@ -1,0 +1,2507 @@
+{
+ "casos": [
+  {
+   "afectado": [
+    {
+     "desde_incluida": "1.0.1",
+     "hasta_excluida": "1.0.1g",
+     "producto": "openssl",
+     "vendedor": "openssl"
+    },
+    {
+     "hasta_excluida": "0.9.44",
+     "producto": "filezilla_server",
+     "vendedor": "filezilla-project"
+    },
+    {
+     "producto": "application_processing_engine_firmware",
+     "vendedor": "siemens",
+     "version": "2.0"
+    },
+    {
+     "producto": "cp_1543-1_firmware",
+     "vendedor": "siemens",
+     "version": "1.1"
+    },
+    {
+     "producto": "simatic_s7-1500_firmware",
+     "vendedor": "siemens",
+     "version": "1.5"
+    },
+    {
+     "producto": "simatic_s7-1500t_firmware",
+     "vendedor": "siemens",
+     "version": "1.5"
+    },
+    {
+     "hasta_excluida": "8.3.3",
+     "producto": "elan-8.2",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "wincc_open_architecture",
+     "vendedor": "siemens",
+     "version": "3.12"
+    },
+    {
+     "producto": "v100_firmware",
+     "vendedor": "intellian",
+     "version": "1.20"
+    },
+    {
+     "producto": "v100_firmware",
+     "vendedor": "intellian",
+     "version": "1.21"
+    },
+    {
+     "producto": "v100_firmware",
+     "vendedor": "intellian",
+     "version": "1.24"
+    },
+    {
+     "producto": "v60_firmware",
+     "vendedor": "intellian",
+     "version": "1.15"
+    },
+    {
+     "producto": "v60_firmware",
+     "vendedor": "intellian",
+     "version": "1.25"
+    },
+    {
+     "producto": "micollab",
+     "vendedor": "mitel",
+     "version": "6.0"
+    },
+    {
+     "producto": "micollab",
+     "vendedor": "mitel",
+     "version": "7.0"
+    },
+    {
+     "producto": "micollab",
+     "vendedor": "mitel",
+     "version": "7.1"
+    },
+    {
+     "producto": "micollab",
+     "vendedor": "mitel",
+     "version": "7.2"
+    },
+    {
+     "producto": "micollab",
+     "vendedor": "mitel",
+     "version": "7.3"
+    },
+    {
+     "producto": "micollab",
+     "vendedor": "mitel",
+     "version": "7.3.0.104"
+    },
+    {
+     "producto": "mivoice",
+     "vendedor": "mitel",
+     "version": "1.1.2.5"
+    },
+    {
+     "producto": "mivoice",
+     "vendedor": "mitel",
+     "version": "1.1.3.3"
+    },
+    {
+     "producto": "mivoice",
+     "vendedor": "mitel",
+     "version": "1.2.0.11"
+    },
+    {
+     "producto": "mivoice",
+     "vendedor": "mitel",
+     "version": "1.3.2.2"
+    },
+    {
+     "producto": "mivoice",
+     "vendedor": "mitel",
+     "version": "1.4.0.102"
+    },
+    {
+     "producto": "opensuse",
+     "vendedor": "opensuse",
+     "version": "12.3"
+    },
+    {
+     "producto": "opensuse",
+     "vendedor": "opensuse",
+     "version": "13.1"
+    },
+    {
+     "producto": "ubuntu_linux",
+     "vendedor": "canonical",
+     "version": "12.04"
+    },
+    {
+     "producto": "ubuntu_linux",
+     "vendedor": "canonical",
+     "version": "12.10"
+    },
+    {
+     "producto": "ubuntu_linux",
+     "vendedor": "canonical",
+     "version": "13.10"
+    },
+    {
+     "producto": "fedora",
+     "vendedor": "fedoraproject",
+     "version": "19"
+    },
+    {
+     "producto": "fedora",
+     "vendedor": "fedoraproject",
+     "version": "20"
+    },
+    {
+     "producto": "gluster_storage",
+     "vendedor": "redhat",
+     "version": "2.1"
+    },
+    {
+     "producto": "storage",
+     "vendedor": "redhat",
+     "version": "2.1"
+    },
+    {
+     "producto": "virtualization",
+     "vendedor": "redhat",
+     "version": "6.0"
+    },
+    {
+     "producto": "enterprise_linux_desktop",
+     "vendedor": "redhat",
+     "version": "6.0"
+    },
+    {
+     "producto": "enterprise_linux_server",
+     "vendedor": "redhat",
+     "version": "6.0"
+    },
+    {
+     "producto": "enterprise_linux_server_aus",
+     "vendedor": "redhat",
+     "version": "6.5"
+    },
+    {
+     "producto": "enterprise_linux_server_eus",
+     "vendedor": "redhat",
+     "version": "6.5"
+    },
+    {
+     "producto": "enterprise_linux_server_tus",
+     "vendedor": "redhat",
+     "version": "6.5"
+    },
+    {
+     "producto": "enterprise_linux_workstation",
+     "vendedor": "redhat",
+     "version": "6.0"
+    }
+   ],
+   "asignador": "redhat",
+   "cve": "CVE-2014-0160",
+   "cvss31": [
+    {
+     "fuente": "NVD",
+     "puntuacion": 7.5,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "puntuacion": 7.5,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+    }
+   ],
+   "cvss31_cna": [],
+   "cvss40": [],
+   "cvss40_cna": [],
+   "cwe_adp": {
+    "CISA-ADP": [
+     "CWE-125"
+    ]
+   },
+   "cwe_cna": [],
+   "cwe_nvd": [
+    {
+     "fuente": "NVD",
+     "id": "CWE-125",
+     "tipo": "Primary"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "id": "CWE-125",
+     "tipo": "Secondary"
+    }
+   ],
+   "descripcion_en": "The (1) TLS and (2) DTLS implementations in OpenSSL 1.0.1 before 1.0.1g do not properly handle Heartbeat Extension packets, which allows remote attackers to obtain sensitive information from process memory via crafted packets that trigger a buffer over-read, as demonstrated by reading private keys, related to d1_both.c and t1_lib.c, aka the Heartbleed bug.",
+   "epss": {
+    "fecha": "2026-10-30",
+    "percentil": 0.99996,
+    "puntuacion": 0.99999
+   },
+   "kev": {
+    "agregada": "2022-05-04",
+    "cwes": [
+     "CWE-125"
+    ],
+    "fecha_limite": "2022-05-25",
+    "nombre": "OpenSSL Information Disclosure Vulnerability",
+    "ransomware": "Unknown"
+   },
+   "publicada": "2014-04-07",
+   "ssvc_cisa": {
+    "automatizable": "yes",
+    "explotacion": "active",
+    "fecha": "2025-02-07",
+    "impacto_tecnico": "partial",
+    "version": "2.0.3"
+   }
+  },
+  {
+   "afectado": [
+    {
+     "desde_incluida": "2.2.3",
+     "hasta_excluida": "2.3.32",
+     "producto": "struts",
+     "vendedor": "apache"
+    },
+    {
+     "desde_incluida": "2.5.0",
+     "hasta_excluida": "2.5.10.1",
+     "producto": "struts",
+     "vendedor": "apache"
+    },
+    {
+     "producto": "storwize_v3500_firmware",
+     "vendedor": "ibm",
+     "version": "7.7.1.6"
+    },
+    {
+     "producto": "storwize_v3500_firmware",
+     "vendedor": "ibm",
+     "version": "7.8.1.0"
+    },
+    {
+     "producto": "storwize_v5000_firmware",
+     "vendedor": "ibm",
+     "version": "7.7.1.6"
+    },
+    {
+     "producto": "storwize_v5000_firmware",
+     "vendedor": "ibm",
+     "version": "7.8.1.0"
+    },
+    {
+     "producto": "storwize_v7000_firmware",
+     "vendedor": "ibm",
+     "version": "7.7.1.6"
+    },
+    {
+     "producto": "storwize_v7000_firmware",
+     "vendedor": "ibm",
+     "version": "7.8.1.0"
+    },
+    {
+     "producto": "storage_v5030_firmware",
+     "vendedor": "lenovo",
+     "version": "7.7.1.6"
+    },
+    {
+     "producto": "storage_v5030_firmware",
+     "vendedor": "lenovo",
+     "version": "7.8.1.0"
+    },
+    {
+     "producto": "server_automation",
+     "vendedor": "hp",
+     "version": "9.1.0"
+    },
+    {
+     "producto": "server_automation",
+     "vendedor": "hp",
+     "version": "10.0.0"
+    },
+    {
+     "producto": "server_automation",
+     "vendedor": "hp",
+     "version": "10.1.0"
+    },
+    {
+     "producto": "server_automation",
+     "vendedor": "hp",
+     "version": "10.2.0"
+    },
+    {
+     "producto": "server_automation",
+     "vendedor": "hp",
+     "version": "10.5.0"
+    },
+    {
+     "producto": "weblogic_server",
+     "vendedor": "oracle",
+     "version": "10.3.6.0.0"
+    },
+    {
+     "producto": "weblogic_server",
+     "vendedor": "oracle",
+     "version": "12.1.3.0.0"
+    },
+    {
+     "producto": "weblogic_server",
+     "vendedor": "oracle",
+     "version": "12.2.1.1.0"
+    },
+    {
+     "producto": "weblogic_server",
+     "vendedor": "oracle",
+     "version": "12.2.1.2.0"
+    },
+    {
+     "hasta_excluida": "6.6.5",
+     "producto": "clearpass_policy_manager",
+     "vendedor": "arubanetworks"
+    },
+    {
+     "producto": "oncommand_balance",
+     "vendedor": "netapp"
+    }
+   ],
+   "asignador": "apache",
+   "cve": "CVE-2017-5638",
+   "cvss31": [
+    {
+     "fuente": "NVD",
+     "puntuacion": 9.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "puntuacion": 9.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    }
+   ],
+   "cvss31_cna": [],
+   "cvss40": [],
+   "cvss40_cna": [],
+   "cwe_adp": {
+    "CISA-ADP": [
+     "CWE-755"
+    ]
+   },
+   "cwe_cna": [],
+   "cwe_nvd": [
+    {
+     "fuente": "NVD",
+     "id": "CWE-755",
+     "tipo": "Primary"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "id": "CWE-755",
+     "tipo": "Secondary"
+    }
+   ],
+   "descripcion_en": "The Jakarta Multipart parser in Apache Struts 2 2.3.x before 2.3.32 and 2.5.x before 2.5.10.1 has incorrect exception handling and error-message generation during file-upload attempts, which allows remote attackers to execute arbitrary commands via a crafted Content-Type, Content-Disposition, or Content-Length HTTP header, as exploited in the wild in March 2017 with a Content-Type header containing a #cmd= string.",
+   "epss": {
+    "fecha": "2026-10-30",
+    "percentil": 0.99994,
+    "puntuacion": 0.99999
+   },
+   "kev": {
+    "agregada": "2021-11-03",
+    "cwes": [
+     "CWE-20"
+    ],
+    "fecha_limite": "2022-05-03",
+    "nombre": "Apache Struts Remote Code Execution Vulnerability",
+    "ransomware": "Known"
+   },
+   "publicada": "2017-03-11",
+   "ssvc_cisa": {
+    "automatizable": "yes",
+    "explotacion": "active",
+    "fecha": "2025-02-06",
+    "impacto_tecnico": "total",
+    "version": "2.0.3"
+   }
+  },
+  {
+   "afectado": [
+    {
+     "producto": "windows_7",
+     "vendedor": "microsoft"
+    },
+    {
+     "producto": "windows_server_2008",
+     "vendedor": "microsoft"
+    },
+    {
+     "producto": "windows_server_2008",
+     "vendedor": "microsoft",
+     "version": "r2"
+    },
+    {
+     "producto": "axiom_multix_m_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "axiom_vertix_md_trauma_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "axiom_vertix_solitaire_m_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "mobilett_xp_digital_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "multix_pro_acss_p_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "multix_pro_p_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "multix_pro_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "multix_pro_acss_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "multix_pro_navy_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "multix_swing_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "multix_top_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "multix_top_acss_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "multix_top_p_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "multix_top_acss_p_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "vertix_solitaire_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "atellica_solution_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "aptio_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "streamlab_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "centralink_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "viva_e_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "viva_twin_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "syngo_lab_process_manager",
+     "vendedor": "siemens"
+    },
+    {
+     "hasta_incluida": "2.3.2",
+     "producto": "rapidpoint_500_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "lantis_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "agile_controller-campus_firmware",
+     "vendedor": "huawei",
+     "version": "v100r002c00"
+    },
+    {
+     "producto": "agile_controller-campus_firmware",
+     "vendedor": "huawei",
+     "version": "v100r002c10"
+    },
+    {
+     "producto": "bh620_v2_firmware",
+     "vendedor": "huawei",
+     "version": "v100r002c00"
+    },
+    {
+     "producto": "bh621_v2_firmware",
+     "vendedor": "huawei",
+     "version": "v100r002c00"
+    },
+    {
+     "producto": "bh622_v2_firmware",
+     "vendedor": "huawei",
+     "version": "v100r001c00"
+    },
+    {
+     "producto": "bh640_v2_firmware",
+     "vendedor": "huawei",
+     "version": "v100r002c00"
+    },
+    {
+     "producto": "ch121_firmware",
+     "vendedor": "huawei",
+     "version": "v100r001c00"
+    },
+    {
+     "producto": "ch140_firmware",
+     "vendedor": "huawei",
+     "version": "v100r001c00"
+    },
+    {
+     "producto": "ch220_firmware",
+     "vendedor": "huawei",
+     "version": "v100r001c00"
+    },
+    {
+     "producto": "ch221_firmware",
+     "vendedor": "huawei",
+     "version": "v100r001c00"
+    },
+    {
+     "producto": "ch222_firmware",
+     "vendedor": "huawei",
+     "version": "v100r002c00"
+    },
+    {
+     "producto": "ch240_firmware",
+     "vendedor": "huawei",
+     "version": "v100r001c00"
+    },
+    {
+     "producto": "ch242_firmware",
+     "vendedor": "huawei",
+     "version": "v100r001c00"
+    }
+   ],
+   "asignador": "microsoft",
+   "cve": "CVE-2019-0708",
+   "cvss31": [
+    {
+     "fuente": "NVD",
+     "puntuacion": 9.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "puntuacion": 9.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    }
+   ],
+   "cvss31_cna": [],
+   "cvss40": [],
+   "cvss40_cna": [],
+   "cwe_adp": {
+    "CISA-ADP": [
+     "CWE-416"
+    ]
+   },
+   "cwe_cna": [],
+   "cwe_nvd": [
+    {
+     "fuente": "NVD",
+     "id": "CWE-416",
+     "tipo": "Primary"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "id": "CWE-416",
+     "tipo": "Secondary"
+    }
+   ],
+   "descripcion_en": "A remote code execution vulnerability exists in Remote Desktop Services formerly known as Terminal Services when an unauthenticated attacker connects to the target system using RDP and sends specially crafted requests, aka 'Remote Desktop Services Remote Code Execution Vulnerability'.",
+   "epss": {
+    "fecha": "2026-10-30",
+    "percentil": 0.99999,
+    "puntuacion": 0.99999
+   },
+   "kev": {
+    "agregada": "2021-11-03",
+    "cwes": [
+     "CWE-416"
+    ],
+    "fecha_limite": "2022-05-03",
+    "nombre": "Microsoft Remote Desktop Services Remote Code Execution Vulnerability",
+    "ransomware": "Known"
+   },
+   "publicada": "2019-05-16",
+   "ssvc_cisa": {
+    "automatizable": "yes",
+    "explotacion": "active",
+    "fecha": "2025-02-07",
+    "impacto_tecnico": "total",
+    "version": "2.0.3"
+   }
+  },
+  {
+   "afectado": [
+    {
+     "desde_incluida": "1.8.2",
+     "hasta_excluida": "1.8.32",
+     "producto": "sudo",
+     "vendedor": "sudo_project"
+    },
+    {
+     "desde_incluida": "1.9.0",
+     "hasta_excluida": "1.9.5",
+     "producto": "sudo",
+     "vendedor": "sudo_project"
+    },
+    {
+     "producto": "sudo",
+     "vendedor": "sudo_project",
+     "version": "1.9.5"
+    },
+    {
+     "producto": "fedora",
+     "vendedor": "fedoraproject",
+     "version": "32"
+    },
+    {
+     "producto": "fedora",
+     "vendedor": "fedoraproject",
+     "version": "33"
+    },
+    {
+     "producto": "debian_linux",
+     "vendedor": "debian",
+     "version": "9.0"
+    },
+    {
+     "producto": "debian_linux",
+     "vendedor": "debian",
+     "version": "10.0"
+    },
+    {
+     "producto": "active_iq_unified_manager",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "cloud_backup",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "hci_management_node",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "oncommand_unified_manager_core_package",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "ontap_select_deploy_administration_utility",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "ontap_tools",
+     "vendedor": "netapp",
+     "version": "9"
+    },
+    {
+     "producto": "solidfire",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "web_gateway",
+     "vendedor": "mcafee",
+     "version": "8.2.17"
+    },
+    {
+     "producto": "web_gateway",
+     "vendedor": "mcafee",
+     "version": "9.2.8"
+    },
+    {
+     "producto": "web_gateway",
+     "vendedor": "mcafee",
+     "version": "10.0.4"
+    },
+    {
+     "producto": "diskstation_manager_unified_controller",
+     "vendedor": "synology",
+     "version": "3.0"
+    },
+    {
+     "producto": "diskstation_manager",
+     "vendedor": "synology",
+     "version": "6.2"
+    },
+    {
+     "producto": "skynas_firmware",
+     "vendedor": "synology"
+    },
+    {
+     "producto": "vs960hd_firmware",
+     "vendedor": "synology"
+    },
+    {
+     "hasta_excluida": "21.1.1",
+     "producto": "privilege_management_for_mac",
+     "vendedor": "beyondtrust"
+    },
+    {
+     "hasta_excluida": "10.3.2-10",
+     "producto": "privilege_management_for_unix\\/linux",
+     "vendedor": "beyondtrust"
+    },
+    {
+     "producto": "micros_compact_workstation_3_firmware",
+     "vendedor": "oracle",
+     "version": "310"
+    },
+    {
+     "desde_incluida": "400",
+     "hasta_incluida": "410",
+     "producto": "micros_es400_firmware",
+     "vendedor": "oracle"
+    },
+    {
+     "producto": "micros_kitchen_display_system_firmware",
+     "vendedor": "oracle",
+     "version": "210"
+    },
+    {
+     "producto": "micros_workstation_5a_firmware",
+     "vendedor": "oracle",
+     "version": "5a"
+    },
+    {
+     "desde_incluida": "610",
+     "hasta_incluida": "655",
+     "producto": "micros_workstation_6_firmware",
+     "vendedor": "oracle"
+    },
+    {
+     "desde_incluida": "10.3.0.0.0",
+     "hasta_incluida": "10.3.0.2.1",
+     "producto": "communications_performance_intelligence_center",
+     "vendedor": "oracle"
+    },
+    {
+     "desde_incluida": "10.4.0.1.0",
+     "hasta_incluida": "10.4.0.3.1",
+     "producto": "communications_performance_intelligence_center",
+     "vendedor": "oracle"
+    },
+    {
+     "desde_incluida": "7.4.0",
+     "hasta_incluida": "7.7.1",
+     "producto": "tekelec_platform_distribution",
+     "vendedor": "oracle"
+    }
+   ],
+   "asignador": "mitre",
+   "cve": "CVE-2021-3156",
+   "cvss31": [
+    {
+     "fuente": "NVD",
+     "puntuacion": 7.8,
+     "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "puntuacion": 7.8,
+     "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+    }
+   ],
+   "cvss31_cna": [],
+   "cvss40": [],
+   "cvss40_cna": [],
+   "cwe_adp": {
+    "CISA-ADP": [
+     "CWE-193"
+    ]
+   },
+   "cwe_cna": [],
+   "cwe_nvd": [
+    {
+     "fuente": "NVD",
+     "id": "CWE-193",
+     "tipo": "Primary"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "id": "CWE-193",
+     "tipo": "Secondary"
+    }
+   ],
+   "descripcion_en": "Sudo before 1.9.5p2 contains an off-by-one error that can result in a heap-based buffer overflow, which allows privilege escalation to root via \"sudoedit -s\" and a command-line argument that ends with a single backslash character.",
+   "epss": {
+    "fecha": "2026-10-30",
+    "percentil": 0.99976,
+    "puntuacion": 0.99962
+   },
+   "kev": {
+    "agregada": "2022-04-06",
+    "cwes": [
+     "CWE-122",
+     "CWE-193"
+    ],
+    "fecha_limite": "2022-04-27",
+    "nombre": "Sudo Heap-Based Buffer Overflow Vulnerability",
+    "ransomware": "Unknown"
+   },
+   "publicada": "2021-01-26",
+   "ssvc_cisa": {
+    "automatizable": "no",
+    "explotacion": "active",
+    "fecha": "2025-02-03",
+    "impacto_tecnico": "total",
+    "version": "2.0.3"
+   }
+  },
+  {
+   "afectado": [
+    {
+     "producto": "http_server",
+     "vendedor": "apache",
+     "version": "2.4.49"
+    },
+    {
+     "producto": "fedora",
+     "vendedor": "fedoraproject",
+     "version": "34"
+    },
+    {
+     "producto": "fedora",
+     "vendedor": "fedoraproject",
+     "version": "35"
+    },
+    {
+     "producto": "instantis_enterprisetrack",
+     "vendedor": "oracle",
+     "version": "17.1"
+    },
+    {
+     "producto": "instantis_enterprisetrack",
+     "vendedor": "oracle",
+     "version": "17.2"
+    },
+    {
+     "producto": "instantis_enterprisetrack",
+     "vendedor": "oracle",
+     "version": "17.3"
+    },
+    {
+     "producto": "cloud_backup",
+     "vendedor": "netapp"
+    }
+   ],
+   "asignador": "apache",
+   "cve": "CVE-2021-41773",
+   "cvss31": [
+    {
+     "fuente": "NVD",
+     "puntuacion": 9.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "puntuacion": 7.5,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+    }
+   ],
+   "cvss31_cna": [],
+   "cvss40": [],
+   "cvss40_cna": [],
+   "cwe_adp": {},
+   "cwe_cna": [
+    "CWE-22"
+   ],
+   "cwe_nvd": [
+    {
+     "fuente": "security@apache.org",
+     "id": "CWE-22",
+     "tipo": "Secondary"
+    },
+    {
+     "fuente": "NVD",
+     "id": "CWE-22",
+     "tipo": "Primary"
+    }
+   ],
+   "descripcion_en": "A flaw was found in a change made to path normalization in Apache HTTP Server 2.4.49. An attacker could use a path traversal attack to map URLs to files outside the directories configured by Alias-like directives. If files outside of these directories are not protected by the usual default configuration \"require all denied\", these requests can succeed. If CGI scripts are also enabled for these aliased pathes, this could allow for remote code execution. This issue is known to be exploited in the wild. This issue only affects Apache 2.4.49 and not earlier versions. The fix in Apache HTTP Server 2.4.50 was found to be incomplete, see CVE-2021-42013.",
+   "epss": {
+    "fecha": "2026-10-30",
+    "percentil": 0.99986,
+    "puntuacion": 0.99992
+   },
+   "kev": {
+    "agregada": "2021-11-03",
+    "cwes": [
+     "CWE-22"
+    ],
+    "fecha_limite": "2021-11-17",
+    "nombre": "Apache HTTP Server Path Traversal Vulnerability",
+    "ransomware": "Known"
+   },
+   "publicada": "2021-10-05",
+   "ssvc_cisa": {
+    "automatizable": "yes",
+    "explotacion": "active",
+    "fecha": "2025-02-04",
+    "impacto_tecnico": "total",
+    "version": "2.0.3"
+   }
+  },
+  {
+   "afectado": [
+    {
+     "hasta_excluida": "2.7.0",
+     "producto": "6bk1602-0aa12-0tp0_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "hasta_excluida": "2.7.0",
+     "producto": "6bk1602-0aa22-0tp0_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "hasta_excluida": "2.7.0",
+     "producto": "6bk1602-0aa32-0tp0_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "hasta_excluida": "2.7.0",
+     "producto": "6bk1602-0aa42-0tp0_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "hasta_excluida": "2.7.0",
+     "producto": "6bk1602-0aa52-0tp0_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "desde_incluida": "2.0.1",
+     "hasta_excluida": "2.3.1",
+     "producto": "log4j",
+     "vendedor": "apache"
+    },
+    {
+     "desde_incluida": "2.4.0",
+     "hasta_excluida": "2.12.2",
+     "producto": "log4j",
+     "vendedor": "apache"
+    },
+    {
+     "desde_incluida": "2.13.0",
+     "hasta_excluida": "2.15.0",
+     "producto": "log4j",
+     "vendedor": "apache"
+    },
+    {
+     "producto": "log4j",
+     "vendedor": "apache",
+     "version": "2.0"
+    },
+    {
+     "producto": "sppa-t3000_ses3000_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "hasta_excluida": "2019.1",
+     "producto": "capital",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "capital",
+     "vendedor": "siemens",
+     "version": "2019.1"
+    },
+    {
+     "hasta_excluida": "10.4.2",
+     "producto": "comos",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "desigo_cc_advanced_reports",
+     "vendedor": "siemens",
+     "version": "3.0"
+    },
+    {
+     "producto": "desigo_cc_advanced_reports",
+     "vendedor": "siemens",
+     "version": "4.0"
+    },
+    {
+     "producto": "desigo_cc_advanced_reports",
+     "vendedor": "siemens",
+     "version": "4.1"
+    },
+    {
+     "producto": "desigo_cc_advanced_reports",
+     "vendedor": "siemens",
+     "version": "4.2"
+    },
+    {
+     "producto": "desigo_cc_advanced_reports",
+     "vendedor": "siemens",
+     "version": "5.0"
+    },
+    {
+     "producto": "desigo_cc_advanced_reports",
+     "vendedor": "siemens",
+     "version": "5.1"
+    },
+    {
+     "producto": "desigo_cc_info_center",
+     "vendedor": "siemens",
+     "version": "5.0"
+    },
+    {
+     "producto": "desigo_cc_info_center",
+     "vendedor": "siemens",
+     "version": "5.1"
+    },
+    {
+     "hasta_excluida": "2021-12-13",
+     "producto": "e-car_operation_center",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "energy_engage",
+     "vendedor": "siemens",
+     "version": "3.1"
+    },
+    {
+     "producto": "energyip",
+     "vendedor": "siemens",
+     "version": "8.5"
+    },
+    {
+     "producto": "energyip",
+     "vendedor": "siemens",
+     "version": "8.6"
+    },
+    {
+     "producto": "energyip",
+     "vendedor": "siemens",
+     "version": "8.7"
+    },
+    {
+     "producto": "energyip",
+     "vendedor": "siemens",
+     "version": "9.0"
+    },
+    {
+     "hasta_excluida": "3.8.0.12",
+     "producto": "energyip_prepay",
+     "vendedor": "siemens"
+    },
+    {
+     "hasta_excluida": "8.6.2j-398",
+     "producto": "gma-manager",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "head-end_system_universal_device_integration_system",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "industrial_edge_management",
+     "vendedor": "siemens"
+    },
+    {
+     "hasta_excluida": "2021-12-13",
+     "producto": "industrial_edge_management_hub",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "logo\\!_soft_comfort",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "mendix",
+     "vendedor": "siemens"
+    },
+    {
+     "hasta_excluida": "2021-12-16",
+     "producto": "mindsphere",
+     "vendedor": "siemens"
+    },
+    {
+     "hasta_excluida": "2021-12-13",
+     "producto": "navigator",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "nx",
+     "vendedor": "siemens"
+    },
+    {
+     "desde_incluida": "3.2",
+     "hasta_excluida": "3.5",
+     "producto": "opcenter_intelligence",
+     "vendedor": "siemens"
+    },
+    {
+     "hasta_incluida": "1.1.3",
+     "producto": "operation_scheduler",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "sentron_powermanager",
+     "vendedor": "siemens",
+     "version": "4.1"
+    }
+   ],
+   "asignador": "apache",
+   "cve": "CVE-2021-44228",
+   "cvss31": [
+    {
+     "fuente": "NVD",
+     "puntuacion": 10.0,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "puntuacion": 10.0,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+    }
+   ],
+   "cvss31_cna": [],
+   "cvss40": [],
+   "cvss40_cna": [],
+   "cwe_adp": {},
+   "cwe_cna": [
+    "CWE-20",
+    "CWE-400",
+    "CWE-502"
+   ],
+   "cwe_nvd": [
+    {
+     "fuente": "security@apache.org",
+     "id": "CWE-20",
+     "tipo": "Secondary"
+    },
+    {
+     "fuente": "security@apache.org",
+     "id": "CWE-400",
+     "tipo": "Secondary"
+    },
+    {
+     "fuente": "security@apache.org",
+     "id": "CWE-502",
+     "tipo": "Secondary"
+    },
+    {
+     "fuente": "NVD",
+     "id": "CWE-917",
+     "tipo": "Secondary"
+    }
+   ],
+   "descripcion_en": "Apache Log4j2 2.0-beta9 through 2.15.0 (excluding security releases 2.12.2, 2.12.3, and 2.3.1) JNDI features used in configuration, log messages, and parameters do not protect against attacker controlled LDAP and other JNDI related endpoints. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers when message lookup substitution is enabled. From log4j 2.15.0, this behavior has been disabled by default. From version 2.16.0 (along with 2.12.2, 2.12.3, and 2.3.1), this functionality has been completely removed. Note that this vulnerability is specific to log4j-core and does not affect log4net, log4cxx, or other Apache Logging Services projects.",
+   "epss": {
+    "fecha": "2026-10-30",
+    "percentil": 1.0,
+    "puntuacion": 0.99999
+   },
+   "kev": {
+    "agregada": "2021-12-10",
+    "cwes": [
+     "CWE-20",
+     "CWE-400",
+     "CWE-502"
+    ],
+    "fecha_limite": "2021-12-24",
+    "nombre": "Apache Log4j2 Remote Code Execution Vulnerability",
+    "ransomware": "Known"
+   },
+   "publicada": "2021-12-10",
+   "ssvc_cisa": {
+    "automatizable": "yes",
+    "explotacion": "active",
+    "fecha": "2025-02-04",
+    "impacto_tecnico": "total",
+    "version": "2.0.3"
+   }
+  },
+  {
+   "afectado": [
+    {
+     "hasta_excluida": "5.2.20",
+     "producto": "spring_framework",
+     "vendedor": "vmware"
+    },
+    {
+     "desde_incluida": "5.3.0",
+     "hasta_excluida": "5.3.18",
+     "producto": "spring_framework",
+     "vendedor": "vmware"
+    },
+    {
+     "hasta_excluida": "2.1.0",
+     "producto": "cx_cloud_agent",
+     "vendedor": "cisco"
+    },
+    {
+     "producto": "communications_cloud_native_core_automated_test_suite",
+     "vendedor": "oracle",
+     "version": "1.9.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_automated_test_suite",
+     "vendedor": "oracle",
+     "version": "22.1.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_console",
+     "vendedor": "oracle",
+     "version": "1.9.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_console",
+     "vendedor": "oracle",
+     "version": "22.1.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_network_exposure_function",
+     "vendedor": "oracle",
+     "version": "22.1.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_network_function_cloud_native_environment",
+     "vendedor": "oracle",
+     "version": "1.10.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_network_function_cloud_native_environment",
+     "vendedor": "oracle",
+     "version": "22.1.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_network_repository_function",
+     "vendedor": "oracle",
+     "version": "1.15.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_network_repository_function",
+     "vendedor": "oracle",
+     "version": "22.1.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_network_slice_selection_function",
+     "vendedor": "oracle",
+     "version": "1.8.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_network_slice_selection_function",
+     "vendedor": "oracle",
+     "version": "1.15.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_network_slice_selection_function",
+     "vendedor": "oracle",
+     "version": "22.1.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_policy",
+     "vendedor": "oracle",
+     "version": "1.15.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_policy",
+     "vendedor": "oracle",
+     "version": "22.1.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_security_edge_protection_proxy",
+     "vendedor": "oracle",
+     "version": "1.7.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_security_edge_protection_proxy",
+     "vendedor": "oracle",
+     "version": "22.1.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_unified_data_repository",
+     "vendedor": "oracle",
+     "version": "1.15.0"
+    },
+    {
+     "producto": "communications_cloud_native_core_unified_data_repository",
+     "vendedor": "oracle",
+     "version": "22.1.0"
+    },
+    {
+     "producto": "communications_policy_management",
+     "vendedor": "oracle",
+     "version": "12.6.0.0.0"
+    },
+    {
+     "producto": "financial_services_analytical_applications_infrastructure",
+     "vendedor": "oracle",
+     "version": "8.1.1"
+    },
+    {
+     "producto": "financial_services_analytical_applications_infrastructure",
+     "vendedor": "oracle",
+     "version": "8.1.2.0"
+    },
+    {
+     "producto": "financial_services_behavior_detection_platform",
+     "vendedor": "oracle",
+     "version": "8.1.1.0"
+    },
+    {
+     "producto": "financial_services_behavior_detection_platform",
+     "vendedor": "oracle",
+     "version": "8.1.1.1"
+    },
+    {
+     "producto": "financial_services_behavior_detection_platform",
+     "vendedor": "oracle",
+     "version": "8.1.2.0"
+    },
+    {
+     "producto": "financial_services_enterprise_case_management",
+     "vendedor": "oracle",
+     "version": "8.1.1.0"
+    },
+    {
+     "producto": "financial_services_enterprise_case_management",
+     "vendedor": "oracle",
+     "version": "8.1.1.1"
+    },
+    {
+     "producto": "financial_services_enterprise_case_management",
+     "vendedor": "oracle",
+     "version": "8.1.2.0"
+    },
+    {
+     "hasta_excluida": "8.0.29",
+     "producto": "mysql_enterprise_monitor",
+     "vendedor": "oracle"
+    },
+    {
+     "producto": "product_lifecycle_analytics",
+     "vendedor": "oracle",
+     "version": "3.6.1"
+    },
+    {
+     "producto": "retail_xstore_point_of_service",
+     "vendedor": "oracle",
+     "version": "20.0.1"
+    },
+    {
+     "producto": "retail_xstore_point_of_service",
+     "vendedor": "oracle",
+     "version": "21.0.0"
+    },
+    {
+     "producto": "sd-wan_edge",
+     "vendedor": "oracle",
+     "version": "9.0"
+    },
+    {
+     "producto": "sd-wan_edge",
+     "vendedor": "oracle",
+     "version": "9.1"
+    },
+    {
+     "hasta_excluida": "2.0.4",
+     "producto": "operation_scheduler",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "sipass_integrated",
+     "vendedor": "siemens",
+     "version": "2.80"
+    },
+    {
+     "producto": "sipass_integrated",
+     "vendedor": "siemens",
+     "version": "2.85"
+    },
+    {
+     "producto": "siveillance_identity",
+     "vendedor": "siemens",
+     "version": "1.5"
+    }
+   ],
+   "asignador": "vmware",
+   "cve": "CVE-2022-22965",
+   "cvss31": [
+    {
+     "fuente": "NVD",
+     "puntuacion": 9.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "puntuacion": 9.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    }
+   ],
+   "cvss31_cna": [],
+   "cvss40": [],
+   "cvss40_cna": [],
+   "cwe_adp": {},
+   "cwe_cna": [
+    "CWE-94"
+   ],
+   "cwe_nvd": [
+    {
+     "fuente": "security@vmware.com",
+     "id": "CWE-94",
+     "tipo": "Secondary"
+    },
+    {
+     "fuente": "NVD",
+     "id": "CWE-94",
+     "tipo": "Primary"
+    }
+   ],
+   "descripcion_en": "A Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding. The specific exploit requires the application to run on Tomcat as a WAR deployment. If the application is deployed as a Spring Boot executable jar, i.e. the default, it is not vulnerable to the exploit. However, the nature of the vulnerability is more general, and there may be other ways to exploit it.",
+   "epss": {
+    "fecha": "2026-10-30",
+    "percentil": 0.9995,
+    "puntuacion": 0.99638
+   },
+   "kev": {
+    "agregada": "2022-04-04",
+    "cwes": [
+     "CWE-94"
+    ],
+    "fecha_limite": "2022-04-25",
+    "nombre": "Spring Framework JDK 9+ Remote Code Execution Vulnerability",
+    "ransomware": "Unknown"
+   },
+   "publicada": "2022-04-01",
+   "ssvc_cisa": {
+    "automatizable": "yes",
+    "explotacion": "active",
+    "fecha": "2025-01-29",
+    "impacto_tecnico": "total",
+    "version": "2.0.3"
+   }
+  },
+  {
+   "afectado": [
+    {
+     "hasta_excluida": "14.0.5.45",
+     "producto": "moveit_cloud",
+     "vendedor": "progress"
+    },
+    {
+     "desde_incluida": "14.1.0.0",
+     "hasta_excluida": "14.1.6.97",
+     "producto": "moveit_cloud",
+     "vendedor": "progress"
+    },
+    {
+     "desde_incluida": "15.0.0.0",
+     "hasta_excluida": "15.0.2.39",
+     "producto": "moveit_cloud",
+     "vendedor": "progress"
+    },
+    {
+     "hasta_excluida": "2021.0.7",
+     "producto": "moveit_transfer",
+     "vendedor": "progress"
+    },
+    {
+     "desde_incluida": "2021.1.0",
+     "hasta_excluida": "2021.1.5",
+     "producto": "moveit_transfer",
+     "vendedor": "progress"
+    },
+    {
+     "desde_incluida": "2022.0.0",
+     "hasta_excluida": "2022.0.5",
+     "producto": "moveit_transfer",
+     "vendedor": "progress"
+    },
+    {
+     "desde_incluida": "2022.1.0",
+     "hasta_excluida": "2022.1.6",
+     "producto": "moveit_transfer",
+     "vendedor": "progress"
+    },
+    {
+     "desde_incluida": "2023.0.0",
+     "hasta_excluida": "2023.0.2",
+     "producto": "moveit_transfer",
+     "vendedor": "progress"
+    }
+   ],
+   "asignador": "mitre",
+   "cve": "CVE-2023-34362",
+   "cvss31": [
+    {
+     "fuente": "NVD",
+     "puntuacion": 9.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "puntuacion": 9.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    }
+   ],
+   "cvss31_cna": [],
+   "cvss40": [],
+   "cvss40_cna": [],
+   "cwe_adp": {
+    "CISA-ADP": [
+     "CWE-89"
+    ]
+   },
+   "cwe_cna": [],
+   "cwe_nvd": [
+    {
+     "fuente": "NVD",
+     "id": "CWE-89",
+     "tipo": "Primary"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "id": "CWE-89",
+     "tipo": "Secondary"
+    }
+   ],
+   "descripcion_en": "In Progress MOVEit Transfer before 2021.0.6 (13.0.6), 2021.1.4 (13.1.4), 2022.0.4 (14.0.4), 2022.1.5 (14.1.5), and 2023.0.1 (15.0.1), a SQL injection vulnerability has been found in the MOVEit Transfer web application that could allow an unauthenticated attacker to gain access to MOVEit Transfer's database. Depending on the database engine being used (MySQL, Microsoft SQL Server, or Azure SQL), an attacker may be able to infer information about the structure and contents of the database, and execute SQL statements that alter or delete database elements. NOTE: this is exploited in the wild in May and June 2023; exploitation of unpatched systems can occur via HTTP or HTTPS. All versions (e.g., 2020.0 and 2019x) before the five explicitly mentioned versions are affected, including older unsupported versions.",
+   "epss": {
+    "fecha": "2026-10-30",
+    "percentil": 0.9997,
+    "puntuacion": 0.99934
+   },
+   "kev": {
+    "agregada": "2023-06-02",
+    "cwes": [
+     "CWE-89"
+    ],
+    "fecha_limite": "2023-06-23",
+    "nombre": "Progress MOVEit Transfer SQL Injection Vulnerability",
+    "ransomware": "Known"
+   },
+   "publicada": "2023-06-02",
+   "ssvc_cisa": {
+    "automatizable": "yes",
+    "explotacion": "active",
+    "fecha": "2024-06-27",
+    "impacto_tecnico": "total",
+    "version": "2.0.3"
+   }
+  },
+  {
+   "afectado": [
+    {
+     "desde_incluida": "3.1.5",
+     "producto": "simatic_s7-1500_cpu_1518f-4_pn\\/dp_mfp_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "hasta_excluida": "1.0",
+     "producto": "sinec_ins",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "sinec_ins",
+     "vendedor": "siemens",
+     "version": "1.0"
+    },
+    {
+     "hasta_excluida": "3.0",
+     "producto": "sinec_nms",
+     "vendedor": "siemens"
+    },
+    {
+     "hasta_excluida": "1.1",
+     "producto": "st7_scadaconnect",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "ruggedcom_ape1808_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "desde_incluida": "3.1.5",
+     "producto": "simatic_s7-1500_cpu_1518-4_pn\\/dp_mfp_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "desde_incluida": "3.1.5",
+     "producto": "siplus_s7-1500_cpu_1518-4_pn\\/dp_mfp_firmware",
+     "vendedor": "siemens"
+    },
+    {
+     "producto": "http",
+     "vendedor": "ietf",
+     "version": "2.0"
+    },
+    {
+     "hasta_excluida": "1.57.0",
+     "producto": "nghttp2",
+     "vendedor": "nghttp2"
+    },
+    {
+     "hasta_excluida": "4.1.100",
+     "producto": "netty",
+     "vendedor": "netty"
+    },
+    {
+     "producto": "envoy",
+     "vendedor": "envoyproxy",
+     "version": "1.24.10"
+    },
+    {
+     "producto": "envoy",
+     "vendedor": "envoyproxy",
+     "version": "1.25.9"
+    },
+    {
+     "producto": "envoy",
+     "vendedor": "envoyproxy",
+     "version": "1.26.4"
+    },
+    {
+     "producto": "envoy",
+     "vendedor": "envoyproxy",
+     "version": "1.27.0"
+    },
+    {
+     "hasta_excluida": "9.4.53",
+     "producto": "jetty",
+     "vendedor": "eclipse"
+    },
+    {
+     "desde_incluida": "10.0.0",
+     "hasta_excluida": "10.0.17",
+     "producto": "jetty",
+     "vendedor": "eclipse"
+    },
+    {
+     "desde_incluida": "11.0.0",
+     "hasta_excluida": "11.0.17",
+     "producto": "jetty",
+     "vendedor": "eclipse"
+    },
+    {
+     "desde_incluida": "12.0.0",
+     "hasta_excluida": "12.0.2",
+     "producto": "jetty",
+     "vendedor": "eclipse"
+    },
+    {
+     "hasta_excluida": "2.7.5",
+     "producto": "caddy",
+     "vendedor": "caddyserver"
+    },
+    {
+     "hasta_excluida": "1.20.10",
+     "producto": "go",
+     "vendedor": "golang"
+    },
+    {
+     "desde_incluida": "1.21.0",
+     "hasta_excluida": "1.21.3",
+     "producto": "go",
+     "vendedor": "golang"
+    },
+    {
+     "hasta_excluida": "0.17.0",
+     "producto": "http2",
+     "vendedor": "golang"
+    },
+    {
+     "hasta_excluida": "0.17.0",
+     "producto": "networking",
+     "vendedor": "golang"
+    },
+    {
+     "desde_incluida": "13.1.0",
+     "hasta_incluida": "13.1.5",
+     "producto": "big-ip_access_policy_manager",
+     "vendedor": "f5"
+    },
+    {
+     "desde_incluida": "14.1.0",
+     "hasta_incluida": "14.1.5",
+     "producto": "big-ip_access_policy_manager",
+     "vendedor": "f5"
+    },
+    {
+     "desde_incluida": "15.1.0",
+     "hasta_incluida": "15.1.10",
+     "producto": "big-ip_access_policy_manager",
+     "vendedor": "f5"
+    },
+    {
+     "desde_incluida": "16.1.0",
+     "hasta_incluida": "16.1.4",
+     "producto": "big-ip_access_policy_manager",
+     "vendedor": "f5"
+    },
+    {
+     "producto": "big-ip_access_policy_manager",
+     "vendedor": "f5",
+     "version": "17.1.0"
+    },
+    {
+     "desde_incluida": "13.1.0",
+     "hasta_incluida": "13.1.5",
+     "producto": "big-ip_advanced_firewall_manager",
+     "vendedor": "f5"
+    },
+    {
+     "desde_incluida": "14.1.0",
+     "hasta_incluida": "14.1.5",
+     "producto": "big-ip_advanced_firewall_manager",
+     "vendedor": "f5"
+    },
+    {
+     "desde_incluida": "15.1.0",
+     "hasta_incluida": "15.1.10",
+     "producto": "big-ip_advanced_firewall_manager",
+     "vendedor": "f5"
+    },
+    {
+     "desde_incluida": "16.1.0",
+     "hasta_incluida": "16.1.4",
+     "producto": "big-ip_advanced_firewall_manager",
+     "vendedor": "f5"
+    },
+    {
+     "producto": "big-ip_advanced_firewall_manager",
+     "vendedor": "f5",
+     "version": "17.1.0"
+    },
+    {
+     "desde_incluida": "13.1.0",
+     "hasta_incluida": "13.1.5",
+     "producto": "big-ip_advanced_web_application_firewall",
+     "vendedor": "f5"
+    },
+    {
+     "desde_incluida": "14.1.0",
+     "hasta_incluida": "14.1.5",
+     "producto": "big-ip_advanced_web_application_firewall",
+     "vendedor": "f5"
+    },
+    {
+     "desde_incluida": "15.1.0",
+     "hasta_incluida": "15.1.10",
+     "producto": "big-ip_advanced_web_application_firewall",
+     "vendedor": "f5"
+    },
+    {
+     "desde_incluida": "16.1.0",
+     "hasta_incluida": "16.1.4",
+     "producto": "big-ip_advanced_web_application_firewall",
+     "vendedor": "f5"
+    },
+    {
+     "producto": "big-ip_advanced_web_application_firewall",
+     "vendedor": "f5",
+     "version": "17.1.0"
+    },
+    {
+     "desde_incluida": "13.1.0",
+     "hasta_incluida": "13.1.5",
+     "producto": "big-ip_analytics",
+     "vendedor": "f5"
+    }
+   ],
+   "asignador": "mitre",
+   "cve": "CVE-2023-44487",
+   "cvss31": [
+    {
+     "fuente": "NVD",
+     "puntuacion": 7.5,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "puntuacion": 7.5,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+    }
+   ],
+   "cvss31_cna": [],
+   "cvss40": [],
+   "cvss40_cna": [],
+   "cwe_adp": {
+    "CISA-ADP": [
+     "CWE-400"
+    ]
+   },
+   "cwe_cna": [],
+   "cwe_nvd": [
+    {
+     "fuente": "NVD",
+     "id": "NVD-CWE-noinfo",
+     "tipo": "Primary"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "id": "CWE-400",
+     "tipo": "Secondary"
+    }
+   ],
+   "descripcion_en": "The HTTP/2 protocol allows a denial of service (server resource consumption) because request cancellation can reset many streams quickly, as exploited in the wild in August through October 2023.",
+   "epss": {
+    "fecha": "2026-10-30",
+    "percentil": 0.99998,
+    "puntuacion": 0.99999
+   },
+   "kev": {
+    "agregada": "2023-10-10",
+    "cwes": [
+     "CWE-400"
+    ],
+    "fecha_limite": "2023-10-31",
+    "nombre": "HTTP/2 Rapid Reset Attack Vulnerability",
+    "ransomware": "Unknown"
+   },
+   "publicada": "2023-10-10",
+   "ssvc_cisa": {
+    "automatizable": "yes",
+    "explotacion": "active",
+    "fecha": "2024-07-23",
+    "impacto_tecnico": "partial",
+    "version": "2.0.3"
+   }
+  },
+  {
+   "afectado": [
+    {
+     "hasta_excluida": "116.0.5845.187",
+     "producto": "chrome",
+     "vendedor": "google"
+    },
+    {
+     "producto": "fedora",
+     "vendedor": "fedoraproject",
+     "version": "37"
+    },
+    {
+     "producto": "fedora",
+     "vendedor": "fedoraproject",
+     "version": "38"
+    },
+    {
+     "producto": "fedora",
+     "vendedor": "fedoraproject",
+     "version": "39"
+    },
+    {
+     "producto": "debian_linux",
+     "vendedor": "debian",
+     "version": "10.0"
+    },
+    {
+     "producto": "debian_linux",
+     "vendedor": "debian",
+     "version": "11.0"
+    },
+    {
+     "producto": "debian_linux",
+     "vendedor": "debian",
+     "version": "12.0"
+    },
+    {
+     "hasta_excluida": "102.15.1",
+     "producto": "firefox",
+     "vendedor": "mozilla"
+    },
+    {
+     "hasta_excluida": "117.0.1",
+     "producto": "firefox",
+     "vendedor": "mozilla"
+    },
+    {
+     "desde_incluida": "115.1.0",
+     "hasta_excluida": "115.2.1",
+     "producto": "firefox",
+     "vendedor": "mozilla"
+    },
+    {
+     "hasta_excluida": "102.15.1",
+     "producto": "thunderbird",
+     "vendedor": "mozilla"
+    },
+    {
+     "desde_incluida": "115.0",
+     "hasta_excluida": "115.2.2",
+     "producto": "thunderbird",
+     "vendedor": "mozilla"
+    },
+    {
+     "hasta_excluida": "116.0.1938.81",
+     "producto": "edge_chromium",
+     "vendedor": "microsoft"
+    },
+    {
+     "hasta_excluida": "1.6.00.26463",
+     "producto": "teams",
+     "vendedor": "microsoft"
+    },
+    {
+     "hasta_excluida": "1.6.00.26474",
+     "producto": "teams",
+     "vendedor": "microsoft"
+    },
+    {
+     "hasta_excluida": "1.0.62681.0",
+     "producto": "webp_image_extension",
+     "vendedor": "microsoft"
+    },
+    {
+     "hasta_excluida": "1.3.2",
+     "producto": "libwebp",
+     "vendedor": "webmproject"
+    },
+    {
+     "producto": "active_iq_unified_manager",
+     "vendedor": "netapp"
+    },
+    {
+     "hasta_excluida": "2023.2",
+     "producto": "seequent_leapfrog",
+     "vendedor": "bentley"
+    },
+    {
+     "hasta_excluida": "5.51",
+     "producto": "honeyview",
+     "vendedor": "bandisoft"
+    }
+   ],
+   "asignador": "Chrome",
+   "cve": "CVE-2023-4863",
+   "cvss31": [
+    {
+     "fuente": "NVD",
+     "puntuacion": 8.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "puntuacion": 8.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+    }
+   ],
+   "cvss31_cna": [],
+   "cvss40": [],
+   "cvss40_cna": [],
+   "cwe_adp": {
+    "CISA-ADP": [
+     "CWE-787"
+    ]
+   },
+   "cwe_cna": [],
+   "cwe_nvd": [
+    {
+     "fuente": "NVD",
+     "id": "CWE-787",
+     "tipo": "Primary"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "id": "CWE-787",
+     "tipo": "Secondary"
+    }
+   ],
+   "descripcion_en": "Heap buffer overflow in libwebp in Google Chrome prior to 116.0.5845.187 and libwebp 1.3.2 allowed a remote attacker to perform an out of bounds memory write via a crafted HTML page. (Chromium security severity: Critical)",
+   "epss": {
+    "fecha": "2026-10-30",
+    "percentil": 0.9998,
+    "puntuacion": 0.99979
+   },
+   "kev": {
+    "agregada": "2023-09-13",
+    "cwes": [
+     "CWE-787"
+    ],
+    "fecha_limite": "2023-10-04",
+    "nombre": "Google Chromium WebP Heap-Based Buffer Overflow Vulnerability",
+    "ransomware": "Unknown"
+   },
+   "publicada": "2023-09-12",
+   "ssvc_cisa": {
+    "automatizable": "no",
+    "explotacion": "active",
+    "fecha": "2023-11-28",
+    "impacto_tecnico": "total",
+    "version": "2.0.3"
+   }
+  },
+  {
+   "afectado": [
+    {
+     "hasta_excluida": "2.6.7",
+     "producto": "fast_dds",
+     "vendedor": "eprosima"
+    },
+    {
+     "desde_incluida": "2.10.0",
+     "hasta_excluida": "2.10.3",
+     "producto": "fast_dds",
+     "vendedor": "eprosima"
+    },
+    {
+     "desde_incluida": "2.11.0",
+     "hasta_excluida": "2.11.3",
+     "producto": "fast_dds",
+     "vendedor": "eprosima"
+    },
+    {
+     "desde_incluida": "2.12.0",
+     "hasta_excluida": "2.12.2",
+     "producto": "fast_dds",
+     "vendedor": "eprosima"
+    }
+   ],
+   "asignador": "GitHub_M",
+   "cve": "CVE-2023-50716",
+   "cvss31": [
+    {
+     "fuente": "security-advisories@github.com",
+     "puntuacion": 9.6,
+     "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+    },
+    {
+     "fuente": "NVD",
+     "puntuacion": 9.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    }
+   ],
+   "cvss31_cna": [
+    {
+     "puntuacion": 9.7,
+     "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+    }
+   ],
+   "cvss40": [],
+   "cvss40_cna": [],
+   "cwe_adp": {},
+   "cwe_cna": [
+    "CWE-416"
+   ],
+   "cwe_nvd": [
+    {
+     "fuente": "security-advisories@github.com",
+     "id": "CWE-416",
+     "tipo": "Secondary"
+    },
+    {
+     "fuente": "NVD",
+     "id": "CWE-416",
+     "tipo": "Primary"
+    }
+   ],
+   "descripcion_en": "eProsima Fast DDS (formerly Fast RTPS) is a C++ implementation of the Data Distribution Service standard of the Object Management Group. Prior to versions 2.13.0, 2.12.2, 2.11.3, 2.10.3, and 2.6.7, an invalid DATA_FRAG Submessage causes a bad-free error, and the Fast-DDS process can be remotely terminated. If an invalid Data_Frag packet is sent, the `Inline_qos, SerializedPayload` member of object `ch` will attempt to release memory without initialization, resulting in a 'bad-free' error. Versions 2.13.0, 2.12.2, 2.11.3, 2.10.2, and 2.6.7 fix this issue.",
+   "epss": {
+    "fecha": "2026-10-30",
+    "percentil": 0.54012,
+    "puntuacion": 0.00724
+   },
+   "kev": null,
+   "publicada": "2024-03-06",
+   "ssvc_cisa": {
+    "automatizable": "no",
+    "explotacion": "none",
+    "fecha": "2024-03-06",
+    "impacto_tecnico": "partial",
+    "version": "2.0.3"
+   }
+  },
+  {
+   "afectado": [
+    {
+     "producto": "application_security_gateway",
+     "vendedor": "netentsec",
+     "version": "6.3"
+    }
+   ],
+   "asignador": "VulDB",
+   "cve": "CVE-2024-2021",
+   "cvss31": [
+    {
+     "fuente": "cna@vuldb.com",
+     "puntuacion": 6.3,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L"
+    },
+    {
+     "fuente": "NVD",
+     "puntuacion": 9.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    }
+   ],
+   "cvss31_cna": [
+    {
+     "puntuacion": 6.3,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L"
+    }
+   ],
+   "cvss40": [],
+   "cvss40_cna": [],
+   "cwe_adp": {},
+   "cwe_cna": [
+    "CWE-89"
+   ],
+   "cwe_nvd": [
+    {
+     "fuente": "cna@vuldb.com",
+     "id": "CWE-89",
+     "tipo": "Secondary"
+    }
+   ],
+   "descripcion_en": "A vulnerability was found in Netentsec NS-ASG Application Security Gateway 6.3. It has been classified as critical. Affected is an unknown function of the file /admin/list_localuser.php. The manipulation of the argument ResId leads to sql injection. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. The identifier of this vulnerability is VDB-255300. NOTE: The vendor was contacted early about this disclosure but did not respond in any way.",
+   "epss": {
+    "fecha": "2026-10-30",
+    "percentil": 0.54595,
+    "puntuacion": 0.00741
+   },
+   "kev": null,
+   "publicada": "2024-03-01",
+   "ssvc_cisa": {
+    "automatizable": "no",
+    "explotacion": "poc",
+    "fecha": "2024-03-01",
+    "impacto_tecnico": "partial",
+    "version": "2.0.3"
+   }
+  },
+  {
+   "afectado": [
+    {
+     "producto": "chatgpt-wechat-personal",
+     "vendedor": "dirk1983",
+     "version": "2023-03-29"
+    }
+   ],
+   "asignador": "mitre",
+   "cve": "CVE-2024-27565",
+   "cvss31": [
+    {
+     "fuente": "NVD",
+     "puntuacion": 9.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "puntuacion": 9.8,
+     "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    }
+   ],
+   "cvss31_cna": [],
+   "cvss40": [],
+   "cvss40_cna": [],
+   "cwe_adp": {
+    "CISA-ADP": [
+     "CWE-918"
+    ]
+   },
+   "cwe_cna": [],
+   "cwe_nvd": [
+    {
+     "fuente": "NVD",
+     "id": "CWE-918",
+     "tipo": "Primary"
+    },
+    {
+     "fuente": "CISA-ADP",
+     "id": "CWE-918",
+     "tipo": "Secondary"
+    }
+   ],
+   "descripcion_en": "A Server-Side Request Forgery (SSRF) in weixin.php of ChatGPT-wechat-personal commit a0857f6 allows attackers to force the application to make arbitrary requests.",
+   "epss": {
+    "fecha": "2026-10-30",
+    "percentil": 0.5158,
+    "puntuacion": 0.00661
+   },
+   "kev": null,
+   "publicada": "2024-03-05",
+   "ssvc_cisa": {
+    "automatizable": "yes",
+    "explotacion": "none",
+    "fecha": "2024-08-29",
+    "impacto_tecnico": "total",
+    "version": "2.0.3"
+   }
+  },
+  {
+   "afectado": [
+    {
+     "producto": "sma_6200_firmware",
+     "vendedor": "sonicwall"
+    },
+    {
+     "producto": "sma_7200_firmware",
+     "vendedor": "sonicwall"
+    },
+    {
+     "desde_incluida": "4.32.0",
+     "hasta_incluida": "4.32.1f",
+     "producto": "eos",
+     "vendedor": "arista"
+    },
+    {
+     "producto": "ubuntu_linux",
+     "vendedor": "canonical",
+     "version": "23.10"
+    },
+    {
+     "producto": "ubuntu_linux",
+     "vendedor": "canonical",
+     "version": "24.04"
+    },
+    {
+     "producto": "almalinux",
+     "vendedor": "almalinux",
+     "version": "9.0"
+    },
+    {
+     "producto": "sma_6210_firmware",
+     "vendedor": "sonicwall"
+    },
+    {
+     "producto": "sma_7210_firmware",
+     "vendedor": "sonicwall"
+    },
+    {
+     "producto": "sma_8200v_firmware",
+     "vendedor": "sonicwall"
+    },
+    {
+     "producto": "sra_ex_7000_firmware",
+     "vendedor": "sonicwall"
+    },
+    {
+     "producto": "a1k_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "a70_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "a90_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "a700s_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "8300_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "8700_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "a400_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "c400_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "a250_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "500f_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "c250_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "a800_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "c800_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "a900_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "a9500_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "c190_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "a150_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "a220_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "fas2720_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "fas2750_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "fas2820_firmware",
+     "vendedor": "netapp"
+    },
+    {
+     "producto": "bootstrap_os",
+     "vendedor": "netapp"
+    },
+    {
+     "desde_incluida": "12.0",
+     "hasta_excluida": "12.7.6",
+     "producto": "macos",
+     "vendedor": "apple"
+    },
+    {
+     "desde_incluida": "13.0",
+     "hasta_excluida": "13.6.8",
+     "producto": "macos",
+     "vendedor": "apple"
+    },
+    {
+     "desde_incluida": "14.0",
+     "hasta_excluida": "14.6",
+     "producto": "macos",
+     "vendedor": "apple"
+    },
+    {
+     "hasta_excluida": "4.4",
+     "producto": "openssh",
+     "vendedor": "openbsd"
+    },
+    {
+     "desde_incluida": "8.6",
+     "hasta_incluida": "9.8",
+     "producto": "openssh",
+     "vendedor": "openbsd"
+    },
+    {
+     "producto": "openssh",
+     "vendedor": "openbsd",
+     "version": "4.4"
+    },
+    {
+     "producto": "openssh",
+     "vendedor": "openbsd",
+     "version": "8.5"
+    },
+    {
+     "producto": "openssh",
+     "vendedor": "openbsd",
+     "version": "8.6"
+    }
+   ],
+   "asignador": "redhat",
+   "cve": "CVE-2024-6387",
+   "cvss31": [
+    {
+     "fuente": "secalert@redhat.com",
+     "puntuacion": 8.1,
+     "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    },
+    {
+     "fuente": "NVD",
+     "puntuacion": 8.1,
+     "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    }
+   ],
+   "cvss31_cna": [
+    {
+     "puntuacion": 8.1,
+     "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+    }
+   ],
+   "cvss40": [],
+   "cvss40_cna": [],
+   "cwe_adp": {},
+   "cwe_cna": [
+    "CWE-364"
+   ],
+   "cwe_nvd": [
+    {
+     "fuente": "secalert@redhat.com",
+     "id": "CWE-364",
+     "tipo": "Secondary"
+    },
+    {
+     "fuente": "NVD",
+     "id": "CWE-362",
+     "tipo": "Primary"
+    }
+   ],
+   "descripcion_en": "A security regression (CVE-2006-5051) was discovered in OpenSSH's server (sshd). There is a race condition which can lead sshd to handle some signals in an unsafe manner. An unauthenticated, remote attacker may be able to trigger it by failing to authenticate within a set time period.",
+   "epss": {
+    "fecha": "2026-10-30",
+    "percentil": 0.99946,
+    "puntuacion": 0.99506
+   },
+   "kev": null,
+   "publicada": "2024-07-01",
+   "ssvc_cisa": {
+    "automatizable": "no",
+    "explotacion": "poc",
+    "fecha": "2024-07-02",
+    "impacto_tecnico": "total",
+    "version": "2.0.3"
+   }
+  }
+ ],
+ "procedencia": {
+  "advertencia": "Instantánea: KEV y EPSS cambian a diario. No es el estado actual de estos CVE.",
+  "fecha_consulta": "2026-10-30",
+  "fuentes": {
+   "cisa_kev": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+   "cve_program": "https://cveawg.mitre.org/api/cve/",
+   "first_epss": "https://api.first.org/data/v1/epss",
+   "nvd": "https://services.nvd.nist.gov/rest/json/cves/2.0"
+  },
+  "kev_fecha_publicacion": "2026-10-29T19:09:34.4003Z",
+  "kev_version_catalogo": "2026.10.29"
+ }
+}

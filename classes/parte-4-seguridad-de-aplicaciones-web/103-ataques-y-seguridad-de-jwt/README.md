@@ -100,6 +100,12 @@ expiración —lo que obliga a tiempos de vida cortos y a una lista de revocaci�
 sesiones de golpe—. Ese último punto es el compromiso de fondo del JWT frente a la sesión clásica:
 gana en escalabilidad sin estado, pierde en control de revocación.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Los dos ataques que definen el tema —`alg:none` y la confusión de algoritmos— son el mismo defecto: `CWE-347` (*verificación incorrecta de una firma criptográfica*), de nivel *Base*, hija de `CWE-345` (verificación insuficiente de la autenticidad de los datos), una clase que MITRE desaconseja para mapear. En el momento en que el servidor acepta un token sin comprobar la firma que *él* espera, o con el algoritmo que elige el cliente, ha dejado de verificar. OWASP la sitúa en A04 Cryptographic Failures (A02 en 2021), una categoría que mucha gente asocia con «cifrar mal» y no con «verificar mal»; es un buen recordatorio de que el nombre de la categoría no agota su contenido.
+
+La otra mitad del tema, las claves débiles, tiene su propio CWE según el caso: una clave HMAC escrita en el código es `CWE-321` (*clave criptográfica embebida*), que cuelga de las credenciales embebidas (`CWE-798`); una clave de longitud insuficiente cae en la fuerza criptográfica inadecuada (`CWE-326`). Que haya tres entradas para «JWT mal hecho» no es una complicación del catálogo: son tres defectos con tres correcciones distintas (verificar siempre con el algoritmo fijado, sacar la clave del código, usar una clave de entropía suficiente). Los errores de gestión de secretos se practican en la [clase 364](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
+
 ## 📖 Definiciones y características
 
 - **JWT**: token compacto con header, payload y firma en Base64URL. Característica: autocontenido y stateless.

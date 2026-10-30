@@ -99,6 +99,12 @@ con **mínimo privilegio**. El mensaje de fondo conecta con toda la parte: la de
 es otra forma de confiar en la entrada del usuario, y la solución es la misma que en la inyección —no
 dejar que datos externos se conviertan en código—.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+`CWE-502` (*deserialización de datos no confiables*) es una debilidad de nivel *Base* que cuelga de `CWE-913` (control incorrecto del código gestionado dinámicamente). Que su padre sea un problema de *código dinámico* y no de «formato» recoge la idea de la clase: deserializar un formato capaz de instanciar objetos arbitrarios equivale a dejar que los datos elijan qué código se ejecuta. OWASP la incluye en A08 Software or Data Integrity Failures; en el Top 25 de 2025 ocupa el puesto 15 y tiene **11 CVE en KEV**, y en el Top 10 de debilidades de KEV figura en quinto lugar: su peso en explotación es mayor que su peso en frecuencia.
+
+El registro de **CVE-2021-44228** (Log4Shell) es un buen ejemplo de que un CVE puede enlazar **varias debilidades** sin que exista «la» debilidad: el CNA de Apache lista `CWE-20`, `CWE-400` y `CWE-502`, y NVD añade `CWE-917` (inyección de lenguaje de expresiones). Nadie se equivoca necesariamente; cada fuente describe una faceta. Qué hacer con eso al clasificar se trata en la [clase 362](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md), y la sustitución de `pickle` por un formato de solo datos se verifica con una prueba en el laboratorio `appsec-code`.
+
 ## 📖 Definiciones y características
 
 - **Serialización**: convertir un objeto en bytes/texto para almacenarlo o transmitirlo. Característica: reversible mediante deserialización.

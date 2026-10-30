@@ -7,7 +7,10 @@ inteligencia de explotación— y produces un informe con un plan de remediació
 
 Dos de esas capas vienen **implementadas** en el laboratorio, no solo explicadas:
 [`priorizar.py`](priorizar.py) consulta CISA KEV y EPSS de verdad y ordena los hallazgos, y
-[`typosquat.py`](typosquat.py) detecta nombres de paquete suplantados.
+[`typosquat.py`](typosquat.py) detecta nombres de paquete suplantados. Para la **Parte 20**
+(clases 361–370, CWE, CVE, CVSS) se añaden una calculadora CVSS v3.1/v4.0, la tabla de plazos de CISA
+BOD 26-04, un detector de discrepancias entre fuentes y un mapa CWE de los defectos plantados
+([ver la ampliación](#ampliación-de-la-parte-20-cwe-cve-cvss-y-su-gestión)).
 
 Es el laboratorio que responde a una pregunta que ningún otro del programa cubre: **¿qué se rompe
 entre que el código sale de tu editor y llega a producción?**
@@ -392,6 +395,41 @@ implementación:
   hallazgos* y *no ejecutada* nunca se mezclan.
 - **La etiqueta P1–P4 usa el CVSS ajustado**, el mismo que el orden. Una etiqueta que contradice el
   orden de la lista destruye la confianza en el informe entero.
+
+### Ampliación de la Parte 20: CWE, CVE, CVSS y su gestión
+
+Este laboratorio es también la práctica de las clases **366–370**. Además de `priorizar.py` y
+`typosquat.py`, incluye herramientas que **reproducen** (sin red y con la biblioteca estándar) lo que
+esas clases explican, cada una con pruebas:
+
+| Herramienta | Qué hace | Clase |
+|---|---|---|
+| [`cwe-map.json`](cwe-map.json) | Correspondencia de cada defecto de `repo-vulnerable/` con el catálogo CWE, con su **tipo de correspondencia** (oficial, inferida o ninguna), motivo y corrección | 366 |
+| [`discrepancias.py`](discrepancias.py) | Señala dónde discrepan CNA, CISA-ADP y NVD sobre un mismo CVE (puntuaciones, CWE, ausencia de CWE primario, puntuación que no coincide con su vector) | 367 |
+| [`nvd_estados.py`](nvd_estados.py) y `datos/nvd-estados-*.json` | Cuenta los estados de enriquecimiento de NVD en una ventana de CVE; la foto guardada es la que cita la clase 367 | 367 |
+| [`cvss.py`](cvss.py) y `datos/cvss4/` | Calculadora de **CVSS v3.1** (con el cálculo paso a paso) y **v4.0** (tablas oficiales de FIRST, BSD-2-Clause, con su licencia) | 368 |
+| [`bod2604.py`](bod2604.py) | La tabla de 16 filas de **CISA BOD 26-04** (exposición, KEV, automatizable, impacto técnico → plazo) | 369 |
+| [`priorizar.py`](priorizar.py) `--instantanea ... --bod-26-04` | Prioriza con los datos fechados del repositorio (sin red) y añade el plazo de referencia de BOD 26-04 | 369 |
+| [`actualizar_casos.py`](actualizar_casos.py) | Regenera `datos/casos-cwe-cve.json` (14 casos reales con CNA, ADP, NVD, EPSS y KEV) consultando las APIs oficiales | 367–369 |
+
+```bash
+# Ordena con la instantánea del 2026-10-30 y añade el plazo de BOD 26-04
+python priorizar.py --instantanea datos/casos-cwe-cve.json --bod-26-04
+
+# Prioriza hallazgos que ya traen su CWE y su vector CVSS
+python priorizar.py --hallazgos hallazgos-cwe-ejemplo.json --sin-red
+
+# Calcula y explica una puntuación; detecta discrepancias entre fuentes
+python cvss.py "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" --explicar
+python discrepancias.py CVE-2024-6387
+
+# Pruebas de todo lo anterior
+python -m unittest discover -s tests -v
+```
+
+Dos cautelas que forman parte del diseño: los datos de `datos/` son **instantáneas fechadas** (KEV y EPSS cambian
+a diario, y `actualizar_casos.py` las regenera), y cuando un CVE no figura en la instantánea el informe lo dice:
+«sin KEV / sin EPSS» significa *no sabemos*, no «no se explota».
 
 ### Minimal blast radius: subir lo mínimo, no lo último
 

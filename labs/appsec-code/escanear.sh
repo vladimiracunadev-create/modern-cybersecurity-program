@@ -21,4 +21,16 @@ else
 fi
 
 echo
-echo "Compara los hallazgos con SOLUCION.md. ¿Encontró el SAST las 8? ¿Algún falso positivo?"
+echo "== Contraste de cada etiqueta CWE con el mapa del laboratorio =="
+if command -v bandit >/dev/null 2>&1 && command -v python3 >/dev/null 2>&1; then
+  SALIDA="$(mktemp)"
+  bandit -r vulnerable_app -f json -o "$SALIDA" >/dev/null 2>&1 || true
+  python3 ../../scripts/cwe_kb.py sast "$SALIDA" --mapa cwe-map.json || true
+  rm -f "$SALIDA"
+else
+  echo "(se necesita bandit y python3; hay una salida ya verificada en tests/datos/bandit-1.9.4-app.json:"
+  echo " python3 ../../scripts/cwe_kb.py sast tests/datos/bandit-1.9.4-app.json --mapa cwe-map.json)"
+fi
+
+echo
+echo "Compara los hallazgos con SOLUCION.md. ¿Encontró el SAST las 8? ¿Algún falso positivo? ¿La etiqueta CWE de la herramienta es la correcta?"

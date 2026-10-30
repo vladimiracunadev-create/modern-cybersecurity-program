@@ -2777,7 +2777,8 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-11-devsecops-y-seguridad-del-sdlc/238-sast-analisis-estatico-de-codigo/README.md"
+    "classes/parte-11-devsecops-y-seguridad-del-sdlc/238-sast-analisis-estatico-de-codigo/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md"
    ],
    "authors": []
   },
@@ -3204,6 +3205,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md",
     "classes/parte-5-explotacion-de-sistemas-y-binarios/128-integer-overflows-y-errores-aritmeticos/README.md"
    ],
    "authors": []
@@ -4430,7 +4432,8 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-0-fundamentos-y-prerrequisitos/018-git-y-control-de-versiones-para-profesionales-de-seguridad/README.md",
-    "classes/parte-11-devsecops-y-seguridad-del-sdlc/242-seguridad-en-pipelines-ci-cd/README.md"
+    "classes/parte-11-devsecops-y-seguridad-del-sdlc/242-seguridad-en-pipelines-ci-cd/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md"
    ],
    "authors": []
   },
@@ -4568,7 +4571,9 @@
     "classes/parte-0-fundamentos-y-prerrequisitos/015-python-para-seguridad-fundamentos-del-lenguaje/README.md",
     "classes/parte-0-fundamentos-y-prerrequisitos/016-python-para-seguridad-sockets-y-programacion-de-red/README.md",
     "classes/parte-0-fundamentos-y-prerrequisitos/019-expresiones-regulares-para-analisis-de-logs-y-datos/README.md",
-    "classes/parte-0-fundamentos-y-prerrequisitos/020-sistemas-de-numeracion-y-encoding-binario-hex-base64-y-url/README.md"
+    "classes/parte-0-fundamentos-y-prerrequisitos/020-sistemas-de-numeracion-y-encoding-binario-hex-base64-y-url/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md"
    ],
    "authors": []
   },
@@ -5323,6 +5328,8 @@
    "used_in": [
     "classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md",
     "classes/parte-16-capstones-y-preparacion-de-certificaciones/308-capstone-campana-de-bug-bounty/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/204-forense-de-sistemas-de-archivos-ntfs-y-ext4/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/211-forense-movil/README.md"
    ],
@@ -12561,7 +12568,15 @@
     "classes/parte-0-fundamentos-y-prerrequisitos/002-el-panorama-de-amenazas-moderno-actores-motivaciones-y-cyber-kill-chain/README.md",
     "classes/parte-11-devsecops-y-seguridad-del-sdlc/240-sca-dependencias-y-riesgo-de-terceros/README.md",
     "classes/parte-11-devsecops-y-seguridad-del-sdlc/245-gestion-de-vulnerabilidades-a-escala/README.md",
-    "classes/parte-17-profundizacion-para-certificaciones/318-gestion-del-programa-de-vulnerabilidades/README.md"
+    "classes/parte-17-profundizacion-para-certificaciones/318-gestion-del-programa-de-vulnerabilidades/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -12669,6 +12684,9 @@
     "classes/parte-17-profundizacion-para-certificaciones/318-gestion-del-programa-de-vulnerabilidades/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/321-comunicacion-y-reporte-para-analistas-de-seguridad/README.md",
     "classes/parte-18-ia-aplicada-a-la-ciberseguridad/338-generacion-de-informes-y-flujos-de-trabajo-con-ia/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/071-analisis-de-vulnerabilidades-con-nessus-y-openvas/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/085-reporte-profesional-de-pentest/README.md",
     "classes/parte-4-seguridad-de-aplicaciones-web/114-bug-bounty-metodologia-y-plataformas/README.md"
@@ -12722,6 +12740,9 @@
     "classes/parte-11-devsecops-y-seguridad-del-sdlc/240-sca-dependencias-y-riesgo-de-terceros/README.md",
     "classes/parte-11-devsecops-y-seguridad-del-sdlc/245-gestion-de-vulnerabilidades-a-escala/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/318-gestion-del-programa-de-vulnerabilidades/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/071-analisis-de-vulnerabilidades-con-nessus-y-openvas/README.md"
    ],
    "authors": [],
@@ -13362,13 +13383,13 @@
    "id": "mitre-cwe",
    "type": "standard",
    "title": "Common Weakness Enumeration (CWE)",
-   "identifier": "MITRE CWE 4.20",
-   "version": "4.20",
-   "published": "2026",
+   "identifier": "MITRE CWE 5.0",
+   "version": "5.0",
+   "published": "2026-10-28",
    "locator": "https://cwe.mitre.org/",
    "authority": "MITRE Corporation",
    "status": "verificada",
-   "notes": "Version de la lista en el momento de la verificacion: CWE 4.20 (cwe.mitre.org). Los identificadores CWE-NNN son estables entre versiones; el catalogo no.",
+   "notes": "Versión de la lista usada por el programa: CWE 5.0 (2026-10-28), importada a knowledge/cwe/ con su procedencia. Los identificadores CWE-NNN son estables entre versiones; el catálogo no. Las vistas se identifican con su número y las categorías de OWASP son agrupaciones que no se usan para mapear.",
    "matches": {
     "url_prefixes": [
      "https://cwe.mitre.org"
@@ -13377,10 +13398,18 @@
      "\\bcwe\\b"
     ]
    },
-   "accessed": "2026-08-19",
+   "accessed": "2026-10-30",
    "used_in": [
     "classes/parte-11-devsecops-y-seguridad-del-sdlc/238-sast-analisis-estatico-de-codigo/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/323-pruebas-de-seguridad-del-software-y-evaluacion/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md",
     "classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md",
     "classes/parte-5-explotacion-de-sistemas-y-binarios/119-buffer-overflow-en-stack-teoria/README.md",
     "classes/parte-5-explotacion-de-sistemas-y-binarios/125-vulnerabilidades-de-format-string/README.md",
@@ -13830,6 +13859,9 @@
    "used_in": [
     "classes/parte-1-redes-y-seguridad-de-redes/031-nmap-deteccion-de-servicios-y-fingerprinting-de-os/README.md",
     "classes/parte-18-ia-aplicada-a-la-ciberseguridad/331-ia-generativa-y-llms-en-ciberseguridad-panorama-y-limites/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/071-analisis-de-vulnerabilidades-con-nessus-y-openvas/README.md"
    ],
    "authors": [],
@@ -14977,6 +15009,9 @@
     "classes/parte-2-criptografia-aplicada/057-almacenamiento-seguro-de-contrasenas-bcrypt-scrypt-y-argon2/README.md",
     "classes/parte-2-criptografia-aplicada/063-gestion-de-secretos-vault-y-kms/README.md",
     "classes/parte-2-criptografia-aplicada/065-implementaciones-seguras-y-errores-criptograficos-comunes/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/080-cracking-de-contrasenas-con-john-y-hashcat/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/081-ataques-a-credenciales-fuerza-bruta-y-password-spraying/README.md",
     "classes/parte-4-seguridad-de-aplicaciones-web/091-inyeccion-sql-fundamentos/README.md",
@@ -15414,7 +15449,7 @@
    "locator": "https://owasp.org/Top10/",
    "authority": "OWASP Foundation",
    "status": "verificada",
-   "notes": "Las clases citan la edicion 2021 (rutas A01_2021...). En la verificacion, owasp.org/Top10/ redirige ya a la edicion OWASP Top 10:2025: las citas a 2021 siguen resolviendo pero apuntan a una edicion superada.",
+   "notes": "Edición 2021, superada por OWASP Top 10:2025 (ver la entrada owasp-top10-2025). Las clases la citan solo como referencia histórica para leer informes y certificaciones anteriores y explican la correspondencia con la edición vigente.",
    "matches": {
     "url_prefixes": [
      "https://owasp.org/Top10"
@@ -15427,12 +15462,16 @@
    "used_in": [
     "classes/parte-11-devsecops-y-seguridad-del-sdlc/242-seguridad-en-pipelines-ci-cd/README.md",
     "classes/parte-2-criptografia-aplicada/065-implementaciones-seguras-y-errores-criptograficos-comunes/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md",
     "classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md",
     "classes/parte-4-seguridad-de-aplicaciones-web/105-control-de-acceso-roto-idor-y-path-traversal/README.md",
     "classes/parte-4-seguridad-de-aplicaciones-web/115-secure-coding-y-defensa-de-aplicaciones-web/README.md"
    ],
    "authors": [],
-   "vigencia": "vigente"
+   "vigencia": "superada"
   },
   {
    "id": "owasp-vwad",
@@ -18094,6 +18133,158 @@
    "used_in": [
     "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md"
+   ]
+  },
+  {
+   "id": "cve-program",
+   "type": "standard",
+   "title": "CVE Program: glosario y formato de registro",
+   "identifier": "CVE Program",
+   "published": "",
+   "locator": "https://www.cve.org/ResourcesSupport/Glossary",
+   "authority": "CVE Program (MITRE, CISA)",
+   "status": "verificada",
+   "notes": "Glosario oficial (CNA, ADP, vulnerabilidad), estados del registro y formato de registro 5.1 usados en la clase 367.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.cve.org"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-30",
+   "authors": [],
+   "vigencia": "vigente",
+   "used_in": [
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md"
+   ]
+  },
+  {
+   "id": "mitre-capec",
+   "type": "standard",
+   "title": "Common Attack Pattern Enumeration and Classification (CAPEC)",
+   "identifier": "MITRE CAPEC",
+   "published": "",
+   "locator": "https://capec.mitre.org/",
+   "authority": "MITRE Corporation",
+   "status": "verificada",
+   "notes": "Catálogo de patrones de ataque enlazado desde las fichas CWE.",
+   "matches": {
+    "url_prefixes": [
+     "https://capec.mitre.org"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-30",
+   "authors": [],
+   "vigencia": "vigente",
+   "used_in": [
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md"
+   ]
+  },
+  {
+   "id": "apache-httpd-seguridad",
+   "type": "reference",
+   "title": "Apache HTTP Server 2.4: vulnerabilidades",
+   "identifier": "Apache HTTP Server security",
+   "published": "",
+   "locator": "https://httpd.apache.org/security/vulnerabilities_24.html",
+   "authority": "Apache Software Foundation",
+   "status": "verificada",
+   "notes": "Avisos del proveedor sobre CVE-2021-41773 y la corrección posterior. Comprobado en red el 2026-10-30.",
+   "matches": {
+    "url_prefixes": [
+     "https://httpd.apache.org/security"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-30",
+   "authors": [],
+   "vigencia": "vigente",
+   "used_in": [
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md"
+   ]
+  },
+  {
+   "id": "owasp-top10-2025",
+   "type": "standard",
+   "title": "OWASP Top 10:2025",
+   "identifier": "OWASP Top 10:2025",
+   "published": "2025",
+   "locator": "https://top10.owasp.org/2025/0x00_2025-Introduction/",
+   "authority": "OWASP Foundation",
+   "status": "verificada",
+   "notes": "Edición vigente: diez categorías, dos nuevas (A03 cadena de suministro, A10 condiciones excepcionales) y SSRF integrada en A01. Comprobado en red el 2026-10-30.",
+   "matches": {
+    "url_prefixes": [
+     "https://top10.owasp.org/2025"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-30",
+   "authors": [],
+   "vigencia": "vigente",
+   "used_in": [
+    "classes/parte-2-criptografia-aplicada/065-implementaciones-seguras-y-errores-criptograficos-comunes/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/115-secure-coding-y-defensa-de-aplicaciones-web/README.md"
+   ]
+  },
+  {
+   "id": "cisa-bod-26-04",
+   "type": "standard",
+   "title": "CISA BOD 26-04: Prioritizing Security Updates Based on Risk",
+   "identifier": "CISA BOD 26-04",
+   "published": "2026",
+   "locator": "https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk",
+   "authority": "Cybersecurity and Infrastructure Security Agency (EE. UU.)",
+   "status": "verificada",
+   "notes": "Directiva del 2026-06-10 que sustituye a BOD 22-01 y BOD 19-02. Obligatoria para agencias civiles federales de EE. UU.; referencia para el resto. Consultada el 2026-10-30.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-30",
+   "authors": [],
+   "vigencia": "vigente",
+   "used_in": [
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md"
+   ]
+  },
+  {
+   "id": "mitre-cwe-top25-2025",
+   "type": "standard",
+   "title": "2025 CWE Top 25 y Top 10 KEV Weaknesses",
+   "identifier": "MITRE CWE Top 25 2025",
+   "published": "2025",
+   "locator": "https://cwe.mitre.org/top25/archive/2025/2025_cwe_top25.html",
+   "authority": "MITRE Corporation",
+   "status": "verificada",
+   "notes": "Ranking de debilidades por frecuencia y severidad, metodología y lista de debilidades con más CVE en KEV. Consultado el 2026-10-30.",
+   "matches": {
+    "url_prefixes": [
+     "https://cwe.mitre.org/top25/archive/2025"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-10-30",
+   "authors": [],
+   "vigencia": "vigente",
+   "used_in": [
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md"
    ]
   }
  ]

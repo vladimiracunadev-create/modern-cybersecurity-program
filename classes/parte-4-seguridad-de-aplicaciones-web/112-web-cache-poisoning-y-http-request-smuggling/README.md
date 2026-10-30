@@ -100,6 +100,12 @@ input que afecte a la respuesta y no cachear contenido dependiente de cabeceras 
 de la clase: la seguridad no es solo del código, sino de **cómo encajan las piezas** de la arquitectura,
 y las discrepancias entre ellas son una clase entera de vulnerabilidad.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+El contrabando de peticiones HTTP tiene una entrada que describe su raíz con precisión: `CWE-444` (*interpretación inconsistente de peticiones HTTP*), de nivel *Base*, cuyo padre es `CWE-436` (conflicto de interpretación). Es la misma idea con la que arranca tu clase: dos máquinas que interpretan una misma secuencia de bytes de forma distinta. En OWASP la categoría es A06 Insecure Design (A04 en 2021), lo que recuerda que la raíz está en que el sistema se **diseñó** con componentes encadenados que no comparten una única definición de dónde termina una petición.
+
+El envenenamiento de caché web, en cambio, no tiene en el catálogo una entrada propia: una búsqueda de «cache» en el catálogo local devuelve entradas sobre el uso de cachés con información sensible, no sobre su envenenamiento. Es un ejemplo útil de la tercera categoría de correspondencia de la [clase 362](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md): cuando ninguna entrada describe literalmente el defecto, no se fuerza un CWE; se declara que la correspondencia es *inferida* (con el razonamiento: por ejemplo, una entrada no incluida en la clave de caché que cambia la respuesta) o que no hay ninguna. Para documentar el ataque, el catálogo de patrones CAPEC y las investigaciones de la fuente de la clase son mejores referencias que un CWE mal ajustado.
+
 ## 📖 Definiciones y características
 
 - **Web cache poisoning**: inyectar contenido en una respuesta cacheada que se sirve a otros usuarios. Característica: amplifica un input a muchas víctimas.

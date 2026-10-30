@@ -101,6 +101,12 @@ estado de cada bin —sin esa visibilidad, el heap es opaco—. La lección de f
 no es un caos, sino un sistema con reglas precisas, y explotarlo es aprender esas reglas mejor de lo
 que las conoce el programa víctima.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+El montón añade al catálogo una variante con nombre propio: `CWE-122` (*desbordamiento de buffer basado en el montón*), de nivel *Variant*, hija de `CWE-787` y de `CWE-788`. Es el equivalente de `CWE-121` (pila) para esta región de memoria, y la elección entre una y otra no es un detalle: indica **dónde** debe mirar quien corrige y qué mitigaciones del sistema cambian la explotabilidad. En 2025 `CWE-122` ocupa el puesto 16 del Top 25 de MITRE con 6 CVE en KEV y aparece en el Top 10 de debilidades de KEV, lo que confirma que el montón es un objetivo real, no solo académico.
+
+La clase menciona los «orígenes de los bugs» del montón (desbordamientos, usar tras liberar, doble liberación); cada uno es una entrada distinta con su corrección. Los dos últimos se estudian en la clase siguiente y se corresponden con `CWE-416` y `CWE-415`. Una advertencia sobre las **cadenas**: muchos fallos de montón nacen en un error aritmético previo (un tamaño mal calculado), de modo que el eslabón raíz es `CWE-190` o `CWE-131` y no el desbordamiento en sí; se trata en la clase 128 y con una práctica completa en la [clase 365](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
+
 ## 📖 Definiciones y características
 
 - **Chunk:** unidad de asignación del heap con cabecera (`size`) y datos. *Clave:* el bit `PREV_INUSE`

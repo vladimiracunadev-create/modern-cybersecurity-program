@@ -1,0 +1,3 @@
+# Los datos de knowledge/ llevan hashes de integridad y desplazamientos en bytes:
+# no se les puede convertir el fin de linea al extraerlos en Windows.
+knowledge/** -text

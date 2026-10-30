@@ -1,6 +1,6 @@
 # 🧭 Rutas guiadas por rol
 
-El programa tiene 360 clases; **no todas son para todos a la vez**. Estas rutas ordenan el
+El programa tiene 370 clases; **no todas son para todos a la vez**. Estas rutas ordenan el
 recorrido según el rol al que apuntas: qué partes hacer, en qué orden, con qué laboratorios
 practicar y a qué certificación apuntar. Todas asumen que **empiezas por la Parte 0**
 (fundamentos): es el cimiento común.
@@ -91,6 +91,7 @@ Ciclo de vulnerabilidades, hardening/parchado, controles (AV/EDR) y reporte — 
 5. 📚 **Parte 8** — **189** EDR · 188 Threat hunting · 195 Threat Intelligence · 197 Métricas del SOC
 6. 📚 **Parte 11** — 240 SCA/dependencias · **245** Gestión de vulnerabilidades a escala
 7. 📚 **Parte 9** — **219** Ejercicios de mesa (simulacros) · + Partes 3–7 para las pruebas de penetración de validación
+8. 📚 **Parte 20** — **367** CVE · **368** CVSS · **369** EPSS, KEV y priorización · **370** ciclo completo · 361–366 catálogo CWE y familias de debilidades
 
 - 🧪 [`appsec-code`](../labs/appsec-code/README.md) (SAST/vulns en código) · [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) (**priorización KEV/EPSS/CVSS e informe**) · [`appsec-web`](../labs/appsec-web/README.md) · [`rootcause-windows`](../labs/rootcause-windows/README.md) (controles/EDR en Windows)
 - 🎓 **CompTIA CySA+** · Security+ · (certs de producto: Tenable/Qualys/Rapid7)
@@ -138,6 +139,7 @@ CSIRT/CERT o en el equipo que opera el VDP.
 3. 📚 **Parte 4** — **087**, **110**, **114–115**: reportes web, bounty y corrección
 4. 📚 **Partes 8–9** — inteligencia, respuesta, contención y aprendizaje
 5. 📚 **Partes 11, 14 y 17** — SDLC, terceros, gobierno y ciclo de vulnerabilidades
+6. 📚 **Parte 20** — CVE, CVSS y priorización (**367**–**369**): lo que ocurre con un reporte y por qué dos fuentes puntúan distinto
 
 - 🧪 [`appsec-code`](../labs/appsec-code/README.md) ·
   [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) ·
@@ -172,6 +174,7 @@ Seguridad de aplicaciones y caza de vulnerabilidades web.
 3. 📚 **Parte 4** — Seguridad web (086–115) · núcleo
 4. 📚 **Parte 11** — DevSecOps y SDLC (236–248) · para el lado defensivo
 5. 📚 **Parte 15** — Seguridad de IA/LLM (291–300) · superficie moderna
+6. 📚 **Parte 20** — CWE, CVE y CVSS (361–370) · el vocabulario y la verificación de las correcciones
 
 - 🧪 [`appsec-web`](../labs/appsec-web/README.md) · [`appsec-code`](../labs/appsec-code/README.md) · [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) (el SDLC completo en 8 capas) · 🚩 [CTF web](../ctf/README.md)
 - 🎓 **eWPTX** · Burp Suite Certified Practitioner
@@ -188,6 +191,7 @@ Triaje y gobierno del riesgo del SDLC: convierte la salida de SAST, DAST, SCA, s
 4. 📚 **Parte 17** — **318** programa de vulnerabilidades · **323** pruebas de software · **321** reporte · **330** automatización
 5. 📚 **Parte 14** — **277** riesgo · **282** procedimientos · **284** terceros (tus dependencias) · **287** métricas
 6. 📚 **Parte 10** — **227** contenedores · **230** IaC · **231** CSPM
+7. 📚 **Parte 20** — **362** causa raíz · **367**–**369** CVE, CVSS y priorización · **370** expediente por hallazgo
 
 - 🧪 [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) con su **[trayecto Analista DevSecOps](../labs/devsecops-pipeline/TRAYECTO-ANALISTA-DEVSECOPS.md)** (normalizar → falsos positivos → priorizar → tickets y SLA → excepción → verificar → reportar) · [`appsec-code`](../labs/appsec-code/README.md) · [`appsec-web`](../labs/appsec-web/README.md) · [`cloud-security`](../labs/cloud-security/README.md)
 - 🎓 **CompTIA CySA+** · Security+ · (CISSP a medio plazo)
@@ -203,6 +207,7 @@ Construye la capacidad técnica: pipelines CI/CD seguros, puertas de bloqueo pro
 4. 📚 **Parte 2** — firmas y **063** Vault/KMS · 📚 **Parte 4** — **087** y **110**
 5. 📚 **Parte 17** — **330** automatización · **324** hardening · **313**/**315** identidades · **323** pruebas
 6. 📚 **Partes 8, 9 y 14** — **182**, **202** (el pipeline también genera incidentes) · **282**, **284**
+7. 📚 **Parte 20** — **366** configuración y cadena de suministro en CWE · **369** priorización · **370** pruebas de regresión
 
 - 🧪 [`devsecops-pipeline`](../labs/devsecops-pipeline/README.md) con su **[trayecto Ingeniero DevSecOps](../labs/devsecops-pipeline/TRAYECTO-INGENIERO-DEVSECOPS.md)** (gates proporcionales → secretos y permisos → SBOM → firma → policy as code → excepciones que caducan → **reversión demostrada**) · [`cloud-security`](../labs/cloud-security/README.md) · [`appsec-code`](../labs/appsec-code/README.md) · 🧰 **tu propio repositorio** como laboratorio final
 - 🎓 Ninguna certificación lo describe bien todavía: **CySA+** como base y **CKS** (fuera del programa) si el terreno es Kubernetes. Aquí pesa más un repositorio público con un pipeline bien hecho.

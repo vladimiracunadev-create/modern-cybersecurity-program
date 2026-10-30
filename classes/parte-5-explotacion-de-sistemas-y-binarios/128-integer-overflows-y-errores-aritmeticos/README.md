@@ -103,6 +103,12 @@ unsigned. La lección conecta con toda la parte: la seguridad de memoria en C/C+
 que el lenguaje no comprueba por ti, y un descuido aritmético de una línea puede ser el primer eslabón
 de una cadena que termina en RCE.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Los errores aritméticos tienen su propia rama en el catálogo, bajo `CWE-682` (*cálculo incorrecto*). El desbordamiento de entero que estudias es `CWE-190` (*desbordamiento o envoltura de enteros*), de nivel *Base*; el subdesbordamiento es `CWE-191`; las tres trampas de la clase se reparten bajo `CWE-681` (*conversión incorrecta entre tipos numéricos*), con `CWE-195` (con signo a sin signo), `CWE-196` (sin signo a con signo), `CWE-194` (extensión de signo inesperada) y `CWE-197` (truncamiento). Y el «patrón clásico» —un overflow en el cálculo del tamaño que luego produce una escritura fuera de límites— tiene nombre propio: la **cadena `CWE-680`** (*desbordamiento de entero a desbordamiento de buffer*), una entrada de estructura *Compuesta* que MITRE desaconseja usar para mapear pero que documenta exactamente esa secuencia.
+
+La implicación práctica es una regla de la [clase 362](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md): en una cadena se corrige **el eslabón raíz**. Si el cálculo del tamaño desborda, comprobar el límite en la copia posterior trata el síntoma; corregir el cálculo elimina la causa de ambos. Esta cadena `CWE-190` → `CWE-787` está implementada como práctica ejecutable en `labs/appsec-code/practicas/memoria_y_carreras.py`, con pruebas que demuestran la escritura fuera de límites antes de la corrección y su ausencia después. Los CVE reales a menudo registran solo el último eslabón (el desbordamiento de buffer): **CVE-2021-3156** (`sudo`) es un caso donde NVD asigna `CWE-193`, un error de uno, como debilidad primaria aunque su consecuencia sea un desbordamiento de montón.
+
 ## 📖 Definiciones y características
 
 - **Integer overflow:** el resultado excede el máximo del tipo y "da la vuelta". *Clave:* CWE-190;

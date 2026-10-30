@@ -272,13 +272,18 @@ y la Parte 17 para automatización y gobierno.
    Firmar artefactos sin entender qué garantiza una firma es teatro.
 5. 📚 [**Parte 4 — Seguridad web**](../classes/parte-4-seguridad-de-aplicaciones-web/README.md)
    · **087** OWASP Top 10 y **110** APIs REST: lo que tus controles buscan.
-6. 📚 [**Parte 17 — Profundización**](../classes/parte-17-profundizacion-para-certificaciones/README.md)
+6. 📚 [**Parte 20 — Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestión**](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md).
+   Lo que tus puertas y reglas deben saber nombrar: [366 — configuración, dependencias, contenedores y pipelines](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md)
+   (con su mapa CWE de correspondencias oficiales, inferidas y «ninguna»),
+   [369 — EPSS, KEV y priorización](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md) para las políticas de bloqueo y [370 — ciclo completo](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md)
+   para convertir un hallazgo en una prueba de regresión permanente.
+7. 📚 [**Parte 17 — Profundización**](../classes/parte-17-profundizacion-para-certificaciones/README.md)
    · **330** análisis de código y automatización de seguridad · **324** hardening y configuración ·
    **313**/**315** identidades y accesos privilegiados · **323** pruebas de software.
-7. 📚 [**Parte 8 y Parte 9**](../classes/parte-8-blue-team-deteccion-y-soc/README.md)
+8. 📚 [**Parte 8 y Parte 9**](../classes/parte-8-blue-team-deteccion-y-soc/README.md)
    · **182** telemetría y **202** respuesta a incidentes: el pipeline también genera señales, y
    algún día será el origen de un incidente.
-8. 📚 [**Parte 14 — GRC**](../classes/parte-14-grc-riesgo-y-cumplimiento/README.md)
+9. 📚 [**Parte 14 — GRC**](../classes/parte-14-grc-riesgo-y-cumplimiento/README.md)
    · **284** riesgo de terceros y **282** políticas: la cadena de suministro con lenguaje de
    auditoría.
 

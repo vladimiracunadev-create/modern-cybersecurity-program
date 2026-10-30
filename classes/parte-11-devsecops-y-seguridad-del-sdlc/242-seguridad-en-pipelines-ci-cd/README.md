@@ -81,6 +81,23 @@ Un workflow usa `vendor/deploy@v2` con permiso de escritura y secreto cloud. Aun
 
 Hay dominio cuando el alumno rastrea datos y privilegios desde el evento hasta el despliegue, reconoce ejecución de entrada no confiable, reduce permisos, fija dependencias, separa build de release y puede explicar qué amenaza mitiga cada control.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Los defectos típicos de un pipeline también se pueden nombrar con el catálogo, y hacerlo sirve para comparar hallazgos entre herramientas. El laboratorio del programa (`labs/devsecops-pipeline/cwe-map.json`) clasifica cada defecto de un workflow vulnerable con uno de tres tipos de correspondencia, y el resultado enseña que **no todo tiene un CWE**:
+
+| Defecto del workflow | CWE | Correspondencia |
+|---|---|---|
+| Expresión de GitHub interpolada en un script de shell | `CWE-78` | Oficial |
+| Secreto escrito en un registro o artefacto | `CWE-532` | Oficial |
+| Token en la URL de una petición | `CWE-598` | Oficial |
+| `curl -k`: sin validación de certificado | `CWE-295` | Oficial |
+| `curl \| bash` sin verificar | `CWE-494` | Oficial |
+| `pull_request_target` que ejecuta código del PR | `CWE-829` | Inferida |
+| `permissions: write-all` | `CWE-250` | Inferida |
+| Acción referenciada por etiqueta mutable | `CWE-1357` | Inferida |
+
+«Oficial» significa que la entrada del catálogo describe literalmente el defecto; «inferida», que se llega por razonamiento y se declara; y para otros hallazgos del mismo laboratorio, como `CMD` en forma *shell*, la correspondencia es **ninguna**. Distinguir estos tres casos evita forzar etiquetas. El ejemplo de la clase, una acción útil con etiqueta mutable, es el caso `CWE-1357`: la acción puede cambiar sin que lo decidas. La metodología completa está en la [clase 366](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
+
 ## 📖 Definiciones y características
 
 - **Poisoned Pipeline Execution (PPE)**: inyectar código malicioso que el pipeline ejecuta con sus privilegios. *Característica*: ocurre cuando el pipeline corre código no confiable de PRs.

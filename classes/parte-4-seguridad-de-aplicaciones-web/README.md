@@ -9,7 +9,7 @@
 - Dafydd Stuttard y Marcus Pinto — *The Web Application Hacker's Handbook* (2ª ed., Wiley)
 - Peter Yaworski — *Real-World Bug Hunting* (No Starch Press)
 - Vickie Li — *Bug Bounty Bootcamp* (No Starch Press)
-- OWASP — *Top 10 (2021)*, *Web Security Testing Guide (WSTG)* y *Application Security Verification Standard (ASVS)*
+- OWASP — *Top 10:2025* (y la edición 2021 como referencia histórica), *Web Security Testing Guide (WSTG)* y *Application Security Verification Standard (ASVS)*
 - PortSwigger — *Web Security Academy* (material de laboratorio y taxonomía de ataques)
 
 ---
@@ -133,7 +133,7 @@ flowchart TD
 ### 🧰 Bloque 1 · Fundamentos y herramientas — clases 086 a 090
 
 - **[086 · Arquitectura web moderna y superficie de ataque](086-arquitectura-web-moderna-y-superficie-de-ataque/README.md)** · 90 min — Cada componente (navegador, CDN, WAF, API, backend) procesa la entrada distinto y por eso es un punto de ataque distinto. Añade la frontera frontend–wallet–contrato/programa: conectar, firmar y producir un efecto son eventos distintos que deben observarse por separado.
-- **[087 · OWASP Top 10: panorama general](087-owasp-top-10-panorama-general/README.md)** · 75 min — El mapa consensuado del riesgo web. Las tres primeras categorías (control de acceso, cripto, inyección) y por qué el Top 10 es el índice mental de todo pentest web.
+- **[087 · OWASP Top 10: panorama general](087-owasp-top-10-panorama-general/README.md)** · 75 min — El mapa consensuado del riesgo web, con la edición 2025 (dos categorías nuevas: cadena de suministro y condiciones excepcionales; SSRF integrada en control de acceso) y la 2021 como referencia. Cada categoría es una agrupación de CWE, no un CWE, y por qué el Top 10 es el índice mental de todo pentest web.
 - **[088 · Burp Suite: configuración y flujo de trabajo](088-burp-suite-configuracion-y-flujo-de-trabajo/README.md)** · 120 min — El proxy que se pone en medio de tu navegador y hace moldeable todo lo que envía. La CA para HTTPS, Repeater e Intruder, y por qué Burp amplifica el criterio pero no lo sustituye.
 - **[089 · OWASP ZAP](089-owasp-zap/README.md)** · 90 min — La alternativa abierta. Spider tradicional frente a AJAX spider, la distinción pasivo/activo que evita incidentes, y el Automation Framework para CI/CD.
 - **[090 · Mapeo, spidering y descubrimiento de contenido](090-mapeo-spidering-y-descubrimiento-de-contenido/README.md)** · 100 min — No puedes probar lo que no encontraste. Dirbusting con SecLists, el JavaScript como mapa que el sitio te entrega, y los ficheros que hablan de más (robots.txt, `.git`).
@@ -208,7 +208,7 @@ Los bloques de vulnerabilidades son bastante independientes, pero 086–088 son 
 - Stuttard & Pinto, *The Web Application Hacker's Handbook*, 2ª ed., Wiley.
 - Yaworski, *Real-World Bug Hunting*, No Starch Press.
 - Li, *Bug Bounty Bootcamp*, No Starch Press.
-- OWASP Top 10 — <https://owasp.org/Top10/>
+- OWASP Top 10:2025 — <https://top10.owasp.org/2025/0x00_2025-Introduction/> (edición 2021: <https://owasp.org/Top10/2021/>)
 - OWASP Web Security Testing Guide — <https://owasp.org/www-project-web-security-testing-guide/>
 - OWASP ASVS — <https://owasp.org/www-project-application-security-verification-standard/>
 - PortSwigger Web Security Academy — <https://portswigger.net/web-security>

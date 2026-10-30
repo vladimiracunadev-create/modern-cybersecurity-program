@@ -2,7 +2,7 @@
 
 # 🛡️ Programa de Ciberseguridad Moderna
 
-## **360 clases · 20 partes (0–19) · de fundamentos a nivel experto**
+## **370 clases · 21 partes (0–20) · de fundamentos a nivel experto**
 
 **El programa de ciberseguridad más completo en español — desde redes, criptografía y Linux hasta Red Team, DFIR, cloud security, exploit development, seguridad de IA y Game Security.**
 
@@ -10,7 +10,7 @@
 [![Security](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/security.yml)
 [![Deploy Pages](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/deploy-pages.yml)
 
-[![Clases](https://img.shields.io/badge/clases-360%20·%2020%20partes-7c5cff?style=for-the-badge)](classes/README.md)
+[![Clases](https://img.shields.io/badge/clases-370%20·%2021%20partes-7c5cff?style=for-the-badge)](classes/README.md)
 [![Nivel](https://img.shields.io/badge/nivel-fundamentos%20→%20experto-2e8b57?style=for-the-badge)](classes/README.md)
 [![Idioma](https://img.shields.io/badge/idioma-español-blue?style=for-the-badge)](README.md)
 [![Código](https://img.shields.io/badge/código-Apache--2.0-3fb950?style=for-the-badge)](LICENSE)
@@ -33,7 +33,7 @@
 
 ## 🎯 Qué es esto
 
-Un currículo modular y **secuencial** que cubre **todo el espectro de la ciberseguridad moderna**, paso a paso, en 360 clases numeradas (001→360) agrupadas en 20 partes. Cada clase es una carpeta con un `README.md` completo que incluye:
+Un currículo modular y **secuencial** que cubre **todo el espectro de la ciberseguridad moderna**, paso a paso, en 370 clases numeradas (001→370) agrupadas en 21 partes. Cada clase es una carpeta con un `README.md` completo que incluye:
 
 - 🎯 **Objetivo** y **resultados de aprendizaje verificables**.
 - 🗺️ **Temas** con el porqué de cada uno.
@@ -77,17 +77,17 @@ Eso también permite detectar cuándo una norma deja de estar vigente, que es cu
 | Marco / publicación | Identificador y versión | Partes que lo usan |
 |---|---|---:|
 | [MITRE ATT&CK: Adversarial Tactics, Techniques and Common…](https://attack.mitre.org/) | MITRE ATT&CK v19.2 | 13 (0, 1, 3, 6, 7, 8, 9, 10, 12, 13, 16, 17, 18) |
-| [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/) | OWASP Cheat Sheet Series | 7 (0, 2, 3, 4, 10, 11, 17) |
+| [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/) | OWASP Cheat Sheet Series | 8 (0, 2, 3, 4, 10, 11, 17, 20) |
 | [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/) | OWASP WSTG v4.2 | 8 (1, 3, 4, 11, 12, 16, 17, 18) |
+| [Common Weakness Enumeration (CWE)](https://cwe.mitre.org/) | MITRE CWE 5.0 | 5 (4, 5, 11, 17, 20) |
 | [CISA: avisos, catálogos y recursos de ciberseguridad](https://www.cisa.gov/) | CISA | 7 (0, 9, 12, 13, 14, 16, 17) |
+| [CISA Known Exploited Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | CISA KEV Catalog | 5 (0, 4, 11, 17, 20) |
 | [Computer Security Incident Handling Guide](https://csrc.nist.gov/pubs/sp/800/61/r2/final) | NIST SP 800-61 Rev. 2 — **retirada** | 6 (7, 8, 9, 10, 16, 17) |
 | [OWASP Community: fichas de ataques y vulnerabilidades](https://owasp.org/www-community/) | OWASP Community | 5 (0, 1, 4, 5, 11) |
+| [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss) | FIRST CVSS | 6 (3, 4, 16, 17, 18, 20) |
 | [MITRE ATLAS: Adversarial Threat Landscape for…](https://atlas.mitre.org/) | MITRE ATLAS v2026.07 | 2 (15, 18) |
 | [The NIST Cybersecurity Framework (CSF) 2.0](https://www.nist.gov/cyberframework) | NIST CSF 2.0 | 6 (0, 8, 9, 10, 14, 17) |
 | [Security and Privacy Controls for Information Systems and…](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) | NIST SP 800-53 Rev. 5 | 7 (7, 8, 9, 13, 14, 16, 17) |
-| [Incident Response Recommendations and Considerations for…](https://doi.org/10.6028/NIST.SP.800-61r3) | NIST SP 800-61 Rev. 3 | 4 (7, 8, 9, 10) |
-| [CIS Benchmarks: guías de configuración segura](https://www.cisecurity.org/cis-benchmarks) | CIS Benchmarks | 4 (0, 10, 14, 17) |
-| [Technical Guide to Information Security Testing and Assessment](https://csrc.nist.gov/pubs/sp/800/115/final) | NIST SP 800-115 | 4 (3, 7, 8, 16) |
 
 ### Normas citadas que ya no están vigentes
 
@@ -96,6 +96,7 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 | Publicación | Estado | Clases que la citan |
 |---|---|---:|
 | [NIST SP 800-61 Rev. 2](https://csrc.nist.gov/pubs/sp/800/61/r2/final) | retirada | 12 |
+| [OWASP Top 10:2021](https://owasp.org/Top10/) | superada | 9 |
 | [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html) | superada | 4 |
 | [NIST IR 8259](https://csrc.nist.gov/pubs/ir/8259/final) | retirada | 3 |
 | [RFC 793](https://www.rfc-editor.org/rfc/rfc793) | obsoleta | 2 |
@@ -107,16 +108,16 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 | [RFC 7489](https://www.rfc-editor.org/rfc/rfc7489) | obsoleta | 1 |
 | [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446) | obsoleta | 1 |
 
-Las 759 obras que usa el programa — 57 libros, 25 artículos, 167 normas y 510 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-10-01 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
+Las 765 obras que usa el programa — 57 libros, 25 artículos, 172 normas y 511 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-10-01 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
 
 <!-- fuentes:fin -->
 
-## 🗂️ Las 20 partes, numeradas de 0 a 19
+## 🗂️ Las 21 partes, numeradas de 0 a 20
 
 Cada parte tiene su **propio README** con narrativa completa: de qué trata, resultados de aprendizaje, estructura temática y enlaces a las clases.
 
-> La Parte 0 cuenta como la primera unidad; por eso la vigésima y última unidad se identifica como
-> **Parte 19**. «20 partes» expresa la cantidad, no la existencia de una carpeta `parte-20`.
+> La Parte 0 cuenta como la primera unidad; por eso la vigésima primera y última unidad se identifica como
+> **Parte 20**. «21 partes» expresa la cantidad.
 
 | # | Parte | Clases | Foco | README |
 |---|---|---:|---|---|
@@ -140,28 +141,32 @@ Cada parte tiene su **propio README** con narrativa completa: de qué trata, res
 | 17 | Profundización para certificaciones | 20 (311–330) | Gestión de datos, IAM empresarial, arquitectura, seguridad física, gestión de vulnerabilidades y gobierno | [📘 leer](classes/parte-17-profundizacion-para-certificaciones/README.md) |
 | 18 | IA aplicada a la ciberseguridad | 10 (331–340) | LLMs y agentes: MCP, kali-mcp, pentesting asistido, defensa e informes | [📘 leer](classes/parte-18-ia-aplicada-a-la-ciberseguridad/README.md) |
 | 19 | Seguridad de videojuegos, cheats y anti-cheat | 20 (341–360) | Autoridad, memoria, ESP, aim, telemetría, detección, privacidad y RCA | [📘 leer](classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/README.md) |
+| 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS | 10 (361–370) | Catálogo CWE, causa raíz, familias de debilidades, CVE, CVSS v3.1/v4.0, EPSS, KEV y corrección verificada | [📘 leer](classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
+| 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS | 10 (361–370) | Catálogo CWE, causa raíz, familias de debilidades, CVE, CVSS v3.1/v4.0, EPSS, KEV y corrección verificada | [📘 leer](classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
+| 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS | 10 (361–370) | Catálogo CWE, causa raíz, familias de debilidades, CVE, CVSS v3.1/v4.0, EPSS, KEV y corrección verificada | [📘 leer](classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
+| 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS | 10 (361–370) | Catálogo CWE, causa raíz, familias de debilidades, CVE, CVSS v3.1/v4.0, EPSS, KEV y corrección verificada | [📘 leer](classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
 
-➡️ **[Ver el índice plano de las 360 clases](classes/README.md)**
+➡️ **[Ver el índice plano de las 370 clases](classes/README.md)**
 
 ## 📕 Manual completo (todo el curso en un documento)
 
-¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **360 clases** y los recursos transversales **«¿Y si cruzas la línea?»**, **«Cybercrime-as-a-Service»** y **«Modelo operativo de Game Security»**, con portada, aviso ético e índice enlazado.
+¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **370 clases** y los recursos transversales **«¿Y si cruzas la línea?»**, **«Cybercrime-as-a-Service»** y **«Modelo operativo de Game Security»**, con portada, aviso ético e índice enlazado.
 
-- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — **1.365 páginas A4** con **392 diagramas** dibujados, listas para imprimir o leer offline.
+- 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — **1.505 páginas A4** con **404 diagramas** dibujados, listas para imprimir o leer offline.
 
 > Se genera con `python scripts/generar_manual.py` a partir de las clases, así que siempre refleja el contenido actual del repositorio.
 
 ## 📱 Aplicación Android y web
 
-La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **360 clases en 20 partes** y siete recursos transversales **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. Incluye «¿Y si cruzas la línea?», glosario, plataformas de práctica, CaaS, Game Security y las rutas de **Responsible Disclosure / CVD** e **Investigador/a de seguridad** como tarjetas visibles y buscables.
+La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **370 clases en 21 partes** y siete recursos transversales **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. Incluye «¿Y si cruzas la línea?», glosario, plataformas de práctica, CaaS, Game Security y las rutas de **Responsible Disclosure / CVD** e **Investigador/a de seguridad** como tarjetas visibles y buscables.
 
 - 🌐 **[Abrir la aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/)** — misma experiencia, publicada dentro de GitHub Pages.
 - 📥 **[Descargar Android, web y manual — release v1.3.0](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.3.0)** · verifica los tres artefactos con `SHA256SUMS.txt`.
-- 🧭 **Navegación:** Home (20 partes + progreso global) → Parte (clases + buscador) → Clase, en dos pestañas: *Teoría* (objetivo, resultados, temas, explicación en profundidad, definiciones, glosario) y *Práctica* (preparación, laboratorio, ejercicios, reto, errores comunes, preguntas frecuentes, referencias).
+- 🧭 **Navegación:** Home (21 partes + progreso global) → Parte (clases + buscador) → Clase, en dos pestañas: *Teoría* (objetivo, resultados, temas, explicación en profundidad, definiciones, glosario) y *Práctica* (preparación, laboratorio, ejercicios, reto, errores comunes, preguntas frecuentes, referencias).
 - 🔌 **Offline-first:** las clases se leen enteras sin conexión, diagramas incluidos; solo necesitan internet los enlaces al sitio y a GitHub. El progreso se guarda **solo en tu dispositivo**.
 
 <div align="center">
-<img src="docs/img/app-home.png" alt="Pantalla de inicio: 20 partes y progreso" width="30%"> <img src="docs/img/app-parte.png" alt="Clases de una parte con buscador" width="30%"> <img src="docs/img/app-clase.png" alt="Detalle de una clase" width="30%">
+<img src="docs/img/app-home.png" alt="Pantalla de inicio: partes y progreso" width="30%"> <img src="docs/img/app-parte.png" alt="Clases de una parte con buscador" width="30%"> <img src="docs/img/app-clase.png" alt="Detalle de una clase" width="30%">
 </div>
 
 > APK de **sideload** (fuera de Play Store), firmado en el pipeline de release. En Android, permite instalar desde "orígenes desconocidos" para el instalador que uses. Detalle técnico y pipeline en [docs/APP_MOVIL.md](docs/APP_MOVIL.md).
@@ -176,8 +181,8 @@ comando, más una colección de retos tipo CTF:
 - 🎯 **[Red Team / Active Directory](labs/red-team-ad/README.md)** — caja de atacante + guía GOAD · Parte 7.
 - 🔐 **[Criptografía](labs/cripto/README.md)** — retos con solución en Python (XOR, RSA-Fermat, MD5, ECB) · Parte 2.
 - 🧠 **[DFIR memoria/malware](labs/dfir-memoria/README.md)** — Volatility 3 + YARA para forense de memoria · Partes 9 y 17.
-- 🔎 **[Code review / SAST](labs/appsec-code/README.md)** — app vulnerable + Semgrep/Bandit · Partes 11 y 17.
-- 🚚 **[Pipeline de despliegue (DevSecOps)](labs/devsecops-pipeline/README.md)** — repo vulnerable auditado en **8 capas** (dependencias, SAST, secretos, Dockerfile, contenedor, CI/CD, typosquatting y priorización KEV/EPSS/CVSS) con informe · Parte 11.
+- 🔎 **[Code review / SAST](labs/appsec-code/README.md)** — app vulnerable con 8 debilidades, su versión corregida y **pruebas que fallan antes y pasan después**, mapa CWE y contraste de las etiquetas de Bandit/Semgrep · Partes 11, 17 y 20.
+- 🚚 **[Pipeline de despliegue (DevSecOps)](labs/devsecops-pipeline/README.md)** — repo vulnerable auditado en **8 capas** (dependencias, SAST, secretos, Dockerfile, contenedor, CI/CD, typosquatting y priorización KEV/EPSS/CVSS) con informe, más calculadora **CVSS v3.1/v4.0**, tabla de plazos de **CISA BOD 26-04** y comparación de fuentes CNA/ADP/NVD · Partes 11 y 20.
 - 🤖 **[Pentest con IA (kali-mcp)](labs/kali-mcp-ia/README.md)** — agente de IA orquestando Kali vía MCP · Parte 18.
 - 🎮 **[Game Security Range](labs/game-security/README.md)** — cliente/servidor educativo, modos vulnerable/seguro, telemetría, datasets y detectores · Parte 19.
 - 🪟 **[Triaje forense de Windows (RootCause)](labs/rootcause-windows/README.md)** — sensor forense de comportamiento en Rust · Partes 6, 8 y 9.
@@ -200,7 +205,7 @@ comando, más una colección de retos tipo CTF:
 - 🎮 **[Modelo operativo de Game Security](docs/modelo-operativo-game-security.md)** — separa ingeniería, investigación, sanción, apelación, privacidad y respuesta a incidentes; define evidencia y límites de práctica.
 - 🗺️ **[Matriz de roles SecOps y DevSecOps](docs/matriz-roles-secops-devsecops.md)** — SOC, SecOps, DevSecOps, AppSec, Cloud Security y DFIR comparados por misión, decisiones, entregables, métricas, clases y progresión, con el diagrama del ciclo desarrollo → pipeline → nube → producción → monitoreo → incidente → aprendizaje.
 - 📝 **[Autoevaluaciones](autoevaluaciones/README.md)** — 109 preguntas (una batería por parte). Versión interactiva con puntuación: [quiz](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/quiz.html).
-- ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/progreso.html)** — marca las 360 clases (se guarda en tu navegador).
+- ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/progreso.html)** — marca las 370 clases (se guarda en tu navegador).
 - 🔑 **[Soluciones a los retos](soluciones/README.md)** — claves de referencia de los ejercicios y retos (Parte 2 completa; resto por lotes).
 - 🎓 **[Certificaciones](certificaciones/README.md)** — mapeo del programa a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con **% de cobertura ponderado por dominio**.
 
@@ -226,13 +231,13 @@ Cada rol tiene una **guía de carrera completa** (qué es, día a día, qué nec
 - **[Pentester](rutas/pentester.md) / [Red Team](rutas/red-team.md)** → Partes 0, 1, 3, 4, 5, 7 (+ 12).
 - **[Analista SOC / Blue Team](rutas/soc-blue-team.md)** → Partes 0, 1, 6, 8, 9.
 - **[Analista SecOps](rutas/secops-analista.md)** → Partes 0, 8, 9, 17, 14 (+ 3, 10, 11) · la **operación** de seguridad: cobertura de controles, ciclo de vulnerabilidades, parcheo y hardening, revisión de accesos, runbooks, SLA y métricas. **No es un SOC L1**: el SOC trabaja sobre eventos, este rol sobre controles y riesgo; alineado a **Security+ → CySA+**.
-- **[Analista de Gestión de Vulnerabilidades](rutas/gestion-vulnerabilidades.md)** → Partes 0, 1, 3, 8, 11, 17 (VM, hardening/parcheo, EDR y reporte) · alineado a **CySA+**.
-- **[AppSec / Bug Bounty](rutas/appsec.md)** → Partes 0, 2, 4, 11.
-- **[Analista DevSecOps](rutas/devsecops-analista.md)** → Partes 0, 11, 4, 17, 14 (+ 10) · triaje y gobierno del riesgo del SDLC: falsos positivos con argumento, priorización **KEV/EPSS/CVSS + exposición**, backlog, SLA, excepciones con vencimiento, verificación y evidencia contra **NIST SSDF** y **OWASP SAMM**; alineado a **CySA+**.
-- **[Ingeniero DevSecOps](rutas/devsecops-engineer.md)** → Partes 0, 11 (entera), 10, 2, 17 · construye la capacidad: pipelines CI/CD seguros, puertas de bloqueo proporcionales, **SBOM**, firma y procedencia (**SLSA**), **policy as code** con OPA/Rego, identidades efímeras y secretos. También aparece como **«Especialista DevSecOps»**: la guía explica cómo distinguir qué perfil pide cada oferta.
+- **[Analista de Gestión de Vulnerabilidades](rutas/gestion-vulnerabilidades.md)** → Partes 0, 1, 3, 8, 11, 17 y 20 (VM, hardening/parcheo, EDR, reporte y CWE/CVE/CVSS) · alineado a **CySA+**.
+- **[AppSec / Bug Bounty](rutas/appsec.md)** → Partes 0, 2, 4, 11 y 20.
+- **[Analista DevSecOps](rutas/devsecops-analista.md)** → Partes 0, 11, 4, 20, 17, 14 (+ 10) · triaje y gobierno del riesgo del SDLC: falsos positivos con argumento, priorización **KEV/EPSS/CVSS + exposición**, backlog, SLA, excepciones con vencimiento, verificación y evidencia contra **NIST SSDF** y **OWASP SAMM**; alineado a **CySA+**.
+- **[Ingeniero DevSecOps](rutas/devsecops-engineer.md)** → Partes 0, 11 (entera), 10, 2, 20, 17 · construye la capacidad: pipelines CI/CD seguros, puertas de bloqueo proporcionales, **SBOM**, firma y procedencia (**SLSA**), **policy as code** con OPA/Rego, identidades efímeras y secretos. También aparece como **«Especialista DevSecOps»**: la guía explica cómo distinguir qué perfil pide cada oferta.
 - **[DFIR / Forense](rutas/dfir.md)** → Partes 0, 1, 6, 9.
 - **[Threat Intelligence Analyst / CTI](rutas/threat-intelligence-analyst.md)** → Partes 0, 1, 6, 7, 8, 9, 12 y 17 · convierte observables en estimaciones con procedencia, confianza y vigencia; entrega contexto distinto a SOC, DFIR, infraestructura y dirección.
-- **[Responsable de divulgación coordinada / Responsible Disclosure](rutas/divulgacion-responsable.md)** → Partes 0, 3, 4, 8, 9, 11, 14 y 17 · recibe, valida y coordina reportes hasta una mitigación y comunicación verificables; diferencia descubridor, reportante, proveedor, desplegador y coordinador.
+- **[Responsable de divulgación coordinada / Responsible Disclosure](rutas/divulgacion-responsable.md)** → Partes 0, 3, 4, 8, 9, 11, 14, 17 y 20 · recibe, valida y coordina reportes hasta una mitigación y comunicación verificables; diferencia descubridor, reportante, proveedor, desplegador y coordinador.
 - **[Investigador/a de seguridad](rutas/investigador-seguridad.md)** → Parte 0, Partes 1–2 y una especialidad en 4, 5, 6 o 13 (+ 7, 8, 11, 15 y 18) · formula hipótesis, construye experimentos autorizados y reproducibles y comunica mecanismos, precondiciones y límites.
 - **[Cloud Security](rutas/cloud-security.md)** → Partes 0, 2, 10, 11.
 - **[GRC / Gestión](rutas/grc.md)** → Partes 0, 14 (+ 8, 9 para contexto técnico).
@@ -311,7 +316,7 @@ El repositorio no se publica a ciegas: cada `push` y cada PR pasan por integraci
 Los mismos validadores corren en local antes de subir:
 
 ```bash
-python scripts/validar_estructura.py       # 360 clases + enlaces .md sin rotos
+python scripts/validar_estructura.py       # 370 clases + enlaces .md sin rotos
 python scripts/validar_encoding.py          # todo UTF-8, sin mojibake
 python scripts/generar_navegacion.py --check # navegación coherente
 python scripts/verify-sources                # fuentes: registro, citas y cifras
@@ -349,7 +354,7 @@ python scripts/generar_curriculum_movil.py   # catálogo embebido de la app móv
 
 ### ✅ Lo que sí es
 
-- 📚 un currículo **secuencial y completo** de 360 clases, de fundamentos a nivel experto;
+- 📚 un currículo **secuencial y completo** de 370 clases, de fundamentos a nivel experto;
 - 🧪 un curso con **práctica real**: 11 laboratorios ejecutables y retos tipo CTF con writeups;
 - 🧭 una guía de **carrera por rol** con día a día, skills, certificaciones y salario orientativo;
 - 🎓 un mapeo honesto a **certificaciones** (Security+, PenTest+, CySA+, OSCP, CISSP, BTL1, SANS) con % de cobertura;

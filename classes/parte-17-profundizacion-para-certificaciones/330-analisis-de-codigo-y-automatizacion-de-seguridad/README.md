@@ -55,6 +55,12 @@ flowchart LR
 
 El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Automatizar el análisis de código multiplica la cantidad de etiquetas de CWE que llegan al equipo, y por eso hay que automatizar también la **comprobación** de esas etiquetas. El programa incluye una herramienta que relaciona los hallazgos de Bandit, Semgrep o SARIF con el CWE recomendado de un laboratorio (por ejemplo, `eval` aparece etiquetado `CWE-78` cuando el defecto es `CWE-95`): `python scripts/cwe_kb.py sast salida.json --mapa cwe-map.json` indica, para cada hallazgo, si el CWE de la herramienta coincide, es válido pero menos específico, o difiere. En la salida de Bandit 1.9.4 sobre `labs/appsec-code` hay diez hallazgos: tres coinciden con el CWE recomendado, cinco son válidos pero menos específicos o difieren y dos son avisos informativos de importación; además, un defecto (el *path traversal*) no se detecta. Un *pipeline* que se limite a bloquear por severidad dejaría pasar lo que la herramienta no ve y bloquearía por etiquetas poco fiables.
+
+En el flujo automatizado, la prioridad de un CVE detectado por SCA debe calcularse a partir de datos fechados (KEV, EPSS) y de la exposición, y registrarse junto a la versión de la base de avisos para que el resultado sea reproducible; ver [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md). Los casos mixtos, con una vulnerabilidad en KEV en una dependencia de poca exposición, justifican que la política tenga excepciones documentadas.
+
 ## 📖 Definiciones y características
 
 - **Revisión de código segura:** lectura estructurada del código buscando defectos de seguridad (validación, authz, manejo de secretos, criptografía). Característica clave: capta **fallos de lógica de negocio** que ninguna herramienta automática entiende.

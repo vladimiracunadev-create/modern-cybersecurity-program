@@ -1,0 +1,2106 @@
+{
+ "esquema": 1,
+ "descripcion": "Mapa curricular de CWE: dónde se enseña, se practica y se verifica cada debilidad.",
+ "familias": {
+  "entradas": {
+   "nombre": "Entradas no confiables: inyección y validación",
+   "clases": [
+    363
+   ]
+  },
+  "identidad-acceso": {
+   "nombre": "Identidad, control de acceso y sesiones",
+   "clases": [
+    364
+   ]
+  },
+  "criptografia-secretos": {
+   "nombre": "Criptografía y gestión de secretos",
+   "clases": [
+    364
+   ]
+  },
+  "informacion": {
+   "nombre": "Exposición de información",
+   "clases": [
+    364
+   ]
+  },
+  "memoria": {
+   "nombre": "Memoria, enteros y su cadena",
+   "clases": [
+    365
+   ]
+  },
+  "concurrencia-recursos": {
+   "nombre": "Concurrencia y consumo de recursos",
+   "clases": [
+    365
+   ]
+  },
+  "configuracion-cadena": {
+   "nombre": "Configuración, dependencias y cadena de suministro",
+   "clases": [
+    366
+   ]
+  },
+  "abstractas": {
+   "nombre": "Clases abstractas y debilidades de diseño",
+   "clases": [
+    361,
+    362
+   ]
+  }
+ },
+ "entradas": {
+  "CWE-74": {
+   "alias_es": [
+    "inyeccion",
+    "neutralizacion de elementos especiales"
+   ],
+   "familia": "entradas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "inyeccion",
+    "injection"
+   ],
+   "teoria": [
+    91,
+    363
+   ],
+   "ejercicio": [
+    363
+   ],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Separar datos de control con interfaces estructuradas (parametrización) y codificar la salida según el contexto.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-77": {
+   "alias_es": [
+    "inyeccion de comandos"
+   ],
+   "familia": "entradas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "inyeccion de comandos"
+   ],
+   "teoria": [
+    95,
+    363
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Evitar construir órdenes con texto; usar interfaces que reciban argumentos por separado.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-78": {
+   "alias_es": [
+    "inyeccion de comandos del sistema operativo",
+    "os command injection",
+    "shell injection"
+   ],
+   "familia": "entradas",
+   "nivel": "basico",
+   "palabras_clave": [
+    "inyeccion de comandos",
+    "shell=true",
+    "os command"
+   ],
+   "teoria": [
+    95,
+    363,
+    370
+   ],
+   "ejercicio": [
+    363,
+    370
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_correcciones.py::test_inyeccion_de_comandos"
+   ],
+   "correccion": "app_corregida.py: lista de argumentos sin shell y validación del destino.",
+   "mitigacion": "Pasar argumentos como lista sin intérprete de órdenes, validar contra lista de permitidos y ejecutar con mínimo privilegio.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-79": {
+   "alias_es": [
+    "xss",
+    "cross-site scripting",
+    "scripting entre sitios"
+   ],
+   "familia": "entradas",
+   "nivel": "basico",
+   "palabras_clave": [
+    "xss",
+    "cross-site scripting"
+   ],
+   "teoria": [
+    96,
+    97,
+    363
+   ],
+   "ejercicio": [
+    363
+   ],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Codificar la salida según el contexto (HTML, atributo, JavaScript, URL) y limitar la ejecución con una política CSP.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-89": {
+   "alias_es": [
+    "inyeccion sql",
+    "sql injection",
+    "sqli"
+   ],
+   "familia": "entradas",
+   "nivel": "basico",
+   "palabras_clave": [
+    "inyeccion sql",
+    "sql injection",
+    "parametriz"
+   ],
+   "teoria": [
+    91,
+    92,
+    93,
+    361,
+    362,
+    363,
+    370
+   ],
+   "ejercicio": [
+    363,
+    370
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_correcciones.py::test_inyeccion_sql"
+   ],
+   "correccion": "app_corregida.py: consulta parametrizada con marcador (?).",
+   "mitigacion": "Consultas parametrizadas o procedimientos almacenados; mínimo privilegio en la cuenta de base de datos.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-94": {
+   "alias_es": [
+    "inyeccion de codigo",
+    "code injection"
+   ],
+   "familia": "entradas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "inyeccion de codigo",
+    "code injection"
+   ],
+   "teoria": [
+    107,
+    363
+   ],
+   "ejercicio": [
+    363
+   ],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "No generar ni evaluar código a partir de entrada externa; usar evaluadores restringidos o formatos de datos.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-95": {
+   "alias_es": [
+    "eval",
+    "evaluacion de codigo",
+    "inyeccion de eval"
+   ],
+   "familia": "entradas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "eval"
+   ],
+   "teoria": [
+    238,
+    363,
+    370
+   ],
+   "ejercicio": [
+    363,
+    370
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_correcciones.py::test_evaluacion_de_codigo"
+   ],
+   "correccion": "app_corregida.py: evaluador aritmético restringido en lugar de eval.",
+   "mitigacion": "Sustituir eval por un analizador de lenguaje restringido o por estructuras de datos; nunca evaluar entrada externa.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-20": {
+   "alias_es": [
+    "validacion de entrada",
+    "input validation"
+   ],
+   "familia": "abstractas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "validacion de entrada",
+    "input validation"
+   ],
+   "teoria": [
+    115,
+    362,
+    363
+   ],
+   "ejercicio": [
+    362
+   ],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Validar por lista de permitidos en el punto de entrada, pero tratar la validación como complemento de la corrección en el punto de uso.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-22": {
+   "alias_es": [
+    "path traversal",
+    "recorrido de directorios",
+    "traversal de ruta"
+   ],
+   "familia": "entradas",
+   "nivel": "basico",
+   "palabras_clave": [
+    "path traversal",
+    "recorrido de ruta",
+    "ruta"
+   ],
+   "teoria": [
+    105,
+    363,
+    370
+   ],
+   "ejercicio": [
+    363,
+    370
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_correcciones.py::test_path_traversal"
+   ],
+   "correccion": "app_corregida.py: la ruta se resuelve y se comprueba que queda dentro del directorio permitido.",
+   "mitigacion": "Resolver la ruta canónica y comprobar que está dentro del directorio permitido; no usar entrada del usuario como nombre de archivo.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-352": {
+   "alias_es": [
+    "csrf",
+    "falsificacion de peticion en sitios cruzados",
+    "cross-site request forgery"
+   ],
+   "familia": "entradas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "csrf",
+    "cross-site request forgery"
+   ],
+   "teoria": [
+    98,
+    104,
+    362,
+    363
+   ],
+   "ejercicio": [
+    363
+   ],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Tokens anti-CSRF por sesión, atributo SameSite en cookies y verificación del origen de la petición.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-434": {
+   "alias_es": [
+    "subida de archivos",
+    "carga de archivos peligrosos",
+    "file upload"
+   ],
+   "familia": "entradas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "subida de archivos",
+    "carga de archivos",
+    "upload"
+   ],
+   "teoria": [
+    108,
+    363
+   ],
+   "ejercicio": [],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_practicas_ssrf_y_subida.py::test_un_script_disfrazado_de_imagen_se_rechaza_por_su_contenido"
+   ],
+   "correccion": "practicas/subida.py: guardar_correcto valida extensión, contenido y tamaño y guarda con un nombre generado.",
+   "mitigacion": "Validar tipo por contenido y lista de permitidos, renombrar, guardar fuera de la raíz web y sin permisos de ejecución.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-502": {
+   "alias_es": [
+    "deserializacion insegura",
+    "deserializacion de datos no confiables",
+    "pickle"
+   ],
+   "familia": "entradas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "deserializacion",
+    "pickle"
+   ],
+   "teoria": [
+    106,
+    363,
+    370
+   ],
+   "ejercicio": [
+    363,
+    370
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_correcciones.py::test_deserializacion"
+   ],
+   "correccion": "app_corregida.py: formato de datos (JSON) en lugar de pickle.",
+   "mitigacion": "No deserializar datos no confiables con formatos capaces de instanciar objetos; usar formatos de solo datos y verificar integridad.",
+   "evaluacion": []
+  },
+  "CWE-611": {
+   "alias_es": [
+    "xxe",
+    "entidades externas xml"
+   ],
+   "familia": "entradas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "xxe",
+    "entidad externa",
+    "entidades externas"
+   ],
+   "teoria": [
+    100,
+    363
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Desactivar DTD y entidades externas en el analizador XML.",
+   "evaluacion": []
+  },
+  "CWE-918": {
+   "alias_es": [
+    "ssrf",
+    "falsificacion de peticion del lado del servidor"
+   ],
+   "familia": "entradas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "ssrf",
+    "server-side request forgery"
+   ],
+   "teoria": [
+    99,
+    363
+   ],
+   "ejercicio": [
+    363
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_practicas_ssrf_y_subida.py::test_el_mismo_host_permitido_resolviendo_a_una_direccion_interna_se_rechaza"
+   ],
+   "correccion": "practicas/ssrf.py: resolver_destino valida el destino final (lista de nombres, direcciones públicas y dirección fijada).",
+   "mitigacion": "Lista de destinos permitidos, resolver y validar la dirección final antes de conectar y bloquear rangos internos y de metadatos.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-284": {
+   "alias_es": [
+    "control de acceso inadecuado",
+    "improper access control"
+   ],
+   "familia": "identidad-acceso",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "control de acceso"
+   ],
+   "teoria": [
+    364
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Aplicar una política de acceso explícita, denegar por defecto y centralizar la decisión en el servidor.",
+   "evaluacion": []
+  },
+  "CWE-862": {
+   "alias_es": [
+    "falta de autorizacion",
+    "missing authorization",
+    "idor"
+   ],
+   "familia": "identidad-acceso",
+   "nivel": "basico",
+   "palabras_clave": [
+    "autorizacion",
+    "missing authorization"
+   ],
+   "teoria": [
+    110,
+    247,
+    364
+   ],
+   "ejercicio": [
+    364
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_practicas_autorizacion.py::test_solo_el_admin_borra_en_la_version_correcta"
+   ],
+   "correccion": "practicas/autorizacion.py: borrar_correcto comprueba el rol en el servidor.",
+   "mitigacion": "Comprobar la autorización en cada operación en el servidor, con denegación por defecto y matriz de pruebas por usuario y recurso.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-863": {
+   "alias_es": [
+    "autorizacion incorrecta",
+    "incorrect authorization"
+   ],
+   "familia": "identidad-acceso",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "autorizacion incorrecta",
+    "incorrect authorization"
+   ],
+   "teoria": [
+    105,
+    110,
+    247,
+    364
+   ],
+   "ejercicio": [
+    364
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_practicas_autorizacion.py::test_la_version_con_comprobacion_equivocada_tambien_falla"
+   ],
+   "correccion": "practicas/autorizacion.py: leer_correcto compara el propietario real del recurso.",
+   "mitigacion": "Probar la política completa (todas las parejas usuario–recurso), no solo el caso feliz.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-639": {
+   "alias_es": [
+    "referencia directa insegura a objeto",
+    "idor",
+    "clave controlada por el usuario"
+   ],
+   "familia": "identidad-acceso",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "idor",
+    "clave controlada",
+    "referencia directa"
+   ],
+   "teoria": [
+    105,
+    110,
+    247,
+    364
+   ],
+   "ejercicio": [
+    364
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_practicas_autorizacion.py::test_la_version_vulnerable_viola_la_politica_en_las_parejas_ajenas"
+   ],
+   "correccion": "practicas/autorizacion.py: leer_correcto verifica la propiedad antes de devolver el recurso.",
+   "mitigacion": "Autorizar el objeto concreto solicitado y responder igual a un identificador inexistente y a uno ajeno.",
+   "evaluacion": []
+  },
+  "CWE-287": {
+   "alias_es": [
+    "autenticacion incorrecta",
+    "improper authentication"
+   ],
+   "familia": "identidad-acceso",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "autenticacion"
+   ],
+   "teoria": [
+    101,
+    364
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Usar mecanismos de autenticación probados, comprobar la identidad en cada petición protegida y proteger contra repetición.",
+   "evaluacion": []
+  },
+  "CWE-306": {
+   "alias_es": [
+    "falta de autenticacion en funcion critica",
+    "missing authentication"
+   ],
+   "familia": "identidad-acceso",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "falta de autenticacion",
+    "missing authentication"
+   ],
+   "teoria": [
+    101,
+    364
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Exigir autenticación en todas las funciones críticas, incluidas las de administración y las internas expuestas.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-269": {
+   "alias_es": [
+    "gestion incorrecta de privilegios",
+    "escalada de privilegios"
+   ],
+   "familia": "identidad-acceso",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "privilegios"
+   ],
+   "teoria": [
+    364
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Principio de mínimo privilegio y revisión de las operaciones que cambian el nivel de privilegio.",
+   "evaluacion": []
+  },
+  "CWE-307": {
+   "alias_es": [
+    "limitacion de intentos de autenticacion",
+    "fuerza bruta"
+   ],
+   "familia": "identidad-acceso",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "intentos de autenticacion",
+    "restriccion indebida"
+   ],
+   "teoria": [
+    101,
+    111,
+    364
+   ],
+   "ejercicio": [],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_practicas_memoria_y_limites.py::test_se_bloquea_tras_los_fallos_y_se_desbloquea_con_el_tiempo"
+   ],
+   "correccion": "practicas/limites.py: ControlDeIntentos bloquea tras fallos consecutivos.",
+   "mitigacion": "Limitar intentos por cuenta y por origen con bloqueo temporal y registro.",
+   "evaluacion": []
+  },
+  "CWE-798": {
+   "alias_es": [
+    "credenciales embebidas",
+    "secretos en el codigo",
+    "hardcoded credentials"
+   ],
+   "familia": "criptografia-secretos",
+   "nivel": "basico",
+   "palabras_clave": [
+    "credenciales embebidas",
+    "secretos",
+    "hard-coded"
+   ],
+   "teoria": [
+    241,
+    364,
+    366,
+    370
+   ],
+   "ejercicio": [
+    364,
+    370
+   ],
+   "laboratorio": [
+    "labs/appsec-code",
+    "labs/devsecops-pipeline"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_correcciones.py::test_secretos_no_estan_en_el_codigo"
+   ],
+   "correccion": "app_corregida.py: los secretos se leen del entorno y no figuran en el código.",
+   "mitigacion": "Sacar los secretos del código y de las imágenes, gestionarlos en un almacén de secretos y rotarlos.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-259": {
+   "alias_es": [
+    "contrasena embebida",
+    "hard-coded password"
+   ],
+   "familia": "criptografia-secretos",
+   "nivel": "basico",
+   "palabras_clave": [
+    "contrasena embebida",
+    "hard-coded password"
+   ],
+   "teoria": [
+    238,
+    241,
+    364
+   ],
+   "ejercicio": [
+    370
+   ],
+   "laboratorio": [
+    "labs/appsec-code",
+    "labs/devsecops-pipeline"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_correcciones.py::test_secretos_no_estan_en_el_codigo"
+   ],
+   "correccion": "app_corregida.py: la contraseña se lee del entorno.",
+   "mitigacion": "No incluir contraseñas en el código; usar el entorno o un gestor de secretos.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-327": {
+   "alias_es": [
+    "algoritmo criptografico roto",
+    "criptografia debil"
+   ],
+   "familia": "criptografia-secretos",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "algoritmo criptografico",
+    "roto o arriesgado"
+   ],
+   "teoria": [
+    238,
+    364
+   ],
+   "ejercicio": [
+    370
+   ],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Usar algoritmos y bibliotecas estándar vigentes y evitar diseñar criptografía propia.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-916": {
+   "alias_es": [
+    "hash de contrasena debil",
+    "hash sin sal",
+    "md5 para contrasenas"
+   ],
+   "familia": "criptografia-secretos",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "hash de contrasena",
+    "scrypt",
+    "sal"
+   ],
+   "teoria": [
+    238,
+    364,
+    370
+   ],
+   "ejercicio": [
+    364,
+    370
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_correcciones.py::test_hash_de_contrasena"
+   ],
+   "correccion": "app_corregida.py: scrypt con sal y parámetros de coste.",
+   "mitigacion": "Usar un algoritmo con coste ajustable y sal para contraseñas (scrypt, Argon2, bcrypt) y comparar en tiempo constante.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-200": {
+   "alias_es": [
+    "exposicion de informacion sensible",
+    "fuga de informacion"
+   ],
+   "familia": "informacion",
+   "nivel": "basico",
+   "palabras_clave": [
+    "exposicion de informacion",
+    "informacion sensible"
+   ],
+   "teoria": [
+    110,
+    111,
+    364
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Minimizar lo que se devuelve y registra; separar mensajes de error para el usuario y para el diagnóstico.",
+   "evaluacion": []
+  },
+  "CWE-295": {
+   "alias_es": [
+    "validacion de certificados",
+    "improper certificate validation"
+   ],
+   "familia": "criptografia-secretos",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "certificado"
+   ],
+   "teoria": [
+    242,
+    364,
+    366
+   ],
+   "ejercicio": [],
+   "laboratorio": [
+    "labs/devsecops-pipeline"
+   ],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "No desactivar la validación de certificados; fijar la confianza en las autoridades requeridas.",
+   "evaluacion": []
+  },
+  "CWE-330": {
+   "alias_es": [
+    "aleatoriedad insuficiente",
+    "valores aleatorios predecibles"
+   ],
+   "familia": "criptografia-secretos",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "aleatori"
+   ],
+   "teoria": [
+    364
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Usar generadores criptográficamente seguros para secretos, tokens y claves.",
+   "evaluacion": []
+  },
+  "CWE-119": {
+   "alias_es": [
+    "desbordamiento de buffer",
+    "limites de memoria"
+   ],
+   "familia": "memoria",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "desbordamiento de buffer",
+    "limites de memoria"
+   ],
+   "teoria": [
+    119,
+    362,
+    365
+   ],
+   "ejercicio": [
+    365
+   ],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Preferir lenguajes con seguridad de memoria y comprobar límites antes de copiar o indexar.",
+   "evaluacion": []
+  },
+  "CWE-120": {
+   "alias_es": [
+    "desbordamiento de buffer clasico",
+    "copia sin comprobar tamano"
+   ],
+   "familia": "memoria",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "buffer overflow",
+    "desbordamiento",
+    "copia"
+   ],
+   "teoria": [
+    119,
+    120,
+    365
+   ],
+   "ejercicio": [
+    365
+   ],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Comprobar el tamaño de destino antes de copiar y usar funciones acotadas.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-121": {
+   "alias_es": [
+    "desbordamiento en pila",
+    "stack overflow"
+   ],
+   "familia": "memoria",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "pila",
+    "stack"
+   ],
+   "teoria": [
+    119,
+    120,
+    122,
+    365
+   ],
+   "ejercicio": [
+    365
+   ],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Canarios de pila, ASLR y DEP/NX como defensa en profundidad; la corrección es comprobar el límite.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-122": {
+   "alias_es": [
+    "desbordamiento en el heap",
+    "desbordamiento en monticulo"
+   ],
+   "familia": "memoria",
+   "nivel": "avanzado",
+   "palabras_clave": [
+    "heap",
+    "monticulo"
+   ],
+   "teoria": [
+    126,
+    365
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Comprobar los límites de las asignaciones dinámicas y usar asignadores endurecidos como defensa en profundidad.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-125": {
+   "alias_es": [
+    "lectura fuera de limites",
+    "out-of-bounds read"
+   ],
+   "familia": "memoria",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "lectura fuera de limites",
+    "out-of-bounds read"
+   ],
+   "teoria": [
+    119,
+    136,
+    365
+   ],
+   "ejercicio": [
+    365
+   ],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Comprobar índices y longitudes antes de leer.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-787": {
+   "alias_es": [
+    "escritura fuera de limites",
+    "out-of-bounds write"
+   ],
+   "familia": "memoria",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "escritura fuera de limites",
+    "out-of-bounds write"
+   ],
+   "teoria": [
+    119,
+    365
+   ],
+   "ejercicio": [
+    365
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_practicas_memoria_y_limites.py::test_corregir_el_calculo_elimina_la_escritura_fuera_de_limites"
+   ],
+   "correccion": "practicas/memoria_y_carreras.py: tamano_correcto elimina el desbordamiento que producía la escritura.",
+   "mitigacion": "Comprobar límites en cada escritura y corregir el cálculo de tamaños que la origina (cadena CWE-680).",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-416": {
+   "alias_es": [
+    "uso despues de liberar",
+    "use after free"
+   ],
+   "familia": "memoria",
+   "nivel": "avanzado",
+   "palabras_clave": [
+    "uso despues de liberar",
+    "use after free"
+   ],
+   "teoria": [
+    127,
+    365
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Invalidar punteros tras liberar, usar propiedad clara de la memoria y lenguajes con seguridad de memoria.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-415": {
+   "alias_es": [
+    "doble liberacion",
+    "double free"
+   ],
+   "familia": "memoria",
+   "nivel": "avanzado",
+   "palabras_clave": [
+    "doble liberacion",
+    "double free"
+   ],
+   "teoria": [
+    127,
+    365
+   ],
+   "ejercicio": [
+    365
+   ],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Anular el puntero tras liberar y mantener una única propiedad de cada bloque.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-476": {
+   "alias_es": [
+    "desreferencia de puntero nulo",
+    "null pointer"
+   ],
+   "familia": "memoria",
+   "nivel": "basico",
+   "palabras_clave": [
+    "puntero nulo",
+    "null pointer"
+   ],
+   "teoria": [
+    136,
+    365
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Comprobar punteros y valores devueltos antes de usarlos.",
+   "evaluacion": []
+  },
+  "CWE-190": {
+   "alias_es": [
+    "desbordamiento de enteros",
+    "integer overflow"
+   ],
+   "familia": "memoria",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "desbordamiento de enteros",
+    "integer overflow"
+   ],
+   "teoria": [
+    128,
+    365
+   ],
+   "ejercicio": [
+    365
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_practicas_memoria_y_limites.py::test_el_producto_da_la_vuelta_en_32_bits"
+   ],
+   "correccion": "practicas/memoria_y_carreras.py: tamano_correcto comprueba el desbordamiento antes de reservar.",
+   "mitigacion": "Comprobar el desbordamiento antes de la operación o usar aritmética con comprobación.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-193": {
+   "alias_es": [
+    "error de uno",
+    "off-by-one"
+   ],
+   "familia": "memoria",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "off-by-one",
+    "error de uno"
+   ],
+   "teoria": [
+    128,
+    365
+   ],
+   "ejercicio": [
+    365
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_practicas_memoria_y_limites.py::test_la_version_correcta_no_se_sale_nunca"
+   ],
+   "correccion": "practicas/memoria_y_carreras.py: rellenar_correcto respeta el límite.",
+   "mitigacion": "Revisar condiciones de bucle y límites; usar abstracciones que lleven la longitud.",
+   "evaluacion": []
+  },
+  "CWE-362": {
+   "alias_es": [
+    "condicion de carrera",
+    "race condition"
+   ],
+   "familia": "concurrencia-recursos",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "condicion de carrera",
+    "race condition"
+   ],
+   "teoria": [
+    109,
+    365
+   ],
+   "ejercicio": [
+    365
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_practicas_memoria_y_limites.py::test_con_cerrojo_solo_prospera_una_y_el_saldo_nunca_es_negativo"
+   ],
+   "correccion": "practicas/memoria_y_carreras.py: CuentaCorrecta hace atómica la comprobación y el uso.",
+   "mitigacion": "Hacer atómica la comprobación y el uso (cerrojos, transacciones) y probar con ejecución concurrente.",
+   "evaluacion": []
+  },
+  "CWE-367": {
+   "alias_es": [
+    "toctou",
+    "comprobar y usar"
+   ],
+   "familia": "concurrencia-recursos",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "toctou",
+    "time-of-check"
+   ],
+   "teoria": [
+    109,
+    365
+   ],
+   "ejercicio": [],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_practicas_memoria_y_limites.py::test_dos_retiradas_simultaneas_vacian_mas_de_lo_que_hay"
+   ],
+   "correccion": "practicas/memoria_y_carreras.py: CuentaCorrecta unifica comprobar y usar bajo un cerrojo.",
+   "mitigacion": "Operar sobre el recurso, no sobre su nombre, y unificar comprobación y uso.",
+   "evaluacion": []
+  },
+  "CWE-770": {
+   "alias_es": [
+    "recursos sin limite",
+    "limitacion de tasa",
+    "rate limiting"
+   ],
+   "familia": "concurrencia-recursos",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "sin limite",
+    "limitacion de tasa",
+    "throttling"
+   ],
+   "teoria": [
+    110,
+    111,
+    365,
+    366
+   ],
+   "ejercicio": [
+    365
+   ],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_practicas_memoria_y_limites.py::test_con_limite_acepta_exactamente_el_maximo_y_rechaza_uno_mas"
+   ],
+   "correccion": "practicas/limites.py: leer_acotado y LimitadorDeTasa imponen límites.",
+   "mitigacion": "Imponer límites de tamaño, tasa y concurrencia y rechazar el exceso sin cargarlo entero.",
+   "evaluacion": []
+  },
+  "CWE-400": {
+   "alias_es": [
+    "consumo descontrolado de recursos",
+    "denegacion de servicio"
+   ],
+   "familia": "concurrencia-recursos",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "consumo",
+    "denegacion de servicio"
+   ],
+   "teoria": [
+    111,
+    365
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Acotar el consumo de recursos y vigilar los agotamientos.",
+   "evaluacion": []
+  },
+  "CWE-489": {
+   "alias_es": [
+    "depuracion activa",
+    "codigo de depuracion en produccion"
+   ],
+   "familia": "configuracion-cadena",
+   "nivel": "basico",
+   "palabras_clave": [
+    "depuracion activa",
+    "debug"
+   ],
+   "teoria": [
+    238,
+    243,
+    324,
+    366,
+    370
+   ],
+   "ejercicio": [
+    370
+   ],
+   "laboratorio": [
+    "labs/appsec-code",
+    "labs/devsecops-pipeline"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_correcciones.py::test_depuracion_y_enlace"
+   ],
+   "correccion": "app_corregida.py: depuración desactivada y enlace solo a la interfaz necesaria.",
+   "mitigacion": "Desactivar la depuración en producción, enlazar solo a las interfaces necesarias y revisar la configuración por entorno.",
+   "evaluacion": []
+  },
+  "CWE-250": {
+   "alias_es": [
+    "ejecucion con privilegios innecesarios",
+    "contenedor como root"
+   ],
+   "familia": "configuracion-cadena",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "privilegios innecesarios",
+    "como root",
+    "user"
+   ],
+   "teoria": [
+    242,
+    243,
+    324,
+    364,
+    366
+   ],
+   "ejercicio": [
+    366
+   ],
+   "laboratorio": [
+    "labs/devsecops-pipeline"
+   ],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Ejecutar con un usuario sin privilegios y reducir permisos de procesos y workflows.",
+   "evaluacion": []
+  },
+  "CWE-732": {
+   "alias_es": [
+    "permisos incorrectos",
+    "permisos excesivos"
+   ],
+   "familia": "configuracion-cadena",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "permisos"
+   ],
+   "teoria": [
+    324,
+    366
+   ],
+   "ejercicio": [
+    366
+   ],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Asignar los permisos mínimos y revisar los valores por defecto.",
+   "evaluacion": []
+  },
+  "CWE-1104": {
+   "alias_es": [
+    "componentes sin mantenimiento",
+    "dependencias abandonadas"
+   ],
+   "familia": "configuracion-cadena",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "sin mantenimiento",
+    "unmaintained"
+   ],
+   "teoria": [
+    240,
+    366
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Inventariar dependencias, retirar componentes sin mantenimiento y vigilar avisos.",
+   "evaluacion": []
+  },
+  "CWE-1395": {
+   "alias_es": [
+    "dependencia vulnerable",
+    "componente con vulnerabilidades conocidas"
+   ],
+   "familia": "configuracion-cadena",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "dependencia vulnerable",
+    "vulnerabilidades conocidas"
+   ],
+   "teoria": [
+    240,
+    366
+   ],
+   "ejercicio": [
+    366
+   ],
+   "laboratorio": [
+    "labs/devsecops-pipeline"
+   ],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Inventariar y actualizar dependencias con análisis de composición de software y priorizar por explotación.",
+   "evaluacion": []
+  },
+  "CWE-829": {
+   "alias_es": [
+    "inclusion de funcionalidad de fuente no confiable",
+    "accion de terceros"
+   ],
+   "familia": "configuracion-cadena",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "fuente no confiable",
+    "terceros"
+   ],
+   "teoria": [
+    242,
+    246,
+    366
+   ],
+   "ejercicio": [
+    366
+   ],
+   "laboratorio": [
+    "labs/devsecops-pipeline"
+   ],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Fijar y verificar los componentes externos (por resumen o commit) y limitar su confianza.",
+   "evaluacion": []
+  },
+  "CWE-494": {
+   "alias_es": [
+    "descarga sin verificar integridad",
+    "curl | bash"
+   ],
+   "familia": "configuracion-cadena",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "integridad",
+    "sin verificar"
+   ],
+   "teoria": [
+    242,
+    243,
+    246,
+    366
+   ],
+   "ejercicio": [
+    366
+   ],
+   "laboratorio": [
+    "labs/devsecops-pipeline"
+   ],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Verificar integridad y firma de lo descargado antes de ejecutarlo.",
+   "evaluacion": []
+  },
+  "CWE-1357": {
+   "alias_es": [
+    "dependencia sin fijar",
+    "etiqueta mutable"
+   ],
+   "familia": "configuracion-cadena",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "etiqueta mutable",
+    "sin fijar",
+    "latest"
+   ],
+   "teoria": [
+    240,
+    242,
+    243,
+    246,
+    366
+   ],
+   "ejercicio": [
+    366
+   ],
+   "laboratorio": [
+    "labs/devsecops-pipeline"
+   ],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Fijar versiones y resúmenes de imágenes y acciones.",
+   "evaluacion": []
+  },
+  "CWE-915": {
+   "alias_es": [
+    "asignacion masiva",
+    "mass assignment"
+   ],
+   "familia": "configuracion-cadena",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "asignacion masiva",
+    "mass assignment"
+   ],
+   "teoria": [
+    110,
+    366
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Permitir solo los campos esperados al enlazar datos de entrada con objetos.",
+   "evaluacion": []
+  },
+  "CWE-1188": {
+   "alias_es": [
+    "valores por defecto inseguros"
+   ],
+   "familia": "configuracion-cadena",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "valores por defecto",
+    "inicializacion"
+   ],
+   "teoria": [
+    324,
+    366
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Entregar el producto con valores por defecto seguros.",
+   "evaluacion": []
+  },
+  "CWE-532": {
+   "alias_es": [
+    "secretos en registros",
+    "datos sensibles en logs"
+   ],
+   "familia": "informacion",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "registro",
+    "log"
+   ],
+   "teoria": [
+    241,
+    242,
+    364
+   ],
+   "ejercicio": [],
+   "laboratorio": [
+    "labs/devsecops-pipeline"
+   ],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "No registrar secretos ni datos personales y filtrar la salida de diagnóstico.",
+   "evaluacion": []
+  },
+  "CWE-943": {
+   "alias_es": [
+    "inyeccion en consultas de datos",
+    "nosql"
+   ],
+   "familia": "entradas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "nosql",
+    "logica de consultas"
+   ],
+   "teoria": [
+    91,
+    94
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Separar estructura y datos de la consulta, tipar la entrada y usar interfaces parametrizadas del almacén.",
+   "evaluacion": []
+  },
+  "CWE-88": {
+   "alias_es": [
+    "inyeccion de argumentos"
+   ],
+   "familia": "entradas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "argumento"
+   ],
+   "teoria": [
+    95
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Pasar los argumentos como lista, validar los permitidos y usar `--` para separar opciones de datos.",
+   "evaluacion": []
+  },
+  "CWE-521": {
+   "alias_es": [
+    "contrasena debil",
+    "requisitos de contrasena"
+   ],
+   "familia": "identidad-acceso",
+   "nivel": "basico",
+   "palabras_clave": [
+    "contrasena"
+   ],
+   "teoria": [
+    101
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Exigir longitud mínima, comprobar contra listas de contraseñas filtradas y ofrecer un segundo factor.",
+   "evaluacion": []
+  },
+  "CWE-384": {
+   "alias_es": [
+    "fijacion de sesion",
+    "session fixation"
+   ],
+   "familia": "identidad-acceso",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "fijacion de sesion",
+    "session fixation"
+   ],
+   "teoria": [
+    102
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Regenerar el identificador de sesión al autenticarse y no aceptar identificadores impuestos desde fuera.",
+   "evaluacion": []
+  },
+  "CWE-1004": {
+   "alias_es": [
+    "cookie sin httponly"
+   ],
+   "familia": "configuracion-cadena",
+   "nivel": "basico",
+   "palabras_clave": [
+    "httponly"
+   ],
+   "teoria": [
+    97,
+    102
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Emitir las cookies de sesión con HttpOnly.",
+   "evaluacion": []
+  },
+  "CWE-614": {
+   "alias_es": [
+    "cookie sin secure"
+   ],
+   "familia": "configuracion-cadena",
+   "nivel": "basico",
+   "palabras_clave": [
+    "secure"
+   ],
+   "teoria": [
+    102
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Emitir las cookies de sesión con el atributo Secure y servir solo por HTTPS.",
+   "evaluacion": []
+  },
+  "CWE-347": {
+   "alias_es": [
+    "verificacion de firma incorrecta",
+    "jwt alg none"
+   ],
+   "familia": "criptografia-secretos",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "firma",
+    "alg"
+   ],
+   "teoria": [
+    103
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Verificar siempre la firma con el algoritmo y la clave fijados por el servidor, nunca con los que indique el token.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-321": {
+   "alias_es": [
+    "clave criptografica embebida"
+   ],
+   "familia": "criptografia-secretos",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "clave criptografica",
+    "secret_key"
+   ],
+   "teoria": [
+    103,
+    241
+   ],
+   "ejercicio": [],
+   "laboratorio": [
+    "labs/devsecops-pipeline"
+   ],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Sacar la clave del código, generarla con entropía suficiente y rotarla.",
+   "evaluacion": []
+  },
+  "CWE-326": {
+   "alias_es": [
+    "fuerza criptografica inadecuada",
+    "clave corta"
+   ],
+   "familia": "criptografia-secretos",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "fuerza",
+    "longitud"
+   ],
+   "teoria": [
+    103
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Usar longitudes de clave y parámetros recomendados por estándares vigentes.",
+   "evaluacion": []
+  },
+  "CWE-601": {
+   "alias_es": [
+    "redireccion abierta",
+    "open redirect"
+   ],
+   "familia": "entradas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "redireccion",
+    "redirect_uri"
+   ],
+   "teoria": [
+    104
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Validar el destino de la redirección contra una lista de permitidos y no aceptar URL arbitrarias.",
+   "evaluacion": []
+  },
+  "CWE-1321": {
+   "alias_es": [
+    "contaminacion de prototipo",
+    "prototype pollution"
+   ],
+   "familia": "entradas",
+   "nivel": "avanzado",
+   "palabras_clave": [
+    "prototype pollution",
+    "contaminacion de prototipo"
+   ],
+   "teoria": [
+    113
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Evitar fusiones recursivas de objetos con claves controladas y usar objetos sin prototipo o mapas.",
+   "evaluacion": []
+  },
+  "CWE-942": {
+   "alias_es": [
+    "cors permisivo"
+   ],
+   "familia": "configuracion-cadena",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "cors"
+   ],
+   "teoria": [
+    113
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Permitir solo orígenes explícitos y no reflejar el origen de la petición.",
+   "evaluacion": []
+  },
+  "CWE-346": {
+   "alias_es": [
+    "validacion de origen",
+    "postmessage"
+   ],
+   "familia": "entradas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "origen",
+    "postmessage"
+   ],
+   "teoria": [
+    113
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Comprobar el origen del emisor contra una lista de permitidos antes de actuar sobre un mensaje.",
+   "evaluacion": []
+  },
+  "CWE-444": {
+   "alias_es": [
+    "contrabando de peticiones http",
+    "request smuggling"
+   ],
+   "familia": "entradas",
+   "nivel": "avanzado",
+   "palabras_clave": [
+    "request smuggling",
+    "contrabando"
+   ],
+   "teoria": [
+    112
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Hacer que todos los componentes interpreten igual los límites de la petición y rechazar las ambiguas.",
+   "evaluacion": []
+  },
+  "CWE-841": {
+   "alias_es": [
+    "flujo de comportamiento",
+    "saltarse pasos"
+   ],
+   "familia": "abstractas",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "flujo",
+    "pasos"
+   ],
+   "teoria": [
+    109
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Validar en el servidor el estado y el orden de las operaciones.",
+   "evaluacion": []
+  },
+  "CWE-799": {
+   "alias_es": [
+    "frecuencia de interaccion",
+    "limite de repeticion"
+   ],
+   "familia": "concurrencia-recursos",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "frecuencia",
+    "repeticion"
+   ],
+   "teoria": [
+    109
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Limitar la frecuencia y la repetición de acciones sensibles por cuenta y por origen.",
+   "evaluacion": []
+  },
+  "CWE-602": {
+   "alias_es": [
+    "seguridad solo en el cliente"
+   ],
+   "familia": "identidad-acceso",
+   "nivel": "basico",
+   "palabras_clave": [
+    "cliente",
+    "interfaz"
+   ],
+   "teoria": [
+    247
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Repetir en el servidor toda comprobación de seguridad hecha en el cliente.",
+   "evaluacion": []
+  },
+  "CWE-134": {
+   "alias_es": [
+    "cadena de formato",
+    "format string"
+   ],
+   "familia": "memoria",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "format string",
+    "cadena de formato"
+   ],
+   "teoria": [
+    125
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Usar una cadena de formato constante y pasar los datos como argumentos.",
+   "evaluacion": []
+  },
+  "CWE-1336": {
+   "alias_es": [
+    "inyeccion de plantillas",
+    "ssti"
+   ],
+   "familia": "entradas",
+   "nivel": "avanzado",
+   "palabras_clave": [
+    "ssti",
+    "plantilla"
+   ],
+   "teoria": [
+    107
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "No construir plantillas a partir de entrada; pasar los datos como variables del contexto y usar entornos aislados.",
+   "evaluacion": []
+  },
+  "CWE-131": {
+   "alias_es": [
+    "calculo incorrecto del tamano de buffer"
+   ],
+   "familia": "memoria",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "tamano de buffer",
+    "tamano"
+   ],
+   "teoria": [
+    137
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Calcular tamaños con aritmética comprobada y validar antes de reservar.",
+   "evaluacion": []
+  },
+  "CWE-191": {
+   "alias_es": [
+    "subdesbordamiento de enteros"
+   ],
+   "familia": "memoria",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "subdesbordamiento",
+    "underflow"
+   ],
+   "teoria": [
+    128
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Comprobar el rango antes de restar y usar tipos adecuados.",
+   "evaluacion": []
+  },
+  "CWE-681": {
+   "alias_es": [
+    "conversion incorrecta entre tipos numericos",
+    "truncamiento"
+   ],
+   "familia": "memoria",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "conversion",
+    "truncamiento",
+    "signed"
+   ],
+   "teoria": [
+    128
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Evitar mezclar signo y tamaño de tipos y comprobar el rango en cada conversión.",
+   "evaluacion": []
+  },
+  "CWE-680": {
+   "alias_es": [
+    "desbordamiento de entero a desbordamiento de buffer"
+   ],
+   "familia": "memoria",
+   "nivel": "avanzado",
+   "palabras_clave": [
+    "cadena",
+    "tamano"
+   ],
+   "teoria": [
+    128
+   ],
+   "ejercicio": [],
+   "laboratorio": [
+    "labs/appsec-code"
+   ],
+   "prueba": [
+    "labs/appsec-code/tests/test_practicas_memoria_y_limites.py::test_el_buffer_diminuto_recibe_escrituras_fuera_de_limites"
+   ],
+   "correccion": "practicas/memoria_y_carreras.py: tamano_correcto corrige el eslabón raíz de la cadena.",
+   "mitigacion": "Corregir el eslabón raíz (el cálculo del tamaño) y no solo la copia posterior.",
+   "evaluacion": [
+    "autoevaluaciones/preguntas.json"
+   ]
+  },
+  "CWE-538": {
+   "alias_es": [
+    "informacion sensible en archivos accesibles"
+   ],
+   "familia": "informacion",
+   "nivel": "intermedio",
+   "palabras_clave": [
+    "archivo",
+    "contexto"
+   ],
+   "teoria": [
+    241,
+    243
+   ],
+   "ejercicio": [],
+   "laboratorio": [
+    "labs/devsecops-pipeline"
+   ],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "No incluir secretos ni metadatos en artefactos accesibles; usar listas de exclusión del contexto de construcción.",
+   "evaluacion": []
+  },
+  "CWE-598": {
+   "alias_es": [
+    "token en la url",
+    "datos sensibles en la cadena de consulta"
+   ],
+   "familia": "informacion",
+   "nivel": "basico",
+   "palabras_clave": [
+    "url",
+    "consulta"
+   ],
+   "teoria": [
+    241,
+    242
+   ],
+   "ejercicio": [],
+   "laboratorio": [
+    "labs/devsecops-pipeline"
+   ],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Enviar datos sensibles en el cuerpo o en cabeceras, no en la URL.",
+   "evaluacion": []
+  },
+  "CWE-506": {
+   "alias_es": [
+    "codigo malicioso embebido"
+   ],
+   "familia": "configuracion-cadena",
+   "nivel": "avanzado",
+   "palabras_clave": [
+    "codigo malicioso",
+    "malicioso"
+   ],
+   "teoria": [
+    246
+   ],
+   "ejercicio": [],
+   "laboratorio": [],
+   "prueba": [],
+   "correccion": "",
+   "mitigacion": "Verificar la integridad y la procedencia de los componentes y vigilar compromisos de la cadena de suministro.",
+   "evaluacion": []
+  }
+ }
+}

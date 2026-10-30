@@ -103,6 +103,12 @@ de forma que aunque una inyección se cuele, el script del atacante no se ejecut
 permitido. Codificación de salida como defensa primaria y CSP como red de seguridad: esa es la
 combinación que de verdad cierra el XSS.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+El catálogo usa **una sola entrada** para todo lo que has aprendido en esta clase: `CWE-79` (*neutralización incorrecta de entrada durante la generación de la página web*), de nivel *Base*, estable y apta para mapear, con `CWE-74` como padre. Fíjate en lo que **no** hace: no existe un CWE «XSS reflejado» distinto de otro «almacenado». Esa diferencia vive en el catálogo de patrones de ataque (`CAPEC-591` para el reflejado, `CAPEC-592` para el almacenado y `CAPEC-588` para el basado en DOM), mientras que el CWE nombra la causa común. Sí hay hijas de `CWE-79`, y se parecen a lo que viste en «el contexto de inyección lo decide todo»: variantes como `CWE-80` (etiquetas HTML con script) y `CWE-83` (script en atributos) describen **dónde** falla la neutralización, no cómo llega el dato.
+
+Los números de 2025 aportan perspectiva. El XSS es la **primera** debilidad del Top 25 de MITRE (60,38 puntos) porque concentra una enorme cantidad de CVE, pero solo **7** de ellos figuran en el catálogo KEV, frente a los 20 de la inyección de comandos. OWASP lo describe como un caso de «mucha frecuencia y poco impacto» dentro de A05 Injection. No significa que sea inofensivo —el robo de sesión de esta clase es real—, sino que **frecuencia y explotación observada son señales distintas** y no deben confundirse al priorizar (clase 369). La corrección en la causa es la codificación de salida según el contexto, y se practica en la [clase 363](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
+
 ## 📖 Definiciones y características
 
 - **XSS reflejado**: el payload viaja en la petición y se refleja en la respuesta inmediata. Característica: requiere que la víctima abra un enlace preparado.

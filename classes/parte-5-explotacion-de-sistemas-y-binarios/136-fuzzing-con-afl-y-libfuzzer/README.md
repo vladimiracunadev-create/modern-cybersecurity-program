@@ -110,6 +110,12 @@ La lección de la clase es que el fuzzing es la forma más escalable de encontra
 toda esta parte: no reemplaza el análisis humano, pero **genera el material** —los crashes— que luego
 se analiza y se convierte en exploits (clase 138) o en parches.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Un fuzzer no entrega debilidades, entrega **cierres inesperados**; convertirlos en un CWE es un trabajo de análisis posterior. Los saneadores (*sanitizers*) que acompañan al fuzzing clasifican parte de la información: un informe de AddressSanitizer distingue una lectura de una escritura fuera de límites, y esa diferencia decide la entrada del catálogo: una lectura es `CWE-125` (*lectura fuera de límites*), una escritura es `CWE-787`, y con el contexto se refina a `CWE-121` (pila) o `CWE-122` (montón). Un *use-after-free* detectado se clasifica como `CWE-416`, una desreferencia nula como `CWE-476` y un desbordamiento aritmético detectado por UBSan como `CWE-190`.
+
+Esto importa para la triage: estas entradas no tienen la misma gravedad. Una escritura (`CWE-787`) es candidata a control de ejecución; una lectura (`CWE-125`) puede filtrar memoria (Heartbleed, **CVE-2014-0160**, es un `CWE-125` con CVSS 7,5, EPSS ≈ 100 % y entrada en KEV); una desreferencia nula (`CWE-476`, puesto 13 del Top 25 con 0 CVE en KEV) suele ser una caída. Clasificar bien el crash decide a quién se le asigna y con qué urgencia, y es el punto de partida de un CVE. El flujo completo, de la debilidad a la corrección verificada, está en la [clase 370](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
+
 ## 📖 Definiciones y características
 
 - **Fuzzing:** generación masiva de entradas para provocar fallos. *Clave:* el guiado por cobertura

@@ -85,6 +85,12 @@ El pipeline construye dos veces: una para escanear y otra para publicar. La prim
 
 Existe dominio cuando el alumno puede vincular artefacto, SBOM, firma y procedencia por digest, explicar qué garantiza cada evidencia, describir correctamente SLSA Build v1.2 y diseñar verificación en el punto de consumo.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+La cadena de suministro tiene un lugar propio en las dos listas que se estudian en la Parte 20. Para OWASP es la categoría **A03:2025 Software Supply Chain Failures**, nueva en su forma ampliada, con 5 debilidades. En el catálogo CWE las entradas relevantes son `CWE-1357` (dependencia de un componente insuficientemente confiable) y sus hijas `CWE-1104` (sin mantenimiento) y `CWE-1395` (vulnerable); `CWE-829` (inclusión de funcionalidad de una esfera de control no confiable) para el paquete o la acción de origen dudoso; `CWE-494` (descarga de código sin comprobar su integridad) y `CWE-506` (código malicioso embebido) para el compromiso del artefacto.
+
+Una SBOM responde a «qué hay», no a «qué importa», y lo muestra el caso de un paquete de nombre parecido a otro (*typosquatting*): en el laboratorio del programa, `requets` imitando a `requests` es un `CWE-829` por correspondencia **inferida** (no hay una entrada que describa literalmente el engaño de nombres). La SBOM lo hace visible, pero la decisión de retirarlo depende de procedencia y de contexto, como desarrolla la [clase 366](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
+
 ## 📖 Definiciones y características
 
 - **SBOM (Software Bill of Materials)**: inventario formal de componentes de un artefacto. *Característica*: acelera la investigación cuando aparece una vulnerabilidad, pero requiere validar completitud y alcance.

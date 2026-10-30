@@ -101,6 +101,12 @@ navegadores que la soportan. Sanitización con DOMPurify donde haya que renderiz
 Trusted Types como defensa de plataforma: esa es la pila completa contra las variantes más
 peligrosas del XSS.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Ni el almacenado ni el basado en DOM tienen un CWE propio: ambos son `CWE-79`, la misma entrada que el reflejado. Lo que el catálogo de patrones de ataque separa (`CAPEC-592` para el almacenado, `CAPEC-588` para el basado en DOM) es la **mecánica**, y eso es útil para detectar y probar, pero no cambia la causa raíz: salida mal neutralizada en un contexto que el navegador interpreta. En el caso de DOM XSS la neutralización que falta ocurre en el cliente, en el código JavaScript que escribe en el DOM, no en la plantilla del servidor; sigue siendo el mismo defecto con la corrección en otro sitio, y por eso una prueba del servidor no lo detecta.
+
+La clasificación sirve también para no sobrerreaccionar. Un XSS almacenado en una página de administración expuesta a internet, con sesiones sin `HttpOnly` (`CWE-1004`), es más grave que uno reflejado que exige que la víctima pulse un enlace, pero el CWE es el mismo; lo que cambia la prioridad es el contexto y las señales de explotación que la [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md) combina. Aprender a distinguir el *tipo* de debilidad (`CWE-79`) de la *gravedad en tu activo* evita tanto subestimar un almacenado como dar alarma por cualquier reflejo en un formulario de búsqueda.
+
 ## 📖 Definiciones y características
 
 - **Stored XSS**: el payload se guarda en el servidor y se sirve a otros. Característica: no requiere enlace; se dispara solo al ver el contenido.

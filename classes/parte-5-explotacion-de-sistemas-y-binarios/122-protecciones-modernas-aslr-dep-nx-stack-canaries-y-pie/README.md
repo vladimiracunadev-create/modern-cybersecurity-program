@@ -106,6 +106,12 @@ sin NX, sirve el shellcode clásico; con todo activado, hará falta un leak, ROP
 la GOT o al heap. La lección de la clase es que la explotación moderna no derrota una defensa, sino
 **una pila de defensas encadenadas**, y cada una de las clases siguientes enseña a sortear una.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Las protecciones de esta clase son **mitigaciones de explotación**, no correcciones de la debilidad, y el catálogo CWE lo refleja de forma precisa. El desbordamiento de pila es `CWE-121`; el canario, DEP/NX, ASLR y PIE no lo eliminan, solo hacen más difícil o más improbable convertirlo en ejecución de código fiable. La corrección es comprobar el límite de la copia (`CWE-120` y su causa, que muchas veces es un tamaño mal calculado). Por eso un binario con todas las protecciones activadas sigue teniendo la misma entrada de CWE en el informe, y la lectura de `checksec` sobre su postura describe la *dificultad de explotación*, no la *ausencia de defecto*.
+
+Esta distinción tiene consecuencias de priorización. En los datos de 2025, `CWE-787` (escritura fuera de límites) es la quinta debilidad del Top 25 de MITRE con 12 CVE en KEV, y `CWE-121`, a pesar de las protecciones, tiene 4: las defensas elevan el coste del atacante, no lo anulan: un binario protegido puede seguir explotándose si se encadena con una fuga de información (`CWE-125`) que derrote a ASLR. Una política de seguridad que dé por cerrado un desbordamiento porque «el binario tiene canario» confunde ambas cosas; la práctica de comprobación de límites con prueba está en la [clase 365](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
+
 ## 📖 Definiciones y características
 
 - **ASLR:** aleatoriza las direcciones base de librerías, stack y heap en cada ejecución. *Clave:* una

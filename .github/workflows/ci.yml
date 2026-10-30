@@ -52,6 +52,18 @@ jobs:
           python -m unittest scripts.tests.test_generar_glosario_global -v
           python scripts/generar_glosario_global.py --check
 
+      - name: Probar y validar la base de conocimiento CWE (datos, mapa curricular, referencias y matriz)
+        run: |
+          python -m unittest scripts.tests.test_cwe_kb -v
+          python scripts/cwe_kb.py validar
+          python scripts/cwe_kb.py referencias
+          python scripts/cwe_kb.py cobertura --check
+
+      - name: Probar los laboratorios de la Parte 20 (appsec-code y devsecops-pipeline)
+        run: |
+          python -m unittest discover -s labs/appsec-code/tests -v
+          python -m unittest discover -s labs/devsecops-pipeline/tests -v
+
       - name: Probar conciliación del caso de custodia digital
         run: python -m unittest discover -s labs/custodia-activos-digitales/tests -v
 

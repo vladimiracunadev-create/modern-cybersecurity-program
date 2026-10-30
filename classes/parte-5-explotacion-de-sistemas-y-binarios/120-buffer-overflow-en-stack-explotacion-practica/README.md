@@ -98,6 +98,12 @@ ejercicio de laboratorio en un exploit de verdad, y depende de que las condicion
 direcciones) coincidan —el motivo de las técnicas de *info leak* y gestión de libc de las clases
 posteriores—.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Un exploit que funciona demuestra una debilidad, pero **no la sustituye en la clasificación**: tras llegar al control de RIP lo que se informa sigue siendo la causa (`CWE-120` o `CWE-121`, hijas de `CWE-787`), no «ejecución de código» ni «shell». La ejecución de código es el *impacto técnico* que MITRE lista como consecuencia de la debilidad. Es la regla de la [clase 362](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md): se mapea la debilidad, no el síntoma ni el impacto.
+
+Hay también un matiz sobre la existencia de exploits. Que exista un exploit público o una prueba de concepto —como el que construyes en esta clase en un laboratorio— no equivale a que el fallo se esté explotando en el mundo: para el catálogo KEV de CISA hace falta evidencia fiable de uso hostil, y los escaneos, la investigación y las pruebas de concepto no cuentan (ver [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md)). La distancia entre «es explotable» y «se explota» es lo que separa la severidad de la prioridad.
+
 ## 📖 Definiciones y características
 
 - **Payload:** secuencia de bytes que envías al programa para explotarlo. *Clave:* aquí es

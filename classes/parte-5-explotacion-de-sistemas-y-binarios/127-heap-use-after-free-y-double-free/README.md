@@ -100,6 +100,12 @@ detección como **AddressSanitizer (ASan)**, que instrumenta el binario para **d
 free en el momento en que ocurren** durante las pruebas, son hoy indispensables en el desarrollo de
 C/C++ seguro y en el *fuzzing* de la clase 136.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+El *use-after-free* es `CWE-416` (*uso después de liberar*), una variante estable cuyo padre es `CWE-825` (desreferencia de un puntero expirado), y la doble liberación es `CWE-415`, hermana bajo el mismo padre. Son dos de las debilidades de memoria con más peso en explotación: `CWE-416` es la **séptima** del Top 25 de 2025 con **14 CVE en KEV**, la segunda del Top 10 de debilidades de KEV (subió siete puestos respecto del año anterior). Esto da sentido a la idea de la clase de que el UAF «suele terminar en control de ejecución»: la estadística de KEV lo confirma.
+
+Dos casos reales del programa muestran la enorme distancia que puede haber entre dos fallos del *mismo* CWE. **CVE-2019-0708** (BlueKeep), un `CWE-416` en los Servicios de Escritorio Remoto de Windows, tiene un CVSS de 9,8, está en KEV con uso en *ransomware* y un EPSS cercano al 100 %. **CVE-2023-50716**, un `CWE-416` en una biblioteca de comunicaciones (Fast DDS), tiene CVSS 9,8 en NVD y 9,6 en su CNA, pero un EPSS del 0,72 % y ninguna entrada en KEV. La clase de debilidad dice qué buscar; la exposición, la explotación observada y la probabilidad dicen qué corregir primero (ver [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md)).
+
 ## 📖 Definiciones y características
 
 - **Use-after-free:** uso de memoria tras `free`. *Clave:* CWE-416; si el chunk se reasigna, escribes

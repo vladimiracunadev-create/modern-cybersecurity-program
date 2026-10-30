@@ -95,6 +95,12 @@ de correos personalizables, por ejemplo), se usa un motor **logic-less** como Mu
 expresiones arbitrarias, solo sustituye variables- y se ejecuta con sandbox y minimo privilegio como
 capas adicionales. La regla, una vez mas, es la de toda la parte: separar codigo de datos.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+La inyección de plantillas tiene un CWE propio y reciente: `CWE-1336` (*neutralización incorrecta de elementos especiales usados en un motor de plantillas*), de nivel *Base* y estado *Incomplete*, hija de `CWE-94` (control incorrecto de la generación de código). Que el padre sea inyección de **código** y no de comandos recoge lo que viste en «de expresión a RCE»: el atacante no habla con el sistema operativo sino con el lenguaje de la plantilla, y desde ahí escapa a la ejecución. Una observación de rigor: en el catálogo 5.0, `CWE-1336` no figura entre las debilidades de A05:2025, aunque su padre `CWE-94` sí; si un informe debe indicar categoría OWASP, quien clasifica toma esa decisión y la deja escrita, no se da por obvia.
+
+Un caso real de la familia es **CVE-2022-22965** (Spring4Shell), clasificado con `CWE-94` por su CNA y por NVD: ejecución de código a través de un enlace de datos en un marco muy extendido, con CVSS 9,8, EPSS en torno al 99,6 % y presencia en KEV. La comparación con el SSTI sirve para recordar que **la clase de debilidad no determina el riesgo**: la misma `CWE-94` en un producto sin exposición y sin explotación conocida pide un plazo muy distinto (ver [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md)).
+
 ## 📖 Definiciones y características
 
 - **SSTI**: el input se interpreta dentro de una plantilla del servidor. Característica: puede ejecutar código del lado servidor.

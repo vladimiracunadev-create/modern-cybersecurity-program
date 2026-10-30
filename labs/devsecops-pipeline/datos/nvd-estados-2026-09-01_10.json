@@ -1,0 +1,42 @@
+{
+ "con_cvss31_de_cualquier_fuente": 4285,
+ "con_cvss31_publicado_por_nvd": 399,
+ "con_cvss40_de_alguna_fuente": 1355,
+ "con_cwe_asignado_por_nvd": 38,
+ "con_cwe_de_cualquier_fuente": 4573,
+ "estados": {
+  "Analyzed": 2364,
+  "Awaiting Analysis": 467,
+  "Deferred": 1645,
+  "Modified": 85,
+  "Received": 199,
+  "Rejected": 47,
+  "Undergoing Analysis": 15
+ },
+ "leidos": 4822,
+ "porcentaje_por_estado": {
+  "Analyzed": 49.0,
+  "Awaiting Analysis": 9.7,
+  "Deferred": 34.1,
+  "Modified": 1.8,
+  "Received": 4.1,
+  "Rejected": 1.0,
+  "Undergoing Analysis": 0.3
+ },
+ "procedencia": {
+  "advertencia": "Foto del momento de la consulta; los estados cambian a diario. Una sola ventana no es una estadística general.",
+  "fecha_consulta": "2026-10-30",
+  "fuente": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+  "nombres_web": {
+   "Analyzed": "Enriched",
+   "Awaiting Analysis": "Awaiting Enrichment",
+   "Deferred": "Not Scheduled",
+   "Modified": "Modified After Enrichment",
+   "Received": "Received",
+   "Rejected": "Rejected",
+   "Undergoing Analysis": "Undergoing Enrichment"
+  },
+  "total_segun_nvd": 4822,
+  "ventana_de_publicacion": "2026-09-01..2026-09-10"
+ }
+}

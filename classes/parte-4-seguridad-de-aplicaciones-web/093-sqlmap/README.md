@@ -100,6 +100,12 @@ la inyección a mano (clases 091–092) es lo que permite interpretar sus result
 hallazgos y saber cuándo se ha excedido —una herramienta potente en manos que no entienden el
 fondo es la forma más rápida de causar un incidente en un cliente—.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+SQLMap automatiza la explotación de **una** debilidad, `CWE-89`, y esa relación uno a uno es la clave para interpretar su salida. Cuando la herramienta confirma una inyección y enumera una técnica (booleana, temporal, basada en errores, en `UNION`), no ha encontrado «varias vulnerabilidades»: ha demostrado de formas distintas el mismo defecto, y el informe lleva **un** hallazgo con **un** CWE. Lo que cambia entre técnicas es la dificultad de explotación y lo que se puede leer, no la causa raíz ni la corrección (consultas parametrizadas, ver la [clase 363](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md)).
+
+Un recordatorio de prioridad que SQLMap hace tentador olvidar: que se pueda volcar la base de datos entera con una herramienta pública no convierte al hallazgo en una emergencia por sí solo. En los casos reales del programa la misma `CWE-89` aparece en un CVE con explotación confirmada en KEV (MOVEit Transfer) y en otro con una probabilidad de explotación inferior al 1 % (una pasarela de Netentsec); la diferencia la dan la exposición, la explotación observada y el valor de los datos, que se explican en la [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md). Y la ficha del catálogo (`python scripts/cwe_kb.py mostrar CWE-89`) recuerda las consecuencias técnicas —leer datos, modificar datos, saltarse la autenticación— que conviene reflejar en el informe junto con la evidencia de SQLMap.
+
 ## 📖 Definiciones y características
 
 - **sqlmap**: herramienta open source que automatiza SQLi de extremo a extremo. Característica: soporta múltiples motores y técnicas.

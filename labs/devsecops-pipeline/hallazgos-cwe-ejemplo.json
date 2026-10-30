@@ -1,0 +1,83 @@
+[
+  {
+    "cve": "CVE-2021-44228",
+    "paquete": "log4j-core",
+    "version": "2.14.1",
+    "versiones_corregidas": ["2.15.0"],
+    "cwe": ["CWE-502", "CWE-20", "CWE-400", "CWE-917"],
+    "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+    "exposicion": "publica",
+    "nota": "Log4Shell. NVD no marca ningún CWE como primario: el CNA (Apache) declara 20, 400 y 502 y NVD añade 917. La causa raíz a corregir es la evaluación de expresiones JNDI en mensajes de log; subir de versión la elimina."
+  },
+  {
+    "cve": "CVE-2014-0160",
+    "paquete": "openssl",
+    "version": "1.0.1f",
+    "versiones_corregidas": ["1.0.1g"],
+    "cwe": "CWE-125",
+    "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+    "exposicion": "publica",
+    "nota": "Heartbleed. NVD lo clasifica como CWE-125 (lectura fuera de límites), no como desbordamiento de buffer. CVSS 7.5 (High, no Critical) y aun así explotación documentada en KEV."
+  },
+  {
+    "cve": "CVE-2023-4863",
+    "paquete": "libwebp",
+    "version": "1.3.1",
+    "versiones_corregidas": ["1.3.2"],
+    "cwe": "CWE-787",
+    "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+    "exposicion": "interna",
+    "nota": "Desbordamiento de heap en una biblioteca de imágenes embebida en navegadores y aplicaciones. Aquí se escenifica un servicio interno que procesa imágenes subidas por empleados."
+  },
+  {
+    "cve": "CVE-2021-3156",
+    "paquete": "sudo",
+    "version": "1.9.5p1",
+    "versiones_corregidas": ["1.9.5p2"],
+    "cwe": "CWE-193",
+    "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+    "exposicion": "interna",
+    "nota": "Escalada local de privilegios (error de un byte, CWE-193). Exige cuenta local: en un servidor compartido pesa mucho, en un contenedor efímero sin usuarios, poco. Versión corregida según el aviso del proyecto sudo."
+  },
+  {
+    "cve": "CVE-2017-5638",
+    "paquete": "struts2-core",
+    "version": "2.5.10",
+    "versiones_corregidas": ["2.5.10.1"],
+    "cwe": "CWE-755",
+    "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "exposicion": "publica",
+    "nota": "NVD lo clasifica como CWE-755 (manejo indebido de condiciones excepcionales): el defecto estaba en cómo se trataba un error al procesar la cabecera Content-Type, no en una «inyección» genérica."
+  },
+  {
+    "cve": "CVE-2022-22965",
+    "paquete": "spring-beans",
+    "version": "5.3.17",
+    "versiones_corregidas": ["5.3.18"],
+    "cwe": "CWE-94",
+    "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "exposicion": "desconocida",
+    "nota": "Spring4Shell. La explotación depende de condiciones concretas (JDK 9+, empaquetado WAR en Tomcat...): hasta analizarlas, la exposición queda «desconocida» y se aplica el factor conservador."
+  },
+  {
+    "cve": "CVE-2023-50716",
+    "paquete": "fast-dds",
+    "version": "2.10.2",
+    "versiones_corregidas": ["2.10.3"],
+    "cwe": "CWE-416",
+    "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+    "cvss": 9.8,
+    "exposicion": "no-alcanzable",
+    "nota": "Use-after-free con CVSS alto y sin explotación documentada. La nota declarada (9.8) es la de NVD; el vector incluido es el del CNA (adyacente, 9.6). El priorizador avisa de la discrepancia: hay que decidir cuál aplica a tu caso."
+  },
+  {
+    "cve": "CVE-2024-2021",
+    "paquete": "netentsec-application-security-gateway",
+    "version": "6.3",
+    "versiones_corregidas": [],
+    "cwe": "CWE-89",
+    "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+    "exposicion": "publica",
+    "nota": "Inyección SQL en un equipo de red. NVD la puntúa 9.8 y el CNA 6.3 (exige privilegios bajos). NVD no registra versión corregida: obliga a mitigar o sustituir y a documentar la decisión."
+  }
+]

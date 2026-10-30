@@ -76,11 +76,16 @@ mitigación o parche verificado, aviso final y asuntos que quedaron inciertos.
    066–067 para mandato y alcance, 071 para validación y 084–085 para priorización y reporte.
 3. 📚 [**Parte 4 — Seguridad web**](../classes/parte-4-seguridad-de-aplicaciones-web/README.md):
    087, 110, 114 y 115 para comprender reportes frecuentes, programas de bounty y corrección.
-4. 📚 [**Partes 8 y 9**](../classes/parte-8-blue-team-deteccion-y-soc/README.md): 195 para
+4. 📚 [**Parte 20 — Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestión**](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md):
+   [367 — CVE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md) (CNA, ciclo de vida y estados del registro: lo que ocurre con tu reporte),
+   [368 — CVSS](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md) (por qué dos fuentes legítimas puntúan distinto y cómo proponer un vector
+   honesto) y [369 — EPSS, KEV y priorización](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md) (por qué la explotación observada cambia la urgencia
+   de la coordinación).
+5. 📚 [**Partes 8 y 9**](../classes/parte-8-blue-team-deteccion-y-soc/README.md): 195 para
    inteligencia y 202, 215–217 para coordinación, contención y aprendizaje del incidente.
-5. 📚 [**Parte 11 — DevSecOps**](../classes/parte-11-devsecops-y-seguridad-del-sdlc/README.md):
+6. 📚 [**Parte 11 — DevSecOps**](../classes/parte-11-devsecops-y-seguridad-del-sdlc/README.md):
    236–246 para llevar el reporte hasta código, dependencias, pipeline, SBOM y procedencia.
-6. 📚 [**Partes 14 y 17**](../classes/parte-14-grc-riesgo-y-cumplimiento/README.md): 277,
+7. 📚 [**Partes 14 y 17**](../classes/parte-14-grc-riesgo-y-cumplimiento/README.md): 277,
    282, 284–285, 318, 320–322 y 324 para riesgo, terceros, auditoría, gobierno y hardening.
 
 Práctica recomendada: usa [`appsec-code`](../labs/appsec-code/README.md) para reproducir y corregir

@@ -1,11 +1,11 @@
 # 🗺️ Roadmap
 
 El programa se construye por fases. El **currículo escrito** (README completo por cada una
-de las 360 clases) es la base y el primer entregable.
+de las 370 clases) es la base y el primer entregable.
 
 ## Fase 1 — Currículo escrito completo ✅ (completa)
 
-- [x] Diseño del currículo vigente: 20 partes, 360 clases, numeración 001–360.
+- [x] Diseño del currículo vigente: 21 partes, 370 clases, numeración 001–370.
 - [x] Estructura de carpetas + índice maestro (`classes/README.md`).
 - [x] README de cada parte (narrativa, prerrequisitos, fuentes).
 - [x] README rico por clase (objetivo, temas, definiciones, laboratorio, ejercicios, reto, errores comunes, FAQ, referencias).
@@ -42,13 +42,13 @@ python-pptx). Notebooks **descartados** por decisión.
 
 - [x] Sitio web navegable del currículo (GitHub Pages, con nav a rutas/quiz/progreso).
 - [x] Autoevaluaciones interactivas por parte ([`autoevaluaciones/`](autoevaluaciones/README.md), 109 preguntas).
-- [x] Seguimiento de progreso de las 360 clases (localStorage).
+- [x] Seguimiento de progreso de las 370 clases (localStorage).
 - [x] Rutas guiadas por rol ([`rutas/`](rutas/README.md)): los roles clásicos (pentester, red team, SOC, DFIR, gestión de vulnerabilidades, AppSec, cloud, GRC y **CISO / director de seguridad de la información**) **más los derivados de ofertas de empleo reales** — analista de ciberseguridad en institución regulada, analista de seguridad ofensiva, SecOps, seguridad de infraestructura, operación de plataformas (MSSP/DLP), jefe de seguridad, **arquitecto de ciberseguridad IT/OT** y cooperación técnica. Cada una con su [examen final](docs/examen-final-por-rol.md); índice completo en [`rutas/README.md`](rutas/README.md).
 - [x] **Familia SecOps y DevSecOps diferenciada**: rutas propias de [analista SecOps](rutas/secops-analista.md), [analista DevSecOps](rutas/devsecops-analista.md) e [ingeniero DevSecOps](rutas/devsecops-engineer.md) (con el alias «Especialista DevSecOps» explicado), la [matriz comparativa transversal](docs/matriz-roles-secops-devsecops.md) frente a SOC, AppSec, Cloud Security y DFIR, tres **trayectos de laboratorio** sobre `blue-team-soc` y `devsecops-pipeline`, y tres exámenes finales nuevos. Esta fase se completó cuando el currículo terminaba en la clase 340; la Parte 19 amplió después el catálogo hasta la 360.
 
 ## Fase 5 — App móvil Android ✅ (completa)
 
-- [x] App **Expo / React Native** ([`mobile/`](mobile/README.md)) con las **360 clases en 20 partes** embebidas para leer **sin conexión**.
+- [x] App **Expo / React Native** ([`mobile/`](mobile/README.md)) con las **370 clases en 21 partes** embebidas para leer **sin conexión**.
 - [x] Navegación Home (partes + progreso) → Parte (clases + buscador) → Clase, con progreso local.
 - [x] **Las clases enteras dentro del APK** (v1.1.0): explicación en profundidad, diagramas, glosario, laboratorio, ejercicios, reto, errores comunes, preguntas y referencias. Hasta la v1.0.0 la app embebía un resumen y había que salir al sitio para leer la clase.
 - [x] Catálogo **generado** desde los README de las clases (`scripts/generar_curriculum_movil.py`, con `--check` de integridad).
@@ -61,7 +61,7 @@ python-pptx). Notebooks **descartados** por decisión.
 - [x] **Seis rutas nuevas**, cada una con la ficha completa del cargo (alias, consolidación del título, mandato, día/mes/año, entregables, KPI y KRI, competencias, conflictos de interés, entrevista, certificaciones, capstone, portafolio, diferencias con los cargos vecinos y fuentes con fecha): [Field CISO / Customer CISO](rutas/field-ciso.md), [vCISO / Fractional / Interim / CISOaaS](rutas/vciso.md), [BISO](rutas/biso.md), [Product CISO](rutas/product-ciso.md), [AI CISO](rutas/ai-ciso.md) y [OT CISO](rutas/ot-ciso.md). **«Cloud CISO» se analizó y no recibió ruta propia**: la decisión y su justificación están documentadas en el ecosistema.
 - [x] **Laboratorio ejecutivo** ([`labs/ciso-leadership`](labs/ciso-leadership/README.md)): 14 escenarios no ofensivos sobre **cinco organizaciones ficticias**, cada uno con contexto, datos de entrada, instrucciones, entregable, rúbrica, criterio de aceptación, ejemplo de referencia y límites éticos; **[15 plantillas reutilizables](labs/ciso-leadership/PLANTILLAS.md)** (RACI, registro de riesgos, aceptación de riesgo, KPI/KRI, informe ejecutivo, 30/60/90, BIA, tabletop, terceros, declaración de trabajo de vCISO, descubrimiento de Field CISO, paquete de confianza de producto, inventario y riesgos de IA, y roadmap OT). Es el primer laboratorio **sin Docker** del repositorio, y la excepción está documentada en [`labs/README.md`](labs/README.md).
 - [x] **Evaluación del ecosistema** ([`EVALUACION.md`](labs/ciso-leadership/EVALUACION.md)): 18 preguntas de escenario más cinco ejercicios prácticos (RACI de crisis, aceptación de riesgo, conflicto de interés en preventa, informe ejecutivo y clasificación de seis cargos reales), y **siete exámenes finales nuevos** en [`docs/examen-final-por-rol.md`](docs/examen-final-por-rol.md), ninguno aprobable con el entregable de otro.
-- [x] **Validador de rutas** ([`scripts/validar_rutas.py`](scripts/validar_rutas.py)), en CI: comprueba que ninguna guía queda huérfana del índice, que cada una trae las secciones obligatorias, que las referencias apuntan a clases existentes dentro del catálogo vigente 001–360, que las rutas del ecosistema enlazan su laboratorio y su capstone, y —para todo el repositorio— que **ningún enlace con ancla** (`fichero.md#sección`) apunta a un encabezado inexistente, algo que el validador de estructura no miraba.
+- [x] **Validador de rutas** ([`scripts/validar_rutas.py`](scripts/validar_rutas.py)), en CI: comprueba que ninguna guía queda huérfana del índice, que cada una trae las secciones obligatorias, que las referencias apuntan a clases existentes dentro del catálogo vigente 001–370, que las rutas del ecosistema enlazan su laboratorio y su capstone, y —para todo el repositorio— que **ningún enlace con ancla** (`fichero.md#sección`) apunta a un encabezado inexistente, algo que el validador de estructura no miraba.
 - [x] Esta fase no alteró la numeración de las **340 clases que existían entonces**: su contenido nuevo vivió en `rutas/`, `labs/` y `docs/`. La ampliación 341–360 corresponde a la Fase 7.
 
 ---
@@ -80,5 +80,13 @@ python-pptx). Notebooks **descartados** por decisión.
 - [x] Integración en README, CTF, GitHub Pages y aplicación móvil offline, con búsqueda por sigla o plataforma.
 - [x] Tests y CI contra deriva; auditoría documentada en [`docs/AUDITORIA-CTF-GLOSARIO-PLATAFORMAS.md`](docs/AUDITORIA-CTF-GLOSARIO-PLATAFORMAS.md).
 
-**Las 8 fases del roadmap están completas.** ¿Ideas o mejoras? Abre un *issue* o revisa
+## Fase 9 — CWE, CVE, CVSS y gestión de vulnerabilidades ✅ (completa)
+
+- [x] Parte 20 con 10 clases (361–370): catálogo CWE, causa raíz, familias de debilidades, CVE, CVSS v3.1/v4.0, EPSS, KEV y corrección verificada.
+- [x] Base de conocimiento local de CWE 5.0 ([`knowledge/cwe/`](knowledge/cwe/LICENCIA-MITRE.md)) con importación reproducible, índices, procedencia y licencia, y herramienta de consulta ([`scripts/cwe_kb.py`](scripts/cwe_kb.py)).
+- [x] Laboratorios ampliados: `appsec-code` (versión corregida, mapa CWE y pruebas que fallan antes y pasan después) y `devsecops-pipeline` (CVSS, BOD 26-04, discrepancias entre fuentes, mapa CWE).
+- [x] [Matriz de cobertura CWE](docs/matriz-cobertura-cwe.md) generada y verificada contra los archivos del repositorio, y enriquecimiento de clases de las Partes 2, 3, 4, 5, 11 y 17.
+- [x] Autoevaluación de la Parte 20, validadores en CI y [auditoría de cobertura](docs/auditoria-cobertura-cwe-cve-cvss.md).
+
+**Las 9 fases del roadmap están completas.** ¿Ideas o mejoras? Abre un *issue* o revisa
 [CONTRIBUTING.md](CONTRIBUTING.md).

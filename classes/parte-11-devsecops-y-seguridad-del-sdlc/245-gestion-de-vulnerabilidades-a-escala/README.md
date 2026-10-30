@@ -83,6 +83,12 @@ Tras integrar escáneres, DefectDojo recibe mil hallazgos críticos duplicados. 
 
 El alumno domina el programa cuando puede convertir hallazgos heterogéneos en instancias trazables, ordenar con contexto, asignar tratamiento y vencimiento, verificar el cierre y elegir métricas que distingan cobertura, velocidad y riesgo residual.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+La gestión de vulnerabilidades a escala necesita **unidades de análisis** distintas, y el trío CWE–CVE–instancia las ordena. Un **CVE** identifica la vulnerabilidad concreta en un producto; la **instancia** es ese CVE en un activo concreto (la que tiene dueño, exposición y plazo); y el **CWE** es la causa común que agrupa muchos CVE. Esa última capa es la que permite la métrica de la clase de «recurrencia de causas»: si el 30 % de tus hallazgos son `CWE-89` o `CWE-798`, no tienes 400 tickets sino un problema de proceso (una capa de acceso a datos que no parametriza, una práctica de secretos que falla) y la intervención es una sola.
+
+Para el plazo, ten presente el modelo de **CISA BOD 26-04** (10 de junio de 2026), que sustituye a BOD 22-01 y 19-02: obligatorio solo para agencias civiles federales de EE. UU., pero una referencia útil porque combina cuatro variables (exposición del activo, presencia en KEV, si la explotación es automatizable y si el impacto técnico es total o parcial) en una tabla de 16 filas que da plazos de 3, 14 o 60 días o «próxima actualización», y que añade un triaje forense cuando hay explotación confirmada con control total. Sobre los datos reales del programa, el mismo CVE pasa de «3 días y triaje forense» a «14 días» solo con cambiar el activo de expuesto a interno. Puedes reproducirlo con `python labs/devsecops-pipeline/priorizar.py --instantanea ... --bod-26-04`; la explicación y las limitaciones están en la [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
+
 ## 📖 Definiciones y características
 
 - **Gestión de vulnerabilidades**: proceso continuo de identificar, evaluar, tratar y reportar vulnerabilidades. *Característica*: es un ciclo, no un evento puntual.

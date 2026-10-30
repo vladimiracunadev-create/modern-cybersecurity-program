@@ -118,7 +118,7 @@ todo lo que se ha estudiado en estas veinte clases.
 
 | Término | Definición concisa |
 |---------|--------------------|
-| OWASP A02 | *Cryptographic Failures*: categoría del Top 10 |
+| OWASP A02 / A04 | *Cryptographic Failures*: categoría del Top 10 (A02 en 2021, A04 en 2025) |
 | No inventes criptografía | Usar bibliotecas maduras en vez de implementaciones propias |
 | API de alto nivel | Biblioteca que no deja elegir modo, relleno ni IV |
 | libsodium / Tink / age | Bibliotecas con el camino fácil ya seguro |
@@ -210,7 +210,7 @@ Poder cambiar algoritmos y claves sin rediseñar; será imprescindible en la mig
 
 ## 🔗 Referencias
 
-- OWASP Top 10 A02:2021 Cryptographic Failures — <https://owasp.org/Top10/A02_2021-Cryptographic_Failures/>
+- OWASP Top 10 A02:2021 Cryptographic Failures — <https://owasp.org/Top10/A02_2021-Cryptographic_Failures/> — categoría en la edición 2021; en la 2025 es A04 (<https://top10.owasp.org/2025/0x00_2025-Introduction/>). — categoría en la edición 2021; en la 2025 es A04 (<https://top10.owasp.org/2025/0x00_2025-Introduction/>).
 - Ferguson, Schneier, Kohno, *Cryptography Engineering* (todo el libro).
 - Wong, *Real-World Cryptography*, cap. 8, 13 y 16.
 - OWASP Cryptographic Storage Cheat Sheet — <https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html>

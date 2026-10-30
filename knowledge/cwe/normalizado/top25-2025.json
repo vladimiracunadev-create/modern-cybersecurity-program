@@ -1,0 +1,210 @@
+{
+ "lista": "2025 CWE Top 25 Most Dangerous Software Weaknesses",
+ "fuente": "https://cwe.mitre.org/top25/archive/2025/2025_cwe_top25.html",
+ "metodologia": "https://cwe.mitre.org/top25/archive/2025/2025_methodology.html",
+ "pagina_actualizada": "December 15, 2025",
+ "fecha_consulta": "2026-10-30",
+ "nota": "puntuacion = frecuencia normalizada x severidad CVSS media normalizada x 100 (CVSS v3.0/3.1); ver la metodologia.",
+ "entradas": [
+  {
+   "rango": 1,
+   "id": "CWE-79",
+   "nombre": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+   "puntuacion": 60.38,
+   "cves_en_kev": 7,
+   "cambio_vs_anterior": "0"
+  },
+  {
+   "rango": 2,
+   "id": "CWE-89",
+   "nombre": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+   "puntuacion": 28.72,
+   "cves_en_kev": 4,
+   "cambio_vs_anterior": "+1"
+  },
+  {
+   "rango": 3,
+   "id": "CWE-352",
+   "nombre": "Cross-Site Request Forgery (CSRF)",
+   "puntuacion": 13.64,
+   "cves_en_kev": 0,
+   "cambio_vs_anterior": "+1"
+  },
+  {
+   "rango": 4,
+   "id": "CWE-862",
+   "nombre": "Missing Authorization",
+   "puntuacion": 13.28,
+   "cves_en_kev": 0,
+   "cambio_vs_anterior": "+5"
+  },
+  {
+   "rango": 5,
+   "id": "CWE-787",
+   "nombre": "Out-of-bounds Write",
+   "puntuacion": 12.68,
+   "cves_en_kev": 12,
+   "cambio_vs_anterior": "-3"
+  },
+  {
+   "rango": 6,
+   "id": "CWE-22",
+   "nombre": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+   "puntuacion": 8.99,
+   "cves_en_kev": 10,
+   "cambio_vs_anterior": "-1"
+  },
+  {
+   "rango": 7,
+   "id": "CWE-416",
+   "nombre": "Use After Free",
+   "puntuacion": 8.47,
+   "cves_en_kev": 14,
+   "cambio_vs_anterior": "+1"
+  },
+  {
+   "rango": 8,
+   "id": "CWE-125",
+   "nombre": "Out-of-bounds Read",
+   "puntuacion": 7.88,
+   "cves_en_kev": 3,
+   "cambio_vs_anterior": "-2"
+  },
+  {
+   "rango": 9,
+   "id": "CWE-78",
+   "nombre": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+   "puntuacion": 7.85,
+   "cves_en_kev": 20,
+   "cambio_vs_anterior": "-2"
+  },
+  {
+   "rango": 10,
+   "id": "CWE-94",
+   "nombre": "Improper Control of Generation of Code ('Code Injection')",
+   "puntuacion": 7.57,
+   "cves_en_kev": 7,
+   "cambio_vs_anterior": "+1"
+  },
+  {
+   "rango": 11,
+   "id": "CWE-120",
+   "nombre": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
+   "puntuacion": 6.96,
+   "cves_en_kev": 0,
+   "cambio_vs_anterior": "N/A"
+  },
+  {
+   "rango": 12,
+   "id": "CWE-434",
+   "nombre": "Unrestricted Upload of File with Dangerous Type",
+   "puntuacion": 6.87,
+   "cves_en_kev": 4,
+   "cambio_vs_anterior": "-2"
+  },
+  {
+   "rango": 13,
+   "id": "CWE-476",
+   "nombre": "NULL Pointer Dereference",
+   "puntuacion": 6.41,
+   "cves_en_kev": 0,
+   "cambio_vs_anterior": "+8"
+  },
+  {
+   "rango": 14,
+   "id": "CWE-121",
+   "nombre": "Stack-based Buffer Overflow",
+   "puntuacion": 5.75,
+   "cves_en_kev": 4,
+   "cambio_vs_anterior": "N/A"
+  },
+  {
+   "rango": 15,
+   "id": "CWE-502",
+   "nombre": "Deserialization of Untrusted Data",
+   "puntuacion": 5.23,
+   "cves_en_kev": 11,
+   "cambio_vs_anterior": "+1"
+  },
+  {
+   "rango": 16,
+   "id": "CWE-122",
+   "nombre": "Heap-based Buffer Overflow",
+   "puntuacion": 5.21,
+   "cves_en_kev": 6,
+   "cambio_vs_anterior": "N/A"
+  },
+  {
+   "rango": 17,
+   "id": "CWE-863",
+   "nombre": "Incorrect Authorization",
+   "puntuacion": 4.14,
+   "cves_en_kev": 4,
+   "cambio_vs_anterior": "+1"
+  },
+  {
+   "rango": 18,
+   "id": "CWE-20",
+   "nombre": "Improper Input Validation",
+   "puntuacion": 4.09,
+   "cves_en_kev": 2,
+   "cambio_vs_anterior": "-6"
+  },
+  {
+   "rango": 19,
+   "id": "CWE-284",
+   "nombre": "Improper Access Control",
+   "puntuacion": 4.07,
+   "cves_en_kev": 1,
+   "cambio_vs_anterior": "N/A"
+  },
+  {
+   "rango": 20,
+   "id": "CWE-200",
+   "nombre": "Exposure of Sensitive Information to an Unauthorized Actor",
+   "puntuacion": 4.01,
+   "cves_en_kev": 1,
+   "cambio_vs_anterior": "-3"
+  },
+  {
+   "rango": 21,
+   "id": "CWE-306",
+   "nombre": "Missing Authentication for Critical Function",
+   "puntuacion": 3.47,
+   "cves_en_kev": 11,
+   "cambio_vs_anterior": "+4"
+  },
+  {
+   "rango": 22,
+   "id": "CWE-918",
+   "nombre": "Server-Side Request Forgery (SSRF)",
+   "puntuacion": 3.36,
+   "cves_en_kev": 0,
+   "cambio_vs_anterior": "-3"
+  },
+  {
+   "rango": 23,
+   "id": "CWE-77",
+   "nombre": "Improper Neutralization of Special Elements used in a Command ('Command Injection')",
+   "puntuacion": 3.15,
+   "cves_en_kev": 2,
+   "cambio_vs_anterior": "-10"
+  },
+  {
+   "rango": 24,
+   "id": "CWE-639",
+   "nombre": "Authorization Bypass Through User-Controlled Key",
+   "puntuacion": 2.62,
+   "cves_en_kev": 0,
+   "cambio_vs_anterior": "+6"
+  },
+  {
+   "rango": 25,
+   "id": "CWE-770",
+   "nombre": "Allocation of Resources Without Limits or Throttling",
+   "puntuacion": 2.54,
+   "cves_en_kev": 0,
+   "cambio_vs_anterior": "+1"
+  }
+ ]
+}

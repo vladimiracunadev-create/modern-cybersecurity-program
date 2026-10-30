@@ -117,7 +117,13 @@ gobierno.
    [071 — Análisis de vulnerabilidades con Nessus y OpenVAS](../classes/parte-3-hacking-etico-y-pentesting-metodologia/071-analisis-de-vulnerabilidades-con-nessus-y-openvas/README.md)
    y [085 — Reporte profesional de pentest](../classes/parte-3-hacking-etico-y-pentesting-metodologia/085-reporte-profesional-de-pentest/README.md),
    que enseña a comunicar hallazgos con severidad y evidencia.
-4. 📚 [**Parte 17 — Profundización**](../classes/parte-17-profundizacion-para-certificaciones/README.md).
+4. 📚 [**Parte 20 — Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestión**](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md).
+   El vocabulario y los datos del rol: [367 — CVE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md) (qué fuente dice qué: CNA, CISA-ADP y NVD),
+   [368 — CVSS v3.1 y v4.0](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md) (qué mide y qué no), [369 — EPSS, KEV y priorización](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md)
+   (con la tabla de plazos de CISA BOD 26-04) y [370 — ciclo completo](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md) (de la debilidad a la
+   corrección verificada). Las clases 361–366 aportan el catálogo CWE para agrupar hallazgos por
+   causa raíz y medir la recurrencia, no solo contar tickets.
+5. 📚 [**Parte 17 — Profundización**](../classes/parte-17-profundizacion-para-certificaciones/README.md).
    Aquí pasas del escaneo al **programa** de VM:
    [318 — Gestión del programa de vulnerabilidades](../classes/parte-17-profundizacion-para-certificaciones/318-gestion-del-programa-de-vulnerabilidades/README.md)
    es la clase central de esta ruta;
@@ -125,17 +131,17 @@ gobierno.
    [322 — Threat Intelligence operacional avanzada](../classes/parte-17-profundizacion-para-certificaciones/322-threat-intelligence-operacional-avanzada/README.md)
    (para nutrir la priorización) y
    [321 — Comunicación y reporte](../classes/parte-17-profundizacion-para-certificaciones/321-comunicacion-y-reporte-para-analistas-de-seguridad/README.md).
-5. 📚 [**Parte 8 — Blue Team y SOC**](../classes/parte-8-blue-team-deteccion-y-soc/README.md).
+6. 📚 [**Parte 8 — Blue Team y SOC**](../classes/parte-8-blue-team-deteccion-y-soc/README.md).
    El contexto operativo: [189 — Análisis de endpoints con EDR](../classes/parte-8-blue-team-deteccion-y-soc/189-analisis-de-endpoints-con-edr/README.md)
    (control compensatorio), [188 — Threat hunting](../classes/parte-8-blue-team-deteccion-y-soc/188-threat-hunting-metodologia/README.md),
    [195 — Threat Intelligence operacional](../classes/parte-8-blue-team-deteccion-y-soc/195-threat-intelligence-operacional/README.md)
    y [197 — Métricas y madurez del SOC](../classes/parte-8-blue-team-deteccion-y-soc/197-metricas-y-madurez-del-soc/README.md),
    porque VM se mide igual que un SOC.
-6. 📚 [**Parte 11 — DevSecOps**](../classes/parte-11-devsecops-y-seguridad-del-sdlc/README.md).
+7. 📚 [**Parte 11 — DevSecOps**](../classes/parte-11-devsecops-y-seguridad-del-sdlc/README.md).
    La vulnerabilidad moderna vive en el código y sus dependencias:
    [240 — SCA, dependencias y riesgo de terceros](../classes/parte-11-devsecops-y-seguridad-del-sdlc/240-sca-dependencias-y-riesgo-de-terceros/README.md)
    y [245 — Gestión de vulnerabilidades a escala](../classes/parte-11-devsecops-y-seguridad-del-sdlc/245-gestion-de-vulnerabilidades-a-escala/README.md).
-7. 📚 [**Parte 9 — DFIR**](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/README.md).
+8. 📚 [**Parte 9 — DFIR**](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/README.md).
    [219 — Ejercicios de mesa (tabletop)](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md):
    los simulacros donde una vulnerabilidad sin parchar se convierte en la lección del incidente.
 

@@ -1,0 +1,130 @@
+{
+  "esquema": 1,
+  "laboratorio": "labs/appsec-code",
+  "descripcion": "Mapa de las 8 debilidades plantadas en vulnerable_app/app.py: qué CWE es cada una y por qué, qué dijo realmente cada herramienta, y qué prueba demuestra la corrección. Lo consumen tests/test_correcciones.py y la matriz de cobertura CWE.",
+  "verificado": {
+    "catalogo_cwe": "5.0 (2026-10-28)",
+    "bandit": "1.9.4",
+    "fecha": "2026-10-30",
+    "salida_de_bandit": "tests/datos/bandit-1.9.4-app.json",
+    "semgrep": "No ejecutado en esta verificación (no estaba disponible localmente). Lo que se afirma de Semgrep en SOLUCION.md es la expectativa del laboratorio, no una medición."
+  },
+  "vulnerabilidades": [
+    {
+      "id": 1,
+      "titulo": "Secretos embebidos en el código",
+      "marcador": "DB_PASSWORD = \"",
+      "cwe_principal": "CWE-798",
+      "cwe_alternativas": [
+        {"id": "CWE-259", "motivo": "Variante específica para contraseñas (DB_PASSWORD). Es la que reporta Bandit. La clave de AWS no es una contraseña sino una credencial, por eso el paraguas CWE-798 cubre las dos."}
+      ],
+      "bandit": {"regla": "B105", "cwe_reportado": "CWE-259", "detecta": true,
+                 "nota": "Solo marca DB_PASSWORD. NO marca AWS_KEY: Bandit busca nombres de variable parecidos a «password», y «AWS_KEY» no lo parece. Falso negativo real con una credencial en la línea de al lado."},
+      "correccion": "app_corregida.py: DB_PASSWORD se lee de os.environ; la clave de AWS desaparece del código.",
+      "simbolo_correccion": "DB_PASSWORD = os.environ.get",
+      "prueba": "test_secretos_no_estan_en_el_codigo"
+    },
+    {
+      "id": 2,
+      "titulo": "Inyección SQL por concatenación",
+      "marcador": "query = \"SELECT * FROM users WHERE name = '\"",
+      "cwe_principal": "CWE-89",
+      "cwe_alternativas": [],
+      "bandit": {"regla": "B608", "cwe_reportado": "CWE-89", "detecta": true,
+                 "nota": "Severidad MEDIUM y confianza LOW: la regla sospecha de cualquier SQL armado con cadenas, y por eso produce falsos positivos en código que sí es seguro."},
+      "correccion": "app_corregida.py: consulta parametrizada con marcador (?).",
+      "simbolo_correccion": "WHERE name = ?",
+      "prueba": "test_inyeccion_sql"
+    },
+    {
+      "id": 3,
+      "titulo": "Inyección de comandos del sistema operativo",
+      "marcador": "subprocess.check_output(\"ping -c 1 \" + host, shell=True)",
+      "cwe_principal": "CWE-78",
+      "cwe_alternativas": [
+        {"id": "CWE-77", "motivo": "Clase padre (inyección de comandos en general). CWE-78 es más específica y es la que debe usarse para mapear."}
+      ],
+      "bandit": {"regla": "B602", "cwe_reportado": "CWE-78", "detecta": true,
+                 "nota": "Severidad HIGH, confianza HIGH. También marca el import de subprocess (B404, informativo) con el mismo CWE: dos hallazgos, un solo defecto."},
+      "correccion": "app_corregida.py: lista de argumentos sin shell y validación de host.",
+      "simbolo_correccion": "subprocess.run([\"ping\"",
+      "prueba": "test_inyeccion_de_comandos"
+    },
+    {
+      "id": 4,
+      "titulo": "Hash de contraseña débil (MD5 sin sal)",
+      "marcador": "hashlib.md5(",
+      "cwe_principal": "CWE-916",
+      "cwe_alternativas": [
+        {"id": "CWE-327", "motivo": "Es lo que reporta Bandit (algoritmo roto o arriesgado). Correcto pero genérico: es una clase."},
+        {"id": "CWE-328", "motivo": "Hash débil: padre directo de CWE-916."}
+      ],
+      "bandit": {"regla": "B324", "cwe_reportado": "CWE-327", "detecta": true,
+                 "nota": "Detecta MD5 en cualquier uso. Para un checksum de integridad no sería una vulnerabilidad de contraseñas; el contexto (aquí, almacenar contraseñas) es lo que decide el CWE."},
+      "correccion": "app_corregida.py: scrypt con sal aleatoria y comparación en tiempo constante.",
+      "simbolo_correccion": "hashlib.scrypt(",
+      "prueba": "test_hash_de_contrasena"
+    },
+    {
+      "id": 5,
+      "titulo": "Deserialización insegura (pickle)",
+      "marcador": "pickle.loads(data)",
+      "cwe_principal": "CWE-502",
+      "cwe_alternativas": [],
+      "bandit": {"regla": "B301", "cwe_reportado": "CWE-502", "detecta": true,
+                 "nota": "También marca el import de pickle (B403, informativo)."},
+      "correccion": "app_corregida.py: JSON en lugar de pickle.",
+      "simbolo_correccion": "json.loads(request.get_data())",
+      "prueba": "test_deserializacion"
+    },
+    {
+      "id": 6,
+      "titulo": "Path traversal",
+      "marcador": "open(\"/var/data/\" + filename)",
+      "cwe_principal": "CWE-22",
+      "cwe_alternativas": [
+        {"id": "CWE-23", "motivo": "Variante «relative path traversal» (../). Más específica, pero CWE-22 es la del CWE Top 25 y la habitual al clasificar."},
+        {"id": "CWE-73", "motivo": "Control externo del nombre de archivo: la causa más general (la entrada decide qué archivo se abre)."}
+      ],
+      "bandit": {"regla": null, "cwe_reportado": null, "detecta": false,
+                 "nota": "Falso negativo: Bandit no sigue el dato desde request.args hasta open(). Es el límite típico del análisis estático sin seguimiento de flujo de datos (taint tracking)."},
+      "correccion": "app_corregida.py: realpath + commonpath contra el directorio permitido.",
+      "simbolo_correccion": "os.path.commonpath",
+      "prueba": "test_path_traversal"
+    },
+    {
+      "id": 7,
+      "titulo": "Evaluación de código arbitrario (eval)",
+      "marcador": "eval(expr)",
+      "cwe_principal": "CWE-95",
+      "cwe_alternativas": [
+        {"id": "CWE-94", "motivo": "Padre (control indebido de la generación de código). Con revisión de uso «Allowed-with-Review» en el catálogo; CWE-95 es la hija específica de eval."}
+      ],
+      "bandit": {"regla": "B307", "cwe_reportado": "CWE-78", "detecta": true,
+                 "nota": "Detecta el problema pero con el CWE EQUIVOCADO: Bandit 1.9.4 etiqueta eval como CWE-78 (inyección de comandos del SO), y eval no ejecuta comandos del sistema operativo, ejecuta código Python. Quien copie el CWE del informe de la herramienta clasifica mal."},
+      "correccion": "app_corregida.py: evaluador aritmético sobre el árbol sintáctico (ast) con lista cerrada de operadores.",
+      "simbolo_correccion": "def evaluar_aritmetica",
+      "prueba": "test_evaluacion_de_codigo"
+    },
+    {
+      "id": 8,
+      "titulo": "Depuración activa y enlace a todas las interfaces",
+      "marcador": "app.run(host=\"0.0.0.0\", debug=True)",
+      "cwe_principal": "CWE-489",
+      "cwe_alternativas": [
+        {"id": "CWE-94", "motivo": "Es lo que reporta Bandit (B201): la consecuencia (el depurador ejecuta código), no la debilidad (dejar código de depuración activo)."},
+        {"id": "CWE-1327", "motivo": "Para el enlace a 0.0.0.0: «Binding to an Unrestricted IP Address». Bandit (B104) lo etiqueta CWE-605, que es «Multiple Binds to the Same Port» y no describe este defecto."}
+      ],
+      "bandit": {"regla": "B201", "cwe_reportado": "CWE-94", "detecta": true,
+                 "nota": "Un solo app.run produce DOS hallazgos: B201 (debug=True, CWE-94) y B104 (bind a 0.0.0.0, CWE-605). El segundo tiene un CWE que no corresponde al defecto."},
+      "correccion": "app_corregida.py: debug=False y host 127.0.0.1.",
+      "simbolo_correccion": "app.run(host=\"127.0.0.1\", debug=False)",
+      "prueba": "test_depuracion_y_enlace"
+    }
+  ],
+  "hallazgos_adicionales_de_bandit": [
+    {"regla": "B403", "cwe_reportado": "CWE-502", "motivo": "import pickle (informativo, mismo defecto que el nº 5)"},
+    {"regla": "B404", "cwe_reportado": "CWE-78", "motivo": "import subprocess (informativo, mismo defecto que el nº 3)"},
+    {"regla": "B104", "cwe_reportado": "CWE-605", "motivo": "bind a 0.0.0.0 (parte del nº 8; el CWE reportado no corresponde)"}
+  ]
+}

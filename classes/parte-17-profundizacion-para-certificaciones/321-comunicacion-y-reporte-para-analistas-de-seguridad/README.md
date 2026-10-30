@@ -55,6 +55,12 @@ flowchart LR
 
 El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Un buen informe nombra la causa y mide con transparencia. Sobre lo primero, cuando un hallazgo técnico se redacta para otros equipos conviene acompañarlo de la **entrada del catálogo CWE** que lo describe (por ejemplo, `CWE-89` para una inyección SQL), porque es el lenguaje con el que los desarrolladores, las herramientas de análisis y las bases de datos de vulnerabilidades pueden agrupar y buscar. Sobre lo segundo, **toda cifra declara su procedencia**: versión y grupo de métricas de CVSS (CVSS-B v3.1, CVSS-BE v4.0...), fuente del número (CNA, NVD, CISA-ADP, tu equipo) y fecha de consulta de los datos que cambian a diario (KEV, EPSS). Una cifra sin etiqueta no se puede comparar con otra, y las fuentes legítimas discrepan (clase 367).
+
+El resumen ejecutivo es el sitio donde no van los identificadores crudos, pero sí las consecuencias que resultan de combinarlos: «dos activos expuestos tienen una vulnerabilidad con explotación confirmada y deben corregirse en tres días» es el resultado de leer CVE, KEV y exposición juntos (ver [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md)), no el número CVSS aislado. Las decisiones que se piden a dirección deben apoyarse en esas señales fechadas.
+
 ## 📖 Definiciones y características
 
 - **BLUF (Bottom Line Up Front):** técnica de redacción que pone la conclusión y la acción requerida al principio. Característica clave: respeta el tiempo del lector ejecutivo, que decide antes de leer el detalle.

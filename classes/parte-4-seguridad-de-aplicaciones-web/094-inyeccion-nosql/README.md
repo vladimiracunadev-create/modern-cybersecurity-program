@@ -99,6 +99,12 @@ una cadena, hay que **rechazar** explícitamente que llegue un objeto —comprob
 operadores `$`—. En NoSQL, la comprobación de tipos no es una buena práctica opcional: es la
 barrera que impide el bypass más común.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+La inyección NoSQL pone a prueba la regla de la [clase 362](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md) de elegir la entrada **más específica que describa el defecto**. Al buscar «nosql» en el catálogo local solo aparece `CWE-943`, una entrada de nivel *Class*: *neutralización incorrecta de elementos especiales en la lógica de consultas de datos*, de la que cuelgan como hijas `CWE-89` (SQL), `CWE-90` (LDAP) y `CWE-643` (XPath). MITRE marca `CWE-943` como «permitida con revisión» para mapear, es decir, utilizable si has leído su descripción y encaja, y el patrón de ataque correspondiente está en `CAPEC-676`. La lección no es que debas memorizar un número, sino cómo razonar: si el motor es SQL, `CWE-89`; si no hay una hija que encaje con tu almacén, se usa la clase y se declara la correspondencia como *inferida* explicando por qué.
+
+También sirve para entender el operador que rompe la autenticación: el defecto no es «MongoDB» sino que un valor del cliente se interpreta como un operador de la consulta, otra vez datos tratados como control. Para la prevención el principio es idéntico al de SQL (separar estructura y datos y tipar la entrada), y para el contexto de gravedad vale lo dicho en la [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md): la categoría y el CWE orientan *qué buscar*; la prioridad de un CVE concreto exige KEV, EPSS y exposición.
+
 ## 📖 Definiciones y características
 
 - **NoSQL injection**: manipular consultas de bases no relacionales insertando operadores u objetos. Característica: se aprovecha del tipado débil del input.

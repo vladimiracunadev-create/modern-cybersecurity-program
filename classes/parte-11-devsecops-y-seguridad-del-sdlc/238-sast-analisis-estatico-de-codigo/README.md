@@ -81,6 +81,12 @@ Semgrep marca una llamada a `cursor.execute(query, params)`. Al inspeccionar el 
 
 Existe dominio cuando el alumno puede explicar la ruta de un hallazgo, reproducirlo o descartarlo con evidencia, escoger una corrección contextual, escribir pruebas positivas y negativas para una regla y definir un gate que no confunda severidad con certeza.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Cada hallazgo de un SAST lleva casi siempre una etiqueta de CWE, y es tentador copiarla al informe. Los datos del laboratorio del programa enseñan por qué no basta. Al analizar `labs/appsec-code/vulnerable_app/app.py` con Bandit 1.9.4 se obtienen diez hallazgos sobre ocho defectos plantados, y su relación con el CWE correcto cae en tres tipos: **coincide** (inyección SQL, `CWE-89`; inyección de comandos, `CWE-78`; deserialización, `CWE-502`), **es válido pero menos específico** (la contraseña embebida se etiqueta `CWE-259` cuando el defecto abarca también una clave de acceso, `CWE-798`; el hash débil como `CWE-327` en lugar de `CWE-916`; la depuración activa como `CWE-94`, que describe la consecuencia, en lugar de `CWE-489`, que describe la debilidad) y **difiere** (`eval` etiquetado `CWE-78` cuando es `CWE-95`; el enlace a todas las interfaces como `CWE-605`). Además hay falsos negativos: no marca el *path traversal* ni la clave de AWS de la línea siguiente a la contraseña.
+
+El SAST es una fuente de hipótesis, no un veredicto: cada etiqueta de CWE se verifica contra la ficha oficial, y la cobertura de la herramienta se mide con casos conocidos, no se supone. Este es el trabajo que desarrolla la [clase 370](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md), y la herramienta `python scripts/cwe_kb.py sast` lo automatiza para tus propios informes.
+
 ## 📖 Definiciones y características
 
 - **SAST**: análisis del código sin ejecutarlo. *Característica*: cobertura de todo el código, incluidas rutas no ejecutadas; ciego a configuración y runtime.

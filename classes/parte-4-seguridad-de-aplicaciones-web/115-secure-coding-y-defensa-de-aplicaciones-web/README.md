@@ -94,6 +94,12 @@ cierre de la parte es una idea de madurez: el objetivo no es cazar bugs uno a un
 **diseñar y automatizar** de modo que las clases enteras de vulnerabilidad no lleguen a existir. Atacar
 enseña dónde están los fallos; construir seguro es lo que hace que no vuelvan.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+El secure coding se puede leer como la traducción a prácticas de las mitigaciones que MITRE publica para cada debilidad. Cada ficha CWE incluye mitigaciones por fase (arquitectura y diseño, implementación, operación), y las del conjunto que viste en esta parte coinciden con el tipo de controles de la clase: parametrizar y separar datos de control (`CWE-89`, `CWE-78`), codificar la salida según el contexto (`CWE-79`), comprobar autorización en el servidor (`CWE-862`, `CWE-863`) y limitar recursos (`CWE-770`). Se consultan con `python scripts/cwe_kb.py mitigaciones CWE-89`.
+
+Un matiz que la validación de entrada suele ocultar: `CWE-20` (*validación de entrada incorrecta*) es una clase que MITRE **desaconseja** para mapear, porque casi cualquier debilidad puede describirse como «no se validó algo». La validación por lista de permitidos es un complemento valioso, pero **no sustituye** a la corrección en el punto de uso (la consulta parametrizada, la codificación de salida). Apoyarse solo en la validación produce una falsa sensación de seguridad. Cierra el ciclo en la [clase 370](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md): el control se demuestra con una prueba que falla antes y pasa después.
+
 ## 📖 Definiciones y características
 
 - **Secure coding**: prácticas de programación que previenen vulnerabilidades. Característica: es más barato prevenir que parchear.
@@ -187,7 +193,7 @@ Nivel 1 como mínimo para cualquier app; niveles 2–3 para aplicaciones sensibl
 - OWASP ASVS: <https://owasp.org/www-project-application-security-verification-standard/>
 - OWASP Cheat Sheet Series: <https://cheatsheetseries.owasp.org/>
 - OWASP Proactive Controls: <https://owasp.org/www-project-proactive-controls/>
-- OWASP Top 10 2021: <https://owasp.org/Top10/>
+- OWASP Top 10:2025 — <https://top10.owasp.org/2025/0x00_2025-Introduction/> — categorías vigentes (la edición 2021 queda como referencia histórica).
 
 ## 📥 Material descargable
 

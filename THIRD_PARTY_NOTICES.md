@@ -60,6 +60,8 @@ Los archivos Compose y Dockerfile propios están bajo Apache-2.0. Las imágenes 
 | Elasticsearch y Kibana 8.15.3, distribución oficial | `labs/blue-team-soc` | Elastic License 2.0; la distribución oficial no queda bajo Apache-2.0 |
 | Nmap | `labs/redes-nmap` | Nmap Public Source License; contiene condiciones adicionales de redistribución comercial |
 | nginx | `labs/redes-nmap` | BSD-2-Clause para el proyecto nginx; la imagen incluye además paquetes con sus propias licencias |
+| Tablas del algoritmo CVSS v4.0 de la calculadora oficial de FIRST | `labs/devsecops-pipeline/datos/cvss4` | BSD-2-Clause (© 2023 FIRST.ORG, Inc., Red Hat y colaboradores); el aviso se conserva junto a los datos |
+| Catálogo CWE 5.0 de MITRE | `knowledge/cwe` | Términos de uso de MITRE CWE (uso libre con reproducción de su copyright y licencia, en `knowledge/cwe/LICENCIA-MITRE.md`) |
 | OpenSSH | `labs/redes-nmap` | licencias BSD y permisivas incluidas por OpenSSH |
 | `delfer/alpine-ftp-server`, `instrumentisto/nmap`, `linuxserver/openssh-server` | `labs/redes-nmap` | imágenes externas; revisar avisos de la etiqueta efectiva antes de redistribuir |
 | Debian y Python slim | varios Dockerfile | agregados de paquetes libres; cada paquete conserva su licencia |
@@ -89,7 +91,7 @@ Las imágenes Docker son distribuciones agregadas. Este cuadro identifica el com
 
 ## Fuentes, libros, normas y certificaciones
 
-`sources/bibliography.json` registra 714 obras externas para trazabilidad. Citarlas o enlazarlas no incorpora su texto ni las pone bajo la licencia del programa. Los nombres y objetivos de certificaciones, marcos, normas y productos permanecen sujetos a los derechos de sus titulares.
+`sources/bibliography.json` registra 765 obras externas para trazabilidad. Citarlas o enlazarlas no incorpora su texto ni las pone bajo la licencia del programa. Los nombres y objetivos de certificaciones, marcos, normas y productos permanecen sujetos a los derechos de sus titulares.
 
 ## Fuentes primarias consultadas
 
@@ -98,6 +100,8 @@ Las imágenes Docker son distribuciones agregadas. Este cuadro identifica el com
 - Elastic licensing FAQ y ELv2: <https://www.elastic.co/pricing/faq/licensing> · <https://www.elastic.co/licensing/elastic-license>
 - Nmap Public Source License: <https://nmap.org/npsl/>
 - DVWA: <https://github.com/digininja/DVWA>
+- MITRE CWE, términos de uso: <https://cwe.mitre.org/about/termsofuse.html>
+- Calculadora oficial de CVSS v4.0 (BSD-2-Clause): <https://github.com/FIRSTdotorg/cvss-v4-calculator>
 - OWASP Juice Shop: <https://github.com/juice-shop/juice-shop>
 - Licencias concretas de paquetes Node: `mobile/package-lock.json` y los repositorios declarados allí.
 

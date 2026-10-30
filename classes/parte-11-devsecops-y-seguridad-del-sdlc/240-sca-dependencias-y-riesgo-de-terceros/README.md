@@ -1,6 +1,6 @@
 # Clase 240 — SCA: dependencias y riesgo de terceros
 
-> Parte: **11 — DevSecOps y seguridad del SDLC** · Fuente: *Securing DevOps* (Julien Vehent) y OWASP Top 10 A06:2021 (Vulnerable and Outdated Components)
+> Parte: **11 — DevSecOps y seguridad del SDLC** · Fuente: *Securing DevOps* (Julien Vehent) y OWASP Top 10 (A06:2021 Vulnerable and Outdated Components, ampliada en 2025 como A03 Software Supply Chain Failures)
 > ⏱️ Duración estimada: **100 min** · Nivel: **Intermedio**
 
 ---
@@ -83,13 +83,19 @@ El escáner encuentra un CVSS crítico en una biblioteca presente solo en el gen
 
 Hay dominio cuando el alumno reconstruye la ruta de una dependencia hasta el artefacto, valida la coincidencia, diferencia severidad de riesgo, propone una actualización comprobable y documenta una excepción temporal sin ocultar deuda.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+En el catálogo CWE, el riesgo de depender de componentes ajenos tiene entradas propias, y ayudan a nombrar el hallazgo de SCA con precisión. `CWE-1395` (*dependencia de un componente de terceros vulnerable*) es la que describe un CVE conocido en una dependencia; `CWE-1104` (*uso de componentes de terceros sin mantenimiento*) cubre los paquetes abandonados sin necesidad de que exista un CVE todavía; ambas cuelgan de `CWE-1357` (*dependencia de un componente insuficientemente confiable*). OWASP agrupó estas ideas en la categoría **A03:2025 Software Supply Chain Failures**, que amplía la antigua «componentes vulnerables y desactualizados» de 2021, con solo 5 debilidades pero, según OWASP, las puntuaciones medias de explotabilidad e impacto de CVE más altas de todas las categorías.
+
+Un caso real del programa es **CVE-2021-44228** (Log4Shell): una vulnerabilidad en una biblioteca de registro presente en miles de aplicaciones de forma transitiva, con CVSS 10,0, EPSS ≈ 100 % y entrada en KEV con uso en *ransomware*. El escáner SCA la detecta por el identificador del componente y su versión; la decisión de prioridad (la [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md)) añade que la biblioteca esté realmente en la imagen desplegada, que el código vulnerable sea alcanzable y que el activo esté expuesto. El detalle del encaje en el catálogo está en la [clase 366](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
+
 ## 📖 Definiciones y características
 
 - **SCA**: análisis de componentes de terceros para detectar vulnerabilidades y riesgos. *Característica*: se basa en identificar versiones y cruzarlas con bases de avisos.
 - **Dependencia transitiva**: dependencia de tus dependencias. *Característica*: no la declaraste tú, pero corre en tu app; suele ser el mayor riesgo.
 - **CVE / CVSS**: identificador y puntuación de severidad de una vulnerabilidad. *Característica*: CVSS mide severidad teórica, no probabilidad de explotación.
-- **EPSS**: probabilidad de que un CVE sea explotado en 30 días. *Característica*: prioriza mejor que CVSS solo.
-- **KEV (CISA)**: catálogo de vulnerabilidades explotadas activamente. *Característica*: si está en KEV, es prioridad máxima.
+- **EPSS**: probabilidad de que un CVE sea explotado en 30 días. *Característica*: aporta una estimación de probabilidad que CVSS no tiene; no mide el impacto en tu entorno.
+- **KEV (CISA)**: catálogo de vulnerabilidades explotadas activamente. *Característica*: si está en KEV hay explotación observada y sube a las prioridades más altas; el plazo concreto depende de la exposición del activo.
 - **Typosquatting**: paquete malicioso con nombre parecido a uno legítimo. *Característica*: ataque a la cadena de suministro por confusión de nombre.
 
 ## 🧰 Herramientas y preparación

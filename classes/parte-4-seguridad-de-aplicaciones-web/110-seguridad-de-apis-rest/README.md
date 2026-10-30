@@ -96,6 +96,12 @@ función, que el usuario tiene permiso— más allowlists de campos de entrada y
 y no exponer versiones antiguas. La API GraphQL (clase 111) añade sus propios matices, pero el principio
 es el mismo: en una API, la seguridad **es** la autorización, porque no hay interfaz que la disimule.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Las APIs tienen su propio vocabulario (BOLA, BFLA, *mass assignment*), pero el catálogo CWE ofrece la equivalencia en sus términos, y conocerla permite comunicarse con quien trabaja con CVE. La BOLA, el IDOR de las APIs, es `CWE-639`; la BFLA, llamar a una función administrativa sin serlo, es `CWE-862` (falta de autorización) o `CWE-863` (autorización incorrecta) según falte la comprobación o esté mal hecha. La asignación masiva es `CWE-915` (*modificación incorrectamente controlada de atributos de objeto determinados dinámicamente*), hija de `CWE-913`, que OWASP incluye en A08. Y la ausencia de límites de tamaño y de tasa es `CWE-770`, que está en el Top 25 de 2025 (puesto 25) y, por ser un problema de recursos, no pertenece a ninguna categoría del Top 10.
+
+La exposición excesiva de datos se describe con `CWE-200` (*exposición de información sensible a un actor no autorizado*). Cuando un hallazgo reúne varias de estas debilidades en un mismo endpoint, conviene separarlas en el informe: cada una tiene su corrección y su prueba, como se ve en la matriz de acceso de la [clase 364](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md). Y para decidir el orden entre ellas, las señales de la [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md) importan más que la categoría.
+
 ## 📖 Definiciones y características
 
 - **API REST**: interfaz basada en HTTP y recursos con verbos (GET, POST, PUT, DELETE). Característica: cada endpoint necesita autorización propia.

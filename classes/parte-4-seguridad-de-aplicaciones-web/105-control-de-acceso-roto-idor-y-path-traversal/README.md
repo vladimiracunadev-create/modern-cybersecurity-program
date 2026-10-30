@@ -102,6 +102,12 @@ acceso a un directorio base. La lección de fondo es que el control de acceso **
 cliente** —ni ocultando enlaces, ni usando IDs difíciles, ni confiando en que nadie cambie la URL—:
 es una decisión que el servidor toma en cada operación, o no existe.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Esta clase junta dos debilidades que el catálogo relaciona de forma instructiva. La referencia directa insegura a objetos (IDOR) es `CWE-639` (*omisión de autorización mediante una clave controlada por el usuario*), de nivel *Base*, y su padre es `CWE-863` (*autorización incorrecta*): el IDOR es, formalmente, un **caso particular de autorización mal hecha**, lo que explica por qué se arregla con una comprobación de propiedad en el servidor y no con ocultar identificadores. El *path traversal* es `CWE-22`, con dos hijas que describen sus variantes de entrada, `CWE-23` (ruta relativa, los `../`) y `CWE-36` (ruta absoluta). `CWE-22` está en el sexto puesto del Top 25 de 2025 con **10 CVE en KEV**, y MITRE la marca «permitida con revisión» para mapear, de modo que conviene leer su descripción antes de usarla.
+
+Un caso real del programa muestra la diferencia entre el tipo de debilidad y su gravedad. **CVE-2021-41773** (Apache HTTP Server 2.4.49) es un `CWE-22`: NVD lo puntúa con 9,8 y CISA-ADP con 7,5 por suponer solo lectura de archivos; está en KEV desde 2021-11-03 con uso conocido en *ransomware* y su EPSS ronda el 99,99 %. Su descripción añade que la corrección de la versión 2.4.50 resultó incompleta, algo que justifica la verificación del ciclo completo de la [clase 370](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md). La corrección de este laboratorio, con la prueba que usa un directorio hermano para vencer la comprobación ingenua por prefijo, está en `labs/appsec-code`.
+
 ## 📖 Definiciones y características
 
 - **Broken Access Control**: la app no verifica que el usuario pueda hacer/ver lo solicitado. Característica: categoría A01, la más frecuente.

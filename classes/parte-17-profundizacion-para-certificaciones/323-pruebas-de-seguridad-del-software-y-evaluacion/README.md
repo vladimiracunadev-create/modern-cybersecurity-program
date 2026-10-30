@@ -55,6 +55,12 @@ flowchart LR
 
 El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+El registro consolidado de hallazgos de esta clase tiene una columna «CWE», y rellenarla bien es más trabajo del que parece. Los resultados de SAST traen un CWE sugerido por la herramienta, pero **la etiqueta de la herramienta no es el CWE correcto**: en el laboratorio del programa, Bandit etiqueta `eval` con `CWE-78` cuando el defecto es `CWE-95`, y asigna a un hash débil de contraseña la clase genérica `CWE-327` en lugar de `CWE-916`. El procedimiento correcto es abrir la ficha oficial de la entrada (`python scripts/cwe_kb.py mostrar CWE-95`), comprobar que la descripción encaja con el defecto y registrar el tipo de correspondencia (oficial, inferida o ninguna). Al deduplicar hallazgos de SCA, SAST, DAST y revisión, la combinación causa raíz + ubicación es mejor clave de deduplicación que el texto del aviso.
+
+Al priorizar, la «severidad (CVSS/riesgo)» de la columna del registro no basta: añade KEV, EPSS y exposición con fecha. Además, un SAST puede tener **falsos negativos** demostrables —no detectar un *path traversal* en el laboratorio—, lo que obliga a combinar técnicas, tal como se ve en la [clase 370](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
+
 ## 📖 Definiciones y características
 
 - **SAST (Static Application Security Testing):** analiza el **código fuente/binario sin ejecutarlo**. Característica clave: cobertura temprana y amplia, pero muchos falsos positivos; no ve fallos de configuración en runtime.

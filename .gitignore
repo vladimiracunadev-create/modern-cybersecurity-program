@@ -63,3 +63,7 @@ release-artifacts/
 
 # Configuracion local del agente (settings.local.json, launch.json de preview)
 .claude/
+
+# Catalogo CWE descargado (se recupera con scripts/cwe_kb.py importar --descargar)
+knowledge/cwe/original/*
+!knowledge/cwe/original/.gitkeep

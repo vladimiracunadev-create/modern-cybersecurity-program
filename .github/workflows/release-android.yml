@@ -218,7 +218,7 @@ jobs:
             - **Tres recursos transversales offline**: «¿Y si cruzas la línea?»,
               glosario global generado desde las clases y guía verificada de
               plataformas de práctica, con búsqueda por siglas y aliases.
-            - 360 clases en 20 partes, con progreso guardado solo en el dispositivo.
+            - 370 clases en 21 partes, con progreso guardado solo en el dispositivo.
             - Incluye el **APK Android**, la **aplicación web estática** y el
               **manual PDF consolidado**; todos llevan sumas SHA-256.
             - APK compilado y firmado en GitHub Actions. Antes de publicar se abre el

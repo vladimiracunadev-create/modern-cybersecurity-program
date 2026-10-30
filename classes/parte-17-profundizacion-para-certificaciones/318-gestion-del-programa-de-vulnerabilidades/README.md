@@ -55,13 +55,19 @@ flowchart LR
 
 El alumno demuestra dominio cuando explica el diagrama, resuelve el caso con evidencia, declara límites y puede defender por qué su decisión cambia si cambia un supuesto.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+Un programa de gestión de vulnerabilidades puede trabajar sobre tres niveles de datos, y mezclarlos es una fuente clásica de métricas engañosas. El **CVE** es la vulnerabilidad pública concreta; la **instancia** es ese CVE en un activo, con dueño, exposición y plazo; y el **CWE** es la causa común que agrupa muchos CVE. Los dos primeros alimentan la cola de trabajo; el tercero alimenta la **prevención**: si una causa (inyección SQL, `CWE-89`; credenciales embebidas, `CWE-798`; falta de autorización, `CWE-862`) aparece en muchos hallazgos, el remedio es de proceso y no de parche, y la métrica útil es la recurrencia de la causa, no el número de tickets.
+
+La priorización de la clase (CVSS, EPSS, KEV) se refina con tres precisiones de la [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md). Primera, **ningún umbral de EPSS tiene autoridad universal**; el 0,10 del laboratorio es un valor de ejemplo. Segunda, **la exposición del activo cambia el plazo del mismo CVE**: CISA BOD 26-04 (10 de junio de 2026, obligatoria para agencias civiles federales de EE. UU. y referencia para los demás) usa exposición, KEV, automatización e impacto técnico para dar plazos de 3, 14 o 60 días o la próxima actualización, con triaje forense si hay explotación confirmada y control total. Tercera, **un dato ausente no es un dato negativo**: la ausencia de un CVE en KEV o en EPSS significa «no sabemos». Con el priorizador del programa puedes reproducirlo: `python labs/devsecops-pipeline/priorizar.py --instantanea labs/devsecops-pipeline/datos/casos-cwe-cve.json --bod-26-04`.
+
 ## 📖 Definiciones y características
 
 - **Gestión de vulnerabilidades (VM):** proceso continuo de identificar, evaluar, tratar y reportar vulnerabilidades. Característica clave: cíclico y basado en riesgo, no un escaneo puntual.
 - **Escaneo autenticado (credentialed):** el escáner inicia sesión en el activo y lee versión de paquetes/parches. Característica clave: mucho más preciso y con menos falsos positivos que el no autenticado.
 - **CVSS (Common Vulnerability Scoring System):** puntúa la severidad técnica de 0.0 a 10.0. **Base** (intrínseca), **Temporal** (madurez del exploit) y **Environmental** (ajuste al contexto propio). Característica clave: mide severidad, **no** probabilidad ni impacto de negocio.
-- **EPSS (Exploit Prediction Scoring System):** probabilidad (0–1) de que una CVE sea explotada en los próximos 30 días, según datos observados. Característica clave: complementa a CVSS con *likelihood* real.
-- **CISA KEV (Known Exploited Vulnerabilities):** catálogo de CVEs con explotación **confirmada en la práctica**. Característica clave: si una CVE está en KEV, se remedia con máxima urgencia sin importar su CVSS.
+- **EPSS (Exploit Prediction Scoring System):** probabilidad (0–1) de que una CVE sea explotada en los próximos 30 días, según datos observados. Característica clave: complementa a CVSS con una estimación de probabilidad de explotación.
+- **CISA KEV (Known Exploited Vulnerabilities):** catálogo de CVEs con explotación **confirmada en la práctica**. Característica clave: si una CVE está en KEV hay explotación observada y pasa a las prioridades más altas sin importar su CVSS; el plazo concreto depende de la exposición del activo.
 - **SLA de remediación:** plazo máximo para corregir según criticidad (p. ej. Crítica 7–15 días, Alta 30, Media 90). Característica clave: hace exigible la remediación y permite medir cumplimiento.
 - **MTTR (Mean Time To Remediate):** tiempo medio desde detección hasta corrección. Característica clave: métrica central de eficiencia del programa.
 - **Excepción / risk acceptance:** decisión formal y temporal de no remediar, con dueño, justificación, compensaciones y fecha de revisión. Característica clave: documentada y con caducidad, nunca "para siempre".
@@ -90,8 +96,8 @@ Ejercicio aplicado: escanearás un objetivo de laboratorio y construirás una co
 4. **Extrae las CVEs.** Exporta a CSV: `CVE`, `CVSS_base`, `activo`, `severidad`.
 5. **Enriquece con EPSS.** Consulta la API de FIRST (`https://api.first.org/data/v1/epss?cve=CVE-XXXX-YYYY`) y añade la columna `epss`.
 6. **Cruza con KEV.** Descarga el JSON de CISA KEV y marca `en_kev = sí/no` para cada CVE.
-7. **Define la fórmula de priorización.** Regla ejemplo: `P1` si `en_kev = sí`; `P2` si `CVSS ≥ 7 y EPSS ≥ 0.1`; `P3` si `CVSS ≥ 7`; `P4` resto. Ordena la cola.
-8. **Asigna SLAs.** P1 → 48 h, P2 → 15 días, P3 → 30 días, P4 → 90 días. Registra fecha de detección y fecha límite.
+7. **Define la fórmula de priorización.** Regla ejemplo: `P1` si `en_kev = sí`; `P2` si `CVSS ≥ 7 y EPSS ≥ 0.1`; `P3` si `CVSS ≥ 7`; `P4` resto. Ordena la cola. El umbral 0.1 es un valor de ejemplo sin autoridad especial: cada organización fija el suyo (clase 369).
+8. **Asigna SLAs.** P1 → 48 h, P2 → 15 días, P3 → 30 días, P4 → 90 días (valores de ejemplo del laboratorio; compáralos con los plazos de referencia de CISA BOD 26-04, que dependen de exposición, KEV, automatización e impacto: 3, 14 y 60 días). Registra fecha de detección y fecha límite.
 9. **Simula remediación.** Crea tickets para los P1/P2, aplica (o simula) el parche y **re-escanea** para verificar cierre. Documenta una excepción formal para un P3 que no puedas parchear.
 10. **Calcula métricas.** MTTR de los tickets cerrados, % remediado dentro de SLA, y densidad de vulnerabilidades por activo.
 
@@ -112,7 +118,7 @@ Entregable: CSV priorizado (CVE × CVSS × EPSS × KEV × prioridad × SLA) + ta
 
 **Criterio de aceptación:**
 
-- Toda CVE presente en KEV queda como prioridad máxima, independientemente de su CVSS.
+- Toda CVE presente en KEV queda al principio de la cola, independientemente de su CVSS; si se decide otra cosa (por ejemplo, el activo no es alcanzable), la razón queda documentada.
 - La priorización usa las tres señales (severidad, probabilidad, explotación activa), no solo CVSS.
 - Cada prioridad tiene un SLA numérico y una fecha límite calculada desde la detección.
 - Se reportan al menos MTTR y % de remediación dentro de SLA.

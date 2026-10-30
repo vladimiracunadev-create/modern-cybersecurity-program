@@ -99,6 +99,12 @@ phishing** (FIDO2/passkeys) cierran la mayoría de estos huecos. El mensaje de l
 respuestas neutras, rate limiting real, recuperación robusta, MFA bien implementado y gestión de
 sesión sólida (clase 102)—.
 
+### Cómo lo nombra el catálogo CWE y qué cambia al priorizar
+
+En el catálogo CWE, «autenticación rota» no es una entrada sino una **familia** con una raíz que MITRE desaconseja usar: `CWE-287` (*autenticación incorrecta*) es de nivel *Class* y figura como «desaconsejada» (*Discouraged*) para mapear, porque es demasiado general. Debajo cuelgan entradas más precisas, que son las que usarías en un informe. `CWE-306` (*falta de autenticación en una función crítica*) es la que corresponde a «no hay puerta»; `CWE-1390` (*autenticación débil*) agrupa las puertas mal hechas: `CWE-307` (intentos excesivos sin restricción), `CWE-640` (recuperación de contraseña débil), `CWE-308` (un solo factor) y, a través de `CWE-1391` (credenciales débiles), `CWE-521` (requisitos de contraseña débiles). La **enumeración de usuarios** que viste como «el fallo que habilita todo lo demás» se describe como una discrepancia observable en la respuesta (`CWE-204`), que cuelga de la exposición de información.
+
+Los datos de explotación van en la misma dirección que tu intuición: `CWE-306` es la 21.ª del Top 25 de 2025 con **11 CVE en KEV**, y su hija `CWE-288` (autenticación evitada por una ruta o canal alternativo) aparece en el Top 10 de debilidades de KEV; es decir, **la ausencia de autenticación en una función crítica es de las que más se explota**, y por eso la categoría A07 de OWASP merece una auditoría deliberada de qué rutas quedaron sin proteger. La clasificación fina de cada defecto —y la corrección verificada de la autorización relacionada— se practica en la [clase 364](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
+
 ## 📖 Definiciones y características
 
 - **Enumeración de usuarios**: determinar qué cuentas existen por diferencias en las respuestas. Característica: habilita ataques dirigidos.

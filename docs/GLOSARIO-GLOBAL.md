@@ -8,7 +8,7 @@ el generador; la modalidad y disponibilidad pueden cambiar en sus sitios oficial
 > **Archivo generado.** No lo edites a mano. Ejecuta
 > `python scripts/generar_glosario_global.py` y valida con `--check`.
 
-**Cobertura:** 2472 términos consolidados · 345 clases con glosario.
+**Cobertura:** 2596 términos consolidados · 355 clases con glosario.
 
 ## Cómo usarlo
 
@@ -87,61 +87,67 @@ Estándar de etiquetado de VLAN
 
 ### A01 Broken Access Control
 
-Acceder a lo que no corresponde; el nº1 de 2021
+Acceder a lo que no corresponde; primera en 2021 y 2025
 
 **Aparece en 1 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md).
 
-### A02 Cryptographic Failures
-
-Datos sensibles mal protegidos
-
-**Aparece en 1 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md).
-
-### A03 Injection
-
-Datos interpretados como código; incluye XSS desde 2021
-
-**Aparece en 2 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md), [Clase 96 — Cross-Site Scripting (XSS) reflejado](../classes/parte-4-seguridad-de-aplicaciones-web/096-cross-site-scripting-xss-reflejado/README.md).
-
-### A04 Insecure Design
-
-Fallo de diseño, no de implementación
-
-**Aparece en 1 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md).
-
-### A05 Security Misconfiguration
+### A02 Security Misconfiguration
 
 Inseguro por defecto o mal configurado
 
 **Aparece en 1 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md).
 
-### A06 Componentes vulnerables
+### A03 Injection
 
-Dependencias con fallos conocidos
+Categoría OWASP que engloba el XSS desde 2021
+
+**Aparece en 1 clase(s):** [Clase 96 — Cross-Site Scripting (XSS) reflejado](../classes/parte-4-seguridad-de-aplicaciones-web/096-cross-site-scripting-xss-reflejado/README.md).
+
+### A03 Supply Chain Failures
+
+Compromiso de dependencias, construcción o distribución del software
 
 **Aparece en 1 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md).
 
-### A07 Fallos de autenticación
+### A04 Cryptographic Failures
 
-Identificación y gestión de sesión débiles
+Datos sensibles mal protegidos
 
 **Aparece en 1 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md).
 
-### A08 Fallos de integridad
+### A05 Injection
+
+Datos interpretados como código; incluye XSS
+
+**Aparece en 1 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md).
+
+### A06 Insecure Design
+
+Fallo de diseño, no de implementación
+
+**Aparece en 1 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md).
+
+### A07 Authentication Failures
+
+Identificación y autenticación débiles
+
+**Aparece en 1 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md).
+
+### A08 Integrity Failures
 
 Software o datos sin verificar
 
 **Aparece en 1 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md).
 
-### A09 Fallos de registro
+### A09 Logging & Alerting Failures
 
-Falta de logging y monitorización
+Falta de registro y de alerta
 
 **Aparece en 1 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md).
 
-### A10 SSRF
+### A10 Exceptional Conditions
 
-Server-Side Request Forgery; añadido por la comunidad
+Errores y condiciones anómalas mal manejados
 
 **Aparece en 1 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md).
 
@@ -295,6 +301,12 @@ Decisión previa a ejecutar basada en identidad y política del artefacto.
 
 **Aparece en 1 clase(s):** [Clase 243 — Imágenes y contenedores seguros en el pipeline](../classes/parte-11-devsecops-y-seguridad-del-sdlc/243-imagenes-y-contenedores-seguros-en-el-pipeline/README.md).
 
+### ADP
+
+Entidad autorizada que enriquece registros CVE publicados por otros
+
+**Aparece en 2 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md), [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
+
 ### Adversary emulation
 
 Reproducción fiel del comportamiento de un actor real, basada en CTI
@@ -367,6 +379,18 @@ Fuzzer estándar guiado por cobertura
 
 **Aparece en 1 clase(s):** [Clase 136 — Fuzzing con AFL++ y libFuzzer](../classes/parte-5-explotacion-de-sistemas-y-binarios/136-fuzzing-con-afl-y-libfuzzer/README.md).
 
+### Agrupación
+
+Entrada que agrupa otras por una característica; antes llamada categoría
+
+**Aparece en 1 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
+
+### Agrupación (Grouping)
+
+Entrada del catálogo CWE que reúne otras; no es una debilidad y no se usa para mapear
+
+**Aparece en 1 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md).
+
 ### Aislamiento
 
 VM dedicada con snapshots para ejecutar con seguridad
@@ -399,9 +423,9 @@ Conjunto de sistemas y acciones permitidos por escrito
 
 ### Alcance (scope)
 
-Lista de sistemas y acciones permitidos; negación por defecto
+Si el impacto sale de la autoridad de seguridad del componente (v3.1)
 
-**Aparece en 2 clase(s):** [Clase 25 — Ética, legalidad, alcance y divulgación responsable](../classes/parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.md), [Clase 67 — Reglas de engagement, alcance y contratos](../classes/parte-3-hacking-etico-y-pentesting-metodologia/067-reglas-de-engagement-alcance-y-contratos/README.md).
+**Aparece en 3 clase(s):** [Clase 25 — Ética, legalidad, alcance y divulgación responsable](../classes/parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.md), [Clase 67 — Reglas de engagement, alcance y contratos](../classes/parte-3-hacking-etico-y-pentesting-metodologia/067-reglas-de-engagement-alcance-y-contratos/README.md), [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
 
 ### Aleatorización de puerto
 
@@ -839,9 +863,9 @@ Relación tipada entre nodos, con fuente y tiempo.
 
 ### Aritmética segura
 
-Comprobar límites antes de operar
+Comprobar los operandos antes de calcular, no el resultado desbordado
 
-**Aparece en 1 clase(s):** [Clase 128 — Integer overflows y errores aritméticos](../classes/parte-5-explotacion-de-sistemas-y-binarios/128-integer-overflows-y-errores-aritmeticos/README.md).
+**Aparece en 2 clase(s):** [Clase 128 — Integer overflows y errores aritméticos](../classes/parte-5-explotacion-de-sistemas-y-binarios/128-integer-overflows-y-errores-aritmeticos/README.md), [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
 
 ### Arming mode
 
@@ -903,11 +927,17 @@ Compara un carácter por su valor numérico
 
 **Aparece en 1 clase(s):** [Clase 92 — Inyección SQL avanzada y ciega (blind)](../classes/parte-4-seguridad-de-aplicaciones-web/092-inyeccion-sql-avanzada-y-ciega-blind/README.md).
 
+### Asignación masiva
+
+Aceptar y aplicar todos los campos que envía el cliente a un objeto
+
+**Aparece en 1 clase(s):** [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
+
 ### ASLR
 
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
 
-**Aparece en 5 clase(s):** [Clase 23 — Sistemas operativos: procesos, memoria y syscalls](../classes/parte-0-fundamentos-y-prerrequisitos/023-sistemas-operativos-procesos-memoria-y-syscalls/README.md), [Clase 24 — Arquitectura de computadores: CPU, registros y memoria](../classes/parte-0-fundamentos-y-prerrequisitos/024-arquitectura-de-computadores-cpu-registros-y-memoria/README.md), [Clase 119 — Buffer overflow en stack: teoría](../classes/parte-5-explotacion-de-sistemas-y-binarios/119-buffer-overflow-en-stack-teoria/README.md), [Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE](../classes/parte-5-explotacion-de-sistemas-y-binarios/122-protecciones-modernas-aslr-dep-nx-stack-canaries-y-pie/README.md), [Clase 344 — Estado del juego, memoria y manipulación controlada](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/344-estado-juego-memoria-manipulacion-controlada/README.md).
+**Aparece en 6 clase(s):** [Clase 23 — Sistemas operativos: procesos, memoria y syscalls](../classes/parte-0-fundamentos-y-prerrequisitos/023-sistemas-operativos-procesos-memoria-y-syscalls/README.md), [Clase 24 — Arquitectura de computadores: CPU, registros y memoria](../classes/parte-0-fundamentos-y-prerrequisitos/024-arquitectura-de-computadores-cpu-registros-y-memoria/README.md), [Clase 119 — Buffer overflow en stack: teoría](../classes/parte-5-explotacion-de-sistemas-y-binarios/119-buffer-overflow-en-stack-teoria/README.md), [Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE](../classes/parte-5-explotacion-de-sistemas-y-binarios/122-protecciones-modernas-aslr-dep-nx-stack-canaries-y-pie/README.md), [Clase 344 — Estado del juego, memoria y manipulación controlada](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/344-estado-juego-memoria-manipulacion-controlada/README.md), [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
 
 ### ASN
 
@@ -1019,9 +1049,9 @@ Determinar quién está detrás; con niveles de confianza
 
 ### ATT&CK
 
-Base de conocimiento de tácticas y técnicas adversarias observadas
+Base de conocimiento de técnicas de adversarios durante intrusiones
 
-**Aparece en 3 clase(s):** [Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model](../classes/parte-0-fundamentos-y-prerrequisitos/003-frameworks-de-seguridad-nist-csf-iso-27001-mitre-att-ck-y-diamond-model/README.md), [Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios](../classes/parte-0-fundamentos-y-prerrequisitos/008-windows-esencial-para-seguridad-arquitectura-registro-y-servicios/README.md), [Clase 162 — MITRE ATT&CK como lenguaje ofensivo](../classes/parte-7-red-team-y-operaciones-ofensivas/162-mitre-att-ck-como-lenguaje-ofensivo/README.md).
+**Aparece en 4 clase(s):** [Clase 3 — Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model](../classes/parte-0-fundamentos-y-prerrequisitos/003-frameworks-de-seguridad-nist-csf-iso-27001-mitre-att-ck-y-diamond-model/README.md), [Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios](../classes/parte-0-fundamentos-y-prerrequisitos/008-windows-esencial-para-seguridad-arquitectura-registro-y-servicios/README.md), [Clase 162 — MITRE ATT&CK como lenguaje ofensivo](../classes/parte-7-red-team-y-operaciones-ofensivas/162-mitre-att-ck-como-lenguaje-ofensivo/README.md), [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md).
 
 ### ATT&CK Navigator
 
@@ -1034,6 +1064,12 @@ Herramienta para colorear la matriz y visualizar cobertura
 Formato de parchear los servicios propios y atacar los ajenos
 
 **Aparece en 1 clase(s):** [Clase 140 — CTFs de pwn e ingeniería inversa](../classes/parte-5-explotacion-de-sistemas-y-binarios/140-ctfs-de-pwn-e-ingenieria-inversa/README.md).
+
+### Attack Requirements (AT)
+
+Condiciones de despliegue que hacen posible el ataque en v4.0
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
 
 ### Attestation
 
@@ -1063,7 +1099,7 @@ Registro ordenado de solicitudes, decisiones, ejecuciones y resultados.
 
 Control que verifica la identidad del usuario
 
-**Aparece en 1 clase(s):** [Clase 101 — Fallos de autenticación y bypass](../classes/parte-4-seguridad-de-aplicaciones-web/101-fallos-de-autenticacion-y-bypass/README.md).
+**Aparece en 2 clase(s):** [Clase 101 — Fallos de autenticación y bypass](../classes/parte-4-seguridad-de-aplicaciones-web/101-fallos-de-autenticacion-y-bypass/README.md), [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
 
 ### Autenticación de transacción
 
@@ -1131,6 +1167,12 @@ Escaneos reproducibles definidos en fichero
 
 **Aparece en 1 clase(s):** [Clase 89 — OWASP ZAP](../classes/parte-4-seguridad-de-aplicaciones-web/089-owasp-zap/README.md).
 
+### Automatizable
+
+Explotación cuyos pasos pueden ejecutarse sin intervención humana
+
+**Aparece en 1 clase(s):** [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
+
 ### Automatización
 
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
@@ -1151,9 +1193,9 @@ Servidor que posee los datos oficiales de una zona DNS.
 
 ### Autorización
 
-Comprobar si una identidad puede hacer una acción
+Decidir qué acciones y recursos puede usar una identidad ya comprobada
 
-**Aparece en 2 clase(s):** [Clase 25 — Ética, legalidad, alcance y divulgación responsable](../classes/parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.md), [Clase 105 — Control de acceso roto: IDOR y path traversal](../classes/parte-4-seguridad-de-aplicaciones-web/105-control-de-acceso-roto-idor-y-path-traversal/README.md).
+**Aparece en 3 clase(s):** [Clase 25 — Ética, legalidad, alcance y divulgación responsable](../classes/parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.md), [Clase 105 — Control de acceso roto: IDOR y path traversal](../classes/parte-4-seguridad-de-aplicaciones-web/105-control-de-acceso-roto-idor-y-path-traversal/README.md), [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
 
 ### Autorización ≠ autenticación
 
@@ -1279,9 +1321,9 @@ Catálogo de extensiones de Burp
 
 ### Base
 
-Sistema de numeración (2, 8, 10, 16)
+Nivel con detalle suficiente para deducir detección y prevención
 
-**Aparece en 1 clase(s):** [Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL](../classes/parte-0-fundamentos-y-prerrequisitos/020-sistemas-de-numeracion-y-encoding-binario-hex-base64-y-url/README.md).
+**Aparece en 2 clase(s):** [Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL](../classes/parte-0-fundamentos-y-prerrequisitos/020-sistemas-de-numeracion-y-encoding-binario-hex-base64-y-url/README.md), [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
 
 ### Base de firmas
 
@@ -1517,6 +1559,12 @@ Temario oficial vigente del examen.
 
 **Aparece en 1 clase(s):** [Clase 301 — Roadmap de certificaciones: CompTIA, OSCP, CISSP y más](../classes/parte-16-capstones-y-preparacion-de-certificaciones/301-roadmap-de-certificaciones-comptia-oscp-cissp-y-mas/README.md).
 
+### BOD
+
+Directiva operativa vinculante de CISA para agencias civiles federales de EE. UU.
+
+**Aparece en 1 clase(s):** [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
+
 ### Body of knowledge
 
 Alcance publicado de conocimientos evaluados.
@@ -1659,7 +1707,7 @@ Dirección MAC del punto de acceso
 
 Región de tamaño fijo reservada para datos
 
-**Aparece en 1 clase(s):** [Clase 119 — Buffer overflow en stack: teoría](../classes/parte-5-explotacion-de-sistemas-y-binarios/119-buffer-overflow-en-stack-teoria/README.md).
+**Aparece en 2 clase(s):** [Clase 119 — Buffer overflow en stack: teoría](../classes/parte-5-explotacion-de-sistemas-y-binarios/119-buffer-overflow-en-stack-teoria/README.md), [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
 
 ### Buffer de protocolo
 
@@ -1867,6 +1915,18 @@ Guarda respuestas y las sirve a muchos usuarios
 
 **Aparece en 1 clase(s):** [Clase 112 — Web cache poisoning y HTTP request smuggling](../classes/parte-4-seguridad-de-aplicaciones-web/112-web-cache-poisoning-y-http-request-smuggling/README.md).
 
+### Cadena
+
+Secuencia de debilidades en la que una crea las condiciones de la siguiente
+
+**Aparece en 2 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md), [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md).
+
+### Cadena con nombre
+
+Cadena de debilidades frecuente con identificador propio, como CWE-680
+
+**Aparece en 2 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md), [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
+
 ### Cadena de ataque
 
 Acceso, lateral, exfiltración y cifrado final
@@ -2041,6 +2101,12 @@ Normalizar la ruta antes de usarla
 
 **Aparece en 1 clase(s):** [Clase 105 — Control de acceso roto: IDOR y path traversal](../classes/parte-4-seguridad-de-aplicaciones-web/105-control-de-acceso-roto-idor-y-path-traversal/README.md).
 
+### CanPrecede
+
+Relación que indica que una debilidad puede desembocar en otra
+
+**Aparece en 1 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md).
+
 ### Cantidad negativa
 
 Valor que un cálculo mal hecho convierte en abono
@@ -2052,6 +2118,12 @@ Valor que un cálculo mal hecho convierte en abono
 Nivel del paquete (Ether/IP/TCP/UDP/ICMP) como objeto
 
 **Aparece en 1 clase(s):** [Clase 17 — Python para seguridad: manipulación de paquetes con Scapy](../classes/parte-0-fundamentos-y-prerrequisitos/017-python-para-seguridad-manipulacion-de-paquetes-con-scapy/README.md).
+
+### Capa de imagen
+
+Cambio inmutable acumulado en una imagen, legible aunque se «borre» después
+
+**Aparece en 1 clase(s):** [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
 
 ### Capa (layer)
 
@@ -2082,6 +2154,12 @@ Cantidad de datos que un portador puede ocultar
 Privilegio granular que puede retirarse del proceso.
 
 **Aparece en 1 clase(s):** [Clase 243 — Imágenes y contenedores seguros en el pipeline](../classes/parte-11-devsecops-y-seguridad-del-sdlc/243-imagenes-y-contenedores-seguros-en-el-pipeline/README.md).
+
+### CAPEC
+
+Catálogo de patrones de ataque asociado a las debilidades
+
+**Aparece en 1 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md).
 
 ### Capital One
 
@@ -2127,7 +2205,7 @@ El mapa de dónde mirar que se entrega al cliente
 
 ### Categoría de riesgo
 
-Agrupación de fallos por naturaleza, no un bug concreto
+Agrupación de debilidades por naturaleza, no un defecto concreto
 
 **Aparece en 1 clase(s):** [Clase 87 — OWASP Top 10: panorama general](../classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md).
 
@@ -2142,6 +2220,12 @@ Conjunto que ejecutan `-sC` y `-A`
 Pueden degradar, tumbar o explotar el objetivo
 
 **Aparece en 1 clase(s):** [Clase 32 — Nmap Scripting Engine (NSE)](../classes/parte-1-redes-y-seguridad-de-redes/032-nmap-scripting-engine-nse/README.md).
+
+### Categoría OWASP
+
+Agrupación de CWE bajo un riesgo web; no es una debilidad
+
+**Aparece en 1 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md).
 
 ### Categoría safe
 
@@ -2160,6 +2244,12 @@ Comprobación de vulnerabilidades conocidas; a menudo intrusiva
 Clasificar un dominio (business/health) para pasar filtros
 
 **Aparece en 1 clase(s):** [Clase 164 — Diseño de infraestructura de comando y control (C2)](../classes/parte-7-red-team-y-operaciones-ofensivas/164-diseno-de-infraestructura-de-comando-y-control-c2/README.md).
+
+### Causa raíz
+
+Debilidad que, de corregirse, impediría la vulnerabilidad
+
+**Aparece en 2 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md), [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
 
 ### CBC
 
@@ -2202,6 +2292,12 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 El host responde pero nadie escucha; prueba que el host existe
 
 **Aparece en 1 clase(s):** [Clase 30 — Nmap: escaneo de puertos y tipos de escaneo](../classes/parte-1-redes-y-seguridad-de-redes/030-nmap-escaneo-de-puertos-y-tipos-de-escaneo/README.md).
+
+### Cerrojo (mutex)
+
+Mecanismo que garantiza exclusión mutua en una sección crítica
+
+**Aparece en 1 clase(s):** [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
 
 ### Certificado
 
@@ -2293,6 +2389,12 @@ Pruebas estadísticas que detectan LSB
 
 **Aparece en 1 clase(s):** [Clase 64 — Esteganografía y ocultación de datos](../classes/parte-2-criptografia-aplicada/064-esteganografia-y-ocultacion-de-datos/README.md).
 
+### ChildOf
+
+Relación «es hijo de»: de una entrada concreta a otra más abstracta
+
+**Aparece en 1 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
+
 ### chisel / ligolo-ng
 
 Túneles sobre HTTP(S) cuando no hay SSH
@@ -2334,6 +2436,12 @@ Confidencialidad, Integridad y Disponibilidad; las tres propiedades base a prote
 Ejecución, persistencia, evasión, objetivo, C2
 
 **Aparece en 1 clase(s):** [Clase 148 — Análisis de comportamiento](../classes/parte-6-analisis-de-malware/148-analisis-de-comportamiento/README.md).
+
+### Ciclo de vida de la debilidad
+
+Secuencia de etapas desde detectar un defecto hasta prevenir su reaparición
+
+**Aparece en 1 clase(s):** [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
 
 ### Ciclo estático↔dinámico
 
@@ -2412,6 +2520,12 @@ Variantes según qué servidor prioriza qué cabecera
 Dato del payload: `sub`, `exp`, `iss`, `aud`, roles
 
 **Aparece en 1 clase(s):** [Clase 103 — Ataques y seguridad de JWT](../classes/parte-4-seguridad-de-aplicaciones-web/103-ataques-y-seguridad-de-jwt/README.md).
+
+### Clase
+
+Nivel muy abstracto, independiente de lenguaje o tecnología
+
+**Aparece en 1 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
 
 ### Clase negada
 
@@ -2521,6 +2635,18 @@ Comparar ajustando flags / saltar
 
 **Aparece en 1 clase(s):** [Clase 116 — Arquitectura x86/x64 y lenguaje ensamblador](../classes/parte-5-explotacion-de-sistemas-y-binarios/116-arquitectura-x86-x64-y-lenguaje-ensamblador/README.md).
 
+### CNA
+
+Entidad autorizada a asignar identificadores y publicar registros en su ámbito
+
+**Aparece en 1 clase(s):** [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
+
+### CNA de último recurso
+
+CNA que cubre vulnerabilidades que ninguna otra CNA tiene en su ámbito
+
+**Aparece en 1 clase(s):** [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
+
 ### CNAME
 
 Alias que apunta un nombre a otro nombre canónico.
@@ -2577,9 +2703,9 @@ Transformación reversible sin secreto
 
 ### Codificación de salida
 
-Codificar el dato según su contexto; defensa primaria del XSS
+Transformar un dato para que sea inerte en el contexto donde se inserta
 
-**Aparece en 1 clase(s):** [Clase 115 — Secure coding y defensa de aplicaciones web](../classes/parte-4-seguridad-de-aplicaciones-web/115-secure-coding-y-defensa-de-aplicaciones-web/README.md).
+**Aparece en 2 clase(s):** [Clase 115 — Secure coding y defensa de aplicaciones web](../classes/parte-4-seguridad-de-aplicaciones-web/115-secure-coding-y-defensa-de-aplicaciones-web/README.md), [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
 
 ### Código de estado
 
@@ -2701,6 +2827,12 @@ Separación consistente para limitar correlación e impacto.
 
 **Aparece en 2 clase(s):** [Clase 164 — Diseño de infraestructura de comando y control (C2)](../classes/parte-7-red-team-y-operaciones-ofensivas/164-diseno-de-infraestructura-de-comando-y-control-c2/README.md), [Clase 260 — OPSEC personal y anonimato](../classes/parte-12-osint-e-ingenieria-social/260-opsec-personal-y-anonimato/README.md).
 
+### Complejidad (AC)
+
+Si el ataque depende de condiciones fuera del control del atacante
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
+
 ### Complejidad inútil
 
 Endurecer reglas solo produce variantes predecibles
@@ -2737,6 +2869,12 @@ Expresión que construye una colección filtrando y transformando.
 
 **Aparece en 1 clase(s):** [Clase 15 — Python para seguridad: fundamentos del lenguaje](../classes/parte-0-fundamentos-y-prerrequisitos/015-python-para-seguridad-fundamentos-del-lenguaje/README.md).
 
+### Compuesto
+
+Conjunto de debilidades que deben coincidir para que exista riesgo
+
+**Aparece en 2 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md), [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md).
+
 ### Concatenación
 
 Construir la consulta pegando entrada con texto; la causa raíz
@@ -2748,6 +2886,12 @@ Construir la consulta pegando entrada con texto; la causa raíz
 Dependencia común capaz de afectar múltiples servicios.
 
 **Aparece en 1 clase(s):** [Clase 284 — Gestión de riesgo de terceros y proveedores](../classes/parte-14-grc-riesgo-y-cumplimiento/284-gestion-de-riesgo-de-terceros-y-proveedores/README.md).
+
+### Condición de carrera
+
+Resultado que depende del orden de operaciones concurrentes
+
+**Aparece en 1 clase(s):** [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
 
 ### condition
 
@@ -2941,6 +3085,12 @@ Dónde cae la entrada: HTML, atributo, script, URL
 
 **Aparece en 1 clase(s):** [Clase 96 — Cross-Site Scripting (XSS) reflejado](../classes/parte-4-seguridad-de-aplicaciones-web/096-cross-site-scripting-xss-reflejado/README.md).
 
+### Contexto de salida
+
+Lugar donde va el dato: cuerpo HTML, atributo, URL o script
+
+**Aparece en 1 clase(s):** [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
+
 ### Contradicción
 
 Evidencia que reduce la plausibilidad de una hipótesis de identidad.
@@ -2975,7 +3125,13 @@ Código ejecutado por una red; su modelo de estado y autorización depende de la
 
 Medida alternativa que reduce riesgo sin eliminar la causa.
 
-**Aparece en 1 clase(s):** [Clase 245 — Gestión de vulnerabilidades a escala](../classes/parte-11-devsecops-y-seguridad-del-sdlc/245-gestion-de-vulnerabilidades-a-escala/README.md).
+**Aparece en 3 clase(s):** [Clase 245 — Gestión de vulnerabilidades a escala](../classes/parte-11-devsecops-y-seguridad-del-sdlc/245-gestion-de-vulnerabilidades-a-escala/README.md), [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md), [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
+
+### Control de acceso
+
+Conjunto de mecanismos que limitan quién puede hacer qué
+
+**Aparece en 1 clase(s):** [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
 
 ### Control de acceso roto
 
@@ -3031,6 +3187,24 @@ Dato guardado por el navegador y reenviado al servidor.
 
 **Aparece en 2 clase(s):** [Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna](../classes/parte-0-fundamentos-y-prerrequisitos/013-http-https-y-la-arquitectura-de-la-web-moderna/README.md), [Clase 102 — Gestión de sesiones y ataques asociados](../classes/parte-4-seguridad-de-aplicaciones-web/102-gestion-de-sesiones-y-ataques-asociados/README.md).
 
+### Cookie HttpOnly
+
+Atributo que impide que scripts de la página lean la cookie
+
+**Aparece en 1 clase(s):** [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
+
+### Cookie SameSite
+
+Atributo que limita enviar la cookie en peticiones entre sitios
+
+**Aparece en 1 clase(s):** [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
+
+### Cookie Secure
+
+Atributo que impide enviar la cookie por conexiones sin cifrar
+
+**Aparece en 1 clase(s):** [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
+
 ### Cookies / autenticación
 
 Contexto que `-r` preserva para atacar zonas logueadas
@@ -3055,11 +3229,35 @@ Entradas válidas de ejemplo desde las que mutar
 
 **Aparece en 1 clase(s):** [Clase 136 — Fuzzing con AFL++ y libFuzzer](../classes/parte-5-explotacion-de-sistemas-y-binarios/136-fuzzing-con-afl-y-libfuzzer/README.md).
 
+### Corrección incompleta
+
+Parche que deja variantes del ataque sin cerrar
+
+**Aparece en 1 clase(s):** [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
+
+### Corrección verificada
+
+Cambio demostrado por una prueba que falla antes y pasa después
+
+**Aparece en 1 clase(s):** [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
+
 ### Correlación
 
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
 
 **Aparece en 2 clase(s):** [Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP](../classes/parte-3-hacking-etico-y-pentesting-metodologia/070-enumeracion-smb-snmp-smtp-y-ldap/README.md), [Clase 355 — Telemetría para Game Security](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/355-telemetria-game-security/README.md).
+
+### Correspondencia inferida
+
+Relación hallazgo–CWE obtenida por razonamiento, no declarada por la fuente
+
+**Aparece en 2 clase(s):** [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md), [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
+
+### Correspondencia oficial
+
+La ficha CWE describe literalmente el defecto
+
+**Aparece en 1 clase(s):** [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
 
 ### Corroboración
 
@@ -3069,9 +3267,9 @@ Apoyo mediante evidencia con origen suficientemente independiente.
 
 ### CORS
 
-Mecanismo que relaja la SOP de forma controlada
+Mecanismo que decide qué orígenes web pueden leer respuestas de otro origen
 
-**Aparece en 1 clase(s):** [Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution](../classes/parte-4-seguridad-de-aplicaciones-web/113-ataques-del-lado-del-cliente-cors-postmessage-y-prototype-pollution/README.md).
+**Aparece en 2 clase(s):** [Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution](../classes/parte-4-seguridad-de-aplicaciones-web/113-ataques-del-lado-del-cliente-cors-postmessage-y-prototype-pollution/README.md), [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
 
 ### CPA
 
@@ -3081,9 +3279,9 @@ Puede elegir qué textos se cifran; exigencia mínima moderna
 
 ### CPE
 
-Identificador normalizado de plataforma (`cpe:/a:apache:tomcat:9.0.30`)
+Sistema de nombres estructurados de productos usado para indicar afectación
 
-**Aparece en 2 clase(s):** [Clase 31 — Nmap: detección de servicios y fingerprinting de OS](../classes/parte-1-redes-y-seguridad-de-redes/031-nmap-deteccion-de-servicios-y-fingerprinting-de-os/README.md), [Clase 69 — Reconocimiento activo](../classes/parte-3-hacking-etico-y-pentesting-metodologia/069-reconocimiento-activo/README.md).
+**Aparece en 3 clase(s):** [Clase 31 — Nmap: detección de servicios y fingerprinting de OS](../classes/parte-1-redes-y-seguridad-de-redes/031-nmap-deteccion-de-servicios-y-fingerprinting-de-os/README.md), [Clase 69 — Reconocimiento activo](../classes/parte-3-hacking-etico-y-pentesting-metodologia/069-reconocimiento-activo/README.md), [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
 
 ### CPE/CE
 
@@ -3153,11 +3351,23 @@ Apilar resta de RSP; desapilar le suma
 
 **Aparece en 1 clase(s):** [Clase 117 — El stack, los registros y las convenciones de llamada](../classes/parte-5-explotacion-de-sistemas-y-binarios/117-el-stack-los-registros-y-las-convenciones-de-llamada/README.md).
 
+### Credencial codificada
+
+Usuario, contraseña o clave escritos en el código
+
+**Aparece en 2 clase(s):** [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md), [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
+
 ### Credencial efímera
 
 Autorización de corta duración emitida para un contexto concreto.
 
 **Aparece en 1 clase(s):** [Clase 241 — Secretos en el código y pre-commit hooks](../classes/parte-11-devsecops-y-seguridad-del-sdlc/241-secretos-en-el-codigo-y-pre-commit-hooks/README.md).
+
+### Credencial por defecto
+
+Usuario o contraseña de fábrica que el instalador debería cambiar
+
+**Aparece en 2 clase(s):** [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md), [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
 
 ### Credenciales por defecto
 
@@ -3357,6 +3567,12 @@ Proveedor utilizado por el tercero.
 
 **Aparece en 1 clase(s):** [Clase 284 — Gestión de riesgo de terceros y proveedores](../classes/parte-14-grc-riesgo-y-cumplimiento/284-gestion-de-riesgo-de-terceros-y-proveedores/README.md).
 
+### Cubo de fichas
+
+Algoritmo de limitación de tasa que permite ráfagas y limita el ritmo sostenido
+
+**Aparece en 1 clase(s):** [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
+
 ### Cuckoo / CAPE / Any.Run
 
 Sandboxes de análisis de malware
@@ -3419,15 +3635,21 @@ Divulgación coordinada de vulnerabilidades.
 
 ### CVE
 
-Identificador público de una vulnerabilidad conocida
+Programa y sistema de identificadores de vulnerabilidades divulgadas públicamente
 
-**Aparece en 1 clase(s):** [Clase 22 — Docker y contenedores para laboratorios de seguridad](../classes/parte-0-fundamentos-y-prerrequisitos/022-docker-y-contenedores-para-laboratorios-de-seguridad/README.md).
+**Aparece en 2 clase(s):** [Clase 22 — Docker y contenedores para laboratorios de seguridad](../classes/parte-0-fundamentos-y-prerrequisitos/022-docker-y-contenedores-para-laboratorios-de-seguridad/README.md), [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
 
 ### CVSS
 
-Puntuación que ayuda a fijar la recompensa
+Sistema común de puntuación de la severidad de vulnerabilidades
 
-**Aparece en 2 clase(s):** [Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS](../classes/parte-3-hacking-etico-y-pentesting-metodologia/071-analisis-de-vulnerabilidades-con-nessus-y-openvas/README.md), [Clase 114 — Bug bounty: metodología y plataformas](../classes/parte-4-seguridad-de-aplicaciones-web/114-bug-bounty-metodologia-y-plataformas/README.md).
+**Aparece en 3 clase(s):** [Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS](../classes/parte-3-hacking-etico-y-pentesting-metodologia/071-analisis-de-vulnerabilidades-con-nessus-y-openvas/README.md), [Clase 114 — Bug bounty: metodología y plataformas](../classes/parte-4-seguridad-de-aplicaciones-web/114-bug-bounty-metodologia-y-plataformas/README.md), [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
+
+### CWE
+
+Lista comunitaria de tipos de debilidades de software y hardware, mantenida por MITRE
+
+**Aparece en 1 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
 
 ### Cyber device
 
@@ -3635,6 +3857,12 @@ Fallo que redujo el espacio de claves a 32 768
 
 **Aparece en 1 clase(s):** [Clase 58 — Generación de aleatoriedad segura (CSPRNG)](../classes/parte-2-criptografia-aplicada/058-generacion-de-aleatoriedad-segura-csprng/README.md).
 
+### Debilidad
+
+Tipo de error que podría contribuir a introducir vulnerabilidades
+
+**Aparece en 1 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
+
 ### Debrief
 
 Explicación posterior que conecta señales, proceso y aprendizaje.
@@ -3703,15 +3931,27 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 
 ### Defensa en profundidad
 
-AEAD + error único + tiempo constante + límites
+Varias barreras independientes, de modo que el fallo de una no basta
 
-**Aparece en 1 clase(s):** [Clase 60 — Ataques criptográficos: padding oracle y timing](../classes/parte-2-criptografia-aplicada/060-ataques-criptograficos-padding-oracle-y-timing/README.md).
+**Aparece en 2 clase(s):** [Clase 60 — Ataques criptográficos: padding oracle y timing](../classes/parte-2-criptografia-aplicada/060-ataques-criptograficos-padding-oracle-y-timing/README.md), [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
+
+### Defensa estructural
+
+Defensa que impide por diseño que el dato altere la estructura de lo interpretado
+
+**Aparece en 1 clase(s):** [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
 
 ### Defensa por vector
 
 Cada mecanismo se protege de forma específica
 
 **Aparece en 1 clase(s):** [Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution](../classes/parte-4-seguridad-de-aplicaciones-web/113-ataques-del-lado-del-cliente-cors-postmessage-y-prototype-pollution/README.md).
+
+### Deferred
+
+Estado de NVD: el CVE no está programado para enriquecimiento
+
+**Aparece en 1 clase(s):** [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
 
 ### defusedxml
 
@@ -3731,6 +3971,12 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 
 **Aparece en 1 clase(s):** [Clase 347 — Rendering, visibilidad, occlusion y wallhack](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/347-rendering-visibilidad-occlusion-wallhack/README.md).
 
+### Denegación por defecto
+
+Principio de rechazar todo lo que no esté permitido expresamente
+
+**Aparece en 1 clase(s):** [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
+
 ### Denegar por defecto
 
 El acceso se concede explícitamente, nunca se asume
@@ -3741,7 +3987,7 @@ El acceso se concede explícitamente, nunca se asume
 
 Marca los datos como no ejecutables (bit NX)
 
-**Aparece en 3 clase(s):** [Clase 119 — Buffer overflow en stack: teoría](../classes/parte-5-explotacion-de-sistemas-y-binarios/119-buffer-overflow-en-stack-teoria/README.md), [Clase 121 — Escritura de shellcode](../classes/parte-5-explotacion-de-sistemas-y-binarios/121-escritura-de-shellcode/README.md), [Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE](../classes/parte-5-explotacion-de-sistemas-y-binarios/122-protecciones-modernas-aslr-dep-nx-stack-canaries-y-pie/README.md).
+**Aparece en 4 clase(s):** [Clase 119 — Buffer overflow en stack: teoría](../classes/parte-5-explotacion-de-sistemas-y-binarios/119-buffer-overflow-en-stack-teoria/README.md), [Clase 121 — Escritura de shellcode](../classes/parte-5-explotacion-de-sistemas-y-binarios/121-escritura-de-shellcode/README.md), [Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE](../classes/parte-5-explotacion-de-sistemas-y-binarios/122-protecciones-modernas-aslr-dep-nx-stack-canaries-y-pie/README.md), [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
 
 ### Dependencia del motor
 
@@ -3859,9 +4105,9 @@ Mostrar el ensamblador del binario
 
 ### Deserialización
 
-Reconstruir el objeto a partir de los bytes
+Reconstruir objetos en memoria a partir de bytes o texto
 
-**Aparece en 1 clase(s):** [Clase 106 — Deserialización insegura](../classes/parte-4-seguridad-de-aplicaciones-web/106-deserializacion-insegura/README.md).
+**Aparece en 2 clase(s):** [Clase 106 — Deserialización insegura](../classes/parte-4-seguridad-de-aplicaciones-web/106-deserializacion-insegura/README.md), [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
 
 ### Deserialización insegura
 
@@ -4059,6 +4305,12 @@ Necesita impacto de negocio y riesgo
 
 **Aparece en 1 clase(s):** [Clase 160 — Reporte de análisis de malware](../classes/parte-6-analisis-de-malware/160-reporte-de-analisis-de-malware/README.md).
 
+### Dirección de enlace local
+
+Dirección no enrutable fuera del segmento, usada p. ej. para metadatos de nube
+
+**Aparece en 1 clase(s):** [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
+
 ### Dirección de red
 
 Primera dirección del bloque; identifica el segmento.
@@ -4106,6 +4358,12 @@ Módulo que interpreta los bytes de un protocolo como campos con nombre
 Modelar amenazas antes de programar (A04)
 
 **Aparece en 1 clase(s):** [Clase 115 — Secure coding y defensa de aplicaciones web](../classes/parte-4-seguridad-de-aplicaciones-web/115-secure-coding-y-defensa-de-aplicaciones-web/README.md).
+
+### Disputed
+
+Etiqueta de un registro cuya asignación o contenido se cuestionan
+
+**Aparece en 1 clase(s):** [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
 
 ### Distroless
 
@@ -4208,6 +4466,12 @@ Participación de dos autorizadores en una acción crítica.
 Exfiltrar y amenazar con publicar además de cifrar
 
 **Aparece en 1 clase(s):** [Clase 150 — Ransomware: anatomía y análisis](../classes/parte-6-analisis-de-malware/150-ransomware-anatomia-y-analisis/README.md).
+
+### Doble liberación
+
+Liberar dos veces la misma zona de memoria
+
+**Aparece en 1 clase(s):** [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
 
 ### Doble pivote
 
@@ -4679,6 +4943,12 @@ Máquina de rotores alemana; rota por fallos de operación
 
 **Aparece en 1 clase(s):** [Clase 46 — Historia y fundamentos de la criptografía](../classes/parte-2-criptografia-aplicada/046-historia-y-fundamentos-de-la-criptografia/README.md).
 
+### Enriquecimiento
+
+Asociar CVSS, CWE, CPE y referencias etiquetadas a un registro
+
+**Aparece en 1 clase(s):** [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
+
 ### Ensamblador
 
 Representación legible del código máquina
@@ -4720,6 +4990,12 @@ Evaluación de si registros representan la misma entidad.
 La defensa: pasar la entrada a una plantilla fija
 
 **Aparece en 1 clase(s):** [Clase 107 — Server-Side Template Injection (SSTI)](../classes/parte-4-seguridad-de-aplicaciones-web/107-server-side-template-injection-ssti/README.md).
+
+### Entrada no confiable
+
+Dato que llega de fuera de la frontera de confianza del programa
+
+**Aparece en 1 clase(s):** [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
 
 ### Entregable
 
@@ -4775,7 +5051,7 @@ Extraer información detallada de un servicio ya identificado
 
 **Claves de búsqueda normalizadas:** `enumeration`.
 
-**Aparece en 3 clase(s):** [Clase 33 — Enumeración de servicios de red](../classes/parte-1-redes-y-seguridad-de-redes/033-enumeracion-de-servicios-de-red/README.md), [Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP](../classes/parte-3-hacking-etico-y-pentesting-metodologia/070-enumeracion-smb-snmp-smtp-y-ldap/README.md), [Clase 302 — Preparación OSCP: mentalidad Try Harder](../classes/parte-16-capstones-y-preparacion-de-certificaciones/302-preparacion-oscp-mentalidad-try-harder/README.md).
+**Aparece en 4 clase(s):** [Clase 33 — Enumeración de servicios de red](../classes/parte-1-redes-y-seguridad-de-redes/033-enumeracion-de-servicios-de-red/README.md), [Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP](../classes/parte-3-hacking-etico-y-pentesting-metodologia/070-enumeracion-smb-snmp-smtp-y-ldap/README.md), [Clase 302 — Preparación OSCP: mentalidad Try Harder](../classes/parte-16-capstones-y-preparacion-de-certificaciones/302-preparacion-oscp-mentalidad-try-harder/README.md), [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
 
 ### Enumeración de endpoints
 
@@ -4827,9 +5103,9 @@ El navegador adjunta la cookie sin importar el origen
 
 ### EPSS
 
-Estimación probabilística de explotación; no mide impacto propio.
+Estimación de FIRST de la probabilidad de que un CVE se explote en los próximos 30 días
 
-**Aparece en 1 clase(s):** [Clase 240 — SCA: dependencias y riesgo de terceros](../classes/parte-11-devsecops-y-seguridad-del-sdlc/240-sca-dependencias-y-riesgo-de-terceros/README.md).
+**Aparece en 2 clase(s):** [Clase 240 — SCA: dependencias y riesgo de terceros](../classes/parte-11-devsecops-y-seguridad-del-sdlc/240-sca-dependencias-y-riesgo-de-terceros/README.md), [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
 
 ### Equivalencia de tamaños
 
@@ -4848,6 +5124,12 @@ Extended Regular Expressions (activadas con `grep -E`)
 Bug de enteros que habilita otra vulnerabilidad
 
 **Aparece en 1 clase(s):** [Clase 128 — Integer overflows y errores aritméticos](../classes/parte-5-explotacion-de-sistemas-y-binarios/128-integer-overflows-y-errores-aritmeticos/README.md).
+
+### Error de uno
+
+Error de una unidad en un límite, típico de `<=` en lugar de `<`
+
+**Aparece en 1 clase(s):** [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
 
 ### Error genérico
 
@@ -4934,6 +5216,12 @@ Sistema que puede abrir enlaces y contaminar métricas.
 Herramienta que compara el objetivo con firmas conocidas
 
 **Aparece en 1 clase(s):** [Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS](../classes/parte-3-hacking-etico-y-pentesting-metodologia/071-analisis-de-vulnerabilidades-con-nessus-y-openvas/README.md).
+
+### Escapado contextual
+
+Codificación que se elige automáticamente según el contexto de inserción
+
+**Aparece en 1 clase(s):** [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
 
 ### Escape
 
@@ -5042,6 +5330,12 @@ Paquete perteneciente a una conexión ya aceptada
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
 
 **Aparece en 2 clase(s):** [Clase 343 — Taxonomía técnica de cheats](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/343-taxonomia-tecnica-cheats/README.md), [Clase 344 — Estado del juego, memoria y manipulación controlada](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/344-estado-juego-memoria-manipulacion-controlada/README.md).
+
+### Estado de madurez
+
+Stable, Draft, Incomplete o Deprecated: cuánto está desarrollada la ficha
+
+**Aparece en 1 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
 
 ### Estado interno
 
@@ -5265,6 +5559,12 @@ Claims que hay que validar además de la firma
 
 **Aparece en 1 clase(s):** [Clase 103 — Ataques y seguridad de JWT](../classes/parte-4-seguridad-de-aplicaciones-web/103-ataques-y-seguridad-de-jwt/README.md).
 
+### Expediente de hallazgo
+
+Registro trazable de un hallazgo, su evaluación y su corrección
+
+**Aparece en 1 clase(s):** [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
+
 ### Expert Information
 
 Anomalías detectadas por Wireshark, agrupadas por severidad
@@ -5282,6 +5582,12 @@ Caducidad por inactividad y por tiempo absoluto
 Lanza el handler como job en segundo plano
 
 **Aparece en 1 clase(s):** [Clase 73 — Metasploit: explotación y payloads](../classes/parte-3-hacking-etico-y-pentesting-metodologia/073-metasploit-explotacion-y-payloads/README.md).
+
+### Exploit Maturity (E)
+
+Estado de la explotación: atacada, con prueba de concepto o no reportada
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
 
 ### exploit/multi/handler
 
@@ -5303,6 +5609,12 @@ Módulo que aprovecha una vulnerabilidad para lograr ejecución
 
 **Aparece en 1 clase(s):** [Clase 72 — Metasploit Framework: arquitectura y uso](../classes/parte-3-hacking-etico-y-pentesting-metodologia/072-metasploit-framework-arquitectura-y-uso/README.md).
 
+### Explotación activa
+
+Uso hostil del fallo demostrado con evidencia fiable
+
+**Aparece en 1 clase(s):** [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
+
 ### Export Directory
 
 Funciones que ofrece una DLL
@@ -5317,9 +5629,9 @@ Dispositivo que observa el tráfico y emite los registros de flujo
 
 ### Exposición
 
-Servicio accesible desde una posición de red determinada.
+Alcanzabilidad de un activo desde redes que la organización no controla
 
-**Aparece en 1 clase(s):** [Clase 254 — OSINT técnico: Shodan y Censys](../classes/parte-12-osint-e-ingenieria-social/254-osint-tecnico-shodan-y-censys/README.md).
+**Aparece en 2 clase(s):** [Clase 254 — OSINT técnico: Shodan y Censys](../classes/parte-12-osint-e-ingenieria-social/254-osint-tecnico-shodan-y-censys/README.md), [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
 
 ### Exposición excesiva de datos
 
@@ -5395,6 +5707,12 @@ Consecuencia de repetir nonce en GCM: permite escribir
 
 **Aparece en 1 clase(s):** [Clase 59 — Cifrado autenticado (AEAD)](../classes/parte-2-criptografia-aplicada/059-cifrado-autenticado-aead/README.md).
 
+### Falso negativo
+
+Problema real que una herramienta no señala
+
+**Aparece en 1 clase(s):** [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
+
 ### Falso negativo de descubrimiento
 
 Host activo descartado por no responder; se corrige con `-Pn`
@@ -5405,7 +5723,7 @@ Host activo descartado por no responder; se corrige con `-Pn`
 
 Hallazgo reportado que no se sostiene al verificarlo
 
-**Aparece en 4 clase(s):** [Clase 31 — Nmap: detección de servicios y fingerprinting de OS](../classes/parte-1-redes-y-seguridad-de-redes/031-nmap-deteccion-de-servicios-y-fingerprinting-de-os/README.md), [Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS](../classes/parte-3-hacking-etico-y-pentesting-metodologia/071-analisis-de-vulnerabilidades-con-nessus-y-openvas/README.md), [Clase 89 — OWASP ZAP](../classes/parte-4-seguridad-de-aplicaciones-web/089-owasp-zap/README.md), [Clase 156 — Reglas YARA para detección](../classes/parte-6-analisis-de-malware/156-reglas-yara-para-deteccion/README.md).
+**Aparece en 5 clase(s):** [Clase 31 — Nmap: detección de servicios y fingerprinting de OS](../classes/parte-1-redes-y-seguridad-de-redes/031-nmap-deteccion-de-servicios-y-fingerprinting-de-os/README.md), [Clase 71 — Análisis de vulnerabilidades con Nessus y OpenVAS](../classes/parte-3-hacking-etico-y-pentesting-metodologia/071-analisis-de-vulnerabilidades-con-nessus-y-openvas/README.md), [Clase 89 — OWASP ZAP](../classes/parte-4-seguridad-de-aplicaciones-web/089-owasp-zap/README.md), [Clase 156 — Reglas YARA para detección](../classes/parte-6-analisis-de-malware/156-reglas-yara-para-deteccion/README.md), [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
 
 ### Falso positivo / negativo
 
@@ -5479,11 +5797,23 @@ Factores resistentes a phishing
 
 **Aparece en 1 clase(s):** [Clase 101 — Fallos de autenticación y bypass](../classes/parte-4-seguridad-de-aplicaciones-web/101-fallos-de-autenticacion-y-bypass/README.md).
 
+### Fijación de sesión
+
+Ataque que impone un identificador de sesión conocido antes de autenticarse
+
+**Aparece en 1 clase(s):** [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
+
 ### Fijar el algoritmo
 
 El servidor decide el algoritmo, no el token
 
 **Aparece en 1 clase(s):** [Clase 103 — Ataques y seguridad de JWT](../classes/parte-4-seguridad-de-aplicaciones-web/103-ataques-y-seguridad-de-jwt/README.md).
+
+### Fijar por SHA
+
+Referenciar un componente por su identificador de contenido inmutable
+
+**Aparece en 1 clase(s):** [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
 
 ### file
 
@@ -5592,6 +5922,12 @@ Se genera con clave privada y se verifica con la pública
 Descripción de un patrón de tráfico considerado malicioso
 
 **Aparece en 1 clase(s):** [Clase 35 — IDS/IPS con Snort y Suricata](../classes/parte-1-redes-y-seguridad-de-redes/035-ids-ips-con-snort-y-suricata/README.md).
+
+### FIRST
+
+Foro internacional de equipos de respuesta que mantiene CVSS y EPSS
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
 
 ### Flag
 
@@ -5827,7 +6163,7 @@ Origen potencial de datos no confiables.
 
 Material cercano al hecho; no garantiza neutralidad ni autenticidad.
 
-**Aparece en 1 clase(s):** [Clase 249 — Fundamentos de OSINT](../classes/parte-12-osint-e-ingenieria-social/249-fundamentos-de-osint/README.md).
+**Aparece en 2 clase(s):** [Clase 249 — Fundamentos de OSINT](../classes/parte-12-osint-e-ingenieria-social/249-fundamentos-de-osint/README.md), [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
 
 ### Fuente (source)
 
@@ -5859,6 +6195,12 @@ Bloque reutilizable con nombre que encapsula lógica.
 
 **Aparece en 1 clase(s):** [Clase 15 — Python para seguridad: fundamentos del lenguaje](../classes/parte-0-fundamentos-y-prerrequisitos/015-python-para-seguridad-fundamentos-del-lenguaje/README.md).
 
+### Función adaptativa
+
+Función de hash cuyo coste se ajusta para encarecer los intentos de adivinar
+
+**Aparece en 1 clase(s):** [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
+
 ### Función hash criptográfica
 
 Salida de tamaño fijo, determinista y no invertible
@@ -5879,9 +6221,9 @@ Fácil de calcular, difícil de invertir salvo con un secreto
 
 ### Fuzzing
 
-Alimentar el programa con muchas entradas para provocar crashes
+Probar con entradas generadas automáticamente para provocar fallos
 
-**Aparece en 1 clase(s):** [Clase 136 — Fuzzing con AFL++ y libFuzzer](../classes/parte-5-explotacion-de-sistemas-y-binarios/136-fuzzing-con-afl-y-libfuzzer/README.md).
+**Aparece en 2 clase(s):** [Clase 136 — Fuzzing con AFL++ y libFuzzer](../classes/parte-5-explotacion-de-sistemas-y-binarios/136-fuzzing-con-afl-y-libfuzzer/README.md), [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
 
 ### Fuzzy hashing (ssdeep)
 
@@ -6166,6 +6508,12 @@ Actor de amenaza catalogado con sus técnicas atribuidas
 Catálogo de binarios abusables para escalar privilegios
 
 **Aparece en 2 clase(s):** [Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios](../classes/parte-0-fundamentos-y-prerrequisitos/005-linux-esencial-para-seguridad-filesystem-permisos-y-usuarios/README.md), [Clase 76 — Escalada de privilegios en Linux](../classes/parte-3-hacking-etico-y-pentesting-metodologia/076-escalada-de-privilegios-en-linux/README.md).
+
+### Guardarraíl
+
+Control de proceso que dificulta repetir un error
+
+**Aparece en 1 clase(s):** [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
 
 ### Guardrail
 
@@ -6649,11 +6997,23 @@ Atributo usado para relacionar registros, con fuerza y riesgo variables.
 
 **Aparece en 1 clase(s):** [Clase 250 — OSINT de personas](../classes/parte-12-osint-e-ingenieria-social/250-osint-de-personas/README.md).
 
+### Identificador CVE
+
+Código con año y número, de 4 a 19 dígitos, que nombra una vulnerabilidad
+
+**Aparece en 1 clase(s):** [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
+
 ### Identificador de publicación
 
 Clave estable de plataforma preferible a una captura aislada.
 
 **Aparece en 1 clase(s):** [Clase 252 — OSINT en redes sociales](../classes/parte-12-osint-e-ingenieria-social/252-osint-en-redes-sociales/README.md).
+
+### Identificador estable
+
+Código CWE-n que no cambia aunque se reescriba la ficha
+
+**Aparece en 1 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
 
 ### Identificador no obvio
 
@@ -6663,9 +7023,9 @@ UUID que dificulta adivinar, pero no es una defensa
 
 ### IDOR
 
-Referenciar un objeto sin comprobar la propiedad
+Acceso a un objeto ajeno manipulando un identificador de la petición
 
-**Aparece en 1 clase(s):** [Clase 105 — Control de acceso roto: IDOR y path traversal](../classes/parte-4-seguridad-de-aplicaciones-web/105-control-de-acceso-roto-idor-y-path-traversal/README.md).
+**Aparece en 2 clase(s):** [Clase 105 — Control de acceso roto: IDOR y path traversal](../classes/parte-4-seguridad-de-aplicaciones-web/105-control-de-acceso-roto-idor-y-path-traversal/README.md), [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
 
 ### IDS
 
@@ -6703,6 +7063,12 @@ Plantilla inmutable en capas para crear contenedores
 
 **Aparece en 1 clase(s):** [Clase 22 — Docker y contenedores para laboratorios de seguridad](../classes/parte-0-fundamentos-y-prerrequisitos/022-docker-y-contenedores-para-laboratorios-de-seguridad/README.md).
 
+### Imagen de contenedor
+
+Plantilla en capas a partir de la cual se ejecuta un contenedor
+
+**Aparece en 1 clase(s):** [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
+
 ### IMDSv2
 
 Metadata con token que un SSRF simple no puede alcanzar
@@ -6732,6 +7098,12 @@ Evaluación contextual de efectos, afectados y mitigaciones.
 Lo que el bug permite; justifica la severidad
 
 **Aparece en 3 clase(s):** [Clase 85 — Reporte profesional de pentest](../classes/parte-3-hacking-etico-y-pentesting-metodologia/085-reporte-profesional-de-pentest/README.md), [Clase 107 — Server-Side Template Injection (SSTI)](../classes/parte-4-seguridad-de-aplicaciones-web/107-server-side-template-injection-ssti/README.md), [Clase 114 — Bug bounty: metodología y plataformas](../classes/parte-4-seguridad-de-aplicaciones-web/114-bug-bounty-metodologia-y-plataformas/README.md).
+
+### Impacto técnico
+
+Resultado de explotar el fallo, como leer datos o ejecutar código
+
+**Aparece en 2 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md), [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
 
 ### Impacto y severidad
 
@@ -6869,7 +7241,13 @@ Actor con acceso legítimo interno, malicioso o negligente
 
 Aparición concreta de una vulnerabilidad en un activo o artefacto.
 
-**Aparece en 1 clase(s):** [Clase 245 — Gestión de vulnerabilidades a escala](../classes/parte-11-devsecops-y-seguridad-del-sdlc/245-gestion-de-vulnerabilidades-a-escala/README.md).
+**Aparece en 2 clase(s):** [Clase 245 — Gestión de vulnerabilidades a escala](../classes/parte-11-devsecops-y-seguridad-del-sdlc/245-gestion-de-vulnerabilidades-a-escala/README.md), [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
+
+### Instantánea
+
+Copia fechada de datos que cambian a diario
+
+**Aparece en 3 clase(s):** [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md), [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md), [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
 
 ### Instrumentación
 
@@ -6894,6 +7272,12 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 La firma protege de manipulación, no de lectura
 
 **Aparece en 1 clase(s):** [Clase 103 — Ataques y seguridad de JWT](../classes/parte-4-seguridad-de-aplicaciones-web/103-ataques-y-seguridad-de-jwt/README.md).
+
+### Interacción del usuario (UI)
+
+Si hace falta que un usuario colabore para que el ataque funcione
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
 
 ### interactive()
 
@@ -6930,6 +7314,12 @@ Función lógica dentro de un dispositivo USB.
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
 
 **Aparece en 2 clase(s):** [Clase 4 — Montaje del laboratorio: virtualización, Kali, snapshots y aislamiento de red](../classes/parte-0-fundamentos-y-prerrequisitos/004-montaje-del-laboratorio-virtualizacion-kali-snapshots-y-aislamiento-de-red/README.md), [Clase 343 — Taxonomía técnica de cheats](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/343-taxonomia-tecnica-cheats/README.md).
+
+### Intérprete
+
+Componente que ejecuta o interpreta texto con sintaxis propia, como un motor SQL o un shell
+
+**Aparece en 1 clase(s):** [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
 
 ### Intérprete de confianza
 
@@ -7020,6 +7410,12 @@ VirtualAllocEx + WriteProcessMemory + CreateRemoteThread
 Entrada del usuario ejecutada como comando del sistema
 
 **Aparece en 1 clase(s):** [Clase 95 — Inyección de comandos del sistema operativo](../classes/parte-4-seguridad-de-aplicaciones-web/095-inyeccion-de-comandos-del-sistema-operativo/README.md).
+
+### Inyección de script
+
+Interpolar entrada de terceros dentro de un script de shell de un workflow
+
+**Aparece en 1 clase(s):** [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
 
 ### Inyección indirecta
 
@@ -7136,6 +7532,12 @@ Estándar de divulgación de vulnerabilidades
 Estándar de gestión de vulnerabilidades
 
 **Aparece en 1 clase(s):** [Clase 25 — Ética, legalidad, alcance y divulgación responsable](../classes/parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.md).
+
+### ISS
+
+Subpuntuación de impacto: combina la pérdida de confidencialidad, integridad y disponibilidad
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
 
 ### IV
 
@@ -7323,9 +7725,9 @@ Caída del sistema; riesgo de los exploits de kernel
 
 ### KEV
 
-Catálogo de CISA de vulnerabilidades conocidas como explotadas.
+Catálogo de CISA de vulnerabilidades con explotación activa confirmada
 
-**Aparece en 1 clase(s):** [Clase 240 — SCA: dependencias y riesgo de terceros](../classes/parte-11-devsecops-y-seguridad-del-sdlc/240-sca-dependencias-y-riesgo-de-terceros/README.md).
+**Aparece en 2 clase(s):** [Clase 240 — SCA: dependencias y riesgo de terceros](../classes/parte-11-devsecops-y-seguridad-del-sdlc/240-sca-dependencias-y-riesgo-de-terceros/README.md), [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
 
 ### Keychain
 
@@ -7565,6 +7967,12 @@ Encarece los ataques que necesitan muchas peticiones
 
 **Aparece en 1 clase(s):** [Clase 60 — Ataques criptográficos: padding oracle y timing](../classes/parte-2-criptografia-aplicada/060-ataques-criptograficos-padding-oracle-y-timing/README.md).
 
+### Límite de cobertura
+
+Parte del objetivo que una herramienta no puede analizar
+
+**Aparece en 1 clase(s):** [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
+
 ### Límite de profundidad
 
 Restringir cuán anidada puede ser una consulta
@@ -7624,6 +8032,18 @@ Secuencia ordenada y mutable.
 Rechazar contraseñas ya comprometidas al crearlas
 
 **Aparece en 1 clase(s):** [Clase 81 — Ataques a credenciales: fuerza bruta y password spraying](../classes/parte-3-hacking-etico-y-pentesting-metodologia/081-ataques-a-credenciales-fuerza-bruta-y-password-spraying/README.md).
+
+### Lista de prohibidos
+
+Conjunto de valores rechazados; frágil porque exige anticipar todas las variantes
+
+**Aparece en 1 clase(s):** [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
+
+### Lista permitida
+
+Conjunto de valores aceptados; todo lo demás se rechaza
+
+**Aparece en 1 clase(s):** [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
 
 ### Listener
 
@@ -7849,6 +8269,12 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 
 **Aparece en 1 clase(s):** [Clase 350 — Triggerbot, macros, input automation y bots](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/350-triggerbot-macros-input-automation-bots/README.md).
 
+### Macrovector
+
+Clase de equivalencia de seis niveles de la que se deriva la puntuación v4.0
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
+
 ### Magic bytes
 
 Primeros bytes que identifican el tipo real
@@ -7860,6 +8286,12 @@ Primeros bytes que identifican el tipo real
 Rama principal por convención
 
 **Aparece en 1 clase(s):** [Clase 18 — Git y control de versiones para profesionales de seguridad](../classes/parte-0-fundamentos-y-prerrequisitos/018-git-y-control-de-versiones-para-profesionales-de-seguridad/README.md).
+
+### Mala configuración
+
+Ajuste inseguro hecho por quien despliega, no un defecto del producto
+
+**Aparece en 1 clase(s):** [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
 
 ### Maleabilidad
 
@@ -7945,6 +8377,12 @@ Descubrir toda la estructura de la aplicación antes de atacar
 
 **Aparece en 1 clase(s):** [Clase 90 — Mapeo, spidering y descubrimiento de contenido](../classes/parte-4-seguridad-de-aplicaciones-web/090-mapeo-spidering-y-descubrimiento-de-contenido/README.md).
 
+### Mapeo por causa raíz
+
+Asignar a una vulnerabilidad la debilidad CWE que la origina
+
+**Aparece en 1 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md).
+
 ### Marca de tiempo
 
 Prueba de que la firma existía antes de una fecha
@@ -7998,6 +8436,12 @@ Guía de técnicas y casos de prueba móviles.
 Estándar de verificación para controles de aplicaciones móviles.
 
 **Aparece en 1 clase(s):** [Clase 262 — Pentest de aplicaciones Android](../classes/parte-13-seguridad-movil-iot-e-inalambrica/262-pentest-de-aplicaciones-android/README.md).
+
+### Matriz de acceso
+
+Tabla usuario-recurso que se usa como política y como prueba
+
+**Aparece en 1 clase(s):** [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
 
 ### Matriz de comportamiento
 
@@ -8253,9 +8697,9 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 
 ### Mínimo privilegio
 
-Cada servicio con su credencial y solo sus permisos
+Dar a cada componente solo los permisos que necesita
 
-**Aparece en 3 clase(s):** [Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad](../classes/parte-0-fundamentos-y-prerrequisitos/001-que-es-la-ciberseguridad-triada-cia-aaa-superficie-de-ataque-y-defensa-en-profundidad/README.md), [Clase 42 — Segmentación de red y arquitectura Zero Trust](../classes/parte-1-redes-y-seguridad-de-redes/042-segmentacion-de-red-y-arquitectura-zero-trust/README.md), [Clase 63 — Gestión de secretos: Vault y KMS](../classes/parte-2-criptografia-aplicada/063-gestion-de-secretos-vault-y-kms/README.md).
+**Aparece en 5 clase(s):** [Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad](../classes/parte-0-fundamentos-y-prerrequisitos/001-que-es-la-ciberseguridad-triada-cia-aaa-superficie-de-ataque-y-defensa-en-profundidad/README.md), [Clase 42 — Segmentación de red y arquitectura Zero Trust](../classes/parte-1-redes-y-seguridad-de-redes/042-segmentacion-de-red-y-arquitectura-zero-trust/README.md), [Clase 63 — Gestión de secretos: Vault y KMS](../classes/parte-2-criptografia-aplicada/063-gestion-de-secretos-vault-y-kms/README.md), [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md), [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
 
 ### Mínimo privilegio de BD
 
@@ -8292,6 +8736,12 @@ Man-in-the-middle: atacante interpuesto que intercepta el tráfico.
 Un intermediario acuerda una clave con cada parte
 
 **Aparece en 1 clase(s):** [Clase 53 — Intercambio de claves: Diffie-Hellman](../classes/parte-2-criptografia-aplicada/053-intercambio-de-claves-diffie-hellman/README.md).
+
+### MITRE
+
+Organización sin ánimo de lucro que opera el centro HSSEDI y mantiene CWE y CVE
+
+**Aparece en 1 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
 
 ### MITRE ATT&CK
 
@@ -8424,6 +8874,12 @@ Automatiza enumeración local y sugerencias de escalada
 Extensión que automatiza la explotación en Windows
 
 **Aparece en 1 clase(s):** [Clase 129 — Explotación en Windows: manejo de SEH](../classes/parte-5-explotacion-de-sistemas-y-binarios/129-explotacion-en-windows-manejo-de-seh/README.md).
+
+### Montón (heap)
+
+Memoria reservada dinámicamente en ejecución
+
+**Aparece en 1 clase(s):** [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
 
 ### Motor de plantillas
 
@@ -8603,6 +9059,12 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 
 **Aparece en 1 clase(s):** [Clase 342 — Arquitectura de videojuegos desde la perspectiva de seguridad](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/342-arquitectura-videojuegos-perspectiva-seguridad/README.md).
 
+### Neutralización
+
+Asegurar que un dato se trate siempre como dato antes de pasarlo a un intérprete
+
+**Aparece en 2 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md), [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
+
 ### NEW
 
 Paquete que inicia una conexión nueva
@@ -8692,6 +9154,12 @@ Usar bibliotecas maduras en vez de implementaciones propias
 Imposibilidad de negar de forma creíble una acción realizada
 
 **Aparece en 4 clase(s):** [Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad](../classes/parte-0-fundamentos-y-prerrequisitos/001-que-es-la-ciberseguridad-triada-cia-aaa-superficie-de-ataque-y-defensa-en-profundidad/README.md), [Clase 21 — Criptografía: conceptos fundamentales e intuición](../classes/parte-0-fundamentos-y-prerrequisitos/021-criptografia-conceptos-fundamentales-e-intuicion/README.md), [Clase 52 — HMAC y autenticación de mensajes](../classes/parte-2-criptografia-aplicada/052-hmac-y-autenticacion-de-mensajes/README.md), [Clase 54 — Firmas digitales](../classes/parte-2-criptografia-aplicada/054-firmas-digitales/README.md).
+
+### Nomenclatura CVSS
+
+Etiqueta B, BT, BE o BTE que dice qué grupos de métricas se usaron
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
 
 ### Nonce
 
@@ -8827,9 +9295,21 @@ La validación real ocurre en el servidor
 
 ### NVD
 
-Base de datos nacional de vulnerabilidades; indexa CVE por CPE
+Base de datos de vulnerabilidades del NIST que enriquece los registros CVE
 
-**Aparece en 1 clase(s):** [Clase 31 — Nmap: detección de servicios y fingerprinting de OS](../classes/parte-1-redes-y-seguridad-de-redes/031-nmap-deteccion-de-servicios-y-fingerprinting-de-os/README.md).
+**Aparece en 2 clase(s):** [Clase 31 — Nmap: detección de servicios y fingerprinting de OS](../classes/parte-1-redes-y-seguridad-de-redes/031-nmap-deteccion-de-servicios-y-fingerprinting-de-os/README.md), [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
+
+### NVD-CWE-noinfo
+
+Marcador de NVD cuando no hay información suficiente para clasificar
+
+**Aparece en 1 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md).
+
+### NVD-CWE-Other
+
+Marcador de NVD cuando la causa no está en su conjunto simplificado
+
+**Aparece en 1 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md).
 
 ### NX/DEP
 
@@ -9009,9 +9489,9 @@ VPN en espacio de usuario basada en TLS y PKI; muy flexible
 
 ### Operación atómica
 
-Comprobar y actuar sin ventana intermedia
+Operación que ningún otro hilo ve a medias
 
-**Aparece en 1 clase(s):** [Clase 109 — Vulnerabilidades de lógica de negocio](../classes/parte-4-seguridad-de-aplicaciones-web/109-vulnerabilidades-de-logica-de-negocio/README.md).
+**Aparece en 2 clase(s):** [Clase 109 — Vulnerabilidades de lógica de negocio](../classes/parte-4-seguridad-de-aplicaciones-web/109-vulnerabilidades-de-logica-de-negocio/README.md), [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
 
 ### Operador /
 
@@ -9042,6 +9522,12 @@ Entry point, base, subsistema, data directories
 Condición observable que permite decidir si una prueba pasó o falló.
 
 **Aparece en 2 clase(s):** [Clase 60 — Ataques criptográficos: padding oracle y timing](../classes/parte-2-criptografia-aplicada/060-ataques-criptograficos-padding-oracle-y-timing/README.md), [Clase 239 — DAST: análisis dinámico de aplicaciones](../classes/parte-11-devsecops-y-seguridad-del-sdlc/239-dast-analisis-dinamico-de-aplicaciones/README.md).
+
+### Ordinalidad
+
+Si una debilidad es primaria, resultante o indirecta respecto a otras
+
+**Aparece en 1 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md).
 
 ### Origen null
 
@@ -9125,9 +9611,9 @@ Colección de wargames que comienza con Bandit para fundamentos de terminal y se
 
 **Entrada transversal:** sin glosario local todavía; consulta el recurso oficial enlazado.
 
-### OWASP A02
+### OWASP A02 / A04
 
-*Cryptographic Failures*: categoría del Top 10
+*Cryptographic Failures*: categoría del Top 10 (A02 en 2021, A04 en 2025)
 
 **Aparece en 1 clase(s):** [Clase 65 — Implementaciones seguras y errores criptográficos comunes](../classes/parte-2-criptografia-aplicada/065-implementaciones-seguras-y-errores-criptograficos-comunes/README.md).
 
@@ -9555,11 +10041,23 @@ Las colisiones cuestan 2^(n/2), no 2^n
 
 **Aparece en 2 clase(s):** [Clase 51 — Funciones hash: SHA-2, SHA-3 y sus propiedades](../classes/parte-2-criptografia-aplicada/051-funciones-hash-sha-2-sha-3-y-sus-propiedades/README.md), [Clase 61 — Introducción al criptoanálisis](../classes/parte-2-criptografia-aplicada/061-introduccion-al-criptoanalisis/README.md).
 
+### Parametrización
+
+Enviar la consulta y los valores por canales separados
+
+**Aparece en 2 clase(s):** [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md), [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
+
 ### Parámetros predecibles
 
 Requisito: sin un secreto que el atacante no pueda poner
 
 **Aparece en 1 clase(s):** [Clase 98 — Cross-Site Request Forgery (CSRF)](../classes/parte-4-seguridad-de-aplicaciones-web/098-cross-site-request-forgery-csrf/README.md).
+
+### Parche asumido
+
+Corrección dada por buena sin prueba que la demuestre
+
+**Aparece en 1 clase(s):** [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
 
 ### Parseo de parámetros
 
@@ -9629,9 +10127,9 @@ Permite suplantar un binario invocado sin ruta absoluta
 
 ### Path traversal
 
-`../` para leer ficheros fuera del directorio previsto
+Salir del directorio permitido mediante rutas relativas o absolutas
 
-**Aparece en 1 clase(s):** [Clase 105 — Control de acceso roto: IDOR y path traversal](../classes/parte-4-seguridad-de-aplicaciones-web/105-control-de-acceso-roto-idor-y-path-traversal/README.md).
+**Aparece en 2 clase(s):** [Clase 105 — Control de acceso roto: IDOR y path traversal](../classes/parte-4-seguridad-de-aplicaciones-web/105-control-de-acceso-roto-idor-y-path-traversal/README.md), [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
 
 ### Path traversal en el nombre
 
@@ -9767,6 +10265,12 @@ Herramientas de análisis de PDF
 
 **Aparece en 1 clase(s):** [Clase 152 — Análisis de documentos maliciosos: macros y PDF](../classes/parte-6-analisis-de-malware/152-analisis-de-documentos-maliciosos-macros-y-pdf/README.md).
 
+### PeerOf
+
+Relación entre entradas parecidas sin parentesco jerárquico
+
+**Aparece en 1 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md).
+
 ### Pelado por capas
 
 Revelar la ofuscación una capa cada vez
@@ -9820,6 +10324,12 @@ Secreto global fuera de la base de datos; defensa adicional
 Sustitución `%XX` en URLs
 
 **Aparece en 1 clase(s):** [Clase 20 — Sistemas de numeración y encoding: binario, hex, base64 y URL](../classes/parte-0-fundamentos-y-prerrequisitos/020-sistemas-de-numeracion-y-encoding-binario-hex-base64-y-url/README.md).
+
+### Percentil
+
+Fracción de CVE puntuados cuya probabilidad es menor o igual a la de este
+
+**Aparece en 1 clase(s):** [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
 
 ### Perezoso
 
@@ -9927,7 +10437,13 @@ La pila contiene la lista de direcciones de gadgets
 
 Región LIFO con locales, argumentos y dirección de retorno
 
-**Aparece en 2 clase(s):** [Clase 24 — Arquitectura de computadores: CPU, registros y memoria](../classes/parte-0-fundamentos-y-prerrequisitos/024-arquitectura-de-computadores-cpu-registros-y-memoria/README.md), [Clase 117 — El stack, los registros y las convenciones de llamada](../classes/parte-5-explotacion-de-sistemas-y-binarios/117-el-stack-los-registros-y-las-convenciones-de-llamada/README.md).
+**Aparece en 3 clase(s):** [Clase 24 — Arquitectura de computadores: CPU, registros y memoria](../classes/parte-0-fundamentos-y-prerrequisitos/024-arquitectura-de-computadores-cpu-registros-y-memoria/README.md), [Clase 117 — El stack, los registros y las convenciones de llamada](../classes/parte-5-explotacion-de-sistemas-y-binarios/117-el-stack-los-registros-y-las-convenciones-de-llamada/README.md), [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
+
+### Pilar
+
+Nivel de abstracción más alto; raíz de la jerarquía de investigación
+
+**Aparece en 1 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
 
 ### Ping sweep
 
@@ -10068,6 +10584,12 @@ pwn.college, ROP Emporium, picoCTF, HackTheBox
 Controlador que ejecuta lógica sobre entradas y salidas.
 
 **Aparece en 1 clase(s):** [Clase 273 — Seguridad de sistemas de control industrial (ICS/SCADA)](../classes/parte-13-seguridad-movil-iot-e-inalambrica/273-seguridad-de-sistemas-de-control-industrial-ics-scada/README.md).
+
+### PLOVER
+
+Documento de trabajo de 2005 con más de 1.500 ejemplos reales que precedió a CWE
+
+**Aparece en 1 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
 
 ### PLT
 
@@ -10287,6 +10809,12 @@ Ganchos antes y después de la decisión de ruta (NAT)
 
 **Aparece en 1 clase(s):** [Clase 34 — Firewalls: tipos, iptables y nftables](../classes/parte-1-redes-y-seguridad-de-redes/034-firewalls-tipos-iptables-y-nftables/README.md).
 
+### Prerrequisito de explotación
+
+Condición que debe cumplir el atacante, como no tener cuenta
+
+**Aparece en 1 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md).
+
 ### prerule
 
 Fase previa al escaneo; no depende de ningún host
@@ -10389,11 +10917,23 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 
 **Aparece en 1 clase(s):** [Clase 359 — Privacidad, gobernanza, sanciones y seguridad del propio Anti-Cheat](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/359-privacidad-gobernanza-sanciones-seguridad-anticheat/README.md).
 
+### Privilegios requeridos (PR)
+
+Nivel de cuenta que el atacante necesita antes de atacar
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
+
 ### PRNG
 
 Generador determinista; parece aleatorio pero es predecible
 
 **Aparece en 1 clase(s):** [Clase 58 — Generación de aleatoriedad segura (CSPRNG)](../classes/parte-2-criptografia-aplicada/058-generacion-de-aleatoriedad-segura-csprng/README.md).
+
+### PRNG criptográfico
+
+Generador de números aleatorios apto para valores impredecibles
+
+**Aparece en 1 clase(s):** [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
 
 ### Probe
 
@@ -10593,6 +11133,12 @@ El servidor alcanza lo que el atacante no puede
 
 **Aparece en 1 clase(s):** [Clase 99 — Server-Side Request Forgery (SSRF)](../classes/parte-4-seguridad-de-aplicaciones-web/099-server-side-request-forgery-ssrf/README.md).
 
+### Proxy involuntario
+
+Servidor que actúa de intermediario por orden de un tercero
+
+**Aparece en 1 clase(s):** [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
+
 ### Proxy transparente
 
 Intermediario que intercepta sin que el cliente lo configure
@@ -10613,9 +11159,15 @@ Agrupación de binarios en Ghidra
 
 ### Prueba de concepto
 
-`alert(1)`; demuestra la ejecución sin causar daño
+Código que demuestra que una vulnerabilidad es explotable, sin implicar uso hostil
 
-**Aparece en 1 clase(s):** [Clase 96 — Cross-Site Scripting (XSS) reflejado](../classes/parte-4-seguridad-de-aplicaciones-web/096-cross-site-scripting-xss-reflejado/README.md).
+**Aparece en 2 clase(s):** [Clase 96 — Cross-Site Scripting (XSS) reflejado](../classes/parte-4-seguridad-de-aplicaciones-web/096-cross-site-scripting-xss-reflejado/README.md), [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
+
+### Prueba de regresión
+
+Prueba automática que detecta si un defecto ya corregido reaparece
+
+**Aparece en 1 clase(s):** [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
 
 ### Prueba lógica
 
@@ -10683,11 +11235,17 @@ Identificador de aplicación dentro de un host (capa 4)
 
 **Aparece en 1 clase(s):** [Clase 10 — Redes TCP/IP: modelo OSI, encapsulación y capas](../classes/parte-0-fundamentos-y-prerrequisitos/010-redes-tcp-ip-modelo-osi-encapsulacion-y-capas/README.md).
 
+### Puntero
+
+Variable que guarda una dirección de memoria
+
+**Aparece en 1 clase(s):** [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
+
 ### Puntero colgante
 
-Puntero que sobrevive al `free` de su memoria
+Puntero que apunta a memoria que ya no es válida
 
-**Aparece en 1 clase(s):** [Clase 127 — Heap: use-after-free y double free](../classes/parte-5-explotacion-de-sistemas-y-binarios/127-heap-use-after-free-y-double-free/README.md).
+**Aparece en 2 clase(s):** [Clase 127 — Heap: use-after-free y double free](../classes/parte-5-explotacion-de-sistemas-y-binarios/127-heap-use-after-free-y-double-free/README.md), [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
 
 ### Puntero next
 
@@ -10719,11 +11277,23 @@ Punto base público fijado por los parámetros de la curva
 
 **Aparece en 1 clase(s):** [Clase 50 — Criptografía de curva elíptica (ECC)](../classes/parte-2-criptografia-aplicada/050-criptografia-de-curva-eliptica-ecc/README.md).
 
+### Puntuación ambiental
+
+Ajuste de la base por el activo y el entorno de quien consume la puntuación
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
+
 ### Puntuación de riesgo
 
 CVSS combinado con el contexto de negocio
 
 **Aparece en 1 clase(s):** [Clase 85 — Reporte profesional de pentest](../classes/parte-3-hacking-etico-y-pentesting-metodologia/085-reporte-profesional-de-pentest/README.md).
+
+### Puntuación temporal
+
+Ajuste de la base por madurez de explotación y corrección
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
 
 ### Purple team
 
@@ -10888,6 +11458,12 @@ GDB desactiva ASLR por defecto; puede falsear pruebas
 Cifra los datos y exige un rescate
 
 **Aparece en 2 clase(s):** [Clase 141 — Introducción al malware: tipos y taxonomía](../classes/parte-6-analisis-de-malware/141-introduccion-al-malware-tipos-y-taxonomia/README.md), [Clase 150 — Ransomware: anatomía y análisis](../classes/parte-6-analisis-de-malware/150-ransomware-anatomia-y-analisis/README.md).
+
+### Ransomware conocido
+
+Etiqueta KEV de uso del CVE en campañas de secuestro de datos
+
+**Aparece en 1 clase(s):** [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
 
 ### RAT
 
@@ -11197,6 +11773,12 @@ Mapeo de nombre a dirección IPv4.
 
 **Aparece en 1 clase(s):** [Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos](../classes/parte-0-fundamentos-y-prerrequisitos/012-dns-dhcp-y-arp-funcionamiento-y-riesgos/README.md).
 
+### Registro CVE
+
+Conjunto de datos estructurados asociados a un identificador
+
+**Aparece en 1 clase(s):** [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
+
 ### Registro (GPR)
 
 Celda de memoria ultrarrápida de la CPU (RAX…R15)
@@ -11256,6 +11838,12 @@ Diff del registro antes y después
 Recalcular el hash de contraseña con parámetros más fuertes
 
 **Aparece en 1 clase(s):** [Clase 65 — Implementaciones seguras y errores criptográficos comunes](../classes/parte-2-criptografia-aplicada/065-implementaciones-seguras-y-errores-criptograficos-comunes/README.md).
+
+### Rejected
+
+Estado de un registro que ya no debe usarse pero permanece en la lista
+
+**Aparece en 1 clase(s):** [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
 
 ### RELATED
 
@@ -11359,11 +11947,23 @@ Colar parte de una petición en la de otro usuario
 
 **Aparece en 1 clase(s):** [Clase 112 — Web cache poisoning y HTTP request smuggling](../classes/parte-4-seguridad-de-aplicaciones-web/112-web-cache-poisoning-y-http-request-smuggling/README.md).
 
+### Requires
+
+Relación que indica qué debilidades exige un compuesto
+
+**Aparece en 1 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md).
+
 ### Requisito de inteligencia
 
 Pregunta ligada a una decisión y a un alcance.
 
 **Aparece en 1 clase(s):** [Clase 249 — Fundamentos de OSINT](../classes/parte-12-osint-e-ingenieria-social/249-fundamentos-de-osint/README.md).
+
+### Reserved but Public
+
+Identificador reservado que ya es citado públicamente sin registro publicado
+
+**Aparece en 1 clase(s):** [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
 
 ### Resistencia a manipulación
 
@@ -11711,9 +12311,9 @@ Repetición de las operaciones internas de AES (10, 12 o 14)
 
 ### root
 
-Superusuario (UID 0) que ignora los permisos tradicionales
+Organización que recluta, forma y gobierna CNA dentro de un ámbito
 
-**Aparece en 1 clase(s):** [Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios](../classes/parte-0-fundamentos-y-prerrequisitos/005-linux-esencial-para-seguridad-filesystem-permisos-y-usuarios/README.md).
+**Aparece en 2 clase(s):** [Clase 5 — Linux esencial para seguridad: filesystem, permisos y usuarios](../classes/parte-0-fundamentos-y-prerrequisitos/005-linux-esencial-para-seguridad-filesystem-permisos-y-usuarios/README.md), [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
 
 ### Root of trust
 
@@ -11818,6 +12418,12 @@ Existe algún ataque mejor que la fuerza bruta
 El ataque es alcanzable con recursos reales
 
 **Aparece en 1 clase(s):** [Clase 61 — Introducción al criptoanálisis](../classes/parte-2-criptografia-aplicada/061-introduccion-al-criptoanalisis/README.md).
+
+### Roundup
+
+Redondeo hacia arriba a un decimal definido por CVSS
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
 
 ### RPA
 
@@ -11933,6 +12539,12 @@ Invocar un comando con su ruta completa evita el secuestro
 
 **Aparece en 1 clase(s):** [Clase 76 — Escalada de privilegios en Linux](../classes/parte-3-hacking-etico-y-pentesting-metodologia/076-escalada-de-privilegios-en-linux/README.md).
 
+### Ruta de búsqueda no controlada
+
+Lugar donde el sistema busca bibliotecas o programas y que un atacante puede escribir
+
+**Aparece en 1 clase(s):** [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
+
 ### RVA
 
 Desplazamiento relativo en memoria
@@ -11977,6 +12589,12 @@ Valida que el manejador sea legítimo
 
 **Aparece en 1 clase(s):** [Clase 129 — Explotación en Windows: manejo de SEH](../classes/parte-5-explotacion-de-sistemas-y-binarios/129-explotacion-en-windows-manejo-de-seh/README.md).
 
+### Sal
+
+Valor aleatorio único por contraseña que se mezcla antes de calcular el hash
+
+**Aparece en 1 clase(s):** [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
+
 ### Sal (salt)
 
 Valor aleatorio por contraseña contra tablas precomputadas
@@ -12015,9 +12633,9 @@ Aísla el JS de un origen de los datos de otro
 
 ### SameSite
 
-Atributo que limita el envío de cookies entre orígenes.
+Atributo de cookie que limita su envío en peticiones entre sitios
 
-**Aparece en 3 clase(s):** [Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna](../classes/parte-0-fundamentos-y-prerrequisitos/013-http-https-y-la-arquitectura-de-la-web-moderna/README.md), [Clase 98 — Cross-Site Request Forgery (CSRF)](../classes/parte-4-seguridad-de-aplicaciones-web/098-cross-site-request-forgery-csrf/README.md), [Clase 102 — Gestión de sesiones y ataques asociados](../classes/parte-4-seguridad-de-aplicaciones-web/102-gestion-de-sesiones-y-ataques-asociados/README.md).
+**Aparece en 4 clase(s):** [Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna](../classes/parte-0-fundamentos-y-prerrequisitos/013-http-https-y-la-arquitectura-de-la-web-moderna/README.md), [Clase 98 — Cross-Site Request Forgery (CSRF)](../classes/parte-4-seguridad-de-aplicaciones-web/098-cross-site-request-forgery-csrf/README.md), [Clase 102 — Gestión de sesiones y ataques asociados](../classes/parte-4-seguridad-de-aplicaciones-web/102-gestion-de-sesiones-y-ataques-asociados/README.md), [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
 
 ### SameSite=Lax
 
@@ -12067,6 +12685,12 @@ Transformación válida para un contexto específico; no es universal.
 
 **Aparece en 1 clase(s):** [Clase 238 — SAST: análisis estático de código](../classes/parte-11-devsecops-y-seguridad-del-sdlc/238-sast-analisis-estatico-de-codigo/README.md).
 
+### Sanitizer
+
+Instrumentación del compilador que detecta errores de memoria o comportamiento indefinido
+
+**Aparece en 1 clase(s):** [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
+
 ### Sanitizer (ASan/UBSan)
 
 Convierte corrupciones silenciosas en crashes claros
@@ -12075,9 +12699,9 @@ Convierte corrupciones silenciosas en crashes claros
 
 ### SAST
 
-Análisis estático de seguridad del código
+Análisis estático del código fuente sin ejecutarlo
 
-**Aparece en 2 clase(s):** [Clase 115 — Secure coding y defensa de aplicaciones web](../classes/parte-4-seguridad-de-aplicaciones-web/115-secure-coding-y-defensa-de-aplicaciones-web/README.md), [Clase 137 — Descubrimiento de vulnerabilidades en código](../classes/parte-5-explotacion-de-sistemas-y-binarios/137-descubrimiento-de-vulnerabilidades-en-codigo/README.md).
+**Aparece en 3 clase(s):** [Clase 115 — Secure coding y defensa de aplicaciones web](../classes/parte-4-seguridad-de-aplicaciones-web/115-secure-coding-y-defensa-de-aplicaciones-web/README.md), [Clase 137 — Descubrimiento de vulnerabilidades en código](../classes/parte-5-explotacion-de-sistemas-y-binarios/137-descubrimiento-de-vulnerabilidades-en-codigo/README.md), [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
 
 ### Saturación
 
@@ -12095,7 +12719,7 @@ Copia del RBP anterior, adyacente a la dirección de retorno
 
 Inventario de componentes que acelera evaluación, sin demostrar seguridad.
 
-**Aparece en 2 clase(s):** [Clase 246 — Supply chain security: SBOM y SLSA](../classes/parte-11-devsecops-y-seguridad-del-sdlc/246-supply-chain-security-sbom-y-slsa/README.md), [Clase 275 — Seguridad de dispositivos médicos](../classes/parte-13-seguridad-movil-iot-e-inalambrica/275-seguridad-de-dispositivos-medicos/README.md).
+**Aparece en 3 clase(s):** [Clase 246 — Supply chain security: SBOM y SLSA](../classes/parte-11-devsecops-y-seguridad-del-sdlc/246-supply-chain-security-sbom-y-slsa/README.md), [Clase 275 — Seguridad de dispositivos médicos](../classes/parte-13-seguridad-movil-iot-e-inalambrica/275-seguridad-de-dispositivos-medicos/README.md), [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
 
 ### SCA
 
@@ -12159,9 +12783,9 @@ Limpieza upstream antes de que el volumen alcance el enlace protegido
 
 ### scrypt
 
-Primera KDF *memory-hard* ampliamente usada
+Función de derivación de claves que consume tiempo y memoria
 
-**Aparece en 1 clase(s):** [Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2](../classes/parte-2-criptografia-aplicada/057-almacenamiento-seguro-de-contrasenas-bcrypt-scrypt-y-argon2/README.md).
+**Aparece en 2 clase(s):** [Clase 57 — Almacenamiento seguro de contraseñas: bcrypt, scrypt y Argon2](../classes/parte-2-criptografia-aplicada/057-almacenamiento-seguro-de-contrasenas-bcrypt-scrypt-y-argon2/README.md), [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
 
 ### Scylla / ImpREC
 
@@ -12175,11 +12799,23 @@ Parte del binario con un propósito (.text, .rodata…)
 
 **Aparece en 2 clase(s):** [Clase 130 — Ingeniería inversa: introducción](../classes/parte-5-explotacion-de-sistemas-y-binarios/130-ingenieria-inversa-introduccion/README.md), [Clase 145 — El formato PE de Windows](../classes/parte-6-analisis-de-malware/145-el-formato-pe-de-windows/README.md).
 
+### Sección crítica
+
+Código que solo un hilo debe ejecutar a la vez
+
+**Aparece en 1 clase(s):** [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
+
 ### SecLists
 
 Colección de referencia de rutas, parámetros y payloads
 
 **Aparece en 1 clase(s):** [Clase 90 — Mapeo, spidering y descubrimiento de contenido](../classes/parte-4-seguridad-de-aplicaciones-web/090-mapeo-spidering-y-descubrimiento-de-contenido/README.md).
+
+### Secretariado
+
+Organización que mantiene la infraestructura del programa CVE
+
+**Aparece en 1 clase(s):** [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
 
 ### Secreto
 
@@ -12417,9 +13053,9 @@ Desviación de la uniformidad que acaba siendo explotable
 
 ### Sesión
 
-Asociación de peticiones al mismo usuario autenticado.
+Estado que recuerda la identidad del usuario entre peticiones
 
-**Aparece en 5 clase(s):** [Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna](../classes/parte-0-fundamentos-y-prerrequisitos/013-http-https-y-la-arquitectura-de-la-web-moderna/README.md), [Clase 72 — Metasploit Framework: arquitectura y uso](../classes/parte-3-hacking-etico-y-pentesting-metodologia/072-metasploit-framework-arquitectura-y-uso/README.md), [Clase 73 — Metasploit: explotación y payloads](../classes/parte-3-hacking-etico-y-pentesting-metodologia/073-metasploit-explotacion-y-payloads/README.md), [Clase 102 — Gestión de sesiones y ataques asociados](../classes/parte-4-seguridad-de-aplicaciones-web/102-gestion-de-sesiones-y-ataques-asociados/README.md), [Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic](../classes/parte-7-red-team-y-operaciones-ofensivas/165-frameworks-c2-cobalt-strike-sliver-y-mythic/README.md).
+**Aparece en 6 clase(s):** [Clase 13 — HTTP, HTTPS y la arquitectura de la web moderna](../classes/parte-0-fundamentos-y-prerrequisitos/013-http-https-y-la-arquitectura-de-la-web-moderna/README.md), [Clase 72 — Metasploit Framework: arquitectura y uso](../classes/parte-3-hacking-etico-y-pentesting-metodologia/072-metasploit-framework-arquitectura-y-uso/README.md), [Clase 73 — Metasploit: explotación y payloads](../classes/parte-3-hacking-etico-y-pentesting-metodologia/073-metasploit-explotacion-y-payloads/README.md), [Clase 102 — Gestión de sesiones y ataques asociados](../classes/parte-4-seguridad-de-aplicaciones-web/102-gestion-de-sesiones-y-ataques-asociados/README.md), [Clase 165 — Frameworks C2: Cobalt Strike, Sliver y Mythic](../classes/parte-7-red-team-y-operaciones-ofensivas/165-frameworks-c2-cobalt-strike-sliver-y-mythic/README.md), [Clase 364 — Familias CWE (2): identidad, acceso, criptografía y exposición de información](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md).
 
 ### Sesión nula
 
@@ -12498,6 +13134,12 @@ Uso de identidad alternativa que puede mantener continuidad.
 Separar identificadores sin eliminar toda posibilidad de enlace.
 
 **Aparece en 1 clase(s):** [Clase 289 — Privacidad y protección de datos](../classes/parte-14-grc-riesgo-y-cumplimiento/289-privacidad-y-proteccion-de-datos/README.md).
+
+### Severidad
+
+Cuán grave sería explotar la vulnerabilidad, bajo ciertos supuestos
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
 
 ### sFlow
 
@@ -12704,6 +13346,12 @@ Redirigir los dominios DGA a un servidor controlado
 Sistema independiente destinado a llevar el proceso a estado seguro.
 
 **Aparece en 1 clase(s):** [Clase 273 — Seguridad de sistemas de control industrial (ICS/SCADA)](../classes/parte-13-seguridad-movil-iot-e-inalambrica/273-seguridad-de-sistemas-de-control-industrial-ics-scada/README.md).
+
+### Sistema subsecuente
+
+Sistema distinto del vulnerable al que el ataque también afecta (v4.0)
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
 
 ### Site-to-site
 
@@ -13089,7 +13737,7 @@ Renderizado en servidor; cada acción pide una página nueva
 
 La aplicación hace una petición a una URL que controla el atacante
 
-**Aparece en 1 clase(s):** [Clase 99 — Server-Side Request Forgery (SSRF)](../classes/parte-4-seguridad-de-aplicaciones-web/099-server-side-request-forgery-ssrf/README.md).
+**Aparece en 2 clase(s):** [Clase 99 — Server-Side Request Forgery (SSRF)](../classes/parte-4-seguridad-de-aplicaciones-web/099-server-side-request-forgery-ssrf/README.md), [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
 
 ### SSRF ciega
 
@@ -13108,6 +13756,12 @@ Inyeccion en la plantilla, evaluada en el servidor
 SSTI ejecuta en el servidor; XSS en el navegador
 
 **Aparece en 1 clase(s):** [Clase 107 — Server-Side Template Injection (SSTI)](../classes/parte-4-seguridad-de-aplicaciones-web/107-server-side-template-injection-ssti/README.md).
+
+### SSVC
+
+Marco de CISA de decisión en árbol para priorizar vulnerabilidades
+
+**Aparece en 1 clase(s):** [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
 
 ### Stack
 
@@ -13351,9 +14005,9 @@ Operación sensible que puede convertir esos datos en impacto.
 
 ### Superficie de ataque
 
-Conjunto de todos los puntos de entrada posibles a un sistema
+Conjunto de puntos por los que un atacante puede interactuar con un sistema
 
-**Aparece en 3 clase(s):** [Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad](../classes/parte-0-fundamentos-y-prerrequisitos/001-que-es-la-ciberseguridad-triada-cia-aaa-superficie-de-ataque-y-defensa-en-profundidad/README.md), [Clase 86 — Arquitectura web moderna y superficie de ataque](../classes/parte-4-seguridad-de-aplicaciones-web/086-arquitectura-web-moderna-y-superficie-de-ataque/README.md), [Clase 137 — Descubrimiento de vulnerabilidades en código](../classes/parte-5-explotacion-de-sistemas-y-binarios/137-descubrimiento-de-vulnerabilidades-en-codigo/README.md).
+**Aparece en 4 clase(s):** [Clase 1 — Qué es la ciberseguridad: tríada CIA, AAA, superficie de ataque y defensa en profundidad](../classes/parte-0-fundamentos-y-prerrequisitos/001-que-es-la-ciberseguridad-triada-cia-aaa-superficie-de-ataque-y-defensa-en-profundidad/README.md), [Clase 86 — Arquitectura web moderna y superficie de ataque](../classes/parte-4-seguridad-de-aplicaciones-web/086-arquitectura-web-moderna-y-superficie-de-ataque/README.md), [Clase 137 — Descubrimiento de vulnerabilidades en código](../classes/parte-5-explotacion-de-sistemas-y-binarios/137-descubrimiento-de-vulnerabilidades-en-codigo/README.md), [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
 
 ### Superficie de kernel
 
@@ -13837,6 +14491,12 @@ Código ejecutado antes del entry point; anti-debug
 
 **Aparece en 1 clase(s):** [Clase 145 — El formato PE de Windows](../classes/parte-6-analisis-de-malware/145-el-formato-pe-de-windows/README.md).
 
+### TOCTOU
+
+Se comprueba una condición y se usa el recurso después, con un cambio posible entre ambos
+
+**Aparece en 1 clase(s):** [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
+
 ### Toggles
 
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
@@ -13851,9 +14511,9 @@ Estructura con la identidad y privilegios de un proceso
 
 ### Token anti-CSRF
 
-Valor secreto e impredecible que debe volver con la petición
+Valor impredecible por petición que el atacante no puede conocer
 
-**Aparece en 1 clase(s):** [Clase 98 — Cross-Site Request Forgery (CSRF)](../classes/parte-4-seguridad-de-aplicaciones-web/098-cross-site-request-forgery-csrf/README.md).
+**Aparece en 2 clase(s):** [Clase 98 — Cross-Site Request Forgery (CSRF)](../classes/parte-4-seguridad-de-aplicaciones-web/098-cross-site-request-forgery-csrf/README.md), [Clase 363 — Familias CWE (1): entradas no confiables](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md).
 
 ### Token de acceso
 
@@ -13947,9 +14607,9 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 
 ### Trazabilidad
 
-Cada afirmación respaldada por evidencia registrada
+Capacidad de reconstruir de dónde sale cada dato y cada decisión
 
-**Aparece en 1 clase(s):** [Clase 85 — Reporte profesional de pentest](../classes/parte-3-hacking-etico-y-pentesting-metodologia/085-reporte-profesional-de-pentest/README.md).
+**Aparece en 2 clase(s):** [Clase 85 — Reporte profesional de pentest](../classes/parte-3-hacking-etico-y-pentesting-metodologia/085-reporte-profesional-de-pentest/README.md), [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
 
 ### Triage
 
@@ -13970,6 +14630,12 @@ Agrupar crashes por su causa raíz
 file, checksec, strings, abrir en Ghidra
 
 **Aparece en 1 clase(s):** [Clase 140 — CTFs de pwn e ingeniería inversa](../classes/parte-5-explotacion-de-sistemas-y-binarios/140-ctfs-de-pwn-e-ingenieria-inversa/README.md).
+
+### Triaje forense
+
+Examen de un activo para detectar si ya fue comprometido
+
+**Aparece en 1 clase(s):** [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
 
 ### Troubleshooting
 
@@ -14090,6 +14756,12 @@ Herramienta para lanzar peticiones simultáneas
 Con suficientes gadgets se computa cualquier cosa
 
 **Aparece en 1 clase(s):** [Clase 124 — Return-Oriented Programming (ROP)](../classes/parte-5-explotacion-de-sistemas-y-binarios/124-return-oriented-programming-rop/README.md).
+
+### Typosquatting
+
+Publicar paquetes con nombres parecidos a otros populares
+
+**Aparece en 1 clase(s):** [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
 
 ## U
 
@@ -14231,6 +14903,12 @@ Packer común que se deshace con un comando
 
 **Aparece en 2 clase(s):** [Clase 135 — Ofuscación y técnicas anti-reversing](../classes/parte-5-explotacion-de-sistemas-y-binarios/135-ofuscacion-y-tecnicas-anti-reversing/README.md), [Clase 147 — Ofuscación, packing y unpacking](../classes/parte-6-analisis-de-malware/147-ofuscacion-packing-y-unpacking/README.md).
 
+### Use after free
+
+Uso de memoria liberada a través de un puntero que quedó colgando
+
+**Aparece en 1 clase(s):** [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
+
 ### Use-after-free (UAF)
 
 Usar un puntero a memoria ya liberada
@@ -14242,6 +14920,12 @@ Usar un puntero a memoria ya liberada
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
 
 **Aparece en 1 clase(s):** [Clase 353 — Arquitecturas Anti-Cheat](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/353-arquitecturas-anticheat/README.md).
+
+### Uso para mapear
+
+Etiqueta que dice si una entrada sirve para clasificar vulnerabilidades reales
+
+**Aparece en 1 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
 
 ### Uso responsable
 
@@ -14323,11 +15007,23 @@ Precios y saldos calculados en el servidor
 
 **Aparece en 1 clase(s):** [Clase 109 — Vulnerabilidades de lógica de negocio](../classes/parte-4-seguridad-de-aplicaciones-web/109-vulnerabilidades-de-logica-de-negocio/README.md).
 
+### Valor por defecto
+
+Ajuste con el que el producto llega de fábrica
+
+**Aparece en 1 clase(s):** [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
+
 ### Variable de entorno
 
 Mejor que el código, pero visible en procesos y volcados
 
 **Aparece en 1 clase(s):** [Clase 63 — Gestión de secretos: Vault y KMS](../classes/parte-2-criptografia-aplicada/063-gestion-de-secretos-vault-y-kms/README.md).
+
+### Variante
+
+Nivel más específico, ligado a un lenguaje o tecnología
+
+**Aparece en 1 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
 
 ### Vaudenay (2002)
 
@@ -14346,6 +15042,18 @@ Gestor de secretos con autenticación, políticas y auditoría
 Interfaz CAN virtual de Linux sin bus físico.
 
 **Aparece en 1 clase(s):** [Clase 274 — Seguridad automotriz y bus CAN](../classes/parte-13-seguridad-movil-iot-e-inalambrica/274-seguridad-automotriz-y-bus-can/README.md).
+
+### Vector CVSS
+
+Cadena con las métricas y valores que originan una puntuación
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
+
+### Vector de ataque (AV)
+
+Desde dónde puede atacarse: red, adyacente, local o físico
+
+**Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
 
 ### Vector2/Vector3
 
@@ -14509,6 +15217,18 @@ Ingeniería social mediante voz o telefonía.
 
 **Aparece en 1 clase(s):** [Clase 257 — Pretexting y vishing](../classes/parte-12-osint-e-ingenieria-social/257-pretexting-y-vishing/README.md).
 
+### Vista
+
+Punto de vista sobre el catálogo, en forma de lista plana o de grafo
+
+**Aparece en 1 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
+
+### Vista 1003
+
+Subconjunto simplificado de unas 130 debilidades usado por NVD
+
+**Aparece en 1 clase(s):** [Clase 362 — Del síntoma a la causa raíz: relaciones, cadenas y mapeo CWE](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md).
+
 ### Vista de grafo
 
 Código como bloques básicos conectados por saltos
@@ -14629,6 +15349,12 @@ Tabla de punteros a métodos virtuales de un objeto
 
 **Aparece en 1 clase(s):** [Clase 127 — Heap: use-after-free y double free](../classes/parte-5-explotacion-de-sistemas-y-binarios/127-heap-use-after-free-y-double-free/README.md).
 
+### Vulnerabilidad
+
+Ocurrencia concreta de una debilidad en un producto, explotable con impacto en CIA
+
+**Aparece en 1 clase(s):** [Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md).
+
 ### Vulnerabilidad candidata
 
 Source que alcanza un sink sin validación
@@ -14648,6 +15374,12 @@ Catálogo de máquinas virtuales vulnerables descargables para practicar en una 
 **Sitio oficial:** [VulnHub](https://www.vulnhub.com/).
 
 **Entrada transversal:** sin glosario local todavía; consulta el recurso oficial enlazado.
+
+### Vulnrichment
+
+Programa de CISA que añade datos SSVC y CWE a registros CVE
+
+**Aparece en 1 clase(s):** [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
 
 ### vulnserver
 
@@ -14805,6 +15537,12 @@ Procesos que reparten el tráfico y consolidan los logs
 
 **Aparece en 1 clase(s):** [Clase 44 — Zeek para análisis de red a gran escala](../classes/parte-1-redes-y-seguridad-de-redes/044-zeek-para-analisis-de-red-a-gran-escala/README.md).
 
+### Workflow
+
+Receta automatizada de CI/CD que se dispara por eventos de un repositorio
+
+**Aparece en 1 clase(s):** [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
+
 ### Workspace
 
 Aislamiento de los datos por cliente o fase
@@ -14834,6 +15572,12 @@ Handshake que no expone material para crackeo offline
 El valor da la vuelta al superar el máximo del tipo
 
 **Aparece en 1 clase(s):** [Clase 128 — Integer overflows y errores aritméticos](../classes/parte-5-explotacion-de-sistemas-y-binarios/128-integer-overflows-y-errores-aritmeticos/README.md).
+
+### Wraparound
+
+Un entero que supera su máximo vuelve a empezar desde cero
+
+**Aparece en 1 clase(s):** [Clase 365 — Familias CWE (3): memoria, enteros, concurrencia y recursos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md).
 
 ### Writeup
 

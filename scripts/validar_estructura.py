@@ -69,6 +69,7 @@ PARTES_ESTANDAR_PROFUNDO = (
     "parte-7-red-team-y-operaciones-ofensivas",
     "parte-8-blue-team-deteccion-y-soc",
     "parte-19-seguridad-de-videojuegos-cheats-y-anticheat",
+    "parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss",
 )
 
 

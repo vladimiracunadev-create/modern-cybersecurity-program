@@ -121,4 +121,4 @@ Entrega una ficha con threat boundary, reproducción en el rango, evento de tele
 
 ## ➡️ Siguiente clase
 
-[Volver al índice del programa](../../README.md)
+[Clase 361 — CWE: qué es, quién lo mantiene y cómo está construido](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md)
