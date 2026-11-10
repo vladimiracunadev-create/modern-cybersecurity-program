@@ -48,11 +48,31 @@ El diagrama debe leerse como una cadena de supuestos: verificar un nodo no demue
 
 Un documento de otro tenant aparece por filtro tardío. La autorización se mueve a la recuperación y se prueba antes de generar.
 
+### Agentes, pasarelas, MCP y servidores de modelos: dónde se cruza con el LLMjacking
+
+Un agente es, además de una fuente de acciones, un **consumidor de inferencia con credenciales propias**. Eso añade una pregunta de seguridad que el análisis de injection suele omitir: *¿qué puede gastar este agente, con qué clave y quién lo limita?* La clase 295 describe la cadena de intrusión del LLMjacking; aquí interesa dónde la tocan las arquitecturas de RAG y agentes.
+
+**Lo documentado.** GTIG (2 de noviembre de 2026) cita como vías de acceso los endpoints de LLM expuestos (por ejemplo Ollama) y la explotación de una vulnerabilidad de escalada de privilegios en el gateway LiteLLM (CVE-2026-40217), y recomienda parchear los gateways de LLM, restringir las descargas de modelos a registros internos o catálogos aprobados y limitar el tráfico saliente de los servicios cloud. Sysdig (17 de junio de 2026) describe un servidor Ollama mal configurado usado como motor de decisión de una herramienta ofensiva automatizada. La FAQ oficial de Ollama indica que por defecto escucha en `127.0.0.1:11434`, que la dirección se cambia con `OLLAMA_HOST` y que se puede publicar mediante proxy inverso o túneles; no describe autenticación integrada, de modo que quien lo expone debe añadirla delante.
+
+**Lo que se infiere para esta clase (hipótesis pedagógicas, no hechos observados).** Un agente con herramientas añade tres riesgos de consumo que los informes públicos no documentan como casos de LLMjacking pero que se deducen de las mismas causas:
+
+1. **Bucles de herramienta.** Un agente que reintenta sin límite, o que una injection indirecta (clase 296) empuja a iterar, consume tokens sin que nadie lo haya «atacado» con credenciales. Es consumo no acotado (LLM10:2025) por diseño, y el control es un presupuesto *por tarea*: máximo de pasos, de tokens y de herramientas por ejecución.
+2. **La clave del agente como activo de alto valor.** Si el agente guarda su clave de proveedor en el entorno donde ejecuta herramientas o código generado, cualquier ejecución comprometida (clase 297, sandbox) puede leerla. La clave debe vivir fuera del alcance de la herramienta, preferiblemente tras un *gateway* que sea quien se autentica ante el proveedor.
+3. **Conexiones MCP y proxies.** Un servidor MCP o un gateway que reenvía solicitudes es un punto único que concentra claves de varios proveedores: si se compromete, se compromete toda la reventa potencial. Trátalo como un secreto de producción: autenticación, segmentación, registro y parcheo.
+
+**Qué cambia en el diseño.** El *gateway* de modelos deja de ser solo un enrutador: es el sitio natural para **autenticar al agente, aplicar cuotas por identidad, modelo y día, registrar cada invocación y cortar** cuando se supera un límite. Sus claves hacia el proveedor deben ser distintas por entorno y estar limitadas al modelo necesario. En el laboratorio [`llmjacking-defense`](../../../labs/llmjacking-defense/README.md), el tope diario por identidad (escenarios S3, S5 y S6) recorta la exposición a unos pocos dólares ficticios, pero también muestra su coste: el atacante agota la cuota y el servicio legítimo se queda sin ella. Esa tensión entre disponibilidad y límite es una **decisión de diseño**, no un detalle de configuración.
+
+**Práctica adicional (local, sin red).** Con `secret_scan.evaluar_bind_ollama` del laboratorio, evalúa cuatro valores de `OLLAMA_HOST` (por defecto, `localhost`, `0.0.0.0:11434` y `0.0.0.0:11434` detrás de proxy autenticado) y justifica el nivel de riesgo de cada uno. No escanees ni pruebes servidores que no sean tuyos: buscar puertos abiertos en infraestructura ajena es una actividad que exige autorización.
+
+> ℹ️ **Edición del Top 10.** Esta clase usa la numeración 2023 (LLM07, LLM08). En la edición 2025 *Excessive Agency* es LLM06:2025. La equivalencia completa está en la clase 295.
+
 ## 📔 Glosario operativo
 
 | Término | Definición |
 |---|---|
 | Tool boundary | Frontera donde texto puede provocar una operación. |
+| Gateway de modelos | Servicio intermedio que autentica a quien consume un modelo, aplica cuotas, registra y reenvía al proveedor. |
+| Presupuesto por tarea | Límite de pasos, tokens y herramientas que un agente puede gastar en una ejecución. |
 | Evaluación | Experimento reproducible ligado a un riesgo y criterio. |
 | Riesgo residual | Exposición que permanece tras controles. |
 
@@ -136,6 +156,9 @@ No, pero amplifican el impacto: convierten texto en acciones. La seguridad está
 **❓ ¿Basta con validar la entrada del usuario?**
 No. En RAG y agentes, el peligro entra por documentos, respuestas de herramientas y contenido web. Toda fuente externa debe tratarse como hostil.
 
+**❓ ¿Un agente puede causar un LLMjacking sin que lo ataquen?**
+Puede causar consumo no acotado por un bucle o una injection indirecta; eso no es LLMjacking (que implica uso no autorizado de acceso ajeno) pero se mitiga con los mismos límites. Mantén la distinción al clasificar el incidente.
+
 **❓ ¿Cómo evito fugas entre clientes en el vector store?**
 Segmenta por tenant: colecciones separadas o filtro obligatorio por `tenant_id` en cada consulta, verificado en el servidor, no en el cliente.
 
@@ -146,6 +169,9 @@ Segmenta por tenant: colecciones separadas o filtro obligatorio por `tenant_id` 
 - Greshake et al., "Indirect Prompt Injection", 2023 — <https://arxiv.org/abs/2302.12173>
 - NIST AI 600-1, Generative AI Profile — <https://www.nist.gov/itl/ai-risk-management-framework>
 - MITRE ATLAS — <https://atlas.mitre.org/>
+- Google Threat Intelligence Group, «The Rise of LLMJacking» (2 de noviembre de 2026; endpoints expuestos y gateways de LLM) — <https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models/>
+- Sysdig Threat Research Team, «LLMjacking evolved» (17 de junio de 2026; Ollama expuesto) — <https://www.sysdig.com/blog/llmjacking-evolved-attackers-are-using-stolen-ai-compute-to-build-offensive-agentic-tools>
+- Ollama, FAQ (dirección de escucha y exposición) — <https://docs.ollama.com/faq>
 
 ## 📥 Material descargable
 

@@ -191,6 +191,8 @@ Rota primero. Luego purga con git-filter-repo o BFG y coordina el force-push con
 **❓ ¿Cómo evito el problema de raíz?**
 No pongas secretos en el código. Usa un secrets manager/vault e inyéctalos en runtime como variables de entorno o montajes.
 
+> 🔗 **Conexión con el abuso de recursos de IA (LLMjacking) — Parte 11 · DevSecOps.** Las claves de proveedores de IA son secretos de alto valor porque se traducen en gasto inmediato. El laboratorio [`llmjacking-defense`](../../../labs/llmjacking-defense/README.md) incluye un escáner didáctico que reconoce formatos de claves sin validarlas jamás contra un proveedor, y la clase 295 explica por qué validar una clave encontrada es acceso no autorizado.
+
 ## 🔗 Referencias
 
 - gitleaks — <https://github.com/gitleaks/gitleaks>

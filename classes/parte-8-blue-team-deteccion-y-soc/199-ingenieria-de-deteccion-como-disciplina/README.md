@@ -172,6 +172,8 @@ Cuando exista un procedimiento seguro y representativo, conviene validarlo. Una 
 **❓ ¿Cuándo retiro una detección?**
 Cuando su ratio de falsos positivos es insostenible, la técnica ya no aplica, o otra regla la cubre mejor. Documenta la decisión: retirar también es ingeniería.
 
+> 🔗 **Conexión con el abuso de recursos de IA (LLMjacking) — Parte 8 · Blue Team.** La ingeniería de detección también aplica a telemetría de IA: los registros de invocación de modelos son una fuente nueva, y el laboratorio [`llmjacking-defense`](../../../labs/llmjacking-defense/README.md) muestra cómo una regla de anomalías con señales explicables se mide con precisión, recall, falsos positivos y latencia. Es la misma disciplina de esta clase aplicada a un dato distinto; el detalle conceptual está en la clase 295.
+
 ## 🔗 Referencias verificables y alcance
 
 - Sigma Rules Specification: especificación oficial usada para estructura, validación y conversión de reglas portables — <https://sigmahq.io/sigma-specification/specification/sigma-rules-specification.html>

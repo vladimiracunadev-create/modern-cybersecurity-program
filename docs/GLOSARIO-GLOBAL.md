@@ -8,7 +8,7 @@ el generador; la modalidad y disponibilidad pueden cambiar en sus sitios oficial
 > **Archivo generado.** No lo edites a mano. Ejecuta
 > `python scripts/generar_glosario_global.py` y valida con `--check`.
 
-**Cobertura:** 2596 términos consolidados · 355 clases con glosario.
+**Cobertura:** 2604 términos consolidados · 355 clases con glosario.
 
 ## Cómo usarlo
 
@@ -719,7 +719,7 @@ Unidad de comando/respuesta usada por aplicaciones de tarjetas inteligentes.
 
 Cantidad y tipo de riesgo que la organización está dispuesta a perseguir o retener.
 
-**Aparece en 1 clase(s):** [Clase 276 — Gobernanza de la seguridad de la información](../classes/parte-14-grc-riesgo-y-cumplimiento/276-gobernanza-de-la-seguridad-de-la-informacion/README.md).
+**Aparece en 2 clase(s):** [Clase 276 — Gobernanza de la seguridad de la información](../classes/parte-14-grc-riesgo-y-cumplimiento/276-gobernanza-de-la-seguridad-de-la-informacion/README.md), [Clase 300 — Gobernanza y ética de la IA segura](../classes/parte-15-seguridad-de-ia-y-machine-learning/300-gobernanza-y-etica-de-la-ia-segura/README.md).
 
 ### API de alto nivel
 
@@ -3123,9 +3123,9 @@ Código ejecutado por una red; su modelo de estado y autorización depende de la
 
 ### Control compensatorio
 
-Medida alternativa que reduce riesgo sin eliminar la causa.
+Medida alternativa que reduce un riesgo cuando el control ideal no es viable.
 
-**Aparece en 3 clase(s):** [Clase 245 — Gestión de vulnerabilidades a escala](../classes/parte-11-devsecops-y-seguridad-del-sdlc/245-gestion-de-vulnerabilidades-a-escala/README.md), [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md), [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
+**Aparece en 4 clase(s):** [Clase 245 — Gestión de vulnerabilidades a escala](../classes/parte-11-devsecops-y-seguridad-del-sdlc/245-gestion-de-vulnerabilidades-a-escala/README.md), [Clase 295 — OWASP Top 10 para aplicaciones con LLM](../classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md), [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md), [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
 
 ### Control de acceso
 
@@ -3982,6 +3982,12 @@ Principio de rechazar todo lo que no esté permitido expresamente
 El acceso se concede explícitamente, nunca se asume
 
 **Aparece en 1 clase(s):** [Clase 105 — Control de acceso roto: IDOR y path traversal](../classes/parte-4-seguridad-de-aplicaciones-web/105-control-de-acceso-roto-idor-y-path-traversal/README.md).
+
+### Denial of Wallet
+
+Consumo masivo de un servicio de pago por uso para volver insostenible su coste.
+
+**Aparece en 1 clase(s):** [Clase 295 — OWASP Top 10 para aplicaciones con LLM](../classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md).
 
 ### DEP / NX
 
@@ -6269,6 +6275,12 @@ Componente que media tráfico entre dominios de red.
 
 **Aparece en 1 clase(s):** [Clase 274 — Seguridad automotriz y bus CAN](../classes/parte-13-seguridad-movil-iot-e-inalambrica/274-seguridad-automotriz-y-bus-can/README.md).
 
+### Gateway de modelos
+
+Servicio intermedio que autentica a quien consume un modelo, aplica cuotas, registra y reenvía al proveedor.
+
+**Aparece en 1 clase(s):** [Clase 297 — Seguridad de aplicaciones con LLM: RAG y agentes](../classes/parte-15-seguridad-de-ia-y-machine-learning/297-seguridad-de-aplicaciones-con-llm-rag-y-agentes/README.md).
+
 ### gcc -S
 
 Genera el ensamblador de un fuente C, para aprender a leerlo
@@ -7803,9 +7815,9 @@ Aísla las tablas de páginas de usuario y kernel
 
 ### KRI
 
-Indicador de exposición o cambio de riesgo.
+Indicador de riesgo clave: métrica que anticipa que un riesgo se acerca a su apetito.
 
-**Aparece en 1 clase(s):** [Clase 287 — Métricas de seguridad: KPIs y KRIs](../classes/parte-14-grc-riesgo-y-cumplimiento/287-metricas-de-seguridad-kpis-y-kris/README.md).
+**Aparece en 2 clase(s):** [Clase 287 — Métricas de seguridad: KPIs y KRIs](../classes/parte-14-grc-riesgo-y-cumplimiento/287-metricas-de-seguridad-kpis-y-kris/README.md), [Clase 300 — Gobernanza y ética de la IA segura](../classes/parte-15-seguridad-de-ia-y-machine-learning/300-gobernanza-y-etica-de-la-ia-segura/README.md).
 
 ## L
 
@@ -8080,6 +8092,18 @@ Abusar de herramientas legítimas del sistema
 Loadable Kernel Module; vía de los rootkits de kernel
 
 **Aparece en 1 clase(s):** [Clase 154 — Malware en Linux](../classes/parte-6-analisis-de-malware/154-malware-en-linux/README.md).
+
+### LLM Mixer
+
+Intermediario que agrupa claves robadas y revende acceso ocultando el origen (término de GTIG).
+
+**Aparece en 1 clase(s):** [Clase 295 — OWASP Top 10 para aplicaciones con LLM](../classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md).
+
+### LLMjacking
+
+Uso no autorizado de modelos de lenguaje ajenos, normalmente con credenciales robadas o endpoints expuestos, de modo que otro asume el coste.
+
+**Aparece en 1 clase(s):** [Clase 295 — OWASP Top 10 para aplicaciones con LLM](../classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md).
 
 ### LNA
 
@@ -10826,6 +10850,12 @@ Fase previa al escaneo; no depende de ningún host
 Deber ético del consultor; no destruir huellas
 
 **Aparece en 1 clase(s):** [Clase 84 — Anti-forense y borrado de huellas (concepto y límites)](../classes/parte-3-hacking-etico-y-pentesting-metodologia/084-anti-forense-y-borrado-de-huellas-concepto-y-limites/README.md).
+
+### Presupuesto por tarea
+
+Límite de pasos, tokens y herramientas que un agente puede gastar en una ejecución.
+
+**Aparece en 1 clase(s):** [Clase 297 — Seguridad de aplicaciones con LLM: RAG y agentes](../classes/parte-15-seguridad-de-ia-y-machine-learning/297-seguridad-de-aplicaciones-con-llm-rag-y-agentes/README.md).
 
 ### Pretexting
 
@@ -14521,6 +14551,18 @@ Representa el contexto de seguridad de un proceso
 
 **Aparece en 1 clase(s):** [Clase 77 — Escalada de privilegios en Windows](../classes/parte-3-hacking-etico-y-pentesting-metodologia/077-escalada-de-privilegios-en-windows/README.md).
 
+### Token de autenticación
+
+Secreto portador (clave de API, sesión, OAuth) que identifica a quien lo presenta.
+
+**Aparece en 1 clase(s):** [Clase 295 — OWASP Top 10 para aplicaciones con LLM](../classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md).
+
+### Token de inferencia
+
+Unidad de texto que el modelo procesa y que el proveedor factura.
+
+**Aparece en 1 clase(s):** [Clase 295 — OWASP Top 10 para aplicaciones con LLM](../classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md).
+
 ### Token de reseteo
 
 Debe ser impredecible, corto y de un solo uso
@@ -15720,6 +15762,12 @@ Herramienta que genera gadget chains para Java
 **Aparece en 1 clase(s):** [Clase 106 — Deserialización insegura](../classes/parte-4-seguridad-de-aplicaciones-web/106-deserializacion-insegura/README.md).
 
 ## Z
+
+### Z robusto
+
+Desviación respecto de la mediana medida en unidades de σ = 1,4826·MAD; resiste valores extremos.
+
+**Aparece en 1 clase(s):** [Clase 295 — OWASP Top 10 para aplicaciones con LLM](../classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md).
 
 ### Z-score,
 

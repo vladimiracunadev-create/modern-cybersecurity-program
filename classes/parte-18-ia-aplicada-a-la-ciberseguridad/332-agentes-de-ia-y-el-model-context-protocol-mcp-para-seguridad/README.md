@@ -131,6 +131,8 @@ Kali, aislado, y el agente habla con un gateway — no ejecuta binarios arbitrar
 Dar acciones potentes sin supervisión y la prompt injection: que datos del objetivo manipulen
 al agente para que haga algo fuera de alcance.
 
+> 🔗 **Conexión con el abuso de recursos de IA (LLMjacking) — Parte 18 · IA aplicada.** Un agente que opera herramientas de ciberseguridad consume inferencia con credenciales propias. Aplica aquí lo visto en las clases 295 y 297: clave tras un gateway, presupuesto por tarea y registro de invocaciones, y no entregues al agente claves de proveedor en un entorno donde ejecute código.
+
 ## 🔗 Referencias
 
 - [Model Context Protocol — especificación](https://modelcontextprotocol.io/)

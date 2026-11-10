@@ -95,6 +95,7 @@ export const DIAGRAMAS = {
   "3ce0ff67f626466c": { fuente: require('../../assets/diagramas/3ce0ff67f626466c.png'), proporcion: 0.0511 },
   "3d38623bbcaaa40d": { fuente: require('../../assets/diagramas/3d38623bbcaaa40d.png'), proporcion: 0.4089 },
   "3dc2c12a5e097860": { fuente: require('../../assets/diagramas/3dc2c12a5e097860.png'), proporcion: 1.0368 },
+  "3ebde513f8f6c4fd": { fuente: require('../../assets/diagramas/3ebde513f8f6c4fd.png'), proporcion: 0.2222 },
   "3efd74321c76d3a7": { fuente: require('../../assets/diagramas/3efd74321c76d3a7.png'), proporcion: 0.3471 },
   "3f3695c2a0a0e717": { fuente: require('../../assets/diagramas/3f3695c2a0a0e717.png'), proporcion: 0.1104 },
   "4096a9618d6246c9": { fuente: require('../../assets/diagramas/4096a9618d6246c9.png'), proporcion: 0.0578 },
@@ -419,4 +420,4 @@ export const DIAGRAMAS = {
 
 export const diagramaPorId = (id) => (id ? DIAGRAMAS[id] : undefined);
 
-export const TOTAL_DIAGRAMAS = 404;
+export const TOTAL_DIAGRAMAS = 405;

@@ -46,11 +46,32 @@ El diagrama debe leerse como una cadena de supuestos: verificar un nodo no demue
 
 Un modelo pasa exactitud pero carece de mecanismo de apelación. El impacto sobre personas exige controles más allá de performance.
 
+### El riesgo económico de la IA: gobernar el consumo, no solo el modelo
+
+La gobernanza de IA suele empezar por el sesgo, la transparencia y la regulación. Hay otro riesgo con un dueño mucho más claro: **el consumo**. Un servicio de IA de pago por uso convierte cualquier credencial en una línea de gasto, y los informes de 2024 a 2026 sobre LLMjacking (clase 295) muestran que ese gasto puede dispararse en horas por obra de un tercero. Una organización que gobierna sus modelos pero no sus claves ni sus límites tiene un hueco de gobierno, aunque tenga una política de IA impecable.
+
+**Qué debe tener una gobernanza que lo cubra.**
+
+1. **Inventario con dueño.** Cada clave, cuenta de servicio, endpoint y gateway de IA figura en el registro de activos (NIST AI RMF, función *Map*) con un responsable y una fecha de recertificación. Una clave sin dueño no se rota ni se revoca a tiempo.
+2. **Apetito de riesgo expresado en dinero.** La política fija un gasto máximo tolerable por servicio y por periodo, y quién puede autorizar excepciones. Esa cifra alimenta los límites técnicos y el análisis cuantitativo de la clase 277. Una cifra pública como los 100 000 USD en un día que menciona GTIG sirve de **escenario de estrés**, no de predicción.
+3. **Indicadores de riesgo (KRI) medibles** (función *Measure*): porcentaje de claves con dueño, edad máxima de una clave sin rotar, porcentaje de identidades con límite de gasto, tiempo medio de detección en los ejercicios y cobertura del registro de invocaciones.
+4. **Respuesta ensayada** (función *Manage*): el playbook de LLMjacking está en el laboratorio y se ensaya en un tabletop (clase 219). Debe incluir contactos del proveedor, política de preservación de evidencia y quién decide cortar un servicio legítimo si hace falta contener.
+5. **Terceros.** El contrato y los términos del proveedor determinan qué ocurre con los cargos fraudulentos: no se supone un reembolso, se verifica con anticipación y se anota como riesgo residual en el registro (clase 284).
+6. **Decisión explícita sobre el coste colateral.** Un tope duro protege el presupuesto pero puede interrumpir un servicio legítimo; un tope laxo protege la disponibilidad pero admite más gasto. Esa elección es una decisión del comité de riesgo, no de quien configura la cuota, y debe quedar registrada como aceptación de riesgo.
+
+**RACI mínimo.** Dueño del servicio (A): aprueba límites y excepciones. Plataforma/FinOps (R): configura cuotas, presupuestos y acciones automáticas. Seguridad (R/C): detección, respuesta y revisión de accesos. Legal/compras (C): términos con el proveedor. Dirección (I): recibe los KRI y las excepciones aceptadas.
+
+**Ejemplo.** Un equipo de marketing pide ampliar el acceso de una cuenta de servicio a un modelo caro para un lote puntual. Si existe un registro de cambio con ventana, identidad, modelo y tope, la ráfaga se distingue de un abuso en el análisis (escenario S8 del laboratorio) y el tope se amplía solo para esa ventana. Si no existe, se obtiene lo que muestra el laboratorio: o se bloquea trabajo legítimo, o se pierde la señal. La gobernanza es lo que hace posible esa diferencia.
+
+**Práctica adicional.** Añade al registro de riesgos del reto cuatro filas de consumo de IA (clave expuesta, endpoint sin autenticar, bucle de agente y rampa legítima no coordinada) con probabilidad, impacto en USD según tu escenario de estrés, controles preventivos, detectivos y correctivos, dueño y KRI.
+
 ## 📔 Glosario operativo
 
 | Término | Definición |
 |---|---|
 | Impact assessment | Evaluación contextual de efectos, afectados y mitigaciones. |
+| KRI | Indicador de riesgo clave: métrica que anticipa que un riesgo se acerca a su apetito. |
+| Apetito de riesgo | Nivel de pérdida que la organización acepta, expresado en términos medibles. |
 | Evaluación | Experimento reproducible ligado a un riesgo y criterio. |
 | Riesgo residual | Exposición que permanece tras controles. |
 
@@ -143,6 +164,8 @@ La model card y el registro de riesgos: dan visibilidad inmediata de límites y 
 - EU AI Act — <https://artificialintelligenceact.eu/>
 - Mitchell et al., "Model Cards for Model Reporting", FAT* 2019 — <https://arxiv.org/abs/1810.03993>
 - Gebru et al., "Datasheets for Datasets", 2018 — <https://arxiv.org/abs/1803.09010>
+- Google Threat Intelligence Group, «The Rise of LLMJacking» (2 de noviembre de 2026) — <https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models/>
+- Cloud Security Alliance AI Safety Initiative, «LLMjacking Evolves» (18 de junio de 2026; recomendaciones de gobierno de credenciales de IA) — <https://labs.cloudsecurityalliance.org/research/csa-research-note-llmjacking-offensive-ai-tooling-20260618-c/>
 
 ## 📥 Material descargable
 

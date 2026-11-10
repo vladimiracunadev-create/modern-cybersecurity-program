@@ -977,6 +977,50 @@
           ],
           "correcta": 1,
           "exp": "Hay que limitar permisos del agente y validar entradas/salidas."
+        },
+        {
+          "q": "¿Qué distingue al LLMjacking de la prompt injection?",
+          "opciones": [
+            "El LLMjacking abusa del acceso (credenciales o endpoints) para consumir inferencia ajena; la injection manipula el comportamiento del modelo con texto",
+            "Son sinónimos",
+            "La injection exige robar una clave de API",
+            "El LLMjacking solo afecta a modelos open source"
+          ],
+          "correcta": 0,
+          "exp": "Uno explota el acceso y la factura; el otro, el canal de instrucciones del modelo. Los controles son distintos."
+        },
+        {
+          "q": "¿Por qué una alerta de presupuesto no equivale a un límite de gasto?",
+          "opciones": [
+            "Porque nunca se envía",
+            "Porque informa con retraso y no detiene el consumo; el gasto puede superar el umbral antes del aviso",
+            "Porque solo funciona con modelos propios",
+            "Porque el proveedor la ignora"
+          ],
+          "correcta": 1,
+          "exp": "La documentación de AWS Budgets indica actualización hasta tres veces al día y retraso entre cargo y notificación. Detener exige cuotas, límites en línea o acciones automáticas."
+        },
+        {
+          "q": "Un barrido de cientos de solicitudes con max_tokens=1 sobre varios modelos desde un origen nuevo es mejor interpretado como…",
+          "opciones": [
+            "Una prueba concluyente de ataque atribuible a un actor",
+            "Una anomalía compatible con validación de credenciales que requiere correlación",
+            "Tráfico normal de un modelo pequeño",
+            "Un fallo del proveedor"
+          ],
+          "correcta": 1,
+          "exp": "Es un indicador, no una atribución: se confirma correlando identidad, origen, API invocada y facturación."
+        },
+        {
+          "q": "¿Qué riesgo introduce un tope duro de gasto por identidad?",
+          "opciones": [
+            "Ninguno",
+            "Puede denegar tráfico legítimo, incluso porque el atacante agote la cuota",
+            "Aumenta el gasto",
+            "Impide registrar eventos"
+          ],
+          "correcta": 1,
+          "exp": "Un control preventivo tiene coste colateral: debe decidirse y aceptarse explícitamente."
         }
       ]
     },

@@ -18286,6 +18286,188 @@
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md",
     "classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md"
    ]
+  },
+  {
+   "id": "owasp-llm10-2025-unbounded-consumption",
+   "type": "reference",
+   "title": "OWASP GenAI Security Project — LLM10:2025 Unbounded Consumption",
+   "authors": [
+    "OWASP GenAI Security Project"
+   ],
+   "locator": "https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/",
+   "authority": "OWASP Foundation",
+   "status": "verificada",
+   "notes": "Ficha oficial consultada el 2026-11-10: definicion, escenario Denial of Wallet y 15 mitigaciones.",
+   "matches": {
+    "url_prefixes": [
+     "https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-10",
+   "used_in": [
+    "classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md"
+   ]
+  },
+  {
+   "id": "sysdig-llmjacking-2024",
+   "type": "reference",
+   "title": "LLMjacking: Stolen Cloud Credentials Used in New AI Attack",
+   "authors": [
+    "Sysdig Threat Research Team"
+   ],
+   "locator": "https://www.sysdig.com/blog/llmjacking-stolen-cloud-credentials-used-in-new-ai-attack",
+   "authority": "Sysdig",
+   "status": "verificada",
+   "notes": "Publicado el 2024-05-06; consultado el 2026-11-10. Acceso inicial via CVE-2021-3129, validacion de credenciales, consulta de logging y estimacion de coste.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.sysdig.com/blog/llmjacking-stolen-cloud-credentials-used-in-new-ai-attack"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-10",
+   "used_in": [
+    "classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md"
+   ]
+  },
+  {
+   "id": "sysdig-llmjacking-evolved-2026",
+   "type": "reference",
+   "title": "LLMjacking evolved: attackers are using stolen AI compute to build offensive agentic tools",
+   "authors": [
+    "Sysdig Threat Research Team"
+   ],
+   "locator": "https://www.sysdig.com/blog/llmjacking-evolved-attackers-are-using-stolen-ai-compute-to-build-offensive-agentic-tools",
+   "authority": "Sysdig",
+   "status": "verificada",
+   "notes": "Publicado el 2026-06-17; consultado el 2026-11-10. Ollama expuesto usado como motor de una herramienta ofensiva; la intencion final es incierta segun la fuente.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.sysdig.com/blog/llmjacking-evolved-attackers-are-using-stolen-ai-compute-to-build-offensive-agentic-tools"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-10",
+   "used_in": [
+    "classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md",
+    "classes/parte-15-seguridad-de-ia-y-machine-learning/297-seguridad-de-aplicaciones-con-llm-rag-y-agentes/README.md"
+   ]
+  },
+  {
+   "id": "gtig-rise-of-llmjacking-2026",
+   "type": "reference",
+   "title": "The Rise of LLMJacking: How Threat Actors Monetize Compromised Cloud and Model Resources",
+   "authors": [
+    "Google Threat Intelligence Group",
+    "Mandiant"
+   ],
+   "locator": "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models/",
+   "authority": "Google Cloud",
+   "status": "verificada",
+   "notes": "Publicado el 2026-11-02; consultado el 2026-11-10. Vectores, LLM Mixers, cifras de cargos y recomendaciones; la prevision sobre actores futuros es de GTIG, no un hecho verificado.",
+   "matches": {
+    "url_prefixes": [
+     "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-10",
+   "used_in": [
+    "classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md",
+    "classes/parte-15-seguridad-de-ia-y-machine-learning/297-seguridad-de-aplicaciones-con-llm-rag-y-agentes/README.md",
+    "classes/parte-15-seguridad-de-ia-y-machine-learning/300-gobernanza-y-etica-de-la-ia-segura/README.md"
+   ]
+  },
+  {
+   "id": "csa-llmjacking-evolves-2026",
+   "type": "reference",
+   "title": "CSA Research Note: LLMjacking Evolves",
+   "authors": [
+    "Cloud Security Alliance AI Safety Initiative"
+   ],
+   "locator": "https://labs.cloudsecurityalliance.org/research/csa-research-note-llmjacking-offensive-ai-tooling-20260618-c/",
+   "authority": "Cloud Security Alliance",
+   "status": "verificada",
+   "notes": "Publicado el 2026-06-18; consultado el 2026-11-10. Nota de investigacion que interpreta y resume informes de terceros; sus cifras de Bizarre Bazaar no se reproducen aqui.",
+   "matches": {
+    "url_prefixes": [
+     "https://labs.cloudsecurityalliance.org/research/csa-research-note-llmjacking-offensive-ai-tooling-20260618-c/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-10",
+   "used_in": [
+    "classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md",
+    "classes/parte-15-seguridad-de-ia-y-machine-learning/300-gobernanza-y-etica-de-la-ia-segura/README.md"
+   ]
+  },
+  {
+   "id": "ollama-docs-faq",
+   "type": "reference",
+   "title": "Ollama documentation — FAQ",
+   "authors": [
+    "Ollama"
+   ],
+   "locator": "https://docs.ollama.com/faq",
+   "authority": "Ollama",
+   "status": "verificada",
+   "notes": "Consultada el 2026-11-10: escucha por defecto en 127.0.0.1:11434, OLLAMA_HOST, proxy inverso y tuneles; la FAQ no describe autenticacion.",
+   "matches": {
+    "url_prefixes": [
+     "https://docs.ollama.com/faq"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-10",
+   "used_in": [
+    "classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md",
+    "classes/parte-15-seguridad-de-ia-y-machine-learning/297-seguridad-de-aplicaciones-con-llm-rag-y-agentes/README.md"
+   ]
+  },
+  {
+   "id": "aws-budgets-managing-costs",
+   "type": "reference",
+   "title": "Managing your costs with AWS Budgets",
+   "authors": [
+    "Amazon Web Services"
+   ],
+   "locator": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
+   "authority": "Amazon Web Services",
+   "status": "verificada",
+   "notes": "Consultada el 2026-11-10: datos actualizados hasta tres veces al dia y retraso entre cargo y notificacion; ejemplo de accion de presupuesto con politica IAM.",
+   "matches": {
+    "url_prefixes": [
+     "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-10",
+   "used_in": [
+    "classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md"
+   ]
+  },
+  {
+   "id": "elladodelmal-llmjacking-2026",
+   "type": "reference",
+   "title": "LLMJacking: como los cibercriminales hacen que pagues sus consultas a modelos de IA",
+   "authors": [
+    "Chema Alonso"
+   ],
+   "locator": "https://www.elladodelmal.com/2026/11/llmjacking-como-los-cibercriminales.html",
+   "authority": "Un informatico en el lado del mal",
+   "status": "verificada",
+   "notes": "Publicado el 2026-11-09; consultado el 2026-11-10. Fuente secundaria de divulgacion que resume el informe de GTIG; no se usa para hechos que GTIG no confirme.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.elladodelmal.com/2026/11/llmjacking-como-los-cibercriminales.html"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-10",
+   "used_in": [
+    "classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md"
+   ]
   }
  ]
 }

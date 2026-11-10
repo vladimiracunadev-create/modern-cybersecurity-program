@@ -225,6 +225,8 @@ La verificación de código responde qué fuente corresponde al bytecode publica
 No elimina claves de administración, control de liquidez, concentración, actualizaciones, frontends ni
 afirmaciones falsas. Es una evidencia útil dentro de un escenario, no una garantía del proyecto.
 
+> 🔗 **Conexión con el abuso de recursos de IA (LLMjacking) — Parte 14 · GRC.** El consumo de IA es un riesgo que se puede cuantificar con escenarios de estrés (gasto por hora × horas hasta contener). La clase 300 lo lleva al registro de riesgos, y la clase 295 aporta las cifras públicas que sirven de escenario, siempre como casos y no como promedios.
+
 ## 🔗 Referencias
 
 - Hubbard & Seiersen — How to Measure Anything in Cybersecurity Risk. <https://www.howtomeasureanything.com/cybersecurity/>

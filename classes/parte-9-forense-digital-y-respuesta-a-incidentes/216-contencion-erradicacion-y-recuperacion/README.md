@@ -164,6 +164,8 @@ Cuando el alcance indique acceso posible o exposición: contraseñas, tokens, cl
 **❓ ¿Cómo sé que erradiqué de verdad?**
 Con monitoreo reforzado durante un periodo y criterios objetivos: cero IOCs activos, cero conexiones al C2, cero reintentos de persistencia.
 
+> 🔗 **Conexión con el abuso de recursos de IA (LLMjacking) — Parte 9 · Respuesta a incidentes.** El abuso de credenciales de IA es un caso de contención donde revocar demasiado pronto puede destruir rastro y revocar demasiado tarde cuesta dinero. El [playbook de LLMjacking](../../../labs/llmjacking-defense/PLAYBOOK-LLMJACKING.md) ordena la secuencia: desactivar antes de borrar, preservar registros y recuperar con claves nuevas. Contexto en la clase 295.
+
 ## 🔗 Referencias verificables y alcance
 
 - **NIST SP 800-61 Rev. 3:** <https://doi.org/10.6028/NIST.SP.800-61r3> — recomendaciones actuales para integrar preparación, detección, respuesta y recuperación con CSF 2.0.

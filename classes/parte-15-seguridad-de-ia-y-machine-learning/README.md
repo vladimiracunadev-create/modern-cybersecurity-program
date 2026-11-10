@@ -61,7 +61,7 @@ flowchart LR
 
 ## 🧭 Recorrido clase a clase
 
-Las clases 291–294 construyen el modelo de amenaza desde el ciclo de datos hasta inferencia y extracción. Las clases 295–297 trasladan ese razonamiento a aplicaciones LLM, contenido no confiable, RAG y herramientas. Las clases 298–300 evalúan uso defensivo, abuso y gobierno durante todo el ciclo. Cada clase produce evidencia reproducible y declara incertidumbre; ninguna taxonomía ni benchmark funciona como certificado de seguridad.
+Las clases 291–294 construyen el modelo de amenaza desde el ciclo de datos hasta inferencia y extracción. Las clases 295–297 trasladan ese razonamiento a aplicaciones LLM, contenido no confiable, RAG y herramientas. Dentro de ese tramo, la 295 es también el núcleo del **abuso de recursos de IA (LLMjacking)**: primero se distingue de la injection y de la extracción, luego se desmonta su cadena de intrusión y por último se miden controles y detección en un laboratorio local; la 297 lo retoma desde agentes, gateways y servidores de modelos, y la 300 lo convierte en riesgo económico gobernable. Las clases 298–300 evalúan uso defensivo, abuso y gobierno durante todo el ciclo. Cada clase produce evidencia reproducible y declara incertidumbre; ninguna taxonomía ni benchmark funciona como certificado de seguridad.
 
 ### Capítulos enlazados
 
@@ -73,23 +73,23 @@ Las clases 291–294 construyen el modelo de amenaza desde el ciclo de datos has
 
 **[Clase 294 — Robo y extracción de modelos](294-robo-y-extraccion-de-modelos/README.md).** Aprender cómo un adversario con solo acceso a la API de predicción puede robar la funcionalidad de un modelo (model extraction), reconstruir datos de entrenamiento (model inversion) o determinar si un registro estuvo en el entrenamiento (membership inference).
 
-**[Clase 295 — OWASP Top 10 para aplicaciones con LLM](295-owasp-top-10-para-aplicaciones-con-llm/README.md).** Dominar la taxonomía OWASP Top 10 para aplicaciones con LLM como marco de referencia para auditar y asegurar sistemas basados en modelos de lenguaje.
+**[Clase 295 — OWASP Top 10 para aplicaciones con LLM](295-owasp-top-10-para-aplicaciones-con-llm/README.md).** Dominar la taxonomía OWASP Top 10 para aplicaciones con LLM como marco de referencia para auditar y asegurar sistemas basados en modelos de lenguaje, y entender el consumo no acotado (LLM10:2025) a través del LLMjacking: qué es, cómo evoluciona una intrusión, qué controles la cortan en cada fase, por qué una alerta de presupuesto no limita el gasto y cómo demostrar con datos sintéticos que la detección funciona. Aparece aquí porque necesita el vocabulario de riesgos de la taxonomía y prepara las clases siguientes. Evidencia: auditoría con checklist, informe del laboratorio [`llmjacking-defense`](../../labs/llmjacking-defense/README.md).
 
 **[Clase 296 — Prompt injection y jailbreaks](296-prompt-injection-y-jailbreaks/README.md).** Entender a fondo la vulnerabilidad número uno de las aplicaciones con LLM: la prompt injection, y su primo el jailbreak.
 
-**[Clase 297 — Seguridad de aplicaciones con LLM: RAG y agentes](297-seguridad-de-aplicaciones-con-llm-rag-y-agentes/README.md).** Asegurar las arquitecturas de LLM más potentes y más peligrosas: RAG (Retrieval-Augmented Generation) y agentes con herramientas.
+**[Clase 297 — Seguridad de aplicaciones con LLM: RAG y agentes](297-seguridad-de-aplicaciones-con-llm-rag-y-agentes/README.md).** Asegurar las arquitecturas de LLM más potentes y más peligrosas: RAG (Retrieval-Augmented Generation) y agentes con herramientas, incluyendo el agente como consumidor de inferencia con credenciales propias, los gateways de modelos y la exposición de servidores como Ollama.
 
 **[Clase 298 — IA aplicada a la defensa: detección y SOC](298-ia-aplicada-a-la-defensa-deteccion-y-soc/README.md).** Usar la IA como herramienta defensiva de forma realista: detección de anomalías, priorización de alertas, triage y apoyo al analista en el SOC, sin caer en el "AI washing".
 
 **[Clase 299 — IA ofensiva y deepfakes](299-ia-ofensiva-y-deepfakes/README.md).** Comprender cómo los atacantes aprovechan la IA generativa —phishing hiperpersonalizado, deepfakes de voz e imagen, malware asistido, automatización de reconocimiento— y, sobre todo, cómo defenderse: detección de contenido sintético, procedencia (C2PA), verificación fuera de banda y concienciación.
 
-**[Clase 300 — Gobernanza y ética de la IA segura](300-gobernanza-y-etica-de-la-ia-segura/README.md).** Cerrar la parte llevando todo lo aprendido al plano de la gobernanza: cómo una organización adopta IA de forma segura, responsable y conforme a la regulación.
+**[Clase 300 — Gobernanza y ética de la IA segura](300-gobernanza-y-etica-de-la-ia-segura/README.md).** Cerrar la parte llevando todo lo aprendido al plano de la gobernanza: cómo una organización adopta IA de forma segura, responsable y conforme a la regulación, incluido el gobierno del consumo (inventario de claves, apetito de riesgo en dinero, KRI y aceptación del coste colateral de los límites).
 
 | Bloque | Clases | Foco |
 |--------|--------|------|
 | Fundamentos y superficie de ataque | 291 | Panorama, ciclo de vida, MITRE ATLAS, NIST AI RMF |
 | Ataques al modelo | 292, 293, 294 | Adversariales, envenenamiento/backdoors, robo/extracción |
-| Seguridad de LLM y aplicaciones | 295, 296, 297 | OWASP Top 10 LLM, prompt injection/jailbreaks, RAG y agentes |
+| Seguridad de LLM y aplicaciones | 295, 296, 297 | OWASP Top 10 LLM, abuso de recursos de IA (LLMjacking), prompt injection/jailbreaks, RAG y agentes |
 | IA como herramienta | 298, 299 | Defensa (SOC/detección), ofensiva y deepfakes |
 | Gobernanza | 300 | Ética, regulación, gestión del riesgo de IA |
 
@@ -101,6 +101,11 @@ Las clases 291–294 construyen el modelo de amenaza desde el ciclo de datos has
 - Adversarial Robustness Toolbox (IBM/LF AI) — <https://github.com/Trusted-AI/adversarial-robustness-toolbox>
 - garak (NVIDIA) — <https://github.com/NVIDIA/garak> · PyRIT (Microsoft) — <https://github.com/Azure/PyRIT>
 - ISO/IEC 42001:2023 — <https://www.iso.org/standard/81230.html>
+- LLMjacking: GTIG (2026) <https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models/> · Sysdig (2024) <https://www.sysdig.com/blog/llmjacking-stolen-cloud-credentials-used-in-new-ai-attack> · OWASP LLM10:2025 <https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/>
+
+### Conexiones del LLMjacking con otras partes
+
+El tema vive en la 295, pero se practica donde cada competencia es natural: detección con métricas (clase 199, Parte 8), contención y preservación de evidencia (216, Parte 9), permisos de invocación de modelos (222, Parte 10), claves como secretos de alto valor (241, Parte 11), escenarios de estrés económico (277, Parte 14) y agentes que consumen inferencia (332, Parte 18). Cada una añade una nota breve que remite a la 295 para no duplicar el desarrollo.
 
 ## ▶️ Empezar
 

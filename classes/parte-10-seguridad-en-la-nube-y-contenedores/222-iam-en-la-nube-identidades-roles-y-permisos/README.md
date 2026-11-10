@@ -152,6 +152,8 @@ Un `Deny` explícito aplicable prevalece sobre un `Allow`; sin `Allow` aplicable
 **❓ ¿Cómo aplico privilegio mínimo sin frenar al equipo?**
 Empieza permisivo pero mide: usa Access Analyzer/policy usage para ver qué se usa realmente y recorta lo no utilizado. Itera en vez de adivinar.
 
+> 🔗 **Conexión con el abuso de recursos de IA (LLMjacking) — Parte 10 · Seguridad cloud.** Los permisos que permiten invocar modelos o habilitar servicios de IA son permisos IAM como cualquier otro y deben denegarse por defecto. La clase 295 explica por qué esto corta el LLMjacking en varias fases, y el laboratorio [`llmjacking-defense`](../../../labs/llmjacking-defense/README.md) simula el efecto de una credencial de servicio con privilegios excesivos.
+
 ## 🔗 Referencias verificables y alcance
 
 - AWS IAM User Guide. <https://docs.aws.amazon.com/IAM/latest/UserGuide/> — fuente oficial para identidades, roles, políticas y STS.

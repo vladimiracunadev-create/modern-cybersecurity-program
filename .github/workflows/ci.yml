@@ -64,6 +64,11 @@ jobs:
           python -m unittest discover -s labs/appsec-code/tests -v
           python -m unittest discover -s labs/devsecops-pipeline/tests -v
 
+      - name: Probar el laboratorio de LLMjacking (datos sintéticos, detector y controles)
+        run: |
+          python -m unittest discover -s labs/llmjacking-defense/tests -v
+          python labs/llmjacking-defense/llmjacking_lab.py robustez --seeds 5
+
       - name: Probar conciliación del caso de custodia digital
         run: python -m unittest discover -s labs/custodia-activos-digitales/tests -v
 

@@ -108,7 +108,7 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 | [RFC 7489](https://www.rfc-editor.org/rfc/rfc7489) | obsoleta | 1 |
 | [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446) | obsoleta | 1 |
 
-Las 765 obras que usa el programa — 57 libros, 25 artículos, 172 normas y 511 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-10-01 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
+Las 773 obras que usa el programa — 57 libros, 25 artículos, 172 normas y 519 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-10-01 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
 
 <!-- fuentes:fin -->
 
@@ -185,6 +185,7 @@ comando, más una colección de retos tipo CTF:
 - 🪟 **[Triaje forense de Windows (RootCause)](labs/rootcause-windows/README.md)** — sensor forense de comportamiento en Rust · Partes 6, 8 y 9.
 - ₿ **[Custodia de activos digitales](labs/custodia-activos-digitales/README.md)** — caso transversal ficticio con conciliación ledger–operación–blockchain, IAM/PAM/SoD, insider risk, threat model, DFIR, ocho playbooks, dataset y tests · Partes 8, 9, 11, 14, 16 y 17; [diagnóstico y arquitectura](docs/caso-custodia-activos-digitales.md).
 - 📣 **[Lanzamientos virales y memecoins](labs/lanzamientos-virales/README.md)** — caso offline ficticio: video viral, token/sitio/cuentas/airdrop falsos, account takeover, autorización maliciosa, drainer, seed theft, clipboard y rug pull, con analizador y tests · Partes 4, 6, 9, 12 y 14; [auditoría curricular](docs/caso-lanzamientos-virales.md).
+- 🔑 **[LLMjacking: detectar y contener abuso de recursos de IA](labs/llmjacking-defense/README.md)** — simulación local y determinista de ocho escenarios (clave expuesta, validación mínima, consumo anómalo, Ollama sin autenticación, privilegios excesivos, contención y ráfaga legítima), detector con señales explicables, métricas y comparación de controles · Parte 15 (con conexiones a las Partes 8–11, 14 y 18).
 - 🌐 **[Escaneo de red (nmap)](labs/redes-nmap/README.md)** · 💥 **[Explotación de binarios (pwn)](labs/pwn-binarios/README.md)** · ☁️ **[Auditoría cloud (CSPM)](labs/cloud-security/README.md)** — Partes 1, 5 y 10.
 - 🚩 **[Retos tipo CTF](ctf/README.md)** — web, cripto, redes, forense, OSINT y pwn, con writeups.
 - 📖 **[Glosario global](docs/GLOSARIO-GLOBAL.md)** — términos, siglas, aliases y trazabilidad automática hacia las clases donde aparecen.
