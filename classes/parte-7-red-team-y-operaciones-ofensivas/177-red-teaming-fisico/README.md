@@ -23,6 +23,7 @@ Al finalizar, el alumno podrá:
 6. **Observar** evidencia de host y red, diferenciando conexión, conducta sospechosa y atribución a un producto.
 7. **Validar** controles de puerto, autorización por interfaz, bloqueo de sesión, mínimo privilegio y vigilancia física.
 8. **Responder** a un accesorio o implante desconocido preservando contexto y evitando una atribución prematura.
+9. **Distinguir** interdicción y *evil maid* de los dispositivos que se dejan a la vista, y **evaluar** controles de recepción y devoluciones sin fabricar implantes en productos ajenos.
 
 ## 🗺️ Temas
 
@@ -36,6 +37,7 @@ Al finalizar, el alumno podrá:
 | 6 | Instrumentación USB | ¿Cómo observar el protocolo sin confundir analizador con herramienta de ejecución? |
 | 7 | Dispositivos compactos de red | ¿Qué evidencia deja un puente, router o adaptador insertado? |
 | 8 | Detección, mitigación y respuesta | ¿Qué demuestra cada fuente y cómo se comprueba el control? |
+| 9 | Manipulación en la cadena de distribución | Interdicción, evil maid, devoluciones y qué detecta cada control |
 
 ## 🧠 Explicación en profundidad
 
@@ -110,6 +112,35 @@ La observación defensiva cambia: en el host puede aparecer un nuevo adaptador, 
 
 En Windows, `%SystemRoot%\inf\SetupAPI.dev.log` registra operaciones de instalación de dispositivos y controladores. No es un registro universal de cada pulsación. En Linux, `udevadm monitor --kernel --udev --property` observa altas/bajas y propiedades durante la prueba; `journalctl -k` aporta mensajes del kernel si la configuración los conserva. USBGuard registra decisiones propias cuando está instalado y habilitado. En todos los casos hay falsos negativos si la fuente no estaba activa o retuvo poco, y falsos positivos por teclados, docks y adaptadores legítimos.
 
+### Cuando el implante va dentro del producto: manipulación de la cadena de distribución
+
+Las secciones anteriores tratan dispositivos que alguien *deja* en un sitio (cables, adaptadores, implantes de red). Hay otra familia, menos visible: el atacante manipula un producto legítimo **antes de que llegue a su dueño**, y el dueño lo usa sin sospechar. Dos modalidades se distinguen por el momento en que ocurre el acceso:
+
+- **Interdicción (*interdiction*).** El paquete se intercepta durante el transporte o el almacenamiento, se abre, se modifica y se reempaqueta.
+- ***Evil maid*.** El atacante accede al dispositivo desatendido (una habitación, un maletín) el tiempo justo para alterarlo y devolverlo a su sitio.
+
+En ambos, el atacante parte de una ventaja: un objeto auténtico, con su caja, su sello y, si tiene un secure element, su attestation. Por eso la defensa no se apoya en comprobar lo que el objeto *dice ser*, sino en **reducir y registrar los momentos en que alguien pudo tocarlo**.
+
+**Devoluciones y reventa.** Un dispositivo devuelto y reingresado a venta es un riesgo especial: el cierre original ya se abrió y el siguiente comprador no sabe qué ocurrió entre medias. La política segura es que **una devolución no vuelve a vender sin inspección y reempaquetado controlado**. Es una decisión de proceso, no de tecnología.
+
+**Qué controla cada capa (y qué no):**
+
+| Control | Qué detecta o previene | Límite |
+|---|---|---|
+| Compra por canal autorizado | reduce el número de manos y la probabilidad de reventa opaca | no elimina el riesgo si el eslabón autorizado se compromete |
+| Sello numerado y registrado | apertura grosera, cambio de sello | los sellos pueden clonarse o abrirse sin rastro; sirven para trazabilidad |
+| Fotografías de empaquetado y de recepción | comparación posterior | solo útil si alguien compara con la referencia |
+| Masa dentro de tolerancia | adición de componentes pesados | un implante de pocos gramos puede quedar dentro de la tolerancia |
+| Inspección por muestreo (radiografía, comparación con referencia) | electrónica añadida | cubre la muestra, no cada unidad |
+| Attestation del componente seguro | sustitución del chip por uno falso | no ve nada fuera del chip (ver la clase 267) |
+| Trazabilidad con registro encadenado | huecos de custodia | prueba el recorrido, no el contenido |
+
+**Red team físico de hardware, con límites.** Un ejercicio autorizado puede incluir la verificación de recepción de un proveedor, pero **no** la fabricación o instalación de un implante dentro de un producto de un tercero, ni la manipulación de dispositivos que contengan fondos o datos de personas ajenas al alcance. Si necesitas demostrar el concepto, hazlo con dispositivos propios, ficticios y sin secretos, y diseña el ejercicio para evaluar la **detección y el proceso de recepción**, no la capacidad de ocultar.
+
+**Auditoría de proveedores (rol auditor de cadena de suministro).** Evalúa: quién puede tocar el producto desde la fábrica hasta el cliente; qué evidencias existen en cada traspaso; qué pasa con los devueltos; qué derecho de auditoría hay sobre los revendedores; cómo se notifica un incidente y en cuánto tiempo. El caso Ledger de octubre de 2026 (clase 267) muestra por qué estas preguntas importan más que la verificación de software.
+
+Práctica: en [`labs/hardware-tamper-defense`](../../../labs/hardware-tamper-defense/README.md), construye la política de recepción de ocho controles (reto 3) y clasifica cuáles detectan un implante, cuáles solo un reemplazo grosero y cuáles solo dejan trazabilidad.
+
 ## 📖 Definiciones y características
 
 - **Enumeración USB:** negociación por la que el host conoce descriptores y configura el dispositivo. Ocurre antes de que la aplicación use la interfaz.
@@ -133,6 +164,9 @@ En Windows, `%SystemRoot%\inf\SetupAPI.dev.log` registra operaciones de instalac
 | Marcador inocuo | Resultado preparado que prueba la acción sin acceder a datos reales. |
 | White cell | Equipo que conoce y controla el ejercicio, alcance y condiciones de parada. |
 | Restauración | Eliminación de cargas, credenciales, datos y cambios tras la prueba. |
+| Interdicción | Interceptación de un envío para modificarlo antes de la entrega. |
+| Evil maid | Acceso breve a un dispositivo desatendido para alterarlo y devolverlo. |
+| Trazabilidad | Capacidad de reconstruir quién tuvo un objeto y cuándo. |
 
 ## 🧰 Herramientas y preparación
 
@@ -213,6 +247,8 @@ La respuesta correcta no es etiquetarlo inmediatamente como Bash Bunny o LAN Tur
 4. Propón tres fuentes para investigar una nueva interfaz USB y especifica un falso positivo y un falso negativo por fuente.
 5. Modela una prueba de Packet Squirrel en modo puente sin Internet y define cómo demostrar que fue retirado.
 6. Redacta una decisión de contención que preserve evidencia sin dejar el endpoint conectado a una red dudosa.
+7. Elabora una política de recepción de ocho controles para un revendedor y clasifica cada control: ¿detecta un implante, solo un reemplazo grosero o únicamente deja trazabilidad?
+8. Explica por qué un dispositivo devuelto no debería reingresar a venta sin inspección y qué evidencia documentarías.
 
 ## 📝 Reto verificable
 
@@ -263,6 +299,8 @@ La práctica sin equipo permite evaluar interpretación de evidencia, selección
 | Confiar en el aspecto del cable | el implante conserva función aparente | compra controlada, inventario y puertos/cargadores adecuados |
 | Conectar evidencia a otro portátil | altera estado y puede ejecutar funciones | preservar y analizar en banco aislado con procedimiento |
 | Aplicar una política de bloqueo sin recuperación | puede dejar sin teclado o dock | ensayar en VM, permitir dispositivo conocido y documentar reversión |
+| «La caja y el sello están intactos, entonces el producto es el original» | los cierres pueden reproducirse o reabrirse | combinar canal autorizado, trazabilidad e inspección por muestreo |
+| Revender devoluciones tal cual | el siguiente comprador hereda una manipulación posible | inspección y reempaquetado controlado |
 
 ## ❓ Preguntas frecuentes
 
@@ -273,6 +311,10 @@ La práctica sin equipo permite evaluar interpretación de evidencia, selección
 **¿Se puede saber la marca por los logs?** A veces aparece un nombre o VID/PID consistente, pero son datos declarados. Se informa como indicio, no como atribución concluyente.
 
 **¿Qué significa controlar el equipo?** Administrarlo incluye firmware, configuración, acceso, respaldo y borrado. Controlar su riesgo significa impedir o detectar efectos no autorizados sobre el sistema. Son trabajos relacionados, pero diferentes.
+
+**¿Qué diferencia hay entre este tema y dejar un implante en una sala?** En una sala el dispositivo se despliega *en el entorno de la víctima*; en la cadena de distribución se altera *el producto* antes de que llegue. Cambia el momento, quién tiene acceso y qué control es eficaz.
+
+**¿Puede un red team probar esto?** Puede evaluar el proceso de recepción y la detección de un proveedor con autorización expresa y dispositivos propios. No debe alterar productos ajenos ni manipular activos de terceros.
 
 ## 🔗 Referencias verificables y alcance
 
@@ -288,6 +330,10 @@ La práctica sin equipo permite evaluar interpretación de evidencia, selección
 - Microsoft, [SetupAPI device installation log](https://learn.microsoft.com/windows-hardware/drivers/install/setupapi-device-installation-log-entries) y [Device Control](https://learn.microsoft.com/defender-endpoint/device-control-removable-storage-access-control) — fuentes y alcance; «removable storage» no cubre todo USB.
 - Hak5, [Packet Squirrel Mark II: networking and modes](https://docs.hak5.org/packet-squirrel-mark-ii/getting-started/networking-and-modes) — diferencias entre NAT, bridge, transparent, jail e isolate.
 - TOOOL, [recursos y código ético](https://toool.us/) — seguridad y práctica responsable en el componente de control de acceso físico; esta clase no enseña bypass de cerraduras.
+- MITRE ATT&CK, [T1195.003 — Compromise Hardware Supply Chain](https://attack.mitre.org/techniques/T1195/003/) — manipulación de hardware o firmware antes de la entrega; el encaje de casos concretos es interpretativo.
+- Ledger Donjon, [Device genuineness (threat model)](https://donjon.ledger.com/threat-model/device-genuineness/) — reconoce evil maid y cadena de suministro como amenazas y declara que los sellos no son fiables. Consultada el 10 de noviembre de 2026.
+- NIST, [SP 800-161 Rev. 1](https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final) — gestión de riesgos de cadena de suministro de TIC.
+- Laboratorio local [`hardware-tamper-defense`](../../../labs/hardware-tamper-defense/README.md).
 
 Fuentes consultadas el **6 de octubre de 2026**. Las páginas de fabricante respaldan funciones del modelo documentado, no eficacia universal ni disponibilidad futura.
 

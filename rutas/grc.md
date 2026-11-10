@@ -130,6 +130,21 @@ Refuerzo desde las Partes 0 y 11:
 - 🧩 [003 · Frameworks de seguridad: NIST CSF, ISO 27001, MITRE ATT&CK y Diamond Model](../classes/parte-0-fundamentos-y-prerrequisitos/003-frameworks-de-seguridad-nist-csf-iso-27001-mitre-att-ck-y-diamond-model/README.md) — el mapa de marcos, desde el primer día.
 - 🔗 [240 · SCA: dependencias y riesgo de terceros](../classes/parte-11-devsecops-y-seguridad-del-sdlc/240-sca-dependencias-y-riesgo-de-terceros/README.md) — riesgo de supply chain, gobernado desde el pipeline.
 
+### 🔧 Ampliación: manipulación física de hardware (Auditor de cadena de suministro y especialista en riesgo tecnológico)
+
+Auditas el recorrido de un producto, no solo su ficha técnica: canales autorizados, sellos numerados, devoluciones, derecho de auditoría y notificación de incidentes. Estimas riesgo con escenarios y no con totales que ninguna fuente respalda.
+
+Reutiliza estas clases, sin material nuevo que estudiar aparte:
+
+- [284 · Gestión de riesgo de terceros y proveedores](../classes/parte-14-grc-riesgo-y-cumplimiento/284-gestion-de-riesgo-de-terceros-y-proveedores/README.md)
+- [285 · Auditoría de seguridad](../classes/parte-14-grc-riesgo-y-cumplimiento/285-auditoria-de-seguridad/README.md)
+- [277 · Gestión de riesgos: cuantitativa y cualitativa](../classes/parte-14-grc-riesgo-y-cumplimiento/277-gestion-de-riesgos-cuantitativa-y-cualitativa/README.md)
+- [267 · Hacking de firmware](../classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md)
+
+Práctica: [`labs/hardware-tamper-defense`](../labs/hardware-tamper-defense/README.md) (datos ficticios, sin hardware ni secretos reales).
+
+**Evidencia de aprendizaje:** Lista de verificación de auditoría de un revendedor con evidencias solicitadas por control y una entrada de registro de riesgos con su escenario de estrés.
+
 ## 🎓 Certificaciones
 
 Con archivo en el programa (enlazan a su ficha):

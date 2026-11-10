@@ -153,6 +153,22 @@ distingue el evento desencadenante de la debilidad que permitió el impacto. Pra
 La [matriz de responsabilidades CaaS](../docs/cybercrime-as-a-service.md#modelo-operativo-y-responsabilidades-por-rol)
 separa el trabajo forense del contexto CTI y de la decisión de continuidad.
 
+### 🔧 Ampliación: manipulación física de hardware (Especialista DFIR)
+
+Cuando el objeto a investigar es un dispositivo físico, la evidencia es el propio hardware y su recorrido. Aprendes a preservarlo cerrado, aislarlo de radiofrecuencia sin energizarlo, registrar cada manipulación en una cadena de custodia verificable y redactar conclusiones como «compatible con», separando hechos de hipótesis.
+
+Reutiliza estas clases, sin material nuevo que estudiar aparte:
+
+- [267 · Hacking de firmware](../classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md)
+- [268 · Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md)
+- [312 · Retención, destrucción segura de datos y DLP](../classes/parte-17-profundizacion-para-certificaciones/312-retencion-destruccion-segura-de-datos-y-dlp/README.md)
+- [216 · Contención, erradicación y recuperación](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/216-contencion-erradicacion-y-recuperacion/README.md)
+- [218 · Reporte forense y aspectos legales](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/218-reporte-forense-y-aspectos-legales/README.md)
+
+Práctica: [`labs/hardware-tamper-defense`](../labs/hardware-tamper-defense/README.md) (datos ficticios, sin hardware ni secretos reales).
+
+**Evidencia de aprendizaje:** Informe forense de la MUESTRA-B del laboratorio con cadena de custodia encadenada, tres veredictos independientes (autenticidad, integridad física, custodia) y límites explícitos.
+
 ## 🎓 Certificaciones
 
 Con archivo en el programa (mapean a partes concretas):

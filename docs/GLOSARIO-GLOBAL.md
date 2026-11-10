@@ -8,7 +8,7 @@ el generador; la modalidad y disponibilidad pueden cambiar en sus sitios oficial
 > **Archivo generado.** No lo edites a mano. Ejecuta
 > `python scripts/generar_glosario_global.py` y valida con `--check`.
 
-**Cobertura:** 2604 términos consolidados · 355 clases con glosario.
+**Cobertura:** 2613 términos consolidados · 355 clases con glosario.
 
 ## Cómo usarlo
 
@@ -1073,9 +1073,9 @@ Condiciones de despliegue que hacen posible el ataque en v4.0
 
 ### Attestation
 
-Declaración firmable sobre una propiedad o proceso.
+Prueba por desafío y respuesta de que un componente posee una clave certificada por el fabricante.
 
-**Aparece en 1 clase(s):** [Clase 246 — Supply chain security: SBOM y SLSA](../classes/parte-11-devsecops-y-seguridad-del-sdlc/246-supply-chain-security-sbom-y-slsa/README.md).
+**Aparece en 2 clase(s):** [Clase 246 — Supply chain security: SBOM y SLSA](../classes/parte-11-devsecops-y-seguridad-del-sdlc/246-supply-chain-security-sbom-y-slsa/README.md), [Clase 267 — Hacking de firmware](../classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md).
 
 ### Audiencia
 
@@ -1589,6 +1589,12 @@ Acceder a datos de otro navegando relaciones
 
 **Aparece en 1 clase(s):** [Clase 111 — Seguridad de APIs GraphQL](../classes/parte-4-seguridad-de-aplicaciones-web/111-seguridad-de-apis-graphql/README.md).
 
+### BOM de referencia
+
+Lista de componentes esperados de un ejemplar de origen conocido; sirve para detectar lo que sobra.
+
+**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
+
 ### Booleana
 
 Deducir datos por la diferencia entre condición verdadera y falsa
@@ -1944,6 +1950,12 @@ Acceso, lateral, exfiltración y cifrado final
 Recorrido de firmas desde el certificado hasta una raíz
 
 **Aparece en 1 clase(s):** [Clase 55 — PKI, certificados X.509 y autoridades de certificación](../classes/parte-2-criptografia-aplicada/055-pki-certificados-x-509-y-autoridades-de-certificacion/README.md).
+
+### Cadena de custodia
+
+Registro continuo de quién tuvo el objeto y en qué estado.
+
+**Aparece en 2 clase(s):** [Clase 267 — Hacking de firmware](../classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md), [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
 
 ### Cadena de entrega
 
@@ -5487,6 +5499,12 @@ Registro de la orden exacta que produjo cada hallazgo
 
 **Aparece en 2 clase(s):** [Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP](../classes/parte-3-hacking-etico-y-pentesting-metodologia/070-enumeracion-smb-snmp-smtp-y-ldap/README.md), [Clase 85 — Reporte profesional de pentest](../classes/parte-3-hacking-etico-y-pentesting-metodologia/085-reporte-profesional-de-pentest/README.md).
 
+### Evil maid
+
+Acceso breve a un dispositivo desatendido para alterarlo y devolverlo.
+
+**Aparece en 2 clase(s):** [Clase 177 — Red teaming físico](../classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md), [Clase 267 — Hacking de firmware](../classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md).
+
 ### Evil twin
 
 AP falso que imita un SSID legítimo para captar clientes
@@ -7314,6 +7332,12 @@ Pausar una petición para modificarla antes de enviarla
 Ver y modificar argumentos y retorno en caliente
 
 **Aparece en 1 clase(s):** [Clase 134 — Análisis dinámico y debugging de binarios](../classes/parte-5-explotacion-de-sistemas-y-binarios/134-analisis-dinamico-y-debugging-de-binarios/README.md).
+
+### Interdicción
+
+Interceptación de un envío para modificarlo antes de la entrega.
+
+**Aparece en 2 clase(s):** [Clase 177 — Red teaming físico](../classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md), [Clase 267 — Hacking de firmware](../classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md).
 
 ### Interfaz
 
@@ -11459,6 +11483,12 @@ Estimación de dirección con antenas y método apropiados.
 
 **Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR) e investigación de interferencias](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
 
+### Radiografía (rayos X)
+
+Imagen interna que permite ver componentes ocultos sin abrir el dispositivo.
+
+**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
+
 ### Radiotap
 
 Metadatos de captura como canal, tasa y RSSI aportados por el driver.
@@ -12913,6 +12943,12 @@ Construir software seguro por diseño, no por parche
 
 **Aparece en 1 clase(s):** [Clase 115 — Secure coding y defensa de aplicaciones web](../classes/parte-4-seguridad-de-aplicaciones-web/115-secure-coding-y-defensa-de-aplicaciones-web/README.md).
 
+### Secure element
+
+Chip que guarda claves y firma sin revelarlas, con protecciones físicas propias.
+
+**Aparece en 1 clase(s):** [Clase 267 — Hacking de firmware](../classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md).
+
 ### Security champion
 
 Miembro del equipo que facilita prácticas y conexión con especialistas.
@@ -13472,6 +13508,12 @@ Protocolo de compartición de Windows; muy rico en datos
 Dialecto obsoleto e inseguro; su presencia ya es un hallazgo
 
 **Aparece en 2 clase(s):** [Clase 33 — Enumeración de servicios de red](../classes/parte-1-redes-y-seguridad-de-redes/033-enumeracion-de-servicios-de-red/README.md), [Clase 70 — Enumeración: SMB, SNMP, SMTP y LDAP](../classes/parte-3-hacking-etico-y-pentesting-metodologia/070-enumeracion-smb-snmp-smtp-y-ldap/README.md).
+
+### SMD
+
+Componente de montaje superficial, soldado directamente sobre la placa.
+
+**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
 
 ### SMEP
 
@@ -14257,6 +14299,12 @@ Los enteros no representan cualquier valor
 
 **Aparece en 1 clase(s):** [Clase 128 — Integer overflows y errores aritméticos](../classes/parte-5-explotacion-de-sistemas-y-binarios/128-integer-overflows-y-errores-aritmeticos/README.md).
 
+### Tamper-evident
+
+Diseño que deja evidencia de apertura; no impide la apertura.
+
+**Aparece en 1 clase(s):** [Clase 267 — Hacking de firmware](../classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md).
+
 ### Tamper script (--tamper)
 
 Transforma payloads para evadir un WAF
@@ -14473,6 +14521,12 @@ Comparación que no depende de dónde falla la coincidencia
 
 **Aparece en 2 clase(s):** [Clase 48 — Cifrado de flujo: ChaCha20 y por qué evitar RC4](../classes/parte-2-criptografia-aplicada/048-cifrado-de-flujo-chacha20-y-por-que-evitar-rc4/README.md), [Clase 52 — HMAC y autenticación de mensajes](../classes/parte-2-criptografia-aplicada/052-hmac-y-autenticacion-de-mensajes/README.md).
 
+### Tiempo de subida
+
+Duración del flanco de una señal; crece con la carga conectada a la línea.
+
+**Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
+
 ### Tier
 
 Nivel de madurez del proceso de gestión de riesgo (1 a 4)
@@ -14651,7 +14705,7 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 
 Capacidad de reconstruir de dónde sale cada dato y cada decisión
 
-**Aparece en 2 clase(s):** [Clase 85 — Reporte profesional de pentest](../classes/parte-3-hacking-etico-y-pentesting-metodologia/085-reporte-profesional-de-pentest/README.md), [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
+**Aparece en 3 clase(s):** [Clase 85 — Reporte profesional de pentest](../classes/parte-3-hacking-etico-y-pentesting-metodologia/085-reporte-profesional-de-pentest/README.md), [Clase 177 — Red teaming físico](../classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md), [Clase 370 — Ciclo completo: de la debilidad a la corrección verificada](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
 
 ### Triage
 

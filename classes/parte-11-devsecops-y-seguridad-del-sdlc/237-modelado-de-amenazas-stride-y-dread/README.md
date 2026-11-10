@@ -190,6 +190,8 @@ Sirve para observar los problemas de un puntaje subjetivo. En un modelo real con
 **❓ ¿Puedo automatizar el modelado de amenazas?**
 Parcialmente. Herramientas como pytm generan amenazas candidatas a partir del modelo, pero el juicio experto sobre contexto y priorización sigue siendo humano.
 
+> 🔗 **Conexión con la manipulación física de hardware — Parte 11 · Modelado de amenazas.** STRIDE también aplica a un objeto físico: la clase 267 lo usa sobre un dispositivo de custodia (suplantación del dispositivo, alteración de la placa, divulgación por el bus de pantalla) y muestra qué filas cubre un control de software y cuáles no.
+
 ## 🔗 Referencias
 
 - Adam Shostack, *Threat Modeling: Designing for Security*, Wiley 2014.

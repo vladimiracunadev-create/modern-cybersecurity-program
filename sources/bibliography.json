@@ -13253,6 +13253,7 @@
     "classes/parte-12-osint-e-ingenieria-social/256-fundamentos-de-ingenieria-social/README.md",
     "classes/parte-12-osint-e-ingenieria-social/257-pretexting-y-vishing/README.md",
     "classes/parte-12-osint-e-ingenieria-social/258-campanas-de-phishing-con-gophish/README.md",
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md",
     "classes/parte-13-seguridad-movil-iot-e-inalambrica/273-seguridad-de-sistemas-de-control-industrial-ics-scada/README.md",
     "classes/parte-16-capstones-y-preparacion-de-certificaciones/305-capstone-operacion-red-team-end-to-end/README.md",
     "classes/parte-16-capstones-y-preparacion-de-certificaciones/306-capstone-deteccion-blue-team-end-to-end/README.md",
@@ -14125,7 +14126,9 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
-    "classes/parte-14-grc-riesgo-y-cumplimiento/284-gestion-de-riesgo-de-terceros-y-proveedores/README.md"
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md",
+    "classes/parte-14-grc-riesgo-y-cumplimiento/284-gestion-de-riesgo-de-terceros-y-proveedores/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md"
    ],
    "authors": [],
    "vigencia": "retirada"
@@ -18467,6 +18470,142 @@
    "accessed": "2026-11-10",
    "used_in": [
     "classes/parte-15-seguridad-de-ia-y-machine-learning/295-owasp-top-10-para-aplicaciones-con-llm/README.md"
+   ]
+  },
+  {
+   "id": "ledger-donjon-device-genuineness",
+   "type": "reference",
+   "title": "Ledger Donjon — Device genuineness (threat model)",
+   "authors": [
+    "Ledger Donjon"
+   ],
+   "locator": "https://donjon.ledger.com/threat-model/device-genuineness/",
+   "authority": "Ledger",
+   "status": "verificada",
+   "notes": "Consultada el 2026-11-10: Genuine Check verifica el secure element por attestation; declara que no detecta modificaciones fisicas ni verifica el historial de la cadena de suministro; sellos no fiables.",
+   "matches": {
+    "url_prefixes": [
+     "https://donjon.ledger.com/threat-model/device-genuineness/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-10",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md",
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md"
+   ]
+  },
+  {
+   "id": "cryptoslate-ledger-implant-2026",
+   "type": "reference",
+   "title": "Ledger confirms hidden implant in crypto wallet as theft investigation widens",
+   "authors": [
+    "CryptoSlate"
+   ],
+   "locator": "https://cryptoslate.com/ledger-confirms-hidden-implant-in-crypto-wallet-as-93-million-theft-investigation-widens/",
+   "authority": "CryptoSlate",
+   "status": "verificada",
+   "notes": "Fuente SECUNDARIA consultada el 2026-11-10: fechas, cifras de terceros (Galaxy Digital, Bitquery) y descripcion atribuida a Tibane Labs. No se usa para hechos que la fuente primaria no confirme.",
+   "matches": {
+    "url_prefixes": [
+     "https://cryptoslate.com/ledger-confirms-hidden-implant-in-crypto-wallet-as-93-million-theft-investigation-widens/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-10",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md"
+   ]
+  },
+  {
+   "id": "tibane-ledger-nano-x-implant",
+   "type": "reference",
+   "title": "Tibane Labs — Ledger Nano X implant research",
+   "authors": [
+    "Tibane Labs"
+   ],
+   "locator": "https://www.tibane.net/research/ledger-nano-x-implant",
+   "authority": "Tibane Labs",
+   "status": "pendiente",
+   "notes": "Fuente primaria NO verificada: la pagina solo devolvio su titulo el 2026-11-10. Sus afirmaciones se citan unicamente via prensa secundaria y se marcan asi en la clase 267.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.tibane.net/research/ledger-nano-x-implant"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-10",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md"
+   ]
+  },
+  {
+   "id": "mitre-attack-t1195-003",
+   "type": "reference",
+   "title": "MITRE ATT&CK — T1195.003 Compromise Hardware Supply Chain",
+   "authors": [
+    "MITRE"
+   ],
+   "locator": "https://attack.mitre.org/techniques/T1195/003/",
+   "authority": "MITRE",
+   "status": "verificada",
+   "notes": "Consultada el 2026-11-10: version 1.1, modificada el 2025-10-24. Tactica Initial Access. El encaje del caso Ledger es interpretativo.",
+   "matches": {
+    "url_prefixes": [
+     "https://attack.mitre.org/techniques/T1195/003/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-10",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md",
+    "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md"
+   ]
+  },
+  {
+   "id": "nist-sp-800-193",
+   "type": "reference",
+   "title": "NIST SP 800-193 — Platform Firmware Resiliency Guidelines",
+   "authors": [
+    "NIST"
+   ],
+   "locator": "https://csrc.nist.gov/pubs/sp/800/193/final",
+   "authority": "NIST",
+   "status": "verificada",
+   "notes": "Consultada el 2026-11-10: version final de mayo de 2018; proteccion, deteccion y recuperacion del firmware de plataforma.",
+   "matches": {
+    "url_prefixes": [
+     "https://csrc.nist.gov/pubs/sp/800/193/final"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-10",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md",
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md"
+   ]
+  },
+  {
+   "id": "nist-ir-8276",
+   "type": "reference",
+   "title": "NIST IR 8276 — Key Practices in Cyber Supply Chain Risk Management",
+   "authors": [
+    "NIST"
+   ],
+   "locator": "https://csrc.nist.gov/pubs/ir/8276/final",
+   "authority": "NIST",
+   "status": "verificada",
+   "notes": "Consultada el 2026-11-10: version final de febrero de 2021.",
+   "matches": {
+    "url_prefixes": [
+     "https://csrc.nist.gov/pubs/ir/8276/final"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-10",
+   "used_in": [
+    "classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md"
    ]
   }
  ]

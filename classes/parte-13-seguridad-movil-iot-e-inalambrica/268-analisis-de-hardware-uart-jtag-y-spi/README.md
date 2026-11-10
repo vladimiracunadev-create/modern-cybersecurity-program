@@ -21,6 +21,8 @@ Al finalizar, el alumno podrá:
 6. **Explicar** qué prueba una consola, un IDCODE, una traza o un volcado y qué permanece incierto.
 7. **Administrar** firmware de sondas y respaldos sin mezclar herramientas, evidencia y secretos.
 8. **Relacionar** depuración y firmware con controles de producción, respuesta y especialización en canales laterales.
+9. **Comparar** una placa inspeccionada con una referencia y clasificar cada diferencia como reparación, cambio de lote o componente añadido, sin concluir por apariencia.
+10. **Combinar** inspección visual, imagen interna y medidas eléctricas para formular hipótesis «compatible con», y **preservar** un dispositivo sospechoso con cadena de custodia.
 
 ## 🗺️ Temas
 
@@ -34,6 +36,9 @@ Al finalizar, el alumno podrá:
 | 6 | SPI y flashrom | Adquirir firmware de modo reproducible |
 | 7 | Protección de producción | Equilibrar bloqueo, fabricación y recuperación |
 | 8 | Canales laterales y fallos | Ubicar ChipWhisperer como especialización, no atajo |
+| 9 | PCB, componentes SMD y buses como sistema de confianza | Entender por qué lo que viaja por un bus lo ve cualquier componente conectado |
+| 10 | Detección de electrónica añadida | Inspección comparada, radiografía, microscopía y medidas eléctricas con sus límites |
+| 11 | Anti-tamper y preservación de evidencia | Qué protegen los sellos y cómo conservar un dispositivo sospechoso |
 
 ## 🧠 Explicación en profundidad
 
@@ -102,6 +107,30 @@ En un incidente de laboratorio, desconectar inmediatamente puede destruir estado
 
 En producto, los indicadores posibles son sellos alterados, soldadura o marcas en test points, cambios de boot, lectura de fusibles, logs de mantenimiento y firmware no firmado. Su ausencia no demuestra que no hubo acceso. La respuesta combina inspección, verificación criptográfica del software, rotación de secretos si pudieron exponerse y revisión del proceso de fabricación/servicio.
 
+### Anatomía física de un dispositivo: leer una placa como un sistema de confianza
+
+Una placa de circuito impreso (**PCB**) conecta componentes de montaje superficial (**SMD**) mediante pistas de cobre en varias capas. Para el análisis de seguridad conviene leerla como un **sistema de confianza**: qué componente guarda secretos, cuál ejecuta código, cuál muestra información al usuario y por dónde viaja cada dato. En un dispositivo de custodia típico hay un **microcontrolador** que ejecuta la aplicación, un **secure element** que guarda las claves y firma, una **memoria** para firmware y datos, una **pantalla** que es el canal por el que la persona verifica lo que firma, una **batería** y un conector. Los buses que los unen (**SPI**, **I2C**, **UART**) son canales de comunicación sin cifrar por diseño: lo que viaja por ellos lo ve cualquier componente conectado a la misma línea.
+
+Esa última frase explica la clase de riesgo de esta sección. Si el secure element entrega al resto del dispositivo algo que luego se muestra al usuario, ese contenido recorre un bus compartido hasta la pantalla. Protegerlo dentro del chip no protege su camino de salida. El caso Ledger de octubre de 2026 (clase 267) se apoya justo en eso: un observador añadido junto a la pantalla ve lo que ve el usuario.
+
+### Detectar electrónica añadida: tres familias de comprobación
+
+1. **Inspección visual y comparada.** Se compara el dispositivo con un **ejemplar de referencia** de origen conocido: componentes presentes, posiciones, marcados, color y brillo de la soldadura, restos de flux, cintas o adhesivos, cable flexible no previsto bajo la pantalla, batería distinta. La comparación es mucho más fiable que «mirar a ver si algo se ve raro», porque sin referencia no hay forma de saber qué sobra. Limitación: un lote de fabricación legítimo puede cambiar proveedor de pantalla o soldadura (la muestra C del laboratorio), así que **una diferencia no es todavía un implante**.
+2. **Imagen interna.** La **radiografía** (rayos X) permite ver componentes y pistas ocultos bajo módulos o cubiertas sin abrir el dispositivo, y comparar su silueta con la referencia; la **microscopía** estudia marcados, soldaduras y rasguños de herramientas. Ambas requieren equipo y personal cualificado, y no sustituyen la identificación del componente: una forma extra en la imagen es una hipótesis que se confirma retirando y analizando la pieza con el consentimiento del propietario. La inspección destructiva se hace **la última**, tras fotografiarlo todo.
+3. **Medidas eléctricas.** Un componente añadido puede cambiar el **consumo** (una radio celular produce ráfagas periódicas al registrarse en la red), la **carga** de un bus (un nodo extra aumenta la capacitancia y alarga el flanco de la señal) o la **emisión de radiofrecuencia**. Son indicios compatibles, no pruebas: una ráfaga puede ser una radio legítima y un flanco lento puede venir de la sonda. En el laboratorio se separan con una duración mínima, un patrón periódico y una referencia medida con el mismo montaje.
+
+**Por qué ninguna sola basta.** Un implante bien diseñado puede apagarse, agruparse en ventanas de actividad o ir bajo un flex que la inspección visual no ve; la radiografía puede no distinguir una pieza sin marcado de un componente legítimo; la medida eléctrica depende del montaje. Se combinan, y la conclusión se redacta como **«compatible con»** y no como «es».
+
+### Anti-tamper y evidencia de manipulación
+
+Las medidas de hardware se agrupan en tres niveles: **tamper-evident** (deja evidencia, como un sello), **tamper-resistant** (dificulta el acceso físico) y **tamper-responsive** (reacciona, por ejemplo borrando claves). Ayudan a proteger lo que está *dentro* del chip protegido, pero no lo que sale de él hacia otros componentes. Un sello holográfico informa solo si alguien lo inspecciona y no se puede reproducir; Ledger declara que los sellos no son una protección fiable porque pueden clonarse o abrirse y cerrarse sin rastro. La conclusión práctica: el sello se usa como **trazabilidad**, no como garantía de integridad.
+
+### Preservación de evidencia de un dispositivo sospechoso
+
+Se trabaja como en cualquier adquisición forense (clases 201 y 312), con particularidades físicas. **Fotografía el dispositivo cerrado**, con escala y número de sello, antes de tocarlo. **No lo energices** hasta decidir cómo preservarlo: si lleva una radio, puede transmitir o recibir órdenes y un reinicio puede alterar el estado. **Aíslalo de radiofrecuencia** en lugar de apagarlo, y documenta cómo. Etiqueta, registra cada manipulación como un eslabón de la cadena de custodia y conserva el embalaje original, porque también es evidencia. Hacer visible la edición posterior del registro con una cadena de hashes aporta integridad del *registro*, no veracidad de su contenido. La apertura y las imágenes las hace personal cualificado con autorización del propietario: no se abren dispositivos de terceros por curiosidad.
+
+Práctica: [`labs/hardware-tamper-defense`](../../../labs/hardware-tamper-defense/README.md) reproduce la comparación de placa, el análisis de un bus simulado con texto ficticio, la búsqueda de ráfagas de consumo, la cadena de custodia y el informe, con tres muestras ficticias. No contiene captura de secretos reales ni código de implante.
+
 ## 📖 Definiciones y características
 
 - **UART:** enlace serie asíncrono; una consola puede ser solo salida, interactiva o autenticada.
@@ -128,6 +157,11 @@ En producto, los indicadores posibles son sellos alterados, soldadura o marcas e
 | OpenOCD | Software de depuración que coordina sonda y target configurados. |
 | flashrom | Herramienta para identificar, leer, verificar y escribir flash compatible. |
 | ESD | Descarga electrostática capaz de dañar componentes. |
+| BOM de referencia | Lista de componentes esperados de un ejemplar de origen conocido; sirve para detectar lo que sobra. |
+| SMD | Componente de montaje superficial, soldado directamente sobre la placa. |
+| Radiografía (rayos X) | Imagen interna que permite ver componentes ocultos sin abrir el dispositivo. |
+| Tiempo de subida | Duración del flanco de una señal; crece con la carga conectada a la línea. |
+| Cadena de custodia | Registro continuo de quién tuvo el objeto y en qué estado. |
 
 ## ✅ Criterio de dominio
 
@@ -189,6 +223,10 @@ No copies literalmente `<sonda>`, `<mcu-exacto>` ni `<programador>`: son marcado
 4. Diseña un control de producción que deshabilite debug sin impedir recuperación autorizada.
 5. Ante dos volcados diferentes en 37 bytes, plantea un diagnóstico eléctrico antes de interpretar firmware.
 6. Define los prerrequisitos que faltan antes de iniciar un laboratorio ChipWhisperer.
+7. Ejecuta `labs/hardware-tamper-defense` y justifica por qué la muestra C no se clasifica como implante aunque difiera de la referencia.
+8. Explica por qué un flanco más lento en un bus es un indicio y no una prueba. Nombra dos causas ajenas a un implante.
+9. Diseña el procedimiento de recepción de un dispositivo sospechoso: qué fotografías, qué registro y qué no hacer antes de aislarlo.
+10. Compara radiografía, microscopía y medida de consumo: qué detecta cada una, qué no y cuál harías primero.
 
 ## 📝 Reto verificable
 
@@ -206,6 +244,9 @@ Entrega un cuaderno de banco con fotos, hipótesis, medidas, pinout, parámetros
 | Hashes SPI difieren | contacto, alimentación o contención | detener análisis y corregir banco |
 | El DUT deja de arrancar | alimentación o escritura accidental | cortar energía, preservar estado y seguir plan de recuperación |
 | «JTAG presente = memoria extraíble» | confunde interfaz con autorización/capacidad | probar solo operaciones de identificación permitidas |
+| Concluir «implante» por una diferencia visual | puede ser un cambio de lote o una reparación | comparar con referencia y orden de servicio; formular «compatible con» |
+| Encender el dispositivo sospechoso «para ver qué hace» | una radio puede transmitir y el estado puede cambiar | fotografiar cerrado, aislar de radiofrecuencia y planificar |
+| Considerar probado un cambio de consumo | puede ser una radio legítima o el montaje | exigir duración, periodicidad y referencia medida igual |
 
 ## ❓ Preguntas frecuentes
 
@@ -216,6 +257,12 @@ Entrega un cuaderno de banco con fotos, hipótesis, medidas, pinout, parámetros
 **¿Bus Pirate reemplaza todo el banco?** No. Integra muchas funciones de baja velocidad, pero multímetro, analizador dedicado y sonda de depuración responden preguntas distintas.
 
 **¿ChipWhisperer prueba que una implementación es insegura?** Una práctica sobre un target educativo demuestra un fenómeno bajo condiciones concretas. Evaluar un producto exige modelo de amenaza, repetibilidad, parámetros y contramedidas.
+
+**¿Basta un sello para saber si abrieron un dispositivo?** No: un sello deja evidencia solo si alguien lo inspecciona y no se puede reproducir. Sirve como trazabilidad.
+
+**¿Los rayos X prueban que hay un implante?** Muestran siluetas; una pieza extra es una hipótesis que se confirma identificándola, normalmente con apertura cualificada y consentimiento del propietario.
+
+**¿Puedo abrir el dispositivo de un tercero para comprobarlo?** No sin su autorización; además puede alterar evidencia y contener datos personales.
 
 ## 🔗 Referencias verificables y alcance
 
@@ -229,6 +276,9 @@ Entrega un cuaderno de banco con fotos, hipótesis, medidas, pinout, parámetros
 - NIST, [IR 8259A](https://csrc.nist.gov/pubs/ir/8259/a/final) — capacidades de ciberseguridad que el fabricante debe considerar en dispositivos IoT.
 - Woudenberg y O'Flynn, *The Hardware Hacking Handbook* (ISBN 9781593278755) — método experimental y contexto de ataques físicos; se contrasta con datasheets y documentación del instrumento.
 - Grand Idea Studio, [JTAGulator](https://www.grandideastudio.com/portfolio/security/jtagulator/) — ejemplo de instrumento para identificación de pinout; no reemplaza la medición eléctrica previa.
+- Ledger Donjon, [Device genuineness (threat model)](https://donjon.ledger.com/threat-model/device-genuineness/) — límites de la attestation frente a modificaciones físicas y sellos. Consultada el 10 de noviembre de 2026.
+- NIST, [SP 800-193](https://csrc.nist.gov/pubs/sp/800/193/final) — protección, detección y recuperación del firmware de plataforma.
+- Laboratorio local [`hardware-tamper-defense`](../../../labs/hardware-tamper-defense/README.md) — comparación de placa, bus simulado, consumo, custodia e informe con datos ficticios.
 
 Fuentes consultadas el **6 de octubre de 2026**. Los comandos deben adaptarse al chip, sonda, revisión y documentación de cada banco.
 

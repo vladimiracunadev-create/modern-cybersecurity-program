@@ -181,6 +181,8 @@ Un binario legítimo del sistema (PowerShell, certutil, rundll32…) usado con f
 **❓ ¿Puedo recuperar algo tras un wipe en SSD?**
 Difícil por TRIM, pero busca en shadow copies, backups, journal, memoria y logs externos.
 
+> 🔗 **Conexión con la manipulación física de hardware — Parte 9 · Anti-forense.** Un dispositivo manipulado también esconde su evidencia: el implante no deja huellas en discos ni registros del usuario, y reiniciarlo no lo elimina. La clase 268 explica cómo conservar y examinar un dispositivo físico sospechoso, y el laboratorio [`hardware-tamper-defense`](../../../labs/hardware-tamper-defense/README.md) practica la cadena de custodia con hashes encadenados.
+
 ## 🔗 Referencias verificables y alcance
 
 - **MITRE ATT&CK T1070 — Indicator Removal:** <https://attack.mitre.org/techniques/T1070/> — catálogo de comportamientos observados y mitigaciones; no prueba que una anomalía concreta sea adversaria.

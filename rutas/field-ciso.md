@@ -314,6 +314,21 @@ capstone no está aprobado.
 9. ¿Qué carencia de tu producto actual llevarías tú mismo a la hoja de ruta y con qué argumento?
 10. ¿Cuándo has cambiado de opinión por lo que te dijo un cliente?
 
+### 🔧 Ampliación: manipulación física de hardware (Field CISO)
+
+Ante clientes y comités debes explicar con claridad por qué un dispositivo auténtico puede no ser seguro, qué preguntas hacer a un proveedor y qué responder cuando una verificación de software parece tranquilizadora.
+
+Reutiliza estas clases, sin material nuevo que estudiar aparte:
+
+- [284 · Gestión de riesgo de terceros y proveedores](../classes/parte-14-grc-riesgo-y-cumplimiento/284-gestion-de-riesgo-de-terceros-y-proveedores/README.md)
+- [267 · Hacking de firmware](../classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md)
+- [219 · Ejercicios de mesa (tabletop)](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md)
+- [215 · Playbooks de respuesta a incidentes](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/215-playbooks-de-respuesta-a-incidentes/README.md)
+
+Práctica: [`labs/hardware-tamper-defense`](../labs/hardware-tamper-defense/README.md) (datos ficticios, sin hardware ni secretos reales).
+
+**Evidencia de aprendizaje:** Guion de una página para un comité: qué demuestra y qué no una attestation, qué evidencias pedir a un proveedor y cómo se ve una respuesta defendible.
+
 ## 🎓 Certificaciones
 
 Ninguna certificación te da este puesto: te lo da la trayectoria y la capacidad de conversación.

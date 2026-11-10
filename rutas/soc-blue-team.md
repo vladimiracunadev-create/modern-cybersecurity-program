@@ -156,6 +156,21 @@ al proveedor y medir recuperación; la IP de origen o la etiqueta T1498 no basta
 La [matriz de responsabilidades CaaS](../docs/cybercrime-as-a-service.md#modelo-operativo-y-responsabilidades-por-rol)
 delimita la entrega hacia CTI, SecOps, infraestructura y DFIR.
 
+### 🔧 Ampliación: manipulación física de hardware (Analista SOC)
+
+Un incidente de hardware no genera alertas en tus endpoints: llega como reclamaciones de usuarios, patrones de transferencias o avisos del fabricante. Aprendes a reconocer qué fuentes de señal existen, a no confundir un compromiso de hardware con uno de firmware o de servidores, y a escalar con los hechos que sí tienes.
+
+Reutiliza estas clases, sin material nuevo que estudiar aparte:
+
+- [267 · Hacking de firmware](../classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md)
+- [215 · Playbooks de respuesta a incidentes](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/215-playbooks-de-respuesta-a-incidentes/README.md)
+- [199 · Ingeniería de detección como disciplina](../classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md)
+- [181 · El SOC moderno: roles, niveles y procesos](../classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md)
+
+Práctica: [`labs/hardware-tamper-defense`](../labs/hardware-tamper-defense/README.md) (datos ficticios, sin hardware ni secretos reales).
+
+**Evidencia de aprendizaje:** Nota de triaje de un caso de dispositivo sospechoso: qué se sabe, qué no, a quién se escala y qué se pide al usuario (no inicializar, conservar el embalaje).
+
 ## 🎓 Certificaciones
 
 Con archivo en el programa (mapean a partes concretas):

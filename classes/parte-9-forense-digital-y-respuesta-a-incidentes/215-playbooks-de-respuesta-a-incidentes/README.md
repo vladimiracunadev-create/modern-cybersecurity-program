@@ -165,6 +165,8 @@ No. Automatiza lo repetible (enriquecer IOCs, bloquear, notificar) para que el a
 **❓ ¿Cómo evito que caduquen?**
 Revísalos tras cada incidente y en las lecciones aprendidas; un playbook es un documento vivo.
 
+> 🔗 **Conexión con la manipulación física de hardware — Parte 9 · Playbooks.** Un playbook de manipulación física de hardware tiene pasos propios: no energizar, aislar de radiofrecuencia, fotografiar cerrado, rotar el secreto en un dispositivo de confianza y comunicar con claridad qué se sabe y qué no. El caso de la clase 267 y el laboratorio [`hardware-tamper-defense`](../../../labs/hardware-tamper-defense/README.md) lo ejemplifican.
+
 ## 🔗 Referencias verificables y alcance
 
 - **NIST SP 800-61 Rev. 3:** <https://doi.org/10.6028/NIST.SP.800-61r3> — recomendaciones actuales que integran respuesta a incidentes con CSF 2.0; reemplaza Rev. 2.

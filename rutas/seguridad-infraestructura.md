@@ -206,6 +206,21 @@ ISP, capacidad, runbook y prueba; documenta qué controla tu perímetro y qué d
 La [matriz de responsabilidades CaaS](../docs/cybercrime-as-a-service.md#modelo-operativo-y-responsabilidades-por-rol)
 explicita las fronteras con SOC, SecOps, CTI, DFIR y dirección.
 
+### 🔧 Ampliación: manipulación física de hardware (Arquitecto de seguridad)
+
+Diseñas con la idea de que la confianza en un componente no se extiende a su entorno: modelas amenazas físicas con STRIDE, distingues la cadena de suministro de software de la de hardware y decides qué canales de compra, inspecciones y registros exigir.
+
+Reutiliza estas clases, sin material nuevo que estudiar aparte:
+
+- [237 · Modelado de amenazas: STRIDE y DREAD](../classes/parte-11-devsecops-y-seguridad-del-sdlc/237-modelado-de-amenazas-stride-y-dread/README.md)
+- [246 · Supply chain security: SBOM y SLSA](../classes/parte-11-devsecops-y-seguridad-del-sdlc/246-supply-chain-security-sbom-y-slsa/README.md)
+- [267 · Hacking de firmware](../classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md)
+- [316 · Modelos de seguridad y arquitectura (Bell-LaPadula, Biba, Clark-Wilson)](../classes/parte-17-profundizacion-para-certificaciones/316-modelos-de-seguridad-y-arquitectura/README.md)
+
+Práctica: [`labs/hardware-tamper-defense`](../labs/hardware-tamper-defense/README.md) (datos ficticios, sin hardware ni secretos reales).
+
+**Evidencia de aprendizaje:** Modelo de amenazas STRIDE de un dispositivo de custodia con los controles preventivos, detectivos y correctivos asignados, y la justificación de qué cubre cada uno.
+
 ## 🎓 Certificaciones
 
 Con archivo en el programa (mapean a partes concretas):

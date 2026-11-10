@@ -136,6 +136,8 @@ Cuando aparece una vulnerabilidad en una librería (Log4Shell), el SBOM te dice 
 **❓ ¿Soy responsable de una brecha en mi proveedor?**
 Ante GDPR sigues siendo responsable de los datos que le confías. Por eso exiges cláusulas, auditoría y notificación rápida.
 
+> 🔗 **Conexión con la manipulación física de hardware — Parte 14 · Terceros.** La auditoría de un revendedor o distribuidor de hardware pide más que un cuestionario: canales autorizados, sellos numerados, política de devoluciones, derecho de auditoría y notificación de incidentes con plazo. La clase 267 enumera esos controles y el laboratorio [`hardware-tamper-defense`](../../../labs/hardware-tamper-defense/README.md) los verifica con datos ficticios.
+
 ## 🔗 Referencias
 
 - NIST SP 800-161 Rev.1 — Supply Chain Risk Management. <https://csrc.nist.gov/pubs/sp/800/161/r1/final>

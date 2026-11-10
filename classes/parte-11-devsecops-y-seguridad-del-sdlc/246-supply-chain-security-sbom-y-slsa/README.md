@@ -187,6 +187,8 @@ Empieza por generar y verificar procedencia (Build L1) y adopta una plataforma a
 **❓ ¿El SBOM me protege de un ataque de supply chain?**
 No lo previene por sí solo. Reduce el tiempo de inventario y ayuda a investigar «¿contenemos X?», pero la afectación exige analizar versión, configuración y alcance; la procedencia se verifica mediante evidencia adicional vinculada al artefacto.
 
+> 🔗 **Conexión con la manipulación física de hardware — Parte 11 · Supply chain.** SBOM y SLSA describen la cadena de suministro *de software*. La cadena de hardware es distinta: un componente auténtico puede acompañarse de otros añadidos tras la fabricación y ninguna firma de software lo revela. La clase 267 desarrolla la diferencia con un caso de octubre de 2026.
+
 ## 🔗 Referencias
 
 - SLSA Specification v1.2 — <https://slsa.dev/spec/v1.2/>

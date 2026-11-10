@@ -64,6 +64,9 @@ jobs:
           python -m unittest discover -s labs/appsec-code/tests -v
           python -m unittest discover -s labs/devsecops-pipeline/tests -v
 
+      - name: Probar el laboratorio de manipulación física de hardware (datos sintéticos)
+        run: python -m unittest discover -s labs/hardware-tamper-defense/tests -v
+
       - name: Probar el laboratorio de LLMjacking (datos sintéticos, detector y controles)
         run: |
           python -m unittest discover -s labs/llmjacking-defense/tests -v

@@ -108,6 +108,20 @@ Entrega un repositorio que permita reconstruir un hallazgo sintético desde cero
 No incluyas secretos, malware operativo, datos personales ni instrucciones que amplíen el daño
 sin aportar capacidad defensiva. Reproducible no significa irresponsablemente armado.
 
+### 🔧 Ampliación: manipulación física de hardware (Ingeniero de hardware security y especialista en ingeniería inversa)
+
+Combinas inspección comparada, buses, firmware y raíz de confianza para evaluar qué prueba cada verificación. El objetivo es formular hipótesis comprobables sobre un dispositivo propio, no extraer secretos de nadie.
+
+Reutiliza estas clases, sin material nuevo que estudiar aparte:
+
+- [268 · Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md)
+- [267 · Hacking de firmware](../classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md)
+- [265 · Ingeniería inversa de aplicaciones móviles](../classes/parte-13-seguridad-movil-iot-e-inalambrica/265-ingenieria-inversa-de-aplicaciones-moviles/README.md)
+
+Práctica: [`labs/hardware-tamper-defense`](../labs/hardware-tamper-defense/README.md) (datos ficticios, sin hardware ni secretos reales).
+
+**Evidencia de aprendizaje:** Cuaderno de banco con la comparación de placa de las tres muestras del laboratorio, el análisis del bus simulado, la detección de ráfagas de consumo y las limitaciones de cada técnica.
+
 ## 🎓 Certificaciones
 
 No existe una certificación única para «Security Researcher». **Security+** puede acreditar base;

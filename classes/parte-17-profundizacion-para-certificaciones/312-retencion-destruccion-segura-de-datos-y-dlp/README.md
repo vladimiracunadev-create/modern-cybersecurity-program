@@ -159,6 +159,8 @@ cifrado, IAM y formación del usuario.
 Sí, y a veces chocan: una ley exige guardar 5 años, otra (privacidad) exige borrar cuando ya no es
 necesario. Documenta ambas y define el período que satisface las dos.
 
+> 🔗 **Conexión con la manipulación física de hardware — Parte 17 · Retención y evidencia.** La cadena de custodia de un objeto físico se aplica igual que la de un disco: registro continuo, sellos, estado en cada traspaso y hashes sobre el registro. La clase 268 la aplica a un dispositivo sospechoso y el laboratorio [`hardware-tamper-defense`](../../../labs/hardware-tamper-defense/README.md) permite practicarla.
+
 ## 🔗 Referencias
 
 - NIST SP 800-88 Rev. 1 — *Guidelines for Media Sanitization*. <https://csrc.nist.gov/pubs/sp/800/88/r1/final>

@@ -855,6 +855,50 @@
           ],
           "correcta": 1,
           "exp": "Wearables/IoT lo usan; hay ataques de sniffing y suplantación."
+        },
+        {
+          "q": "Un dispositivo supera la attestation de su secure element. ¿Qué se puede concluir?",
+          "opciones": [
+            "Que todo el dispositivo es original e íntegro",
+            "Que ese chip es original; la integridad física del resto no queda demostrada",
+            "Que no hay implantes posibles",
+            "Que la cadena de custodia es continua"
+          ],
+          "correcta": 1,
+          "exp": "La attestation responde por el componente, no por lo que lo rodea ni por su recorrido."
+        },
+        {
+          "q": "¿Por qué un sello antimanipulación intacto no prueba que nadie abrió el dispositivo?",
+          "opciones": [
+            "Porque nunca se rompe",
+            "Porque puede reproducirse o reabrirse sin rastro y solo sirve si alguien lo inspecciona",
+            "Porque el fabricante no los usa",
+            "Porque solo protege el firmware"
+          ],
+          "correcta": 1,
+          "exp": "Sirve como trazabilidad, no como garantía de integridad."
+        },
+        {
+          "q": "En una comparación de placa aparece una pantalla de otro lote. ¿Cuál es la conclusión más defendible?",
+          "opciones": [
+            "Hay un implante",
+            "Es una diferencia sin explicar que exige contrastar con una orden de servicio o un cambio de proveedor",
+            "No importa",
+            "El dispositivo es falso"
+          ],
+          "correcta": 1,
+          "exp": "Una diferencia no es un componente añadido; hay que formular una hipótesis comprobable."
+        },
+        {
+          "q": "Tras un incidente de implante en el canal de pantalla, ¿qué remedio resuelve la exposición de la frase de recuperación?",
+          "opciones": [
+            "Reiniciar de fábrica el dispositivo",
+            "Actualizar el firmware",
+            "Generar un secreto nuevo en un dispositivo de confianza y migrar los activos",
+            "Cambiar la contraseña de la aplicación"
+          ],
+          "correcta": 2,
+          "exp": "La electrónica añadida no depende del firmware: se rota el secreto expuesto."
         }
       ]
     },
