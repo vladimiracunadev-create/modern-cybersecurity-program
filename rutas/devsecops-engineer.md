@@ -443,6 +443,22 @@ año.
 - **Las puertas de seguridad afectan al trabajo de otras personas.** Bloquear sin aviso, sin vía de
   excepción y sin explicación no es rigor: es abuso de una posición técnica.
 
+### 🔧 Ampliación: ingeniería inversa como disciplina transversal (ingeniero DevSecOps)
+
+Para componentes sin código fuente, comparar el binario de una versión con el de la anterior permite comprobar qué cambió realmente y si un parche llegó a la función afectada, complementando SBOM y firmas (clase 246).
+
+Reutiliza estas clases, sin material nuevo que estudiar aparte:
+
+- [130 · Ingeniería inversa: introducción](../classes/parte-5-explotacion-de-sistemas-y-binarios/130-ingenieria-inversa-introduccion/README.md)
+- [133 · Análisis estático de binarios](../classes/parte-5-explotacion-de-sistemas-y-binarios/133-analisis-estatico-de-binarios/README.md)
+- [134 · Análisis dinámico y debugging de binarios](../classes/parte-5-explotacion-de-sistemas-y-binarios/134-analisis-dinamico-y-debugging-de-binarios/README.md)
+- [137 · Descubrimiento de vulnerabilidades en código](../classes/parte-5-explotacion-de-sistemas-y-binarios/137-descubrimiento-de-vulnerabilidades-en-codigo/README.md)
+- [332 · Agentes de IA y MCP para seguridad](../classes/parte-18-ia-aplicada-a-la-ciberseguridad/332-agentes-de-ia-y-el-model-context-protocol-mcp-para-seguridad/README.md)
+
+Práctica: [`labs/ingenieria-inversa-triage`](../labs/ingenieria-inversa-triage/README.md) (binarios sintéticos, sin ejecutar nada).
+
+**Evidencia de aprendizaje:** Procedimiento de validación de una actualización de un componente binario: qué se compara, qué conclusiones permite y cuáles no.
+
 ---
 
 - ⬅️ [Volver al índice de rutas](./README.md)

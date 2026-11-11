@@ -248,6 +248,22 @@ especialización, pero también la disponibilidad fuera de horario.
    práctica bien redactados y análisis de volcados de memoria. En DFIR, un informe claro y
    riguroso demuestra más que cualquier título.
 
+### 🔧 Ampliación: ingeniería inversa como disciplina transversal (analista DFIR)
+
+Dentro de un alcance autorizado y sobre copias de evidencia, el triaje estático de un ejecutable (hash, secciones, símbolos, entropía, cadenas) documenta qué se encontró sin ejecutarlo y qué queda por verificar. La salida de un agente de IA nunca sustituye la evidencia: cada afirmación del informe cita su fuente.
+
+Reutiliza estas clases, sin material nuevo que estudiar aparte:
+
+- [130 · Ingeniería inversa: introducción](../classes/parte-5-explotacion-de-sistemas-y-binarios/130-ingenieria-inversa-introduccion/README.md)
+- [133 · Análisis estático de binarios](../classes/parte-5-explotacion-de-sistemas-y-binarios/133-analisis-estatico-de-binarios/README.md)
+- [134 · Análisis dinámico y debugging de binarios](../classes/parte-5-explotacion-de-sistemas-y-binarios/134-analisis-dinamico-y-debugging-de-binarios/README.md)
+- [137 · Descubrimiento de vulnerabilidades en código](../classes/parte-5-explotacion-de-sistemas-y-binarios/137-descubrimiento-de-vulnerabilidades-en-codigo/README.md)
+- [332 · Agentes de IA y MCP para seguridad](../classes/parte-18-ia-aplicada-a-la-ciberseguridad/332-agentes-de-ia-y-el-model-context-protocol-mcp-para-seguridad/README.md)
+
+Práctica: [`labs/ingenieria-inversa-triage`](../labs/ingenieria-inversa-triage/README.md) (binarios sintéticos, sin ejecutar nada).
+
+**Evidencia de aprendizaje:** Ficha de triaje de un ejecutable de práctica con hash, indicios (marcados como indicios, no pruebas), hipótesis y plan de verificación en entorno aislado.
+
 ---
 
 - ⬅️ [Volver al índice de rutas](./README.md)

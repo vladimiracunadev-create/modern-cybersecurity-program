@@ -36,6 +36,7 @@ Al finalizar, el alumno podrá:
 | 6 | Detección de funciones | Prólogos y heurísticas |
 | 7 | Límites: packing, indirección | Cuándo el estático no basta |
 | 8 | capstone/pyelftools | Automatizar el análisis |
+| 9 | Efecto del compilador y límites del decompilador | Saber cuándo el pseudocódigo engaña |
 
 ## 🧠 Explicación en profundidad
 
@@ -104,6 +105,35 @@ estático a bajo nivel existen librerías como **capstone** (motor de desensambl
 (parseo de ELF), que permiten construir herramientas propias. La lección es que el análisis estático
 es potente y seguro pero **incompleto por naturaleza**, y por eso se complementa con el dinámico de la
 clase 134.
+
+### Lo que el compilador hizo y lo que el decompilador inventa
+
+El código que lees no es una traducción literal del fuente: el compilador lo **transformó** para que fuera
+rápido y pequeño, y esas transformaciones explican muchas escenas desconcertantes. Con optimización
+(`-O2`), el compilador **inserta** funciones pequeñas en sus llamadores (*inlining*), de modo que la
+función que buscas puede no existir como tal; **desenrolla** bucles; **precalcula** expresiones constantes;
+y sustituye operaciones caras por otras equivalentes. Un ejemplo conocido: una división entera por una
+constante suele compilarse como una **multiplicación por un número aparentemente mágico seguido de un
+desplazamiento**, porque multiplicar es más barato que dividir; quien no conoce el truco ve una
+constante absurda donde el fuente decía `x / 10`. Una `switch` densa se convierte en una **tabla de
+saltos**, lo que enlaza con el desensamblado lineal que se descarrila con datos y con los saltos indirectos
+que el recursivo no sigue. Y un `strip` elimina los nombres pero deja intactas estas transformaciones.
+
+El **decompilador** (Ghidra, IDA y otros) añade otra capa: produce **pseudocódigo en C** a partir del
+desensamblado, pero lo que escribe son **inferencias**. Los nombres de variable son sintéticos
+(`local_28`, `param_1`); los **tipos** se deducen del uso y pueden ser erróneos (un puntero mostrado como
+entero, una estructura recuperada como un conjunto de desplazamientos sueltos); las convenciones de
+llamada y el número de argumentos se estiman, y una función que no retorna puede dejar al decompilador
+inventando código inalcanzable. Por eso el pseudocódigo es un **punto de partida legible, no una
+verdad**: cada conclusión relevante se contrasta con las instrucciones reales y, cuando algo no
+cuadra, la discrepancia suele indicar una optimización que no has reconocido o un tipo mal inferido.
+Se aprende comparando: compilar el mismo fuente propio con `-O0` y con `-O2` y observar cómo cambian
+tamaño, número de funciones y estructura del CFG.
+
+El [laboratorio de triaje](../../../labs/ingenieria-inversa-triage/README.md) ilustra el primer paso de
+esa disciplina: un binario sin símbolos conserva el mismo `.text` que el original, de modo que lo único
+que ha cambiado es cuánto te ayuda a orientarte. Esa diferencia es la que hay que compensar con
+inferencia, y toda inferencia debe quedar marcada como tal en el informe.
 
 ## 📖 Definiciones y características
 
@@ -185,6 +215,13 @@ sudo apt install -y binutils
 
 6. Documenta qué preguntas quedan sin responder por estático y requerirán dinámico.
 
+7. Compila un programa propio de 30–50 líneas con `gcc -O0` y con `gcc -O2`, y compara número de
+   funciones, tamaño de `.text` y CFG de `main`. Anota qué desapareció (¿inlining?) y qué apareció
+   (¿tablas de saltos, constantes "mágicas"?). Contrasta el pseudocódigo del decompilador con las
+   instrucciones en al menos dos puntos y señala un tipo o un nombre que sea inferencia. Para la parte de
+   estructura del binario puedes apoyarte en el
+   [laboratorio de triaje](../../../labs/ingenieria-inversa-triage/README.md).
+
 ## ✍️ Ejercicios
 
 1. Encuentra un caso donde el desensamblado lineal se desincronice.
@@ -211,6 +248,8 @@ su dirección y, cuando sea directo, la función destino.
 | capstone no decodifica | Modo/arquitectura equivocados (32 vs 64) |
 | Binario "vacío" en objdump | Está empacado (UPX u otro); desempácalo primero |
 | Call destino incorrecto | Confundes dirección relativa con absoluta |
+| El pseudocódigo "no cuadra" con el desensamblado | Tipo mal inferido u optimización no reconocida; manda el desensamblado |
+| La función que buscas no existe | El compilador la insertó en el llamador (*inlining*); busca su cuerpo dentro de otra |
 
 ## ❓ Preguntas frecuentes
 

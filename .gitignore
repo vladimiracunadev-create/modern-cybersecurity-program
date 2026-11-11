@@ -69,3 +69,4 @@ knowledge/cwe/original/*
 !knowledge/cwe/original/.gitkeep
 labs/llmjacking-defense/salida/
 labs/hardware-tamper-defense/salida/
+labs/ingenieria-inversa-triage/salida/

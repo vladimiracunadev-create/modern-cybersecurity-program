@@ -170,6 +170,22 @@ Un cargo llamado «researcher» que solo ejecuta escáneres no ofrece la misma p
   <https://csrc.nist.gov/pubs/sp/800/115/final>
 - OWASP Web Security Testing Guide — <https://owasp.org/www-project-web-security-testing-guide/>
 
+### 🔧 Ampliación: ingeniería inversa como disciplina transversal (investigador de vulnerabilidades y de firmware)
+
+Dentro de un alcance autorizado y con software propio o de práctica, conviertes el triaje estático, la comparación de versiones y el cuaderno de hipótesis en un método repetible. REA (clase 332) es una opción de automatización con agentes, no un requisito: el mismo trabajo se hace con Ghidra, radare2 y GDB.
+
+Reutiliza estas clases, sin material nuevo que estudiar aparte:
+
+- [130 · Ingeniería inversa: introducción](../classes/parte-5-explotacion-de-sistemas-y-binarios/130-ingenieria-inversa-introduccion/README.md)
+- [133 · Análisis estático de binarios](../classes/parte-5-explotacion-de-sistemas-y-binarios/133-analisis-estatico-de-binarios/README.md)
+- [134 · Análisis dinámico y debugging de binarios](../classes/parte-5-explotacion-de-sistemas-y-binarios/134-analisis-dinamico-y-debugging-de-binarios/README.md)
+- [137 · Descubrimiento de vulnerabilidades en código](../classes/parte-5-explotacion-de-sistemas-y-binarios/137-descubrimiento-de-vulnerabilidades-en-codigo/README.md)
+- [332 · Agentes de IA y MCP para seguridad](../classes/parte-18-ia-aplicada-a-la-ciberseguridad/332-agentes-de-ia-y-el-model-context-protocol-mcp-para-seguridad/README.md)
+
+Práctica: [`labs/ingenieria-inversa-triage`](../labs/ingenieria-inversa-triage/README.md) (binarios sintéticos, sin ejecutar nada).
+
+**Evidencia de aprendizaje:** Informe reproducible de una comparación entre dos versiones de un binario propio: función cambiada, evidencia citada, hipótesis verificadas y lista de lo que no se pudo concluir.
+
 ---
 
 - ⬅️ [Volver al índice de rutas](./README.md)

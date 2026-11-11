@@ -5328,6 +5328,7 @@
    "used_in": [
     "classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md",
     "classes/parte-16-capstones-y-preparacion-de-certificaciones/308-capstone-campana-de-bug-bounty/README.md",
+    "classes/parte-18-ia-aplicada-a-la-ciberseguridad/332-agentes-de-ia-y-el-model-context-protocol-mcp-para-seguridad/README.md",
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md",
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/204-forense-de-sistemas-de-archivos-ntfs-y-ext4/README.md",
@@ -9435,6 +9436,7 @@
     "classes/parte-1-redes-y-seguridad-de-redes/027-analisis-de-trafico-filtros-seguimiento-de-flujos-y-estadisticas/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/034-firewalls-tipos-iptables-y-nftables/README.md",
     "classes/parte-1-redes-y-seguridad-de-redes/037-proxies-nat-y-pivoting-de-red/README.md",
+    "classes/parte-5-explotacion-de-sistemas-y-binarios/130-ingenieria-inversa-introduccion/README.md",
     "classes/parte-6-analisis-de-malware/154-malware-en-linux/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/206-analisis-de-artefactos-de-linux/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/208-forense-de-red/README.md"

@@ -37,6 +37,7 @@ Al finalizar, el alumno podrá:
 | 6 | Falsos positivos/negativos | Interpretar con criterio |
 | 7 | Priorización por explotabilidad | Enfocar el esfuerzo |
 | 8 | Reporte y disclosure | Cerrar el ciclo con ética |
+| 9 | Comparar versiones y validar un parche | Entender una corrección sin tener el fuente |
 
 ## 🧠 Explicación en profundidad
 
@@ -113,6 +114,28 @@ Buscar fallos en el código es, en el fondo, **reconocer patrones de CWE**: cada
 
 La lección importante, comprobada con datos del laboratorio, es que **la etiqueta de la herramienta no es el CWE correcto**. En `labs/appsec-code`, Bandit 1.9.4 etiqueta `eval` con `CWE-78` cuando el defecto es `CWE-95`, asigna a un hash débil de contraseña la clase genérica `CWE-327` en lugar de `CWE-916`, y no detecta en absoluto el *path traversal* (`CWE-22`). El programa incluye una herramienta que contrasta cada hallazgo con el mapa de un laboratorio (`python scripts/cwe_kb.py sast ... --mapa ...`). Cómo se resuelve este trabajo de clasificación y por qué el análisis estático debe combinarse con pruebas se desarrolla en la [clase 370](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
 
+### Comparar versiones: entender un parche cuando no hay fuente
+
+Un parche de seguridad es una pista concentrada: cambia lo mínimo necesario para cerrar un fallo, así que
+**comparar la versión vulnerable con la corregida** señala dónde estaba el problema. Cuando el fabricante no
+publica el fuente (o no publica un resumen claro), el análisis se hace sobre los binarios: se emparejan las
+funciones de ambas versiones (por nombre si hay símbolos, por una huella del cuerpo o por la estructura del
+CFG si no los hay) y se examinan solo las que difieren. Herramientas como BinDiff o Diaphora automatizan el
+emparejamiento sobre desensambladores; el principio, sin embargo, se entiende con un script de bytes por función.
+
+Esta técnica sirve a dos usos con éticas distintas. El **uso defensivo** es validar un parche propio o de un
+proveedor: comprobar que el cambio llega a la función afectada, que no deja otra ruta sin proteger y que
+el binario que se despliega es el que se revisó (clase 246). El **uso ofensivo** es deducir el fallo
+corregido para atacar sistemas que aún no se han actualizado; se estudia para entender el ritmo al que se
+debe parchear, no para usarlo contra sistemas ajenos. En ambos casos conviene recordar tres límites: un
+cambio de bytes no demuestra la intención (una recompilación con otra optimización modifica muchas
+funciones sin tocar la lógica); reubicar código desplaza direcciones sin cambiar el comportamiento; y un
+parche puede **mover** el problema en vez de resolverlo. Confirmar una corrección exige leer la función
+nueva, comprobar que el límite coincide con el tamaño real del destino, revisar los demás llamadores y
+repetir con la versión corregida la entrada que fallaba en la vulnerable. El
+[laboratorio de triaje](../../../labs/ingenieria-inversa-triage/README.md) compara dos versiones sintéticas
+y localiza la función cambiada, dejando explícito qué no puede saberse solo con los bytes.
+
 ## 📖 Definiciones y características
 
 - **Superficie de ataque:** conjunto de puntos donde entran datos no confiables. *Clave:* prioriza
@@ -180,6 +203,10 @@ pip install semgrep
 
 6. Redacta un mini-reporte de una vulnerabilidad como si fueras a enviarlo al mantenedor: descripción,
    PoC mínima, versiones afectadas, mitigación y una propuesta de plazo de divulgación.
+
+7. Compara dos versiones de un binario con el
+   [laboratorio de triaje](../../../labs/ingenieria-inversa-triage/README.md): localiza la función que
+   cambió y escribe qué comprobarías para afirmar que el cambio corrige el fallo y no solo lo desplaza.
 
 ## ✍️ Ejercicios
 

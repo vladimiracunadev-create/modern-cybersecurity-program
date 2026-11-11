@@ -234,6 +234,8 @@ funciones concretas.
 **❓ ¿Ofuscar mi software lo hace seguro?** Aumenta el coste del atacante, pero no sustituye a una buena
 arquitectura de seguridad.
 
+> 🔬 **Práctica de apoyo.** El [laboratorio de triaje](../../../labs/ingenieria-inversa-triage/README.md) calcula la entropía de cada sección de un ELF sintético con una sección empaquetada. Una entropía cercana a 8 bits por byte es un **indicio** de compresión o cifrado, no una prueba: un recurso comprimido legítimo la tiene igual. Antes de concluir hace falta ver qué código lee esa sección y la descomprime.
+
 ## 🔗 Referencias
 
 - Eilam, E. *Reversing: Secrets of Reverse Engineering*. Wiley.

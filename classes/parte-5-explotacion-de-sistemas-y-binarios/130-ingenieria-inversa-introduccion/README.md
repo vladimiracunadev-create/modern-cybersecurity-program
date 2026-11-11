@@ -37,6 +37,9 @@ Al finalizar, el alumno podrá:
 | 6 | strings y triage rápido | Primeras pistas |
 | 7 | Estático vs dinámico | Estrategia de análisis |
 | 8 | Metodología por objetivos | No perderse en binarios grandes |
+| 9 | De la fuente al binario: qué se pierde y qué sobrevive | Saber qué puede recuperarse y qué hay que inferir |
+| 10 | Análisis, modificación y explotación | Separar entender de alterar y de atacar |
+| 11 | Hipótesis y evidencia | Distinguir lo observado de lo supuesto |
 
 ## 🧠 Explicación en profundidad
 
@@ -92,6 +95,44 @@ arquitectura y si está stripped; **`strings`** extrae las cadenas de texto legi
 revelan de golpe la función del programa (URLs, mensajes de error, rutas, nombres de funciones de la
 librería) o incluso una flag mal escondida; y `checksec` (clase 122) informa de las mitigaciones. Es
 sorprendente cuánto se aprende de un binario solo con `strings` antes de leer una sola instrucción.
+
+### De la fuente al binario: qué se pierde y qué sobrevive
+
+La **ingeniería directa** va del diseño al producto: un programador escribe código fuente, un compilador
+lo traduce a ensamblador, un ensamblador a código objeto y un enlazador (*linker*) junta los objetos y las
+bibliotecas en un ejecutable. La ingeniería inversa recorre ese camino al revés, y el modo de leerlo es
+preguntarse en cada paso **qué información se descartó y cuál tuvo que conservarse para que el programa
+siguiera funcionando**. Se descartan los comentarios, los nombres de variables locales, el formato y,
+con optimización, buena parte de la estructura (funciones fundidas, bucles reescritos). Sobreviven los
+bytes de las instrucciones, las **cadenas literales**, los nombres de las funciones importadas de
+bibliotecas (el cargador los necesita), el orden de las decisiones y las **convenciones de llamada** (clase
+117), porque sin ellas las funciones no podrían entenderse entre sí.
+
+Esta lectura explica por qué no todo objetivo es igual de difícil. Un programa en **Java** o **.NET** se
+distribuye como *bytecode*, un código intermedio que conserva nombres de clases y métodos y mucha
+información de tipos, y por eso se recupera casi como fuente. Un programa en **C o C++ compilado a código
+máquina** conserva mucho menos, y uno en **Rust o Go** añade bibliotecas enlazadas que inflan el binario y
+cambian las convenciones. Un mismo fuente producirá además binarios distintos según el compilador, su
+versión y el nivel de optimización: lo que aprendas de un compilador no se traslada mecánicamente a otro.
+La consecuencia práctica es que el analista nunca "recupera el fuente": **reconstruye una explicación
+compatible con los bytes**, y esa explicación puede ser incorrecta aunque parezca natural.
+
+Conviene separar tres actividades que se confunden con facilidad. **Analizar** es entender qué hace el
+binario sin cambiarlo: es lo que enseña esta parte. **Modificar** es alterarlo (parchear una comprobación,
+inyectar código) y plantea cuestiones de licencia, integridad y, en muchos casos, ley; solo es razonable
+sobre software propio o con autorización. **Explotar** es provocar un comportamiento no previsto para
+obtener un efecto, y se estudia en las clases 116–139 dentro de los límites del programa. El análisis
+no implica ninguna de las otras dos, pero es requisito de ambas, y por eso la ética de la clase 025 se
+aplica desde el primer `strings`.
+
+Una última disciplina, que el resto de la parte retoma, es mantener separadas **observación, inferencia e
+hipótesis**. "La cadena `Licencia invalida` aparece en `.rodata` en el offset 0x40" es una
+observación. "La función que la referencia valida la licencia" es una inferencia. "La clave correcta es
+42" es una hipótesis que solo se confirma al verificarla con otra fuente de evidencia (un
+desensamblado que muestre la comparación, una ejecución en entorno aislado). Escribirlas por separado
+evita el error más frecuente de la disciplina: dar por cierto lo que simplemente encaja. El
+[laboratorio de triaje](../../../labs/ingenieria-inversa-triage/README.md) lo practica con un cuaderno de
+hipótesis que exige citar evidencia antes de cerrar ninguna.
 
 ### Estático frente a dinámico: dos formas de mirar, y una metodología
 
@@ -186,6 +227,11 @@ sudo apt install -y pev
 6. Escribe un mini-informe: propósito aparente, funciones clave y por dónde continuarías (estático con
    Ghidra o dinámico con GDB).
 
+7. Sin compilador (por ejemplo en Windows) o como complemento, ejecuta el
+   [laboratorio de triaje](../../../labs/ingenieria-inversa-triage/README.md): genera binarios ELF
+   sintéticos, compara la versión con y sin símbolos y comprueba que `.text` es idéntico. En el informe
+   separa lo que **observaste**, lo que **infieres** y lo que queda como **hipótesis sin verificar**.
+
 ## ✍️ Ejercicios
 
 1. Diferencia entre program headers y section headers de un ELF.
@@ -230,6 +276,8 @@ reconstruye la semántica.
 - Eilam, E. *Reversing: Secrets of Reverse Engineering*. Wiley.
 - ELF spec — <https://refspecs.linuxfoundation.org/elf/elf.pdf>
 - Microsoft PE format — <https://learn.microsoft.com/windows/win32/debug/pe-format>
+- `elf(5)` (Linux man-pages) — <https://man7.org/linux/man-pages/man5/elf.5.html> — campos de la cabecera,
+  secciones y símbolos usados en el laboratorio de triaje.
 
 ## 📥 Material descargable
 

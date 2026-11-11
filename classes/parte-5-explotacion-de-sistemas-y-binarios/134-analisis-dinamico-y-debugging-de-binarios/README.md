@@ -37,6 +37,7 @@ Al finalizar, el alumno podrá:
 | 6 | Dump de memoria | Extraer cadenas descifradas |
 | 7 | Emulación (Unicorn/qiling) | Ejecutar fragmentos sin todo el entorno |
 | 8 | Cierre estático↔dinámico | Metodología combinada |
+| 9 | El observador altera lo observado | Evitar conclusiones falsas por la propia instrumentación |
 
 ## 🧠 Explicación en profundidad
 
@@ -105,6 +106,31 @@ el análisis estático da el mapa completo pero opaco; el dinámico confirma qu�
 verdad y revela lo que estaba oculto (código desempaquetado, valores calculados); y el analista
 **alterna** entre ambos —lee estáticamente una función sospechosa, pone un breakpoint para ver sus
 datos reales, vuelve al estático con esa información— hasta reconstruir el comportamiento del binario.
+
+### El observador altera lo observado
+
+Toda instrumentación **modifica** el programa que se estudia, y olvidarlo produce conclusiones falsas. Un
+*breakpoint* por software se implementa sustituyendo una instrucción por otra especial (en x86, `int3`),
+así que el código en memoria deja de ser el original: un programa que calcula una suma de verificación
+sobre su propio código verá otra cosa. Avanzar paso a paso (*single-step*) multiplica el tiempo de
+ejecución, lo que dispara los tiempos de espera y las comprobaciones de tiempo. Un depurador se engancha
+al objetivo como su *tracer* (en Linux, mediante `ptrace`) y el sistema solo admite un *tracer* a la vez, por lo que un
+programa puede detectar que está siendo observado (clase 135). GDB desactiva por defecto la
+aleatorización del espacio de direcciones (ASLR) del programa que lanza, de modo que las direcciones que
+ves en la sesión no son las que habría en una ejecución normal; esto es útil para repetir pruebas y
+engañoso si lo olvidas. Y un *hook* de Frida que cambia un valor de retorno demuestra que el programa
+**puede** comportarse así, no que **lo haga** sin tu intervención.
+
+Por eso la observación dinámica se trata como una **comprobación de una predicción**, no como un
+descubrimiento aislado. El ciclo es: (1) hipótesis desde el análisis estático ("`check_license` devuelve 0 si
+la clave es incorrecta"); (2) predicción observable ("con la entrada `X` el registro de retorno valdrá 0");
+(3) ejecución en el entorno aislado con la instrumentación mínima necesaria; (4) comparación de lo
+observado con lo predicho, anotando qué instrumentación estaba activa; (5) si difieren, se revisa la
+hipótesis **y** la sospecha de que la instrumentación alteró el resultado, repitiendo con otra técnica
+(por ejemplo, `strace` en lugar de un depurador). Cuando el resultado es el mismo con dos técnicas
+distintas, la confianza sube; cuando solo aparece con una, se documenta como no concluyente. El
+[laboratorio de triaje](../../../labs/ingenieria-inversa-triage/README.md) incluye un cuaderno de
+hipótesis que obliga a citar la evidencia de cada cierre.
 
 ## 📖 Definiciones y características
 

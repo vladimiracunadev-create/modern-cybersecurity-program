@@ -67,6 +67,9 @@ jobs:
       - name: Probar el laboratorio de manipulación física de hardware (datos sintéticos)
         run: python -m unittest discover -s labs/hardware-tamper-defense/tests -v
 
+      - name: Probar el laboratorio de ingeniería inversa (ELF sintéticos, sin ejecutar binarios)
+        run: python -m unittest discover -s labs/ingenieria-inversa-triage/tests -v
+
       - name: Probar el laboratorio de LLMjacking (datos sintéticos, detector y controles)
         run: |
           python -m unittest discover -s labs/llmjacking-defense/tests -v
