@@ -12576,7 +12576,9 @@
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md",
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md",
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md",
-    "classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md"
+    "classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/095-inyeccion-de-comandos-del-sistema-operativo/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/101-fallos-de-autenticacion-y-bypass/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -12684,11 +12686,14 @@
     "classes/parte-17-profundizacion-para-certificaciones/318-gestion-del-programa-de-vulnerabilidades/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/321-comunicacion-y-reporte-para-analistas-de-seguridad/README.md",
     "classes/parte-18-ia-aplicada-a-la-ciberseguridad/338-generacion-de-informes-y-flujos-de-trabajo-con-ia/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md",
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md",
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md",
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/071-analisis-de-vulnerabilidades-con-nessus-y-openvas/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/085-reporte-profesional-de-pentest/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/095-inyeccion-de-comandos-del-sistema-operativo/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/099-server-side-request-forgery-ssrf/README.md",
     "classes/parte-4-seguridad-de-aplicaciones-web/114-bug-bounty-metodologia-y-plataformas/README.md"
    ],
    "authors": [],
@@ -12743,7 +12748,8 @@
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md",
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md",
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md",
-    "classes/parte-3-hacking-etico-y-pentesting-metodologia/071-analisis-de-vulnerabilidades-con-nessus-y-openvas/README.md"
+    "classes/parte-3-hacking-etico-y-pentesting-metodologia/071-analisis-de-vulnerabilidades-con-nessus-y-openvas/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/099-server-side-request-forgery-ssrf/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -13207,7 +13213,8 @@
     "classes/parte-15-seguridad-de-ia-y-machine-learning/297-seguridad-de-aplicaciones-con-llm-rag-y-agentes/README.md",
     "classes/parte-15-seguridad-de-ia-y-machine-learning/298-ia-aplicada-a-la-defensa-deteccion-y-soc/README.md",
     "classes/parte-15-seguridad-de-ia-y-machine-learning/299-ia-ofensiva-y-deepfakes/README.md",
-    "classes/parte-18-ia-aplicada-a-la-ciberseguridad/339-riesgos-guardrails-opsec-y-etica-del-hacking-con-ia/README.md"
+    "classes/parte-18-ia-aplicada-a-la-ciberseguridad/339-riesgos-guardrails-opsec-y-etica-del-hacking-con-ia/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/105-control-de-acceso-roto-idor-y-path-traversal/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -13248,6 +13255,7 @@
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/226-ataques-y-pentest-en-entornos-cloud/README.md",
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/234-logging-y-deteccion-en-la-nube/README.md",
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/235-respuesta-a-incidentes-en-la-nube/README.md",
+    "classes/parte-11-devsecops-y-seguridad-del-sdlc/245-gestion-de-vulnerabilidades-a-escala/README.md",
     "classes/parte-12-osint-e-ingenieria-social/249-fundamentos-de-osint/README.md",
     "classes/parte-12-osint-e-ingenieria-social/254-osint-tecnico-shodan-y-censys/README.md",
     "classes/parte-12-osint-e-ingenieria-social/256-fundamentos-de-ingenieria-social/README.md",
@@ -13412,6 +13420,9 @@
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md",
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md",
     "classes/parte-4-seguridad-de-aplicaciones-web/087-owasp-top-10-panorama-general/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/095-inyeccion-de-comandos-del-sistema-operativo/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/099-server-side-request-forgery-ssrf/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/101-fallos-de-autenticacion-y-bypass/README.md",
     "classes/parte-5-explotacion-de-sistemas-y-binarios/119-buffer-overflow-en-stack-teoria/README.md",
     "classes/parte-5-explotacion-de-sistemas-y-binarios/125-vulnerabilidades-de-format-string/README.md",
     "classes/parte-5-explotacion-de-sistemas-y-binarios/127-heap-use-after-free-y-double-free/README.md",
@@ -18160,7 +18171,11 @@
    "used_in": [
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/361-cwe-que-es-y-como-esta-construido/README.md",
     "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/362-del-sintoma-a-la-causa-raiz-mapeo-cwe/README.md",
-    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md"
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/364-familias-cwe-identidad-acceso-criptografia-informacion/README.md",
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/095-inyeccion-de-comandos-del-sistema-operativo/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/099-server-side-request-forgery-ssrf/README.md",
+    "classes/parte-4-seguridad-de-aplicaciones-web/101-fallos-de-autenticacion-y-bypass/README.md"
    ]
   },
   {
@@ -18606,6 +18621,468 @@
    "accessed": "2026-11-10",
    "used_in": [
     "classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md"
+   ]
+  },
+  {
+   "id": "huntress-connectwise-skykick",
+   "type": "reference",
+   "title": "Huntress: ConnectWise (SkyKick) Vendor Credentials Abused in M365 Attacks",
+   "authors": [
+    "Huntress"
+   ],
+   "published": "2026",
+   "locator": "https://www.huntress.com/blog/vendor-credential-enables-unauthorized-access",
+   "authority": "Huntress",
+   "status": "verificada",
+   "notes": "Informe técnico del incidente de octubre de 2026: cronología UTC, señales de detección, recuentos de inquilinos (cota inferior) y remediación. Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.huntress.com/blog/vendor-credential-enables-unauthorized-access"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-10-seguridad-en-la-nube-y-contenedores/222-iam-en-la-nube-identidades-roles-y-permisos/README.md",
+    "classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md"
+   ]
+  },
+  {
+   "id": "railway-preliminary-report-oct-2026",
+   "type": "reference",
+   "title": "Railway: Preliminary Report: Oct 21st Security Incident",
+   "authors": [
+    "Railway"
+   ],
+   "published": "2026",
+   "locator": "https://blog.railway.com/p/preliminary-report-october-security-incident",
+   "authority": "Railway",
+   "status": "verificada",
+   "notes": "Informe preliminar del propio afectado; el informe forense final estaba pendiente. Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://blog.railway.com/p/preliminary-report-october-security-incident"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-11-devsecops-y-seguridad-del-sdlc/241-secretos-en-el-codigo-y-pre-commit-hooks/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/216-contencion-erradicacion-y-recuperacion/README.md"
+   ]
+  },
+  {
+   "id": "bleepingcomputer-idcf-cloud-2026",
+   "type": "reference",
+   "title": "BleepingComputer: Ransomware attack disrupts Japan's IDCF Cloud used by govt clients",
+   "authors": [
+    "BleepingComputer"
+   ],
+   "published": "2026",
+   "locator": "https://www.bleepingcomputer.com/news/security/ransomware-attack-disrupts-japans-idcf-cloud-used-by-govt-clients/",
+   "authority": "BleepingComputer",
+   "status": "verificada",
+   "notes": "Fuente secundaria: el aviso original de IDC Frontier no se pudo consultar; las cifras de recuperación varían entre fuentes. Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.bleepingcomputer.com/news/security/ransomware-attack-disrupts-japans-idcf-cloud-used-by-govt-clients/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/216-contencion-erradicacion-y-recuperacion/README.md"
+   ]
+  },
+  {
+   "id": "cisa-aa26-293a-safepay",
+   "type": "reference",
+   "title": "CISA, FBI y socios: #StopRansomware: SafePay Ransomware (AA26-293A)",
+   "authors": [
+    "Cybersecurity and Infrastructure Security Agency (EE. UU.)"
+   ],
+   "published": "2026",
+   "locator": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a",
+   "authority": "Cybersecurity and Infrastructure Security Agency (EE. UU.)",
+   "status": "verificada",
+   "notes": "Aviso conjunto del 2026-10-20: vías de acceso inicial, CVE listados, técnicas ATT&CK y recomendaciones. Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-11-devsecops-y-seguridad-del-sdlc/245-gestion-de-vulnerabilidades-a-escala/README.md"
+   ]
+  },
+  {
+   "id": "php-ghsa-oom-cve-2026-109618",
+   "type": "reference",
+   "title": "PHP Group: GHSA-w8hw-w9fx-j79w (CVE-2026-109618)",
+   "authors": [
+    "PHP Group"
+   ],
+   "published": "2026",
+   "locator": "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w",
+   "authority": "PHP Group",
+   "status": "verificada",
+   "notes": "Aviso del proyecto: memoria sin inicializar tras longjmp por OOM. Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md"
+   ]
+  },
+  {
+   "id": "php-ghsa-stale-state-cve-2026-109619",
+   "type": "reference",
+   "title": "PHP Group: GHSA-6wmf-4rv5-p3rp (CVE-2026-109619)",
+   "authors": [
+    "PHP Group"
+   ],
+   "published": "2026",
+   "locator": "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp",
+   "authority": "PHP Group",
+   "status": "verificada",
+   "notes": "Aviso del proyecto: estado global obsoleto que apunta a memoria de la petición. Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md"
+   ]
+  },
+  {
+   "id": "linux-kernel-stable-cve-2026-46300",
+   "type": "reference",
+   "title": "Linux kernel: net: skbuff: preserve shared-frag marker during coalescing",
+   "authors": [
+    "Kernel.org"
+   ],
+   "published": "2026",
+   "locator": "https://git.kernel.org/stable/c/3599e6b3cc1ada96883d496a50a210d3afbb6987",
+   "authority": "Kernel.org",
+   "status": "verificada",
+   "notes": "Commit de corrección referenciado por el registro CVE-2026-46300. Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://git.kernel.org/stable/c/3599e6b3cc1ada96883d496a50a210d3afbb6987"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md"
+   ]
+  },
+  {
+   "id": "nodejs-october-2026-security-releases",
+   "type": "reference",
+   "title": "Node.js: October 2026 Security Releases",
+   "authors": [
+    "OpenJS Foundation / Node.js"
+   ],
+   "published": "2026",
+   "locator": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+   "authority": "OpenJS Foundation / Node.js",
+   "status": "verificada",
+   "notes": "Corrección del decodificador Brotli (CVE-2026-111497) en Node.js. Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md"
+   ]
+  },
+  {
+   "id": "gitlab-patch-release-19-4-2",
+   "type": "reference",
+   "title": "GitLab: Patch release 19.4.2",
+   "authors": [
+    "GitLab"
+   ],
+   "published": "2026",
+   "locator": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/",
+   "authority": "GitLab",
+   "status": "verificada",
+   "notes": "Versiones corregidas de CVE-2026-97229. Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/365-familias-cwe-memoria-enteros-concurrencia-recursos/README.md"
+   ]
+  },
+  {
+   "id": "siemens-ssa-580366",
+   "type": "reference",
+   "title": "Siemens ProductCERT: SSA-580366",
+   "authors": [
+    "Siemens ProductCERT"
+   ],
+   "published": "2026",
+   "locator": "https://productcert.siemens.com/productcert/html/ssa-580366.html",
+   "authority": "Siemens ProductCERT",
+   "status": "verificada",
+   "notes": "Aviso de CVE-2026-110936 (Software Center). Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://productcert.siemens.com/productcert/html/ssa-580366.html"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md"
+   ]
+  },
+  {
+   "id": "ahsay-patch-cve-105133-105134",
+   "type": "reference",
+   "title": "Ahsay: patch CVE-2026-105133 / CVE-2026-105134",
+   "authors": [
+    "Ahsay"
+   ],
+   "published": "2026",
+   "locator": "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update",
+   "authority": "Ahsay",
+   "status": "verificada",
+   "notes": "Anuncio del fabricante con versiones corregidas. Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-4-seguridad-de-aplicaciones-web/095-inyeccion-de-comandos-del-sistema-operativo/README.md"
+   ]
+  },
+  {
+   "id": "plex-security-update-1-43-3",
+   "type": "reference",
+   "title": "Plex: Important security update for Plex Media Server v1.43.2 and earlier",
+   "authors": [
+    "Plex"
+   ],
+   "published": "2026",
+   "locator": "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319",
+   "authority": "Plex",
+   "status": "verificada",
+   "notes": "Aviso del fabricante referenciado por KEV para los cuatro CVE de Plex. Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-4-seguridad-de-aplicaciones-web/099-server-side-request-forgery-ssrf/README.md"
+   ]
+  },
+  {
+   "id": "beyondtrust-bt26-05",
+   "type": "reference",
+   "title": "BeyondTrust: Security advisory BT26-05",
+   "authors": [
+    "BeyondTrust"
+   ],
+   "published": "2026",
+   "locator": "https://www.beyondtrust.com/trust-center/security-advisories/bt26-05",
+   "authority": "BeyondTrust",
+   "status": "verificada",
+   "notes": "Aviso de CVE-2026-102764 (Remote Support). Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.beyondtrust.com/trust-center/security-advisories/bt26-05"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-4-seguridad-de-aplicaciones-web/101-fallos-de-autenticacion-y-bypass/README.md"
+   ]
+  },
+  {
+   "id": "ivanti-connect-secure-cve-2026-104935",
+   "type": "reference",
+   "title": "Ivanti: Security Advisory Ivanti Connect Secure (CVE-2026-104935)",
+   "authors": [
+    "Ivanti"
+   ],
+   "published": "2026",
+   "locator": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935",
+   "authority": "Ivanti",
+   "status": "verificada",
+   "notes": "Aviso referenciado por las entradas KEV de tres CVE de Ivanti. Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-4-seguridad-de-aplicaciones-web/101-fallos-de-autenticacion-y-bypass/README.md"
+   ]
+  },
+  {
+   "id": "fortinet-fg-ir-26-175",
+   "type": "reference",
+   "title": "Fortinet PSIRT: FG-IR-26-175",
+   "authors": [
+    "Fortinet"
+   ],
+   "published": "2026",
+   "locator": "https://fortiguard.fortinet.com/psirt/FG-IR-26-175",
+   "authority": "Fortinet",
+   "status": "verificada",
+   "notes": "Aviso de CVE-2026-104286 (FortiMail). Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://fortiguard.fortinet.com/psirt/FG-IR-26-175"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-4-seguridad-de-aplicaciones-web/105-control-de-acceso-roto-idor-y-path-traversal/README.md"
+   ]
+  },
+  {
+   "id": "cisco-sa-esa-afw-zqyjkjxp",
+   "type": "reference",
+   "title": "Cisco: cisco-sa-esa-afw-zqYJkjxp",
+   "authors": [
+    "Cisco"
+   ],
+   "published": "2026",
+   "locator": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-afw-zqYJkjxp",
+   "authority": "Cisco",
+   "status": "verificada",
+   "notes": "Aviso de CVE-2026-76519 (Secure Email Gateway). Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-afw-zqYJkjxp"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-4-seguridad-de-aplicaciones-web/105-control-de-acceso-roto-idor-y-path-traversal/README.md"
+   ]
+  },
+  {
+   "id": "atlassian-cve-2026-21589",
+   "type": "reference",
+   "title": "Atlassian: CVE-2026-21589 Arbitrary File Access Vulnerability Impacts Multiple Products",
+   "authors": [
+    "Atlassian"
+   ],
+   "published": "2026",
+   "locator": "https://confluence.atlassian.com/security/cve-2026-21589-arbitrary-file-access-vulnerability-impacts-multiple-products-1870495748.html",
+   "authority": "Atlassian",
+   "status": "verificada",
+   "notes": "Aviso con productos y versiones corregidas. Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://confluence.atlassian.com/security/cve-2026-21589-arbitrary-file-access-vulnerability-impacts-multiple-products-1870495748.html"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-4-seguridad-de-aplicaciones-web/105-control-de-acceso-roto-idor-y-path-traversal/README.md"
+   ]
+  },
+  {
+   "id": "collabora-ghsa-g3vx-3m76-fghh",
+   "type": "reference",
+   "title": "Collabora Online: GHSA-g3vx-3m76-fghh (CVE-2026-110447)",
+   "authors": [
+    "Collabora Productivity"
+   ],
+   "published": "2026",
+   "locator": "https://github.com/CollaboraOnline/online/security/advisories/GHSA-g3vx-3m76-fghh",
+   "authority": "Collabora Productivity",
+   "status": "verificada",
+   "notes": "Aviso de la inyección en proxy.php del Built-in CODE Server. Consultado el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://github.com/CollaboraOnline/online/security/advisories/GHSA-g3vx-3m76-fghh"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-4-seguridad-de-aplicaciones-web/095-inyeccion-de-comandos-del-sistema-operativo/README.md"
+   ]
+  },
+  {
+   "id": "mitre-attack-t1098-003",
+   "type": "reference",
+   "title": "MITRE ATT&CK: Account Manipulation: Additional Cloud Roles (T1098.003)",
+   "authors": [
+    "MITRE"
+   ],
+   "published": "2026",
+   "locator": "https://attack.mitre.org/techniques/T1098/003/",
+   "authority": "MITRE",
+   "status": "verificada",
+   "notes": "Técnica verificada en ATT&CK v20.1 el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://attack.mitre.org/techniques/T1098/003/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md"
+   ]
+  },
+  {
+   "id": "mitre-attack-t1110-003",
+   "type": "reference",
+   "title": "MITRE ATT&CK: Brute Force: Password Spraying (T1110.003)",
+   "authors": [
+    "MITRE"
+   ],
+   "published": "2026",
+   "locator": "https://attack.mitre.org/techniques/T1110/003/",
+   "authority": "MITRE",
+   "status": "verificada",
+   "notes": "Técnica verificada en ATT&CK v20.1 el 2026-11-11.",
+   "matches": {
+    "url_prefixes": [
+     "https://attack.mitre.org/techniques/T1110/003/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-11",
+   "used_in": [
+    "classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md"
    ]
   }
  ]

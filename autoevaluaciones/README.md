@@ -347,6 +347,58 @@ Lleva la cuenta de todas las clases del programa en [`progreso.html`](progreso.h
 
 </details>
 
+**6. Un servicio construye `ping -c 1 <host>` con un valor externo. ¿Por qué pasar los argumentos como lista (argv) protege más que escapar metacaracteres?**
+
+- a) Porque la lista es más rápida
+- b) Porque no hay shell que reinterprete el texto: cada elemento llega al programa como un argumento y no como sintaxis
+- c) Porque elimina la necesidad de validar el valor
+- d) Porque solo funciona en Linux
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Porque no hay shell que reinterprete el texto: cada elemento llega al programa como un argumento y no como sintaxis.** El escapado intenta predecir cómo un intérprete leerá el texto; con argv no hay intérprete que lo reinterprete. Aun así conviene validar con lista blanca y rechazar valores que empiecen por guion, que podrían tomarse como opciones.
+
+</details>
+
+**7. En un SSRF de octubre de 2026 un parámetro pensado para el esquema («protocolo») aceptaba una URL completa. ¿Qué defecto de diseño ilustra?**
+
+- a) Falta de cifrado en tránsito
+- b) El campo no tiene un dominio de valores acotado: debería ser una enumeración (http o https), no una cadena libre
+- c) Uso de HTTP en lugar de HTTPS
+- d) Ausencia de un límite de peticiones
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) El campo no tiene un dominio de valores acotado: debería ser una enumeración (http o https), no una cadena libre.** Validar el tipo de valor (enumeración) evita que el cliente decida el destino. Después sigue haciendo falta validar el destino resuelto contra rangos privados y metadatos.
+
+</details>
+
+**8. Un registro CVE indica que las versiones 7.0.0 a 7.1.2 de un producto tienen el mismo error que las 6.3.0 a 6.5.4, pero «no son explotables» por cambios en el marco subyacente. ¿Qué conclusión es correcta?**
+
+- a) Las 7.x no necesitan ninguna acción
+- b) Que un error exista y que sea explotable son hechos distintos; se actualiza igualmente, pero la urgencia difiere
+- c) El registro está equivocado
+- d) Solo importa la versión más antigua
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Que un error exista y que sea explotable son hechos distintos; se actualiza igualmente, pero la urgencia difiere.** Distinguir existencia de explotabilidad evita tanto el pánico como la complacencia. Una versión no explotable hoy puede serlo si cambia el componente del que depende.
+
+</details>
+
+**9. ¿Qué comprobación protege realmente frente a un path traversal, incluidas las formas codificadas?**
+
+- a) Buscar la cadena `..` en el nombre recibido
+- b) Rechazar todos los nombres con barras
+- c) Normalizar la ruta final y comprobar que sigue dentro del directorio base
+- d) Convertir el nombre a minúsculas
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: c) Normalizar la ruta final y comprobar que sigue dentro del directorio base.** Las demás comprobaciones fallan ante codificaciones (`%2e%2e`, doble codificación), separadores alternativos o bytes nulos. Solo la ruta resuelta dice dónde se va a operar.
+
+</details>
+
 ## Parte 5 — Explotación de sistemas y binarios
 
 **1. Un buffer overflow en el stack puede sobrescribir…**
@@ -615,6 +667,19 @@ Lleva la cuenta de todas las clases del programa en [`progreso.html`](progreso.h
 
 </details>
 
+**6. Una regla detecta que se añade una credencial a una aplicación y alerta cuando el actor no figura como propietario. Sin el inventario de propietarios, ¿qué ocurre?**
+
+- a) La regla deja de funcionar
+- b) Alerta también sobre el cambio legítimo de un administrador: la calidad depende del dato de contexto
+- c) Detecta más ataques reales
+- d) Se vuelve más rápida
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Alerta también sobre el cambio legítimo de un administrador: la calidad depende del dato de contexto.** La condición por sí sola no distingue un cambio autorizado de uno hostil; el inventario es parte de la regla. Medir con datos sintéticos lo hace visible.
+
+</details>
+
 ## Parte 9 — Forense digital y respuesta a incidentes
 
 **1. Según el orden de volatilidad, ¿qué se adquiere primero?**
@@ -679,6 +744,19 @@ Lleva la cuenta de todas las clases del programa en [`progreso.html`](progreso.h
 <details><summary>Ver respuesta</summary>
 
 **Correcta: b) Manipular las marcas de tiempo de archivos para despistar.** Se detecta comparando $STANDARD_INFORMATION vs $FILE_NAME en NTFS.
+
+</details>
+
+**6. Tras el compromiso del plano de gestión de un entorno, ¿qué copias de seguridad cuentan como un plan de recuperación?**
+
+- a) Todas las que existen
+- b) Solo las fuera del alcance del atacante, inmutables y con restauración probada recientemente
+- c) Las más recientes
+- d) Las que están en el mismo proveedor, por su rapidez
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Solo las fuera del alcance del atacante, inmutables y con restauración probada recientemente.** Si faltan alcance, inmutabilidad o prueba de restauración, la copia es una esperanza y no un plan. El RPO que importa es el realmente alcanzable, no el configurado.
 
 </details>
 
@@ -749,6 +827,19 @@ Lleva la cuenta de todas las clases del programa en [`progreso.html`](progreso.h
 
 </details>
 
+**6. Ante el abuso de una aplicación de un proveedor con consentimiento en tu inquilino, ¿por qué se recomienda deshabilitarla y no eliminarla?**
+
+- a) Porque eliminar es ilegal
+- b) Porque deshabilitar corta el acceso y conserva la evidencia y el estado; eliminar destruye ambos y obliga a un nuevo consentimiento
+- c) Porque la eliminación tarda más
+- d) Porque deshabilitar borra los permisos
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Porque deshabilitar corta el acceso y conserva la evidencia y el estado; eliminar destruye ambos y obliga a un nuevo consentimiento.** Se conserva la configuración y los registros para la investigación y se evita reconceder permisos sin saber si el proveedor restableció sus credenciales.
+
+</details>
+
 ## Parte 11 — DevSecOps y seguridad del SDLC
 
 **1. 'Shift-left' significa…**
@@ -813,6 +904,19 @@ Lleva la cuenta de todas las clases del programa en [`progreso.html`](progreso.h
 <details><summary>Ver respuesta</summary>
 
 **Correcta: b) Gestionar en un vault/secret manager y escanear con pre-commit.** gitleaks/detect-secrets + gestores de secretos evitan filtraciones.
+
+</details>
+
+**6. Una plataforma informa que variables de entorno cifradas pudieron descifrarse sin precisar cuáles. ¿Cuál es la respuesta proporcionada?**
+
+- a) Esperar el informe final
+- b) Rotar todos los secretos que estuvieron almacenados en la plataforma, empezando por los de mayor impacto
+- c) Rotar solo las claves de pago
+- d) Eliminar la cuenta
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Rotar todos los secretos que estuvieron almacenados en la plataforma, empezando por los de mayor impacto.** Si no se puede saber qué secretos se vieron, se asume compromiso de todos los que pudieron verse. Recibir un aviso de revocación de un proveedor no prueba que tu clave fuera robada.
 
 </details>
 
@@ -950,6 +1054,58 @@ Lleva la cuenta de todas las clases del programa en [`progreso.html`](progreso.h
 
 </details>
 
+**6. Un dispositivo supera la attestation de su secure element. ¿Qué se puede concluir?**
+
+- a) Que todo el dispositivo es original e íntegro
+- b) Que ese chip es original; la integridad física del resto no queda demostrada
+- c) Que no hay implantes posibles
+- d) Que la cadena de custodia es continua
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Que ese chip es original; la integridad física del resto no queda demostrada.** La attestation responde por el componente, no por lo que lo rodea ni por su recorrido.
+
+</details>
+
+**7. ¿Por qué un sello antimanipulación intacto no prueba que nadie abrió el dispositivo?**
+
+- a) Porque nunca se rompe
+- b) Porque puede reproducirse o reabrirse sin rastro y solo sirve si alguien lo inspecciona
+- c) Porque el fabricante no los usa
+- d) Porque solo protege el firmware
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Porque puede reproducirse o reabrirse sin rastro y solo sirve si alguien lo inspecciona.** Sirve como trazabilidad, no como garantía de integridad.
+
+</details>
+
+**8. En una comparación de placa aparece una pantalla de otro lote. ¿Cuál es la conclusión más defendible?**
+
+- a) Hay un implante
+- b) Es una diferencia sin explicar que exige contrastar con una orden de servicio o un cambio de proveedor
+- c) No importa
+- d) El dispositivo es falso
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Es una diferencia sin explicar que exige contrastar con una orden de servicio o un cambio de proveedor.** Una diferencia no es un componente añadido; hay que formular una hipótesis comprobable.
+
+</details>
+
+**9. Tras un incidente de implante en el canal de pantalla, ¿qué remedio resuelve la exposición de la frase de recuperación?**
+
+- a) Reiniciar de fábrica el dispositivo
+- b) Actualizar el firmware
+- c) Generar un secreto nuevo en un dispositivo de confianza y migrar los activos
+- d) Cambiar la contraseña de la aplicación
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: c) Generar un secreto nuevo en un dispositivo de confianza y migrar los activos.** La electrónica añadida no depende del firmware: se rota el secreto expuesto.
+
+</details>
+
 ## Parte 14 — GRC, riesgo y cumplimiento
 
 **1. En términos simples, el riesgo se estima como…**
@@ -1081,6 +1237,58 @@ Lleva la cuenta de todas las clases del programa en [`progreso.html`](progreso.h
 <details><summary>Ver respuesta</summary>
 
 **Correcta: b) Que una inyección logre ejecutar acciones no deseadas.** Hay que limitar permisos del agente y validar entradas/salidas.
+
+</details>
+
+**6. ¿Qué distingue al LLMjacking de la prompt injection?**
+
+- a) El LLMjacking abusa del acceso (credenciales o endpoints) para consumir inferencia ajena; la injection manipula el comportamiento del modelo con texto
+- b) Son sinónimos
+- c) La injection exige robar una clave de API
+- d) El LLMjacking solo afecta a modelos open source
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: a) El LLMjacking abusa del acceso (credenciales o endpoints) para consumir inferencia ajena; la injection manipula el comportamiento del modelo con texto.** Uno explota el acceso y la factura; el otro, el canal de instrucciones del modelo. Los controles son distintos.
+
+</details>
+
+**7. ¿Por qué una alerta de presupuesto no equivale a un límite de gasto?**
+
+- a) Porque nunca se envía
+- b) Porque informa con retraso y no detiene el consumo; el gasto puede superar el umbral antes del aviso
+- c) Porque solo funciona con modelos propios
+- d) Porque el proveedor la ignora
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Porque informa con retraso y no detiene el consumo; el gasto puede superar el umbral antes del aviso.** La documentación de AWS Budgets indica actualización hasta tres veces al día y retraso entre cargo y notificación. Detener exige cuotas, límites en línea o acciones automáticas.
+
+</details>
+
+**8. Un barrido de cientos de solicitudes con max_tokens=1 sobre varios modelos desde un origen nuevo es mejor interpretado como…**
+
+- a) Una prueba concluyente de ataque atribuible a un actor
+- b) Una anomalía compatible con validación de credenciales que requiere correlación
+- c) Tráfico normal de un modelo pequeño
+- d) Un fallo del proveedor
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Una anomalía compatible con validación de credenciales que requiere correlación.** Es un indicador, no una atribución: se confirma correlando identidad, origen, API invocada y facturación.
+
+</details>
+
+**9. ¿Qué riesgo introduce un tope duro de gasto por identidad?**
+
+- a) Ninguno
+- b) Puede denegar tráfico legítimo, incluso porque el atacante agote la cuota
+- c) Aumenta el gasto
+- d) Impide registrar eventos
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) Puede denegar tráfico legítimo, incluso porque el atacante agote la cuota.** Un control preventivo tiene coste colateral: debe decidirse y aceptarse explícitamente.
 
 </details>
 
@@ -1793,5 +2001,44 @@ Lleva la cuenta de todas las clases del programa en [`progreso.html`](progreso.h
 <details><summary>Ver respuesta</summary>
 
 **Correcta: a) A01 Broken Access Control.** En 2021 era la categoría propia A10; en 2025 se integró en A01. La A10 de 2025 es ahora Mishandling of Exceptional Conditions.
+
+</details>
+
+**26. Un CVE tiene registro publicado el 23 de septiembre y entra a KEV el 20 de octubre. ¿Qué afirmación es correcta?**
+
+- a) Fue descubierto el 20 de octubre
+- b) La entrada a KEV marca la incorporación al catálogo, no la primera explotación ni el descubrimiento; esa fecha puede ser desconocida
+- c) KEV registra siempre la fecha de la primera explotación
+- d) El identificador contiene el año de publicación
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) La entrada a KEV marca la incorporación al catálogo, no la primera explotación ni el descubrimiento; esa fecha puede ser desconocida.** KEV publica `dateAdded`. El año del identificador es el de reserva. La fecha de explotación solo la dan, a veces, las descripciones del fabricante.
+
+</details>
+
+**27. Un CVE de VMware ESX con CVSS 3,1 de 2,7 y EPSS de 0,7 % figura en KEV. ¿Cómo debe tratarlo quien prioriza?**
+
+- a) Ignorarlo, por su severidad
+- b) KEV prevalece: hay explotación confirmada; se decide el plazo según exposición y SSVC, y se valora su papel en la cadena (borrar el rastro)
+- c) Esperar a que EPSS suba
+- d) Tratarlo como crítico solo por estar en KEV, sin mirar nada más
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) KEV prevalece: hay explotación confirmada; se decide el plazo según exposición y SSVC, y se valora su papel en la cadena (borrar el rastro).** La severidad aislada subestima un control que permite operar sin registro. EPSS es un pronóstico y KEV es evidencia; cuando existe evidencia manda.
+
+</details>
+
+**28. Dos CVE de memoria aparecen en KEV la misma semana: uno en PHP y otro en el kernel de Linux. ¿Se puede afirmar que forman una cadena?**
+
+- a) Sí, por coincidir en el tiempo
+- b) No: los registros no los vinculan; viven en capas distintas y compartir semana de KEV no es compartir causa
+- c) Sí, porque PHP corre sobre Linux
+- d) Depende de su CVSS
+
+<details><summary>Ver respuesta</summary>
+
+**Correcta: b) No: los registros no los vinculan; viven en capas distintas y compartir semana de KEV no es compartir causa.** Una cadena es una hipótesis que exige una fuente que la sostenga. Sin ella se estudian por separado, y se declara la incertidumbre.
 
 </details>

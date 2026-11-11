@@ -123,15 +123,17 @@ Aparecen como **mencionados** (no se afirma que se enseñen). Si alguno debe cub
 |---|---|---|
 | CWE-15 | External Control of System or Configuration Setting | 1 |
 | CWE-16 | Configuration | 2 |
-| CWE-23 | Relative Path Traversal | 7 |
+| CWE-23 | Relative Path Traversal | 8 |
 | CWE-36 | Absolute Path Traversal | 2 |
 | CWE-61 | UNIX Symbolic Link (Symlink) Following | 1 |
-| CWE-73 | External Control of File Name or Path | 2 |
+| CWE-73 | External Control of File Name or Path | 3 |
 | CWE-80 | Improper Neutralization of Script-Related HTML Tags in a Web Page | 1 |
 | CWE-83 | Improper Neutralization of Script in Attributes in a Web Page | 1 |
+| CWE-84 | Improper Neutralization of Encoded URI Schemes in a Web Page | 1 |
 | CWE-90 | Improper Neutralization of Special Elements used in an LDAP Query | 2 |
 | CWE-118 | Incorrect Access of Indexable Resource | 7 |
-| CWE-123 | Write-what-where Condition | 1 |
+| CWE-123 | Write-what-where Condition | 2 |
+| CWE-158 | Improper Neutralization of Null Byte or NUL Character | 2 |
 | CWE-194 | Unexpected Sign Extension | 1 |
 | CWE-195 | Signed to Unsigned Conversion Error | 1 |
 | CWE-196 | Unsigned to Signed Conversion Error | 1 |
@@ -143,23 +145,26 @@ Aparecen como **mencionados** (no se afirma que se enseñen). Si alguno debe cub
 | CWE-276 | Incorrect Default Permissions | 5 |
 | CWE-285 | Improper Authorization | 5 |
 | CWE-288 | Authentication Bypass Using an Alternate Path or Channel | 3 |
+| CWE-290 | Authentication Bypass by Spoofing | 3 |
 | CWE-308 | Use of Single-factor Authentication | 1 |
-| CWE-312 | Cleartext Storage of Sensitive Information | 1 |
+| CWE-312 | Cleartext Storage of Sensitive Information | 2 |
 | CWE-319 | Cleartext Transmission of Sensitive Information | 1 |
 | CWE-325 | Missing Cryptographic Step | 1 |
 | CWE-328 | Use of Weak Hash | 6 |
 | CWE-338 | Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG) | 1 |
-| CWE-345 | Insufficient Verification of Data Authenticity | 6 |
+| CWE-345 | Insufficient Verification of Data Authenticity | 7 |
 | CWE-364 | Signal Handler Race Condition | 21 |
 | CWE-405 | Asymmetric Resource Consumption (Amplification) | 1 |
 | CWE-426 | Untrusted Search Path | 2 |
-| CWE-427 | Uncontrolled Search Path Element | 2 |
+| CWE-427 | Uncontrolled Search Path Element | 3 |
 | CWE-436 | Interpretation Conflict | 1 |
 | CWE-441 | Unintended Proxy or Intermediary | 2 |
 | CWE-447 | Unimplemented or Unsupported Feature in UI | 1 |
+| CWE-456 | Missing Initialization of a Variable | 1 |
 | CWE-477 | Use of Obsolete Function | 1 |
 | CWE-526 | Cleartext Storage of Sensitive Information in an Environment Variable | 5 |
 | CWE-547 | Use of Hard-coded, Security-relevant Constants | 1 |
+| CWE-552 | Files or Directories Accessible to External Parties | 1 |
 | CWE-605 | Multiple Binds to the Same Port | 11 |
 | CWE-610 | Externally Controlled Reference to a Resource in Another Sphere | 2 |
 | CWE-613 | DEPRECATED: Insufficient Session Expiration | 5 |
@@ -176,13 +181,13 @@ Aparecen como **mencionados** (no se afirma que se enseñen). Si alguno debe cub
 | CWE-693 | Protection Mechanism Failure | 5 |
 | CWE-706 | Use of Incorrectly-Resolved Name or Reference | 3 |
 | CWE-707 | Improper Neutralization | 9 |
-| CWE-755 | Improper Handling of Exceptional Conditions | 8 |
+| CWE-755 | Improper Handling of Exceptional Conditions | 9 |
 | CWE-759 | Use of a One-Way Hash without a Salt | 1 |
 | CWE-763 | Release of Invalid Pointer or Reference | 2 |
 | CWE-776 | Improper Restriction of Recursive Entity References in DTDs | 2 |
-| CWE-778 | Insufficient Logging | 2 |
+| CWE-778 | Insufficient Logging | 3 |
 | CWE-788 | Access of Memory Location After End of Buffer | 3 |
-| CWE-824 | Access of Uninitialized Pointer | 2 |
+| CWE-824 | Access of Uninitialized Pointer | 4 |
 | CWE-825 | Expired Pointer Dereference | 4 |
 | CWE-837 | Improper Enforcement of a Single, Unique Action | 1 |
 | CWE-840 | Business Logic Errors | 1 |

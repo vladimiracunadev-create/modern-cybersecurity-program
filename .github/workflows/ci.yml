@@ -72,6 +72,9 @@ jobs:
           python -m unittest discover -s labs/llmjacking-defense/tests -v
           python labs/llmjacking-defense/llmjacking_lab.py robustez --seeds 5
 
+      - name: Probar el laboratorio de casos reales de octubre de 2026 (datos de instantánea y modelos)
+        run: python -m unittest discover -s labs/octubre-2026-casos-reales/tests -v
+
       - name: Probar conciliación del caso de custodia digital
         run: python -m unittest discover -s labs/custodia-activos-digitales/tests -v
 

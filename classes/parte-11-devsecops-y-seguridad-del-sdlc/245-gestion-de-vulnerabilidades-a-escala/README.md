@@ -34,6 +34,7 @@ Al finalizar, el alumno podrá:
 | 5 | VEX y excepciones | Documentar lo no explotable |
 | 6 | Métricas del programa | MTTR, backlog, tasa de recurrencia |
 | 7 | Herramientas de agregación | DefectDojo y similares |
+| 8 | Dispositivos de borde y ransomware: SafePay y los KEV de octubre de 2026 | Qué se parchea primero cuando el atacante entra por el borde |
 
 ## 🧠 Explicación en profundidad
 
@@ -68,6 +69,13 @@ Contar vulnerabilidades abiertas puede subir cuando mejora la cobertura. Son má
 ### Caso razonado: mil críticos y ninguna prioridad
 
 Tras integrar escáneres, DefectDojo recibe mil hallazgos críticos duplicados. El equipo normaliza identificadores, conserva instancias por activo y separa imágenes no desplegadas. Cruza exposición y KEV, valida una ruta pública explotable y asigna un dueño. Los hallazgos heredados entran en campañas por componente; los nuevos rompen la línea base según política. El valor no provino de cerrar mil tickets, sino de convertir datos en una cola defendible.
+
+<!-- octubre-2026-245 -->
+### Caso real de octubre de 2026: SafePay y el borde de la red
+
+El **20 de octubre de 2026** CISA, el FBI y socios publicaron el aviso conjunto **AA26-293A** sobre el ransomware SafePay: unas **600 organizaciones** afectadas, entre ellas de infraestructuras críticas, en Norteamérica, Sudamérica, Europa y Australia. El aviso lista como vías de acceso inicial credenciales robadas, expuestas o adivinadas, el uso de VPN y la explotación de **dispositivos expuestos a Internet** mediante scripts automatizados, y enumera cinco CVE históricos (`CVE-2020-3259`, `CVE-2023-20269`, `CVE-2023-27532`, `CVE-2024-40711` y `CVE-2024-40766`). Los cinco figuran en KEV con uso conocido en campañas de ransomware (consulta del 2026-11-10); **ninguno entró a KEV en octubre**. El aviso no asigna un CVE a cada víctima, y por tanto no permite decir que todas las víctimas fueron comprometidas por esas vulnerabilidades.
+
+Lo que sí fija para la gestión de vulnerabilidades: (1) el inventario debe saber **qué dispositivos están en el borde** (VPN, cortafuegos, pasarelas de correo), porque son los que BOD 26-04 prioriza (clase [369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md)); (2) con 28 de los 36 CVE de KEV de octubre con plazo de «3 días y triaje forense» cuando el activo está expuesto, la capacidad de parchear en horas el borde es un requisito operativo, no una meta; (3) parchear no basta si ya hubo acceso: el aviso insiste en revisar cuentas nuevas o inactivas, herramientas legítimas usadas en contextos inesperados y copias de seguridad aisladas, inmutables y probadas. El detalle de la recuperación está en la clase [216](../../parte-9-forense-digital-y-respuesta-a-incidentes/216-contencion-erradicacion-y-recuperacion/README.md). Los casos concretos de octubre de 2026 de esta familia están en el [informe del mes](../../../docs/casos-reales/2026-10/README.md).
 
 ## 📔 Glosario operativo
 
@@ -179,6 +187,7 @@ Es una forma estandarizada de decir "este CVE está presente pero no somos explo
 - CISA KEV — <https://www.cisa.gov/known-exploited-vulnerabilities-catalog>
 - EPSS — <https://www.first.org/epss/>
 - CycloneDX VEX — <https://cyclonedx.org/capabilities/vex/>
+- CISA, FBI y socios, *#StopRansomware: SafePay Ransomware* (AA26-293A) — <https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a> — vías de acceso inicial, CVE listados, técnicas ATT&CK y recomendaciones.
 
 ## 📥 Material descargable
 

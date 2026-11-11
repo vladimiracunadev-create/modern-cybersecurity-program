@@ -1,0 +1,698 @@
+{
+ "mes": "2026-10",
+ "version": 1,
+ "aviso": "Mapa de trabajo del programa: asigna cada CVE a la clase que lo desarrolla. La asignación es una decisión pedagógica; los datos del CVE provienen de instantanea.json.",
+ "casos": [
+  {
+   "cve": "CVE-2015-3306",
+   "fabricante": "ProFTPD",
+   "producto": "ProFTPD",
+   "familia": "control-de-acceso",
+   "cwe_registro": [
+    "CWE-284"
+   ],
+   "cwe_kev": [
+    "CWE-284"
+   ],
+   "clase_canonica": 105,
+   "clases_relacionadas": [
+    367
+   ],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "ProFTPD mod_copy 2015"
+  },
+  {
+   "cve": "CVE-2015-5477",
+   "fabricante": "ISC",
+   "producto": "BIND",
+   "familia": "memoria",
+   "cwe_registro": [
+    "CWE-617"
+   ],
+   "cwe_kev": [
+    "CWE-19"
+   ],
+   "clase_canonica": 365,
+   "clases_relacionadas": [
+    367
+   ],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "BIND TKEY 2015"
+  },
+  {
+   "cve": "CVE-2016-3081",
+   "fabricante": "Apache",
+   "producto": "Struts",
+   "familia": "inyeccion-de-comandos",
+   "cwe_registro": [
+    "CWE-77"
+   ],
+   "cwe_kev": [
+    "CWE-77"
+   ],
+   "clase_canonica": 95,
+   "clases_relacionadas": [
+    367
+   ],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::argv_seguro",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Struts antiguo: la edad no impide la explotación"
+  },
+  {
+   "cve": "CVE-2021-3199",
+   "fabricante": "ONLYOFFICE",
+   "producto": "Docs",
+   "familia": "path-traversal",
+   "cwe_registro": [
+    "CWE-22"
+   ],
+   "cwe_kev": [
+    "CWE-22"
+   ],
+   "clase_canonica": 105,
+   "clases_relacionadas": [
+    367
+   ],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::ruta_segura",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "ONLYOFFICE 2021"
+  },
+  {
+   "cve": "CVE-2023-22894",
+   "fabricante": "Strapi",
+   "producto": "Strapi",
+   "familia": "exposicion-de-informacion",
+   "cwe_registro": [
+    "CWE-312"
+   ],
+   "cwe_kev": [
+    "CWE-312"
+   ],
+   "clase_canonica": 364,
+   "clases_relacionadas": [
+    367
+   ],
+   "laboratorio": "",
+   "evaluacion": "",
+   "nota": "Strapi: inferencia de hashes de contraseña mediante filtros"
+  },
+  {
+   "cve": "CVE-2025-61624",
+   "fabricante": "Fortinet",
+   "producto": "Multiple Products",
+   "familia": "path-traversal",
+   "cwe_registro": [
+    "CWE-22"
+   ],
+   "cwe_kev": [
+    "CWE-22"
+   ],
+   "clase_canonica": 105,
+   "clases_relacionadas": [],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::ruta_segura",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Fortinet: varios productos; CVSS 5,4"
+  },
+  {
+   "cve": "CVE-2026-0322",
+   "fabricante": "Palo Alto Networks",
+   "producto": "PAN-OS",
+   "familia": "inyeccion-de-codigo",
+   "cwe_registro": [
+    "CWE-94"
+   ],
+   "cwe_kev": [
+    "CWE-94"
+   ],
+   "clase_canonica": 95,
+   "clases_relacionadas": [
+    222
+   ],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "PAN-OS: requiere autenticación y acceso a la interfaz de gestión"
+  },
+  {
+   "cve": "CVE-2026-102489",
+   "fabricante": "Zammad GmbH",
+   "producto": "Zammad",
+   "familia": "autenticacion",
+   "cwe_registro": [
+    "CWE-384"
+   ],
+   "cwe_kev": [
+    "CWE-384"
+   ],
+   "clase_canonica": 101,
+   "clases_relacionadas": [],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Zammad: fijación de sesión"
+  },
+  {
+   "cve": "CVE-2026-102490",
+   "fabricante": "Zammad GmbH",
+   "producto": "Zammad",
+   "familia": "escalada-local",
+   "cwe_registro": [
+    "CWE-269"
+   ],
+   "cwe_kev": [
+    "CWE-269"
+   ],
+   "clase_canonica": 101,
+   "clases_relacionadas": [
+    366
+   ],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Zammad: paquetes DEB/RPM ejecutan archivos escribibles por la cuenta del servicio"
+  },
+  {
+   "cve": "CVE-2026-102764",
+   "fabricante": "BeyondTrust",
+   "producto": "Remote Support",
+   "familia": "autenticacion",
+   "cwe_registro": [
+    "CWE-290"
+   ],
+   "cwe_kev": [
+    "CWE-290"
+   ],
+   "clase_canonica": 101,
+   "clases_relacionadas": [
+    105
+   ],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "BeyondTrust: validación de origen en mensajería interna; operaciones sobre archivos"
+  },
+  {
+   "cve": "CVE-2026-104286",
+   "fabricante": "Fortinet",
+   "producto": "FortiMail",
+   "familia": "path-traversal",
+   "cwe_registro": [
+    "CWE-22"
+   ],
+   "cwe_kev": [
+    "CWE-22",
+    "CWE-158"
+   ],
+   "clase_canonica": 105,
+   "clases_relacionadas": [],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::ruta_segura",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "FortiMail: escritura arbitraria sin autenticación"
+  },
+  {
+   "cve": "CVE-2026-104935",
+   "fabricante": "Ivanti",
+   "producto": "Connect Secure",
+   "familia": "autenticacion",
+   "cwe_registro": [
+    "CWE-290"
+   ],
+   "cwe_kev": [
+    "CWE-290"
+   ],
+   "clase_canonica": 101,
+   "clases_relacionadas": [
+    222,
+    245
+   ],
+   "laboratorio": "labs/octubre-2026-casos-reales/respaldo_y_triaje.py::triaje_del_mes",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Ivanti Connect Secure: suplantación para eludir autenticación"
+  },
+  {
+   "cve": "CVE-2026-105133",
+   "fabricante": "Ahsay",
+   "producto": "AhsayCBS",
+   "familia": "autenticacion",
+   "cwe_registro": [
+    "CWE-287"
+   ],
+   "cwe_kev": [
+    "CWE-287"
+   ],
+   "clase_canonica": 101,
+   "clases_relacionadas": [
+    105
+   ],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Ahsay: autenticación incorrecta en la API"
+  },
+  {
+   "cve": "CVE-2026-105134",
+   "fabricante": "Ahsay",
+   "producto": "AhsayCBS",
+   "familia": "inyeccion-de-comandos",
+   "cwe_registro": [
+    "CWE-77",
+    "CWE-78"
+   ],
+   "cwe_kev": [
+    "CWE-77",
+    "CWE-78"
+   ],
+   "clase_canonica": 95,
+   "clases_relacionadas": [
+    199,
+    245
+   ],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::argv_seguro",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Ahsay: inyección de comandos en receptor de réplica; mismo aviso que 105133"
+  },
+  {
+   "cve": "CVE-2026-106931",
+   "fabricante": "EG Secure Solutions",
+   "producto": "SiteGuard Server Edition",
+   "familia": "inyeccion-de-comandos",
+   "cwe_registro": [
+    "CWE-78"
+   ],
+   "cwe_kev": [
+    "CWE-78"
+   ],
+   "clase_canonica": 95,
+   "clases_relacionadas": [],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::argv_seguro",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "SiteGuard: ejecución como root o SYSTEM"
+  },
+  {
+   "cve": "CVE-2026-109618",
+   "fabricante": "PHP Group",
+   "producto": "PHP",
+   "familia": "memoria",
+   "cwe_registro": [
+    "CWE-1325",
+    "CWE-1419",
+    "CWE-416",
+    "CWE-755",
+    "CWE-824"
+   ],
+   "cwe_kev": [
+    "CWE-416",
+    "CWE-755",
+    "CWE-824",
+    "CWE-1325",
+    "CWE-1419"
+   ],
+   "clase_canonica": 365,
+   "clases_relacionadas": [],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "PHP: longjmp tras OOM deja memoria sin inicializar"
+  },
+  {
+   "cve": "CVE-2026-109619",
+   "fabricante": "PHP Group",
+   "producto": "PHP",
+   "familia": "memoria",
+   "cwe_registro": [
+    "CWE-1325",
+    "CWE-1419",
+    "CWE-416",
+    "CWE-755",
+    "CWE-824"
+   ],
+   "cwe_kev": [
+    "CWE-416",
+    "CWE-755",
+    "CWE-824",
+    "CWE-1325",
+    "CWE-1419"
+   ],
+   "clase_canonica": 365,
+   "clases_relacionadas": [],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "PHP: estado global apunta a memoria de petición liberada"
+  },
+  {
+   "cve": "CVE-2026-110447",
+   "fabricante": "Collabora",
+   "producto": "Collabora Online – Built-in CODE Server",
+   "familia": "inyeccion-de-comandos",
+   "cwe_registro": [
+    "CWE-78"
+   ],
+   "cwe_kev": [
+    "CWE-78"
+   ],
+   "clase_canonica": 95,
+   "clases_relacionadas": [
+    245
+   ],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::argv_seguro",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Collabora CODE en Nextcloud; solo la variante integrada, no el servidor independiente"
+  },
+  {
+   "cve": "CVE-2026-110936",
+   "fabricante": "Siemens",
+   "producto": "Software Center",
+   "familia": "ruta-de-busqueda",
+   "cwe_registro": [
+    "CWE-427"
+   ],
+   "cwe_kev": [
+    "CWE-427"
+   ],
+   "clase_canonica": 366,
+   "clases_relacionadas": [],
+   "laboratorio": "",
+   "evaluacion": "",
+   "nota": "Siemens Software Center: DLL desde ruta no controlada; local"
+  },
+  {
+   "cve": "CVE-2026-111357",
+   "fabricante": "Ivanti",
+   "producto": "Connect Secure",
+   "familia": "autenticacion",
+   "cwe_registro": [
+    "CWE-829"
+   ],
+   "cwe_kev": [
+    "CWE-306",
+    "CWE-862",
+    "CWE-345"
+   ],
+   "clase_canonica": 101,
+   "clases_relacionadas": [
+    364
+   ],
+   "laboratorio": "labs/octubre-2026-casos-reales/respaldo_y_triaje.py::triaje_del_mes",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Ivanti: escalada a root en 22.8R2.4; el aviso comparte referencia con 104935 y 118527"
+  },
+  {
+   "cve": "CVE-2026-111497",
+   "fabricante": "Google",
+   "producto": "Brotli",
+   "familia": "memoria",
+   "cwe_registro": [
+    "CWE-252",
+    "CWE-787"
+   ],
+   "cwe_kev": [
+    "CWE-252",
+    "CWE-787"
+   ],
+   "clase_canonica": 365,
+   "clases_relacionadas": [
+    363
+   ],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Brotli: escritura fuera de límites en el decodificador"
+  },
+  {
+   "cve": "CVE-2026-114625",
+   "fabricante": "Arista",
+   "producto": "VeloCloud Orchestrator",
+   "familia": "autorizacion",
+   "cwe_registro": [
+    "CWE-89"
+   ],
+   "cwe_kev": [
+    "CWE-89"
+   ],
+   "clase_canonica": 101,
+   "clases_relacionadas": [
+    363,
+    364
+   ],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Arista VeloCloud: cualquier usuario autenticado obtiene privilegios de operador; KEV lo clasifica como CWE-89"
+  },
+  {
+   "cve": "CVE-2026-118527",
+   "fabricante": "Ivanti",
+   "producto": "Connect Secure",
+   "familia": "fechas-de-un-cve",
+   "cwe_registro": [
+    "CWE-340"
+   ],
+   "cwe_kev": [
+    "CWE-340"
+   ],
+   "clase_canonica": 367,
+   "clases_relacionadas": [
+    105
+   ],
+   "laboratorio": "labs/octubre-2026-casos-reales/respaldo_y_triaje.py::triaje_del_mes",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Ivanti: nombres de archivo predecibles; el registro CVE se publicó tras la entrada a KEV"
+  },
+  {
+   "cve": "CVE-2026-21589",
+   "fabricante": "Atlassian",
+   "producto": "Multiple Products",
+   "familia": "exposicion-de-archivos",
+   "cwe_registro": [
+    "CWE-552"
+   ],
+   "cwe_kev": [
+    "CWE-552"
+   ],
+   "clase_canonica": 105,
+   "clases_relacionadas": [
+    366
+   ],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::ruta_segura",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Atlassian: archivos accesibles bajo la raíz web; requiere conocer la ruta"
+  },
+  {
+   "cve": "CVE-2026-41709",
+   "fabricante": "Broadcom",
+   "producto": "VMware ESX",
+   "familia": "registro-insuficiente",
+   "cwe_registro": [
+    "CWE-778"
+   ],
+   "cwe_kev": [
+    "CWE-778"
+   ],
+   "clase_canonica": 369,
+   "clases_relacionadas": [
+    199,
+    364
+   ],
+   "laboratorio": "labs/octubre-2026-casos-reales/respaldo_y_triaje.py::triaje_del_mes",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "ESX: CVSS 2,7 y en KEV; un administrador malicioso opera sin dejar registro"
+  },
+  {
+   "cve": "CVE-2026-46300",
+   "fabricante": "Linux",
+   "producto": "Kernel",
+   "familia": "memoria",
+   "cwe_registro": [
+    "CWE-123",
+    "CWE-456"
+   ],
+   "cwe_kev": [
+    "CWE-456"
+   ],
+   "clase_canonica": 365,
+   "clases_relacionadas": [
+    366
+   ],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Kernel Linux: marca de fragmentos compartidos perdida al fusionar"
+  },
+  {
+   "cve": "CVE-2026-48356",
+   "fabricante": "Adobe",
+   "producto": "Commerce and Magento",
+   "familia": "carga-de-archivos",
+   "cwe_registro": [
+    "CWE-434"
+   ],
+   "cwe_kev": [
+    "CWE-434"
+   ],
+   "clase_canonica": 105,
+   "clases_relacionadas": [
+    95
+   ],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::ruta_segura",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Adobe Commerce: subida sin restricción, requiere interacción del usuario"
+  },
+  {
+   "cve": "CVE-2026-76418",
+   "fabricante": "Cisco",
+   "producto": "Secure Firewall ASA Software and Cisco Secure FTD Software",
+   "familia": "manejo-de-condiciones",
+   "cwe_registro": [
+    "CWE-690"
+   ],
+   "cwe_kev": [
+    "CWE-690"
+   ],
+   "clase_canonica": 365,
+   "clases_relacionadas": [],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Cisco ASA/FTD: denegación de servicio por errores de lógica en autenticación secundaria"
+  },
+  {
+   "cve": "CVE-2026-76519",
+   "fabricante": "Cisco",
+   "producto": "Secure Email Gateway",
+   "familia": "path-traversal",
+   "cwe_registro": [
+    "CWE-23"
+   ],
+   "cwe_kev": [
+    "CWE-23"
+   ],
+   "clase_canonica": 105,
+   "clases_relacionadas": [],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::ruta_segura",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Cisco ESA: ruta relativa a través de un adjunto"
+  },
+  {
+   "cve": "CVE-2026-88779",
+   "fabricante": "Citrix",
+   "producto": "NetScaler",
+   "familia": "memoria",
+   "cwe_registro": [
+    "CWE-119"
+   ],
+   "cwe_kev": [
+    "CWE-119"
+   ],
+   "clase_canonica": 365,
+   "clases_relacionadas": [],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "NetScaler: desbordamiento; el registro describe denegación de servicio"
+  },
+  {
+   "cve": "CVE-2026-96652",
+   "fabricante": "Plex",
+   "producto": "Media Server",
+   "familia": "ssrf",
+   "cwe_registro": [
+    "CWE-918"
+   ],
+   "cwe_kev": [
+    "CWE-918"
+   ],
+   "clase_canonica": 99,
+   "clases_relacionadas": [
+    222
+   ],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::validar_destino",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Plex: URL completa en el parámetro protocol"
+  },
+  {
+   "cve": "CVE-2026-96654",
+   "fabricante": "Plex",
+   "producto": "Media Server",
+   "familia": "neutralizacion-de-esquema-url",
+   "cwe_registro": [
+    "CWE-84"
+   ],
+   "cwe_kev": [
+    "CWE-84"
+   ],
+   "clase_canonica": 99,
+   "clases_relacionadas": [
+    95
+   ],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::validar_destino",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Plex: valores de URL sin neutralizar en searchOne"
+  },
+  {
+   "cve": "CVE-2026-96655",
+   "fabricante": "Plex",
+   "producto": "Media Server",
+   "familia": "ssrf",
+   "cwe_registro": [
+    "CWE-918"
+   ],
+   "cwe_kev": [
+    "CWE-918"
+   ],
+   "clase_canonica": 99,
+   "clases_relacionadas": [
+    222
+   ],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::validar_destino",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Plex: destino arbitrario en la ruta de transcodificación; usuario autenticado"
+  },
+  {
+   "cve": "CVE-2026-96656",
+   "fabricante": "Plex",
+   "producto": "Media Server",
+   "familia": "escritura-de-archivos",
+   "cwe_registro": [
+    "CWE-73"
+   ],
+   "cwe_kev": [
+    "CWE-73"
+   ],
+   "clase_canonica": 105,
+   "clases_relacionadas": [
+    366
+   ],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::ruta_segura",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Plex: opción de transcodificador que termina cargando bibliotecas .so; administrador"
+  },
+  {
+   "cve": "CVE-2026-96951",
+   "fabricante": "Microsoft",
+   "producto": "Windows",
+   "familia": "inyeccion-de-comandos",
+   "cwe_registro": [
+    "CWE-77"
+   ],
+   "cwe_kev": [
+    "CWE-77"
+   ],
+   "clase_canonica": 95,
+   "clases_relacionadas": [],
+   "laboratorio": "labs/octubre-2026-casos-reales/destinos_y_rutas.py::argv_seguro",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "Windows Shell: el registro lo describe como elusión de una función de seguridad"
+  },
+  {
+   "cve": "CVE-2026-97229",
+   "fabricante": "GitLab",
+   "producto": "Community Edition and Enterprise Edition",
+   "familia": "enteros",
+   "cwe_registro": [
+    "CWE-190"
+   ],
+   "cwe_kev": [
+    "CWE-190"
+   ],
+   "clase_canonica": 365,
+   "clases_relacionadas": [
+    363,
+    245
+   ],
+   "laboratorio": "",
+   "evaluacion": "autoevaluaciones/preguntas.json (Octubre 2026)",
+   "nota": "GitLab: desbordamiento de enteros en el compilador de expresiones regulares (Onigmo)"
+  }
+ ]
+}

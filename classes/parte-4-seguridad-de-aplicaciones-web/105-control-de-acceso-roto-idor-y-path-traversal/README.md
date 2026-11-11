@@ -32,6 +32,7 @@ Al finalizar, el alumno podrá:
 | 5 | Path/directory traversal | Lectura de archivos |
 | 6 | Métodos y verbos HTTP | Bypass por verbo |
 | 7 | Defensa: authz por objeto | Cierre del fallo |
+| 8 | Casos KEV de octubre de 2026: Fortinet, Cisco, Atlassian, Plex | Lectura, escritura y carga de archivos fuera de lugar |
 
 ## 🧠 Explicación en profundidad
 
@@ -108,6 +109,30 @@ Esta clase junta dos debilidades que el catálogo relaciona de forma instructiva
 
 Un caso real del programa muestra la diferencia entre el tipo de debilidad y su gravedad. **CVE-2021-41773** (Apache HTTP Server 2.4.49) es un `CWE-22`: NVD lo puntúa con 9,8 y CISA-ADP con 7,5 por suponer solo lectura de archivos; está en KEV desde 2021-11-03 con uso conocido en *ransomware* y su EPSS ronda el 99,99 %. Su descripción añade que la corrección de la versión 2.4.50 resultó incompleta, algo que justifica la verificación del ciclo completo de la [clase 370](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md). La corrección de este laboratorio, con la prueba que usa un directorio hermano para vencer la comprobación ingenua por prefijo, está en `labs/appsec-code`.
 
+<!-- octubre-2026-105 -->
+### Casos reales de octubre de 2026: cuando el archivo equivocado se lee, se escribe o se ejecuta
+
+Seis CVE de KEV de octubre de 2026 pertenecen a esta familia, y los registros permiten ordenarlos por **qué se puede hacer con la ruta**: leer, escribir o cargar. Datos del registro CVE y de KEV (consulta del 2026-11-10).
+
+| Operación | CVE | Producto | Descripción verificada | CWE |
+|---|---|---|---|---|
+| Leer | `CVE-2026-21589` | Atlassian (Bitbucket, Confluence, Jira, Bamboo, Crowd, Crucible, Fisheye) | un atacante sin autenticar accede a archivos concretos bajo la raíz web; **debe conocer el nombre y la ruta exactos**, no puede listar directorios | 552 |
+| Escribir | `CVE-2026-104286` | Fortinet FortiMail | escritura de archivos arbitrarios sin autenticación mediante peticiones HTTP/HTTPS manipuladas | 22 (KEV añade 158) |
+| Escribir | `CVE-2026-76519` | Cisco Secure Email Gateway | la función de reputación de archivos (AMP) maneja mal un adjunto y permite escribir archivos; el aviso añade ejecución de comandos con privilegios de root | 23 |
+| Escribir | `CVE-2025-61624` | Fortinet (FortiOS, FortiProxy, FortiPAM y otros) | traversal de ruta en varias líneas de producto | 22 |
+| Cargar | `CVE-2026-96656` | Plex Media Server | opción de transcodificador que termina en la carga de bibliotecas `.so` sin verificar | 73 |
+| Subir | `CVE-2026-48356` | Adobe Commerce | subida de archivo de tipo peligroso; exige que la víctima interactúe con una URL manipulada | 434 |
+
+**Cómo se relacionan las debilidades.** `CWE-22` es la entrada general («limitación incorrecta de un nombre de ruta a un directorio restringido»); `CWE-23` es la variante de **ruta relativa** (`../`), que es la que describe Cisco; `CWE-158` es la neutralización incorrecta del **byte nulo**, que algunos analizadores tratan como fin de cadena, y KEV lo añade a `CWE-22` en FortiMail; `CWE-73` es el control externo de un nombre o una ruta (Plex); `CWE-552` es la exposición de archivos accesibles a partes no autorizadas (Atlassian). Es la jerarquía que se estudia en la clase [363](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/363-familias-cwe-entradas-no-confiables/README.md): una misma tarea («abrir un archivo con un nombre que viene de fuera») tiene varias formas de fallar.
+
+**Por qué importa lo que *no* hace Atlassian.** El registro precisa que no se pueden enumerar directorios y que hay que conocer la ruta exacta. Eso baja la probabilidad, pero no la gravedad cuando el archivo es una configuración con credenciales: «en algunas configuraciones puede haber archivos sensibles». Una defensa complementaria, independiente del parche, es **no dejar secretos bajo la raíz web**.
+
+**Escritura de archivos: el salto a ejecución.** Escribir un archivo es peligroso por lo que el sistema hace luego con él: un directorio desde el que se cargan módulos, una tarea programada, una plantilla que se interpreta. FortiMail y Cisco lo muestran sin autenticación; Plex lo muestra desde el lado de la *carga* (el arranque ejecuta todo `.so` sin comprobar firma). Defensivamente, tres controles se refuerzan entre sí: **canonicalizar y confinar** la ruta, que el proceso no pueda **escribir donde se carga código**, y exigir **firma o lista de hashes** a lo que se carga.
+
+**Práctica verificable.** `ruta_vulnerable` y `ruta_segura` están en `destinos_y_rutas.py`. La segura aplica, en este orden: decodificar hasta un punto fijo y rechazar la doble codificación (`%252e%252e`), rechazar el byte nulo y la barra invertida, rechazar rutas absolutas, normalizar y **comprobar que el resultado sigue dentro del directorio base**. Esta última comprobación es la que realmente protege; las anteriores solo acotan formas. Las pruebas incluyen `../x`, `a/../../x`, `%2e%2e/x`, `%252e%252e/x`, `/etc/passwd`, `a\..\x`, `a\x00.png` y `a%00.png`, y comprueban que `informes/2026/octubre.pdf` y `a/../b.txt` sí se aceptan. Limitación: el modelo opera sobre cadenas con `posixpath`; no resuelve enlaces simbólicos, que en un sistema real requieren `realpath` o apertura relativa a un descriptor de directorio.
+
+**Qué dice la edad de otros dos casos.** `CVE-2021-3199` (ONLYOFFICE, 2021, CVSS 9,8 y EPSS ≈ 30 %) y `CVE-2015-3306` (ProFTPD `mod_copy`, 2015, CVSS 10,0 y EPSS ≈ 99,5 %) entraron a KEV el mismo día, 2026-10-08. Un ejemplo de que el inventario de software antiguo —servicios FTP o editores documentales olvidados— es una superficie real.
+
 ## 📖 Definiciones y características
 
 - **Broken Access Control**: la app no verifica que el usuario pueda hacer/ver lo solicitado. Característica: categoría A01, la más frecuente.
@@ -167,6 +192,7 @@ GET /download?file=../../../../etc/passwd
 4. Descubre una función admin por forced browsing.
 5. Prueba cambiar el verbo HTTP (GET→POST/PUT) para saltar un control.
 6. Escribe el control de acceso correcto a nivel de objeto (comprobar propietario).
+7. Casos de octubre de 2026. (a) Con `ruta_segura`, demuestra que `a/../b.txt` es legítimo y `%252e%252e/x` no; (b) explica por qué comprobar solo que la cadena no contiene `..` fracasa; (c) para `CVE-2026-96656` (Plex) indica qué tres controles evitarían que una opción de configuración llegue a ejecutarse. *Solución razonada:* (b) porque hay codificaciones (`%2e%2e`, doble codificación), separadores alternativos y bytes nulos que producen `..` solo tras decodificar; la única comprobación robusta es sobre la ruta **resuelta**; (c) entrada de configuración validada (lista de opciones permitidas), directorio de carga no escribible por el proceso que escribe preferencias, y verificación de firma de las bibliotecas que se cargan.
 
 ## 📝 Reto verificable
 
@@ -200,6 +226,9 @@ Leer es lo básico; combinado con upload o LFI puede escalar a ejecución de có
 - OWASP Broken Access Control (A01): <https://owasp.org/Top10/A01_2021-Broken_Access_Control/>
 - OWASP Path Traversal.
 - PortSwigger Access control: <https://portswigger.net/web-security/access-control>
+- Atlassian, aviso de `CVE-2026-21589` — <https://confluence.atlassian.com/security/cve-2026-21589-arbitrary-file-access-vulnerability-impacts-multiple-products-1870495748.html> — productos, versiones introducidas y corregidas.
+- Fortinet PSIRT, `FG-IR-26-175` (FortiMail) — <https://fortiguard.fortinet.com/psirt/FG-IR-26-175> — versiones afectadas y corregidas de `CVE-2026-104286`.
+- Cisco, *cisco-sa-esa-afw-zqYJkjxp* — <https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-afw-zqYJkjxp> — escritura de archivos en Secure Email Gateway.
 
 ## 📥 Material descargable
 

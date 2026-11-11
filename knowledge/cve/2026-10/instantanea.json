@@ -1,0 +1,5393 @@
+{
+ "mes": "2026-10",
+ "generado": "2026-11-11T13:08:48Z",
+ "fuentes": {
+  "kev": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json",
+  "kev_version": "2026.11.10",
+  "kev_publicado": "2026-11-10T19:03:29.8375Z",
+  "registro_cve": "https://cveawg.mitre.org/api/cve/{id}",
+  "epss": "https://api.first.org/data/v1/epss?cve={ids}"
+ },
+ "kev_incorporados_en_el_mes": 36,
+ "cves": [
+  {
+   "cve": "CVE-2015-3306",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "mitre",
+    "reservado": "2015-04-15T00:00:00.000Z",
+    "publicado": "2015-05-18T15:00:00.000Z",
+    "actualizado": "2026-10-09T16:02:13.824Z",
+    "titulo": null,
+    "descripcion": "The mod_copy module in ProFTPD 1.3.5 allows remote attackers to read and write to arbitrary files via the site cpfr and site cpto commands.",
+    "cwe_registro": [
+     "CWE-284"
+    ],
+    "afectados": [
+     {
+      "fabricante": "n/a",
+      "producto": "n/a",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "n/a"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 10,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "fuente": "CISA-ADP"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "yes",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "http://www.rapid7.com/db/modules/exploit/unix/ftp/proftpd_modcopy_exec",
+     "https://www.exploit-db.com/exploits/36803/",
+     "http://packetstormsecurity.com/files/131555/ProFTPd-1.3.5-Remote-Command-Execution.html",
+     "http://www.debian.org/security/2015/dsa-3263",
+     "http://packetstormsecurity.com/files/131567/ProFTPd-CPFR-CPTO-Proof-Of-Concept.html",
+     "http://packetstormsecurity.com/files/132218/ProFTPD-1.3.5-Mod_Copy-Command-Execution.html",
+     "http://lists.opensuse.org/opensuse-updates/2015-06/msg00020.html",
+     "http://lists.fedoraproject.org/pipermail/package-announce/2015-May/157053.html",
+     "http://lists.fedoraproject.org/pipermail/package-announce/2015-May/157054.html",
+     "http://www.securityfocus.com/bid/74238",
+     "https://www.exploit-db.com/exploits/36742/",
+     "http://lists.fedoraproject.org/pipermail/package-announce/2015-May/157581.html"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-08",
+    "plazo_federal": "2026-10-11",
+    "nombre": "ProFTPD Improper Access Control Vulnerability",
+    "fabricante": "ProFTPD",
+    "producto": "ProFTPD",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-284"
+    ],
+    "notas": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: http://www.proftpd.org/ ; https://lists.debian.org/debian-security-announce/2015/msg00154.html ; https://lists.opensuse.org/archives/list/updates@lists.opensuse.org/message/WE6YZRG5UVXMGQ7IVDRYBPIWV4M6UUGM/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2015-3306"
+   },
+   "epss": {
+    "probabilidad": 0.99497,
+    "percentil": 0.99945,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2015-5477",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "mitre",
+    "reservado": "2015-07-10T00:00:00.000Z",
+    "publicado": "2015-07-29T14:00:00.000Z",
+    "actualizado": "2026-11-03T23:47:03.092Z",
+    "titulo": null,
+    "descripcion": "named in ISC BIND 9.x before 9.9.7-P2 and 9.10.x before 9.10.2-P3 allows remote attackers to cause a denial of service (REQUIRE assertion failure and daemon exit) via TKEY queries.",
+    "cwe_registro": [
+     "CWE-617"
+    ],
+    "afectados": [
+     {
+      "fabricante": "n/a",
+      "producto": "n/a",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "n/a"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 7.5,
+      "severidad": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "fuente": "CISA-ADP"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "yes",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "http://packetstormsecurity.com/files/132926/BIND-TKEY-Query-Denial-Of-Service.html",
+     "http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html",
+     "http://lists.opensuse.org/opensuse-security-announce/2015-07/msg00050.html",
+     "https://h20564.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c04789415",
+     "https://kb.juniper.net/JSA10783",
+     "http://rhn.redhat.com/errata/RHSA-2015-1513.html",
+     "http://lists.opensuse.org/opensuse-security-announce/2015-07/msg00044.html",
+     "https://security.netapp.com/advisory/ntap-20160114-0001/",
+     "https://kb.isc.org/article/AA-01438",
+     "http://lists.fedoraproject.org/pipermail/package-announce/2015-August/163015.html",
+     "http://marc.info/?l=bugtraq&m=144017354030745&w=2",
+     "http://marc.info/?l=bugtraq&m=144294073801304&w=2"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-08",
+    "plazo_federal": "2026-10-11",
+    "nombre": " ISC BIND Data Processing Errors Vulnerability",
+    "fabricante": "ISC",
+    "producto": "BIND",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-19"
+    ],
+    "notas": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://web.archive.org/web/20150729014733/https://kb.isc.org/article/AA-01272 ; https://access.redhat.com/errata/RHSA-2015:1513.html; https://supportportal.juniper.net/s/article/2016-01-Security-Bulletin-Junos-Vulnerability-in-ISC-BIND-named-CVE-2015-5477 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2015-5477"
+   },
+   "epss": {
+    "probabilidad": 0.99584,
+    "percentil": 0.99946,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2016-3081",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "redhat",
+    "reservado": "2016-03-10T00:00:00.000Z",
+    "publicado": "2016-04-26T14:00:00.000Z",
+    "actualizado": "2026-10-09T03:55:30.407Z",
+    "titulo": null,
+    "descripcion": "Apache Struts 2.3.19 to 2.3.20.2, 2.3.21 to 2.3.24.1, and 2.3.25 to 2.3.28, when Dynamic Method Invocation is enabled, allow remote attackers to execute arbitrary code via method: prefix, related to chained expressions.",
+    "cwe_registro": [
+     "CWE-77"
+    ],
+    "afectados": [
+     {
+      "fabricante": "n/a",
+      "producto": "n/a",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "n/a"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 8.1,
+      "severidad": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "fuente": "CISA-ADP"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "http://www.securitytracker.com/id/1035665",
+     "https://struts.apache.org/docs/s2-032.html",
+     "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20160527-01-struts2-en",
+     "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html",
+     "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+     "http://www.rapid7.com/db/modules/exploit/linux/http/struts_dmi_exec",
+     "https://www.exploit-db.com/exploits/39756/",
+     "http://www.securityfocus.com/bid/91787",
+     "http://packetstormsecurity.com/files/136856/Apache-Struts-2.3.28-Dynamic-Method-Invocation-Remote-Code-Execution.html",
+     "http://www.securityfocus.com/bid/87327",
+     "http://www.rapid7.com/db/modules/exploit/multi/http/struts_dmi_exec"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-08",
+    "plazo_federal": "2026-10-11",
+    "nombre": "Apache Struts Command Injection Vulnerability",
+    "fabricante": "Apache",
+    "producto": "Struts",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-77"
+    ],
+    "notas": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://cwiki.apache.org/confluence/display/WW/S2-032 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2016-3081"
+   },
+   "epss": {
+    "probabilidad": 0.96916,
+    "percentil": 0.99888,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2021-3199",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "mitre",
+    "reservado": "2021-01-21T00:00:00.000Z",
+    "publicado": "2021-01-22T02:41:34.000Z",
+    "actualizado": "2026-10-09T03:55:31.111Z",
+    "titulo": null,
+    "descripcion": "Directory traversal with remote code execution can occur in /upload in ONLYOFFICE Document Server before 5.6.3, when JWT is used, via a /.. sequence in an image upload parameter.",
+    "cwe_registro": [
+     "CWE-22"
+    ],
+    "afectados": [
+     {
+      "fabricante": "n/a",
+      "producto": "n/a",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "n/a"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 9.8,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "fuente": "CISA-ADP"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "yes",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://github.com/ONLYOFFICE/DocumentServer/blob/903fe5ab7a275bd69c3c3346af2d21cf87ebeabf/CHANGELOG.md#563",
+     "https://github.com/nola-milkin/poc_exploits/blob/master/CVE-2021-3199/poc_uploadImageFile.py",
+     "https://github.com/moehw/poc_exploits/tree/master/CVE-2021-3199/poc_uploadImageFile.py"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-08",
+    "plazo_federal": "2026-10-11",
+    "nombre": "ONLYOFFICE Docs Server Path Traversal Vulnerability",
+    "fabricante": "ONLYOFFICE",
+    "producto": "Docs",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-22"
+    ],
+    "notas": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: ; https://github.com/ONLYOFFICE/DocumentServer/blob/903fe5ab7a275bd69c3c3346af2d21cf87ebeabf/CHANGELOG.md#563 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2021-3199"
+   },
+   "epss": {
+    "probabilidad": 0.30244,
+    "percentil": 0.98237,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2023-22894",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "mitre",
+    "reservado": "2023-01-10T00:00:00.000Z",
+    "publicado": "2023-04-19T00:00:00.000Z",
+    "actualizado": "2026-10-09T03:55:26.444Z",
+    "titulo": null,
+    "descripcion": "Strapi through 4.5.5 allows attackers (with access to the admin panel) to discover sensitive user details by exploiting the query filter. The attacker can filter users by columns that contain sensitive information and infer a value from API responses. If the attacker has super admin access, then this can be exploited to discover the password hash and password reset token of all users. If the attacker has admin panel access to an account with permission to access the username and email of API users with a lower privileged role (e.g., Editor or Author), then this can be exploited to discover sensitive information for all API users but not other admin accounts.",
+    "cwe_registro": [
+     "CWE-312"
+    ],
+    "afectados": [
+     {
+      "fabricante": "n/a",
+      "producto": "n/a",
+      "versiones": [
+       {
+        "version": "n/a",
+        "status": "affected"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 7.2,
+      "severidad": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "fuente": "CISA-ADP"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://github.com/strapi/strapi/releases",
+     "https://www.ghostccamm.com/blog/multi_strapi_vulns/",
+     "https://strapi.io/blog/security-disclosure-of-vulnerabilities-cve"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-08",
+    "plazo_federal": "2026-10-11",
+    "nombre": "Strapi Cleartext Storage of Sensitive Information Vulnerability",
+    "fabricante": "Strapi",
+    "producto": "Strapi",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-312"
+    ],
+    "notas": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://strapi.io/blog/security-disclosure-of-vulnerabilities-cve ; https://github.com/strapi/strapi/releases ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2023-22894"
+   },
+   "epss": {
+    "probabilidad": 0.04114,
+    "percentil": 0.90864,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2025-61624",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "fortinet",
+    "reservado": "2025-09-29T07:36:48.603Z",
+    "publicado": "2026-04-14T15:39:51.445Z",
+    "actualizado": "2026-10-17T03:55:20.565Z",
+    "titulo": null,
+    "descripcion": "An Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') [CWE-22] vulnerability in Fortinet FortiOS 7.6.0 through 7.6.4, FortiOS 7.4.0 through 7.4.9, FortiOS 7.2 all versions, FortiOS 7.0 all versions, FortiOS 6.4 all versions, FortiPAM 1.7.0, FortiPAM 1.6 all versions, FortiPAM 1.5 all versions, FortiPAM 1.4 all versions, FortiPAM 1.3 all versions, FortiPAM 1.2 all versions, FortiPAM 1.1 all versions, FortiPAM 1.0 all versions, FortiProxy 7.6.0 through 7.6.4, FortiProxy 7.4.0 through 7.4.11, FortiProxy 7.2 all versions, FortiProxy 7.0 all versions, FortiSwitchManager 7.2.0 through 7.2.7, FortiSwitchManager 7.0.0 through 7.0.6 may allow an authenticated attacker with admin profile and at least read-write permissions to write or delete arbitrary files via specific CLI commands.",
+    "cwe_registro": [
+     "CWE-22"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Fortinet",
+      "producto": "FortiOS",
+      "versiones": [
+       {
+        "versionType": "semver",
+        "version": "7.6.0",
+        "lessThanOrEqual": "7.6.4",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "7.4.0",
+        "lessThanOrEqual": "7.4.9",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "7.2.0",
+        "lessThanOrEqual": "7.2.13",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "7.0.0",
+        "lessThanOrEqual": "7.0.19",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "6.4.0",
+        "lessThanOrEqual": "6.4.16",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Fortinet",
+      "producto": "FortiProxy",
+      "versiones": [
+       {
+        "versionType": "semver",
+        "version": "7.6.0",
+        "lessThanOrEqual": "7.6.4",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "7.4.0",
+        "lessThanOrEqual": "7.4.11",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "7.2.0",
+        "lessThanOrEqual": "7.2.16",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "7.0.0",
+        "lessThanOrEqual": "7.0.23",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Fortinet",
+      "producto": "FortiSwitchManager",
+      "versiones": [
+       {
+        "versionType": "semver",
+        "version": "7.2.0",
+        "lessThanOrEqual": "7.2.7",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "7.0.0",
+        "lessThanOrEqual": "7.0.6",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Fortinet",
+      "producto": "FortiPAM",
+      "versiones": [
+       {
+        "version": "1.7.0",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "1.6.0",
+        "lessThanOrEqual": "1.6.2",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "1.5.0",
+        "lessThanOrEqual": "1.5.1",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "1.4.0",
+        "lessThanOrEqual": "1.4.3",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "1.3.0",
+        "lessThanOrEqual": "1.3.1",
+        "status": "affected"
+       },
+       {
+        "version": "1.2.0",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "1.1.0",
+        "lessThanOrEqual": "1.1.2",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "1.0.0",
+        "lessThanOrEqual": "1.0.3",
+        "status": "affected"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 5.4,
+      "severidad": "MEDIUM",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H/E:P/RL:O/RC:C",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://fortiguard.fortinet.com/psirt/FG-IR-26-122"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-16",
+    "plazo_federal": "2026-10-19",
+    "nombre": "Fortinet Multiple Products Path Traversal Vulnerability",
+    "fabricante": "Fortinet",
+    "producto": "Multiple Products",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-22"
+    ],
+    "notas": "https://fortiguard.fortinet.com/psirt/FG-IR-26-122 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2025-61624"
+   },
+   "epss": {
+    "probabilidad": 0.01343,
+    "percentil": 0.71597,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-0322",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "palo_alto",
+    "reservado": "2025-11-03T20:46:23.966Z",
+    "publicado": "2026-10-14T17:26:52.448Z",
+    "actualizado": "2026-11-10T12:40:25.624Z",
+    "titulo": "PAN-OS: Authenticated Remote Code Execution (RCE) in the Management Interface",
+    "descripcion": "A remote code execution (RCE) vulnerability in the management interface of Palo Alto Networks PAN-OS® software enables an authenticated attacker with network access to execute arbitrary code with root privileges on the firewall.\n\n\n\nThe security risk posed by this issue is minimized by restricting access to the management interface to only trusted internal IP addresses according to our recommended  best practice deployment guidelines https://live.paloaltonetworks.com/t5/community-blogs/tips-amp-tricks-how-to-secure-the-management-access-of-your-palo/ba-p/464431 .\n\n\n\nThis issue is applicable to PAN-OS software on PA-Series and VM-Series firewalls and on Panorama (virtual and M-Series).\n\n\n\nCloud NGFW and Prisma® Access are not impacted by this vulnerability.",
+    "cwe_registro": [
+     "CWE-94"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Palo Alto Networks",
+      "producto": "Cloud NGFW",
+      "versiones": [
+       {
+        "status": "unaffected",
+        "version": "All",
+        "versionType": "custom"
+       }
+      ]
+     },
+     {
+      "fabricante": "Palo Alto Networks",
+      "producto": "PAN-OS",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "12.2.0",
+        "lessThan": "12.2.4",
+        "versionType": "custom"
+       },
+       {
+        "status": "affected",
+        "version": "12.1.0",
+        "lessThan": "12.1.10-h2",
+        "versionType": "custom"
+       },
+       {
+        "status": "affected",
+        "version": "11.2.0",
+        "lessThan": "11.2.16",
+        "versionType": "custom"
+       },
+       {
+        "status": "affected",
+        "version": "11.1.0",
+        "lessThan": "11.1.16-h3",
+        "versionType": "custom"
+       },
+       {
+        "status": "affected",
+        "version": "10.2.0",
+        "lessThan": "10.2.18-h12",
+        "versionType": "custom"
+       }
+      ]
+     },
+     {
+      "fabricante": "Palo Alto Networks",
+      "producto": "Prisma Access",
+      "versiones": [
+       {
+        "status": "unaffected",
+        "version": "All",
+        "versionType": "custom"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "4.0",
+      "puntuacion": 8.6,
+      "severidad": "HIGH",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A/AU:N/R:U/V:D/RE:M/U:Red",
+      "fuente": "CNA"
+     },
+     {
+      "version": "4.0",
+      "puntuacion": 8.5,
+      "severidad": "HIGH",
+      "vector": "CVSS:4.0/AV:A/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A/AU:N/R:U/V:D/RE:M/U:Red",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://security.paloaltonetworks.com/CVE-2026-0322"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-14",
+    "plazo_federal": "2026-10-17",
+    "nombre": "Palo Alto Networks PAN-OS Code Injection Vulnerability",
+    "fabricante": "Palo Alto Networks",
+    "producto": "PAN-OS",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-94"
+    ],
+    "notas": "https://security.paloaltonetworks.com/CVE-2026-0322 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-0322"
+   },
+   "epss": {
+    "probabilidad": 0.0174,
+    "percentil": 0.77919,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-102489",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "DIVD",
+    "reservado": "2026-09-29T09:46:12.490Z",
+    "publicado": "2026-09-30T16:21:19.937Z",
+    "actualizado": "2026-10-19T09:10:59.656Z",
+    "titulo": "Undisclosed RCE in Zammad v6.3 and higher",
+    "descripcion": "Zammad versions 6.3.0 to 6.5.4 are vulnerable a session hijack vulnerability that leads to remote code execution as the zammad user. The bug is also present in version 7.0.0 to version 7.1.2, but not exploitable due to changes in the underlying framework.",
+    "cwe_registro": [
+     "CWE-384"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Zammad GmbH",
+      "producto": "Zammad",
+      "versiones": [
+       {
+        "lessThan": "6.3.0",
+        "status": "unknown",
+        "version": "*",
+        "versionType": "semver"
+       },
+       {
+        "lessThan": "6.5.4",
+        "status": "affected",
+        "version": "6.3.0",
+        "versionType": "semver"
+       },
+       {
+        "lessThan": "7.1.3",
+        "status": "unknown",
+        "version": "7.0.0",
+        "versionType": "semver"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "4.0",
+      "puntuacion": 8.7,
+      "severidad": "HIGH",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/E:A/AU:Y/V:C",
+      "fuente": "CNA"
+     },
+     {
+      "version": "4.0",
+      "puntuacion": 9.4,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A/AU:Y/V:C",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://csirt.divd.nl/DIVD-2026-00015",
+     "https://csirt.divd.nl/CVE-2026-102489",
+     "https://zammad.com/en/advisories/cve-2026-102489-cve-2026-102490",
+     "https://community.zammad.org/t/take-care-local-privilege-escalation-cve-2026-102490-is-reported-as-being-actively-exploited/21297/2"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-02",
+    "plazo_federal": "2026-10-05",
+    "nombre": "Zammad GmbH Zammad Session Fixation Vulnerability",
+    "fabricante": "Zammad GmbH",
+    "producto": "Zammad",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-384"
+    ],
+    "notas": "https://zammad.com/en/product/releases/ ; https://community.zammad.org/t/take-care-local-privilege-escalation-cve-2026-102490-is-reported-as-being-actively-exploited/21297/2 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-102489"
+   },
+   "epss": {
+    "probabilidad": 0.49915,
+    "percentil": 0.9891,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-102490",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "DIVD",
+    "reservado": "2026-09-29T09:46:12.490Z",
+    "publicado": "2026-09-30T16:21:20.601Z",
+    "actualizado": "2026-10-08T19:55:53.033Z",
+    "titulo": "Local privilege escalation in Zammad v1.5.0 to v7.2.2 installed via DEB or RPM package",
+    "descripcion": "Zammad packages built with packager.io (DEB and RPM) could have allowed a local attacker who already had file system write privileges as the unprivileged zammad service account to escalate to full root privileges on the host. Service processes began running as root and executed files that were owned and writable by the zammad account before dropping their identity to that account. An attacker holding that foothold could have escalated within seconds, because the affected services were restarted automatically whenever they stopped; no administrator interaction was required. Only installations from the DEB and RPM packages were affected — installations from source or the official container images were not. All released packaged versions were affected.",
+    "cwe_registro": [
+     "CWE-269"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Zammad GmbH",
+      "producto": "Zammad",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "1.5.0",
+        "lessThan": "7.2.2",
+        "versionType": "semver"
+       },
+       {
+        "status": "unknown",
+        "version": "*",
+        "lessThan": "1.5.0",
+        "versionType": "semver"
+       },
+       {
+        "status": "unaffected",
+        "version": "7.2.2",
+        "lessThan": "*",
+        "versionType": "semver"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "4.0",
+      "puntuacion": 8.5,
+      "severidad": "HIGH",
+      "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A/AU:Y/V:D",
+      "fuente": "CNA"
+     },
+     {
+      "version": "4.0",
+      "puntuacion": 9.4,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A/AU:Y/V:C",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://csirt.divd.nl/DIVD-2026-00015",
+     "https://csirt.divd.nl/CVE-2026-102490",
+     "https://zammad.com/en/advisories/cve-2026-102489-cve-2026-102490",
+     "https://github.com/zammad/zammad/security/advisories/GHSA-p97w-927q-8vxq"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-02",
+    "plazo_federal": "2026-10-05",
+    "nombre": "Zammad GmbH Zammad Improper Privilege Management Vulnerability",
+    "fabricante": "Zammad GmbH",
+    "producto": "Zammad",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-269"
+    ],
+    "notas": "https://zammad.com/en/product/releases/ ; https://community.zammad.org/t/take-care-local-privilege-escalation-cve-2026-102490-is-reported-as-being-actively-exploited/21297/2 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-102490"
+   },
+   "epss": {
+    "probabilidad": 0.10936,
+    "percentil": 0.95919,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-102764",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "BT",
+    "reservado": "2026-09-29T16:29:20.011Z",
+    "publicado": "2026-10-15T20:30:32.240Z",
+    "actualizado": "2026-10-17T03:55:27.214Z",
+    "titulo": "Improper Origin Validation in Internal Messaging Components of BeyondTrust Remote Support",
+    "descripcion": "The vulnerability exists within internal components of BeyondTrust’s Remote Support product. The components did not adequately validate the origin of the messages it received. Under the right conditions, this could allow an attacker to perform file operations on the appliance.",
+    "cwe_registro": [
+     "CWE-290"
+    ],
+    "afectados": [
+     {
+      "fabricante": "BeyondTrust",
+      "producto": "Remote Support",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "0",
+        "lessThanOrEqual": "26.2.3",
+        "versionType": "custom"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "4.0",
+      "puntuacion": 9.3,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "yes",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://nvd.nist.gov/vuln/detail/CVE-2026-102764",
+     "https://www.beyondtrust.com/blog/entry/bt26-05",
+     "https://beyondtrustcorp.service-now.com/csm?id=csm_kb_article&sysparm_article=KB0024066"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-16",
+    "plazo_federal": "2026-10-19",
+    "nombre": "BeyondTrust Remote Support Authentication Bypass by Spoofing Vulnerability",
+    "fabricante": "BeyondTrust",
+    "producto": "Remote Support",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-290"
+    ],
+    "notas": "https://www.beyondtrust.com/trust-center/security-advisories/bt26-05 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-102764"
+   },
+   "epss": {
+    "probabilidad": 0.77994,
+    "percentil": 0.99576,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-104286",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "fortinet",
+    "reservado": "2026-10-01T19:12:54.081Z",
+    "publicado": "2026-10-01T19:17:38.938Z",
+    "actualizado": "2026-10-28T17:10:14.979Z",
+    "titulo": null,
+    "descripcion": "An improper limitation of a pathname to a restricted directory ('path traversal') vulnerability in Fortinet FortiMail 8.0.0 through 8.0.1, FortiMail 7.6.0 through 7.6.6, FortiMail 7.4.0 through 7.4.8, FortiMail 7.2.0 through 7.2.9, FortiMail 7.0 all versions may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests.",
+    "cwe_registro": [
+     "CWE-22"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Fortinet",
+      "producto": "FortiMail",
+      "versiones": [
+       {
+        "versionType": "semver",
+        "version": "8.0.0",
+        "lessThanOrEqual": "8.0.1",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "7.6.0",
+        "lessThanOrEqual": "7.6.6",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "7.4.0",
+        "lessThanOrEqual": "7.4.8",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "7.2.0",
+        "lessThanOrEqual": "7.2.9",
+        "status": "affected"
+       },
+       {
+        "versionType": "semver",
+        "version": "7.0.0",
+        "lessThanOrEqual": "7.0.9",
+        "status": "affected"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 9.8,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "yes",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://fortiguard.fortinet.com/psirt/FG-IR-26-175"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-01",
+    "plazo_federal": "2026-10-04",
+    "nombre": "Fortinet FortiMail Path Traversal Vulnerability",
+    "fabricante": "Fortinet",
+    "producto": "FortiMail",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-22",
+     "CWE-158"
+    ],
+    "notas": "https://fortiguard.fortinet.com/psirt/FG-IR-26-175 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-104286"
+   },
+   "epss": {
+    "probabilidad": 0.04573,
+    "percentil": 0.91694,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-104935",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "ivanti",
+    "reservado": "2026-10-02T17:07:30.656Z",
+    "publicado": "2026-10-13T15:31:07.757Z",
+    "actualizado": "2026-10-13T19:58:23.946Z",
+    "titulo": null,
+    "descripcion": "Authentication bypass by spoofing in ICS before version 25.1.3.0 allows a remote unauthenticated attacker to execute arbitrary commands. This does not impact ICS version 22.7R2.14 or prior.",
+    "cwe_registro": [
+     "CWE-290"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Ivanti",
+      "producto": "Connect Secure",
+      "versiones": [
+       {
+        "status": "unaffected",
+        "version": "25.1.3.0",
+        "versionType": "custom"
+       },
+       {
+        "status": "unaffected",
+        "version": "25.1.3.1",
+        "versionType": "custom"
+       },
+       {
+        "status": "unaffected",
+        "version": "22.8R2.5",
+        "versionType": "custom"
+       },
+       {
+        "status": "unaffected",
+        "version": "22.7R2.14",
+        "versionType": "custom"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 8.6,
+      "severidad": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "yes",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-13",
+    "plazo_federal": "2026-10-16",
+    "nombre": "Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
+    "fabricante": "Ivanti",
+    "producto": "Connect Secure",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-290"
+    ],
+    "notas": "https:/forums.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935 ; https://nvd.nist.gov/vuln/detail/CVE-2026-104935"
+   },
+   "epss": {
+    "probabilidad": 0.88936,
+    "percentil": 0.9978,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-105133",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "VulDB",
+    "reservado": "2026-10-03T13:13:31.953Z",
+    "publicado": "2026-10-04T05:15:14.561Z",
+    "actualizado": "2026-10-26T14:31:10.237Z",
+    "titulo": "Ahsay AhsayCBS API ApiStructsAction.java checkSysPwd improper authentication",
+    "descripcion": "A vulnerability was detected in Ahsay AhsayCBS up to 9.15.2.69/10.3.4.44. This affects the function checkSysPwd of the file com/ahsay/obs/api/ApiStructsAction.java of the component API. Performing a manipulation of the argument random results in improper authentication. It is possible to initiate the attack remotely. The exploit is now public and may be used. Upgrading to version 9.15.2.70 and 10.3.4.45 is able to mitigate this issue. It is recommended to upgrade the affected component. The initial patch did not fix the security vulnerability properly. An update of the CVE entry to reflect this became necessary.",
+    "cwe_registro": [
+     "CWE-287"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Ahsay",
+      "producto": "AhsayCBS",
+      "versiones": [
+       {
+        "version": "9.15.2.0",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.1",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.2",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.3",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.4",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.5",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.6",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.7",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.8",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.9",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.10",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.11",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.12",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.13",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.14",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.15",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.16",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.17",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.18",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.19",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.20",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.21",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.22",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.23",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.24",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.25",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.26",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.27",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.28",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.29",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.30",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.31",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.32",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.33",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.34",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.35",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.36",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.37",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.38",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.39",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.40",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.41",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.42",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.43",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.44",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.45",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.46",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.47",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.48",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.49",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.50",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.51",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.52",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.53",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.54",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.55",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.56",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.57",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.58",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.59",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.60",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.61",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.62",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.63",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.64",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.65",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.66",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.67",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.68",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.69",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.0",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.1",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.2",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.3",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.4",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.5",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.6",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.7",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.8",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.9",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.10",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.11",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.12",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.13",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.14",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.15",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.16",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.17",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.18",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.19",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.20",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.21",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.22",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.23",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.24",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.25",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.26",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.27",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.28",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.29",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.30",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.31",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.32",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.33",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.34",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.35",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.36",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.37",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.38",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.39",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.40",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.41",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.42",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.43",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.44",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.70",
+        "status": "unaffected"
+       },
+       {
+        "version": "10.3.4.45",
+        "status": "unaffected"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "4.0",
+      "puntuacion": 6.9,
+      "severidad": "MEDIUM",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:A",
+      "fuente": "CNA"
+     },
+     {
+      "version": "3.1",
+      "puntuacion": 7.3,
+      "severidad": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:H/RL:O/RC:C",
+      "fuente": "CNA"
+     },
+     {
+      "version": "3.0",
+      "puntuacion": 7.3,
+      "severidad": "HIGH",
+      "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:H/RL:O/RC:C",
+      "fuente": "CNA"
+     },
+     {
+      "version": "2.0",
+      "puntuacion": 7.5,
+      "severidad": null,
+      "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P/E:H/RL:OF/RC:C",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "yes",
+     "Technical Impact": "partial"
+    },
+    "referencias": [
+     "https://vuldb.com/vuln/413350",
+     "https://vuldb.com/vuln/413350/cti",
+     "https://vuldb.com/cve/CVE-2026-105133",
+     "https://vuldb.com/submit/942688",
+     "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update",
+     "https://www.huntress.com/blog/ahsaycbs-flaws-exploit"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-14",
+    "plazo_federal": "2026-10-17",
+    "nombre": "Ahsay AhsayCBS Improper Authentication Vulnerability",
+    "fabricante": "Ahsay",
+    "producto": "AhsayCBS",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-287"
+    ],
+    "notas": "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-105133"
+   },
+   "epss": {
+    "probabilidad": 0.84478,
+    "percentil": 0.99704,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-105134",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "VulDB",
+    "reservado": "2026-10-03T13:13:35.953Z",
+    "publicado": "2026-10-04T05:30:12.882Z",
+    "actualizado": "2026-10-26T14:31:13.988Z",
+    "titulo": "Ahsay AhsayCBS Replication Receiver UpdateReceivers.do os command injection",
+    "descripcion": "A flaw has been found in Ahsay AhsayCBS up to 9.15.2.69/10.3.4.44. This vulnerability affects unknown code of the file /rps/api/json/UpdateReceivers.do of the component Replication Receiver. Executing a manipulation of the argument random can lead to os command injection. It is possible to launch the attack remotely. The exploit has been published and may be used. Upgrading to version 9.15.2.70 and 10.3.4.45 is able to resolve this issue. Upgrading the affected component is advised. The initial patch did not fix the security vulnerability properly. An update of the CVE entry to reflect this became necessary.",
+    "cwe_registro": [
+     "CWE-77",
+     "CWE-78"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Ahsay",
+      "producto": "AhsayCBS",
+      "versiones": [
+       {
+        "version": "9.15.2.0",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.1",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.2",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.3",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.4",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.5",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.6",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.7",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.8",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.9",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.10",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.11",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.12",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.13",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.14",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.15",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.16",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.17",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.18",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.19",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.20",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.21",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.22",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.23",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.24",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.25",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.26",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.27",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.28",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.29",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.30",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.31",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.32",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.33",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.34",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.35",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.36",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.37",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.38",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.39",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.40",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.41",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.42",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.43",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.44",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.45",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.46",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.47",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.48",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.49",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.50",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.51",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.52",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.53",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.54",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.55",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.56",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.57",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.58",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.59",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.60",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.61",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.62",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.63",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.64",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.65",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.66",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.67",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.68",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.69",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.0",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.1",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.2",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.3",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.4",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.5",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.6",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.7",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.8",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.9",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.10",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.11",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.12",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.13",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.14",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.15",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.16",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.17",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.18",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.19",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.20",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.21",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.22",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.23",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.24",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.25",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.26",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.27",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.28",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.29",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.30",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.31",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.32",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.33",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.34",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.35",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.36",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.37",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.38",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.39",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.40",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.41",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.42",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.43",
+        "status": "affected"
+       },
+       {
+        "version": "10.3.4.44",
+        "status": "affected"
+       },
+       {
+        "version": "9.15.2.70",
+        "status": "unaffected"
+       },
+       {
+        "version": "10.3.4.45",
+        "status": "unaffected"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "4.0",
+      "puntuacion": 10,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A",
+      "fuente": "CNA"
+     },
+     {
+      "version": "3.1",
+      "puntuacion": 10,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H/E:H/RL:O/RC:C",
+      "fuente": "CNA"
+     },
+     {
+      "version": "3.0",
+      "puntuacion": 10,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H/E:H/RL:O/RC:C",
+      "fuente": "CNA"
+     },
+     {
+      "version": "2.0",
+      "puntuacion": 10,
+      "severidad": null,
+      "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C/E:H/RL:OF/RC:C",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "yes",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://vuldb.com/vuln/413351",
+     "https://vuldb.com/vuln/413351/cti",
+     "https://vuldb.com/cve/CVE-2026-105134",
+     "https://vuldb.com/submit/942743",
+     "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update",
+     "https://www.huntress.com/blog/ahsaycbs-flaws-exploit"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-14",
+    "plazo_federal": "2026-10-17",
+    "nombre": "Ahsay AhsayCBS Command Injection Vulnerability",
+    "fabricante": "Ahsay",
+    "producto": "AhsayCBS",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-77",
+     "CWE-78"
+    ],
+    "notas": "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-105134"
+   },
+   "epss": {
+    "probabilidad": 0.81763,
+    "percentil": 0.99649,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-106931",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "jpcert",
+    "reservado": "2026-10-07T04:50:26.138Z",
+    "publicado": "2026-10-14T04:45:07.678Z",
+    "actualizado": "2026-10-21T03:56:27.300Z",
+    "titulo": null,
+    "descripcion": "SiteGuard Server Edition contains an OS command injection vulnerability, which may allow an attacker to execute arbitrary OS commands with root or SYSTEM privileges on the system running the affected product.",
+    "cwe_registro": [
+     "CWE-78"
+    ],
+    "afectados": [
+     {
+      "fabricante": "EG Secure Solutions Inc.",
+      "producto": "SiteGuard Server Edition for Apache httpd",
+      "versiones": [
+       {
+        "version": "Ver2.20",
+        "status": "affected",
+        "versionType": "semver",
+        "lessThan": "Ver8.00 Update 5"
+       }
+      ]
+     },
+     {
+      "fabricante": "EG Secure Solutions Inc.",
+      "producto": "SiteGuard Server Edition for Nginx",
+      "versiones": [
+       {
+        "version": "Ver2.20",
+        "status": "affected",
+        "versionType": "semver",
+        "lessThan": "Ver8.00 Update 5"
+       }
+      ]
+     },
+     {
+      "fabricante": "EG Secure Solutions Inc.",
+      "producto": "SiteGuard Server Edition for IIS",
+      "versiones": [
+       {
+        "version": "Ver2.20",
+        "status": "affected",
+        "versionType": "semver",
+        "lessThan": "Ver8.00 Update 5"
+       }
+      ]
+     },
+     {
+      "fabricante": "EG Secure Solutions Inc.",
+      "producto": "SiteGuard Server Edition for Apache httpd on FreeBSD",
+      "versiones": [
+       {
+        "version": "Ver2.20",
+        "status": "affected",
+        "versionType": "semver",
+        "lessThan": "Ver7.00 Update 6"
+       }
+      ]
+     },
+     {
+      "fabricante": "EG Secure Solutions Inc.",
+      "producto": "SiteGuard Server Edition for Nginx on FreeBSD",
+      "versiones": [
+       {
+        "version": "Ver2.20",
+        "status": "affected",
+        "versionType": "semver",
+        "lessThan": "Ver7.00 Update 6"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.0",
+      "puntuacion": 7.8,
+      "severidad": "HIGH",
+      "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "fuente": "CNA"
+     },
+     {
+      "version": "4.0",
+      "puntuacion": 8.5,
+      "severidad": "HIGH",
+      "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://www.eg-secure.co.jp/siteguard/news/alert-202610-1",
+     "https://jvn.jp/en/jp/JVN88474777/"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-20",
+    "plazo_federal": "2026-10-23",
+    "nombre": "EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
+    "fabricante": "EG Secure Solutions",
+    "producto": "SiteGuard Server Edition",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-78"
+    ],
+    "notas": "https://www.eg-secure.co.jp/siteguard/news/alert-202610-1 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-106931"
+   },
+   "epss": {
+    "probabilidad": 0.02528,
+    "percentil": 0.85029,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-109618",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "php",
+    "reservado": "2026-10-12T21:03:58.117Z",
+    "publicado": "2026-10-21T13:48:34.845Z",
+    "actualizado": "2026-11-05T18:17:38.313Z",
+    "titulo": "RCE via OOM corruption",
+    "descripcion": "PHP uses longjmp() for out-of-memory (OOM) errors to exit the current context and abort handling of the request. Some contexts may not properly account for this scenario and leave request memory in an uninitialized state before performing an allocation. The subsequent request cleanup procedure may read or branch on this memory. Multiple OOM strategies can consistently trigger this condition and lead to remote code execution (RCE).",
+    "cwe_registro": [
+     "CWE-1325",
+     "CWE-1419",
+     "CWE-416",
+     "CWE-755",
+     "CWE-824"
+    ],
+    "afectados": [
+     {
+      "fabricante": "PHP Group",
+      "producto": "PHP",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "8.2.*",
+        "lessThan": "8.2.35",
+        "versionType": "semver"
+       },
+       {
+        "status": "affected",
+        "version": "8.3.*",
+        "lessThan": "8.3.36",
+        "versionType": "semver"
+       },
+       {
+        "status": "affected",
+        "version": "8.4.*",
+        "lessThan": "8.4.27",
+        "versionType": "semver"
+       },
+       {
+        "status": "affected",
+        "version": "8.5.*",
+        "lessThan": "8.5.12",
+        "versionType": "semver"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "4.0",
+      "puntuacion": 9.2,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-26",
+    "plazo_federal": "2026-10-29",
+    "nombre": "PHP Memory Corruption Vulnerability",
+    "fabricante": "PHP Group",
+    "producto": "PHP",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-416",
+     "CWE-755",
+     "CWE-824",
+     "CWE-1325",
+     "CWE-1419"
+    ],
+    "notas": "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://www.php.net/ ; https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ;  https://nvd.nist.gov/vuln/detail/CVE-2026-109618"
+   },
+   "epss": {
+    "probabilidad": 0.99999,
+    "percentil": 0.99999,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-109619",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "php",
+    "reservado": "2026-10-12T21:04:00.504Z",
+    "publicado": "2026-10-21T13:54:43.866Z",
+    "actualizado": "2026-11-05T18:17:39.997Z",
+    "titulo": "RCE via stale global state",
+    "descripcion": "PHP has various global state that temporarily points into request memory. In some scenarios, global state may not be correctly reset, or may be repopulated after being reset. The global state may then refer to request memory even after it has been freed. Subsequent requests may read or branch on this stale state before it is fully initialized. Multiple strategies can trigger this condition and produce remote code execution (RCE).",
+    "cwe_registro": [
+     "CWE-1325",
+     "CWE-1419",
+     "CWE-416",
+     "CWE-755",
+     "CWE-824"
+    ],
+    "afectados": [
+     {
+      "fabricante": "PHP Group",
+      "producto": "PHP",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "8.2.*",
+        "lessThan": "8.2.35",
+        "versionType": "semver"
+       },
+       {
+        "status": "affected",
+        "version": "8.3.*",
+        "lessThan": "8.3.36",
+        "versionType": "semver"
+       },
+       {
+        "status": "affected",
+        "version": "8.4.*",
+        "lessThan": "8.4.27",
+        "versionType": "semver"
+       },
+       {
+        "status": "affected",
+        "version": "8.5.*",
+        "lessThan": "8.5.12",
+        "versionType": "semver"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "4.0",
+      "puntuacion": 9.2,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-26",
+    "plazo_federal": "2026-10-29",
+    "nombre": "PHP Stale Internal Request-State Vulnerability",
+    "fabricante": "PHP Group",
+    "producto": "PHP",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-416",
+     "CWE-755",
+     "CWE-824",
+     "CWE-1325",
+     "CWE-1419"
+    ],
+    "notas": "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://www.php.net/ ; https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ;  https://nvd.nist.gov/vuln/detail/CVE-2026-109619"
+   },
+   "epss": {
+    "probabilidad": 0.99999,
+    "percentil": 0.99999,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-110447",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "mitre",
+    "reservado": "2026-10-14T02:27:41.637Z",
+    "publicado": "2026-10-14T02:27:42.315Z",
+    "actualizado": "2026-10-24T03:55:50.462Z",
+    "titulo": null,
+    "descripcion": "Collabora Online Built-in CODE Server before 26.4.303 (richdocumentscode), a Nextcloud app, allows remote code execution, as exploited in the wild in September and October 2026, a different vulnerability than CVE-2025-66208. This is an OS command injection in proxy.php when the CODE server isn't running (e.g., the product was recently restarted). The vulnerability is not present in standalone Collabora Online servers; only this deployment with CODE Server is affected.",
+    "cwe_registro": [
+     "CWE-78"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Collabora",
+      "producto": "Collabora Online - Built-in CODE Server",
+      "versiones": [
+       {
+        "lessThan": "26.4.303",
+        "status": "affected",
+        "version": "0",
+        "versionType": "semver"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "4.0",
+      "puntuacion": 9.2,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "yes",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://github.com/CollaboraOnline/richdocumentscode/issues/354",
+     "https://help.nextcloud.com/t/to-collabora-built-in-user-update-asap/250516"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-23",
+    "plazo_federal": "2026-10-26",
+    "nombre": "Collabora Online – Built-in CODE Server OS Command Injection Vulnerability",
+    "fabricante": "Collabora",
+    "producto": "Collabora Online – Built-in CODE Server",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-78"
+    ],
+    "notas": "https://help.nextcloud.com/t/to-collabora-built-in-user-update-asap/250516 ; https://github.com/CollaboraOnline/online/security/advisories/GHSA-g3vx-3m76-fghh ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-110447"
+   },
+   "epss": {
+    "probabilidad": 0.73307,
+    "percentil": 0.99465,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-110936",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "siemens",
+    "reservado": "2026-10-15T06:40:09.855Z",
+    "publicado": "2026-10-15T14:01:17.797Z",
+    "actualizado": "2026-10-21T03:56:21.823Z",
+    "titulo": null,
+    "descripcion": "A vulnerability has been identified in Siemens Software Center (All versions < V4.0.9.8). The affected application loads dynamic-link libraries (DLLs) from an uncontrolled search path. This could allow an authenticated local attacker to place a specially crafted DLL in a directory that the application searches, leading to arbitrary code execution with the privileges of the affected application.",
+    "cwe_registro": [
+     "CWE-427"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Siemens",
+      "producto": "Siemens Software Center",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "0",
+        "lessThan": "V4.0.9.8",
+        "versionType": "custom"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 6.7,
+      "severidad": "MEDIUM",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "fuente": "CNA"
+     },
+     {
+      "version": "4.0",
+      "puntuacion": 8.4,
+      "severidad": "HIGH",
+      "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://cert-portal.siemens.com/productcert/html/ssa-580366.html"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-20",
+    "plazo_federal": "2026-11-03",
+    "nombre": "Siemens Software Center Uncontrolled Search Path Element Vulnerability",
+    "fabricante": "Siemens",
+    "producto": "Software Center",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-427"
+    ],
+    "notas": "https://productcert.siemens.com/productcert/html/ssa-580366.html ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-110936"
+   },
+   "epss": {
+    "probabilidad": 0.00967,
+    "percentil": 0.62024,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-111357",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "mitre",
+    "reservado": "2026-10-15T20:56:57.139Z",
+    "publicado": "2026-10-15T20:56:58.045Z",
+    "actualizado": "2026-10-31T03:56:17.842Z",
+    "titulo": null,
+    "descripcion": "Ivanti Connect Secure 22.8R2.4 mishandles the manner in which the dsinvoked broker trusts DSCache configuration data, leading to privilege escalation to root, as exploited in the wild in October 2026.",
+    "cwe_registro": [
+     "CWE-829"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Ivanti",
+      "producto": "Connect Secure",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "22.8R2.4",
+        "versionType": "custom"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 7,
+      "severidad": "HIGH",
+      "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://www.volexity.com/blog/2026/10/13/a-series-of-unauthenticated-events-chained-exploitation-of-ivanti-connect-secure-zero-days/",
+     "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-30",
+    "plazo_federal": "2026-11-02",
+    "nombre": "Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
+    "fabricante": "Ivanti",
+    "producto": "Connect Secure",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-306",
+     "CWE-862",
+     "CWE-345"
+    ],
+    "notas": "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935?language=en_US ; https://www.cisa.gov/news-events/alerts/2026/10/13/cisa-urges-patching-newly-exploited-vulnerability-ivanti-connect-secure ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-111357"
+   },
+   "epss": {
+    "probabilidad": 0.00533,
+    "percentil": 0.45343,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-111497",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "Google",
+    "reservado": "2026-10-16T09:58:17.790Z",
+    "publicado": "2026-10-22T13:35:41.975Z",
+    "actualizado": "2026-11-10T12:50:00.309Z",
+    "titulo": "Out-of-Bounds Write in Google Brotli Decoder",
+    "descripcion": "A buffer overflow vulnerability in the Brotli decoder (c/dec/decode.c) in Google Brotli versions 1.0.3 through 1.2.0 on all platforms allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a crafted Brotli-compressed stream.\n\n\n\n\n\nUsers need to update any Brotli libraries or binaries between 1.0.3 through 1.2.0 to the latest available version: 1.0.10 or 1.1.1 or 1.2.1.",
+    "cwe_registro": [
+     "CWE-252",
+     "CWE-787"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Google",
+      "producto": "Brotli",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "1.0.3",
+        "lessThan": "1.0.10",
+        "versionType": "semver"
+       },
+       {
+        "status": "affected",
+        "version": "1.1.0",
+        "lessThan": "1.1.1",
+        "versionType": "semver"
+       },
+       {
+        "status": "affected",
+        "version": "1.2.0",
+        "lessThan": "1.2.1",
+        "versionType": "semver"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "4.0",
+      "puntuacion": 9.2,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases#nodejs-brotli-decoder-out-of-bounds-write-permits-remote-code-execution-cve-2026-111497---high",
+     "https://github.com/andybalholm/brotli/releases/tag/v1.2.7"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-27",
+    "plazo_federal": "2026-11-10",
+    "nombre": "Google Brotli Unchecked Return Value Vulnerability",
+    "fabricante": "Google",
+    "producto": "Brotli",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-252",
+     "CWE-787"
+    ],
+    "notas": "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/google/brotli/releases/tag/v1.2.1 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-111497"
+   },
+   "epss": {
+    "probabilidad": 0.82641,
+    "percentil": 0.9967,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-114625",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "Arista",
+    "reservado": "2026-10-21T20:35:35.535Z",
+    "publicado": "2026-10-22T20:47:56.427Z",
+    "actualizado": "2026-10-24T03:55:14.884Z",
+    "titulo": "Security Advisory 0199",
+    "descripcion": "VeloCloud Orchestrator (VCO) on-prem has a security issue where this issue may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.\n\nOn an affected system, any authenticated user can gain operator privileges and masquerade as a local \"superuser operator\" user. This includes access to functionality that is intended for internal use only and which is not intended to be remotely accessible.\n\nHosted, including Dedicated, versions of VCO were impacted and have already been patched.",
+    "cwe_registro": [
+     "CWE-89"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Arista Networks",
+      "producto": "VeloCloud Orchestrator",
+      "versiones": [
+       {
+        "version": "5.2.0",
+        "lessThan": "5.2.3.18",
+        "status": "affected",
+        "versionType": "custom"
+       },
+       {
+        "version": "6.1.0",
+        "lessThan": "6.1.3.10",
+        "status": "affected",
+        "versionType": "custom"
+       },
+       {
+        "version": "6.4.0",
+        "lessThan": "6.4.2.12",
+        "status": "affected",
+        "versionType": "custom"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 9.9,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "fuente": "CNA"
+     },
+     {
+      "version": "4.0",
+      "puntuacion": 9.4,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://www.arista.com/en/support/advisories-notices/security-advisory/24838-security-advisory-0199"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-23",
+    "plazo_federal": "2026-10-26",
+    "nombre": "Arista VeloCloud Orchestrator SQL Injection Vulnerability",
+    "fabricante": "Arista",
+    "producto": "VeloCloud Orchestrator",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-89"
+    ],
+    "notas": "https://www.arista.com/en/support/advisories-notices/security-advisory/24838-security-advisory-0199 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-114625"
+   },
+   "epss": {
+    "probabilidad": 0.01025,
+    "percentil": 0.63849,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-118527",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "ivanti",
+    "reservado": "2026-10-28T15:30:44.861Z",
+    "publicado": "2026-11-03T14:53:28.232Z",
+    "actualizado": "2026-11-03T15:32:56.011Z",
+    "titulo": null,
+    "descripcion": "Use of predictable filenames in Ivanti Connect Secure before versions 25.1.1.3 and 22.8R2.6 allows a remote authenticated attacker to upload files with attacker-controlled content to a known location on disk.",
+    "cwe_registro": [
+     "CWE-340"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Ivanti",
+      "producto": "Connect Secure",
+      "versiones": [
+       {
+        "status": "unaffected",
+        "version": "25.1.1.3"
+       },
+       {
+        "status": "unaffected",
+        "version": "22.8R2.6"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 4.3,
+      "severidad": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "partial"
+    },
+    "referencias": [
+     "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935?language=en_US"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-30",
+    "plazo_federal": "2026-11-13",
+    "nombre": "Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
+    "fabricante": "Ivanti",
+    "producto": "Connect Secure",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-340"
+    ],
+    "notas": "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935?language=en_US ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-118527"
+   },
+   "epss": {
+    "probabilidad": 0.00822,
+    "percentil": 0.57628,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-21589",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "atlassian",
+    "reservado": "2026-01-01T00:00:40.722Z",
+    "publicado": "2026-10-05T21:30:00.390Z",
+    "actualizado": "2026-10-29T12:04:46.110Z",
+    "titulo": null,
+    "descripcion": "This is a vulnerability in Bitbucket Data Center, Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center. Crowd Data Center, Crucible and Fisheye. This Arbitrary File Access vulnerability allows an unauthenticated attacker to access specific files within the web application root directory in affected versions. Exploitation requires prior knowledge of the target file's exact name and path; this vulnerability does not allow attackers to enumerate or list directory contents. In some configurations, there may be some sensitive files that make this highly severe. This vulnerability allows an unauthenticated remote attacker to access specific files within the web application root directory in affected versions. The vulnerability must be addressed for affected versions of: -- Bitbucket Data Center, introduced in version >= 4.6.0, fix versions: 9.4.26, 10.2.8, 10.5.1 -- Confluence Data Center, introduced in version >= 5.10.0, fix versions 9.2.26, 10.2.19 -- Crowd Data Center, introduced in version >= 2.11.0, fix versions 6.3.7, 7.0.3, 7.1.7, 7.2.4 -- Jira Software Data Center, introduced in version >= 7.1.0, fix versions 9.12.40, 10.3.26, 11.3.12 -- Jira Service Management Data Center, introduced in version >= 3.1.0, fix versions 5.12.40, 10.3.26, 11.3.12 -- Bamboo Data Center >= 7.0.1, fix versions 10.2.24, 12.1.12 -- Crucible, fix versions 4.9.15 -- Fisheye, fix version 4.9.15 -- Exploitation requires prior knowledge of the target file's exact name and path. The vulnerability does not include the capability to enumerate or list directory contents.",
+    "cwe_registro": [
+     "CWE-552"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Atlassian",
+      "producto": "Bamboo Data Center",
+      "versiones": [
+       {
+        "version": "All other versions",
+        "status": "affected"
+       },
+       {
+        "version": "Patch version 10.2.24 and later",
+        "status": "unaffected"
+       },
+       {
+        "version": "Patch version 12.1.12 and later",
+        "status": "unaffected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Atlassian",
+      "producto": "Bitbucket Data Center",
+      "versiones": [
+       {
+        "version": "All other versions",
+        "status": "affected"
+       },
+       {
+        "version": "Patch version 10.2.8 and later",
+        "status": "unaffected"
+       },
+       {
+        "version": "Patch version 10.5.1 and later",
+        "status": "unaffected"
+       },
+       {
+        "version": "Patch version 9.4.26 and later",
+        "status": "unaffected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Atlassian",
+      "producto": "Confluence Data Center",
+      "versiones": [
+       {
+        "version": "All other versions",
+        "status": "affected"
+       },
+       {
+        "version": "Patch version 10.2.19 and later",
+        "status": "unaffected"
+       },
+       {
+        "version": "Patch version 9.2.26 and later",
+        "status": "unaffected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Atlassian",
+      "producto": "Crowd Data Center",
+      "versiones": [
+       {
+        "version": "All other versions",
+        "status": "affected"
+       },
+       {
+        "version": "Patch version 7.2.4 and later",
+        "status": "unaffected"
+       },
+       {
+        "version": "Patch version 7.1.7 and later",
+        "status": "unaffected"
+       },
+       {
+        "version": "Patch version 7.0.3 and later",
+        "status": "unaffected"
+       },
+       {
+        "version": "Patch version 6.3.7 and later",
+        "status": "unaffected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Atlassian",
+      "producto": "Crucible Data Center",
+      "versiones": [
+       {
+        "version": "All other versions",
+        "status": "affected"
+       },
+       {
+        "version": "Patch version 4.9.15 and later",
+        "status": "unaffected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Atlassian",
+      "producto": "Fisheye Data Center",
+      "versiones": [
+       {
+        "version": "All other versions",
+        "status": "affected"
+       },
+       {
+        "version": "Patch version 4.9.15 and later",
+        "status": "unaffected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Atlassian",
+      "producto": "Jira Service Management Data Center",
+      "versiones": [
+       {
+        "version": "All other versions",
+        "status": "affected"
+       },
+       {
+        "version": "Patch version 11.3.12 and later",
+        "status": "unaffected"
+       },
+       {
+        "version": "Patch version 10.3.26 and later",
+        "status": "unaffected"
+       },
+       {
+        "version": "Patch version 5.12.40 and later",
+        "status": "unaffected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Atlassian",
+      "producto": "Jira Software Data Center",
+      "versiones": [
+       {
+        "version": "All other versions",
+        "status": "affected"
+       },
+       {
+        "version": "Patch version 11.3.12 and later",
+        "status": "unaffected"
+       },
+       {
+        "version": "Patch version 10.3.26 and later",
+        "status": "unaffected"
+       },
+       {
+        "version": "Patch version 9.12.40 and later",
+        "status": "unaffected"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "4.0",
+      "puntuacion": 9.3,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://jira.atlassian.com/browse/BAM-26567",
+     "https://jira.atlassian.com/browse/BSERV-20604",
+     "https://jira.atlassian.com/browse/CONFSERVER-104488",
+     "https://jira.atlassian.com/browse/CRUC-8741",
+     "https://jira.atlassian.com/browse/CWD-6610",
+     "https://jira.atlassian.com/browse/FE-7583",
+     "https://jira.atlassian.com/browse/JRASERVER-79546",
+     "https://jira.atlassian.com/browse/JSDSERVER-16809"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-15",
+    "plazo_federal": "2026-10-18",
+    "nombre": "Atlassian Multiple Products Files or Directories Accessible to External Parties Vulnerability",
+    "fabricante": "Atlassian",
+    "producto": "Multiple Products",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-552"
+    ],
+    "notas": "https://confluence.atlassian.com/security/cve-2026-21589-arbitrary-file-access-vulnerability-impacts-multiple-products-1870495748.html?ref=labs.watchtowr.com ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-21589"
+   },
+   "epss": {
+    "probabilidad": 0.99664,
+    "percentil": 0.99949,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-41709",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "vmware",
+    "reservado": "2026-04-22T06:21:34.490Z",
+    "publicado": "2026-07-30T12:45:02.292Z",
+    "actualizado": "2026-10-29T03:56:50.795Z",
+    "titulo": "ESX insufficient logging vulnerability",
+    "descripcion": "VMware ESX contains an insufficient logging vulnerability. A malicious administrator could exploit this issue to perform certain operations without them being logged.",
+    "cwe_registro": [
+     "CWE-778"
+    ],
+    "afectados": [
+     {
+      "fabricante": "VMware",
+      "producto": "Cloud Foundation",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "9.1.x.x"
+       },
+       {
+        "status": "affected",
+        "version": "9.0.x.x"
+       },
+       {
+        "status": "affected",
+        "version": "5.x",
+        "lessThan": "5.2.4",
+        "versionType": "custom"
+       }
+      ]
+     },
+     {
+      "fabricante": "VMware",
+      "producto": "vSphere Foundation",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "9.1.x.x"
+       },
+       {
+        "status": "affected",
+        "version": "9.0.x.x"
+       }
+      ]
+     },
+     {
+      "fabricante": "VMware",
+      "producto": "ESX",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "9.1.x.x",
+        "lessThan": "ESXi-9.1.0.0-25370933",
+        "versionType": "custom"
+       },
+       {
+        "status": "affected",
+        "version": "9.0.x.x",
+        "lessThan": "ESXi-9.0.2.0100-25595025",
+        "versionType": "custom"
+       },
+       {
+        "status": "affected",
+        "version": "8.0",
+        "lessThan": "ESXi80U3j-25429389",
+        "versionType": "custom"
+       }
+      ]
+     },
+     {
+      "fabricante": "VMware",
+      "producto": "Telco Cloud Platform",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "5.1.x"
+       },
+       {
+        "status": "affected",
+        "version": "5.0.x"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 2.7,
+      "severidad": "LOW",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "partial"
+    },
+    "referencias": [
+     "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-28",
+    "plazo_federal": "2026-11-11",
+    "nombre": "Broadcom VMWare ESX Insufficient Logging Vulnerability",
+    "fabricante": "Broadcom",
+    "producto": "VMware ESX",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-778"
+    ],
+    "notas": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-41709"
+   },
+   "epss": {
+    "probabilidad": 0.00689,
+    "percentil": 0.53064,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-46300",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "Linux",
+    "reservado": "2026-05-13T15:03:33.111Z",
+    "publicado": "2026-05-23T11:44:02.231Z",
+    "actualizado": "2026-10-29T03:55:37.330Z",
+    "titulo": "net: skbuff: preserve shared-frag marker during coalescing",
+    "descripcion": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: skbuff: preserve shared-frag marker during coalescing\n\nskb_try_coalesce() can attach paged frags from @from to @to.  If @from\nhas SKBFL_SHARED_FRAG set, the resulting @to skb can contain the same\nexternally-owned or page-cache-backed frags, but the shared-frag marker\nis currently lost.\n\nThat breaks the invariant relied on by later in-place writers.  In\nparticular, ESP input checks skb_has_shared_frag() before deciding\nwhether an uncloned nonlinear skb can skip skb_cow_data().  If TCP\nreceive coalescing has moved shared frags into an unmarked skb, ESP can\nsee skb_has_shared_frag() as false and decrypt in place over page-cache\nbacked frags.\n\nPropagate SKBFL_SHARED_FRAG when skb_try_coalesce() transfers paged\nfrags.  The tailroom copy path does not need the marker because it copies\nbytes into @to's linear data rather than transferring frag descriptors.",
+    "cwe_registro": [
+     "CWE-123",
+     "CWE-456"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Linux",
+      "producto": "Linux",
+      "versiones": [
+       {
+        "version": "cef401de7be8c4e155c6746bfccf721a4fa5fab9",
+        "lessThan": "3599e6b3cc1ada96883d496a50a210d3afbb6987",
+        "status": "affected",
+        "versionType": "git"
+       },
+       {
+        "version": "cef401de7be8c4e155c6746bfccf721a4fa5fab9",
+        "lessThan": "2f2b16022a2e10ca7bccfb98db5ed2ec0f72641c",
+        "status": "affected",
+        "versionType": "git"
+       },
+       {
+        "version": "cef401de7be8c4e155c6746bfccf721a4fa5fab9",
+        "lessThan": "9d3e5fd19fe1063bf607219e8562fbd567b8e8d5",
+        "status": "affected",
+        "versionType": "git"
+       },
+       {
+        "version": "cef401de7be8c4e155c6746bfccf721a4fa5fab9",
+        "lessThan": "78bf6b6bb19541d19fbda6242e7cfe2c682763c0",
+        "status": "affected",
+        "versionType": "git"
+       },
+       {
+        "version": "cef401de7be8c4e155c6746bfccf721a4fa5fab9",
+        "lessThan": "760e1addc27ba1a7beb4a0a7e8b3e9ec49e7a34e",
+        "status": "affected",
+        "versionType": "git"
+       },
+       {
+        "version": "cef401de7be8c4e155c6746bfccf721a4fa5fab9",
+        "lessThan": "3bd9e113d50034db99d7ef69fd8e5242d15e414a",
+        "status": "affected",
+        "versionType": "git"
+       },
+       {
+        "version": "cef401de7be8c4e155c6746bfccf721a4fa5fab9",
+        "lessThan": "3884358a9286b17f389a72b1426fc4547c23c111",
+        "status": "affected",
+        "versionType": "git"
+       },
+       {
+        "version": "cef401de7be8c4e155c6746bfccf721a4fa5fab9",
+        "lessThan": "f84eca5817390257cef78013d0112481c503b4a3",
+        "status": "affected",
+        "versionType": "git"
+       }
+      ]
+     },
+     {
+      "fabricante": "Linux",
+      "producto": "Linux",
+      "versiones": [
+       {
+        "version": "3.9",
+        "status": "affected"
+       },
+       {
+        "version": "0",
+        "lessThan": "3.9",
+        "status": "unaffected",
+        "versionType": "semver"
+       },
+       {
+        "version": "5.10.257",
+        "lessThanOrEqual": "5.10.*",
+        "status": "unaffected",
+        "versionType": "semver"
+       },
+       {
+        "version": "5.15.208",
+        "lessThanOrEqual": "5.15.*",
+        "status": "unaffected",
+        "versionType": "semver"
+       },
+       {
+        "version": "6.1.174",
+        "lessThanOrEqual": "6.1.*",
+        "status": "unaffected",
+        "versionType": "semver"
+       },
+       {
+        "version": "6.6.141",
+        "lessThanOrEqual": "6.6.*",
+        "status": "unaffected",
+        "versionType": "semver"
+       },
+       {
+        "version": "6.12.91",
+        "lessThanOrEqual": "6.12.*",
+        "status": "unaffected",
+        "versionType": "semver"
+       },
+       {
+        "version": "6.18.33",
+        "lessThanOrEqual": "6.18.*",
+        "status": "unaffected",
+        "versionType": "semver"
+       },
+       {
+        "version": "7.0.10",
+        "lessThanOrEqual": "7.0.*",
+        "status": "unaffected",
+        "versionType": "semver"
+       },
+       {
+        "version": "7.1",
+        "lessThanOrEqual": "*",
+        "status": "unaffected",
+        "versionType": "original_commit_for_fix"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 7.8,
+      "severidad": "HIGH",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "fuente": "CNA"
+     },
+     {
+      "version": "3.1",
+      "puntuacion": 7.8,
+      "severidad": "HIGH",
+      "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "fuente": "redhat-SADP"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://git.kernel.org/stable/c/3599e6b3cc1ada96883d496a50a210d3afbb6987",
+     "https://git.kernel.org/stable/c/2f2b16022a2e10ca7bccfb98db5ed2ec0f72641c",
+     "https://git.kernel.org/stable/c/9d3e5fd19fe1063bf607219e8562fbd567b8e8d5",
+     "https://git.kernel.org/stable/c/78bf6b6bb19541d19fbda6242e7cfe2c682763c0",
+     "https://git.kernel.org/stable/c/760e1addc27ba1a7beb4a0a7e8b3e9ec49e7a34e",
+     "https://git.kernel.org/stable/c/3bd9e113d50034db99d7ef69fd8e5242d15e414a",
+     "https://git.kernel.org/stable/c/3884358a9286b17f389a72b1426fc4547c23c111",
+     "https://git.kernel.org/stable/c/f84eca5817390257cef78013d0112481c503b4a3"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-28",
+    "plazo_federal": "2026-10-31",
+    "nombre": "Linux Kernel Missing Initialization of a Variable Vulnerability",
+    "fabricante": "Linux",
+    "producto": "Kernel",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-456"
+    ],
+    "notas": "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: ; https://git.kernel.org/stable/c/3599e6b3cc1ada96883d496a50a210d3afbb6987 ; https://git.kernel.org/stable/c/2f2b16022a2e10ca7bccfb98db5ed2ec0f72641c ; https://git.kernel.org/stable/c/9d3e5fd19fe1063bf607219e8562fbd567b8e8d5 ; https://git.kernel.org/stable/c/78bf6b6bb19541d19fbda6242e7cfe2c682763c0 ; https://git.kernel.org/stable/c/760e1addc27ba1a7beb4a0a7e8b3e9ec49e7a34e ; https://git.kernel.org/stable/c/3bd9e113d50034db99d7ef69fd8e5242d15e414a ; https://git.kernel.org/stable/c/3884358a9286b17f389a72b1426fc4547c23c111 ; https://git.kernel.org/stable/c/f84eca5817390257cef78013d0112481c503b4a3 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-46300"
+   },
+   "epss": {
+    "probabilidad": 0.1613,
+    "percentil": 0.96953,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-48356",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "adobe",
+    "reservado": "2026-05-21T15:28:38.140Z",
+    "publicado": "2026-07-14T19:44:17.036Z",
+    "actualizado": "2026-10-28T03:55:44.631Z",
+    "titulo": "Adobe Commerce | Unrestricted Upload of File with Dangerous Type (CWE-434)",
+    "descripcion": "Adobe Commerce is affected by an Unrestricted Upload of File with Dangerous Type vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or control over the victim's account or session. Exploitation of this issue requires user interaction in that a victim must visit a maliciously crafted URL or interact with a compromised web page. Scope is changed.",
+    "cwe_registro": [
+     "CWE-434"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Adobe",
+      "producto": "Adobe Commerce",
+      "versiones": [
+       {
+        "lessThanOrEqual": "2.4.9, 2.4.8-p5, 2.4.7-p10, 2.4.6-p15, 2.4.5-p17, 2.4.4-p18",
+        "status": "affected",
+        "version": "0",
+        "versionType": "custom"
+       },
+       {
+        "status": "unaffected",
+        "version": "2.4.9-2026-jul, 2.4.8-2026-jul, 2.4.7-2026-jul, 2.4.6-2026-jul, 2.4.5-2026-jul, 2.4.4-2026-jul",
+        "versionType": "custom"
+       }
+      ]
+     },
+     {
+      "fabricante": "Adobe",
+      "producto": "Adobe Commerce B2B",
+      "versiones": [
+       {
+        "lessThanOrEqual": "1.5.3, 1.5.2-p5, 1.4.2-p10, 1.3.4-p17, 1.3.3-p18",
+        "status": "affected",
+        "version": "0",
+        "versionType": "custom"
+       },
+       {
+        "status": "unaffected",
+        "version": "1.5.3-2026-jul, 1.5.2-2026-jul, 1.4.2-2026-jul, 1.3.4-2026-jul, 1.3.3-2026-jul",
+        "versionType": "custom"
+       }
+      ]
+     },
+     {
+      "fabricante": "Adobe",
+      "producto": "Magento Open Source",
+      "versiones": [
+       {
+        "lessThanOrEqual": "2.4.9, 2.4.8-p5, 2.4.7-p10, 2.4.6-p15",
+        "status": "affected",
+        "version": "0",
+        "versionType": "custom"
+       },
+       {
+        "status": "unaffected",
+        "version": "2.4.9-2026-jul, 2.4.8-2026-jul, 2.4.7-2026-jul, 2.4.6-2026-jul",
+        "versionType": "custom"
+       }
+      ]
+     },
+     {
+      "fabricante": "Adobe",
+      "producto": "Adobe Commerce Events",
+      "versiones": [
+       {
+        "lessThanOrEqual": "1.20.0",
+        "status": "affected",
+        "version": "0",
+        "versionType": "semver"
+       },
+       {
+        "status": "unaffected",
+        "version": "1.21.0",
+        "versionType": "semver"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 9.3,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://helpx.adobe.com/security/products/magento/apsb26-73.html"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-27",
+    "plazo_federal": "2026-11-10",
+    "nombre": "Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
+    "fabricante": "Adobe",
+    "producto": "Commerce and Magento",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-434"
+    ],
+    "notas": "https://www.adobe.com/trust/security/products/commerce/apsb26-73.html ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-48356"
+   },
+   "epss": {
+    "probabilidad": 0.47472,
+    "percentil": 0.98852,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-76418",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "cisco",
+    "reservado": "2026-08-19T12:02:03.633Z",
+    "publicado": "2026-10-28T20:05:31.926Z",
+    "actualizado": "2026-10-30T03:55:57.976Z",
+    "titulo": "Cisco Secure Firewall Adaptive Security Appliance and Secure Firewall Threat Defense Software Remote Access SSL VPN Tunnel Denial of Service Vulnerability",
+    "descripcion": "A vulnerability in the Remote Access SSL VPN service of Cisco Secure Firewall Adaptive Security Appliance (ASA) Software and Cisco Secure Firewall Threat Defense (FTD) Software could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition. This vulnerability is due to logic errors when secondary authentication is configured on a tunnel group. An attacker could exploit this vulnerability by sending a crafted request when connecting to the SSL remote access VPN. A successful exploit could allow the attacker to cause the affected device to reload, resulting in a DoS condition.",
+    "cwe_registro": [
+     "CWE-690"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Cisco",
+      "producto": "Cisco Secure Firewall Adaptive Security Appliance (ASA) Software",
+      "versiones": [
+       {
+        "version": "9.16.1",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.1.28",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.2",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.2.3",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.2.7",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.2.11",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.2.13",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.2.14",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.3.3",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.3",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.3.14",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.1",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.3.15",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.1.3",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.2",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.3.19",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.3.23",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.2.5",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.2.7",
+        "status": "affected"
+       },
+       {
+        "version": "9.19.1",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.9",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.2.8",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.14",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.3",
+        "status": "affected"
+       },
+       {
+        "version": "9.19.1.5",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.18",
+        "status": "affected"
+       },
+       {
+        "version": "9.19.1.9",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.3.39",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.19",
+        "status": "affected"
+       },
+       {
+        "version": "9.19.1.12",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.3.46",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.27",
+        "status": "affected"
+       },
+       {
+        "version": "9.19.1.18",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.3.53",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.3.55",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.38",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.39",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.3.56",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.1",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.42",
+        "status": "affected"
+       },
+       {
+        "version": "9.19.1.22",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.1.5",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.5",
+        "status": "affected"
+       },
+       {
+        "version": "9.19.1.24",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.48",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.8",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.2",
+        "status": "affected"
+       },
+       {
+        "version": "9.19.1.27",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.55",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.22",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.2.10",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.57",
+        "status": "affected"
+       },
+       {
+        "version": "9.19.1.28",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.24",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.2.21",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.61",
+        "status": "affected"
+       },
+       {
+        "version": "9.19.1.31",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.29",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.2.22",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.62",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.34",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.3",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.67",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.70",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.40",
+        "status": "affected"
+       },
+       {
+        "version": "9.23.1",
+        "status": "affected"
+       },
+       {
+        "version": "9.22.1.1",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.71",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.3.4",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.47",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.3.7",
+        "status": "affected"
+       },
+       {
+        "version": "9.19.1.37",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.76",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.3.9",
+        "status": "affected"
+       },
+       {
+        "version": "9.19.1.38",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.50",
+        "status": "affected"
+       },
+       {
+        "version": "9.22.1.3",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.3.10",
+        "status": "affected"
+       },
+       {
+        "version": "9.22.1.2",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.52",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.3.13",
+        "status": "affected"
+       },
+       {
+        "version": "9.22.1.6",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.53",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.82",
+        "status": "affected"
+       },
+       {
+        "version": "9.22.2",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.3.16",
+        "status": "affected"
+       },
+       {
+        "version": "9.19.1.42",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.57",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.84",
+        "status": "affected"
+       },
+       {
+        "version": "9.23.1.3",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.3.20",
+        "status": "affected"
+       },
+       {
+        "version": "9.22.2.4",
+        "status": "affected"
+       },
+       {
+        "version": "9.23.1.7",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.4",
+        "status": "affected"
+       },
+       {
+        "version": "9.22.2.9",
+        "status": "affected"
+       },
+       {
+        "version": "9.23.1.13",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.4.7",
+        "status": "affected"
+       },
+       {
+        "version": "9.22.2.13",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.66",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.4.10",
+        "status": "affected"
+       },
+       {
+        "version": "9.23.1.19",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.85",
+        "status": "affected"
+       },
+       {
+        "version": "9.22.2.14",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.67",
+        "status": "affected"
+       },
+       {
+        "version": "9.24.1",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.68",
+        "status": "affected"
+       },
+       {
+        "version": "9.23.1.22",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.4.14",
+        "status": "affected"
+       },
+       {
+        "version": "9.22.2.20",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.71",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.4.19",
+        "status": "affected"
+       },
+       {
+        "version": "9.23.1.26",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.89",
+        "status": "affected"
+       },
+       {
+        "version": "9.22.2.32",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.76",
+        "status": "affected"
+       },
+       {
+        "version": "9.22.3",
+        "status": "affected"
+       },
+       {
+        "version": "9.24.1.5",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.4.22",
+        "status": "affected"
+       },
+       {
+        "version": "9.24.1.9",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.4.28",
+        "status": "affected"
+       },
+       {
+        "version": "9.22.3.5",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.92",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.135",
+        "status": "affected"
+       },
+       {
+        "version": "9.23.1.195",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.4.30",
+        "status": "affected"
+       },
+       {
+        "version": "9.24.1.155",
+        "status": "affected"
+       },
+       {
+        "version": "9.23.1.32",
+        "status": "affected"
+       },
+       {
+        "version": "9.24.1.11",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.4.34",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.82",
+        "status": "affected"
+       },
+       {
+        "version": "9.24.10",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.90",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.4.46",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.4.235",
+        "status": "affected"
+       },
+       {
+        "version": "9.20.4.49",
+        "status": "affected"
+       },
+       {
+        "version": "9.22.3.26",
+        "status": "affected"
+       },
+       {
+        "version": "9.16.4.103",
+        "status": "affected"
+       },
+       {
+        "version": "9.18.4.94",
+        "status": "affected"
+       },
+       {
+        "version": "9.23.1.47",
+        "status": "affected"
+       },
+       {
+        "version": "9.24.1.26",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Cisco",
+      "producto": "Cisco Secure Firewall Threat Defense (FTD) Software",
+      "versiones": [
+       {
+        "version": "7.0.0",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.0.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.1.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.2",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.0",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.2.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.3",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.0.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.4",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.5",
+        "status": "affected"
+       },
+       {
+        "version": "7.3.0",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.2",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.3",
+        "status": "affected"
+       },
+       {
+        "version": "7.3.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.4",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.6",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.5",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.4.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.3.1.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.4.0",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.6.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.5.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.4.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.6",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.6.2",
+        "status": "affected"
+       },
+       {
+        "version": "7.4.1.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.7",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.5.2",
+        "status": "affected"
+       },
+       {
+        "version": "7.3.1.2",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.8",
+        "status": "affected"
+       },
+       {
+        "version": "7.6.0",
+        "status": "affected"
+       },
+       {
+        "version": "7.4.2",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.8.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.6.3",
+        "status": "affected"
+       },
+       {
+        "version": "7.4.2.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.9",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.7",
+        "status": "affected"
+       },
+       {
+        "version": "7.7.0",
+        "status": "affected"
+       },
+       {
+        "version": "7.4.2.2",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.10",
+        "status": "affected"
+       },
+       {
+        "version": "7.6.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.4.2.3",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.8",
+        "status": "affected"
+       },
+       {
+        "version": "7.6.2",
+        "status": "affected"
+       },
+       {
+        "version": "7.7.10",
+        "status": "affected"
+       },
+       {
+        "version": "7.7.11",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.8.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.6.2.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.7.10.1",
+        "status": "affected"
+       },
+       {
+        "version": "7.4.2.4",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.10.2",
+        "status": "affected"
+       },
+       {
+        "version": "7.4.3",
+        "status": "affected"
+       },
+       {
+        "version": "7.6.4",
+        "status": "affected"
+       },
+       {
+        "version": "10.0.0",
+        "status": "affected"
+       },
+       {
+        "version": "7.4.4",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.9",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.11",
+        "status": "affected"
+       },
+       {
+        "version": "7.4.7",
+        "status": "affected"
+       },
+       {
+        "version": "7.4.8",
+        "status": "affected"
+       },
+       {
+        "version": "7.2.12",
+        "status": "affected"
+       },
+       {
+        "version": "7.6.6",
+        "status": "affected"
+       },
+       {
+        "version": "7.7.13",
+        "status": "affected"
+       },
+       {
+        "version": "10.0.2",
+        "status": "affected"
+       },
+       {
+        "version": "7.0.10",
+        "status": "affected"
+       },
+       {
+        "version": "10.1.0",
+        "status": "affected"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 8.6,
+      "severidad": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "yes",
+     "Technical Impact": "partial"
+    },
+    "referencias": [
+     "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-tunnel-dos-s6mgkb75"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-29",
+    "plazo_federal": "2026-11-01",
+    "nombre": "Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability",
+    "fabricante": "Cisco",
+    "producto": "Secure Firewall ASA Software and Cisco Secure FTD Software",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-690"
+    ],
+    "notas": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-tunnel-dos-s6mgkb75 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-76418"
+   },
+   "epss": {
+    "probabilidad": 0.00821,
+    "percentil": 0.57605,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-76519",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "cisco",
+    "reservado": "2026-08-19T12:02:03.642Z",
+    "publicado": "2026-10-14T16:07:51.466Z",
+    "actualizado": "2026-10-15T03:56:57.762Z",
+    "titulo": "Cisco Secure Email Gateway Arbitrary File Write Vulnerability",
+    "descripcion": "A vulnerability in the Advanced Malware Protection (AMP) feature of Cisco Secure Email Gateway could allow an unauthenticated, remote attacker to write arbitrary files on the underlying operating system.\r\n\r\nThis vulnerability is due to improper handling of email attachments when the file reputation service is enabled. An attacker could exploit this vulnerability by sending an email that contains a crafted attachment through an affected device. A successful exploit could allow the attacker to write arbitrary files and execute commands with&nbsp;root privileges on the underlying operating system.",
+    "cwe_registro": [
+     "CWE-23"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Cisco",
+      "producto": "Cisco Secure Email",
+      "versiones": [
+       {
+        "version": "14.0.0-698",
+        "status": "affected"
+       },
+       {
+        "version": "13.5.1-277",
+        "status": "affected"
+       },
+       {
+        "version": "13.0.0-392",
+        "status": "affected"
+       },
+       {
+        "version": "14.2.0-620",
+        "status": "affected"
+       },
+       {
+        "version": "13.0.5-007",
+        "status": "affected"
+       },
+       {
+        "version": "13.5.4-038",
+        "status": "affected"
+       },
+       {
+        "version": "14.2.1-020",
+        "status": "affected"
+       },
+       {
+        "version": "14.3.0-032",
+        "status": "affected"
+       },
+       {
+        "version": "15.0.0-104",
+        "status": "affected"
+       },
+       {
+        "version": "15.0.1-030",
+        "status": "affected"
+       },
+       {
+        "version": "15.5.0-048",
+        "status": "affected"
+       },
+       {
+        "version": "15.5.1-055",
+        "status": "affected"
+       },
+       {
+        "version": "15.5.2-018",
+        "status": "affected"
+       },
+       {
+        "version": "16.0.0-050",
+        "status": "affected"
+       },
+       {
+        "version": "15.0.3-002",
+        "status": "affected"
+       },
+       {
+        "version": "16.0.0-054",
+        "status": "affected"
+       },
+       {
+        "version": "15.5.3-022",
+        "status": "affected"
+       },
+       {
+        "version": "16.0.1-017",
+        "status": "affected"
+       },
+       {
+        "version": "15.5.4-012",
+        "status": "affected"
+       },
+       {
+        "version": "16.0.4-016",
+        "status": "affected"
+       },
+       {
+        "version": "15.0.5-016",
+        "status": "affected"
+       },
+       {
+        "version": "16.0.2-112",
+        "status": "affected"
+       },
+       {
+        "version": "16.0.3-044",
+        "status": "affected"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 9.8,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "yes",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-afw-zqYJkjxp"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-14",
+    "plazo_federal": "2026-10-17",
+    "nombre": "Cisco Secure Email Gateway Relative Path Traversal Vulnerability",
+    "fabricante": "Cisco",
+    "producto": "Secure Email Gateway",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-23"
+    ],
+    "notas": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-afw-zqYJkjxp ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-76519"
+   },
+   "epss": {
+    "probabilidad": 0.06227,
+    "percentil": 0.93593,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-88779",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "NetScaler",
+    "reservado": "2026-09-10T07:14:57.370Z",
+    "publicado": "2026-10-04T02:35:35.525Z",
+    "actualizado": "2026-10-05T03:55:38.096Z",
+    "titulo": "Memory overflow vulnerability  leading to Denial of Service",
+    "descripcion": "Vulnerability in NetScaler ADC and NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.41, before 13.1-64.28, before 14.1-73.41 FIPS, and before 13.1-37.282; Gateway: before 14.1-73.41 and before 13.1-64.28.",
+    "cwe_registro": [
+     "CWE-119"
+    ],
+    "afectados": [
+     {
+      "fabricante": "NetScaler",
+      "producto": "ADC",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "0",
+        "lessThan": "14.1-73.41",
+        "versionType": "Patch"
+       },
+       {
+        "status": "affected",
+        "version": "0",
+        "lessThan": "13.1-64.28",
+        "versionType": "Patch"
+       },
+       {
+        "status": "affected",
+        "version": "0",
+        "lessThan": "14.1-73.41 FIPS",
+        "versionType": "Patch"
+       },
+       {
+        "status": "affected",
+        "version": "0",
+        "lessThan": "13.1-37.282",
+        "versionType": "Patch"
+       }
+      ]
+     },
+     {
+      "fabricante": "NetScaler",
+      "producto": "Gateway",
+      "versiones": [
+       {
+        "status": "affected",
+        "version": "0",
+        "lessThan": "14.1-73.41",
+        "versionType": "Patch"
+       },
+       {
+        "status": "affected",
+        "version": "0",
+        "lessThan": "13.1-64.28",
+        "versionType": "Patch"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "4.0",
+      "puntuacion": 8.7,
+      "severidad": "HIGH",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "yes",
+     "Technical Impact": "partial"
+    },
+    "referencias": [
+     "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697174"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-04",
+    "plazo_federal": "2026-10-07",
+    "nombre": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+    "fabricante": "Citrix",
+    "producto": "NetScaler",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-119"
+    ],
+    "notas": "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697174 ; https://community.citrix.com/techzone-blogs/110_security-updates/understanding-and-addressing-cve-2026-88779-in-citrix-netscaler-adc-and-citrix-netscaler-gateway/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-88779"
+   },
+   "epss": {
+    "probabilidad": 0.11388,
+    "percentil": 0.96029,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-96652",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "cisa-cg",
+    "reservado": "2026-09-23T14:42:11.354Z",
+    "publicado": "2026-09-23T16:06:15.517Z",
+    "actualizado": "2026-10-21T03:56:26.467Z",
+    "titulo": "Plex Media Server SSRF",
+    "descripcion": "Plex Media Server before 1.43.3.10861 allows SSRF via '/player/timeline'. An attacker using any X-Plex-Token value can include a full URL in the 'protocol' parameter and force the Plex server to POST to the attacker's chosen destination.",
+    "cwe_registro": [
+     "CWE-918"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Plex",
+      "producto": "Media Server",
+      "versiones": [
+       {
+        "version": "0",
+        "status": "affected",
+        "lessThan": "1.43.3.10861",
+        "versionType": "custom"
+       },
+       {
+        "version": "1.43.3.10861",
+        "status": "unaffected"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 4.3,
+      "severidad": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "fuente": "CNA"
+     },
+     {
+      "version": "4.0",
+      "puntuacion": 5.3,
+      "severidad": "MEDIUM",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "partial"
+    },
+    "referencias": [
+     "https://raw.githubusercontent.com/cisagov/CSAF/develop/csaf_files/IT/white/2026/va-26-266-01.json",
+     "https://forums.plex.tv/t/plex-media-server/30447/711",
+     "https://www.cve.org/CVERecord?id=CVE-2026-96652",
+     "https://zmain.info/blog/plex2shell"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-20",
+    "plazo_federal": "2026-11-03",
+    "nombre": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+    "fabricante": "Plex",
+    "producto": "Media Server",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-918"
+    ],
+    "notas": "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-96652"
+   },
+   "epss": {
+    "probabilidad": 0.11886,
+    "percentil": 0.96136,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-96654",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "cisa-cg",
+    "reservado": "2026-09-23T14:42:18.475Z",
+    "publicado": "2026-09-23T16:06:35.821Z",
+    "actualizado": "2026-10-21T03:56:25.683Z",
+    "titulo": "Plex Media Server URL injection",
+    "descripcion": "Plex Media Server before 1.43.3.10861 does not correctly neutralize URL values included in 'searchOne,' allowing an attacker to call other plugins' functions and supply their own parameters.",
+    "cwe_registro": [
+     "CWE-84"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Plex",
+      "producto": "Media Server",
+      "versiones": [
+       {
+        "version": "0",
+        "status": "affected",
+        "lessThan": "1.43.3.10861",
+        "versionType": "custom"
+       },
+       {
+        "version": "1.43.3.10861",
+        "status": "unaffected"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "4.0",
+      "puntuacion": 6.9,
+      "severidad": "MEDIUM",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+      "fuente": "CNA"
+     },
+     {
+      "version": "3.1",
+      "puntuacion": 6.5,
+      "severidad": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "yes",
+     "Technical Impact": "partial"
+    },
+    "referencias": [
+     "https://www.cve.org/CVERecord?id=CVE-2026-96654",
+     "https://forums.plex.tv/t/plex-media-server/30447/711",
+     "https://raw.githubusercontent.com/cisagov/CSAF/develop/csaf_files/IT/white/2026/va-26-266-01.json",
+     "https://zmain.info/blog/plex2shell"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-20",
+    "plazo_federal": "2026-10-23",
+    "nombre": "Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability",
+    "fabricante": "Plex",
+    "producto": "Media Server",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-84"
+    ],
+    "notas": "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-96654"
+   },
+   "epss": {
+    "probabilidad": 0.01949,
+    "percentil": 0.80391,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-96655",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "cisa-cg",
+    "reservado": "2026-09-23T14:42:25.245Z",
+    "publicado": "2026-09-23T16:06:53.133Z",
+    "actualizado": "2026-10-21T03:56:24.883Z",
+    "titulo": "Plex Media Server arbitrary-host SSRF",
+    "descripcion": "Plex Media Server before 1.43.3.10861 allows an authenticated user to request arbitrary internal or external addresses via the '/video/:/transcode/universal' path parameter.",
+    "cwe_registro": [
+     "CWE-918"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Plex",
+      "producto": "Media Server",
+      "versiones": [
+       {
+        "version": "0",
+        "status": "affected",
+        "lessThan": "1.43.3.10861",
+        "versionType": "custom"
+       },
+       {
+        "version": "1.43.3.10861",
+        "status": "unaffected"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 4.3,
+      "severidad": "MEDIUM",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "fuente": "CNA"
+     },
+     {
+      "version": "4.0",
+      "puntuacion": 5.3,
+      "severidad": "MEDIUM",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "partial"
+    },
+    "referencias": [
+     "https://raw.githubusercontent.com/cisagov/CSAF/develop/csaf_files/IT/white/2026/va-26-266-01.json",
+     "https://forums.plex.tv/t/plex-media-server/30447/711",
+     "https://www.cve.org/CVERecord?id=CVE-2026-96655",
+     "https://zmain.info/blog/plex2shell"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-20",
+    "plazo_federal": "2026-11-03",
+    "nombre": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+    "fabricante": "Plex",
+    "producto": "Media Server",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-918"
+    ],
+    "notas": "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-96655"
+   },
+   "epss": {
+    "probabilidad": 0.10724,
+    "percentil": 0.95858,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-96656",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "cisa-cg",
+    "reservado": "2026-09-23T14:42:33.270Z",
+    "publicado": "2026-09-23T16:07:10.048Z",
+    "actualizado": "2026-10-21T03:56:10.489Z",
+    "titulo": "Plex Media Server arbitrary file write",
+    "descripcion": "Plex Media Server before 1.43.3.10861 allows an admin user to write arbitrary files that may be executed on load. The preference TranscoderH264Options is appended verbatim to x264's option string on every transcode. At startup, all .so files are run without signature, execute bit, or symbol checks.",
+    "cwe_registro": [
+     "CWE-73"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Plex",
+      "producto": "Media Server",
+      "versiones": [
+       {
+        "version": "0",
+        "status": "affected",
+        "lessThan": "1.43.3.10861",
+        "versionType": "custom"
+       },
+       {
+        "version": "1.43.3.10861",
+        "status": "unaffected"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "4.0",
+      "puntuacion": 8.6,
+      "severidad": "HIGH",
+      "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "fuente": "CNA"
+     },
+     {
+      "version": "3.1",
+      "puntuacion": 7.2,
+      "severidad": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://forums.plex.tv/t/plex-media-server/30447/711",
+     "https://www.cve.org/CVERecord?id=CVE-2026-96656",
+     "https://raw.githubusercontent.com/cisagov/CSAF/develop/csaf_files/IT/white/2026/va-26-266-01.json",
+     "https://zmain.info/blog/plex2shell"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-20",
+    "plazo_federal": "2026-10-23",
+    "nombre": "Plex Media Server External Control of File Name or Path Vulnerability",
+    "fabricante": "Plex",
+    "producto": "Media Server",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-73"
+    ],
+    "notas": "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-96656"
+   },
+   "epss": {
+    "probabilidad": 0.01785,
+    "percentil": 0.78487,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-96951",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "microsoft",
+    "reservado": "2026-09-23T20:35:19.928Z",
+    "publicado": "2026-10-13T19:01:26.801Z",
+    "actualizado": "2026-11-10T20:45:19.210Z",
+    "titulo": "Windows Shell Security Feature Bypass Vulnerability",
+    "descripcion": "Improper neutralization of special elements used in a command ('command injection') in Windows Shell allows an unauthorized attacker to bypass a security feature over a network.",
+    "cwe_registro": [
+     "CWE-77"
+    ],
+    "afectados": [
+     {
+      "fabricante": "Microsoft",
+      "producto": "Microsoft Edge (Chromium-based)",
+      "versiones": [
+       {
+        "version": "1.0.0.0",
+        "lessThan": "154.0.4258.62",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Outlook.com",
+      "versiones": [
+       {
+        "version": "1.0.0",
+        "lessThan": "20260925.100",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows 10 Version 1607",
+      "versiones": [
+       {
+        "version": "10.0.14393.0",
+        "lessThan": "10.0.14393.9612",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows 10 Version 1809",
+      "versiones": [
+       {
+        "version": "10.0.17763.0",
+        "lessThan": "10.0.17763.9376",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows 10 Version 21H2",
+      "versiones": [
+       {
+        "version": "10.0.19044.0",
+        "lessThan": "10.0.19044.7807",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows 10 Version 22H2",
+      "versiones": [
+       {
+        "version": "10.0.19045.0",
+        "lessThan": "10.0.19045.7807",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows 11 version 23H2",
+      "versiones": [
+       {
+        "version": "10.0.22631.0",
+        "lessThan": "10.0.22631.7652",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows 11 Version 23H2",
+      "versiones": [
+       {
+        "version": "10.0.22631.0",
+        "lessThan": "10.0.22631.7652",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows 11 Version 24H2",
+      "versiones": [
+       {
+        "version": "10.0.26100.0",
+        "lessThan": "10.0.26100.9711",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows 11 Version 25H2",
+      "versiones": [
+       {
+        "version": "10.0.26200.0",
+        "lessThan": "10.0.26200.9711",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows 11 version 26H1",
+      "versiones": [
+       {
+        "version": "10.0.28000.0",
+        "lessThan": "10.0.28000.3231",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows 11 Version 26H2",
+      "versiones": [
+       {
+        "version": "10.0.26300.0",
+        "lessThan": "10.0.26300.9711",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows Server 2012 R2",
+      "versiones": [
+       {
+        "version": "6.3.9600.0",
+        "lessThan": "6.3.9600.23470",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows Server 2012 R2 (Server Core installation)",
+      "versiones": [
+       {
+        "version": "6.3.9600.0",
+        "lessThan": "6.3.9600.23470",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows Server 2016",
+      "versiones": [
+       {
+        "version": "10.0.14393.0",
+        "lessThan": "10.0.14393.9612",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows Server 2016 (Server Core installation)",
+      "versiones": [
+       {
+        "version": "10.0.14393.0",
+        "lessThan": "10.0.14393.9612",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows Server 2019",
+      "versiones": [
+       {
+        "version": "10.0.17763.0",
+        "lessThan": "10.0.17763.9376",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows Server 2019 (Server Core installation)",
+      "versiones": [
+       {
+        "version": "10.0.17763.0",
+        "lessThan": "10.0.17763.9376",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows Server 2022",
+      "versiones": [
+       {
+        "version": "10.0.20348.0",
+        "lessThan": "10.0.20348.5761",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows Server 2025",
+      "versiones": [
+       {
+        "version": "10.0.26100.0",
+        "lessThan": "10.0.26100.33650",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     },
+     {
+      "fabricante": "Microsoft",
+      "producto": "Windows Server 2025 (Server Core installation)",
+      "versiones": [
+       {
+        "version": "10.0.26100.0",
+        "lessThan": "10.0.26100.33650",
+        "versionType": "custom",
+        "status": "affected"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 8.8,
+      "severidad": "HIGH",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "no",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-96951"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-13",
+    "plazo_federal": "2026-10-16",
+    "nombre": "Microsoft Windows Command Injection Vulnerability",
+    "fabricante": "Microsoft",
+    "producto": "Windows",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-77"
+    ],
+    "notas": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-96951 ; BOD 26-04: BOD 26-04: Prioritizing Security Updates Based on Risk | CISA ; Forensics Triage Requirements: BOD 26-04: Implementation Guidance for Prioritizing Security Updates Based on Risk | CISA ;  https://nvd.nist.gov/vuln/detail/CVE-2026-96951"
+   },
+   "epss": {
+    "probabilidad": 0.09813,
+    "percentil": 0.95588,
+    "fecha": "2026-11-10"
+   }
+  },
+  {
+   "cve": "CVE-2026-97229",
+   "registro": {
+    "estado": "PUBLISHED",
+    "cna": "GitLab",
+    "reservado": "2026-09-24T10:04:47.421Z",
+    "publicado": "2026-10-13T01:05:46.166Z",
+    "actualizado": "2026-10-30T23:18:16.598Z",
+    "titulo": "Integer Overflow or Wraparound in GitLab",
+    "descripcion": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 19.2 before 19.2.8, 19.3 before 19.3.5, and 19.4 before 19.4.2 that, under certain conditions, could have allowed an unauthenticated user to execute arbitrary code on the GitLab server via a specially crafted regular expression in a CI/CD configuration, due to insufficient regular expression validation.",
+    "cwe_registro": [
+     "CWE-190"
+    ],
+    "afectados": [
+     {
+      "fabricante": "GitLab",
+      "producto": "GitLab",
+      "versiones": [
+       {
+        "version": "19.2",
+        "status": "affected",
+        "lessThan": "19.2.8",
+        "versionType": "semver"
+       },
+       {
+        "version": "19.3",
+        "status": "affected",
+        "lessThan": "19.3.5",
+        "versionType": "semver"
+       },
+       {
+        "version": "19.4",
+        "status": "affected",
+        "lessThan": "19.4.2",
+        "versionType": "semver"
+       }
+      ]
+     }
+    ],
+    "cvss": [
+     {
+      "version": "3.1",
+      "puntuacion": 10,
+      "severidad": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "fuente": "CNA"
+     }
+    ],
+    "ssvc_cisa": {
+     "Exploitation": "active",
+     "Automatable": "yes",
+     "Technical Impact": "total"
+    },
+    "referencias": [
+     "https://gitlab.com/gitlab-org/gitlab/-/work_items/630686",
+     "https://hackerone.com/reports/4055749",
+     "https://hackerone.com/reports/4058589",
+     "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/"
+    ]
+   },
+   "kev": {
+    "fecha_incorporacion": "2026-10-29",
+    "plazo_federal": "2026-11-01",
+    "nombre": "GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
+    "fabricante": "GitLab",
+    "producto": "Community Edition and Enterprise Edition",
+    "accion_requerida": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+    "ransomware": "Unknown",
+    "cwe_kev": [
+     "CWE-190"
+    ],
+    "notas": "Other products can potentially be affected by the same underlying Ruby/Onigmo Integer Overflow issue in CI/CD Regular Expression Compiler. For more information please see: https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves ; https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-97229"
+   },
+   "epss": {
+    "probabilidad": 0.6522,
+    "percentil": 0.99261,
+    "fecha": "2026-11-10"
+   }
+  }
+ ]
+}

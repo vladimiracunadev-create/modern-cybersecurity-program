@@ -31,6 +31,7 @@ Al finalizar, el alumno podrá:
 | 6 | Rotación de credenciales | Cerrar el acceso robado |
 | 7 | Recuperación monitorizada | Detectar reinfección |
 | 8 | Validación de erradicación | Criterio para cerrar |
+| 9 | Recuperación tras ransomware en la nube: IDC Frontier (octubre de 2026) | Respaldos que sobreviven al compromiso del plano de gestión |
 
 ## 🧠 Explicación en profundidad
 
@@ -67,6 +68,21 @@ La reconstrucción desde una imagen confiable suele reducir incertidumbre frente
 La recuperación define servicio mínimo, criterios de salud, dependencias, validación de datos y plan de reversión. Los sistemas vuelven por etapas y con telemetría reforzada. Una ausencia breve de alertas no demuestra erradicación; la ventana se justifica por ciclos de negocio, persistencia observada y riesgo.
 
 El cierre exige demostrar que las rutas conocidas de acceso están eliminadas, el servicio funciona, las fuentes de detección reportan y las acciones pendientes tienen dueño. Si queda incertidumbre relevante, se comunica en vez de transformar «no observado» en «no existe».
+
+<!-- octubre-2026-216 -->
+### Caso real de octubre de 2026: el respaldo que cae con el entorno
+
+El **7 de octubre de 2026**, IDC Frontier (proveedor de nube japonés) informó de un ataque de *ransomware* de un tercero en su región East Japan Region 1 (IDCF Cloud). Las fuentes consultadas, en su mayoría secundarias, coinciden en que afectó a **495 empresas y gobiernos locales** y en que la recuperación por *snapshot* solo alcanzó a una parte de los clientes (194 según el aviso del 14 de octubre y 206 según la actualización del 27; las fuentes difieren). El vector de entrada **no se había divulgado**; una firma externa no encontró evidencia de acceso a datos de clientes en las cuatro zonas afectadas, y la compañía declaró no haber pagado ni negociado. Circuló una nota de los atacantes con cifras mucho mayores (por ejemplo, cientos de miles de *snapshots* borrados) que **la compañía no confirmó**: se trata como una afirmación del atacante, no como un hecho.
+
+**La lección sin necesidad de conocer el vector.** Sea cual fuere el modo de entrada, un resultado se repite en muchos incidentes de este tipo: *las copias que dependen de las mismas credenciales y del mismo plano de gestión que producción caen con producción*. Una copia es útil si cumple a la vez tres condiciones: está **fuera del alcance** de lo que el atacante controla, es **inmutable** durante la retención y se **ha probado restaurar** recientemente. Falta una y la copia no es un plan de recuperación, es una esperanza.
+
+El laboratorio ([README](../../../labs/octubre-2026-casos-reales/README.md), `respaldo_y_triaje.py::evaluar_respaldos`) modela esta idea con un inventario **ficticio**: cada copia tiene un dominio de confianza, un indicador de inmutabilidad, uno de separación fuera de banda y los días desde la última restauración probada. Si el atacante controla el dominio `nube-A`, sobreviven las copias de otro dominio, y las del mismo dominio solo si son inmutables **y** fuera de banda. Las pruebas cubren tres situaciones: todo en el mismo dominio (no es recuperable), una bóveda inmutable y fuera de banda más una copia en otra nube (recuperable, con el mejor RPO de 12 h) y una copia que existe pero **nunca se ha probado** (no cuenta como utilizable). La métrica que cierra el ciclo es el RPO realmente alcanzable, no el configurado.
+
+**Cómo se conecta con la respuesta.** (1) **Contención:** aislar primero el plano de gestión y rotar las credenciales de administración antes de restaurar, o se restaura hacia un entorno que el atacante aún controla. (2) **Evidencia:** preservar registros y copias forenses antes de reconstruir; el resultado de una reconstrucción apresurada es perder la prueba de cómo entraron. (3) **Recuperación en orden:** servicios por criticidad y dependencias, no por comodidad. (4) **Comunicación:** las fechas, las cifras y el estado cambian; IDC Frontier publicó informes sucesivos y cerró la investigación el 27 de octubre (séptimo informe). Documenta qué es hecho confirmado y qué es dicho de terceros.
+
+**Límite de este estudio de caso.** No se pudo consultar el aviso original del proveedor, solo coberturas secundarias (BleepingComputer, entre otras); por eso las cifras de clientes recuperables se dan como un rango y se marcan como no confirmadas. Una conclusión sobre **cómo** entraron los atacantes no existe en las fuentes y no se debe inferir.
+
+**Segundo caso, otro eje: secretos y rotación (Railway).** El 21 de octubre de 2026 Railway informó de acceso no autorizado a sistemas que almacenan variables de entorno de clientes; su informe preliminar sitúa la ventana entre el 20 de octubre a las 13:58 UTC y el 22 a las 03:32 UTC, e indica que el atacante extrajo secretos cifrados, obtuvo credenciales de CI y descifró un subconjunto de variables. Como máximo el 1,85 % de los espacios de trabajo (unos 100 000) pudo verse afectado, aunque la empresa pidió rotar las claves almacenadas antes del 21 de octubre a todos los usuarios y avisó a los proveedores para que revocaran claves. Es un ejemplo de **erradicación por rotación**: cuando no se sabe qué claves se vieron, se asume compromiso de todas las que pudieron verse. La explicación del tratamiento de los secretos está en la clase [241](../../parte-11-devsecops-y-seguridad-del-sdlc/241-secretos-en-el-codigo-y-pre-commit-hooks/README.md).
 
 ## 📔 Glosario
 
@@ -133,6 +149,7 @@ Dominas la clase cuando comparas opciones de contención por riesgo, reversión 
 4. Diseña un plan de rotación de credenciales tras un compromiso.
 5. Define los criterios de validación de erradicación.
 6. Explica cómo contener sin perder la memoria del equipo.
+7. IDCF y Railway (octubre de 2026). (a) Con `evaluar_respaldos`, construye un inventario realista de tu organización y calcula qué sobrevive si se pierde el control de tu nube principal; (b) en el caso Railway, ordena por riesgo las tres claves siguientes que un cliente tendría almacenadas: token de GitHub, clave de un proveedor de IA y contraseña de base de datos expuesta públicamente, e indica el orden de rotación. *Solución razonada:* (a) debe aparecer al menos una copia inmutable y fuera de banda con restauración probada; si no, la conclusión es «no recuperable». (b) el orden depende del daño y de lo que el atacante puede hacer sin esperar: una clave de proveedor de IA tiene coste inmediato (clase 295), el token de GitHub da acceso a código y a nuevas credenciales, y una base de datos públicamente accesible cambia el cálculo; el criterio —no el orden concreto— es lo evaluable.
 
 ## 📝 Reto verificable
 
@@ -172,6 +189,8 @@ Con monitoreo reforzado durante un periodo y criterios objetivos: cero IOCs acti
 - **Sysinternals Autoruns:** <https://learn.microsoft.com/sysinternals/downloads/autoruns> — documentación oficial para ubicaciones de inicio automático Windows; no cubre todas las formas de acceso, identidad o persistencia cloud.
 - **MITRE ATT&CK — Persistence:** <https://attack.mitre.org/tactics/TA0003/> — taxonomía de comportamientos para ampliar búsquedas; la cobertura depende de fuentes disponibles.
 - **CISA Incident Response Playbook:** <https://www.cisa.gov/sites/default/files/publications/Cybersecurity_Incident_Vulnerability_Response_Playbooks_508C.pdf> — ejemplo oficial de acciones y coordinación; adaptar autoridad y criterios al entorno.
+- BleepingComputer, *Ransomware attack disrupts Japan's IDCF Cloud used by govt clients* — <https://www.bleepingcomputer.com/news/security/ransomware-attack-disrupts-japans-idcf-cloud-used-by-govt-clients/> — fecha, zonas, número de clientes y cifras no confirmadas del atacante (fuente secundaria).
+- Railway, *Preliminary Report: Oct 21st Security Incident* — <https://blog.railway.com/p/preliminary-report-october-security-incident> — cronología en UTC, qué se accedió, qué se desconoce y guía de rotación.
 
 ## 📥 Material descargable
 

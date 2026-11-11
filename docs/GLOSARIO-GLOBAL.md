@@ -8,7 +8,7 @@ el generador; la modalidad y disponibilidad pueden cambiar en sus sitios oficial
 > **Archivo generado.** No lo edites a mano. Ejecuta
 > `python scripts/generar_glosario_global.py` y valida con `--check`.
 
-**Cobertura:** 2613 términos consolidados · 355 clases con glosario.
+**Cobertura:** 2614 términos consolidados · 355 clases con glosario.
 
 ## Cómo usarlo
 
@@ -3790,6 +3790,12 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 Almacén de parámetros del módulo
 
 **Aparece en 1 clase(s):** [Clase 72 — Metasploit Framework: arquitectura y uso](../classes/parte-3-hacking-etico-y-pentesting-metodologia/072-metasploit-framework-arquitectura-y-uso/README.md).
+
+### dateAdded (KEV)
+
+Fecha en que CISA incorporó un CVE al catálogo de vulnerabilidades explotadas; no es la fecha de publicación ni la de la primera explotación
+
+**Aparece en 1 clase(s):** [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
 
 ### Dato contaminado (tainted)
 

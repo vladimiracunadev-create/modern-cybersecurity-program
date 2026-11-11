@@ -76,16 +76,16 @@ Eso también permite detectar cuándo una norma deja de estar vigente, que es cu
 
 | Marco / publicación | Identificador y versión | Partes que lo usan |
 |---|---|---:|
-| [MITRE ATT&CK: Adversarial Tactics, Techniques and Common…](https://attack.mitre.org/) | MITRE ATT&CK v19.2 | 13 (0, 1, 3, 6, 7, 8, 9, 10, 12, 13, 16, 17, 18) |
+| [MITRE ATT&CK: Adversarial Tactics, Techniques and Common…](https://attack.mitre.org/) | MITRE ATT&CK v19.2 | 14 (0, 1, 3, 6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18) |
 | [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/) | OWASP Cheat Sheet Series | 8 (0, 2, 3, 4, 10, 11, 17, 20) |
 | [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/) | OWASP WSTG v4.2 | 8 (1, 3, 4, 11, 12, 16, 17, 18) |
 | [Common Weakness Enumeration (CWE)](https://cwe.mitre.org/) | MITRE CWE 5.0 | 5 (4, 5, 11, 17, 20) |
-| [CISA: avisos, catálogos y recursos de ciberseguridad](https://www.cisa.gov/) | CISA | 7 (0, 9, 12, 13, 14, 16, 17) |
 | [CISA Known Exploited Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | CISA KEV Catalog | 5 (0, 4, 11, 17, 20) |
-| [Computer Security Incident Handling Guide](https://csrc.nist.gov/pubs/sp/800/61/r2/final) | NIST SP 800-61 Rev. 2 — **retirada** | 6 (7, 8, 9, 10, 16, 17) |
-| [OWASP Community: fichas de ataques y vulnerabilidades](https://owasp.org/www-community/) | OWASP Community | 5 (0, 1, 4, 5, 11) |
 | [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss) | FIRST CVSS | 6 (3, 4, 16, 17, 18, 20) |
-| [MITRE ATLAS: Adversarial Threat Landscape for…](https://atlas.mitre.org/) | MITRE ATLAS v2026.07 | 2 (15, 18) |
+| [CISA: avisos, catálogos y recursos de ciberseguridad](https://www.cisa.gov/) | CISA | 7 (0, 9, 12, 13, 14, 16, 17) |
+| [Computer Security Incident Handling Guide](https://csrc.nist.gov/pubs/sp/800/61/r2/final) | NIST SP 800-61 Rev. 2 — **retirada** | 6 (7, 8, 9, 10, 16, 17) |
+| [MITRE ATLAS: Adversarial Threat Landscape for…](https://atlas.mitre.org/) | MITRE ATLAS v2026.07 | 3 (4, 15, 18) |
+| [OWASP Community: fichas de ataques y vulnerabilidades](https://owasp.org/www-community/) | OWASP Community | 5 (0, 1, 4, 5, 11) |
 | [The NIST Cybersecurity Framework (CSF) 2.0](https://www.nist.gov/cyberframework) | NIST CSF 2.0 | 6 (0, 8, 9, 10, 14, 17) |
 | [Security and Privacy Controls for Information Systems and…](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) | NIST SP 800-53 Rev. 5 | 7 (7, 8, 9, 13, 14, 16, 17) |
 
@@ -108,7 +108,7 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 | [RFC 7489](https://www.rfc-editor.org/rfc/rfc7489) | obsoleta | 1 |
 | [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446) | obsoleta | 1 |
 
-Las 779 obras que usa el programa — 57 libros, 25 artículos, 172 normas y 525 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-10-01 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
+Las 799 obras que usa el programa — 57 libros, 25 artículos, 172 normas y 545 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-10-01 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
 
 <!-- fuentes:fin -->
 
@@ -186,6 +186,7 @@ comando, más una colección de retos tipo CTF:
 - ₿ **[Custodia de activos digitales](labs/custodia-activos-digitales/README.md)** — caso transversal ficticio con conciliación ledger–operación–blockchain, IAM/PAM/SoD, insider risk, threat model, DFIR, ocho playbooks, dataset y tests · Partes 8, 9, 11, 14, 16 y 17; [diagnóstico y arquitectura](docs/caso-custodia-activos-digitales.md).
 - 📣 **[Lanzamientos virales y memecoins](labs/lanzamientos-virales/README.md)** — caso offline ficticio: video viral, token/sitio/cuentas/airdrop falsos, account takeover, autorización maliciosa, drainer, seed theft, clipboard y rug pull, con analizador y tests · Partes 4, 6, 9, 12 y 14; [auditoría curricular](docs/caso-lanzamientos-virales.md).
 - 🔑 **[LLMjacking: detectar y contener abuso de recursos de IA](labs/llmjacking-defense/README.md)** — simulación local y determinista de ocho escenarios (clave expuesta, validación mínima, consumo anómalo, Ollama sin autenticación, privilegios excesivos, contención y ráfaga legítima), detector con señales explicables, métricas y comparación de controles · Parte 15 (con conexiones a las Partes 8–11, 14 y 18).
+- 🗓️ **[Octubre de 2026: casos reales de CVE e incidentes](labs/octubre-2026-casos-reales/README.md)** — validación de destinos (SSRF), rutas y argumentos con su versión vulnerable y corregida, reglas de detección sobre identidades de aplicación, supervivencia de copias de seguridad y triaje de los 36 CVE incorporados a KEV en el mes; informe en [`docs/casos-reales/2026-10`](docs/casos-reales/2026-10/README.md) · Partes 4, 8, 9, 10 y 20
 - 🔩 **[Manipulación física de hardware](labs/hardware-tamper-defense/README.md)** — caso ficticio inspirado en el implante confirmado por Ledger en octubre de 2026: un secure element auténtico no prueba integridad física ni custodia. Comparación de placa, bus simulado, consumo, cadena de custodia e informe · Partes 7 y 13, con notas en las Partes 9, 11, 14 y 17.
 - 🌐 **[Escaneo de red (nmap)](labs/redes-nmap/README.md)** · 💥 **[Explotación de binarios (pwn)](labs/pwn-binarios/README.md)** · ☁️ **[Auditoría cloud (CSPM)](labs/cloud-security/README.md)** — Partes 1, 5 y 10.
 - 🚩 **[Retos tipo CTF](ctf/README.md)** — web, cripto, redes, forense, OSINT y pwn, con writeups.
@@ -203,7 +204,7 @@ comando, más una colección de retos tipo CTF:
 - 🧭 **[Rutas guiadas por rol](rutas/README.md)** — recorridos ordenados para pentester, red team, SOC/blue, **analista SecOps**, DFIR, **Threat Intelligence / CTI**, **responsable de divulgación coordinada (Responsible Disclosure)**, **investigador/a de seguridad**, **gestión de vulnerabilidades**, AppSec, **analista DevSecOps**, **ingeniero DevSecOps**, cloud, GRC, **Game Security / Anti-Cheat Engineer**, **Game Integrity / Anti-Cheat Analyst**, **analista de ciberseguridad (institución regulada)**, **analista de seguridad ofensiva**, **ingeniero SecOps / security engineer**, **seguridad de infraestructura**, **operación de plataformas (MSSP/DLP)**, **jefe de seguridad**, **jefe de infraestructura y ciberseguridad**, **CISO / director de seguridad de la información**, **arquitecto de ciberseguridad IT/OT** y **cooperación/alianzas técnicas** — más el **[ecosistema CISO](rutas/ecosistema-ciso.md)** con seis rutas propias alrededor del cargo: **Field CISO**, **vCISO**, **BISO**, **Product CISO**, **AI CISO** y **OT CISO**.
 - 🎮 **[Modelo operativo de Game Security](docs/modelo-operativo-game-security.md)** — separa ingeniería, investigación, sanción, apelación, privacidad y respuesta a incidentes; define evidencia y límites de práctica.
 - 🗺️ **[Matriz de roles SecOps y DevSecOps](docs/matriz-roles-secops-devsecops.md)** — SOC, SecOps, DevSecOps, AppSec, Cloud Security y DFIR comparados por misión, decisiones, entregables, métricas, clases y progresión, con el diagrama del ciclo desarrollo → pipeline → nube → producción → monitoreo → incidente → aprendizaje.
-- 📝 **[Autoevaluaciones](autoevaluaciones/README.md)** — 109 preguntas (una batería por parte). Versión interactiva con puntuación: [quiz](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/quiz.html).
+- 📝 **[Autoevaluaciones](autoevaluaciones/README.md)** — 153 preguntas (una batería por parte). Versión interactiva con puntuación: [quiz](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/quiz.html).
 - ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/progreso.html)** — marca las 370 clases (se guarda en tu navegador).
 - 🔑 **[Soluciones a los retos](soluciones/README.md)** — claves de referencia de los ejercicios y retos (Parte 2 completa; resto por lotes).
 - 🎓 **[Certificaciones](certificaciones/README.md)** — mapeo del programa a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con **% de cobertura ponderado por dominio**.

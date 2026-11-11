@@ -31,6 +31,7 @@ Al finalizar, el alumno podrá:
 | 6 | Validación con Atomic Red Team | Probar que realmente detecta |
 | 7 | Calidad y deuda de detección | Evitar degradación silenciosa |
 | 8 | Colaboración red↔blue (puente a purple) | Mejorar con adversario real |
+| 9 | Detección de abuso de identidades de aplicación (caso ConnectWise, octubre de 2026) | Reglas verificables con eventos sintéticos y métricas |
 
 ## 🧠 Explicación en profundidad
 
@@ -83,6 +84,26 @@ Red team describe procedimiento, prerequisitos y variaciones; blue team declara 
 Las prácticas de hardware de las clases [177](../../parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md) y [268–272](../../parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md) exigen contratos específicos. Una fuente PnP/USBGuard puede demostrar que apareció una interfaz; EDR o red puede mostrar el proceso, ruta o asociación posterior; inventario físico y custodia pueden vincular el equipo examinado. Ninguna capa debe rellenar las otras por inferencia.
 
 Una detección portable se diseña como correlación temporal, no como una lista de marcas: *nuevo dispositivo USB con interfaz HID o red no inventariada* seguido de *conducta sensible* dentro de una ventana. El fixture positivo conserva descriptores e interfaz más la acción inocua de la Clase 177; los negativos incluyen un teclado de reemplazo y un dock corporativo. En WiFi, el positivo combina SSID protegido, BSSID fuera de inventario y RSN/certificado incompatible; el negativo contiene APs legítimos nuevos y redes vecinas. Si la fuente no aporta un campo, la regla declara el hueco en vez de inventarlo.
+
+<!-- octubre-2026-199 -->
+### Un caso real convertido en detección: identidades de aplicación abusadas
+
+Un buen ejercicio de ingeniería de detección parte de un incidente publicado y se pregunta: *¿qué evidencia habría delatado esto, y cómo demuestro que mi regla funciona?* El incidente de octubre de 2026 de **ConnectWise Cloud Backup** (antes SkyKick) es adecuado porque el informe de Huntress documenta el comportamiento con detalle suficiente y reconoce sus límites. Los hechos que usamos, todos de ese informe: una credencial de aplicación del proveedor, ya autorizada en muchos inquilinos de Microsoft 365, se usó desde una dirección de un proveedor de alojamiento y no desde el rango habitual del proveedor; entre el 13 y el 15 de octubre hubo pulverización de contraseñas, principales de servicio que se asignaron roles de directorio (en un inquilino, Administrador Global) y adiciones de secretos a otras aplicaciones; Huntress confirmó 162 inquilinos con inicios de sesión no autorizados el 16 de octubre y advierte de que es una cota inferior.
+
+**De la observación a cuatro reglas.** El laboratorio ([README](../../../labs/octubre-2026-casos-reales/README.md), `deteccion_identidad_app.py`) traduce lo observado a reglas con datos **sintéticos** (identificadores, direcciones y esquema de eventos ficticios):
+
+| Regla | Condición | Técnica ATT&CK que describe la conducta | Falso positivo previsible |
+|---|---|---|---|
+| R1 | una aplicación se asigna a sí misma un rol de directorio | T1098.003 *Additional Cloud Roles* | un proveedor que se concede permisos al incorporarse; mitiga una lista de cambios aprobados |
+| R2 | se añade una credencial a una aplicación y el actor no figura como propietario | T1098.001 *Additional Cloud Credentials* | un administrador que rota secretos; mitiga el inventario de propietarios |
+| R3 | inicio de sesión de un principal de servicio desde fuera de los rangos conocidos de su proveedor | (acceso con credenciales válidas) | proveedor que cambia de infraestructura; mitiga la comunicación del cambio |
+| R4 | ≥ 8 cuentas distintas fallan desde un mismo origen en una hora | T1110.003 *Password Spraying* | pruebas autorizadas de seguridad |
+
+Las técnicas se verificaron en la matriz de ATT&CK (v20.1) el 2026-11-11. Conviene decir lo que **no** se afirma: que el atacante real usara exactamente estas técnicas con estos nombres es una interpretación del defensor sobre lo descrito, no un hecho del informe; y la regla R3 se apoya en un rango de direcciones que **en la realidad cambia** y requiere mantenimiento.
+
+**Medir antes de confiar.** `medir` calcula, sobre la verdad de terreno sintética, cuántos eventos maliciosos detecta (todos, en las semillas probadas, 1 a 5 y 7) y cuántos falsos positivos produce (cero con el inventario de propietarios). La prueba `test_sin_inventario_de_propietarios_el_cambio_legitimo_alerta` muestra el contrapunto: **sin el inventario, R2 alerta sobre el cambio legítimo del administrador**. La conclusión de ingeniería es que la calidad de la regla está en el *dato de contexto* que la acompaña, no solo en la condición. Un resultado perfecto sobre datos sintéticos no prueba el rendimiento en producción: es una prueba de que la lógica hace lo que dice, que es el primer paso, no el último. Para probar en tu entorno, exporta tus eventos reales y aplica las mismas métricas.
+
+**Lo que el informe no permite concluir.** Huntress señala que las lecturas de Graph no dejan rastro de auditoría, así que ninguna regla de este laboratorio podría detectar la lectura de datos; solo el uso de la credencial y los cambios de configuración. Es una limitación del origen de datos (clase de fuentes de telemetría), no de la regla. Las respuestas defendibles (deshabilitar —sin eliminar— las aplicaciones, revisar roles y credenciales añadidos desde el 13 de octubre, revisar exclusiones de acceso condicional) están en el informe y se retoman en la clase [222](../../parte-10-seguridad-en-la-nube-y-contenedores/222-iam-en-la-nube-identidades-roles-y-permisos/README.md).
 
 ## 📔 Glosario
 
@@ -146,6 +167,7 @@ Las validaciones con Atomic Red Team se ejecutan solo en tu laboratorio propio y
 5. Calcula la precisión de una regla con TP/FP de ejemplo.
 6. Explica cómo el versionado ayuda a auditar cambios de detección.
 7. Diseña contratos separados para conexión USB, conducta posterior y atribución física; indica qué decisión puede tomar el SOC con cada uno.
+8. Caso ConnectWise (octubre de 2026). Ejecuta las pruebas de `Deteccion` y: (a) desactiva R3 y comprueba qué eventos dejan de detectarse; (b) cambia `umbral_spray` a 20 y explica el efecto; (c) escribe la consulta equivalente a R2 para tu SIEM en pseudocódigo y lista los datos de contexto que necesita. *Solución razonada:* (a) los inicios de sesión del principal de servicio desde el origen hostil dejan de alertar, pero R1 y R2 siguen cubriendo la fase posterior: defensa en profundidad entre reglas; (b) con 20 la pulverización de 18 cuentas del caso sintético ya no se detecta, ilustrando el compromiso umbral/sensibilidad; (c) necesita el inventario de propietarios por aplicación y el origen del actor.
 
 ## 📝 Reto verificable
 
@@ -183,6 +205,9 @@ Cuando su ratio de falsos positivos es insostenible, la técnica ya no aplica, o
 - SigmaHQ Rules: repositorio comunitario de contenido que debe adaptarse, probarse, versionarse y mantenerse localmente — <https://github.com/SigmaHQ/sigma>
 - USBGuard Rule Language: campos y semántica verificables para decisiones de autorización USB; VID/PID, nombre y serie no constituyen identidad criptográfica — <https://usbguard.github.io/documentation/rule-language>
 - Microsoft SetupAPI device installation log: alcance real del registro de instalación de dispositivos en Windows — <https://learn.microsoft.com/windows-hardware/drivers/install/setupapi-device-installation-log-entries>
+- Huntress, *ConnectWise (SkyKick) Vendor Credentials Abused in M365 Attacks* — <https://www.huntress.com/blog/vendor-credential-enables-unauthorized-access> — cronología, señales de detección, recuentos de inquilinos y límites de lo conocido.
+- MITRE ATT&CK, *Additional Cloud Roles* (T1098.003) — <https://attack.mitre.org/techniques/T1098/003/> — técnica citada en la regla R1.
+- MITRE ATT&CK, *Password Spraying* (T1110.003) — <https://attack.mitre.org/techniques/T1110/003/> — técnica citada en la regla R4.
 
 ## 📥 Material descargable
 

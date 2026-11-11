@@ -1,0 +1,113 @@
+{
+ "mes": "2026-10",
+ "version": 1,
+ "aviso": "Incidentes sin CVE propio o con CVE no asignado a víctimas concretas. Los identificadores INC son internos del programa.",
+ "fecha_verificacion": "2026-11-11",
+ "incidentes": [
+  {
+   "id": "INC-2026-10-IDCF",
+   "organizacion": "IDC Frontier (IDCF Cloud), Japón",
+   "sector": "proveedor de nube",
+   "cve_asociados": [],
+   "clases": [
+    216,
+    222,
+    214
+   ],
+   "estado_vector": "no divulgado en las fuentes consultadas",
+   "hechos_observados": [
+    "Ataque de ransomware de un tercero confirmado por la compañía, a partir de las 03:40 (hora de Japón) del 7 de octubre de 2026 en East Japan Region 1.",
+    "495 empresas y gobiernos locales afectados según las fuentes secundarias.",
+    "La compañía informa de que la recuperación por snapshot alcanzó solo a una parte de los clientes (cifras que varían entre fuentes: 194 y 206)."
+   ],
+   "no_confirmado": [
+    "Las cifras de la nota de los atacantes (554 153 snapshots borrados, 239 hipervisores) no fueron confirmadas por la compañía.",
+    "Vector de entrada, exfiltración y atribución."
+   ],
+   "fuentes": [
+    "https://www.bleepingcomputer.com/news/security/ransomware-attack-disrupts-japans-idcf-cloud-used-by-govt-clients/"
+   ],
+   "incertidumbre": "alta: solo se contrastó una fuente secundaria; el aviso original del proveedor no se pudo consultar"
+  },
+  {
+   "id": "INC-2026-10-CONNECTWISE-CLOUD-BACKUP",
+   "organizacion": "ConnectWise (Cloud Backup, antes SkyKick) y sus clientes de Microsoft 365",
+   "sector": "proveedor de servicios gestionados / SaaS",
+   "cve_asociados": [],
+   "clases": [
+    222,
+    199,
+    216
+   ],
+   "estado_vector": "credencial de aplicación del proveedor usada desde infraestructura ajena; cómo se obtuvo la credencial no figura en la fuente consultada",
+   "hechos_observados": [
+    "Entre el 13 y el 15 de octubre de 2026: pulverización de contraseñas, asignación de roles de directorio por principales de servicio y obtención de tokens de Microsoft Graph desde una IP de alojamiento (informe de Huntress).",
+    "162 inquilinos con inicios de sesión no autorizados confirmados al 16 de octubre; el recuento es un mínimo porque depende de la telemetría de Huntress.",
+    "El 17 de octubre ConnectWise informó de que había deshabilitado las aplicaciones afectadas."
+   ],
+   "no_confirmado": [
+    "Qué datos se leyeron (las lecturas de Graph no dejan rastro de auditoría).",
+    "El operador. Huntress cita una atribución de Microsoft a Storm-0940 que no verificó por su cuenta."
+   ],
+   "fuentes": [
+    "https://www.huntress.com/blog/vendor-credential-enables-unauthorized-access"
+   ],
+   "incertidumbre": "media: fuente primaria de un tercero (Huntress); la declaración de ConnectWise se conoce solo por referencia"
+  },
+  {
+   "id": "INC-2026-10-RAILWAY",
+   "organizacion": "Railway (plataforma de despliegue en la nube)",
+   "sector": "PaaS",
+   "cve_asociados": [],
+   "clases": [
+    241,
+    216,
+    295
+   ],
+   "estado_vector": "no divulgado; el informe preliminar menciona un intento de escalada de privilegios en la infraestructura de compilación",
+   "hechos_observados": [
+    "Ventana de ataque del 20 de octubre 13:58 UTC al 22 de octubre 03:32 UTC según el informe preliminar.",
+    "El atacante extrajo secretos cifrados, obtuvo credenciales de CI y descifró un subconjunto de variables de entorno.",
+    "Como máximo el 1,85 % de los espacios de trabajo (unos 100 000) pudo tener variables comprometidas; la empresa recomendó rotar las claves guardadas antes del 21 de octubre."
+   ],
+   "no_confirmado": [
+    "Si se accedió al código fuente de los usuarios.",
+    "Qué claves concretas se descifraron.",
+    "Informe forense final pendiente."
+   ],
+   "fuentes": [
+    "https://blog.railway.com/p/preliminary-report-october-security-incident"
+   ],
+   "incertidumbre": "media: informe preliminar del propio afectado"
+  },
+  {
+   "id": "INC-2026-10-SAFEPAY-AA26-293A",
+   "organizacion": "Víctimas de SafePay (unas 600, infraestructura crítica)",
+   "sector": "múltiples",
+   "cve_asociados": [
+    "CVE-2020-3259",
+    "CVE-2023-20269",
+    "CVE-2023-27532",
+    "CVE-2024-40711",
+    "CVE-2024-40766"
+   ],
+   "clases": [
+    216,
+    245,
+    369
+   ],
+   "estado_vector": "credenciales robadas o adivinadas, VPN y explotación de dispositivos expuestos",
+   "hechos_observados": [
+    "Aviso conjunto AA26-293A de CISA, FBI y socios, publicado el 20 de octubre de 2026.",
+    "El aviso lista cinco CVE históricos (2020-2024) y técnicas ATT&CK por táctica. Los cinco figuran en KEV con uso conocido en campañas de ransomware (consulta del 2026-11-10); ninguno entró a KEV en octubre de 2026."
+   ],
+   "no_confirmado": [
+    "El aviso no asigna un CVE concreto a cada víctima."
+   ],
+   "fuentes": [
+    "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a"
+   ],
+   "incertidumbre": "baja para el contenido del aviso"
+  }
+ ]
+}

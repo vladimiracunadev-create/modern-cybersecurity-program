@@ -306,6 +306,50 @@
           ],
           "correcta": 1,
           "exp": "Token por sesión/petición y cookies SameSite frenan la petición forjada."
+        },
+        {
+          "q": "Un servicio construye `ping -c 1 <host>` con un valor externo. ¿Por qué pasar los argumentos como lista (argv) protege más que escapar metacaracteres?",
+          "opciones": [
+            "Porque la lista es más rápida",
+            "Porque no hay shell que reinterprete el texto: cada elemento llega al programa como un argumento y no como sintaxis",
+            "Porque elimina la necesidad de validar el valor",
+            "Porque solo funciona en Linux"
+          ],
+          "correcta": 1,
+          "exp": "El escapado intenta predecir cómo un intérprete leerá el texto; con argv no hay intérprete que lo reinterprete. Aun así conviene validar con lista blanca y rechazar valores que empiecen por guion, que podrían tomarse como opciones."
+        },
+        {
+          "q": "En un SSRF de octubre de 2026 un parámetro pensado para el esquema («protocolo») aceptaba una URL completa. ¿Qué defecto de diseño ilustra?",
+          "opciones": [
+            "Falta de cifrado en tránsito",
+            "El campo no tiene un dominio de valores acotado: debería ser una enumeración (http o https), no una cadena libre",
+            "Uso de HTTP en lugar de HTTPS",
+            "Ausencia de un límite de peticiones"
+          ],
+          "correcta": 1,
+          "exp": "Validar el tipo de valor (enumeración) evita que el cliente decida el destino. Después sigue haciendo falta validar el destino resuelto contra rangos privados y metadatos."
+        },
+        {
+          "q": "Un registro CVE indica que las versiones 7.0.0 a 7.1.2 de un producto tienen el mismo error que las 6.3.0 a 6.5.4, pero «no son explotables» por cambios en el marco subyacente. ¿Qué conclusión es correcta?",
+          "opciones": [
+            "Las 7.x no necesitan ninguna acción",
+            "Que un error exista y que sea explotable son hechos distintos; se actualiza igualmente, pero la urgencia difiere",
+            "El registro está equivocado",
+            "Solo importa la versión más antigua"
+          ],
+          "correcta": 1,
+          "exp": "Distinguir existencia de explotabilidad evita tanto el pánico como la complacencia. Una versión no explotable hoy puede serlo si cambia el componente del que depende."
+        },
+        {
+          "q": "¿Qué comprobación protege realmente frente a un path traversal, incluidas las formas codificadas?",
+          "opciones": [
+            "Buscar la cadena `..` en el nombre recibido",
+            "Rechazar todos los nombres con barras",
+            "Normalizar la ruta final y comprobar que sigue dentro del directorio base",
+            "Convertir el nombre a minúsculas"
+          ],
+          "correcta": 2,
+          "exp": "Las demás comprobaciones fallan ante codificaciones (`%2e%2e`, doble codificación), separadores alternativos o bytes nulos. Solo la ruta resuelta dice dónde se va a operar."
         }
       ]
     },
@@ -550,6 +594,17 @@
           ],
           "correcta": 1,
           "exp": "Es una señal fuerte de anti-forense: borrado del log de seguridad."
+        },
+        {
+          "q": "Una regla detecta que se añade una credencial a una aplicación y alerta cuando el actor no figura como propietario. Sin el inventario de propietarios, ¿qué ocurre?",
+          "opciones": [
+            "La regla deja de funcionar",
+            "Alerta también sobre el cambio legítimo de un administrador: la calidad depende del dato de contexto",
+            "Detecta más ataques reales",
+            "Se vuelve más rápida"
+          ],
+          "correcta": 1,
+          "exp": "La condición por sí sola no distingue un cambio autorizado de uno hostil; el inventario es parte de la regla. Medir con datos sintéticos lo hace visible."
         }
       ]
     },
@@ -611,6 +666,17 @@
           ],
           "correcta": 1,
           "exp": "Se detecta comparando $STANDARD_INFORMATION vs $FILE_NAME en NTFS."
+        },
+        {
+          "q": "Tras el compromiso del plano de gestión de un entorno, ¿qué copias de seguridad cuentan como un plan de recuperación?",
+          "opciones": [
+            "Todas las que existen",
+            "Solo las fuera del alcance del atacante, inmutables y con restauración probada recientemente",
+            "Las más recientes",
+            "Las que están en el mismo proveedor, por su rapidez"
+          ],
+          "correcta": 1,
+          "exp": "Si faltan alcance, inmutabilidad o prueba de restauración, la copia es una esperanza y no un plan. El RPO que importa es el realmente alcanzable, no el configurado."
         }
       ]
     },
@@ -672,6 +738,17 @@
           ],
           "correcta": 2,
           "exp": "Menos privilegio + credenciales efímeras reducen el impacto."
+        },
+        {
+          "q": "Ante el abuso de una aplicación de un proveedor con consentimiento en tu inquilino, ¿por qué se recomienda deshabilitarla y no eliminarla?",
+          "opciones": [
+            "Porque eliminar es ilegal",
+            "Porque deshabilitar corta el acceso y conserva la evidencia y el estado; eliminar destruye ambos y obliga a un nuevo consentimiento",
+            "Porque la eliminación tarda más",
+            "Porque deshabilitar borra los permisos"
+          ],
+          "correcta": 1,
+          "exp": "Se conserva la configuración y los registros para la investigación y se evita reconceder permisos sin saber si el proveedor restableció sus credenciales."
         }
       ]
     },
@@ -733,6 +810,17 @@
           ],
           "correcta": 1,
           "exp": "gitleaks/detect-secrets + gestores de secretos evitan filtraciones."
+        },
+        {
+          "q": "Una plataforma informa que variables de entorno cifradas pudieron descifrarse sin precisar cuáles. ¿Cuál es la respuesta proporcionada?",
+          "opciones": [
+            "Esperar el informe final",
+            "Rotar todos los secretos que estuvieron almacenados en la plataforma, empezando por los de mayor impacto",
+            "Rotar solo las claves de pago",
+            "Eliminar la cuenta"
+          ],
+          "correcta": 1,
+          "exp": "Si no se puede saber qué secretos se vieron, se asume compromiso de todos los que pudieron verse. Recibir un aviso de revocación de un proveedor no prueba que tu clave fuera robada."
         }
       ]
     },
@@ -1504,6 +1592,39 @@
           "opciones": ["A01 Broken Access Control", "A10 Server-Side Request Forgery", "A05 Injection", "A03 Software Supply Chain Failures"],
           "correcta": 0,
           "exp": "En 2021 era la categoría propia A10; en 2025 se integró en A01. La A10 de 2025 es ahora Mishandling of Exceptional Conditions."
+        },
+        {
+          "q": "Un CVE tiene registro publicado el 23 de septiembre y entra a KEV el 20 de octubre. ¿Qué afirmación es correcta?",
+          "opciones": [
+            "Fue descubierto el 20 de octubre",
+            "La entrada a KEV marca la incorporación al catálogo, no la primera explotación ni el descubrimiento; esa fecha puede ser desconocida",
+            "KEV registra siempre la fecha de la primera explotación",
+            "El identificador contiene el año de publicación"
+          ],
+          "correcta": 1,
+          "exp": "KEV publica `dateAdded`. El año del identificador es el de reserva. La fecha de explotación solo la dan, a veces, las descripciones del fabricante."
+        },
+        {
+          "q": "Un CVE de VMware ESX con CVSS 3,1 de 2,7 y EPSS de 0,7 % figura en KEV. ¿Cómo debe tratarlo quien prioriza?",
+          "opciones": [
+            "Ignorarlo, por su severidad",
+            "KEV prevalece: hay explotación confirmada; se decide el plazo según exposición y SSVC, y se valora su papel en la cadena (borrar el rastro)",
+            "Esperar a que EPSS suba",
+            "Tratarlo como crítico solo por estar en KEV, sin mirar nada más"
+          ],
+          "correcta": 1,
+          "exp": "La severidad aislada subestima un control que permite operar sin registro. EPSS es un pronóstico y KEV es evidencia; cuando existe evidencia manda."
+        },
+        {
+          "q": "Dos CVE de memoria aparecen en KEV la misma semana: uno en PHP y otro en el kernel de Linux. ¿Se puede afirmar que forman una cadena?",
+          "opciones": [
+            "Sí, por coincidir en el tiempo",
+            "No: los registros no los vinculan; viven en capas distintas y compartir semana de KEV no es compartir causa",
+            "Sí, porque PHP corre sobre Linux",
+            "Depende de su CVSS"
+          ],
+          "correcta": 1,
+          "exp": "Una cadena es una hipótesis que exige una fuente que la sostenga. Sin ella se estudian por separado, y se declara la incertidumbre."
         }
       ]
     }

@@ -34,6 +34,7 @@ Al finalizar, el alumno podrá:
 | 5 | Escaneo en CI | Red de seguridad si el hook se salta |
 | 6 | Remediación: rotar y purgar | Detectar no basta; hay que rotar |
 | 7 | Gestión de secretos correcta | Vaults en vez de secretos en código |
+| 8 | Variables de entorno en una plataforma: lo que enseña Railway (octubre de 2026) | Qué se rota cuando no se sabe qué se vio |
 
 ## 🧠 Explicación en profundidad
 
@@ -68,6 +69,13 @@ El objetivo no es mover una clave larga desde YAML a otra variable igualmente pe
 ### Caso razonado: clave borrada del repositorio
 
 Un desarrollador publica una clave cloud, hace un segundo commit borrándola y concluye que el problema está resuelto. El equipo revoca la clave, consulta registros desde su emisión, identifica ejecuciones, rota recursos derivados y después limpia el historial coordinando clones. Añade detección local y central, reemplaza la clave por federación de identidad limitada al entorno y crea una prueba que evita imprimir variables. La secuencia prioriza detener el acceso antes de embellecer Git.
+
+<!-- octubre-2026-241 -->
+### Caso real de octubre de 2026: las claves guardadas en una plataforma
+
+El incidente de **Railway** (20 a 22 de octubre de 2026) deja una lección directa para esta clase: las variables de entorno que guardas en una plataforma son *secretos en custodia de un tercero*. El informe preliminar de Railway afirma que el atacante extrajo secretos cifrados, obtuvo credenciales de CI, descifró un subconjunto y que, a partir del registro de acciones, pudo ver que **buscaba nombres concretos de claves de proveedores de IA**. Como el cifrado por sobres impide saber desde la base de datos qué claves se descifraron, la empresa recomendó rotar todas las guardadas antes del 21 de octubre, y los proveedores recibieron la solicitud de revocar claves preventivamente: **recibir un aviso de revocación no prueba que tu clave fuera robada**.
+
+Tres prácticas de la clase se vuelven concretas: (1) **rotar es más fácil si está automatizado y probado** (un secreto cuya rotación nunca se ha ensayado se rotará mal en plena crisis); (2) **menos secretos de vida larga**: credenciales efímeras o federadas reducen la ventana de uso; (3) **limitar el daño de cada clave** (cuota, restricción por origen, presupuesto), porque la clave de un proveedor de IA robada cuesta dinero desde el primer minuto (véase LLMjacking en la clase 295). Lo que el informe no permite afirmar: cómo entró el atacante ni si accedió al código fuente de los usuarios, que la empresa dijo no descartar hasta el informe final.
 
 ## 📔 Glosario operativo
 
@@ -200,6 +208,7 @@ No pongas secretos en el código. Usa un secrets manager/vault e inyéctalos en 
 - pre-commit framework — <https://pre-commit.com/>
 - git-filter-repo — <https://github.com/newren/git-filter-repo>
 - detect-secrets — <https://github.com/Yelp/detect-secrets>
+- Railway, *Preliminary Report: Oct 21st Security Incident* — <https://blog.railway.com/p/preliminary-report-october-security-incident> — qué se accedió, qué se desconoce y la recomendación de rotación a los usuarios.
 
 ## 📥 Material descargable
 

@@ -32,6 +32,7 @@ Al finalizar, el alumno podrá:
 | 5 | Privilegio mínimo y límites de permisos | Reducen el blast radius |
 | 6 | Escalada de privilegios IAM | Rutas que convierten un permiso menor en admin |
 | 7 | Federación y SSO | Centralizar identidades corporativas |
+| 8 | Identidades de aplicación y proveedores: el caso ConnectWise (octubre de 2026) | Una credencial de proveedor es una identidad con permisos en muchos inquilinos |
 
 ## 🧠 Explicación en profundidad
 
@@ -65,6 +66,28 @@ El permiso mínimo no se diseña una sola vez. Se parte de acciones necesarias, 
 
 `iam:PassRole` no equivale por sí solo a administrador. Se vuelve peligroso cuando el principal puede pasarlo a un servicio que ejecutará acciones bajo un rol más potente y puede controlar esa carga. De modo similar, editar una trust policy, crear versiones de funciones o enlazar roles puede producir nuevas rutas. El análisis construye un grafo de relaciones y valida una cadena completa, no una lista de permisos «peligrosos» aislados.
 
+<!-- octubre-2026-222 -->
+### Caso real de octubre de 2026: la identidad del proveedor como vector
+
+Hasta ahora hemos tratado las identidades como personas y cuentas de servicio propias. El incidente de **ConnectWise Cloud Backup** (octubre de 2026) añade una cuarta figura: la **aplicación de un proveedor externo que tiene permisos delegados en tu inquilino**. Según el informe de Huntress, la credencial de la aplicación (un secreto o *client assertion* guardado en el inquilino del proveedor, no en el tuyo) se usó entre el 13 y el 15 de octubre para obtener *tokens* de Microsoft Graph desde una dirección distinta de la habitual; con ellos, el atacante actuó con **los permisos que tu inquilino ya había concedido a esa aplicación**, ni uno más.
+
+**Por qué es un problema de arquitectura de IAM y no solo de ese proveedor.**
+
+1. **El consentimiento concedido es permanente hasta que se revoca.** Autorizar una aplicación de copia de seguridad le da lectura sobre buzones y archivos. Si el proveedor se compromete, ese consentimiento es el activo del atacante. El control no está en el inicio de sesión del atacante (que es legítimo para el sistema), sino en **qué se concedió** y **quién lo revisa**.
+2. **Las aplicaciones de gestión suelen tener más permisos de los que parece.** El informe describe que aplicaciones de gestión llegaron a asignarse roles de directorio y a añadir secretos a otras aplicaciones. Un permiso como «administrar aplicaciones» permite a una identidad **fabricarse nuevas credenciales** y por tanto persistir.
+3. **La telemetría disponible es la de tu inquilino.** Por eso las señales útiles están en el registro de auditoría (altas de roles, adición de credenciales) y en los inicios de sesión de principales de servicio por aplicación y origen. Huntress hace una advertencia que condiciona la respuesta: las lecturas de Graph no dejan rastro de auditoría.
+
+**Controles que el informe menciona (y su razón).**
+
+- **Deshabilitar, no eliminar**, las aplicaciones afectadas hasta que el proveedor confirme el restablecimiento de credenciales: eliminar destruye la evidencia y obliga a un nuevo consentimiento; deshabilitar corta el acceso y la conserva.
+- Revisar **todas las credenciales de aplicaciones y registros de aplicación** añadidas desde el inicio de la actividad y eliminar los roles de directorio que el proveedor no tuviera concedidos intencionadamente.
+- Revisar **las exclusiones de acceso condicional** para esas aplicaciones: una excepción pensada para que el servicio funcione puede ser la brecha.
+- Endurecer: restringir los secretos de cliente mediante políticas de gestión de aplicaciones, limitar quién tiene el rol de Administrador de aplicaciones y aplicar acceso condicional a las identidades de carga de trabajo.
+
+**La lección de diseño.** Inventaría las aplicaciones de terceros con consentimiento en tu inquilino, con **propietario, permiso y justificación** para cada una, y trata cada cambio en ese inventario como un cambio de seguridad. La detección de abuso sobre este inventario se practica en la clase [199](../../parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md) y la respuesta (contención, rotación y recuperación) en la [216](../../parte-9-forense-digital-y-respuesta-a-incidentes/216-contencion-erradicacion-y-recuperacion/README.md). Sobre los números: 162 inquilinos confirmados el 16 de octubre es una **cota inferior** (Huntress solo ve su propia telemetría y no puede revisar inquilinos sin las licencias de registro necesarias); no uses esa cifra como alcance total del incidente.
+
+**Principio común.** Sean personas, cuentas de servicio o aplicaciones de terceros, **las identidades privilegiadas se inventarían, se restringen por origen y se revisan**; el caso de octubre de 2026 muestra qué ocurre cuando una de ellas queda fuera del inventario.
+
 ## 📖 Definiciones y características
 
 - **Usuario IAM:** identidad de larga duración con credenciales propias. *Clave:* preferir roles; los usuarios con claves estáticas son un riesgo si se filtran.
@@ -74,6 +97,8 @@ El permiso mínimo no se diseña una sola vez. Se parte de acciones necesarias, 
 - **Permission boundary:** conjunto que limita permisos máximos otorgables por políticas de identidad. *Clave:* no concede acceso y debe combinarse con otros límites y políticas.
 - **`sts:AssumeRole`:** acción que cambia de identidad. *Clave:* base de la federación y de muchas rutas de escalada.
 - **Escalada de privilegios:** cadena que permite obtener capacidades superiores a las previstas. *Clave:* requiere demostrar acciones, recursos, rol destino, trust policy y control efectivo de la carga.
+- **Principal de servicio (aplicación empresarial):** identidad de una aplicación dentro de un inquilino, con sus permisos y credenciales (secretos o certificados). *Clave:* no tiene una persona detrás ni un segundo factor; su control depende de quién puede añadirle credenciales y desde dónde se usa.
+- **Consentimiento de aplicación:** autorización que un inquilino concede a una aplicación (a veces de un proveedor externo) para actuar con ciertos permisos. *Clave:* dura hasta que se revoca; si el proveedor se compromete, ese consentimiento es el alcance del atacante.
 
 ## 🔍 Caso razonado — desplegar una Lambda con `PassRole`
 
@@ -121,6 +146,7 @@ aws iam simulate-principal-policy \
 4. Añade una `Condition` que exija MFA para acciones destructivas.
 5. Usa PMapper para identificar caminos hacia un rol privilegiado dentro de las cuentas y relaciones que la credencial auditora pudo observar; declara límites de cobertura.
 6. Diseña un esquema de permission boundaries para un equipo que autoadministra sus recursos.
+7. ConnectWise (octubre de 2026). Lista cinco aplicaciones de terceros con consentimiento en un inquilino de prueba (o ficticio) y, para cada una: permiso, propietario y fecha de la última revisión. Redacta la decisión (mantener, reducir, deshabilitar) y la prueba que demostraría que el permiso reducido sigue permitiendo la función. *Solución razonada:* una buena respuesta parte del permiso mínimo que la función necesita; si la aplicación de copia de seguridad solo restaura buzones, no necesita administrar aplicaciones ni roles de directorio; la prueba es ejecutar la función con el permiso reducido y registrar que no falla.
 
 ## 📝 Reto verificable
 
@@ -162,6 +188,7 @@ Empieza permisivo pero mide: usa Access Analyzer/policy usage para ver qué se u
 - Google Cloud IAM overview. <https://cloud.google.com/iam/docs/overview> — referencia oficial para principals, roles, políticas y herencia en Google Cloud.
 - PMapper. <https://github.com/nccgroup/PMapper> — herramienta abierta para modelar relaciones AWS; los caminos deben validarse contra políticas efectivas.
 - Rhino Security Labs — IAM privilege escalation. <https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/> — investigación técnica complementaria, no especificación de autorización.
+- Huntress, *ConnectWise (SkyKick) Vendor Credentials Abused in M365 Attacks* — <https://www.huntress.com/blog/vendor-credential-enables-unauthorized-access> — mecanismo, remediación recomendada y límites del recuento de inquilinos.
 
 ## 📥 Material descargable
 

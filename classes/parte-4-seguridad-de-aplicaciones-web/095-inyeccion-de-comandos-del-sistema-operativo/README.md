@@ -32,6 +32,7 @@ Al finalizar, el alumno podrá:
 | 5 | Reverse shell en lab | Demostrar impacto real |
 | 6 | Diferencias Linux/Windows | Sintaxis del shell varía |
 | 7 | Defensa: evitar system(), allowlists | Cierre del fallo |
+| 8 | Casos KEV de octubre de 2026: Ahsay, Collabora, SiteGuard | Cuatro productos, una misma familia y condiciones distintas |
 
 ## 🧠 Explicación en profundidad
 
@@ -105,6 +106,33 @@ elimina la clase entera de fallo, igual que las consultas parametrizadas elimina
 
 Los datos de 2025 explican por qué esta clase es prioritaria. `CWE-78` ocupa el puesto 9 del Top 25 de MITRE, pero en el **Top 10 de debilidades de KEV** de MITRE y CISA es la **primera**, con **20 CVE** en el catálogo de explotación conocida, el máximo de cualquier debilidad de la lista. Una inyección que da ejecución de órdenes sin interacción de un usuario es fácil de automatizar y de aprovechar a escala, y eso se refleja en la explotación observada. Lo que sigue es la lectura de esas cifras en la [clase 369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md), y la corrección verificada (argumentos como lista y validación del destino) se demuestra en la [clase 370](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md).
 
+<!-- octubre-2026-095 -->
+### Casos reales de octubre de 2026: la misma familia en cuatro productos
+
+En octubre de 2026 CISA incorporó al catálogo KEV varias vulnerabilidades de inyección de comandos. Verlas juntas enseña algo que un solo caso no muestra: la falla es siempre la misma (un dato externo llega a un intérprete que lo trata como instrucción), pero lo que decide la gravedad es **en qué condiciones se alcanza el punto vulnerable** y **con qué identidad corre el proceso**. Todos los datos siguientes proceden del registro CVE y de la entrada KEV de cada caso (consultados el 2026-11-10; véase el [informe del mes](../../../docs/casos-reales/2026-10/README.md)).
+
+| CVE | Producto | CWE (registro) | Qué dice el registro | En KEV |
+|---|---|---|---|---|
+| `CVE-2026-105134` | Ahsay AhsayCBS (receptor de réplica, `UpdateReceivers.do`) | 77 y 78 | un parámetro manipulado lleva a inyección de comandos del sistema operativo, de forma remota; el registro indica que existe un exploit público | 2026-10-14 |
+| `CVE-2026-110447` | Collabora Online *Built-in CODE Server* (aplicación de Nextcloud) | 78 | inyección en `proxy.php` **cuando el servidor CODE no está en ejecución** (por ejemplo, tras un reinicio); no afecta al Collabora Online independiente | 2026-10-23 |
+| `CVE-2026-106931` | EG Secure Solutions SiteGuard Server Edition | 78 | permite ejecutar comandos con privilegios de **root o SYSTEM** | 2026-10-20 |
+| `CVE-2026-96951` | Microsoft Windows (Shell) | 77 | neutralización incorrecta de elementos especiales en un comando; Microsoft lo clasifica como elusión de una función de seguridad | 2026-10-13 |
+
+Un caso más sirve de contraste temporal: `CVE-2016-3081` (Apache Struts, ejecución mediante el prefijo `method:` con invocación dinámica de métodos) tiene diez años y entró al catálogo el **2026-10-08**. KEV no dice quién lo explota ni contra qué, solo que CISA tiene evidencia de explotación; lo que sí permite concluir es que un sistema sin actualizar sigue siendo un blanco útil una década después.
+
+**Qué enseña cada caso.**
+
+1. **Ahsay: la cadena autenticación + inyección.** El mismo aviso del fabricante cubre `CVE-2026-105133` (autenticación incorrecta en la API, CWE-287) y `CVE-2026-105134` (inyección de comandos). El registro de cada CVE describe una vulnerabilidad por separado; **que se encadenen es una inferencia razonable, no un hecho documentado** en los registros. La lección práctica es que un panel de administración de copias de seguridad expuesto a Internet reúne dos fallos de distinta familia, y arreglar solo uno deja el otro. La inyección (`CVE-2026-105134`) tiene CVSS 10,0 en la puntuación del CNA y la autenticación (`CVE-2026-105133`), 7,3 en 3.1: la segunda parece «menor» y, sin embargo, es la que abre la puerta. Ambos se publicaron el 4 de octubre y entraron a KEV el 14, diez días después.
+2. **Collabora: el estado del sistema como parte de la explotación.** La condición «el servidor CODE no está ejecutándose» significa que el punto vulnerable se alcanza por un camino de *recuperación*, no por el flujo normal. Es un patrón frecuente: el código que gestiona estados excepcionales (arranque, reinicio, error) recibe menos pruebas y menos revisión que el camino feliz. Defensivamente, esto cambia dos cosas: la revisión de código debe incluir los caminos de error, y los registros de reinicio de un servicio expuesto son una señal que merece correlación.
+3. **SiteGuard: el privilegio multiplica el impacto.** El mismo error de inyección produce un compromiso distinto según quién ejecute el proceso. Con `root` o `SYSTEM`, la inyección es control total del equipo; con una cuenta de servicio sin privilegios, es acceso acotado a lo que esa cuenta puede hacer. De ahí que *mínimo privilegio* y *aislamiento del servicio* sean controles de **impacto**, no de prevención: no impiden la inyección, reducen lo que vale.
+4. **Windows Shell: la clasificación importa.** El registro usa `CWE-77`, la forma general; los otros usan `CWE-78`, la específica del sistema operativo. La diferencia es de nivel de abstracción (77 es la inyección de comandos en general; 78 es la que acaba en un shell del sistema operativo). Para el análisis de causa raíz conviene el CWE más específico que el hecho sostenga, y para la priorización da igual: lo que decide el plazo es KEV, la automatización y el impacto, no el número del CWE (clase [369](../../parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md)).
+
+5. **PAN-OS: autenticado no significa seguro.** `CVE-2026-0322` (`CWE-94`, inyección de código) afecta a la interfaz de gestión de PAN-OS: un atacante **autenticado y con acceso de red a esa interfaz** ejecuta código con privilegios de root en el cortafuegos (versiones anteriores a 12.2.4, 12.1.10-h2, 11.2.16 y 11.1.16-h3; Cloud NGFW no está afectado). Se publicó y entró a KEV el mismo día, el 2026-10-14, con CVSS 4.0 de 8,6 según el CNA y un EPSS de solo 1,7 %. El propio fabricante indica que el riesgo se reduce si el acceso a la interfaz de gestión se limita a direcciones internas de confianza: la exposición, no la severidad, fue la variable decisiva. Es además un recordatorio de que la inyección de *código* (`CWE-94`) y la de *comandos* (`CWE-77`/`78`) son hermanas: en la primera el dato se interpreta como código del propio lenguaje o plataforma; en la segunda, como orden del sistema operativo.
+
+**Cómo se previene, y cómo se demuestra.** La defensa estructural es **no construir líneas de shell con datos externos**: pasar los argumentos como lista (`argv`) a la API del lenguaje, validar el valor con una lista blanca estricta y rechazar los que empiecen por `-` para que no se interpreten como opciones. El laboratorio ([README](../../../labs/octubre-2026-casos-reales/README.md)) implementa las dos versiones en `destinos_y_rutas.py`: `linea_de_shell_vulnerable` produce la línea que un servidor ingenuo pasaría a `sh -c` (no se ejecuta nada), `comandos_que_ejecutaria_un_shell` cuenta cuántas órdenes vería un shell, y `argv_seguro` devuelve la lista segura o `None`. La prueba de que la corrección funciona es doble: los valores `8.8.8.8; id`, `$(id)`, `` `id` `` y `-oProxy=x` se rechazan, y un nombre legítimo produce exactamente `["ping", "-c", "1", "--", "ejemplo.test"]`. Una limitación honesta: el modelo es una simplificación de un shell POSIX; no sustituye a una revisión del código real ni cubre otros intérpretes.
+
+**Detección y respuesta.** Si no se puede parchear de inmediato, las señales defendibles son procesos hijo inesperados de un servicio web o de aplicación (un servidor de réplica que lanza `sh`, `cmd.exe` o `powershell.exe`), conexiones salientes nuevas desde el servicio y archivos nuevos en directorios escribibles por él. Ninguna prueba por sí sola una intrusión, y los avisos de los fabricantes no publican indicadores de compromiso para estos CVE en los registros consultados: no los inventes. Con la inyección en KEV y privilegio alto, BOD 26-04 recomienda además un **triaje forense** del activo: parchear cierra la puerta, no demuestra que nadie haya entrado ya.
+
 ## 📖 Definiciones y características
 
 - **OS command injection**: ejecución de comandos del sistema vía input no sanitizado. Característica: suele acabar en RCE.
@@ -169,6 +197,7 @@ nc -lvnp 4444
 4. Explica la diferencia entre command injection y argument injection.
 5. Escribe la versión segura en Python usando `subprocess` con lista de argumentos (sin `shell=True`).
 6. Diseña una allowlist para un campo que solo debe aceptar una IP.
+7. Casos de octubre de 2026. Ejecuta `python -m unittest discover -s labs/octubre-2026-casos-reales/tests -v` y localiza las pruebas de `Comandos`. (a) Añade un valor de entrada que `argv_seguro` acepte pero que consideres peligroso, o demuestra que no existe. (b) Explica por qué `SiteGuard` y `Collabora` comparten familia de CWE pero merecen respuestas distintas. (c) Redacta una regla de detección con solo señales de proceso hijo y di qué falso positivo esperas. *Solución razonada:* (a) con la lista blanca de nombres de host y el `--`, una entrada válida solo puede ser un nombre; el riesgo restante es lógico (por ejemplo, apuntar a un host interno), que es SSRF, no inyección. (b) la condición de alcance (Collabora solo en el camino de reinicio) y el privilegio (SiteGuard como root/SYSTEM) cambian la urgencia y el aislamiento, aunque la causa sea la misma. (c) «proceso `sh` hijo de un servicio de réplica»; el falso positivo típico es un script de mantenimiento legítimo, por eso se compara con una línea base.
 
 ## 📝 Reto verificable
 
@@ -201,6 +230,10 @@ Es frágil. Mejor evitar el shell por completo y validar con allowlists estricta
 - Stuttard & Pinto, *The Web Application Hacker's Handbook*, cap. 9 (OS command injection).
 - OWASP Command Injection: <https://owasp.org/www-community/attacks/Command_Injection>
 - PortSwigger OS command injection: <https://portswigger.net/web-security/os-command-injection>
+- CVE Program, registro de `CVE-2026-105134`, `CVE-2026-110447`, `CVE-2026-106931` y `CVE-2026-96951` — <https://www.cve.org/CVERecord?id=CVE-2026-105134> — descripción, CWE, versiones y CVSS de cada caso.
+- CISA, *Known Exploited Vulnerabilities Catalog* (consulta del 2026-11-10) — <https://www.cisa.gov/known-exploited-vulnerabilities-catalog> — fecha de incorporación y estado de explotación de los cinco CVE.
+- Collabora y Nextcloud, aviso del *Built-in CODE Server* — <https://github.com/CollaboraOnline/online/security/advisories/GHSA-g3vx-3m76-fghh> — condición de alcance (servidor CODE detenido) y versión corregida 26.4.303.
+- Ahsay, anuncio de parche de `CVE-2026-105133` y `CVE-2026-105134` — <https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update> — versiones corregidas.
 
 ## 📥 Material descargable
 
