@@ -1,6 +1,6 @@
 # 🧭 Rutas guiadas por rol
 
-El programa tiene 370 clases; **no todas son para todos a la vez**. Estas rutas ordenan el
+El programa tiene 381 clases; **no todas son para todos a la vez**. Estas rutas ordenan el
 recorrido según el rol al que apuntas: qué partes hacer, en qué orden, con qué laboratorios
 practicar y a qué certificación apuntar. Todas asumen que **empiezas por la Parte 0**
 (fundamentos): es el cimiento común.
