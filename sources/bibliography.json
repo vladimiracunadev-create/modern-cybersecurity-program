@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "verified_on": "2026-10-01",
+ "verified_on": "2026-11-12",
  "min_uso_declarado_pct": 66.0,
  "policy": "Toda afirmacion del programa se apoya en una entrada de este registro. Ninguna entrada se acepta sin localizador verificable: ISBN-13 para libros, DOI para articulos, URL https de la fuente primaria para normas y documentacion oficial. Lo que no se pudo comprobar queda como \"pendiente\" con el motivo, nunca borrado ni rellenado por intuicion.",
  "entries": [
@@ -988,7 +988,8 @@
    "accessed": "2026-08-19",
    "used_in": [
     "classes/parte-12-osint-e-ingenieria-social/256-fundamentos-de-ingenieria-social/README.md",
-    "classes/parte-12-osint-e-ingenieria-social/257-pretexting-y-vishing/README.md"
+    "classes/parte-12-osint-e-ingenieria-social/257-pretexting-y-vishing/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md"
    ]
   },
   {
@@ -1714,7 +1715,12 @@
    "used_in": [
     "classes/parte-12-osint-e-ingenieria-social/256-fundamentos-de-ingenieria-social/README.md",
     "classes/parte-12-osint-e-ingenieria-social/257-pretexting-y-vishing/README.md",
-    "classes/parte-12-osint-e-ingenieria-social/258-campanas-de-phishing-con-gophish/README.md"
+    "classes/parte-12-osint-e-ingenieria-social/258-campanas-de-phishing-con-gophish/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/373-pretexting-impersonation-y-elicitation-desde-la-defensa/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md"
    ]
   },
   {
@@ -12806,7 +12812,7 @@
    "used_in": [
     "classes/parte-14-grc-riesgo-y-cumplimiento/281-cumplimiento-gdpr-hipaa-y-pci-dss/README.md",
     "classes/parte-14-grc-riesgo-y-cumplimiento/289-privacidad-y-proteccion-de-datos/README.md",
-    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/218-reporte-forense-y-aspectos-legales/README.md"
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md"
    ],
    "authors": [],
    "vigencia": "vigente"
@@ -13274,6 +13280,10 @@
     "classes/parte-18-ia-aplicada-a-la-ciberseguridad/331-ia-generativa-y-llms-en-ciberseguridad-panorama-y-limites/README.md",
     "classes/parte-18-ia-aplicada-a-la-ciberseguridad/334-reconocimiento-y-escaneo-asistidos-por-ia/README.md",
     "classes/parte-18-ia-aplicada-a-la-ciberseguridad/335-explotacion-y-post-explotacion-autorizada-asistida-por-ia/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/373-pretexting-impersonation-y-elicitation-desde-la-defensa/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/066-metodologia-de-pentesting-ptes-y-osstmm/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/067-reglas-de-engagement-alcance-y-contratos/README.md",
     "classes/parte-3-hacking-etico-y-pentesting-metodologia/070-enumeracion-smb-snmp-smtp-y-ldap/README.md",
@@ -14512,6 +14522,9 @@
     "classes/parte-17-profundizacion-para-certificaciones/313-gestion-del-ciclo-de-vida-de-identidades-iam-empresarial/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/317-seguridad-fisica-y-ambiental/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/320-gobierno-aspectos-legales-regulatorios-y-gestion-del-programa/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/373-pretexting-impersonation-y-elicitation-desde-la-defensa/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/177-red-teaming-fisico/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/182-logging-y-fuentes-de-telemetria/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/215-playbooks-de-respuesta-a-incidentes/README.md"
@@ -14617,6 +14630,7 @@
    "accessed": "2026-08-24",
    "used_in": [
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/235-respuesta-a-incidentes-en-la-nube/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/179-reporte-y-metricas-de-red-team/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/196-automatizacion-con-soar/README.md",
@@ -14659,6 +14673,7 @@
     "classes/parte-10-seguridad-en-la-nube-y-contenedores/235-respuesta-a-incidentes-en-la-nube/README.md",
     "classes/parte-16-capstones-y-preparacion-de-certificaciones/307-capstone-respuesta-a-incidentes-dfir-end-to-end/README.md",
     "classes/parte-17-profundizacion-para-certificaciones/321-comunicacion-y-reporte-para-analistas-de-seguridad/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md",
     "classes/parte-7-red-team-y-operaciones-ofensivas/179-reporte-y-metricas-de-red-team/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/181-el-soc-moderno-roles-niveles-y-procesos/README.md",
     "classes/parte-8-blue-team-deteccion-y-soc/196-automatizacion-con-soar/README.md",
@@ -14821,6 +14836,7 @@
    },
    "accessed": "2026-08-19",
    "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/201-fundamentos-de-dfir-y-cadena-de-custodia/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/203-adquisicion-forense-discos-e-imagenes/README.md",
     "classes/parte-9-forense-digital-y-respuesta-a-incidentes/206-analisis-de-artefactos-de-linux/README.md",
@@ -19085,6 +19101,496 @@
    "accessed": "2026-11-11",
    "used_in": [
     "classes/parte-8-blue-team-deteccion-y-soc/199-ingenieria-de-deteccion-como-disciplina/README.md"
+   ]
+  },
+  {
+   "id": "thinking-fast-and-slow",
+   "type": "book",
+   "title": "Thinking, Fast and Slow",
+   "authors": [
+    "Daniel Kahneman"
+   ],
+   "published": "2013",
+   "isbn13": "9780374533557",
+   "locator": "https://openlibrary.org/isbn/9780374533557",
+   "authority": "Farrar, Straus and Giroux",
+   "status": "verificada",
+   "notes": "Comprobado en Open Library el 2026-11-12.",
+   "matches": {
+    "url_prefixes": [],
+    "text_patterns": [
+     "thinking fast and slow",
+     "kahneman"
+    ]
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md"
+   ]
+  },
+  {
+   "id": "art-of-deception-mitnick",
+   "type": "book",
+   "title": "The Art of Deception: Controlling the Human Element of Security",
+   "authors": [
+    "Kevin D. Mitnick",
+    "William L. Simon"
+   ],
+   "published": "2003",
+   "isbn13": "9780764542800",
+   "locator": "https://openlibrary.org/isbn/9780764542800",
+   "authority": "Wiley",
+   "status": "verificada",
+   "notes": "Comprobado en Open Library el 2026-11-12.",
+   "matches": {
+    "url_prefixes": [],
+    "text_patterns": [
+     "art of deception",
+     "mitnick"
+    ]
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/373-pretexting-impersonation-y-elicitation-desde-la-defensa/README.md"
+   ]
+  },
+  {
+   "id": "man-without-a-face-wolf",
+   "type": "book",
+   "title": "Man Without a Face: The Autobiography of Communism's Greatest Spymaster",
+   "authors": [
+    "Markus Wolf",
+    "Anne McElvoy"
+   ],
+   "published": "1997",
+   "isbn13": "9780812963946",
+   "locator": "https://openlibrary.org/isbn/9780812963946",
+   "authority": "Times Books",
+   "status": "verificada",
+   "notes": "Comprobado en Open Library el 2026-11-12. Memorias: se usan como relato de un participante, no como prueba independiente.",
+   "matches": {
+    "url_prefixes": [],
+    "text_patterns": [
+     "man without a face"
+    ]
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md"
+   ]
+  },
+  {
+   "id": "tiger-trap-wise",
+   "type": "book",
+   "title": "Tiger Trap: America's Secret Spy War with China",
+   "authors": [
+    "David Wise"
+   ],
+   "published": "2011",
+   "isbn13": "9780547553108",
+   "locator": "https://openlibrary.org/isbn/9780547553108",
+   "authority": "Houghton Mifflin Harcourt",
+   "status": "verificada",
+   "notes": "Comprobado en Open Library el 2026-11-12.",
+   "matches": {
+    "url_prefixes": [],
+    "text_patterns": [
+     "tiger trap"
+    ]
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md"
+   ]
+  },
+  {
+   "id": "us-code-18-1831",
+   "type": "standard",
+   "title": "18 U.S.C. 1831 Economic espionage",
+   "authors": [
+    "Cornell Legal Information Institute"
+   ],
+   "locator": "https://www.law.cornell.edu/uscode/text/18/1831",
+   "authority": "Cornell LII",
+   "status": "verificada",
+   "notes": "Texto del codigo de EE. UU. consultado el 2026-11-12.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.law.cornell.edu/uscode/text/18/1831"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md"
+   ]
+  },
+  {
+   "id": "us-code-18-1832",
+   "type": "standard",
+   "title": "18 U.S.C. 1832 Theft of trade secrets",
+   "authors": [
+    "Cornell Legal Information Institute"
+   ],
+   "locator": "https://www.law.cornell.edu/uscode/text/18/1832",
+   "authority": "Cornell LII",
+   "status": "verificada",
+   "notes": "Texto del codigo de EE. UU. consultado el 2026-11-12.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.law.cornell.edu/uscode/text/18/1832"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md"
+   ]
+  },
+  {
+   "id": "cisa-insider-threat-mitigation-guide",
+   "type": "reference",
+   "title": "Insider Threat Mitigation Guide",
+   "authors": [
+    "CISA"
+   ],
+   "locator": "https://www.cisa.gov/resources-tools/resources/insider-threat-mitigation-guide",
+   "authority": "CISA",
+   "status": "verificada",
+   "notes": "Respuesta HTTP 200 el 2026-11-12.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.cisa.gov/resources-tools/resources/insider-threat-mitigation-guide"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md"
+   ]
+  },
+  {
+   "id": "cisa-recognize-report-phishing",
+   "type": "reference",
+   "title": "Recognize and Report Phishing",
+   "authors": [
+    "CISA"
+   ],
+   "locator": "https://www.cisa.gov/secure-our-world/recognize-and-report-phishing",
+   "authority": "CISA",
+   "status": "verificada",
+   "notes": "Respuesta HTTP 200 el 2026-11-12.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.cisa.gov/secure-our-world/recognize-and-report-phishing"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md"
+   ]
+  },
+  {
+   "id": "sei-cert-insider-threat-guide-7",
+   "type": "reference",
+   "title": "Common Sense Guide to Mitigating Insider Threats, Seventh Edition",
+   "authors": [
+    "Software Engineering Institute, CERT"
+   ],
+   "locator": "https://insights.sei.cmu.edu/library/common-sense-guide-to-mitigating-insider-threats-seventh-edition/",
+   "authority": "SEI Carnegie Mellon",
+   "status": "verificada",
+   "notes": "Respuesta HTTP 200 el 2026-11-12.",
+   "matches": {
+    "url_prefixes": [
+     "https://insights.sei.cmu.edu/library/common-sense-guide-to-mitigating-insider-threats-seventh-edition/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md"
+   ]
+  },
+  {
+   "id": "wp29-wp249",
+   "type": "reference",
+   "title": "Opinion 2/2017 on data processing at work (WP249)",
+   "authors": [
+    "Article 29 Data Protection Working Party"
+   ],
+   "locator": "https://ec.europa.eu/justice/article-29/documentation/opinion-recommendation/files/2017/wp249_en.pdf",
+   "authority": "Comision Europea",
+   "status": "verificada",
+   "notes": "Respuesta HTTP 200 el 2026-11-12.",
+   "matches": {
+    "url_prefixes": [
+     "https://ec.europa.eu/justice/article-29/documentation/opinion-recommendation/files/2017/wp249_en.pdf"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md"
+   ]
+  },
+  {
+   "id": "gdpr-2016-679",
+   "type": "standard",
+   "title": "Regulation (EU) 2016/679 (GDPR)",
+   "authors": [
+    "Parlamento Europeo y Consejo"
+   ],
+   "locator": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+   "authority": "EUR-Lex",
+   "status": "verificada",
+   "notes": "Texto oficial del RGPD.",
+   "matches": {
+    "url_prefixes": [
+     "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-14-grc-riesgo-y-cumplimiento/281-cumplimiento-gdpr-hipaa-y-pci-dss/README.md",
+    "classes/parte-14-grc-riesgo-y-cumplimiento/289-privacidad-y-proteccion-de-datos/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md",
+    "classes/parte-9-forense-digital-y-respuesta-a-incidentes/218-reporte-forense-y-aspectos-legales/README.md"
+   ]
+  },
+  {
+   "id": "fbi-ic3-2025-report",
+   "type": "reference",
+   "title": "Internet Crime Report 2025",
+   "authors": [
+    "FBI Internet Crime Complaint Center"
+   ],
+   "locator": "https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf",
+   "authority": "FBI IC3",
+   "status": "verificada",
+   "notes": "Cifras extraidas del PDF el 2026-11-12: Confidence/Romance 929 287 469 USD (2025) y 672 009 052 (2024); BEC 3 046 598 558 (2025) y 2 770 151 146 (2024).",
+   "matches": {
+    "url_prefixes": [
+     "https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md"
+   ]
+  },
+  {
+   "id": "doj-ding-guilty-2026",
+   "type": "reference",
+   "title": "Former Google Engineer Found Guilty of Economic Espionage and Theft of Confidential AI Technology",
+   "authors": [
+    "US Attorney's Office, Northern District of California"
+   ],
+   "locator": "https://www.justice.gov/usao-ndca/pr/former-google-engineer-found-guilty-economic-espionage-and-theft-confidential-ai",
+   "authority": "US DOJ",
+   "status": "verificada",
+   "notes": "Comunicado oficial localizado por busqueda web el 2026-11-12; el sitio bloquea la descarga automatica, por lo que las cifras del veredicto (29-ene-2026, 14 cargos) se contrastaron con la cobertura de prensa.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.justice.gov/usao-ndca/pr/former-google-engineer-found-guilty-economic-espionage-and-theft-confidential-ai"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md"
+   ]
+  },
+  {
+   "id": "doj-illegals-2010",
+   "type": "reference",
+   "title": "Ten Alleged Secret Agents Arrested in the United States",
+   "authors": [
+    "US Department of Justice"
+   ],
+   "locator": "https://www.justice.gov/archives/opa/pr/ten-alleged-secret-agents-arrested-united-states",
+   "authority": "US DOJ",
+   "status": "verificada",
+   "notes": "Comunicado de 2010 localizado el 2026-11-12; el sitio bloquea la descarga automatica.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.justice.gov/archives/opa/pr/ten-alleged-secret-agents-arrested-united-states"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md"
+   ]
+  },
+  {
+   "id": "cia-farewell-dossier-weiss",
+   "type": "reference",
+   "title": "Duping the Soviets: The Farewell Dossier (Studies in Intelligence 39(5), 1996)",
+   "authors": [
+    "Gus W. Weiss"
+   ],
+   "locator": "https://www.cia.gov/resources/csi/studies-in-intelligence/1996-2/the-farewell-dossier",
+   "authority": "CIA",
+   "status": "verificada",
+   "notes": "Relato de un participante; no se usa como prueba independiente de los efectos que describe.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.cia.gov/resources/csi/studies-in-intelligence/1996-2/the-farewell-dossier"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md"
+   ]
+  },
+  {
+   "id": "cia-studies-in-intelligence",
+   "type": "reference",
+   "title": "Studies in Intelligence",
+   "authors": [
+    "CIA Center for the Study of Intelligence"
+   ],
+   "locator": "https://www.cia.gov/resources/csi/studies-in-intelligence/",
+   "authority": "CIA",
+   "status": "verificada",
+   "notes": "Coleccion de estudios publicos; respuesta HTTP 200 el 2026-11-12.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.cia.gov/resources/csi/studies-in-intelligence/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md"
+   ]
+  },
+  {
+   "id": "nvidia-board-statement-2026-11-08",
+   "type": "reference",
+   "title": "Statement from NVIDIA Board of Directors",
+   "authors": [
+    "NVIDIA"
+   ],
+   "locator": "https://investor.nvidia.com/news/press-release-details/2026/Statement-from-NVIDIA-Board-of-Directors/",
+   "authority": "NVIDIA",
+   "status": "verificada",
+   "notes": "Comunicado oficial del 2026-11-08 leido el 2026-11-12. Es una declaracion de parte.",
+   "matches": {
+    "url_prefixes": [
+     "https://investor.nvidia.com/news/press-release-details/2026/Statement-from-NVIDIA-Board-of-Directors/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md"
+   ]
+  },
+  {
+   "id": "foxbusiness-nvidia-honeypot-2026",
+   "type": "reference",
+   "title": "Jensen Huang probe raises fears over Nvidia trade secrets",
+   "authors": [
+    "Eric Revell"
+   ],
+   "locator": "https://www.foxbusiness.com/economy/nvidia-case-highlights-risks-alleged-honeypot-schemes-targeting-executives",
+   "authority": "Fox Business",
+   "status": "verificada",
+   "notes": "Prensa, 2026-11-09; separa declaracion de la junta y opiniones de expertos.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.foxbusiness.com/economy/nvidia-case-highlights-risks-alleged-honeypot-schemes-targeting-executives"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md"
+   ]
+  },
+  {
+   "id": "foreignpolicy-nvidia-spy-scandal-2026",
+   "type": "reference",
+   "title": "The Nvidia Spy Scandal Was Hiding in Plain Sight",
+   "authors": [
+    "David Ignatius"
+   ],
+   "locator": "https://foreignpolicy.com/2026/11/10/jensen-huang-nvidia-spy-scandal-alice-huang-us-intelligence/",
+   "authority": "Foreign Policy",
+   "status": "verificada",
+   "notes": "Columna de opinion del 2026-11-10; las afirmaciones atribuidas a fuentes anonimas no estan verificadas.",
+   "matches": {
+    "url_prefixes": [
+     "https://foreignpolicy.com/2026/11/10/jensen-huang-nvidia-spy-scandal-alice-huang-us-intelligence/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md"
+   ]
+  },
+  {
+   "id": "bostonglobe-china-nvidia-denial-2026",
+   "type": "reference",
+   "title": "China dismisses spy plot claim involving Nvidia CEO",
+   "authors": [
+    "The Boston Globe"
+   ],
+   "locator": "https://www.bostonglobe.com/2026/11/09/world/china-dismisses-spy-plot-claim-involving-nvidia-ceo/",
+   "authority": "The Boston Globe",
+   "status": "verificada",
+   "notes": "Prensa, 2026-11-09; localizado por busqueda web, no leido en texto completo.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.bostonglobe.com/2026/11/09/world/china-dismisses-spy-plot-claim-involving-nvidia-ceo/"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md"
+   ]
+  },
+  {
+   "id": "nbc-smith-leung-probation",
+   "type": "reference",
+   "title": "Retired FBI agent gets probation in spy case",
+   "authors": [
+    "NBC News"
+   ],
+   "locator": "https://www.nbcnews.com/news/amp/wbna8621304",
+   "authority": "NBC News",
+   "status": "verificada",
+   "notes": "Prensa; la fecha exacta de la nota no se pudo confirmar.",
+   "matches": {
+    "url_prefixes": [
+     "https://www.nbcnews.com/news/amp/wbna8621304"
+    ],
+    "text_patterns": []
+   },
+   "accessed": "2026-11-12",
+   "used_in": [
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md",
+    "classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md"
    ]
   }
  ]

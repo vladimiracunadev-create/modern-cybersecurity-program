@@ -108,6 +108,10 @@ flowchart LR
 
 El proyecto integrador utiliza una organización y personas ficticias: produce un informe OSINT con fuentes y confianza, modela qué exposición habilitaría un pretexto, propone una simulación de mínimo daño y diseña controles técnicos, de proceso y OPSEC. El [laboratorio OrbitPup](../../labs/lanzamientos-virales/README.md) añade una variante completamente offline: video viral → búsqueda → cuentas falsas o tomadas → airdrop → autorización maliciosa → movimiento de activos. Toda interacción queda dentro del laboratorio y el resultado evita datos personales, wallets y fondos reales.
 
+## ➡️ Continuación: la Parte 21
+
+Esta parte trata la ingeniería social como ataque puntual (un correo, una llamada, una campaña). Cuando la manipulación se vuelve una relación sostenida, una operación de captación, espionaje industrial o un riesgo de personas con acceso, el recorrido continúa en la [Parte 21 — Ingeniería social, espionaje y contrainteligencia](../parte-21-ingenieria-social-espionaje-y-contrainteligencia/README.md): psicología de la manipulación, elicitation, trampas románticas, amenazas internas, contrainteligencia empresarial, protección de ejecutivos y un caso integrador.
+
 ## ⚖️ Nota ética y legal (léela antes de empezar)
 
 Todo el contenido de esta parte se enseña con fines **defensivos, de concienciación y de pruebas

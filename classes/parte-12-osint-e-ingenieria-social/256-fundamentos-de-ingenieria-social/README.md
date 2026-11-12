@@ -19,6 +19,8 @@ con permiso explícito y por escrito** (alcance, objetivos, reglas de enfrentami
 y contacto de escalado). Nunca practiques con personas sin su consentimiento o el de su organización.
 Toda esta clase apunta a defender y a probar de forma autorizada.
 
+> 🔗 **Continuación en la Parte 21:** la psicología de la manipulación se profundiza en la clase [372](../../parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md) y el marco de inteligencia y contrainteligencia en la [371](../../parte-21-ingenieria-social-espionaje-y-contrainteligencia/371-mapa-de-disciplinas-espionaje-inteligencia-y-contrainteligencia/README.md).
+
 ## 📚 Resultados de aprendizaje
 
 Al finalizar, el alumno podrá:

@@ -2,7 +2,7 @@
 
 # 🛡️ Programa de Ciberseguridad Moderna
 
-## **370 clases · 21 partes (0–20) · de fundamentos a nivel experto**
+## **381 clases · 22 partes (0–21) · de fundamentos a nivel experto**
 
 **El programa de ciberseguridad más completo en español — desde redes, criptografía y Linux hasta Red Team, DFIR, cloud security, exploit development, seguridad de IA y Game Security.**
 
@@ -10,7 +10,7 @@
 [![Security](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/security.yml)
 [![Deploy Pages](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/actions/workflows/deploy-pages.yml)
 
-[![Clases](https://img.shields.io/badge/clases-370%20·%2021%20partes-7c5cff?style=for-the-badge)](classes/README.md)
+[![Clases](https://img.shields.io/badge/clases-381%20·%2022%20partes-7c5cff?style=for-the-badge)](classes/README.md)
 [![Nivel](https://img.shields.io/badge/nivel-fundamentos%20→%20experto-2e8b57?style=for-the-badge)](classes/README.md)
 [![Idioma](https://img.shields.io/badge/idioma-español-blue?style=for-the-badge)](README.md)
 [![Código](https://img.shields.io/badge/código-Apache--2.0-3fb950?style=for-the-badge)](LICENSE)
@@ -33,7 +33,7 @@
 
 ## 🎯 Qué es esto
 
-Un currículo modular y **secuencial** que cubre **todo el espectro de la ciberseguridad moderna**, paso a paso, en 370 clases numeradas (001→370) agrupadas en 21 partes. Cada clase es una carpeta con un `README.md` completo que incluye:
+Un currículo modular y **secuencial** que cubre **todo el espectro de la ciberseguridad moderna**, paso a paso, en 381 clases numeradas (001→381) agrupadas en 22 partes. Cada clase es una carpeta con un `README.md` completo que incluye:
 
 - 🎯 **Objetivo** y **resultados de aprendizaje verificables**.
 - 🗺️ **Temas** con el porqué de cada uno.
@@ -76,18 +76,18 @@ Eso también permite detectar cuándo una norma deja de estar vigente, que es cu
 
 | Marco / publicación | Identificador y versión | Partes que lo usan |
 |---|---|---:|
-| [MITRE ATT&CK: Adversarial Tactics, Techniques and Common…](https://attack.mitre.org/) | MITRE ATT&CK v19.2 | 14 (0, 1, 3, 6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18) |
+| [MITRE ATT&CK: Adversarial Tactics, Techniques and Common…](https://attack.mitre.org/) | MITRE ATT&CK v19.2 | 15 (0, 1, 3, 6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 18, 21) |
 | [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/) | OWASP Cheat Sheet Series | 8 (0, 2, 3, 4, 10, 11, 17, 20) |
 | [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/) | OWASP WSTG v4.2 | 8 (1, 3, 4, 11, 12, 16, 17, 18) |
 | [Common Weakness Enumeration (CWE)](https://cwe.mitre.org/) | MITRE CWE 5.0 | 5 (4, 5, 11, 17, 20) |
 | [CISA Known Exploited Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | CISA KEV Catalog | 5 (0, 4, 11, 17, 20) |
 | [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss) | FIRST CVSS | 6 (3, 4, 16, 17, 18, 20) |
+| [Security and Privacy Controls for Information Systems and…](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) | NIST SP 800-53 Rev. 5 | 8 (7, 8, 9, 13, 14, 16, 17, 21) |
+| [Computer Security Incident Handling Guide](https://csrc.nist.gov/pubs/sp/800/61/r2/final) | NIST SP 800-61 Rev. 2 — **retirada** | 7 (7, 8, 9, 10, 16, 17, 21) |
 | [CISA: avisos, catálogos y recursos de ciberseguridad](https://www.cisa.gov/) | CISA | 7 (0, 9, 12, 13, 14, 16, 17) |
-| [Computer Security Incident Handling Guide](https://csrc.nist.gov/pubs/sp/800/61/r2/final) | NIST SP 800-61 Rev. 2 — **retirada** | 6 (7, 8, 9, 10, 16, 17) |
 | [MITRE ATLAS: Adversarial Threat Landscape for…](https://atlas.mitre.org/) | MITRE ATLAS v2026.07 | 3 (4, 15, 18) |
+| [Incident Response Recommendations and Considerations for…](https://doi.org/10.6028/NIST.SP.800-61r3) | NIST SP 800-61 Rev. 3 | 5 (7, 8, 9, 10, 21) |
 | [OWASP Community: fichas de ataques y vulnerabilidades](https://owasp.org/www-community/) | OWASP Community | 5 (0, 1, 4, 5, 11) |
-| [The NIST Cybersecurity Framework (CSF) 2.0](https://www.nist.gov/cyberframework) | NIST CSF 2.0 | 6 (0, 8, 9, 10, 14, 17) |
-| [Security and Privacy Controls for Information Systems and…](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) | NIST SP 800-53 Rev. 5 | 7 (7, 8, 9, 13, 14, 16, 17) |
 
 ### Normas citadas que ya no están vigentes
 
@@ -95,7 +95,7 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 
 | Publicación | Estado | Clases que la citan |
 |---|---|---:|
-| [NIST SP 800-61 Rev. 2](https://csrc.nist.gov/pubs/sp/800/61/r2/final) | retirada | 12 |
+| [NIST SP 800-61 Rev. 2](https://csrc.nist.gov/pubs/sp/800/61/r2/final) | retirada | 13 |
 | [OWASP Top 10:2021](https://owasp.org/Top10/) | superada | 9 |
 | [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html) | superada | 4 |
 | [NIST IR 8259](https://csrc.nist.gov/pubs/ir/8259/final) | retirada | 3 |
@@ -108,16 +108,16 @@ Detectado al construir el registro: el organismo que las publica las ha retirado
 | [RFC 7489](https://www.rfc-editor.org/rfc/rfc7489) | obsoleta | 1 |
 | [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446) | obsoleta | 1 |
 
-Las 799 obras que usa el programa — 57 libros, 25 artículos, 172 normas y 545 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-10-01 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
+Las 820 obras que usa el programa — 61 libros, 25 artículos, 175 normas y 559 documentaciones oficiales — están en [`sources/bibliography.json`](sources/bibliography.json), cada una con su localizador. Comprobado por última vez el 2026-11-12 con [`scripts/verify-sources`](scripts/verify-sources), que corre en CI.
 
 <!-- fuentes:fin -->
 
-## 🗂️ Las 21 partes, numeradas de 0 a 20
+## 🗂️ Las 22 partes, numeradas de 0 a 21
 
 Cada parte tiene su **propio README** con narrativa completa: de qué trata, resultados de aprendizaje, estructura temática y enlaces a las clases.
 
-> La Parte 0 cuenta como la primera unidad; por eso la vigésima primera y última unidad se identifica como
-> **Parte 20**. «21 partes» expresa la cantidad.
+> La Parte 0 cuenta como la primera unidad; por eso la vigésima segunda y última unidad se identifica como
+> **Parte 21**. «22 partes» expresa la cantidad.
 
 | # | Parte | Clases | Foco | README |
 |---|---|---:|---|---|
@@ -142,12 +142,13 @@ Cada parte tiene su **propio README** con narrativa completa: de qué trata, res
 | 18 | IA aplicada a la ciberseguridad | 10 (331–340) | LLMs y agentes: MCP, kali-mcp, pentesting asistido, defensa e informes | [📘 leer](classes/parte-18-ia-aplicada-a-la-ciberseguridad/README.md) |
 | 19 | Seguridad de videojuegos, cheats y anti-cheat | 20 (341–360) | Autoridad, memoria, ESP, aim, telemetría, detección, privacidad y RCA | [📘 leer](classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/README.md) |
 | 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS | 10 (361–370) | Catálogo CWE, causa raíz, familias de debilidades, CVE, CVSS v3.1/v4.0, EPSS, KEV y corrección verificada | [📘 leer](classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
+| 21 | Ingeniería social, espionaje y contrainteligencia | 11 (371–381) | Psicología de la manipulación, elicitation, captación, trampas románticas, espionaje industrial, amenazas internas, contrainteligencia empresarial, protección de ejecutivos y caso NVIDIA | [📘 leer](classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/README.md) |
 
-➡️ **[Ver el índice plano de las 370 clases](classes/README.md)**
+➡️ **[Ver el índice plano de las 381 clases](classes/README.md)**
 
 ## 📕 Manual completo (todo el curso en un documento)
 
-¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **370 clases** y los recursos transversales **«¿Y si cruzas la línea?»**, **«Cybercrime-as-a-Service»** y **«Modelo operativo de Game Security»**, con portada, aviso ético e índice enlazado.
+¿Prefieres el curso entero en un solo sitio, para leer de corrido o estudiar sin conexión? El **manual** consolida las **381 clases** y los recursos transversales **«¿Y si cruzas la línea?»**, **«Cybercrime-as-a-Service»** y **«Modelo operativo de Game Security»**, con portada, aviso ético e índice enlazado.
 
 - 📥 **[Descargar el manual en PDF](manual/MANUAL.pdf)** — **1.505 páginas A4** con **404 diagramas** dibujados, listas para imprimir o leer offline.
 
@@ -155,11 +156,11 @@ Cada parte tiene su **propio README** con narrativa completa: de qué trata, res
 
 ## 📱 Aplicación Android y web
 
-La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **370 clases en 21 partes** y siete recursos transversales **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. Incluye «¿Y si cruzas la línea?», glosario, plataformas de práctica, CaaS, Game Security y las rutas de **Responsible Disclosure / CVD** e **Investigador/a de seguridad** como tarjetas visibles y buscables.
+La app **Ciberseguridad Moderna** ([`mobile/`](mobile/README.md)) embebe las **381 clases en 22 partes** y siete recursos transversales **completos** para leerlos **sin conexión**, con buscador y seguimiento de progreso local. Incluye «¿Y si cruzas la línea?», glosario, plataformas de práctica, CaaS, Game Security y las rutas de **Responsible Disclosure / CVD** e **Investigador/a de seguridad** como tarjetas visibles y buscables.
 
 - 🌐 **[Abrir la aplicación web](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/app/)** — misma experiencia, publicada dentro de GitHub Pages.
 - 📥 **[Descargar Android, web y manual — release v1.3.0](https://github.com/vladimiracunadev-create/modern-cybersecurity-program/releases/tag/v1.3.0)** · verifica los tres artefactos con `SHA256SUMS.txt`.
-- 🧭 **Navegación:** Home (21 partes + progreso global) → Parte (clases + buscador) → Clase, en dos pestañas: *Teoría* (objetivo, resultados, temas, explicación en profundidad, definiciones, glosario) y *Práctica* (preparación, laboratorio, ejercicios, reto, errores comunes, preguntas frecuentes, referencias).
+- 🧭 **Navegación:** Home (22 partes + progreso global) → Parte (clases + buscador) → Clase, en dos pestañas: *Teoría* (objetivo, resultados, temas, explicación en profundidad, definiciones, glosario) y *Práctica* (preparación, laboratorio, ejercicios, reto, errores comunes, preguntas frecuentes, referencias).
 - 🔌 **Offline-first:** las clases se leen enteras sin conexión, diagramas incluidos; solo necesitan internet los enlaces al sitio y a GitHub. El progreso se guarda **solo en tu dispositivo**.
 
 <div align="center">
@@ -206,7 +207,7 @@ comando, más una colección de retos tipo CTF:
 - 🎮 **[Modelo operativo de Game Security](docs/modelo-operativo-game-security.md)** — separa ingeniería, investigación, sanción, apelación, privacidad y respuesta a incidentes; define evidencia y límites de práctica.
 - 🗺️ **[Matriz de roles SecOps y DevSecOps](docs/matriz-roles-secops-devsecops.md)** — SOC, SecOps, DevSecOps, AppSec, Cloud Security y DFIR comparados por misión, decisiones, entregables, métricas, clases y progresión, con el diagrama del ciclo desarrollo → pipeline → nube → producción → monitoreo → incidente → aprendizaje.
 - 📝 **[Autoevaluaciones](autoevaluaciones/README.md)** — 153 preguntas (una batería por parte). Versión interactiva con puntuación: [quiz](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/quiz.html).
-- ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/progreso.html)** — marca las 370 clases (se guarda en tu navegador).
+- ✅ **[Seguimiento de progreso](https://vladimiracunadev-create.github.io/modern-cybersecurity-program/autoevaluaciones/progreso.html)** — marca las 381 clases (se guarda en tu navegador).
 - 🔑 **[Soluciones a los retos](soluciones/README.md)** — claves de referencia de los ejercicios y retos (Parte 2 completa; resto por lotes).
 - 🎓 **[Certificaciones](certificaciones/README.md)** — mapeo del programa a Security+, PenTest+, CySA+, OSCP, CISSP, BTL1 y SANS con **% de cobertura ponderado por dominio**.
 
@@ -317,7 +318,7 @@ El repositorio no se publica a ciegas: cada `push` y cada PR pasan por integraci
 Los mismos validadores corren en local antes de subir:
 
 ```bash
-python scripts/validar_estructura.py       # 370 clases + enlaces .md sin rotos
+python scripts/validar_estructura.py       # 381 clases + enlaces .md sin rotos
 python scripts/validar_encoding.py          # todo UTF-8, sin mojibake
 python scripts/generar_navegacion.py --check # navegación coherente
 python scripts/verify-sources                # fuentes: registro, citas y cifras
@@ -355,7 +356,7 @@ python scripts/generar_curriculum_movil.py   # catálogo embebido de la app móv
 
 ### ✅ Lo que sí es
 
-- 📚 un currículo **secuencial y completo** de 370 clases, de fundamentos a nivel experto;
+- 📚 un currículo **secuencial y completo** de 381 clases, de fundamentos a nivel experto;
 - 🧪 un curso con **práctica real**: 11 laboratorios ejecutables y retos tipo CTF con writeups;
 - 🧭 una guía de **carrera por rol** con día a día, skills, certificaciones y salario orientativo;
 - 🎓 un mapeo honesto a **certificaciones** (Security+, PenTest+, CySA+, OSCP, CISSP, BTL1, SANS) con % de cobertura;

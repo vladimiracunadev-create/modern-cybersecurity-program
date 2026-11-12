@@ -120,7 +120,7 @@ hipótesis alternativas y caducidad.
 1. 📚 **Parte 0** — redes, sistemas, Python y ética (011, 023–025).
 2. 📚 **Partes 1 y 6** — tráfico, NetFlow, malware, C2 e inteligencia derivada.
 3. 📚 **Partes 7–9** — TTP, detección, CTI operacional, IR y timelines.
-4. 📚 **Parte 12** — OSINT y OPSEC · **Parte 17** — comunicación y CTI avanzada (321–322).
+4. 📚 **Parte 12** — OSINT y OPSEC · **Parte 21** — **371** disciplinas, **374**–**376** captación, relaciones y espionaje industrial, **381** análisis comparado con niveles de evidencia · **Parte 17** — comunicación y CTI avanzada (321–322).
 5. 🕸️ **[Cybercrime-as-a-Service](../docs/cybercrime-as-a-service.md)** — mercado, DDoS-for-hire,
    evidencia y coordinación con SOC, SecOps, infraestructura, DFIR, CISO y legal.
 
@@ -250,6 +250,7 @@ El **máximo responsable** de la seguridad de la información y la cibersegurida
 4. 📚 **Parte 8** — **181** SOC · **183** SIEM · **195** threat intelligence · **197** métricas y madurez: supervisar la operación sin operarla
 5. 📚 **Parte 9** — **202** ciclo de respuesta · **215** playbooks · **219** ejercicios de mesa: la crisis que vas a dirigir
 6. 📚 **Partes 10, 11 y 15** — **221**/**234** nube · **236**/**245**/**248** DevSecOps · **300** gobernanza de la IA: donde viven hoy tus servicios digitales
+7. 📚 **Parte 21** — **377**/**378** amenazas internas y contrainteligencia empresarial · **379** protección de ejecutivos · **380** investigación y legalidad: el riesgo de las personas con acceso
 
 - 🎲 **[219 · Tabletop](../classes/parte-9-forense-digital-y-respuesta-a-incidentes/219-ejercicios-de-mesa-tabletop/README.md)** es la práctica principal · 📋 construye los **diez entregables del cargo** (política, plan director, registro de riesgos, SoA, BIA/BCP, plan de respuesta, programa de vulnerabilidades, marco de terceros, concienciación e informe ejecutivo) · 🧪 [`blue-team-soc`](../labs/blue-team-soc/README.md) y [`cloud-security`](../labs/cloud-security/README.md) para no perder el contacto técnico
 - 🎓 **CISSP** · (fuera del programa: **CISM**, **CRISC**, **ISO 27001 Lead Implementer**, CCISO)

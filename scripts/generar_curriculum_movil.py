@@ -4,8 +4,8 @@
 Recorre ``classes/parte-*/NNN-*/README.md`` y los recursos transversales —las
 fuentes de verdad del programa— y escribe ``mobile/src/data/classes.js`` con:
 
-    PARTS            — las 21 partes, con su rango de clases y nivel dominante
-    CLASSES          — las 370 clases, planas y ordenadas por número
+    PARTS            — las 22 partes, con su rango de clases y nivel dominante
+    CLASSES          — las 381 clases, planas y ordenadas por número
     CLASSES_BY_PART  — las mismas clases indexadas por slug de parte
     RESOURCES        — recursos transversales completos para lectura offline
     TOTAL_CLASSES / TOTAL_PARTS
@@ -39,7 +39,7 @@ GitHub, no a Colab.
 
 El parseo se ancla en el **emoji** del encabezado, no en su texto: el título de la
 sección puede variar ("🧪 Laboratorio guiado — Diseña tu SOC") pero el emoji es
-estable en las 370 clases. Vuelve a ejecutarlo tras cualquier edición del temario;
+estable en las 381 clases. Vuelve a ejecutarlo tras cualquier edición del temario;
 ``--check`` falla (exit 1) si el archivo generado quedó desincronizado.
 
 Uso:
@@ -169,6 +169,7 @@ PART_SUBTITLE: dict[str, str] = {
     "parte-18-ia-aplicada-a-la-ciberseguridad": "LLMs y agentes: MCP, kali-mcp, pentesting asistido, defensa e informes",
     "parte-19-seguridad-de-videojuegos-cheats-y-anticheat": "Arquitectura, autoridad, cheats controlados, telemetría, detección y gobernanza",
     "parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss": "CWE, CVE, CVSS, EPSS y KEV: nombrar, medir, priorizar y corregir con evidencia",
+    "parte-21-ingenieria-social-espionaje-y-contrainteligencia": "Psicología de la manipulación, captación, espionaje industrial, amenazas internas y contrainteligencia empresarial",
 }
 
 # Título corto y legible de cada parte para la tarjeta del Home.
@@ -194,6 +195,7 @@ PART_SHORT: dict[str, str] = {
     "parte-18-ia-aplicada-a-la-ciberseguridad": "IA aplicada a la ciberseguridad",
     "parte-19-seguridad-de-videojuegos-cheats-y-anticheat": "Game Security y Anti-Cheat",
     "parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss": "Debilidades y vulnerabilidades: CWE, CVE, CVSS",
+    "parte-21-ingenieria-social-espionaje-y-contrainteligencia": "Ingeniería social, espionaje y contrainteligencia",
 }
 
 # ── Reparto de secciones entre las dos pestañas de la app ────────────────────

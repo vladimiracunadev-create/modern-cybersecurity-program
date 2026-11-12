@@ -1693,6 +1693,84 @@
           "exp": "Una cadena es una hipótesis que exige una fuente que la sostenga. Sin ella se estudian por separado, y se declara la incertidumbre."
         }
       ]
+    },
+    {
+      "idx": 21,
+      "titulo": "Ingeniería social, espionaje y contrainteligencia",
+      "preguntas": [
+        {
+          "q": "¿Qué distingue a la inteligencia de la simple información?",
+          "opciones": ["Que es siempre secreta", "Que es un juicio útil para decidir, producido al analizar información", "Que procede únicamente de fuentes humanas", "Que solo la producen los Estados"],
+          "correcta": 1,
+          "exp": "La información es un dato; la inteligencia es el juicio que reduce la incertidumbre de quien decide. Puede proceder de fuentes abiertas y producirla cualquier organización."
+        },
+        {
+          "q": "¿Qué diferencia práctica hay entre 18 U.S.C. § 1831 y § 1832?",
+          "opciones": ["El § 1831 exige beneficio para un gobierno, instrumento o agente extranjero; el § 1832 no", "El § 1832 solo se aplica a empleados públicos", "Son idénticos y solo cambia la pena", "El § 1831 se refiere a datos personales y el § 1832 a patentes"],
+          "correcta": 0,
+          "exp": "El § 1831 tipifica el espionaje económico y exige ese beneficio extranjero; el § 1832 sanciona el robo de secretos comerciales sin exigirlo. Qué cargo se formula refleja lo que la fiscalía pretende probar."
+        },
+        {
+          "q": "¿Por qué la inteligencia analítica no protege por sí sola frente a la manipulación?",
+          "opciones": ["Porque las personas inteligentes son más ingenuas", "Porque la manipulación eficaz evita activar el pensamiento deliberado, con prisa y presión", "Porque solo funciona contra personas sin formación", "Porque los atacantes conocen el código de la víctima"],
+          "correcta": 1,
+          "exp": "La presión de tiempo y la carga emocional impiden que intervenga el pensamiento lento. Por eso los procesos con pausa, doble control y verificación fuera de banda protegen mejor que la voluntad."
+        },
+        {
+          "q": "Recibes una petición urgente de un supuesto directivo y se te pide no consultar a nadie. ¿Qué señal es la más relevante?",
+          "opciones": ["El tono cordial", "La petición de secreto hacia tu propia organización", "El uso de tu nombre de pila", "La hora del mensaje"],
+          "correcta": 1,
+          "exp": "Un secreto exigido para que no consultes a tu organización elimina uno de los controles que te protegen y es motivo de reporte por sí solo, aunque el relato parezca creíble."
+        },
+        {
+          "q": "¿Qué es la elicitación y cuál es su mejor contramedida?",
+          "opciones": ["Un interrogatorio formal; negarse a contestar", "Obtener información en una conversación aparentemente casual; desviar, remitir o responder con generalidades", "Un tipo de malware; actualizar el antivirus", "Una técnica de cifrado; cambiar la clave"],
+          "correcta": 1,
+          "exp": "La elicitación aprovecha la cortesía y el deseo de ayudar o corregir. Las contramedidas son conversacionales y de política: desviar, responder en general, remitir a comunicaciones o declinar con amabilidad."
+        },
+        {
+          "q": "¿Qué limita el modelo MICE (dinero, ideología, compromiso o coerción, ego) para detectar riesgos?",
+          "opciones": ["Que solo describe a los espías profesionales", "Que no predice quién colaborará: las motivaciones son frecuentes, se combinan e ignoran oportunidad y canal", "Que está prohibido por la ley", "Que solo se aplica a empresas privadas"],
+          "correcta": 1,
+          "exp": "Muchísimas personas con deudas o resentimiento nunca colaboran con nadie. El modelo sirve para orientar el apoyo y la prevención, no para etiquetar personas."
+        },
+        {
+          "q": "Una cadena de peticiones pequeñas que crece poco a poco, con favores y confidencias, ¿qué fase del ciclo de captación describe?",
+          "opciones": ["Terminación", "Desarrollo de la relación de confianza", "Verificación de antecedentes", "Contrainteligencia ofensiva"],
+          "correcta": 1,
+          "exp": "El desarrollo construye rapport mediante reciprocidad y gradualidad; ningún paso parece grave, por lo que la señal está en la trayectoria de la relación y no en una petición aislada."
+        },
+        {
+          "q": "¿Qué rasgo distingue una operación de inteligencia con relación afectiva de una estafa de romance?",
+          "opciones": ["La operación busca información y es muy dirigida; la estafa busca dinero y es masiva", "No hay ninguna diferencia", "La estafa siempre dura años", "La operación nunca usa identidades falsas"],
+          "correcta": 0,
+          "exp": "Selección, objetivo y paciencia son los criterios principales. Aun así, a veces no puede resolverse la distinción hasta que lo aclaran las autoridades; la respuesta inmediata es reportar."
+        },
+        {
+          "q": "Alguien te amenaza con difundir imágenes íntimas si no pagas. ¿Qué es lo más acertado?",
+          "opciones": ["Pagar rápido para que acabe", "No pagar, conservar la evidencia, cortar el contacto y denunciar", "Borrar todo para no dejar rastro", "Confrontar al extorsionador con tu identidad real"],
+          "correcta": 1,
+          "exp": "Pagar no garantiza que cese y señala solvencia. Conservar las pruebas y denunciar a la plataforma y a las autoridades es la ruta recomendada, con apoyo a la víctima y sin culpabilizarla."
+        },
+        {
+          "q": "¿Qué cuatro tipos de insider distingue la clase 377?",
+          "opciones": ["Interno, externo, mixto y anónimo", "Negligente, malicioso, comprometido y colusorio", "Técnico, físico, legal y financiero", "Activo, pasivo, directo e indirecto"],
+          "correcta": 1,
+          "exp": "Cada tipo exige una respuesta distinta: formación y diseño para el negligente, detección e investigación para el malicioso, protección y apoyo para el comprometido, y controles de segregación para el colusorio."
+        },
+        {
+          "q": "¿Por qué ningún sistema automático de amenazas internas debería sancionar por sí solo?",
+          "opciones": ["Porque las alertas son siempre falsas", "Porque un indicador es ambiguo; debe originar revisión humana con contexto, no sanción", "Porque la ley lo prohíbe en todos los países", "Porque los insiders siempre son inocentes"],
+          "correcta": 1,
+          "exp": "Una descarga masiva puede ser una migración y un aislamiento puede ser un duelo. Combinar indicadores, contextualizarlos y revisarlos con RR. HH., legal y seguridad respeta la presunción de inocencia."
+        },
+        {
+          "q": "En el caso NVIDIA, ¿qué afirmación puede presentarse como declaración oficial y no como hecho probado de espionaje?",
+          "opciones": ["Que la ejecutiva era agente de un servicio extranjero", "Que la junta de NVIDIA anunció una investigación independiente y afirmó no tener razón para creer que se comprometieron secretos", "Que hubo pérdida de secretos industriales", "Que otros veinte ejecutivos fueron objetivo"],
+          "correcta": 1,
+          "exp": "El comunicado del 8 de noviembre de 2026 es una declaración de parte, verificable como tal. La atribución a un servicio extranjero y el daño a secretos no están probados públicamente, y la cifra de otros objetivos procede de una fuente única en una columna de opinión."
+        }
+      ]
     }
   ]
 }

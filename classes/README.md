@@ -1,6 +1,6 @@
 # Indice del curriculo
 
-**370 clases - 21 partes numeradas 0-20** - numeracion secuencial 001-370. La Parte 0 es la primera unidad y la Parte 20, la vigésima primera. Cada parte tiene su propio README con la narrativa completa (de que trata, que problemas resuelve, resultados de aprendizaje, estructura tematica y prerrequisitos).
+**381 clases - 22 partes numeradas 0-21** - numeracion secuencial 001-381. La Parte 0 es la primera unidad y la Parte 21, la vigésima segunda. Cada parte tiene su propio README con la narrativa completa (de que trata, que problemas resuelve, resultados de aprendizaje, estructura tematica y prerrequisitos).
 
 | Parte | Tema | Clases | README de la parte |
 |---|---|---:|---|
@@ -25,6 +25,7 @@
 | 18 | IA aplicada a la ciberseguridad (agentes, MCP, kali-mcp) | 10 (331-340) | [leer parte 18](parte-18-ia-aplicada-a-la-ciberseguridad/README.md) |
 | 19 | Seguridad de videojuegos, cheats y anti-cheat | 20 (341-360) | [leer parte 19](parte-19-seguridad-de-videojuegos-cheats-y-anticheat/README.md) |
 | 20 | Debilidades y vulnerabilidades: CWE, CVE, CVSS y su gestion | 10 (361-370) | [leer parte 20](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/README.md) |
+| 21 | Ingenieria social, espionaje y contrainteligencia | 11 (371-381) | [leer parte 21](parte-21-ingenieria-social-espionaje-y-contrainteligencia/README.md) |
 
 ---
 
@@ -462,3 +463,17 @@ A continuacion, el indice plano de las clases. Si buscas la narrativa de una par
 - [368 - CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md)
 - [369 - EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md)
 - [370 - Ciclo completo: de la debilidad a la corrección verificada](parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/370-ciclo-completo-de-la-debilidad-a-la-correccion-verificada/README.md)
+
+## [Parte 21 - Ingenieria social, espionaje y contrainteligencia](parte-21-ingenieria-social-espionaje-y-contrainteligencia/README.md)
+
+- [371 - Mapa de disciplinas: espionaje, inteligencia y contrainteligencia](parte-21-ingenieria-social-espionaje-y-contrainteligencia/371-mapa-de-disciplinas-espionaje-inteligencia-y-contrainteligencia/README.md)
+- [372 - Psicología de la manipulación y resistencia a la presión](parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md)
+- [373 - Pretexting, impersonation y elicitation desde la defensa](parte-21-ingenieria-social-espionaje-y-contrainteligencia/373-pretexting-impersonation-y-elicitation-desde-la-defensa/README.md)
+- [374 - Captación de fuentes humanas y ciclo de reclutamiento](parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md)
+- [375 - Trampas románticas, honey trap, kompromat y estafas de romance](parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md)
+- [376 - Espionaje industrial, económico y tecnológico](parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md)
+- [377 - Amenazas internas: indicadores, programas y límites](parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md)
+- [378 - Contrainteligencia empresarial y seguridad del personal](parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md)
+- [379 - Protección de ejecutivos y personas con acceso estratégico](parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md)
+- [380 - Investigación de incidentes humanos, ética y legalidad](parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md)
+- [381 - Caso NVIDIA y análisis comparado (capstone)](parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md)

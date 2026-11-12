@@ -12,6 +12,8 @@ y cultura. El alumno terminará capaz de proponer medidas anti-phishing (SPF/DKI
 resistente, filtros), procedimientos de verificación de identidad y un programa de concienciación
 medible, cerrando el ciclo iniciado con el ataque autorizado.
 
+> 🔗 **Continuación en la Parte 21:** la defensa organizacional continúa con la contrainteligencia empresarial ([378](../../parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md)) y la protección de ejecutivos ([379](../../parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md)).
+
 ## 📚 Resultados de aprendizaje
 
 Al finalizar, el alumno podrá:

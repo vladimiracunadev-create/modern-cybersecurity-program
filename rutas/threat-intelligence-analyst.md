@@ -33,7 +33,10 @@ autoridad investigadora: conserva hechos públicos y telemetría autorizada, y e
    comportamiento de malware e inteligencia derivada (026–027, 045, 149, 154, 157).
 3. [Partes 7–9](../classes/parte-8-blue-team-deteccion-y-soc/README.md): adversary emulation,
    hunting, CTI operacional, detección, IR y línea temporal (161–180, 187–195, 201–220).
-4. [Parte 12](../classes/parte-12-osint-e-ingenieria-social/README.md): OSINT y OPSEC (249–255, 260).
+4. [Parte 12](../classes/parte-12-osint-e-ingenieria-social/README.md): OSINT y OPSEC (249–255, 260), y la
+   [Parte 21](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/README.md): ciclo de
+   inteligencia, captación, espionaje industrial y análisis de casos con niveles de evidencia
+   (371, 374–376, 381).
 5. [Partes 14 y 17](../classes/parte-17-profundizacion-para-certificaciones/README.md): riesgo de
    terceros, comunicación y CTI avanzada (284, 321–322).
 6. Recurso transversal [Cybercrime-as-a-Service](../docs/cybercrime-as-a-service.md): modelo de

@@ -4,7 +4,7 @@
 
 Por que existe
 --------------
-El manual junta las 370 clases y recursos en una sola pagina HTML de más de 1.500 páginas y 404
+El manual junta las 381 clases y recursos en una sola pagina HTML de más de 1.500 páginas y 404
 diagramas. La forma facil de dibujarlos —cargar mermaid.js y dejar que Chrome
 imprima— **no funciona a esa escala**: Chrome imprime cuando se agota el
 presupuesto de tiempo virtual, y con 360 diagramas mermaid no ha empezado

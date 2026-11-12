@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Genera el MANUAL del curso en PDF: consolida las 370 clases y los recursos
+Genera el MANUAL del curso en PDF: consolida las 381 clases y los recursos
 transversales en un unico documento ordenado.
 
   - manual/MANUAL.pdf  render imprimible (via Microsoft Edge/Chrome headless)
@@ -8,7 +8,7 @@ transversales en un unico documento ordenado.
 El Markdown consolidado se construye en memoria como paso intermedio (se
 convierte a HTML y de ahi a PDF); no se deja ningun .md en el repositorio.
 
-El manual respeta el orden global 001->370 agrupado en las 21 partes, con
+El manual respeta el orden global 001->381 agrupado en las 22 partes, con
 portada, aviso etico e indice enlazado a cada clase.
 
 Transformaciones sobre cada README de clase para que funcione como documento
@@ -361,7 +361,7 @@ def md_a_html(md_text: str) -> str:
 
 TIMEOUT_S = 1200
 
-# Un manual de 370 clases no baja de varios megas; por debajo de esto la
+# Un manual de 381 clases no baja de varios megas; por debajo de esto la
 # impresion salio mal aunque el navegador diga que termino bien.
 MIN_PDF_BYTES = 5_000_000
 

@@ -38,7 +38,7 @@ intenta construir: **conducta → evidencia → persona → norma aplicable → 
 
 ## 🪞 El espejo de las capacidades profesionales
 
-El programa contiene 370 clases y 21 partes. No todas poseen una «versión criminal»: gobernar un
+El programa contiene 381 clases y 22 partes. No todas poseen una «versión criminal»: gobernar un
 SGSI o redactar una política no se transforma mágicamente en delito. Sí existen capacidades de
 doble uso cuyo propósito cambia al desaparecer el consentimiento o aparecer fraude, daño,
 apropiación, extorsión o sabotaje.

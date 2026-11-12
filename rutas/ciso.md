@@ -334,6 +334,10 @@ dirección**, no la base.
 8. 📚 [**Partes 1, 3 y 4**](../classes/parte-1-redes-y-seguridad-de-redes/README.md) · la base
    técnica que gobiernas: **034** firewalls, **042** segmentación y zero trust, **071** Nessus y
    **087** OWASP Top 10 (el porqué del WAF).
+9. 📚 [**Parte 21 — Ingeniería social, espionaje y contrainteligencia**](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/README.md)
+   · **377** amenazas internas · **378** contrainteligencia empresarial · **379** protección de
+   ejecutivos · **380** investigación y legalidad · **381** el caso abierto que la junta tendría que
+   gobernar: el riesgo de las personas con acceso estratégico.
 
 Clases concretas por las que empezar:
 

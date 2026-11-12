@@ -8,7 +8,7 @@ el generador; la modalidad y disponibilidad pueden cambiar en sus sitios oficial
 > **Archivo generado.** No lo edites a mano. Ejecuta
 > `python scripts/generar_glosario_global.py` y valida con `--check`.
 
-**Cobertura:** 2614 términos consolidados · 355 clases con glosario.
+**Cobertura:** 2710 términos consolidados · 366 clases con glosario.
 
 ## Cómo usarlo
 
@@ -475,6 +475,12 @@ RSP alineado en el `call`; su ausencia crashea libc
 
 **Aparece en 3 clase(s):** [Clase 117 — El stack, los registros y las convenciones de llamada](../classes/parte-5-explotacion-de-sistemas-y-binarios/117-el-stack-los-registros-y-las-convenciones-de-llamada/README.md), [Clase 120 — Buffer overflow en stack: explotación práctica](../classes/parte-5-explotacion-de-sistemas-y-binarios/120-buffer-overflow-en-stack-explotacion-practica/README.md), [Clase 123 — Bypass de protecciones: ret2libc](../classes/parte-5-explotacion-de-sistemas-y-binarios/123-bypass-de-protecciones-ret2libc/README.md).
 
+### Alleged
+
+Afirmado sin probar.
+
+**Aparece en 1 clase(s):** [Clase 381 — Caso NVIDIA y análisis comparado (capstone)](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md).
+
 ### Allocator
 
 Gestor que decide dónde colocar cada asignación
@@ -793,6 +799,12 @@ Razón documentada por la que una norma obliga a una entidad o flujo.
 
 **Aparece en 1 clase(s):** [Clase 281 — Cumplimiento: GDPR, HIPAA y PCI-DSS](../classes/parte-14-grc-riesgo-y-cumplimiento/281-cumplimiento-gdpr-hipaa-y-pci-dss/README.md).
 
+### Approach
+
+Primer intento de contacto con una persona objetivo.
+
+**Aparece en 1 clase(s):** [Clase 374 — Captación de fuentes humanas y ciclo de reclutamiento](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md).
+
 ### Approval / permiso
 
 Autoridad concedida a un tercero para actuar sobre un activo según el protocolo.
@@ -945,6 +957,12 @@ Identificador de un sistema autónomo que anuncia prefijos, no sinónimo de empr
 
 **Aparece en 1 clase(s):** [Clase 251 — OSINT de empresas y dominios](../classes/parte-12-osint-e-ingenieria-social/251-osint-de-empresas-y-dominios/README.md).
 
+### Assessing
+
+Valoración de motivación, vulnerabilidad y aptitud.
+
+**Aparece en 1 clase(s):** [Clase 374 — Captación de fuentes humanas y ciclo de reclutamiento](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md).
+
 ### Association
 
 Paso por el que cliente y AP establecen relación 802.11; no garantiza acceso superior.
@@ -1077,6 +1095,12 @@ Prueba por desafío y respuesta de que un componente posee una clave certificada
 
 **Aparece en 2 clase(s):** [Clase 246 — Supply chain security: SBOM y SLSA](../classes/parte-11-devsecops-y-seguridad-del-sdlc/246-supply-chain-security-sbom-y-slsa/README.md), [Clase 267 — Hacking de firmware](../classes/parte-13-seguridad-movil-iot-e-inalambrica/267-hacking-de-firmware/README.md).
 
+### Attribution
+
+Asignar una operación a un actor con evidencia y nivel de confianza.
+
+**Aparece en 1 clase(s):** [Clase 381 — Caso NVIDIA y análisis comparado (capstone)](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md).
+
 ### Audiencia
 
 Lector con necesidades específicas
@@ -1130,6 +1154,12 @@ Garantía de que el mensaje viene de quien dice
 `password: {$ne: ""}` entra sin conocer la contraseña
 
 **Aparece en 1 clase(s):** [Clase 94 — Inyección NoSQL](../classes/parte-4-seguridad-de-aplicaciones-web/094-inyeccion-nosql/README.md).
+
+### Authority bias
+
+Tendencia a aceptar lo que dice una figura de autoridad sin verificarlo.
+
+**Aparece en 1 clase(s):** [Clase 372 — Psicología de la manipulación y resistencia a la presión](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md).
 
 ### Authorization Code
 
@@ -1421,6 +1451,12 @@ Compromiso o suplantación de correo para inducir acciones de negocio.
 
 **Aparece en 1 clase(s):** [Clase 256 — Fundamentos de ingeniería social](../classes/parte-12-osint-e-ingenieria-social/256-fundamentos-de-ingenieria-social/README.md).
 
+### BEC (Business Email Compromise)
+
+Fraude que usa correo suplantado o tomado para inducir pagos o cambios.
+
+**Aparece en 1 clase(s):** [Clase 379 — Protección de ejecutivos y personas con acceso estratégico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md).
+
 ### Bejtlich
 
 Autor que formalizó la disciplina de NSM
@@ -1510,6 +1546,12 @@ El equipo no recibe información previa
 Hacker malicioso sin autorización
 
 **Aparece en 1 clase(s):** [Clase 25 — Ética, legalidad, alcance y divulgación responsable](../classes/parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.md).
+
+### Blackmail
+
+Amenaza de revelar información dañina salvo que la víctima actúe o pague.
+
+**Aparece en 1 clase(s):** [Clase 375 — Trampas románticas, honey trap, kompromat y estafas de romance](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md).
 
 ### BLAKE2 / BLAKE3
 
@@ -2257,6 +2299,12 @@ Clasificar un dominio (business/health) para pasar filtros
 
 **Aparece en 1 clase(s):** [Clase 164 — Diseño de infraestructura de comando y control (C2)](../classes/parte-7-red-team-y-operaciones-ofensivas/164-diseno-de-infraestructura-de-comando-y-control-c2/README.md).
 
+### Catfishing
+
+Crear una identidad falsa para engañar emocionalmente.
+
+**Aparece en 1 clase(s):** [Clase 375 — Trampas románticas, honey trap, kompromat y estafas de romance](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md).
+
 ### Causa raíz
 
 Debilidad que, de corregirse, impediría la vulnerabilidad
@@ -2298,6 +2346,12 @@ Red de distribución que cachea contenido cerca del usuario
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
 
 **Aparece en 1 clase(s):** [Clase 357 — Estadística, anomalías y falsos positivos](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/357-estadistica-anomalias-falsos-positivos/README.md).
+
+### CEO fraud
+
+BEC que suplanta a un directivo para ordenar una acción financiera.
+
+**Aparece en 1 clase(s):** [Clase 379 — Protección de ejecutivos y personas con acceso estratégico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md).
 
 ### Cerrado
 
@@ -2370,6 +2424,12 @@ Cifrado de flujo moderno basado en operaciones ARX
 AEAD para software y móviles sin aceleración AES
 
 **Aparece en 1 clase(s):** [Clase 59 — Cifrado autenticado (AEAD)](../classes/parte-2-criptografia-aplicada/059-cifrado-autenticado-aead/README.md).
+
+### Chain of custody
+
+Registro de quién manejó la evidencia y cuándo.
+
+**Aparece en 1 clase(s):** [Clase 380 — Investigación de incidentes humanos, ética y legalidad](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md).
 
 ### check
 
@@ -2593,6 +2653,12 @@ La misma clave genera y verifica el MAC
 
 **Aparece en 1 clase(s):** [Clase 52 — HMAC y autenticación de mensajes](../classes/parte-2-criptografia-aplicada/052-hmac-y-autenticacion-de-mensajes/README.md).
 
+### Clean device
+
+Equipo sin datos innecesarios, usado en viajes de riesgo.
+
+**Aparece en 1 clase(s):** [Clase 379 — Protección de ejecutivos y personas con acceso estratégico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md).
+
 ### Client
 
 La aplicación que solicita acceso
@@ -2731,6 +2797,12 @@ Número que resume el resultado de una respuesta HTTP.
 
 **Aparece en 1 clase(s):** [Clase 90 — Mapeo, spidering y descubrimiento de contenido](../classes/parte-4-seguridad-de-aplicaciones-web/090-mapeo-spidering-y-descubrimiento-de-contenido/README.md).
 
+### Coercion
+
+Forzar una conducta mediante amenaza o presión.
+
+**Aparece en 1 clase(s):** [Clase 375 — Trampas románticas, honey trap, kompromat y estafas de romance](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md).
+
 ### Colector
 
 Servidor que recibe, almacena e indexa los flujos
@@ -2791,6 +2863,12 @@ Patrón para darse root desde el kernel
 
 **Aparece en 1 clase(s):** [Clase 139 — Kernel exploitation: introducción](../classes/parte-5-explotacion-de-sistemas-y-binarios/139-kernel-exploitation-introduccion/README.md).
 
+### Commitment and consistency
+
+Preferencia por mantener conductas consistentes con compromisos previos.
+
+**Aparece en 1 clase(s):** [Clase 372 — Psicología de la manipulación y resistencia a la presión](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md).
+
 ### Comparación
 
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
@@ -2839,6 +2917,12 @@ Separación consistente para limitar correlación e impacto.
 
 **Aparece en 2 clase(s):** [Clase 164 — Diseño de infraestructura de comando y control (C2)](../classes/parte-7-red-team-y-operaciones-ofensivas/164-diseno-de-infraestructura-de-comando-y-control-c2/README.md), [Clase 260 — OPSEC personal y anonimato](../classes/parte-12-osint-e-ingenieria-social/260-opsec-personal-y-anonimato/README.md).
 
+### Compartmentation
+
+División de información o proyectos en perímetros aislados.
+
+**Aparece en 1 clase(s):** [Clase 378 — Contrainteligencia empresarial y seguridad del personal](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md).
+
 ### Complejidad (AC)
 
 Si el ataque depende de condiciones fuera del control del atacante
@@ -2880,6 +2964,12 @@ Orquestador declarativo multi-servicio
 Expresión que construye una colección filtrando y transformando.
 
 **Aparece en 1 clase(s):** [Clase 15 — Python para seguridad: fundamentos del lenguaje](../classes/parte-0-fundamentos-y-prerrequisitos/015-python-para-seguridad-fundamentos-del-lenguaje/README.md).
+
+### Compromised insider
+
+Su acceso o su voluntad es controlado por un tercero.
+
+**Aparece en 1 clase(s):** [Clase 377 — Amenazas internas: indicadores, programas y límites](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md).
 
 ### Compuesto
 
@@ -2923,6 +3013,12 @@ Juicio explicado sobre la solidez de una conclusión.
 
 **Aparece en 1 clase(s):** [Clase 249 — Fundamentos de OSINT](../classes/parte-12-osint-e-ingenieria-social/249-fundamentos-de-osint/README.md).
 
+### Confidence level
+
+Grado declarado de certeza de un juicio analítico.
+
+**Aparece en 1 clase(s):** [Clase 381 — Caso NVIDIA y análisis comparado (capstone)](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md).
+
 ### Confirmación externa
 
 Evidencia solicitada y recibida directamente de una fuente independiente.
@@ -2934,6 +3030,12 @@ Evidencia solicitada y recibida directamente de una fuente independiente.
 `sleep`/`timeout` para detectar sin ver la salida
 
 **Aparece en 1 clase(s):** [Clase 95 — Inyección de comandos del sistema operativo](../classes/parte-4-seguridad-de-aplicaciones-web/095-inyeccion-de-comandos-del-sistema-operativo/README.md).
+
+### Conflict of interest
+
+Interés personal que puede interferir con el deber hacia la organización.
+
+**Aparece en 1 clase(s):** [Clase 375 — Trampas románticas, honey trap, kompromat y estafas de romance](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md).
 
 ### Conflicto
 
@@ -3235,6 +3337,12 @@ Taxonomía de resultados del CSF.
 
 **Aparece en 1 clase(s):** [Clase 279 — NIST Cybersecurity Framework](../classes/parte-14-grc-riesgo-y-cumplimiento/279-nist-cybersecurity-framework/README.md).
 
+### Corporate counterintelligence
+
+Actividades defensivas de una organización para proteger sus activos y personas de la obtención hostil de información.
+
+**Aparece en 1 clase(s):** [Clase 378 — Contrainteligencia empresarial y seguridad del personal](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md).
+
 ### Corpus semilla
 
 Entradas válidas de ejemplo desde las que mutar
@@ -3282,6 +3390,12 @@ Apoyo mediante evidencia con origen suficientemente independiente.
 Mecanismo que decide qué orígenes web pueden leer respuestas de otro origen
 
 **Aparece en 2 clase(s):** [Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution](../classes/parte-4-seguridad-de-aplicaciones-web/113-ataques-del-lado-del-cliente-cors-postmessage-y-prototype-pollution/README.md), [Clase 366 — Familias CWE (4): configuración, dependencias, contenedores, APIs, nube y sistemas operativos](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/366-familias-cwe-configuracion-dependencias-contenedores-apis-nube-so/README.md).
+
+### Counterintelligence
+
+Actividades para identificar y neutralizar la inteligencia de un adversario.
+
+**Aparece en 1 clase(s):** [Clase 371 — Mapa de disciplinas: espionaje, inteligencia y contrainteligencia](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/371-mapa-de-disciplinas-espionaje-inteligencia-y-contrainteligencia/README.md).
 
 ### CPA
 
@@ -3447,6 +3561,12 @@ Requisito contra el que se compara evidencia.
 
 **Aparece en 1 clase(s):** [Clase 285 — Auditoría de seguridad](../classes/parte-14-grc-riesgo-y-cumplimiento/285-auditoria-de-seguridad/README.md).
 
+### Critical path
+
+Secuencia de factores que precede a un incidente interno.
+
+**Aparece en 1 clase(s):** [Clase 377 — Amenazas internas: indicadores, programas y límites](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md).
+
 ### CRL
 
 Lista de certificados revocados
@@ -3475,7 +3595,7 @@ Inferencia de fecha o periodo de captura.
 
 Activos críticos cuyo compromiso define el éxito del ejercicio
 
-**Aparece en 1 clase(s):** [Clase 161 — Red Team vs pentest: filosofía y objetivos](../classes/parte-7-red-team-y-operaciones-ofensivas/161-red-team-vs-pentest-filosofia-y-objetivos/README.md).
+**Aparece en 3 clase(s):** [Clase 161 — Red Team vs pentest: filosofía y objetivos](../classes/parte-7-red-team-y-operaciones-ofensivas/161-red-team-vs-pentest-filosofia-y-objetivos/README.md), [Clase 376 — Espionaje industrial, económico y tecnológico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md), [Clase 378 — Contrainteligencia empresarial y seguridad del personal](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md).
 
 ### crt.sh
 
@@ -3633,6 +3753,12 @@ Responsabilidad de proteger y destruir lo extraído
 
 **Aparece en 1 clase(s):** [Clase 74 — Meterpreter y post-explotación](../classes/parte-3-hacking-etico-y-pentesting-metodologia/074-meterpreter-y-post-explotacion/README.md).
 
+### Cutout
+
+Persona o canal que separa al director de la fuente.
+
+**Aparece en 1 clase(s):** [Clase 374 — Captación de fuentes humanas y ciclo de reclutamiento](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md).
+
 ### Cutter
 
 GUI construida sobre rizin
@@ -3761,6 +3887,12 @@ Procedencia y transformaciones de datos.
 
 **Aparece en 1 clase(s):** [Clase 293 — Envenenamiento de datos y modelos](../classes/parte-15-seguridad-de-ia-y-machine-learning/293-envenenamiento-de-datos-y-modelos/README.md).
 
+### Data minimisation
+
+Tratar solo los datos necesarios.
+
+**Aparece en 1 clase(s):** [Clase 380 — Investigación de incidentes humanos, ética y legalidad](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md).
+
 ### Data Protection class
 
 Política que liga acceso a archivos con claves y estado del dispositivo.
@@ -3887,6 +4019,12 @@ Explicación posterior que conecta señales, proceso y aprendizaje.
 
 **Aparece en 1 clase(s):** [Clase 258 — Campañas de phishing con GoPhish](../classes/parte-12-osint-e-ingenieria-social/258-campanas-de-phishing-con-gophish/README.md).
 
+### Debriefing
+
+Recogida de contactos y situaciones tras un viaje o evento.
+
+**Aparece en 1 clase(s):** [Clase 378 — Contrainteligencia empresarial y seguridad del personal](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md).
+
 ### Decisión
 
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
@@ -3939,7 +4077,7 @@ URI que puede activar una ruta o componente de la aplicación.
 
 Medio sintético o manipulado que imita atributos humanos.
 
-**Aparece en 1 clase(s):** [Clase 299 — IA ofensiva y deepfakes](../classes/parte-15-seguridad-de-ia-y-machine-learning/299-ia-ofensiva-y-deepfakes/README.md).
+**Aparece en 2 clase(s):** [Clase 299 — IA ofensiva y deepfakes](../classes/parte-15-seguridad-de-ia-y-machine-learning/299-ia-ofensiva-y-deepfakes/README.md), [Clase 379 — Protección de ejecutivos y personas con acceso estratégico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md).
 
 ### Defensa
 
@@ -3965,11 +4103,23 @@ Cada mecanismo se protege de forma específica
 
 **Aparece en 1 clase(s):** [Clase 113 — Ataques del lado del cliente: CORS, postMessage y prototype pollution](../classes/parte-4-seguridad-de-aplicaciones-web/113-ataques-del-lado-del-cliente-cors-postmessage-y-prototype-pollution/README.md).
 
+### Defensive briefing
+
+Información de autoridades a un objetivo potencial sobre amenazas.
+
+**Aparece en 1 clase(s):** [Clase 381 — Caso NVIDIA y análisis comparado (capstone)](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md).
+
 ### Deferred
 
 Estado de NVD: el CVE no está programado para enriquecimiento
 
 **Aparece en 1 clase(s):** [Clase 367 — CVE: identificar vulnerabilidades concretas](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/367-cve-identificar-vulnerabilidades-concretas/README.md).
+
+### Deflection
+
+Contramedida: reorientar la conversación sin responder.
+
+**Aparece en 1 clase(s):** [Clase 373 — Pretexting, impersonation y elicitation desde la defensa](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/373-pretexting-impersonation-y-elicitation-desde-la-defensa/README.md).
 
 ### defusedxml
 
@@ -4223,6 +4373,12 @@ Ejecutar la muestra para observar su comportamiento
 
 **Aparece en 1 clase(s):** [Clase 142 — Laboratorio seguro de análisis de malware](../classes/parte-6-analisis-de-malware/142-laboratorio-seguro-de-analisis-de-malware/README.md).
 
+### Developing
+
+Construcción gradual de una relación de confianza.
+
+**Aparece en 1 clase(s):** [Clase 374 — Captación de fuentes humanas y ciclo de reclutamiento](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md).
+
 ### DEX
 
 Bytecode ejecutado por Android Runtime.
@@ -4322,6 +4478,12 @@ Identificador criptográfico del contenido exacto de una imagen.
 CA comprometida en 2011; caso canónico del fallo del modelo
 
 **Aparece en 1 clase(s):** [Clase 55 — PKI, certificados X.509 y autoridades de certificación](../classes/parte-2-criptografia-aplicada/055-pki-certificados-x-509-y-autoridades-de-certificacion/README.md).
+
+### Digital footprint
+
+Rastro de información de una persona en línea.
+
+**Aparece en 1 clase(s):** [Clase 379 — Protección de ejecutivos y personas con acceso estratégico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md).
 
 ### Dirección
 
@@ -4424,6 +4586,12 @@ Cargar una DLL maliciosa desde una ubicación escribible
 Inspección de contenido para detectar datos sensibles
 
 **Aparece en 1 clase(s):** [Clase 83 — Exfiltración de datos](../classes/parte-3-hacking-etico-y-pentesting-metodologia/083-exfiltracion-de-datos/README.md).
+
+### DLP (Data Loss Prevention)
+
+Controles que detectan o bloquean la salida indebida de datos.
+
+**Aparece en 1 clase(s):** [Clase 377 — Amenazas internas: indicadores, programas y límites](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md).
 
 ### DMARC
 
@@ -4665,11 +4833,29 @@ Protocolo de negociación de trunk; conviene desactivarlo
 
 **Aparece en 1 clase(s):** [Clase 39 — Ataques de capa 2: ARP spoofing y VLAN hopping](../classes/parte-1-redes-y-seguridad-de-redes/039-ataques-de-capa-2-arp-spoofing-y-vlan-hopping/README.md).
 
+### Dual approval
+
+Acción que exige dos personas independientes.
+
+**Aparece en 1 clase(s):** [Clase 379 — Protección de ejecutivos y personas con acceso estratégico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md).
+
 ### DualECDRBG
 
 Generador retirado por sospecha de puerta trasera
 
 **Aparece en 1 clase(s):** [Clase 50 — Criptografía de curva elíptica (ECC)](../classes/parte-2-criptografia-aplicada/050-criptografia-de-curva-eliptica-ecc/README.md).
+
+### Due diligence
+
+Revisión previa a una operación, que implica compartir información.
+
+**Aparece en 1 clase(s):** [Clase 376 — Espionaje industrial, económico y tecnológico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md).
+
+### Due process
+
+Garantías procedimentales antes de una decisión que afecte derechos.
+
+**Aparece en 1 clase(s):** [Clase 380 — Investigación de incidentes humanos, ética y legalidad](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md).
 
 ### Dueño de riesgo
 
@@ -4694,6 +4880,12 @@ ACK repetido que señala un hueco en la secuencia recibida
 Bug ya reportado; no se recompensa
 
 **Aparece en 1 clase(s):** [Clase 114 — Bug bounty: metodología y plataformas](../classes/parte-4-seguridad-de-aplicaciones-web/114-bug-bounty-metodologia-y-plataformas/README.md).
+
+### Duress
+
+Situación en que una persona actúa forzada.
+
+**Aparece en 1 clase(s):** [Clase 379 — Protección de ejecutivos y personas con acceso estratégico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md).
 
 ### DUT/target
 
@@ -4762,6 +4954,12 @@ Formas de presentar un adaptador Ethernet por USB en diferentes sistemas.
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
 
 **Aparece en 1 clase(s):** [Clase 341 — Introducción a Game Security y modelo de amenazas](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/341-introduccion-game-security-modelo-amenazas/README.md).
+
+### Economic espionage
+
+Sustracción de información para beneficiar a un gobierno o sus agentes en lo económico (18 U.S.C. § 1831).
+
+**Aparece en 2 clase(s):** [Clase 371 — Mapa de disciplinas: espionaje, inteligencia y contrainteligencia](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/371-mapa-de-disciplinas-espionaje-inteligencia-y-contrainteligencia/README.md), [Clase 376 — Espionaje industrial, económico y tecnológico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md).
 
 ### ECS
 
@@ -4840,6 +5038,12 @@ Instrumental avanzado de pwntools
 pwntools: direcciones de funciones y GOT
 
 **Aparece en 1 clase(s):** [Clase 123 — Bypass de protecciones: ret2libc](../classes/parte-5-explotacion-de-sistemas-y-binarios/123-bypass-de-protecciones-ret2libc/README.md).
+
+### Elicitation
+
+Obtención de información mediante conversación aparentemente casual (clase 373).
+
+**Aparece en 2 clase(s):** [Clase 372 — Psicología de la manipulación y resistencia a la presión](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md), [Clase 373 — Pretexting, impersonation y elicitation desde la defensa](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/373-pretexting-impersonation-y-elicitation-desde-la-defensa/README.md).
 
 ### Emparejamiento exploit-vulnerabilidad
 
@@ -5313,6 +5517,12 @@ Cifrado+autenticación / solo autenticación en IPsec
 
 **Aparece en 1 clase(s):** [Clase 125 — Vulnerabilidades de format string](../classes/parte-5-explotacion-de-sistemas-y-binarios/125-vulnerabilidades-de-format-string/README.md).
 
+### Espionage
+
+Obtención clandestina de información protegida por su titular.
+
+**Aparece en 1 clase(s):** [Clase 371 — Mapa de disciplinas: espionaje, inteligencia y contrainteligencia](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/371-mapa-de-disciplinas-espionaje-inteligencia-y-contrainteligencia/README.md).
+
 ### Esquema
 
 Todos los tipos, campos y operaciones disponibles
@@ -5553,6 +5763,12 @@ Ajuste que limita la ejecución de scripts (no es seguridad)
 
 **Aparece en 1 clase(s):** [Clase 9 — PowerShell para seguridad ofensiva y defensiva](../classes/parte-0-fundamentos-y-prerrequisitos/009-powershell-para-seguridad-ofensiva-y-defensiva/README.md).
 
+### Executive protection
+
+Conjunto de medidas físicas, digitales y de proceso para personas de alto valor.
+
+**Aparece en 1 clase(s):** [Clase 379 — Protección de ejecutivos y personas con acceso estratégico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md).
+
 ### execve
 
 Syscall que reemplaza el proceso por otro (`/bin/sh`)
@@ -5570,6 +5786,12 @@ Salida anómala de datos hacia un destino externo
 Sacar datos usando consultas DNS que casi nadie bloquea
 
 **Aparece en 2 clase(s):** [Clase 41 — Seguridad de DNS: envenenamiento, DNSSEC y tunneling](../classes/parte-1-redes-y-seguridad-de-redes/041-seguridad-de-dns-envenenamiento-dnssec-y-tunneling/README.md), [Clase 83 — Exfiltración de datos](../classes/parte-3-hacking-etico-y-pentesting-metodologia/083-exfiltracion-de-datos/README.md).
+
+### Exfiltration
+
+Salida no autorizada de datos de una organización.
+
+**Aparece en 1 clase(s):** [Clase 376 — Espionaje industrial, económico y tecnológico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md).
 
 ### EXIF
 
@@ -5644,6 +5866,12 @@ Módulo que aprovecha una vulnerabilidad para lograr ejecución
 Uso hostil del fallo demostrado con evidencia fiable
 
 **Aparece en 1 clase(s):** [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
+
+### Export controls
+
+Reglas que limitan la venta de ciertos productos o tecnologías.
+
+**Aparece en 1 clase(s):** [Clase 381 — Caso NVIDIA y análisis comparado (capstone)](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md).
 
 ### Export Directory
 
@@ -5772,6 +6000,12 @@ Linaje / versión / operación concreta
 Concentración hacia un destino / dispersión desde un origen
 
 **Aparece en 1 clase(s):** [Clase 45 — NetFlow y análisis de metadatos de tráfico](../classes/parte-1-redes-y-seguridad-de-redes/045-netflow-y-analisis-de-metadatos-de-trafico/README.md).
+
+### Farewell Dossier
+
+Material de Vetrov (1981) sobre una red soviética de adquisición tecnológica.
+
+**Aparece en 1 clase(s):** [Clase 376 — Espionaje industrial, económico y tecnológico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md).
 
 ### Fase
 
@@ -6287,6 +6521,12 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 
 **Aparece en 1 clase(s):** [Clase 342 — Arquitectura de videojuegos desde la perspectiva de seguridad](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/342-arquitectura-videojuegos-perspectiva-seguridad/README.md).
 
+### Gaslighting
+
+Manipulación que hace dudar a alguien de su propia percepción.
+
+**Aparece en 1 clase(s):** [Clase 372 — Psicología de la manipulación y resistencia a la presión](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md).
+
 ### Gate
 
 Regla de decisión del flujo, con evidencia, umbral y tratamiento de excepciones.
@@ -6641,6 +6881,12 @@ Puntero a la función manejadora de esta entrada
 
 **Aparece en 2 clase(s):** [Clase 73 — Metasploit: explotación y payloads](../classes/parte-3-hacking-etico-y-pentesting-metodologia/073-metasploit-explotacion-y-payloads/README.md), [Clase 129 — Explotación en Windows: manejo de SEH](../classes/parte-5-explotacion-de-sistemas-y-binarios/129-explotacion-en-windows-manejo-de-seh/README.md).
 
+### Handling
+
+Gestión de la relación y de los contactos tras el reclutamiento.
+
+**Aparece en 1 clase(s):** [Clase 374 — Captación de fuentes humanas y ciclo de reclutamiento](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md).
+
 ### Handshake
 
 Intercambio de tres segmentos que establece una conexión TCP.
@@ -6833,6 +7079,12 @@ Persona diferente que comparte nombre u otro atributo.
 
 **Aparece en 1 clase(s):** [Clase 250 — OSINT de personas](../classes/parte-12-osint-e-ingenieria-social/250-osint-de-personas/README.md).
 
+### Honey trap
+
+Uso de una relación romántica o sexual simulada o aprovechada para obtener información o presión.
+
+**Aparece en 1 clase(s):** [Clase 375 — Trampas románticas, honey trap, kompromat y estafas de romance](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md).
+
 ### Host-only
 
 Red VM ↔ host, sin Internet
@@ -6947,17 +7199,41 @@ Punto donde una persona con autoridad aprueba una transición de riesgo.
 
 **Aparece en 1 clase(s):** [Clase 340 — Capstone: pentest autorizado asistido por IA con MCP](../classes/parte-18-ia-aplicada-a-la-ciberseguridad/340-capstone-pentest-autorizado-asistido-por-ia-con-mcp/README.md).
 
+### Human hacking
+
+Sinónimo informal de ingeniería social que destaca el aprovechamiento de procesos de decisión humanos.
+
+**Aparece en 1 clase(s):** [Clase 371 — Mapa de disciplinas: espionaje, inteligencia y contrainteligencia](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/371-mapa-de-disciplinas-espionaje-inteligencia-y-contrainteligencia/README.md).
+
 ### Human-in-the-loop
 
 Diseño que asigna revisión humana con autoridad real.
 
 **Aparece en 1 clase(s):** [Clase 298 — IA aplicada a la defensa: detección y SOC](../classes/parte-15-seguridad-de-ia-y-machine-learning/298-ia-aplicada-a-la-defensa-deteccion-y-soc/README.md).
 
+### Human source
+
+Persona que aporta información a un actor de inteligencia o interesado.
+
+**Aparece en 1 clase(s):** [Clase 374 — Captación de fuentes humanas y ciclo de reclutamiento](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md).
+
+### HUMINT (Human Intelligence)
+
+Información obtenida de personas que la conocen o acceden a ella.
+
+**Aparece en 1 clase(s):** [Clase 371 — Mapa de disciplinas: espionaje, inteligencia y contrainteligencia](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/371-mapa-de-disciplinas-espionaje-inteligencia-y-contrainteligencia/README.md).
+
 ### Hydra / Medusa
 
 Herramientas de ataque a credenciales multiprotocolo
 
 **Aparece en 1 clase(s):** [Clase 81 — Ataques a credenciales: fuerza bruta y password spraying](../classes/parte-3-hacking-etico-y-pentesting-metodologia/081-ataques-a-credenciales-fuerza-bruta-y-password-spraying/README.md).
+
+### Hypothesis
+
+Explicación provisional que debe ponerse a prueba.
+
+**Aparece en 1 clase(s):** [Clase 381 — Caso NVIDIA y análisis comparado (capstone)](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md).
 
 ## I
 
@@ -7093,6 +7369,12 @@ Protocolo de intercambio de claves de IPsec
 
 **Aparece en 1 clase(s):** [Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN](../classes/parte-1-redes-y-seguridad-de-redes/036-vpn-y-tuneles-ipsec-wireguard-y-openvpn/README.md).
 
+### Illegals
+
+Agentes que operan bajo identidad falsa sin cobertura diplomática.
+
+**Aparece en 1 clase(s):** [Clase 376 — Espionaje industrial, económico y tecnológico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md).
+
 ### Imagen
 
 Plantilla inmutable en capas para crear contenedores
@@ -7147,6 +7429,12 @@ Qué significa para la organización y con qué urgencia
 
 **Aparece en 1 clase(s):** [Clase 160 — Reporte de análisis de malware](../classes/parte-6-analisis-de-malware/160-reporte-de-analisis-de-malware/README.md).
 
+### Impersonation
+
+Actuar como otra persona o rol para obtener confianza o acceso.
+
+**Aparece en 1 clase(s):** [Clase 373 — Pretexting, impersonation y elicitation desde la defensa](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/373-pretexting-impersonation-y-elicitation-desde-la-defensa/README.md).
+
 ### imphash
 
 Hash de la tabla de imports; agrupa por APIs usadas
@@ -7177,6 +7465,12 @@ Reparto de responsabilidad ante daños accidentales
 
 **Aparece en 1 clase(s):** [Clase 67 — Reglas de engagement, alcance y contratos](../classes/parte-3-hacking-etico-y-pentesting-metodologia/067-reglas-de-engagement-alcance-y-contratos/README.md).
 
+### Independent committee
+
+Directores sin vínculo con la gestión que supervisan una investigación.
+
+**Aparece en 1 clase(s):** [Clase 381 — Caso NVIDIA y análisis comparado (capstone)](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md).
+
 ### Indication
 
 Actualización GATT que requiere confirmación.
@@ -7188,6 +7482,12 @@ Actualización GATT que requiere confirmación.
 Base construida con observaciones realizadas en momentos concretos.
 
 **Aparece en 1 clase(s):** [Clase 254 — OSINT técnico: Shodan y Censys](../classes/parte-12-osint-e-ingenieria-social/254-osint-tecnico-shodan-y-censys/README.md).
+
+### Industrial espionage
+
+Obtención clandestina de secretos de una empresa por un competidor o sus intermediarios.
+
+**Aparece en 2 clase(s):** [Clase 371 — Mapa de disciplinas: espionaje, inteligencia y contrainteligencia](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/371-mapa-de-disciplinas-espionaje-inteligencia-y-contrainteligencia/README.md), [Clase 376 — Espionaje industrial, económico y tecnológico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md).
 
 ### INetSim
 
@@ -7269,9 +7569,15 @@ Tráfico hacia, desde y a través del equipo
 
 ### Insider
 
-Actor con acceso legítimo interno, malicioso o negligente
+Quien tiene o tuvo acceso autorizado a recursos de la organización.
 
-**Aparece en 1 clase(s):** [Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain](../classes/parte-0-fundamentos-y-prerrequisitos/002-el-panorama-de-amenazas-moderno-actores-motivaciones-y-cyber-kill-chain/README.md).
+**Aparece en 3 clase(s):** [Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain](../classes/parte-0-fundamentos-y-prerrequisitos/002-el-panorama-de-amenazas-moderno-actores-motivaciones-y-cyber-kill-chain/README.md), [Clase 371 — Mapa de disciplinas: espionaje, inteligencia y contrainteligencia](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/371-mapa-de-disciplinas-espionaje-inteligencia-y-contrainteligencia/README.md), [Clase 377 — Amenazas internas: indicadores, programas y límites](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md).
+
+### Insider threat
+
+Riesgo de que un insider dañe a la organización, con o sin intención.
+
+**Aparece en 1 clase(s):** [Clase 377 — Amenazas internas: indicadores, programas y límites](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md).
 
 ### Instancia
 
@@ -7308,6 +7614,12 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 La firma protege de manipulación, no de lectura
 
 **Aparece en 1 clase(s):** [Clase 103 — Ataques y seguridad de JWT](../classes/parte-4-seguridad-de-aplicaciones-web/103-ataques-y-seguridad-de-jwt/README.md).
+
+### Intelligence
+
+Juicio útil para decidir, producido al analizar información. Formal: producto de recolectar, procesar, analizar y difundir información para apoyar decisiones.
+
+**Aparece en 1 clase(s):** [Clase 371 — Mapa de disciplinas: espionaje, inteligencia y contrainteligencia](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/371-mapa-de-disciplinas-espionaje-inteligencia-y-contrainteligencia/README.md).
 
 ### Interacción del usuario (UI)
 
@@ -7819,6 +8131,12 @@ Servicio gestionado de claves en la nube
 
 **Aparece en 1 clase(s):** [Clase 63 — Gestión de secretos: Vault y KMS](../classes/parte-2-criptografia-aplicada/063-gestion-de-secretos-vault-y-kms/README.md).
 
+### Kompromat
+
+Información real o fabricada para dañar o presionar a alguien.
+
+**Aparece en 1 clase(s):** [Clase 375 — Trampas románticas, honey trap, kompromat y estafas de romance](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md).
+
 ### KOTH — King of the Hill
 
 Formato competitivo en el que se obtiene y conserva control de un objetivo autorizado durante un intervalo.
@@ -7923,6 +8241,12 @@ Concesión temporal de una IP a un cliente DHCP.
 
 **Aparece en 1 clase(s):** [Clase 12 — DNS, DHCP y ARP: funcionamiento y riesgos](../classes/parte-0-fundamentos-y-prerrequisitos/012-dns-dhcp-y-arp-funcionamiento-y-riesgos/README.md).
 
+### Least privilege
+
+Cada persona tiene solo los accesos necesarios.
+
+**Aparece en 1 clase(s):** [Clase 377 — Amenazas internas: indicadores, programas y límites](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md).
+
 ### leave; ret
 
 Gadget típico de pivote de pila
@@ -7935,11 +8259,23 @@ Gadget típico de pivote de pila
 
 **Aparece en 1 clase(s):** [Clase 100 — XML External Entities (XXE)](../classes/parte-4-seguridad-de-aplicaciones-web/100-xml-external-entities-xxe/README.md).
 
+### Legal hold
+
+Orden de conservar datos por razón jurídica.
+
+**Aparece en 1 clase(s):** [Clase 380 — Investigación de incidentes humanos, ética y legalidad](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md).
+
 ### Legítimo,
 
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
 
 **Aparece en 1 clase(s):** [Clase 350 — Triggerbot, macros, input automation y bots](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/350-triggerbot-macros-input-automation-bots/README.md).
+
+### Lessons learned
+
+Revisión posterior para mejorar procesos.
+
+**Aparece en 1 clase(s):** [Clase 380 — Investigación de incidentes humanos, ética y legalidad](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md).
 
 ### Let's Encrypt / ACME
 
@@ -7960,6 +8296,12 @@ Plataforma de entrenamiento SOC con investigaciones simuladas y modalidades grat
 Dirección y puerto de escucha del atacante
 
 **Aparece en 2 clase(s):** [Clase 73 — Metasploit: explotación y payloads](../classes/parte-3-hacking-etico-y-pentesting-metodologia/073-metasploit-explotacion-y-payloads/README.md), [Clase 75 — msfvenom: generación de payloads](../classes/parte-3-hacking-etico-y-pentesting-metodologia/075-msfvenom-generacion-de-payloads/README.md).
+
+### Liaison
+
+Intermediario que filtra solicitudes a un ejecutivo.
+
+**Aparece en 1 clase(s):** [Clase 379 — Protección de ejecutivos y personas con acceso estratégico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/379-proteccion-de-ejecutivos-y-personas-con-acceso-estrategico/README.md).
 
 ### libc
 
@@ -8003,6 +8345,12 @@ Veredicto por versión, no por comprobación efectiva
 
 **Aparece en 1 clase(s):** [Clase 32 — Nmap Scripting Engine (NSE)](../classes/parte-1-redes-y-seguridad-de-redes/032-nmap-scripting-engine-nse/README.md).
 
+### Liking
+
+Mayor disposición a colaborar con quien nos agrada.
+
+**Aparece en 1 clase(s):** [Clase 372 — Psicología de la manipulación y resistencia a la presión](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md).
+
 ### Limitación de tasa
 
 Encarece los ataques que necesitan muchas peticiones
@@ -8038,6 +8386,12 @@ Eliminar toda persistencia al cerrar el engagement
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
 
 **Aparece en 1 clase(s):** [Clase 348 — Matemática de un aimbot](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/348-matematica-aimbot/README.md).
+
+### Line X
+
+Unidad soviética dedicada a obtener tecnología occidental (según el relato de Weiss).
+
+**Aparece en 1 clase(s):** [Clase 376 — Espionaje industrial, económico y tecnológico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md).
 
 ### Línea base
 
@@ -8358,6 +8712,12 @@ Poder alterar el texto claro manipulando el cifrado
 Plugin que detecta código inyectado en memoria
 
 **Aparece en 1 clase(s):** [Clase 148 — Análisis de comportamiento](../classes/parte-6-analisis-de-malware/148-analisis-de-comportamiento/README.md).
+
+### Malicious insider
+
+Actúa con intención de dañar o beneficiarse.
+
+**Aparece en 1 clase(s):** [Clase 377 — Amenazas internas: indicadores, programas y límites](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md).
 
 ### Malleable C2
 
@@ -8719,6 +9079,12 @@ Tabla maestra de ficheros de NTFS; guarda varios timestamps
 
 **Aparece en 1 clase(s):** [Clase 84 — Anti-forense y borrado de huellas (concepto y límites)](../classes/parte-3-hacking-etico-y-pentesting-metodologia/084-anti-forense-y-borrado-de-huellas-concepto-y-limites/README.md).
 
+### MICE
+
+Modelo mnemotécnico de motivaciones para colaborar.
+
+**Aparece en 1 clase(s):** [Clase 374 — Captación de fuentes humanas y ciclo de reclutamiento](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md).
+
 ### Micro-emulación
 
 Emulación atómica de un comportamiento aislado y reutilizable
@@ -8997,6 +9363,12 @@ Generador de payloads autónomos de Metasploit
 
 **Aparece en 2 clase(s):** [Clase 75 — msfvenom: generación de payloads](../classes/parte-3-hacking-etico-y-pentesting-metodologia/075-msfvenom-generacion-de-payloads/README.md), [Clase 121 — Escritura de shellcode](../classes/parte-5-explotacion-de-sistemas-y-binarios/121-escritura-de-shellcode/README.md).
 
+### MSS
+
+Servicio de inteligencia civil de China.
+
+**Aparece en 1 clase(s):** [Clase 381 — Caso NVIDIA y análisis comparado (capstone)](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md).
+
 ### mTLS
 
 TLS mutuo; ambos extremos se autentican con certificado
@@ -9076,6 +9448,18 @@ Modo de red: la VM sale, no es alcanzable desde fuera
 Acuerdo de confidencialidad sobre lo descubierto
 
 **Aparece en 2 clase(s):** [Clase 25 — Ética, legalidad, alcance y divulgación responsable](../classes/parte-0-fundamentos-y-prerrequisitos/025-etica-legalidad-alcance-y-divulgacion-responsable/README.md), [Clase 67 — Reglas de engagement, alcance y contratos](../classes/parte-3-hacking-etico-y-pentesting-metodologia/067-reglas-de-engagement-alcance-y-contratos/README.md).
+
+### Need-to-know
+
+Principio por el que solo accede a información quien la necesita para su tarea.
+
+**Aparece en 2 clase(s):** [Clase 373 — Pretexting, impersonation y elicitation desde la defensa](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/373-pretexting-impersonation-y-elicitation-desde-la-defensa/README.md), [Clase 378 — Contrainteligencia empresarial y seguridad del personal](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md).
+
+### Negligent insider
+
+Causa daño por error o descuido.
+
+**Aparece en 1 clase(s):** [Clase 377 — Amenazas internas: indicadores, programas y límites](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md).
 
 ### Nessus
 
@@ -9451,6 +9835,18 @@ Error de uno en un límite; a menudo pisa metadatos
 
 **Aparece en 1 clase(s):** [Clase 128 — Integer overflows y errores aritméticos](../classes/parte-5-explotacion-de-sistemas-y-binarios/128-integer-overflows-y-errores-aritmeticos/README.md).
 
+### Offboarding
+
+Conjunto de pasos al terminar la relación con una persona.
+
+**Aparece en 1 clase(s):** [Clase 377 — Amenazas internas: indicadores, programas y límites](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md).
+
+### Official statement
+
+Posición formal de una parte.
+
+**Aparece en 1 clase(s):** [Clase 381 — Caso NVIDIA y análisis comparado (capstone)](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md).
+
 ### Offset
 
 Bytes desde el inicio del buffer hasta la dirección de retorno
@@ -9601,7 +9997,7 @@ Recogida de información de fuentes públicas para dar verosimilitud al pretexto
 
 **Claves de búsqueda normalizadas:** `osint`.
 
-**Aparece en 3 clase(s):** [Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain](../classes/parte-0-fundamentos-y-prerrequisitos/002-el-panorama-de-amenazas-moderno-actores-motivaciones-y-cyber-kill-chain/README.md), [Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas](../classes/parte-3-hacking-etico-y-pentesting-metodologia/068-reconocimiento-pasivo-e-inteligencia-de-fuentes-abiertas/README.md), [Clase 166 — Phishing y entrega de payloads](../classes/parte-7-red-team-y-operaciones-ofensivas/166-phishing-y-entrega-de-payloads/README.md).
+**Aparece en 4 clase(s):** [Clase 2 — El panorama de amenazas moderno: actores, motivaciones y Cyber Kill Chain](../classes/parte-0-fundamentos-y-prerrequisitos/002-el-panorama-de-amenazas-moderno-actores-motivaciones-y-cyber-kill-chain/README.md), [Clase 68 — Reconocimiento pasivo e inteligencia de fuentes abiertas](../classes/parte-3-hacking-etico-y-pentesting-metodologia/068-reconocimiento-pasivo-e-inteligencia-de-fuentes-abiertas/README.md), [Clase 166 — Phishing y entrega de payloads](../classes/parte-7-red-team-y-operaciones-ofensivas/166-phishing-y-entrega-de-payloads/README.md), [Clase 371 — Mapa de disciplinas: espionaje, inteligencia y contrainteligencia](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/371-mapa-de-disciplinas-espionaje-inteligencia-y-contrainteligencia/README.md).
 
 ### OSS-Fuzz
 
@@ -9626,6 +10022,12 @@ Exfiltrar por DNS/HTTP a un servidor del atacante
 Forzar a la BD a conectar fuera y exfiltrar por DNS/HTTP
 
 **Aparece en 1 clase(s):** [Clase 92 — Inyección SQL avanzada y ciega (blind)](../classes/parte-4-seguridad-de-aplicaciones-web/092-inyeccion-sql-avanzada-y-ciega-blind/README.md).
+
+### Out-of-band verification
+
+Confirmar por un canal distinto al de la solicitud.
+
+**Aparece en 1 clase(s):** [Clase 373 — Pretexting, impersonation y elicitation desde la defensa](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/373-pretexting-impersonation-y-elicitation-desde-la-defensa/README.md).
 
 ### Output encoding
 
@@ -10481,6 +10883,12 @@ Aleatoriza la dirección de carga del propio binario
 
 **Aparece en 2 clase(s):** [Clase 119 — Buffer overflow en stack: teoría](../classes/parte-5-explotacion-de-sistemas-y-binarios/119-buffer-overflow-en-stack-teoria/README.md), [Clase 122 — Protecciones modernas: ASLR, DEP/NX, stack canaries y PIE](../classes/parte-5-explotacion-de-sistemas-y-binarios/122-protecciones-modernas-aslr-dep-nx-stack-canaries-y-pie/README.md).
 
+### Pig butchering
+
+Fraude que combina un vínculo afectivo y una falsa inversión.
+
+**Aparece en 1 clase(s):** [Clase 375 — Trampas románticas, honey trap, kompromat y estafas de romance](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md).
+
 ### Pila como programa
 
 La pila contiene la lista de direcciones de gadgets
@@ -10827,6 +11235,12 @@ Ejercicio enfocado con feedback y dificultad calibrada.
 
 **Aparece en 1 clase(s):** [Clase 310 — Plan de aprendizaje continuo y comunidad](../classes/parte-16-capstones-y-preparacion-de-certificaciones/310-plan-de-aprendizaje-continuo-y-comunidad/README.md).
 
+### Pre-travel briefing
+
+Preparación sobre riesgos y conducta antes de viajar.
+
+**Aparece en 1 clase(s):** [Clase 378 — Contrainteligencia empresarial y seguridad del personal](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md).
+
 ### Precision,
 
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
@@ -10881,17 +11295,29 @@ Deber ético del consultor; no destruir huellas
 
 **Aparece en 1 clase(s):** [Clase 84 — Anti-forense y borrado de huellas (concepto y límites)](../classes/parte-3-hacking-etico-y-pentesting-metodologia/084-anti-forense-y-borrado-de-huellas-concepto-y-limites/README.md).
 
+### Presumption of innocence
+
+Nadie es culpable hasta que se pruebe.
+
+**Aparece en 1 clase(s):** [Clase 380 — Investigación de incidentes humanos, ética y legalidad](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md).
+
 ### Presupuesto por tarea
 
 Límite de pasos, tokens y herramientas que un agente puede gastar en una ejecución.
 
 **Aparece en 1 clase(s):** [Clase 297 — Seguridad de aplicaciones con LLM: RAG y agentes](../classes/parte-15-seguridad-de-ia-y-machine-learning/297-seguridad-de-aplicaciones-con-llm-rag-y-agentes/README.md).
 
+### Pretext
+
+Marco narrativo que da motivo y legitimidad a una petición.
+
+**Aparece en 2 clase(s):** [Clase 372 — Psicología de la manipulación y resistencia a la presión](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md), [Clase 373 — Pretexting, impersonation y elicitation desde la defensa](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/373-pretexting-impersonation-y-elicitation-desde-la-defensa/README.md).
+
 ### Pretexting
 
-Uso de una historia para legitimar identidad y solicitud.
+Uso de una historia fabricada para justificar una solicitud.
 
-**Aparece en 1 clase(s):** [Clase 257 — Pretexting y vishing](../classes/parte-12-osint-e-ingenieria-social/257-pretexting-y-vishing/README.md).
+**Aparece en 2 clase(s):** [Clase 257 — Pretexting y vishing](../classes/parte-12-osint-e-ingenieria-social/257-pretexting-y-vishing/README.md), [Clase 373 — Pretexting, impersonation y elicitation desde la defensa](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/373-pretexting-impersonation-y-elicitation-desde-la-defensa/README.md).
 
 ### Pretexto
 
@@ -10970,6 +11396,12 @@ Ir donde es probable un bug pagado
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
 
 **Aparece en 1 clase(s):** [Clase 353 — Arquitecturas Anti-Cheat](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/353-arquitecturas-anticheat/README.md).
+
+### Privilege creep
+
+Permisos que se acumulan al cambiar de función.
+
+**Aparece en 1 clase(s):** [Clase 378 — Contrainteligencia empresarial y seguridad del personal](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md).
 
 ### Privilegios
 
@@ -11120,6 +11552,12 @@ Característica formulada de modo que un tercero pueda observarla o refutarla.
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
 
 **Aparece en 1 clase(s):** [Clase 359 — Privacidad, gobernanza, sanciones y seguridad del propio Anti-Cheat](../classes/parte-19-seguridad-de-videojuegos-cheats-y-anticheat/359-privacidad-gobernanza-sanciones-seguridad-anticheat/README.md).
+
+### Proportionality
+
+La medida es adecuada, necesaria y la menos intrusiva.
+
+**Aparece en 1 clase(s):** [Clase 380 — Investigación de incidentes humanos, ética y legalidad](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md).
 
 ### proto
 
@@ -11531,6 +11969,12 @@ Etiqueta KEV de uso del CVE en campañas de secuestro de datos
 
 **Aparece en 1 clase(s):** [Clase 369 — EPSS, CISA KEV y priorización por riesgo: qué arreglar primero](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/369-epss-cisa-kev-y-priorizacion-por-riesgo/README.md).
 
+### Rapport
+
+Relación de confianza y afinidad entre personas.
+
+**Aparece en 1 clase(s):** [Clase 372 — Psicología de la manipulación y resistencia a la presión](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md).
+
 ### RAT
 
 Troyano de acceso remoto interactivo
@@ -11659,6 +12103,12 @@ Pedir memoria del mismo tamaño para controlar el contenido
 
 **Aparece en 1 clase(s):** [Clase 127 — Heap: use-after-free y double free](../classes/parte-5-explotacion-de-sistemas-y-binarios/127-heap-use-after-free-y-double-free/README.md).
 
+### Reciprocity
+
+Sentimiento de deber de devolver un favor recibido.
+
+**Aparece en 1 clase(s):** [Clase 372 — Psicología de la manipulación y resistencia a la presión](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md).
+
 ### Recoil,
 
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
@@ -11713,6 +12163,12 @@ Regenerar la tabla de imports del binario volcado
 
 **Aparece en 1 clase(s):** [Clase 147 — Ofuscación, packing y unpacking](../classes/parte-6-analisis-de-malware/147-ofuscacion-packing-y-unpacking/README.md).
 
+### Recruitment
+
+Propuesta que formaliza la colaboración.
+
+**Aparece en 1 clase(s):** [Clase 374 — Captación de fuentes humanas y ciclo de reclutamiento](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md).
+
 ### Recuperación a userland
 
 Volver limpio tras ganar privilegios
@@ -11730,6 +12186,12 @@ Camino alternativo al login, a menudo el más débil
 Binarios o datos escondidos dentro del PE
 
 **Aparece en 1 clase(s):** [Clase 143 — Análisis estático básico](../classes/parte-6-analisis-de-malware/143-analisis-estatico-basico/README.md).
+
+### Red flag
+
+Indicio que justifica atención, no una prueba.
+
+**Aparece en 1 clase(s):** [Clase 378 — Contrainteligencia empresarial y seguridad del personal](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md).
 
 ### Red interna
 
@@ -12369,6 +12831,18 @@ Código que cambia con estado; una grabación antigua suele no ser reutilizable.
 
 **Aparece en 1 clase(s):** [Clase 269 — Radio definida por software (SDR) e investigación de interferencias](../classes/parte-13-seguridad-movil-iot-e-inalambrica/269-radio-definida-por-software-sdr/README.md).
 
+### Romance scam
+
+Fraude que simula una relación afectiva para obtener dinero o datos.
+
+**Aparece en 1 clase(s):** [Clase 375 — Trampas románticas, honey trap, kompromat y estafas de romance](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md).
+
+### Romeo spy
+
+Agente que simula una relación afectiva para obtener acceso (término histórico de la Guerra Fría).
+
+**Aparece en 1 clase(s):** [Clase 375 — Trampas románticas, honey trap, kompromat y estafas de romance](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md).
+
 ### Ronda
 
 Repetición de las operaciones internas de AES (10, 12 o 14)
@@ -12567,7 +13041,7 @@ Riesgo de promotor/liquidez o abandono; no es sinónimo de phishing ni de draine
 
 Reglas de autorización, tiempo, objetivos y parada.
 
-**Aparece en 1 clase(s):** [Clase 303 — Capstone: laboratorio completo de pentest](../classes/parte-16-capstones-y-preparacion-de-certificaciones/303-capstone-laboratorio-completo-de-pentest/README.md).
+**Aparece en 2 clase(s):** [Clase 303 — Capstone: laboratorio completo de pentest](../classes/parte-16-capstones-y-preparacion-de-certificaciones/303-capstone-laboratorio-completo-de-pentest/README.md), [Clase 380 — Investigación de incidentes humanos, ética y legalidad](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md).
 
 ### Rules of Engagement (RoE)
 
@@ -12799,6 +13273,12 @@ Librería Python de forja y análisis de paquetes
 
 **Aparece en 1 clase(s):** [Clase 17 — Python para seguridad: manipulación de paquetes con Scapy](../classes/parte-0-fundamentos-y-prerrequisitos/017-python-para-seguridad-manipulacion-de-paquetes-con-scapy/README.md).
 
+### Scarcity
+
+Mayor valoración de lo que parece limitado en tiempo o cantidad.
+
+**Aparece en 1 clase(s):** [Clase 372 — Psicología de la manipulación y resistencia a la presión](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md).
+
 ### Schema
 
 Concepto de esta clase aplicado al Game Security Range y a su frontera de confianza.
@@ -12961,6 +13441,12 @@ Miembro del equipo que facilita prácticas y conexión con especialistas.
 
 **Aparece en 1 clase(s):** [Clase 248 — Cultura DevSecOps y security champions](../classes/parte-11-devsecops-y-seguridad-del-sdlc/248-cultura-devsecops-y-security-champions/README.md).
 
+### Security culture
+
+Modo habitual de actuar respecto a la protección.
+
+**Aparece en 1 clase(s):** [Clase 378 — Contrainteligencia empresarial y seguridad del personal](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md).
+
 ### Security Onion
 
 Distribución que integra Suricata, Zeek y análisis para NSM
@@ -12984,6 +13470,12 @@ PDU de transporte con TCP (datagrama con UDP)
 Separación de capacidades incompatibles para que una acción sensible requiera control independiente.
 
 **Aparece en 1 clase(s):** [Clase 276 — Gobernanza de la seguridad de la información](../classes/parte-14-grc-riesgo-y-cumplimiento/276-gobernanza-de-la-seguridad-de-la-informacion/README.md).
+
+### Segregation of duties
+
+Dividir tareas críticas entre varias personas.
+
+**Aparece en 1 clase(s):** [Clase 377 — Amenazas internas: indicadores, programas y límites](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/377-amenazas-internas-indicadores-programas-y-limites/README.md).
 
 ### Segunda preimagen
 
@@ -13212,6 +13704,18 @@ Separar identificadores sin eliminar toda posibilidad de enlace.
 Cuán grave sería explotar la vulnerabilidad, bajo ciertos supuestos
 
 **Aparece en 1 clase(s):** [Clase 368 — CVSS v3.1 y v4.0: qué mide la severidad y cómo se calcula](../classes/parte-20-debilidades-y-vulnerabilidades-cwe-cve-cvss/368-cvss-v3-1-y-v4-0-severidad/README.md).
+
+### Sexpionage
+
+Término para el uso del sexo y el afecto en el espionaje.
+
+**Aparece en 1 clase(s):** [Clase 375 — Trampas románticas, honey trap, kompromat y estafas de romance](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md).
+
+### Sextortion
+
+Extorsión mediante imágenes íntimas reales o simuladas.
+
+**Aparece en 1 clase(s):** [Clase 375 — Trampas románticas, honey trap, kompromat y estafas de romance](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/375-trampas-romanticas-honey-trap-kompromat-y-estafas-de-romance/README.md).
 
 ### sFlow
 
@@ -13613,6 +14117,18 @@ Sistema en chip que integra procesador y periféricos.
 
 **Aparece en 1 clase(s):** [Clase 268 — Análisis de hardware: UART, JTAG/SWD y SPI](../classes/parte-13-seguridad-movil-iot-e-inalambrica/268-analisis-de-hardware-uart-jtag-y-spi/README.md).
 
+### Social engineering
+
+Manipulación de personas para obtener acciones o información.
+
+**Aparece en 1 clase(s):** [Clase 371 — Mapa de disciplinas: espionaje, inteligencia y contrainteligencia](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/371-mapa-de-disciplinas-espionaje-inteligencia-y-contrainteligencia/README.md).
+
+### Social proof
+
+Imitar lo que hacen otros como guía de conducta.
+
+**Aparece en 1 clase(s):** [Clase 372 — Psicología de la manipulación y resistencia a la presión](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md).
+
 ### SOCKDGRAM
 
 Tipo de socket de datagramas sin conexión (UDP)
@@ -13744,6 +14260,12 @@ Concepto de esta clase aplicado al Game Security Range y a su frontera de confia
 Enrutar solo parte del tráfico por el túnel
 
 **Aparece en 1 clase(s):** [Clase 36 — VPN y túneles: IPsec, WireGuard y OpenVPN](../classes/parte-1-redes-y-seguridad-de-redes/036-vpn-y-tuneles-ipsec-wireguard-y-openvpn/README.md).
+
+### Spotting
+
+Fase en que se localizan personas con acceso de interés.
+
+**Aparece en 1 clase(s):** [Clase 374 — Captación de fuentes humanas y ciclo de reclutamiento](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md).
 
 ### Spraying en AD
 
@@ -14201,6 +14723,12 @@ Cuenta local de máximo privilegio (`S-1-5-18`)
 
 **Aparece en 4 clase(s):** [Clase 8 — Windows esencial para seguridad: arquitectura, registro y servicios](../classes/parte-0-fundamentos-y-prerrequisitos/008-windows-esencial-para-seguridad-arquitectura-registro-y-servicios/README.md), [Clase 74 — Meterpreter y post-explotación](../classes/parte-3-hacking-etico-y-pentesting-metodologia/074-meterpreter-y-post-explotacion/README.md), [Clase 77 — Escalada de privilegios en Windows](../classes/parte-3-hacking-etico-y-pentesting-metodologia/077-escalada-de-privilegios-en-windows/README.md), [Clase 100 — XML External Entities (XXE)](../classes/parte-4-seguridad-de-aplicaciones-web/100-xml-external-entities-xxe/README.md).
 
+### System 1 / System 2
+
+Modos de pensamiento rápido-automático y lento-deliberado (Kahneman).
+
+**Aparece en 1 clase(s):** [Clase 372 — Psicología de la manipulación y resistencia a la presión](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/372-psicologia-de-la-manipulacion-y-resistencia-a-la-presion/README.md).
+
 ### system("/bin/sh")
 
 Objetivo típico: función de libc que lanza una shell
@@ -14280,6 +14808,12 @@ Etiqueta de versión de una imagen
 Etiqueta que detecta cualquier manipulación
 
 **Aparece en 1 clase(s):** [Clase 59 — Cifrado autenticado (AEAD)](../classes/parte-2-criptografia-aplicada/059-cifrado-autenticado-aead/README.md).
+
+### Tailgating / piggybacking
+
+Entrar a un área restringida aprovechando que otra persona abre la puerta.
+
+**Aparece en 1 clase(s):** [Clase 373 — Pretexting, impersonation y elicitation desde la defensa](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/373-pretexting-impersonation-y-elicitation-desde-la-defensa/README.md).
 
 ### Taint analysis
 
@@ -14485,6 +15019,12 @@ Tickets de Kerberos (concesión y servicio)
 
 **Aparece en 1 clase(s):** [Clase 78 — Movimiento lateral en la red](../classes/parte-3-hacking-etico-y-pentesting-metodologia/078-movimiento-lateral-en-la-red/README.md).
 
+### Theft of trade secrets
+
+Apropiación ilícita de secretos con perjuicio al titular (18 U.S.C. § 1832).
+
+**Aparece en 1 clase(s):** [Clase 376 — Espionaje industrial, económico y tecnológico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md).
+
 ### ThreadPoolExecutor
 
 Gestor de un pool de hilos reutilizables de `concurrent.futures`
@@ -14647,6 +15187,18 @@ Gestión del producto durante diseño, mercado, soporte y retiro.
 
 **Aparece en 1 clase(s):** [Clase 275 — Seguridad de dispositivos médicos](../classes/parte-13-seguridad-movil-iot-e-inalambrica/275-seguridad-de-dispositivos-medicos/README.md).
 
+### Trade secret
+
+Información con valor por no ser conocida y protegida con medidas razonables.
+
+**Aparece en 1 clase(s):** [Clase 376 — Espionaje industrial, económico y tecnológico](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/376-espionaje-industrial-economico-y-tecnologico/README.md).
+
+### Tradecraft
+
+Métodos de un servicio de inteligencia para operar sin ser detectado.
+
+**Aparece en 1 clase(s):** [Clase 371 — Mapa de disciplinas: espionaje, inteligencia y contrainteligencia](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/371-mapa-de-disciplinas-espionaje-inteligencia-y-contrainteligencia/README.md).
+
 ### Tráfico este-oeste
 
 Comunicación entre hosts internos; objeto de la microsegmentación
@@ -14719,7 +15271,7 @@ Clasificación inicial que determina alcance, urgencia y respuesta.
 
 **Claves de búsqueda normalizadas:** `triaje`.
 
-**Aparece en 3 clase(s):** [Clase 114 — Bug bounty: metodología y plataformas](../classes/parte-4-seguridad-de-aplicaciones-web/114-bug-bounty-metodologia-y-plataformas/README.md), [Clase 130 — Ingeniería inversa: introducción](../classes/parte-5-explotacion-de-sistemas-y-binarios/130-ingenieria-inversa-introduccion/README.md), [Clase 259 — Defensa contra la ingeniería social](../classes/parte-12-osint-e-ingenieria-social/259-defensa-contra-la-ingenieria-social/README.md).
+**Aparece en 4 clase(s):** [Clase 114 — Bug bounty: metodología y plataformas](../classes/parte-4-seguridad-de-aplicaciones-web/114-bug-bounty-metodologia-y-plataformas/README.md), [Clase 130 — Ingeniería inversa: introducción](../classes/parte-5-explotacion-de-sistemas-y-binarios/130-ingenieria-inversa-introduccion/README.md), [Clase 259 — Defensa contra la ingeniería social](../classes/parte-12-osint-e-ingenieria-social/259-defensa-contra-la-ingenieria-social/README.md), [Clase 380 — Investigación de incidentes humanos, ética y legalidad](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md).
 
 ### Triage / dedup
 
@@ -14999,6 +15551,18 @@ Otras listas de chunks libres
 
 **Aparece en 1 clase(s):** [Clase 126 — Explotación de heap: fundamentos](../classes/parte-5-explotacion-de-sistemas-y-binarios/126-explotacion-de-heap-fundamentos/README.md).
 
+### Unverified report
+
+Información sin corroboración independiente.
+
+**Aparece en 1 clase(s):** [Clase 381 — Caso NVIDIA y análisis comparado (capstone)](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/381-caso-nvidia-y-analisis-comparado-capstone/README.md).
+
+### Unwitting source
+
+Persona que aporta datos sin saber a quién ni para qué.
+
+**Aparece en 1 clase(s):** [Clase 374 — Captación de fuentes humanas y ciclo de reclutamiento](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/374-captacion-de-fuentes-humanas-y-ciclo-de-reclutamiento/README.md).
+
 ### UPX
 
 Packer común que se deshace con un comando
@@ -15241,6 +15805,12 @@ Guardar algoritmo y parámetros junto al dato
 
 **Aparece en 1 clase(s):** [Clase 110 — Seguridad de APIs REST](../classes/parte-4-seguridad-de-aplicaciones-web/110-seguridad-de-apis-rest/README.md).
 
+### Vetting
+
+Comprobación de antecedentes y adecuación al puesto.
+
+**Aparece en 1 clase(s):** [Clase 378 — Contrainteligencia empresarial y seguridad del personal](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/378-contrainteligencia-empresarial-y-seguridad-del-personal/README.md).
+
 ### VEX
 
 Declaración del estado de afectación de un producto respecto de vulnerabilidades.
@@ -15317,7 +15887,7 @@ Comando de pwndbg que visualiza el heap
 
 Ingeniería social mediante voz o telefonía.
 
-**Aparece en 1 clase(s):** [Clase 257 — Pretexting y vishing](../classes/parte-12-osint-e-ingenieria-social/257-pretexting-y-vishing/README.md).
+**Aparece en 2 clase(s):** [Clase 257 — Pretexting y vishing](../classes/parte-12-osint-e-ingenieria-social/257-pretexting-y-vishing/README.md), [Clase 373 — Pretexting, impersonation y elicitation desde la defensa](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/373-pretexting-impersonation-y-elicitation-desde-la-defensa/README.md).
 
 ### Vista
 
@@ -15548,6 +16118,12 @@ Cifrado WiFi roto en parte por reutilización de nonce
 Filtra objetos del pipeline por una condición
 
 **Aparece en 1 clase(s):** [Clase 9 — PowerShell para seguridad ofensiva y defensiva](../classes/parte-0-fundamentos-y-prerrequisitos/009-powershell-para-seguridad-ofensiva-y-defensiva/README.md).
+
+### Whistleblower
+
+Persona que comunica irregularidades de buena fe.
+
+**Aparece en 1 clase(s):** [Clase 380 — Investigación de incidentes humanos, ética y legalidad](../classes/parte-21-ingenieria-social-espionaje-y-contrainteligencia/380-investigacion-de-incidentes-humanos-etica-y-legalidad/README.md).
 
 ### White box
 
